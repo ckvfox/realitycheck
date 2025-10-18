@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RealityCheck – Overall Country Ranking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="overall-page">
+	<!-- 🔄 Lade-Spinner -->
+	<div id="overlay-spinner">
+	  <div></div>
+	  <p>Loading global KPI data...</p>
+	</div>
+  <h1 style="max-width:1100px;margin:1rem auto 0;padding:0 1rem;">Overall Country Ranking</h1>
+
+  <!-- 🧭 Intro-Bereich -->
+  <section id="overall-intro" style="max-width:900px;margin:1rem auto 2rem;padding:0 1rem;line-height:1.6;">
+    <p>
+      The <strong>Overall Country Ranking</strong> combines dozens of key performance indicators (KPIs) 
+      into a single, data-driven comparison. It reflects how countries perform across 
+      <em>economy, society, sustainability, governance</em> and more — helping to reveal the bigger picture 
+      beyond individual statistics.
+    </p>
+    <p>
+      Each cluster below groups related indicators. You can adjust the importance of every KPI 
+      by choosing whether it should weigh <b>high</b>, <b>very high</b> or <b>not interested</b>.
+      The ranking recalculates instantly to show how your priorities change the outcome.
+    </p>
+    <p style="font-style:italic;color:#555;">
+      Use this page to explore patterns in prosperity, equity, and resilience — or to build your own 
+      interpretation of what “progress” means across nations.
+    </p>
+  </section>
+
+  <!-- KPI-Gruppen (per Script gefüllt) -->
+  <div id="priority-container"></div>
+
+  <!-- Ergebnis-Tabelle -->
+  <table id="overall-table">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Country</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Legende -->
+  <div id="legend">
+    The overall ranking combines multiple KPIs. Each KPI can be prioritized as 
+    <b>very high</b>, <b>high</b>, or <b>not interested</b>. 
+    Results include only countries with sufficient data coverage.
+  </div>
+
+  <p id="last-updated" style="margin-top:1em; font-size:0.9em; color:#555; text-align:center;"></p>
+
+  <script src="script_overall_ranking_countries.js"></script>
+  <!-- Kein Dark-Mode Messaging mehr -->
+</body>
+</html>

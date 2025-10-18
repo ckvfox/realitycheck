@@ -1,0 +1,1220 @@
+{
+  "Jamaica": {
+    "capital": "Kingston",
+    "government": "Constitutional Monarchy",
+    "lat": 17.99702,
+    "lon": -76.79358
+  },
+  "Comoros": {
+    "capital": "Moroni",
+    "government": "Federal Republic",
+    "lat": -11.7,
+    "lon": 43.23
+  },
+  "Zimbabwe": {
+    "capital": "Harare",
+    "government": "Presidential Republic",
+    "lat": -17.82,
+    "lon": 31.03
+  },
+  "Laos": {
+    "capital": "Vientiane",
+    "government": "Single-party State",
+    "lat": 17.97,
+    "lon": 102.6
+  },
+  "Latvia": {
+    "capital": "Riga",
+    "government": "Parliamentary Republic",
+    "lat": 56.95,
+    "lon": 24.1
+  },
+  "Tajikistan": {
+    "capital": "Dushanbe",
+    "government": "Parliamentary Republic",
+    "lat": 38.55,
+    "lon": 68.77
+  },
+  "United Kingdom": {
+    "capital": "London",
+    "government": "Constitutional Monarchy",
+    "lat": 51.5,
+    "lon": -0.08
+  },
+  "Nicaragua": {
+    "capital": "Managua",
+    "government": "Presidential Republic",
+    "lat": 12.13,
+    "lon": -86.25
+  },
+  "Sudan": {
+    "capital": "Khartoum",
+    "government": "Presidential Republic",
+    "lat": 15.6,
+    "lon": 32.53
+  },
+  "Greece": {
+    "capital": "Athens",
+    "government": "Parliamentary Republic",
+    "lat": 37.98,
+    "lon": 23.73
+  },
+  "Lithuania": {
+    "capital": "Vilnius",
+    "government": "Parliamentary Republic",
+    "lat": 54.68,
+    "lon": 25.32
+  },
+  "Rwanda": {
+    "capital": "Kigali",
+    "government": "Presidential Republic",
+    "lat": -1.95,
+    "lon": 30.05
+  },
+  "Senegal": {
+    "capital": "Dakar",
+    "government": "Presidential Republic",
+    "lat": 14.73,
+    "lon": -17.63
+  },
+  "Monaco": {
+    "capital": "Monaco",
+    "government": "Constitutional Monarchy",
+    "lat": 43.73,
+    "lon": 7.42
+  },
+  "Lesotho": {
+    "capital": "Maseru",
+    "government": "Constitutional Monarchy",
+    "lat": -29.32,
+    "lon": 27.48
+  },
+  "Tunisia": {
+    "capital": "Tunis",
+    "government": "Presidential Republic",
+    "lat": 36.8,
+    "lon": 10.18
+  },
+  "Vanuatu": {
+    "capital": "Port Vila",
+    "government": "Parliamentary Republic",
+    "lat": -17.73,
+    "lon": 168.32
+  },
+  "Ecuador": {
+    "capital": "Quito",
+    "government": "Presidential Republic",
+    "lat": -0.22,
+    "lon": -78.5
+  },
+  "Kuwait": {
+    "capital": "Kuwait City",
+    "government": "Constitutional Monarchy",
+    "lat": 29.37,
+    "lon": 47.97
+  },
+  "Philippines": {
+    "capital": "Manila",
+    "government": "Parliamentary Republic",
+    "lat": 14.6,
+    "lon": 120.97
+  },
+  "Chile": {
+    "capital": "Santiago",
+    "government": "Presidential Republic",
+    "lat": -33.45,
+    "lon": -70.67
+  },
+  "Bahamas": {
+    "capital": "Nassau",
+    "government": "Constitutional Monarchy",
+    "lat": 25.08,
+    "lon": -77.35
+  },
+  "Tanzania": {
+    "capital": "Dodoma",
+    "government": "Presidential Republic",
+    "lat": -6.163,
+    "lon": 35.7516
+  },
+  "Costa Rica": {
+    "capital": "San José",
+    "government": "Presidential Republic",
+    "lat": 9.93,
+    "lon": -84.09
+  },
+  "Morocco": {
+    "capital": "Rabat",
+    "government": "Constitutional Monarchy",
+    "lat": 34.02,
+    "lon": -6.82
+  },
+  "Montenegro": {
+    "capital": "Podgorica",
+    "government": "Parliamentary Republic",
+    "lat": 42.43,
+    "lon": 19.27
+  },
+  "Micronesia": {
+    "capital": "Palikir",
+    "government": "Federal Republic",
+    "lat": 6.92,
+    "lon": 158.15
+  },
+  "Portugal": {
+    "capital": "Lisbon",
+    "government": "Parliamentary Republic",
+    "lat": 38.72,
+    "lon": -9.13
+  },
+  "United Arab Emirates": {
+    "capital": "Abu Dhabi",
+    "government": "Federal Republic",
+    "lat": 24.47,
+    "lon": 54.37
+  },
+  "Libya": {
+    "capital": "Tripoli",
+    "government": "Presidential Republic",
+    "lat": 32.88,
+    "lon": 13.17
+  },
+  "Luxembourg": {
+    "capital": "Luxembourg",
+    "government": "Constitutional Monarchy",
+    "lat": 49.6,
+    "lon": 6.12
+  },
+  "Solomon Islands": {
+    "capital": "Honiara",
+    "government": "Constitutional Monarchy",
+    "lat": -9.43,
+    "lon": 159.95
+  },
+  "Algeria": {
+    "capital": "Algiers",
+    "government": "Presidential Republic",
+    "lat": 36.75,
+    "lon": 3.05
+  },
+  "Antigua and Barbuda": {
+    "capital": "Saint John's",
+    "government": "Constitutional Monarchy",
+    "lat": 17.12,
+    "lon": -61.85
+  },
+  "Brazil": {
+    "capital": "Brasília",
+    "government": "Federal Republic",
+    "lat": -15.79,
+    "lon": -47.88
+  },
+  "Mali": {
+    "capital": "Bamako",
+    "government": "Presidential Republic",
+    "lat": 12.65,
+    "lon": -8.0
+  },
+  "Pakistan": {
+    "capital": "Islamabad",
+    "government": "Federal Republic",
+    "lat": 33.68,
+    "lon": 73.05
+  },
+  "Trinidad and Tobago": {
+    "capital": "Port of Spain",
+    "government": "Presidential Republic",
+    "lat": 10.65,
+    "lon": -61.52
+  },
+  "Armenia": {
+    "capital": "Yerevan",
+    "government": "Parliamentary Republic",
+    "lat": 40.17,
+    "lon": 44.5
+  },
+  "Bangladesh": {
+    "capital": "Dhaka",
+    "government": "Parliamentary Republic",
+    "lat": 23.72,
+    "lon": 90.4
+  },
+  "Turkmenistan": {
+    "capital": "Ashgabat",
+    "government": "Parliamentary Republic",
+    "lat": 37.95,
+    "lon": 58.38
+  },
+  "Palau": {
+    "capital": "Ngerulmud",
+    "government": "Parliamentary Republic",
+    "lat": 7.5,
+    "lon": 134.62
+  },
+  "Cuba": {
+    "capital": "Havana",
+    "government": "Single-party State",
+    "lat": 23.12,
+    "lon": -82.35
+  },
+  "Chad": {
+    "capital": "N'Djamena",
+    "government": "Presidential Republic",
+    "lat": 12.1,
+    "lon": 15.03
+  },
+  "Bosnia and Herzegovina": {
+    "capital": "Sarajevo",
+    "government": "Federal Republic",
+    "lat": 43.87,
+    "lon": 18.42
+  },
+  "Botswana": {
+    "capital": "Gaborone",
+    "government": "Presidential Republic",
+    "lat": -24.63,
+    "lon": 25.9
+  },
+  "Estonia": {
+    "capital": "Tallinn",
+    "government": "Parliamentary Republic",
+    "lat": 59.43,
+    "lon": 24.72
+  },
+  "Bahrain": {
+    "capital": "Manama",
+    "government": "Constitutional Monarchy",
+    "lat": 26.23,
+    "lon": 50.57
+  },
+  "Dominican Republic": {
+    "capital": "Santo Domingo",
+    "government": "Presidential Republic",
+    "lat": 18.47,
+    "lon": -69.9
+  },
+  "United States": {
+    "capital": "Washington, D.C.",
+    "government": "Federal Republic",
+    "lat": 38.89,
+    "lon": -77.05
+  },
+  "Colombia": {
+    "capital": "Bogotá",
+    "government": "Federal Republic",
+    "lat": 4.71,
+    "lon": -74.07
+  },
+  "Guinea": {
+    "capital": "Conakry",
+    "government": "Presidential Republic",
+    "lat": 9.5,
+    "lon": -13.7
+  },
+  "Ireland": {
+    "capital": "Dublin",
+    "government": "Parliamentary Republic",
+    "lat": 53.32,
+    "lon": -6.23
+  },
+  "Maldives": {
+    "capital": "Malé",
+    "government": "Parliamentary Republic",
+    "lat": 4.17,
+    "lon": 73.51
+  },
+  "Panama": {
+    "capital": "Panama City",
+    "government": "Presidential Republic",
+    "lat": 8.97,
+    "lon": -79.53
+  },
+  "Mozambique": {
+    "capital": "Maputo",
+    "government": "Presidential Republic",
+    "lat": -25.95,
+    "lon": 32.58
+  },
+  "Oman": {
+    "capital": "Muscat",
+    "government": "Absolute Monarchy",
+    "lat": 23.62,
+    "lon": 58.58
+  },
+  "Czechia": {
+    "capital": "Prague",
+    "government": "Parliamentary Republic",
+    "lat": 50.08,
+    "lon": 14.47
+  },
+  "Saint Vincent and the Grenadines": {
+    "capital": "Kingstown",
+    "government": "Constitutional Monarchy",
+    "lat": 13.13,
+    "lon": -61.22
+  },
+  "Haiti": {
+    "capital": "Port-au-Prince",
+    "government": "Presidential Republic",
+    "lat": 18.53,
+    "lon": -72.33
+  },
+  "Nigeria": {
+    "capital": "Abuja",
+    "government": "Federal Republic",
+    "lat": 9.08,
+    "lon": 7.53
+  },
+  "Namibia": {
+    "capital": "Windhoek",
+    "government": "Presidential Republic",
+    "lat": -22.57,
+    "lon": 17.08
+  },
+  "Dominica": {
+    "capital": "Roseau",
+    "government": "Presidential Republic",
+    "lat": 15.3,
+    "lon": -61.4
+  },
+  "Canada": {
+    "capital": "Ottawa",
+    "government": "Constitutional Monarchy",
+    "lat": 45.42,
+    "lon": -75.7
+  },
+  "Niger": {
+    "capital": "Niamey",
+    "government": "Presidential Republic",
+    "lat": 13.52,
+    "lon": 2.12
+  },
+  "Indonesia": {
+    "capital": "Jakarta",
+    "government": "Parliamentary Republic",
+    "lat": -6.17,
+    "lon": 106.82
+  },
+  "Yemen": {
+    "capital": "Sana'a",
+    "government": "Parliamentary Republic",
+    "lat": 15.37,
+    "lon": 44.19
+  },
+  "Palestine": {
+    "capital": "East Jerusalem",
+    "government": "Transitional Government",
+    "lat": 31.7683,
+    "lon": 35.2137
+  },
+  "Gabon": {
+    "capital": "Libreville",
+    "government": "Presidential Republic",
+    "lat": 0.38,
+    "lon": 9.45
+  },
+  "Eritrea": {
+    "capital": "Asmara",
+    "government": "Single-party State",
+    "lat": 15.33,
+    "lon": 38.93
+  },
+  "Cyprus": {
+    "capital": "Nicosia",
+    "government": "Parliamentary Republic",
+    "lat": 35.17,
+    "lon": 33.37
+  },
+  "Slovakia": {
+    "capital": "Bratislava",
+    "government": "Parliamentary Republic",
+    "lat": 48.15,
+    "lon": 17.12
+  },
+  "Slovenia": {
+    "capital": "Ljubljana",
+    "government": "Parliamentary Republic",
+    "lat": 46.05,
+    "lon": 14.52
+  },
+  "Kiribati": {
+    "capital": "South Tarawa",
+    "government": "Parliamentary Republic",
+    "lat": 1.33,
+    "lon": 172.98
+  },
+  "Germany": {
+    "capital": "Berlin",
+    "government": "Federal Republic",
+    "lat": 52.52,
+    "lon": 13.4
+  },
+  "Kosovo": {
+    "capital": "Pristina",
+    "government": "Parliamentary Republic",
+    "lat": 42.6629,
+    "lon": 21.1655
+  },
+  "Ivory Coast": {
+    "capital": "Yamoussoukro",
+    "government": "Presidential Republic",
+    "lat": 6.82,
+    "lon": -5.27
+  },
+  "Sri Lanka": {
+    "capital": "Sri Jayawardenepura Kotte",
+    "government": "Parliamentary Republic",
+    "lat": 6.9147,
+    "lon": 79.9733
+  },
+  "Belgium": {
+    "capital": "Brussels",
+    "government": "Constitutional Monarchy",
+    "lat": 50.83,
+    "lon": 4.33
+  },
+  "Israel": {
+    "capital": "Jerusalem",
+    "government": "Parliamentary Republic",
+    "lat": 31.77,
+    "lon": 35.23
+  },
+  "Denmark": {
+    "capital": "Copenhagen",
+    "government": "Constitutional Monarchy",
+    "lat": 55.67,
+    "lon": 12.58
+  },
+  "Syria": {
+    "capital": "Damascus",
+    "government": "Parliamentary Republic",
+    "lat": 33.5,
+    "lon": 36.3
+  },
+  "Timor-Leste": {
+    "capital": "Dili",
+    "government": "Parliamentary Republic",
+    "lat": -8.58,
+    "lon": 125.6
+  },
+  "San Marino": {
+    "capital": "City of San Marino",
+    "government": "Parliamentary Republic",
+    "lat": 43.94,
+    "lon": 12.45
+  },
+  "Gambia": {
+    "capital": "Banjul",
+    "government": "Presidential Republic",
+    "lat": 13.45,
+    "lon": -16.57
+  },
+  "Peru": {
+    "capital": "Lima",
+    "government": "Presidential Republic",
+    "lat": -12.05,
+    "lon": -77.05
+  },
+  "Guinea-Bissau": {
+    "capital": "Bissau",
+    "government": "Presidential Republic",
+    "lat": 11.85,
+    "lon": -15.58
+  },
+  "Sierra Leone": {
+    "capital": "Freetown",
+    "government": "Presidential Republic",
+    "lat": 8.48,
+    "lon": -13.23
+  },
+  "Turkey": {
+    "capital": "Ankara",
+    "government": "Parliamentary Republic",
+    "lat": 39.93,
+    "lon": 32.87
+  },
+  "Bolivia": {
+    "capital": "Sucre",
+    "government": "Federal Republic",
+    "lat": -19.0196,
+    "lon": -65.2619
+  },
+  "Norway": {
+    "capital": "Oslo",
+    "government": "Constitutional Monarchy",
+    "lat": 59.92,
+    "lon": 10.75
+  },
+  "Republic of the Congo": {
+    "capital": "Brazzaville",
+    "government": "Presidential Republic",
+    "lat": -4.25,
+    "lon": 15.28
+  },
+  "Eswatini": {
+    "capital": "Mbabane",
+    "government": "Absolute Monarchy",
+    "lat": -26.32,
+    "lon": 31.13
+  },
+  "Paraguay": {
+    "capital": "Asunción",
+    "government": "Federal Republic",
+    "lat": -25.28,
+    "lon": -57.57
+  },
+  "Ukraine": {
+    "capital": "Kyiv",
+    "government": "Parliamentary Republic",
+    "lat": 50.43,
+    "lon": 30.52
+  },
+  "Malaysia": {
+    "capital": "Kuala Lumpur",
+    "government": "Constitutional Monarchy",
+    "lat": 3.17,
+    "lon": 101.7
+  },
+  "Tonga": {
+    "capital": "Nuku'alofa",
+    "government": "Constitutional Monarchy",
+    "lat": -21.13,
+    "lon": -175.2
+  },
+  "Benin": {
+    "capital": "Porto-Novo",
+    "government": "Presidential Republic",
+    "lat": 6.4969,
+    "lon": 2.6289
+  },
+  "Sweden": {
+    "capital": "Stockholm",
+    "government": "Constitutional Monarchy",
+    "lat": 59.33,
+    "lon": 18.05
+  },
+  "Tuvalu": {
+    "capital": "Funafuti",
+    "government": "Constitutional Monarchy",
+    "lat": -8.52,
+    "lon": 179.22
+  },
+  "Mongolia": {
+    "capital": "Ulan Bator",
+    "government": "Parliamentary Republic",
+    "lat": 47.92,
+    "lon": 106.91
+  },
+  "South Africa": {
+    "capital": "Pretoria",
+    "government": "Presidential Republic",
+    "lat": -25.7479,
+    "lon": 28.2293
+  },
+  "Australia": {
+    "capital": "Canberra",
+    "government": "Constitutional Monarchy",
+    "lat": -35.27,
+    "lon": 149.13
+  },
+  "Saint Kitts and Nevis": {
+    "capital": "Basseterre",
+    "government": "Constitutional Monarchy",
+    "lat": 17.3,
+    "lon": -62.72
+  },
+  "Ghana": {
+    "capital": "Accra",
+    "government": "Presidential Republic",
+    "lat": 5.55,
+    "lon": -0.22
+  },
+  "Iraq": {
+    "capital": "Baghdad",
+    "government": "Parliamentary Republic",
+    "lat": 33.33,
+    "lon": 44.4
+  },
+  "Vietnam": {
+    "capital": "Hanoi",
+    "government": "Single-party State",
+    "lat": 21.03,
+    "lon": 105.85
+  },
+  "Guyana": {
+    "capital": "Georgetown",
+    "government": "Presidential Republic",
+    "lat": 6.8,
+    "lon": -58.15
+  },
+  "Azerbaijan": {
+    "capital": "Baku",
+    "government": "Parliamentary Republic",
+    "lat": 40.38,
+    "lon": 49.87
+  },
+  "Cameroon": {
+    "capital": "Yaoundé",
+    "government": "Presidential Republic",
+    "lat": 3.85,
+    "lon": 11.5
+  },
+  "Egypt": {
+    "capital": "Cairo",
+    "government": "Presidential Republic",
+    "lat": 30.05,
+    "lon": 31.25
+  },
+  "Iceland": {
+    "capital": "Reykjavik",
+    "government": "Parliamentary Republic",
+    "lat": 64.15,
+    "lon": -21.95
+  },
+  "Venezuela": {
+    "capital": "Caracas",
+    "government": "Federal Republic",
+    "lat": 10.48,
+    "lon": -66.87
+  },
+  "Barbados": {
+    "capital": "Bridgetown",
+    "government": "Presidential Republic",
+    "lat": 13.1,
+    "lon": -59.62
+  },
+  "Falkland Islands": {
+    "capital": "Stanley",
+    "government": "Presidential Republic",
+    "lat": -51.7,
+    "lon": -57.85
+  },
+  "Malawi": {
+    "capital": "Lilongwe",
+    "government": "Presidential Republic",
+    "lat": -13.97,
+    "lon": 33.78
+  },
+  "Kyrgyzstan": {
+    "capital": "Bishkek",
+    "government": "Parliamentary Republic",
+    "lat": 42.87,
+    "lon": 74.6
+  },
+  "Taiwan": {
+    "capital": "Taipei",
+    "government": "Presidential Republic",
+    "lat": 25.033,
+    "lon": 121.5654
+  },
+  "Bulgaria": {
+    "capital": "Sofia",
+    "government": "Parliamentary Republic",
+    "lat": 42.68,
+    "lon": 23.32
+  },
+  "North Korea": {
+    "capital": "Pyongyang",
+    "government": "Single-party State",
+    "lat": 39.02,
+    "lon": 125.75
+  },
+  "Andorra": {
+    "capital": "Andorra la Vella",
+    "government": "Constitutional Monarchy",
+    "lat": 42.5,
+    "lon": 1.52
+  },
+  "Angola": {
+    "capital": "Luanda",
+    "government": "Presidential Republic",
+    "lat": -8.83,
+    "lon": 13.22
+  },
+  "Russia": {
+    "capital": "Moscow",
+    "government": "Federal Republic",
+    "lat": 55.75,
+    "lon": 37.6
+  },
+  "Burkina Faso": {
+    "capital": "Ouagadougou",
+    "government": "Presidential Republic",
+    "lat": 12.37,
+    "lon": -1.52
+  },
+  "Vatican City": {
+    "capital": "Vatican City",
+    "government": "Theocracy",
+    "lat": 41.9,
+    "lon": 12.45
+  },
+  "Afghanistan": {
+    "capital": "Kabul",
+    "government": "Parliamentary Republic",
+    "lat": 34.52,
+    "lon": 69.18
+  },
+  "Croatia": {
+    "capital": "Zagreb",
+    "government": "Parliamentary Republic",
+    "lat": 45.8,
+    "lon": 16.0
+  },
+  "Bhutan": {
+    "capital": "Thimphu",
+    "government": "Parliamentary Republic",
+    "lat": 27.47,
+    "lon": 89.63
+  },
+  "Belarus": {
+    "capital": "Minsk",
+    "government": "Parliamentary Republic",
+    "lat": 53.9,
+    "lon": 27.57
+  },
+  "New Zealand": {
+    "capital": "Wellington",
+    "government": "Constitutional Monarchy",
+    "lat": -41.3,
+    "lon": 174.78
+  },
+  "Madagascar": {
+    "capital": "Antananarivo",
+    "government": "Presidential Republic",
+    "lat": -18.92,
+    "lon": 47.52
+  },
+  "Thailand": {
+    "capital": "Bangkok",
+    "government": "Constitutional Monarchy",
+    "lat": 13.75,
+    "lon": 100.52
+  },
+  "Georgia": {
+    "capital": "Tbilisi",
+    "government": "Parliamentary Republic",
+    "lat": 41.68,
+    "lon": 44.83
+  },
+  "India": {
+    "capital": "New Delhi",
+    "government": "Federal Republic",
+    "lat": 28.6,
+    "lon": 77.2
+  },
+  "China": {
+    "capital": "Beijing",
+    "government": "Single-party State",
+    "lat": 39.92,
+    "lon": 116.38
+  },
+  "Djibouti": {
+    "capital": "Djibouti",
+    "government": "Presidential Republic",
+    "lat": 11.58,
+    "lon": 43.15
+  },
+  "Saudi Arabia": {
+    "capital": "Riyadh",
+    "government": "Absolute Monarchy",
+    "lat": 24.65,
+    "lon": 46.7
+  },
+  "Iran": {
+    "capital": "Tehran",
+    "government": "Theocracy",
+    "lat": 35.7,
+    "lon": 51.42
+  },
+  "Zambia": {
+    "capital": "Lusaka",
+    "government": "Presidential Republic",
+    "lat": -15.42,
+    "lon": 28.28
+  },
+  "Ethiopia": {
+    "capital": "Addis Ababa",
+    "government": "Federal Republic",
+    "lat": 9.03,
+    "lon": 38.7
+  },
+  "Guatemala": {
+    "capital": "Guatemala City",
+    "government": "Presidential Republic",
+    "lat": 14.62,
+    "lon": -90.52
+  },
+  "Suriname": {
+    "capital": "Paramaribo",
+    "government": "Presidential Republic",
+    "lat": 5.83,
+    "lon": -55.17
+  },
+  "Uruguay": {
+    "capital": "Montevideo",
+    "government": "Federal Republic",
+    "lat": -34.85,
+    "lon": -56.17
+  },
+  "Italy": {
+    "capital": "Rome",
+    "government": "Parliamentary Republic",
+    "lat": 41.9,
+    "lon": 12.48
+  },
+  "Fiji": {
+    "capital": "Suva",
+    "government": "Parliamentary Republic",
+    "lat": -18.13,
+    "lon": 178.42
+  },
+  "São Tomé and Príncipe": {
+    "capital": "São Tomé",
+    "government": "Presidential Republic",
+    "lat": 0.34,
+    "lon": 6.73
+  },
+  "Switzerland": {
+    "capital": "Bern",
+    "government": "Federal Republic",
+    "lat": 46.9481,
+    "lon": 7.4474
+  },
+  "DR Congo": {
+    "capital": "Kinshasa",
+    "government": "Presidential Republic",
+    "lat": -4.32,
+    "lon": 15.3
+  },
+  "Finland": {
+    "capital": "Helsinki",
+    "government": "Parliamentary Republic",
+    "lat": 60.17,
+    "lon": 24.93
+  },
+  "Malta": {
+    "capital": "Valletta",
+    "government": "Parliamentary Republic",
+    "lat": 35.88,
+    "lon": 14.5
+  },
+  "El Salvador": {
+    "capital": "San Salvador",
+    "government": "Presidential Republic",
+    "lat": 13.7,
+    "lon": -89.2
+  },
+  "Jordan": {
+    "capital": "Amman",
+    "government": "Constitutional Monarchy",
+    "lat": 31.95,
+    "lon": 35.93
+  },
+  "Nauru": {
+    "capital": "Yaren",
+    "government": "Parliamentary Republic",
+    "lat": -0.5477,
+    "lon": 166.9211
+  },
+  "Poland": {
+    "capital": "Warsaw",
+    "government": "Parliamentary Republic",
+    "lat": 52.25,
+    "lon": 21.0
+  },
+  "Mauritania": {
+    "capital": "Nouakchott",
+    "government": "Presidential Republic",
+    "lat": 18.07,
+    "lon": -15.97
+  },
+  "North Macedonia": {
+    "capital": "Skopje",
+    "government": "Parliamentary Republic",
+    "lat": 42.0,
+    "lon": 21.43
+  },
+  "Togo": {
+    "capital": "Lomé",
+    "government": "Presidential Republic",
+    "lat": 6.14,
+    "lon": 1.21
+  },
+  "Myanmar": {
+    "capital": "Naypyidaw",
+    "government": "Federal Republic",
+    "lat": 19.76,
+    "lon": 96.07
+  },
+  "Qatar": {
+    "capital": "Doha",
+    "government": "Constitutional Monarchy",
+    "lat": 25.28,
+    "lon": 51.53
+  },
+  "France": {
+    "capital": "Paris",
+    "government": "Parliamentary Republic",
+    "lat": 48.87,
+    "lon": 2.33
+  },
+  "Seychelles": {
+    "capital": "Victoria",
+    "government": "Presidential Republic",
+    "lat": -4.62,
+    "lon": 55.45
+  },
+  "Moldova": {
+    "capital": "Chișinău",
+    "government": "Parliamentary Republic",
+    "lat": 47.01,
+    "lon": 28.9
+  },
+  "South Sudan": {
+    "capital": "Juba",
+    "government": "Federal Republic",
+    "lat": 4.85,
+    "lon": 31.62
+  },
+  "Brunei": {
+    "capital": "Bandar Seri Begawan",
+    "government": "Absolute Monarchy",
+    "lat": 4.88,
+    "lon": 114.93
+  },
+  "Japan": {
+    "capital": "Tokyo",
+    "government": "Constitutional Monarchy",
+    "lat": 35.68,
+    "lon": 139.75
+  },
+  "Grenada": {
+    "capital": "St. George's",
+    "government": "Constitutional Monarchy",
+    "lat": 32.38,
+    "lon": -64.68
+  },
+  "Spain": {
+    "capital": "Madrid",
+    "government": "Constitutional Monarchy",
+    "lat": 40.4,
+    "lon": -3.68
+  },
+  "Papua New Guinea": {
+    "capital": "Port Moresby",
+    "government": "Constitutional Monarchy",
+    "lat": -9.45,
+    "lon": 147.18
+  },
+  "Uzbekistan": {
+    "capital": "Tashkent",
+    "government": "Parliamentary Republic",
+    "lat": 41.32,
+    "lon": 69.25
+  },
+  "Argentina": {
+    "capital": "Buenos Aires",
+    "government": "Federal Republic",
+    "lat": -34.58,
+    "lon": -58.67
+  },
+  "South Korea": {
+    "capital": "Seoul",
+    "government": "Parliamentary Republic",
+    "lat": 37.55,
+    "lon": 126.98
+  },
+  "Belize": {
+    "capital": "Belmopan",
+    "government": "Constitutional Monarchy",
+    "lat": 17.25,
+    "lon": -88.77
+  },
+  "Mexico": {
+    "capital": "Mexico City",
+    "government": "Federal Republic",
+    "lat": 19.43,
+    "lon": -99.13
+  },
+  "Serbia": {
+    "capital": "Belgrade",
+    "government": "Parliamentary Republic",
+    "lat": 44.83,
+    "lon": 20.5
+  },
+  "Cape Verde": {
+    "capital": "Praia",
+    "government": "Presidential Republic",
+    "lat": 14.92,
+    "lon": -23.52
+  },
+  "Cambodia": {
+    "capital": "Phnom Penh",
+    "government": "Constitutional Monarchy",
+    "lat": 11.55,
+    "lon": 104.92
+  },
+  "Romania": {
+    "capital": "Bucharest",
+    "government": "Parliamentary Republic",
+    "lat": 44.43,
+    "lon": 26.1
+  },
+  "Hungary": {
+    "capital": "Budapest",
+    "government": "Parliamentary Republic",
+    "lat": 47.5,
+    "lon": 19.08
+  },
+  "Marshall Islands": {
+    "capital": "Majuro",
+    "government": "Parliamentary Republic",
+    "lat": 7.1,
+    "lon": 171.38
+  },
+  "Somalia": {
+    "capital": "Mogadishu",
+    "government": "Federal Republic",
+    "lat": 2.07,
+    "lon": 45.33
+  },
+  "Albania": {
+    "capital": "Tirana",
+    "government": "Parliamentary Republic",
+    "lat": 41.32,
+    "lon": 19.82
+  },
+  "Burundi": {
+    "capital": "Gitega",
+    "government": "Presidential Republic",
+    "lat": -3.43,
+    "lon": 29.93
+  },
+  "Central African Republic": {
+    "capital": "Bangui",
+    "government": "Presidential Republic",
+    "lat": 4.37,
+    "lon": 18.58
+  },
+  "Saint Lucia": {
+    "capital": "Castries",
+    "government": "Constitutional Monarchy",
+    "lat": 14.0,
+    "lon": -61.0
+  },
+  "Uganda": {
+    "capital": "Kampala",
+    "government": "Presidential Republic",
+    "lat": 0.32,
+    "lon": 32.55
+  },
+  "Honduras": {
+    "capital": "Tegucigalpa",
+    "government": "Presidential Republic",
+    "lat": 14.1,
+    "lon": -87.22
+  },
+  "Kazakhstan": {
+    "capital": "Astana",
+    "government": "Parliamentary Republic",
+    "lat": 51.16,
+    "lon": 71.45
+  },
+  "Kenya": {
+    "capital": "Nairobi",
+    "government": "Presidential Republic",
+    "lat": -1.28,
+    "lon": 36.82
+  },
+  "Samoa": {
+    "capital": "Apia",
+    "government": "Parliamentary Republic",
+    "lat": -13.82,
+    "lon": -171.77
+  },
+  "Nepal": {
+    "capital": "Kathmandu",
+    "government": "Federal Republic",
+    "lat": 27.72,
+    "lon": 85.32
+  },
+  "Equatorial Guinea": {
+    "capital": "Malabo",
+    "government": "Presidential Republic",
+    "lat": 3.75,
+    "lon": 8.78
+  },
+  "Lebanon": {
+    "capital": "Beirut",
+    "government": "Parliamentary Republic",
+    "lat": 33.87,
+    "lon": 35.5
+  },
+  "Mauritius": {
+    "capital": "Port Louis",
+    "government": "Presidential Republic",
+    "lat": -20.15,
+    "lon": 57.48
+  },
+  "Liechtenstein": {
+    "capital": "Vaduz",
+    "government": "Constitutional Monarchy",
+    "lat": 47.13,
+    "lon": 9.52
+  },
+  "Cayman Islands": {
+    "capital": "George Town",
+    "government": "Presidential Republic",
+    "lat": 19.3,
+    "lon": -81.38
+  },
+  "Anguilla": {
+    "capital": "The Valley",
+    "government": "Presidential Republic",
+    "lat": 18.22,
+    "lon": -63.05
+  },
+  "Guadeloupe": {
+    "capital": "Basse-Terre",
+    "government": "Presidential Republic",
+    "lat": 16.03,
+    "lon": -61.73
+  },
+  "Austria": {
+    "capital": "Vienna",
+    "government": "Federal Republic",
+    "lat": 48.2,
+    "lon": 16.37
+  },
+  "Netherlands": {
+    "capital": "Amsterdam",
+    "government": "Constitutional Monarchy",
+    "lat": 52.3676,
+    "lon": 4.9041
+  },
+  "Svalbard and Jan Mayen": {
+    "capital": "Longyearbyen",
+    "government": "Parliamentary Republic",
+    "lat": 78.22,
+    "lon": 15.63
+  },
+  "Singapore": {
+    "capital": "Singapore",
+    "government": "Parliamentary Republic",
+    "lat": 1.28,
+    "lon": 103.85
+  },
+  "World": {
+    "capital": "",
+    "government": "",
+    "lat": 0,
+    "lon": 0
+  },
+  "Liberia": {
+    "capital": "Monrovia",
+    "government": "Presidential Republic",
+    "lat": 6.3,
+    "lon": -10.8
+  }
+}

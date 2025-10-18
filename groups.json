@@ -1,0 +1,81 @@
+{
+  "EU": {
+    "title": "European Union",
+    "members": [
+      "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic",
+      "Denmark", "Estonia", "Finland", "France", "Germany", "Greece",
+      "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg",
+      "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia",
+      "Slovenia", "Spain", "Sweden"
+    ]
+  },
+  "NATO": {
+    "title": "NATO",
+    "members": [
+      "Albania", "Belgium", "Bulgaria", "Canada", "Croatia", "Czech Republic",
+      "Denmark", "Estonia", "Finland", "France", "Germany", "Greece",
+      "Hungary", "Iceland", "Italy", "Latvia", "Lithuania", "Luxembourg",
+      "Montenegro", "Netherlands", "North Macedonia", "Norway", "Poland",
+      "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Turkey",
+      "United Kingdom", "United States"
+    ]
+  },
+  "OECD": {
+    "title": "OECD",
+    "members": [
+      "Australia", "Austria", "Belgium", "Canada", "Chile", "Colombia",
+      "Costa Rica", "Czech Republic", "Denmark", "Estonia", "Finland",
+      "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland",
+      "Israel", "Italy", "Japan", "Korea, Rep.", "Latvia", "Lithuania",
+      "Luxembourg", "Mexico", "Netherlands", "New Zealand", "Norway",
+      "Poland", "Portugal", "Slovak Republic", "Slovenia", "Spain",
+      "Sweden", "Switzerland", "Turkey", "United Kingdom", "United States"
+    ]
+  },
+  "G7": {
+    "title": "G7",
+    "members": [
+      "Canada", "France", "Germany", "Italy", "Japan", "United Kingdom", "United States"
+    ]
+  },
+  "BRICS": {
+    "title": "BRICS",
+    "members": [
+      "Brazil", "Russia", "India", "China", "South Africa",
+      "Egypt", "Ethiopia", "Iran", "Saudi Arabia", "United Arab Emirates"
+    ]
+  },
+  "G20": {
+    "title": "G20",
+    "members": [
+      "Argentina", "Australia", "Brazil", "Canada", "China", "France",
+      "Germany", "India", "Indonesia", "Italy", "Japan", "Korea, Rep.",
+      "Mexico", "Russia", "Saudi Arabia", "South Africa", "Turkey",
+      "United Kingdom", "United States", "European Union"
+    ]
+  },
+  "ASEAN": {
+    "title": "ASEAN",
+    "members": [
+      "Brunei Darussalam", "Cambodia", "Indonesia", "Lao PDR", "Malaysia",
+      "Myanmar", "Philippines", "Singapore", "Thailand", "Vietnam"
+    ]
+  },
+  "AfricanUnion": {
+    "title": "African Union",
+    "members": [
+      "Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi",
+      "Cabo Verde", "Cameroon", "Central African Republic", "Chad",
+      "Comoros", "Congo, Dem. Rep.", "Congo, Rep.", "Cote d'Ivoire",
+      "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini",
+      "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau",
+      "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi",
+      "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique",
+      "Namibia", "Niger", "Nigeria", "Rwanda", "Sao Tome and Principe",
+      "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa",
+      "South Sudan", "Sudan", "Tanzania", "Togo", "Tunisia", "Uganda",
+      "Zambia", "Zimbabwe"
+    ]
+  }
+
+}

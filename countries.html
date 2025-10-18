@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealityCheck – Countries</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+<body>
+
+  <section id="intro" style="max-width:900px;margin:1rem auto 0; padding:0 1rem;">
+    <h1>🌍 RealityCheck – Countries</h1>
+	 <p>
+		The world is in turmoil. Radicalization, polarization, and populism often dominate the headlines—and many say that everything used to be better and that today everything is going down the drain. But is that really true?
+	  </p>
+
+	  <p>
+		<strong>No!</strong> At least not in many areas. The facts paint a different picture. Prejudices and gut feelings can be refuted with data from reliable sources. When you compare key figures, put them into context (per capita, per km², per GDP) and also look at historical developments, you realize that many things are constantly improving – worldwide.
+	  </p>
+
+	  <p>
+		This project is inspired by <strong><em>Hans Rosling</em></strong>’s book <a href="https://en.wikipedia.org/wiki/Factfulness" target="_blank" rel="noopener"><em>Factfulness</em></a> and invites you to discover and classify the data yourself. In the spirit of <strong><em>W. Edwards Deming</em></strong> – “In God we trust. All others must bring data” – we aim to foster a more nuanced understanding of global trends.
+	  </p>
+
+	  <p>
+		At the same time, it’s important to acknowledge that not everything in the world is fine, and some things are actually getting worse. Developments in the areas of climate and conflict are particularly cause for concern. These challenges demand attention, action, and—once again—data-driven insight.
+	  </p>
+  </section>
+
+	<!-- Controls (zentriert) -->
+	<section id="controls">
+
+	  <div class="control-pair">
+		<label for="kpiSelect">KPI:</label>
+		<select id="kpiSelect"></select>
+	  </div>
+
+	  <!-- 🔄 Fullscreen Loading Spinner (zentriert, beeinflusst Layout nicht) -->
+	  <div id="overlay-spinner">
+		<div></div>
+		<p>Loading country KPI data...</p>
+	  </div>
+
+	  <div class="control-pair">
+		<label for="yearSelect">Comparison Year:</label>
+		<select id="yearSelect"></select>
+	  </div>
+
+	  <div class="control-pair">
+		<label for="relationSelect">Relation:</label>
+		<select id="relationSelect">
+		  <option value="absolute">Absolute</option>
+		  <option value="percapita">Per Capita</option>
+		  <option value="pergdp">Per GDP</option>
+		  <option value="perkm2">Per km²</option>
+		</select>
+	  </div>
+
+	  <div class="control-pair">
+		<label for="countrySelect">Home Country:</label>
+		<select id="countrySelect"></select>
+	  </div>
+
+	</section>
+
+	<!-- Warnbox & KPI-Beschreibung -->
+	<div id="warning-box" class="hidden" style="max-width:var(--max-width);margin:0 auto;">
+	  ⚠️ <strong>Attention:</strong> No current data is available for some countries. Older values were used.
+	</div>
+	<div id="kpi-description" style="max-width:var(--max-width);margin:.5rem auto 1rem;font-style:italic;"></div>
+
+  <!-- Tabelle -->
+  <section id="data-table">
+    <table id="country-table" aria-label="Country data table">
+      <thead>
+        <tr>
+          <th data-col="rank">Rank</th>
+          <th data-col="country">Country</th>
+          <th data-col="value">Value</th>
+          <th title="Change vs previous year">Δ vs Prev</th>
+          <th title="Change vs comparison year">Δ vs Year</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Quelle & Datum -->
+  <div id="data-meta">
+    Source: <a id="data-source" href="#" target="_blank" rel="noopener">---</a><br>
+    Last update: <span id="data-date">---</span>
+  </div>
+
+  <!-- Chart -->
+  <section id="chart-container">
+    <canvas id="kpi-chart"></canvas>
+    <div id="chart-selectors" style="margin-top:.5rem;">
+      <label>Compare:</label>
+      <select id="country1Select"></select>
+      <select id="country2Select"></select>
+      <select id="country3Select"></select>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section id="map-section">
+    <div id="map"></div>
+  </section>
+
+  <!-- Legende -->
+  <section id="legend">
+    <h3>Legend:</h3>
+    <ul>
+      <li>↑ Increase, ↓ Decrease, → No change (Δ vs previous year; hover for details)</li>
+      <li>Δ vs Comparison Year in %</li>
+      <li id="rounding-info">Values shown consistently per KPI</li>
+      <li>Data correctness lies with the original source</li>
+      <li>Groups have no ranking, Δ vs PrevYear, and no comparison year values</li>
+      <li>Countries without available data for the selected KPI are not shown in the table</li>
+      <li>KPIs in <em>grey italic</em> have no data available yet</li>
+      <li>Groups (e.g. NATO, EU) are shown after countries, calculated as the sum of their members</li>
+    </ul>
+  </section>
+
+<script src="scripts/normalize_name.js"></script>
+<script src="script.js"></script>
+
+<script>
+  // --- DEBUG & INIT FIX FOR MAP --------------------------------------------
+  console.log("✅ countries.html loaded");
+
+  if (typeof init === "function") {
+    console.log("➡️ Calling init()");
+    init();
+  } else {
+    console.warn("⚠️ init() not found");
+  }
+
+  window.addEventListener("load", () => {
+    if (typeof updateChart === "function") {
+      console.log("➡️ updateChart()");
+      updateChart();
+    }
+
+    // --- Leaflet Map Retry Logic ---
+    function startMap(attempt = 1) {
+      const maxAttempts = 10;
+      const mapEl = document.getElementById("map");
+      const ready = mapEl && mapEl.offsetHeight > 0 && mapEl.offsetWidth > 0;
+
+      console.log(`🗺️ Map init attempt ${attempt} (visible=${ready})`);
+
+      if (!ready && attempt < maxAttempts) {
+        return setTimeout(() => startMap(attempt + 1), 500);
+      }
+
+      if (typeof initMap === "function") {
+        try {
+          console.log("➡️ initMap()");
+          initMap();
+          setTimeout(() => {
+            if (window.map && window.map.invalidateSize) {
+              console.log("➡️ invalidateSize()");
+              window.map.invalidateSize();
+            }
+          }, 800);
+        } catch (e) {
+          console.error("❌ initMap() failed", e);
+        }
+      } else {
+        console.warn("⚠️ initMap() not defined");
+      }
+    }
+
+    startMap();
+  });
+</script>  
+<!-- 💬 RealityCheck Chatbot -->
+<div id="chatbot-button" title="Open RealityCheck Chat">💬</div>
+
+<div id="chatbot-window" style="display:none;opacity:0;transition:opacity 0.3s ease;">
+  <div id="chatbox">
+    <h2>🤖 RealityCheck-Bot <span style="float:right;font-size:1.2rem;">🇬🇧</span></h2>
+    <div id="messages">
+      Welcome to the RealityCheck Chat!<br>
+      Ask me about countries, KPIs or global trends.<br>
+      (Currently English only)
+    </div>
+    <div id="input-area">
+      <input id="user-input" placeholder="Ask RealityCheck…" />
+      <button id="send">Send</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* === Floating Chat Styles === */
+  #chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #007bff;
+    color: #fff;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,.3);
+    cursor: pointer;
+    z-index: 99999;
+  }
+  #chatbot-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 340px;
+    height: 430px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 99998;
+  }
+  #chatbox { display: flex; flex-direction: column; height: 100%; }
+  #chatbox h2 {
+    background: #007bff; color: #fff;
+    margin: 0; padding: .6rem 1rem; font-size: 1rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  #messages { flex: 1; padding: 1rem; overflow-y: auto; font-size: .95rem; }
+  #input-area { display: flex; padding: .6rem; border-top: 1px solid #ddd; }
+  #user-input { flex: 1; padding: .5rem; border: 1px solid #ccc; border-radius: 8px; }
+  #send {
+    margin-left: .5rem; padding: .5rem 1rem; border: none;
+    background: #007bff; color: #fff; border-radius: 8px; cursor: pointer;
+  }
+  #send:hover { background: #005fcc; }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn      = document.getElementById("chatbot-button");
+  const win      = document.getElementById("chatbot-window");
+  const sendBtn  = document.getElementById("send");
+  const input    = document.getElementById("user-input");
+  const messages = document.getElementById("messages");
+
+  if (!btn || !win || !sendBtn || !input || !messages) {
+    console.error("Chatbot init failed: missing DOM nodes");
+    return;
+  }
+
+  // === Toggle Chat Window ===
+  btn.addEventListener("click", () => {
+    const hidden = win.style.display === "none" || win.style.display === "";
+    if (hidden) {
+      win.style.display = "block";
+      requestAnimationFrame(() => (win.style.opacity = "1"));
+    } else {
+      win.style.opacity = "0";
+      setTimeout(() => (win.style.display = "none"), 300);
+    }
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && win.style.display === "block") {
+      win.style.opacity = "0";
+      setTimeout(() => (win.style.display = "none"), 300);
+    }
+  });
+
+  // === Helper: Add Message ===
+  function addMessage(sender, text) {
+    const msg = document.createElement("div");
+    msg.className = sender;
+    msg.style.margin = "0.3rem 0";
+    msg.textContent = (sender === "user" ? "🧍 " : "🤖 ") + text;
+    messages.appendChild(msg);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  // === Load analysis.md (optional) ===
+  let globalAnalysis = "";
+  fetch("data/analysis.md")
+    .then(r => r.ok ? r.text() : "")
+    .then(txt => (globalAnalysis = txt))
+    .catch(() => console.warn("No analysis.md found"));
+
+  // === Load KPI list from /scripts/ ===
+  let kpiList = [];
+  async function loadAvailableKPIs() {
+    try {
+      const data = await fetch("scripts/available_kpis - Kopie.json").then(r => r.json());
+      const arr = Array.isArray(data) ? data : Object.values(data);
+      kpiList = arr.map((k, i) => ({
+        key: k.filename || k.title || k.source_code || `k${i}`,
+        title: k.title || "",
+        description: k.description || "",
+        source_code: k.source_code || "",
+        filename: k.filename || "",
+        blob: `${k.title||""} ${k.description||""} ${k.source_code||""} ${k.filename||""}`.toLowerCase()
+      }));
+      console.log(`✅ ${kpiList.length} KPIs loaded from /scripts`);
+    } catch (e) {
+      console.error("❌ Failed to load available_kpis - Kopie.json", e);
+    }
+  }
+  loadAvailableKPIs();
+
+  // === Load country aliases ===
+  let countryMappings = {};
+  async function loadCountryMappings() {
+    try {
+      const res = await fetch("scripts/country_mappings.json");
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      countryMappings = await res.json();
+      console.log(`✅ ${Object.keys(countryMappings).length} country mappings loaded`);
+    } catch (err) {
+      console.warn("⚠️ Could not load country_mappings.json", err);
+      countryMappings = {};
+    }
+  }
+  loadCountryMappings();
+
+  let lastKPI = null;
+
+  // === Main Chat Logic ===
+  async function handleUserInput() {
+    try {
+      const text = input.value.trim();
+      if (!text) return;
+      addMessage("user", text);
+      input.value = "";
+
+      const lower = text.toLowerCase();
+
+      // --- Global question → analysis.md
+      if (/trend|world|global|develop|analysis|climate|conflict|war|economy/.test(lower) && globalAnalysis) {
+        const para = globalAnalysis
+          .split(/\n+/)
+          .find(p => p.toLowerCase().includes("gdp") || p.toLowerCase().includes("econom"))
+          || globalAnalysis.split(/\n+/).slice(0, 8).join(" ");
+        addMessage("bot", "Here's what the global analysis says:\n" + para);
+        return;
+      }
+
+      if (!kpiList.length) {
+        addMessage("bot", "I’m still loading indicators. Please try again shortly.");
+        return;
+      }
+
+      // === Fuzzy KPI Match
+      const words = lower.split(/\W+/).filter(w => w.length > 2);
+      let foundKPI =
+        kpiList.find(k => words.some(w =>
+          k.title.toLowerCase().includes(w) ||
+          k.filename.toLowerCase().includes(w) ||
+          k.source_code.toLowerCase().includes(w)
+        )) ||
+        kpiList.find(k => words.some(w => k.description.toLowerCase().includes(w))) ||
+        (lastKPI ? kpiList.find(k => k.key === lastKPI) : null);
+
+      if (!foundKPI) {
+        addMessage("bot", "I couldn’t identify a KPI from your question 🤔");
+        return;
+      }
+      lastKPI = foundKPI.key;
+
+      // === Detect Country (with alias support)
+      let countries = {};
+      try {
+        countries = await fetch("scripts/countries - Kopie.json").then(r => r.json());
+        console.log(`✅ ${Object.keys(countries).length} countries loaded`);
+      } catch (err) {
+        console.warn("⚠️ Could not load countries list", err);
+        countries = {};
+      }
+
+      // check for country name or alias
+      let country = Object.keys(countries).find(c => lower.includes(c.toLowerCase()));
+
+      if (!country) {
+        const aliasEntry = Object.entries(countryMappings).find(([alias, mapped]) =>
+          lower.includes(alias.toLowerCase())
+        );
+        if (aliasEntry) country = aliasEntry[1];
+      }
+
+      if (country) console.log("🌍 Detected country:", country);
+      else console.log("❌ No country detected in input.");
+
+      // === Load KPI Data using filename ===
+      const fileBase = foundKPI.filename || "unknown";
+      const dataFile = `data/${fileBase}.json`;
+      console.log("🔎 Using indicator:", foundKPI.title, "→", dataFile);
+
+      try {
+        const resp = await fetch(dataFile);
+        if (!resp.ok) {
+          addMessage("bot", `I found “${foundKPI.title}”, but couldn’t access its data file (${dataFile}).`);
+          return;
+        }
+
+        const data = await resp.json();
+
+        // --- Support both array and object structures ---
+        let entries = [];
+        if (Array.isArray(data)) {
+          const latestByCountry = {};
+          for (const row of data) {
+            if (!row.country || row.value == null) continue;
+            if (
+              !latestByCountry[row.country] ||
+              (row.year && row.year > latestByCountry[row.country].year)
+            ) {
+              latestByCountry[row.country] = { name: row.country, value: Number(row.value) };
+            }
+          }
+          entries = Object.values(latestByCountry);
+        } else if (typeof data === "object") {
+          entries = Object.entries(data).map(([name, values]) => ({
+            name,
+            value: typeof values === "object" ? Number(Object.values(values).pop()) : Number(values)
+          }));
+        }
+
+        entries = entries
+          .filter(v => !Number.isNaN(v.value))
+          .sort((a, b) => b.value - a.value);
+
+        if (!entries.length) {
+          addMessage("bot", `The dataset for “${foundKPI.title}” has no numeric values.`);
+          return;
+        }
+
+        if (country) {
+          const idx = entries.findIndex(e => e.name.toLowerCase() === country.toLowerCase());
+          if (idx >= 0) {
+            const rank = idx + 1;
+            const total = entries.length;
+            const value = entries[idx].value.toLocaleString("en-US");
+            addMessage("bot", `${country} ranks ${rank} of ${total} in “${foundKPI.title}” with ${value}.`);
+          } else {
+            addMessage("bot", `I found “${foundKPI.title}”, but ${country} has no value in this dataset.`);
+          }
+        } else {
+          addMessage("bot", `I found “${foundKPI.title}”. Please specify a country 🌍`);
+        }
+      } catch (err) {
+        console.error("❌ Error loading data", err);
+        addMessage("bot", `I found “${foundKPI.title}”, but couldn’t read its data file ❌`);
+      }
+
+    } catch (err) {
+      console.error("❌ handleUserInput failed", err);
+      addMessage("bot", "Something went wrong while processing your question.");
+    }
+  }
+
+  // === Event Listeners ===
+  sendBtn.addEventListener("click", handleUserInput);
+  input.addEventListener("keydown", e => { if (e.key === "Enter") handleUserInput(); });
+
+  console.log("✅ Chatbot handlers attached");
+});
+</script>
+
+
+<link rel="stylesheet" href="floating_chat.css">
+<script src="floating_chat.js"></script>
+
+</body>
+</html>
