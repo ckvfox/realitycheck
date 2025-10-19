@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-RealityCheck Fetch Script – Oktober 2025
-----------------------------------------
-Erweiterte Version mit Quell-Datumsprüfung und Glossary-Unterstützung.
-Nur aktualisierte KPIs werden neu geladen.
+RealityCheck Fetch Script – Oktober 2025 (Meta-Version)
+-------------------------------------------------------
+Produktive Version mit:
+ • Logging nach /data/fetch_log.txt
+ • Pfade auf /data/meta/
+ • filename statt normalize_name()
+ • vollständigem Mapping-, Dummy-, und Analyse-Handling
 """
 
-import os, csv, json, re, requests, unicodedata, traceback, io
+import os, csv, json, re, requests, unicodedata, traceback, io, zipfile
 from datetime import datetime, timezone
 from typing import Dict, List, Any, Optional, Tuple
-from normalize_name import normalize_name
 
 # ======================================================================
 # 🔧 Pfade
@@ -18,13 +20,14 @@ from normalize_name import normalize_name
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR   = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 DATA_DIR   = os.path.join(ROOT_DIR, "data")
+META_DIR   = os.path.join(DATA_DIR, "meta")
 SOURCE_CSV_DIR = os.path.join(SCRIPT_DIR, "source_csv")
 PENDING_DIR    = os.path.join(DATA_DIR, "pending")
 
-COUNTRIES_FILE       = os.path.join(ROOT_DIR, "countries.json")
-COUNTRY_MAP_FILE     = os.path.join(SCRIPT_DIR, "country_mappings.json")
-COUNTRY_PENDING_FILE = os.path.join(SCRIPT_DIR, "country_mappings_pending.json")
-AVAILABLE_FILE       = os.path.join(ROOT_DIR, "available_kpis.json")
+COUNTRIES_FILE       = os.path.join(META_DIR, "countries.json")
+COUNTRY_MAP_FILE     = os.path.join(META_DIR, "country_mappings.json")
+COUNTRY_PENDING_FILE = os.path.join(META_DIR, "country_mappings_pending.json")
+AVAILABLE_FILE       = os.path.join(META_DIR, "available_kpis.json")
 LOG_FILE             = os.path.join(DATA_DIR, "fetch_log.txt")
 STATUS_FILE          = os.path.join(DATA_DIR, "fetch_status.json")
 
@@ -68,8 +71,7 @@ def safe_float(x) -> Optional[float]:
 def safe_filename(text: str) -> str:
     text = re.sub(r'[^a-zA-Z0-9_.-]', '_', str(text))
     return text[:150]
-
-# ======================================================================
+    # ======================================================================
 # 🌍 Country Mapping
 # ======================================================================
 def _norm(s: str) -> str:
@@ -88,7 +90,8 @@ def build_country_indices(countries: Dict[str, Any], mapping: Dict[str, str]):
     return c_index, a_index
 
 def canonicalize_country(name: str, c_index, a_index, countries, pending, stats):
-    if not name: return None
+    if not name:
+        return None
     if name in countries:
         stats["mapped_ok"] += 1
         return name
@@ -110,7 +113,7 @@ def canonicalize_country(name: str, c_index, a_index, countries, pending, stats)
     return None
 
 # ======================================================================
-# 💾 Speicherung
+# 💾 Speicherung / Dummy
 # ======================================================================
 def save_records(kpi_id: str, records: List[Dict[str, Any]]):
     ensure_dirs()
@@ -136,10 +139,6 @@ def keep_or_dummy(kpi_id: str, reason: str, stats):
 # 🔍 Update-Check & Source-Date Extraction
 # ======================================================================
 def get_source_date_from_worldbank(code: str) -> Optional[str]:
-    """
-    Liefert das letzte Aktualisierungsdatum eines World Bank Indicators.
-    Versucht mehrere mögliche Felder (lastupdated, lastUpdate, usw.).
-    """
     meta_url = f"https://api.worldbank.org/v2/indicator/{code}?format=json"
     try:
         r = requests.get(meta_url, timeout=20)
@@ -147,7 +146,7 @@ def get_source_date_from_worldbank(code: str) -> Optional[str]:
             data = r.json()
             if isinstance(data, list) and len(data) > 0 and isinstance(data[0], dict):
                 meta = data[0]
-                for key in ["lastupdated", "LastUpdated", "lastUpdated", "lastupdate"]:
+                for key in ["lastupdated","LastUpdated","lastUpdated","lastupdate"]:
                     if key in meta and meta[key]:
                         d = meta[key]
                         if re.match(r"^\d{4}-\d{2}-\d{2}$", d):
@@ -157,24 +156,18 @@ def get_source_date_from_worldbank(code: str) -> Optional[str]:
         log(f"[WARN] Could not get WorldBank source_date for {code}: {e}")
     return None
 
-
 def get_source_date_from_owid(url: str) -> Optional[str]:
-    """
-    Holt das letzte Änderungsdatum aus der OWID-Metadaten-API.
-    Prüft mehrere mögliche Feldnamen.
-    """
     try:
         meta_url = url.replace("/grapher/", "/grapher/data/metadata/")
         r = requests.get(meta_url, timeout=20)
         if r.status_code == 200:
             data = r.json()
-            for key in ["last_updated", "updatedAt", "lastUpdatedAtSource", "dataEditedAt", "publishedAt"]:
+            for key in ["last_updated","updatedAt","lastUpdatedAtSource","dataEditedAt","publishedAt"]:
                 if key in data and data[key]:
                     return data[key]
     except Exception as e:
         log(f"[WARN] Could not get OWID source_date: {e}")
     return None
-
 
 def should_fetch(kpi_id: str, source_date: Optional[str], fetch_status: dict) -> bool:
     local_info = fetch_status.get("kpis", {}).get(kpi_id)
@@ -184,17 +177,14 @@ def should_fetch(kpi_id: str, source_date: Optional[str], fetch_status: dict) ->
     if not source_date or not local_date or local_date == "Unknown":
         return True
     try:
-        l = datetime.fromisoformat(local_date.replace("Z", "+00:00"))
-        r = datetime.fromisoformat(source_date.replace("Z", "+00:00"))
+        l = datetime.fromisoformat(local_date.replace("Z","+00:00"))
+        r = datetime.fromisoformat(source_date.replace("Z","+00:00"))
         return r > l
     except Exception:
         return True
 
 # ======================================================================
-# 🌐 Datenquellen
-# ======================================================================
-# ======================================================================
-# 🌐 World Bank & CSV
+# 🌐 Datenquellen – World Bank & CSV
 # ======================================================================
 def fetch_worldbank_series(code: str) -> Optional[List[Dict[str, Any]]]:
     url = f"https://api.worldbank.org/v2/country/all/indicator/{code}?format=json&per_page=20000"
@@ -222,14 +212,17 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
     out = []
     for row in rows:
         val = row.get("value")
-        if val is None: continue
+        if val is None:
+            continue
         cname = (row.get("country") or {}).get("value") or row.get("countryiso3code") or ""
         canon = canonicalize_country(cname, c_index, a_index, countries, pending, stats)
-        if not canon: continue
+        if not canon:
+            continue
         try:
             year = int(row.get("date"))
-            out.append({"country": canon, "iso2": "", "year": year, "value": float(val)})
-        except: continue
+            out.append({"country": canon,"iso2":"","year":year,"value":float(val)})
+        except:
+            continue
     if out:
         save_records(kpi_id, out)
         stats["wb_success"] += 1
@@ -250,13 +243,17 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
         for r in reader:
             cname = (r.get("country") or "").strip()
             canon = canonicalize_country(cname, c_index, a_index, countries, pending, stats)
-            if not canon: continue
+            if not canon:
+                continue
             year = r.get("year")
             val = safe_float(r.get("value"))
-            if not year or val is None: continue
-            try: y = int(float(year))
-            except: continue
-            out.append({"country": canon, "iso2": r.get("iso2",""), "year": y, "value": val})
+            if not year or val is None:
+                continue
+            try:
+                y = int(float(year))
+            except:
+                continue
+            out.append({"country":canon,"iso2":r.get("iso2",""),"year":y,"value":val})
     if out:
         save_records(kpi_id, out)
         stats["csv_success"] += 1
@@ -264,8 +261,8 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
         log(f"[OK] CSV KPI saved: {kpi_id} ({len(out)} rows)")
     else:
         keep_or_dummy(kpi_id, f"CSV empty {csv_name}", stats)
-
-# ======================================================================
+        
+    # ======================================================================
 # 🧭 OWID Fetch
 # ======================================================================
 def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
@@ -274,7 +271,6 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
         keep_or_dummy(kpi_id, "missing source_code", stats)
         return
 
-    # komplette URL bauen – source_code enthält bereits .csv und ggf. Parameter
     url = f"https://ourworldindata.org/grapher/{source_code}"
 
     try:
@@ -285,28 +281,21 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
     except Exception as e:
         log(f"[ERR] OWID fetch failed for {source_code}: {e}")
         keep_or_dummy(kpi_id, f"OWID fetch failed {source_code}", stats)
-
-        # --- Sicheres Schreiben der Error-Datei (Windows-kompatibel + Längenlimit) ---
         filename = f"{kpi_id}_{safe_filename(source_code)}_error.txt"
-        if len(filename) > 180:  # Windows max path limit workaround
-            filename = filename[:180] + "_error.txt"
         ensure_dirs()
-        try:
-            with open(os.path.join(PENDING_DIR, filename), "w", encoding="utf-8") as f:
-                    f.write(str(e))
-        except Exception as file_err:
-            log(f"[WARN] Could not write error file {filename}: {file_err}")
+        with open(os.path.join(PENDING_DIR, filename[:180]), "w", encoding="utf-8") as f:
+            f.write(str(e))
         return
 
     reader = csv.DictReader(io.StringIO(text))
     cols = reader.fieldnames or []
-    if not {"Entity", "Code", "Year"}.issubset(set(cols)):
+    if not {"Entity","Code","Year"}.issubset(set(cols)):
         open(os.path.join(PENDING_DIR, f"{kpi_id}_{source_code}.csv"), "w", encoding="utf-8").write(text)
         log(f"[WARN] OWID format unknown → pending saved: {source_code}")
         keep_or_dummy(kpi_id, f"OWID format unknown {source_code}", stats)
         return
 
-    var_cols = [c for c in cols if c not in ("Entity", "Code", "Year")]
+    var_cols = [c for c in cols if c not in ("Entity","Code","Year")]
     if not var_cols:
         keep_or_dummy(kpi_id, f"OWID no data column {source_code}", stats)
         return
@@ -326,7 +315,7 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
             y = int(float(year))
         except:
             continue
-        out.append({"country": canon, "iso2": row.get("Code", ""), "year": y, "value": val})
+        out.append({"country":canon,"iso2":row.get("Code",""),"year":y,"value":val})
 
     if out:
         save_records(kpi_id, out)
@@ -341,15 +330,13 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
 # 🕊️ UNHCR Fetch (ZIP/CSV, Encoding & Header-robust)
 # ======================================================================
 def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
-    import re, zipfile, io, csv, unicodedata
-
-    def _norm(s: str) -> str:
+    def _norm_local(s: str) -> str:
         s = "".join(c for c in unicodedata.normalize("NFKD", str(s).lower()) if not unicodedata.combining(c))
         return re.sub(r"[^a-z0-9]+", " ", s).strip()
 
     def _find_col(cols_list, *patterns):
-        norms = {c: _norm(c) for c in cols_list}
-        pats  = [(_norm(p) if isinstance(p, str) else "") for p in patterns if p]
+        norms = {c: _norm_local(c) for c in cols_list}
+        pats  = [(_norm_local(p) if isinstance(p, str) else "") for p in patterns if p]
         for c, cn in norms.items():
             for p in pats:
                 if p and p in cn:
@@ -361,8 +348,6 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
     if not source_code.startswith("population"):
         source_code = "population?download=true"
     url = f"{base_url}{source_code}"
-
-    # Windows-safe file tag
     safe_code = re.sub(r'[^a-zA-Z0-9._-]', '_', source_code)
 
     # --- Download ---
@@ -382,23 +367,19 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
     try:
         if "zip" in content_type or resp.content[:2] == b"PK":
             with zipfile.ZipFile(io.BytesIO(resp.content)) as zf:
-                # nimm die erste CSV
                 name = next((n for n in zf.namelist() if n.lower().endswith(".csv")), None)
                 if not name:
                     raise Exception("No CSV file inside ZIP")
                 raw = zf.read(name)
-                # erst UTF-8-SIG, dann UTF-16
                 try:
                     text = raw.decode("utf-8-sig")
                 except UnicodeDecodeError:
                     text = raw.decode("utf-16")
                 log(f"[INFO] Extracted CSV '{name}' from UNHCR ZIP ({len(text)} bytes)")
         else:
-            # Text-CSV
             try:
                 resp.encoding = "utf-8-sig"
                 text = resp.text
-                # Fallback UTF-16 falls Kauderwelsch
                 if len(text) < 10 or "PK\x03\x04" in text:
                     text = resp.content.decode("utf-16")
             except UnicodeDecodeError:
@@ -408,19 +389,14 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
         keep_or_dummy(kpi_id, f"UNHCR decode error {source_code}", stats)
         return
 
-    # --- Normalize newlines ---
-    text = text.replace("\r\n", "\n").replace("\r", "\n")
-
-    # --- CSV dialect sniffing ---
+    # --- Normalize newlines & detect dialect ---
+    text = text.replace("\r\n","\n").replace("\r","\n")
     try:
         sample = text[:4096]
-        dialect = csv.Sniffer().sniff(sample, delimiters=[",", ";", "\t"])
-        has_header = csv.Sniffer().has_header(sample)
+        dialect = csv.Sniffer().sniff(sample, delimiters=[",",";","\t"])
     except Exception:
         dialect = csv.excel
-        has_header = True
 
-    # --- DictReader ---
     try:
         reader = csv.DictReader(io.StringIO(text), dialect=dialect, skipinitialspace=True)
     except csv.Error as e:
@@ -436,29 +412,20 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
         keep_or_dummy(kpi_id, f"UNHCR no header {safe_code}", stats)
         return
 
-    # --- Column mapping (robust auf alte/neue Header) ---
-    # Country (destination / asylum)
-    country_key = (_find_col(cols, "country of asylum", "territory of asylum", "country / territory of asylum")
+    # --- Column mapping ---
+    country_key = (_find_col(cols, "country of asylum","territory of asylum","country / territory of asylum")
                    or _find_col(cols, "country of asylum/residence")
                    or _find_col(cols, "asylum"))
-
-    # Year
     year_key = _find_col(cols, "year")
-
-    # Value (choose by 'unhcr_field' or default to refugees)
-    explicit_field = meta.get("unhcr_field")  # z.B. "Asylum-seekers" oder "Refugees under UNHCR's mandate"
+    explicit_field = meta.get("unhcr_field")
     if explicit_field:
         value_key = _find_col(cols, explicit_field)
     else:
-        # bevorzugte Reihenfolge
         value_key = (_find_col(cols, "refugees under unhcr's mandate")
-                     or _find_col(cols, "refugees under unhcr s mandate")  # apostrophenfrei
                      or _find_col(cols, "refugees (incl. refugee-like situations)")
                      or _find_col(cols, "refugees"))
 
     if not all([country_key, year_key, value_key]):
-        # Für Debug: komplette CSV + Headerliste ablegen
-        open(os.path.join(PENDING_DIR, f"{kpi_id}_{safe_code}_full.csv"), "w", encoding="utf-8").write(text)
         open(os.path.join(PENDING_DIR, f"{kpi_id}_{safe_code}_cols.txt"), "w", encoding="utf-8").write("\n".join(cols))
         log(f"[WARN] UNHCR column mapping failed → pending: {safe_code}")
         keep_or_dummy(kpi_id, f"UNHCR unknown format {safe_code}", stats)
@@ -475,8 +442,7 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
             continue
         y_raw = row.get(year_key)
         v_raw = row.get(value_key)
-
-        if y_raw in (None, "") or v_raw in (None, ""):
+        if y_raw in (None,"") or v_raw in (None,""):
             continue
         val = safe_float(v_raw)
         if val is None:
@@ -485,21 +451,18 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
             year = int(float(y_raw))
         except Exception:
             continue
+        out.append({"country":canon,"iso2":"","year":year,"value":val})
 
-        out.append({"country": canon, "iso2": "", "year": year, "value": val})
-
-    # --- Save or dummy ---
     if out:
         log(f"[INFO] Parsed {len(out)} UNHCR records ({value_key})")
         save_records(kpi_id, out)
-        stats["unhcr_success"] = stats.get("unhcr_success", 0) + 1
+        stats["unhcr_success"] = stats.get("unhcr_success",0)+1
         stats["saved_records"] += len(out)
         log(f"[OK] UNHCR KPI saved: {kpi_id} ({len(out)} rows)")
     else:
         open(os.path.join(PENDING_DIR, f"{kpi_id}_{safe_code}_nodata.csv"), "w", encoding="utf-8").write(text)
         keep_or_dummy(kpi_id, f"UNHCR empty {safe_code}", stats)
-
-
+        
 # ======================================================================
 # 🚀 Main
 # ======================================================================
@@ -511,12 +474,13 @@ def main():
     fetch_status = read_json(STATUS_FILE, {"kpis": {}})
 
     stats = {
-        "countries_loaded":0,"kpis_loaded":0,"saved_records":0,"dummies":0,
-        "mapped_ok":0,"mapped_drop":0,"mapped_pending":0,"new_pending":set(),
-        "wb_success":0,"csv_success":0,"owid_success":0,"unhcr_success":0,
-        "errors":0,"skipped":0
+        "countries_loaded": 0, "kpis_loaded": 0, "saved_records": 0, "dummies": 0,
+        "mapped_ok": 0, "mapped_drop": 0, "mapped_pending": 0, "new_pending": set(),
+        "wb_success": 0, "csv_success": 0, "owid_success": 0, "unhcr_success": 0,
+        "errors": 0, "skipped": 0
     }
 
+    # --- Metadaten & Mapping laden ---
     countries = read_json(COUNTRIES_FILE, {})
     mapping   = read_json(COUNTRY_MAP_FILE, {})
     pending   = read_json(COUNTRY_PENDING_FILE, {})
@@ -527,10 +491,10 @@ def main():
     kpi_list = [v for v in raw_kpis if isinstance(v, dict)]
     stats["kpis_loaded"] = len(kpi_list)
 
+    # --- KPI-Schleife ---
     for meta in kpi_list:
         try:
-            base = meta.get("filename") or meta.get("id") or meta.get("title") or "kpi"
-            kpi_id = normalize_name(base)
+            kpi_id = meta.get("filename") or meta.get("id") or meta.get("title") or "kpi"
             source_type = (meta.get("source_type") or meta.get("type") or "").lower().strip()
             source_code = meta.get("source_code") or meta.get("code") or ""
             source_date = None
@@ -543,13 +507,13 @@ def main():
             else:
                 source_date = "Unknown"
 
-            # --- Prüfen, ob Fetch nötig ---
+            # Prüfen, ob Fetch nötig
             if not should_fetch(kpi_id, source_date, fetch_status):
                 stats["skipped"] += 1
                 log(f"[SKIP] {kpi_id} – local data up to date ({source_date})")
                 continue
 
-            # --- Verarbeiten nach Quelle ---
+            # Quelle verarbeiten
             if source_type == "worldbank":
                 process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
             elif source_type == "csv":
@@ -561,7 +525,7 @@ def main():
             else:
                 keep_or_dummy(kpi_id, f"unknown source_type {source_type}", stats)
 
-            # --- Status aktualisieren ---
+            # Status aktualisieren
             fetch_status.setdefault("kpis", {})[kpi_id] = {
                 "source": meta.get("source") or meta.get("source_type") or "unknown",
                 "url": meta.get("source_url") or meta.get("url") or "",
@@ -576,26 +540,28 @@ def main():
     # --- Abschluss ---
     fetch_status["lastRun"] = now_utc()
     write_json(STATUS_FILE, fetch_status)
+    write_json(COUNTRY_PENDING_FILE, pending)
+
     log(f"[INFO] fetch_status.json updated with {len(fetch_status.get('kpis',{}))} KPIs")
 
     summary = [
         "=== RealityCheck Fetch Report ===",
         f"Countries loaded:   {stats['countries_loaded']}",
-        f"KPIs processed:     {stats['kpis_loaded']}",
-        f"Saved records:      {stats['saved_records']}",
+        f"KPIs processed:    {stats['kpis_loaded']}",
+        f"Saved records:     {stats['saved_records']}",
         "",
-        f"WorldBank KPIs:     {stats['wb_success']}",
-        f"CSV KPIs:           {stats['csv_success']}",
-        f"OWID KPIs:          {stats['owid_success']}",
-        f"UNHCR KPIs:         {stats['unhcr_success']}",
+        f"WorldBank KPIs:    {stats['wb_success']}",
+        f"CSV KPIs:          {stats['csv_success']}",
+        f"OWID KPIs:         {stats['owid_success']}",
+        f"UNHCR KPIs:        {stats['unhcr_success']}",
         "",
-        f"Mapping OK:         {stats['mapped_ok']}",
-        f"Mapping dropped:    {stats['mapped_drop']}",
-        f"Mapping pending:    {stats['mapped_pending']}",
+        f"Mapping OK:        {stats['mapped_ok']}",
+        f"Mapping dropped:   {stats['mapped_drop']}",
+        f"Mapping pending:   {stats['mapped_pending']}",
         "",
-        f"Dummies created:    {stats['dummies']}",
+        f"Dummies created:   {stats['dummies']}",
         f"Skipped (up-to-date): {stats['skipped']}",
-        f"Errors:             {stats['errors']}",
+        f"Errors:            {stats['errors']}",
         "=================================",
         "✅ Fetch completed successfully\n"
     ]
@@ -612,14 +578,15 @@ if __name__ == "__main__":
     try:
         import subprocess
         print("➡️ Starte fetch_overall_ranking.py ...")
-        subprocess.run(["python", "fetch_overall_ranking.py"], check=True)
+        subprocess.run(["python", "scripts/fetch_overall_ranking.py"], check=True)
         print("✅ Overall Ranking erfolgreich erstellt.")
     except Exception as e:
         print(f"⚠️ Fehler beim Erstellen des Overall-Rankings: {e}")
+
     try:
         from analysis import run_global_analysis
         print("➡️ Starte globale KI-Analyse ...")
         run_global_analysis()
         print("✅ Globale Analyse abgeschlossen (data/analysis.md)")
     except Exception as e:
-        print(f"⚠️ Fehler bei der Analyse: {e}")
+        print(f"⚠️ Fehler bei der Analyse: {e}") 
