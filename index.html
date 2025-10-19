@@ -2,86 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RealityCheck – Interactive Country Comparison</title>
-
-  <!-- Stylesheet normal laden (kein preload nötig) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealityCheck – Global Dashboard</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Eigenes Styling -->
-  <style>
-    html, body { overflow: hidden; }
-    main { flex: 1 1 auto; display: flex; flex-direction: column; overflow: hidden; }
-    #main-frame { height: calc(100vh - 160px); }
-  </style>
-
-  <!-- Saubere Preload-Handhabung -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
 </head>
-
 <body>
   <header>
-    <h1>🌍 RealityCheck – Global Dashboard</h1>
+    <img src="images/logo.png" alt="RealityCheck Logo" style="height:60px; vertical-align:middle; margin-right:0.6rem;">
+    <h1 style="display:inline-block; vertical-align:middle;">🌍 RealityCheck</h1>
     <nav>
-      <a href="#" onclick="loadPage('countries.html', this)" class="active">Countries</a>
+      <a href="#" onclick="loadPage('countries.html', this)">Countries</a>
       <a href="#" onclick="loadPage('world.html', this)">World</a>
       <a href="#" onclick="loadPage('overall_ranking_countries.html', this)">Overall Ranking</a>
+      <a href="#" onclick="loadPage('data_glossary.html', this)">Data Glossary</a>
       <a href="#" onclick="loadPage('analysis.html', this)">Analysis</a>
     </nav>
   </header>
 
-  <main>
-    <div id="frame-loader" class="active"><div class="spinner"></div></div>
-    <iframe id="main-frame" src="countries.html" title="RealityCheck Content"></iframe>
-  </main>
+  <main id="main-frame"></main>
+  <div id="frame-loader" class="hidden">Loading…</div>
 
   <footer>
-    <div id="tracking-wrapper">
-      <div id="total-visitors">Visitors: loading…</div>
-    </div>
-
-    <p style="margin-top:.6rem;">
-      © RealityCheck Project —
-      <a href="#" onclick="loadPage('impressum.html', null)">Impressum</a> |
-      <a href="#" onclick="loadPage('privacy.html', null)">Privacy</a> |
-	  <a href="#" onclick="loadPage('data_glossary.html', null)">Data-Glossary</a> |
-	  <a href="#" onclick="loadPage('about.html', null)">About</a>	  </p>
+    <p>
+      <a href="#" onclick="loadPage('impressum.html', this)">Impressum</a> |
+      <a href="#" onclick="loadPage('privacy.html', this)">Privacy Policy</a>
+    </p>
   </footer>
 
-  <script>
-    // === Load subpages with cache-bypass and show loader ===
-    function loadPage(page, link){
-      const frame=document.getElementById("main-frame");
-      const loader=document.getElementById("frame-loader");
-      frame.src=page+"?t="+Date.now();
-      loader.classList.add("active");
-      document.querySelectorAll("nav a").forEach(a=>a.classList.remove("active"));
-      if(link) link.classList.add("active");
-    }
-
-    // Hide loader when iframe loaded
-    const frame=document.getElementById("main-frame");
-    frame.addEventListener("load",()=>document.getElementById("frame-loader").classList.remove("active"));
-
-    // === Visitor Tracking (vereinfachte Version ohne Tabelle) ===
-    async function loadVisitorStats() {
-      const el = document.getElementById("total-visitors");
-      if (!el) return;
-      try {
-        const resp = await fetch("tracking.json?nocache=" + Date.now());
-        if (!resp.ok) throw new Error(resp.status);
-        const data = await resp.json();
-        el.textContent = "Visitors total: " + (data.total || 0);
-      } catch (e) {
-        console.warn("⚠️ Visitor tracking not available", e);
-        el.textContent = "Visitors total: unavailable";
-      }
-    }
-
-    // Direkt beim Laden ausführen
-    loadVisitorStats();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
