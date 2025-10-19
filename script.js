@@ -77,9 +77,7 @@ async function init() {
         document.addEventListener("DOMContentLoaded", r, { once: true })
       );
     if (!document.getElementById("kpiSelect")) {
-      console.warn(
-        "RealityCheck: #kpiSelect not found -- skipping init (likely main frame)."
-      );
+      console.warn("RealityCheck: #kpiSelect not found -- skipping init.");
       return;
     }
 
@@ -120,7 +118,7 @@ async function init() {
   }
 }
 
-/* ========= Populate KPI ========= */
+/* ========= KPI-Auswahl ========= */
 async function populateKpiSelect() {
   const sel = document.getElementById("kpiSelect");
   const spinner = document.getElementById("overlay-spinner");
@@ -134,15 +132,13 @@ async function populateKpiSelect() {
   const tmp = [];
 
   try {
-    // === KPIs thematisch clustern ===
     for (const meta of getKpiArray().filter(k => k.world_kpi !== "e")) {
-      const id = meta.filename; // 🔹 normalizeName entfernt
+      const id = meta.filename;
       const cl = meta.cluster || "Other";
       if (!clusters[cl]) clusters[cl] = [];
       clusters[cl].push({ id, title: meta.title, relation: meta.relation });
     }
 
-    // === Dropdowns nach Cluster & Alphabet sortieren ===
     for (const cl of Object.keys(clusters).sort()) {
       const g = document.createElement("optgroup");
       g.label = cl;
@@ -175,6 +171,7 @@ async function populateKpiSelect() {
     if (spinner) spinner.classList.add("hidden");
   }
 }
+
 /* ========= Country Selects ========= */
 function populateHomeCountrySelect() {
   const s = document.getElementById("countrySelect");
@@ -232,41 +229,40 @@ function applyRelation(v, c, y) {
 function getMetaForCurrent() {
   const arr = getKpiArray();
   if (!currentKpi) return null;
-  // 🔹 normalizeName entfernt: direkter Vergleich über filename
   return arr.find(m => (m.filename || m.id || m.title) === currentKpi) || null;
 }
+/* ========= Adaptive Scaling (medianbasiert) ========= */
+function determineAdaptiveScale(values) {
+  const nums = values.filter(v => typeof v === "number" && !isNaN(v));
+  if (!nums.length) return { divisor: 1, suffix: "" };
 
-/* ========= Sorting ========= */
+  const sorted = [...nums].sort((a, b) => a - b);
+  const median = sorted[Math.floor(sorted.length / 2)];
+  const magnitude = Math.max(Math.abs(median), 1);
+
+  if (magnitude >= 1e12) return { divisor: 1e12, suffix: "T" };
+  if (magnitude >= 1e9)  return { divisor: 1e9, suffix: "B" };
+  if (magnitude >= 1e6)  return { divisor: 1e6, suffix: "M" };
+  if (magnitude >= 1e3)  return { divisor: 1e3, suffix: "K" };
+  return { divisor: 1, suffix: "" };
+}
+
+/* ========= Sorting Header Binding ========= */
 function bindHeaderSorting() {
   const headers = document.querySelectorAll("#country-table th[data-col]");
   if (!headers.length) return;
 
-  headers.forEach(th => {
-    th.replaceWith(th.cloneNode(true));
-  });
-
+  headers.forEach(th => th.replaceWith(th.cloneNode(true)));
   const freshHeaders = document.querySelectorAll("#country-table th[data-col]");
   freshHeaders.forEach(th => {
     th.addEventListener("click", () => {
       const col = th.dataset.col;
       if (!col) return;
-      if (userSort.col === col) {
-        userSort.asc = !userSort.asc;
-      } else {
-        userSort = { col, asc: col === "country" || col === "rank" };
-      }
+      if (userSort.col === col) userSort.asc = !userSort.asc;
+      else userSort = { col, asc: col === "country" || col === "rank" };
       updateTable();
     });
   });
-}
-
-function determineCommonScale(values) {
-  const maxVal = Math.max(...values.map(v => Math.abs(v || 0)));
-  if (maxVal >= 1e12) return { divisor: 1e12, suffix: "T" };
-  if (maxVal >= 1e9) return { divisor: 1e9, suffix: "B" };
-  if (maxVal >= 1e6) return { divisor: 1e6, suffix: "M" };
-  if (maxVal >= 1e3) return { divisor: 1e3, suffix: "K" };
-  return { divisor: 1, suffix: "" };
 }
 
 /* ========= Table ========= */
@@ -282,22 +278,23 @@ function updateTable() {
   const unit = (meta.unit || "").trim();
   const scaleMode = meta.scale || "auto";
 
+  // === Länderzeilen ===
   const rows = [];
   for (const c of Object.keys(countries)) {
     const vals = currentData.filter(r => r.country === c);
     if (!vals.length) continue;
 
     const latest = vals.sort((a, b) => b.year - a.year)[0];
-    const prev = vals.find(r => r.year === latest.year - 1);
-    const comp = compYear ? vals.find(r => r.year === compYear) : null;
+    const prev   = vals.find(r => r.year === latest.year - 1);
+    const comp   = compYear ? vals.find(r => r.year === compYear) : null;
 
     const lv = applyRelation(latest.value, c, latest.year);
     const pv = prev ? applyRelation(prev.value, c, prev.year) : null;
     const cv = comp ? applyRelation(comp.value, c, comp.year) : null;
 
     const arrow = pv != null ? calcTrend(lv, pv) : "→";
-    const dAbs = pv != null ? lv - pv : null;
-    const dPct = pv ? ((lv - pv) / pv) * 100 : null;
+    const dAbs  = pv != null ? lv - pv : null;
+    const dPct  = pv ? ((lv - pv) / pv) * 100 : null;
     const dComp = cv != null ? (((lv - cv) / cv) * 100).toFixed(2) + "%" : "-";
 
     rows.push({
@@ -312,12 +309,14 @@ function updateTable() {
     });
   }
 
+  // === Adaptive Skalierung bestimmen ===
   let scaleInfo = { divisor: 1, suffix: "" };
   if (meta.scale === "auto") {
     const allValues = rows.map(r => r.value).filter(v => !isNaN(v));
-    scaleInfo = determineCommonScale(allValues);
+    scaleInfo = determineAdaptiveScale(allValues);
   }
 
+  // === Gruppenberechnung (Summe oder Durchschnitt) ===
   const groupRows = [];
   for (const [gKey, gDef] of Object.entries(groups)) {
     const members = gDef.members || [];
@@ -326,13 +325,19 @@ function updateTable() {
     if (!mrows.length) continue;
 
     let agg;
-    if ((meta.unit || "").includes("%") || meta.scale === "none") {
+    const isRelative =
+      (meta.unit || "").includes("%") ||
+      ["index", "ratio", "none"].includes(meta.scale);
+
+    if (isRelative) {
+      // relative Kennzahlen → Durchschnitt
       agg = mrows.reduce((a, r) => a + (r.value || 0), 0) / mrows.length;
     } else {
+      // absolute Kennzahlen → Summe
       agg = mrows.reduce((a, r) => a + (r.value || 0), 0);
     }
-    const lastYear = Math.max(...mrows.map(r => r.update));
 
+    const lastYear = Math.max(...mrows.map(r => r.update));
     groupRows.push({
       country: title,
       value: agg,
@@ -341,44 +346,41 @@ function updateTable() {
       deltaPrevPct: null,
       deltaComp: "-",
       update: lastYear,
-      isGroup: true
+      isGroup: true,
+      aggregationType: isRelative ? "average" : "sum"
     });
   }
 
+  // === Sortierung bestimmen ===
   let sortedRows = [...rows];
-  const sortType = (meta.sort || "higher").toLowerCase();
+  const sortType  = (meta.sort || "higher").toLowerCase();
   const targetVal = parseFloat(meta.target_value || 0);
 
   if (userSort.col && userSort.col !== "rank") {
     const { col, asc } = userSort;
     sortedRows.sort((a, b) => {
-      const A = a[col] ?? 0,
-        B = b[col] ?? 0;
+      const A = a[col] ?? 0, B = b[col] ?? 0;
       if (A === B) return 0;
-      return asc ? (A > B ? 1 : -1) : A < B ? 1 : -1;
+      return asc ? (A > B ? 1 : -1) : (A < B ? 1 : -1);
     });
   } else {
-    if (sortType === "higher") {
-      sortedRows.sort((a, b) => (b.value || 0) - (a.value || 0));
-    } else if (sortType === "lower") {
-      sortedRows.sort((a, b) => (a.value || 0) - (b.value || 0));
-    } else if (sortType === "target") {
+    if (sortType === "higher") sortedRows.sort((a, b) => (b.value || 0) - (a.value || 0));
+    else if (sortType === "lower") sortedRows.sort((a, b) => (a.value || 0) - (b.value || 0));
+    else if (sortType === "target") {
       sortedRows.sort((a, b) => {
         const devA = Math.abs((a.value ?? 0) - targetVal);
         const devB = Math.abs((b.value ?? 0) - targetVal);
         return devA - devB;
       });
-    } else {
-      sortedRows.sort((a, b) => (b.value || 0) - (a.value || 0));
-    }
+    } else sortedRows.sort((a, b) => (b.value || 0) - (a.value || 0));
   }
 
+  // === Ränge zuweisen ===
   const rankMap = new Map();
   let rankCounter = 0;
   sortedRows.forEach(r => {
-    if (r.country === "World" || r.country === "Welt") {
-      rankMap.set(r.country, "🌍");
-    } else {
+    if (["World","Welt"].includes(r.country)) rankMap.set(r.country, "🌍");
+    else {
       rankCounter++;
       rankMap.set(r.country, rankCounter);
     }
@@ -388,17 +390,7 @@ function updateTable() {
     ...sortedRows.map(r => ({ ...r, rank: rankMap.get(r.country) })),
     ...groupRows.map(r => ({ ...r, rank: "–" }))
   ];
-
-  if (userSort.col === "rank") {
-    final.sort((a, b) => {
-      const ar = a.rank === "🌍" || a.rank === "–" ? Infinity : a.rank;
-      const br = b.rank === "🌍" || b.rank === "–" ? Infinity : b.rank;
-      if (ar === br) return 0;
-      return userSort.asc ? (ar > br ? 1 : -1) : ar < br ? 1 : -1;
-    });
-  }
-
-  // === Home Country sticky/top + highlight ===
+    // === Home Country sticky/top + highlight ===
   const home = document.getElementById("countrySelect")?.value;
   if (home) {
     const i = final.findIndex(r => r.country === home);
@@ -414,7 +406,12 @@ function updateTable() {
     const tr = document.createElement("tr");
     if (r.highlight) tr.classList.add("highlight");
     if (r.isGroup) tr.classList.add("group-row");
-    if (r.country === "World" || r.country === "Welt") tr.classList.add("world-row");
+    if (["World","Welt"].includes(r.country)) tr.classList.add("world-row");
+
+    // 🔹 Tooltip für Gruppen: Summe oder Durchschnitt
+    if (r.isGroup) {
+      tr.title = `Group value = ${r.aggregationType === "average" ? "Average" : "Sum"} of members`;
+    }
 
     tr.addEventListener("click", () => {
       if (!r.isGroup) highlightOnMap(r.country);
@@ -422,7 +419,7 @@ function updateTable() {
 
     const deltaTitle =
       r.deltaPrevAbs != null
-        ? `title="Δ vs Prev: ${formatValueAuto(r.deltaPrevAbs, scaleMode)} (${
+        ? `title="Δ vs Prev: ${formatValueAuto(r.deltaPrevAbs, meta.scale)} (${
             r.deltaPrevPct != null ? r.deltaPrevPct.toFixed(2) + "%" : "n/a"
           })"`
         : `title="No previous year data"`;
@@ -433,7 +430,7 @@ function updateTable() {
       <td>${
         meta.scale === "auto"
           ? (r.value / scaleInfo.divisor).toFixed(2) + " " + scaleInfo.suffix
-          : formatValueAuto(r.value, scaleMode)
+          : formatValueAuto(r.value, meta.scale)
       }${unit ? " " + unit : ""}</td>
       <td class="trend" ${deltaTitle}>${r.deltaPrevArrow}</td>
       <td>${r.deltaComp ?? "-"}</td>
@@ -442,7 +439,7 @@ function updateTable() {
     tbody.appendChild(tr);
   });
 
-  // === Header-Pfeile & aktive Spalte markieren ===
+  // === Header-Pfeile aktualisieren ===
   document.querySelectorAll("#country-table th[data-col]").forEach(th => {
     const col = th.dataset.col;
     const label = th.textContent.replace(/[▲▼]/g, "").trim();
@@ -464,9 +461,7 @@ function updateTable() {
         if (cell) {
           cell.style.transition = "background 0.3s ease";
           cell.style.background = "rgba(255,255,0,0.07)";
-          setTimeout(() => {
-            cell.style.background = "";
-          }, 300);
+          setTimeout(() => (cell.style.background = ""), 300);
         }
       });
     }
@@ -477,11 +472,10 @@ function updateTable() {
   if (roundInfo) {
     if (scaleMode === "auto") {
       let explain =
-        "Values are automatically scaled (K, M, B, T). K = thousand (10³), M = million (10⁶), B = billion (10⁹), T = trillion (10¹²).";
+        "Values are auto-scaled using median-based factor (K, M, B, T).";
       roundInfo.textContent = explain;
-      if (scaleInfo && scaleInfo.suffix) {
+      if (scaleInfo && scaleInfo.suffix)
         roundInfo.textContent += ` (All values in ${scaleInfo.suffix})`;
-      }
     } else if (scaleMode === "none") {
       roundInfo.textContent = "Values shown as-is (no scaling).";
     } else if (scaleMode === "%") {
@@ -497,10 +491,7 @@ function updateChart() {
   const ctxEl = document.getElementById("kpi-chart");
   if (!ctxEl) return;
 
-  const meta = getMetaForCurrent() || {
-    title: currentKpi || "Selected KPI",
-    unit: ""
-  };
+  const meta = getMetaForCurrent() || { title: currentKpi || "Selected KPI", unit: "" };
   const years = currentData.length
     ? [...new Set(currentData.map(r => r.year))].sort((a, b) => a - b)
     : [];
@@ -561,10 +552,9 @@ function updateChart() {
 function initMap() {
   const el = document.getElementById("map");
   if (!el) {
-    console.warn("⚠️ Kein #map-Element gefunden – Map wird nicht initialisiert.");
+    console.warn("⚠️ Kein #map-Element gefunden – Map nicht initialisiert.");
     return;
   }
-
   map = L.map("map").setView([20, 0], 2);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap contributors"
@@ -574,19 +564,16 @@ function initMap() {
     if (map && typeof map.invalidateSize === "function") {
       map.invalidateSize();
       console.log("✅ Leaflet map rendered & resized");
-    } else {
-      console.warn("⚠️ map.invalidateSize() nicht verfügbar");
     }
   }, 100);
 }
-/* ========= Map Update ========= */
+
 function updateMap() {
   if (!map || !currentKpi) return;
   if (mapLayer) map.removeLayer(mapLayer);
   mapLayer = L.layerGroup().addTo(map);
 }
 
-/* ========= Country Highlight ========= */
 function highlightOnMap(country) {
   if (!countries[country]) return;
   const info = countries[country];
@@ -596,13 +583,10 @@ function highlightOnMap(country) {
   L.popup()
     .setLatLng([info.lat, info.lon])
     .setContent(
-      `${country}<br>Capital: ${info.capital || "–"}<br>Gov: ${
-        info.government || "–"
-      }`
+      `${country}<br>Capital: ${info.capital || "–"}<br>Gov: ${info.government || "–"}`
     )
     .openOn(map);
 }
 
 /* ========= Start ========= */
 document.addEventListener("DOMContentLoaded", () => init());
-  
