@@ -1,0 +1,12 @@
+# --- Security & local config ---
+.env
+*.env
+env.txt
+
+# --- Python cache ---
+__pycache__/
+*.pyc
+
+# --- System files ---
+.DS_Store
+Thumbs.db
