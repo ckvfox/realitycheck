@@ -1,5 +1,5 @@
 # =============================================
-# 🌍 RealityCheck – Global KPI Analysis Script
+# 🌍 RealityCheck – Global KPI Analysis Script (B2 Version)
 # =============================================
 
 import json
@@ -13,7 +13,7 @@ from openai import OpenAI
 
 def run_global_analysis():
     """
-    Reads all KPI JSON files from /data, creates an AI-generated global analysis,
+    Reads all KPI JSON files from /data, creates an AI-generated global analysis (B2-level reasoning),
     and saves the result as Markdown and JSON inside /data.
     Also extracts outlier information (min/max country & year) for data quality review.
     """
@@ -132,22 +132,25 @@ def run_global_analysis():
     except Exception as e:
         print("❌ Error saving outliers:", e)
 
-    # === 7. Prepare AI prompt ===
-    print("\n🧠 Sending KPI summary to AI for analysis...")
+    # === 7. Prepare AI prompt (B2 reasoning) ===
+    print("\n🧠 Sending KPI summary to AI for analysis (B2 level)...")
     prompt = (
-        "Analyze the following global KPI summaries. "
-        "Draw clear conclusions about worldwide trends, improvements, deteriorations, "
-        "correlations, interactions, outliers, and regional patterns.\n\n"
-        "Provide a structured response with:\n"
-        "- Overview (1 paragraph)\n"
-        "- Key Highlights (bullet points)\n"
-        "- Key Lowlights (bullet points)\n"
-        "- Correlations / Interactions\n"
-        "- Global Trends & Forecast\n"
-        "- Notable Regions or Countries\n"
+        "Analyze the following global KPI summaries with a clear and reasoned tone (CEFR level B2). "
+        "Explain global trends, improvements, deteriorations, and correlations across regions and clusters. "
+        "Pay attention to differences between democracies and autocracies, and how political systems, "
+        "economic power groups (EU, G7, G20, BRICS, OECD, etc.), and resource dependencies influence the results. "
+        "Include reflections on key global challenges such as climate change, inequality, conflict, and migration, "
+        "and identify which countries or groups show positive or negative exceptions.\n\n"
+        "Structure your response as follows:\n"
+        "- Overview (short paragraph)\n"
+        "- Highlights (positive developments)\n"
+        "- Lowlights (negative developments)\n"
+        "- Political & Regional Differences\n"
+        "- Interrelations & Global Dynamics\n"
+        "- Forecast & Outlook\n"
         "- Short Global Conclusion\n\n"
-        "Note: 'outlier_count' values indicate potential data anomalies or true crises.\n\n"
-        f"Here is the aggregated KPI data:\n{json.dumps(data_summary, indent=2)[:12000]}"
+        "Here is the aggregated KPI data:\n"
+        f"{json.dumps(data_summary, indent=2)[:12000]}"
     )
 
     response = client.chat.completions.create(
@@ -167,7 +170,7 @@ def run_global_analysis():
             json.dumps({"analysis_text": text, "summary": data_summary}, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
-        print("\n✅ Global analysis saved successfully!")
+        print("\n✅ Global B2-level analysis saved successfully!")
         print("📄 Markdown:", output_md.resolve())
         print("📊 JSON:", output_json.resolve())
     except Exception as e:
