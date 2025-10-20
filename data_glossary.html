@@ -29,81 +29,81 @@
         </tr>
       </thead>
       <tbody id="glossary-body">
-        <tr><td colspan="6" style="text-align:center;">Loading data...</td></tr>
+        <tr><td colspan="6" style="text-align:center;">Loading data …</td></tr>
       </tbody>
     </table>
 
     <div id="legend">
-      <span class="fresh">🟩 Fresh (≤ 1 year)</span> &nbsp;·&nbsp;
-      <span class="warn">🟨 Moderate (≤ 3 years)</span> &nbsp;·&nbsp;
-      <span class="stale">🟥 Stale / Unknown (> 3 years)</span> &nbsp;·&nbsp;
+      <span class="fresh">🟩 Fresh (≤ 1 yr)</span> · 
+      <span class="warn">🟨 Moderate (≤ 3 yrs)</span> · 
+      <span class="stale">🟥 Stale / n/a (> 3 yrs)</span> · 
       <span class="outlier">🔺 Data Outliers</span>
     </div>
   </section>
 
   <script>
-    async function loadGlossary() {
-      try {
-        const [fetchRes, outlierRes] = await Promise.all([
-          fetch("data/fetch_status.json"),
-          fetch("data/analysis_outliers.json")
-        ]);
-        const data = await fetchRes.json();
-        const outliers = await outlierRes.json();
+  async function loadGlossary() {
+    try {
+      const [fetchRes, outlierRes] = await Promise.all([
+        fetch("data/fetch_status.json"),
+        fetch("data/analysis_outliers.json")
+      ]);
+      const data = await fetchRes.json();
+      const outliers = await outlierRes.json();
 
-        const tbody = document.getElementById("glossary-body");
-        tbody.innerHTML = "";
+      const tbody = document.getElementById("glossary-body");
+      tbody.innerHTML = "";
 
-        const kpis = data.kpis || {};
-        const nowYear = new Date().getFullYear();
+      const kpis = data.kpis || {};
+      const nowYear = new Date().getFullYear();
 
-        Object.entries(kpis).forEach(([id, info]) => {
-          const tr = document.createElement("tr");
-          const out = outliers[id] || {};
-          const flagged = out.flagged || [];
+      Object.entries(kpis).forEach(([id, info]) => {
+        const tr = document.createElement("tr");
+        const out = outliers[id] || {};
+        const flagged = out.flagged || [];
 
-          const dy = parseInt(info.data_year) || 0;
-          const diffY = dy ? nowYear - dy : 99;
-          const clsYear = diffY <= 1 ? "fresh" : diffY <= 3 ? "warn" : "stale";
+        const dy = parseInt(info.data_year) || 0;
+        const diffY = dy ? nowYear - dy : 99;
+        const clsYear = diffY <= 1 ? "fresh" : diffY <= 3 ? "warn" : "stale";
 
-          const sd = info.source_date;
-          let clsSrc = "stale";
-          if (sd && /\d{4}/.test(sd)) {
-            const y = parseInt(sd.match(/\d{4}/)[0]);
-            const diffS = nowYear - y;
-            clsSrc = diffS <= 1 ? "fresh" : diffS <= 3 ? "warn" : "stale";
-          }
+        const sd = info.source_date;
+        let clsSrc = "stale";
+        if (sd && /\d{4}/.test(sd)) {
+          const y = parseInt(sd.match(/\d{4}/)[0]);
+          const diffS = nowYear - y;
+          clsSrc = diffS <= 1 ? "fresh" : diffS <= 3 ? "warn" : "stale";
+        }
 
-          let clsOut = "";
-          if (flagged.length >= 10) clsOut = "outlier";
-          else if (flagged.length > 0) clsOut = "warn";
+        let clsOut = "";
+        if (flagged.length >= 10) clsOut = "outlier";
+        else if (flagged.length > 0) clsOut = "warn";
 
-          const minInfo = out.min ? `${out.min.country || "?"} (${out.min.year || "?"})` : "–";
-          const maxInfo = out.max ? `${out.max.country || "?"} (${out.max.year || "?"})` : "–";
+        const minInfo = out.min ? `${out.min.country || "?"} (${out.min.year || "?"})` : "–";
+        const maxInfo = out.max ? `${out.max.country || "?"} (${out.max.year || "?"})` : "–";
 
-          tr.innerHTML = `
-            <td>${id}</td>
-            <td>${info.source ? `<a href="${info.source}" target="_blank">${info.source}</a>` : "?"}</td>
-            <td class="${clsYear}">${info.data_year || "Unknown"}</td>
-            <td class="${clsSrc}">${info.source_date || "Unknown"}</td>
-            <td>${info.last_fetch || "–"}</td>
-            <td class="${clsOut}">
-              ${flagged.length ? `🔺 ${flagged.length}` : "–"}
-              <span class="outlier-info">
-                min: ${minInfo}, max: ${maxInfo}
-              </span>
-            </td>
-          `;
-          tbody.appendChild(tr);
-        });
-      } catch (err) {
-        console.error("Glossary load failed:", err);
-        document.getElementById("glossary-body").innerHTML =
-          `<tr><td colspan="6" style="text-align:center;color:red;">Error loading data</td></tr>`;
-      }
+        tr.innerHTML = `
+          <td>${id}</td>
+          <td>${info.source ? `<a href="${info.source}" target="_blank">${info.source}</a>` : "?"}</td>
+          <td class="${clsYear}">${info.data_year || "n/a"}</td>
+          <td class="${clsSrc}">${info.source_date || "n/a"}</td>
+          <td>${info.last_fetch || "–"}</td>
+          <td class="${clsOut}">
+            ${flagged.length ? `🔺 ${flagged.length}` : "–"}
+            <span class="outlier-info">
+              min: ${minInfo}, max: ${maxInfo}
+            </span>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    } catch (err) {
+      console.error("Glossary load failed:", err);
+      document.getElementById("glossary-body").innerHTML =
+        `<tr><td colspan="6" style="text-align:center;color:red;">Error loading data</td></tr>`;
     }
+  }
 
-    window.addEventListener("DOMContentLoaded", loadGlossary);
+  window.addEventListener("DOMContentLoaded", loadGlossary);
   </script>
 
 </body>
