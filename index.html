@@ -23,7 +23,7 @@
   <div id="frame-loader" class="hidden">Loading…</div>
 
   <footer>
-    <p id="visitor-count">Visitors total: <span id="visitor-number">unavailable</span></p>
+    <p id="visitor-count">Visitors total: <span id="visitor-number">loading…</span></p>
     <p>
       © RealityCheck Project -- 
       <a href="#" onclick="loadPage('impressum.html', this)">Impressum</a> | 
@@ -34,8 +34,8 @@
   </footer>
 
   <script>
-    // 🧭 Visitor count loader (simple JSON read)
-    fetch('tracking.json', { cache: "no-store" })
+    // 🌐 Visitor tracking via PHP (increments +1 and returns updated count)
+    fetch('tracking.php', { cache: "no-store" })
       .then(r => r.ok ? r.json() : null)
       .then(data => {
         const el = document.getElementById('visitor-number');
