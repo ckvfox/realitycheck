@@ -5,105 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RealityCheck – World Overview</title>
 
-  <!-- Haupt-Stylesheet normal laden -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Browser-Optimierungen -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-
-  <!-- Lazy-Loading deaktivieren für iframes (reduziert Intervention-Warnungen) -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      for (const iframe of document.querySelectorAll("iframe[loading='lazy']")) {
-        iframe.loading = "eager";
-      }
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body class="world-page">
 
-<section id="world-intro">
-  <h1>🌍 RealityCheck – World Trends Dashboard</h1>
-
-  <!-- 🧭 Intro-Bereich -->
-  <section id="overall-intro" style="max-width:900px;margin:1rem auto 2rem;padding:0 1rem;line-height:1.6;">
+  <!-- 🌍 Intro -->
+  <section id="world-intro" style="max-width:900px;margin:1rem auto 2rem;padding:0 1rem;line-height:1.6;">
+    <h1>🌍 RealityCheck – World Trends Dashboard</h1>
     <p>
-      The world is changing faster than ever — and not always for the better.  
+      The world is changing faster than ever -- and not always for the better.  
       Rising temperatures, biodiversity loss, conflicts, and shifting economic power reveal a planet 
       under increasing pressure. This dashboard highlights <strong>global trends that raise concern</strong> 
       but also provide insight into where humanity is making progress.
     </p>
     <p>
       While national statistics offer valuable detail, only a global perspective shows how all these forces 
-      connect — from climate to conflict, from energy to environment.  
+      connect -- from climate to conflict, from energy to environment.  
       Understanding these linkages is essential to see where the world is headed.
     </p>
     <p style="font-style:italic;color:#555;">
-      Each chart below visualizes a core global indicator using data from 
-      <a href="https://ourworldindata.org/" target="_blank" rel="noopener">Our World in Data</a>.  
-      They serve as reality checks on our collective trajectory — and reminders of what still can change.
+      Each chart below visualizes a core global indicator using data from RealityCheck’s integrated database.  
+      They serve as reality checks on our collective trajectory -- and reminders of what still can change.
     </p>
   </section>
-</section>
 
-<section id="world-kpis">
-  <div class="graph-block">
-    <h3>🌡️ Global Temperature Anomaly</h3>
-    <iframe src="https://ourworldindata.org/grapher/temperature-anomaly?tab=chart&country=World" loading="lazy"></iframe>
-    <p class="kpi-desc">
-      This metric shows anomalies in global surface temperature relative to the pre-industrial baseline (1861–1890). 
-      It’s one of the clearest measures of the planet’s long-term warming trend.
-    </p>
-  </div>
+  <!-- 📊 Container für alle Welt-KPIs -->
+  <section id="world-kpis" style="max-width:1100px;margin:0 auto 3rem;padding:0 1rem;">
+    <div id="overlay-spinner" class="hidden">Loading global data…</div>
+    <!-- Charts werden hier dynamisch eingefügt -->
+  </section>
 
-  <div class="graph-block">
-    <h3>🌍 Annual CO₂ Emissions (Fossil & Industry)</h3>
-    <iframe src="https://ourworldindata.org/grapher/annual-co2-emissions?tab=chart&country=World" loading="lazy"></iframe>
-    <p class="kpi-desc">
-      Total global CO₂ emissions from fossil fuels and industrial processes per year.  
-      Rising emissions remain the dominant driver of climate change.
-    </p>
-  </div>
-
-  <div class="graph-block">
-    <h3>🌋 Natural Disaster Events</h3>
-    <iframe src="https://ourworldindata.org/grapher/number-of-natural-disaster-events?tab=line" loading="lazy"></iframe>
-    <p class="kpi-desc">
-      The number of recorded natural disasters worldwide, based on EM-DAT data.  
-      It reflects both increased reporting and growing human exposure to climate extremes.
-    </p>
-  </div>
-
-  <div class="graph-block">
-    <h3>🐾 Global Living Planet Index</h3>
-    <iframe src="https://ourworldindata.org/grapher/global-living-planet-index?tab=line" loading="lazy"></iframe>
-    <p class="kpi-desc">
-      The Living Planet Index tracks biodiversity trends across thousands of vertebrate populations since 1970.  
-      Declines indicate how ecosystems and species are under stress.
-    </p>
-  </div>
-
-  <div class="graph-block">
-    <h3>⚔️ Battle-related Deaths (All Armed Conflicts)</h3>
-    <iframe src="https://ourworldindata.org/explorers/conflict-data?Conflict+type=All+armed+conflicts&Measure=Conflict+deaths&Conflict+sub-type=All+sub-types&Data+source=Uppsala+Conflict+Data+Program&Sub-measure=Country+and+regional+data&country=~OWID_WRL&tab=map&hideControls=false" loading="lazy"></iframe>
-    <p class="kpi-desc">
-      Total deaths from all armed conflicts worldwide.  
-      Fluctuations highlight changing geopolitical tensions and humanitarian crises.
-    </p>
-  </div>
-
-  <div class="graph-block">
-    <h3>🔥 Global Warming Contribution from Historical Emissions</h3>
-    <iframe src="https://ourworldindata.org/grapher/global-warming-fossil?tab=chart&country=World" loading="lazy"></iframe>
-    <p class="kpi-desc">
-      The cumulative contribution of fossil and industrial emissions to global temperature rise.  
-      It shows which activities have most shaped today’s climate conditions.
-    </p>
-  </div>
-</section>
-
+  <!-- JS -->
+  <script src="scripts/script_world.js"></script>
 </body>
 </html>
