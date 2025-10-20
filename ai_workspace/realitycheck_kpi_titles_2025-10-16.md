@@ -1,65 +1,67 @@
-# RealityCheck – KPI Titles (from available_kpis.json)
+# 📊 RealityCheck – KPI Titles (from available_kpis.json)
 
-## Complete KPI List (Titles Only)
+## ✅ Complete KPI List (Titles Only)
 
-Access to Basic Drinking Water
-Adult Literacy Rate
-Age Dependency Ratio (Total)
-Air Quality (PM2.5 Exposure)
-Big Mac Index
-CO₂ Emissions
-Democracy Index
-Education Expenditure (% of GDP)
-Electric Vehicle Stock
-Employment-to-Population Ratio
-Extreme Poverty
-Fertility Rate
-Female Labor Force Participation
-Fixed Broadband Subscriptions (per 100 people)
-GDP (current US$)
-GDP per Capita (current US$)
-GNI per Capita (current US$)
-Gini Index
-Global Conflict Deaths
-Government Debt (% of GDP)
-Health Expenditure per Capita
-Homelessness Rate
-Hospital Beds per 1 000 People
-Human Development Index (HDI)
-Infant Mortality Rate
-Individuals Using the Internet
-Inflation (CPI)
-Internet Penetration Rate
-Land Area
-Life Expectancy
-Life Expectancy at Birth
-Living Planet Index
-Maternal Mortality Ratio
-Mean Years of Schooling
-Median Age
-Military Expenditure (% of GDP)
-Military Spending (SIPRI)
-Mobile Subscriptions (per 100 inhabitants)
-Number of Armed Conflicts
-Old-Age Dependency Ratio
-Olympic Medals (Summer + Winter)
-Physicians per 1 000 People
-Political Corruption Index
-Population
-Population Growth
-Press Freedom Index
-Protected Land Area (% of total land area)
-Public Debt (% of GDP)
-Railway Length
-Recycling Rate
-Refugees by Destination
-Renewable Energy Share
-Resource Consumption per Capita
-Road Traffic Deaths (per 100k)
-Statutory Retirement Age (Male)
-Supply Chain Risk Index
-Tax Revenue (% of GDP)
-Trade Balance (Exports minus Imports, % of GDP)
-Unemployment Rate
-Urbanization Rate
-World Happiness Index
+1. Access to Basic Drinking Water  
+2. Adult Literacy Rate  
+3. Age Dependency Ratio (Total)  
+4. Air Quality (PM2.5 Exposure)  
+5. Big Mac Index  
+6. CO₂ Emissions  
+7. Democracy Index  
+8. Education Expenditure (% of GDP)  
+9. Electric Vehicle Stock  
+10. Employment-to-Population Ratio  
+11. Environmental Performance Index (EPI)  
+12. Extreme Poverty  
+13. Fertility Rate  
+14. Female Labor Force Participation  
+15. Fixed Broadband Subscriptions (per 100 people)  
+16. GDP (current US$)  
+17. GDP per Capita (current US$)  
+18. GNI per Capita (current US$)  
+19. Gini Index  
+20. Global Conflict Deaths  
+21. **Global Peace Index (GPI)**  
+22. Government Debt (% of GDP)  
+23. Health Expenditure per Capita  
+24. Homelessness Rate  
+25. Hospital Beds per 1 000 People  
+26. Human Development Index (HDI)  
+27. Infant Mortality Rate  
+28. Individuals Using the Internet  
+29. Inflation (CPI)  
+30. Internet Penetration Rate  
+31. Land Area  
+32. Life Expectancy  
+33. Life Expectancy at Birth  
+34. Living Planet Index  
+35. Maternal Mortality Ratio  
+36. Mean Years of Schooling  
+37. Median Age  
+38. Military Expenditure (% of GDP)  
+39. Military Spending (SIPRI)  
+40. Mobile Subscriptions (per 100 inhabitants)  
+41. Number of Armed Conflicts  
+42. Old-Age Dependency Ratio  
+43. Olympic Medals (Summer + Winter)  
+44. Physicians per 1 000 People  
+45. Political Corruption Index  
+46. Population  
+47. Population Growth  
+48. Press Freedom Index  
+49. Protected Land Area (% of total land area)  
+50. Public Debt (% of GDP)  
+51. Railway Length  
+52. Recycling Rate  
+53. Refugees by Destination  
+54. Renewable Energy Share  
+55. Resource Consumption per Capita  
+56. Road Traffic Deaths (per 100k)  
+57. Statutory Retirement Age (Male)  
+58. Supply Chain Risk Index  
+59. Tax Revenue (% of GDP)  
+60. Trade Balance (Exports minus Imports, % of GDP)  
+61. Unemployment Rate  
+62. Urbanization Rate  
+63. World Happiness Index
