@@ -209,7 +209,7 @@ function applyRelation(v, c, y) {
   const rel = document.getElementById("relationSelect");
   const m = getMetaForCurrent();
   if (!v) return v;
-  if (m && m.relation === "*") return v;
+  if (!m || m.relation !== "*") return v;
   if (rel?.value === "percapita") {
     const p = populationData.find(r => r.country === c && r.year === y);
     return p ? v / p.value : null;
@@ -265,6 +265,33 @@ function bindHeaderSorting() {
   });
 }
 
+/* ========= Year Select (Comparison) ========= */
+function populateYearSelect() {
+  const sel = document.getElementById("yearSelect");
+  if (!sel) return;
+
+  const years = Array.isArray(currentData)
+    ? [...new Set(currentData.map(r => r.year))].filter(y => Number.isFinite(y)).sort((a,b) => b - a)
+    : [];
+
+  // Vorherige Auswahl merken (falls z.B. beim KPI-Wechsel vorhanden)
+  const prev = sel.value;
+
+  // Always prepend "-- none --", dann die Jahre
+  sel.innerHTML = [
+    `<option value="">-- none --</option>`,
+    ...years.map(y => `<option value="${y}">${y}</option>`)
+  ].join("");
+
+  // Falls vorher ein Jahr gewählt war und es noch existiert → beibehalten, sonst auf none
+  if (prev !== "" && years.includes(parseInt(prev))) {
+    sel.value = prev;
+  } else {
+    sel.value = "";
+  }
+}
+
+
 /* ========= Table ========= */
 function updateTable() {
   const tbody = document.querySelector("#country-table tbody");
@@ -272,7 +299,8 @@ function updateTable() {
   tbody.innerHTML = "";
 
   const compYearEl = document.getElementById("yearSelect");
-  const compYear = compYearEl ? parseInt(compYearEl.value) || null : null;
+  const compYear = compYearEl && compYearEl.value !== "" ? parseInt(compYearEl.value) : null;
+
 
   const meta = getMetaForCurrent() || {};
   const unit = (meta.unit || "").trim();
@@ -509,6 +537,9 @@ function updateChart() {
       label: country,
       data: vals,
       borderWidth: 2,
+      borderColor: getColorForCountry(country),
+      pointRadius: 3,
+      pointHoverRadius: 5,
       fill: false,
       tension: 0.25
     });
@@ -517,6 +548,7 @@ function updateChart() {
   const ctx = ctxEl.getContext("2d");
   if (chartInstance) chartInstance.destroy();
 
+  // 💡 Chart.js mit Tooltip, Responsive, World-Styling
   chartInstance = new Chart(ctx, {
     type: "line",
     data: {
@@ -536,17 +568,143 @@ function updateChart() {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false, // ✅ Responsive Höhe durch css
+	  aspectRatio: 2, // stabilisiert Höhe-Breite-Verhältnis
+      layout: {
+        padding: { top: 20, bottom: 10, left: 10, right: 10 }
+      },
       plugins: {
-        title: { display: true, text: meta.title || "No data selected" },
-        legend: { display: datasets.length > 0 }
+        title: { 
+          display: true, 
+          text: meta.title || "No data selected" 
+        },
+        legend: { 
+          display: datasets.length > 0 
+        },
+        tooltip: {
+          enabled: true,
+          callbacks: {
+            label: function(ctx) {
+              const country = ctx.dataset.label || '';
+              const year = ctx.label;
+              const value = ctx.parsed.y;
+              if (value == null || isNaN(value)) return `${country}: no data (${year})`;
+              return `${country}: ${value.toLocaleString()} (${year})`;
+            },
+            title: function(ctx) {
+              return "Year: " + (ctx[0]?.label ?? "");
+            }
+          }
+        }
+      },
+      interaction: {
+        mode: 'nearest',
+        intersect: false
       },
       scales: {
-        y: { beginAtZero: true, title: { display: true, text: meta.unit || "" } },
-        x: { grid: { color: "rgba(255,255,255,0.05)" } }
+        y: { 
+          beginAtZero: true, 
+          title: { display: true, text: meta.unit || "" },
+          grid: { color: "rgba(255,255,255,0.05)" }
+        },
+        x: { 
+          grid: { color: "rgba(255,255,255,0.05)" }
+        }
       }
     }
   });
 }
+
+/* ========= Hilfsfunktion: Farbzuteilung ========= */
+function getColorForCountry(name) {
+  const palette = [
+    "#1a355e", "#d94f4f", "#4ea64f", "#e5a22f", "#7c4eea", "#49b9cc"
+  ];
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const index = Math.abs(hash % palette.length);
+  return palette[index];
+}
+
+
+/* ========= Compatibility: updateView() ========= */
+function updateView() {
+  try {
+    const sel = document.getElementById("kpiSelect");
+    currentKpi = sel?.value || currentKpi;
+
+    const meta = getMetaForCurrent();
+    if (!meta) {
+      console.warn("⚠️ No meta found for current KPI:", currentKpi);
+      return;
+    }
+	
+	updateRelationAvailability(meta);
+
+    const filename = meta.filename || meta.id || meta.title;
+
+    loadJSON(`data/${filename}.json`).then(data => {
+      currentData = Array.isArray(data) ? data : [];
+      console.log(`✅ updateView(): ${filename} → ${currentData.length} records`);
+
+      populateYearSelect();
+      updateTable();
+      updateChart();
+      updateMap();
+
+      // 🔹 KPI-Beschreibung
+      const descEl = document.getElementById("kpi-description");
+      if (descEl) descEl.textContent = meta.description || "";
+
+      // 🔹 Quelle & Datum
+      const sourceLink = document.getElementById("data-source");
+      const dateEl = document.getElementById("data-date");
+
+      // ✅ Quelle (Domain)
+      if (sourceLink) {
+        if (meta.source && meta.source.startsWith("http")) {
+          sourceLink.href = meta.source;
+          sourceLink.textContent = new URL(meta.source).hostname.replace("www.", "");
+        } else {
+          sourceLink.href = "#";
+          sourceLink.textContent = meta.source || "---";
+        }
+      }
+
+      // ✅ Datum (korrekt aus fetch_status.json)
+      if (dateEl) {
+        const kpiStatus = fetchStatus?.kpis?.[filename] || {};
+        const date =
+          kpiStatus.last_fetch ||
+          kpiStatus.last_update ||
+          meta.last_fetch ||
+          meta.last_update ||
+          "---";
+        dateEl.textContent = date !== "---"
+          ? new Date(date).toISOString().split("T")[0] // nur Datumsteil anzeigen
+          : "---";
+      }
+    });
+  } catch (e) {
+    console.error("❌ updateView() failed:", e);
+  }
+}
+/* ========= Relation Select Activation ========= */
+function updateRelationAvailability(meta) {
+  const relSelect = document.getElementById("relationSelect");
+  if (!relSelect) return;
+
+  // Wenn das KPI keine Relation erlaubt → absolute fixieren & ausgrauen
+  if (!meta.relation || meta.relation.trim() === "" || meta.relation === "-") {
+    relSelect.value = "absolute";
+    relSelect.disabled = true;
+  } else {
+    relSelect.disabled = false;
+  }
+}
+
 
 /* ========= Map ========= */
 function initMap() {
@@ -555,17 +713,30 @@ function initMap() {
     console.warn("⚠️ Kein #map-Element gefunden – Map nicht initialisiert.");
     return;
   }
-  map = L.map("map").setView([20, 0], 2);
+
+  // 🌍 Grundinitialisierung mit Mobile-freundlichen Optionen
+  map = L.map("map", {
+    scrollWheelZoom: false,   // verhindert versehentliches Scrollen im Frame
+    dragging: true,           // erlaubt Verschieben auf Mobil
+    tap: true                 // erlaubt Tippen auf Marker
+  }).setView([20, 0], 2);
+
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap contributors"
   }).addTo(map);
 
+  // 🩵 Mobile Exit-Fix (verhindert, dass man im Map-Bereich „gefangen“ bleibt)
+  el.style.touchAction = "pan-x pan-y";     // erlaubt normales Scrollen
+  document.body.style.overscrollBehavior = "contain"; // kein Scroll-Lock im Frame
+  el.addEventListener("touchmove", e => e.stopPropagation(), { passive: true });
+
+  // 🕐 Größe nach kurzer Verzögerung korrekt berechnen
   setTimeout(() => {
     if (map && typeof map.invalidateSize === "function") {
       map.invalidateSize();
-      console.log("✅ Leaflet map rendered & resized");
+      console.log("✅ Leaflet map rendered & resized (mobile-safe)");
     }
-  }, 100);
+  }, 150);
 }
 
 function updateMap() {
@@ -588,5 +759,39 @@ function highlightOnMap(country) {
     .openOn(map);
 }
 
+
 /* ========= Start ========= */
 document.addEventListener("DOMContentLoaded", () => init());
+
+// =====================================================
+// 🔁 loadPage() for navigation (used in index.html <nav>)
+// =====================================================
+function loadPage(page, link) {
+  const frame = document.getElementById("main-frame");
+  const loader = document.getElementById("frame-loader");
+
+  if (!frame) {
+    console.warn("⚠️ main-frame element not found!");
+    return;
+  }
+
+  // Loader aktivieren
+  if (loader) loader.classList.add("active");
+
+  // Seite neu laden (mit Cache-Bypass)
+  frame.src = page + "?t=" + Date.now();
+
+  // Aktiven Menüpunkt markieren
+  document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+  if (link) link.classList.add("active");
+
+  // Wenn Frame fertig geladen ist → Loader ausblenden
+  frame.addEventListener(
+    "load",
+    () => loader && loader.classList.remove("active"),
+    { once: true }
+  );
+}
+
+// Damit onclick="loadPage(...)" im HTML funktioniert
+window.loadPage = loadPage;

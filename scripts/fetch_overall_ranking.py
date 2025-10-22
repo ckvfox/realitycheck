@@ -5,8 +5,9 @@ RealityCheck – Overall Ranking Generator (Meta-Version)
 -------------------------------------------------------
 • Pfade angepasst auf /data/meta/
 • Verzicht auf normalize_name(), stattdessen meta["filename"]
-• Unveränderte Bewertungslogik (higher, lower, target)
-• Logischer, transparenter Fortschritts-Output
+• Bewertungslogik: only higher / lower / target
+• Ausschluss: relevance="none" oder world_kpi="e"
+• Klarer Fortschritts- und Fehler-Output
 """
 
 import os
@@ -65,16 +66,19 @@ def main():
     available = load_json(AVAILABLE_FILE)
     valid_kpis = {}
 
-    # === KPI-Auswahl ===
+    # === KPI-Auswahl (Filterung) ===
     for k in available:
         sort = k.get("sort")
         world_kpi = k.get("world_kpi")
         relevance = k.get("relevance", "normal")
 
-        if sort not in ["higher", "lower", "target"]:
-            continue
+        # Ausschlüsse ----------------------------------------------------
+        if relevance == "none":
+            continue            # 1️⃣ explizit ausgeschlossen
         if world_kpi == "e":
-            continue
+            continue            # 2️⃣ global-only KPI
+        if sort not in ["higher", "lower", "target"]:
+            continue            # 3️⃣ kein Ranking-Kriterium
 
         filename = k.get("filename")
         if not filename:
@@ -110,7 +114,7 @@ def main():
             log(f"⚠️ No numeric values for {filename}")
             continue
 
-        # === Sortierung ===
+        # === Sortierung nach KPI-Typ ===
         if sort_type == "higher":
             sorted_countries = sorted(latest.items(), key=lambda x: x[1]["value"], reverse=True)
         elif sort_type == "lower":

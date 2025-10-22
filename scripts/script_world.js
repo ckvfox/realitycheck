@@ -37,14 +37,20 @@ function showSpinner(show=true, msg="Loading global data…") {
   spinner.classList.toggle("hidden", !show);
 }
 
-/* ========= Chart Renderer ========= */
+/* ========= Chart Renderer mit Tooltip ========= */
 function renderChart(container, title, unit, data) {
   const canvas = document.createElement("canvas");
   canvas.width = 800;
   canvas.height = 400;
   container.appendChild(canvas);
+// 🌈 Optionales Styling für bessere Optik
+  canvas.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
+  canvas.style.borderRadius = "8px";
+  canvas.style.marginBottom = "1rem";
+  canvas.style.background = "#fff";
 
   const ctx = canvas.getContext("2d");
+
   new Chart(ctx, {
     type: "line",
     data: {
@@ -54,20 +60,35 @@ function renderChart(container, title, unit, data) {
         data: data.values,
         borderColor: "#1a355e",
         borderWidth: 2,
+        pointRadius: 2,
+        pointHoverRadius: 5,
         fill: false,
         tension: 0.2
       }]
     },
     options: {
       responsive: true,
+      interaction: { mode: "nearest", intersect: false },
       plugins: {
         title: { display: true, text: title },
-        legend: { display: false }
+        legend: { display: false },
+        tooltip: {
+          enabled: true,
+          callbacks: {
+            title: ctx => "Year: " + (ctx[0]?.label ?? ""),
+            label: ctx => {
+              const val = ctx.parsed.y;
+              if (val == null || isNaN(val)) return "No data";
+              return `${val.toLocaleString()} ${unit || ""}`.trim();
+            }
+          }
+        }
       },
       scales: {
         y: {
           beginAtZero: false,
-          title: { display: !!unit, text: unit || "" }
+          title: { display: !!unit, text: unit || "" },
+          grid: { color: "rgba(0,0,0,0.05)" }
         },
         x: {
           ticks: { autoSkip: true, maxTicksLimit: 10 },
@@ -132,6 +153,18 @@ async function initWorldPage() {
       p.textContent = desc;
       block.appendChild(p);
     }
+		// === Quelle hinzufügen ===
+	const source = document.createElement("p");
+	source.className = "chart-source";
+	if (kpi.source) {
+	  // Wenn in available_kpis.json ein Source-Link steht → verwende ihn
+	  source.innerHTML = `Source: <a href="${kpi.source}" target="_blank" rel="noopener">${new URL(kpi.source).hostname}</a>`;
+	} else {
+	  // Fallback für KPIs ohne Link
+	  source.textContent = "Source: RealityCheck Database (OWID, World Bank, UN, EPI)";
+	}
+	block.appendChild(source);
+
   });
 
   await Promise.allSettled(tasks);

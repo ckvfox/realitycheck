@@ -1,25 +1,34 @@
 /* ============================================================
-   🌍 RealityCheck – Overall Country Ranking (Relevance + Normalization)
+   🌍 RealityCheck – Overall Country Ranking Script (Final 2025-10)
    ============================================================ */
 
+let kpis = [];
+let countries = [];
+let missingKPIs = [];
+
+const RELEVANCE_WEIGHTS = {
+  very_high: 1.0,
+  high: 0.7,
+  normal: 0.4,
+  low: 0.2,
+  irrelevant: 0.0
+};
+
+const EXCLUDE_COUNTRIES = new Set(["World"]);
+
+/* ---------- Utility: Fetch JSON ---------- */
 async function loadJSON(path) {
   try {
-    const res = await fetch(path, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return await res.json();
+    const resp = await fetch(path + "?t=" + Date.now());
+    if (!resp.ok) throw new Error(resp.statusText);
+    return await resp.json();
   } catch (e) {
-    console.error("❌ loadJSON failed:", path, e);
+    console.warn("⚠️ loadJSON failed:", path, e);
     return [];
   }
 }
 
-let kpis = [];
-let countries = {};
-let results = [];
-
-/* ========= Init ========= */
-document.addEventListener("DOMContentLoaded", () => initOverall());
-
+/* ---------- Init ---------- */
 async function initOverall() {
   const spinner = document.getElementById("overlay-spinner");
   if (spinner) spinner.classList.remove("hidden");
@@ -31,28 +40,23 @@ async function initOverall() {
   await buildOverallRanking();
 
   if (spinner) spinner.classList.add("hidden");
+  fetchLastUpdated();
+  createInfoBox();
 }
 
-/* ========= Relevance Weights ========= */
-function getRelevanceWeight(level) {
-  const map = {
-    very_high: 1.5,
-    high: 1.2,
-    normal: 1.0,
-    low: 0.6,
-    irrelevant: 0.0
-  };
-  return map[level?.toLowerCase()] ?? 1.0;
-}
-
-/* ========= Build relevance selectors (clustered layout) ========= */
+/* ---------- Build KPI Cluster Boxes ---------- */
 function buildRelevanceControls() {
-  const container = document.getElementById("relevance-controls");
+  const container = document.getElementById("priority-container");
   container.innerHTML = "";
 
   const clusters = {};
   kpis
-    .filter(k => k.world_kpi !== "e")
+    .filter(
+      k =>
+        ["higher", "lower", "target"].includes(k.sort) &&
+        k.world_kpi !== "e" &&
+        (k.relevance ?? "normal") !== "none"
+    )
     .forEach(meta => {
       const cl = meta.cluster || "Other";
       if (!clusters[cl]) clusters[cl] = [];
@@ -61,50 +65,94 @@ function buildRelevanceControls() {
 
   for (const [clusterName, list] of Object.entries(clusters)) {
     const group = document.createElement("div");
-    group.className = "cluster-group";
+    group.className = "cluster-box";
     const h3 = document.createElement("h3");
     h3.textContent = clusterName;
     group.appendChild(h3);
 
-    list.sort((a, b) => a.title.localeCompare(b.title)).forEach(meta => {
-      const row = document.createElement("div");
-      row.className = "kpi-row";
+    list
+      .sort((a, b) => a.title.localeCompare(b.title))
+      .forEach(meta => {
+        const row = document.createElement("div");
+        row.className = "kpi-row";
+        const label = document.createElement("label");
+        label.textContent = meta.title + ": ";
 
-      const label = document.createElement("label");
-      label.textContent = meta.title + ": ";
+        const sel = document.createElement("select");
+        ["very_high", "high", "normal", "low", "irrelevant"].forEach(opt => {
+          const o = document.createElement("option");
+          o.value = opt;
+          o.textContent = opt.replace("_", " ");
+          if (opt === (meta.relevance || "normal")) o.selected = true;
+          sel.appendChild(o);
+        });
 
-      const sel = document.createElement("select");
-      ["very_high", "high", "normal", "low", "irrelevant"].forEach(opt => {
-        const o = document.createElement("option");
-        o.value = opt;
-        o.textContent = opt.replace("_", " ");
-        if (opt === (meta.relevance || "normal")) o.selected = true; // ← Default aus available_kpis.json
-        sel.appendChild(o);
+        sel.dataset.kpi = meta.filename;
+        row.appendChild(label);
+        row.appendChild(sel);
+        group.appendChild(row);
       });
-
-      sel.dataset.kpi = meta.filename;
-      row.appendChild(label);
-      row.appendChild(sel);
-      group.appendChild(row);
-    });
 
     container.appendChild(group);
   }
 
-  // Event: Ranking neu berechnen
-  document.getElementById("recalc-btn")?.addEventListener("click", async () => {
+  // Buttons
+  const btnBox = document.getElementById("priority-buttons");
+  btnBox.innerHTML = `
+    <button id="calc-btn">Calculate</button>
+    <button id="reset-btn">Reset</button>
+  `;
+
+  // Restore saved weights
+  const saved = localStorage.getItem("overallKPIWeights");
+  if (saved) {
+    const map = JSON.parse(saved);
+    for (const meta of kpis) {
+      if (map[meta.filename]) meta.relevance = map[meta.filename];
+      const sel = container.querySelector(`select[data-kpi="${meta.filename}"]`);
+      if (sel && map[meta.filename]) sel.value = map[meta.filename];
+    }
+  }
+
+  // Events
+  document.getElementById("calc-btn").addEventListener("click", async () => {
     for (const meta of kpis) {
       const sel = container.querySelector(`select[data-kpi="${meta.filename}"]`);
       if (sel) meta.relevance = sel.value;
     }
+    localStorage.setItem(
+      "overallKPIWeights",
+      JSON.stringify(Object.fromEntries(kpis.map(m => [m.filename, m.relevance || "normal"])))
+    );
+    showToast("KPI selection saved");
     await buildOverallRanking();
+  });
+
+  document.getElementById("reset-btn").addEventListener("click", () => {
+    localStorage.removeItem("overallKPIWeights");
+    location.reload();
+  });
+
+  // Show info box when something changes
+  container.querySelectorAll("select").forEach(sel => {
+    sel.addEventListener("change", () => {
+      const box = document.getElementById("localinfo-box");
+      if (box) box.style.display = "block";
+    });
   });
 }
 
-/* ========= Build Overall Ranking ========= */
+/* ---------- Build Overall Ranking ---------- */
 async function buildOverallRanking() {
-  const valid = kpis.filter(k => k.world_kpi !== "e" && getRelevanceWeight(k.relevance) > 0);
+  const valid = kpis.filter(
+    k =>
+      ["higher", "lower", "target"].includes(k.sort) &&
+      k.world_kpi !== "e" &&
+      (k.relevance ?? "normal") !== "none"
+  );
+
   const aggregated = {};
+  missingKPIs = [];
 
   for (const meta of valid) {
     const id = meta.filename;
@@ -113,17 +161,28 @@ async function buildOverallRanking() {
       const data = await loadJSON(`data/${id}.json`);
       if (!Array.isArray(data) || data.length === 0) continue;
 
-      const numeric = data.filter(d => typeof d.value === "number");
+      const numeric = data.filter(d => !isNaN(parseFloat(d.value)));
       if (numeric.length < 2) continue;
 
-      const min = Math.min(...numeric.map(d => d.value));
-      const max = Math.max(...numeric.map(d => d.value));
+      // pro Land neuestes Jahr
+      const latestByCountry = new Map();
+      for (const d of numeric) {
+        if (!d.country) continue;
+        const prev = latestByCountry.get(d.country);
+        if (!prev || (d.year ?? -Infinity) > (prev.year ?? -Infinity))
+          latestByCountry.set(d.country, d);
+      }
+      const latest = Array.from(latestByCountry.values());
+      if (latest.length < 2) continue;
+
+      const min = Math.min(...latest.map(d => parseFloat(d.value)));
+      const max = Math.max(...latest.map(d => parseFloat(d.value)));
       const range = max - min || 1;
 
-      for (const d of numeric) {
+      for (const d of latest) {
         const c = d.country;
-        let norm = (d.value - min) / range;
-        if (meta.relation === "lower") norm = 1 - norm;
+        let norm = (parseFloat(d.value) - min) / range;
+        if (meta.sort === "lower") norm = 1 - norm;
         const val = norm * weight;
 
         if (!aggregated[c]) aggregated[c] = { sum: 0, count: 0 };
@@ -132,37 +191,57 @@ async function buildOverallRanking() {
       }
     } catch (e) {
       console.warn(`⚠️ KPI ${id} failed:`, e);
+      missingKPIs.push(meta.title);
     }
   }
 
-  results = Object.entries(aggregated).map(([country, obj]) => ({
-    country,
-    score: obj.count ? obj.sum / obj.count : 0,
-    used: obj.count
-  }));
+  const prioritizedCount = valid.length;
 
-  results.sort((a, b) => b.score - a.score);
-  renderOverallTable(results);
+  const list = Object.entries(aggregated)
+    .map(([country, obj]) => ({
+      country,
+      score: obj.count > 0 ? obj.sum / obj.count : 0,
+      used: obj.count,
+      coverage: prioritizedCount ? obj.count / prioritizedCount : 0
+    }))
+    .filter(r => r.coverage >= 0.6); // Mindestabdeckung 60 %
+
+  list.sort((a, b) => b.score - a.score);
+
+  renderOverallTable(list);
+  renderLegend(prioritizedCount, missingKPIs);
 }
 
-/* ========= Render Table ========= */
+/* ---------- Weight Helper ---------- */
+function getRelevanceWeight(r) {
+  return RELEVANCE_WEIGHTS[r] ?? 0.4;
+}
+
+/* ---------- Render Table ---------- */
 function renderOverallTable(list) {
   const tbody = document.querySelector("#overall-table tbody");
   tbody.innerHTML = "";
 
-  let rank = 1;
-  for (const entry of list) {
-    if (entry.country === "World" || entry.country === "Welt") continue;
+  if (!list.length) {
+    tbody.innerHTML = `<tr><td colspan="4">No countries meet the 60 % data coverage requirement.</td></tr>`;
+    return;
+  }
+
+  const total = list.length;
+  list.forEach((entry, i) => {
+    const rank = i + 1;
+    const medal = rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : rank;
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${rank}</td>
+      <td>${medal}</td>
       <td>${entry.country}</td>
       <td>${(entry.score * 100).toFixed(2)}</td>
       <td>${entry.used}</td>
     `;
+    if (rank <= 10) tr.classList.add("top10");
+    if (rank > total - 10) tr.classList.add("flop10");
     tbody.appendChild(tr);
-    rank++;
-  }
+  });
 
   const lastUpdated = document.getElementById("last-updated");
   if (lastUpdated) {
@@ -170,3 +249,93 @@ function renderOverallTable(list) {
     lastUpdated.textContent = "Last calculated: " + d.toISOString().slice(0, 10);
   }
 }
+
+/* ---------- Legend (unter Tabelle) ---------- */
+function renderLegend(prioritizedCount, missing = []) {
+  let leg = document.getElementById("legend");
+  if (!leg) {
+    leg = document.createElement("div");
+    leg.id = "legend";
+    const table = document.getElementById("overall-table");
+    table.insertAdjacentElement("afterend", leg);
+  }
+
+  const missingList = missing.length
+    ? `<div class="missing-kpis"><strong>📉 KPIs currently without country-level data:</strong><br><span>${missing.join(
+        ", "
+      )}</span></div>`
+    : "";
+
+  leg.innerHTML = `
+    <div class="legend-block">
+      <h3>📊 How the Overall Ranking Works</h3>
+      <p>
+        For each KPI the <b>latest country value</b> is normalized to <code>[0,1]</code>:
+      </p>
+      <pre style="background:#0b1220;color:#e6e9ef;padding:.6rem;border-radius:.4rem;line-height:1.4;overflow:auto;">
+norm = (value - min) / (max - min)
+if sort == "lower": norm = 1 - norm
+weighted = norm × relevance_weight
+score(country) = Σ(weighted) / KPIs_used
+      </pre>
+      <ul>
+        <li>✅ Only KPIs with <b>sort = higher/lower/target</b> are included.</li>
+        <li>🚫 Excludes KPIs with <code>world_kpi = "e"</code> or <code>relevance = "none"</code>.</li>
+        <li>⚖️ Only countries with <b>≥ 60 %</b> KPI coverage appear in the ranking.</li>
+        <li>🥇 Top 10 rows highlighted green 💔 Bottom 10 red</li>
+      </ul>
+      <p><b>${prioritizedCount}</b> KPIs with data included in calculation.</p>
+      ${missingList}
+    </div>`;
+}
+
+/* ---------- Info Box (GDPR notice) ---------- */
+function createInfoBox() {
+  if (document.getElementById("localinfo-box")) return;
+  const box = document.createElement("div");
+  box.id = "localinfo-box";
+  box.innerHTML = `
+    <strong>ℹ️ Info:</strong> Your weighting settings are stored <b>locally</b> in your browser.<br>
+    No cookies and no data are sent anywhere.
+    <button id="close-localinfo">×</button>
+  `;
+  document.body.appendChild(box);
+  box.querySelector("#close-localinfo")?.addEventListener("click", () => box.remove());
+}
+
+/* ---------- Toast Helper ---------- */
+function showToast(msg) {
+  const t = document.createElement("div");
+  Object.assign(t.style, {
+    position: "fixed",
+    bottom: "20px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    background: "#333",
+    color: "#fff",
+    padding: "8px 14px",
+    borderRadius: "6px",
+    zIndex: 99999,
+    opacity: "0",
+    transition: "opacity .3s"
+  });
+  t.textContent = msg;
+  document.body.appendChild(t);
+  requestAnimationFrame(() => (t.style.opacity = "1"));
+  setTimeout(() => t.remove(), 2000);
+}
+
+/* ---------- Last Updated ---------- */
+async function fetchLastUpdated() {
+  try {
+    const r = await fetch("data/fetch_status.json");
+    if (!r.ok) return;
+    const j = await r.json();
+    if (j.last_fetch)
+      document.getElementById("last-updated").textContent =
+        "Last data update: " + new Date(j.last_fetch).toLocaleDateString();
+  } catch {}
+}
+
+/* ---------- Start ---------- */
+window.addEventListener("DOMContentLoaded", initOverall);

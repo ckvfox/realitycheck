@@ -13,6 +13,12 @@ Produktive Version mit:
 import os, csv, json, re, requests, unicodedata, traceback, io, zipfile
 from datetime import datetime, timezone
 from typing import Dict, List, Any, Optional, Tuple
+from dotenv import load_dotenv
+import hashlib
+
+# === Load .env (API-Keys, Settings etc.) ===
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", ".env"))
+
 
 # ======================================================================
 # 🔧 Pfade
@@ -68,10 +74,30 @@ def safe_float(x) -> Optional[float]:
     except Exception:
         return None
 
+import hashlib
+
 def safe_filename(text: str) -> str:
-    text = re.sub(r'[^a-zA-Z0-9_.-]', '_', str(text))
-    return text[:150]
-    # ======================================================================
+    """Sanitize and shorten filenames safely (handles long URLs and special chars)."""
+    text = str(text)
+    # Grundbereinigung
+    text = re.sub(r'[^a-zA-Z0-9_.-]', '_', text)
+    # Wenn zu lang, hinten Hash ergänzen
+    if len(text) > 100:
+        digest = hashlib.md5(text.encode("utf-8")).hexdigest()[:8]
+        text = text[:90] + "_" + digest
+    return text
+
+
+def safe_pending_filename(text: str) -> str:
+    """Erzeugt einen sicheren, kurzen Dateinamen für Pending-Files (z. B. bei OWID-404s)."""
+    text = str(text)
+    clean = re.sub(r'[^a-zA-Z0-9_.-]', '_', text)
+    if len(clean) > 100:
+        digest = hashlib.md5(clean.encode("utf-8")).hexdigest()[:8]
+        clean = clean[:90] + "_" + digest
+    return clean
+
+# ======================================================================
 # 🌍 Country Mapping
 # ======================================================================
 def _norm(s: str) -> str:
@@ -281,9 +307,9 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
     except Exception as e:
         log(f"[ERR] OWID fetch failed for {source_code}: {e}")
         keep_or_dummy(kpi_id, f"OWID fetch failed {source_code}", stats)
-        filename = f"{kpi_id}_{safe_filename(source_code)}_error.txt"
+        safe_name = safe_pending_filename(f"{kpi_id}_{source_code}")
         ensure_dirs()
-        with open(os.path.join(PENDING_DIR, filename[:180]), "w", encoding="utf-8") as f:
+        with open(os.path.join(PENDING_DIR, safe_name), "w", encoding="utf-8") as f:
             f.write(str(e))
         return
 
@@ -468,6 +494,7 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
 # ======================================================================
 def main():
     ensure_dirs()
+    log(f"🔐 Using OPENAI_API_KEY: {'found' if os.getenv('OPENAI_API_KEY') else 'missing'}")
     log("=== Fetch started ===")
 
     # --- Bestehenden Status laden ---
@@ -578,7 +605,7 @@ if __name__ == "__main__":
     try:
         import subprocess
         print("➡️ Starte fetch_overall_ranking.py ...")
-        subprocess.run(["python", "scripts/fetch_overall_ranking.py"], check=True)
+        subprocess.run(["python", os.path.join(SCRIPT_DIR, "fetch_overall_ranking.py")], check=True)
         print("✅ Overall Ranking erfolgreich erstellt.")
     except Exception as e:
         print(f"⚠️ Fehler beim Erstellen des Overall-Rankings: {e}")
