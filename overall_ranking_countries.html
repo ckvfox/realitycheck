@@ -2,46 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Overall Country Ranking</title>
+  <title>RealityCheck – Overall Country Ranking</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body class="overall-ranking">
-  <!-- === Spinner === -->
+<body class="overall-page">
+
+  <!-- 🔄 Lade-Spinner -->
   <div id="overlay-spinner" class="hidden">
-    <div class="spinner"></div>
-    <p>Loading data...</p>
+    <p>Loading global KPI data...</p>
   </div>
 
-  <!-- 🧭 Intro-Bereich -->
-  <section id="overall-intro" class="content-section intro-text">
-    <p>
-      The <strong>Overall Country Ranking</strong> combines dozens of key performance indicators (KPIs)
-      into a single, data-driven comparison. It reflects how countries perform across
-      <em>economy, society, sustainability, governance</em> and more -- helping to reveal the bigger picture
-      beyond individual statistics.
-    </p>
-    <p>
-      Each cluster below groups related indicators. You can adjust the importance of every KPI
-      by choosing whether it should weigh <b>high</b>, <b>very high</b> or <b>not interested</b>.
-      The ranking recalculates instantly to show how your priorities change the outcome.
-    </p>
-    <p class="intro-note">
-      Use this page to explore patterns in prosperity, equity, and resilience -- or to build your own
-      interpretation of what "progress" means across nations.
-    </p>
-  </section>
+	<section class="page-intro">
+	  <h1>🌍 RealityCheck – Overall Country Ranking</h1>
+	  <p>
+		The <strong>Overall Country Ranking</strong> combines dozens of key performance indicators (KPIs) 
+		into a single, data-driven comparison. It reflects how countries perform across 
+		<em>economy, society, sustainability, and governance</em> — helping to reveal the bigger picture 
+		beyond individual statistics.
+	  </p>
+	  <p>
+		Each cluster below groups related indicators. You can adjust the importance of every KPI 
+		by choosing whether it should weigh <b>very high</b>, <b>high</b>, or <b>not interested</b>. 
+		The ranking recalculates instantly to show how your priorities change the outcome.
+	  </p>
+	  <p class="note">
+		Use this page to explore patterns in prosperity, equity, and resilience — 
+		or to build your own interpretation of what “progress” means across nations.
+	  </p>
+	</section>
 
-  <!-- === KPI relevance selectors (clustered) === -->
+
+  <!-- ⚙️ KPI-Prioritäten -->
   <section id="relevance-section" class="content-section">
-    <div id="relevance-controls"></div>
-    <div class="button-bar">
-      <button id="recalc-btn">Recalculate Ranking</button>
+    <div id="priority-container"></div>
+    <div id="priority-buttons">
+      <button id="calc-btn">Calculate</button>
+      <button id="reset-btn">Reset</button>
     </div>
   </section>
 
-  <!-- === Results Table === -->
-  <section id="results-section" class="content-section">
+  <!-- 📊 Ergebnis-Tabelle -->
+  <section id="overall-results">
     <table id="overall-table">
       <thead>
         <tr>
@@ -51,28 +54,23 @@
           <th>KPIs used</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <tr><td colspan="4" style="text-align:center;">Loading results...</td></tr>
+      </tbody>
     </table>
-    <p id="last-updated" class="timestamp"></p>
+
+    <!-- Legende wird dynamisch eingefügt -->
+    <p id="last-updated" style="margin-top:1em; font-size:0.9em; color:#555; text-align:center;"></p>
   </section>
 
-  <!-- === Legend Section === -->
-  <section id="legend-section" class="content-section legend">
-    <h3>Legend & Calculation Notes</h3>
-    <ul>
-      <li><b>Score:</b> Average of all weighted, normalized KPI values per country (0–100 scale).</li>
-      <li><b>Normalization:</b> Each KPI is scaled between 0 and 1 based on its observed minimum and maximum values.</li>
-      <li><b>Direction:</b> If a KPI’s relation is <code>lower</code>, its values are inverted so that smaller = better.</li>
-      <li><b>Relevance:</b> Defines how strongly each KPI contributes to the overall score.<br>
-        <code>very high</code> = ×1.5, <code>high</code> = ×1.2, <code>normal</code> = ×1.0,
-        <code>low</code> = ×0.6, <code>irrelevant</code> = ×0.0.
-      </li>
-      <li><b>World KPIs:</b> Indicators marked as global-only (<code>world_kpi = "e"</code>) are excluded from the ranking.</li>
-      <li><b>Update:</b> The ranking reflects the most recent available data from all included sources.</li>
-    </ul>
-  </section>
+  <!-- 📘 Hinweisbox zur lokalen Speicherung -->
+  <div id="localinfo-box" style="display:none;">
+    <strong>ℹ️ Info:</strong> Your weighting settings are stored <b>locally</b> in your browser.<br>
+    No cookies and no data are sent anywhere.
+    <button id="close-localinfo">×</button>
+  </div>
 
-  <!-- ✅ Script jetzt im Unterordner /scripts -->
-  <script src="scripts/overall_ranking.js"></script>
+  <script src="scripts/script_overall_ranking_countries.js"></script>
+
 </body>
 </html>

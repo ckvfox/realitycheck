@@ -134,9 +134,6 @@ tr.flop10{ background:#ff6f61 !important; color:#fff; }
 #data-meta a{ color:#0b63c5; }
 
 /* --- Chart & Map (unverändert visuell) --- */
-#chart-container, #map-section{
-  max-width:var(--max-width); margin:2rem auto; text-align:center; padding:0 1rem;
-}
 #kpi-chart{ width:100%; max-width:900px; height:400px; }
 #map{
   width:100% !important; height:480px !important; min-height:400px !important;
@@ -353,11 +350,7 @@ body.overall-page #priority-buttons {
 }
 #spinner.active { visibility: visible; }
 
-/* === FINAL MAP + LAYOUT FIX (stable version) === */
-#chart-container {
-  margin-bottom: 2.5rem;
-  text-align: center;
-}
+/* /* === FINAL MAP + LAYOUT FIX (stable version) === */
 
 #map-section {
   width: 100%;
@@ -721,4 +714,389 @@ td.warn    { background: rgba(255, 165, 0, 0.08); }
   #controls .control-pair select {
     width: 100%;
   }
+}
+/* === FIX: Align World intro to left (consistent with Countries & Overall) === */
+body.world-page #world-intro {
+  text-align: left !important;
+  margin: 1rem auto 2rem !important;
+  padding: 0 1rem !important;
+}
+
+body.world-page #world-intro h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--steel-blue);
+}
+/* === FIX: enforce global font for world.html === */
+body.world-page, 
+body.world-page * {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* === Header & Logo Optimierung === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--steel-blue, #163a64);
+  height: 80px;               /* volle Headerhöhe */
+  padding: 0 1.5rem;
+}
+
+.logo-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#site-logo {
+  height: 100%;                /* nutzt volle Headerhöhe */
+  width: auto;                 /* proportional skalieren */
+  object-fit: contain;         /* kein Beschneiden */
+  image-rendering: crisp-edges;
+}
+.leaflet-container {
+  touch-action: pan-x pan-y !important;
+}
+
+.map-container {
+  height: calc(100vh - 180px); /* Header/Footer abziehen */
+  overflow: hidden;
+}
+
+body, html {
+  overscroll-behavior: contain;
+}
+@media (max-width: 600px) {
+  section, p, h1, h2, h3 {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+canvas {
+  max-width: 100% !important;
+  height: auto !important;
+}
+.chart-selects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 280px;
+  margin: 0.5rem auto 1rem;
+}
+
+.chart-selects select {
+  width: 100%;
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/* === Chart Container (Final – identical to World, stable & responsive) === */
+#chart-container {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto 2.5rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#chart-container canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 420px !important;   /* verhindert endloses Wachstum */
+  display: block;
+}
+
+.chart-selects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 280px;
+  margin: 0.5rem auto 1rem;
+}
+
+.chart-selects label {
+  font-weight: 600;
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+}
+
+.chart-selects select {
+  width: 100%;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  #chart-container {
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+  #chart-container canvas {
+    max-height: 340px !important;
+  }
+}
+
+/* === KPI Description: zentriert & begrenzte Breite wie Intro === */
+#kpi-description {
+  max-width: 900px;              /* gleiche Breite wie Intro */
+  margin: 1rem auto 2rem;
+  padding: 0 1rem;
+  line-height: 1.6;
+  color: #444;
+  font-style: italic;
+  font-size: 0.95rem;
+  text-align: left;              /* optional: statt zentriert */
+}
+
+@media (max-width: 700px) {
+  #kpi-description {
+    padding: 0 .8rem;
+    font-size: 0.9rem;
+  }
+}
+#kpi-description {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  padding: 1rem 1.2rem;
+}
+/* ============================================================
+   🧠 Global Analysis Page Styles
+   ============================================================ */
+
+#analysis-section {
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  padding: 0 1.5rem;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+#analysis-section.loaded {
+  opacity: 1;
+}
+
+#analysis-content {
+  background: #fff;
+  color: #222;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* === Headings inside analysis content === */
+#analysis-content h1,
+#analysis-content h2,
+#analysis-content h3 {
+  color: var(--steel-blue);
+  font-weight: 700;
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+#analysis-content h1 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--steel-blue);
+  padding-bottom: .3rem;
+}
+
+#analysis-content h2 { font-size: 1.25rem; }
+
+#analysis-content h3 {
+  font-size: 1.1rem;
+  color: #0b2144;
+  font-style: italic;
+}
+
+#analysis-content ul {
+  margin: 0.5rem 0 1rem 1.4rem;
+}
+
+#analysis-content li {
+  margin-bottom: 0.4rem;
+}
+
+#analysis-content strong { color: #000; }
+#analysis-content em { color: #444; }
+#analysis-content pre { white-space: pre-wrap; }
+
+/* ============================================================
+   🌍 World Page Styles
+   ============================================================ */
+
+body.world-page {
+  overflow-x: hidden;
+}
+
+#world-kpis {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+#overlay-spinner {
+  text-align: center;
+  padding: 1rem;
+  color: #555;
+  font-style: italic;
+}
+/* ============================================================
+   🌍 Global Page Intro Style  (World-optimized visual baseline)
+   ============================================================ */
+
+.page-intro {
+  max-width: 900px;
+  margin: 1rem auto 2.5rem;
+  padding: 0 1rem;
+  line-height: 1.65;
+  text-align: left;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #222;
+}
+
+.page-intro h1 {
+  color: var(--steel-blue);
+  text-align: left;
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.page-intro p {
+  margin: 0.8rem 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+.page-intro p.note {
+  font-style: italic;
+  color: #555;
+  margin-top: 1.2rem;
+}
+/* === Responsive Logo Fix === */
+#logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Reduziere Logo-Größe und erhalte Menü auf kleinen Geräten */
+@media (max-width: 900px) {
+  #logo { height: 40px; }
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  #logo { height: 36px; margin-bottom: .4rem; }
+  nav { flex-wrap: wrap; justify-content: center; gap: .6rem; }
+}
+
+/* Optional: ganz kleines Symbol ab 480px */
+@media (max-width: 480px) {
+  #logo {
+    content: url("images/logo_symbol.png"); /* Weltkugel mit RC */
+    height: 32px;
+  }
+}
+/* ============================================================
+   💡 About Page Styles – same structure as Analysis
+   ============================================================ */
+
+#about-section {
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  padding: 0 1.5rem;
+  line-height: 1.6;
+}
+
+#about-content {
+  background: #fff;
+  color: #222;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+#about-content h2 {
+  color: var(--steel-blue);
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--steel-blue);
+  padding-bottom: .3rem;
+}
+/* ============================================================
+   ✨ About Page: Animation & Overshoot Styling
+   ============================================================ */
+
+#about-section {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+#about-section.loaded {
+  opacity: 1;
+}
+
+#overshoot-timer {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #222;
+}
+#overshoot-timer small {
+  display: block;
+  margin-top: 0.3rem;
+  color: #555;
+}
+.chart-source {
+  font-size: 0.85rem;
+  color: #555;
+  text-align: right;
+  margin-top: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-source a {
+  color: #0b63c5;
+  text-decoration: none;
+}
+
+.chart-source a:hover {
+  text-decoration: underline;
 }

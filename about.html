@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>RealityCheck – About</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
   <script>
-    // Earth Overshoot Timer – approx. day humanity exceeds Earth's yearly biocapacity
+    // Earth Overshoot Timer – calculates how far we are beyond Earth's yearly capacity
     function updateOvershootTimer() {
       const today = new Date();
       const year = today.getFullYear();
@@ -28,11 +28,9 @@
 </head>
 
 <body>
-<main style="max-width:900px;margin:2rem auto 4rem;padding:0 1rem;line-height:1.6;">
-
-  <!-- 1️⃣ Project Intention -->
-  <section id="intention" style="margin-bottom:3rem;">
-    <h2>What This Project Is About</h2>
+  <!-- 🌍 Intro -->
+  <section class="page-intro">
+    <h1>💡 About RealityCheck</h1>
     <p>
       The world is changing – politically, socially, and ecologically.  
       We often hear that “everything used to be better” and that “the world is going downhill.”  
@@ -40,122 +38,126 @@
       The central question is: <em>How is our world really doing?</em>
     </p>
 
-	<p>
-	  Nothing is god-given. Nothing is destiny.  
-	  Humanity created the systems that shape our world – and humanity can change them again.  
-	  Where there is will, there is a way. This project is about clarity, awareness, and hope.
-	</p>
-
-	<p>
-	  As historian <em><a href="https://www.ynharari.com" target="_blank" rel="noopener noreferrer">Yuval Noah Harari</a></em> reminds us in his 
-	  acclaimed series <em>“Sapiens,” “Homo Deus,”</em> and <em>“21 Lessons for the 21st Century,”</em>  
-	  the world we live in is built on human imagination — our institutions, economies, and beliefs are stories we agreed to tell together.  
-	  Because humanity created them, humanity can also change them.  
-	  This insight connects <b>RealityCheck</b> with thinkers like Harari, 
-	  <em><a href="https://www.earth4all.life" target="_blank" rel="noopener noreferrer">Earth for All</a></em>, 
-	  and <em><a href="https://www.gapminder.org/factfulness-book/" target="_blank" rel="noopener noreferrer">Hans Rosling’s Factfulness</a></em>:  
-	  a shared belief that understanding the world through facts is the first step toward improving it.
-	</p>
-
-	<p>
-	  Inspired by the book <em><a href="https://www.earth4all.life" target="_blank" rel="noopener noreferrer">“Earth for All”</a></em> by the Club of Rome, 
-	  RealityCheck embraces the idea that infinite growth on a finite planet is impossible.  
-	  The question is not <em>whether</em> we need to rethink, but <em>how fast</em> we can.
-	</p>
-
-
-    <div id="overshoot-timer" style="margin:1rem 0;padding:1rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--group-bg);text-align:center;"></div>
-
     <p>
-      The main challenges ahead are clear:
+      Nothing is god-given. Nothing is destiny.  
+      Humanity created the systems that shape our world – and humanity can change them again.  
+      Where there is will, there is a way. This project is about clarity, awareness, and hope.
+    </p>
+  </section>
+
+  <!-- 📘 Main Content Box -->
+  <section id="about-section">
+    <div id="about-content">
+
+      <p>
+        As historian <em><a href="https://www.ynharari.com" target="_blank" rel="noopener noreferrer">Yuval Noah Harari</a></em> reminds us in his 
+        acclaimed series <em>“Sapiens,” “Homo Deus,”</em> and <em>“21 Lessons for the 21st Century,”</em>  
+        the world we live in is built on human imagination — our institutions, economies, and beliefs are stories we agreed to tell together.  
+        Because humanity created them, humanity can also change them.  
+        This insight connects <b>RealityCheck</b> with thinkers like Harari, 
+        <em><a href="https://www.earth4all.life" target="_blank" rel="noopener noreferrer">Earth for All</a></em>, 
+        and <em><a href="https://www.gapminder.org/factfulness-book/" target="_blank" rel="noopener noreferrer">Hans Rosling’s Factfulness</a></em>:  
+        a shared belief that understanding the world through facts is the first step toward improving it.
+      </p>
+
+      <p>
+        Inspired by the book <em><a href="https://www.earth4all.life" target="_blank" rel="noopener noreferrer">“Earth for All”</a></em> by the Club of Rome, 
+        RealityCheck embraces the idea that infinite growth on a finite planet is impossible.  
+        The question is not <em>whether</em> we need to rethink, but <em>how fast</em> we can.
+      </p>
+
+      <div id="overshoot-timer"></div>
+
+      <p>The main challenges ahead are clear:</p>
       <ul>
         <li>Limiting climate change and protecting biodiversity</li>
         <li>Reducing inequality, poverty, and misinformation</li>
         <li>Strengthening democracy, education, and global cooperation</li>
       </ul>
-      <b>RealityCheck</b> provides the data foundation for that transformation –  
-      understandable, comparable, and interactive.
-    </p>
-  </section>
+      <p>
+        <b>RealityCheck</b> provides the data foundation for that transformation –  
+        understandable, comparable, and interactive.
+      </p>
 
-  <!-- 2️⃣ Programming with ChatGPT -->
-  <section id="collaboration" style="margin-bottom:3rem;">
-    <h2>Programming with ChatGPT</h2>
-    <p>
-      This project is the result of an unusual collaboration between human and AI –  
-      between myself (Carsten), acting as business analyst, requirements manager, and tester –  
-      and ChatGPT, serving as developer and creative partner.
-    </p>
+      <h2>Programming with ChatGPT</h2>
+      <p>
+        This project is the result of an unusual collaboration between human and AI –  
+        between myself (Carsten), acting as business analyst, requirements manager, and tester –  
+        and ChatGPT, serving as developer and creative partner.
+      </p>
 
-    <p>
-      The technical challenge wasn’t just about merging APIs, JSON structures, and data formats –  
-      it was about aligning logic, intention, and context.  
-      “Prompt programming” requires precision, patience, and structure –  
-      just like any real project, but expressed through language instead of code.
-    </p>
-	
-	<p>
-	  I know what it takes to program well, and I know what the result of good programming is... 
-	  Chat-GPT has worked wonders in between ;-) 
-    </p>
-	
-    <p>
-      <b>What worked well:</b>
+      <p>
+        The technical challenge wasn’t just about merging APIs, JSON structures, and data formats –  
+        it was about aligning logic, intention, and context.  
+        “Prompt programming” requires precision, patience, and structure –  
+        just like any real project, but expressed through language instead of code.
+      </p>
+
+      <p>
+        I know what it takes to program well, and I know what the result of good programming is...  
+        Chat-GPT has worked wonders in between ;-)
+      </p>
+
+      <p><b>What worked well:</b></p>
       <ul>
         <li>Iterative development – continuous refinement of layout, data logic, and UX</li>
         <li>Strict naming conventions and clear folder structure</li>
         <li>Automated data handling and transparency in all steps</li>
       </ul>
-      <b>What was challenging:</b>
+
+      <p><b>What was challenging:</b></p>
       <ul>
         <li>Maintaining context over long iterations</li>
         <li>Keeping frontend and backend logic consistent (mappings, fetch behavior, CORS issues)</li>
         <li>Working around hosting limitations (e.g. InfinityFree – no server-side processing)</li>
       </ul>
-      <b>Recommendations for others:</b>
+
+      <p><b>Recommendations for others:</b></p>
       <ul>
         <li>Use clear, modular structures (naming, file hierarchy, JSON schemas)</li>
         <li>Think in iterations: “make it work, then make it right, then make it beautiful”</li>
         <li>Always create backups and dummy data before connecting live sources</li>
         <li>Treat ChatGPT as a <em>team member</em> – not a code vending machine</li>
       </ul>
-    </p>
+
+      <h2>RealityCheck – Behind the Scenes</h2>
+      <p>
+        RealityCheck is a joint project by <strong>Carsten Winterling</strong> (Business Analyst, Requirements Manager, Tester)
+        and <strong>ChatGPT</strong> (Programming, logic, and creative support).
+      </p>
+      <figure class="teamwork-figure">
+        <img src="images/teamwork_wunder.png" alt="RealityCheck – Hier geschieht ein Wunder" />
+      </figure>
+
+      <h2>About Me</h2>
+      <p>
+        I live near Cologne, Germany. I’m married and a father of three.  
+        Professionally, I’m the head of an IT division in an insurance company –  
+        a “techie” at heart who loves structure, data, and problem solving.
+      </p>
+
+      <p>
+        <b>RealityCheck</b> is a passion project – born from curiosity and a belief  
+        that data can tell a more hopeful story than headlines.  
+        The world is not doomed; it’s changing. And we still decide how.
+      </p>
+
+      <p style="font-style:italic;">
+        Built through curiosity, patience, and collaboration –  
+        with facts, reason, and optimism. <br><br>
+        <b>Carsten Winterling & ChatGPT</b><br>
+        <small>Cologne, Germany – 2025</small>
+      </p>
+
+    </div>
   </section>
   
-  <section id="teamwork" class="about-section">
-  <h2>RealityCheck – Behind the Scenes</h2>
-  <p>
-    RealityCheck is a joint project by <strong>Carsten Winterling</strong> (Business Analyst, Requirements Manager, Tester)
-    und <strong>ChatGPT</strong> (Programming, logic, and creative support).
-  </p>
-  <figure class="teamwork-figure">
-    <img src="images/teamwork_wunder.png" alt="RealityCheck – Hier geschieht ein Wunder" />
-  </figure>
-</section>
+  <script>
+  // Fade-In wie bei Analysis
+  window.addEventListener("load", () => {
+    document.getElementById("about-section").classList.add("loaded");
+  });
+</script>
 
-
-  <!-- 3️⃣ About Me -->
-  <section id="about-me">
-    <h2>About Me</h2>
-    <p>
-      I live near Cologne, Germany. I’m married and a father of three.  
-      Professionally, I’m the head of an IT division in an insurance company –  
-      a “techie” at heart who loves structure, data, and problem solving.
-    </p>
-
-    <p>
-      <b>RealityCheck</b> is a passion project – born from curiosity and a belief  
-      that data can tell a more hopeful story than headlines.  
-      The world is not doomed; it’s changing. And we still decide how.
-    </p>
-
-    <p style="font-style:italic;">
-      Built through curiosity, patience, and collaboration –  
-      with facts, reason, and optimism. <br><br>
-      <b>Carsten Winterling & ChatGPT</b><br>
-      <small>Cologne, Germany – 2025</small>
-    </p>
-  </section>
-</main>
 </body>
 </html>

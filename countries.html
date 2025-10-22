@@ -12,24 +12,33 @@
 </head>
 <body>
 
-  <section id="intro" style="max-width:900px;margin:1rem auto 0; padding:0 1rem;">
-    <h1>🌍 RealityCheck – Countries</h1>
-	 <p>
-	The world is in turmoil. Radicalization, polarization, and populism often dominate the headlines—and many say that everything used to be better and that today everything is going down the drain.
-	  </p>
-
+	<section class="page-intro">
+	  <h1>🗺️ RealityCheck – Countries Dashboard</h1>
 	  <p>
-	<strong>No!</strong> At least not in many areas. The facts paint a different picture. Prejudices and gut feelings can be refuted with data from reliable sources. When you compare key figures, public discourse can become more factual and less emotional.
+		The world is in turmoil. Radicalization, polarization, and populism often dominate the headlines — 
+		and many say that everything used to be better and that today everything is going downhill. 
+		But is that really true?
 	  </p>
-
 	  <p>
-	This project is inspired by <strong><em>Hans Rosling</em></strong>’s book <a href="https://en.wikipedia.org/wiki/Factfulness" target="_blank" rel="noopener"><em>Factfulness</em></a> and invites you to check your own reality.
+		<strong>No!</strong> At least not in many areas. The facts paint a different picture. 
+		Prejudices and gut feelings can be refuted with data from reliable sources. 
+		When you compare key figures, put them into context (per capita, per km², per GDP) 
+		and also look at historical developments, you realize that many things are constantly improving — worldwide.
 	  </p>
-
 	  <p>
-	At the same time, it’s important to acknowledge that not everything in the world is fine, and some things are actually getting worse. Developments in the areas of climate and conflict are particularly worrying.
+		This project is inspired by <strong><em>Hans Rosling</em></strong>’s book 
+		<a href="https://en.wikipedia.org/wiki/Factfulness" target="_blank" rel="noopener"><em>Factfulness</em></a> 
+		and invites you to discover and classify the data yourself. 
+		In the spirit of <strong><em>W. Edwards Deming</em></strong> – “In God we trust. All others must bring data” – 
+		we aim to foster a more nuanced understanding of global trends.
 	  </p>
-  </section>
+	  <p class="note">
+		Each chart and map below visualizes a key national indicator from the RealityCheck dataset — 
+		offering perspective on where each country stands and how it evolves over time.
+	  </p>
+	</section>
+
+
 
 	<!-- Controls (zentriert) -->
 	<section id="controls">
@@ -95,16 +104,17 @@
     Last update: <span id="data-date">---</span>
   </div>
 
-  <!-- Chart -->
-  <section id="chart-container">
-    <canvas id="kpi-chart"></canvas>
-    <div id="chart-selectors" style="margin-top:.5rem;">
-      <label>Compare:</label>
-      <select id="country1Select"></select>
-      <select id="country2Select"></select>
-      <select id="country3Select"></select>
-    </div>
-  </section>
+<!-- Chart -->
+	<section id="chart-container">
+	  <canvas id="kpi-chart"></canvas>
+
+	  <div class="chart-selects">
+		<label>Compare:</label>
+		<select id="country1Select"></select>
+		<select id="country2Select"></select>
+		<select id="country3Select"></select>
+	  </div>
+	</section>
 
   <!-- Map -->
   <section id="map-section">
