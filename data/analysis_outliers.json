@@ -133,98 +133,6 @@
       }
     ]
   },
-  "adult_literacy_rate": {
-    "min": {
-      "value": 8.82999992370605,
-      "country": "Burkina Faso",
-      "year": 1975
-    },
-    "max": {
-      "value": 100.0,
-      "country": "North Korea",
-      "year": 2008
-    },
-    "flagged": [
-      {
-        "country": "Afghanistan",
-        "year": 1979,
-        "value": 18.1599998474121,
-        "z_score": 3.13
-      },
-      {
-        "country": "Benin",
-        "year": 1979,
-        "value": 16.4799995422363,
-        "z_score": 3.22
-      },
-      {
-        "country": "Burkina Faso",
-        "year": 1996,
-        "value": 12.8500003814697,
-        "z_score": 3.4
-      },
-      {
-        "country": "Burkina Faso",
-        "year": 1991,
-        "value": 13.5699996948242,
-        "z_score": 3.36
-      },
-      {
-        "country": "Burkina Faso",
-        "year": 1975,
-        "value": 8.82999992370605,
-        "z_score": 3.6
-      },
-      {
-        "country": "Central African Republic",
-        "year": 1975,
-        "value": 18.2399997711182,
-        "z_score": 3.13
-      },
-      {
-        "country": "Chad",
-        "year": 1993,
-        "value": 10.8900003433228,
-        "z_score": 3.5
-      },
-      {
-        "country": "Guinea",
-        "year": 1996,
-        "value": 20.5499992370606,
-        "z_score": 3.02
-      },
-      {
-        "country": "Guinea-Bissau",
-        "year": 1979,
-        "value": 19.9599990844727,
-        "z_score": 3.04
-      },
-      {
-        "country": "Mali",
-        "year": 1998,
-        "value": 19.0400009155273,
-        "z_score": 3.09
-      },
-      {
-        "country": "Mali",
-        "year": 1976,
-        "value": 9.43000030517578,
-        "z_score": 3.57
-      },
-      {
-        "country": "Nepal",
-        "year": 1981,
-        "value": 20.5699996948242,
-        "z_score": 3.01
-      },
-      {
-        "country": "Niger",
-        "year": 2001,
-        "value": 14.3800001144409,
-        "z_score": 3.32
-      }
-    ]
-  },
   "age_dependency_ratio_total": {
     "min": {
       "value": 17.303247,
@@ -807,6 +715,56 @@
       }
     ]
   },
+  "electric_vehicle_stock": {
+    "min": {
+      "value": 29.0,
+      "country": "New Zealand",
+      "year": 2011
+    },
+    "max": {
+      "value": 58000000.0,
+      "country": "World",
+      "year": 2024
+    },
+    "flagged": [
+      {
+        "country": "China",
+        "year": 2023,
+        "value": 21800000.0,
+        "z_score": 4.66
+      },
+      {
+        "country": "China",
+        "year": 2024,
+        "value": 34000000.0,
+        "z_score": 7.38
+      },
+      {
+        "country": "World",
+        "year": 2021,
+        "value": 16300000.0,
+        "z_score": 3.44
+      },
+      {
+        "country": "World",
+        "year": 2022,
+        "value": 26000000.0,
+        "z_score": 5.6
+      },
+      {
+        "country": "World",
+        "year": 2023,
+        "value": 40000000.0,
+        "z_score": 8.72
+      },
+      {
+        "country": "World",
+        "year": 2024,
+        "value": 58000000.0,
+        "z_score": 12.73
+      }
+    ]
+  },
   "employment_to_population_ratio": {
     "min": {
       "value": 19.886,
@@ -816,6 +774,19 @@
     "max": {
       "value": 87.461,
       "country": "Qatar",
+      "year": 2022
+    },
+    "flagged": []
+  },
+  "environmental_performance_index": {
+    "min": {
+      "value": 18.9,
+      "country": "India",
+      "year": 2022
+    },
+    "max": {
+      "value": 77.9,
+      "country": "Denmark",
       "year": 2022
     },
     "flagged": []
@@ -1467,6 +1438,110 @@
         "year": 1945,
         "value": 5507143.0,
         "z_score": 6.43
+      }
+    ]
+  },
+  "global_peace_index": {
+    "min": {
+      "value": 1.091,
+      "country": "Iceland",
+      "year": 2023
+    },
+    "max": {
+      "value": 3.57,
+      "country": "Afghanistan",
+      "year": 2021
+    },
+    "flagged": [
+      {
+        "country": "Afghanistan",
+        "year": 2016,
+        "value": 3.371,
+        "z_score": 3.04
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2017,
+        "value": 3.427,
+        "z_score": 3.17
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2018,
+        "value": 3.564,
+        "z_score": 3.48
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2019,
+        "value": 3.551,
+        "z_score": 3.45
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2020,
+        "value": 3.568,
+        "z_score": 3.48
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2021,
+        "value": 3.57,
+        "z_score": 3.49
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2022,
+        "value": 3.543,
+        "z_score": 3.43
+      },
+      {
+        "country": "Iraq",
+        "year": 2008,
+        "value": 3.389,
+        "z_score": 3.08
+      },
+      {
+        "country": "Iraq",
+        "year": 2016,
+        "value": 3.384,
+        "z_score": 3.07
+      },
+      {
+        "country": "Iraq",
+        "year": 2017,
+        "value": 3.378,
+        "z_score": 3.06
+      },
+      {
+        "country": "Russia",
+        "year": 2025,
+        "value": 3.441,
+        "z_score": 3.2
+      },
+      {
+        "country": "Syria",
+        "year": 2017,
+        "value": 3.354,
+        "z_score": 3.0
+      },
+      {
+        "country": "Ukraine",
+        "year": 2025,
+        "value": 3.434,
+        "z_score": 3.18
+      },
+      {
+        "country": "Yemen",
+        "year": 2021,
+        "value": 3.37,
+        "z_score": 3.04
+      },
+      {
+        "country": "Yemen",
+        "year": 2022,
+        "value": 3.452,
+        "z_score": 3.22
       }
     ]
   },
@@ -2460,6 +2535,19 @@
       }
     ]
   },
+  "living_planet_index": {
+    "min": {
+      "value": 27.097133,
+      "country": "World",
+      "year": 2018
+    },
+    "max": {
+      "value": 100.0,
+      "country": "World",
+      "year": 1970
+    },
+    "flagged": []
+  },
   "maternal_mortality_ratio": {
     "min": {
       "value": 1.0,
@@ -2606,140 +2694,6 @@
       "year": 2040
     },
     "flagged": []
-  },
-  "measles_vaccination_mcv1": {
-    "min": {
-      "value": 1.0,
-      "country": "Bangladesh",
-      "year": 1985
-    },
-    "max": {
-      "value": 99.0,
-      "country": "Albania",
-      "year": 2013
-    },
-    "flagged": [
-      {
-        "country": "World",
-        "year": 1980,
-        "value": 12.8521513566878,
-        "z_score": 3.11
-      },
-      {
-        "country": "Afghanistan",
-        "year": 1986,
-        "value": 14.0,
-        "z_score": 3.06
-      },
-      {
-        "country": "Afghanistan",
-        "year": 1985,
-        "value": 14.0,
-        "z_score": 3.06
-      },
-      {
-        "country": "Afghanistan",
-        "year": 1984,
-        "value": 14.0,
-        "z_score": 3.06
-      },
-      {
-        "country": "Afghanistan",
-        "year": 1983,
-        "value": 9.0,
-        "z_score": 3.3
-      },
-      {
-        "country": "Afghanistan",
-        "year": 1982,
-        "value": 8.0,
-        "z_score": 3.34
-      },
-      {
-        "country": "Afghanistan",
-        "year": 1980,
-        "value": 11.0,
-        "z_score": 3.2
-      },
-      {
-        "country": "Bangladesh",
-        "year": 1988,
-        "value": 13.0,
-        "z_score": 3.11
-      },
-      {
-        "country": "Bangladesh",
-        "year": 1987,
-        "value": 6.0,
-        "z_score": 3.44
-      },
-      {
-        "country": "Bangladesh",
-        "year": 1986,
-        "value": 3.0,
-        "z_score": 3.58
-      },
-      {
-        "country": "Bangladesh",
-        "year": 1985,
-        "value": 1.0,
-        "z_score": 3.67
-      },
-      {
-        "country": "Bangladesh",
-        "year": 1984,
-        "value": 1.0,
-        "z_score": 3.67
-      },
-      {
-        "country": "Bangladesh",
-        "year": 1983,
-        "value": 1.0,
-        "z_score": 3.67
-      },
-      {
-        "country": "Bangladesh",
-        "year": 1982,
-        "value": 1.0,
-        "z_score": 3.67
-      },
-      {
-        "country": "Bolivia",
-        "year": 1983,
-        "value": 13.0,
-        "z_score": 3.11
-      },
-      {
-        "country": "Bolivia",
-        "year": 1982,
-        "value": 15.0,
-        "z_score": 3.01
-      },
-      {
-        "country": "Bolivia",
-        "year": 1980,
-        "value": 13.0,
-        "z_score": 3.11
-      },
-      {
-        "country": "Central African Republic",
-        "year": 1981,
-        "value": 15.0,
-        "z_score": 3.01
-      },
-      {
-        "country": "Central African Republic",
-        "year": 1980,
-        "value": 12.0,
-        "z_score": 3.15
-      },
-      {
-        "country": "Chad",
-        "year": 1986,
-        "value": 12.0,
-        "z_score": 3.15
-      }
-    ]
   },
   "median_age": {
     "min": {
@@ -3545,6 +3499,336 @@
       }
     ]
   },
+  "olympic_medals_summer": {
+    "min": {
+      "value": 1.0,
+      "country": "Algeria",
+      "year": 1992
+    },
+    "max": {
+      "value": 71.0,
+      "country": "United States",
+      "year": 1984
+    },
+    "flagged": [
+      {
+        "country": "Germany",
+        "year": 1976,
+        "value": 34.0,
+        "z_score": 3.56
+      },
+      {
+        "country": "Germany",
+        "year": 1980,
+        "value": 39.0,
+        "z_score": 4.19
+      },
+      {
+        "country": "Germany",
+        "year": 1988,
+        "value": 30.0,
+        "z_score": 3.06
+      },
+      {
+        "country": "Germany",
+        "year": 1992,
+        "value": 30.0,
+        "z_score": 3.06
+      },
+      {
+        "country": "United Kingdom",
+        "year": 1908,
+        "value": 36.0,
+        "z_score": 3.82
+      },
+      {
+        "country": "United Kingdom",
+        "year": 2012,
+        "value": 30.0,
+        "z_score": 3.06
+      },
+      {
+        "country": "United States",
+        "year": 1904,
+        "value": 56.0,
+        "z_score": 6.33
+      },
+      {
+        "country": "United States",
+        "year": 1920,
+        "value": 31.0,
+        "z_score": 3.19
+      },
+      {
+        "country": "United States",
+        "year": 1924,
+        "value": 36.0,
+        "z_score": 3.82
+      },
+      {
+        "country": "United States",
+        "year": 1928,
+        "value": 30.0,
+        "z_score": 3.06
+      },
+      {
+        "country": "United States",
+        "year": 1932,
+        "value": 39.0,
+        "z_score": 4.19
+      },
+      {
+        "country": "United States",
+        "year": 1948,
+        "value": 33.0,
+        "z_score": 3.44
+      },
+      {
+        "country": "United States",
+        "year": 1956,
+        "value": 32.0,
+        "z_score": 3.31
+      },
+      {
+        "country": "United States",
+        "year": 1960,
+        "value": 31.0,
+        "z_score": 3.19
+      },
+      {
+        "country": "United States",
+        "year": 1964,
+        "value": 37.0,
+        "z_score": 3.94
+      },
+      {
+        "country": "United States",
+        "year": 1972,
+        "value": 32.0,
+        "z_score": 3.31
+      },
+      {
+        "country": "United States",
+        "year": 1976,
+        "value": 31.0,
+        "z_score": 3.19
+      },
+      {
+        "country": "United States",
+        "year": 1984,
+        "value": 71.0,
+        "z_score": 8.22
+      },
+      {
+        "country": "United States",
+        "year": 1988,
+        "value": 41.0,
+        "z_score": 4.44
+      },
+      {
+        "country": "United States",
+        "year": 1992,
+        "value": 47.0,
+        "z_score": 5.2
+      }
+    ]
+  },
+  "olympic_medals_winter": {
+    "min": {
+      "value": 1.0,
+      "country": "Australia",
+      "year": 1924
+    },
+    "max": {
+      "value": 13.0,
+      "country": "Russia",
+      "year": 2006
+    },
+    "flagged": [
+      {
+        "country": "Germany",
+        "year": 2002,
+        "value": 11.0,
+        "z_score": 3.02
+      },
+      {
+        "country": "Italy",
+        "year": 1994,
+        "value": 11.0,
+        "z_score": 3.02
+      },
+      {
+        "country": "Norway",
+        "year": 1952,
+        "value": 12.0,
+        "z_score": 3.39
+      },
+      {
+        "country": "Norway",
+        "year": 2002,
+        "value": 12.0,
+        "z_score": 3.39
+      },
+      {
+        "country": "Norway",
+        "year": 2006,
+        "value": 11.0,
+        "z_score": 3.02
+      },
+      {
+        "country": "Norway",
+        "year": 2010,
+        "value": 12.0,
+        "z_score": 3.39
+      },
+      {
+        "country": "Russia",
+        "year": 2006,
+        "value": 13.0,
+        "z_score": 3.76
+      },
+      {
+        "country": "United States",
+        "year": 2010,
+        "value": 11.0,
+        "z_score": 3.02
+      }
+    ]
+  },
+  "overall_immunization_coverage": {
+    "min": {
+      "value": 1.0,
+      "country": "Bangladesh",
+      "year": 1984
+    },
+    "max": {
+      "value": 99.0,
+      "country": "Albania",
+      "year": 2019
+    },
+    "flagged": [
+      {
+        "country": "Afghanistan",
+        "year": 1994,
+        "value": 12.0,
+        "z_score": 3.17
+      },
+      {
+        "country": "Afghanistan",
+        "year": 1986,
+        "value": 11.0,
+        "z_score": 3.22
+      },
+      {
+        "country": "Afghanistan",
+        "year": 1985,
+        "value": 15.0,
+        "z_score": 3.03
+      },
+      {
+        "country": "Afghanistan",
+        "year": 1983,
+        "value": 5.0,
+        "z_score": 3.5
+      },
+      {
+        "country": "Afghanistan",
+        "year": 1982,
+        "value": 5.0,
+        "z_score": 3.5
+      },
+      {
+        "country": "Afghanistan",
+        "year": 1981,
+        "value": 3.0,
+        "z_score": 3.59
+      },
+      {
+        "country": "Afghanistan",
+        "year": 1980,
+        "value": 4.0,
+        "z_score": 3.55
+      },
+      {
+        "country": "Angola",
+        "year": 1988,
+        "value": 12.0,
+        "z_score": 3.17
+      },
+      {
+        "country": "Angola",
+        "year": 1987,
+        "value": 10.0,
+        "z_score": 3.27
+      },
+      {
+        "country": "Angola",
+        "year": 1986,
+        "value": 10.0,
+        "z_score": 3.27
+      },
+      {
+        "country": "Angola",
+        "year": 1985,
+        "value": 8.0,
+        "z_score": 3.36
+      },
+      {
+        "country": "Angola",
+        "year": 1984,
+        "value": 8.0,
+        "z_score": 3.36
+      },
+      {
+        "country": "Angola",
+        "year": 1983,
+        "value": 6.0,
+        "z_score": 3.45
+      },
+      {
+        "country": "Bangladesh",
+        "year": 1987,
+        "value": 9.0,
+        "z_score": 3.31
+      },
+      {
+        "country": "Bangladesh",
+        "year": 1986,
+        "value": 4.0,
+        "z_score": 3.55
+      },
+      {
+        "country": "Bangladesh",
+        "year": 1985,
+        "value": 2.0,
+        "z_score": 3.64
+      },
+      {
+        "country": "Bangladesh",
+        "year": 1984,
+        "value": 1.0,
+        "z_score": 3.68
+      },
+      {
+        "country": "Bangladesh",
+        "year": 1983,
+        "value": 1.0,
+        "z_score": 3.68
+      },
+      {
+        "country": "Bangladesh",
+        "year": 1982,
+        "value": 1.0,
+        "z_score": 3.68
+      },
+      {
+        "country": "Bangladesh",
+        "year": 1981,
+        "value": 1.0,
+        "z_score": 3.68
+      }
+    ]
+  },
   "physicians_per_1_000_people": {
     "min": {
       "value": 0.004,
@@ -4251,6 +4535,140 @@
         "year": 2011,
         "value": 85166.0,
         "z_score": 3.04
+      }
+    ]
+  },
+  "recycling_rate": {
+    "min": {
+      "value": 0.85,
+      "country": "Serbia",
+      "year": 1995
+    },
+    "max": {
+      "value": 67.1,
+      "country": "South Korea",
+      "year": 2020
+    },
+    "flagged": [
+      {
+        "country": "Benin",
+        "year": 2016,
+        "value": 55.97,
+        "z_score": 3.01
+      },
+      {
+        "country": "Benin",
+        "year": 2017,
+        "value": 56.2,
+        "z_score": 3.03
+      },
+      {
+        "country": "Benin",
+        "year": 2018,
+        "value": 56.42,
+        "z_score": 3.05
+      },
+      {
+        "country": "Benin",
+        "year": 2019,
+        "value": 56.65,
+        "z_score": 3.07
+      },
+      {
+        "country": "Benin",
+        "year": 2020,
+        "value": 56.87,
+        "z_score": 3.08
+      },
+      {
+        "country": "Benin",
+        "year": 2021,
+        "value": 56.87,
+        "z_score": 3.08
+      },
+      {
+        "country": "Benin",
+        "year": 2022,
+        "value": 56.87,
+        "z_score": 3.08
+      },
+      {
+        "country": "South Korea",
+        "year": 1995,
+        "value": 63.29,
+        "z_score": 3.6
+      },
+      {
+        "country": "South Korea",
+        "year": 1996,
+        "value": 63.5,
+        "z_score": 3.62
+      },
+      {
+        "country": "South Korea",
+        "year": 1997,
+        "value": 63.7,
+        "z_score": 3.63
+      },
+      {
+        "country": "South Korea",
+        "year": 1998,
+        "value": 63.91,
+        "z_score": 3.65
+      },
+      {
+        "country": "South Korea",
+        "year": 1999,
+        "value": 64.11,
+        "z_score": 3.67
+      },
+      {
+        "country": "South Korea",
+        "year": 2000,
+        "value": 64.32,
+        "z_score": 3.68
+      },
+      {
+        "country": "South Korea",
+        "year": 2001,
+        "value": 64.5,
+        "z_score": 3.7
+      },
+      {
+        "country": "South Korea",
+        "year": 2002,
+        "value": 64.68,
+        "z_score": 3.71
+      },
+      {
+        "country": "South Korea",
+        "year": 2003,
+        "value": 64.87,
+        "z_score": 3.73
+      },
+      {
+        "country": "South Korea",
+        "year": 2004,
+        "value": 65.05,
+        "z_score": 3.74
+      },
+      {
+        "country": "South Korea",
+        "year": 2005,
+        "value": 65.23,
+        "z_score": 3.76
+      },
+      {
+        "country": "South Korea",
+        "year": 2006,
+        "value": 65.36,
+        "z_score": 3.77
+      },
+      {
+        "country": "South Korea",
+        "year": 2007,
+        "value": 65.49,
+        "z_score": 3.78
       }
     ]
   },
