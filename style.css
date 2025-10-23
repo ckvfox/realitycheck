@@ -182,7 +182,7 @@ body.overall-page #priority-container {
 }
 
 body.overall-page .cluster-box {
-  flex: 1 1 320px;                /* Standard: zwei bis drei Spalten */
+  flex: 1 1 320px;
   max-width: 500px;
   background: #fff;
   border: 1px solid var(--border);
@@ -192,9 +192,12 @@ body.overall-page .cluster-box {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 360px;              /* gleiche optische Höhe */
+  min-height: auto;
+  height: auto;
   box-sizing: border-box;
+  transition: all .2s ease;
 }
+
 
 body.overall-page .kpi-row {
   display: flex;
@@ -632,15 +635,16 @@ body:not(.overall-page) #controls select {
   text-align: center;
 }
 
-/* === DATA GLOSSARY: unified table style & responsiveness === */
+/* === DATA GLOSSARY unified with other pages (scrolls as full page) === */
 #glossary-container {
   max-width: var(--max-width);
   margin: 1.5rem auto 2rem;
   padding: 0 1rem;
-  overflow-x: auto;              /* verhindert globalen Scrollbalken */
+  overflow: visible !important;  /* erlaubt gesamtes Seiten-Scrollen */
   box-sizing: border-box;
 }
 
+/* Tabelle bleibt normal scrollbar, nicht sticky */
 #glossary-container table {
   width: 100%;
   border-collapse: collapse;
@@ -650,20 +654,13 @@ body:not(.overall-page) #controls select {
   box-shadow: 0 0 10px rgba(0,0,0,.04);
 }
 
-#glossary-container th,
-#glossary-container td {
-  padding: .6rem .8rem;
-  border-bottom: 1px solid var(--border);
-  text-align: left;
-}
-
+/* Tabellenkopf nicht sticky → scrollt mit */
 #glossary-container thead th {
   background: var(--table-head);
   color: var(--table-head-text);
-  position: sticky;
-  top: 0;
-  z-index: 1;
+  position: static;  /* vorher sticky */
 }
+
 
 /* Farben für Frische-Indikatoren (bereits global definiert, aber doppelt sicher) */
 .fresh { background:#e9ffe9 !important; }
@@ -1099,4 +1096,223 @@ body.world-page {
 
 .chart-source a:hover {
   text-decoration: underline;
+}
+/* === FINAL MOBILE LOGO FIX (2025-10) === */
+
+/* Grundlayout: Logo immer sichtbar, egal ob Header umbricht */
+header {
+  position: relative;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+
+#logo {
+  display: block;
+  height: 52px;
+  width: auto;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+/* mittlere Geräte */
+@media (max-width: 900px) {
+  #logo {
+    height: 44px;
+    margin-bottom: .4rem;
+  }
+}
+
+/* kleine Geräte: Logo bleibt oben sichtbar über Menü */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding-top: .6rem;
+    padding-bottom: .4rem;
+  }
+  #logo {
+    height: 38px;
+    margin-bottom: .5rem;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .6rem;
+  }
+}
+
+/* Mini-Geräte: kleines Symbol (alternative Grafik erlaubt) */
+@media (max-width: 480px) {
+  #logo {
+    content: url("images/logo_symbol.png"); /* kleine Version mit transparentem Hintergrund */
+    height: 32px;
+  }
+}
+/* === iOS Safari Portrait Fix (Logo visibility) === */
+@supports (-webkit-touch-callout: none) {
+  #logo {
+    height: auto !important;
+    max-height: 48px !important;
+    margin: 0.4rem 0;
+  }
+  header {
+    min-height: 72px;
+  }
+}
+tr.fun-mode {
+  background-color: #fff7cc !important;
+}
+tr.safe-mode {
+  background-color: #d8f4e0 !important;
+}
+tr.fun-safe {
+  background: linear-gradient(90deg, #fff7cc 50%, #d8f4e0 50%) !important;
+}
+/* === Fun / Safe visual tweaks === */
+tr.fun-mode {
+  background-color: #fff9c4 !important;
+}
+tr.safe-mode {
+  background-color: #d5f5dd !important;
+}
+tr.fun-safe {
+  background: linear-gradient(90deg, #fff9c4 50%, #d5f5dd 50%) !important;
+}
+
+/* --- Icon styling next to country name --- */
+.mode-icons {
+  font-size: 1.1em;
+  margin-left: 6px;
+}
+
+/* --- Refined rank coloring --- */
+#overall-table tbody tr.top3 td:first-child {
+  font-weight: 700;
+  background-color: gold;
+  color: #000;
+}
+#overall-table tbody tr:nth-child(4),
+#overall-table tbody tr:nth-child(5),
+#overall-table tbody tr:nth-child(6),
+#overall-table tbody tr:nth-child(7) {
+  background-color: #e6ffe6 !important;
+}
+#overall-table tbody tr.flop10 {
+  background-color: #ffcccc !important;
+  color: #000;
+}
+/* === Fun / Safe Mode Switch === */
+#mode-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+}
+
+#mode-switch button {
+  background: var(--steel-blue);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.25s, transform 0.2s;
+}
+
+#mode-switch button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.15);
+}
+
+#mode-switch button.active {
+  background: var(--accent);
+}
+
+/* === Zeilenfarben für Fun/Safe/Combined === */
+tr.fun-mode {
+  background-color: #fff9c4 !important;
+}
+tr.safe-mode {
+  background-color: #d5f5dd !important;
+}
+tr.fun-safe {
+  background: linear-gradient(90deg, #fff9c4 50%, #d5f5dd 50%) !important;
+}
+.mode-icons {
+  font-size: 1.1em;
+  margin-left: 6px;
+}
+/* === Centered mode switch buttons === */
+#mode-switch{
+  display:flex;justify-content:center;align-items:center;gap:.75rem;margin:1.25rem auto 0;
+}
+#mode-switch button{
+  background:var(--steel-blue);color:#fff;border:0;border-radius:9999px;
+  padding:.5rem 1rem;font-weight:600;cursor:pointer;transition:transform .15s,filter .2s;
+}
+#mode-switch button:hover{ transform:translateY(-1px); filter:brightness(1.05); }
+#mode-switch button.active{ background:var(--accent); }
+
+/* Icons neben Land */
+.mode-icons{ margin-left:6px; font-size:1.1em; }
+
+/* Ensure good contrast for rank highlights */
+#overall-table tbody tr.top10 td{ color:var(--text); background:#e6ffe6; }   /* hellgrün, schwarze Schrift */
+#overall-table tbody tr.flop10 td{ color:var(--text); background:#ffe0e0; }   /* hellrot, schwarze Schrift */
+
+/* Kill any old row-coloring for fun/safe if present */
+tr.fun-mode, tr.safe-mode, tr.fun-safe { background: transparent !important; }
+/* === RealityCheck Header mit Logo + Text === */
+header {
+  background: var(--steel-blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  position: relative;
+  z-index: 1000;
+}
+
+#logo-link {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  text-decoration: none;
+}
+
+#logo {
+  height: 44px;
+  width: auto;
+  border-radius: 50%;
+  transition: transform .3s ease;
+}
+
+#logo:hover {
+  transform: scale(1.05);
+}
+
+#logo-text {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* === Mobile Verhalten === */
+@media (max-width: 700px) {
+  #logo-text {
+    display: none;  /* nur Kugel sichtbar */
+  }
+  header {
+    padding: .5rem .8rem;
+  }
+  #logo {
+    height: 40px;
+  }
 }

@@ -68,7 +68,13 @@ def run_global_analysis():
                 else:
                     rows = []
 
-                values = [v.get("value") for v in rows if isinstance(v.get("value"), (int, float))]
+                values = [
+                    v.get("value")
+                    for v in rows
+                    if isinstance(v.get("value"), (int, float))
+                    and v.get("country") not in ["World"]
+]
+
 
                 if not values or len(values) < 5:
                     continue
@@ -164,6 +170,15 @@ def run_global_analysis():
     text = response.choices[0].message.content.strip()
 
     # === 8. Save results ===
+    import re
+
+    def clean_text(t: str) -> str:
+        """Entfernt durchgestrichene Markdown-Passagen (~~text~~)."""
+        return re.sub(r"~~(.*?)~~", r"\1", t)
+
+    # 🧹 Entferne durchgestrichenen Text vor dem Speichern
+    text = clean_text(text)
+
     try:
         output_md.write_text(text, encoding="utf-8")
         output_json.write_text(

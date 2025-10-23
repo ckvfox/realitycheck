@@ -288,7 +288,7 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
     else:
         keep_or_dummy(kpi_id, f"CSV empty {csv_name}", stats)
         
-    # ======================================================================
+# ======================================================================
 # 🧭 OWID Fetch
 # ======================================================================
 def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
@@ -299,6 +299,7 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
 
     url = f"https://ourworldindata.org/grapher/{source_code}"
 
+    # --- Versuch, Daten abzurufen ---
     try:
         resp = requests.get(url, timeout=30)
         if resp.status_code != 200:
@@ -307,7 +308,8 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
     except Exception as e:
         log(f"[ERR] OWID fetch failed for {source_code}: {e}")
         keep_or_dummy(kpi_id, f"OWID fetch failed {source_code}", stats)
-        safe_name = safe_pending_filename(f"{kpi_id}_{source_code}")
+        # 🔧 Pending-Datei bei Netzwerkfehlern mit Endung .txt
+        safe_name = safe_pending_filename(f"{kpi_id}_{source_code}_error") + ".txt"
         ensure_dirs()
         with open(os.path.join(PENDING_DIR, safe_name), "w", encoding="utf-8") as f:
             f.write(str(e))
@@ -315,41 +317,62 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
 
     reader = csv.DictReader(io.StringIO(text))
     cols = reader.fieldnames or []
-    if not {"Entity","Code","Year"}.issubset(set(cols)):
-        open(os.path.join(PENDING_DIR, f"{kpi_id}_{source_code}.csv"), "w", encoding="utf-8").write(text)
-        log(f"[WARN] OWID format unknown → pending saved: {source_code}")
+
+    # --- Formatprüfung ---
+    if not {"Entity", "Code", "Year"}.issubset(set(cols)):
+        # 🔧 Pending-Datei bei unbekanntem Format mit Endung .csv
+        safe_name = safe_pending_filename(f"{kpi_id}_{source_code}_format_unknown") + ".csv"
+        ensure_dirs()
+        with open(os.path.join(PENDING_DIR, safe_name), "w", encoding="utf-8") as f:
+            f.write(text)
+        log(f"[WARN] OWID format unknown → pending saved: {safe_name}")
         keep_or_dummy(kpi_id, f"OWID format unknown {source_code}", stats)
         return
 
-    var_cols = [c for c in cols if c not in ("Entity","Code","Year")]
+    var_cols = [c for c in cols if c not in ("Entity", "Code", "Year")]
     if not var_cols:
         keep_or_dummy(kpi_id, f"OWID no data column {source_code}", stats)
         return
 
     var = var_cols[0]
     out = []
+
     for row in reader:
         cname = row.get("Entity", "")
         canon = canonicalize_country(cname, c_index, a_index, countries, pending, stats)
         if not canon:
             continue
+
         year = row.get("Year")
         val = safe_float(row.get(var))
         if val is None or not year:
             continue
+
         try:
             y = int(float(year))
-        except:
+        except Exception:
             continue
-        out.append({"country":canon,"iso2":row.get("Code",""),"year":y,"value":val})
 
+        out.append({
+            "country": canon,
+            "iso2": row.get("Code", ""),
+            "year": y,
+            "value": val
+        })
+
+    # --- Ergebnisbehandlung ---
     if out:
         save_records(kpi_id, out)
         stats["owid_success"] += 1
         stats["saved_records"] += len(out)
         log(f"[OK] OWID KPI saved: {kpi_id} ({len(out)} rows)")
     else:
-        open(os.path.join(PENDING_DIR, f"{kpi_id}_{source_code}_nodata.csv"), "w", encoding="utf-8").write(text)
+        # 🔧 Fix: sichere Pending-Datei bei leeren Daten + .csv-Endung
+        safe_name = safe_pending_filename(f"{kpi_id}_{source_code}_nodata") + ".csv"
+        ensure_dirs()
+        with open(os.path.join(PENDING_DIR, safe_name), "w", encoding="utf-8") as f:
+            f.write(text)
+        log(f"[WARN] OWID no data → pending saved: {safe_name}")
         keep_or_dummy(kpi_id, f"OWID empty {source_code}", stats)
 
 # ======================================================================
@@ -602,18 +625,27 @@ def main():
 # ======================================================================
 if __name__ == "__main__":
     main()
+
     try:
         import subprocess
-        print("➡️ Starte fetch_overall_ranking.py ...")
+        print("➡️ Starte fetch_overall_ranking.py …")
         subprocess.run(["python", os.path.join(SCRIPT_DIR, "fetch_overall_ranking.py")], check=True)
         print("✅ Overall Ranking erfolgreich erstellt.")
     except Exception as e:
-        print(f"⚠️ Fehler beim Erstellen des Overall-Rankings: {e}")
+        print(f"⚠️ Fehler beim Overall-Ranking: {e}")
+
+    try:
+        # === NEW: Consolidated all_kpis_data.json ===
+        print("➡️ Starte fetch_consolidated.py …")
+        subprocess.run(["python", os.path.join(SCRIPT_DIR, "fetch_consolidated.py")], check=True)
+        print("✅ KPI-Daten erfolgreich konsolidiert (data/all_kpis_data.json).")
+    except Exception as e:
+        print(f"⚠️ Fehler bei Konsolidierung: {e}")
 
     try:
         from analysis import run_global_analysis
-        print("➡️ Starte globale KI-Analyse ...")
+        print("➡️ Starte globale KI-Analyse …")
         run_global_analysis()
         print("✅ Globale Analyse abgeschlossen (data/analysis.md)")
     except Exception as e:
-        print(f"⚠️ Fehler bei der Analyse: {e}") 
+        print(f"⚠️ Fehler bei der Analyse: {e}")

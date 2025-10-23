@@ -5,18 +5,8 @@
 const META_FILE = "data/meta/available_kpis.json";
 const DATA_DIR = "data";
 
-/* ========= Hilfsfunktionen ========= */
-async function loadJSON(path) {
-  try {
-    const res = await fetch(path, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const txt = await res.text();
-    return txt ? JSON.parse(txt) : [];
-  } catch (e) {
-    console.warn("⚠️ loadJSON failed:", path, e);
-    return [];
-  }
-}
+let META = [], ALL_DATA = {}; // consolidated dataset + meta
+
 
 /* ========= Chart Helper ========= */
 function getWorldSeries(entries) {
@@ -101,10 +91,11 @@ function renderChart(container, title, unit, data) {
 
 /* ========= Hauptlogik ========= */
 async function initWorldPage() {
-  showSpinner(true, "Loading global indicators…");
+  showSpinner(true, "Loading world data…");
+  META = await loadJSON("data/meta/available_kpis.json");
+  ALL_DATA = await loadAllKPIData();
 
-  const meta = await loadJSON(META_FILE);
-  const worldKpis = meta
+  const worldKpis = META
     .filter(k => (k.world_kpi === "y" || k.world_kpi === "e") && k.filename)
     .sort((a,b) => a.title.localeCompare(b.title));
 
@@ -133,7 +124,7 @@ async function initWorldPage() {
     block.innerHTML = `<h3>${title}</h3>`;
     worldContainer.appendChild(block);
 
-    const data = await loadJSON(`${DATA_DIR}/${filename}.json`);
+    const data = ALL_DATA[filename] || [];
     if (!Array.isArray(data) || data.length === 0) {
       block.innerHTML += `<p style="color:#666;font-style:italic;">No data available.</p>`;
       return;

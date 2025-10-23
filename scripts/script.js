@@ -1,15 +1,6 @@
-/* ========= Fetch helper ========= */
-async function loadJSON(path) {
-  try {
-    const res = await fetch(path, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const txt = await res.text();
-    return txt ? JSON.parse(txt) : [];
-  } catch (e) {
-    console.error("❌ loadJSON", path, e);
-    return [];
-  }
-}
+// core.js already provides loadJSON(), showSpinner(), etc.
+let ALL_DATA = {};  // consolidated dataset
+
 
 /* ========= Globals ========= */
 let kpis = {}, countries = {}, groups = {}, fetchStatus = {};
@@ -82,6 +73,7 @@ async function init() {
     }
 
     // === Daten laden ===
+	showSpinner(true, "Loading data…"); // ✅ zentraler Loader aktivieren
     kpis = await loadJSON("data/meta/available_kpis.json");
     countries = await loadJSON("data/meta/countries.json");
     groups = await loadJSON("data/meta/groups.json");
@@ -89,6 +81,9 @@ async function init() {
     populationData = await loadJSON("data/population.json");
     gdpData = await loadJSON("data/gdp.json");
     areaData = await loadJSON("data/area.json");
+	ALL_DATA = await loadAllKPIData(); // ✅ Consolidated dataset
+	showSpinner(false); // Loader wieder ausblenden
+
 
     // === Dropdowns & Eventhandler ===
     await populateKpiSelect();
@@ -645,8 +640,8 @@ function updateView() {
 
     const filename = meta.filename || meta.id || meta.title;
 
-    loadJSON(`data/${filename}.json`).then(data => {
-      currentData = Array.isArray(data) ? data : [];
+	currentData = ALL_DATA[filename] || [];
+
       console.log(`✅ updateView(): ${filename} → ${currentData.length} records`);
 
       populateYearSelect();
@@ -686,11 +681,11 @@ function updateView() {
           ? new Date(date).toISOString().split("T")[0] // nur Datumsteil anzeigen
           : "---";
       }
-    });
   } catch (e) {
     console.error("❌ updateView() failed:", e);
   }
 }
+
 /* ========= Relation Select Activation ========= */
 function updateRelationAvailability(meta) {
   const relSelect = document.getElementById("relationSelect");

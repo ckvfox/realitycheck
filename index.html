@@ -10,17 +10,31 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 
-  <style>
-    html, body { overflow: hidden; }
-    main { flex: 1 1 auto; display: flex; flex-direction: column; overflow: hidden; }
-    #main-frame { height: calc(100vh - 160px); border: none; }
-    header img { height: 60px; margin-right: 0.6rem; vertical-align: middle; }
-  </style>
+<style>
+  html, body {
+    overflow: hidden;
+  }
+  main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #main-frame {
+    height: calc(100vh - 160px);
+    border: none;
+  }
+</style>
+
 </head>
 
 <body>
 <header>
-  <img id="logo" src="images/logo.png" alt="RealityCheck Logo">
+  <a href="#" id="logo-link" onclick="loadPage('countries.html', this)">
+    <img id="logo" src="images/logo_flow_globe.png" alt="RealityCheck Logo" />
+    <span id="logo-text">RealityCheck</span>
+  </a>
+
   <nav>
     <a href="#" onclick="loadPage('countries.html', this)" class="active">Countries</a>
     <a href="#" onclick="loadPage('world.html', this)">World</a>
@@ -28,6 +42,7 @@
     <a href="#" onclick="loadPage('analysis.html', this)">Analysis</a>
   </nav>
 </header>
+
 
   <main>
     <div id="frame-loader" class="active"><div class="spinner"></div></div>
@@ -75,5 +90,15 @@
     }
     loadVisitorStats();
   </script>
+  <script>
+  // Scrollt das iframe an den Anfang, wenn Nutzer den Header antippt
+  document.querySelector("header").addEventListener("click", () => {
+    const frame = document.getElementById("main-frame");
+    if (frame && frame.contentWindow) {
+      frame.contentWindow.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+</script>
+
 </body>
 </html>

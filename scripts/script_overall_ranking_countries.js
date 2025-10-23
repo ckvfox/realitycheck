@@ -5,6 +5,7 @@
 let kpis = [];
 let countries = [];
 let missingKPIs = [];
+let ALL_DATA = {}; // consolidated dataset from all_kpis_data.json
 
 const RELEVANCE_WEIGHTS = {
   very_high: 1.0,
@@ -16,33 +17,75 @@ const RELEVANCE_WEIGHTS = {
 
 const EXCLUDE_COUNTRIES = new Set(["World"]);
 
-/* ---------- Utility: Fetch JSON ---------- */
-async function loadJSON(path) {
-  try {
-    const resp = await fetch(path + "?t=" + Date.now());
-    if (!resp.ok) throw new Error(resp.statusText);
-    return await resp.json();
-  } catch (e) {
-    console.warn("⚠️ loadJSON failed:", path, e);
-    return [];
-  }
-}
 
 /* ---------- Init ---------- */
 async function initOverall() {
-  const spinner = document.getElementById("overlay-spinner");
-  if (spinner) spinner.classList.remove("hidden");
+  showSpinner(true, "Building Overall Ranking…");
 
   kpis = await loadJSON("data/meta/available_kpis.json");
   countries = await loadJSON("data/meta/countries.json");
+  ALL_DATA = await loadAllKPIData(); // ✅ consolidated dataset
 
   buildRelevanceControls();
   await buildOverallRanking();
 
-  if (spinner) spinner.classList.add("hidden");
+  showSpinner(false);
   fetchLastUpdated();
   createInfoBox();
 }
+
+// ============================================================
+// 🌈 Mode Switch (Normal / Fun / Safe Haven)
+// ============================================================
+function initModeSwitch() {
+  if (document.getElementById("mode-switch-initialized")) return; // einmalig
+  const marker = document.createElement("div");
+  marker.id = "mode-switch-initialized";
+  document.body.appendChild(marker);
+
+  const normalBtn = document.getElementById("normalMode");
+  const funBtn = document.getElementById("funMode");
+  const safeBtn = document.getElementById("safeMode");
+
+  // Normal = Icons aus, Buttons resetten
+  normalBtn.addEventListener("click", () => {
+    document.querySelectorAll("#mode-switch button").forEach(b => b.classList.remove("active"));
+    normalBtn.classList.add("active");
+    funOn = false; safeOn = false;
+    funBtn.setAttribute("aria-pressed","false"); funBtn.textContent = "😎 Fun Mode deaktiviert";
+    safeBtn.setAttribute("aria-pressed","false"); safeBtn.textContent = "🛡️ Safe Haven deaktiviert";
+    updateModeIcons();
+  });
+
+  // Fun toggle
+  funBtn.addEventListener("click", () => {
+    funOn = !funOn;
+    const label = funOn ? "😎 Fun Mode aktiviert" : "😎 Fun Mode deaktiviert";
+    funBtn.textContent = label;
+    funBtn.setAttribute("aria-pressed", funOn ? "true" : "false");
+
+    // Aktiv-Status-Style nur auf Buttons, Normal bleibt unmarkiert
+    funBtn.classList.toggle("active", funOn);
+    updateModeIcons();
+  });
+
+  // Safe toggle
+  safeBtn.addEventListener("click", () => {
+    safeOn = !safeOn;
+    const label = safeOn ? "🛡️ Safe Haven aktiviert" : "🛡️ Safe Haven deaktiviert";
+    safeBtn.textContent = label;
+    safeBtn.setAttribute("aria-pressed", safeOn ? "true" : "false");
+
+    safeBtn.classList.toggle("active", safeOn);
+    updateModeIcons();
+  });
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  initModeSwitch();
+});
+
 
 /* ---------- Build KPI Cluster Boxes ---------- */
 function buildRelevanceControls() {
@@ -158,7 +201,7 @@ async function buildOverallRanking() {
     const id = meta.filename;
     const weight = getRelevanceWeight(meta.relevance);
     try {
-      const data = await loadJSON(`data/${id}.json`);
+      const data = ALL_DATA[id] || [];
       if (!Array.isArray(data) || data.length === 0) continue;
 
       const numeric = data.filter(d => !isNaN(parseFloat(d.value)));
@@ -210,7 +253,55 @@ async function buildOverallRanking() {
 
   renderOverallTable(list);
   renderLegend(prioritizedCount, missingKPIs);
+  await loadFunSafeSets();   // Sets laden
+  initModeSwitch();          // Buttons sicher initialisieren (einmalig)
+  updateModeIcons();         // Icons gemäß aktuellem Toggle-Status (Default: aus)
+
+
 }
+// Global state
+let FUN_SET = new Set();
+let SAFE_SET = new Set();
+let funOn = false;
+let safeOn = false;
+
+// Lädt Top-10 Sets EINMAL (keine Farben, nur Daten)
+async function loadFunSafeSets() {
+  try {
+    const [fun, safe] = await Promise.all([
+      fetch("data/fun_ranking.json").then(r => r.ok ? r.json() : []),
+      fetch("data/safe_haven_ranking.json").then(r => r.ok ? r.json() : [])
+    ]);
+    FUN_SET = new Set((fun || []).slice(0, 10).map(e => e.country));
+    SAFE_SET = new Set((safe || []).slice(0, 10).map(e => e.country));
+  } catch (e) {
+    console.warn("⚠️ Could not load fun/safe sets:", e);
+    FUN_SET = new Set(); SAFE_SET = new Set();
+  }
+}
+
+// Fügt/entfernt ausschließlich die Icons gemäß funOn/safeOn
+function updateModeIcons() {
+  document.querySelectorAll("#overall-table tbody tr").forEach(tr => {
+    const nameCell = tr.children[1];
+    if (!nameCell) return;
+    // alte Icons entfernen
+    nameCell.querySelectorAll(".mode-icons").forEach(n => n.remove());
+
+    const country = nameCell.textContent.trim();
+    let icons = "";
+    if (funOn && FUN_SET.has(country)) icons += "😎";
+    if (safeOn && SAFE_SET.has(country)) icons += "🛡️";
+    if (icons) {
+      const span = document.createElement("span");
+      span.className = "mode-icons";
+      span.textContent = " " + icons;
+      nameCell.appendChild(span);
+    }
+  });
+}
+
+
 
 /* ---------- Weight Helper ---------- */
 function getRelevanceWeight(r) {
@@ -249,7 +340,6 @@ function renderOverallTable(list) {
     lastUpdated.textContent = "Last calculated: " + d.toISOString().slice(0, 10);
   }
 }
-
 /* ---------- Legend (unter Tabelle) ---------- */
 function renderLegend(prioritizedCount, missing = []) {
   let leg = document.getElementById("legend");
@@ -279,15 +369,22 @@ weighted = norm × relevance_weight
 score(country) = Σ(weighted) / KPIs_used
       </pre>
       <ul>
-        <li>✅ Only KPIs with <b>sort = higher/lower/target</b> are included.</li>
-        <li>🚫 Excludes KPIs with <code>world_kpi = "e"</code> or <code>relevance = "none"</code>.</li>
+        <li>🚫 Only indicators that make sense for such comparison are included.</li>
         <li>⚖️ Only countries with <b>≥ 60 %</b> KPI coverage appear in the ranking.</li>
         <li>🥇 Top 10 rows highlighted green 💔 Bottom 10 red</li>
       </ul>
       <p><b>${prioritizedCount}</b> KPIs with data included in calculation.</p>
       ${missingList}
-    </div>`;
+    </div>
+
+    <div class="legend-block">
+      <h3>🌍 Mode Highlights</h3>
+      <p><strong>😎 Fun Mode:</strong> Warm, sunny, happy and relaxed. Good beer, reasonably priced</p>
+      <p><strong>🛡️ Safe Haven Mode:</strong> Peaceful, resilient, and rights-respecting democracies with low climate risk.</p>
+    </div>
+  `;
 }
+
 
 /* ---------- Info Box (GDPR notice) ---------- */
 function createInfoBox() {

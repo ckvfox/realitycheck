@@ -30,8 +30,9 @@ LOG_FILE       = os.path.join(DATA_DIR, "fetch_log.txt")
 # 🧰 Hilfsfunktionen
 # ======================================================================
 def log(msg: str):
-    """Schreibt Zeitstempel + Nachricht in Konsole & Logdatei."""
-    line = f"[{datetime.utcnow().isoformat(timespec='seconds')}Z] {msg}"
+    """Schreibt Zeitstempel + Nachricht in Konsole & Logdatei (UTC)."""
+    from datetime import datetime, timezone
+    line = f"[{datetime.now(timezone.utc).isoformat(timespec='seconds')}] {msg}"
     print(line)
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(line + "\n")
@@ -147,7 +148,21 @@ def main():
     if missing:
         log(f"⚠️ Missing {len(missing)} files: {', '.join(missing[:10])} ...")
 
-    log("=== Overall Ranking Generation Finished ===")
+    # ============================================================
+    # 🧠 Trigger Fun & Safe Haven AI Rankings (safe subprocess)
+    # ============================================================
+    try:
+        import subprocess
+        log("➡️ Starting fun/safe haven ranking generation ...")
+        subprocess.run(
+            ["python", os.path.join(SCRIPT_DIR, "generate_fun_safe_rankings.py")],
+            check=True
+        )
+        log("✅ Fun & Safe Haven rankings successfully generated.")
+    except Exception as e:
+        log(f"⚠️ Fun/Safe Haven ranking generation failed: {e}")
+
+
 
 # ======================================================================
 # ▶ Start
