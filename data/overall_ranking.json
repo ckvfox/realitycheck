@@ -30,8 +30,6 @@
       "employment_to_population_ratio": 51,
       "female_labor_force_participation": 36,
       "political_corruption_index": 4,
-      "life_expectancy": 13,
-      "military_spending_sipri": 133,
       "individuals_using_the_internet": 10,
       "fixed_broadband_subscriptions_per_100_people": 9,
       "education_expenditure_of_gdp": 39,
@@ -39,9 +37,10 @@
       "recycling_rate": 25,
       "environmental_performance_index": 20,
       "global_peace_index": 32,
-      "electric_vehicle_stock": 8
+      "electric_vehicle_stock": 8,
+      "inform_resilience_index": 16
     },
-    "kpi_count": 38
+    "kpi_count": 37
   },
   {
     "country": "New Zealand",
@@ -72,8 +71,6 @@
       "employment_to_population_ratio": 24,
       "female_labor_force_participation": 19,
       "political_corruption_index": 3,
-      "life_expectancy": 27,
-      "military_spending_sipri": 106,
       "individuals_using_the_internet": 20,
       "fixed_broadband_subscriptions_per_100_people": 27,
       "education_expenditure_of_gdp": 49,
@@ -81,9 +78,10 @@
       "recycling_rate": 67,
       "environmental_performance_index": 26,
       "global_peace_index": 3,
-      "electric_vehicle_stock": 27
+      "electric_vehicle_stock": 27,
+      "inform_resilience_index": 7
     },
-    "kpi_count": 36
+    "kpi_count": 35
   },
   {
     "country": "Sweden",
@@ -115,8 +113,6 @@
       "employment_to_population_ratio": 75,
       "female_labor_force_participation": 37,
       "political_corruption_index": 2,
-      "life_expectancy": 15,
-      "military_spending_sipri": 135,
       "individuals_using_the_internet": 23,
       "fixed_broadband_subscriptions_per_100_people": 21,
       "education_expenditure_of_gdp": 11,
@@ -124,9 +120,10 @@
       "recycling_rate": 17,
       "environmental_performance_index": 5,
       "global_peace_index": 35,
-      "electric_vehicle_stock": 11
+      "electric_vehicle_stock": 11,
+      "inform_resilience_index": 26
     },
-    "kpi_count": 37
+    "kpi_count": 36
   },
   {
     "country": "Iceland",
@@ -157,8 +154,6 @@
       "employment_to_population_ratio": 18,
       "female_labor_force_participation": 16,
       "political_corruption_index": 7,
-      "life_expectancy": 18,
-      "military_spending_sipri": 2,
       "individuals_using_the_internet": 4,
       "fixed_broadband_subscriptions_per_100_people": 29,
       "education_expenditure_of_gdp": 12,
@@ -166,9 +161,10 @@
       "recycling_rate": 4,
       "environmental_performance_index": 10,
       "global_peace_index": 1,
-      "electric_vehicle_stock": 29
+      "electric_vehicle_stock": 29,
+      "inform_resilience_index": 8
     },
-    "kpi_count": 36
+    "kpi_count": 35
   },
   {
     "country": "Switzerland",
@@ -200,8 +196,6 @@
       "employment_to_population_ratio": 41,
       "female_labor_force_participation": 35,
       "political_corruption_index": 8,
-      "life_expectancy": 6,
-      "military_spending_sipri": 123,
       "individuals_using_the_internet": 15,
       "fixed_broadband_subscriptions_per_100_people": 6,
       "education_expenditure_of_gdp": 64,
@@ -209,9 +203,10 @@
       "recycling_rate": 36,
       "environmental_performance_index": 9,
       "global_peace_index": 5,
-      "electric_vehicle_stock": 17
+      "electric_vehicle_stock": 17,
+      "inform_resilience_index": 11
     },
-    "kpi_count": 37
+    "kpi_count": 36
   },
   {
     "country": "Finland",
@@ -243,8 +238,6 @@
       "employment_to_population_ratio": 109,
       "female_labor_force_participation": 58,
       "political_corruption_index": 9,
-      "life_expectancy": 31,
-      "military_spending_sipri": 126,
       "individuals_using_the_internet": 34,
       "fixed_broadband_subscriptions_per_100_people": 36,
       "education_expenditure_of_gdp": 19,
@@ -252,9 +245,10 @@
       "recycling_rate": 23,
       "environmental_performance_index": 3,
       "global_peace_index": 10,
-      "electric_vehicle_stock": 20
+      "electric_vehicle_stock": 20,
+      "inform_resilience_index": 15
     },
-    "kpi_count": 37
+    "kpi_count": 36
   },
   {
     "country": "Denmark",
@@ -287,8 +281,6 @@
       "employment_to_population_ratio": 70,
       "female_labor_force_participation": 48,
       "political_corruption_index": 1,
-      "life_expectancy": 30,
-      "military_spending_sipri": 132,
       "individuals_using_the_internet": 5,
       "fixed_broadband_subscriptions_per_100_people": 14,
       "education_expenditure_of_gdp": 20,
@@ -296,9 +288,10 @@
       "recycling_rate": 24,
       "environmental_performance_index": 1,
       "global_peace_index": 8,
-      "electric_vehicle_stock": 15
+      "electric_vehicle_stock": 15,
+      "inform_resilience_index": 6
     },
-    "kpi_count": 38
+    "kpi_count": 37
   },
   {
     "country": "Ireland",
@@ -329,17 +322,16 @@
       "employment_to_population_ratio": 55,
       "female_labor_force_participation": 46,
       "political_corruption_index": 16,
-      "life_expectancy": 20,
-      "military_spending_sipri": 85,
       "individuals_using_the_internet": 18,
       "fixed_broadband_subscriptions_per_100_people": 43,
       "education_expenditure_of_gdp": 145,
       "mean_years_of_schooling": 5,
       "recycling_rate": 12,
       "environmental_performance_index": 24,
-      "global_peace_index": 2
+      "global_peace_index": 2,
+      "inform_resilience_index": 22
     },
-    "kpi_count": 35
+    "kpi_count": 34
   },
   {
     "country": "Netherlands",
@@ -371,8 +363,6 @@
       "employment_to_population_ratio": 36,
       "female_labor_force_participation": 28,
       "political_corruption_index": 5,
-      "life_expectancy": 25,
-      "military_spending_sipri": 144,
       "individuals_using_the_internet": 17,
       "fixed_broadband_subscriptions_per_100_people": 18,
       "education_expenditure_of_gdp": 54,
@@ -380,9 +370,10 @@
       "recycling_rate": 39,
       "environmental_performance_index": 11,
       "global_peace_index": 15,
-      "electric_vehicle_stock": 7
+      "electric_vehicle_stock": 7,
+      "inform_resilience_index": 40
     },
-    "kpi_count": 37
+    "kpi_count": 36
   },
   {
     "country": "Luxembourg",
@@ -413,16 +404,15 @@
       "employment_to_population_ratio": 92,
       "female_labor_force_participation": 62,
       "political_corruption_index": 13,
-      "life_expectancy": 24,
-      "military_spending_sipri": 70,
       "individuals_using_the_internet": 11,
       "fixed_broadband_subscriptions_per_100_people": 24,
       "education_expenditure_of_gdp": 113,
       "mean_years_of_schooling": 40,
       "recycling_rate": 13,
-      "environmental_performance_index": 6
+      "environmental_performance_index": 6,
+      "inform_resilience_index": 3
     },
-    "kpi_count": 34
+    "kpi_count": 33
   },
   {
     "country": "Australia",
@@ -454,8 +444,6 @@
       "employment_to_population_ratio": 42,
       "female_labor_force_participation": 31,
       "political_corruption_index": 11,
-      "life_expectancy": 7,
-      "military_spending_sipri": 148,
       "individuals_using_the_internet": 16,
       "fixed_broadband_subscriptions_per_100_people": 34,
       "education_expenditure_of_gdp": 61,
@@ -463,9 +451,10 @@
       "recycling_rate": 5,
       "environmental_performance_index": 17,
       "global_peace_index": 18,
-      "electric_vehicle_stock": 18
+      "electric_vehicle_stock": 18,
+      "inform_resilience_index": 38
     },
-    "kpi_count": 37
+    "kpi_count": 36
   },
   {
     "country": "Taiwan",
@@ -476,14 +465,12 @@
       "big_mac_index": 10,
       "age_dependency_ratio_total": 28,
       "political_corruption_index": 47,
-      "life_expectancy": 41,
-      "military_spending_sipri": 140,
       "mean_years_of_schooling": 6,
       "recycling_rate": 123,
       "environmental_performance_index": 74,
       "global_peace_index": 40
     },
-    "kpi_count": 12
+    "kpi_count": 10
   },
   {
     "country": "Germany",
@@ -516,8 +503,6 @@
       "employment_to_population_ratio": 83,
       "female_labor_force_participation": 72,
       "political_corruption_index": 6,
-      "life_expectancy": 35,
-      "military_spending_sipri": 159,
       "individuals_using_the_internet": 35,
       "fixed_broadband_subscriptions_per_100_people": 10,
       "education_expenditure_of_gdp": 52,
@@ -525,9 +510,10 @@
       "recycling_rate": 10,
       "environmental_performance_index": 13,
       "global_peace_index": 20,
-      "electric_vehicle_stock": 4
+      "electric_vehicle_stock": 4,
+      "inform_resilience_index": 47
     },
-    "kpi_count": 38
+    "kpi_count": 37
   },
   {
     "country": "Canada",
@@ -560,8 +546,6 @@
       "employment_to_population_ratio": 63,
       "female_labor_force_participation": 41,
       "political_corruption_index": 12,
-      "life_expectancy": 19,
-      "military_spending_sipri": 147,
       "individuals_using_the_internet": 32,
       "fixed_broadband_subscriptions_per_100_people": 19,
       "education_expenditure_of_gdp": 66,
@@ -569,9 +553,10 @@
       "recycling_rate": 59,
       "environmental_performance_index": 50,
       "global_peace_index": 14,
-      "electric_vehicle_stock": 9
+      "electric_vehicle_stock": 9,
+      "inform_resilience_index": 53
     },
-    "kpi_count": 38
+    "kpi_count": 37
   },
   {
     "country": "Uruguay",
@@ -590,6 +575,7 @@
       "hospital_beds_per_1_000_people": 92,
       "infant_mortality_rate": 55,
       "maternal_mortality_ratio": 60,
+      "adult_literacy_rate": 28,
       "age_dependency_ratio_total": 76,
       "overall_immunization_coverage": 80,
       "extreme_poverty": 35,
@@ -603,15 +589,14 @@
       "employment_to_population_ratio": 85,
       "female_labor_force_participation": 59,
       "political_corruption_index": 21,
-      "life_expectancy": 56,
-      "military_spending_sipri": 93,
       "individuals_using_the_internet": 43,
       "fixed_broadband_subscriptions_per_100_people": 41,
       "education_expenditure_of_gdp": 69,
       "mean_years_of_schooling": 109,
       "recycling_rate": 48,
       "environmental_performance_index": 115,
-      "global_peace_index": 48
+      "global_peace_index": 48,
+      "inform_resilience_index": 57
     },
     "kpi_count": 36
   },
@@ -645,8 +630,6 @@
       "employment_to_population_ratio": 57,
       "female_labor_force_participation": 76,
       "political_corruption_index": 23,
-      "life_expectancy": 3,
-      "military_spending_sipri": 153,
       "individuals_using_the_internet": 73,
       "fixed_broadband_subscriptions_per_100_people": 23,
       "education_expenditure_of_gdp": 129,
@@ -654,9 +637,10 @@
       "recycling_rate": 145,
       "environmental_performance_index": 25,
       "global_peace_index": 12,
-      "electric_vehicle_stock": 12
+      "electric_vehicle_stock": 12,
+      "inform_resilience_index": 23
     },
-    "kpi_count": 37
+    "kpi_count": 36
   },
   {
     "country": "United Kingdom",
@@ -689,8 +673,6 @@
       "employment_to_population_ratio": 79,
       "female_labor_force_participation": 60,
       "political_corruption_index": 17,
-      "life_expectancy": 36,
-      "military_spending_sipri": 156,
       "individuals_using_the_internet": 19,
       "fixed_broadband_subscriptions_per_100_people": 20,
       "education_expenditure_of_gdp": 29,
@@ -698,9 +680,10 @@
       "recycling_rate": 28,
       "environmental_performance_index": 2,
       "global_peace_index": 30,
-      "electric_vehicle_stock": 5
+      "electric_vehicle_stock": 5,
+      "inform_resilience_index": 21
     },
-    "kpi_count": 38
+    "kpi_count": 37
   },
   {
     "country": "Costa Rica",
@@ -719,6 +702,7 @@
       "hospital_beds_per_1_000_people": 144,
       "infant_mortality_rate": 75,
       "maternal_mortality_ratio": 74,
+      "adult_literacy_rate": 51,
       "age_dependency_ratio_total": 38,
       "overall_immunization_coverage": 3,
       "extreme_poverty": 69,
@@ -732,15 +716,14 @@
       "employment_to_population_ratio": 125,
       "female_labor_force_participation": 130,
       "political_corruption_index": 45,
-      "life_expectancy": 40,
-      "military_spending_sipri": 1,
       "individuals_using_the_internet": 77,
       "fixed_broadband_subscriptions_per_100_people": 69,
       "education_expenditure_of_gdp": 22,
       "mean_years_of_schooling": 87,
       "recycling_rate": 181,
       "environmental_performance_index": 68,
-      "global_peace_index": 54
+      "global_peace_index": 54,
+      "inform_resilience_index": 85
     },
     "kpi_count": 36
   },
@@ -773,8 +756,6 @@
       "employment_to_population_ratio": 97,
       "female_labor_force_participation": 73,
       "political_corruption_index": 32,
-      "life_expectancy": 29,
-      "military_spending_sipri": 113,
       "individuals_using_the_internet": 26,
       "fixed_broadband_subscriptions_per_100_people": 52,
       "education_expenditure_of_gdp": 48,
@@ -782,9 +763,10 @@
       "recycling_rate": 22,
       "environmental_performance_index": 8,
       "global_peace_index": 4,
-      "electric_vehicle_stock": 19
+      "electric_vehicle_stock": 19,
+      "inform_resilience_index": 35
     },
-    "kpi_count": 36
+    "kpi_count": 35
   },
   {
     "country": "Mauritius",
@@ -802,6 +784,7 @@
       "hospital_beds_per_1_000_people": 54,
       "infant_mortality_rate": 98,
       "maternal_mortality_ratio": 110,
+      "adult_literacy_rate": 78,
       "age_dependency_ratio_total": 15,
       "overall_immunization_coverage": 85,
       "extreme_poverty": 47,
@@ -814,15 +797,14 @@
       "employment_to_population_ratio": 124,
       "female_labor_force_participation": 132,
       "political_corruption_index": 82,
-      "life_expectancy": 92,
-      "military_spending_sipri": 9,
       "individuals_using_the_internet": 103,
       "fixed_broadband_subscriptions_per_100_people": 60,
       "education_expenditure_of_gdp": 97,
       "mean_years_of_schooling": 26,
       "recycling_rate": 98,
       "environmental_performance_index": 78,
-      "global_peace_index": 26
+      "global_peace_index": 26,
+      "inform_resilience_index": 29
     },
     "kpi_count": 34
   },
@@ -842,6 +824,7 @@
       "hospital_beds_per_1_000_people": 34,
       "infant_mortality_rate": 2,
       "maternal_mortality_ratio": 23,
+      "adult_literacy_rate": 10,
       "age_dependency_ratio_total": 124,
       "overall_immunization_coverage": 143,
       "extreme_poverty": 38,
@@ -855,15 +838,14 @@
       "employment_to_population_ratio": 69,
       "female_labor_force_participation": 43,
       "political_corruption_index": 10,
-      "life_expectancy": 51,
-      "military_spending_sipri": 88,
       "individuals_using_the_internet": 40,
       "fixed_broadband_subscriptions_per_100_people": 37,
       "education_expenditure_of_gdp": 53,
       "mean_years_of_schooling": 33,
       "recycling_rate": 18,
       "environmental_performance_index": 14,
-      "global_peace_index": 24
+      "global_peace_index": 24,
+      "inform_resilience_index": 14
     },
     "kpi_count": 35
   },
@@ -884,6 +866,7 @@
       "hospital_beds_per_1_000_people": 70,
       "infant_mortality_rate": 21,
       "maternal_mortality_ratio": 12,
+      "adult_literacy_rate": 16,
       "homelessness_rate": 9,
       "age_dependency_ratio_total": 68,
       "overall_immunization_coverage": 77,
@@ -898,8 +881,6 @@
       "employment_to_population_ratio": 130,
       "female_labor_force_participation": 98,
       "political_corruption_index": 30,
-      "life_expectancy": 10,
-      "military_spending_sipri": 145,
       "individuals_using_the_internet": 22,
       "fixed_broadband_subscriptions_per_100_people": 30,
       "education_expenditure_of_gdp": 76,
@@ -907,7 +888,8 @@
       "recycling_rate": 42,
       "environmental_performance_index": 27,
       "global_peace_index": 25,
-      "electric_vehicle_stock": 16
+      "electric_vehicle_stock": 16,
+      "inform_resilience_index": 48
     },
     "kpi_count": 38
   },
@@ -942,17 +924,16 @@
       "employment_to_population_ratio": 84,
       "female_labor_force_participation": 90,
       "political_corruption_index": 29,
-      "life_expectancy": 45,
-      "military_spending_sipri": 125,
       "individuals_using_the_internet": 68,
       "fixed_broadband_subscriptions_per_100_people": 26,
       "education_expenditure_of_gdp": 87,
       "mean_years_of_schooling": 17,
       "recycling_rate": 20,
       "environmental_performance_index": 19,
-      "global_peace_index": 11
+      "global_peace_index": 11,
+      "inform_resilience_index": 13
     },
-    "kpi_count": 37
+    "kpi_count": 36
   },
   {
     "country": "Portugal",
@@ -971,6 +952,7 @@
       "hospital_beds_per_1_000_people": 55,
       "infant_mortality_rate": 20,
       "maternal_mortality_ratio": 57,
+      "adult_literacy_rate": 76,
       "age_dependency_ratio_total": 127,
       "overall_immunization_coverage": 15,
       "extreme_poverty": 42,
@@ -984,8 +966,6 @@
       "employment_to_population_ratio": 111,
       "female_labor_force_participation": 80,
       "political_corruption_index": 37,
-      "life_expectancy": 23,
-      "military_spending_sipri": 111,
       "individuals_using_the_internet": 62,
       "fixed_broadband_subscriptions_per_100_people": 13,
       "education_expenditure_of_gdp": 77,
@@ -993,7 +973,8 @@
       "recycling_rate": 58,
       "environmental_performance_index": 48,
       "global_peace_index": 7,
-      "electric_vehicle_stock": 22
+      "electric_vehicle_stock": 22,
+      "inform_resilience_index": 17
     },
     "kpi_count": 37
   },
@@ -1013,6 +994,7 @@
       "hospital_beds_per_1_000_people": 41,
       "infant_mortality_rate": 30,
       "maternal_mortality_ratio": 24,
+      "adult_literacy_rate": 81,
       "age_dependency_ratio_total": 130,
       "overall_immunization_coverage": 64,
       "extreme_poverty": 51,
@@ -1026,8 +1008,6 @@
       "employment_to_population_ratio": 147,
       "female_labor_force_participation": 128,
       "political_corruption_index": 48,
-      "life_expectancy": 32,
-      "military_spending_sipri": 128,
       "individuals_using_the_internet": 75,
       "fixed_broadband_subscriptions_per_100_people": 15,
       "education_expenditure_of_gdp": 127,
@@ -1035,7 +1015,8 @@
       "recycling_rate": 63,
       "environmental_performance_index": 29,
       "global_peace_index": 45,
-      "electric_vehicle_stock": 30
+      "electric_vehicle_stock": 30,
+      "inform_resilience_index": 70
     },
     "kpi_count": 36
   },
@@ -1069,8 +1050,6 @@
       "employment_to_population_ratio": 128,
       "female_labor_force_participation": 103,
       "political_corruption_index": 20,
-      "life_expectancy": 12,
-      "military_spending_sipri": 154,
       "individuals_using_the_internet": 58,
       "fixed_broadband_subscriptions_per_100_people": 5,
       "education_expenditure_of_gdp": 45,
@@ -1078,9 +1057,10 @@
       "recycling_rate": 31,
       "environmental_performance_index": 12,
       "global_peace_index": 74,
-      "electric_vehicle_stock": 6
+      "electric_vehicle_stock": 6,
+      "inform_resilience_index": 54
     },
-    "kpi_count": 37
+    "kpi_count": 36
   },
   {
     "country": "Malta",
@@ -1098,6 +1078,7 @@
       "hospital_beds_per_1_000_people": 36,
       "infant_mortality_rate": 45,
       "maternal_mortality_ratio": 41,
+      "adult_literacy_rate": 84,
       "age_dependency_ratio_total": 53,
       "overall_immunization_coverage": 36,
       "extreme_poverty": 22,
@@ -1110,14 +1091,13 @@
       "employment_to_population_ratio": 56,
       "female_labor_force_participation": 77,
       "political_corruption_index": 43,
-      "life_expectancy": 14,
-      "military_spending_sipri": 24,
       "individuals_using_the_internet": 41,
       "fixed_broadband_subscriptions_per_100_people": 12,
       "education_expenditure_of_gdp": 71,
       "mean_years_of_schooling": 13,
       "recycling_rate": 153,
-      "environmental_performance_index": 4
+      "environmental_performance_index": 4,
+      "inform_resilience_index": 9
     },
     "kpi_count": 33
   },
@@ -1152,8 +1132,6 @@
       "employment_to_population_ratio": 77,
       "female_labor_force_participation": 65,
       "political_corruption_index": 19,
-      "life_expectancy": 49,
-      "military_spending_sipri": 162,
       "individuals_using_the_internet": 37,
       "fixed_broadband_subscriptions_per_100_people": 25,
       "education_expenditure_of_gdp": 42,
@@ -1161,9 +1139,10 @@
       "recycling_rate": 115,
       "environmental_performance_index": 43,
       "global_peace_index": 128,
-      "electric_vehicle_stock": 3
+      "electric_vehicle_stock": 3,
+      "inform_resilience_index": 82
     },
-    "kpi_count": 38
+    "kpi_count": 37
   },
   {
     "country": "Chile",
@@ -1182,6 +1161,7 @@
       "hospital_beds_per_1_000_people": 113,
       "infant_mortality_rate": 56,
       "maternal_mortality_ratio": 45,
+      "adult_literacy_rate": 60,
       "age_dependency_ratio_total": 39,
       "overall_immunization_coverage": 60,
       "extreme_poverty": 45,
@@ -1195,8 +1175,6 @@
       "employment_to_population_ratio": 102,
       "female_labor_force_participation": 101,
       "political_corruption_index": 26,
-      "life_expectancy": 38,
-      "military_spending_sipri": 117,
       "individuals_using_the_internet": 28,
       "fixed_broadband_subscriptions_per_100_people": 67,
       "education_expenditure_of_gdp": 65,
@@ -1204,7 +1182,8 @@
       "recycling_rate": 195,
       "environmental_performance_index": 65,
       "global_peace_index": 62,
-      "electric_vehicle_stock": 31
+      "electric_vehicle_stock": 31,
+      "inform_resilience_index": 80
     },
     "kpi_count": 37
   },
@@ -1225,6 +1204,7 @@
       "hospital_beds_per_1_000_people": 40,
       "infant_mortality_rate": 6,
       "maternal_mortality_ratio": 11,
+      "adult_literacy_rate": 18,
       "age_dependency_ratio_total": 112,
       "overall_immunization_coverage": 107,
       "extreme_poverty": 12,
@@ -1238,15 +1218,14 @@
       "employment_to_population_ratio": 101,
       "female_labor_force_participation": 87,
       "political_corruption_index": 22,
-      "life_expectancy": 34,
-      "military_spending_sipri": 74,
       "individuals_using_the_internet": 49,
       "fixed_broadband_subscriptions_per_100_people": 44,
       "education_expenditure_of_gdp": 47,
       "mean_years_of_schooling": 35,
       "recycling_rate": 47,
       "environmental_performance_index": 7,
-      "global_peace_index": 9
+      "global_peace_index": 9,
+      "inform_resilience_index": 43
     },
     "kpi_count": 36
   },
@@ -1267,6 +1246,7 @@
       "hospital_beds_per_1_000_people": 66,
       "infant_mortality_rate": 22,
       "maternal_mortality_ratio": 4,
+      "adult_literacy_rate": 89,
       "age_dependency_ratio_total": 148,
       "overall_immunization_coverage": 25,
       "extreme_poverty": 52,
@@ -1280,8 +1260,6 @@
       "employment_to_population_ratio": 49,
       "female_labor_force_participation": 34,
       "political_corruption_index": 33,
-      "life_expectancy": 21,
-      "military_spending_sipri": 151,
       "individuals_using_the_internet": 65,
       "fixed_broadband_subscriptions_per_100_people": 51,
       "education_expenditure_of_gdp": 28,
@@ -1289,7 +1267,8 @@
       "recycling_rate": 35,
       "environmental_performance_index": 57,
       "global_peace_index": 155,
-      "electric_vehicle_stock": 23
+      "electric_vehicle_stock": 23,
+      "inform_resilience_index": 81
     },
     "kpi_count": 37
   },
@@ -1310,6 +1289,7 @@
       "hospital_beds_per_1_000_people": 3,
       "infant_mortality_rate": 15,
       "maternal_mortality_ratio": 18,
+      "adult_literacy_rate": 42,
       "age_dependency_ratio_total": 19,
       "overall_immunization_coverage": 34,
       "extreme_poverty": 31,
@@ -1323,8 +1303,6 @@
       "employment_to_population_ratio": 52,
       "female_labor_force_participation": 70,
       "political_corruption_index": 35,
-      "life_expectancy": 4,
-      "military_spending_sipri": 152,
       "individuals_using_the_internet": 13,
       "fixed_broadband_subscriptions_per_100_people": 8,
       "education_expenditure_of_gdp": 32,
@@ -1332,7 +1310,8 @@
       "recycling_rate": 1,
       "environmental_performance_index": 63,
       "global_peace_index": 41,
-      "electric_vehicle_stock": 13
+      "electric_vehicle_stock": 13,
+      "inform_resilience_index": 24
     },
     "kpi_count": 37
   },
@@ -1353,6 +1332,7 @@
       "hospital_beds_per_1_000_people": 26,
       "infant_mortality_rate": 18,
       "maternal_mortality_ratio": 70,
+      "adult_literacy_rate": 8,
       "age_dependency_ratio_total": 129,
       "overall_immunization_coverage": 35,
       "extreme_poverty": 40,
@@ -1366,15 +1346,14 @@
       "employment_to_population_ratio": 100,
       "female_labor_force_participation": 78,
       "political_corruption_index": 25,
-      "life_expectancy": 79,
-      "military_spending_sipri": 89,
       "individuals_using_the_internet": 38,
       "fixed_broadband_subscriptions_per_100_people": 63,
       "education_expenditure_of_gdp": 85,
       "mean_years_of_schooling": 19,
       "recycling_rate": 33,
       "environmental_performance_index": 15,
-      "global_peace_index": 22
+      "global_peace_index": 22,
+      "inform_resilience_index": 51
     },
     "kpi_count": 36
   },
@@ -1407,8 +1386,6 @@
       "employment_to_population_ratio": 129,
       "female_labor_force_participation": 113,
       "political_corruption_index": 15,
-      "life_expectancy": 26,
-      "military_spending_sipri": 131,
       "individuals_using_the_internet": 21,
       "fixed_broadband_subscriptions_per_100_people": 16,
       "education_expenditure_of_gdp": 21,
@@ -1416,9 +1393,10 @@
       "recycling_rate": 30,
       "environmental_performance_index": 21,
       "global_peace_index": 16,
-      "electric_vehicle_stock": 10
+      "electric_vehicle_stock": 10,
+      "inform_resilience_index": 44
     },
-    "kpi_count": 36
+    "kpi_count": 35
   },
   {
     "country": "Botswana",
@@ -1436,6 +1414,7 @@
       "hospital_beds_per_1_000_people": 101,
       "infant_mortality_rate": 165,
       "maternal_mortality_ratio": 145,
+      "adult_literacy_rate": 115,
       "age_dependency_ratio_total": 113,
       "overall_immunization_coverage": 59,
       "extreme_poverty": 130,
@@ -1449,15 +1428,14 @@
       "employment_to_population_ratio": 123,
       "female_labor_force_participation": 25,
       "political_corruption_index": 49,
-      "life_expectancy": 143,
-      "military_spending_sipri": 63,
       "individuals_using_the_internet": 96,
       "fixed_broadband_subscriptions_per_100_people": 133,
       "education_expenditure_of_gdp": 8,
       "mean_years_of_schooling": 61,
       "recycling_rate": 71,
       "environmental_performance_index": 35,
-      "global_peace_index": 43
+      "global_peace_index": 43,
+      "inform_resilience_index": 68
     },
     "kpi_count": 35
   },
@@ -1477,6 +1455,7 @@
       "hospital_beds_per_1_000_people": 18,
       "infant_mortality_rate": 23,
       "maternal_mortality_ratio": 40,
+      "adult_literacy_rate": 13,
       "age_dependency_ratio_total": 87,
       "overall_immunization_coverage": 113,
       "extreme_poverty": 66,
@@ -1490,15 +1469,14 @@
       "employment_to_population_ratio": 88,
       "female_labor_force_participation": 56,
       "political_corruption_index": 38,
-      "life_expectancy": 82,
-      "military_spending_sipri": 101,
       "individuals_using_the_internet": 60,
       "fixed_broadband_subscriptions_per_100_people": 57,
       "education_expenditure_of_gdp": 89,
       "mean_years_of_schooling": 31,
       "recycling_rate": 26,
       "environmental_performance_index": 31,
-      "global_peace_index": 23
+      "global_peace_index": 23,
+      "inform_resilience_index": 25
     },
     "kpi_count": 35
   },
@@ -1516,6 +1494,7 @@
       "hospital_beds_per_1_000_people": 112,
       "infant_mortality_rate": 87,
       "maternal_mortality_ratio": 90,
+      "adult_literacy_rate": 98,
       "age_dependency_ratio_total": 54,
       "overall_immunization_coverage": 82,
       "extreme_poverty": 122,
@@ -1528,13 +1507,12 @@
       "employment_to_population_ratio": 131,
       "female_labor_force_participation": 109,
       "political_corruption_index": 53,
-      "life_expectancy": 81,
-      "military_spending_sipri": 7,
       "individuals_using_the_internet": 115,
       "fixed_broadband_subscriptions_per_100_people": 115,
       "education_expenditure_of_gdp": 83,
       "recycling_rate": 89,
-      "environmental_performance_index": 91
+      "environmental_performance_index": 91,
+      "inform_resilience_index": 27
     },
     "kpi_count": 30
   },
@@ -1555,6 +1533,7 @@
       "hospital_beds_per_1_000_people": 65,
       "infant_mortality_rate": 14,
       "maternal_mortality_ratio": 31,
+      "adult_literacy_rate": 21,
       "age_dependency_ratio_total": 114,
       "overall_immunization_coverage": 73,
       "extreme_poverty": 61,
@@ -1568,8 +1547,6 @@
       "employment_to_population_ratio": 148,
       "female_labor_force_participation": 140,
       "political_corruption_index": 44,
-      "life_expectancy": 9,
-      "military_spending_sipri": 150,
       "individuals_using_the_internet": 54,
       "fixed_broadband_subscriptions_per_100_people": 45,
       "education_expenditure_of_gdp": 100,
@@ -1577,7 +1554,8 @@
       "recycling_rate": 15,
       "environmental_performance_index": 23,
       "global_peace_index": 33,
-      "electric_vehicle_stock": 14
+      "electric_vehicle_stock": 14,
+      "inform_resilience_index": 71
     },
     "kpi_count": 37
   },
@@ -1598,6 +1576,7 @@
       "hospital_beds_per_1_000_people": 16,
       "infant_mortality_rate": 36,
       "maternal_mortality_ratio": 5,
+      "adult_literacy_rate": 32,
       "homelessness_rate": 6,
       "age_dependency_ratio_total": 85,
       "overall_immunization_coverage": 75,
@@ -1612,8 +1591,6 @@
       "employment_to_population_ratio": 98,
       "female_labor_force_participation": 105,
       "political_corruption_index": 28,
-      "life_expectancy": 53,
-      "military_spending_sipri": 149,
       "individuals_using_the_internet": 59,
       "fixed_broadband_subscriptions_per_100_people": 62,
       "education_expenditure_of_gdp": 86,
@@ -1621,7 +1598,8 @@
       "recycling_rate": 19,
       "environmental_performance_index": 46,
       "global_peace_index": 36,
-      "electric_vehicle_stock": 26
+      "electric_vehicle_stock": 26,
+      "inform_resilience_index": 42
     },
     "kpi_count": 38
   },
@@ -1641,6 +1619,7 @@
       "hospital_beds_per_1_000_people": 100,
       "infant_mortality_rate": 25,
       "maternal_mortality_ratio": 54,
+      "adult_literacy_rate": 33,
       "age_dependency_ratio_total": 30,
       "overall_immunization_coverage": 69,
       "extreme_poverty": 6,
@@ -1653,15 +1632,14 @@
       "employment_to_population_ratio": 43,
       "female_labor_force_participation": 30,
       "political_corruption_index": 36,
-      "life_expectancy": 33,
-      "military_spending_sipri": 65,
       "individuals_using_the_internet": 45,
       "fixed_broadband_subscriptions_per_100_people": 22,
       "education_expenditure_of_gdp": 70,
       "mean_years_of_schooling": 14,
       "recycling_rate": 88,
       "environmental_performance_index": 22,
-      "global_peace_index": 68
+      "global_peace_index": 68,
+      "inform_resilience_index": 64
     },
     "kpi_count": 34
   },
@@ -1682,6 +1660,7 @@
       "hospital_beds_per_1_000_people": 127,
       "infant_mortality_rate": 138,
       "maternal_mortality_ratio": 120,
+      "adult_literacy_rate": 114,
       "age_dependency_ratio_total": 45,
       "overall_immunization_coverage": 72,
       "extreme_poverty": 99,
@@ -1695,8 +1674,6 @@
       "employment_to_population_ratio": 121,
       "female_labor_force_participation": 156,
       "political_corruption_index": 113,
-      "life_expectancy": 121,
-      "military_spending_sipri": 158,
       "individuals_using_the_internet": 145,
       "fixed_broadband_subscriptions_per_100_people": 138,
       "education_expenditure_of_gdp": 95,
@@ -1704,7 +1681,8 @@
       "recycling_rate": 87,
       "environmental_performance_index": 179,
       "global_peace_index": 115,
-      "electric_vehicle_stock": 21
+      "electric_vehicle_stock": 21,
+      "inform_resilience_index": 159
     },
     "kpi_count": 37
   },
@@ -1737,17 +1715,16 @@
       "employment_to_population_ratio": 93,
       "female_labor_force_participation": 75,
       "political_corruption_index": 57,
-      "life_expectancy": 55,
-      "military_spending_sipri": 105,
       "individuals_using_the_internet": 50,
       "fixed_broadband_subscriptions_per_100_people": 40,
       "education_expenditure_of_gdp": 74,
       "mean_years_of_schooling": 7,
       "recycling_rate": 131,
       "environmental_performance_index": 18,
-      "global_peace_index": 28
+      "global_peace_index": 28,
+      "inform_resilience_index": 60
     },
-    "kpi_count": 35
+    "kpi_count": 34
   },
   {
     "country": "South Africa",
@@ -1766,6 +1743,7 @@
       "hospital_beds_per_1_000_people": 99,
       "infant_mortality_rate": 137,
       "maternal_mortality_ratio": 133,
+      "adult_literacy_rate": 90,
       "age_dependency_ratio_total": 48,
       "overall_immunization_coverage": 162,
       "extreme_poverty": 137,
@@ -1779,15 +1757,14 @@
       "employment_to_population_ratio": 162,
       "female_labor_force_participation": 92,
       "political_corruption_index": 95,
-      "life_expectancy": 167,
-      "military_spending_sipri": 104,
       "individuals_using_the_internet": 112,
       "fixed_broadband_subscriptions_per_100_people": 134,
       "education_expenditure_of_gdp": 25,
       "mean_years_of_schooling": 58,
       "recycling_rate": 40,
       "environmental_performance_index": 116,
-      "global_peace_index": 125
+      "global_peace_index": 125,
+      "inform_resilience_index": 136
     },
     "kpi_count": 36
   },
@@ -1808,6 +1785,7 @@
       "hospital_beds_per_1_000_people": 108,
       "infant_mortality_rate": 58,
       "maternal_mortality_ratio": 75,
+      "adult_literacy_rate": 68,
       "age_dependency_ratio_total": 23,
       "overall_immunization_coverage": 84,
       "extreme_poverty": 9,
@@ -1821,15 +1799,14 @@
       "employment_to_population_ratio": 46,
       "female_labor_force_participation": 104,
       "political_corruption_index": 63,
-      "life_expectancy": 75,
-      "military_spending_sipri": 110,
       "individuals_using_the_internet": 12,
       "fixed_broadband_subscriptions_per_100_people": 93,
       "education_expenditure_of_gdp": 122,
       "mean_years_of_schooling": 8,
       "recycling_rate": 66,
       "environmental_performance_index": 129,
-      "global_peace_index": 13
+      "global_peace_index": 13,
+      "inform_resilience_index": 88
     },
     "kpi_count": 36
   },
@@ -1849,6 +1826,7 @@
       "hospital_beds_per_1_000_people": 125,
       "infant_mortality_rate": 118,
       "maternal_mortality_ratio": 101,
+      "adult_literacy_rate": 56,
       "age_dependency_ratio_total": 26,
       "overall_immunization_coverage": 91,
       "extreme_poverty": 89,
@@ -1861,15 +1839,14 @@
       "employment_to_population_ratio": 110,
       "female_labor_force_participation": 114,
       "political_corruption_index": 27,
-      "life_expectancy": 105,
-      "military_spending_sipri": 39,
       "individuals_using_the_internet": 78,
       "fixed_broadband_subscriptions_per_100_people": 61,
       "education_expenditure_of_gdp": 143,
       "mean_years_of_schooling": 24,
       "recycling_rate": 96,
       "environmental_performance_index": 59,
-      "global_peace_index": 89
+      "global_peace_index": 89,
+      "inform_resilience_index": 73
     },
     "kpi_count": 34
   },
@@ -1887,6 +1864,7 @@
       "hospital_beds_per_1_000_people": 19,
       "infant_mortality_rate": 163,
       "maternal_mortality_ratio": 156,
+      "adult_literacy_rate": 131,
       "age_dependency_ratio_total": 146,
       "overall_immunization_coverage": 141,
       "extreme_poverty": 157,
@@ -1899,14 +1877,13 @@
       "employment_to_population_ratio": 34,
       "female_labor_force_participation": 42,
       "political_corruption_index": 46,
-      "life_expectancy": 152,
-      "military_spending_sipri": 16,
       "individuals_using_the_internet": 168,
       "fixed_broadband_subscriptions_per_100_people": 191,
       "education_expenditure_of_gdp": 51,
       "recycling_rate": 126,
       "environmental_performance_index": 128,
-      "global_peace_index": 44
+      "global_peace_index": 44,
+      "inform_resilience_index": 106
     },
     "kpi_count": 31
   },
@@ -1925,6 +1902,7 @@
       "hospital_beds_per_1_000_people": 116,
       "infant_mortality_rate": 81,
       "maternal_mortality_ratio": 88,
+      "adult_literacy_rate": 62,
       "age_dependency_ratio_total": 73,
       "overall_immunization_coverage": 166,
       "extreme_poverty": 88,
@@ -1938,15 +1916,14 @@
       "employment_to_population_ratio": 66,
       "female_labor_force_participation": 97,
       "political_corruption_index": 84,
-      "life_expectancy": 47,
-      "military_spending_sipri": 3,
       "individuals_using_the_internet": 125,
       "fixed_broadband_subscriptions_per_100_people": 81,
       "education_expenditure_of_gdp": 161,
       "mean_years_of_schooling": 41,
       "recycling_rate": 119,
       "environmental_performance_index": 47,
-      "global_peace_index": 84
+      "global_peace_index": 84,
+      "inform_resilience_index": 115
     },
     "kpi_count": 34
   },
@@ -1964,6 +1941,7 @@
       "hospital_beds_per_1_000_people": 75,
       "infant_mortality_rate": 109,
       "maternal_mortality_ratio": 123,
+      "adult_literacy_rate": 86,
       "age_dependency_ratio_total": 61,
       "overall_immunization_coverage": 173,
       "extreme_poverty": 79,
@@ -1976,14 +1954,14 @@
       "employment_to_population_ratio": 134,
       "female_labor_force_participation": 127,
       "political_corruption_index": 39,
-      "life_expectancy": 103,
       "individuals_using_the_internet": 105,
       "fixed_broadband_subscriptions_per_100_people": 82,
       "education_expenditure_of_gdp": 148,
       "recycling_rate": 93,
-      "environmental_performance_index": 70
+      "environmental_performance_index": 70,
+      "inform_resilience_index": 78
     },
-    "kpi_count": 29
+    "kpi_count": 30
   },
   {
     "country": "Jamaica",
@@ -2001,6 +1979,7 @@
       "hospital_beds_per_1_000_people": 122,
       "infant_mortality_rate": 120,
       "maternal_mortality_ratio": 138,
+      "adult_literacy_rate": 116,
       "age_dependency_ratio_total": 9,
       "overall_immunization_coverage": 6,
       "extreme_poverty": 71,
@@ -2013,15 +1992,14 @@
       "employment_to_population_ratio": 39,
       "female_labor_force_participation": 40,
       "political_corruption_index": 40,
-      "life_expectancy": 127,
-      "military_spending_sipri": 41,
       "individuals_using_the_internet": 52,
       "fixed_broadband_subscriptions_per_100_people": 87,
       "education_expenditure_of_gdp": 36,
       "mean_years_of_schooling": 64,
       "recycling_rate": 112,
       "environmental_performance_index": 72,
-      "global_peace_index": 93
+      "global_peace_index": 93,
+      "inform_resilience_index": 77
     },
     "kpi_count": 34
   },
@@ -2040,6 +2018,7 @@
       "hospital_beds_per_1_000_people": 53,
       "infant_mortality_rate": 13,
       "maternal_mortality_ratio": 32,
+      "adult_literacy_rate": 36,
       "age_dependency_ratio_total": 106,
       "overall_immunization_coverage": 145,
       "extreme_poverty": 83,
@@ -2053,13 +2032,12 @@
       "employment_to_population_ratio": 155,
       "female_labor_force_participation": 139,
       "political_corruption_index": 88,
-      "life_expectancy": 72,
-      "military_spending_sipri": 28,
       "individuals_using_the_internet": 57,
       "fixed_broadband_subscriptions_per_100_people": 42,
       "recycling_rate": 177,
       "environmental_performance_index": 64,
-      "global_peace_index": 34
+      "global_peace_index": 34,
+      "inform_resilience_index": 52
     },
     "kpi_count": 32
   },
@@ -2080,6 +2058,7 @@
       "hospital_beds_per_1_000_people": 159,
       "infant_mortality_rate": 130,
       "maternal_mortality_ratio": 122,
+      "adult_literacy_rate": 37,
       "age_dependency_ratio_total": 67,
       "overall_immunization_coverage": 168,
       "extreme_poverty": 100,
@@ -2093,15 +2072,14 @@
       "employment_to_population_ratio": 72,
       "female_labor_force_participation": 111,
       "political_corruption_index": 162,
-      "life_expectancy": 138,
-      "military_spending_sipri": 121,
       "individuals_using_the_internet": 83,
       "fixed_broadband_subscriptions_per_100_people": 119,
       "education_expenditure_of_gdp": 105,
       "mean_years_of_schooling": 84,
       "recycling_rate": 9,
       "environmental_performance_index": 157,
-      "global_peace_index": 105
+      "global_peace_index": 105,
+      "inform_resilience_index": 156
     },
     "kpi_count": 36
   },
@@ -2121,6 +2099,7 @@
       "hospital_beds_per_1_000_people": 132,
       "infant_mortality_rate": 145,
       "maternal_mortality_ratio": 136,
+      "adult_literacy_rate": 79,
       "age_dependency_ratio_total": 78,
       "overall_immunization_coverage": 121,
       "extreme_poverty": 56,
@@ -2133,15 +2112,14 @@
       "employment_to_population_ratio": 64,
       "female_labor_force_participation": 95,
       "political_corruption_index": 120,
-      "life_expectancy": 101,
-      "military_spending_sipri": 78,
       "individuals_using_the_internet": 46,
       "fixed_broadband_subscriptions_per_100_people": 100,
       "education_expenditure_of_gdp": 111,
       "mean_years_of_schooling": 66,
       "recycling_rate": 144,
       "environmental_performance_index": 89,
-      "global_peace_index": 79
+      "global_peace_index": 79,
+      "inform_resilience_index": 119
     },
     "kpi_count": 34
   },
@@ -2161,6 +2139,7 @@
       "hospital_beds_per_1_000_people": 5,
       "infant_mortality_rate": 90,
       "maternal_mortality_ratio": 91,
+      "adult_literacy_rate": 34,
       "age_dependency_ratio_total": 133,
       "overall_immunization_coverage": 52,
       "extreme_poverty": 41,
@@ -2174,15 +2153,14 @@
       "employment_to_population_ratio": 95,
       "female_labor_force_participation": 89,
       "political_corruption_index": 121,
-      "life_expectancy": 123,
-      "military_spending_sipri": 32,
       "individuals_using_the_internet": 87,
       "fixed_broadband_subscriptions_per_100_people": 89,
       "education_expenditure_of_gdp": 116,
       "mean_years_of_schooling": 71,
       "recycling_rate": 132,
       "environmental_performance_index": 156,
-      "global_peace_index": 37
+      "global_peace_index": 37,
+      "inform_resilience_index": 65
     },
     "kpi_count": 35
   },
@@ -2202,6 +2180,7 @@
       "hospital_beds_per_1_000_people": 58,
       "infant_mortality_rate": 67,
       "maternal_mortality_ratio": 80,
+      "adult_literacy_rate": 26,
       "age_dependency_ratio_total": 74,
       "overall_immunization_coverage": 158,
       "extreme_poverty": 62,
@@ -2215,15 +2194,14 @@
       "employment_to_population_ratio": 96,
       "female_labor_force_participation": 94,
       "political_corruption_index": 71,
-      "life_expectancy": 68,
-      "military_spending_sipri": 108,
       "individuals_using_the_internet": 51,
       "fixed_broadband_subscriptions_per_100_people": 65,
       "education_expenditure_of_gdp": 30,
       "mean_years_of_schooling": 76,
       "recycling_rate": 164,
       "environmental_performance_index": 92,
-      "global_peace_index": 46
+      "global_peace_index": 46,
+      "inform_resilience_index": 67
     },
     "kpi_count": 35
   },
@@ -2244,6 +2222,7 @@
       "hospital_beds_per_1_000_people": 12,
       "infant_mortality_rate": 31,
       "maternal_mortality_ratio": 51,
+      "adult_literacy_rate": 30,
       "age_dependency_ratio_total": 98,
       "overall_immunization_coverage": 5,
       "extreme_poverty": 60,
@@ -2257,15 +2236,14 @@
       "employment_to_population_ratio": 90,
       "female_labor_force_participation": 83,
       "political_corruption_index": 86,
-      "life_expectancy": 73,
-      "military_spending_sipri": 112,
       "individuals_using_the_internet": 33,
       "fixed_broadband_subscriptions_per_100_people": 33,
       "education_expenditure_of_gdp": 109,
       "mean_years_of_schooling": 27,
       "recycling_rate": 34,
       "environmental_performance_index": 33,
-      "global_peace_index": 17
+      "global_peace_index": 17,
+      "inform_resilience_index": 34
     },
     "kpi_count": 36
   },
@@ -2285,6 +2263,7 @@
       "hospital_beds_per_1_000_people": 23,
       "infant_mortality_rate": 38,
       "maternal_mortality_ratio": 6,
+      "adult_literacy_rate": 40,
       "age_dependency_ratio_total": 126,
       "overall_immunization_coverage": 88,
       "extreme_poverty": 37,
@@ -2298,15 +2277,14 @@
       "employment_to_population_ratio": 137,
       "female_labor_force_participation": 123,
       "political_corruption_index": 52,
-      "life_expectancy": 54,
-      "military_spending_sipri": 91,
       "individuals_using_the_internet": 84,
       "fixed_broadband_subscriptions_per_100_people": 56,
       "education_expenditure_of_gdp": 96,
       "mean_years_of_schooling": 22,
       "recycling_rate": 75,
       "environmental_performance_index": 16,
-      "global_peace_index": 19
+      "global_peace_index": 19,
+      "inform_resilience_index": 39
     },
     "kpi_count": 35
   },
@@ -2327,6 +2305,7 @@
       "hospital_beds_per_1_000_people": 93,
       "infant_mortality_rate": 92,
       "maternal_mortality_ratio": 112,
+      "adult_literacy_rate": 75,
       "age_dependency_ratio_total": 31,
       "overall_immunization_coverage": 93,
       "extreme_poverty": 91,
@@ -2340,8 +2319,6 @@
       "employment_to_population_ratio": 89,
       "female_labor_force_participation": 91,
       "political_corruption_index": 81,
-      "life_expectancy": 84,
-      "military_spending_sipri": 142,
       "individuals_using_the_internet": 80,
       "fixed_broadband_subscriptions_per_100_people": 72,
       "education_expenditure_of_gdp": 34,
@@ -2349,7 +2326,8 @@
       "recycling_rate": 191,
       "environmental_performance_index": 82,
       "global_peace_index": 130,
-      "electric_vehicle_stock": 24
+      "electric_vehicle_stock": 24,
+      "inform_resilience_index": 150
     },
     "kpi_count": 37
   },
@@ -2369,6 +2347,7 @@
       "hospital_beds_per_1_000_people": 81,
       "infant_mortality_rate": 167,
       "maternal_mortality_ratio": 140,
+      "adult_literacy_rate": 104,
       "age_dependency_ratio_total": 154,
       "overall_immunization_coverage": 161,
       "extreme_poverty": 132,
@@ -2381,15 +2360,14 @@
       "employment_to_population_ratio": 145,
       "female_labor_force_participation": 74,
       "political_corruption_index": 58,
-      "life_expectancy": 154,
-      "military_spending_sipri": 47,
       "individuals_using_the_internet": 130,
       "fixed_broadband_subscriptions_per_100_people": 132,
       "education_expenditure_of_gdp": 4,
       "mean_years_of_schooling": 131,
       "recycling_rate": 80,
       "environmental_performance_index": 44,
-      "global_peace_index": 50
+      "global_peace_index": 50,
+      "inform_resilience_index": 114
     },
     "kpi_count": 34
   },
@@ -2410,6 +2388,7 @@
       "hospital_beds_per_1_000_people": 135,
       "infant_mortality_rate": 116,
       "maternal_mortality_ratio": 141,
+      "adult_literacy_rate": 66,
       "age_dependency_ratio_total": 46,
       "overall_immunization_coverage": 152,
       "extreme_poverty": 101,
@@ -2423,15 +2402,14 @@
       "employment_to_population_ratio": 37,
       "female_labor_force_participation": 99,
       "political_corruption_index": 134,
-      "life_expectancy": 131,
-      "military_spending_sipri": 134,
       "individuals_using_the_internet": 116,
       "fixed_broadband_subscriptions_per_100_people": 126,
       "education_expenditure_of_gdp": 185,
       "mean_years_of_schooling": 62,
       "recycling_rate": 107,
       "environmental_performance_index": 163,
-      "global_peace_index": 49
+      "global_peace_index": 49,
+      "inform_resilience_index": 129
     },
     "kpi_count": 36
   },
@@ -2452,6 +2430,7 @@
       "hospital_beds_per_1_000_people": 121,
       "infant_mortality_rate": 86,
       "maternal_mortality_ratio": 105,
+      "adult_literacy_rate": 72,
       "age_dependency_ratio_total": 27,
       "overall_immunization_coverage": 111,
       "extreme_poverty": 108,
@@ -2464,15 +2443,14 @@
       "employment_to_population_ratio": 94,
       "female_labor_force_participation": 102,
       "political_corruption_index": 74,
-      "life_expectancy": 64,
-      "military_spending_sipri": 136,
       "individuals_using_the_internet": 107,
       "fixed_broadband_subscriptions_per_100_people": 85,
       "education_expenditure_of_gdp": 50,
       "mean_years_of_schooling": 54,
       "recycling_rate": 38,
       "environmental_performance_index": 87,
-      "global_peace_index": 140
+      "global_peace_index": 140,
+      "inform_resilience_index": 152
     },
     "kpi_count": 35
   },
@@ -2491,6 +2469,7 @@
       "hospital_beds_per_1_000_people": 8,
       "infant_mortality_rate": 48,
       "maternal_mortality_ratio": 30,
+      "adult_literacy_rate": 38,
       "age_dependency_ratio_total": 116,
       "overall_immunization_coverage": 68,
       "extreme_poverty": 65,
@@ -2504,15 +2483,14 @@
       "employment_to_population_ratio": 115,
       "female_labor_force_participation": 107,
       "political_corruption_index": 99,
-      "life_expectancy": 86,
-      "military_spending_sipri": 98,
       "individuals_using_the_internet": 88,
       "fixed_broadband_subscriptions_per_100_people": 32,
       "education_expenditure_of_gdp": 79,
       "mean_years_of_schooling": 68,
       "recycling_rate": 37,
       "environmental_performance_index": 41,
-      "global_peace_index": 29
+      "global_peace_index": 29,
+      "inform_resilience_index": 45
     },
     "kpi_count": 34
   },
@@ -2531,6 +2509,7 @@
       "hospital_beds_per_1_000_people": 44,
       "infant_mortality_rate": 24,
       "maternal_mortality_ratio": 10,
+      "adult_literacy_rate": 63,
       "age_dependency_ratio_total": 81,
       "overall_immunization_coverage": 116,
       "extreme_poverty": 93,
@@ -2544,14 +2523,13 @@
       "employment_to_population_ratio": 150,
       "female_labor_force_participation": 136,
       "political_corruption_index": 132,
-      "life_expectancy": 69,
-      "military_spending_sipri": 46,
       "individuals_using_the_internet": 71,
       "fixed_broadband_subscriptions_per_100_people": 54,
       "education_expenditure_of_gdp": 130,
       "recycling_rate": 184,
       "environmental_performance_index": 34,
-      "global_peace_index": 51
+      "global_peace_index": 51,
+      "inform_resilience_index": 59
     },
     "kpi_count": 33
   },
@@ -2572,6 +2550,7 @@
       "hospital_beds_per_1_000_people": 98,
       "infant_mortality_rate": 65,
       "maternal_mortality_ratio": 81,
+      "adult_literacy_rate": 91,
       "age_dependency_ratio_total": 24,
       "overall_immunization_coverage": 90,
       "extreme_poverty": 13,
@@ -2585,15 +2564,14 @@
       "employment_to_population_ratio": 29,
       "female_labor_force_participation": 53,
       "political_corruption_index": 110,
-      "life_expectancy": 77,
-      "military_spending_sipri": 118,
       "individuals_using_the_internet": 48,
       "fixed_broadband_subscriptions_per_100_people": 88,
       "education_expenditure_of_gdp": 159,
       "mean_years_of_schooling": 52,
       "recycling_rate": 14,
       "environmental_performance_index": 108,
-      "global_peace_index": 86
+      "global_peace_index": 86,
+      "inform_resilience_index": 124
     },
     "kpi_count": 36
   },
@@ -2612,6 +2590,7 @@
       "hospital_beds_per_1_000_people": 25,
       "infant_mortality_rate": 44,
       "maternal_mortality_ratio": 49,
+      "adult_literacy_rate": 22,
       "age_dependency_ratio_total": 122,
       "overall_immunization_coverage": 65,
       "extreme_poverty": 75,
@@ -2625,15 +2604,14 @@
       "employment_to_population_ratio": 122,
       "female_labor_force_participation": 112,
       "political_corruption_index": 133,
-      "life_expectancy": 74,
-      "military_spending_sipri": 97,
       "individuals_using_the_internet": 67,
       "fixed_broadband_subscriptions_per_100_people": 46,
       "education_expenditure_of_gdp": 126,
       "mean_years_of_schooling": 25,
       "recycling_rate": 194,
       "environmental_performance_index": 79,
-      "global_peace_index": 64
+      "global_peace_index": 64,
+      "inform_resilience_index": 93
     },
     "kpi_count": 34
   },
@@ -2652,6 +2630,7 @@
       "hospital_beds_per_1_000_people": 171,
       "infant_mortality_rate": 144,
       "maternal_mortality_ratio": 163,
+      "adult_literacy_rate": 123,
       "age_dependency_ratio_total": 147,
       "overall_immunization_coverage": 63,
       "extreme_poverty": 146,
@@ -2665,15 +2644,14 @@
       "employment_to_population_ratio": 61,
       "female_labor_force_participation": 38,
       "political_corruption_index": 107,
-      "life_expectancy": 173,
-      "military_spending_sipri": 43,
       "individuals_using_the_internet": 124,
       "fixed_broadband_subscriptions_per_100_people": 162,
       "education_expenditure_of_gdp": 144,
       "mean_years_of_schooling": 77,
       "recycling_rate": 127,
       "environmental_performance_index": 169,
-      "global_peace_index": 61
+      "global_peace_index": 61,
+      "inform_resilience_index": 109
     },
     "kpi_count": 34
   },
@@ -2693,6 +2671,7 @@
       "hospital_beds_per_1_000_people": 71,
       "infant_mortality_rate": 69,
       "maternal_mortality_ratio": 34,
+      "adult_literacy_rate": 48,
       "age_dependency_ratio_total": 58,
       "overall_immunization_coverage": 29,
       "extreme_poverty": 36,
@@ -2706,15 +2685,14 @@
       "employment_to_population_ratio": 114,
       "female_labor_force_participation": 86,
       "political_corruption_index": 105,
-      "life_expectancy": 46,
-      "military_spending_sipri": 57,
       "individuals_using_the_internet": 86,
       "fixed_broadband_subscriptions_per_100_people": 70,
       "education_expenditure_of_gdp": 141,
       "mean_years_of_schooling": 60,
       "recycling_rate": 73,
       "environmental_performance_index": 62,
-      "global_peace_index": 52
+      "global_peace_index": 52,
+      "inform_resilience_index": 62
     },
     "kpi_count": 35
   },
@@ -2735,6 +2713,7 @@
       "hospital_beds_per_1_000_people": 49,
       "infant_mortality_rate": 52,
       "maternal_mortality_ratio": 68,
+      "adult_literacy_rate": 87,
       "age_dependency_ratio_total": 70,
       "overall_immunization_coverage": 43,
       "extreme_poverty": 85,
@@ -2748,15 +2727,14 @@
       "employment_to_population_ratio": 146,
       "female_labor_force_participation": 158,
       "political_corruption_index": 83,
-      "life_expectancy": 67,
-      "military_spending_sipri": 79,
       "individuals_using_the_internet": 147,
       "fixed_broadband_subscriptions_per_100_people": 109,
       "education_expenditure_of_gdp": 180,
       "mean_years_of_schooling": 53,
       "recycling_rate": 49,
       "environmental_performance_index": 131,
-      "global_peace_index": 97
+      "global_peace_index": 97,
+      "inform_resilience_index": 102
     },
     "kpi_count": 36
   },
@@ -2776,6 +2754,7 @@
       "hospital_beds_per_1_000_people": 85,
       "infant_mortality_rate": 3,
       "maternal_mortality_ratio": 33,
+      "adult_literacy_rate": 50,
       "age_dependency_ratio_total": 7,
       "overall_immunization_coverage": 42,
       "access_to_basic_drinking_water": 18,
@@ -2787,15 +2766,14 @@
       "employment_to_population_ratio": 25,
       "female_labor_force_participation": 32,
       "political_corruption_index": 14,
-      "life_expectancy": 8,
-      "military_spending_sipri": 137,
       "individuals_using_the_internet": 29,
       "fixed_broadband_subscriptions_per_100_people": 58,
       "education_expenditure_of_gdp": 168,
       "mean_years_of_schooling": 4,
       "recycling_rate": 8,
       "environmental_performance_index": 45,
-      "global_peace_index": 6
+      "global_peace_index": 6,
+      "inform_resilience_index": 1
     },
     "kpi_count": 33
   },
@@ -2813,6 +2791,7 @@
       "hospital_beds_per_1_000_people": 86,
       "infant_mortality_rate": 135,
       "maternal_mortality_ratio": 117,
+      "adult_literacy_rate": 109,
       "age_dependency_ratio_total": 107,
       "overall_immunization_coverage": 23,
       "extreme_poverty": 120,
@@ -2825,15 +2804,14 @@
       "employment_to_population_ratio": 152,
       "female_labor_force_participation": 145,
       "political_corruption_index": 80,
-      "life_expectancy": 136,
-      "military_spending_sipri": 37,
       "individuals_using_the_internet": 93,
       "fixed_broadband_subscriptions_per_100_people": 94,
       "education_expenditure_of_gdp": 81,
       "mean_years_of_schooling": 100,
       "recycling_rate": 60,
       "environmental_performance_index": 105,
-      "global_peace_index": 106
+      "global_peace_index": 106,
+      "inform_resilience_index": 107
     },
     "kpi_count": 32
   },
@@ -2853,6 +2831,7 @@
       "hospital_beds_per_1_000_people": 141,
       "infant_mortality_rate": 185,
       "maternal_mortality_ratio": 183,
+      "adult_literacy_rate": 94,
       "age_dependency_ratio_total": 141,
       "overall_immunization_coverage": 127,
       "extreme_poverty": 155,
@@ -2865,15 +2844,14 @@
       "employment_to_population_ratio": 144,
       "female_labor_force_participation": 117,
       "political_corruption_index": 90,
-      "life_expectancy": 199,
-      "military_spending_sipri": 15,
       "individuals_using_the_internet": 148,
       "fixed_broadband_subscriptions_per_100_people": 166,
       "education_expenditure_of_gdp": 16,
       "mean_years_of_schooling": 119,
       "recycling_rate": 143,
       "environmental_performance_index": 140,
-      "global_peace_index": 120
+      "global_peace_index": 120,
+      "inform_resilience_index": 122
     },
     "kpi_count": 34
   },
@@ -2894,6 +2872,7 @@
       "hospital_beds_per_1_000_people": 22,
       "infant_mortality_rate": 99,
       "maternal_mortality_ratio": 71,
+      "adult_literacy_rate": 20,
       "age_dependency_ratio_total": 103,
       "overall_immunization_coverage": 130,
       "extreme_poverty": 23,
@@ -2907,15 +2886,14 @@
       "employment_to_population_ratio": 21,
       "female_labor_force_participation": 17,
       "political_corruption_index": 65,
-      "life_expectancy": 130,
-      "military_spending_sipri": 23,
       "individuals_using_the_internet": 99,
       "fixed_broadband_subscriptions_per_100_people": 59,
       "education_expenditure_of_gdp": 15,
       "mean_years_of_schooling": 63,
       "recycling_rate": 21,
       "environmental_performance_index": 84,
-      "global_peace_index": 66
+      "global_peace_index": 66,
+      "inform_resilience_index": 103
     },
     "kpi_count": 36
   },
@@ -2935,6 +2913,7 @@
       "hospital_beds_per_1_000_people": 10,
       "infant_mortality_rate": 53,
       "maternal_mortality_ratio": 52,
+      "adult_literacy_rate": 25,
       "age_dependency_ratio_total": 104,
       "overall_immunization_coverage": 150,
       "extreme_poverty": 53,
@@ -2948,15 +2927,14 @@
       "employment_to_population_ratio": 143,
       "female_labor_force_participation": 133,
       "political_corruption_index": 70,
-      "life_expectancy": 83,
-      "military_spending_sipri": 129,
       "individuals_using_the_internet": 44,
       "fixed_broadband_subscriptions_per_100_people": 39,
       "education_expenditure_of_gdp": 131,
       "mean_years_of_schooling": 49,
       "recycling_rate": 133,
       "environmental_performance_index": 30,
-      "global_peace_index": 38
+      "global_peace_index": 38,
+      "inform_resilience_index": 66
     },
     "kpi_count": 35
   },
@@ -2975,6 +2953,7 @@
       "hospital_beds_per_1_000_people": 193,
       "infant_mortality_rate": 154,
       "maternal_mortality_ratio": 155,
+      "adult_literacy_rate": 107,
       "age_dependency_ratio_total": 131,
       "overall_immunization_coverage": 191,
       "extreme_poverty": 162,
@@ -2987,15 +2966,14 @@
       "employment_to_population_ratio": 132,
       "female_labor_force_participation": 108,
       "political_corruption_index": 124,
-      "life_expectancy": 168,
-      "military_spending_sipri": 21,
       "individuals_using_the_internet": 178,
       "fixed_broadband_subscriptions_per_100_people": 172,
       "education_expenditure_of_gdp": 189,
       "mean_years_of_schooling": 143,
       "recycling_rate": 178,
       "environmental_performance_index": 174,
-      "global_peace_index": 116
+      "global_peace_index": 116,
+      "inform_resilience_index": 172
     },
     "kpi_count": 33
   },
@@ -3014,6 +2992,7 @@
       "hospital_beds_per_1_000_people": 168,
       "infant_mortality_rate": 148,
       "maternal_mortality_ratio": 164,
+      "adult_literacy_rate": 153,
       "age_dependency_ratio_total": 164,
       "overall_immunization_coverage": 99,
       "extreme_poverty": 127,
@@ -3027,15 +3006,14 @@
       "employment_to_population_ratio": 141,
       "female_labor_force_participation": 152,
       "political_corruption_index": 61,
-      "life_expectancy": 145,
-      "military_spending_sipri": 59,
       "individuals_using_the_internet": 135,
       "fixed_broadband_subscriptions_per_100_people": 146,
       "education_expenditure_of_gdp": 23,
       "mean_years_of_schooling": 136,
       "recycling_rate": 142,
       "environmental_performance_index": 135,
-      "global_peace_index": 69
+      "global_peace_index": 69,
+      "inform_resilience_index": 127
     },
     "kpi_count": 34
   },
@@ -3054,6 +3032,7 @@
       "hospital_beds_per_1_000_people": 153,
       "infant_mortality_rate": 108,
       "maternal_mortality_ratio": 104,
+      "adult_literacy_rate": 73,
       "age_dependency_ratio_total": 95,
       "overall_immunization_coverage": 147,
       "extreme_poverty": 77,
@@ -3067,15 +3046,14 @@
       "employment_to_population_ratio": 28,
       "female_labor_force_participation": 52,
       "political_corruption_index": 142,
-      "life_expectancy": 100,
-      "military_spending_sipri": 52,
       "individuals_using_the_internet": 95,
       "fixed_broadband_subscriptions_per_100_people": 95,
       "education_expenditure_of_gdp": 125,
       "mean_years_of_schooling": 80,
       "recycling_rate": 85,
       "environmental_performance_index": 94,
-      "global_peace_index": 75
+      "global_peace_index": 75,
+      "inform_resilience_index": 72
     },
     "kpi_count": 34
   },
@@ -3095,6 +3073,7 @@
       "hospital_beds_per_1_000_people": 142,
       "infant_mortality_rate": 146,
       "maternal_mortality_ratio": 159,
+      "adult_literacy_rate": 135,
       "age_dependency_ratio_total": 180,
       "overall_immunization_coverage": 97,
       "extreme_poverty": 169,
@@ -3108,15 +3087,14 @@
       "employment_to_population_ratio": 44,
       "female_labor_force_participation": 27,
       "political_corruption_index": 123,
-      "life_expectancy": 155,
-      "military_spending_sipri": 27,
       "individuals_using_the_internet": 186,
       "fixed_broadband_subscriptions_per_100_people": 182,
       "education_expenditure_of_gdp": 153,
       "mean_years_of_schooling": 129,
       "recycling_rate": 165,
       "environmental_performance_index": 97,
-      "global_peace_index": 71
+      "global_peace_index": 71,
+      "inform_resilience_index": 141
     },
     "kpi_count": 35
   },
@@ -3136,6 +3114,7 @@
       "hospital_beds_per_1_000_people": 109,
       "infant_mortality_rate": 150,
       "maternal_mortality_ratio": 124,
+      "adult_literacy_rate": 113,
       "age_dependency_ratio_total": 178,
       "overall_immunization_coverage": 102,
       "extreme_poverty": 167,
@@ -3149,15 +3128,14 @@
       "employment_to_population_ratio": 104,
       "female_labor_force_participation": 84,
       "political_corruption_index": 66,
-      "life_expectancy": 165,
-      "military_spending_sipri": 49,
       "individuals_using_the_internet": 169,
       "fixed_broadband_subscriptions_per_100_people": 160,
       "education_expenditure_of_gdp": 99,
       "mean_years_of_schooling": 102,
       "recycling_rate": 137,
       "environmental_performance_index": 106,
-      "global_peace_index": 65
+      "global_peace_index": 65,
+      "inform_resilience_index": 133
     },
     "kpi_count": 35
   },
@@ -3178,6 +3156,7 @@
       "hospital_beds_per_1_000_people": 128,
       "infant_mortality_rate": 100,
       "maternal_mortality_ratio": 100,
+      "adult_literacy_rate": 82,
       "age_dependency_ratio_total": 59,
       "overall_immunization_coverage": 148,
       "extreme_poverty": 98,
@@ -3191,15 +3170,14 @@
       "employment_to_population_ratio": 23,
       "female_labor_force_participation": 24,
       "political_corruption_index": 111,
-      "life_expectancy": 63,
-      "military_spending_sipri": 100,
       "individuals_using_the_internet": 90,
       "fixed_broadband_subscriptions_per_100_people": 106,
       "education_expenditure_of_gdp": 91,
       "mean_years_of_schooling": 65,
       "recycling_rate": 167,
       "environmental_performance_index": 101,
-      "global_peace_index": 96
+      "global_peace_index": 96,
+      "inform_resilience_index": 132
     },
     "kpi_count": 36
   },
@@ -3219,6 +3197,7 @@
       "hospital_beds_per_1_000_people": 102,
       "infant_mortality_rate": 121,
       "maternal_mortality_ratio": 96,
+      "adult_literacy_rate": 139,
       "age_dependency_ratio_total": 13,
       "overall_immunization_coverage": 22,
       "extreme_poverty": 4,
@@ -3231,15 +3210,15 @@
       "employment_to_population_ratio": 48,
       "female_labor_force_participation": 66,
       "political_corruption_index": 34,
-      "life_expectancy": 109,
       "individuals_using_the_internet": 64,
       "fixed_broadband_subscriptions_per_100_people": 151,
       "education_expenditure_of_gdp": 31,
       "recycling_rate": 192,
       "environmental_performance_index": 85,
-      "global_peace_index": 21
+      "global_peace_index": 21,
+      "inform_resilience_index": 63
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Liberia",
@@ -3256,6 +3235,7 @@
       "hospital_beds_per_1_000_people": 129,
       "infant_mortality_rate": 184,
       "maternal_mortality_ratio": 189,
+      "adult_literacy_rate": 147,
       "age_dependency_ratio_total": 173,
       "overall_immunization_coverage": 139,
       "extreme_poverty": 140,
@@ -3268,15 +3248,14 @@
       "employment_to_population_ratio": 13,
       "female_labor_force_participation": 14,
       "political_corruption_index": 164,
-      "life_expectancy": 187,
-      "military_spending_sipri": 14,
       "individuals_using_the_internet": 179,
       "fixed_broadband_subscriptions_per_100_people": 170,
       "education_expenditure_of_gdp": 166,
       "mean_years_of_schooling": 117,
       "recycling_rate": 173,
       "environmental_performance_index": 173,
-      "global_peace_index": 70
+      "global_peace_index": 70,
+      "inform_resilience_index": 139
     },
     "kpi_count": 33
   },
@@ -3307,16 +3286,15 @@
       "employment_to_population_ratio": 112,
       "female_labor_force_participation": 150,
       "political_corruption_index": 59,
-      "life_expectancy": 156,
-      "military_spending_sipri": 19,
       "individuals_using_the_internet": 104,
       "fixed_broadband_subscriptions_per_100_people": 140,
       "education_expenditure_of_gdp": 90,
       "mean_years_of_schooling": 16,
       "recycling_rate": 97,
-      "environmental_performance_index": 146
+      "environmental_performance_index": 146,
+      "inform_resilience_index": 87
     },
-    "kpi_count": 32
+    "kpi_count": 31
   },
   {
     "country": "Armenia",
@@ -3334,6 +3312,7 @@
       "hospital_beds_per_1_000_people": 33,
       "infant_mortality_rate": 73,
       "maternal_mortality_ratio": 69,
+      "adult_literacy_rate": 12,
       "age_dependency_ratio_total": 49,
       "overall_immunization_coverage": 66,
       "extreme_poverty": 74,
@@ -3347,15 +3326,14 @@
       "employment_to_population_ratio": 119,
       "female_labor_force_participation": 68,
       "political_corruption_index": 69,
-      "life_expectancy": 85,
-      "military_spending_sipri": 90,
       "individuals_using_the_internet": 100,
       "fixed_broadband_subscriptions_per_100_people": 80,
       "education_expenditure_of_gdp": 162,
       "mean_years_of_schooling": 70,
       "recycling_rate": 125,
       "environmental_performance_index": 56,
-      "global_peace_index": 58
+      "global_peace_index": 58,
+      "inform_resilience_index": 76
     },
     "kpi_count": 35
   },
@@ -3374,6 +3352,7 @@
       "hospital_beds_per_1_000_people": 188,
       "infant_mortality_rate": 175,
       "maternal_mortality_ratio": 182,
+      "adult_literacy_rate": 128,
       "age_dependency_ratio_total": 171,
       "overall_immunization_coverage": 185,
       "extreme_poverty": 165,
@@ -3387,14 +3366,13 @@
       "employment_to_population_ratio": 3,
       "female_labor_force_participation": 1,
       "political_corruption_index": 150,
-      "life_expectancy": 183,
-      "military_spending_sipri": 26,
       "individuals_using_the_internet": 183,
       "fixed_broadband_subscriptions_per_100_people": 176,
       "education_expenditure_of_gdp": 142,
       "recycling_rate": 168,
       "environmental_performance_index": 167,
-      "global_peace_index": 60
+      "global_peace_index": 60,
+      "inform_resilience_index": 155
     },
     "kpi_count": 33
   },
@@ -3415,6 +3393,7 @@
       "hospital_beds_per_1_000_people": 152,
       "infant_mortality_rate": 85,
       "maternal_mortality_ratio": 93,
+      "adult_literacy_rate": 69,
       "homelessness_rate": 4,
       "age_dependency_ratio_total": 52,
       "overall_immunization_coverage": 153,
@@ -3428,8 +3407,6 @@
       "employment_to_population_ratio": 71,
       "female_labor_force_participation": 122,
       "political_corruption_index": 96,
-      "life_expectancy": 90,
-      "military_spending_sipri": 139,
       "individuals_using_the_internet": 97,
       "fixed_broadband_subscriptions_per_100_people": 76,
       "education_expenditure_of_gdp": 101,
@@ -3437,7 +3414,8 @@
       "recycling_rate": 163,
       "environmental_performance_index": 73,
       "global_peace_index": 135,
-      "electric_vehicle_stock": 28
+      "electric_vehicle_stock": 28,
+      "inform_resilience_index": 140
     },
     "kpi_count": 37
   },
@@ -3456,6 +3434,7 @@
       "hospital_beds_per_1_000_people": 139,
       "infant_mortality_rate": 88,
       "maternal_mortality_ratio": 102,
+      "adult_literacy_rate": 61,
       "age_dependency_ratio_total": 55,
       "overall_immunization_coverage": 170,
       "extreme_poverty": 107,
@@ -3469,15 +3448,14 @@
       "employment_to_population_ratio": 60,
       "female_labor_force_participation": 100,
       "political_corruption_index": 108,
-      "life_expectancy": 70,
-      "military_spending_sipri": 102,
       "individuals_using_the_internet": 108,
       "fixed_broadband_subscriptions_per_100_people": 86,
       "education_expenditure_of_gdp": 107,
       "mean_years_of_schooling": 79,
       "recycling_rate": 41,
       "environmental_performance_index": 66,
-      "global_peace_index": 129
+      "global_peace_index": 129,
+      "inform_resilience_index": 154
     },
     "kpi_count": 34
   },
@@ -3496,6 +3474,7 @@
       "hospital_beds_per_1_000_people": 174,
       "infant_mortality_rate": 147,
       "maternal_mortality_ratio": 170,
+      "adult_literacy_rate": 121,
       "age_dependency_ratio_total": 189,
       "overall_immunization_coverage": 140,
       "extreme_poverty": 161,
@@ -3509,15 +3488,14 @@
       "employment_to_population_ratio": 4,
       "female_labor_force_participation": 4,
       "political_corruption_index": 50,
-      "life_expectancy": 160,
-      "military_spending_sipri": 75,
       "individuals_using_the_internet": 172,
       "fixed_broadband_subscriptions_per_100_people": 142,
       "education_expenditure_of_gdp": 137,
       "mean_years_of_schooling": 120,
       "recycling_rate": 139,
       "environmental_performance_index": 133,
-      "global_peace_index": 73
+      "global_peace_index": 73,
+      "inform_resilience_index": 144
     },
     "kpi_count": 34
   },
@@ -3533,6 +3511,7 @@
       "hospital_beds_per_1_000_people": 60,
       "infant_mortality_rate": 141,
       "maternal_mortality_ratio": 158,
+      "adult_literacy_rate": 103,
       "age_dependency_ratio_total": 89,
       "overall_immunization_coverage": 136,
       "extreme_poverty": 117,
@@ -3544,15 +3523,13 @@
       "inflation_consumer_price_index": 86,
       "employment_to_population_ratio": 87,
       "female_labor_force_participation": 116,
-      "life_expectancy": 107,
-      "military_spending_sipri": 163,
       "individuals_using_the_internet": 127,
       "fixed_broadband_subscriptions_per_100_people": 78,
       "education_expenditure_of_gdp": 121,
       "mean_years_of_schooling": 91,
       "electric_vehicle_stock": 1
     },
-    "kpi_count": 27
+    "kpi_count": 26
   },
   {
     "country": "Bosnia and Herzegovina",
@@ -3570,6 +3547,7 @@
       "hospital_beds_per_1_000_people": 97,
       "infant_mortality_rate": 51,
       "maternal_mortality_ratio": 29,
+      "adult_literacy_rate": 55,
       "age_dependency_ratio_total": 88,
       "overall_immunization_coverage": 149,
       "extreme_poverty": 27,
@@ -3583,14 +3561,13 @@
       "employment_to_population_ratio": 154,
       "female_labor_force_participation": 148,
       "political_corruption_index": 136,
-      "life_expectancy": 60,
-      "military_spending_sipri": 38,
       "individuals_using_the_internet": 76,
       "fixed_broadband_subscriptions_per_100_people": 55,
       "education_expenditure_of_gdp": 132,
       "recycling_rate": 57,
       "environmental_performance_index": 102,
-      "global_peace_index": 59
+      "global_peace_index": 59,
+      "inform_resilience_index": 95
     },
     "kpi_count": 34
   },
@@ -3609,6 +3586,7 @@
       "hospital_beds_per_1_000_people": 137,
       "infant_mortality_rate": 158,
       "maternal_mortality_ratio": 144,
+      "adult_literacy_rate": 111,
       "age_dependency_ratio_total": 150,
       "overall_immunization_coverage": 96,
       "extreme_poverty": 159,
@@ -3622,15 +3600,14 @@
       "employment_to_population_ratio": 47,
       "female_labor_force_participation": 33,
       "political_corruption_index": 91,
-      "life_expectancy": 182,
-      "military_spending_sipri": 82,
       "individuals_using_the_internet": 165,
       "fixed_broadband_subscriptions_per_100_people": 143,
       "education_expenditure_of_gdp": 102,
       "mean_years_of_schooling": 121,
       "recycling_rate": 77,
       "environmental_performance_index": 147,
-      "global_peace_index": 127
+      "global_peace_index": 127,
+      "inform_resilience_index": 169
     },
     "kpi_count": 34
   },
@@ -3650,6 +3627,7 @@
       "hospital_beds_per_1_000_people": 172,
       "infant_mortality_rate": 97,
       "maternal_mortality_ratio": 97,
+      "adult_literacy_rate": 100,
       "age_dependency_ratio_total": 97,
       "overall_immunization_coverage": 160,
       "extreme_poverty": 123,
@@ -3662,15 +3640,14 @@
       "employment_to_population_ratio": 117,
       "female_labor_force_participation": 147,
       "political_corruption_index": 130,
-      "life_expectancy": 111,
-      "military_spending_sipri": 64,
       "individuals_using_the_internet": 139,
       "fixed_broadband_subscriptions_per_100_people": 129,
       "education_expenditure_of_gdp": 78,
       "mean_years_of_schooling": 108,
       "recycling_rate": 157,
       "environmental_performance_index": 120,
-      "global_peace_index": 124
+      "global_peace_index": 124,
+      "inform_resilience_index": 163
     },
     "kpi_count": 34
   },
@@ -3690,6 +3667,7 @@
       "hospital_beds_per_1_000_people": 166,
       "infant_mortality_rate": 110,
       "maternal_mortality_ratio": 115,
+      "adult_literacy_rate": 141,
       "age_dependency_ratio_total": 66,
       "overall_immunization_coverage": 53,
       "extreme_poverty": 90,
@@ -3703,15 +3681,14 @@
       "employment_to_population_ratio": 159,
       "female_labor_force_participation": 168,
       "political_corruption_index": 106,
-      "life_expectancy": 88,
-      "military_spending_sipri": 115,
       "individuals_using_the_internet": 47,
       "fixed_broadband_subscriptions_per_100_people": 117,
       "education_expenditure_of_gdp": 26,
       "mean_years_of_schooling": 99,
       "recycling_rate": 45,
       "environmental_performance_index": 160,
-      "global_peace_index": 85
+      "global_peace_index": 85,
+      "inform_resilience_index": 104
     },
     "kpi_count": 35
   },
@@ -3732,6 +3709,7 @@
       "hospital_beds_per_1_000_people": 15,
       "infant_mortality_rate": 63,
       "maternal_mortality_ratio": 59,
+      "adult_literacy_rate": 19,
       "age_dependency_ratio_total": 50,
       "overall_immunization_coverage": 119,
       "extreme_poverty": 14,
@@ -3745,15 +3723,14 @@
       "employment_to_population_ratio": 139,
       "female_labor_force_participation": 121,
       "political_corruption_index": 102,
-      "life_expectancy": 106,
-      "military_spending_sipri": 155,
       "individuals_using_the_internet": 89,
       "fixed_broadband_subscriptions_per_100_people": 77,
       "education_expenditure_of_gdp": 57,
       "mean_years_of_schooling": 75,
       "recycling_rate": 188,
       "environmental_performance_index": 52,
-      "global_peace_index": 161
+      "global_peace_index": 161,
+      "inform_resilience_index": 161
     },
     "kpi_count": 36
   },
@@ -3773,6 +3750,7 @@
       "hospital_beds_per_1_000_people": 94,
       "infant_mortality_rate": 82,
       "maternal_mortality_ratio": 87,
+      "adult_literacy_rate": 108,
       "age_dependency_ratio_total": 63,
       "overall_immunization_coverage": 46,
       "extreme_poverty": 55,
@@ -3786,15 +3764,14 @@
       "employment_to_population_ratio": 163,
       "female_labor_force_participation": 163,
       "political_corruption_index": 75,
-      "life_expectancy": 76,
-      "military_spending_sipri": 84,
       "individuals_using_the_internet": 119,
       "fixed_broadband_subscriptions_per_100_people": 91,
       "education_expenditure_of_gdp": 14,
       "mean_years_of_schooling": 42,
       "recycling_rate": 150,
       "environmental_performance_index": 96,
-      "global_peace_index": 81
+      "global_peace_index": 81,
+      "inform_resilience_index": 89
     },
     "kpi_count": 35
   },
@@ -3814,6 +3791,7 @@
       "hospital_beds_per_1_000_people": 29,
       "infant_mortality_rate": 64,
       "maternal_mortality_ratio": 72,
+      "adult_literacy_rate": 17,
       "age_dependency_ratio_total": 115,
       "overall_immunization_coverage": 126,
       "extreme_poverty": 94,
@@ -3827,14 +3805,13 @@
       "employment_to_population_ratio": 105,
       "female_labor_force_participation": 79,
       "political_corruption_index": 42,
-      "life_expectancy": 96,
-      "military_spending_sipri": 67,
       "individuals_using_the_internet": 91,
       "fixed_broadband_subscriptions_per_100_people": 53,
       "education_expenditure_of_gdp": 104,
       "recycling_rate": 79,
       "environmental_performance_index": 103,
-      "global_peace_index": 109
+      "global_peace_index": 109,
+      "inform_resilience_index": 91
     },
     "kpi_count": 34
   },
@@ -3854,6 +3831,7 @@
       "hospital_beds_per_1_000_people": 145,
       "infant_mortality_rate": 76,
       "maternal_mortality_ratio": 89,
+      "adult_literacy_rate": 95,
       "age_dependency_ratio_total": 57,
       "overall_immunization_coverage": 61,
       "extreme_poverty": 96,
@@ -3867,15 +3845,14 @@
       "employment_to_population_ratio": 81,
       "female_labor_force_participation": 124,
       "political_corruption_index": 117,
-      "life_expectancy": 120,
-      "military_spending_sipri": 53,
       "individuals_using_the_internet": 126,
       "fixed_broadband_subscriptions_per_100_people": 99,
       "education_expenditure_of_gdp": 136,
       "mean_years_of_schooling": 96,
       "recycling_rate": 105,
       "environmental_performance_index": 95,
-      "global_peace_index": 104
+      "global_peace_index": 104,
+      "inform_resilience_index": 111
     },
     "kpi_count": 35
   },
@@ -3895,6 +3872,7 @@
       "hospital_beds_per_1_000_people": 185,
       "infant_mortality_rate": 132,
       "maternal_mortality_ratio": 142,
+      "adult_literacy_rate": 136,
       "age_dependency_ratio_total": 93,
       "overall_immunization_coverage": 37,
       "extreme_poverty": 81,
@@ -3907,15 +3885,14 @@
       "employment_to_population_ratio": 168,
       "female_labor_force_participation": 161,
       "political_corruption_index": 103,
-      "life_expectancy": 135,
-      "military_spending_sipri": 51,
       "individuals_using_the_internet": 146,
       "fixed_broadband_subscriptions_per_100_people": 125,
       "education_expenditure_of_gdp": 114,
       "mean_years_of_schooling": 122,
       "recycling_rate": 186,
       "environmental_performance_index": 162,
-      "global_peace_index": 77
+      "global_peace_index": 77,
+      "inform_resilience_index": 131
     },
     "kpi_count": 34
   },
@@ -3936,6 +3913,7 @@
       "hospital_beds_per_1_000_people": 181,
       "infant_mortality_rate": 119,
       "maternal_mortality_ratio": 126,
+      "adult_literacy_rate": 112,
       "age_dependency_ratio_total": 125,
       "overall_immunization_coverage": 144,
       "extreme_poverty": 111,
@@ -3949,15 +3927,14 @@
       "employment_to_population_ratio": 82,
       "female_labor_force_participation": 144,
       "political_corruption_index": 119,
-      "life_expectancy": 114,
-      "military_spending_sipri": 48,
       "individuals_using_the_internet": 144,
       "fixed_broadband_subscriptions_per_100_people": 124,
       "education_expenditure_of_gdp": 138,
       "mean_years_of_schooling": 125,
       "recycling_rate": 156,
       "environmental_performance_index": 166,
-      "global_peace_index": 108
+      "global_peace_index": 108,
+      "inform_resilience_index": 153
     },
     "kpi_count": 36
   },
@@ -3977,6 +3954,7 @@
       "hospital_beds_per_1_000_people": 178,
       "infant_mortality_rate": 143,
       "maternal_mortality_ratio": 150,
+      "adult_literacy_rate": 118,
       "age_dependency_ratio_total": 190,
       "overall_immunization_coverage": 101,
       "extreme_poverty": 163,
@@ -3990,15 +3968,14 @@
       "employment_to_population_ratio": 8,
       "female_labor_force_participation": 8,
       "political_corruption_index": 143,
-      "life_expectancy": 150,
-      "military_spending_sipri": 80,
       "individuals_using_the_internet": 194,
       "fixed_broadband_subscriptions_per_100_people": 180,
       "education_expenditure_of_gdp": 157,
       "mean_years_of_schooling": 115,
       "recycling_rate": 53,
       "environmental_performance_index": 124,
-      "global_peace_index": 113
+      "global_peace_index": 113,
+      "inform_resilience_index": 162
     },
     "kpi_count": 35
   },
@@ -4017,6 +3994,7 @@
       "hospital_beds_per_1_000_people": 147,
       "infant_mortality_rate": 156,
       "maternal_mortality_ratio": 175,
+      "adult_literacy_rate": 151,
       "age_dependency_ratio_total": 174,
       "overall_immunization_coverage": 146,
       "extreme_poverty": 131,
@@ -4029,15 +4007,14 @@
       "employment_to_population_ratio": 153,
       "female_labor_force_participation": 125,
       "political_corruption_index": 54,
-      "life_expectancy": 171,
-      "military_spending_sipri": 5,
       "individuals_using_the_internet": 149,
       "fixed_broadband_subscriptions_per_100_people": 171,
       "education_expenditure_of_gdp": 152,
       "mean_years_of_schooling": 138,
       "recycling_rate": 134,
       "environmental_performance_index": 121,
-      "global_peace_index": 55
+      "global_peace_index": 55,
+      "inform_resilience_index": 117
     },
     "kpi_count": 33
   },
@@ -4057,6 +4034,7 @@
       "hospital_beds_per_1_000_people": 161,
       "infant_mortality_rate": 136,
       "maternal_mortality_ratio": 131,
+      "adult_literacy_rate": 119,
       "age_dependency_ratio_total": 86,
       "overall_immunization_coverage": 30,
       "extreme_poverty": 102,
@@ -4070,15 +4048,14 @@
       "employment_to_population_ratio": 80,
       "female_labor_force_participation": 129,
       "political_corruption_index": 169,
-      "life_expectancy": 93,
-      "military_spending_sipri": 109,
       "individuals_using_the_internet": 152,
       "fixed_broadband_subscriptions_per_100_people": 112,
       "education_expenditure_of_gdp": 172,
       "mean_years_of_schooling": 110,
       "recycling_rate": 99,
       "environmental_performance_index": 176,
-      "global_peace_index": 123
+      "global_peace_index": 123,
+      "inform_resilience_index": 167
     },
     "kpi_count": 35
   },
@@ -4097,6 +4074,7 @@
       "hospital_beds_per_1_000_people": 179,
       "infant_mortality_rate": 179,
       "maternal_mortality_ratio": 186,
+      "adult_literacy_rate": 152,
       "age_dependency_ratio_total": 185,
       "overall_immunization_coverage": 180,
       "extreme_poverty": 136,
@@ -4110,15 +4088,14 @@
       "employment_to_population_ratio": 14,
       "female_labor_force_participation": 9,
       "political_corruption_index": 41,
-      "life_expectancy": 193,
-      "military_spending_sipri": 29,
       "individuals_using_the_internet": 171,
       "fixed_broadband_subscriptions_per_100_people": 174,
       "education_expenditure_of_gdp": 134,
       "mean_years_of_schooling": 104,
       "recycling_rate": 3,
       "environmental_performance_index": 154,
-      "global_peace_index": 112
+      "global_peace_index": 112,
+      "inform_resilience_index": 151
     },
     "kpi_count": 34
   },
@@ -4137,6 +4114,7 @@
       "hospital_beds_per_1_000_people": 184,
       "infant_mortality_rate": 186,
       "maternal_mortality_ratio": 176,
+      "adult_literacy_rate": 155,
       "age_dependency_ratio_total": 160,
       "overall_immunization_coverage": 100,
       "extreme_poverty": 153,
@@ -4149,15 +4127,14 @@
       "employment_to_population_ratio": 126,
       "female_labor_force_participation": 106,
       "political_corruption_index": 87,
-      "life_expectancy": 190,
-      "military_spending_sipri": 12,
       "individuals_using_the_internet": 182,
       "fixed_broadband_subscriptions_per_100_people": 192,
       "education_expenditure_of_gdp": 156,
       "mean_years_of_schooling": 132,
       "recycling_rate": 162,
       "environmental_performance_index": 139,
-      "global_peace_index": 57
+      "global_peace_index": 57,
+      "inform_resilience_index": 143
     },
     "kpi_count": 33
   },
@@ -4177,6 +4154,7 @@
       "hospital_beds_per_1_000_people": 136,
       "infant_mortality_rate": 125,
       "maternal_mortality_ratio": 143,
+      "adult_literacy_rate": 71,
       "age_dependency_ratio_total": 105,
       "overall_immunization_coverage": 187,
       "extreme_poverty": 87,
@@ -4189,15 +4167,14 @@
       "employment_to_population_ratio": 10,
       "female_labor_force_participation": 12,
       "political_corruption_index": 109,
-      "life_expectancy": 147,
-      "military_spending_sipri": 66,
       "individuals_using_the_internet": 122,
       "fixed_broadband_subscriptions_per_100_people": 101,
       "education_expenditure_of_gdp": 6,
       "mean_years_of_schooling": 78,
       "recycling_rate": 27,
       "environmental_performance_index": 99,
-      "global_peace_index": 83
+      "global_peace_index": 83,
+      "inform_resilience_index": 116
     },
     "kpi_count": 34
   },
@@ -4218,6 +4195,7 @@
       "hospital_beds_per_1_000_people": 68,
       "infant_mortality_rate": 74,
       "maternal_mortality_ratio": 58,
+      "adult_literacy_rate": 53,
       "age_dependency_ratio_total": 44,
       "overall_immunization_coverage": 19,
       "extreme_poverty": 49,
@@ -4231,8 +4209,6 @@
       "employment_to_population_ratio": 140,
       "female_labor_force_participation": 153,
       "political_corruption_index": 149,
-      "life_expectancy": 71,
-      "military_spending_sipri": 143,
       "individuals_using_the_internet": 70,
       "fixed_broadband_subscriptions_per_100_people": 71,
       "education_expenditure_of_gdp": 140,
@@ -4240,7 +4216,8 @@
       "recycling_rate": 29,
       "environmental_performance_index": 171,
       "global_peace_index": 146,
-      "electric_vehicle_stock": 25
+      "electric_vehicle_stock": 25,
+      "inform_resilience_index": 160
     },
     "kpi_count": 37
   },
@@ -4260,6 +4237,7 @@
       "hospital_beds_per_1_000_people": 182,
       "infant_mortality_rate": 180,
       "maternal_mortality_ratio": 178,
+      "adult_literacy_rate": 154,
       "age_dependency_ratio_total": 177,
       "overall_immunization_coverage": 155,
       "extreme_poverty": 129,
@@ -4273,15 +4251,14 @@
       "employment_to_population_ratio": 35,
       "female_labor_force_participation": 54,
       "political_corruption_index": 104,
-      "life_expectancy": 189,
-      "military_spending_sipri": 68,
       "individuals_using_the_internet": 155,
       "fixed_broadband_subscriptions_per_100_people": 149,
       "education_expenditure_of_gdp": 124,
       "mean_years_of_schooling": 116,
       "recycling_rate": 130,
       "environmental_performance_index": 137,
-      "global_peace_index": 94
+      "global_peace_index": 94,
+      "inform_resilience_index": 137
     },
     "kpi_count": 35
   },
@@ -4300,6 +4277,7 @@
       "hospital_beds_per_1_000_people": 177,
       "infant_mortality_rate": 189,
       "maternal_mortality_ratio": 193,
+      "adult_literacy_rate": 134,
       "age_dependency_ratio_total": 182,
       "overall_immunization_coverage": 178,
       "extreme_poverty": 154,
@@ -4313,14 +4291,13 @@
       "employment_to_population_ratio": 5,
       "female_labor_force_participation": 3,
       "political_corruption_index": 171,
-      "life_expectancy": 201,
-      "military_spending_sipri": 96,
       "individuals_using_the_internet": 158,
       "fixed_broadband_subscriptions_per_100_people": 186,
       "education_expenditure_of_gdp": 191,
       "recycling_rate": 185,
       "environmental_performance_index": 161,
-      "global_peace_index": 148
+      "global_peace_index": 148,
+      "inform_resilience_index": 176
     },
     "kpi_count": 33
   },
@@ -4338,6 +4315,7 @@
       "hospital_beds_per_1_000_people": 163,
       "infant_mortality_rate": 166,
       "maternal_mortality_ratio": 153,
+      "adult_literacy_rate": 138,
       "age_dependency_ratio_total": 192,
       "overall_immunization_coverage": 179,
       "extreme_poverty": 148,
@@ -4350,14 +4328,13 @@
       "employment_to_population_ratio": 38,
       "female_labor_force_participation": 11,
       "political_corruption_index": 92,
-      "life_expectancy": 176,
-      "military_spending_sipri": 72,
       "individuals_using_the_internet": 151,
       "fixed_broadband_subscriptions_per_100_people": 167,
       "education_expenditure_of_gdp": 160,
       "recycling_rate": 83,
       "environmental_performance_index": 150,
-      "global_peace_index": 76
+      "global_peace_index": 76,
+      "inform_resilience_index": 158
     },
     "kpi_count": 31
   },
@@ -4376,6 +4353,7 @@
       "hospital_beds_per_1_000_people": 183,
       "infant_mortality_rate": 151,
       "maternal_mortality_ratio": 180,
+      "adult_literacy_rate": 146,
       "age_dependency_ratio_total": 191,
       "overall_immunization_coverage": 129,
       "extreme_poverty": 116,
@@ -4389,15 +4367,14 @@
       "employment_to_population_ratio": 164,
       "female_labor_force_participation": 164,
       "political_corruption_index": 161,
-      "life_expectancy": 148,
-      "military_spending_sipri": 42,
       "individuals_using_the_internet": 161,
       "fixed_broadband_subscriptions_per_100_people": 161,
       "education_expenditure_of_gdp": 72,
       "mean_years_of_schooling": 134,
       "recycling_rate": 160,
       "environmental_performance_index": 164,
-      "global_peace_index": 110
+      "global_peace_index": 110,
+      "inform_resilience_index": 149
     },
     "kpi_count": 34
   },
@@ -4418,6 +4395,7 @@
       "hospital_beds_per_1_000_people": 79,
       "infant_mortality_rate": 112,
       "maternal_mortality_ratio": 56,
+      "adult_literacy_rate": 88,
       "age_dependency_ratio_total": 119,
       "overall_immunization_coverage": 189,
       "extreme_poverty": 103,
@@ -4431,14 +4409,13 @@
       "employment_to_population_ratio": 158,
       "female_labor_force_participation": 162,
       "political_corruption_index": 157,
-      "life_expectancy": 61,
-      "military_spending_sipri": 56,
       "individuals_using_the_internet": 85,
       "fixed_broadband_subscriptions_per_100_people": 114,
       "education_expenditure_of_gdp": 187,
       "recycling_rate": 113,
       "environmental_performance_index": 141,
-      "global_peace_index": 136
+      "global_peace_index": 136,
+      "inform_resilience_index": 173
     },
     "kpi_count": 35
   },
@@ -4457,6 +4434,7 @@
       "hospital_beds_per_1_000_people": 124,
       "infant_mortality_rate": 124,
       "maternal_mortality_ratio": 108,
+      "adult_literacy_rate": 127,
       "age_dependency_ratio_total": 128,
       "overall_immunization_coverage": 86,
       "extreme_poverty": 1,
@@ -4470,15 +4448,14 @@
       "employment_to_population_ratio": 167,
       "female_labor_force_participation": 173,
       "political_corruption_index": 112,
-      "life_expectancy": 78,
-      "military_spending_sipri": 141,
       "individuals_using_the_internet": 109,
       "fixed_broadband_subscriptions_per_100_people": 97,
       "education_expenditure_of_gdp": 35,
       "mean_years_of_schooling": 82,
       "recycling_rate": 149,
       "environmental_performance_index": 155,
-      "global_peace_index": 92
+      "global_peace_index": 92,
+      "inform_resilience_index": 96
     },
     "kpi_count": 34
   },
@@ -4498,6 +4475,7 @@
       "hospital_beds_per_1_000_people": 42,
       "infant_mortality_rate": 107,
       "maternal_mortality_ratio": 92,
+      "adult_literacy_rate": 24,
       "age_dependency_ratio_total": 138,
       "overall_immunization_coverage": 133,
       "extreme_poverty": 84,
@@ -4511,15 +4489,14 @@
       "employment_to_population_ratio": 45,
       "female_labor_force_participation": 93,
       "political_corruption_index": 141,
-      "life_expectancy": 125,
-      "military_spending_sipri": 55,
       "individuals_using_the_internet": 63,
       "fixed_broadband_subscriptions_per_100_people": 120,
       "education_expenditure_of_gdp": 13,
       "mean_years_of_schooling": 50,
       "recycling_rate": 117,
       "environmental_performance_index": 125,
-      "global_peace_index": 78
+      "global_peace_index": 78,
+      "inform_resilience_index": 99
     },
     "kpi_count": 35
   },
@@ -4538,6 +4515,7 @@
       "hospital_beds_per_1_000_people": 143,
       "infant_mortality_rate": 105,
       "maternal_mortality_ratio": 63,
+      "adult_literacy_rate": 43,
       "age_dependency_ratio_total": 163,
       "overall_immunization_coverage": 120,
       "extreme_poverty": 78,
@@ -4550,14 +4528,14 @@
       "employment_to_population_ratio": 171,
       "female_labor_force_participation": 169,
       "political_corruption_index": 67,
-      "life_expectancy": 174,
       "individuals_using_the_internet": 74,
       "fixed_broadband_subscriptions_per_100_people": 110,
       "education_expenditure_of_gdp": 41,
       "recycling_rate": 193,
-      "global_peace_index": 145
+      "global_peace_index": 145,
+      "inform_resilience_index": 171
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Mozambique",
@@ -4575,6 +4553,7 @@
       "hospital_beds_per_1_000_people": 167,
       "infant_mortality_rate": 178,
       "maternal_mortality_ratio": 127,
+      "adult_literacy_rate": 143,
       "age_dependency_ratio_total": 193,
       "overall_immunization_coverage": 171,
       "extreme_poverty": 171,
@@ -4588,15 +4567,14 @@
       "employment_to_population_ratio": 11,
       "female_labor_force_participation": 6,
       "political_corruption_index": 126,
-      "life_expectancy": 184,
-      "military_spending_sipri": 54,
       "individuals_using_the_internet": 185,
       "fixed_broadband_subscriptions_per_100_people": 173,
       "education_expenditure_of_gdp": 27,
       "mean_years_of_schooling": 139,
       "recycling_rate": 183,
       "environmental_performance_index": 144,
-      "global_peace_index": 121
+      "global_peace_index": 121,
+      "inform_resilience_index": 179
     },
     "kpi_count": 35
   },
@@ -4616,6 +4594,7 @@
       "hospital_beds_per_1_000_people": 165,
       "infant_mortality_rate": 149,
       "maternal_mortality_ratio": 161,
+      "adult_literacy_rate": 120,
       "age_dependency_ratio_total": 159,
       "overall_immunization_coverage": 27,
       "extreme_poverty": 145,
@@ -4628,15 +4607,14 @@
       "employment_to_population_ratio": 103,
       "female_labor_force_participation": 57,
       "political_corruption_index": 76,
-      "life_expectancy": 151,
-      "military_spending_sipri": 36,
       "individuals_using_the_internet": 167,
       "fixed_broadband_subscriptions_per_100_people": 164,
       "education_expenditure_of_gdp": 73,
       "mean_years_of_schooling": 130,
       "recycling_rate": 146,
       "environmental_performance_index": 138,
-      "global_peace_index": 91
+      "global_peace_index": 91,
+      "inform_resilience_index": 123
     },
     "kpi_count": 34
   },
@@ -4657,6 +4635,7 @@
       "hospital_beds_per_1_000_people": 134,
       "infant_mortality_rate": 91,
       "maternal_mortality_ratio": 78,
+      "adult_literacy_rate": 74,
       "age_dependency_ratio_total": 102,
       "overall_immunization_coverage": 51,
       "extreme_poverty": 20,
@@ -4669,15 +4648,14 @@
       "employment_to_population_ratio": 174,
       "female_labor_force_participation": 174,
       "political_corruption_index": 79,
-      "life_expectancy": 62,
-      "military_spending_sipri": 99,
       "individuals_using_the_internet": 39,
       "fixed_broadband_subscriptions_per_100_people": 116,
       "education_expenditure_of_gdp": 120,
       "mean_years_of_schooling": 43,
       "recycling_rate": 116,
       "environmental_performance_index": 83,
-      "global_peace_index": 72
+      "global_peace_index": 72,
+      "inform_resilience_index": 110
     },
     "kpi_count": 35
   },
@@ -4697,6 +4675,7 @@
       "hospital_beds_per_1_000_people": 187,
       "infant_mortality_rate": 162,
       "maternal_mortality_ratio": 157,
+      "adult_literacy_rate": 144,
       "age_dependency_ratio_total": 167,
       "overall_immunization_coverage": 163,
       "extreme_poverty": 144,
@@ -4710,14 +4689,13 @@
       "employment_to_population_ratio": 32,
       "female_labor_force_participation": 61,
       "political_corruption_index": 93,
-      "life_expectancy": 157,
-      "military_spending_sipri": 81,
       "individuals_using_the_internet": 189,
       "fixed_broadband_subscriptions_per_100_people": 163,
       "education_expenditure_of_gdp": 165,
       "recycling_rate": 135,
       "environmental_performance_index": 142,
-      "global_peace_index": 138
+      "global_peace_index": 138,
+      "inform_resilience_index": 177
     },
     "kpi_count": 34
   },
@@ -4737,6 +4715,7 @@
       "hospital_beds_per_1_000_people": 149,
       "infant_mortality_rate": 46,
       "maternal_mortality_ratio": 20,
+      "adult_literacy_rate": 47,
       "age_dependency_ratio_total": 1,
       "overall_immunization_coverage": 54,
       "extreme_poverty": 11,
@@ -4749,15 +4728,14 @@
       "employment_to_population_ratio": 1,
       "female_labor_force_participation": 26,
       "political_corruption_index": 68,
-      "life_expectancy": 22,
-      "military_spending_sipri": 138,
       "individuals_using_the_internet": 7,
       "fixed_broadband_subscriptions_per_100_people": 98,
       "education_expenditure_of_gdp": 133,
       "mean_years_of_schooling": 111,
       "recycling_rate": 180,
       "environmental_performance_index": 136,
-      "global_peace_index": 27
+      "global_peace_index": 27,
+      "inform_resilience_index": 4
     },
     "kpi_count": 34
   },
@@ -4777,6 +4755,7 @@
       "hospital_beds_per_1_000_people": 13,
       "infant_mortality_rate": 61,
       "maternal_mortality_ratio": 46,
+      "adult_literacy_rate": 15,
       "age_dependency_ratio_total": 136,
       "overall_immunization_coverage": 26,
       "extreme_poverty": 8,
@@ -4790,15 +4769,14 @@
       "employment_to_population_ratio": 26,
       "female_labor_force_participation": 22,
       "political_corruption_index": 118,
-      "life_expectancy": 99,
-      "military_spending_sipri": 83,
       "individuals_using_the_internet": 36,
       "fixed_broadband_subscriptions_per_100_people": 90,
       "education_expenditure_of_gdp": 68,
       "mean_years_of_schooling": 30,
       "recycling_rate": 189,
       "environmental_performance_index": 93,
-      "global_peace_index": 56
+      "global_peace_index": 56,
+      "inform_resilience_index": 55
     },
     "kpi_count": 35
   },
@@ -4819,6 +4797,7 @@
       "hospital_beds_per_1_000_people": 111,
       "infant_mortality_rate": 40,
       "maternal_mortality_ratio": 13,
+      "adult_literacy_rate": 31,
       "age_dependency_ratio_total": 2,
       "overall_immunization_coverage": 58,
       "extreme_poverty": 15,
@@ -4832,15 +4811,14 @@
       "employment_to_population_ratio": 12,
       "female_labor_force_participation": 82,
       "political_corruption_index": 31,
-      "life_expectancy": 17,
-      "military_spending_sipri": 146,
       "individuals_using_the_internet": 3,
       "fixed_broadband_subscriptions_per_100_people": 31,
       "education_expenditure_of_gdp": 106,
       "mean_years_of_schooling": 73,
       "recycling_rate": 50,
       "environmental_performance_index": 39,
-      "global_peace_index": 53
+      "global_peace_index": 53,
+      "inform_resilience_index": 19
     },
     "kpi_count": 36
   },
@@ -4858,6 +4836,7 @@
       "hospital_beds_per_1_000_people": 146,
       "infant_mortality_rate": 72,
       "maternal_mortality_ratio": 53,
+      "adult_literacy_rate": 52,
       "age_dependency_ratio_total": 14,
       "overall_immunization_coverage": 14,
       "access_to_basic_drinking_water": 126,
@@ -4869,14 +4848,13 @@
       "employment_to_population_ratio": 31,
       "female_labor_force_participation": 159,
       "political_corruption_index": 51,
-      "life_expectancy": 44,
-      "military_spending_sipri": 120,
       "individuals_using_the_internet": 25,
       "fixed_broadband_subscriptions_per_100_people": 102,
       "education_expenditure_of_gdp": 88,
       "recycling_rate": 122,
       "environmental_performance_index": 149,
-      "global_peace_index": 42
+      "global_peace_index": 42,
+      "inform_resilience_index": 41
     },
     "kpi_count": 30
   },
@@ -4895,6 +4873,7 @@
       "hospital_beds_per_1_000_people": 175,
       "infant_mortality_rate": 164,
       "maternal_mortality_ratio": 173,
+      "adult_literacy_rate": 129,
       "age_dependency_ratio_total": 172,
       "overall_immunization_coverage": 108,
       "extreme_poverty": 141,
@@ -4907,15 +4886,14 @@
       "employment_to_population_ratio": 99,
       "female_labor_force_participation": 69,
       "political_corruption_index": 135,
-      "life_expectancy": 186,
-      "military_spending_sipri": 35,
       "individuals_using_the_internet": 162,
       "fixed_broadband_subscriptions_per_100_people": 155,
       "education_expenditure_of_gdp": 94,
       "mean_years_of_schooling": 86,
       "recycling_rate": 190,
       "environmental_performance_index": 134,
-      "global_peace_index": 126
+      "global_peace_index": 126,
+      "inform_resilience_index": 157
     },
     "kpi_count": 33
   },
@@ -4934,6 +4912,7 @@
       "hospital_beds_per_1_000_people": 110,
       "infant_mortality_rate": 171,
       "maternal_mortality_ratio": 177,
+      "adult_literacy_rate": 85,
       "age_dependency_ratio_total": 186,
       "overall_immunization_coverage": 103,
       "extreme_poverty": 160,
@@ -4947,15 +4926,14 @@
       "employment_to_population_ratio": 78,
       "female_labor_force_participation": 50,
       "political_corruption_index": 147,
-      "life_expectancy": 185,
-      "military_spending_sipri": 86,
       "individuals_using_the_internet": 159,
       "fixed_broadband_subscriptions_per_100_people": 147,
       "education_expenditure_of_gdp": 190,
       "mean_years_of_schooling": 106,
       "recycling_rate": 68,
       "environmental_performance_index": 69,
-      "global_peace_index": 114
+      "global_peace_index": 114,
+      "inform_resilience_index": 148
     },
     "kpi_count": 34
   },
@@ -4974,6 +4952,7 @@
       "hospital_beds_per_1_000_people": 164,
       "infant_mortality_rate": 126,
       "maternal_mortality_ratio": 139,
+      "adult_literacy_rate": 132,
       "age_dependency_ratio_total": 109,
       "overall_immunization_coverage": 138,
       "access_to_basic_drinking_water": 155,
@@ -4986,15 +4965,14 @@
       "employment_to_population_ratio": 7,
       "female_labor_force_participation": 10,
       "political_corruption_index": 167,
-      "life_expectancy": 133,
-      "military_spending_sipri": 69,
       "individuals_using_the_internet": 134,
       "fixed_broadband_subscriptions_per_100_people": 131,
       "education_expenditure_of_gdp": 170,
       "mean_years_of_schooling": 123,
       "recycling_rate": 138,
       "environmental_performance_index": 153,
-      "global_peace_index": 87
+      "global_peace_index": 87,
+      "inform_resilience_index": 130
     },
     "kpi_count": 33
   },
@@ -5013,6 +4991,7 @@
       "hospital_beds_per_1_000_people": 103,
       "infant_mortality_rate": 161,
       "maternal_mortality_ratio": 152,
+      "adult_literacy_rate": 125,
       "age_dependency_ratio_total": 161,
       "overall_immunization_coverage": 159,
       "extreme_poverty": 138,
@@ -5025,14 +5004,14 @@
       "employment_to_population_ratio": 142,
       "female_labor_force_participation": 138,
       "political_corruption_index": 156,
-      "life_expectancy": 163,
       "individuals_using_the_internet": 163,
       "fixed_broadband_subscriptions_per_100_people": 165,
       "education_expenditure_of_gdp": 163,
       "recycling_rate": 158,
-      "environmental_performance_index": 86
+      "environmental_performance_index": 86,
+      "inform_resilience_index": 84
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Pakistan",
@@ -5051,6 +5030,7 @@
       "hospital_beds_per_1_000_people": 176,
       "infant_mortality_rate": 182,
       "maternal_mortality_ratio": 147,
+      "adult_literacy_rate": 148,
       "age_dependency_ratio_total": 158,
       "overall_immunization_coverage": 122,
       "extreme_poverty": 125,
@@ -5064,15 +5044,14 @@
       "employment_to_population_ratio": 136,
       "female_labor_force_participation": 165,
       "political_corruption_index": 146,
-      "life_expectancy": 153,
-      "military_spending_sipri": 130,
       "individuals_using_the_internet": 174,
       "fixed_broadband_subscriptions_per_100_people": 150,
       "education_expenditure_of_gdp": 176,
       "mean_years_of_schooling": 126,
       "recycling_rate": 124,
       "environmental_performance_index": 175,
-      "global_peace_index": 144
+      "global_peace_index": 144,
+      "inform_resilience_index": 170
     },
     "kpi_count": 36
   },
@@ -5093,6 +5072,7 @@
       "hospital_beds_per_1_000_people": 50,
       "infant_mortality_rate": 96,
       "maternal_mortality_ratio": 67,
+      "adult_literacy_rate": 14,
       "age_dependency_ratio_total": 29,
       "overall_immunization_coverage": 188,
       "extreme_poverty": 2,
@@ -5106,14 +5086,13 @@
       "employment_to_population_ratio": 76,
       "female_labor_force_participation": 44,
       "political_corruption_index": 168,
-      "life_expectancy": 98,
-      "military_spending_sipri": 107,
       "individuals_using_the_internet": 56,
       "fixed_broadband_subscriptions_per_100_people": 73,
       "education_expenditure_of_gdp": 115,
       "recycling_rate": 118,
       "environmental_performance_index": 104,
-      "global_peace_index": 95
+      "global_peace_index": 95,
+      "inform_resilience_index": 125
     },
     "kpi_count": 35
   },
@@ -5133,6 +5112,7 @@
       "hospital_beds_per_1_000_people": 140,
       "infant_mortality_rate": 127,
       "maternal_mortality_ratio": 109,
+      "adult_literacy_rate": 110,
       "age_dependency_ratio_total": 151,
       "overall_immunization_coverage": 106,
       "extreme_poverty": 46,
@@ -5146,15 +5126,14 @@
       "employment_to_population_ratio": 169,
       "female_labor_force_participation": 177,
       "political_corruption_index": 158,
-      "life_expectancy": 117,
-      "military_spending_sipri": 119,
       "individuals_using_the_internet": 92,
       "fixed_broadband_subscriptions_per_100_people": 83,
       "education_expenditure_of_gdp": 118,
       "mean_years_of_schooling": 90,
       "recycling_rate": 101,
       "environmental_performance_index": 168,
-      "global_peace_index": 147
+      "global_peace_index": 147,
+      "inform_resilience_index": 164
     },
     "kpi_count": 35
   },
@@ -5174,6 +5153,7 @@
       "hospital_beds_per_1_000_people": 126,
       "infant_mortality_rate": 142,
       "maternal_mortality_ratio": 165,
+      "adult_literacy_rate": 124,
       "age_dependency_ratio_total": 176,
       "overall_immunization_coverage": 151,
       "extreme_poverty": 147,
@@ -5187,15 +5167,14 @@
       "employment_to_population_ratio": 113,
       "female_labor_force_participation": 21,
       "political_corruption_index": 151,
-      "life_expectancy": 172,
-      "military_spending_sipri": 33,
       "individuals_using_the_internet": 160,
       "fixed_broadband_subscriptions_per_100_people": 153,
       "education_expenditure_of_gdp": 128,
       "mean_years_of_schooling": 133,
       "recycling_rate": 91,
       "environmental_performance_index": 100,
-      "global_peace_index": 103
+      "global_peace_index": 103,
+      "inform_resilience_index": 145
     },
     "kpi_count": 35
   },
@@ -5216,6 +5195,7 @@
       "hospital_beds_per_1_000_people": 148,
       "infant_mortality_rate": 113,
       "maternal_mortality_ratio": 65,
+      "adult_literacy_rate": 117,
       "age_dependency_ratio_total": 132,
       "overall_immunization_coverage": 33,
       "extreme_poverty": 70,
@@ -5229,15 +5209,14 @@
       "employment_to_population_ratio": 160,
       "female_labor_force_participation": 171,
       "political_corruption_index": 125,
-      "life_expectancy": 126,
-      "military_spending_sipri": 103,
       "individuals_using_the_internet": 117,
       "fixed_broadband_subscriptions_per_100_people": 103,
       "education_expenditure_of_gdp": 110,
       "mean_years_of_schooling": 88,
       "recycling_rate": 43,
       "environmental_performance_index": 127,
-      "global_peace_index": 107
+      "global_peace_index": 107,
+      "inform_resilience_index": 120
     },
     "kpi_count": 36
   },
@@ -5256,6 +5235,7 @@
       "hospital_beds_per_1_000_people": 95,
       "infant_mortality_rate": 62,
       "maternal_mortality_ratio": 39,
+      "adult_literacy_rate": 59,
       "age_dependency_ratio_total": 3,
       "overall_immunization_coverage": 9,
       "access_to_basic_drinking_water": 11,
@@ -5267,15 +5247,14 @@
       "employment_to_population_ratio": 19,
       "female_labor_force_participation": 119,
       "political_corruption_index": 62,
-      "life_expectancy": 42,
-      "military_spending_sipri": 127,
       "individuals_using_the_internet": 6,
       "fixed_broadband_subscriptions_per_100_people": 156,
       "education_expenditure_of_gdp": 18,
       "mean_years_of_schooling": 137,
       "recycling_rate": 100,
       "environmental_performance_index": 88,
-      "global_peace_index": 31
+      "global_peace_index": 31,
+      "inform_resilience_index": 56
     },
     "kpi_count": 32
   },
@@ -5294,6 +5273,7 @@
       "hospital_beds_per_1_000_people": 32,
       "infant_mortality_rate": 170,
       "maternal_mortality_ratio": 172,
+      "adult_literacy_rate": 137,
       "age_dependency_ratio_total": 110,
       "overall_immunization_coverage": 184,
       "extreme_poverty": 152,
@@ -5306,15 +5286,14 @@
       "employment_to_population_ratio": 108,
       "female_labor_force_participation": 47,
       "political_corruption_index": 137,
-      "life_expectancy": 175,
-      "military_spending_sipri": 6,
       "individuals_using_the_internet": 157,
       "fixed_broadband_subscriptions_per_100_people": 169,
       "education_expenditure_of_gdp": 188,
       "mean_years_of_schooling": 124,
       "recycling_rate": 169,
       "environmental_performance_index": 172,
-      "global_peace_index": 141
+      "global_peace_index": 141,
+      "inform_resilience_index": 180
     },
     "kpi_count": 33
   },
@@ -5345,16 +5324,15 @@
       "employment_to_population_ratio": 178,
       "female_labor_force_participation": 170,
       "political_corruption_index": 115,
-      "life_expectancy": 170,
-      "military_spending_sipri": 17,
       "individuals_using_the_internet": 129,
       "fixed_broadband_subscriptions_per_100_people": 148,
       "education_expenditure_of_gdp": 112,
       "recycling_rate": 114,
       "environmental_performance_index": 61,
-      "global_peace_index": 122
+      "global_peace_index": 122,
+      "inform_resilience_index": 146
     },
-    "kpi_count": 32
+    "kpi_count": 31
   },
   {
     "country": "Vietnam",
@@ -5372,6 +5350,7 @@
       "hospital_beds_per_1_000_people": 88,
       "infant_mortality_rate": 101,
       "maternal_mortality_ratio": 99,
+      "adult_literacy_rate": 64,
       "age_dependency_ratio_total": 47,
       "overall_immunization_coverage": 47,
       "extreme_poverty": 72,
@@ -5385,15 +5364,14 @@
       "employment_to_population_ratio": 16,
       "female_labor_force_participation": 18,
       "political_corruption_index": 85,
-      "life_expectancy": 94,
-      "military_spending_sipri": 122,
       "individuals_using_the_internet": 81,
       "fixed_broadband_subscriptions_per_100_people": 68,
       "education_expenditure_of_gdp": 147,
       "mean_years_of_schooling": 94,
       "recycling_rate": 11,
       "environmental_performance_index": 177,
-      "global_peace_index": 39
+      "global_peace_index": 39,
+      "inform_resilience_index": 113
     },
     "kpi_count": 35
   },
@@ -5413,6 +5391,7 @@
       "hospital_beds_per_1_000_people": 107,
       "infant_mortality_rate": 174,
       "maternal_mortality_ratio": 132,
+      "adult_literacy_rate": 93,
       "age_dependency_ratio_total": 135,
       "overall_immunization_coverage": 137,
       "extreme_poverty": 158,
@@ -5426,15 +5405,14 @@
       "employment_to_population_ratio": 175,
       "female_labor_force_participation": 126,
       "political_corruption_index": 98,
-      "life_expectancy": 177,
-      "military_spending_sipri": 20,
       "individuals_using_the_internet": 142,
       "fixed_broadband_subscriptions_per_100_people": 137,
       "education_expenditure_of_gdp": 24,
       "mean_years_of_schooling": 118,
       "recycling_rate": 90,
       "environmental_performance_index": 76,
-      "global_peace_index": 99
+      "global_peace_index": 99,
+      "inform_resilience_index": 97
     },
     "kpi_count": 35
   },
@@ -5452,6 +5430,7 @@
       "hospital_beds_per_1_000_people": 43,
       "infant_mortality_rate": 57,
       "maternal_mortality_ratio": 84,
+      "adult_literacy_rate": 49,
       "age_dependency_ratio_total": 41,
       "overall_immunization_coverage": 4,
       "access_to_basic_drinking_water": 113,
@@ -5463,16 +5442,16 @@
       "employment_to_population_ratio": 127,
       "female_labor_force_participation": 146,
       "political_corruption_index": 100,
-      "life_expectancy": 57,
       "individuals_using_the_internet": 121,
       "fixed_broadband_subscriptions_per_100_people": 135,
       "education_expenditure_of_gdp": 5,
       "mean_years_of_schooling": 10,
       "recycling_rate": 44,
       "environmental_performance_index": 60,
-      "global_peace_index": 102
+      "global_peace_index": 102,
+      "inform_resilience_index": 86
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Cameroon",
@@ -5490,6 +5469,7 @@
       "hospital_beds_per_1_000_people": 84,
       "infant_mortality_rate": 172,
       "maternal_mortality_ratio": 168,
+      "adult_literacy_rate": 130,
       "age_dependency_ratio_total": 183,
       "overall_immunization_coverage": 154,
       "extreme_poverty": 135,
@@ -5503,15 +5483,14 @@
       "employment_to_population_ratio": 50,
       "female_labor_force_participation": 64,
       "political_corruption_index": 172,
-      "life_expectancy": 180,
-      "military_spending_sipri": 60,
       "individuals_using_the_internet": 154,
       "fixed_broadband_subscriptions_per_100_people": 145,
       "education_expenditure_of_gdp": 150,
       "mean_years_of_schooling": 101,
       "recycling_rate": 187,
       "environmental_performance_index": 152,
-      "global_peace_index": 137
+      "global_peace_index": 137,
+      "inform_resilience_index": 174
     },
     "kpi_count": 35
   },
@@ -5531,6 +5510,7 @@
       "hospital_beds_per_1_000_people": 192,
       "infant_mortality_rate": 177,
       "maternal_mortality_ratio": 166,
+      "adult_literacy_rate": 157,
       "age_dependency_ratio_total": 187,
       "overall_immunization_coverage": 94,
       "extreme_poverty": 156,
@@ -5544,14 +5524,13 @@
       "employment_to_population_ratio": 151,
       "female_labor_force_participation": 141,
       "political_corruption_index": 73,
-      "life_expectancy": 192,
-      "military_spending_sipri": 77,
       "individuals_using_the_internet": 188,
       "fixed_broadband_subscriptions_per_100_people": 183,
       "education_expenditure_of_gdp": 44,
       "recycling_rate": 61,
       "environmental_performance_index": 126,
-      "global_peace_index": 152
+      "global_peace_index": 152,
+      "inform_resilience_index": 181
     },
     "kpi_count": 34
   },
@@ -5571,6 +5550,7 @@
       "hospital_beds_per_1_000_people": 120,
       "infant_mortality_rate": 59,
       "maternal_mortality_ratio": 64,
+      "adult_literacy_rate": 45,
       "age_dependency_ratio_total": 4,
       "overall_immunization_coverage": 48,
       "access_to_basic_drinking_water": 36,
@@ -5582,15 +5562,14 @@
       "employment_to_population_ratio": 20,
       "female_labor_force_participation": 131,
       "political_corruption_index": 89,
-      "life_expectancy": 37,
-      "military_spending_sipri": 87,
       "individuals_using_the_internet": 1,
       "fixed_broadband_subscriptions_per_100_people": 84,
       "education_expenditure_of_gdp": 178,
       "mean_years_of_schooling": 103,
       "recycling_rate": 120,
       "environmental_performance_index": 90,
-      "global_peace_index": 100
+      "global_peace_index": 100,
+      "inform_resilience_index": 10
     },
     "kpi_count": 33
   },
@@ -5609,6 +5588,7 @@
       "hospital_beds_per_1_000_people": 191,
       "infant_mortality_rate": 187,
       "maternal_mortality_ratio": 179,
+      "adult_literacy_rate": 162,
       "age_dependency_ratio_total": 196,
       "overall_immunization_coverage": 142,
       "extreme_poverty": 143,
@@ -5622,15 +5602,14 @@
       "employment_to_population_ratio": 27,
       "female_labor_force_participation": 55,
       "political_corruption_index": 131,
-      "life_expectancy": 195,
-      "military_spending_sipri": 71,
       "individuals_using_the_internet": 164,
       "fixed_broadband_subscriptions_per_100_people": 158,
       "education_expenditure_of_gdp": 92,
       "mean_years_of_schooling": 140,
       "recycling_rate": 154,
       "environmental_performance_index": 158,
-      "global_peace_index": 154
+      "global_peace_index": 154,
+      "inform_resilience_index": 178
     },
     "kpi_count": 34
   },
@@ -5648,6 +5627,7 @@
       "hospital_beds_per_1_000_people": 62,
       "infant_mortality_rate": 111,
       "maternal_mortality_ratio": 106,
+      "adult_literacy_rate": 145,
       "age_dependency_ratio_total": 51,
       "overall_immunization_coverage": 128,
       "access_to_basic_drinking_water": 39,
@@ -5659,14 +5639,13 @@
       "employment_to_population_ratio": 161,
       "female_labor_force_participation": 155,
       "political_corruption_index": 148,
-      "life_expectancy": 140,
-      "military_spending_sipri": 92,
       "individuals_using_the_internet": 61,
       "fixed_broadband_subscriptions_per_100_people": 128,
       "education_expenditure_of_gdp": 167,
       "mean_years_of_schooling": 32,
       "recycling_rate": 54,
-      "global_peace_index": 131
+      "global_peace_index": 131,
+      "inform_resilience_index": 147
     },
     "kpi_count": 30
   },
@@ -5685,6 +5664,7 @@
       "hospital_beds_per_1_000_people": 190,
       "infant_mortality_rate": 192,
       "maternal_mortality_ratio": 174,
+      "adult_literacy_rate": 161,
       "age_dependency_ratio_total": 199,
       "overall_immunization_coverage": 131,
       "extreme_poverty": 164,
@@ -5697,15 +5677,14 @@
       "employment_to_population_ratio": 17,
       "female_labor_force_participation": 45,
       "political_corruption_index": 97,
-      "life_expectancy": 191,
-      "military_spending_sipri": 50,
       "individuals_using_the_internet": 180,
       "fixed_broadband_subscriptions_per_100_people": 177,
       "education_expenditure_of_gdp": 98,
       "mean_years_of_schooling": 141,
       "recycling_rate": 74,
       "environmental_performance_index": 110,
-      "global_peace_index": 143
+      "global_peace_index": 143,
+      "inform_resilience_index": 184
     },
     "kpi_count": 33
   },
@@ -5725,6 +5704,7 @@
       "hospital_beds_per_1_000_people": 158,
       "infant_mortality_rate": 129,
       "maternal_mortality_ratio": 160,
+      "adult_literacy_rate": 54,
       "age_dependency_ratio_total": 101,
       "overall_immunization_coverage": 182,
       "extreme_poverty": 113,
@@ -5738,15 +5718,14 @@
       "employment_to_population_ratio": 135,
       "female_labor_force_participation": 151,
       "political_corruption_index": 175,
-      "life_expectancy": 115,
-      "military_spending_sipri": 4,
       "individuals_using_the_internet": 132,
       "fixed_broadband_subscriptions_per_100_people": 105,
       "education_expenditure_of_gdp": 192,
       "mean_years_of_schooling": 89,
       "recycling_rate": 70,
       "environmental_performance_index": 67,
-      "global_peace_index": 139
+      "global_peace_index": 139,
+      "inform_resilience_index": 165
     },
     "kpi_count": 35
   },
@@ -5765,6 +5744,7 @@
       "hospital_beds_per_1_000_people": 114,
       "infant_mortality_rate": 140,
       "maternal_mortality_ratio": 162,
+      "adult_literacy_rate": 97,
       "age_dependency_ratio_total": 152,
       "overall_immunization_coverage": 183,
       "extreme_poverty": 92,
@@ -5778,15 +5758,14 @@
       "employment_to_population_ratio": 156,
       "female_labor_force_participation": 134,
       "political_corruption_index": 122,
-      "life_expectancy": 149,
-      "military_spending_sipri": 45,
       "individuals_using_the_internet": 120,
       "fixed_broadband_subscriptions_per_100_people": 130,
       "education_expenditure_of_gdp": 164,
       "mean_years_of_schooling": 34,
       "recycling_rate": 64,
       "environmental_performance_index": 51,
-      "global_peace_index": 117
+      "global_peace_index": 117,
+      "inform_resilience_index": 108
     },
     "kpi_count": 34
   },
@@ -5805,6 +5784,7 @@
       "hospital_beds_per_1_000_people": 169,
       "infant_mortality_rate": 153,
       "maternal_mortality_ratio": 181,
+      "adult_literacy_rate": 133,
       "age_dependency_ratio_total": 194,
       "overall_immunization_coverage": 110,
       "extreme_poverty": 168,
@@ -5817,15 +5797,14 @@
       "employment_to_population_ratio": 9,
       "female_labor_force_participation": 5,
       "political_corruption_index": 138,
-      "life_expectancy": 181,
-      "military_spending_sipri": 30,
       "individuals_using_the_internet": 192,
       "fixed_broadband_subscriptions_per_100_people": 188,
       "education_expenditure_of_gdp": 67,
       "mean_years_of_schooling": 128,
       "recycling_rate": 174,
       "environmental_performance_index": 151,
-      "global_peace_index": 133
+      "global_peace_index": 133,
+      "inform_resilience_index": 166
     },
     "kpi_count": 33
   },
@@ -5845,6 +5824,7 @@
       "hospital_beds_per_1_000_people": 28,
       "infant_mortality_rate": 43,
       "maternal_mortality_ratio": 61,
+      "adult_literacy_rate": 57,
       "age_dependency_ratio_total": 34,
       "overall_immunization_coverage": 32,
       "extreme_poverty": 5,
@@ -5858,8 +5838,6 @@
       "employment_to_population_ratio": 54,
       "female_labor_force_participation": 51,
       "political_corruption_index": 94,
-      "life_expectancy": 59,
-      "military_spending_sipri": 161,
       "individuals_using_the_internet": 42,
       "fixed_broadband_subscriptions_per_100_people": 11,
       "education_expenditure_of_gdp": 103,
@@ -5867,7 +5845,8 @@
       "recycling_rate": 51,
       "environmental_performance_index": 159,
       "global_peace_index": 98,
-      "electric_vehicle_stock": 2
+      "electric_vehicle_stock": 2,
+      "inform_resilience_index": 69
     },
     "kpi_count": 36
   },
@@ -5886,6 +5865,7 @@
       "hospital_beds_per_1_000_people": 31,
       "infant_mortality_rate": 93,
       "maternal_mortality_ratio": 76,
+      "adult_literacy_rate": 5,
       "age_dependency_ratio_total": 120,
       "overall_immunization_coverage": 109,
       "extreme_poverty": 86,
@@ -5899,14 +5879,13 @@
       "employment_to_population_ratio": 120,
       "female_labor_force_participation": 149,
       "political_corruption_index": 154,
-      "life_expectancy": 116,
-      "military_spending_sipri": 95,
       "individuals_using_the_internet": 55,
       "fixed_broadband_subscriptions_per_100_people": 49,
       "education_expenditure_of_gdp": 37,
       "recycling_rate": 32,
       "environmental_performance_index": 107,
-      "global_peace_index": 67
+      "global_peace_index": 67,
+      "inform_resilience_index": 83
     },
     "kpi_count": 33
   },
@@ -5926,6 +5905,7 @@
       "hospital_beds_per_1_000_people": 160,
       "infant_mortality_rate": 80,
       "maternal_mortality_ratio": 107,
+      "adult_literacy_rate": 106,
       "age_dependency_ratio_total": 82,
       "overall_immunization_coverage": 115,
       "extreme_poverty": 106,
@@ -5938,15 +5918,14 @@
       "employment_to_population_ratio": 53,
       "female_labor_force_participation": 110,
       "political_corruption_index": 173,
-      "life_expectancy": 91,
-      "military_spending_sipri": 22,
       "individuals_using_the_internet": 140,
       "fixed_broadband_subscriptions_per_100_people": 122,
       "education_expenditure_of_gdp": 149,
       "mean_years_of_schooling": 98,
       "recycling_rate": 111,
       "environmental_performance_index": 111,
-      "global_peace_index": 111
+      "global_peace_index": 111,
+      "inform_resilience_index": 142
     },
     "kpi_count": 34
   },
@@ -5965,6 +5944,7 @@
       "hospital_beds_per_1_000_people": 104,
       "infant_mortality_rate": 47,
       "maternal_mortality_ratio": 37,
+      "adult_literacy_rate": 44,
       "age_dependency_ratio_total": 8,
       "overall_immunization_coverage": 41,
       "access_to_basic_drinking_water": 70,
@@ -5977,15 +5957,14 @@
       "employment_to_population_ratio": 59,
       "female_labor_force_participation": 154,
       "political_corruption_index": 64,
-      "life_expectancy": 52,
-      "military_spending_sipri": 157,
       "individuals_using_the_internet": 2,
       "fixed_broadband_subscriptions_per_100_people": 17,
       "education_expenditure_of_gdp": 60,
       "mean_years_of_schooling": 56,
       "recycling_rate": 84,
       "environmental_performance_index": 109,
-      "global_peace_index": 90
+      "global_peace_index": 90,
+      "inform_resilience_index": 36
     },
     "kpi_count": 33
   },
@@ -6004,6 +5983,7 @@
       "hospital_beds_per_1_000_people": 189,
       "infant_mortality_rate": 191,
       "maternal_mortality_ratio": 184,
+      "adult_literacy_rate": 158,
       "age_dependency_ratio_total": 184,
       "overall_immunization_coverage": 181,
       "extreme_poverty": 119,
@@ -6016,14 +5996,13 @@
       "employment_to_population_ratio": 138,
       "female_labor_force_participation": 137,
       "political_corruption_index": 163,
-      "life_expectancy": 194,
-      "military_spending_sipri": 58,
       "individuals_using_the_internet": 176,
       "fixed_broadband_subscriptions_per_100_people": 190,
       "education_expenditure_of_gdp": 182,
       "recycling_rate": 56,
       "environmental_performance_index": 145,
-      "global_peace_index": 118
+      "global_peace_index": 118,
+      "inform_resilience_index": 138
     },
     "kpi_count": 32
   },
@@ -6041,6 +6020,7 @@
       "hospital_beds_per_1_000_people": 156,
       "infant_mortality_rate": 173,
       "maternal_mortality_ratio": 185,
+      "adult_literacy_rate": 142,
       "age_dependency_ratio_total": 166,
       "overall_immunization_coverage": 176,
       "extreme_poverty": 150,
@@ -6053,14 +6033,13 @@
       "employment_to_population_ratio": 62,
       "female_labor_force_participation": 67,
       "political_corruption_index": 145,
-      "life_expectancy": 178,
-      "military_spending_sipri": 10,
       "individuals_using_the_internet": 170,
       "fixed_broadband_subscriptions_per_100_people": 168,
       "education_expenditure_of_gdp": 174,
       "recycling_rate": 159,
       "environmental_performance_index": 98,
-      "global_peace_index": 101
+      "global_peace_index": 101,
+      "inform_resilience_index": 121
     },
     "kpi_count": 31
   },
@@ -6081,6 +6060,7 @@
       "hospital_beds_per_1_000_people": 11,
       "infant_mortality_rate": 37,
       "maternal_mortality_ratio": 44,
+      "adult_literacy_rate": 6,
       "age_dependency_ratio_total": 71,
       "overall_immunization_coverage": 40,
       "extreme_poverty": 25,
@@ -6094,15 +6074,14 @@
       "employment_to_population_ratio": 74,
       "female_labor_force_participation": 81,
       "political_corruption_index": 140,
-      "life_expectancy": 108,
-      "military_spending_sipri": 160,
       "individuals_using_the_internet": 30,
       "fixed_broadband_subscriptions_per_100_people": 64,
       "education_expenditure_of_gdp": 93,
       "mean_years_of_schooling": 51,
       "recycling_rate": 182,
       "environmental_performance_index": 112,
-      "global_peace_index": 162
+      "global_peace_index": 162,
+      "inform_resilience_index": 126
     },
     "kpi_count": 36
   },
@@ -6122,6 +6101,7 @@
       "hospital_beds_per_1_000_people": 6,
       "infant_mortality_rate": 7,
       "maternal_mortality_ratio": 1,
+      "adult_literacy_rate": 11,
       "age_dependency_ratio_total": 65,
       "overall_immunization_coverage": 21,
       "extreme_poverty": 3,
@@ -6135,14 +6115,13 @@
       "employment_to_population_ratio": 65,
       "female_labor_force_participation": 63,
       "political_corruption_index": 78,
-      "life_expectancy": 97,
-      "military_spending_sipri": 94,
       "individuals_using_the_internet": 31,
       "fixed_broadband_subscriptions_per_100_people": 38,
       "education_expenditure_of_gdp": 63,
       "recycling_rate": 82,
       "environmental_performance_index": 55,
-      "global_peace_index": 119
+      "global_peace_index": 119,
+      "inform_resilience_index": 46
     },
     "kpi_count": 34
   },
@@ -6159,6 +6138,7 @@
       "hospital_beds_per_1_000_people": 155,
       "infant_mortality_rate": 139,
       "maternal_mortality_ratio": 171,
+      "adult_literacy_rate": 140,
       "age_dependency_ratio_total": 169,
       "overall_immunization_coverage": 62,
       "access_to_basic_drinking_water": 189,
@@ -6169,15 +6149,15 @@
       "employment_to_population_ratio": 15,
       "female_labor_force_participation": 13,
       "political_corruption_index": 128,
-      "life_expectancy": 146,
       "individuals_using_the_internet": 184,
       "fixed_broadband_subscriptions_per_100_people": 175,
       "education_expenditure_of_gdp": 171,
       "recycling_rate": 176,
       "environmental_performance_index": 143,
-      "global_peace_index": 132
+      "global_peace_index": 132,
+      "inform_resilience_index": 134
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Iran",
@@ -6194,6 +6174,7 @@
       "hospital_beds_per_1_000_people": 118,
       "infant_mortality_rate": 83,
       "maternal_mortality_ratio": 62,
+      "adult_literacy_rate": 96,
       "age_dependency_ratio_total": 32,
       "overall_immunization_coverage": 24,
       "extreme_poverty": 82,
@@ -6207,15 +6188,14 @@
       "employment_to_population_ratio": 165,
       "female_labor_force_participation": 175,
       "political_corruption_index": 139,
-      "life_expectancy": 65,
-      "military_spending_sipri": 124,
       "individuals_using_the_internet": 102,
       "fixed_broadband_subscriptions_per_100_people": 96,
       "education_expenditure_of_gdp": 151,
       "mean_years_of_schooling": 48,
       "recycling_rate": 94,
       "environmental_performance_index": 132,
-      "global_peace_index": 142
+      "global_peace_index": 142,
+      "inform_resilience_index": 168
     },
     "kpi_count": 34
   },
@@ -6234,6 +6214,7 @@
       "hospital_beds_per_1_000_people": 170,
       "infant_mortality_rate": 159,
       "maternal_mortality_ratio": 134,
+      "adult_literacy_rate": 160,
       "age_dependency_ratio_total": 175,
       "overall_immunization_coverage": 192,
       "extreme_poverty": 139,
@@ -6246,14 +6227,13 @@
       "employment_to_population_ratio": 177,
       "female_labor_force_participation": 179,
       "political_corruption_index": 170,
-      "life_expectancy": 141,
-      "military_spending_sipri": 116,
       "individuals_using_the_internet": 190,
       "fixed_broadband_subscriptions_per_100_people": 152,
       "education_expenditure_of_gdp": 56,
       "mean_years_of_schooling": 112,
       "recycling_rate": 81,
-      "global_peace_index": 159
+      "global_peace_index": 159,
+      "inform_resilience_index": 188
     },
     "kpi_count": 32
   },
@@ -6271,6 +6251,7 @@
       "hospital_beds_per_1_000_people": 105,
       "infant_mortality_rate": 181,
       "maternal_mortality_ratio": 151,
+      "adult_literacy_rate": 99,
       "age_dependency_ratio_total": 156,
       "overall_immunization_coverage": 175,
       "extreme_poverty": 109,
@@ -6283,14 +6264,13 @@
       "employment_to_population_ratio": 106,
       "female_labor_force_participation": 96,
       "political_corruption_index": 155,
-      "life_expectancy": 179,
-      "military_spending_sipri": 25,
       "individuals_using_the_internet": 136,
       "fixed_broadband_subscriptions_per_100_people": 179,
       "education_expenditure_of_gdp": 169,
       "recycling_rate": 55,
       "environmental_performance_index": 77,
-      "global_peace_index": 82
+      "global_peace_index": 82,
+      "inform_resilience_index": 92
     },
     "kpi_count": 31
   },
@@ -6309,6 +6289,7 @@
       "hospital_beds_per_1_000_people": 180,
       "infant_mortality_rate": 188,
       "maternal_mortality_ratio": 192,
+      "adult_literacy_rate": 163,
       "age_dependency_ratio_total": 195,
       "overall_immunization_coverage": 174,
       "extreme_poverty": 149,
@@ -6321,14 +6302,13 @@
       "employment_to_population_ratio": 73,
       "female_labor_force_participation": 120,
       "political_corruption_index": 174,
-      "life_expectancy": 200,
-      "military_spending_sipri": 61,
       "individuals_using_the_internet": 191,
       "fixed_broadband_subscriptions_per_100_people": 194,
       "education_expenditure_of_gdp": 135,
       "recycling_rate": 148,
       "environmental_performance_index": 165,
-      "global_peace_index": 134
+      "global_peace_index": 134,
+      "inform_resilience_index": 186
     },
     "kpi_count": 32
   },
@@ -6348,6 +6328,7 @@
       "hospital_beds_per_1_000_people": 39,
       "infant_mortality_rate": 131,
       "maternal_mortality_ratio": 55,
+      "adult_literacy_rate": 3,
       "age_dependency_ratio_total": 149,
       "overall_immunization_coverage": 45,
       "extreme_poverty": 105,
@@ -6361,15 +6342,14 @@
       "employment_to_population_ratio": 166,
       "female_labor_force_participation": 157,
       "political_corruption_index": 159,
-      "life_expectancy": 122,
-      "military_spending_sipri": 40,
       "individuals_using_the_internet": 143,
       "fixed_broadband_subscriptions_per_100_people": 184,
       "education_expenditure_of_gdp": 40,
       "mean_years_of_schooling": 85,
       "recycling_rate": 121,
       "environmental_performance_index": 117,
-      "global_peace_index": 80
+      "global_peace_index": 80,
+      "inform_resilience_index": 112
     },
     "kpi_count": 35
   },
@@ -6388,6 +6368,7 @@
       "hospital_beds_per_1_000_people": 138,
       "infant_mortality_rate": 160,
       "maternal_mortality_ratio": 130,
+      "adult_literacy_rate": 126,
       "age_dependency_ratio_total": 94,
       "overall_immunization_coverage": 177,
       "extreme_poverty": 124,
@@ -6400,15 +6381,14 @@
       "employment_to_population_ratio": 33,
       "female_labor_force_participation": 39,
       "political_corruption_index": 129,
-      "life_expectancy": 144,
-      "military_spending_sipri": 8,
       "individuals_using_the_internet": 131,
       "fixed_broadband_subscriptions_per_100_people": 139,
       "education_expenditure_of_gdp": 186,
       "mean_years_of_schooling": 113,
       "recycling_rate": 109,
       "environmental_performance_index": 148,
-      "global_peace_index": 47
+      "global_peace_index": 47,
+      "inform_resilience_index": 101
     },
     "kpi_count": 33
   },
@@ -6427,6 +6407,7 @@
       "hospital_beds_per_1_000_people": 48,
       "infant_mortality_rate": 152,
       "maternal_mortality_ratio": 27,
+      "adult_literacy_rate": 9,
       "age_dependency_ratio_total": 108,
       "overall_immunization_coverage": 28,
       "extreme_poverty": 142,
@@ -6439,14 +6420,13 @@
       "employment_to_population_ratio": 149,
       "female_labor_force_participation": 118,
       "political_corruption_index": 166,
-      "life_expectancy": 137,
-      "military_spending_sipri": 34,
       "individuals_using_the_internet": 181,
       "fixed_broadband_subscriptions_per_100_people": 123,
       "education_expenditure_of_gdp": 155,
       "recycling_rate": 104,
       "environmental_performance_index": 118,
-      "global_peace_index": 88
+      "global_peace_index": 88,
+      "inform_resilience_index": 79
     },
     "kpi_count": 32
   },
@@ -6466,6 +6446,7 @@
       "hospital_beds_per_1_000_people": 173,
       "infant_mortality_rate": 168,
       "maternal_mortality_ratio": 167,
+      "adult_literacy_rate": 150,
       "age_dependency_ratio_total": 179,
       "overall_immunization_coverage": 193,
       "extreme_poverty": 115,
@@ -6479,15 +6460,14 @@
       "employment_to_population_ratio": 170,
       "female_labor_force_participation": 172,
       "political_corruption_index": 144,
-      "life_expectancy": 166,
-      "military_spending_sipri": 76,
       "individuals_using_the_internet": 177,
       "fixed_broadband_subscriptions_per_100_people": 185,
       "education_expenditure_of_gdp": 173,
       "mean_years_of_schooling": 135,
       "recycling_rate": 171,
       "environmental_performance_index": 170,
-      "global_peace_index": 160
+      "global_peace_index": 160,
+      "inform_resilience_index": 185
     },
     "kpi_count": 35
   },
@@ -6506,6 +6486,7 @@
       "hospital_beds_per_1_000_people": 130,
       "infant_mortality_rate": 122,
       "maternal_mortality_ratio": 73,
+      "adult_literacy_rate": 77,
       "age_dependency_ratio_total": 91,
       "overall_immunization_coverage": 165,
       "extreme_poverty": 126,
@@ -6519,15 +6500,15 @@
       "employment_to_population_ratio": 172,
       "female_labor_force_participation": 176,
       "political_corruption_index": 127,
-      "life_expectancy": 119,
       "individuals_using_the_internet": 166,
       "fixed_broadband_subscriptions_per_100_people": 118,
       "education_expenditure_of_gdp": 58,
       "mean_years_of_schooling": 105,
       "recycling_rate": 172,
-      "global_peace_index": 157
+      "global_peace_index": 157,
+      "inform_resilience_index": 182
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Central African Republic",
@@ -6544,6 +6525,7 @@
       "hospital_beds_per_1_000_people": 154,
       "infant_mortality_rate": 190,
       "maternal_mortality_ratio": 190,
+      "adult_literacy_rate": 156,
       "age_dependency_ratio_total": 201,
       "overall_immunization_coverage": 190,
       "extreme_poverty": 166,
@@ -6556,15 +6538,14 @@
       "employment_to_population_ratio": 22,
       "female_labor_force_participation": 23,
       "political_corruption_index": 160,
-      "life_expectancy": 198,
-      "military_spending_sipri": 18,
       "individuals_using_the_internet": 195,
       "fixed_broadband_subscriptions_per_100_people": 189,
       "education_expenditure_of_gdp": 179,
       "mean_years_of_schooling": 142,
       "recycling_rate": 170,
       "environmental_performance_index": 75,
-      "global_peace_index": 150
+      "global_peace_index": 150,
+      "inform_resilience_index": 187
     },
     "kpi_count": 33
   },
@@ -6578,6 +6559,7 @@
       "hospital_beds_per_1_000_people": 2,
       "infant_mortality_rate": 106,
       "maternal_mortality_ratio": 113,
+      "adult_literacy_rate": 1,
       "age_dependency_ratio_total": 37,
       "overall_immunization_coverage": 8,
       "access_to_basic_drinking_water": 120,
@@ -6589,12 +6571,12 @@
       "employment_to_population_ratio": 6,
       "female_labor_force_participation": 7,
       "political_corruption_index": 116,
-      "life_expectancy": 102,
       "individuals_using_the_internet": 196,
       "recycling_rate": 161,
-      "global_peace_index": 149
+      "global_peace_index": 149,
+      "inform_resilience_index": 135
     },
-    "kpi_count": 22
+    "kpi_count": 23
   },
   {
     "country": "Myanmar",
@@ -6611,6 +6593,7 @@
       "hospital_beds_per_1_000_people": 150,
       "infant_mortality_rate": 157,
       "maternal_mortality_ratio": 154,
+      "adult_literacy_rate": 83,
       "age_dependency_ratio_total": 40,
       "overall_immunization_coverage": 167,
       "extreme_poverty": 118,
@@ -6624,15 +6607,14 @@
       "employment_to_population_ratio": 118,
       "female_labor_force_participation": 143,
       "political_corruption_index": 153,
-      "life_expectancy": 162,
-      "military_spending_sipri": 114,
       "individuals_using_the_internet": 137,
       "fixed_broadband_subscriptions_per_100_people": 136,
       "education_expenditure_of_gdp": 175,
       "mean_years_of_schooling": 114,
       "recycling_rate": 140,
       "environmental_performance_index": 178,
-      "global_peace_index": 153
+      "global_peace_index": 153,
+      "inform_resilience_index": 175
     },
     "kpi_count": 34
   },
@@ -6650,6 +6632,7 @@
       "hospital_beds_per_1_000_people": 186,
       "infant_mortality_rate": 183,
       "maternal_mortality_ratio": 187,
+      "adult_literacy_rate": 159,
       "age_dependency_ratio_total": 188,
       "overall_immunization_coverage": 186,
       "access_to_basic_drinking_water": 150,
@@ -6661,15 +6644,14 @@
       "employment_to_population_ratio": 173,
       "female_labor_force_participation": 178,
       "political_corruption_index": 114,
-      "life_expectancy": 169,
-      "military_spending_sipri": 44,
       "individuals_using_the_internet": 187,
       "fixed_broadband_subscriptions_per_100_people": 181,
       "education_expenditure_of_gdp": 84,
       "mean_years_of_schooling": 127,
       "recycling_rate": 147,
       "environmental_performance_index": 81,
-      "global_peace_index": 158
+      "global_peace_index": 158,
+      "inform_resilience_index": 183
     },
     "kpi_count": 31
   },
@@ -6686,6 +6668,7 @@
       "hospital_beds_per_1_000_people": 157,
       "infant_mortality_rate": 94,
       "maternal_mortality_ratio": 129,
+      "adult_literacy_rate": 41,
       "age_dependency_ratio_total": 181,
       "overall_immunization_coverage": 135,
       "extreme_poverty": 95,
@@ -6697,14 +6680,14 @@
       "inflation_consumer_price_index": 57,
       "employment_to_population_ratio": 157,
       "female_labor_force_participation": 160,
-      "life_expectancy": 124,
       "individuals_using_the_internet": 141,
       "fixed_broadband_subscriptions_per_100_people": 157,
       "education_expenditure_of_gdp": 38,
       "recycling_rate": 2,
-      "environmental_performance_index": 122
+      "environmental_performance_index": 122,
+      "inform_resilience_index": 75
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Liechtenstein",
@@ -6718,11 +6701,11 @@
       "renewable_energy_share": 41,
       "internet_penetration_rate": 14,
       "mobile_subscriptions_per_100_inhabitants": 64,
-      "life_expectancy": 11,
       "individuals_using_the_internet": 14,
       "fixed_broadband_subscriptions_per_100_people": 4,
       "education_expenditure_of_gdp": 158,
-      "recycling_rate": 7
+      "recycling_rate": 7,
+      "inform_resilience_index": 2
     },
     "kpi_count": 14
   },
@@ -6744,13 +6727,12 @@
       "renewable_energy_share": 113,
       "internet_penetration_rate": 24,
       "mobile_subscriptions_per_100_inhabitants": 23,
-      "life_expectancy": 5,
       "individuals_using_the_internet": 24,
       "fixed_broadband_subscriptions_per_100_people": 3,
       "education_expenditure_of_gdp": 177,
       "recycling_rate": 108
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Tonga",
@@ -6766,6 +6748,7 @@
       "hospital_beds_per_1_000_people": 91,
       "infant_mortality_rate": 66,
       "maternal_mortality_ratio": 114,
+      "adult_literacy_rate": 92,
       "age_dependency_ratio_total": 165,
       "overall_immunization_coverage": 18,
       "extreme_poverty": 43,
@@ -6777,15 +6760,15 @@
       "inflation_consumer_price_index": 95,
       "employment_to_population_ratio": 133,
       "female_labor_force_participation": 135,
-      "life_expectancy": 110,
       "individuals_using_the_internet": 138,
       "fixed_broadband_subscriptions_per_100_people": 111,
       "education_expenditure_of_gdp": 46,
       "mean_years_of_schooling": 29,
       "recycling_rate": 141,
-      "environmental_performance_index": 80
+      "environmental_performance_index": 80,
+      "inform_resilience_index": 94
     },
-    "kpi_count": 29
+    "kpi_count": 30
   },
   {
     "country": "Seychelles",
@@ -6800,6 +6783,7 @@
       "hospital_beds_per_1_000_people": 63,
       "infant_mortality_rate": 95,
       "maternal_mortality_ratio": 94,
+      "adult_literacy_rate": 80,
       "age_dependency_ratio_total": 17,
       "overall_immunization_coverage": 76,
       "extreme_poverty": 54,
@@ -6810,13 +6794,12 @@
       "mobile_subscriptions_per_100_inhabitants": 5,
       "inflation_consumer_price_index": 5,
       "political_corruption_index": 18,
-      "life_expectancy": 112,
-      "military_spending_sipri": 11,
       "individuals_using_the_internet": 69,
       "fixed_broadband_subscriptions_per_100_people": 47,
       "education_expenditure_of_gdp": 80,
       "recycling_rate": 52,
-      "environmental_performance_index": 32
+      "environmental_performance_index": 32,
+      "inform_resilience_index": 5
     },
     "kpi_count": 27
   },
@@ -6834,6 +6817,7 @@
       "hospital_beds_per_1_000_people": 151,
       "infant_mortality_rate": 84,
       "maternal_mortality_ratio": 111,
+      "adult_literacy_rate": 102,
       "age_dependency_ratio_total": 43,
       "overall_immunization_coverage": 117,
       "extreme_poverty": 64,
@@ -6845,14 +6829,13 @@
       "inflation_consumer_price_index": 99,
       "employment_to_population_ratio": 91,
       "female_labor_force_participation": 115,
-      "life_expectancy": 104,
-      "military_spending_sipri": 13,
       "individuals_using_the_internet": 118,
       "fixed_broadband_subscriptions_per_100_people": 108,
       "education_expenditure_of_gdp": 75,
       "mean_years_of_schooling": 59,
       "recycling_rate": 155,
-      "environmental_performance_index": 49
+      "environmental_performance_index": 49,
+      "inform_resilience_index": 98
     },
     "kpi_count": 30
   },
@@ -6871,6 +6854,7 @@
       "hospital_beds_per_1_000_people": 27,
       "infant_mortality_rate": 49,
       "maternal_mortality_ratio": 79,
+      "adult_literacy_rate": 39,
       "age_dependency_ratio_total": 5,
       "overall_immunization_coverage": 11,
       "extreme_poverty": 10,
@@ -6883,15 +6867,15 @@
       "employment_to_population_ratio": 67,
       "female_labor_force_participation": 142,
       "political_corruption_index": 77,
-      "life_expectancy": 39,
       "individuals_using_the_internet": 79,
       "fixed_broadband_subscriptions_per_100_people": 79,
       "education_expenditure_of_gdp": 55,
       "mean_years_of_schooling": 97,
       "recycling_rate": 72,
-      "environmental_performance_index": 114
+      "environmental_performance_index": 114,
+      "inform_resilience_index": 28
     },
-    "kpi_count": 31
+    "kpi_count": 32
   },
   {
     "country": "Kosovo",
@@ -6908,12 +6892,10 @@
       "mobile_subscriptions_per_100_inhabitants": 192,
       "inflation_consumer_price_index": 40,
       "political_corruption_index": 55,
-      "life_expectancy": 58,
-      "military_spending_sipri": 31,
       "individuals_using_the_internet": 53,
       "global_peace_index": 63
     },
-    "kpi_count": 16
+    "kpi_count": 14
   },
   {
     "country": "South Sudan",
@@ -6928,6 +6910,7 @@
       "physicians_per_1_000_people": 190,
       "infant_mortality_rate": 194,
       "maternal_mortality_ratio": 191,
+      "adult_literacy_rate": 164,
       "age_dependency_ratio_total": 168,
       "overall_immunization_coverage": 164,
       "extreme_poverty": 170,
@@ -6940,13 +6923,12 @@
       "employment_to_population_ratio": 40,
       "female_labor_force_participation": 15,
       "political_corruption_index": 152,
-      "life_expectancy": 197,
-      "military_spending_sipri": 73,
       "individuals_using_the_internet": 193,
       "fixed_broadband_subscriptions_per_100_people": 193,
       "education_expenditure_of_gdp": 184,
       "recycling_rate": 151,
-      "global_peace_index": 156
+      "global_peace_index": 156,
+      "inform_resilience_index": 190
     },
     "kpi_count": 29
   },
@@ -6962,6 +6944,7 @@
       "hospital_beds_per_1_000_people": 51,
       "infant_mortality_rate": 68,
       "maternal_mortality_ratio": 85,
+      "adult_literacy_rate": 65,
       "age_dependency_ratio_total": 11,
       "overall_immunization_coverage": 2,
       "access_to_basic_drinking_water": 38,
@@ -6972,14 +6955,13 @@
       "inflation_consumer_price_index": 6,
       "employment_to_population_ratio": 68,
       "female_labor_force_participation": 88,
-      "life_expectancy": 87,
-      "military_spending_sipri": 62,
       "individuals_using_the_internet": 9,
       "fixed_broadband_subscriptions_per_100_people": 75,
       "education_expenditure_of_gdp": 82,
       "mean_years_of_schooling": 67,
       "recycling_rate": 76,
-      "environmental_performance_index": 71
+      "environmental_performance_index": 71,
+      "inform_resilience_index": 33
     },
     "kpi_count": 27
   },
@@ -6997,6 +6979,7 @@
       "hospital_beds_per_1_000_people": 162,
       "infant_mortality_rate": 193,
       "maternal_mortality_ratio": 188,
+      "adult_literacy_rate": 149,
       "age_dependency_ratio_total": 198,
       "overall_immunization_coverage": 172,
       "access_to_basic_drinking_water": 185,
@@ -7007,14 +6990,14 @@
       "employment_to_population_ratio": 176,
       "female_labor_force_participation": 167,
       "political_corruption_index": 165,
-      "life_expectancy": 196,
       "individuals_using_the_internet": 173,
       "fixed_broadband_subscriptions_per_100_people": 159,
       "education_expenditure_of_gdp": 193,
       "recycling_rate": 175,
-      "global_peace_index": 151
+      "global_peace_index": 151,
+      "inform_resilience_index": 189
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Monaco",
@@ -7030,13 +7013,12 @@
       "air_quality_pm2_5_exposure": 25,
       "internet_penetration_rate": 8,
       "mobile_subscriptions_per_100_inhabitants": 125,
-      "life_expectancy": 1,
       "individuals_using_the_internet": 8,
       "fixed_broadband_subscriptions_per_100_people": 2,
       "education_expenditure_of_gdp": 181,
       "recycling_rate": 62
     },
-    "kpi_count": 16
+    "kpi_count": 15
   },
   {
     "country": "Cayman Islands",
@@ -7045,13 +7027,13 @@
       "gni_per_capita_current_us": 13,
       "physicians_per_1_000_people": 90,
       "hospital_beds_per_1_000_people": 67,
+      "adult_literacy_rate": 29,
       "age_dependency_ratio_total": 6,
       "access_to_basic_drinking_water": 104,
       "renewable_energy_share": 192,
       "internet_penetration_rate": 98,
       "mobile_subscriptions_per_100_inhabitants": 39,
       "inflation_consumer_price_index": 15,
-      "life_expectancy": 43,
       "individuals_using_the_internet": 98,
       "fixed_broadband_subscriptions_per_100_people": 1,
       "education_expenditure_of_gdp": 183,
@@ -7070,6 +7052,7 @@
       "hospital_beds_per_1_000_people": 57,
       "infant_mortality_rate": 1,
       "maternal_mortality_ratio": 42,
+      "adult_literacy_rate": 7,
       "age_dependency_ratio_total": 75,
       "overall_immunization_coverage": 118,
       "access_to_basic_drinking_water": 17,
@@ -7077,7 +7060,6 @@
       "internet_penetration_rate": 72,
       "mobile_subscriptions_per_100_inhabitants": 85,
       "inflation_consumer_price_index": 30,
-      "life_expectancy": 2,
       "individuals_using_the_internet": 72,
       "fixed_broadband_subscriptions_per_100_people": 35,
       "education_expenditure_of_gdp": 146,
@@ -7107,12 +7089,12 @@
       "inflation_consumer_price_index": 7,
       "employment_to_population_ratio": 30,
       "female_labor_force_participation": 20,
-      "life_expectancy": 95,
       "individuals_using_the_internet": 27,
       "fixed_broadband_subscriptions_per_100_people": 66,
       "education_expenditure_of_gdp": 154,
       "recycling_rate": 46,
-      "environmental_performance_index": 28
+      "environmental_performance_index": 28,
+      "inform_resilience_index": 32
     },
     "kpi_count": 25
   },
@@ -7129,6 +7111,7 @@
       "hospital_beds_per_1_000_people": 21,
       "infant_mortality_rate": 77,
       "maternal_mortality_ratio": 83,
+      "adult_literacy_rate": 23,
       "age_dependency_ratio_total": 62,
       "overall_immunization_coverage": 67,
       "extreme_poverty": 73,
@@ -7141,15 +7124,15 @@
       "employment_to_population_ratio": 86,
       "female_labor_force_participation": 49,
       "political_corruption_index": 24,
-      "life_expectancy": 80,
       "individuals_using_the_internet": 101,
       "fixed_broadband_subscriptions_per_100_people": 28,
       "education_expenditure_of_gdp": 117,
       "mean_years_of_schooling": 81,
       "recycling_rate": 152,
-      "environmental_performance_index": 36
+      "environmental_performance_index": 36,
+      "inform_resilience_index": 20
     },
-    "kpi_count": 29
+    "kpi_count": 30
   },
   {
     "country": "Antigua and Barbuda",
@@ -7161,6 +7144,7 @@
       "hospital_beds_per_1_000_people": 59,
       "infant_mortality_rate": 60,
       "maternal_mortality_ratio": 82,
+      "adult_literacy_rate": 27,
       "age_dependency_ratio_total": 22,
       "overall_immunization_coverage": 1,
       "access_to_basic_drinking_water": 77,
@@ -7169,14 +7153,14 @@
       "internet_penetration_rate": 106,
       "mobile_subscriptions_per_100_inhabitants": 2,
       "inflation_consumer_price_index": 141,
-      "life_expectancy": 66,
       "individuals_using_the_internet": 106,
       "fixed_broadband_subscriptions_per_100_people": 104,
       "education_expenditure_of_gdp": 139,
       "recycling_rate": 103,
-      "environmental_performance_index": 40
+      "environmental_performance_index": 40,
+      "inform_resilience_index": 18
     },
-    "kpi_count": 21
+    "kpi_count": 22
   },
   {
     "country": "Saint Kitts and Nevis",
@@ -7197,11 +7181,11 @@
       "internet_penetration_rate": 110,
       "mobile_subscriptions_per_100_inhabitants": 88,
       "inflation_consumer_price_index": 26,
-      "life_expectancy": 118,
       "individuals_using_the_internet": 110,
       "fixed_broadband_subscriptions_per_100_people": 7,
       "education_expenditure_of_gdp": 123,
-      "recycling_rate": 166
+      "recycling_rate": 166,
+      "inform_resilience_index": 12
     },
     "kpi_count": 21
   },
@@ -7216,6 +7200,7 @@
       "hospital_beds_per_1_000_people": 38,
       "infant_mortality_rate": 123,
       "maternal_mortality_ratio": 125,
+      "adult_literacy_rate": 2,
       "age_dependency_ratio_total": 21,
       "overall_immunization_coverage": 39,
       "access_to_basic_drinking_water": 49,
@@ -7224,13 +7209,13 @@
       "internet_penetration_rate": 175,
       "mobile_subscriptions_per_100_inhabitants": 44,
       "inflation_consumer_price_index": 61,
-      "life_expectancy": 142,
       "individuals_using_the_internet": 175,
       "fixed_broadband_subscriptions_per_100_people": 113,
       "education_expenditure_of_gdp": 119,
-      "recycling_rate": 65
+      "recycling_rate": 65,
+      "inform_resilience_index": 31
     },
-    "kpi_count": 21
+    "kpi_count": 22
   },
   {
     "country": "Saint Lucia",
@@ -7256,12 +7241,12 @@
       "inflation_consumer_price_index": 1,
       "employment_to_population_ratio": 58,
       "female_labor_force_participation": 29,
-      "life_expectancy": 113,
       "individuals_using_the_internet": 123,
       "fixed_broadband_subscriptions_per_100_people": 92,
       "education_expenditure_of_gdp": 108,
       "recycling_rate": 129,
-      "environmental_performance_index": 53
+      "environmental_performance_index": 53,
+      "inform_resilience_index": 50
     },
     "kpi_count": 27
   },
@@ -7276,6 +7261,7 @@
       "hospital_beds_per_1_000_people": 30,
       "infant_mortality_rate": 71,
       "maternal_mortality_ratio": 169,
+      "adult_literacy_rate": 58,
       "age_dependency_ratio_total": 153,
       "overall_immunization_coverage": 13,
       "extreme_poverty": 112,
@@ -7285,13 +7271,13 @@
       "internet_penetration_rate": 94,
       "mobile_subscriptions_per_100_inhabitants": 152,
       "inflation_consumer_price_index": 2,
-      "life_expectancy": 188,
       "individuals_using_the_internet": 94,
       "fixed_broadband_subscriptions_per_100_people": 107,
       "education_expenditure_of_gdp": 33,
-      "recycling_rate": 86
+      "recycling_rate": 86,
+      "inform_resilience_index": 30
     },
-    "kpi_count": 22
+    "kpi_count": 23
   },
   {
     "country": "Grenada",
@@ -7304,6 +7290,7 @@
       "hospital_beds_per_1_000_people": 64,
       "infant_mortality_rate": 115,
       "maternal_mortality_ratio": 98,
+      "adult_literacy_rate": 46,
       "age_dependency_ratio_total": 42,
       "overall_immunization_coverage": 83,
       "extreme_poverty": 57,
@@ -7313,14 +7300,14 @@
       "internet_penetration_rate": 114,
       "mobile_subscriptions_per_100_inhabitants": 139,
       "inflation_consumer_price_index": 25,
-      "life_expectancy": 89,
       "individuals_using_the_internet": 114,
       "fixed_broadband_subscriptions_per_100_people": 50,
       "education_expenditure_of_gdp": 59,
       "recycling_rate": 110,
-      "environmental_performance_index": 58
+      "environmental_performance_index": 58,
+      "inform_resilience_index": 49
     },
-    "kpi_count": 23
+    "kpi_count": 24
   },
   {
     "country": "Saint Vincent and the Grenadines",
@@ -7334,6 +7321,7 @@
       "hospital_beds_per_1_000_people": 45,
       "infant_mortality_rate": 79,
       "maternal_mortality_ratio": 103,
+      "adult_literacy_rate": 70,
       "age_dependency_ratio_total": 56,
       "overall_immunization_coverage": 17,
       "access_to_basic_drinking_water": 83,
@@ -7344,14 +7332,14 @@
       "inflation_consumer_price_index": 109,
       "employment_to_population_ratio": 116,
       "female_labor_force_participation": 71,
-      "life_expectancy": 129,
       "individuals_using_the_internet": 111,
       "fixed_broadband_subscriptions_per_100_people": 48,
       "education_expenditure_of_gdp": 17,
       "recycling_rate": 128,
-      "environmental_performance_index": 37
+      "environmental_performance_index": 37,
+      "inform_resilience_index": 74
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Dominica",
@@ -7371,12 +7359,12 @@
       "internet_penetration_rate": 82,
       "mobile_subscriptions_per_100_inhabitants": 153,
       "inflation_consumer_price_index": 70,
-      "life_expectancy": 132,
       "individuals_using_the_internet": 82,
       "fixed_broadband_subscriptions_per_100_people": 74,
       "education_expenditure_of_gdp": 43,
       "recycling_rate": 136,
-      "environmental_performance_index": 42
+      "environmental_performance_index": 42,
+      "inform_resilience_index": 58
     },
     "kpi_count": 21
   },
@@ -7392,6 +7380,7 @@
       "hospital_beds_per_1_000_people": 80,
       "infant_mortality_rate": 133,
       "maternal_mortality_ratio": 146,
+      "adult_literacy_rate": 67,
       "age_dependency_ratio_total": 144,
       "overall_immunization_coverage": 134,
       "extreme_poverty": 76,
@@ -7400,14 +7389,14 @@
       "renewable_energy_share": 131,
       "internet_penetration_rate": 128,
       "mobile_subscriptions_per_100_inhabitants": 190,
-      "life_expectancy": 161,
       "individuals_using_the_internet": 128,
       "fixed_broadband_subscriptions_per_100_people": 144,
       "education_expenditure_of_gdp": 9,
       "recycling_rate": 16,
-      "environmental_performance_index": 123
+      "environmental_performance_index": 123,
+      "inform_resilience_index": 105
     },
-    "kpi_count": 23
+    "kpi_count": 24
   },
   {
     "country": "Tuvalu",
@@ -7420,6 +7409,7 @@
       "hospital_beds_per_1_000_people": 46,
       "infant_mortality_rate": 117,
       "maternal_mortality_ratio": 149,
+      "adult_literacy_rate": 4,
       "age_dependency_ratio_total": 142,
       "overall_immunization_coverage": 78,
       "extreme_poverty": 110,
@@ -7429,13 +7419,13 @@
       "internet_penetration_rate": 113,
       "mobile_subscriptions_per_100_inhabitants": 134,
       "inflation_consumer_price_index": 11,
-      "life_expectancy": 159,
       "individuals_using_the_internet": 113,
       "fixed_broadband_subscriptions_per_100_people": 127,
       "education_expenditure_of_gdp": 2,
-      "recycling_rate": 78
+      "recycling_rate": 78,
+      "inform_resilience_index": 61
     },
-    "kpi_count": 22
+    "kpi_count": 23
   },
   {
     "country": "Micronesia",
@@ -7458,12 +7448,12 @@
       "internet_penetration_rate": 156,
       "mobile_subscriptions_per_100_inhabitants": 196,
       "inflation_consumer_price_index": 134,
-      "life_expectancy": 158,
       "individuals_using_the_internet": 156,
       "fixed_broadband_subscriptions_per_100_people": 121,
       "education_expenditure_of_gdp": 3,
       "recycling_rate": 106,
-      "environmental_performance_index": 113
+      "environmental_performance_index": 113,
+      "inform_resilience_index": 90
     },
     "kpi_count": 24
   },
@@ -7480,6 +7470,7 @@
       "hospital_beds_per_1_000_people": 123,
       "infant_mortality_rate": 102,
       "maternal_mortality_ratio": 128,
+      "adult_literacy_rate": 101,
       "age_dependency_ratio_total": 170,
       "overall_immunization_coverage": 169,
       "extreme_poverty": 128,
@@ -7492,14 +7483,14 @@
       "employment_to_population_ratio": 107,
       "female_labor_force_participation": 85,
       "political_corruption_index": 60,
-      "life_expectancy": 128,
       "individuals_using_the_internet": 150,
       "fixed_broadband_subscriptions_per_100_people": 154,
       "education_expenditure_of_gdp": 10,
       "recycling_rate": 6,
-      "environmental_performance_index": 119
+      "environmental_performance_index": 119,
+      "inform_resilience_index": 118
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "São Tomé and Príncipe",
@@ -7513,6 +7504,7 @@
       "hospital_beds_per_1_000_people": 74,
       "infant_mortality_rate": 78,
       "maternal_mortality_ratio": 118,
+      "adult_literacy_rate": 105,
       "age_dependency_ratio_total": 162,
       "overall_immunization_coverage": 123,
       "extreme_poverty": 121,
@@ -7525,14 +7517,14 @@
       "employment_to_population_ratio": 179,
       "female_labor_force_participation": 166,
       "political_corruption_index": 56,
-      "life_expectancy": 139,
       "individuals_using_the_internet": 133,
       "fixed_broadband_subscriptions_per_100_people": 141,
       "education_expenditure_of_gdp": 62,
       "recycling_rate": 92,
-      "environmental_performance_index": 38
+      "environmental_performance_index": 38,
+      "inform_resilience_index": 37
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Kiribati",
@@ -7545,6 +7537,7 @@
       "hospital_beds_per_1_000_people": 119,
       "infant_mortality_rate": 169,
       "maternal_mortality_ratio": 121,
+      "adult_literacy_rate": 35,
       "age_dependency_ratio_total": 143,
       "overall_immunization_coverage": 74,
       "extreme_poverty": 104,
@@ -7554,14 +7547,14 @@
       "internet_penetration_rate": 66,
       "mobile_subscriptions_per_100_inhabitants": 184,
       "inflation_consumer_price_index": 156,
-      "life_expectancy": 164,
       "individuals_using_the_internet": 66,
       "fixed_broadband_subscriptions_per_100_people": 187,
       "education_expenditure_of_gdp": 1,
       "recycling_rate": 102,
-      "environmental_performance_index": 54
+      "environmental_performance_index": 54,
+      "inform_resilience_index": 100
     },
-    "kpi_count": 23
+    "kpi_count": 24
   },
   {
     "country": "Solomon Islands",
@@ -7576,6 +7569,7 @@
       "hospital_beds_per_1_000_people": 133,
       "infant_mortality_rate": 114,
       "maternal_mortality_ratio": 135,
+      "adult_literacy_rate": 122,
       "age_dependency_ratio_total": 155,
       "overall_immunization_coverage": 124,
       "extreme_poverty": 151,
@@ -7588,46 +7582,42 @@
       "employment_to_population_ratio": 2,
       "female_labor_force_participation": 2,
       "political_corruption_index": 101,
-      "life_expectancy": 134,
       "individuals_using_the_internet": 153,
       "fixed_broadband_subscriptions_per_100_people": 178,
       "education_expenditure_of_gdp": 7,
       "recycling_rate": 179,
-      "environmental_performance_index": 130
+      "environmental_performance_index": 130,
+      "inform_resilience_index": 128
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Falkland Islands",
     "ranks": {
-      "age_dependency_ratio_total": 16,
-      "life_expectancy": 50
+      "age_dependency_ratio_total": 16
     },
-    "kpi_count": 2
+    "kpi_count": 1
   },
   {
     "country": "Anguilla",
     "ranks": {
-      "age_dependency_ratio_total": 20,
-      "life_expectancy": 48
+      "age_dependency_ratio_total": 20
     },
-    "kpi_count": 2
+    "kpi_count": 1
   },
   {
     "country": "Guadeloupe",
     "ranks": {
-      "age_dependency_ratio_total": 145,
-      "life_expectancy": 28
+      "age_dependency_ratio_total": 145
     },
-    "kpi_count": 2
+    "kpi_count": 1
   },
   {
     "country": "Vatican City",
     "ranks": {
       "age_dependency_ratio_total": 200,
-      "political_corruption_index": 72,
-      "life_expectancy": 16
+      "political_corruption_index": 72
     },
-    "kpi_count": 3
+    "kpi_count": 2
   }
 ]
