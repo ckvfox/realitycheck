@@ -57,4 +57,24 @@ jobs:
             **/*.py
             **/*.md
             **/*.yml
+            
+      - name: 📧 Send notification email
+        if: always()  # 🔥 läuft bei Erfolg ODER Fehler
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "RealityCheck Run – ${{ job.status }}"
+          to: ${{ secrets.EMAIL_TO }}
+          from: RealityCheck Bot <${{ secrets.SMTP_USERNAME }}>
+          secure: true
+          body: |
+            🧭 The RealityCheck workflow finished with status: **${{ job.status }}**
+
+            📅 Date: $(date -u)
+            🔗 View the full log in GitHub Actions.
+          attachments: data/fetch_log.txt
+
 
