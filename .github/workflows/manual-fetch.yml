@@ -45,8 +45,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir:  data/                   # 👈 wichtig: Slash am Ende!
-          server-dir: ${{ secrets.FTP_DIR }}
+          local-dir:  data/                   # 👈 Slash am Ende!
+          server-dir: ${{ secrets.FTP_DIR }}/ # 👈 ebenfalls Slash am Ende!
           state-name: .ftp-deploy-sync-state-data.json
           log-level: verbose
           exclude: |
@@ -56,3 +56,4 @@ jobs:
             **/*.py
             **/*.md
             **/*.yml
+
