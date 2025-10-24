@@ -59,6 +59,17 @@ jobs:
             **/*.md
             **/*.yml
 
+      - name: Commit and push updated data to GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "RealityCheck Bot"
+          git config --global user.email "bot@realitycheck"
+          git add data/
+          # Nur committen, wenn es Änderungen gibt
+          git diff-index --quiet HEAD || git commit -m "📆 Monthly data update ($(date -u))"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+
       - name: 📧 Send notification email
         if: always()
         uses: dawidd6/action-send-mail@v3
@@ -73,6 +84,7 @@ jobs:
           secure: true
           body: |
             🧭 The monthly RealityCheck workflow finished with status: **${{ job.status }}**
+
             📅 Date: $(date -u)
             🔗 View the full log in GitHub Actions.
           attachments: data/fetch_log.txt
