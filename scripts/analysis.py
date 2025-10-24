@@ -194,60 +194,70 @@ def run_global_analysis():
         print("❌ Error while saving:", e)
 
 # ============================================================
-# 🧠 KPI Smart Analysis Generator
+# 🧠 KPI Smart Analysis Generator (fixed path + fallback)
 # ============================================================
-
 from datetime import date
 
 def generate_kpi_analyses(client, data_dir):
-    meta_path = data_dir / "available_kpis.json"
-    if not meta_path.exists():
-        print("⚠️ available_kpis.json not found.")
-        return {}
+    # Neuer Standardpfad
+    meta_path = data_dir / "meta" / "available_kpis.json"
+    # Fallback (alte Struktur)
+    legacy_path = data_dir / "available_kpis.json"
 
-    meta = json.load(open(meta_path, encoding="utf-8"))
+    if not meta_path.exists():
+        if legacy_path.exists():
+            print("⚠️ meta/available_kpis.json not found — using legacy available_kpis.json")
+            meta_path = legacy_path
+        else:
+            print("❌ available_kpis.json not found in /data/meta or /data")
+            return {}
+
+    print(f"📄 Using KPI meta: {meta_path}")
+    with open(meta_path, encoding="utf-8") as f:
+        meta = json.load(f)
+
+    # Meta kann Liste oder Dict sein
     if isinstance(meta, dict):
         meta = list(meta.values())
 
     result = {}
     for entry in tqdm(meta, desc="🧩 Generating KPI summaries"):
-        fname = entry.get("filename")
+        fname   = entry.get("filename")
+        title   = entry.get("title", "")
+        desc    = entry.get("description", "")
+        cluster = entry.get("cluster", "")
+        unit    = entry.get("unit", "")
+
         if not fname:
             continue
-        title = entry.get("title", "")
-        desc = entry.get("description", "")
-        cluster = entry.get("cluster", "")
-        unit = entry.get("unit", "")
 
         prompt = f"""Write a concise (max 1000 characters) analysis for the KPI '{title}'.
-        Describe what it measures, highlight top and low performing countries,
-        mention noticeable trends or regional differences, possible correlations
-        with other indicators in the same cluster ({cluster}), and end with a short outlook.
-        Unit: {unit}. Description: {desc}.
-        """
+Describe what it measures, highlight top and low performing countries,
+mention noticeable trends or regional differences, possible correlations
+with other indicators in the same cluster ({cluster}), and end with a short outlook.
+Unit: {unit}. Description: {desc}.
+"""
 
         try:
-            response = client.chat.completions.create(
+            rsp = client.chat.completions.create(
                 model="gpt-5",
                 messages=[
                     {"role": "system", "content": "You are a global data analyst writing compact KPI summaries."},
                     {"role": "user", "content": prompt}
                 ],
             )
-            summary = response.choices[0].message.content.strip()
-            result[fname] = {
-                "summary": summary,
-                "last_update": str(date.today())
-            }
+            summary = (rsp.choices[0].message.content or "").strip()
+            result[fname] = {"summary": summary, "last_update": str(date.today())}
         except Exception as e:
             print(f"⚠️ Error analyzing {fname}: {e}")
-            continue
 
     out_path = data_dir / "kpi_analysis.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
-    print(f"✅ KPI analyses saved to {out_path}")
+
+    print(f"✅ KPI analyses saved to {out_path} ({len(result)} entries)")
     return result
+
 
 
 if __name__ == "__main__":
