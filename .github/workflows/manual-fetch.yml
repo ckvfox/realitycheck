@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Berlin
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}   # 👈 Diese Zeile NEU
 
     steps:
       - name: Checkout repository
