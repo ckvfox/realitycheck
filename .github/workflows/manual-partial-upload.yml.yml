@@ -1,49 +1,72 @@
-name: 🌐 RealityCheck – Partial FTP Upload
+name: 🎯 RealityCheck – Partial FTP Upload
 
 on:
-  workflow_dispatch:      # Manuell startbar in GitHub Actions
+  workflow_dispatch:
     inputs:
       files:
-        description: "Dateien oder Ordner (kommagetrennt) aus dem Repo-Root, die hochgeladen werden sollen"
+        description: "Comma-separated list of files to upload (relative to repo root, e.g. 'data/fetch_log.txt,data/overall_ranking.json')"
         required: true
-        default: "index.html, style.css, scripts/script.js"
+        default: "data/fetch_log.txt"
 
 jobs:
-  ftp_upload:
+  ftp_partial:
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Berlin
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
-      - name: 🧾 Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: 📂 Prepare upload list
-        id: prep
+      - name: Parse input list and prepare upload folder
         run: |
-          echo "FILES=$(echo '${{ github.event.inputs.files }}' | tr ',' '\n' | sed 's/^ *//;s/ *$//')" >> $GITHUB_ENV
-          echo "📦 Preparing to upload the following files:"
-          echo "${{ github.event.inputs.files }}"
+          echo "📦 Preparing partial upload..."
+          mkdir -p partial_upload
+          IFS=',' read -ra FILES <<< "${{ github.event.inputs.files }}"
+          for f in "${FILES[@]}"; do
+            if [ -f "$f" ]; then
+              echo "✅ Adding $f"
+              mkdir -p "partial_upload/$(dirname $f)"
+              cp "$f" "partial_upload/$f"
+            else
+              echo "⚠️ File not found: $f"
+            fi
+          done
+          echo "Partial upload folder ready."
 
-      - name: 🚀 FTP Deploy selected files
+      - name: FTP Upload selected files
         uses: SamKirkland/ftp-deploy-action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir: ./
+          local-dir: partial_upload/
           server-dir: ${{ secrets.FTP_DIR }}/
-          state-name: .ftp-deploy-sync-state-partial.json
           log-level: verbose
           exclude: |
             **/.git*
             **/.github*
             **/__pycache__/
-            **/data/**
             **/*.py
             **/*.md
             **/*.yml
-          # ⬇️ Nur bestimmte Dateien hochladen
-          include: |
-            ${{ github.event.inputs.files }}
+
+      - name: 📧 Send notification email
+        if: always()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "RealityCheck Partial FTP Upload – ${{ job.status }}"
+          to: ${{ secrets.EMAIL_TO }}
+          from: RealityCheck Bot <${{ secrets.SMTP_USERNAME }}>
+          secure: true
+          body: |
+            🧭 The partial FTP upload finished with status: **${{ job.status }}**
+            📅 Date: $(date -u)
+            📂 Files: ${{ github.event.inputs.files }}
+            🔗 View run details in GitHub Actions.

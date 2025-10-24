@@ -1,27 +1,31 @@
-name: 🧪 RealityCheck – Full FTP Deploy
+name: 🚀 RealityCheck – Full FTP Upload
 
 on:
-  workflow_dispatch: {}   # manuell per Button startbar
+  workflow_dispatch: {}
 
 jobs:
-  full_ftp_deploy:
+  ftp_full:
     runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Berlin
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Deploy entire repository to InfinityFree
-        uses: SamKirkland/FTP-Deploy-Action@v4
+      - name: FTP Upload (Full Clean)
+        uses: SamKirkland/ftp-deploy-action@v4.3.5
         with:
-          server:   ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir:  .                # <— gesamtes Repo
-          server-dir: ${{ secrets.FTP_ROOT_DIR }}   # z. B. /htdocs/
+          local-dir: data/
+          server-dir: ${{ secrets.FTP_DIR }}/data/
+          dangerous-clean-slate: true   # ⚠️ Löscht entfernte Dateien!
+          state-name: .ftp-deploy-sync-state-data.json
+          log-level: verbose
           exclude: |
             **/.git*
             **/.github*
@@ -29,4 +33,20 @@ jobs:
             **/*.py
             **/*.md
             **/*.yml
-            **/scripts/source_csv/**
+
+      - name: 📧 Send notification email
+        if: always()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "RealityCheck Full FTP Upload – ${{ job.status }}"
+          to: ${{ secrets.EMAIL_TO }}
+          from: RealityCheck Bot <${{ secrets.SMTP_USERNAME }}>
+          secure: true
+          body: |
+            🧭 The full FTP upload finished with status: **${{ job.status }}**
+            📅 Date: $(date -u)
+            🔗 View run details in GitHub Actions.

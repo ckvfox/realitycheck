@@ -1,21 +1,20 @@
-name: 🌍 RealityCheck – Monthly Data Pipeline
+name: 📅 RealityCheck – Monthly Automated Fetch
 
 on:
   schedule:
-    - cron: '15 1 1 * *'    # 03:15 Berlin / 01:15 UTC am 1. des Monats
-  workflow_dispatch: {}      # manuell startbar
+    - cron: "0 3 1 * *"     # Jeden 1. des Monats um 03:00 UTC (05:00 MEZ)
+  workflow_dispatch: {}      # Optional: manueller Start
 
 jobs:
-  full_data_pipeline:
+  monthly_run:
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Berlin
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,57 +24,55 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt || true
+          pip install requests pandas tqdm python-dotenv openai
+          echo "✅ Dependencies installed"
 
       - name: Run full RealityCheck pipeline
         run: |
-          set -e
-          echo "===== RealityCheck Fetch Start $(date -u) ====="
+          echo "===== RealityCheck Monthly Fetch Start $(date -u) ====="
           python ./scripts/fetch_data.py
-          echo "===== Fetch End $(date -u) ====="
+          echo "===== Monthly Fetch End $(date -u) ====="
 
-      - name: Upload RealityCheck log artifact
+      - name: Upload log artifact
         uses: actions/upload-artifact@v4
         with:
-          name: fetch_log
+          name: fetch_log_monthly
           path: data/fetch_log.txt
           retention-days: 14
 
       - name: FTP Deploy /data to InfinityFree
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/ftp-deploy-action@v4.3.5
         with:
-          server:   ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir:  data
-          server-dir: ${{ secrets.FTP_DIR }}
+          local-dir: data/
+          server-dir: ${{ secrets.FTP_DIR }}/data/
           state-name: .ftp-deploy-sync-state-data.json
+          log-level: verbose
           exclude: |
             **/.git*
             **/.github*
-            **/*.pyc
             **/__pycache__/
+            **/*.py
+            **/*.md
+            **/*.yml
 
-      - name: Send fetch summary mail
-        uses: dawidd6/action-send-mail@v4
+      - name: 📧 Send notification email
+        if: always()
+        uses: dawidd6/action-send-mail@v3
         with:
-          server:   ${{ secrets.SMTP_SERVER }}
-          port:     ${{ secrets.SMTP_PORT }}
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
           username: ${{ secrets.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          subject:  "RealityCheck – Monthly Fetch Report $(date +'%Y-%m-%d')"
-          to:       ${{ secrets.EMAIL_TO }}
-          from:     ${{ secrets.EMAIL_FROM || secrets.SMTP_USERNAME }}
-          secure:   true
+          subject: "RealityCheck Monthly Run – ${{ job.status }}"
+          to: ${{ secrets.EMAIL_TO }}
+          from: RealityCheck Bot <${{ secrets.SMTP_USERNAME }}>
+          secure: true
           body: |
-            Hello,
-            the automated RealityCheck data pipeline has completed.
-
-            All sub-fetches, consolidation and AI analysis were triggered via:
-              → scripts/fetch_data.py
-
-            The full log is attached (data/fetch_log.txt).
-
-            – RealityCheck Automation
+            🧭 The monthly RealityCheck workflow finished with status: **${{ job.status }}**
+            📅 Date: $(date -u)
+            🔗 View full log in GitHub Actions.
           attachments: data/fetch_log.txt

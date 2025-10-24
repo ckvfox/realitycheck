@@ -1,26 +1,30 @@
-name: 🧪 RealityCheck – Incremental FTP Sync
+name: 🔁 RealityCheck – FTP Sync Upload
 
 on:
-  workflow_dispatch: {}   # manuell starten
+  workflow_dispatch: {}
 
 jobs:
-  incremental_sync:
+  ftp_sync:
     runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Berlin
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Incremental FTP sync to InfinityFree
-        uses: SamKirkland/FTP-Deploy-Action@v4
+      - name: FTP Sync /data
+        uses: SamKirkland/ftp-deploy-action@v4.3.5
         with:
-          server:   ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir:  .                 # oder z. B. ./data
-          server-dir: ${{ secrets.FTP_ROOT_DIR }}
-          state-name: .ftp-deploy-sync-state.json  # speichert Prüfsummen
+          local-dir: data/
+          server-dir: ${{ secrets.FTP_DIR }}/data/
+          state-name: .ftp-deploy-sync-state-data.json
+          log-level: verbose
           exclude: |
             **/.git*
             **/.github*
@@ -28,3 +32,20 @@ jobs:
             **/*.py
             **/*.md
             **/*.yml
+
+      - name: 📧 Send notification email
+        if: always()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "RealityCheck FTP Sync – ${{ job.status }}"
+          to: ${{ secrets.EMAIL_TO }}
+          from: RealityCheck Bot <${{ secrets.SMTP_USERNAME }}>
+          secure: true
+          body: |
+            🧭 The FTP sync finished with status: **${{ job.status }}**
+            📅 Date: $(date -u)
+            🔗 View run details in GitHub Actions.
