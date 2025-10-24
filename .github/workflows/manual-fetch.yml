@@ -21,7 +21,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt || true
+          # manuell benötigte Pakete für RealityCheck:
+          pip install requests pandas tqdm python-dotenv openai
+          echo "✅ Dependencies installed"
 
       - name: Run full RealityCheck pipeline
         run: |
