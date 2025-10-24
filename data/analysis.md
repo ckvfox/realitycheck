@@ -1,52 +1,52 @@
-- Overview
-Global averages point to steady human development with wide gaps. Basic services like immunization (80%) and drinking water (85%) are broadly available, but education (mean 5.5 years), digital access (31% using the internet), and environmental quality (EPI 43, PM2.5 at 27.5 µg/m³) lag in many places. Health outcomes improve unevenly (life expectancy around 62–64 years on average across years; infant mortality still high at 49/1,000). Inequality, conflict, inflation spikes, and high emissions remain key pressures. Variation is large (many outliers), so country paths differ sharply.
+Overview
+The indicators show a world with steady but uneven human development. Basic services (immunization, drinking water, literacy) are broadly available, yet health outcomes and environmental quality lag in many places. Digital access and infrastructure remain split between high- and low-income regions. Political systems, resource dependencies, and membership in economic blocs shape these gaps.
 
-- Highlights (positive developments)
-  - Basic health and services: Immunization coverage at ~80% and drinking water access at ~85% show strong global reach; hospital beds (4.2/1,000) and physicians (1.7/1,000) have expanded compared with low baselines in many low- and middle-income countries.
-  - Education and literacy: Adult literacy averages ~81%; education spending at 4.3% of GDP indicates commitment, especially among OECD/EU members.
-  - Energy transition seeds: Renewables’ average share is high at 33% (with very high shares in hydro-rich economies); electric vehicle stock is growing fast but concentrated.
-  - Demographic dividends: Many countries have young populations (median age 23), supporting potential growth if jobs and skills improve.
-  - Peaceful majorities: Most countries report few or no active armed conflicts in a given year; the global peace index average (~2.0 on a 1–5 scale) is moderate.
+Highlights (positive developments)
+- Health access: Immunization coverage is high on average (around 80%). Access to basic drinking water is also strong (mid‑80s%).
+- Education: Adult literacy averages above 80% where reported, and education spending averages about 4.3% of GDP.
+- Energy transition: Renewable energy’s average share is sizable (~33%), lifted by hydro- and wind-rich countries (Nordics, parts of Latin America, Sub‑Saharan hydro exporters).
+- Labor and participation: Employment-to-population is near 56%, and female labor force participation averages ~50%, signaling gradual social inclusion.
+- Governance and peace “middle”: The Global Peace Index average sits around 2.0 (on a 1–5 scale), with many countries in a broadly stable middle tier.
+- Social well-being: The average happiness score (~5.5/10) indicates moderate satisfaction, with top performers clustered in advanced democracies.
 
-- Lowlights (negative developments)
-  - Heavy disparities: Very high standard deviations and outliers in health (maternal mortality avg 231; infant 49), schooling, internet, and income (GDP per capita highly skewed) show deep divides.
-  - Environment under strain: PM2.5 exposure (27.5) far exceeds WHO guidelines; recycling is low (19% avg); environmental performance is middling (EPI 43).
-  - Climate pressure: CO2 emissions are extremely concentrated, with very large outliers, pointing to the G20 as the decisive group for reductions.
-  - Macroeconomic fragility: Inflation averages 13% with extreme spikes (hyperinflation outliers), and public debt is elevated (avg 56% of GDP; extreme outliers signal crises).
-  - Safety and mobility: Road traffic deaths are high (18 per 100k), especially in rapidly motorizing, lower-income countries.
+Lowlights (negative developments)
+- Health outcomes: Infant mortality (~49 per 1,000) and maternal mortality (~231 per 100,000) remain high on average, reflecting deep inequality in care, especially in low‑income and fragile states.
+- Pollution and safety: PM2.5 exposure (27.5 µg/m3) far exceeds WHO guidelines, and road traffic deaths (~18 per 100k) are high in many emerging economies.
+- Digital divide: Internet penetration averages only ~31%, and fixed broadband ~11 subscriptions per 100 people, showing a clear access gap.
+- Inequality and poverty: The Gini average (~37) and extreme poverty (~11% on average where measured) point to persistent distributional problems.
+- Environmental performance and circularity: EPI averages ~43/100 and recycling ~19%, both below levels needed to meet climate and waste goals.
+- Macro risks: Inflation volatility is large (long tail of hyperinflation cases), and public debt varies widely, signaling vulnerability in several economies.
 
-- Political & Regional Differences
-  - Democracies vs autocracies:
-    - Democracies (esp. OECD/EU/G7): Higher HDI (~0.68 global avg but top performers near 0.9), better press freedom, higher internet/broadband, more physicians/beds, lower infant/maternal mortality, higher recycling/EPI, and more stable inflation. Trade-offs: aging (higher old-age dependency), higher debt, slower population growth.
-    - Autocracies: Mixed outcomes. Resource-rich rentier states can show high income and infrastructure with lower tax-to-GDP from non-resource sectors, higher military spending shares, lower press freedom, and often low renewable shares (unless hydro-rich). Some developmental autocracies deliver strong infrastructure, EV and rail build-outs, but at the cost of civic freedoms.
-  - Economic blocs:
-    - EU/OECD: Leaders in education, health capacity, recycling, EPI, EV uptake; facing aging, higher debt, and energy security transitions.
-    - G7: Very high income and HDI; large historical emissions; accelerating decarbonization, but consumption emissions and aging remain challenges.
-    - G20: Dominates GDP and emissions; progress in renewables/EVs led by China and the EU; outcomes vary widely (from top-tier to fragile members).
-    - BRICS: China drives EVs, rail, and renewables; India shows gains in services access but struggles with air quality; inequality and environmental stress remain issues across several members.
-  - Regions:
-    - Sub-Saharan Africa: Lowest schooling, literacy, and internet; highest fertility and mortality; strong immunization in several countries; very low per-capita emissions but high PM2.5 from household fuels; conflict pockets.
-    - South Asia: Improvements in immunization and basic services; severe air pollution; high population growth and low female labor force in some countries.
-    - East Asia & Pacific: High literacy; rapid EV/renewables in China; aging and very low fertility in advanced democracies (Japan, Korea, Taiwan).
-    - Europe: Top EPI/recycling/press freedom; aging, fiscal pressure, and energy transition costs.
-    - Middle East & North Africa: Higher military spending shares; oil dependence; air pollution; internet often high but labor participation for women lower in many cases; conflicts in several states.
-    - Latin America: High urbanization and middle HDI; elevated inequality (Gini); periodic inflation spikes.
+Political & Regional Differences
+- Democracies vs. autocracies:
+  - Democracies tend to achieve better press freedom, lower perceived corruption, higher EPI, and higher internet and broadband access. They also show lower infant/maternal mortality and longer life expectancy on average.
+  - Autocracies show wider variance. Some deliver strong basics (e.g., high immunization or literacy) and big infrastructure (hospital beds) but often at the cost of media freedom and civic rights. Many allocate higher GDP shares to the military and have lower tax revenue shares where resource rents dominate.
+- Economic blocs:
+  - EU/OECD/G7: High broadband, physicians per capita, recycling rates, and EPI. Low fertility, low infant/maternal mortality, but higher public debt in several members. Stronger press freedom and happiness levels.
+  - G20: Heterogeneous. Large emitters with high PM2.5 in several members; improving renewables by volume but often lower shares due to large fossil baselines. Urbanization is rapid, with elevated road deaths in some.
+  - BRICS: Mixed outcomes. Rapid adoption of renewables (capacity), but air quality and inequality are frequent challenges. Strong industrialization coexists with governance constraints and lower press freedom in some members.
+  - Resource‑dependent states (many in MENA, parts of SSA and CIS): High GDP per capita in some, but lower tax/GDP (due to commodity rents), higher military spending shares, and weaker EPI and press freedom. Renewable shares are rising from a low base.
+- Regional patterns:
+  - Europe (esp. Nordics and Western Europe): Top on EPI, recycling, happiness, life expectancy; low infant mortality; strong broadband. Parts of Eastern Europe have more hospital beds but higher PM2.5 and slower recycling.
+  - East Asia: High life expectancy and digital uptake; PM2.5 remains a concern in industrial belts.
+  - South Asia and Sub‑Saharan Africa: Higher fertility, poverty, and maternal/infant mortality; lower internet access, physicians, and beds per capita; fast urbanization pressures.
+  - Latin America: High urbanization and internet use growth; inequality (higher Gini) and road deaths remain issues.
+  - MENA: Higher military spending shares, lower tax reliance where oil rents dominate; air quality concerns; service expansion is uneven.
 
-- Interrelations & Global Dynamics
-  - Governance and welfare: Higher democracy and press freedom correlate with higher HDI, better health outcomes, and higher internet use. They also correlate with higher tax capacity and social spending.
-  - Education, gender, and fertility: More schooling—especially for girls—links with lower fertility (avg 3.9) and better maternal/infant outcomes; higher female labor force participation supports inclusive growth.
-  - Digital divide and productivity: Internet/broadband adoption tracks higher GDP per capita and happiness; fixed broadband remains low (10.6/100), so many rely on mobile networks. This shapes service-sector growth and innovation.
-  - Environment and income: Recycling and EPI scores are higher in richer democracies; several low-income hydro economies have very high renewable shares yet limited grids/industry.
-  - Emissions concentration: A small set of large economies dominates CO2 outliers; decarbonization in the G20 will determine global outcomes. EVs are scaling in China, the EU, and the US, but recycling and clean grids must catch up.
-  - Conflict, climate, and migration: Youth bulges plus weak job creation, climate shocks, and conflicts increase migration pressures toward OECD/EU/Gulf states. Fragile states show the worst health, education, and inflation results.
+Interrelations & Global Dynamics
+- Human capital loop: Higher literacy and female labor participation tend to link with lower fertility and better child/maternal health. Immunization and water access reinforce these gains.
+- Health system capacity: More physicians, beds, and health spending correlate with higher life expectancy and lower infant/maternal mortality. Several outliers spend heavily but underperform due to inefficiencies.
+- Environment–health nexus: High PM2.5 is associated with lower life expectancy and higher disease burden; countries with higher EPI generally have lower pollution and better health outcomes.
+- Digital and governance: Internet penetration and broadband adoption tend to rise with income, openness, and press freedom. Autocracies can scale access, but constraints on information limit civic and innovation dividends.
+- Military, conflict, and fiscal trade‑offs: Higher military spending share tends to coincide with lower peace and can crowd out social investment, especially where tax bases are narrow and commodity‑linked.
+- Inequality, poverty, and migration: High Gini and poverty, plus conflict and climate stress (droughts, floods, heat) increase migration pressures. Rapid urbanization without infrastructure adds road fatalities and pollution.
 
-- Forecast & Outlook
-  - Climate and energy: Expect faster renewable and EV adoption in G20, led by China and the EU; oil- and gas-dependent states face diversification pressure. Without faster recycling and grid decarbonization, gains will be slower than needed.
-  - Human capital: Continued progress in immunization and water; the key bottlenecks remain learning quality, digital access, and primary care systems to cut maternal/infant mortality.
-  - Demography: Aging will intensify in OECD, Europe, and parts of East Asia; Africa and parts of South Asia can gain a demographic dividend if jobs and skills scale.
-  - Macroeconomy: Inflation likely normalizes in many countries, but fragile states remain at risk of spikes; public debt sustainability will constrain social and climate investment unless tax capacity rises.
-  - Geopolitics and conflict: Military spending (avg 2.7% of GDP) could stay elevated; localized conflicts persist, with global spillovers in energy, food, and migration.
-  - Inequality: Without stronger taxation (avg 17% of GDP) and redistribution, inequality (Gini ~37) may stay high, limiting social cohesion and growth.
+Forecast & Outlook
+- Health and education: Continued gradual declines in infant and maternal mortality are likely, led by vaccine expansion and primary care; gaps will persist in fragile and low‑income states. Literacy and girls’ schooling should keep rising, pulling fertility down.
+- Digital: Mobile broadband will keep narrowing the access gap; fixed broadband will expand more slowly. Democracies and OECD members will retain a lead; large emerging economies will improve rapidly from a lower base.
+- Climate and environment: Renewable shares should rise further as costs fall, but absolute emissions will depend on coal and gas phase‑downs in G20 members. Air quality will improve in some large emitters due to stricter standards, yet climate extremes will intensify stress on water and health systems.
+- Inequality and poverty: Poverty should continue to fall where growth, jobs, and safety nets hold, but inequality will remain elevated without tax reform and stronger public goods. Commodity and climate shocks are key downside risks.
+- Geopolitics and macro: Elevated geopolitical tension implies sustained military outlays and selective reshoring. Inflation will normalize in many places, but debt stress will remain in some emerging and crisis‑hit economies. Policy capacity (tax effort, governance quality) will be decisive.
 
-- Short Global Conclusion
-The world shows broad gains in basic services and elements of the energy transition, yet deep gaps persist across governance, income, and environment. Democracies—especially in OECD/EU—lead on human development, environment, and digital access but face aging and fiscal strains. Autocracies and resource-dependent economies show uneven results: some deliver infrastructure and growth, others face fragility, high inflation, and conflict. Climate change, inequality, and migration pressures will hinge on G20 actions, stronger state capacity, and inclusive, low‑carbon growth models. Positive exceptions include high-renewable and high-immunization performers across income levels; negative exceptions cluster in fragile, conflict‑affected, and hyperinflationary states.
+Short Global Conclusion
+The world combines broad access to basic services with stubborn gaps in outcomes, environment, and digital inclusion. Democracies and high‑income blocs lead on governance, health, and sustainability, while resource dependence and autocratic systems show more uneven results. The main challenges—climate change, inequality, conflict, and migration—interact and reinforce each other. Countries and groups that pair clean energy expansion with investment in health, education, and open institutions are the positive outliers; those locked in conflict, pollution, and rent dependence remain negative exceptions. The window for faster convergence is open but depends on disciplined macro policy, green infrastructure, and accountable governance.
