@@ -34,10 +34,10 @@ Create a JSON list of the Top 10 countries that best match the idea of a 'Fun & 
 
 Criteria (orientation targets, not hard thresholds):
 1. Pleasant average annual temperature (~18–26°C, like Southern France)
-2. Many sunny days per year (like Nice or Valencia)
+2. Many sunny days per year (~300, like Southern France)
 3. Few rainy days per year (<70)
 4. High happiness index (top 40%)
-5. Low cost of beer (reference: Prague)
+5. Low cost of beer (<3.50$ in Restaurant)
 6. Optionally: access to beaches or outdoor lifestyle
 
 Respond ONLY with JSON in this format:
@@ -56,7 +56,7 @@ Criteria:
 3. Low to moderate climate risk (e.g. from Germanwatch Climate Risk Index)
 4. High resilience score (e.g. INFORM Resilience Index)
 5. Stable democratic institutions
-6. Avoid countries bordering current warzones (e.g. Russia/Ukraine)
+6. Avoid countries bordering current warzones
 
 Respond ONLY with JSON in this format:
 [
