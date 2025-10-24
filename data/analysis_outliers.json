@@ -179,13 +179,13 @@
         "country": "Central African Republic",
         "year": 1975,
         "value": 18.2399997711182,
-        "z_score": 3.08
+        "z_score": 3.07
       },
       {
         "country": "Chad",
         "year": 1993,
         "value": 10.8900003433228,
-        "z_score": 3.44
+        "z_score": 3.43
       },
       {
         "country": "Mali",
@@ -223,25 +223,25 @@
         "country": "Benin",
         "year": 2016,
         "value": 55.97,
-        "z_score": 3.01
+        "z_score": 3.0
       },
       {
         "country": "Benin",
         "year": 2017,
         "value": 56.2,
-        "z_score": 3.03
+        "z_score": 3.02
       },
       {
         "country": "Benin",
         "year": 2018,
         "value": 56.42,
-        "z_score": 3.05
+        "z_score": 3.04
       },
       {
         "country": "Benin",
         "year": 2019,
         "value": 56.65,
-        "z_score": 3.07
+        "z_score": 3.06
       },
       {
         "country": "Benin",
@@ -265,79 +265,79 @@
         "country": "South Korea",
         "year": 1995,
         "value": 63.29,
-        "z_score": 3.6
+        "z_score": 3.59
       },
       {
         "country": "South Korea",
         "year": 1996,
         "value": 63.5,
-        "z_score": 3.62
+        "z_score": 3.61
       },
       {
         "country": "South Korea",
         "year": 1997,
         "value": 63.7,
-        "z_score": 3.63
+        "z_score": 3.62
       },
       {
         "country": "South Korea",
         "year": 1998,
         "value": 63.91,
-        "z_score": 3.65
+        "z_score": 3.64
       },
       {
         "country": "South Korea",
         "year": 1999,
         "value": 64.11,
-        "z_score": 3.67
+        "z_score": 3.66
       },
       {
         "country": "South Korea",
         "year": 2000,
         "value": 64.32,
-        "z_score": 3.68
+        "z_score": 3.67
       },
       {
         "country": "South Korea",
         "year": 2001,
         "value": 64.5,
-        "z_score": 3.7
+        "z_score": 3.69
       },
       {
         "country": "South Korea",
         "year": 2002,
         "value": 64.68,
-        "z_score": 3.71
+        "z_score": 3.7
       },
       {
         "country": "South Korea",
         "year": 2003,
         "value": 64.87,
-        "z_score": 3.73
+        "z_score": 3.72
       },
       {
         "country": "South Korea",
         "year": 2004,
         "value": 65.05,
-        "z_score": 3.74
+        "z_score": 3.73
       },
       {
         "country": "South Korea",
         "year": 2005,
         "value": 65.23,
-        "z_score": 3.76
+        "z_score": 3.75
       },
       {
         "country": "South Korea",
         "year": 2006,
         "value": 65.36,
-        "z_score": 3.77
+        "z_score": 3.76
       },
       {
         "country": "South Korea",
         "year": 2007,
         "value": 65.49,
-        "z_score": 3.78
+        "z_score": 3.77
       }
     ]
   },
@@ -364,6 +364,19 @@
       "value": 97.5,
       "country": "Ethiopia",
       "year": 1992
+    },
+    "flagged": []
+  },
+  "mean_years_of_schooling": {
+    "min": {
+      "value": 0.01,
+      "country": "Afghanistan",
+      "year": 1900
+    },
+    "max": {
+      "value": 15.48,
+      "country": "Iceland",
+      "year": 2040
     },
     "flagged": []
   },
@@ -396,13 +409,13 @@
         "country": "Afghanistan",
         "year": 2002,
         "value": 29.6748627315109,
-        "z_score": 3.1
+        "z_score": 3.09
       },
       {
         "country": "Afghanistan",
         "year": 2001,
         "value": 27.4735802318339,
-        "z_score": 3.22
+        "z_score": 3.21
       },
       {
         "country": "Afghanistan",
@@ -414,13 +427,13 @@
         "country": "Ethiopia",
         "year": 2008,
         "value": 30.8752129693809,
-        "z_score": 3.03
+        "z_score": 3.02
       },
       {
         "country": "Ethiopia",
         "year": 2007,
         "value": 29.2977073978485,
-        "z_score": 3.12
+        "z_score": 3.11
       },
       {
         "country": "Ethiopia",
@@ -432,13 +445,13 @@
         "country": "Ethiopia",
         "year": 2005,
         "value": 26.3163660068506,
-        "z_score": 3.29
+        "z_score": 3.28
       },
       {
         "country": "Ethiopia",
         "year": 2004,
         "value": 24.8131815247792,
-        "z_score": 3.37
+        "z_score": 3.36
       },
       {
         "country": "Ethiopia",
@@ -450,37 +463,37 @@
         "country": "Ethiopia",
         "year": 2002,
         "value": 21.77133078604,
-        "z_score": 3.54
+        "z_score": 3.53
       },
       {
         "country": "Ethiopia",
         "year": 2001,
         "value": 20.2320410406542,
-        "z_score": 3.63
+        "z_score": 3.62
       },
       {
         "country": "Ethiopia",
         "year": 2000,
         "value": 18.6823027003951,
-        "z_score": 3.71
+        "z_score": 3.7
       },
       {
         "country": "Mozambique",
         "year": 2005,
         "value": 30.0268645534793,
-        "z_score": 3.08
+        "z_score": 3.07
       },
       {
         "country": "Mozambique",
         "year": 2004,
         "value": 28.4125475477891,
-        "z_score": 3.17
+        "z_score": 3.16
       },
       {
         "country": "Mozambique",
         "year": 2003,
         "value": 26.8306654926848,
-        "z_score": 3.26
+        "z_score": 3.25
       },
       {
         "country": "Mozambique",
@@ -492,13 +505,13 @@
         "country": "Mozambique",
         "year": 2001,
         "value": 23.7660889119429,
-        "z_score": 3.43
+        "z_score": 3.42
       },
       {
         "country": "Mozambique",
         "year": 2000,
         "value": 22.7135095802514,
-        "z_score": 3.49
+        "z_score": 3.48
       },
       {
         "country": "Somalia",
@@ -510,7 +523,7 @@
         "country": "Somalia",
         "year": 2003,
         "value": 28.558900212681,
-        "z_score": 3.16
+        "z_score": 3.15
       }
     ]
   },
@@ -543,121 +556,121 @@
         "country": "World",
         "year": 2024,
         "value": 8142056446.0,
-        "z_score": 73.02
+        "z_score": 72.85
       },
       {
         "country": "World",
         "year": 2023,
         "value": 8064976601.0,
-        "z_score": 72.33
+        "z_score": 72.15
       },
       {
         "country": "World",
         "year": 2022,
         "value": 7990399768.0,
-        "z_score": 71.66
+        "z_score": 71.49
       },
       {
         "country": "World",
         "year": 2021,
         "value": 7920861888.0,
-        "z_score": 71.03
+        "z_score": 70.86
       },
       {
         "country": "World",
         "year": 2020,
         "value": 7855075060.0,
-        "z_score": 70.44
+        "z_score": 70.27
       },
       {
         "country": "World",
         "year": 2019,
         "value": 7778303912.0,
-        "z_score": 69.75
+        "z_score": 69.58
       },
       {
         "country": "World",
         "year": 2018,
         "value": 7697492379.0,
-        "z_score": 69.02
+        "z_score": 68.86
       },
       {
         "country": "World",
         "year": 2017,
         "value": 7614748582.0,
-        "z_score": 68.28
+        "z_score": 68.11
       },
       {
         "country": "World",
         "year": 2016,
         "value": 7529066617.0,
-        "z_score": 67.51
+        "z_score": 67.34
       },
       {
         "country": "World",
         "year": 2015,
         "value": 7441826877.0,
-        "z_score": 66.72
+        "z_score": 66.56
       },
       {
         "country": "World",
         "year": 2014,
         "value": 7354183367.0,
-        "z_score": 65.93
+        "z_score": 65.77
       },
       {
         "country": "World",
         "year": 2013,
         "value": 7265970522.0,
-        "z_score": 65.14
+        "z_score": 64.98
       },
       {
         "country": "World",
         "year": 2012,
         "value": 7176968877.0,
-        "z_score": 64.34
+        "z_score": 64.18
       },
       {
         "country": "World",
         "year": 2011,
         "value": 7087120034.0,
-        "z_score": 63.53
+        "z_score": 63.38
       },
       {
         "country": "World",
         "year": 2010,
         "value": 7001266876.0,
-        "z_score": 62.76
+        "z_score": 62.6
       },
       {
         "country": "World",
         "year": 2009,
         "value": 6916589116.0,
-        "z_score": 62.0
+        "z_score": 61.84
       },
       {
         "country": "World",
         "year": 2008,
         "value": 6830513541.0,
-        "z_score": 61.22
+        "z_score": 61.07
       },
       {
         "country": "World",
         "year": 2007,
         "value": 6744489399.0,
-        "z_score": 60.45
+        "z_score": 60.3
       },
       {
         "country": "World",
         "year": 2006,
         "value": 6659977025.0,
-        "z_score": 59.69
+        "z_score": 59.54
       },
       {
         "country": "World",
         "year": 2005,
         "value": 6575841506.0,
-        "z_score": 58.93
+        "z_score": 58.79
       }
     ]
   },
@@ -668,88 +681,88 @@
       "year": 2023
     },
     "max": {
-      "value": 75.7497,
-      "country": "Cayman Islands",
-      "year": 2019
+      "value": 62.2147,
+      "country": "Saint Kitts and Nevis",
+      "year": 2017
     },
     "flagged": [
       {
         "country": "Andorra",
         "year": 2023,
         "value": 51.7401,
-        "z_score": 3.13
+        "z_score": 3.17
       },
       {
         "country": "Andorra",
         "year": 2022,
         "value": 51.2051,
-        "z_score": 3.09
+        "z_score": 3.13
       },
       {
         "country": "Andorra",
         "year": 2021,
         "value": 50.2769,
-        "z_score": 3.02
-      },
-      {
-        "country": "Cayman Islands",
-        "year": 2022,
-        "value": 56.3604,
-        "z_score": 3.48
-      },
-      {
-        "country": "Cayman Islands",
-        "year": 2019,
-        "value": 75.7497,
-        "z_score": 4.95
+        "z_score": 3.06
       },
       {
         "country": "Monaco",
         "year": 2023,
         "value": 55.8836,
-        "z_score": 3.44
+        "z_score": 3.49
       },
       {
         "country": "Monaco",
         "year": 2022,
         "value": 55.2285,
-        "z_score": 3.39
+        "z_score": 3.44
       },
       {
         "country": "Monaco",
         "year": 2021,
         "value": 54.9173,
-        "z_score": 3.37
+        "z_score": 3.42
       },
       {
         "country": "Monaco",
         "year": 2020,
         "value": 54.8673,
-        "z_score": 3.37
+        "z_score": 3.41
       },
       {
         "country": "Monaco",
         "year": 2019,
         "value": 53.7301,
-        "z_score": 3.28
+        "z_score": 3.32
       },
       {
         "country": "Monaco",
         "year": 2018,
         "value": 51.5909,
-        "z_score": 3.12
+        "z_score": 3.16
       },
       {
         "country": "Monaco",
         "year": 2017,
         "value": 51.1121,
-        "z_score": 3.08
+        "z_score": 3.12
+      },
+      {
+        "country": "Monaco",
+        "year": 2016,
+        "value": 49.9356,
+        "z_score": 3.03
+      },
+      {
+        "country": "Monaco",
+        "year": 2015,
+        "value": 49.9333,
+        "z_score": 3.03
       },
       {
         "country": "Saint Kitts and Nevis",
         "year": 2017,
         "value": 62.2147,
-        "z_score": 3.92
+        "z_score": 3.98
       }
     ]
   },
@@ -900,6 +913,140 @@
       }
     ]
   },
+  "global_co2_emissions": {
+    "min": {
+      "value": 0.0,
+      "country": "Timor-Leste",
+      "year": 1994
+    },
+    "max": {
+      "value": 11902503000.0,
+      "country": "China",
+      "year": 2023
+    },
+    "flagged": [
+      {
+        "country": "China",
+        "year": 1982,
+        "value": 1606585000.0,
+        "z_score": 3.11
+      },
+      {
+        "country": "China",
+        "year": 1982,
+        "value": 1606585000.0,
+        "z_score": 3.11
+      },
+      {
+        "country": "China",
+        "year": 1983,
+        "value": 1694216800.0,
+        "z_score": 3.29
+      },
+      {
+        "country": "China",
+        "year": 1983,
+        "value": 1694216800.0,
+        "z_score": 3.29
+      },
+      {
+        "country": "China",
+        "year": 1984,
+        "value": 1844828000.0,
+        "z_score": 3.6
+      },
+      {
+        "country": "China",
+        "year": 1984,
+        "value": 1844828000.0,
+        "z_score": 3.6
+      },
+      {
+        "country": "China",
+        "year": 1985,
+        "value": 1998083000.0,
+        "z_score": 3.92
+      },
+      {
+        "country": "China",
+        "year": 1985,
+        "value": 1998083000.0,
+        "z_score": 3.92
+      },
+      {
+        "country": "China",
+        "year": 1986,
+        "value": 2104213400.0,
+        "z_score": 4.13
+      },
+      {
+        "country": "China",
+        "year": 1986,
+        "value": 2104213400.0,
+        "z_score": 4.13
+      },
+      {
+        "country": "China",
+        "year": 1987,
+        "value": 2257738500.0,
+        "z_score": 4.45
+      },
+      {
+        "country": "China",
+        "year": 1987,
+        "value": 2257738500.0,
+        "z_score": 4.45
+      },
+      {
+        "country": "China",
+        "year": 1988,
+        "value": 2425893600.0,
+        "z_score": 4.8
+      },
+      {
+        "country": "China",
+        "year": 1988,
+        "value": 2425893600.0,
+        "z_score": 4.8
+      },
+      {
+        "country": "China",
+        "year": 1989,
+        "value": 2463654400.0,
+        "z_score": 4.87
+      },
+      {
+        "country": "China",
+        "year": 1989,
+        "value": 2463654400.0,
+        "z_score": 4.87
+      },
+      {
+        "country": "China",
+        "year": 1990,
+        "value": 2484854800.0,
+        "z_score": 4.92
+      },
+      {
+        "country": "China",
+        "year": 1990,
+        "value": 2484854800.0,
+        "z_score": 4.92
+      },
+      {
+        "country": "China",
+        "year": 1991,
+        "value": 2606096100.0,
+        "z_score": 5.17
+      },
+      {
+        "country": "China",
+        "year": 1991,
+        "value": 2606096100.0,
+        "z_score": 5.17
+      }
+    ]
+  },
   "military_expenditure_of_gdp": {
     "min": {
       "value": 1.715e-05,
@@ -1031,6 +1178,128 @@
         "year": 1999,
         "value": 34.3777684538841,
         "z_score": 9.95
+      }
+    ]
+  },
+  "electric_vehicle_stock": {
+    "min": {
+      "value": 29.0,
+      "country": "New Zealand",
+      "year": 2011
+    },
+    "max": {
+      "value": 34000000.0,
+      "country": "China",
+      "year": 2024
+    },
+    "flagged": [
+      {
+        "country": "China",
+        "year": 2021,
+        "value": 7800000.0,
+        "z_score": 3.2
+      },
+      {
+        "country": "China",
+        "year": 2021,
+        "value": 7800000.0,
+        "z_score": 3.2
+      },
+      {
+        "country": "China",
+        "year": 2022,
+        "value": 14100000.0,
+        "z_score": 5.94
+      },
+      {
+        "country": "China",
+        "year": 2022,
+        "value": 14100000.0,
+        "z_score": 5.94
+      },
+      {
+        "country": "China",
+        "year": 2023,
+        "value": 21800000.0,
+        "z_score": 9.28
+      },
+      {
+        "country": "China",
+        "year": 2023,
+        "value": 21800000.0,
+        "z_score": 9.28
+      },
+      {
+        "country": "China",
+        "year": 2024,
+        "value": 34000000.0,
+        "z_score": 14.59
+      },
+      {
+        "country": "China",
+        "year": 2024,
+        "value": 34000000.0,
+        "z_score": 14.59
+      },
+      {
+        "country": "World",
+        "year": 2020,
+        "value": 10200000.0,
+        "z_score": 4.24
+      },
+      {
+        "country": "World",
+        "year": 2020,
+        "value": 10200000.0,
+        "z_score": 4.24
+      },
+      {
+        "country": "World",
+        "year": 2021,
+        "value": 16300000.0,
+        "z_score": 6.89
+      },
+      {
+        "country": "World",
+        "year": 2021,
+        "value": 16300000.0,
+        "z_score": 6.89
+      },
+      {
+        "country": "World",
+        "year": 2022,
+        "value": 26000000.0,
+        "z_score": 11.11
+      },
+      {
+        "country": "World",
+        "year": 2022,
+        "value": 26000000.0,
+        "z_score": 11.11
+      },
+      {
+        "country": "World",
+        "year": 2023,
+        "value": 40000000.0,
+        "z_score": 17.2
+      },
+      {
+        "country": "World",
+        "year": 2023,
+        "value": 40000000.0,
+        "z_score": 17.2
+      },
+      {
+        "country": "World",
+        "year": 2024,
+        "value": 58000000.0,
+        "z_score": 25.02
+      },
+      {
+        "country": "World",
+        "year": 2024,
+        "value": 58000000.0,
+        "z_score": 25.02
       }
     ]
   },
@@ -1184,7 +1453,7 @@
         "country": "Cuba",
         "year": 2020,
         "value": 11.5248184008093,
-        "z_score": 3.27
+        "z_score": 3.26
       },
       {
         "country": "Cuba",
@@ -1220,7 +1489,7 @@
         "country": "Kiribati",
         "year": 2023,
         "value": 16.39053,
-        "z_score": 5.47
+        "z_score": 5.48
       },
       {
         "country": "Kiribati",
@@ -1315,6 +1584,140 @@
     },
     "flagged": []
   },
+  "military_spending_sipri": {
+    "min": {
+      "value": 0.0,
+      "country": "Costa Rica",
+      "year": 1950
+    },
+    "max": {
+      "value": 1031257100000.0,
+      "country": "United States",
+      "year": 2010
+    },
+    "flagged": [
+      {
+        "country": "China",
+        "year": 2017,
+        "value": 223594950000.0,
+        "z_score": 3.12
+      },
+      {
+        "country": "China",
+        "year": 2017,
+        "value": 223594950000.0,
+        "z_score": 3.12
+      },
+      {
+        "country": "China",
+        "year": 2018,
+        "value": 236692290000.0,
+        "z_score": 3.31
+      },
+      {
+        "country": "China",
+        "year": 2018,
+        "value": 236692290000.0,
+        "z_score": 3.31
+      },
+      {
+        "country": "China",
+        "year": 2019,
+        "value": 248223320000.0,
+        "z_score": 3.48
+      },
+      {
+        "country": "China",
+        "year": 2019,
+        "value": 248223320000.0,
+        "z_score": 3.48
+      },
+      {
+        "country": "China",
+        "year": 2020,
+        "value": 259923330000.0,
+        "z_score": 3.65
+      },
+      {
+        "country": "China",
+        "year": 2020,
+        "value": 259923330000.0,
+        "z_score": 3.65
+      },
+      {
+        "country": "China",
+        "year": 2021,
+        "value": 266692280000.0,
+        "z_score": 3.75
+      },
+      {
+        "country": "China",
+        "year": 2021,
+        "value": 266692280000.0,
+        "z_score": 3.75
+      },
+      {
+        "country": "China",
+        "year": 2022,
+        "value": 278474420000.0,
+        "z_score": 3.93
+      },
+      {
+        "country": "China",
+        "year": 2022,
+        "value": 278474420000.0,
+        "z_score": 3.93
+      },
+      {
+        "country": "China",
+        "year": 2023,
+        "value": 296821400000.0,
+        "z_score": 4.2
+      },
+      {
+        "country": "China",
+        "year": 2023,
+        "value": 296821400000.0,
+        "z_score": 4.2
+      },
+      {
+        "country": "China",
+        "year": 2024,
+        "value": 317561040000.0,
+        "z_score": 4.5
+      },
+      {
+        "country": "China",
+        "year": 2024,
+        "value": 317561040000.0,
+        "z_score": 4.5
+      },
+      {
+        "country": "United States",
+        "year": 1951,
+        "value": 404493140000.0,
+        "z_score": 5.78
+      },
+      {
+        "country": "United States",
+        "year": 1951,
+        "value": 404493140000.0,
+        "z_score": 5.78
+      },
+      {
+        "country": "United States",
+        "year": 1952,
+        "value": 569793100000.0,
+        "z_score": 8.22
+      },
+      {
+        "country": "United States",
+        "year": 1952,
+        "value": 569793100000.0,
+        "z_score": 8.22
+      }
+    ]
+  },
   "tax_revenue_of_gdp": {
     "min": {
       "value": 6.27918000416869e-05,
@@ -1387,121 +1790,121 @@
         "country": "Australia",
         "year": 2024,
         "value": 62550.0,
-        "z_score": 3.92
+        "z_score": 3.96
       },
       {
         "country": "Australia",
         "year": 2023,
         "value": 63160.0,
-        "z_score": 3.97
+        "z_score": 4.0
       },
       {
         "country": "Australia",
         "year": 2022,
         "value": 60710.0,
-        "z_score": 3.79
+        "z_score": 3.83
       },
       {
         "country": "Australia",
         "year": 2021,
         "value": 57180.0,
-        "z_score": 3.54
+        "z_score": 3.57
       },
       {
         "country": "Australia",
         "year": 2020,
         "value": 53630.0,
-        "z_score": 3.28
+        "z_score": 3.31
       },
       {
         "country": "Australia",
         "year": 2019,
         "value": 54890.0,
-        "z_score": 3.37
+        "z_score": 3.41
       },
       {
         "country": "Australia",
         "year": 2018,
         "value": 53080.0,
-        "z_score": 3.24
+        "z_score": 3.27
       },
       {
         "country": "Australia",
         "year": 2017,
         "value": 51480.0,
-        "z_score": 3.13
+        "z_score": 3.16
       },
       {
         "country": "Australia",
         "year": 2016,
         "value": 54100.0,
-        "z_score": 3.32
+        "z_score": 3.35
       },
       {
         "country": "Australia",
         "year": 2015,
         "value": 60520.0,
-        "z_score": 3.78
+        "z_score": 3.81
       },
       {
         "country": "Australia",
         "year": 2014,
         "value": 65220.0,
-        "z_score": 4.11
+        "z_score": 4.15
       },
       {
         "country": "Australia",
         "year": 2013,
         "value": 66080.0,
-        "z_score": 4.18
+        "z_score": 4.21
       },
       {
         "country": "Australia",
         "year": 2012,
         "value": 60290.0,
-        "z_score": 3.76
+        "z_score": 3.8
       },
       {
         "country": "Australia",
         "year": 2011,
         "value": 50410.0,
-        "z_score": 3.05
+        "z_score": 3.08
       },
       {
         "country": "Austria",
         "year": 2024,
         "value": 54160.0,
-        "z_score": 3.32
+        "z_score": 3.35
       },
       {
         "country": "Austria",
         "year": 2023,
         "value": 55220.0,
-        "z_score": 3.4
+        "z_score": 3.43
       },
       {
         "country": "Austria",
         "year": 2022,
         "value": 56320.0,
-        "z_score": 3.48
+        "z_score": 3.51
       },
       {
         "country": "Austria",
         "year": 2021,
         "value": 53400.0,
-        "z_score": 3.27
+        "z_score": 3.3
       },
       {
         "country": "Austria",
         "year": 2019,
         "value": 50900.0,
-        "z_score": 3.09
+        "z_score": 3.12
       },
       {
         "country": "Austria",
         "year": 2014,
         "value": 49960.0,
-        "z_score": 3.02
+        "z_score": 3.05
       }
     ]
   },
@@ -1521,13 +1924,13 @@
         "country": "Brazil",
         "year": 1994,
         "value": 2075.88839757325,
-        "z_score": 24.31
+        "z_score": 24.29
       },
       {
         "country": "Brazil",
         "year": 1993,
         "value": 1927.38079016026,
-        "z_score": 22.56
+        "z_score": 22.54
       },
       {
         "country": "Brazil",
@@ -1539,31 +1942,31 @@
         "country": "Brazil",
         "year": 1991,
         "value": 432.786661926461,
-        "z_score": 4.95
+        "z_score": 4.94
       },
       {
         "country": "Brazil",
         "year": 1990,
         "value": 2947.73277248299,
-        "z_score": 34.59
+        "z_score": 34.56
       },
       {
         "country": "Brazil",
         "year": 1989,
         "value": 1430.7237251472,
-        "z_score": 16.71
+        "z_score": 16.7
       },
       {
         "country": "Brazil",
         "year": 1988,
         "value": 629.114509120897,
-        "z_score": 7.26
+        "z_score": 7.25
       },
       {
         "country": "Bulgaria",
         "year": 1997,
         "value": 1058.37355921973,
-        "z_score": 12.32
+        "z_score": 12.31
       },
       {
         "country": "Chile",
@@ -1599,13 +2002,13 @@
         "country": "Kazakhstan",
         "year": 1994,
         "value": 1877.37239517572,
-        "z_score": 21.97
+        "z_score": 21.96
       },
       {
         "country": "Latvia",
         "year": 1992,
         "value": 951.6961948708,
-        "z_score": 11.06
+        "z_score": 11.05
       },
       {
         "country": "Lithuania",
@@ -1623,19 +2026,19 @@
         "country": "Moldova",
         "year": 1994,
         "value": 486.425623795891,
-        "z_score": 5.58
+        "z_score": 5.57
       },
       {
         "country": "Moldova",
         "year": 1993,
         "value": 1613.60398876194,
-        "z_score": 18.86
+        "z_score": 18.85
       },
       {
         "country": "Moldova",
         "year": 1992,
         "value": 1026.82626424702,
-        "z_score": 11.95
+        "z_score": 11.94
       }
     ]
   },
@@ -1789,121 +2192,121 @@
         "country": "Australia",
         "year": 2024,
         "value": 64407.484256932,
-        "z_score": 3.12
+        "z_score": 3.17
       },
       {
         "country": "Australia",
         "year": 2023,
         "value": 64835.9199754535,
-        "z_score": 3.14
+        "z_score": 3.19
       },
       {
         "country": "Australia",
         "year": 2022,
         "value": 64997.0136536475,
-        "z_score": 3.15
+        "z_score": 3.2
       },
       {
         "country": "Australia",
         "year": 2014,
         "value": 62544.0873773726,
-        "z_score": 3.01
+        "z_score": 3.06
       },
       {
         "country": "Australia",
         "year": 2013,
         "value": 68190.7010035651,
-        "z_score": 3.33
+        "z_score": 3.38
       },
       {
         "country": "Australia",
         "year": 2012,
         "value": 68072.8732340801,
-        "z_score": 3.32
+        "z_score": 3.37
       },
       {
         "country": "Australia",
         "year": 2011,
         "value": 62605.600458306,
+        "z_score": 3.06
+      },
+      {
+        "country": "Denmark",
+        "year": 2024,
+        "value": 71851.7562131368,
+        "z_score": 3.59
+      },
+      {
+        "country": "Denmark",
+        "year": 2023,
+        "value": 68453.8769281145,
+        "z_score": 3.39
+      },
+      {
+        "country": "Denmark",
+        "year": 2022,
+        "value": 68091.3191138669,
+        "z_score": 3.37
+      },
+      {
+        "country": "Denmark",
+        "year": 2021,
+        "value": 69727.9873677012,
+        "z_score": 3.47
+      },
+      {
+        "country": "Denmark",
+        "year": 2014,
+        "value": 62520.4509747011,
+        "z_score": 3.06
+      },
+      {
+        "country": "Denmark",
+        "year": 2011,
+        "value": 61809.737898222,
         "z_score": 3.02
       },
       {
-        "country": "Cayman Islands",
-        "year": 2023,
-        "value": 97749.5078960846,
-        "z_score": 4.97
+        "country": "Denmark",
+        "year": 2008,
+        "value": 64616.6657583663,
+        "z_score": 3.18
       },
       {
-        "country": "Cayman Islands",
-        "year": 2022,
-        "value": 92202.1478031576,
-        "z_score": 4.66
-      },
-      {
-        "country": "Cayman Islands",
-        "year": 2021,
-        "value": 86438.445257404,
-        "z_score": 4.34
-      },
-      {
-        "country": "Cayman Islands",
-        "year": 2020,
-        "value": 82338.7982853661,
-        "z_score": 4.12
-      },
-      {
-        "country": "Cayman Islands",
-        "year": 2019,
-        "value": 88254.2903677044,
-        "z_score": 4.44
-      },
-      {
-        "country": "Cayman Islands",
-        "year": 2018,
-        "value": 83865.5531568184,
+        "country": "Iceland",
+        "year": 2024,
+        "value": 82703.8579937471,
         "z_score": 4.2
       },
       {
-        "country": "Cayman Islands",
-        "year": 2017,
-        "value": 80053.9444506891,
-        "z_score": 3.99
+        "country": "Iceland",
+        "year": 2023,
+        "value": 79960.0961535662,
+        "z_score": 4.05
       },
       {
-        "country": "Cayman Islands",
-        "year": 2016,
-        "value": 77802.2541567187,
-        "z_score": 3.86
+        "country": "Iceland",
+        "year": 2022,
+        "value": 75121.0152280628,
+        "z_score": 3.77
       },
       {
-        "country": "Cayman Islands",
-        "year": 2015,
-        "value": 76379.2095108681,
-        "z_score": 3.78
+        "country": "Iceland",
+        "year": 2021,
+        "value": 69178.4046960961,
+        "z_score": 3.44
       },
       {
-        "country": "Cayman Islands",
-        "year": 2014,
-        "value": 75845.3060407986,
-        "z_score": 3.75
+        "country": "Iceland",
+        "year": 2019,
+        "value": 68452.23622306,
+        "z_score": 3.39
       },
       {
-        "country": "Cayman Islands",
-        "year": 2013,
-        "value": 75113.7332398618,
-        "z_score": 3.71
-      },
-      {
-        "country": "Cayman Islands",
-        "year": 2012,
-        "value": 75101.59136128,
-        "z_score": 3.71
-      },
-      {
-        "country": "Cayman Islands",
-        "year": 2011,
-        "value": 75280.960764889,
-        "z_score": 3.72
+        "country": "Iceland",
+        "year": 2018,
+        "value": 74452.1890731447,
+        "z_score": 3.73
       }
     ]
   },
@@ -2188,6 +2591,19 @@
     },
     "flagged": []
   },
+  "human_development_index_hdi": {
+    "min": {
+      "value": 0.215,
+      "country": "Niger",
+      "year": 1990
+    },
+    "max": {
+      "value": 0.972,
+      "country": "Iceland",
+      "year": 2023
+    },
+    "flagged": []
+  },
   "public_debt_of_gdp": {
     "min": {
       "value": -1.17072566818484,
@@ -2242,121 +2658,121 @@
         "country": "World",
         "year": 2022,
         "value": 140419456.722,
-        "z_score": 66.59
+        "z_score": 66.43
       },
       {
         "country": "World",
         "year": 2021,
         "value": 140490177.614,
-        "z_score": 66.62
+        "z_score": 66.47
       },
       {
         "country": "World",
         "year": 2020,
         "value": 140496038.92,
-        "z_score": 66.63
+        "z_score": 66.47
       },
       {
         "country": "World",
         "year": 2019,
         "value": 140489642.695,
-        "z_score": 66.62
+        "z_score": 66.47
       },
       {
         "country": "World",
         "year": 2018,
         "value": 140388117.186,
-        "z_score": 66.58
+        "z_score": 66.42
       },
       {
         "country": "World",
         "year": 2017,
         "value": 140388337.658,
-        "z_score": 66.58
+        "z_score": 66.42
       },
       {
         "country": "World",
         "year": 2016,
         "value": 140384998.854,
-        "z_score": 66.57
+        "z_score": 66.42
       },
       {
         "country": "World",
         "year": 2015,
         "value": 140383797.195,
-        "z_score": 66.57
+        "z_score": 66.42
       },
       {
         "country": "World",
         "year": 2014,
         "value": 140376282.955,
-        "z_score": 66.57
+        "z_score": 66.41
       },
       {
         "country": "World",
         "year": 2013,
         "value": 140378206.158,
-        "z_score": 66.57
+        "z_score": 66.42
       },
       {
         "country": "World",
         "year": 2012,
         "value": 140021205.18,
-        "z_score": 66.4
+        "z_score": 66.25
       },
       {
         "country": "World",
         "year": 2011,
         "value": 140001646.549,
-        "z_score": 66.39
+        "z_score": 66.24
       },
       {
         "country": "World",
         "year": 2010,
         "value": 140001326.808,
-        "z_score": 66.39
+        "z_score": 66.24
       },
       {
         "country": "World",
         "year": 2009,
         "value": 140001052.93,
-        "z_score": 66.39
+        "z_score": 66.24
       },
       {
         "country": "World",
         "year": 2008,
         "value": 140003369.109,
-        "z_score": 66.39
+        "z_score": 66.24
       },
       {
         "country": "World",
         "year": 2007,
         "value": 139803883.407,
-        "z_score": 66.3
+        "z_score": 66.14
       },
       {
         "country": "World",
         "year": 2006,
         "value": 139803801.687,
-        "z_score": 66.3
+        "z_score": 66.14
       },
       {
         "country": "World",
         "year": 2005,
         "value": 139803496.74,
-        "z_score": 66.3
+        "z_score": 66.14
       },
       {
         "country": "World",
         "year": 2004,
         "value": 139801540.397,
-        "z_score": 66.3
+        "z_score": 66.14
       },
       {
         "country": "World",
         "year": 2003,
         "value": 139767416.437,
-        "z_score": 66.28
+        "z_score": 66.12
       }
     ]
   },
@@ -2631,6 +3047,19 @@
     },
     "flagged": []
   },
+  "democracy_index": {
+    "min": {
+      "value": 0.25,
+      "country": "Afghanistan",
+      "year": 2024
+    },
+    "max": {
+      "value": 9.93,
+      "country": "Norway",
+      "year": 2012
+    },
+    "flagged": []
+  },
   "population_growth": {
     "min": {
       "value": -27.4707864795381,
@@ -2647,19 +3076,19 @@
         "country": "Afghanistan",
         "year": 1994,
         "value": 8.38872960212999,
-        "z_score": 3.88
+        "z_score": 3.89
       },
       {
         "country": "Afghanistan",
         "year": 1993,
         "value": 11.8072591071712,
-        "z_score": 5.87
+        "z_score": 5.88
       },
       {
         "country": "Afghanistan",
         "year": 1992,
         "value": 8.15641941048095,
-        "z_score": 3.74
+        "z_score": 3.75
       },
       {
         "country": "Afghanistan",
@@ -2695,73 +3124,207 @@
         "country": "Andorra",
         "year": 1991,
         "value": 7.45329468211735,
-        "z_score": 3.33
+        "z_score": 3.34
       },
       {
         "country": "Andorra",
         "year": 1971,
         "value": 7.0770003637453,
-        "z_score": 3.11
+        "z_score": 3.12
       },
       {
         "country": "Andorra",
         "year": 1970,
         "value": 7.38423172840341,
-        "z_score": 3.29
+        "z_score": 3.3
       },
       {
         "country": "Andorra",
         "year": 1969,
         "value": 7.7226233936081,
-        "z_score": 3.49
+        "z_score": 3.5
       },
       {
         "country": "Andorra",
         "year": 1968,
         "value": 8.1164086066891,
-        "z_score": 3.72
+        "z_score": 3.73
       },
       {
         "country": "Andorra",
         "year": 1967,
         "value": 7.95482076608293,
-        "z_score": 3.62
+        "z_score": 3.63
       },
       {
         "country": "Andorra",
         "year": 1966,
         "value": 7.02340939081659,
-        "z_score": 3.08
+        "z_score": 3.09
+      },
+      {
+        "country": "Andorra",
+        "year": 1964,
+        "value": 6.88305978652916,
+        "z_score": 3.01
       },
       {
         "country": "Andorra",
         "year": 1963,
         "value": 7.21150595530926,
-        "z_score": 3.19
+        "z_score": 3.2
       },
       {
         "country": "Andorra",
         "year": 1962,
         "value": 7.51910047505593,
-        "z_score": 3.37
+        "z_score": 3.38
       },
       {
         "country": "Andorra",
         "year": 1961,
         "value": 7.81481696897547,
-        "z_score": 3.54
+        "z_score": 3.55
       },
       {
         "country": "Bahrain",
         "year": 2007,
         "value": 7.89230240298341,
-        "z_score": 3.59
+        "z_score": 3.6
+      }
+    ]
+  },
+  "co2_emissions": {
+    "min": {
+      "value": 0.0,
+      "country": "Timor-Leste",
+      "year": 1994
+    },
+    "max": {
+      "value": 11902503000.0,
+      "country": "China",
+      "year": 2023
+    },
+    "flagged": [
+      {
+        "country": "China",
+        "year": 1982,
+        "value": 1606585000.0,
+        "z_score": 3.11
       },
       {
-        "country": "Bahrain",
-        "year": 2006,
-        "value": 7.74778631282051,
-        "z_score": 3.5
+        "country": "China",
+        "year": 1982,
+        "value": 1606585000.0,
+        "z_score": 3.11
+      },
+      {
+        "country": "China",
+        "year": 1983,
+        "value": 1694216800.0,
+        "z_score": 3.29
+      },
+      {
+        "country": "China",
+        "year": 1983,
+        "value": 1694216800.0,
+        "z_score": 3.29
+      },
+      {
+        "country": "China",
+        "year": 1984,
+        "value": 1844828000.0,
+        "z_score": 3.6
+      },
+      {
+        "country": "China",
+        "year": 1984,
+        "value": 1844828000.0,
+        "z_score": 3.6
+      },
+      {
+        "country": "China",
+        "year": 1985,
+        "value": 1998083000.0,
+        "z_score": 3.92
+      },
+      {
+        "country": "China",
+        "year": 1985,
+        "value": 1998083000.0,
+        "z_score": 3.92
+      },
+      {
+        "country": "China",
+        "year": 1986,
+        "value": 2104213400.0,
+        "z_score": 4.13
+      },
+      {
+        "country": "China",
+        "year": 1986,
+        "value": 2104213400.0,
+        "z_score": 4.13
+      },
+      {
+        "country": "China",
+        "year": 1987,
+        "value": 2257738500.0,
+        "z_score": 4.45
+      },
+      {
+        "country": "China",
+        "year": 1987,
+        "value": 2257738500.0,
+        "z_score": 4.45
+      },
+      {
+        "country": "China",
+        "year": 1988,
+        "value": 2425893600.0,
+        "z_score": 4.8
+      },
+      {
+        "country": "China",
+        "year": 1988,
+        "value": 2425893600.0,
+        "z_score": 4.8
+      },
+      {
+        "country": "China",
+        "year": 1989,
+        "value": 2463654400.0,
+        "z_score": 4.87
+      },
+      {
+        "country": "China",
+        "year": 1989,
+        "value": 2463654400.0,
+        "z_score": 4.87
+      },
+      {
+        "country": "China",
+        "year": 1990,
+        "value": 2484854800.0,
+        "z_score": 4.92
+      },
+      {
+        "country": "China",
+        "year": 1990,
+        "value": 2484854800.0,
+        "z_score": 4.92
+      },
+      {
+        "country": "China",
+        "year": 1991,
+        "value": 2606096100.0,
+        "z_score": 5.17
+      },
+      {
+        "country": "China",
+        "year": 1991,
+        "value": 2606096100.0,
+        "z_score": 5.17
       }
     ]
   },
@@ -2869,6 +3432,140 @@
       "year": 2022
     },
     "flagged": []
+  },
+  "old_age_dependency_ratio": {
+    "min": {
+      "value": 1.0122105,
+      "country": "Qatar",
+      "year": 2010
+    },
+    "max": {
+      "value": 107.54717,
+      "country": "Vatican City",
+      "year": 2014
+    },
+    "flagged": [
+      {
+        "country": "Bosnia and Herzegovina",
+        "year": 2023,
+        "value": 33.18952,
+        "z_score": 3.09
+      },
+      {
+        "country": "Bosnia and Herzegovina",
+        "year": 2023,
+        "value": 33.18952,
+        "z_score": 3.09
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2018,
+        "value": 32.804527,
+        "z_score": 3.04
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2018,
+        "value": 32.804527,
+        "z_score": 3.04
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2019,
+        "value": 33.48661,
+        "z_score": 3.13
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2019,
+        "value": 33.48661,
+        "z_score": 3.13
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2020,
+        "value": 33.942352,
+        "z_score": 3.19
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2020,
+        "value": 33.942352,
+        "z_score": 3.19
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2021,
+        "value": 34.003807,
+        "z_score": 3.2
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2021,
+        "value": 34.003807,
+        "z_score": 3.2
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2022,
+        "value": 34.02077,
+        "z_score": 3.2
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2022,
+        "value": 34.02077,
+        "z_score": 3.2
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2023,
+        "value": 34.304073,
+        "z_score": 3.24
+      },
+      {
+        "country": "Bulgaria",
+        "year": 2023,
+        "value": 34.304073,
+        "z_score": 3.24
+      },
+      {
+        "country": "Croatia",
+        "year": 2019,
+        "value": 32.94143,
+        "z_score": 3.06
+      },
+      {
+        "country": "Croatia",
+        "year": 2019,
+        "value": 32.94143,
+        "z_score": 3.06
+      },
+      {
+        "country": "Croatia",
+        "year": 2020,
+        "value": 33.901417,
+        "z_score": 3.19
+      },
+      {
+        "country": "Croatia",
+        "year": 2020,
+        "value": 33.901417,
+        "z_score": 3.19
+      },
+      {
+        "country": "Croatia",
+        "year": 2021,
+        "value": 34.77453,
+        "z_score": 3.3
+      },
+      {
+        "country": "Croatia",
+        "year": 2021,
+        "value": 34.77453,
+        "z_score": 3.3
+      }
+    ]
   },
   "extreme_poverty": {
     "min": {
@@ -3004,6 +3701,140 @@
       }
     ]
   },
+  "life_expectancy": {
+    "min": {
+      "value": 10.9891,
+      "country": "South Sudan",
+      "year": 1988
+    },
+    "max": {
+      "value": 86.3724,
+      "country": "Monaco",
+      "year": 2023
+    },
+    "flagged": [
+      {
+        "country": "Bangladesh",
+        "year": 1906,
+        "value": 21.5,
+        "z_score": 3.18
+      },
+      {
+        "country": "Bangladesh",
+        "year": 1906,
+        "value": 21.5,
+        "z_score": 3.18
+      },
+      {
+        "country": "Cambodia",
+        "year": 1975,
+        "value": 12.7845,
+        "z_score": 3.86
+      },
+      {
+        "country": "Cambodia",
+        "year": 1975,
+        "value": 12.7845,
+        "z_score": 3.86
+      },
+      {
+        "country": "Cambodia",
+        "year": 1976,
+        "value": 11.6323,
+        "z_score": 3.95
+      },
+      {
+        "country": "Cambodia",
+        "year": 1976,
+        "value": 11.6323,
+        "z_score": 3.95
+      },
+      {
+        "country": "Cambodia",
+        "year": 1977,
+        "value": 11.2952,
+        "z_score": 3.98
+      },
+      {
+        "country": "Cambodia",
+        "year": 1977,
+        "value": 11.2952,
+        "z_score": 3.98
+      },
+      {
+        "country": "Cambodia",
+        "year": 1978,
+        "value": 11.5726,
+        "z_score": 3.96
+      },
+      {
+        "country": "Cambodia",
+        "year": 1978,
+        "value": 11.5726,
+        "z_score": 3.96
+      },
+      {
+        "country": "Central African Republic",
+        "year": 2009,
+        "value": 14.6655,
+        "z_score": 3.72
+      },
+      {
+        "country": "Central African Republic",
+        "year": 2009,
+        "value": 14.6655,
+        "z_score": 3.72
+      },
+      {
+        "country": "Central African Republic",
+        "year": 2022,
+        "value": 18.8177,
+        "z_score": 3.39
+      },
+      {
+        "country": "Central African Republic",
+        "year": 2022,
+        "value": 18.8177,
+        "z_score": 3.39
+      },
+      {
+        "country": "Timor-Leste",
+        "year": 1978,
+        "value": 22.9333,
+        "z_score": 3.06
+      },
+      {
+        "country": "Timor-Leste",
+        "year": 1978,
+        "value": 22.9333,
+        "z_score": 3.06
+      },
+      {
+        "country": "India",
+        "year": 1901,
+        "value": 23.486,
+        "z_score": 3.02
+      },
+      {
+        "country": "India",
+        "year": 1901,
+        "value": 23.486,
+        "z_score": 3.02
+      },
+      {
+        "country": "India",
+        "year": 1911,
+        "value": 23.146,
+        "z_score": 3.05
+      },
+      {
+        "country": "India",
+        "year": 1911,
+        "value": 23.146,
+        "z_score": 3.05
+      }
+    ]
+  },
   "world_happiness_index": {
     "min": {
       "value": 1.281,
@@ -3036,6 +3867,140 @@
       "year": 2024
     },
     "flagged": []
+  },
+  "number_of_armed_conflicts": {
+    "min": {
+      "value": 0.0,
+      "country": "Georgia",
+      "year": 1989
+    },
+    "max": {
+      "value": 7.0,
+      "country": "India",
+      "year": 2000
+    },
+    "flagged": [
+      {
+        "country": "Afghanistan",
+        "year": 2019,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2019,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2020,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2020,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2021,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2021,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Bangladesh",
+        "year": 1992,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Bangladesh",
+        "year": 1992,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Bosnia and Herzegovina",
+        "year": 1992,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Bosnia and Herzegovina",
+        "year": 1992,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Bosnia and Herzegovina",
+        "year": 1993,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Bosnia and Herzegovina",
+        "year": 1993,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Bosnia and Herzegovina",
+        "year": 1995,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Bosnia and Herzegovina",
+        "year": 1995,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Brazil",
+        "year": 2022,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Brazil",
+        "year": 2022,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Brazil",
+        "year": 2023,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Brazil",
+        "year": 2023,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Burkina Faso",
+        "year": 2018,
+        "value": 3.0,
+        "z_score": 4.05
+      },
+      {
+        "country": "Burkina Faso",
+        "year": 2018,
+        "value": 3.0,
+        "z_score": 4.05
+      }
+    ]
   },
   "railway_length": {
     "min": {
@@ -3171,6 +4136,140 @@
       }
     ]
   },
+  "median_age": {
+    "min": {
+      "value": 13.189,
+      "country": "Kenya",
+      "year": 1974
+    },
+    "max": {
+      "value": 62.417,
+      "country": "Vatican City",
+      "year": 2012
+    },
+    "flagged": [
+      {
+        "country": "Italy",
+        "year": 2023,
+        "value": 47.461,
+        "z_score": 3.03
+      },
+      {
+        "country": "Italy",
+        "year": 2023,
+        "value": 47.461,
+        "z_score": 3.03
+      },
+      {
+        "country": "Japan",
+        "year": 2019,
+        "value": 47.262,
+        "z_score": 3.01
+      },
+      {
+        "country": "Japan",
+        "year": 2019,
+        "value": 47.262,
+        "z_score": 3.01
+      },
+      {
+        "country": "Japan",
+        "year": 2020,
+        "value": 47.674,
+        "z_score": 3.06
+      },
+      {
+        "country": "Japan",
+        "year": 2020,
+        "value": 47.674,
+        "z_score": 3.06
+      },
+      {
+        "country": "Japan",
+        "year": 2021,
+        "value": 48.123,
+        "z_score": 3.12
+      },
+      {
+        "country": "Japan",
+        "year": 2021,
+        "value": 48.123,
+        "z_score": 3.12
+      },
+      {
+        "country": "Japan",
+        "year": 2022,
+        "value": 48.548,
+        "z_score": 3.17
+      },
+      {
+        "country": "Japan",
+        "year": 2022,
+        "value": 48.548,
+        "z_score": 3.17
+      },
+      {
+        "country": "Japan",
+        "year": 2023,
+        "value": 48.958,
+        "z_score": 3.22
+      },
+      {
+        "country": "Japan",
+        "year": 2023,
+        "value": 48.958,
+        "z_score": 3.22
+      },
+      {
+        "country": "Monaco",
+        "year": 2009,
+        "value": 47.342,
+        "z_score": 3.02
+      },
+      {
+        "country": "Monaco",
+        "year": 2009,
+        "value": 47.342,
+        "z_score": 3.02
+      },
+      {
+        "country": "Monaco",
+        "year": 2010,
+        "value": 48.219,
+        "z_score": 3.13
+      },
+      {
+        "country": "Monaco",
+        "year": 2010,
+        "value": 48.219,
+        "z_score": 3.13
+      },
+      {
+        "country": "Monaco",
+        "year": 2011,
+        "value": 49.124,
+        "z_score": 3.24
+      },
+      {
+        "country": "Monaco",
+        "year": 2011,
+        "value": 49.124,
+        "z_score": 3.24
+      },
+      {
+        "country": "Monaco",
+        "year": 2012,
+        "value": 50.059,
+        "z_score": 3.36
+      },
+      {
+        "country": "Monaco",
+        "year": 2012,
+        "value": 50.059,
+        "z_score": 3.36
+      }
+    ]
+  },
   "mobile_subscriptions_per_100_inhabitants": {
     "min": {
       "value": 0.0,
@@ -3187,121 +4286,121 @@
         "country": "Antigua and Barbuda",
         "year": 2022,
         "value": 200.541,
-        "z_score": 3.17
+        "z_score": 3.19
       },
       {
         "country": "Antigua and Barbuda",
         "year": 2021,
         "value": 199.244,
-        "z_score": 3.14
+        "z_score": 3.16
       },
       {
         "country": "Antigua and Barbuda",
         "year": 2020,
         "value": 200.335,
-        "z_score": 3.17
+        "z_score": 3.18
       },
       {
         "country": "Antigua and Barbuda",
         "year": 2019,
         "value": 201.392,
-        "z_score": 3.19
+        "z_score": 3.2
       },
       {
         "country": "Antigua and Barbuda",
         "year": 2017,
         "value": 203.387,
-        "z_score": 3.23
+        "z_score": 3.24
       },
       {
         "country": "Antigua and Barbuda",
         "year": 2016,
         "value": 200.069,
-        "z_score": 3.16
+        "z_score": 3.18
       },
       {
         "country": "Antigua and Barbuda",
         "year": 2015,
         "value": 196.848,
-        "z_score": 3.1
+        "z_score": 3.11
       },
       {
         "country": "Antigua and Barbuda",
         "year": 2011,
         "value": 203.873,
-        "z_score": 3.23
+        "z_score": 3.25
       },
       {
         "country": "Antigua and Barbuda",
         "year": 2010,
         "value": 196.871,
-        "z_score": 3.1
+        "z_score": 3.11
       },
       {
         "country": "Bahrain",
         "year": 2016,
         "value": 209.489,
-        "z_score": 3.34
+        "z_score": 3.36
       },
       {
-        "country": "Cayman Islands",
-        "year": 2009,
-        "value": 206.581,
-        "z_score": 3.29
-      },
-      {
-        "country": "Cayman Islands",
-        "year": 2008,
-        "value": 192.202,
+        "country": "Kuwait",
+        "year": 2016,
+        "value": 191.294,
         "z_score": 3.01
-      },
-      {
-        "country": "Cayman Islands",
-        "year": 2007,
-        "value": 204.273,
-        "z_score": 3.24
-      },
-      {
-        "country": "Cayman Islands",
-        "year": 2006,
-        "value": 191.904,
-        "z_score": 3.0
       },
       {
         "country": "Kuwait",
         "year": 2015,
         "value": 199.891,
-        "z_score": 3.16
+        "z_score": 3.17
       },
       {
         "country": "Kuwait",
         "year": 2014,
         "value": 207.324,
-        "z_score": 3.3
+        "z_score": 3.32
       },
       {
         "country": "Libya",
         "year": 2022,
         "value": 192.973,
-        "z_score": 3.02
+        "z_score": 3.04
       },
       {
         "country": "Libya",
         "year": 2021,
         "value": 195.118,
-        "z_score": 3.06
+        "z_score": 3.08
       },
       {
         "country": "Maldives",
         "year": 2017,
         "value": 196.41,
-        "z_score": 3.09
+        "z_score": 3.1
       },
       {
         "country": "Montenegro",
         "year": 2023,
         "value": 207.238,
-        "z_score": 3.3
+        "z_score": 3.32
+      },
+      {
+        "country": "Montenegro",
+        "year": 2022,
+        "value": 207.278,
+        "z_score": 3.32
+      },
+      {
+        "country": "Montenegro",
+        "year": 2009,
+        "value": 204.631,
+        "z_score": 3.27
+      },
+      {
+        "country": "Saudi Arabia",
+        "year": 2012,
+        "value": 195.843,
+        "z_score": 3.09
       }
     ]
   },
@@ -3351,7 +4450,7 @@
         "country": "Cuba",
         "year": 2021,
         "value": 9.429,
-        "z_score": 5.32
+        "z_score": 5.31
       },
       {
         "country": "Cuba",
@@ -3375,7 +4474,7 @@
         "country": "Cuba",
         "year": 2017,
         "value": 8.123,
-        "z_score": 4.42
+        "z_score": 4.41
       },
       {
         "country": "Cuba",
@@ -3387,7 +4486,7 @@
         "country": "Cuba",
         "year": 2015,
         "value": 7.759,
-        "z_score": 4.17
+        "z_score": 4.16
       },
       {
         "country": "Cuba",
@@ -3589,121 +4688,121 @@
         "country": "World",
         "year": 2024,
         "value": 111252997846886.0,
-        "z_score": 97.8
+        "z_score": 97.72
       },
       {
         "country": "World",
         "year": 2023,
         "value": 106939249843452.0,
-        "z_score": 94.0
+        "z_score": 93.93
       },
       {
         "country": "World",
         "year": 2022,
         "value": 102434886179161.0,
-        "z_score": 90.04
+        "z_score": 89.96
       },
       {
         "country": "World",
         "year": 2021,
         "value": 98365745535038.5,
-        "z_score": 86.45
+        "z_score": 86.38
       },
       {
         "country": "World",
         "year": 2020,
         "value": 86116567565730.4,
-        "z_score": 75.66
+        "z_score": 75.6
       },
       {
         "country": "World",
         "year": 2019,
         "value": 88492389499432.0,
-        "z_score": 77.76
+        "z_score": 77.69
       },
       {
         "country": "World",
         "year": 2018,
         "value": 87188987385051.5,
-        "z_score": 76.61
+        "z_score": 76.55
       },
       {
         "country": "World",
         "year": 2017,
         "value": 81974795709110.1,
-        "z_score": 72.02
+        "z_score": 71.96
       },
       {
         "country": "World",
         "year": 2016,
         "value": 76957345383656.6,
-        "z_score": 67.6
+        "z_score": 67.54
       },
       {
         "country": "World",
         "year": 2015,
         "value": 75723635302571.9,
-        "z_score": 66.51
+        "z_score": 66.46
       },
       {
         "country": "World",
         "year": 2014,
         "value": 80247427618833.9,
-        "z_score": 70.49
+        "z_score": 70.44
       },
       {
         "country": "World",
         "year": 2013,
         "value": 78070094837109.7,
-        "z_score": 68.58
+        "z_score": 68.52
       },
       {
         "country": "World",
         "year": 2012,
         "value": 75866007009764.4,
-        "z_score": 66.64
+        "z_score": 66.58
       },
       {
         "country": "World",
         "year": 2011,
         "value": 74213035604821.0,
-        "z_score": 65.18
+        "z_score": 65.13
       },
       {
         "country": "World",
         "year": 2010,
         "value": 66722149003894.3,
-        "z_score": 58.58
+        "z_score": 58.54
       },
       {
         "country": "World",
         "year": 2009,
         "value": 60909219885221.0,
-        "z_score": 53.46
+        "z_score": 53.42
       },
       {
         "country": "World",
         "year": 2008,
         "value": 64232292784905.6,
-        "z_score": 56.39
+        "z_score": 56.34
       },
       {
         "country": "World",
         "year": 2007,
         "value": 58448614438455.8,
-        "z_score": 51.3
+        "z_score": 51.25
       },
       {
         "country": "World",
         "year": 2006,
         "value": 51859668488984.3,
-        "z_score": 45.49
+        "z_score": 45.46
       },
       {
         "country": "World",
         "year": 2005,
         "value": 47847635179349.8,
-        "z_score": 41.96
+        "z_score": 41.93
       }
     ]
   },
@@ -3881,8 +4980,21 @@
     },
     "max": {
       "value": 100.0,
-      "country": "Cayman Islands",
+      "country": "Kuwait",
       "year": 2024
+    },
+    "flagged": []
+  },
+  "age_dependency_ratio_total": {
+    "min": {
+      "value": 17.303247,
+      "country": "Qatar",
+      "year": 2010
+    },
+    "max": {
+      "value": 121.8094,
+      "country": "Palau",
+      "year": 1965
     },
     "flagged": []
   },
@@ -3902,7 +5014,7 @@
         "country": "Bangladesh",
         "year": 1971,
         "value": 26.522,
-        "z_score": 3.35
+        "z_score": 3.34
       },
       {
         "country": "Burundi",
@@ -3920,31 +5032,31 @@
         "country": "Cambodia",
         "year": 1977,
         "value": 11.295,
-        "z_score": 4.69
+        "z_score": 4.68
       },
       {
         "country": "Cambodia",
         "year": 1976,
         "value": 11.632,
-        "z_score": 4.66
+        "z_score": 4.65
       },
       {
         "country": "Cambodia",
         "year": 1975,
         "value": 12.784,
-        "z_score": 4.56
+        "z_score": 4.55
       },
       {
         "country": "Central African Republic",
         "year": 2022,
         "value": 18.818,
-        "z_score": 4.03
+        "z_score": 4.02
       },
       {
         "country": "Central African Republic",
         "year": 2009,
         "value": 14.665,
-        "z_score": 4.39
+        "z_score": 4.38
       },
       {
         "country": "Rwanda",
@@ -3956,7 +5068,7 @@
         "country": "Somalia",
         "year": 1992,
         "value": 25.034,
-        "z_score": 3.48
+        "z_score": 3.47
       },
       {
         "country": "Somalia",
@@ -3974,13 +5086,13 @@
         "country": "South Sudan",
         "year": 1993,
         "value": 22.263,
-        "z_score": 3.72
+        "z_score": 3.71
       },
       {
         "country": "South Sudan",
         "year": 1992,
         "value": 21.938,
-        "z_score": 3.75
+        "z_score": 3.74
       },
       {
         "country": "South Sudan",
@@ -3992,25 +5104,25 @@
         "country": "South Sudan",
         "year": 1990,
         "value": 28.628,
-        "z_score": 3.16
+        "z_score": 3.15
       },
       {
         "country": "South Sudan",
         "year": 1989,
         "value": 28.217,
-        "z_score": 3.2
+        "z_score": 3.19
       },
       {
         "country": "South Sudan",
         "year": 1988,
         "value": 10.989,
-        "z_score": 4.72
+        "z_score": 4.71
       },
       {
         "country": "South Sudan",
         "year": 1987,
         "value": 20.721,
-        "z_score": 3.86
+        "z_score": 3.85
       },
       {
         "country": "South Sudan",

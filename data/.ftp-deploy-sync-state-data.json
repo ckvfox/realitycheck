@@ -1,49 +1,49 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1761331926557,
+    "generatedTime": 1761334410562,
     "data": [
         {
             "type": "file",
             "name": ".ftp-deploy-sync-state-data.json",
             "size": 32983,
-            "hash": "3f46565bfb3d5bec0ccd0a4691e34b34edd9262c7af4da729180519af599d997"
+            "hash": "2dda705412879b709fcc66013c9d0cb844a322b5aeee11d8d18c9e7ea4e92a0a"
         },
         {
             "type": "file",
             "name": "access_to_basic_drinking_water.csv",
-            "size": 141026,
-            "hash": "142f5a563e0067ff9dd4f6a41f3cc1ec9ffca28055c0bca36d47dd755107ba2a"
+            "size": 140174,
+            "hash": "0d24292903af1fa995caa3c23f8e5952518dd69f9ceed13a390b27a684475330"
         },
         {
             "type": "file",
             "name": "access_to_basic_drinking_water.json",
-            "size": 433190,
-            "hash": "d35b353c258e99e38a13ab1242e1851e259178f3401bf998e86e49124daed674"
+            "size": 430864,
+            "hash": "a17c63ba0aeb29eeb4ff9948b866057c1b7b89a4ce5167973fb77c04b6dec74c"
         },
         {
             "type": "file",
             "name": "adult_literacy_rate.csv",
-            "size": 36536,
-            "hash": "30658c9699b35195470cb0bb99bc44e4d4dae768c8fb52d62832b26badcad6b6"
+            "size": 36498,
+            "hash": "531079b9332be050330c7fea777b3a6e5819e246802e56f25bffd3752afe688c"
         },
         {
             "type": "file",
             "name": "adult_literacy_rate.json",
-            "size": 112491,
-            "hash": "91d5c97893707200a33cd1b1d8ec61c111a18f2522ca1af9aa2470475b38c70e"
+            "size": 112386,
+            "hash": "9852f66d98224fc00ff8630f0530fe5b08e0292ac32fa8efd0e3268e0f7f7001"
         },
         {
             "type": "file",
             "name": "age_dependency_ratio_total.csv",
-            "size": 4529,
-            "hash": "84f313024b51cb3367415980ab8ea287e2581254ec60d92e5cf9815bbb3e9f18"
+            "size": 841871,
+            "hash": "d73efc437b368a35b8f83c3f7a6cedd8be690ee260ad83200a8cf5adb704b878"
         },
         {
             "type": "file",
             "name": "age_dependency_ratio_total.json",
-            "size": 14422,
-            "hash": "d71ca21c6172dfb998587356b9f4039b8295924cbffa1994e7daed55543d040a"
+            "size": 2795300,
+            "hash": "ae563d99e06633a6dccd0ddf9d4250dbe16475024c530f4b2d494c2b8f9ddea2"
         },
         {
             "type": "file",
@@ -60,68 +60,68 @@
         {
             "type": "file",
             "name": "all_kpis_index.json",
-            "size": 172,
-            "hash": "847bf2c865eac6406e49cf6f3dcdc1d3050945acdb5a1c441739009b6b57c49e"
+            "size": 232,
+            "hash": "835a840585a2cbfbe69191b598d15d0be6cdc12560ac349310227270d040f31d"
         },
         {
             "type": "file",
             "name": "all_kpis_part1.json.gz",
-            "size": 987020,
-            "hash": "b5d072a3a8f170492dc9200e3d31b7c3617df0a7372ff54b0bf83d084de7344f"
+            "size": 854392,
+            "hash": "44c17e8b60b0dc6a249a68226393144ea910ecbf856c73b2d039dd802cdeb7de"
         },
         {
             "type": "file",
             "name": "all_kpis_part2.json.gz",
-            "size": 775490,
-            "hash": "dc3ba92214917c5eac4a055bdfe118b30877b90a461675e0cf7c57564f90f197"
+            "size": 773797,
+            "hash": "cc40c9940ec1db20de39cd9c5e9557954e79c24f4fd6ea04ec3642e9c458c9ef"
         },
         {
             "type": "file",
             "name": "all_kpis_part3.json.gz",
-            "size": 316665,
-            "hash": "75f773a801b93f7441d13fb81503b05a3b517f1260bdc516bf9c85e48e0938cc"
+            "size": 669709,
+            "hash": "d271835b4b4073719bceb14e3f49030c59b4ed347aaefc9f93bd14f36fa49165"
         },
         {
             "type": "file",
             "name": "all_kpis_part4.json.gz",
-            "size": 692396,
-            "hash": "a009e2ff560de2da2ea56727a6986879a36acfb1c5c606e7d52da129f838970f"
+            "size": 689113,
+            "hash": "cc7fe8eabc0202713205cac50aa544d9347020159ed8259290fa182b66c1c8b0"
         },
         {
             "type": "file",
             "name": "all_kpis_part5.json.gz",
             "size": 9554,
-            "hash": "37e45a50c4070ef9a224a75a536e3a1bbbc10f3c5848d216c661209812e2c611"
+            "hash": "9f37e980a6b945bf6ce2bf832456830b4b25eff08b03f7d71e0d847def69512c"
         },
         {
             "type": "file",
             "name": "analysis.json",
-            "size": 17009,
-            "hash": "68fc7ba569db9d4094e485c4de2a771a7dd320c91cfabcede072c666087abdbf"
+            "size": 19484,
+            "hash": "89ab7c97dc3c3334ab9bb6814dc1245d236211890daae76065a8f8d112422f7d"
         },
         {
             "type": "file",
             "name": "analysis.md",
-            "size": 8922,
-            "hash": "02416dbdfcc1c298db157901872d35fda0e484a6ff84a61c8b9540ae81350dde"
+            "size": 9294,
+            "hash": "9016f85ace571c54c5b28063792941af2b431cdff6771e11902a9c6265b47cbb"
         },
         {
             "type": "file",
             "name": "analysis_outliers.json",
-            "size": 81386,
-            "hash": "3b57c5ed5e1c6627b21d0fbafbe02f82054ba645ca44d88a483c5d934f0401cc"
+            "size": 103303,
+            "hash": "b50dbb093e7e40365b8d7d50ac6643c3a8e6030d58a3980b9a50b727f492b3f4"
         },
         {
             "type": "file",
             "name": "area.csv",
-            "size": 302340,
-            "hash": "89307f3f241208e3963c76d1683a9b0ff6cc90982b6369d8ed3547ee5694f129"
+            "size": 300576,
+            "hash": "66de3f073e47db3ac182357b28ef140b593750da56739f910f5468d5ed842710"
         },
         {
             "type": "file",
             "name": "area.json",
-            "size": 1117171,
-            "hash": "66df03105611a40c5bdedbad6c717a62c2a95f88c9cc8a383bbd93f627177a3d"
+            "size": 1111186,
+            "hash": "d68e7703ef7c68138cfb57e4dcc211999cbcfac8190fbd62cbc3c8b4bb6f9794"
         },
         {
             "type": "file",
@@ -150,50 +150,50 @@
         {
             "type": "file",
             "name": "co2_emissions.csv",
-            "size": 8579,
-            "hash": "9f85431e56caeb023eff9ac6571de05439281246656f372dc91449ada29fc95a"
+            "size": 1072297,
+            "hash": "277b57042d9be5683dcd1dab21cccc98b35e6777f645e30ba4e5d23c8b441009"
         },
         {
             "type": "file",
             "name": "co2_emissions.json",
-            "size": 25172,
-            "hash": "7f35e45a128b9ffcdb4b6acada92b9bbf72982f592bcdd5ee809ec14166c32e6"
+            "size": 3508528,
+            "hash": "f8c97aed57b35b64cf493d9a7fe7cbc13bd31c67ca102fb518ebdca5db1376c4"
         },
         {
             "type": "file",
             "name": "democracy_index.csv",
-            "size": 1061,
-            "hash": "8df5893b0db18b7d70c6116ca75205c43a5c5458f52f080ab4eeaf1f6ddc089e"
+            "size": 135625,
+            "hash": "70c112bfa1ca12f0d81a197b6d462aea879b010e64971fe9e05b12109e952cbb"
         },
         {
             "type": "file",
             "name": "democracy_index.json",
-            "size": 3316,
-            "hash": "19fb04c289df4c5351abd7b03a650da8373b022d61a1c8843f0cd413796833d1"
+            "size": 513750,
+            "hash": "d291b65d43b688390d6b5a86a267094f1fe34699cf3c934077082813c86b589c"
         },
         {
             "type": "file",
             "name": "education_expenditure_of_gdp.csv",
-            "size": 162886,
-            "hash": "a3f18ced3a20af61486652fc892901b09ee431b17fba3b906b1f857bee1a7ec5"
+            "size": 162652,
+            "hash": "7fe85a5cbffc74fb7710a171a65b1b04bd0dedbe157b31015fb1a9e8aa9253ec"
         },
         {
             "type": "file",
             "name": "education_expenditure_of_gdp.json",
-            "size": 493977,
-            "hash": "263a34cf463456099468aa6eb4dea80092ae1dd300cd959e4045beca9e273ba8"
+            "size": 493341,
+            "hash": "4295cb4660c3b2e440b486397b47736e3c3241f39d3ef543608e41a8d02e4b0d"
         },
         {
             "type": "file",
             "name": "electric_vehicle_stock.csv",
-            "size": 951,
-            "hash": "aa0ac9f19f1c8b5a8d63cfcdf0ce0f078999f6a2544e5a33ea324a22f3d0bbd2"
+            "size": 20833,
+            "hash": "b3a61cb4149a810b905aedd5d764ed5d8038015611d11f5284b124c5f378ad9f"
         },
         {
             "type": "file",
             "name": "electric_vehicle_stock.json",
-            "size": 2938,
-            "hash": "4b1de771d932b515eaea81f7202c5c0724b449393955955b5c398f5e05ee35b1"
+            "size": 73204,
+            "hash": "9fdc09646a23947c91b94a6460117d4c2d5be9a323a17180a095feff785b651e"
         },
         {
             "type": "file",
@@ -215,27 +215,27 @@
         },
         {
             "type": "file",
-            "name": "extreme_poverty.csv",
-            "size": 49246,
-            "hash": "c2235900b47c798fe04f190e610805ef771588752bc37ad6aa5c90d9ec87dff9"
-        },
-        {
-            "type": "file",
             "name": "environmental_performance_index.json",
             "size": 15831,
             "hash": "a0ef3d13f833622f12bf593c4d59805dea7ebfb588bfa8764b63306bdd346831"
         },
         {
             "type": "file",
-            "name": "extreme_poverty.json",
-            "size": 212837,
-            "hash": "b10bc4f0708fa0e3d03a63f8a7d4be6532d3bda524c5a9c4edf3d599faaee3dc"
+            "name": "extreme_poverty.csv",
+            "size": 49246,
+            "hash": "c2235900b47c798fe04f190e610805ef771588752bc37ad6aa5c90d9ec87dff9"
         },
         {
             "type": "file",
             "name": "female_labor_force_participation.csv",
             "size": 145331,
             "hash": "422e85269c8a077a7a0f48dad525d6427e297f06e97178af59eac252582e4044"
+        },
+        {
+            "type": "file",
+            "name": "extreme_poverty.json",
+            "size": 212837,
+            "hash": "b10bc4f0708fa0e3d03a63f8a7d4be6532d3bda524c5a9c4edf3d599faaee3dc"
         },
         {
             "type": "file",
@@ -246,68 +246,68 @@
         {
             "type": "file",
             "name": "fertility_rate.csv",
-            "size": 277462,
-            "hash": "6fea76ce1bef7c8242b6991b7c13e5a29b7d7dad1714d29ff8ec3c009e95aee3"
+            "size": 275673,
+            "hash": "aab3088a425fd120daa597671aac618c6460abadde60e4df5e57c457c5b31884"
         },
         {
             "type": "file",
             "name": "fertility_rate.json",
-            "size": 1115743,
-            "hash": "7fb1605bedfdc8563371b29bc34d3719509cfffcef2c1b9a9fb39c77e051fc34"
+            "size": 1109666,
+            "hash": "4f262d914aa6381abb7e7fc610982b3c0e9d65252fd2562817cec2f2fd1c8a88"
         },
         {
             "type": "file",
             "name": "fetch_log.txt",
-            "size": 24443,
-            "hash": "7c7019e450738e2eabf39d3ed5ffb56150029f292c6ca3cd1e10b81bd056d564"
+            "size": 31530,
+            "hash": "c88f27d96cdbdddf281c5ad8615760adac0949099d39e54f51e546d9cd15358a"
         },
         {
             "type": "file",
             "name": "fetch_status.json",
             "size": 13082,
-            "hash": "f6c671b413edeb419ae603043eb1845952ba5fe886426b173eff7bbb199c7a91"
+            "hash": "25fb3e33863c69042562a1fe672a630237a26ae7f3c05eb6014d47ea9bfed9f2"
         },
         {
             "type": "file",
             "name": "fixed_broadband_subscriptions_per_100_people.csv",
-            "size": 97456,
-            "hash": "91355b02c81f7b3bffb6d223995b56130e53fecbf783632cf5823b00e680c747"
-        },
-        {
-            "type": "file",
-            "name": "fixed_broadband_subscriptions_per_100_people.json",
-            "size": 360676,
-            "hash": "438c7b0632a5265e28ed3b0f1e79dd9acb5620478f8e1ef73f7f1ead800d02b1"
+            "size": 97037,
+            "hash": "81dce77c7fbd02381f9ee1f530be6fd2cf2c11114914e3b64da522f8b6ac620d"
         },
         {
             "type": "file",
             "name": "fun_ranking.json",
-            "size": 688,
-            "hash": "98429591b1da592e7ad5a330da7eff14f11390c80971b2eb9d9a105bf3e7c3e1"
+            "size": 693,
+            "hash": "5cfe4c2c3b8b744229ef7638bef0d240954611adf5ccc3a99362574762d0bc69"
+        },
+        {
+            "type": "file",
+            "name": "fixed_broadband_subscriptions_per_100_people.json",
+            "size": 359319,
+            "hash": "7f99540f263366ad6dbd181e694e30394b04d77e41036383207650f6b136222b"
         },
         {
             "type": "file",
             "name": "gdp.csv",
-            "size": 356505,
-            "hash": "b71883979f32a02992663f0f2881495a2a6e6c33ac5122a217a9104cc45a4126"
+            "size": 355804,
+            "hash": "738f640c246158ba79b4f09afcfad6b107383707a2c7c6714a3160927c30ebeb"
         },
         {
             "type": "file",
             "name": "gdp.json",
-            "size": 1081891,
-            "hash": "70328a0fbee17f8ff2ea8d87db0a3b0bf3d63171146aadaea7a160c1db0ca2be"
+            "size": 1079984,
+            "hash": "9178ea558fcaf07fc84d3b09b2a033f4326b96b00c89b442cbd0af71c827d074"
         },
         {
             "type": "file",
             "name": "gdp_per_capita_current_us.csv",
-            "size": 360048,
-            "hash": "84ba52b31287dc5052fd5087a2f5fc02b29f5b90d1588ab6621dd481f8402e08"
+            "size": 359350,
+            "hash": "8a006bb4c0bf16bd8c9d8bab2eca4bef8b29ff99bf49869774af77035383ac11"
         },
         {
             "type": "file",
             "name": "gdp_per_capita_current_us.json",
-            "size": 1085434,
-            "hash": "281256a806e0e96741c8ba816e78d40b3e9a1112a60e9695d6b0a93798c5470a"
+            "size": 1083530,
+            "hash": "1a6c5a7fc930b90b1a50906d8132a30249f4644f0c2f60eac90967124f8d1aa8"
         },
         {
             "type": "file",
@@ -323,21 +323,15 @@
         },
         {
             "type": "file",
-            "name": "global_co2_emissions.csv",
-            "size": 8579,
-            "hash": "9f85431e56caeb023eff9ac6571de05439281246656f372dc91449ada29fc95a"
-        },
-        {
-            "type": "file",
             "name": "global_co2_emissions.json",
-            "size": 25172,
-            "hash": "7f35e45a128b9ffcdb4b6acada92b9bbf72982f592bcdd5ee809ec14166c32e6"
+            "size": 3508528,
+            "hash": "f8c97aed57b35b64cf493d9a7fe7cbc13bd31c67ca102fb518ebdca5db1376c4"
         },
         {
             "type": "file",
-            "name": "global_conflict_deaths.json",
-            "size": 19610,
-            "hash": "273c8efe9a128d7a5ff815efd54e77cecd2ab31120d075f5ca2df880f21cd08e"
+            "name": "global_co2_emissions.csv",
+            "size": 1072297,
+            "hash": "277b57042d9be5683dcd1dab21cccc98b35e6777f645e30ba4e5d23c8b441009"
         },
         {
             "type": "file",
@@ -347,15 +341,21 @@
         },
         {
             "type": "file",
-            "name": "global_peace_index.csv",
-            "size": 63854,
-            "hash": "8ebabd3a9c4cc72d1ac75630dff0554f0a344a83f3cc14842cb7915a0225088b"
+            "name": "global_conflict_deaths.json",
+            "size": 19610,
+            "hash": "273c8efe9a128d7a5ff815efd54e77cecd2ab31120d075f5ca2df880f21cd08e"
         },
         {
             "type": "file",
             "name": "global_peace_index.json",
             "size": 258399,
             "hash": "da0ef259a1c9fa7ac4ff76d161f4b2b769922cd219b5e3ead3be8893f0f94e4a"
+        },
+        {
+            "type": "file",
+            "name": "global_peace_index.csv",
+            "size": 63854,
+            "hash": "8ebabd3a9c4cc72d1ac75630dff0554f0a344a83f3cc14842cb7915a0225088b"
         },
         {
             "type": "file",
@@ -377,12 +377,6 @@
         },
         {
             "type": "file",
-            "name": "gni_per_capita_current_us.csv",
-            "size": 232197,
-            "hash": "1ac3da73000b0be39a127a7bd57038df3ac0d0bba6ddae4cb9a9ffcf270521d3"
-        },
-        {
-            "type": "file",
             "name": "global_temperature_anomaly.json",
             "size": 24900,
             "hash": "bde4ba8681b6d068bbdc2471d24acd03bf028885110bd9dde9d5cf38f2e49845"
@@ -390,8 +384,14 @@
         {
             "type": "file",
             "name": "gni_per_capita_current_us.json",
-            "size": 900097,
-            "hash": "44ff76c170fd9fdf05e0205467dc49cd80245ed913d959656fdf213f93014f1b"
+            "size": 898836,
+            "hash": "272c5c908d2e9444798bc5c502678130fcab62db6d3012b3ca8b86fdb52aa5e1"
+        },
+        {
+            "type": "file",
+            "name": "gni_per_capita_current_us.csv",
+            "size": 231807,
+            "hash": "8300d17bff2aefd43fdfbcdbff9b2f5c007e7f4e6a7c5b1a237cbc54972201c4"
         },
         {
             "type": "file",
@@ -420,38 +420,38 @@
         {
             "type": "file",
             "name": "hospital_beds_per_1_000_people.csv",
-            "size": 115885,
-            "hash": "b44d8e02db7c4c556e81826b4582f277f1d1cd246e94392790148c7927adb4f0"
+            "size": 115859,
+            "hash": "a8eaf1fbf51d1ed675b676422e514aac8a9281357cdb38d4009ad982058d34a5"
         },
         {
             "type": "file",
             "name": "hospital_beds_per_1_000_people.json",
-            "size": 431968,
-            "hash": "95c4b3854ea69b30aa9eefc1dc1da2f6c102b061872fd32bf9f0ca0250ea2aa9"
+            "size": 431875,
+            "hash": "dc659dd1666b7bb4e32d64fa365bd2928db71663d9332a1f10a5b3857cc7a24b"
         },
         {
             "type": "file",
             "name": "human_development_index_hdi.csv",
-            "size": 1859,
-            "hash": "d445d0fd6ca3d1b5b89f909283c024b293a0213dabeec0b1c22d62816d969031"
+            "size": 297031,
+            "hash": "1587121523d3307effc243a2e88fad9257efe58b6eb24aa34d0a177599cea91c"
         },
         {
             "type": "file",
             "name": "human_development_index_hdi.json",
-            "size": 6392,
-            "hash": "b98c663b7b7bdcd1b4ddc863b3e827bcb00622be430b2a47ae7e40c443444f29"
+            "size": 1088412,
+            "hash": "35856e06e88bf85a3b62f3ba71c3c8d6b72e3b2a71cd5ab8f3e488647e16de25"
         },
         {
             "type": "file",
             "name": "individuals_using_the_internet.csv",
-            "size": 131934,
-            "hash": "9b1b8e4db0801db77f73d2064667218d4351122c2b9d8cb75d8ce2fe6844125e"
+            "size": 131469,
+            "hash": "2f7f44d5c587d99cc4806f56296f02278475ca0ab4716fb7d56921ecb4beb200"
         },
         {
             "type": "file",
             "name": "individuals_using_the_internet.json",
-            "size": 517429,
-            "hash": "ca4d08f5768bcf10914523064ff67fefbf8465e2f8ea69fb75f20ba62f935b30"
+            "size": 515825,
+            "hash": "cc907e448ced54d9c04d5105741d2ad53f72423ef1a1c2f7ff316b3357ec2ab8"
         },
         {
             "type": "file",
@@ -468,14 +468,14 @@
         {
             "type": "file",
             "name": "inflation_consumer_price_index.csv",
-            "size": 168176,
-            "hash": "8080b5f4a849dc09fc1d448fbaaec6459d8e998ed8c3c2832d200528d7eee777"
+            "size": 167899,
+            "hash": "39c7b9282bd366b8f932efa91dc8b6b1ceb892756007edfd6e33e2a14200a630"
         },
         {
             "type": "file",
             "name": "inflation_consumer_price_index.json",
-            "size": 506771,
-            "hash": "cf434a7e3d85d818776d462f74f2c17a7c48996cd5ffa53efe7bdfb87099c4f6"
+            "size": 506025,
+            "hash": "028c0228fbcf46113dc4c0f24b13e7df67afcb90fb7e6816fc816780e0f47ac6"
         },
         {
             "type": "file",
@@ -491,39 +491,39 @@
         },
         {
             "type": "file",
-            "name": "internet_penetration_rate.csv",
-            "size": 131934,
-            "hash": "9b1b8e4db0801db77f73d2064667218d4351122c2b9d8cb75d8ce2fe6844125e"
+            "name": "internet_penetration_rate.json",
+            "size": 515825,
+            "hash": "cc907e448ced54d9c04d5105741d2ad53f72423ef1a1c2f7ff316b3357ec2ab8"
         },
         {
             "type": "file",
-            "name": "internet_penetration_rate.json",
-            "size": 517429,
-            "hash": "ca4d08f5768bcf10914523064ff67fefbf8465e2f8ea69fb75f20ba62f935b30"
+            "name": "internet_penetration_rate.csv",
+            "size": 131469,
+            "hash": "2f7f44d5c587d99cc4806f56296f02278475ca0ab4716fb7d56921ecb4beb200"
         },
         {
             "type": "file",
             "name": "life_expectancy.csv",
-            "size": 4403,
-            "hash": "1231d3722ede75c0cd3816f0624ca0f5a4c6fd507d205a5abbe376d930c500e9"
+            "size": 860101,
+            "hash": "17fc00d8ae3ee68ed40cf10fe89c6abcaecf84f2e06c7a6a54e691afe3850cb6"
         },
         {
             "type": "file",
             "name": "life_expectancy.json",
-            "size": 14564,
-            "hash": "c55c5978c638ed80b7e652cd1079fde5c3851681c530995f9f211478f4de613a"
+            "size": 2982638,
+            "hash": "bb5d6b0f9b2a8a9010d5d5ec1329c2a8f0fc377342e62f638539e0a50f031fbd"
         },
         {
             "type": "file",
             "name": "life_expectancy_at_birth.csv",
-            "size": 323521,
-            "hash": "a525672b5dfdad2331c8abb704aa210cbf4d91baf0e37c8296fe51656d396ab8"
+            "size": 321679,
+            "hash": "1078aa7e23adf0f961df033985aa4ee2328fbe32e15ef8af74a5466d9016a437"
         },
         {
             "type": "file",
             "name": "life_expectancy_at_birth.json",
-            "size": 1161668,
-            "hash": "44d1fac7d9969935962e6decbc4dea0eb7739910f0cfc144f0af000e896a3688"
+            "size": 1155538,
+            "hash": "1581425a7903dda00055e8e083349335e6fe058fcc426168f32076f86e2273da"
         },
         {
             "type": "file",
@@ -551,27 +551,27 @@
         },
         {
             "type": "file",
-            "name": "mean_years_of_schooling.csv",
-            "size": 1797,
-            "hash": "013432d6121310154ecc29065aec9e952c8c1f885457b46962a87721d78339ab"
+            "name": "mean_years_of_schooling.json",
+            "size": 609876,
+            "hash": "0ae0baa8b2c6823c0f6693a8e07b94d369539eb19f95807479e44a57a3be8e58"
         },
         {
             "type": "file",
-            "name": "mean_years_of_schooling.json",
-            "size": 5660,
-            "hash": "dc03627acee3b77f891cbefaad88e7f182fbcb862cbe59369f51c147bae4b442"
+            "name": "mean_years_of_schooling.csv",
+            "size": 158989,
+            "hash": "fadfbf3b9fde07497557085f0b8f68ba3051cd5f6261a1a167a4786578bb1ec9"
         },
         {
             "type": "file",
             "name": "median_age.csv",
-            "size": 4149,
-            "hash": "43490664cd512551d80be440c785d74006304dd20acadc15995af71ed162542c"
+            "size": 768441,
+            "hash": "c67b9834275cf6514e68db637ad55e15ec4b64e5e334a0000e0a738de4f50ca3"
         },
         {
             "type": "file",
             "name": "median_age.json",
-            "size": 14042,
-            "hash": "de276807c0479dff452e39fe3599df61868c358884348e84a58735c3bc1c2301"
+            "size": 2721870,
+            "hash": "88353fc96484908c56812f270e6c93b14246eb9303e711b58f3f827fc9b3f8f8"
         },
         {
             "type": "folder",
@@ -592,38 +592,38 @@
         {
             "type": "file",
             "name": "military_spending_sipri.csv",
-            "size": 2689,
-            "hash": "73d49f9e07de798d631e397283de625d90b3b456d9f318d3286914a41bc8ac83"
+            "size": 513339,
+            "hash": "e38a7ad910941f8946a8031b1e0a02905ae7885b167027b3c92df484de2e75d3"
         },
         {
             "type": "file",
             "name": "military_spending_sipri.json",
-            "size": 7490,
-            "hash": "2a1982cc57efff45e48b8915b64c3e02fd75792e51f8e5fb0a37d478a2d7326a"
-        },
-        {
-            "type": "file",
-            "name": "mobile_subscriptions_per_100_inhabitants.csv",
-            "size": 227847,
-            "hash": "44a551c471ed5c80adc7606fd83bf3e6f7c403210e23f19ff11b6f8d08edea2a"
+            "size": 1616672,
+            "hash": "4c15a65d94174e28b5955ab066c7439d11c0d2fe19a10e43f58dc4c7d9b4b9e4"
         },
         {
             "type": "file",
             "name": "mobile_subscriptions_per_100_inhabitants.json",
-            "size": 880002,
-            "hash": "ce138f74565e15c15ce0ec01b97578d5abc32e54c6e0eb7a2bf215a7300c9be3"
+            "size": 875577,
+            "hash": "5531f99fc266425109824e739574f69cc0fe2a31291bdce1562cca2c35630d82"
+        },
+        {
+            "type": "file",
+            "name": "mobile_subscriptions_per_100_inhabitants.csv",
+            "size": 226504,
+            "hash": "c94d49901d2f73c4f2a6ec5b98afa0ad787dda3f0766eb66ff9fb3d74594c001"
         },
         {
             "type": "file",
             "name": "number_of_armed_conflicts.csv",
-            "size": 1897,
-            "hash": "7160bb59949939abef0b30bae16101744084a3e5fae4114b7be4a486caf55966"
+            "size": 340081,
+            "hash": "a499a22f84a1584f634c21e5f29ed20b74ca7d6f29f776cf67c03b401f51a1b4"
         },
         {
             "type": "file",
             "name": "number_of_armed_conflicts.json",
-            "size": 6698,
-            "hash": "b208f8122ab418156f0500b43c62a369e8009f9a485ce5b958333053306bd752"
+            "size": 1309682,
+            "hash": "18738c4a00c192b8d2da3b2c625b7238472a5287930d6efa7c49e9dd8200d4cd"
         },
         {
             "type": "file",
@@ -640,14 +640,14 @@
         {
             "type": "file",
             "name": "old_age_dependency_ratio.csv",
-            "size": 4517,
-            "hash": "cb495a00d898fda4bf63cd2463b7bbbc3f87ffdc3d327702d034d78e02b3feaf"
+            "size": 846045,
+            "hash": "667e871b860191dbc7ec0339268261c3b076f1f17804d44a4ee86bc91c3a030d"
         },
         {
             "type": "file",
             "name": "old_age_dependency_ratio.json",
-            "size": 14410,
-            "hash": "9301ec1c3cab6735ad836c028e93619140be11c5cba332e9fe7d8f45166a127c"
+            "size": 2799474,
+            "hash": "0d933fec8a5380ee6ec3114f84fd6e267e4342efff2fccbf04132c92e4f0a154"
         },
         {
             "type": "file",
@@ -688,8 +688,8 @@
         {
             "type": "file",
             "name": "overall_ranking.json",
-            "size": 238446,
-            "hash": "747a4857f725cca636f68d5911aca3d52a9e6ebe37cce2c5ef2999134d7f657c"
+            "size": 264897,
+            "hash": "665c3e19238a568a4d1dd1f95f6a2321d74661d6e51a0cd9f8ff09e6d8770523"
         },
         {
             "type": "folder",
@@ -698,14 +698,14 @@
         {
             "type": "file",
             "name": "physicians_per_1_000_people.csv",
-            "size": 111125,
-            "hash": "3708cf2bc8da75669426f3c566c37613520430d735491302a2c4ba692482eb66"
+            "size": 111045,
+            "hash": "4f5647611873449913fed349f65b83504816263b57522b5383ef3eef585086d9"
         },
         {
             "type": "file",
             "name": "physicians_per_1_000_people.json",
-            "size": 451998,
-            "hash": "ae26dc10d5908ba3eba9e6f3f1eec4e01f314dbae4d6aab9f8a7065e45f6fbec"
+            "size": 451717,
+            "hash": "4306766cf71e2b25ba8d365354507b041a5263ebd50843313345f38490bf05d1"
         },
         {
             "type": "file",
@@ -722,26 +722,26 @@
         {
             "type": "file",
             "name": "population.csv",
-            "size": 337111,
-            "hash": "e874226c36a1214e4c32b4c8ed9b7aa446ebdd4cbf314471e2b6e2466f920b51"
+            "size": 335170,
+            "hash": "e54f05b779ee41495cb405cee953b398146c6d4495886108882eeaa7f39f34f0"
         },
         {
             "type": "file",
             "name": "population.json",
-            "size": 1188658,
-            "hash": "16ffd784c23f4795da7f126dc7fc8a29121a7404e397e4163fc0dddb3de0f6c9"
+            "size": 1182362,
+            "hash": "dd1a3e276b19b907488e9a9c208064a84b189598959cb74e34e9f0f6ed28e4b1"
         },
         {
             "type": "file",
             "name": "population_growth.csv",
-            "size": 422362,
-            "hash": "8f4b09ae81a2e42d7247d4d2f18ad7343de73266427890117304f77e6423b3e3"
+            "size": 419875,
+            "hash": "b1eeb73ca9902398663fbb96797ac5b3b1776ebf64d2c919b598215d01358604"
         },
         {
             "type": "file",
             "name": "population_growth.json",
-            "size": 1260643,
-            "hash": "0137612f7517a64d1ad98ed171f9e3eb9e156bf85482a23fb4d7804fb9e2d36e"
+            "size": 1253868,
+            "hash": "bb2f5f5fc4af82e07d3646da2c688fa4fbae81837200f9e4ac83150fa3c12604"
         },
         {
             "type": "file",
@@ -782,26 +782,26 @@
         {
             "type": "file",
             "name": "recycling_rate.csv",
-            "size": 120742,
-            "hash": "84864c6ea08f439411be74ff044cc3a7ae62fc6997de5e61dd90f1e8291d510c"
+            "size": 119959,
+            "hash": "0861ebe795605475786e693d6799654184f69af11b7f0407d63133015eb69ad1"
         },
         {
             "type": "file",
             "name": "recycling_rate.json",
-            "size": 486539,
-            "hash": "b88a8b97440e0e3e6b11b2cc5df7eee860ff72c3c1bedbf4fe0c4ec4731dc0d5"
+            "size": 483880,
+            "hash": "fd52ec383f67f616bd368f8e7d3f231c9fa69bd9acbc203b3df58374b56fe549"
         },
         {
             "type": "file",
             "name": "renewable_energy_share.csv",
-            "size": 130486,
-            "hash": "55ae887278d9bede973fde101dda86ab33b735f26ac2436267f80c113a0e22ec"
+            "size": 129628,
+            "hash": "dc49dfbf3104aea72d2a52be05efee5e3d78c15a6439aa5c679f3ba0fdfc9b4f"
         },
         {
             "type": "file",
             "name": "renewable_energy_share.json",
-            "size": 542982,
-            "hash": "4ee658167fa09936fb08e9e5217ba8feb9919f1127eca3ac31fa6b7ca445ba49"
+            "size": 539913,
+            "hash": "121a0603611ce5aa3d08fa6135d804b02348b8a7c0320206df22d19e485b1623"
         },
         {
             "type": "file",
@@ -819,7 +819,7 @@
             "type": "file",
             "name": "safe_haven_ranking.json",
             "size": 694,
-            "hash": "cf37085c868236d65eb812de7bf1411a16a89a16ba0c373b69233e77c4400ee0"
+            "hash": "baa09e8adf9eda477e3cfcea9f258df98982636d41de0c6bcfe3093502dce6f3"
         },
         {
             "type": "file",
@@ -848,14 +848,14 @@
         {
             "type": "file",
             "name": "urbanization_rate.csv",
-            "size": 295479,
-            "hash": "ba5770905607ff7575cbc4f89d7941cef0214fae7ca11cb1fa1e6202938ad319"
+            "size": 293659,
+            "hash": "71e83341aaf6f00a1de4bae74733f661e17231db2498d472f0e1e230ea33b578"
         },
         {
             "type": "file",
             "name": "urbanization_rate.json",
-            "size": 1144681,
-            "hash": "ef8328b26d88466ad854ab2171143675652efb5d6d8a4aadeb174510b6d6fb6b"
+            "size": 1138506,
+            "hash": "565ce37c8df1361173486bfa59bd6808c1d22d10ffe762303ea93da7df3b1276"
         },
         {
             "type": "file",
@@ -878,8 +878,8 @@
         {
             "type": "file",
             "name": "meta/countries.json",
-            "size": 26150,
-            "hash": "78497d482048e1700646c26e49af5ed7d7198cc5931a2c38c8cfd2e2c924658e"
+            "size": 26148,
+            "hash": "7b1493d5ef9c4db6f7c296084df5095f3f1f648e005f4d37fb85543cc3fbef3b"
         },
         {
             "type": "file",
