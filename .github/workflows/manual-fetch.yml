@@ -58,12 +58,15 @@ jobs:
             **/*.yml
             
       - name: Commit and push updated data to GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 👈 Token aktiv für Schreibrechte
         run: |
           git config --global user.name "RealityCheck Bot"
           git config --global user.email "bot@realitycheck"
           git add data/
           git commit -m "📊 Automated data update ($(date -u))" || echo "No changes to commit"
-          git push origin main
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+
             
       - name: 📧 Send notification email
         if: always()  # 🔥 läuft bei Erfolg ODER Fehler
