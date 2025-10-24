@@ -1,0 +1,469 @@
+{
+  "analysis_text": "- Overview\nGlobal averages point to steady human development with wide gaps. Basic services like immunization (80%) and drinking water (85%) are broadly available, but education (mean 5.5 years), digital access (31% using the internet), and environmental quality (EPI 43, PM2.5 at 27.5 µg/m³) lag in many places. Health outcomes improve unevenly (life expectancy around 62–64 years on average across years; infant mortality still high at 49/1,000). Inequality, conflict, inflation spikes, and high emissions remain key pressures. Variation is large (many outliers), so country paths differ sharply.\n\n- Highlights (positive developments)\n  - Basic health and services: Immunization coverage at ~80% and drinking water access at ~85% show strong global reach; hospital beds (4.2/1,000) and physicians (1.7/1,000) have expanded compared with low baselines in many low- and middle-income countries.\n  - Education and literacy: Adult literacy averages ~81%; education spending at 4.3% of GDP indicates commitment, especially among OECD/EU members.\n  - Energy transition seeds: Renewables’ average share is high at 33% (with very high shares in hydro-rich economies); electric vehicle stock is growing fast but concentrated.\n  - Demographic dividends: Many countries have young populations (median age 23), supporting potential growth if jobs and skills improve.\n  - Peaceful majorities: Most countries report few or no active armed conflicts in a given year; the global peace index average (~2.0 on a 1–5 scale) is moderate.\n\n- Lowlights (negative developments)\n  - Heavy disparities: Very high standard deviations and outliers in health (maternal mortality avg 231; infant 49), schooling, internet, and income (GDP per capita highly skewed) show deep divides.\n  - Environment under strain: PM2.5 exposure (27.5) far exceeds WHO guidelines; recycling is low (19% avg); environmental performance is middling (EPI 43).\n  - Climate pressure: CO2 emissions are extremely concentrated, with very large outliers, pointing to the G20 as the decisive group for reductions.\n  - Macroeconomic fragility: Inflation averages 13% with extreme spikes (hyperinflation outliers), and public debt is elevated (avg 56% of GDP; extreme outliers signal crises).\n  - Safety and mobility: Road traffic deaths are high (18 per 100k), especially in rapidly motorizing, lower-income countries.\n\n- Political & Regional Differences\n  - Democracies vs autocracies:\n    - Democracies (esp. OECD/EU/G7): Higher HDI (~0.68 global avg but top performers near 0.9), better press freedom, higher internet/broadband, more physicians/beds, lower infant/maternal mortality, higher recycling/EPI, and more stable inflation. Trade-offs: aging (higher old-age dependency), higher debt, slower population growth.\n    - Autocracies: Mixed outcomes. Resource-rich rentier states can show high income and infrastructure with lower tax-to-GDP from non-resource sectors, higher military spending shares, lower press freedom, and often low renewable shares (unless hydro-rich). Some developmental autocracies deliver strong infrastructure, EV and rail build-outs, but at the cost of civic freedoms.\n  - Economic blocs:\n    - EU/OECD: Leaders in education, health capacity, recycling, EPI, EV uptake; facing aging, higher debt, and energy security transitions.\n    - G7: Very high income and HDI; large historical emissions; accelerating decarbonization, but consumption emissions and aging remain challenges.\n    - G20: Dominates GDP and emissions; progress in renewables/EVs led by China and the EU; outcomes vary widely (from top-tier to fragile members).\n    - BRICS: China drives EVs, rail, and renewables; India shows gains in services access but struggles with air quality; inequality and environmental stress remain issues across several members.\n  - Regions:\n    - Sub-Saharan Africa: Lowest schooling, literacy, and internet; highest fertility and mortality; strong immunization in several countries; very low per-capita emissions but high PM2.5 from household fuels; conflict pockets.\n    - South Asia: Improvements in immunization and basic services; severe air pollution; high population growth and low female labor force in some countries.\n    - East Asia & Pacific: High literacy; rapid EV/renewables in China; aging and very low fertility in advanced democracies (Japan, Korea, Taiwan).\n    - Europe: Top EPI/recycling/press freedom; aging, fiscal pressure, and energy transition costs.\n    - Middle East & North Africa: Higher military spending shares; oil dependence; air pollution; internet often high but labor participation for women lower in many cases; conflicts in several states.\n    - Latin America: High urbanization and middle HDI; elevated inequality (Gini); periodic inflation spikes.\n\n- Interrelations & Global Dynamics\n  - Governance and welfare: Higher democracy and press freedom correlate with higher HDI, better health outcomes, and higher internet use. They also correlate with higher tax capacity and social spending.\n  - Education, gender, and fertility: More schooling—especially for girls—links with lower fertility (avg 3.9) and better maternal/infant outcomes; higher female labor force participation supports inclusive growth.\n  - Digital divide and productivity: Internet/broadband adoption tracks higher GDP per capita and happiness; fixed broadband remains low (10.6/100), so many rely on mobile networks. This shapes service-sector growth and innovation.\n  - Environment and income: Recycling and EPI scores are higher in richer democracies; several low-income hydro economies have very high renewable shares yet limited grids/industry.\n  - Emissions concentration: A small set of large economies dominates CO2 outliers; decarbonization in the G20 will determine global outcomes. EVs are scaling in China, the EU, and the US, but recycling and clean grids must catch up.\n  - Conflict, climate, and migration: Youth bulges plus weak job creation, climate shocks, and conflicts increase migration pressures toward OECD/EU/Gulf states. Fragile states show the worst health, education, and inflation results.\n\n- Forecast & Outlook\n  - Climate and energy: Expect faster renewable and EV adoption in G20, led by China and the EU; oil- and gas-dependent states face diversification pressure. Without faster recycling and grid decarbonization, gains will be slower than needed.\n  - Human capital: Continued progress in immunization and water; the key bottlenecks remain learning quality, digital access, and primary care systems to cut maternal/infant mortality.\n  - Demography: Aging will intensify in OECD, Europe, and parts of East Asia; Africa and parts of South Asia can gain a demographic dividend if jobs and skills scale.\n  - Macroeconomy: Inflation likely normalizes in many countries, but fragile states remain at risk of spikes; public debt sustainability will constrain social and climate investment unless tax capacity rises.\n  - Geopolitics and conflict: Military spending (avg 2.7% of GDP) could stay elevated; localized conflicts persist, with global spillovers in energy, food, and migration.\n  - Inequality: Without stronger taxation (avg 17% of GDP) and redistribution, inequality (Gini ~37) may stay high, limiting social cohesion and growth.\n\n- Short Global Conclusion\nThe world shows broad gains in basic services and elements of the energy transition, yet deep gaps persist across governance, income, and environment. Democracies—especially in OECD/EU—lead on human development, environment, and digital access but face aging and fiscal strains. Autocracies and resource-dependent economies show uneven results: some deliver infrastructure and growth, others face fragility, high inflation, and conflict. Climate change, inequality, and migration pressures will hinge on G20 actions, stronger state capacity, and inclusive, low‑carbon growth models. Positive exceptions include high-renewable and high-immunization performers across income levels; negative exceptions cluster in fragile, conflict‑affected, and hyperinflationary states.",
+  "summary": {
+    "overall_immunization_coverage": {
+      "count": 8010,
+      "avg": 80.424,
+      "std": 21.548,
+      "min": 1.0,
+      "max": 99.0,
+      "outlier_count": 153
+    },
+    "adult_literacy_rate": {
+      "count": 1084,
+      "avg": 81.026,
+      "std": 20.413,
+      "min": 8.82999992370605,
+      "max": 100.0,
+      "outlier_count": 10
+    },
+    "recycling_rate": {
+      "count": 5460,
+      "avg": 18.562,
+      "std": 12.421,
+      "min": 0.85,
+      "max": 67.1,
+      "outlier_count": 54
+    },
+    "fertility_rate": {
+      "count": 12448,
+      "avg": 3.911,
+      "std": 2.015,
+      "min": 0.721,
+      "max": 8.864,
+      "outlier_count": 0
+    },
+    "renewable_energy_share": {
+      "count": 6126,
+      "avg": 33.097,
+      "std": 30.328,
+      "min": 0.0,
+      "max": 97.5,
+      "outlier_count": 0
+    },
+    "mean_years_of_schooling": {
+      "count": 6672,
+      "avg": 5.497,
+      "std": 4.062,
+      "min": 0.01,
+      "max": 15.48,
+      "outlier_count": 0
+    },
+    "inform_resilience_index": {
+      "count": 1900,
+      "avg": 3.803,
+      "std": 1.692,
+      "min": 0.6,
+      "max": 8.8,
+      "outlier_count": 0
+    },
+    "access_to_basic_drinking_water": {
+      "count": 4338,
+      "avg": 85.379,
+      "std": 17.971,
+      "min": 18.6823027003951,
+      "max": 100.0,
+      "outlier_count": 29
+    },
+    "environmental_performance_index": {
+      "count": 179,
+      "avg": 43.138,
+      "std": 12.289,
+      "min": 18.9,
+      "max": 77.9,
+      "outlier_count": 0
+    },
+    "population": {
+      "count": 12645,
+      "avg": 27877363.152,
+      "std": 111116232.412,
+      "min": 4607.0,
+      "max": 1450935791.0,
+      "outlier_count": 195
+    },
+    "fixed_broadband_subscriptions_per_100_people": {
+      "count": 3909,
+      "avg": 10.576,
+      "std": 13.157,
+      "min": 0.0,
+      "max": 75.7497,
+      "outlier_count": 13
+    },
+    "employment_to_population_ratio": {
+      "count": 6043,
+      "avg": 56.515,
+      "std": 12.248,
+      "min": 19.886,
+      "max": 87.461,
+      "outlier_count": 0
+    },
+    "hospital_beds_per_1_000_people": {
+      "count": 4691,
+      "avg": 4.191,
+      "std": 3.411,
+      "min": 0.1,
+      "max": 40.3154563903809,
+      "outlier_count": 39
+    },
+    "global_co2_emissions": {
+      "count": 36182,
+      "avg": 95142631.393,
+      "std": 485482086.254,
+      "min": 0.0,
+      "max": 11902503000.0,
+      "outlier_count": 644
+    },
+    "military_expenditure_of_gdp": {
+      "count": 7708,
+      "avg": 2.713,
+      "std": 3.182,
+      "min": 1.715e-05,
+      "max": 117.34982320869,
+      "outlier_count": 143
+    },
+    "electric_vehicle_stock": {
+      "count": 752,
+      "avg": 448317.83,
+      "std": 2300155.697,
+      "min": 29.0,
+      "max": 34000000.0,
+      "outlier_count": 18
+    },
+    "olympic_medals_summer": {
+      "count": 881,
+      "avg": 5.706,
+      "std": 8.394,
+      "min": 1.0,
+      "max": 72.0,
+      "outlier_count": 24
+    },
+    "education_expenditure_of_gdp": {
+      "count": 4917,
+      "avg": 4.334,
+      "std": 2.202,
+      "min": 0.0,
+      "max": 66.9003067016602,
+      "outlier_count": 52
+    },
+    "homelessness_rate": {
+      "count": 32,
+      "avg": 24.221,
+      "std": 25.931,
+      "min": 1.2268863,
+      "max": 85.877396,
+      "outlier_count": 0
+    },
+    "military_spending_sipri": {
+      "count": 16396,
+      "avg": 11843371657.171,
+      "std": 67876363639.265,
+      "min": 0.0,
+      "max": 1031257100000.0,
+      "outlier_count": 236
+    },
+    "tax_revenue_of_gdp": {
+      "count": 4497,
+      "avg": 17.103,
+      "std": 14.869,
+      "min": 6.27918000416869e-05,
+      "max": 638.661722364669,
+      "outlier_count": 7
+    },
+    "gni_per_capita_current_us": {
+      "count": 9906,
+      "avg": 7785.509,
+      "std": 13960.645,
+      "min": 10.0,
+      "max": 121890.0,
+      "outlier_count": 274
+    },
+    "inflation_consumer_price_index": {
+      "count": 5035,
+      "avg": 13.187,
+      "std": 84.848,
+      "min": -16.8596910540644,
+      "max": 2947.73277248299,
+      "outlier_count": 28
+    },
+    "press_freedom_index": {
+      "count": 3184,
+      "avg": 34.254,
+      "std": 16.36,
+      "min": 6.38,
+      "max": 88.87,
+      "outlier_count": 36
+    },
+    "gdp_per_capita_current_us": {
+      "count": 10762,
+      "avg": 8514.322,
+      "std": 17939.962,
+      "min": 11.8013216738981,
+      "max": 256580.515122745,
+      "outlier_count": 211
+    },
+    "maternal_mortality_ratio": {
+      "count": 7488,
+      "avg": 230.727,
+      "std": 403.237,
+      "min": 1.0,
+      "max": 8045.0,
+      "outlier_count": 107
+    },
+    "health_expenditure_per_capita": {
+      "count": 4334,
+      "avg": 964.996,
+      "std": 1692.055,
+      "min": 4.47214985,
+      "max": 12434.43359375,
+      "outlier_count": 120
+    },
+    "internet_penetration_rate": {
+      "count": 5734,
+      "avg": 30.716,
+      "std": 32.352,
+      "min": 0.0,
+      "max": 100.0,
+      "outlier_count": 0
+    },
+    "human_development_index_hdi": {
+      "count": 11744,
+      "avg": 0.683,
+      "std": 0.164,
+      "min": 0.215,
+      "max": 0.972,
+      "outlier_count": 0
+    },
+    "public_debt_of_gdp": {
+      "count": 1595,
+      "avg": 56.53,
+      "std": 77.786,
+      "min": -1.17072566818484,
+      "max": 2003.94175624302,
+      "outlier_count": 4
+    },
+    "area": {
+      "count": 12100,
+      "avg": 713828.768,
+      "std": 2097998.834,
+      "min": 2.027,
+      "max": 17125190.0,
+      "outlier_count": 440
+    },
+    "unemployment_rate": {
+      "count": 6043,
+      "avg": 8.109,
+      "std": 6.169,
+      "min": 0.1,
+      "max": 38.8,
+      "outlier_count": 91
+    },
+    "global_peace_index": {
+      "count": 2904,
+      "avg": 2.025,
+      "std": 0.443,
+      "min": 1.091,
+      "max": 3.57,
+      "outlier_count": 15
+    },
+    "big_mac_index": {
+      "count": 1873,
+      "avg": 3.536,
+      "std": 2.279,
+      "min": 0.64,
+      "max": 85.967,
+      "outlier_count": 1
+    },
+    "female_labor_force_participation": {
+      "count": 6221,
+      "avg": 49.831,
+      "std": 16.277,
+      "min": 4.907,
+      "max": 90.451,
+      "outlier_count": 0
+    },
+    "democracy_index": {
+      "count": 5610,
+      "avg": 5.456,
+      "std": 2.244,
+      "min": 0.25,
+      "max": 9.93,
+      "outlier_count": 0
+    },
+    "population_growth": {
+      "count": 12448,
+      "avg": 1.735,
+      "std": 1.716,
+      "min": -27.4707864795381,
+      "max": 21.700342942038,
+      "outlier_count": 157
+    },
+    "co2_emissions": {
+      "count": 36182,
+      "avg": 95142631.393,
+      "std": 485482086.254,
+      "min": 0.0,
+      "max": 11902503000.0,
+      "outlier_count": 644
+    },
+    "olympic_medals_winter": {
+      "count": 321,
+      "avg": 2.526,
+      "std": 2.481,
+      "min": 1.0,
+      "max": 13.0,
+      "outlier_count": 13
+    },
+    "political_corruption_index": {
+      "count": 38306,
+      "avg": 0.433,
+      "std": 0.281,
+      "min": 0.002,
+      "max": 0.971,
+      "outlier_count": 0
+    },
+    "old_age_dependency_ratio": {
+      "count": 29600,
+      "avg": 10.525,
+      "std": 7.32,
+      "min": 1.0122105,
+      "max": 107.54717,
+      "outlier_count": 358
+    },
+    "extreme_poverty": {
+      "count": 2399,
+      "avg": 11.368,
+      "std": 19.318,
+      "min": 0.0,
+      "max": 97.0,
+      "outlier_count": 76
+    },
+    "life_expectancy": {
+      "count": 32120,
+      "avg": 61.891,
+      "std": 12.654,
+      "min": 10.9891,
+      "max": 86.3724,
+      "outlier_count": 58
+    },
+    "world_happiness_index": {
+      "count": 1147,
+      "avg": 5.544,
+      "std": 1.133,
+      "min": 1.281,
+      "max": 8.019,
+      "outlier_count": 1
+    },
+    "individuals_using_the_internet": {
+      "count": 5734,
+      "avg": 30.716,
+      "std": 32.352,
+      "min": 0.0,
+      "max": 100.0,
+      "outlier_count": 0
+    },
+    "number_of_armed_conflicts": {
+      "count": 14400,
+      "avg": 0.224,
+      "std": 0.686,
+      "min": 0.0,
+      "max": 7.0,
+      "outlier_count": 390
+    },
+    "railway_length": {
+      "count": 2109,
+      "avg": 10096.75,
+      "std": 24667.261,
+      "min": 239.2,
+      "max": 203875.0,
+      "outlier_count": 63
+    },
+    "median_age": {
+      "count": 29600,
+      "avg": 23.414,
+      "std": 7.974,
+      "min": 13.189,
+      "max": 62.417,
+      "outlier_count": 106
+    },
+    "mobile_subscriptions_per_100_inhabitants": {
+      "count": 9686,
+      "avg": 37.48,
+      "std": 51.441,
+      "min": 0.0,
+      "max": 220.412,
+      "outlier_count": 35
+    },
+    "physicians_per_1_000_people": {
+      "count": 5084,
+      "avg": 1.715,
+      "std": 1.451,
+      "min": 0.004,
+      "max": 9.429,
+      "outlier_count": 41
+    },
+    "infant_mortality_rate": {
+      "count": 11411,
+      "avg": 49.12,
+      "std": 45.537,
+      "min": 1.4,
+      "max": 472.5,
+      "outlier_count": 126
+    },
+    "gdp": {
+      "count": 10762,
+      "avg": 206317498497.546,
+      "std": 1135415603595.347,
+      "min": 2585955.87411804,
+      "max": 29184890000000.0,
+      "outlier_count": 161
+    },
+    "air_quality_pm2_5_exposure": {
+      "count": 5952,
+      "avg": 27.483,
+      "std": 16.575,
+      "min": 4.89518090216668,
+      "max": 107.144665250434,
+      "outlier_count": 85
+    },
+    "gini_index": {
+      "count": 2399,
+      "avg": 37.323,
+      "std": 8.721,
+      "min": 20.2,
+      "max": 71.1,
+      "outlier_count": 3
+    },
+    "urbanization_rate": {
+      "count": 12610,
+      "avg": 49.886,
+      "std": 24.896,
+      "min": 2.077,
+      "max": 100.0,
+      "outlier_count": 0
+    },
+    "age_dependency_ratio_total": {
+      "count": 29600,
+      "avg": 71.467,
+      "std": 20.318,
+      "min": 17.303247,
+      "max": 121.8094,
+      "outlier_count": 0
+    },
+    "life_expectancy_at_birth": {
+      "count": 12446,
+      "avg": 64.469,
+      "std": 11.341,
+      "min": 10.989,
+      "max": 86.372,
+      "outlier_count": 35
+    },
+    "road_traffic_deaths_per_100k_people": {
+      "count": 3649,
+      "avg": 17.924,
+      "std": 9.003,
+      "min": 0.0,
+      "max": 64.6,
+      "outlier_count": 3
+    }
+  }
+}
