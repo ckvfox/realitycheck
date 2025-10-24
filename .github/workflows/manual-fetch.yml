@@ -37,7 +37,7 @@ jobs:
           retention-days: 7
 
       - name: FTP Deploy /data to InfinityFree
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@main
         with:
           server:   ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
