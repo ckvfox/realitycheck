@@ -2,10 +2,8 @@
   "parts": [
     "all_kpis_part1.json.gz",
     "all_kpis_part2.json.gz",
-    "all_kpis_part3.json.gz",
-    "all_kpis_part4.json.gz",
-    "all_kpis_part5.json.gz"
+    "all_kpis_part3.json.gz"
   ],
-  "created": "2025-10-24T17:33:05.770148+00:00",
-  "count": 5
+  "created": "2025-10-24T18:03:44.037133+00:00",
+  "count": 3
 }
