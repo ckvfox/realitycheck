@@ -1,0 +1,1318 @@
+/* ============================================================
+   🌍 RealityCheck – Unified Global Styles (no dark mode)
+   ============================================================ */
+
+/* --- Farben & Maße --- */
+:root{
+  --steel-blue:#1a355e;        /* Header/Footer */
+  --link-muted:#d1d5db;        /* Nav-Links */
+  --link-hover:#ffffff;        /* Hover-Farbe in Header/Footer */
+  --content-bg:#f7f9fc;        /* heller Hintergrund */
+  --text:#111;                 /* Standard-Text */
+  --legend:#444;               /* Legendenfarbe */
+  --table-head:#333;           /* Tabellenkopf-Hintergrund */
+  --table-head-text:#fff;      /* Tabellenkopf-Text */
+  --row-alt:#f5f7fa;           /* Alternate row */
+  --row-base:#fff;             /* Base row */
+  --border:#e5e7eb;            /* feine Rahmen */
+  --accent:#0099ff;            /* bestehend */
+  --accent-light:#66bfff;
+  --max-width:1200px;
+  --radius:10px;
+}
+
+/* --- Grundlayout --- */
+html,body{
+  margin:0; height:100%;
+  font-family:"Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--content-bg);
+  color:var(--text);
+  display:flex; flex-direction:column;
+  box-sizing:border-box;
+}
+
+a{ color:#0b63c5; text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+/* --- Header & Navigation --- */
+header{
+  background:var(--steel-blue);
+  color:#fff;
+  padding:.75rem 1rem;
+  display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+header h1{ margin:0; font-size:1rem; font-weight:600; }
+nav{ display:flex; gap:1rem; align-items:center; }
+nav a{
+  color:var(--link-muted);
+  font-weight:500;
+}
+nav a:hover, nav a.active{
+  color:var(--link-hover);
+  font-weight:700;
+  text-decoration:underline;
+}
+
+/* --- Main/Frame --- */
+main{ flex:1; position:relative; display:flex; flex-direction:column; }
+#main-frame{
+  flex:1 1 auto; width:100%; height:calc(100vh - 140px);
+  border:none; background:transparent;
+}
+
+/* --- Footer --- */
+footer{
+  background:var(--steel-blue);
+  color:#fff; text-align:center;
+  padding:1rem;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:.95rem;
+}
+footer a{ color:#f0f3f8; }
+footer a:hover{ text-decoration:underline; font-weight:700; }
+
+/* --- Loader/Spinner (unverändert) --- */
+#frame-loader{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(0,0,0,.25); z-index:10; visibility:hidden;
+}
+#frame-loader.active{ visibility:visible; }
+.spinner{
+  width:48px; height:48px; border:5px solid #ccc; border-top-color:var(--accent);
+  border-radius:50%; animation:spin 1s linear infinite;
+}
+@keyframes spin{ to{ transform:rotate(360deg);} }
+
+/* --- Controls (zentriert) --- */
+section#controls{
+  margin:1.5rem auto; max-width:var(--max-width);
+  display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:.8rem;
+}
+section#controls select{
+  padding:.35rem .5rem; border-radius:6px; border:1px solid #bbb;
+  background:#fff; color:#000;
+}
+
+/* --- Tabellen (global, zentriert) --- */
+section#data-table{ padding:1rem 2vw; max-width:var(--max-width); margin:0 auto; }
+table{
+  width:100%; border-collapse:collapse; margin:1rem auto;
+  background:#fff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden;
+  box-shadow:0 0 10px rgba(0,0,0,.04);
+}
+th,td{ padding:.6rem .8rem; border-bottom:1px solid var(--border); text-align:left; }
+thead th{
+  background:var(--table-head); color:var(--table-head-text);
+  position:sticky; top:0; z-index:1;
+}
+tr:nth-child(odd){ background:var(--row-base); }
+tr:nth-child(even){ background:var(--row-alt); }
+
+/* Klicksortierung beibehalten */
+th[data-col]{ cursor:pointer; user-select:none; }
+th[data-col]:hover{ text-decoration:underline; }
+
+/* --- Hervorhebungen (bestehend lassen) --- */
+.group-row{ background:rgba(0,0,0,0.03) !important; font-style:italic; }
+.world-row{ background:rgba(0,128,255,0.10) !important; font-weight:600; }
+.highlight{
+  background:rgba(255,215,0,0.20) !important;
+  box-shadow:0 0 8px rgba(255,215,0,0.35);
+}
+tr.top10{ background:#d4af37 !important; color:#fff; }
+tr.flop10{ background:#ff6f61 !important; color:#fff; }
+
+/* --- Legenden, Meta, Hinweise --- */
+#legend{
+  max-width:var(--max-width); margin:1.5rem auto 2rem; padding:0 2vw;
+  font-size:.9em; color:var(--legend);
+}
+#data-meta{
+  text-align:center; font-size:.85em; color:#666; margin:-.5rem 0 1.5rem;
+}
+#data-meta a{ color:#0b63c5; }
+
+/* --- Chart & Map (unverändert visuell) --- */
+#kpi-chart{ width:100%; max-width:900px; height:400px; }
+#map{
+  width:100% !important; height:480px !important; min-height:400px !important;
+  background:#444 !important; border-radius:var(--radius); overflow:hidden;
+}
+
+/* --- World-Seite: Blöcke --- */
+#world-intro{
+  max-width:900px; margin:2rem auto 3rem; text-align:center; line-height:1.6; padding:0 1rem;
+}
+#world-kpis{ display:flex; flex-direction:column; align-items:center; gap:2rem; padding:0 1rem 3rem; }
+.graph-block{
+  width:100%; max-width:1000px; background:#fff; border:1px solid var(--border);
+  border-radius:var(--radius); padding:1rem 1rem 1.5rem; text-align:center;
+  box-shadow:0 0 10px rgba(0,0,0,.05);
+}
+.graph-block h3{ margin:.5rem 0 1rem; }
+.graph-block iframe{ border:0; border-radius:6px; width:100%; height:480px; }
+.graph-block p{ font-size:.95rem; color:#555; line-height:1.5; margin-top:.8rem; }
+
+/* --- Tracking-Tabelle im Footer --- */
+#tracking-wrapper{ margin:auto; text-align:center; margin-top:.5rem; }
+#tracking-table{
+  width:100%; max-width:420px; margin:0 auto; border-collapse:collapse; background:#fff;
+  border:1px solid var(--border); border-radius:8px; overflow:hidden;
+}
+#tracking-table th, #tracking-table td{ padding:.4rem .6rem; border-bottom:1px solid var(--border); text-align:left; }
+#tracking-table th{ background:var(--table-head); color:#fff; }
+/* --- Priority / Overall Page (Struktur, Zentrierung & responsiv – stabil & getrennt von Tabelle) --- */
+body.overall-page #priority-container {
+  display: flex;                  /* flexible Anordnung */
+  flex-wrap: wrap;                /* Umbruch der Boxen zulassen */
+  justify-content: center;        /* zentriert */
+  align-items: flex-start;        /* Startlinie oben */
+  gap: 1rem;                      /* gleichmäßiger Abstand */
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem auto;
+
+  /* 🩵 Stabilitäts- & Scroll-Fix */
+  overflow: visible !important;   /* keine innere Scrollbar */
+  height: auto !important;        /* dynamische Höhe */
+  min-height: 200px;              /* bleibt immer sichtbar */
+  box-sizing: border-box;
+  transition: min-height 0.3s ease;
+}
+
+body.overall-page .cluster-box {
+  flex: 1 1 320px;
+  max-width: 500px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: auto;
+  height: auto;
+  box-sizing: border-box;
+  transition: all .2s ease;
+}
+
+
+body.overall-page .kpi-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .4rem;
+}
+
+body.overall-page .kpi-row select {
+  flex: 0 0 140px;                /* feste Breite für Dropdowns */
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  background: #fff;
+  color: #000;
+  padding: 3px 6px;
+}
+
+/* --- Buttons zentriert unterhalb der Cluster --- */
+body.overall-page #priority-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  width: 100%;
+}
+
+body.overall-page #calc-btn,
+body.overall-page #reset-btn {
+  background: var(--steel-blue);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+body.overall-page #calc-btn:hover,
+body.overall-page #reset-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* --- Ergebnis-Tabelle (sauber getrennt vom Flex-Container) --- */
+body.overall-page #overall-table {
+  clear: both;
+  flex: none;                     /* nicht Teil des Flex-Flows */
+  align-self: stretch;
+  display: table;                 /* klassisches Tabellen-Layout */
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto 20px auto;    /* Abstand zu Boxen & Legende */
+  border-collapse: collapse;
+  background: #fff;
+  color: #000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,.1);
+  position: relative;
+  z-index: 2;
+}
+
+body.overall-page #overall-table th,
+body.overall-page #overall-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+/* --- Abstand sichern, falls Tabelle direkt nach Container folgt --- */
+body.overall-page #priority-container + #overall-table {
+  margin-top: 2.5rem;
+}
+
+/* --- Responsive Layout-Anpassungen --- */
+
+/* Zwischen 900 px und 600 px: 2 Spalten */
+@media (max-width: 900px) {
+  body.overall-page #priority-container {
+    gap: 0.8rem;
+    padding: 0 0.5rem;
+  }
+  body.overall-page .cluster-box {
+    flex: 1 1 45%;
+    max-width: 48%;
+  }
+}
+
+/* Unter 600 px: 1 Spalte */
+@media (max-width: 600px) {
+  body.overall-page #priority-container {
+    padding: 0 0.5rem;
+    gap: 0.8rem;
+  }
+  body.overall-page .cluster-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+/* --- Ergebnis-Tabelle (unterhalb der Cluster, kein Überlappen mehr) --- */
+body.overall-page #overall-table {
+  display: table;
+  width: 90%;
+  max-width: 900px;
+  margin: 3rem auto 2rem auto;
+  border-collapse: collapse;
+  background: #fff;
+  color: #000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,.1);
+
+  /* 🩵 Fix gegen Überlagerung */
+  position: static !important;     /* raus aus z-Kontext */
+  z-index: auto !important;        /* keine Ebene über Boxen */
+  clear: both;                     /* garantiert neuen Fluss unterhalb */
+  flex: none !important;           /* nie Flex-Item */
+}
+
+/* Sicherheitsnetz, falls Browser die Tabelle noch im Flex-Flow sieht */
+body.overall-page #priority-container #overall-table {
+  position: static !important;
+  flex: none !important;
+  display: table !important;
+  margin-top: 3rem !important;
+  z-index: auto !important;
+}
+
+/* schöner Abstand zwischen Buttons und Tabelle */
+body.overall-page #priority-buttons {
+  margin-bottom: 2.5rem;
+}
+
+
+/* --- Responsiv --- */
+@media (max-width:900px){
+  th,td{ font-size:.9rem; padding:.45rem; }
+  #kpi-chart, .graph-block iframe{ height:360px; }
+  #map{ height:360px !important; }
+}
+/* === Spinner (in countries.html neben KPI) === */
+#spinner {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 3px solid #ccc;
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  vertical-align: middle;
+  margin-left: 6px;
+  visibility: hidden; /* standardmäßig aus */
+}
+#spinner.active { visibility: visible; }
+
+/* /* === FINAL MAP + LAYOUT FIX (stable version) === */
+
+#map-section {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 1.5rem auto 3rem auto;
+  padding: 0;
+  text-align: center;
+}
+
+#map {
+  display: inline-block;
+  width: 90%;               /* stabil und mittig */
+  max-width: 900px;
+  height: 520px !important;
+  min-height: 480px !important;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: var(--radius);
+  z-index: 11 !important;
+}
+/* === Visitors table readability === */
+#tracking-table {
+  background: #f8f9fc;           /* heller Hintergrund */
+  color: #111;
+  border-radius: 8px;
+}
+#tracking-table th {
+  background: #333;
+  color: #fff;
+}
+#tracking-table td {
+  color: #111;
+}
+/* === Fullscreen Overlay Spinner (only for overall page) === */
+#overlay-spinner {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 9999;
+  font-size: 1rem;
+  color: #333;
+  backdrop-filter: blur(4px);
+}
+
+#overlay-spinner::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ccc;
+  border-top: 6px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+#overlay-spinner.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+/* === FINAL BALANCED FIX: Restore responsive multi-column clusters === */
+
+/* Verhindert globales Flex-Verhalten des Body nur für diese Seite */
+body.overall-page {
+  display: block !important;
+}
+
+/* Container mit eigenem Flex-Layout */
+body.overall-page #priority-container {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem auto;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* Cluster-Boxen */
+body.overall-page .cluster-box {
+  flex: 1 1 320px;          /* min. Breite */
+  max-width: 500px;         /* nicht zu breit */
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 360px;
+  box-sizing: border-box;
+}
+
+/* Tabelle & Buttons normal unterhalb */
+body.overall-page #priority-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem auto;
+}
+
+body.overall-page #overall-table {
+  display: table;
+  width: 90%;
+  max-width: 900px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  background: #fff;
+  color: #000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,.1);
+  clear: both;
+  position: static;
+  z-index: auto;
+}
+
+/* Responsive Verhalten */
+@media (max-width: 900px) {
+  body.overall-page .cluster-box {
+    flex: 1 1 45%;
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 600px) {
+  body.overall-page .cluster-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+/* === Data freshness colors for glossary === */
+.fresh { background:#e9ffe9 !important; }   /* grünlich */
+.warn  { background:#fff9e6 !important; }   /* gelblich */
+.stale { background:#ffeaea !important; }   /* rötlich */
+/* --- Filter-Layout für countries.html (wie Cluster-Logik) --- */
+
+body:not(.overall-page) #controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .8rem;
+  margin: 1.5rem auto;
+  max-width: var(--max-width);
+  padding: 0 1rem;
+}
+
+body:not(.overall-page) #controls label {
+  font-weight: 500;
+}
+
+body:not(.overall-page) #controls select {
+  flex: 0 0 160px;
+  padding: .4rem .6rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+}
+
+/* --- Mobile: Dropdowns untereinander --- */
+@media (max-width: 600px) {
+  body:not(.overall-page) #controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .6rem;
+  }
+  body:not(.overall-page) #controls select {
+    width: 100%;
+  }
+}
+
+
+/* === FIX: Compact responsive selects in countries === */
+body:not(.overall-page) #controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .8rem;
+  margin: 1.5rem auto;
+  max-width: var(--max-width);
+  padding: 0 1rem;
+}
+
+body:not(.overall-page) #controls select {
+  flex: 0 0 160px;      /* Desktop: feste Breite */
+  max-width: 45vw;      /* verhindert Riesengröße auf Mobile */
+  padding: .4rem .6rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+}
+
+@media (max-width: 700px) {
+  body:not(.overall-page) #controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+  body:not(.overall-page) #controls select {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* === Teamwork-Section === */
+.about-section {
+  text-align: center;         /* zentriert Text & Inline-Elemente */
+  margin: 2rem auto;
+  max-width: 1000px;          /* optional: verhindert, dass es zu breit wird */
+}
+
+.teamwork-figure {
+  display: flex;
+  justify-content: center;    /* horizontal zentrieren */
+  align-items: center;        /* vertikal ausrichten (optional) */
+  margin: 2rem auto;
+}
+
+.teamwork-figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;         /* leichte Rundung, optional */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* optional, etwas Tiefe */
+}
+/* === FIX: Label + Select gemeinsam umbrechen (Countries) === */
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+  max-width: var(--max-width);
+  padding: 0 1rem;
+}
+
+#controls .control-pair {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  flex: 0 1 auto;
+}
+
+#controls .control-pair select {
+  padding: .4rem .6rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+  flex: 0 0 160px;
+}
+
+/* Spinner darf sich über volle Breite zentrieren */
+#controls #overlay-spinner {
+  flex: 1 1 100%;
+  text-align: center;
+}
+
+/* === DATA GLOSSARY unified with other pages (scrolls as full page) === */
+#glossary-container {
+  max-width: var(--max-width);
+  margin: 1.5rem auto 2rem;
+  padding: 0 1rem;
+  overflow: visible !important;  /* erlaubt gesamtes Seiten-Scrollen */
+  box-sizing: border-box;
+}
+
+/* Tabelle bleibt normal scrollbar, nicht sticky */
+#glossary-container table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,.04);
+}
+
+/* Tabellenkopf nicht sticky → scrollt mit */
+#glossary-container thead th {
+  background: var(--table-head);
+  color: var(--table-head-text);
+  position: static;  /* vorher sticky */
+}
+
+
+/* Farben für Frische-Indikatoren (bereits global definiert, aber doppelt sicher) */
+.fresh { background:#e9ffe9 !important; }
+.warn  { background:#fff9e6 !important; }
+.stale { background:#ffeaea !important; }
+
+/* Outlier-Styles aus Inline-Definition in die globale Datei verschoben */
+td.outlier { background: rgba(255, 0, 0, 0.08); font-weight: 600; }
+td.warn    { background: rgba(255, 165, 0, 0.08); }
+.outlier-info {
+  font-size: 0.8rem;
+  color: #666;
+  display: block;
+  margin-top: 0.2rem;
+}
+#legend span.outlier {
+  background: rgba(255, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 0 0.3em;
+}
+
+/* --- Mobile Optimization --- */
+@media (max-width: 700px) {
+  #glossary-container {
+    padding: 0 .5rem;
+  }
+  #glossary-container table {
+    font-size: .9rem;
+  }
+  #glossary-container th,
+  #glossary-container td {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+
+/* --- Mobil: vertikal umbrechen --- */
+@media (max-width: 700px) {
+  #controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #controls .control-pair {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #controls .control-pair select {
+    width: 100%;
+  }
+}
+/* === FIX: Align World intro to left (consistent with Countries & Overall) === */
+body.world-page #world-intro {
+  text-align: left !important;
+  margin: 1rem auto 2rem !important;
+  padding: 0 1rem !important;
+}
+
+body.world-page #world-intro h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--steel-blue);
+}
+/* === FIX: enforce global font for world.html === */
+body.world-page, 
+body.world-page * {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif !important;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* === Header & Logo Optimierung === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--steel-blue, #163a64);
+  height: 80px;               /* volle Headerhöhe */
+  padding: 0 1.5rem;
+}
+
+.logo-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#site-logo {
+  height: 100%;                /* nutzt volle Headerhöhe */
+  width: auto;                 /* proportional skalieren */
+  object-fit: contain;         /* kein Beschneiden */
+  image-rendering: crisp-edges;
+}
+.leaflet-container {
+  touch-action: pan-x pan-y !important;
+}
+
+.map-container {
+  height: calc(100vh - 180px); /* Header/Footer abziehen */
+  overflow: hidden;
+}
+
+body, html {
+  overscroll-behavior: contain;
+}
+@media (max-width: 600px) {
+  section, p, h1, h2, h3 {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+canvas {
+  max-width: 100% !important;
+  height: auto !important;
+}
+.chart-selects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 280px;
+  margin: 0.5rem auto 1rem;
+}
+
+.chart-selects select {
+  width: 100%;
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/* === Chart Container (Final – identical to World, stable & responsive) === */
+#chart-container {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto 2.5rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#chart-container canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 420px !important;   /* verhindert endloses Wachstum */
+  display: block;
+}
+
+.chart-selects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 280px;
+  margin: 0.5rem auto 1rem;
+}
+
+.chart-selects label {
+  font-weight: 600;
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+}
+
+.chart-selects select {
+  width: 100%;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  #chart-container {
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+  #chart-container canvas {
+    max-height: 340px !important;
+  }
+}
+
+/* === KPI Description: zentriert & begrenzte Breite wie Intro === */
+#kpi-description {
+  max-width: 900px;              /* gleiche Breite wie Intro */
+  margin: 1rem auto 2rem;
+  padding: 0 1rem;
+  line-height: 1.6;
+  color: #444;
+  font-style: italic;
+  font-size: 0.95rem;
+  text-align: left;              /* optional: statt zentriert */
+}
+
+@media (max-width: 700px) {
+  #kpi-description {
+    padding: 0 .8rem;
+    font-size: 0.9rem;
+  }
+}
+#kpi-description {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  padding: 1rem 1.2rem;
+}
+/* ============================================================
+   🧠 Global Analysis Page Styles
+   ============================================================ */
+
+#analysis-section {
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  padding: 0 1.5rem;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+#analysis-section.loaded {
+  opacity: 1;
+}
+
+#analysis-content {
+  background: #fff;
+  color: #222;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* === Headings inside analysis content === */
+#analysis-content h1,
+#analysis-content h2,
+#analysis-content h3 {
+  color: var(--steel-blue);
+  font-weight: 700;
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+#analysis-content h1 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--steel-blue);
+  padding-bottom: .3rem;
+}
+
+#analysis-content h2 { font-size: 1.25rem; }
+
+#analysis-content h3 {
+  font-size: 1.1rem;
+  color: #0b2144;
+  font-style: italic;
+}
+
+#analysis-content ul {
+  margin: 0.5rem 0 1rem 1.4rem;
+}
+
+#analysis-content li {
+  margin-bottom: 0.4rem;
+}
+
+#analysis-content strong { color: #000; }
+#analysis-content em { color: #444; }
+#analysis-content pre { white-space: pre-wrap; }
+
+/* ============================================================
+   🌍 World Page Styles
+   ============================================================ */
+
+body.world-page {
+  overflow-x: hidden;
+}
+
+#world-kpis {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+#overlay-spinner {
+  text-align: center;
+  padding: 1rem;
+  color: #555;
+  font-style: italic;
+}
+/* ============================================================
+   🌍 Global Page Intro Style  (World-optimized visual baseline)
+   ============================================================ */
+
+.page-intro {
+  max-width: 900px;
+  margin: 1rem auto 2.5rem;
+  padding: 0 1rem;
+  line-height: 1.65;
+  text-align: left;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #222;
+}
+
+.page-intro h1 {
+  color: var(--steel-blue);
+  text-align: left;
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.page-intro p {
+  margin: 0.8rem 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+.page-intro p.note {
+  font-style: italic;
+  color: #555;
+  margin-top: 1.2rem;
+}
+/* === Responsive Logo Fix === */
+#logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Reduziere Logo-Größe und erhalte Menü auf kleinen Geräten */
+@media (max-width: 900px) {
+  #logo { height: 40px; }
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  #logo { height: 36px; margin-bottom: .4rem; }
+  nav { flex-wrap: wrap; justify-content: center; gap: .6rem; }
+}
+
+/* Optional: ganz kleines Symbol ab 480px */
+@media (max-width: 480px) {
+  #logo {
+    content: url("images/logo_symbol.png"); /* Weltkugel mit RC */
+    height: 32px;
+  }
+}
+/* ============================================================
+   💡 About Page Styles – same structure as Analysis
+   ============================================================ */
+
+#about-section {
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  padding: 0 1.5rem;
+  line-height: 1.6;
+}
+
+#about-content {
+  background: #fff;
+  color: #222;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+#about-content h2 {
+  color: var(--steel-blue);
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--steel-blue);
+  padding-bottom: .3rem;
+}
+/* ============================================================
+   ✨ About Page: Animation & Overshoot Styling
+   ============================================================ */
+
+#about-section {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+#about-section.loaded {
+  opacity: 1;
+}
+
+#overshoot-timer {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #222;
+}
+#overshoot-timer small {
+  display: block;
+  margin-top: 0.3rem;
+  color: #555;
+}
+.chart-source {
+  font-size: 0.85rem;
+  color: #555;
+  text-align: right;
+  margin-top: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-source a {
+  color: #0b63c5;
+  text-decoration: none;
+}
+
+.chart-source a:hover {
+  text-decoration: underline;
+}
+/* === FINAL MOBILE LOGO FIX (2025-10) === */
+
+/* Grundlayout: Logo immer sichtbar, egal ob Header umbricht */
+header {
+  position: relative;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+
+#logo {
+  display: block;
+  height: 52px;
+  width: auto;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+/* mittlere Geräte */
+@media (max-width: 900px) {
+  #logo {
+    height: 44px;
+    margin-bottom: .4rem;
+  }
+}
+
+/* kleine Geräte: Logo bleibt oben sichtbar über Menü */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding-top: .6rem;
+    padding-bottom: .4rem;
+  }
+  #logo {
+    height: 38px;
+    margin-bottom: .5rem;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .6rem;
+  }
+}
+
+/* Mini-Geräte: kleines Symbol (alternative Grafik erlaubt) */
+@media (max-width: 480px) {
+  #logo {
+    content: url("images/logo_symbol.png"); /* kleine Version mit transparentem Hintergrund */
+    height: 32px;
+  }
+}
+/* === iOS Safari Portrait Fix (Logo visibility) === */
+@supports (-webkit-touch-callout: none) {
+  #logo {
+    height: auto !important;
+    max-height: 48px !important;
+    margin: 0.4rem 0;
+  }
+  header {
+    min-height: 72px;
+  }
+}
+tr.fun-mode {
+  background-color: #fff7cc !important;
+}
+tr.safe-mode {
+  background-color: #d8f4e0 !important;
+}
+tr.fun-safe {
+  background: linear-gradient(90deg, #fff7cc 50%, #d8f4e0 50%) !important;
+}
+/* === Fun / Safe visual tweaks === */
+tr.fun-mode {
+  background-color: #fff9c4 !important;
+}
+tr.safe-mode {
+  background-color: #d5f5dd !important;
+}
+tr.fun-safe {
+  background: linear-gradient(90deg, #fff9c4 50%, #d5f5dd 50%) !important;
+}
+
+/* --- Icon styling next to country name --- */
+.mode-icons {
+  font-size: 1.1em;
+  margin-left: 6px;
+}
+
+/* --- Refined rank coloring --- */
+#overall-table tbody tr.top3 td:first-child {
+  font-weight: 700;
+  background-color: gold;
+  color: #000;
+}
+#overall-table tbody tr:nth-child(4),
+#overall-table tbody tr:nth-child(5),
+#overall-table tbody tr:nth-child(6),
+#overall-table tbody tr:nth-child(7) {
+  background-color: #e6ffe6 !important;
+}
+#overall-table tbody tr.flop10 {
+  background-color: #ffcccc !important;
+  color: #000;
+}
+/* === Fun / Safe Mode Switch === */
+#mode-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+}
+
+#mode-switch button {
+  background: var(--steel-blue);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.25s, transform 0.2s;
+}
+
+#mode-switch button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.15);
+}
+
+#mode-switch button.active {
+  background: var(--accent);
+}
+
+/* === Zeilenfarben für Fun/Safe/Combined === */
+tr.fun-mode {
+  background-color: #fff9c4 !important;
+}
+tr.safe-mode {
+  background-color: #d5f5dd !important;
+}
+tr.fun-safe {
+  background: linear-gradient(90deg, #fff9c4 50%, #d5f5dd 50%) !important;
+}
+.mode-icons {
+  font-size: 1.1em;
+  margin-left: 6px;
+}
+/* === Centered mode switch buttons === */
+#mode-switch{
+  display:flex;justify-content:center;align-items:center;gap:.75rem;margin:1.25rem auto 0;
+}
+#mode-switch button{
+  background:var(--steel-blue);color:#fff;border:0;border-radius:9999px;
+  padding:.5rem 1rem;font-weight:600;cursor:pointer;transition:transform .15s,filter .2s;
+}
+#mode-switch button:hover{ transform:translateY(-1px); filter:brightness(1.05); }
+#mode-switch button.active{ background:var(--accent); }
+
+/* Icons neben Land */
+.mode-icons{ margin-left:6px; font-size:1.1em; }
+
+/* Ensure good contrast for rank highlights */
+#overall-table tbody tr.top10 td{ color:var(--text); background:#e6ffe6; }   /* hellgrün, schwarze Schrift */
+#overall-table tbody tr.flop10 td{ color:var(--text); background:#ffe0e0; }   /* hellrot, schwarze Schrift */
+
+/* Kill any old row-coloring for fun/safe if present */
+tr.fun-mode, tr.safe-mode, tr.fun-safe { background: transparent !important; }
+/* === RealityCheck Header mit Logo + Text === */
+header {
+  background: var(--steel-blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  position: relative;
+  z-index: 1000;
+}
+
+#logo-link {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  text-decoration: none;
+}
+
+#logo {
+  height: 44px;
+  width: auto;
+  border-radius: 50%;
+  transition: transform .3s ease;
+}
+
+#logo:hover {
+  transform: scale(1.05);
+}
+
+#logo-text {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* === Mobile Verhalten === */
+@media (max-width: 700px) {
+  #logo-text {
+    display: none;  /* nur Kugel sichtbar */
+  }
+  header {
+    padding: .5rem .8rem;
+  }
+  #logo {
+    height: 40px;
+  }
+}

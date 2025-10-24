@@ -142,15 +142,9 @@
 <script src="scripts/script.js"></script>
 
 <script>
-  // --- DEBUG & INIT FIX FOR MAP --------------------------------------------
+  // --- DEBUG --------------------------------------------
   console.log("✅ countries.html loaded");
 
-  if (typeof init === "function") {
-    console.log("➡️ Calling init()");
-    init();
-  } else {
-    console.warn("⚠️ init() not found");
-  }
 
   window.addEventListener("load", () => {
     if (typeof updateChart === "function") {

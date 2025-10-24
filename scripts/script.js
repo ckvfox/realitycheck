@@ -198,6 +198,42 @@ function populateCountrySelects() {
       });
   });
 }
+// ============================================================
+// 🧭 RealityCheck Enhancement: Home Country → Chart Preselect
+// ============================================================
+
+let userOverrodeChart1 = false;
+
+function syncHomeToChart() {
+  const home = document.getElementById('countrySelect')?.value;
+  const c1   = document.getElementById('country1Select');
+  if (!home || !c1) return;
+
+  // Nur setzen, wenn der User #country1Select noch nicht manuell geändert hat
+  if (!userOverrodeChart1 || !c1.value) {
+    const opt = [...c1.options].find(o => o.value === home);
+    if (opt) c1.value = home;
+
+    // Optional sofort aktualisieren
+    if (typeof updateChart === 'function') updateChart();
+  }
+}
+
+// Wenn der User manuell das Vergleichsland ändert → nicht mehr automatisch überschreiben
+document.addEventListener('change', e => {
+  if (e.target?.id === 'country1Select') userOverrodeChart1 = true;
+});
+
+// Wenn das Home Country geändert wird → ggf. übernehmen
+document.addEventListener('change', e => {
+  if (e.target?.id === 'countrySelect') {
+    userOverrodeChart1 = false; // neue Home-Wahl darf wieder gespiegelt werden
+    syncHomeToChart();
+  }
+});
+
+// Beim Init einmalig spiegeln (nachdem alle Dropdowns gefüllt sind)
+setTimeout(syncHomeToChart, 0);
 
 /* ========= Relation ========= */
 function applyRelation(v, c, y) {

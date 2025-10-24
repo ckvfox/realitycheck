@@ -33,7 +33,8 @@ function renderChart(container, title, unit, data) {
   canvas.width = 800;
   canvas.height = 400;
   container.appendChild(canvas);
-// 🌈 Optionales Styling für bessere Optik
+
+  // 🌈 Optionales Styling für bessere Optik
   canvas.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
   canvas.style.borderRadius = "8px";
   canvas.style.marginBottom = "1rem";
@@ -89,17 +90,67 @@ function renderChart(container, title, unit, data) {
   });
 }
 
+/* ========= Einzel-Render-Funktion ========= */
+async function renderWorldKpi(container, kpi) {
+  const filename = kpi.filename;
+  const title = kpi.title || filename;
+  const desc = kpi.description || "";
+  const unit = kpi.unit || "";
+
+  const block = document.createElement("div");
+  block.className = "graph-block";
+  block.innerHTML = `<h3>${title}</h3>`;
+  container.appendChild(block);
+
+  const data = ALL_DATA[filename] || [];
+  if (!Array.isArray(data) || data.length === 0) {
+    block.innerHTML += `<p style="color:#666;font-style:italic;">No data available.</p>`;
+    return;
+  }
+
+  const worldData = getWorldSeries(data);
+  if (worldData.years.length === 0) {
+    block.innerHTML += `<p style="color:#666;font-style:italic;">No global values in dataset.</p>`;
+    return;
+  }
+
+  renderChart(block, title, unit, worldData);
+
+  if (desc) {
+    const p = document.createElement("p");
+    p.className = "kpi-desc";
+    p.textContent = desc;
+    block.appendChild(p);
+  }
+
+  // === Quelle hinzufügen ===
+  const source = document.createElement("p");
+  source.className = "chart-source";
+  if (kpi.source) {
+    source.innerHTML = `Source: <a href="${kpi.source}" target="_blank" rel="noopener">${new URL(kpi.source).hostname}</a>`;
+  } else {
+    source.textContent = "Source: RealityCheck Database (OWID, World Bank, UN, EPI)";
+  }
+  block.appendChild(source);
+}
+
 /* ========= Hauptlogik ========= */
 async function initWorldPage() {
   showSpinner(true, "Loading world data…");
   META = await loadJSON("data/meta/available_kpis.json");
   ALL_DATA = await loadAllKPIData();
 
-  const worldKpis = META
-    .filter(k => (k.world_kpi === "y" || k.world_kpi === "e") && k.filename)
-    .sort((a,b) => a.title.localeCompare(b.title));
+  // === Gruppierung nach Cluster ===
+  const grouped = {};
+  for (const k of META) {
+    if ((k.world_kpi === "y" || k.world_kpi === "e") && k.filename) {
+      const cl = k.cluster || "Other";
+      if (!grouped[cl]) grouped[cl] = [];
+      grouped[cl].push(k);
+    }
+  }
 
-  console.log(`🌐 Found ${worldKpis.length} global KPIs.`);
+  console.log(`🌐 Found ${Object.values(grouped).flat().length} global KPIs in ${Object.keys(grouped).length} clusters.`);
 
   const worldContainer = document.getElementById("world-kpis");
   if (!worldContainer) {
@@ -107,58 +158,26 @@ async function initWorldPage() {
     return;
   }
 
-  if (worldKpis.length === 0) {
+  if (Object.keys(grouped).length === 0) {
     showSpinner(false);
     worldContainer.innerHTML = `<p style="text-align:center;margin-top:2rem;">No global KPIs found.</p>`;
     return;
   }
 
-  const tasks = worldKpis.map(async (kpi) => {
-    const filename = kpi.filename;
-    const title = kpi.title || filename;
-    const desc = kpi.description || "";
-    const unit = kpi.unit || "";
+  // === Cluster-Abschnitte erzeugen ===
+  for (const [cluster, list] of Object.entries(grouped)) {
+    const clusterHeader = document.createElement("h2");
+    clusterHeader.textContent = cluster;
+    clusterHeader.style.margin = "2.5rem 0 1rem";
+    clusterHeader.style.color = "var(--steel-blue)";
+    clusterHeader.style.textAlign = "left";
+    worldContainer.appendChild(clusterHeader);
 
-    const block = document.createElement("div");
-    block.className = "graph-block";
-    block.innerHTML = `<h3>${title}</h3>`;
-    worldContainer.appendChild(block);
-
-    const data = ALL_DATA[filename] || [];
-    if (!Array.isArray(data) || data.length === 0) {
-      block.innerHTML += `<p style="color:#666;font-style:italic;">No data available.</p>`;
-      return;
+    list.sort((a,b) => a.title.localeCompare(b.title));
+    for (const kpi of list) {
+      await renderWorldKpi(worldContainer, kpi);
     }
-
-    const worldData = getWorldSeries(data);
-    if (worldData.years.length === 0) {
-      block.innerHTML += `<p style="color:#666;font-style:italic;">No global values in dataset.</p>`;
-      return;
-    }
-
-    renderChart(block, title, unit, worldData);
-
-    if (desc) {
-      const p = document.createElement("p");
-      p.className = "kpi-desc";
-      p.textContent = desc;
-      block.appendChild(p);
-    }
-		// === Quelle hinzufügen ===
-	const source = document.createElement("p");
-	source.className = "chart-source";
-	if (kpi.source) {
-	  // Wenn in available_kpis.json ein Source-Link steht → verwende ihn
-	  source.innerHTML = `Source: <a href="${kpi.source}" target="_blank" rel="noopener">${new URL(kpi.source).hostname}</a>`;
-	} else {
-	  // Fallback für KPIs ohne Link
-	  source.textContent = "Source: RealityCheck Database (OWID, World Bank, UN, EPI)";
-	}
-	block.appendChild(source);
-
-  });
-
-  await Promise.allSettled(tasks);
+  }
 
   showSpinner(false);
 }

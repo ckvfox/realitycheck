@@ -931,22 +931,22 @@
     "relevance": "normal",
     "actuality": "critical"
 },
-  {
-    "title": "Number of Recorded Natural Disasters",
-    "description": "The number of natural disaster events recorded per year, including floods, storms, earthquakes, droughts and wildfires (EM-DAT data).",
-    "unit": "events",
-    "relation": "",
-    "sort": "neutral",
-    "cluster": "Environment & Sustainability",
-    "source": "https://ourworldindata.org/grapher/number-of-recorded-natural-disasters",
-    "source_type": "owid",
-    "source_code": "number-of-recorded-natural-disasters.csv?useColumnShortNames=true",
-    "scale": "auto",
-    "world_kpi": "e",
-    "filename": "number_of_recorded_natural_disasters",
-    "relevance": "normal",
-    "actuality": "critical"
-  },
+{
+  "title": "Number of Recorded Natural Disasters",
+  "description": "Annual count of natural disaster events worldwide — including floods, storms, droughts, earthquakes, and wildfires — as recorded by EM-DAT. The increasing frequency highlights both improved reporting and the mounting exposure of human populations to climate extremes and environmental degradation.",
+  "unit": "events",
+  "relation": "",
+  "sort": "neutral",
+  "cluster": "Environment & Sustainability",
+  "source": "https://ourworldindata.org/grapher/number-of-natural-disaster-events",
+  "source_type": "owid",
+  "source_code": "number-of-natural-disaster-events.csv?v=1&csvType=filtered&useColumnShortNames=true&overlay=download-data",
+  "scale": "auto",
+  "world_kpi": "e",
+  "filename": "number_of_recorded_natural_disasters",
+  "relevance": "normal",
+  "actuality": "critical"
+},
   {
     "title": "Global CO₂ Emissions",
     "description": "Total annual carbon dioxide (CO₂) emissions from fossil fuels and industry. This indicator represents the sum of all national emissions, highlighting global climate impact and historical trends.",
@@ -981,7 +981,7 @@
   },
   {
     "title": "Global Temperature Anomaly",
-    "description": "Average global surface temperature anomaly relative to the pre-industrial baseline (1850–1900). Higher values indicate stronger warming.",
+    "description": "Average deviation of Earth's surface temperature relative to the pre-industrial baseline (1850–1900). It reflects the planet’s long-term warming trend driven by greenhouse gas emissions, with recent years consistently exceeding 1 °C above that baseline. The indicator shows how close we are to critical thresholds like +1.5 °C under the Paris Agreement.",
     "unit": "°C above pre-industrial baseline",
     "relation": "",
     "sort": "lower",

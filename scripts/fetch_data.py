@@ -141,13 +141,39 @@ def canonicalize_country(name: str, c_index, a_index, countries, pending, stats)
 # ======================================================================
 # 💾 Speicherung / Dummy
 # ======================================================================
-def save_records(kpi_id: str, records: List[Dict[str, Any]]):
+def save_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
+    """
+    Speichert Daten im Standardformat, entfernt automatisch alle Jahre < 1900
+    und protokolliert die Kürzungen im Fetch-Report.
+    """
     ensure_dirs()
-    write_json(os.path.join(DATA_DIR, f"{kpi_id}.json"), records)
+    before = len(records)
+
+    # 🕐 Pre-1900 Cut
+    trimmed = [
+        r for r in records
+        if isinstance(r.get("year"), (int, float, str))
+        and str(r.get("year")).strip() != ""
+        and int(float(r["year"])) >= 1900
+    ]
+    after = len(trimmed)
+
+    if before != after:
+        removed = before - after
+        log(f"[TRIM] {kpi_id}: removed {removed} records before 1900")
+        if stats is not None:
+            stats.setdefault("trimmed_records", 0)
+            stats["trimmed_records"] += removed
+            stats.setdefault("trimmed_kpis", set())
+            stats["trimmed_kpis"].add(kpi_id)
+
+    # --- Normal speichern ---
+    write_json(os.path.join(DATA_DIR, f"{kpi_id}.json"), trimmed)
     with open(os.path.join(DATA_DIR, f"{kpi_id}.csv"), "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["country","iso2","year","value"])
+        w = csv.DictWriter(f, fieldnames=["country", "iso2", "year", "value"])
         w.writeheader()
-        w.writerows(records)
+        w.writerows(trimmed)
+
 
 def keep_or_dummy(kpi_id: str, reason: str, stats):
     json_path = os.path.join(DATA_DIR, f"{kpi_id}.json")
@@ -157,9 +183,10 @@ def keep_or_dummy(kpi_id: str, reason: str, stats):
         return
     write_json(json_path, [])
     with open(csv_path, "w", encoding="utf-8", newline="") as f:
-        csv.DictWriter(f, fieldnames=["country","iso2","year","value"]).writeheader()
+        csv.DictWriter(f, fieldnames=["country", "iso2", "year", "value"]).writeheader()
     stats["dummies"] += 1
     log(f"[WARN] Dummy created for {kpi_id} ({reason})")
+
 
 # ======================================================================
 # 🔍 Update-Check & Source-Date Extraction
@@ -260,26 +287,81 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
 def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
     csv_name = meta.get("source_code") or meta.get("code") or f"{kpi_id}.csv"
     path = os.path.join(SOURCE_CSV_DIR, csv_name)
+
     if not os.path.exists(path):
         keep_or_dummy(kpi_id, f"CSV missing {csv_name}", stats)
         return
-    with open(path, "r", encoding="utf-8") as f:
+
+    # 🔧 BOM-kompatibel öffnen & Header normalisieren
+    with open(path, "r", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
+        if reader.fieldnames:
+            reader.fieldnames = [h.strip().lower() for h in reader.fieldnames]
+
         out = []
         for r in reader:
             cname = (r.get("country") or "").strip()
+            if not cname:
+                continue
+
             canon = canonicalize_country(cname, c_index, a_index, countries, pending, stats)
             if not canon:
                 continue
+
             year = r.get("year")
             val = safe_float(r.get("value"))
             if not year or val is None:
                 continue
+
             try:
                 y = int(float(year))
-            except:
+            except Exception:
                 continue
-            out.append({"country":canon,"iso2":r.get("iso2",""),"year":y,"value":val})
+
+            out.append({
+                "country": canon,
+                "iso2": r.get("iso2", ""),
+                "year": y,
+                "value": val
+            })
+
+    # 🧩 Sonderbehandlung: Natural Disaster-CSV automatisch normalisieren
+    if kpi_id == "number_of_recorded_natural_disasters" and not out:
+        try:
+            import pandas as pd
+            df = pd.read_csv(path)
+            df.columns = [c.strip() for c in df.columns]
+            if "Total disasters" in df.columns:
+                df["value"] = df["Total disasters"]
+            else:
+                numeric_cols = [
+                    c for c in df.columns
+                    if c not in ("Entity", "Code", "Year")
+                    and df[c].dtype != "object"
+                ]
+                df["value"] = df[numeric_cols].sum(axis=1)
+            df = df.rename(columns={"Entity": "country", "Year": "year"})
+            df = df[["country", "year", "value"]]
+
+            out = []
+            for _, r in df.iterrows():
+                cname = str(r["country"]).strip()
+                canon = canonicalize_country(cname, c_index, a_index, countries, pending, stats)
+                if not canon:
+                    continue
+                try:
+                    y = int(float(r["year"]))
+                    val = safe_float(r["value"])
+                    if val is None:
+                        continue
+                    out.append({"country": canon, "iso2": "", "year": y, "value": val})
+                except Exception:
+                    continue
+            if out:
+                log(f"🔄 Auto-normalized Natural Disasters CSV ({len(out)} rows)")
+        except Exception as e:
+            log(f"[WARN] Natural Disasters CSV normalization failed: {e}")
+
     if out:
         save_records(kpi_id, out)
         stats["csv_success"] += 1
@@ -287,6 +369,7 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
         log(f"[OK] CSV KPI saved: {kpi_id} ({len(out)} rows)")
     else:
         keep_or_dummy(kpi_id, f"CSV empty {csv_name}", stats)
+
         
 # ======================================================================
 # 🧭 OWID Fetch
@@ -338,10 +421,38 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
     out = []
 
     for row in reader:
-        cname = row.get("Entity", "")
+        cname = row.get("Entity", "").strip()
+
+        # --- 🔧 Spezialfall: globale Natural Disasters (All disasters) ---
+        if cname.lower() in ["all disasters", "all disasters (total)"]:
+            cname = "World"
+
         canon = canonicalize_country(cname, c_index, a_index, countries, pending, stats)
+
+        # 🔧 World-Fallback, falls Mapping leer
+        if not canon and cname.lower() == "world":
+            canon = "World"
+
         if not canon:
             continue
+
+        year = row.get("Year")
+        val = safe_float(row.get(var))
+        if val is None or not year:
+            continue
+
+        try:
+            y = int(float(year))
+        except Exception:
+            continue
+
+        out.append({
+            "country": canon,
+            "iso2": "OWID_WRL" if canon == "World" else row.get("Code", ""),
+            "year": y,
+            "value": val
+        })
+
 
         year = row.get("Year")
         val = safe_float(row.get(var))
@@ -612,13 +723,25 @@ def main():
         f"Dummies created:   {stats['dummies']}",
         f"Skipped (up-to-date): {stats['skipped']}",
         f"Errors:            {stats['errors']}",
+    ]
+
+    # ✂️ Neue Auswertung der Pre-1900-Kürzungen
+    if stats.get("trimmed_records", 0) > 0:
+        summary.append("")
+        summary.append(
+            f"Pre-1900 cuts:    {stats['trimmed_records']} rows in {len(stats.get('trimmed_kpis', []))} KPIs"
+        )
+
+    summary.extend([
         "=================================",
         "✅ Fetch completed successfully\n"
-    ]
+    ])
+
     report = "\n".join(summary)
     print(report)
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(report + "\n")
+
 
 # ======================================================================
 # ▶ Start

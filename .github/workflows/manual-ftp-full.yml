@@ -1,0 +1,32 @@
+name: 🧪 RealityCheck – Full FTP Deploy
+
+on:
+  workflow_dispatch: {}   # manuell per Button startbar
+
+jobs:
+  full_ftp_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Deploy entire repository to InfinityFree
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server:   ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir:  .                # <— gesamtes Repo
+          server-dir: ${{ secrets.FTP_ROOT_DIR }}   # z. B. /htdocs/
+          exclude: |
+            **/.git*
+            **/.github*
+            **/__pycache__/
+            **/*.py
+            **/*.md
+            **/*.yml
+            **/scripts/source_csv/**

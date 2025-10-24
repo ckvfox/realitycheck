@@ -1,0 +1,30 @@
+name: 🧪 RealityCheck – Incremental FTP Sync
+
+on:
+  workflow_dispatch: {}   # manuell starten
+
+jobs:
+  incremental_sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Incremental FTP sync to InfinityFree
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server:   ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir:  .                 # oder z. B. ./data
+          server-dir: ${{ secrets.FTP_ROOT_DIR }}
+          state-name: .ftp-deploy-sync-state.json  # speichert Prüfsummen
+          exclude: |
+            **/.git*
+            **/.github*
+            **/__pycache__/
+            **/*.py
+            **/*.md
+            **/*.yml
