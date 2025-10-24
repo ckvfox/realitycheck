@@ -303,3 +303,104 @@ Errors:            0
 [2025-10-24T18:50:36+00:00] ✅ overall_ranking.json written to /home/runner/work/realitycheck/realitycheck/data/overall_ranking.json
 [2025-10-24T18:50:36+00:00] ➡️ Starting fun/safe haven ranking generation ...
 [2025-10-24T18:50:48+00:00] ✅ Fun & Safe Haven rankings successfully generated.
+[2025-10-24T19:31:22Z] 🔐 Using OPENAI_API_KEY: found
+[2025-10-24T19:31:22Z] === Fetch started ===
+[2025-10-24T19:31:23Z] [OK] WorldBank KPI saved: area (12099 rows)
+[2025-10-24T19:31:24Z] [OK] WorldBank KPI saved: population (12645 rows)
+[2025-10-24T19:31:24Z] [OK] WorldBank KPI saved: population_growth (12448 rows)
+[2025-10-24T19:31:25Z] [OK] OWID KPI saved: median_age (29156 rows)
+[2025-10-24T19:31:26Z] [OK] WorldBank KPI saved: fertility_rate (12448 rows)
+[2025-10-24T19:31:26Z] [OK] WorldBank KPI saved: urbanization_rate (12610 rows)
+[2025-10-24T19:31:27Z] [OK] OWID KPI saved: democracy_index (5644 rows)
+[2025-10-24T19:31:28Z] [OK] OWID KPI saved: press_freedom_index (3184 rows)
+[2025-10-24T19:31:28Z] [OK] CSV KPI saved: world_happiness_index (1147 rows)
+[2025-10-24T19:31:28Z] [OK] WorldBank KPI saved: gdp (10809 rows)
+[2025-10-24T19:31:29Z] [OK] WorldBank KPI saved: gdp_per_capita_current_us (10809 rows)
+[2025-10-24T19:31:30Z] [OK] WorldBank KPI saved: gni_per_capita_current_us (9956 rows)
+[2025-10-24T19:31:30Z] [OK] WorldBank KPI saved: gini_index (2399 rows)
+[2025-10-24T19:31:31Z] [OK] WorldBank KPI saved: public_debt_of_gdp (1595 rows)
+[2025-10-24T19:31:32Z] [OK] WorldBank KPI saved: tax_revenue_of_gdp (4521 rows)
+[2025-10-24T19:31:32Z] [OK] WorldBank KPI saved: unemployment_rate (6077 rows)
+[2025-10-24T19:31:32Z] [OK] CSV KPI saved: big_mac_index (1873 rows)
+[2025-10-24T19:31:33Z] [OK] OWID KPI saved: human_development_index_hdi (11812 rows)
+[2025-10-24T19:31:33Z] [OK] WorldBank KPI saved: health_expenditure_per_capita (4357 rows)
+[2025-10-24T19:31:34Z] [OK] WorldBank KPI saved: physicians_per_1_000_people (5085 rows)
+[2025-10-24T19:31:35Z] [OK] WorldBank KPI saved: hospital_beds_per_1_000_people (4717 rows)
+[2025-10-24T19:31:35Z] [OK] WorldBank KPI saved: infant_mortality_rate (11445 rows)
+[2025-10-24T19:31:36Z] [OK] WorldBank KPI saved: maternal_mortality_ratio (7527 rows)
+[2025-10-24T19:31:37Z] [OK] WorldBank KPI saved: life_expectancy_at_birth (12446 rows)
+[2025-10-24T19:31:37Z] [OK] WorldBank KPI saved: adult_literacy_rate (1133 rows)
+[2025-10-24T19:31:38Z] [OK] OWID KPI saved: homelessness_rate (32 rows)
+[2025-10-24T19:31:39Z] [OK] OWID KPI saved: old_age_dependency_ratio (29156 rows)
+[2025-10-24T19:31:39Z] [OK] OWID KPI saved: age_dependency_ratio_total (29156 rows)
+[2025-10-24T19:31:40Z] [OK] WorldBank KPI saved: overall_immunization_coverage (8055 rows)
+[2025-10-24T19:31:41Z] [OK] WorldBank KPI saved: extreme_poverty (2442 rows)
+[2025-10-24T19:31:41Z] [OK] WorldBank KPI saved: access_to_basic_drinking_water (4339 rows)
+[2025-10-24T19:31:42Z] [TRIM] co2_emissions: removed 7542 records before 1900
+[2025-10-24T19:31:42Z] [OK] OWID KPI saved: co2_emissions (43904 rows)
+[2025-10-24T19:31:43Z] [OK] WorldBank KPI saved: air_quality_pm2_5_exposure (5983 rows)
+[2025-10-24T19:31:43Z] [OK] WorldBank KPI saved: renewable_energy_share (6124 rows)
+[2025-10-24T19:31:44Z] [OK] WorldBank KPI saved: internet_penetration_rate (5737 rows)
+[2025-10-24T19:31:45Z] [OK] WorldBank KPI saved: mobile_subscriptions_per_100_inhabitants (9688 rows)
+[2025-10-24T19:31:45Z] [OK] WorldBank KPI saved: railway_length (2109 rows)
+[2025-10-24T19:31:46Z] [OK] WorldBank KPI saved: inflation_consumer_price_index (5047 rows)
+[2025-10-24T19:31:46Z] [OK] WorldBank KPI saved: employment_to_population_ratio (6077 rows)
+[2025-10-24T19:31:47Z] [OK] WorldBank KPI saved: female_labor_force_participation (6256 rows)
+[2025-10-24T19:31:48Z] [TRIM] political_corruption_index: removed 14578 records before 1900
+[2025-10-24T19:31:48Z] [OK] OWID KPI saved: political_corruption_index (52884 rows)
+[2025-10-24T19:31:49Z] [TRIM] life_expectancy: removed 1712 records before 1900
+[2025-10-24T19:31:49Z] [OK] OWID KPI saved: life_expectancy (33392 rows)
+[2025-10-24T19:31:49Z] [OK] OWID KPI saved: military_spending_sipri (16468 rows)
+[2025-10-24T19:31:50Z] [OK] OWID KPI saved: number_of_armed_conflicts (14472 rows)
+[2025-10-24T19:31:50Z] [TRIM] global_conflict_deaths: removed 1000 records before 1900
+[2025-10-24T19:31:50Z] [OK] OWID KPI saved: global_conflict_deaths (1202 rows)
+[2025-10-24T19:31:51Z] [OK] WorldBank KPI saved: road_traffic_deaths_per_100k_people (3669 rows)
+[2025-10-24T19:31:52Z] [OK] WorldBank KPI saved: individuals_using_the_internet (5737 rows)
+[2025-10-24T19:31:52Z] [OK] WorldBank KPI saved: fixed_broadband_subscriptions_per_100_people (3915 rows)
+[2025-10-24T19:31:53Z] [OK] WorldBank KPI saved: education_expenditure_of_gdp (4936 rows)
+[2025-10-24T19:31:54Z] [TRIM] mean_years_of_schooling: removed 1308 records before 1900
+[2025-10-24T19:31:54Z] [OK] OWID KPI saved: mean_years_of_schooling (8038 rows)
+[2025-10-24T19:31:54Z] [OK] WorldBank KPI saved: military_expenditure_of_gdp (7772 rows)
+[2025-10-24T19:31:54Z] [OK] CSV KPI saved: recycling_rate (5432 rows)
+[2025-10-24T19:31:54Z] [OK] CSV KPI saved: environmental_performance_index (179 rows)
+[2025-10-24T19:31:54Z] [OK] CSV KPI saved: global_peace_index (2904 rows)
+[2025-10-24T19:31:54Z] [TRIM] olympic_medals_summer: removed 7 records before 1900
+[2025-10-24T19:31:54Z] [OK] CSV KPI saved: olympic_medals_summer (888 rows)
+[2025-10-24T19:31:54Z] [OK] CSV KPI saved: olympic_medals_winter (321 rows)
+[2025-10-24T19:31:55Z] [OK] OWID KPI saved: living_planet_index (102 rows)
+[2025-10-24T19:31:56Z] [OK] OWID KPI saved: electric_vehicle_stock (782 rows)
+[2025-10-24T19:31:56Z] [OK] OWID KPI saved: number_of_recorded_natural_disasters (248 rows)
+[2025-10-24T19:31:57Z] [TRIM] global_co2_emissions: removed 7542 records before 1900
+[2025-10-24T19:31:57Z] [OK] OWID KPI saved: global_co2_emissions (43904 rows)
+[2025-10-24T19:31:57Z] [WARN] Keeping old data for global_supply_chain_stress_index (CSV missing global_supply_chain_stress_index.csv)
+[2025-10-24T19:31:58Z] [TRIM] global_temperature_anomaly: removed 100 records before 1900
+[2025-10-24T19:31:58Z] [OK] OWID KPI saved: global_temperature_anomaly (352 rows)
+[2025-10-24T19:31:58Z] [OK] CSV KPI saved: inform_resilience_index (1900 rows)
+[2025-10-24T19:31:58Z] [WARN] Keeping old data for climate_risk_index.csv (CSV missing CRI)
+[2025-10-24T19:31:58Z] [INFO] fetch_status.json updated with 64 KPIs
+=== RealityCheck Fetch Report ===
+Countries loaded:   198
+KPIs processed:    64
+Saved records:     581544
+
+WorldBank KPIs:    35
+CSV KPIs:          8
+OWID KPIs:         19
+UNHCR KPIs:        0
+
+Mapping OK:        434993
+Mapping dropped:   110963
+Mapping pending:   4628
+
+Dummies created:   0
+Skipped (up-to-date): 0
+Errors:            0
+=================================
+✅ Fetch completed successfully
+
+[2025-10-24T19:31:58+00:00] === Overall Ranking Generation Started ===
+[2025-10-24T19:31:58+00:00] ✅ 39 KPIs considered for ranking
+[2025-10-24T19:31:58+00:00] ⚠️ No numeric values for climate_risk_index.csv
+[2025-10-24T19:31:58+00:00] ✅ overall_ranking.json written to /home/runner/work/realitycheck/realitycheck/data/overall_ranking.json
+[2025-10-24T19:31:58+00:00] ➡️ Starting fun/safe haven ranking generation ...
+[2025-10-24T19:32:09+00:00] ✅ Fun & Safe Haven rankings successfully generated.

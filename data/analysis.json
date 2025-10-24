@@ -1,5 +1,5 @@
 {
-  "analysis_text": "Overview\nThe KPIs show a world with moderate social progress but strong inequalities and wide dispersion. Basic services like immunization (avg 80%) and drinking water (85%) are broadly available, yet health outcomes (infant mortality avg 49 per 1,000; maternal mortality 231 per 100,000) and environmental quality (PM2.5 avg 27.5; EPI avg 43/100; recycling 19%) remain uneven. Economic capacity is highly skewed (GDP per capita avg $8.5k, very large variance), with marked digital, governance, and demographic divides.\n\nHighlights (positive developments)\n- Basic services: Broad access to drinking water (85%) and relatively high immunization coverage (80%) suggest public-health systems reach most people.\n- Education and literacy: Adult literacy averages 81%, supporting labor productivity and civic outcomes.\n- Energy transition footholds: Average renewable share is a notable 33% (with big dispersion), reflecting hydro-rich countries and rapid deployment in parts of the EU, China, and Latin America.\n- Human resilience and peace: INFORM resilience index is moderate (3.8/10 lower is better), and the Global Peace Index average (≈2.0 on a 1–5 scale) indicates most countries are not in high-intensity conflict at a given time.\n- Female economic role: Female labor force participation sits near 50%, with standout cases in Nordics and some African economies (e.g., Rwanda, Namibia).\n- Governance bright spots: Many OECD/EU democracies combine lower perceived corruption, stronger press freedom, better environmental performance, and higher happiness.\n\nLowlights (negative developments)\n- Health gaps: Infant (49/1,000) and maternal mortality (231/100k) averages are high and very dispersed, signaling persistent weaknesses in low-income and fragile states.\n- Environmental stress: PM2.5 exposure (27.5 μg/m3) far exceeds WHO guidelines; EPI average is middling (43/100), and recycling is low (18.6%).\n- Macro instability in fragile contexts: Inflation has high variance, with hyperinflation outliers; military spending (% GDP) shows extreme values in conflict states; public debt and tax-to-GDP have heavy tails, pointing to fiscal risks and data volatility.\n- Digital divide: Internet use averages 31% and fixed broadband 10.6 per 100 people, implying large access gaps (notably in Sub-Saharan Africa and parts of South Asia).\n- Inequality and poverty: Gini averages 37 (with very high country outliers), and extreme poverty still averages 11% across observations.\n- Road safety: Road deaths average 17.9 per 100k, with high variance—an often overlooked public-health burden.\n\nPolitical & Regional Differences\n- Democracies vs autocracies:\n  - Democracies (especially in OECD/EU): Better press freedom (lower scores), lower perceived corruption, higher tax effort, more social spending, and stronger outcomes on life expectancy, infant/maternal mortality, and happiness. Recycling and EPI scores are generally higher. Exceptions: the US has very high health spending but middling life expectancy; several democracies face elevated inequality.\n  - Autocracies: Often weaker press freedom and higher perceived corruption, but some deliver strong service outcomes (e.g., high immunization, infrastructure). Positive exceptions include Singapore (low corruption, high service quality, strong EPI relative to income) and, to a degree, Vietnam. Negative exceptions include conflict-ridden or highly resource-dependent autocracies with low renewables and high PM2.5.\n- Economic power groups:\n  - EU/OECD/G7: High internet/broadband, health capacity (beds, physicians), lower fertility, higher life expectancy, stronger EPI, and higher recycling. The EU leads on renewables growth; Nordics stand out on happiness and governance.\n  - G20: Mixed performance; large emitters (US, China, India) dominate the energy and air-quality picture. Inequality varies widely; social indicators improve with income but remain heterogeneous.\n  - BRICS: Strong economic scale but governance and environmental scores vary. China leads on renewable deployment and infrastructure but has faced PM2.5 challenges and low press freedom. India shows fast digitalization but lower tax-to-GDP, high PM2.5, and large health gaps; Brazil and South Africa struggle with inequality.\n- Resource dependency:\n  - Hydrocarbon exporters (Gulf, Russia): High GNI per capita (especially Gulf), high military outlays and low tax-to-GDP (where oil rents dominate), lower press freedom, low historical renewable shares (now rising), and high PM2.5 or dust exposure. Female labor participation tends to be lower.\n  - Hydro-rich smaller economies (Paraguay, Costa Rica, parts of SSA and the Caucasus): Very high renewable shares and relatively clean electricity, sometimes paired with mid-level incomes.\n\nInterrelations & Global Dynamics\n- Income and human development: Higher GDP/GNI per capita correlate with higher life expectancy, lower infant/maternal mortality, more hospital beds and physicians, and higher internet/broadband. Returns diminish at the highest incomes.\n- Governance and outcomes: Better press freedom and lower corruption align with higher happiness, better EPI scores, stronger tax revenue bases, and better health/education metrics. This cluster describes many EU/OECD democracies; Singapore is a notable non-democratic outlier performing well on service delivery and corruption control.\n- Demography and services: Higher fertility (avg 3.9) and population growth link to lower income, lower access to services, and higher infant/maternal mortality. Urbanization (≈50%) is associated with better service access but, in emerging economies, with worse air quality unless clean-energy and transport policies exist.\n- Energy and environment: The high average renewable share is bimodal—very high in hydro-reliant countries and increasingly high in richer regions investing in wind/solar—while coal-heavy and oil-dependent states lag. Low recycling and middling EPI show circular-economy gaps.\n- Conflict, inflation, and fiscal fragility: Countries with conflict tend to show higher military burden, inflation spikes, and weak tax bases, which hinder social spending and worsen poverty. These dynamics drive internal displacement and cross-border migration.\n- Digital divide and inequality: Low internet penetration and broadband access reinforce income and education gaps. Where connectivity rises quickly (China, India, Indonesia), productivity gains are visible but depend on complementary education and governance.\n\nForecast & Outlook\n- Climate and energy: Expect continued growth in renewables (EU, China, India, US IRA-type policies), but global PM2.5 will remain elevated without faster coal phase-out and clean transport. Recycling and circular-economy policies are likely to expand in the EU and OECD; diffusion to emerging economies will be uneven.\n- Inequality and poverty: Gradual reduction in extreme poverty continues where macro stability and governance improve, but inequality will stay high in parts of Latin America and Southern Africa without tax reform, quality education, and formal job creation.\n- Demographics and migration: Aging in OECD/East Asia and high fertility in parts of Africa will fuel labor shortages in rich economies and migration pressures from poorer, climate-stressed regions. Urbanization will proceed, demanding major investments in housing, water, and transport.\n- Health systems: Immunization coverage should stabilize or improve after recent disruptions, but maternal and infant mortality gaps will persist without targeted primary care, WASH, and women’s health investments. Fiscal stress could slow progress in some low- and middle-income countries.\n- Geopolitics and security: Elevated military spending in Europe and parts of Asia is likely to continue. Peace index averages may drift slightly worse in conflict zones, with spillovers to inflation and debt sustainability.\n\nShort Global Conclusion\nThe data portray a two-speed world: many democracies in the EU/OECD show strong, reinforcing outcomes in governance, health, environment, and digital access, while fragile and resource-dependent states face intertwined challenges of weak institutions, health gaps, pollution, and fiscal stress. Positive exceptions include hydro-rich and reform-oriented countries that convert limited incomes into clean power and better services; negative exceptions occur where high income coexists with environmental or governance weaknesses. Closing the gaps will require faster clean-energy transitions, stronger social compacts (tax capacity and service delivery), investment in women’s health and education, and managed migration policies that align demographic realities with labor needs. Data outliers warn of measurement issues, but the broad patterns are clear: institutions, diversification, and green industrial policies are the levers that separate the global leaders from the laggards.",
+  "analysis_text": "Overview\nThe data sketches a world with clear progress in basic services but deep gaps between and within regions. Averages are middling (HDI 0.683; life expectancy 61–64 years; literacy 81%; immunization 80%), and many indicators show very high dispersion, meaning large inequalities. Environmental pressure is persistent (PM2.5 exposure 27.5 µg/m3; low recycling; CO2 concentrated in a few economies). Institutions and politics matter: governance quality, openness, and fiscal capacity align with better social outcomes.\n\nHighlights (positive developments)\n- Human capital: Literacy (81%), mean years of schooling (5.5), and immunization (80%) suggest long‑term gains. Access to basic drinking water is high on average (85%).\n- Energy transition signals: Renewable energy share averages 33% with a wide range, showing strong progress in leaders (Nordics, Costa Rica, Uruguay, parts of EU and China’s hydro/solar/wind build‑out). Electric vehicle stock is rising fast, concentrated in China and Northern Europe.\n- Health capacity: Hospital beds (4.2 per 1,000) and rising physician density in many OECD/EU states underpin low maternal mortality in those places.\n- Social investment: Education spending (4.3% of GDP) broadly sits in the UNESCO recommended 4–6% range in many democracies.\n- Stability: The Global Peace Index average (2.03) indicates most countries are not in high‑intensity conflict in most years.\n\nLowlights (negative developments)\n- Health gaps: Infant mortality (49 per 1,000) and maternal mortality (231 per 100,000) remain high in many low‑income and fragile states. Average life expectancy (61–64) and HDI (0.683) point to major disparities.\n- Environment: Air quality is poor (PM2.5 27.5 µg/m3, well above WHO guidelines). Recycling is low globally (19%). CO2 emissions are highly concentrated and still large; environmental performance (EPI 43/100) is modest.\n- Inequality and inclusion: Gini averages 37, with very high inequality in parts of Latin America and Southern Africa. Female labor participation at ~50% masks wide gaps in MENA and South Asia.\n- Macroeconomic stress: Inflation shows extreme volatility (average 13% with hyperinflation outliers), and public debt is high on average (57% of GDP) with crisis outliers. Unemployment averages 8.1%.\n- Safety: Road traffic deaths are high (18 per 100k).\n- Governance pressures: Democracy Index (5.46) and Press Freedom scores indicate many hybrid or authoritarian regimes; corruption indicators remain a drag in several regions.\n\nPolitical & Regional Differences\n- Democracies vs autocracies\n  - Democracies/OECD/EU: Higher HDI, life expectancy, schooling, internet/broadband, EPI, and rule-of-law; better maternal/infant outcomes; higher tax revenue shares enable social spending. Aging and low fertility bring high old‑age dependency, and some struggle with slow growth and fiscal pressures.\n  - Autocracies/hybrid regimes: Lower press freedom and higher perceived corruption; often higher military spending share of GDP; weaker health and education outcomes on average. Some resource autocracies show high GNI per capita but underperform on inclusion and sustainability.\n- Economic blocs\n  - G7/EU/OECD: Strong on human development, water access, immunization, hospital beds, and recycling. Leaders in renewables and EVs (Nordics, Germany). Challenges: aging (high old‑age dependency), slower growth, and uneven climate progress (US has high health spend but relatively lower life expectancy).\n  - BRICS: Large absolute CO2, mixed EPI. China leads in EVs and renewables build‑out but faces air pollution and aging. India improves in immunization and electrification with high PM levels and lower per‑capita income. Brazil advances in renewables but has inequality. Russia has high military spending and governance constraints.\n  - G20: Very heterogeneous; accounts for most emissions and economic activity. Climate and fiscal choices here determine global outcomes.\n- Regional patterns\n  - Sub‑Saharan Africa: High fertility (global avg 3.9 hides regional 4–6), low median age, rising access to water and immunization but weak health capacity and internet; elevated infant/maternal mortality; fast urbanization; conflict pockets.\n  - South Asia: Strong gains in schooling and immunization; persistent air pollution; low female labor participation in some states.\n  - East/Southeast Asia: High infrastructure and internet; lower press freedom in several countries; environmental pressures improving but still significant.\n  - MENA: Resource wealth with high military spending in some; water access often high in GCC but female labor participation and press freedom are lower; conflict in several countries worsens outcomes.\n  - Latin America & Caribbean: High urbanization, decent schooling, but high inequality and crime; some renewable leaders (Uruguay, Costa Rica, Chile).\n  - Europe: High HDI, EPI, recycling; aging and fiscal/debt management challenges; war-related setbacks in Eastern Europe.\n\nInterrelations & Global Dynamics\n- Human development loop: Higher education (years of schooling), literacy, and internet use correlate with higher HDI and lower infant/maternal mortality. Immunization and water access directly reduce mortality and raise life expectancy.\n- Demography: Higher fertility is associated with lower schooling and income; aging societies (EU, Japan, Korea) face high old‑age dependency and need migration or productivity gains.\n- Economy and governance: Higher tax revenue shares in rule‑of‑law democracies enable health/education outlays and better outcomes. Corruption and weak press freedom correlate with lower social indicators and higher inflation volatility.\n- Climate‑economy trade‑offs: GDP growth and urbanization raise energy demand and CO2; clean energy and EV adoption help but current averages (33% renewable share; low recycling) are insufficient to bend emissions fast. Air pollution tracks industrialization density and coal use.\n- Security and spending: Conflict correlates with higher military outlays, lower social investment, and weaker outcomes; peace and regional integration (EU) align with better social and environmental results.\n- Migration: Flows are pushed by conflict, climate stress, and low HDI, and pulled by aging, labor shortages, and higher wages in OECD/EU/Gulf states.\n\nPositive and negative exceptions\n- Positive\n  - Nordics/EU leaders: High EPI, recycling, renewables, and social outcomes; Norway and Iceland lead on EV uptake.\n  - Costa Rica and Uruguay: Very high renewable electricity with strong social indicators and peace.\n  - Rwanda and Vietnam: Strong health/education improvements relative to income; high immunization.\n  - Chile: Improving institutions and clean power growth within Latin America.\n  - Botswana: Better governance among resource producers.\n  - China: Global leader in EV stock and renewables scale-up, though with air-quality and governance challenges.\n- Negative\n  - Fragility and conflict: Yemen, Syria, South Sudan, Afghanistan show very poor health and development outcomes.\n  - Hyperinflation/debt crises: Venezuela, Zimbabwe, Lebanon, Argentina feature in inflation/debt outliers.\n  - Inequality: South Africa and several Latin American states remain highly unequal.\n  - Health efficiency: The US combines very high health spending with lower life expectancy compared to OECD peers.\n  - High-emission resource states: Gulf producers have high CO2 per capita and low press freedom despite high GNI.\n\nForecast & Outlook\n- Human development: Continued gains in schooling, immunization, water access, and internet use; digital divides narrow but persist in rural SSA and fragile states.\n- Demography: Aging accelerates in OECD/East Asia; Africa remains young with fast population growth, requiring jobs, infrastructure, and education.\n- Economy: Inflation should normalize in most places, but debt vulnerabilities stay elevated; inequality remains sticky without policy action.\n- Climate: Renewables and EVs expand further, especially in G20, yet current trajectories are unlikely to meet 1.5–2°C without faster coal exit, efficiency, and grid/storage investment; air quality improves slowly in leaders but remains a major health risk in South/Southeast Asia.\n- Geopolitics: Great‑power competition sustains higher military spending and supply‑chain fragmentation; this may slow green tech diffusion but also drive regional manufacturing shifts.\n- Migration: Structural pressures (conflict, climate, aging) keep flows high; policy will focus on managed labor mobility and integration.\n\nShort Global Conclusion\nThe world is improving in basic health, education, and access to services, but progress is uneven and fragile. Democracies with strong institutions generally convert income into human development more effectively, while autocracies and fragile states face persistent health, governance, and inflation risks. Environmental performance lags the needs of the climate era; inequality and conflict continue to block inclusive growth. Faster clean‑energy deployment, stronger institutions, targeted social investment, and peacebuilding—particularly in the G20 and resource‑rich states—are pivotal to bend trends toward healthier, fairer, and greener outcomes.",
   "summary": {
     "overall_immunization_coverage": {
       "count": 8010,
@@ -10,35 +10,43 @@
       "outlier_count": 153
     },
     "adult_literacy_rate": {
-      "count": 1084,
-      "avg": 81.026,
-      "std": 20.413,
+      "count": 1083,
+      "avg": 81.009,
+      "std": 20.415,
       "min": 8.82999992370605,
       "max": 100.0,
       "outlier_count": 10
     },
     "recycling_rate": {
-      "count": 5460,
-      "avg": 18.562,
-      "std": 12.421,
+      "count": 5432,
+      "avg": 18.574,
+      "std": 12.452,
       "min": 0.85,
       "max": 67.1,
       "outlier_count": 54
     },
     "fertility_rate": {
-      "count": 12448,
-      "avg": 3.911,
-      "std": 2.015,
+      "count": 12384,
+      "avg": 3.919,
+      "std": 2.016,
       "min": 0.721,
       "max": 8.864,
       "outlier_count": 0
     },
     "renewable_energy_share": {
-      "count": 6126,
-      "avg": 33.097,
-      "std": 30.328,
+      "count": 6093,
+      "avg": 33.276,
+      "std": 30.311,
       "min": 0.0,
       "max": 97.5,
+      "outlier_count": 0
+    },
+    "mean_years_of_schooling": {
+      "count": 6672,
+      "avg": 5.497,
+      "std": 4.062,
+      "min": 0.01,
+      "max": 15.48,
       "outlier_count": 0
     },
     "inform_resilience_index": {
@@ -50,9 +58,9 @@
       "outlier_count": 0
     },
     "access_to_basic_drinking_water": {
-      "count": 4338,
-      "avg": 85.379,
-      "std": 17.971,
+      "count": 4316,
+      "avg": 85.326,
+      "std": 18.002,
       "min": 18.6823027003951,
       "max": 100.0,
       "outlier_count": 29
@@ -66,19 +74,19 @@
       "outlier_count": 0
     },
     "population": {
-      "count": 12645,
-      "avg": 27877363.152,
-      "std": 111116232.412,
+      "count": 12580,
+      "avg": 28021229.946,
+      "std": 111384854.326,
       "min": 4607.0,
       "max": 1450935791.0,
       "outlier_count": 195
     },
     "fixed_broadband_subscriptions_per_100_people": {
-      "count": 3909,
-      "avg": 10.576,
-      "std": 13.157,
+      "count": 3895,
+      "avg": 10.459,
+      "std": 13.018,
       "min": 0.0,
-      "max": 75.7497,
+      "max": 62.2147,
       "outlier_count": 13
     },
     "employment_to_population_ratio": {
@@ -90,12 +98,20 @@
       "outlier_count": 0
     },
     "hospital_beds_per_1_000_people": {
-      "count": 4691,
+      "count": 4690,
       "avg": 4.191,
-      "std": 3.411,
+      "std": 3.412,
       "min": 0.1,
       "max": 40.3154563903809,
       "outlier_count": 39
+    },
+    "global_co2_emissions": {
+      "count": 36114,
+      "avg": 95321585.338,
+      "std": 485921401.545,
+      "min": 0.0,
+      "max": 11902503000.0,
+      "outlier_count": 644
     },
     "military_expenditure_of_gdp": {
       "count": 7708,
@@ -104,6 +120,14 @@
       "min": 1.715e-05,
       "max": 117.34982320869,
       "outlier_count": 143
+    },
+    "electric_vehicle_stock": {
+      "count": 752,
+      "avg": 448317.83,
+      "std": 2300155.697,
+      "min": 29.0,
+      "max": 34000000.0,
+      "outlier_count": 18
     },
     "olympic_medals_summer": {
       "count": 881,
@@ -114,9 +138,9 @@
       "outlier_count": 24
     },
     "education_expenditure_of_gdp": {
-      "count": 4917,
-      "avg": 4.334,
-      "std": 2.202,
+      "count": 4911,
+      "avg": 4.338,
+      "std": 2.201,
       "min": 0.0,
       "max": 66.9003067016602,
       "outlier_count": 52
@@ -129,6 +153,14 @@
       "max": 85.877396,
       "outlier_count": 0
     },
+    "military_spending_sipri": {
+      "count": 16396,
+      "avg": 11843371657.171,
+      "std": 67876363639.265,
+      "min": 0.0,
+      "max": 1031257100000.0,
+      "outlier_count": 236
+    },
     "tax_revenue_of_gdp": {
       "count": 4497,
       "avg": 17.103,
@@ -138,17 +170,17 @@
       "outlier_count": 7
     },
     "gni_per_capita_current_us": {
-      "count": 9906,
-      "avg": 7785.509,
-      "std": 13960.645,
+      "count": 9893,
+      "avg": 7721.01,
+      "std": 13850.833,
       "min": 10.0,
       "max": 121890.0,
       "outlier_count": 274
     },
     "inflation_consumer_price_index": {
-      "count": 5035,
-      "avg": 13.187,
-      "std": 84.848,
+      "count": 5028,
+      "avg": 13.204,
+      "std": 84.906,
       "min": -16.8596910540644,
       "max": 2947.73277248299,
       "outlier_count": 28
@@ -162,12 +194,12 @@
       "outlier_count": 36
     },
     "gdp_per_capita_current_us": {
-      "count": 10762,
-      "avg": 8514.322,
-      "std": 17939.962,
+      "count": 10744,
+      "avg": 8389.787,
+      "std": 17692.759,
       "min": 11.8013216738981,
       "max": 256580.515122745,
-      "outlier_count": 211
+      "outlier_count": 195
     },
     "maternal_mortality_ratio": {
       "count": 7488,
@@ -186,11 +218,19 @@
       "outlier_count": 120
     },
     "internet_penetration_rate": {
-      "count": 5734,
-      "avg": 30.716,
-      "std": 32.352,
+      "count": 5717,
+      "avg": 30.658,
+      "std": 32.343,
       "min": 0.0,
       "max": 100.0,
+      "outlier_count": 0
+    },
+    "human_development_index_hdi": {
+      "count": 11744,
+      "avg": 0.683,
+      "std": 0.164,
+      "min": 0.215,
+      "max": 0.972,
       "outlier_count": 0
     },
     "public_debt_of_gdp": {
@@ -202,9 +242,9 @@
       "outlier_count": 4
     },
     "area": {
-      "count": 12100,
-      "avg": 713828.768,
-      "std": 2097998.834,
+      "count": 12037,
+      "avg": 717563.468,
+      "std": 2102845.114,
       "min": 2.027,
       "max": 17125190.0,
       "outlier_count": 440
@@ -241,13 +281,29 @@
       "max": 90.451,
       "outlier_count": 0
     },
+    "democracy_index": {
+      "count": 5610,
+      "avg": 5.456,
+      "std": 2.244,
+      "min": 0.25,
+      "max": 9.93,
+      "outlier_count": 0
+    },
     "population_growth": {
-      "count": 12448,
-      "avg": 1.735,
-      "std": 1.716,
+      "count": 12384,
+      "avg": 1.727,
+      "std": 1.715,
       "min": -27.4707864795381,
       "max": 21.700342942038,
-      "outlier_count": 157
+      "outlier_count": 159
+    },
+    "co2_emissions": {
+      "count": 36114,
+      "avg": 95321585.338,
+      "std": 485921401.545,
+      "min": 0.0,
+      "max": 11902503000.0,
+      "outlier_count": 644
     },
     "olympic_medals_winter": {
       "count": 321,
@@ -265,6 +321,14 @@
       "max": 0.971,
       "outlier_count": 0
     },
+    "old_age_dependency_ratio": {
+      "count": 29008,
+      "avg": 10.474,
+      "std": 7.354,
+      "min": 1.0122105,
+      "max": 107.54717,
+      "outlier_count": 352
+    },
     "extreme_poverty": {
       "count": 2399,
       "avg": 11.368,
@@ -272,6 +336,14 @@
       "min": 0.0,
       "max": 97.0,
       "outlier_count": 76
+    },
+    "life_expectancy": {
+      "count": 31528,
+      "avg": 61.776,
+      "std": 12.68,
+      "min": 10.9891,
+      "max": 86.3724,
+      "outlier_count": 50
     },
     "world_happiness_index": {
       "count": 1147,
@@ -282,12 +354,20 @@
       "outlier_count": 1
     },
     "individuals_using_the_internet": {
-      "count": 5734,
-      "avg": 30.716,
-      "std": 32.352,
+      "count": 5717,
+      "avg": 30.658,
+      "std": 32.343,
       "min": 0.0,
       "max": 100.0,
       "outlier_count": 0
+    },
+    "number_of_armed_conflicts": {
+      "count": 14400,
+      "avg": 0.224,
+      "std": 0.686,
+      "min": 0.0,
+      "max": 7.0,
+      "outlier_count": 390
     },
     "railway_length": {
       "count": 2109,
@@ -297,16 +377,24 @@
       "max": 203875.0,
       "outlier_count": 63
     },
+    "median_age": {
+      "count": 29008,
+      "avg": 23.324,
+      "std": 7.959,
+      "min": 13.189,
+      "max": 62.417,
+      "outlier_count": 110
+    },
     "mobile_subscriptions_per_100_inhabitants": {
-      "count": 9686,
-      "avg": 37.48,
-      "std": 51.441,
+      "count": 9640,
+      "avg": 37.332,
+      "std": 51.234,
       "min": 0.0,
       "max": 220.412,
-      "outlier_count": 35
+      "outlier_count": 32
     },
     "physicians_per_1_000_people": {
-      "count": 5084,
+      "count": 5081,
       "avg": 1.715,
       "std": 1.451,
       "min": 0.004,
@@ -322,9 +410,9 @@
       "outlier_count": 126
     },
     "gdp": {
-      "count": 10762,
-      "avg": 206317498497.546,
-      "std": 1135415603595.347,
+      "count": 10744,
+      "avg": 206654697554.862,
+      "std": 1136336404001.188,
       "min": 2585955.87411804,
       "max": 29184890000000.0,
       "outlier_count": 161
@@ -346,17 +434,25 @@
       "outlier_count": 3
     },
     "urbanization_rate": {
-      "count": 12610,
-      "avg": 49.886,
-      "std": 24.896,
+      "count": 12545,
+      "avg": 49.626,
+      "std": 24.697,
       "min": 2.077,
       "max": 100.0,
       "outlier_count": 0
     },
+    "age_dependency_ratio_total": {
+      "count": 29008,
+      "avg": 71.695,
+      "std": 20.211,
+      "min": 17.303247,
+      "max": 121.8094,
+      "outlier_count": 0
+    },
     "life_expectancy_at_birth": {
-      "count": 12446,
-      "avg": 64.469,
-      "std": 11.341,
+      "count": 12382,
+      "avg": 64.432,
+      "std": 11.352,
       "min": 10.989,
       "max": 86.372,
       "outlier_count": 35
