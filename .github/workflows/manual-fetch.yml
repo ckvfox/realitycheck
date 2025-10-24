@@ -55,8 +55,15 @@ jobs:
             **/.github*
             **/__pycache__/
             **/*.py
-            **/*.md
             **/*.yml
+            
+      - name: Commit and push updated data to GitHub
+        run: |
+          git config --global user.name "RealityCheck Bot"
+          git config --global user.email "bot@realitycheck"
+          git add data/
+          git commit -m "📊 Automated data update ($(date -u))" || echo "No changes to commit"
+          git push origin main
             
       - name: 📧 Send notification email
         if: always()  # 🔥 läuft bei Erfolg ODER Fehler
