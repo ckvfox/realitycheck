@@ -45,8 +45,13 @@ jobs:
           protocol: ftps
           local-dir:  data
           server-dir: ${{ secrets.FTP_DIR }}
+          state-name: .ftp-deploy-sync-state-data.json
+          log-level: verbose
           exclude: |
             **/.git*
             **/.github*
-            **/*.pyc
+            **/*.py
+            **/*.md
+            **/*.yml
             **/__pycache__/
+
