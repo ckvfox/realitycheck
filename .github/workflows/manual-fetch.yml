@@ -1,4 +1,4 @@
-name: 🧪 RealityCheck – Manual Fetch (Test)
+name: 🧪 RealityCheck – Manual Fetch (Data)
 
 on:
   workflow_dispatch: {}    # Nur manuell startbar
