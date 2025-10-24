@@ -42,12 +42,12 @@ jobs:
       - name: FTP Deploy /data to InfinityFree
         uses: SamKirkland/ftp-deploy-action@v4.3.5
         with:
-          server:   ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir:  ./data/
-          server-dir: ${{ secrets.FTP_DIR }}/ # 👈 ebenfalls Slash am Ende!
+          local-dir: data/
+          server-dir: ${{ secrets.FTP_DIR }}/data/
           state-name: .ftp-deploy-sync-state-data.json
           log-level: verbose
           exclude: |
