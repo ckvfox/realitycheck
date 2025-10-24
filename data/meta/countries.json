@@ -115,7 +115,7 @@
   },
   "Philippines": {
     "capital": "Manila",
-    "government": "Parliamentary Republic",
+    "government": "Presidential Republic",
     "lat": 14.6,
     "lon": 120.97
   },
@@ -683,12 +683,6 @@
     "lat": 13.1,
     "lon": -59.62
   },
-  "Falkland Islands": {
-    "capital": "Stanley",
-    "government": "Presidential Republic",
-    "lat": -51.7,
-    "lon": -57.85
-  },
   "Malawi": {
     "capital": "Lilongwe",
     "government": "Presidential Republic",
@@ -992,8 +986,8 @@
   "Grenada": {
     "capital": "St. George's",
     "government": "Constitutional Monarchy",
-    "lat": 32.38,
-    "lon": -64.68
+    "lat": 12.05,
+    "lon": –61.75
   },
   "Spain": {
     "capital": "Madrid",
@@ -1163,24 +1157,6 @@
     "lat": 47.13,
     "lon": 9.52
   },
-  "Cayman Islands": {
-    "capital": "George Town",
-    "government": "Presidential Republic",
-    "lat": 19.3,
-    "lon": -81.38
-  },
-  "Anguilla": {
-    "capital": "The Valley",
-    "government": "Presidential Republic",
-    "lat": 18.22,
-    "lon": -63.05
-  },
-  "Guadeloupe": {
-    "capital": "Basse-Terre",
-    "government": "Presidential Republic",
-    "lat": 16.03,
-    "lon": -61.73
-  },
   "Austria": {
     "capital": "Vienna",
     "government": "Federal Republic",
@@ -1192,12 +1168,6 @@
     "government": "Constitutional Monarchy",
     "lat": 52.3676,
     "lon": 4.9041
-  },
-  "Svalbard and Jan Mayen": {
-    "capital": "Longyearbyen",
-    "government": "Parliamentary Republic",
-    "lat": 78.22,
-    "lon": 15.63
   },
   "Singapore": {
     "capital": "Singapore",
