@@ -185,11 +185,69 @@ def run_global_analysis():
             json.dumps({"analysis_text": text, "summary": data_summary}, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
+        print("\n🧠 Generating individual KPI analyses…")
+        generate_kpi_analyses(client, data_dir)
         print("\n✅ Global B2-level analysis saved successfully!")
         print("📄 Markdown:", output_md.resolve())
         print("📊 JSON:", output_json.resolve())
     except Exception as e:
         print("❌ Error while saving:", e)
+
+# ============================================================
+# 🧠 KPI Smart Analysis Generator
+# ============================================================
+
+from datetime import date
+
+def generate_kpi_analyses(client, data_dir):
+    meta_path = data_dir / "available_kpis.json"
+    if not meta_path.exists():
+        print("⚠️ available_kpis.json not found.")
+        return {}
+
+    meta = json.load(open(meta_path, encoding="utf-8"))
+    if isinstance(meta, dict):
+        meta = list(meta.values())
+
+    result = {}
+    for entry in tqdm(meta, desc="🧩 Generating KPI summaries"):
+        fname = entry.get("filename")
+        if not fname:
+            continue
+        title = entry.get("title", "")
+        desc = entry.get("description", "")
+        cluster = entry.get("cluster", "")
+        unit = entry.get("unit", "")
+
+        prompt = f"""Write a concise (max 1000 characters) analysis for the KPI '{title}'.
+        Describe what it measures, highlight top and low performing countries,
+        mention noticeable trends or regional differences, possible correlations
+        with other indicators in the same cluster ({cluster}), and end with a short outlook.
+        Unit: {unit}. Description: {desc}.
+        """
+
+        try:
+            response = client.chat.completions.create(
+                model="gpt-5",
+                messages=[
+                    {"role": "system", "content": "You are a global data analyst writing compact KPI summaries."},
+                    {"role": "user", "content": prompt}
+                ],
+            )
+            summary = response.choices[0].message.content.strip()
+            result[fname] = {
+                "summary": summary,
+                "last_update": str(date.today())
+            }
+        except Exception as e:
+            print(f"⚠️ Error analyzing {fname}: {e}")
+            continue
+
+    out_path = data_dir / "kpi_analysis.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+    print(f"✅ KPI analyses saved to {out_path}")
+    return result
 
 
 if __name__ == "__main__":

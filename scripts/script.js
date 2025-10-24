@@ -688,6 +688,10 @@ function updateView() {
       // 🔹 KPI-Beschreibung
       const descEl = document.getElementById("kpi-description");
       if (descEl) descEl.textContent = meta.description || "";
+	  
+	  // 🧠 Ergänze Smart KPI Analysis
+	  updateKPIAnalysis(filename);
+
 
       // 🔹 Quelle & Datum
       const sourceLink = document.getElementById("data-source");
@@ -790,6 +794,27 @@ function highlightOnMap(country) {
     .openOn(map);
 }
 
+/* ============================================================
+   🧠 KPI Smart Analysis Loader
+   ============================================================ */
+async function updateKPIAnalysis(kpiFile) {
+  const box = document.getElementById("kpi-analysis");
+  if (!box) return;
+  box.innerHTML = "<em>Loading AI summary…</em>";
+
+  try {
+    const res = await fetch("data/kpi_analysis.json?nocache=" + Date.now());
+    if (!res.ok) throw new Error("File not found");
+    const all = await res.json();
+    const info = all[kpiFile];
+    box.innerHTML = info?.summary
+      ? `<strong>🧠 KPI Insights:</strong> ${info.summary}`
+      : "<em>No AI analysis available for this indicator.</em>";
+  } catch (e) {
+    console.warn("⚠️ KPI analysis load failed:", e);
+    box.innerHTML = "<em>No AI analysis available.</em>";
+  }
+}
 
 /* ========= Start ========= */
 document.addEventListener("DOMContentLoaded", () => init());
