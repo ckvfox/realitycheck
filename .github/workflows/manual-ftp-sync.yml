@@ -48,4 +48,4 @@ jobs:
           body: |
             🧭 The FTP sync finished with status: **${{ job.status }}**
             📅 Date: $(date -u)
-            🔗 View run details in GitHub Actions.
+            🔗 View the full log in GitHub Actions.

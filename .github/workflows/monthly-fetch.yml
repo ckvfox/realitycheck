@@ -3,7 +3,7 @@ name: 📅 RealityCheck – Monthly Automated Fetch
 on:
   schedule:
     - cron: "0 3 1 * *"     # Jeden 1. des Monats um 03:00 UTC (05:00 MEZ)
-  workflow_dispatch: {}      # Optional: manueller Start
+  workflow_dispatch: {}      # Optional: manuell startbar
 
 jobs:
   monthly_run:
@@ -38,7 +38,7 @@ jobs:
         with:
           name: fetch_log_monthly
           path: data/fetch_log.txt
-          retention-days: 14
+          retention-days: 7
 
       - name: FTP Deploy /data to InfinityFree
         uses: SamKirkland/ftp-deploy-action@v4.3.5
@@ -74,5 +74,5 @@ jobs:
           body: |
             🧭 The monthly RealityCheck workflow finished with status: **${{ job.status }}**
             📅 Date: $(date -u)
-            🔗 View full log in GitHub Actions.
+            🔗 View the full log in GitHub Actions.
           attachments: data/fetch_log.txt

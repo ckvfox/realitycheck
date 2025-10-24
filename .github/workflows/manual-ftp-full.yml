@@ -23,7 +23,7 @@ jobs:
           protocol: ftps
           local-dir: data/
           server-dir: ${{ secrets.FTP_DIR }}/data/
-          dangerous-clean-slate: true   # ⚠️ Löscht entfernte Dateien!
+          dangerous-clean-slate: true
           state-name: .ftp-deploy-sync-state-data.json
           log-level: verbose
           exclude: |
@@ -49,4 +49,4 @@ jobs:
           body: |
             🧭 The full FTP upload finished with status: **${{ job.status }}**
             📅 Date: $(date -u)
-            🔗 View run details in GitHub Actions.
+            🔗 View the full log in GitHub Actions.
