@@ -107,7 +107,7 @@ async function init() {
       el(id)?.addEventListener("change", updateChart)
     );
 
-    window.addEventListener("load", () => initMap());
+    if (!window.map) window.addEventListener("load", () => initMap());
   } catch (e) {
     console.error("RealityCheck init() failed:", e);
   }
@@ -775,6 +775,12 @@ function initMap() {
     }
   }, 150);
 }
+
+// === Make map initialization globally accessible ===
+window.initMap = initMap;
+window.updateMap = updateMap;
+window.highlightOnMap = highlightOnMap;
+
 
 function updateMap() {
   if (!map || !currentKpi) return;
