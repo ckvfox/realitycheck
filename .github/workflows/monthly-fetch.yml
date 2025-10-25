@@ -1,4 +1,4 @@
-name: 📅 RealityCheck – Monthly Automated Fetch
+name: 📅 RealityCheck – Monthly Automated Fetch (Safe)
 
 on:
   schedule:
@@ -13,34 +13,34 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
-      - name: Checkout repository
+      - name: 🧭 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ secrets.PYTHON_VERSION || '3.11' }}
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests pandas tqdm python-dotenv openai
           echo "✅ Dependencies installed"
 
-      - name: Run full RealityCheck pipeline
+      - name: 🚀 Run full RealityCheck pipeline
         run: |
           echo "===== RealityCheck Monthly Fetch Start $(date -u) ====="
           python ./scripts/fetch_data.py
           echo "===== Monthly Fetch End $(date -u) ====="
 
-      - name: Upload log artifact
+      - name: 💾 Upload log artifact
         uses: actions/upload-artifact@v4
         with:
           name: fetch_log_monthly
           path: data/fetch_log.txt
           retention-days: 7
 
-      - name: FTP Deploy /data to InfinityFree
+      - name: 🌍 FTP Deploy /data to InfinityFree (Safe)
         uses: SamKirkland/ftp-deploy-action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -49,8 +49,9 @@ jobs:
           protocol: ftps
           local-dir: data/
           server-dir: ${{ secrets.FTP_DIR }}/data/
-          state-name: .ftp-deploy-sync-state-data.json
+          state-name: .ftp-deploy-sync-data.json
           log-level: verbose
+          dangerous-clean-slate: false
           exclude: |
             **/.git*
             **/.github*
@@ -58,8 +59,9 @@ jobs:
             **/*.py
             **/*.md
             **/*.yml
+            **/pending/**
 
-      - name: Commit and push updated data to GitHub
+      - name: 🪶 Commit and push updated data to GitHub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -69,6 +71,11 @@ jobs:
           # Nur committen, wenn es Änderungen gibt
           git diff-index --quiet HEAD || git commit -m "📆 Monthly data update ($(date -u))"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+
+      # ✅ Neuer, stabiler Schritt: Datum in Variable schreiben
+      - name: 🕐 Get current UTC date
+        id: date
+        run: echo "date=$(date -u '+%a, %d %b %Y %H:%M:%S UTC')" >> $GITHUB_OUTPUT
 
       - name: 📧 Send notification email
         if: always()
@@ -84,7 +91,8 @@ jobs:
           secure: true
           body: |
             🧭 The monthly RealityCheck workflow finished with status: **${{ job.status }}**
-
-            📅 Date: $(date -u)
+            📅 Date: ${{ steps.date.outputs.date }}
             🔗 View the full log in GitHub Actions.
+
+            Repository: https://github.com/${{ github.repository }}
           attachments: data/fetch_log.txt

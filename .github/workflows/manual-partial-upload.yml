@@ -1,4 +1,4 @@
-name: 🎯 RealityCheck – Partial FTP Upload
+name: 🎯 RealityCheck – Partial FTP Upload (Safe Mode)
 
 on:
   workflow_dispatch:
@@ -16,10 +16,10 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
-      - name: Checkout repository
+      - name: 🧭 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare partial upload folder
+      - name: 📦 Prepare partial upload folder
         run: |
           echo "📦 Preparing partial upload..."
           mkdir -p partial_upload
@@ -33,9 +33,10 @@ jobs:
               echo "⚠️ File not found: $f"
             fi
           done
-          echo "Partial upload folder ready."
+          echo "✅ Partial upload folder ready:"
+          find partial_upload -type f
 
-      - name: FTP Upload selected files
+      - name: 🚀 Safe FTP Upload (incremental, no delete)
         uses: SamKirkland/ftp-deploy-action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -45,6 +46,11 @@ jobs:
           local-dir: partial_upload/
           server-dir: ${{ secrets.FTP_DIR }}/
           log-level: verbose
+
+          # ✅ Sicherheitseinstellungen
+          dangerous-clean-slate: false          # Niemals löschen!
+          state-name: .ftp-partial-sync.json    # Behält Sync-Status bei
+          timeout: 60000                        # 60s Timeout für InfinityFree
           exclude: |
             **/.git*
             **/.github*
@@ -52,8 +58,9 @@ jobs:
             **/*.py
             **/*.md
             **/*.yml
+            **/pending/**
+            **/node_modules/**
 
-      # 🕐 Neuer Schritt: aktuelles UTC-Datum erzeugen
       - name: 🕐 Get current UTC date
         id: date
         run: echo "date=$(date -u '+%a, %d %b %Y %H:%M:%S UTC')" >> $GITHUB_OUTPUT
@@ -74,4 +81,5 @@ jobs:
             🧭 The partial FTP upload finished with status: **${{ job.status }}**
             📅 Date: ${{ steps.date.outputs.date }}
             📂 Files: ${{ github.event.inputs.files }}
+            🚀 Upload mode: Safe incremental (no deletions)
             🔗 View the full log in GitHub Actions.
