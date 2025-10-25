@@ -381,7 +381,7 @@
     "world_kpi": "",
     "filename": "life_expectancy_at_birth",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "stable"
   },
   {
     "title": "Adult Literacy Rate",
@@ -642,8 +642,8 @@
   },
   {
     "title": "Political Corruption Index",
-    "description": "The Political Corruption Index measures the level of corruption in a country’s political system, with a score ranging from 0 to 100, where higher scores indicate lower levels of corruption. This indicator is important because high corruption can undermine democracy, hinder economic development, and erode public trust in government. Factors that influence this index include the effectiveness of law enforcement, the transparency of political processes, and the accountability of public officials. It is closely related to other metrics in the Society & Governance cluster, such as government integrity and public sector accountability, providing a comprehensive view of how corruption impacts overall governance.",
-    "unit": "index (0–100)",
+    "description": "The Political Corruption Index measures the level of corruption in a country’s political system, with a score ranging from 0 to 1, where higher scores indicate lower levels of corruption. This indicator is important because high corruption can undermine democracy, hinder economic development, and erode public trust in government. Factors that influence this index include the effectiveness of law enforcement, the transparency of political processes, and the accountability of public officials. It is closely related to other metrics in the Society & Governance cluster, such as government integrity and public sector accountability, providing a comprehensive view of how corruption impacts overall governance.",
+    "unit": "index (0–1)",
     "relation": "",
     "sort": "lower",
     "cluster": "Society & Governance",
@@ -656,22 +656,7 @@
     "relevance": "normal",
     "actuality": "normal"
   },
-  {
-    "title": "Life Expectancy",
-    "description": "**Life Expectancy** measures the average number of years a newborn is expected to live if current mortality rates continue. This indicator is important because it reflects the overall health and well-being of a population, influenced by factors such as healthcare access, nutrition, and living conditions. Higher life expectancy often indicates better social and economic conditions, while lower life expectancy can signal issues like disease, poverty, or conflict. It also connects with other metrics in the Society & Governance cluster, such as infant mortality rates and health expenditure, providing a fuller picture of a country's health status.",
-    "unit": "",
-    "relation": "",
-    "sort": "higher",
-    "cluster": "Society & Governance",
-    "source": "https://ourworldindata.org/grapher/life-expectancy",
-    "source_type": "owid",
-    "source_code": "life-expectancy.csv?csvType=full&useColumnShortNames=true",
-    "scale": "auto",
-    "world_kpi": "",
-    "filename": "life_expectancy",
-    "relevance": "none",
-    "actuality": "stable"
-  },
+
   {
     "title": "Military Spending (SIPRI)",
     "description": "Military spending measures the total amount of money that countries allocate to their armed forces, including salaries, equipment, and operations. This indicator is important because it reflects a nation's priorities regarding security and defense, influencing its ability to respond to threats and maintain stability. Factors that can affect military spending include political decisions, economic conditions, and regional conflicts. Additionally, military spending is often compared to other metrics like defense capabilities and security risks, helping to paint a broader picture of global security dynamics.",
@@ -734,22 +719,6 @@
     "world_kpi": "",
     "filename": "road_traffic_deaths_per_100k_people",
     "relevance": "none",
-    "actuality": "normal"
-  },
-  {
-    "title": "Individuals Using the Internet",
-    "description": "The share of individuals using the Internet (% of population) indicates digital inclusion and connectivity. It is an alternative to 5G coverage, showing how widespread internet access is in each country.",
-    "unit": "%",
-    "relation": "",
-    "sort": "higher",
-    "cluster": "Infrastructure & Technology",
-    "source": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
-    "source_type": "worldbank",
-    "source_code": "IT.NET.USER.ZS",
-    "scale": "%",
-    "world_kpi": "",
-    "filename": "individuals_using_the_internet",
-    "relevance": "normal",
     "actuality": "normal"
   },
   {
