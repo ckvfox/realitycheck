@@ -776,12 +776,6 @@ function initMap() {
   }, 150);
 }
 
-// === Make map initialization globally accessible ===
-window.initMap = initMap;
-window.updateMap = updateMap;
-window.highlightOnMap = highlightOnMap;
-
-
 function updateMap() {
   if (!map || !currentKpi) return;
   if (mapLayer) map.removeLayer(mapLayer);
@@ -802,6 +796,10 @@ function highlightOnMap(country) {
     .openOn(map);
 }
 
+// === Make map initialization globally accessible ===
+window.initMap = initMap;
+window.updateMap = updateMap;
+window.highlightOnMap = highlightOnMap;
 
 /* ========= Start ========= */
 document.addEventListener("DOMContentLoaded", () => init());
