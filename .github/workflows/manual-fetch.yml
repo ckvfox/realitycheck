@@ -8,38 +8,37 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Berlin
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}   # 👈 Diese Zeile NEU
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
-      - name: Checkout repository
+      - name: 🧭 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ secrets.PYTHON_VERSION || '3.11' }}
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # manuell benötigte Pakete für RealityCheck:
           pip install requests pandas tqdm python-dotenv openai
           echo "✅ Dependencies installed"
 
-      - name: Run full RealityCheck pipeline
+      - name: 🚀 Run full RealityCheck pipeline
         run: |
           echo "===== RealityCheck Manual Fetch Start $(date -u) ====="
           python ./scripts/fetch_data.py
           echo "===== Manual Fetch End $(date -u) ====="
 
-      - name: Upload log artifact
+      - name: 💾 Upload log artifact
         uses: actions/upload-artifact@v4
         with:
           name: fetch_log_manual
           path: data/fetch_log.txt
           retention-days: 7
 
-      - name: FTP Deploy /data to InfinityFree
+      - name: 🌍 FTP Deploy /data to InfinityFree (Safe)
         uses: SamKirkland/ftp-deploy-action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -50,41 +49,47 @@ jobs:
           server-dir: ${{ secrets.FTP_DIR }}/data/
           state-name: .ftp-deploy-sync-state-data.json
           log-level: verbose
+          dangerous-clean-slate: false       # 🚫 Kein Löschen!
           exclude: |
             **/.git*
             **/.github*
             **/__pycache__/
             **/*.py
             **/*.yml
-            
-      - name: Commit and push updated data to GitHub
+            **/pending/**
+
+      - name: 🪶 Commit and push updated data to GitHub
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 👈 Token aktiv für Schreibrechte
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "RealityCheck Bot"
           git config --global user.email "bot@realitycheck"
           git add data/
-          git commit -m "📊 Automated data update ($(date -u))" || echo "No changes to commit"
+          git commit -m "📊 Manual data update ($(date -u))" || echo "No changes to commit"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
 
-            
+      # ✅ Neuer Schritt: aktuelles UTC-Datum speichern
+      - name: 🕐 Get current UTC date
+        id: date
+        run: echo "date=$(date -u '+%a, %d %b %Y %H:%M:%S UTC')" >> $GITHUB_OUTPUT
+
       - name: 📧 Send notification email
-        if: always()  # 🔥 läuft bei Erfolg ODER Fehler
+        if: always()
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
           server_port: ${{ secrets.SMTP_PORT }}
           username: ${{ secrets.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "RealityCheck Run – ${{ job.status }}"
+          subject: "RealityCheck Manual Run – ${{ job.status }}"
           to: ${{ secrets.EMAIL_TO }}
           from: RealityCheck Bot <${{ secrets.SMTP_USERNAME }}>
           secure: true
           body: |
-            🧭 The RealityCheck workflow finished with status: **${{ job.status }}**
+            🧭 The RealityCheck manual fetch finished with status: **${{ job.status }}**
 
-            📅 Date: $(date -u)
+            📅 Date: ${{ steps.date.outputs.date }}
             🔗 View the full log in GitHub Actions.
+
+            Repository: https://github.com/${{ github.repository }}
           attachments: data/fetch_log.txt
-
-
