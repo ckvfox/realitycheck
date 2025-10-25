@@ -107,7 +107,6 @@ async function init() {
       el(id)?.addEventListener("change", updateChart)
     );
 
-    if (!window.map) window.addEventListener("load", () => initMap());
   } catch (e) {
     console.error("RealityCheck init() failed:", e);
   }

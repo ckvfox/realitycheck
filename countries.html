@@ -149,40 +149,37 @@
 <script>
   console.log("✅ countries.html loaded");
 
-  // --- Map initialisieren, sobald Seite vollständig geladen ---
-  window.addEventListener("load", () => {
-    function startMap(attempt = 1) {
-      const maxAttempts = 10;
+  // Map initialisieren, sobald DOM UND Leaflet fertig sind
+  window.addEventListener("DOMContentLoaded", () => {
+    let tries = 0;
+    const maxTries = 20;
+    const timer = setInterval(() => {
       const mapEl = document.getElementById("map");
-      const ready = mapEl && mapEl.offsetHeight > 0 && mapEl.offsetWidth > 0;
+      const leafletReady = typeof L !== "undefined";
+      const initReady = typeof initMap === "function";
+      const visible = mapEl && mapEl.offsetHeight > 0 && mapEl.offsetWidth > 0;
+      tries++;
 
-      console.log(`🗺️ Map init attempt ${attempt} (visible=${ready})`);
+      console.log(`🗺️ Map check ${tries}: leaflet=${leafletReady}, initMap=${initReady}, visible=${visible}`);
 
-      if (!ready && attempt < maxAttempts) {
-        return setTimeout(() => startMap(attempt + 1), 500);
+      if (leafletReady && initReady && visible) {
+        clearInterval(timer);
+        console.log("➡️ Starting initMap()");
+        initMap();
+        setTimeout(() => {
+          if (window.map?.invalidateSize) {
+            console.log("➡️ invalidateSize()");
+            window.map.invalidateSize();
+          }
+        }, 800);
+      } else if (tries >= maxTries) {
+        clearInterval(timer);
+        console.warn("⚠️ Map initialization failed after max retries");
       }
-
-      if (typeof initMap === "function") {
-        try {
-          console.log("➡️ initMap()");
-          initMap();
-          setTimeout(() => {
-            if (window.map && window.map.invalidateSize) {
-              console.log("➡️ invalidateSize()");
-              window.map.invalidateSize();
-            }
-          }, 800);
-        } catch (e) {
-          console.error("❌ initMap() failed", e);
-        }
-      } else {
-        console.warn("⚠️ initMap() not defined");
-      }
-    }
-
-    startMap(); // Karte starten
+    }, 250);
   });
 </script>
+
 
 
 </body>
