@@ -1316,40 +1316,32 @@ header {
     height: 40px;
   }
 }
-/* ============================================================
-   🧠 KPI Smart Analysis Box
-   ============================================================ */
+/* 🧠 KPI Analysis Box */
 #kpi-analysis {
   max-width: var(--max-width);
   margin: 1rem auto 1.5rem;
-  padding: 1rem 1.2rem;
-  background: #fff;
-  border: 1px solid var(--border);
+  padding: 1rem 1.25rem;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background: rgba(25, 50, 80, 0.08);
+  color: #222;  /* deutlich dunkler für Lesbarkeit */
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #222;  
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-#kpi-analysis strong {
-  color: var(--steel-blue);
-}
-
-}
-#kpi-analysis.loaded {
-  opacity: 1;
-}
-/* 🌟 Smooth fade-in for AI KPI analysis */
-#kpi-analysis {
-  max-width: var(--max-width);
-  margin: 1rem auto;
   opacity: 0;
   transition: opacity 0.8s ease;
-  font-style: italic;
-  color: var(--text-color, #eee);
 }
+
+/* Nach dem Laden sanft einblenden */
 #kpi-analysis.loaded {
   opacity: 1;
 }
+
+/* Kopfzeile / Emoji-Hervorhebung */
+#kpi-analysis strong {
+  display: block;
+  color: #b030b0; /* angenehmes Lila passend zur Brand */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-style: normal;
+}
+
+
