@@ -800,13 +800,15 @@ function highlightOnMap(country) {
 async function updateKPIAnalysis(kpiFile) {
   const box = document.getElementById("kpi-analysis");
   if (!box) return;
+
+  const key = kpiFile.replace(/\.json$/i, ""); // ← 🔧 fix
   box.innerHTML = "<em>Loading AI summary…</em>";
 
   try {
     const res = await fetch("data/kpi_analysis.json?nocache=" + Date.now());
     if (!res.ok) throw new Error("File not found");
     const all = await res.json();
-    const info = all[kpiFile];
+    const info = all[key];
     box.innerHTML = info?.summary
       ? `<strong>🧠 KPI Insights:</strong> ${info.summary}`
       : "<em>No AI analysis available for this indicator.</em>";
@@ -815,6 +817,7 @@ async function updateKPIAnalysis(kpiFile) {
     box.innerHTML = "<em>No AI analysis available.</em>";
   }
 }
+
 
 /* ========= Start ========= */
 document.addEventListener("DOMContentLoaded", () => init());
