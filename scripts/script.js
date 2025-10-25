@@ -690,7 +690,7 @@ function updateView() {
       if (descEl) descEl.textContent = meta.description || "";
 	  
 	  // 🧠 Ergänze Smart KPI Analysis
-	  updateKPIAnalysis(filename);
+	  updateKPIAnalysis(meta);
 
 
       // 🔹 Quelle & Datum
@@ -795,23 +795,39 @@ function highlightOnMap(country) {
 }
 
 /* ============================================================
-   🧠 KPI Smart Analysis Loader
+   🧠 KPI Smart Analysis Loader (RealityCheck Stable Version)
    ============================================================ */
-async function updateKPIAnalysis(kpiFile) {
+async function updateKPIAnalysis(meta) {
   const box = document.getElementById("kpi-analysis");
   if (!box) return;
 
-  const key = kpiFile.replace(/\.json$/i, ""); // ← 🔧 fix
-  box.innerHTML = "<em>Loading AI summary…</em>";
+  // Kein KPI oder falsches Objekt
+  if (!meta || !meta.filename) {
+    box.innerHTML = "<em>No KPI selected.</em>";
+    return;
+  }
+
+  // Falls KI-Analyse für diesen KPI deaktiviert ist
+  if (meta.smart_analysis === false) {
+    box.innerHTML = "<em>No AI analysis available for this KPI.</em>";
+    return;
+  }
+
+  // 🔧 Dateiendung entfernen, falls vorhanden
+  const key = meta.filename.replace(/\.json$/i, "");
+  box.innerHTML = "<em>Loading AI insights…</em>";
 
   try {
     const res = await fetch("data/kpi_analysis.json?nocache=" + Date.now());
     if (!res.ok) throw new Error("File not found");
     const all = await res.json();
+
     const info = all[key];
-    box.innerHTML = info?.summary
-      ? `<strong>🧠 KPI Insights:</strong> ${info.summary}`
-      : "<em>No AI analysis available for this indicator.</em>";
+    if (info && info.summary) {
+      box.innerHTML = `<strong>🧠 KPI Insights:</strong> ${info.summary}`;
+    } else {
+      box.innerHTML = "<em>No AI analysis available for this indicator.</em>";
+    }
   } catch (e) {
     console.warn("⚠️ KPI analysis load failed:", e);
     box.innerHTML = "<em>No AI analysis available.</em>";
