@@ -147,17 +147,10 @@
 <script src="scripts/script.js"></script>
 
 <script>
-  // --- DEBUG --------------------------------------------
   console.log("✅ countries.html loaded");
 
-
+  // --- Map initialisieren, sobald Seite vollständig geladen ---
   window.addEventListener("load", () => {
-    if (typeof updateChart === "function") {
-      console.log("➡️ updateChart()");
-      updateChart();
-    }
-
-    // --- Leaflet Map Retry Logic ---
     function startMap(attempt = 1) {
       const maxAttempts = 10;
       const mapEl = document.getElementById("map");
@@ -187,9 +180,10 @@
       }
     }
 
-    startMap();
+    startMap(); // Karte starten
   });
 </script>
+
 
 </body>
 </html>

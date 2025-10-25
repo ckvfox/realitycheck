@@ -1329,8 +1329,15 @@ header {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #222;
+  color: #222;  
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 #kpi-analysis strong {
   color: var(--steel-blue);
+}
+
+}
+#kpi-analysis.loaded {
+  opacity: 1;
 }

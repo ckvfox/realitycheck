@@ -690,7 +690,9 @@ function updateView() {
       if (descEl) descEl.textContent = meta.description || "";
 	  
 	  // 🧠 Ergänze Smart KPI Analysis
-	  updateKPIAnalysis(meta);
+	  // 🧠 Ergänze Smart KPI Analysis (aus core.js)
+	  renderKpiAnalysis(meta);
+
 
 
       // 🔹 Quelle & Datum
@@ -793,51 +795,6 @@ function highlightOnMap(country) {
     )
     .openOn(map);
 }
-
-/* ============================================================
-   🧠 KPI Smart Analysis Loader (Robust Version)
-   ============================================================ */
-async function updateKPIAnalysis(meta) {
-  const box = document.getElementById("kpi-analysis");
-  if (!box) {
-    console.warn("⚠️ #kpi-analysis element not found in DOM.");
-    return;
-  }
-
-  // Kein KPI gewählt
-  if (!meta || !meta.filename) {
-    box.innerHTML = "<em>No KPI selected.</em>";
-    return;
-  }
-
-  const key = meta.filename.replace(/\.json$/i, "");
-  console.log("🧠 Loading KPI analysis for:", key);
-
-  box.innerHTML = "<em>Loading AI insights…</em>";
-
-  try {
-    const res = await fetch("data/kpi_analysis.json?nocache=" + Date.now());
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const all = await res.json();
-
-    if (!all || typeof all !== "object") {
-      throw new Error("Invalid JSON structure in kpi_analysis.json");
-    }
-
-    const info = all[key];
-    if (info && info.summary) {
-      console.log("✅ Found KPI analysis:", key);
-      box.innerHTML = `<strong>🧠 KPI Insights:</strong> ${info.summary}`;
-    } else {
-      console.warn("⚠️ No summary found for", key);
-      box.innerHTML = "<em>No AI analysis available for this indicator.</em>";
-    }
-  } catch (e) {
-    console.error("❌ Failed to load KPI analysis:", e);
-    box.innerHTML = "<em>Error loading AI analysis.</em>";
-  }
-}
-
 
 
 /* ========= Start ========= */

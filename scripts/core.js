@@ -110,6 +110,87 @@ async function loadAllKPIData() {
   }
 }
 
+// ============================================================
+// 🧠 KPI Smart Analysis Loader (shared for all pages)
+// ============================================================
+
+const KPI_ANALYSIS_CACHE = {};
+
+async function loadKpiAnalysis(metaOrId) {
+  // --- Parameter normalisieren ---
+  let key = null;
+  if (!metaOrId) return "";
+  if (typeof metaOrId === "string") key = metaOrId.replace(/\.json$/i, "");
+  else if (metaOrId.filename) key = metaOrId.filename.replace(/\.json$/i, "");
+  else return "";
+
+  // --- Cache prüfen ---
+  if (KPI_ANALYSIS_CACHE[key]) return KPI_ANALYSIS_CACHE[key];
+
+  try {
+    const res = await fetch("data/kpi_analysis.json?nocache=" + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const all = await res.json();
+    const info = all[key];
+    const summary = info?.summary || "";
+    KPI_ANALYSIS_CACHE[key] = summary;
+    return summary;
+  } catch (err) {
+    console.warn("⚠️ loadKpiAnalysis failed:", err);
+    return "";
+  }
+}
+
+/**
+ * Rendert die KI-Analyse in ein Ziel-Element (z.B. #kpi-analysis)
+ * @param {Object|string} metaOrId - KPI-Metaobjekt oder Dateiname
+ * @param {string} targetId - Ziel-Element-ID
+ */
+async function renderKpiAnalysis(metaOrId, targetId = "kpi-analysis") {
+  // 🕐 Warte bis das Ziel-Element im DOM verfügbar ist (max 1 Sekunde)
+  let box = document.getElementById(targetId);
+  let retries = 0;
+  while (!box && retries < 10) {
+    await new Promise(r => setTimeout(r, 100));
+    box = document.getElementById(targetId);
+    retries++;
+  }
+
+  if (!box) {
+    console.warn(`⚠️ Target element #${targetId} not found (after waiting).`);
+    return;
+  }
+
+  // --- Fade-out vorbereiten ---
+  box.classList.remove("loaded");
+
+  // --- KPI-Schlüssel bestimmen ---
+  let key = null;
+  if (typeof metaOrId === "string") key = metaOrId.replace(/\.json$/i, "");
+  else if (metaOrId.filename) key = metaOrId.filename.replace(/\.json$/i, "");
+
+  if (!key) {
+    box.innerHTML = "<em>No KPI selected.</em>";
+    setTimeout(() => box.classList.add("loaded"), 50);
+    return;
+  }
+
+  // --- Anzeige aktualisieren ---
+  box.innerHTML = "<em>Loading AI insights…</em>";
+  const summary = await loadKpiAnalysis(key);
+
+  // --- Ergebnis einfügen + Fade-in aktivieren ---
+  if (summary) {
+    box.innerHTML = `<strong>🧠 KPI Insights:</strong> ${summary}`;
+  } else {
+    box.innerHTML = "<em>No AI analysis available for this indicator.</em>";
+  }
+
+  // ✨ leicht verzögert aktivieren für sanftes Einblenden
+  setTimeout(() => box.classList.add("loaded"), 50);
+}
+
+
 
 
 // === Expose globally for non-module pages ===
@@ -120,3 +201,5 @@ window.resolveCountryName = resolveCountryName;
 window.calculateGroupValues = calculateGroupValues;
 window.rcLog = rcLog;
 window.loadAllKPIData = loadAllKPIData;
+window.loadKpiAnalysis = loadKpiAnalysis;
+window.renderKpiAnalysis = renderKpiAnalysis;
