@@ -1,81 +1,42 @@
 {
-  "EU": {
-    "title": "European Union",
-    "members": [
-      "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic",
-      "Denmark", "Estonia", "Finland", "France", "Germany", "Greece",
-      "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg",
-      "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia",
-      "Slovenia", "Spain", "Sweden"
-    ]
+  "AfricanUnion": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/African_Union\" target=\"_blank\" rel=\"noopener\">African Union</a>",
+    "members": [ "Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cape Verde", "Cameroon", "Central African Republic", "Chad", "Comoros", "DR Congo", "Republic of the Congo", "Ivory Coast", "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique", "Namibia", "Niger", "Nigeria", "Rwanda", "São Tomé and Príncipe", "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe" ]
   },
-  "NATO": {
-    "title": "NATO",
-    "members": [
-      "Albania", "Belgium", "Bulgaria", "Canada", "Croatia", "Czech Republic",
-      "Denmark", "Estonia", "Finland", "France", "Germany", "Greece",
-      "Hungary", "Iceland", "Italy", "Latvia", "Lithuania", "Luxembourg",
-      "Montenegro", "Netherlands", "North Macedonia", "Norway", "Poland",
-      "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Turkey",
-      "United Kingdom", "United States"
-    ]
-  },
-  "OECD": {
-    "title": "OECD",
-    "members": [
-      "Australia", "Austria", "Belgium", "Canada", "Chile", "Colombia",
-      "Costa Rica", "Czech Republic", "Denmark", "Estonia", "Finland",
-      "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland",
-      "Israel", "Italy", "Japan", "Korea, Rep.", "Latvia", "Lithuania",
-      "Luxembourg", "Mexico", "Netherlands", "New Zealand", "Norway",
-      "Poland", "Portugal", "Slovak Republic", "Slovenia", "Spain",
-      "Sweden", "Switzerland", "Turkey", "United Kingdom", "United States"
-    ]
-  },
-  "G7": {
-    "title": "G7",
-    "members": [
-      "Canada", "France", "Germany", "Italy", "Japan", "United Kingdom", "United States"
-    ]
-  },
-  "BRICS": {
-    "title": "BRICS",
-    "members": [
-      "Brazil", "Russia", "India", "China", "South Africa",
-      "Egypt", "Ethiopia", "Iran", "Saudi Arabia", "United Arab Emirates"
-    ]
-  },
-  "G20": {
-    "title": "G20",
-    "members": [
-      "Argentina", "Australia", "Brazil", "Canada", "China", "France",
-      "Germany", "India", "Indonesia", "Italy", "Japan", "Korea, Rep.",
-      "Mexico", "Russia", "Saudi Arabia", "South Africa", "Turkey",
-      "United Kingdom", "United States", "European Union"
-    ]
+  "APEC": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/APEC\" target=\"_blank\" rel=\"noopener\">APEC</a>",
+    "members": [ "Australia", "Brunei", "Canada", "Chile", "China", "Hong Kong", "Indonesia", "Japan", "South Korea", "Malaysia", "Mexico", "New Zealand", "Papua New Guinea", "Peru", "Philippines", "Russia", "Singapore", "Taiwan", "Thailand", "United States", "Vietnam" ]
   },
   "ASEAN": {
-    "title": "ASEAN",
-    "members": [
-      "Brunei Darussalam", "Cambodia", "Indonesia", "Lao PDR", "Malaysia",
-      "Myanmar", "Philippines", "Singapore", "Thailand", "Vietnam"
-    ]
+    "title": "<a href=\"https://en.wikipedia.org/wiki/ASEAN\" target=\"_blank\" rel=\"noopener\">ASEAN</a>",
+    "members": [ "Brunei", "Cambodia", "Indonesia", "Laos", "Malaysia", "Myanmar", "Philippines", "Singapore", "Thailand", "Vietnam" ]
   },
-  "AfricanUnion": {
-    "title": "African Union",
-    "members": [
-      "Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi",
-      "Cabo Verde", "Cameroon", "Central African Republic", "Chad",
-      "Comoros", "Congo, Dem. Rep.", "Congo, Rep.", "Cote d'Ivoire",
-      "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini",
-      "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau",
-      "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi",
-      "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique",
-      "Namibia", "Niger", "Nigeria", "Rwanda", "Sao Tome and Principe",
-      "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa",
-      "South Sudan", "Sudan", "Tanzania", "Togo", "Tunisia", "Uganda",
-      "Zambia", "Zimbabwe"
-    ]
+  "BRICS": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/BRICS\" target=\"_blank\" rel=\"noopener\">BRICS</a>",
+    "members": [ "Brazil", "Russia", "India", "China", "South Africa", "Egypt", "Ethiopia", "Iran", "Saudi Arabia", "United Arab Emirates" ]
+  },
+  "EU": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/European_Union\" target=\"_blank\" rel=\"noopener\">European Union</a>",
+    "members": [ "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden" ]
+  },
+  "G7": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/G7\" target=\"_blank\" rel=\"noopener\">G7</a>",
+    "members": [ "Canada", "France", "Germany", "Italy", "Japan", "United Kingdom", "United States" ]
+  },
+  "G20": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/G20\" target=\"_blank\" rel=\"noopener\">G20</a>",
+    "members": [ "Argentina", "Australia", "Brazil", "Canada", "China", "France", "Germany", "India", "Indonesia", "Italy", "Japan", "South Korea", "Mexico", "Russia", "Saudi Arabia", "South Africa", "Turkey", "United Kingdom", "United States", "European Union" ]
+  },
+  "Mercosur": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/Mercosur\" target=\"_blank\" rel=\"noopener\">Mercosur</a>",
+    "members": [ "Argentina", "Brazil", "Paraguay", "Uruguay", "Bolivia" ]
+  },
+  "NATO": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/NATO\" target=\"_blank\" rel=\"noopener\">NATO</a>",
+    "members": [ "Albania", "Belgium", "Bulgaria", "Canada", "Croatia", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Montenegro", "Netherlands", "North Macedonia", "Norway", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Turkey", "United Kingdom", "United States" ]
+  },
+  "OECD": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/OECD\" target=\"_blank\" rel=\"noopener\">OECD</a>",
+    "members": [ "Australia", "Austria", "Belgium", "Canada", "Chile", "Colombia", "Costa Rica", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Israel", "Italy", "Japan", "South Korea", "Latvia", "Lithuania", "Luxembourg", "Mexico", "Netherlands", "New Zealand", "Norway", "Poland", "Portugal", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Turkey", "United Kingdom", "United States" ]
   }
-
 }

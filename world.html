@@ -4,15 +4,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RealityCheck – World Overview</title>
+  <title>RealityCheck – World Trends Dashboard</title>
 
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    try {
+      if (window.self !== window.top) {
+        document.body.classList.add("in-iframe");
+      } else {
+        document.body.classList.remove("in-iframe");
+      }
+    } catch(e) {
+      console.warn("iframe detection failed", e);
+    }
+  });
+  </script>
 </head>
 
 <body class="world-page">
+  <!-- 🔄 Lade-Spinner -->
+  <div id="overlay-spinner" class="hidden"></div>
 
-  <!-- 🌍 Einheitlicher Intro-Bereich -->
+  <!-- 🌍 Intro -->
   <section class="page-intro">
     <h1>🌍 RealityCheck – World Trends Dashboard</h1>
     <p>
@@ -32,11 +48,14 @@
     </p>
   </section>
 
-  <!-- 📊 Container für alle Welt-KPIs -->
-  <section id="world-kpis">
-    <div id="overlay-spinner" class="hidden">Loading global data…</div>
-    <!-- Charts werden hier dynamisch eingefügt -->
-  </section>
+  <!-- 📊 KPI-Container -->
+  <section id="world-kpis"></section>
+
+  <!-- ⚠️ AI-Disclaimer -->
+  <p style="text-align:center;font-size:0.85rem;color:#555;margin:1.5rem auto 2rem;max-width:900px;line-height:1.5;">
+    ⚠️ Interpretations and summaries on this page may include AI-generated content derived from publicly available datasets.  
+    Data accuracy and rights remain with the original publishers (World Bank, UN, OWID, etc.).
+  </p>
 
   <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>

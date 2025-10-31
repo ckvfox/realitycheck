@@ -15,13 +15,42 @@ async function loadJSON(path) {
   }
 }
 
-// === Spinner ===
+// === Spinner (zentriert + fade) ===
 function showSpinner(show = true, msg = "Loading…") {
   const sp = document.getElementById("overlay-spinner");
   if (!sp) return;
-  if (msg) sp.textContent = msg;
-  sp.classList.toggle("hidden", !show);
+
+  // Struktur bei erstem Aufruf automatisch einfügen
+  if (!sp.dataset.init) {
+    sp.innerHTML = `
+      <div class="spinner-circle"></div>
+      <p class="spinner-text"></p>
+    `;
+    sp.dataset.init = "1";
+  }
+
+  // Text aktualisieren
+  const textEl = sp.querySelector(".spinner-text");
+  if (textEl) textEl.textContent = msg || "Loading…";
+
+  // Sichtbarkeit steuern mit Fade-Effekt
+  if (show) {
+    sp.classList.remove("hidden");
+    sp.style.opacity = "1";
+
+    // Spinner immer im sichtbaren Bereich halten (auch im iframe)
+    try {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    } catch {
+      /* ignore */
+    }
+  } else {
+    sp.style.opacity = "0";
+    setTimeout(() => sp.classList.add("hidden"), 300);
+  }
 }
+
+
 
 // === Normalize KPI/Country names ===
 function normalizeName(str) {
@@ -189,9 +218,6 @@ async function renderKpiAnalysis(metaOrId, targetId = "kpi-analysis") {
   // ✨ leicht verzögert aktivieren für sanftes Einblenden
   setTimeout(() => box.classList.add("loaded"), 50);
 }
-
-
-
 
 // === Expose globally for non-module pages ===
 window.loadJSON = loadJSON;

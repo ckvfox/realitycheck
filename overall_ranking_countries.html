@@ -5,14 +5,26 @@
   <title>RealityCheck – Overall Country Ranking</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+    if (window.self !== window.top) {
+      document.body.classList.add("in-iframe");
+    } else {
+      document.body.classList.remove("in-iframe");
+    }
+  } catch(e) {
+    console.warn("iframe detection failed", e);
+  }
+});
+</script>
+
 </head>
 
 <body class="overall-page">
 
   <!-- 🔄 Lade-Spinner -->
-  <div id="overlay-spinner" class="hidden">
-    <p>Loading global KPI data...</p>
-  </div>
+  <div id="overlay-spinner" class="hidden"></div>
 
 	<section class="page-intro">
 	  <h1>🌍 RealityCheck – Overall Country Ranking</h1>
@@ -24,7 +36,7 @@
 	  </p>
 	  <p>
 		Each cluster below groups related indicators. You can adjust the importance of every KPI 
-		by choosing whether it should weigh <b>very high</b>, <b>high</b>, or <b>not interested</b>. 
+		by choosing whether it should weigh <b>very high</b>, <b>high</b>, <b>normal</b>, <b>low</b>, or <b>irrelevant</b>. 
 		The ranking recalculates instantly to show how your priorities change the outcome.
 	  </p>
 	  <p class="note">
@@ -52,7 +64,8 @@
 
 
   <!-- 📊 Ergebnis-Tabelle -->
-  <section id="overall-results">
+<section id="overall-results">
+  <div class="table-wrapper">
     <table id="overall-table">
       <thead>
         <tr>
@@ -66,10 +79,10 @@
         <tr><td colspan="4" style="text-align:center;">Loading results...</td></tr>
       </tbody>
     </table>
+  </div>
+  <p id="last-updated" style="margin-top:1em; font-size:0.9em; color:#555; text-align:center;"></p>
+</section>
 
-    <!-- Legende wird dynamisch eingefügt -->
-    <p id="last-updated" style="margin-top:1em; font-size:0.9em; color:#555; text-align:center;"></p>
-  </section>
 
   <!-- 📘 Hinweisbox zur lokalen Speicherung -->
   <div id="localinfo-box" style="display:none;">

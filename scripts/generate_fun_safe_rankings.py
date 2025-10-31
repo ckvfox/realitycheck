@@ -1,119 +1,113 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-RealityCheck – AI-based Fun & Safe Haven Rankings
--------------------------------------------------
-Generates two AI-evaluated rankings and saves them as:
-  • data/fun_ranking.json
-  • data/safe_haven_ranking.json
-Uses the modern OpenAI client (>=1.0.0)
-"""
-
+# ==============================================================
+# 🌍 RealityCheck – Fun & Safe Haven Rankings (AI-based)
+# ==============================================================
 import os
 import json
 from openai import OpenAI
+from dotenv import load_dotenv
 
-# === Model & Config ===
-MODEL = "gpt-4o-mini"
-TEMPERATURE = 0.4
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-DATA_DIR = os.path.join(BASE_DIR, "data")
-FUN_FILE = os.path.join(DATA_DIR, "fun_ranking.json")
-SAFE_FILE = os.path.join(DATA_DIR, "safe_haven_ranking.json")
+# === Setup ===
+if os.path.exists(".env"):
+    load_dotenv()
+    print("✅ Loaded local .env")
+else:
+    print("🔒 Using GitHub Secrets / Environment Variables")
 
-# === Initialize client ===
-api_key = os.getenv("OPENAI_API_KEY")
-if not api_key:
-    raise RuntimeError("❌ OPENAI_API_KEY not set in environment")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if not OPENAI_API_KEY:
+    raise ValueError("❌ OPENAI_API_KEY not found. Define in .env or GitHub Secrets.")
 
-client = OpenAI(api_key=api_key)
+client = OpenAI(api_key=OPENAI_API_KEY)
 
-# === Prompts ===
-FUN_PROMPT = """
-Create a JSON list of the Top 10 countries that best match the idea of a 'Fun & Easy Living' lifestyle.
+
+# === Helper functions ===
+def save_json(data, path):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"💾 Saved {path} ({len(data)} entries)")
+
+
+def log_top20(mode_name: str, ranking: list):
+    """Logs ranks 11–20 for transparency/debugging."""
+    if not ranking or len(ranking) < 11:
+        print(f"⚠️  {mode_name}: not enough entries for logging.")
+        return
+    print(f"\n🏁 {mode_name} — Places 11–20:")
+    for entry in ranking[10:20]:
+        print(f"{entry['rank']:>2}. {entry['country']} ({entry['score']:.3f})")
+
+
+# === Prompt definitions ===
+prompt_fun = """
+You are an analyst generating the **Fun Ranking** — Create a JSON list of the Top 10 countries that best match the idea of a 'Fun & Easy Living' lifestyle.
 
 Criteria (orientation targets, not hard thresholds):
 1. Pleasant average annual temperature (~18–26°C, like Southern France)
 2. Many sunny days per year (~300, like Southern France)
 3. Few rainy days per year (<70)
 4. High happiness index (top 40%)
-5. Low cost of beer (<3.50$ in Restaurant)
+5. Low cost of beer (<3.50$ in Restaurants)
 6. Optionally: access to beaches or outdoor lifestyle
 
-Respond ONLY with JSON in this format:
+Return only JSON:
 [
-  { "rank": 1, "country": "Portugal", "score": 91.2 },
+  {"rank": 1, "country": "Spain", "score": 0.95},
+  {"rank": 2, "country": "Portugal", "score": 0.94},
   ...
 ]
+Make sure scores range roughly between 0.6 and 1.0.
 """
 
-SAFE_PROMPT = """
-Create a JSON list of the Top 10 safest and most resilient countries to live in.
+prompt_safe = """
+You are an analyst generating the **Safe Haven Ranking** — Create a JSON list of the Top 10 safest and most resilient countries to live in.
 
 Criteria:
 1. Strong human rights record
-2. Low risk of war, internal conflict or political instability
+2. Low risk of war, internal conflict or political instability (e.g. Geopolitical Risk Index)
 3. Low to moderate climate risk (e.g. from Germanwatch Climate Risk Index)
 4. High resilience score (e.g. INFORM Resilience Index)
 5. Stable democratic institutions
 6. Avoid countries bordering current warzones
 
-Respond ONLY with JSON in this format:
+
+Return only JSON:
 [
-  { "rank": 1, "country": "Switzerland", "score": 94.0 },
+  {"rank": 1, "country": "Switzerland", "score": 0.98},
+  {"rank": 2, "country": "New Zealand", "score": 0.97},
   ...
 ]
+Ensure scores range between 0.6 and 1.0 and are logically consistent.
 """
 
-# === Helper ===
-def query_openai(prompt):
+# === Core execution ===
+def generate_ranking(mode: str, prompt: str, output_path: str):
+    print(f"\n➡️ Generating {mode} ranking via GPT-5…")
+
+    response = client.chat.completions.create(
+        model="gpt-5",
+        messages=[
+            {"role": "system", "content": "You are a geopolitical and socioeconomic analyst."},
+            {"role": "user", "content": prompt.strip()}
+        ],
+        max_tokens=400,     # 🔹 reicht locker für 20 JSON-Einträge
+        temperature=0.6,    # 🔹 moderate Kreativität, stabilere Reihenfolge
+    )
+
+    # ⚠️ Fallback-Sicherheitsprüfung
+    if not response.choices or not response.choices[0].message or not response.choices[0].message.content.strip():
+        print("⚠️ Empty API response – check API key, model name, or rate limit.")
+        return []
+
+    content = response.choices[0].message.content.strip()
+
     try:
-        res = client.chat.completions.create(
-            model=MODEL,
-            temperature=TEMPERATURE,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        text = res.choices[0].message.content.strip()
-
-        # --- Clean possible markdown fences or text wrappers ---
-        if "```" in text:
-            import re
-            match = re.search(r"```(?:json)?(.*?)```", text, re.DOTALL | re.IGNORECASE)
-            if match:
-                text = match.group(1).strip()
-
-        # --- Try parse ---
-        return json.loads(text)
-    except json.JSONDecodeError as je:
-        print("⚠️ JSON parse failed:", je)
-        print("Raw output sample:\n", text[:400])
-        return []
+        data = json.loads(content)
     except Exception as e:
-        print("❌ GPT call failed:", e)
+        print("❌ JSON parse error:", e)
+        print("Response was:", content[:400])
         return []
 
-# === Main ===
-def generate_rankings():
-    print("🧠 Generating Fun & Safe Haven rankings...")
-
-    fun = query_openai(FUN_PROMPT)
-    safe = query_openai(SAFE_PROMPT)
-
-    os.makedirs(DATA_DIR, exist_ok=True)
-
-    if fun:
-        with open(FUN_FILE, "w", encoding="utf-8") as f:
-            json.dump(fun, f, indent=2, ensure_ascii=False)
-        print(f"✅ Saved to {FUN_FILE}")
-    else:
-        print("⚠️ No Fun ranking returned.")
-
-    if safe:
-        with open(SAFE_FILE, "w", encoding="utf-8") as f:
-            json.dump(safe, f, indent=2, ensure_ascii=False)
-        print(f"✅ Saved to {SAFE_FILE}")
-    else:
-        print("⚠️ No Safe Haven ranking returned.")
-
-if __name__ == "__main__":
-    generate_rankings()
+    save_json(data, output_path)
+    log_top20(mode, data)
+    return data

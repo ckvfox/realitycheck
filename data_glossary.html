@@ -20,115 +20,131 @@
       It helps you trace where each figure originates from and how recently it was updated — 
       a transparent foundation for all comparisons and analyses.
     </p>
+
+  </section>
+
+<!-- 📑 Tabelle -->
+<section id="glossary-container">
+  <table id="glossary-table">
+    <thead>
+      <tr>
+        <th>KPI</th>
+        <th>Source</th>
+        <th>Data Year</th>
+        <th>Source Date</th>
+        <th>Last Fetch</th>
+        <th>Outliers</th>
+      </tr>
+    </thead>
+    <tbody id="glossary-body">
+      <tr>
+        <td colspan="6" style="text-align:center;">Loading data …</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 🧭 Legende -->
+  <div id="legend">
     <p class="note">
       Data years are color-coded for freshness, and 🔺 marks statistical outliers 
       detected through automated analysis.
     </p>
-  </section>
-
-  <!-- 📑 Tabelle -->
-  <section id="glossary-container">
-    <table id="glossary-table">
-      <thead>
-        <tr>
-          <th>KPI</th>
-          <th>Source</th>
-          <th>Data Year</th>
-          <th>Last Fetch</th>
-          <th>Outliers</th>
-        </tr>
-      </thead>
-      <tbody id="glossary-body">
-        <tr><td colspan="5" style="text-align:center;">Loading data …</td></tr>
-      </tbody>
-    </table>
-
-    <div id="legend">
+    <p>
       <span class="fresh">🟩 Fresh (≤ 1 yr)</span> · 
       <span class="warn">🟨 Moderate (≤ 3 yrs)</span> · 
       <span class="stale">🟥 Stale / n a (> 3 yrs)</span> · 
       <span class="outlier">🔺 Data Outliers</span>
-    </div>
-  </section>
+    </p>
+  </div>
+</section>
 
-  <!-- ⚙️ Skript -->
-  <script>
-  async function loadGlossary() {
-    try {
-      const [fetchRes, outlierRes] = await Promise.all([
-        fetch("data/fetch_status.json"),
-        fetch("data/analysis_outliers.json")
-      ]);
-      const data = await fetchRes.json();
-      const outliers = await outlierRes.json();
+<!-- ⚙️ Skript -->
+<script>
+async function loadGlossary() {
+  try {
+    const [fetchRes, outlierRes] = await Promise.all([
+      fetch("data/fetch_status.json"),
+      fetch("data/analysis_outliers.json")
+    ]);
+    const data = await fetchRes.json();
+    const outliers = await outlierRes.json();
 
-      const tbody = document.getElementById("glossary-body");
-      tbody.innerHTML = "";
+    const tbody = document.getElementById("glossary-body");
+    tbody.innerHTML = "";
 
-      const kpis = data.kpis || {};
-      const nowYear = new Date().getFullYear();
+    const kpis = data.kpis || {};
+    const nowYear = new Date().getFullYear();
 
-      for (const [id, info] of Object.entries(kpis)) {
-        const tr = document.createElement("tr");
-        const out = outliers[id] || {};
-        const flagged = out.flagged || [];
+    for (const [id, info] of Object.entries(kpis)) {
+      const tr = document.createElement("tr");
+      const out = outliers[id] || {};
+      const flagged = out.flagged || [];
 
-        // 🧮 Bestimme Data Year – wenn leer, dynamisch aus /data/{id}.json
-        let dy = parseInt(info.data_year);
-        if (!dy || dy < 1900) {
-          try {
-            const kpiFile = await fetch(`data/${id}.json`);
-            if (kpiFile.ok) {
-              const kpiData = await kpiFile.json();
-              const years = Array.isArray(kpiData)
-                ? kpiData.map(e => e.year).filter(y => y)
-                : Object.values(kpiData).map(e => e.year).filter(y => y);
-              if (years.length) dy = Math.max(...years);
-            }
-          } catch {}
-        }
-
-        const diffY = dy ? nowYear - dy : 99;
-        const clsYear = diffY <= 1 ? "fresh" : diffY <= 3 ? "warn" : "stale";
-
-        let clsOut = "";
-        if (flagged.length >= 10) clsOut = "outlier";
-        else if (flagged.length > 0) clsOut = "warn";
-
-        const minInfo = out.min ? `${out.min.country || "?"} (${out.min.year || "?"})` : "–";
-        const maxInfo = out.max ? `${out.max.country || "?"} (${out.max.year || "?"})` : "–";
-
-        // 📅 Format Last Fetch (Monat Jahr)
-        let formattedFetch = "–";
-        if (info.last_fetch) {
-          const d = new Date(info.last_fetch);
-          if (!isNaN(d)) {
-            formattedFetch = d.toLocaleString("en-US", { month: "short", year: "numeric" });
+      // 🧮 Data Year (Fallback aus Daten)
+      let dy = parseInt(info.data_year);
+      if (!dy || dy < 1900) {
+        try {
+          const kpiFile = await fetch(`data/${id}.json`);
+          if (kpiFile.ok) {
+            const kpiData = await kpiFile.json();
+            const years = Array.isArray(kpiData)
+              ? kpiData.map(e => e.year).filter(y => y)
+              : Object.values(kpiData).map(e => e.year).filter(y => y);
+            if (years.length) dy = Math.max(...years);
           }
-        }
-
-        tr.innerHTML = `
-          <td>${id}</td>
-          <td>${info.source ? `<a href="${info.source}" target="_blank">${info.source}</a>` : "?"}</td>
-          <td class="${clsYear}">${dy || "n/a"}</td>
-          <td>${formattedFetch}</td>
-          <td class="${clsOut}">
-            ${flagged.length ? `🔺 ${flagged.length}` : "–"}
-            <span class="outlier-info">
-              min: ${minInfo}, max: ${maxInfo}
-            </span>
-          </td>
-        `;
-        tbody.appendChild(tr);
+        } catch {}
       }
-    } catch (err) {
-      console.error("Glossary load failed:", err);
-      document.getElementById("glossary-body").innerHTML =
-        `<tr><td colspan="5" style="text-align:center;color:red;">Error loading data</td></tr>`;
-    }
-  }
 
-  window.addEventListener("DOMContentLoaded", loadGlossary);
-  </script>
+      const diffY = dy ? nowYear - dy : 99;
+      const clsYear = diffY <= 1 ? "fresh" : diffY <= 3 ? "warn" : "stale";
+
+      // 🗓️ Einheitliche Datumsformatierung (DD.MM.YY)
+      function formatShortDate(dateStr) {
+        if (!dateStr) return "–";
+        const d = new Date(dateStr);
+        if (isNaN(d)) return "–";
+        const day = String(d.getDate()).padStart(2, "0");
+        const month = String(d.getMonth() + 1).padStart(2, "0");
+        const year = String(d.getFullYear()).slice(2);
+        return `${day}.${month}.${year}`;
+      }
+
+      const formattedSourceDate = formatShortDate(info.source_date);
+      const formattedFetch = formatShortDate(info.last_fetch);
+
+      // ⚠️ Outlier-Markierungen
+      let clsOut = "";
+      if (flagged.length >= 10) clsOut = "outlier";
+      else if (flagged.length > 0) clsOut = "warn";
+
+      const minInfo = out.min ? `${out.min.country || "?"} (${out.min.year || "?"})` : "–";
+      const maxInfo = out.max ? `${out.max.country || "?"} (${out.max.year || "?"})` : "–";
+
+      // 🧾 Tabellenzeile
+      tr.innerHTML = `
+        <td>${id}</td>
+        <td>${info.source ? `<a href="${info.source}" target="_blank">${info.source}</a>` : "?"}</td>
+        <td class="${clsYear}">${dy || "n/a"}</td>
+        <td>${formattedSourceDate}</td>
+        <td>${formattedFetch}</td>
+        <td class="${clsOut}">
+          ${flagged.length ? `🔺 ${flagged.length}` : "–"}
+          <span class="outlier-info">
+            min: ${minInfo}, max: ${maxInfo}
+          </span>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    }
+  } catch (err) {
+    console.error("Glossary load failed:", err);
+    document.getElementById("glossary-body").innerHTML =
+      `<tr><td colspan="6" style="text-align:center;color:red;">Error loading data</td></tr>`;
+  }
+}
+
+window.addEventListener("DOMContentLoaded", loadGlossary);
+</script>
+
 </body>
 </html>

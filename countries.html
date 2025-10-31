@@ -9,9 +9,11 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
 </head>
 <body>
-
+	<div id="overlay-spinner" class="hidden"></div>
+	 
 	<section class="page-intro">
 	  <h1>🗺️ RealityCheck – Countries Dashboard</h1>
 	  <p>
@@ -38,8 +40,6 @@
 	  </p>
 	</section>
 
-
-
 	<!-- Controls (zentriert) -->
 	<section id="controls">
 
@@ -47,18 +47,10 @@
 		<label for="kpiSelect">KPI:</label>
 		<select id="kpiSelect"></select>
 	  </div>
-
-	  <!-- 🔄 Fullscreen Loading Spinner (zentriert, beeinflusst Layout nicht) -->
-	  <div id="overlay-spinner">
-		<div></div>
-		<p>Loading country KPI data...</p>
-	  </div>
-
 	  <div class="control-pair">
 		<label for="yearSelect">Comparison Year:</label>
 		<select id="yearSelect"></select>
 	  </div>
-
 	  <div class="control-pair">
 		<label for="relationSelect">Relation:</label>
 		<select id="relationSelect">
@@ -85,9 +77,9 @@
 	  <em>AI-based insights for this indicator will appear here…</em>
 	</div>
 
-
-  <!-- Tabelle -->
-  <section id="data-table">
+<!-- Tabelle -->
+<section id="data-table">
+  <div class="table-wrapper">
     <table id="country-table" aria-label="Country data table">
       <thead>
         <tr>
@@ -101,7 +93,9 @@
       </thead>
       <tbody></tbody>
     </table>
-  </section>
+  </div>
+</section>
+
 
   <!-- Quelle & Datum -->
   <div id="data-meta">
@@ -140,9 +134,27 @@
       <li>Groups (e.g. NATO, EU) are shown after countries, calculated as the sum of their members</li>
     </ul>
   </section>
-
+    <!-- ⚠️ AI Disclaimer -->
+    <p style="text-align:center;font-size:0.85rem;color:#555;margin:1.5rem auto 2rem;max-width:900px;line-height:1.5;">
+      ⚠️ Interpretations and insights on this page may include AI-generated analyses based on public datasets.  
+      Data accuracy and copyright remain with the original publishers (World Bank, UN, OWID, etc.).
+  </p>
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+    if (window.self !== window.top) {
+      document.body.classList.add("in-iframe");
+    } else {
+      document.body.classList.remove("in-iframe");
+    }
+  } catch(e) {
+    console.warn("iframe detection failed", e);
+  }
+});
+</script>
+
 <script src="scripts/core.js"></script>
 <script src="scripts/script.js"></script>
 
@@ -179,8 +191,6 @@
     }, 250);
   });
 </script>
-
-
 
 </body>
 </html>

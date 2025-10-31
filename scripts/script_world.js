@@ -1,5 +1,9 @@
 /* ============================================================
    🌍 RealityCheck – World Trends Dashboard (auto from /data)
+   ------------------------------------------------------------
+   Final Clean Version (2025-11-01)
+   • Spinner-Handling über core.js (showSpinner)
+   • Einheitliche Nutzung von loadJSON() und loadAllKPIData()
    ============================================================ */
 
 const META_FILE = "data/meta/available_kpis.json";
@@ -7,24 +11,15 @@ const DATA_DIR = "data";
 
 let META = [], ALL_DATA = {}; // consolidated dataset + meta
 
-
 /* ========= Chart Helper ========= */
 function getWorldSeries(entries) {
-  const worldRows = entries.filter(r => 
+  const worldRows = entries.filter(r =>
     r.country === "World" || r.country === "Welt" || r.country === "Global"
   );
-  const sorted = worldRows.sort((a,b) => a.year - b.year);
+  const sorted = worldRows.sort((a, b) => a.year - b.year);
   const years = sorted.map(r => r.year);
   const values = sorted.map(r => r.value);
   return { years, values };
-}
-
-/* ========= Spinner Steuerung ========= */
-function showSpinner(show=true, msg="Loading global data…") {
-  let spinner = document.getElementById("overlay-spinner");
-  if (!spinner) return;
-  spinner.textContent = msg;
-  spinner.classList.toggle("hidden", !show);
 }
 
 /* ========= Chart Renderer mit Tooltip ========= */
@@ -34,14 +29,12 @@ function renderChart(container, title, unit, data) {
   canvas.height = 400;
   container.appendChild(canvas);
 
-  // 🌈 Optionales Styling für bessere Optik
   canvas.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
   canvas.style.borderRadius = "8px";
   canvas.style.marginBottom = "1rem";
   canvas.style.background = "#fff";
 
   const ctx = canvas.getContext("2d");
-
   new Chart(ctx, {
     type: "line",
     data: {
@@ -54,14 +47,14 @@ function renderChart(container, title, unit, data) {
         pointRadius: 2,
         pointHoverRadius: 5,
         fill: false,
-        tension: 0.2
+        tension: 0.25
       }]
     },
     options: {
       responsive: true,
       interaction: { mode: "nearest", intersect: false },
       plugins: {
-        title: { display: true, text: title },
+        title: { display: false },
         legend: { display: false },
         tooltip: {
           enabled: true,
@@ -123,11 +116,23 @@ async function renderWorldKpi(container, kpi) {
     block.appendChild(p);
   }
 
+  // === KI-Analysebox einfügen ===
+  const aiBox = document.createElement("div");
+  aiBox.id = `kpi-analysis-${filename}`;
+  aiBox.className = "kpi-analysis";
+  block.appendChild(aiBox);
+  renderKpiAnalysis(kpi, aiBox.id);
+
   // === Quelle hinzufügen ===
   const source = document.createElement("p");
   source.className = "chart-source";
   if (kpi.source) {
-    source.innerHTML = `Source: <a href="${kpi.source}" target="_blank" rel="noopener">${new URL(kpi.source).hostname}</a>`;
+    try {
+      const hostname = new URL(kpi.source).hostname.replace("www.", "");
+      source.innerHTML = `Source: <a href="${kpi.source}" target="_blank" rel="noopener">${hostname}</a>`;
+    } catch {
+      source.textContent = `Source: ${kpi.source}`;
+    }
   } else {
     source.textContent = "Source: RealityCheck Database (OWID, World Bank, UN, EPI)";
   }
@@ -136,53 +141,54 @@ async function renderWorldKpi(container, kpi) {
 
 /* ========= Hauptlogik ========= */
 async function initWorldPage() {
-  showSpinner(true, "Loading world data…");
-  META = await loadJSON("data/meta/available_kpis.json");
-  ALL_DATA = await loadAllKPIData();
+  try {
+    // 🌀 Zeige globalen Spinner (aus core.js)
+    showSpinner(true, "Loading world data…");
 
-  // === Gruppierung nach Cluster ===
-  const grouped = {};
-  for (const k of META) {
-    if ((k.world_kpi === "y" || k.world_kpi === "e") && k.filename) {
-      const cl = k.cluster || "Other";
-      if (!grouped[cl]) grouped[cl] = [];
-      grouped[cl].push(k);
+    META = await loadJSON(META_FILE);
+    ALL_DATA = await loadAllKPIData();
+
+    // === Gruppierung nach Cluster ===
+    const grouped = {};
+    for (const k of META) {
+      if ((k.world_kpi === "y" || k.world_kpi === "e") && k.filename) {
+        const cl = k.cluster || "Other";
+        if (!grouped[cl]) grouped[cl] = [];
+        grouped[cl].push(k);
+      }
     }
-  }
 
-  console.log(`🌐 Found ${Object.values(grouped).flat().length} global KPIs in ${Object.keys(grouped).length} clusters.`);
+    const worldContainer = document.getElementById("world-kpis");
+    if (!worldContainer) {
+      console.error("❌ #world-kpis container missing");
+      return;
+    }
 
-  const worldContainer = document.getElementById("world-kpis");
-  if (!worldContainer) {
-    console.error("❌ #world-kpis container missing");
-    return;
-  }
+    if (Object.keys(grouped).length === 0) {
+      worldContainer.innerHTML = `<p style="text-align:center;margin-top:2rem;">No global KPIs found.</p>`;
+      return;
+    }
 
-  if (Object.keys(grouped).length === 0) {
+    // === Rendern nach Cluster ===
+    for (const [cluster, list] of Object.entries(grouped)) {
+      const h2 = document.createElement("h2");
+      h2.textContent = cluster;
+      h2.style.margin = "2rem auto 1rem";
+      h2.style.textAlign = "center";
+      h2.style.color = "var(--steel-blue)";
+      worldContainer.appendChild(h2);
+
+      for (const kpi of list) {
+        await renderWorldKpi(worldContainer, kpi);
+      }
+    }
+  } catch (err) {
+    console.error("🌍 initWorldPage failed:", err);
+  } finally {
+    // ✅ Spinner immer ausblenden
     showSpinner(false);
-    worldContainer.innerHTML = `<p style="text-align:center;margin-top:2rem;">No global KPIs found.</p>`;
-    return;
   }
-
-  // === Cluster-Abschnitte erzeugen ===
-  for (const [cluster, list] of Object.entries(grouped)) {
-    const clusterHeader = document.createElement("h2");
-    clusterHeader.textContent = cluster;
-    clusterHeader.style.margin = "2.5rem 0 1rem";
-    clusterHeader.style.color = "var(--steel-blue)";
-    clusterHeader.style.textAlign = "left";
-    worldContainer.appendChild(clusterHeader);
-
-    list.sort((a,b) => a.title.localeCompare(b.title));
-    for (const kpi of list) {
-      await renderWorldKpi(worldContainer, kpi);
-    }
-  }
-
-  showSpinner(false);
 }
 
-/* ========= Start ========= */
-document.addEventListener("DOMContentLoaded", () => {
-  initWorldPage();
-});
+// === Seite initialisieren ===
+document.addEventListener("DOMContentLoaded", initWorldPage);

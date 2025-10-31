@@ -400,27 +400,54 @@ function createInfoBox() {
   box.querySelector("#close-localinfo")?.addEventListener("click", () => box.remove());
 }
 
-/* ---------- Toast Helper ---------- */
+/* ---------- Toast Helper (zentriert + Fade + Auto-hide) ---------- */
 function showToast(msg) {
-  const t = document.createElement("div");
-  Object.assign(t.style, {
-    position: "fixed",
-    bottom: "20px",
-    left: "50%",
-    transform: "translateX(-50%)",
-    background: "#333",
-    color: "#fff",
-    padding: "8px 14px",
-    borderRadius: "6px",
-    zIndex: 99999,
-    opacity: "0",
-    transition: "opacity .3s"
+  // Reuse existing toast element if present
+  let toast = document.getElementById("toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "toast";
+    document.body.appendChild(toast);
+
+    // Basis-Styles (falls CSS fehlt oder noch nicht geladen)
+    Object.assign(toast.style, {
+      position: "fixed",
+      top: "20px",
+      left: "50%",
+      transform: "translateX(-50%) translateY(-20px)",
+      background: "#1a355e",
+      color: "#fff",
+      padding: "0.75rem 1.25rem",
+      borderRadius: "6px",
+      fontSize: "0.95rem",
+      fontWeight: "500",
+      boxShadow: "0 3px 10px rgba(0,0,0,0.15)",
+      opacity: "0",
+      transition: "opacity .4s ease, transform .4s ease",
+      zIndex: "99999",
+      pointerEvents: "none"
+    });
+  }
+
+  // Aktualisieren und sichtbar machen
+  toast.textContent = msg;
+  toast.classList.add("show");
+
+  // Animation: Fade-In (via Inline-Styles, falls CSS noch nicht geladen)
+  requestAnimationFrame(() => {
+    toast.style.opacity = "1";
+    toast.style.transform = "translateX(-50%) translateY(0)";
   });
-  t.textContent = msg;
-  document.body.appendChild(t);
-  requestAnimationFrame(() => (t.style.opacity = "1"));
-  setTimeout(() => t.remove(), 2000);
+
+  // Automatisches Ausblenden nach 2.5s
+  clearTimeout(toast._timeout);
+  toast._timeout = setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translateX(-50%) translateY(-20px)";
+    toast.classList.remove("show");
+  }, 2500);
 }
+
 
 /* ---------- Last Updated ---------- */
 async function fetchLastUpdated() {

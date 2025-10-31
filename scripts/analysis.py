@@ -1,21 +1,27 @@
 # =============================================
-# 🌍 RealityCheck – Global KPI Analysis Script (B2 Version)
+# 🌍 RealityCheck – Global KPI Analysis Script (B2 Version, Smart Update)
 # =============================================
 
 import json
 import statistics
 from pathlib import Path
 import os
+import time
 from tqdm import tqdm
 from dotenv import load_dotenv
 from openai import OpenAI
+from datetime import date
 
 
-def run_global_analysis():
+# ============================================================
+# 🧠 Hauptfunktion: Globale + Einzel-KPI-Analysen
+# ============================================================
+def run_global_analysis(updated_kpis=None):
     """
     Reads all KPI JSON files from /data, creates an AI-generated global analysis (B2-level reasoning),
     and saves the result as Markdown and JSON inside /data.
     Also extracts outlier information (min/max country & year) for data quality review.
+    If 'updated_kpis' is provided, only those KPIs will get new AI summaries.
     """
 
     # === 1. Load environment variables ===
@@ -73,8 +79,7 @@ def run_global_analysis():
                     for v in rows
                     if isinstance(v.get("value"), (int, float))
                     and v.get("country") not in ["World"]
-]
-
+                ]
 
                 if not values or len(values) < 5:
                     continue
@@ -128,7 +133,7 @@ def run_global_analysis():
             print(f"⚠️ Error processing {f.name}: {e}")
 
     if not data_summary:
-        print("⚠️ No KPI data found – please run fetch_data.py first.")
+        print("⚠️ No KPI data found.")
         return
 
     # === 6. Save outlier overview ===
@@ -159,13 +164,36 @@ def run_global_analysis():
         f"{json.dumps(data_summary, indent=2)[:12000]}"
     )
 
-    response = client.chat.completions.create(
-        model="gpt-5",
-        messages=[
-            {"role": "system", "content": "You are an expert global data analyst specializing in socioeconomic and environmental trends."},
-            {"role": "user", "content": prompt},
-        ],
-    )
+    max_retries = 5
+    for attempt in range(max_retries):
+        try:
+            response = client.chat.completions.create(
+                model="gpt-5",
+                messages=[
+                    {"role": "system", "content": "You are an expert global data analyst specializing in socioeconomic and environmental trends."},
+                    {"role": "user", "content": prompt},
+                ],
+            )
+            # ✅ Wenn erfolgreich: aus Schleife aussteigen
+            break
+
+        except Exception as e:
+            err = str(e)
+            if "429" in err:
+                wait = 30 + attempt * 10  # jedes Mal 10 s länger warten
+                print(f"⚠️ Rate limit hit (try {attempt+1}/{max_retries}) — waiting {wait}s …")
+                time.sleep(wait)
+                continue
+            elif "insufficient_quota" in err or "quota" in err.lower():
+                print("💸 API quota exhausted — skipping global AI analysis.")
+                return
+            else:
+                print(f"❌ Global analysis failed: {e}")
+                return
+    else:
+        print("🚫 Too many retries — skipping global analysis.")
+        return
+
 
     text = response.choices[0].message.content.strip()
 
@@ -176,7 +204,6 @@ def run_global_analysis():
         """Entfernt durchgestrichene Markdown-Passagen (~~text~~)."""
         return re.sub(r"~~(.*?)~~", r"\1", t)
 
-    # 🧹 Entferne durchgestrichenen Text vor dem Speichern
     text = clean_text(text)
 
     try:
@@ -185,23 +212,29 @@ def run_global_analysis():
             json.dumps({"analysis_text": text, "summary": data_summary}, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
-        print("\n🧠 Generating individual KPI analyses…")
-        generate_kpi_analyses(client, data_dir)
+
+        # === SMART: nur geänderte KPI-Analysen erzeugen ===
+        if updated_kpis:
+            print(f"\n🧠 Generating AI summaries for {len(updated_kpis)} updated KPIs…")
+            generate_kpi_analyses(client, data_dir, updated_only=updated_kpis)
+        else:
+            print("\n🧠 No specific updated KPIs provided — generating all summaries…")
+            generate_kpi_analyses(client, data_dir)
+
         print("\n✅ Global B2-level analysis saved successfully!")
         print("📄 Markdown:", output_md.resolve())
         print("📊 JSON:", output_json.resolve())
+
     except Exception as e:
         print("❌ Error while saving:", e)
 
-# ============================================================
-# 🧠 KPI Smart Analysis Generator (fixed path + fallback)
-# ============================================================
-from datetime import date
 
-def generate_kpi_analyses(client, data_dir):
-    # Neuer Standardpfad
+# ============================================================
+# 🧠 KPI Smart Analysis Generator (supports selective updates)
+# ============================================================
+def generate_kpi_analyses(client, data_dir, updated_only=None):
+    """Generates short AI analyses for each KPI, or only for those updated."""
     meta_path = data_dir / "meta" / "available_kpis.json"
-    # Fallback (alte Struktur)
     legacy_path = data_dir / "available_kpis.json"
 
     if not meta_path.exists():
@@ -219,6 +252,11 @@ def generate_kpi_analyses(client, data_dir):
     # Meta kann Liste oder Dict sein
     if isinstance(meta, dict):
         meta = list(meta.values())
+
+    # Filter auf geänderte KPIs
+    if updated_only:
+        meta = [m for m in meta if m.get("filename") in updated_only]
+        print(f"⚙️ Limiting KPI analysis to {len(meta)} updated entries.")
 
     result = {}
     for entry in tqdm(meta, desc="🧩 Generating KPI summaries"):
@@ -248,8 +286,21 @@ Unit: {unit}. Description: {desc}.
             )
             summary = (rsp.choices[0].message.content or "").strip()
             result[fname] = {"summary": summary, "last_update": str(date.today())}
+
+            # 🕐 kurze Pause, um 429-Fehler zu vermeiden
+            time.sleep(2)
+
         except Exception as e:
-            print(f"⚠️ Error analyzing {fname}: {e}")
+            err = str(e)
+            if "429" in err:
+                print(f"⚠️ Rate limit hit for {fname} — retrying in 20 s …")
+                time.sleep(20)
+                return generate_kpi_analyses(client, data_dir, updated_only)
+            elif "insufficient_quota" in err or "quota" in err.lower():
+                print("💸 Quota exhausted — skipping remaining KPI analyses.")
+                break
+            else:
+                print(f"⚠️ Error analyzing {fname}: {e}")
 
     out_path = data_dir / "kpi_analysis.json"
     with open(out_path, "w", encoding="utf-8") as f:
@@ -259,6 +310,8 @@ Unit: {unit}. Description: {desc}.
     return result
 
 
-
+# ============================================================
+# ▶ Standalone execution
+# ============================================================
 if __name__ == "__main__":
     run_global_analysis()

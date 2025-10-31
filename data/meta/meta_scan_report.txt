@@ -1,0 +1,240 @@
+[
+  {
+    "title": "Land Area",
+    "code": "AG.SRF.TOTL.K2",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Population",
+    "code": "SP.POP.TOTL",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Population Growth",
+    "code": "SP.POP.GROW",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Fertility Rate",
+    "code": "SP.DYN.TFRT.IN",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Urbanization Rate",
+    "code": "SP.URB.TOTL.IN.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "GDP (current US$)",
+    "code": "NY.GDP.MKTP.CD",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "GDP per Capita (current US$)",
+    "code": "NY.GDP.PCAP.CD",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "GNI per capita (current US$)",
+    "code": "NY.GNP.PCAP.CD",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Gini Index",
+    "code": "SI.POV.GINI",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Public Debt (% of GDP)",
+    "code": "GC.DOD.TOTL.GD.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Tax Revenue (% of GDP)",
+    "code": "GC.TAX.TOTL.GD.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Unemployment Rate",
+    "code": "SL.UEM.TOTL.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "January 07, 2025"
+  },
+  {
+    "title": "Health Expenditure per Capita",
+    "code": "SH.XPD.CHEX.PC.CD",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Physicians per 1,000 People",
+    "code": "SH.MED.PHYS.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Hospital Beds per 1,000 People",
+    "code": "SH.MED.BEDS.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Infant Mortality Rate",
+    "code": "SP.DYN.IMRT.IN",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Maternal Mortality Ratio",
+    "code": "SH.STA.MMRT",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Life Expectancy at Birth",
+    "code": "SP.DYN.LE00.IN",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Adult Literacy Rate",
+    "code": "SE.ADT.LITR.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Overall Immunization Coverage",
+    "code": "SH.IMM.IDPT",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Extreme Poverty",
+    "code": "SI.POV.DDAY",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Access to Basic Drinking Water",
+    "code": "SH.H2O.BASW.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Air Quality (PM2.5 exposure)",
+    "code": "EN.ATM.PM25.MC.M3",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Renewable Energy Share",
+    "code": "EG.FEC.RNEW.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Internet Penetration Rate",
+    "code": "IT.NET.USER.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Mobile Subscriptions per 100 inhabitants",
+    "code": "IT.CEL.SETS.P2",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Railway Length",
+    "code": "IS.RRS.TOTL.KM",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Inflation (Consumer Price Index)",
+    "code": "FP.CPI.TOTL.ZG",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Employment-to-population ratio",
+    "code": "SL.EMP.TOTL.SP.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "January 07, 2025"
+  },
+  {
+    "title": "Female Labor Force Participation",
+    "code": "SL.TLF.CACT.FE.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "January 07, 2025"
+  },
+  {
+    "title": "Road Traffic Deaths (per 100k people)",
+    "code": "SH.STA.TRAF.P5",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Fixed Broadband Subscriptions (per 100 people)",
+    "code": "IT.NET.BBND.P2",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Education Expenditure (% of GDP)",
+    "code": "SE.XPD.TOTL.GD.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  },
+  {
+    "title": "Military Expenditure (% of GDP)",
+    "code": "MS.MIL.XPND.GD.ZS",
+    "api_results": 0,
+    "has_date_field": false,
+    "zip_result": "No 'date accessed' found"
+  }
+]

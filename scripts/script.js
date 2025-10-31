@@ -82,8 +82,6 @@ async function init() {
     gdpData = await loadJSON("data/gdp.json");
     areaData = await loadJSON("data/area.json");
 	ALL_DATA = await loadAllKPIData(); // ✅ Consolidated dataset
-	showSpinner(false); // Loader wieder ausblenden
-
 
     // === Dropdowns & Eventhandler ===
     await populateKpiSelect();
@@ -109,16 +107,15 @@ async function init() {
 
   } catch (e) {
     console.error("RealityCheck init() failed:", e);
+  } finally {
+    // === Spinner IMMER ausschalten, egal ob Erfolg oder Fehler ===
+    showSpinner(false);
   }
 }
 
 /* ========= KPI-Auswahl ========= */
 async function populateKpiSelect() {
   const sel = document.getElementById("kpiSelect");
-  const spinner = document.getElementById("overlay-spinner");
-  if (!sel) return;
-
-  if (spinner) spinner.classList.remove("hidden");
   sel.disabled = true;
   sel.innerHTML = "<option>Loading KPIs…</option>";
 
@@ -162,8 +159,8 @@ async function populateKpiSelect() {
   } finally {
     sel.classList.remove("loading");
     sel.disabled = false;
-    if (spinner) spinner.classList.add("hidden");
   }
+
 }
 
 /* ========= Country Selects ========= */
