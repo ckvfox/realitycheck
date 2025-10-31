@@ -1,6 +1,16 @@
 ![RealityCheck Logo](images/logo.png)
 
-# 🌍 RealityCheck – Interactive Global Country Dashboard
+# 🌍 RealityCheck – Interactive Country Comparison
+
+**Version:** 2.1 (as of October 31, 2025)  
+**Project Lead:** Carsten Winterling  
+**AI Collaboration:** GPT-5  
+**Hosting:** InfinityFree  
+**Frontend:** HTML, CSS, JS (Chart.js, Leaflet, marked.js)  
+**Backend:** Python (data fetchers, GPT-based analysis & rankings)
+
+---
+
 
 "The world isn’t getting worse — we just measure it better."
 RealityCheck is an interactive global data project inspired by Factfulness,
@@ -31,119 +41,170 @@ It’s both analytical and exploratory — you can:
 
 ---------------------------------------------------------------------
 
-🗂️ PROJECT STRUCTURE
-realitycheck/
+
+## 📁 Current Project Structure
+
+```
+/
+├── index.html                      # Main shell with navigation & iframe loader
+├── about.html                      # About page & data source explanation
+├── style.css                       # Global unified styling
+├── tracking.php                    # Anonymous visitor logging (server side)
+├── favicon.ico / favicon.png       # Browser icons
 │
-├── index.html
-├── countries.html
-├── overall_ranking_countries.html
-├── data_glossary.html
-├── analysis.html
-├── world.html
-├── about.html
-├── impressum.html
-├── privacy.html
-├── tracking.php
-├── tracking.json
+├── countries.html                  # Country dashboard (table, chart, map, chatbot)
+├── world.html                      # Global OWID trend dashboards
+├── overall_ranking_countries.html  # Combined KPI-based ranking page
+├── analysis.html                   # AI-generated analysis rendered via marked.js
+├── data_glossary.html              # Data source freshness & outlier overview
 │
-├── style.css
+├── impressum.html                  # Legal notice
+├── privacy.html                    # Privacy policy (no cookies, no tracking)
 │
-├── scripts/
+├── /scripts/
+│   ├── core.js
 │   ├── script.js
-│   ├── script_overall_ranking_countries.js
 │   ├── script_world.js
+│   ├── script_overall_ranking_countries.js
+│   ├── floating_chat.js
+│   ├── analysis.py
 │   ├── fetch_data.py
 │   ├── fetch_overall_ranking.py
-│   ├── analysis.py
-│   └── ...
+│   ├── generate_fun_safe_rankings.py
+│   ├── fetch_consolidated.py
+│   ├── check_source_csv_updates.py
+
 │
-├── data/
-│   ├── fetch_log.txt
-│   ├── fetch_status.json
-│   ├── overall_ranking.json
-│   ├── population.json
-│   ├── gdp.json
-│   ├── area.json
-│   └── ...
-│
-│   ├── meta/
+├── /data/
+│   │
+│   ├── /meta/
 │   │   ├── available_kpis.json
+│   │   ├── meta_scan_report.txt
 │   │   ├── countries.json
 │   │   ├── groups.json
-│   │   ├── country_mappings.json
 │   │   ├── country_mappings_pending.json
-│   │   └── ...
+│   │   ├── country_mappings.json
+│   │
+│   ├── fetch_status.json
+│   ├── fetch_log.txt
+│   ├── analysis_outliers.json
+│   ├── analysis.md
+│   ├── overall_ranking.json
+│   ├── fun_ranking.json
+│   ├── safe_haven_ranking.json
+│   ├── [kpi].json
 │
-├── images/
-│   ├── logo.png
-│   └── ...
-│
-└── README.md
+└── /images/
+    ├── logo.svg
+```
 
----------------------------------------------------------------------
+---
 
-⚙️ HOW IT WORKS
+## 🧩 Key JSON Structures
 
-1️⃣  Fetch new data:
-    python scripts/fetch_data.py
-    → Retrieves and updates all KPI JSON files.
-      Logs progress and missing mappings to /data/fetch_log.txt
+### `available_kpis.json`
+Metadata master for all KPIs:
 
-2️⃣  Generate overall ranking:
-    python scripts/fetch_overall_ranking.py
-    → Calculates aggregated per-country performance using relevance and sort info.
+```json
+{
+  "title": "Fertility Rate",
+  "description": "Average number of children per woman.",
+  "unit": "births per woman",
+  "relation": "*",
+  "cluster": "Society & Governance",
+  "source": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+  "source_type": "worldbank",
+  "source_code": "SP.DYN.TFRT.IN",
+  "filename": "fertility_rate",
+  "relevance": "normal"
+}
+```
 
-3️⃣  Run AI analysis:
-    python scripts/analysis.py
-    → Produces interpretive summaries using GPT-5-based global reasoning.
+**ID Schema:**  
+- `filename` = normalized title (lowercase, underscores, no accents)  
+- allowed pattern: `[a-z0-9_]+`  
+- clusters: *Economy*, *Society & Governance*, *Environment*, *Security & Resilience*  
+- relevance: `very_high`, `high`, `normal`, `low`, `irrelevant`
 
----------------------------------------------------------------------
+---
 
-🧰 TECH STACK
-Frontend:  HTML5, CSS3, Vanilla JS (ES6), Chart.js, Leaflet
-Backend:   Python 3, Requests, CSV/JSON handling
-AI Layer:  OpenAI GPT-5
-Sources:   World Bank, Our World in Data, UNHCR, custom CSV
-Hosting:   InfinityFree / GitHub Pages
-Versioning: GitHub (ckvfox / realitycheck)
+### `countries.json`
+```json
+"Germany": {
+  "capital": "Berlin",
+  "government": "Federal Republic",
+  "lat": 52.52,
+  "lon": 13.40
+}
+```
 
----------------------------------------------------------------------
+### `groups.json`
+```json
+"G7": {
+  "title": "G7",
+  "members": ["Canada", "France", "Germany", "Italy", "Japan", "United Kingdom", "United States"]
+}
+```
 
-🧩 KPI CLUSTERS
-Economy & Innovation: GDP per Capita, Big Mac Index, R&D Expenditure
-Society & Governance: Education Index, Press Freedom, Happiness Score
-Environment & Resources: CO₂ Emissions, Recycling Rate, EPI Score
-Health & Life: Life Expectancy, Fertility Rate, Vaccination Coverage
-Safety & Resilience: Conflict Deaths, Disaster Events, Safe Haven Index
-Fun & Quality of Life: Coffee Price Index, Tourism Appeal Score
-AI & Meta Insights: Outliers, Correlations, Global Forecasts
+### `country_mappings.json`
+Maps aliases (ISO, German, historic, OWID, WB names) to canonical form:
 
----------------------------------------------------------------------
+```json
+"DEU": "Germany",
+"Deutschland": "Germany",
+"Federal Republic of Germany": "Germany"
+```
 
-🚀 GETTING STARTED
-Clone the repo:
-    git clone https://github.com/ckvfox/realitycheck.git
-    cd realitycheck
+---
 
-Update KPI data:
-    python scripts/fetch_data.py
+## ⚙️ Automated Backend Scripts
 
-Generate new ranking:
-    python scripts/fetch_overall_ranking.py
+| Script | Purpose |
+|--------|----------|
+| `fetch_data.py` | Fetches all KPI datasets (World Bank, OWID, UNHCR, CSV) |
+| `fetch_consolidated.py` | Normalizes data structure and schema, zip to gzip |
+| `fetch_overall_ranking.py` | Generates GPT-based Fun & Safe Haven rankings |
+| `analysis.py` | Produces the AI-generated global analysis (analysis.md) |
+| `check_source_csv_updates.py` | Scans manual CSVs for newer dataset versions |
 
-Open locally:
-    Simply open index.html in your browser
-    or host via GitHub Pages / InfinityFree.
+---
 
----------------------------------------------------------------------
+## 📊 Main Pages & Their Roles
 
-📈 CURRENT FOCUS (October 2025)
-✓ Migration of meta files to /data/meta/
-✓ Replacement of normalize logic with filename field
-✓ Integration of relevance weighting for KPIs
-✓ Unified visual style (no dark mode)
-✓ AI-Analysis prompt (B2 level)
-→ Next: Merge all country JSON into one global dataset
+| File | Description |
+|------|--------------|
+| `countries.html` | Interactive KPI explorer with table, chart, map & chatbot |
+| `world.html` | Global trend dashboard via OWID embeds |
+| `overall_ranking_countries.html` | Interactive ranking with KPI weighting |
+| `analysis.html` | Renders Markdown report (`analysis.md`) |
+| `data_glossary.html` | Data freshness, outliers & sources |
+| `index.html` | Shell frame with navigation, loader & iframe system |
+
+---
+
+## 🚧 Open To-Do List (as of Oct 31, 2025)
+
+### 🧭 UI / Frontend
+- [ ] Center `#overlay-spinner` inside iframe (currently full-page overlay)
+- [ ] Fix horizontal scrollbar on `#country-table`
+- [ ] “Bring me to top” button: scroll behavior inside iframe
+
+### 🧩 Data & Logic
+- [ ] Extract chatbot logic into `/scripts/chatbot.js`
+- [ ] Implement fuzzy loader for file fallbacks
+
+
+### 🧠 Backend
+x
+
+---
+
+## 🧾 Data Sources
+
+- **World Bank API** – https://data.worldbank.org  
+- **Our World in Data (OWID)** – https://ourworldindata.org  
+- **UNHCR**, **WHO**, **IMF**, **Yale EPI**  
+- **Manual CSV datasets:** Big Mac Index, Olympic Medals, etc.
 
 ---------------------------------------------------------------------
 
@@ -156,6 +217,6 @@ for everyone who believes that numbers tell a truer story than opinions.
 
 ---------------------------------------------------------------------
 
-🪪 LICENSE
-MIT License © 2025 RealityCheck / Carsten Winterling
-You are free to use, modify, and distribute this project with attribution.
+---
+
+© 2025 RealityCheck Project – Created by Carsten Winterling
