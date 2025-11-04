@@ -97,18 +97,18 @@ Criteria: human rights (e.g. Human Rights Index), low conflict risk (e.g. Geopol
 Return the full, valid JSON array and make sure all brackets are properly closed.
 """.strip()
 
-# === Core ===
+# === Core (fixed) ===
 def generate_ranking(mode: str, prompt: str, path: Path):
-    log(f"➡️ Generating {mode} via GPT-4-Turbo…")
+    log(f"➡️ Generating {mode} via GPT-4-Turbo …")
     try:
+        # Kein erzwungenes response_format → GPT darf Array [ ... ] zurückgeben
         response = client.chat.completions.create(
             model="gpt-4-turbo",
-            response_format={"type": "json_object"},  # ✅ erzwingt sauberes JSON
             messages=[
                 {"role": "system", "content": "You are a geopolitical and socioeconomic analyst."},
                 {"role": "user", "content": prompt},
             ],
-            max_completion_tokens=1000  # 🔼 mehr Platz, verhindert Abschneiden
+            max_completion_tokens=1000
         )
         text = response.choices[0].message.content.strip()
     except Exception as e:
@@ -119,46 +119,29 @@ def generate_ranking(mode: str, prompt: str, path: Path):
         log(f"⚠️ Empty response for {mode}")
         return []
 
-    # === Robust Parsing ===
-    def try_parse_json(txt: str):
-        try:
-            return json.loads(txt)
-        except json.JSONDecodeError:
-            fixed = txt.strip()
-            if fixed.count("{") > fixed.count("}"):
-                fixed += "}" * (fixed.count("{") - fixed.count("}"))
-            if fixed.count("[") > fixed.count("]"):
-                fixed += "]" * (fixed.count("[") - fixed.count("]"))
-            try:
-                return json.loads(fixed)
-            except Exception:
-                return None
-
+    # === Flexible Parsing (funktioniert mit Array oder Objekt) ===
+    import re
     clean = text.strip("` \n")
     if clean.lower().startswith("json"):
         clean = clean[4:].strip()
 
-    data = try_parse_json(clean)
-    if not data:
-        # Letzter Rettungsversuch: suche JSON-Fragment
-        import re
-        possible = re.search(r"\{.*\}", clean, re.DOTALL)
-        if possible:
-            frag = possible.group(0)
-            if frag.count("{") > frag.count("}"):
-                frag += "}" * (frag.count("{") - frag.count("}"))
-            try:
-                data = json.loads(frag)
-            except Exception:
-                data = None
+    match = re.search(r"(\[.*\]|\{.*\})", clean, re.DOTALL)
+    if not match:
+        log(f"⚠️ No JSON found in GPT response for {mode}")
+        log(f"Raw excerpt: {clean[:200]}")
+        return []
 
-    if not data:
-        log(f"❌ JSON parse error in {mode} (repair failed)")
-        log(f"Raw excerpt: {clean[:300]}")
+    raw_json = match.group(1)
+    try:
+        data = json.loads(raw_json)
+    except Exception as e:
+        log(f"⚠️ JSON parse error in {mode}: {e}")
+        log(f"Raw excerpt: {raw_json[:200]}")
         return []
 
     save_json(data, path)
     return data
+
 
 
 # === Main ===

@@ -1205,3 +1205,32 @@ Updated KPIs:      14
 [2025-11-04 21:37:28 UTC] 🔎 Computing outliers …
 [2025-11-04 21:37:29 UTC] 💾 Outliers saved (54 KPIs, compact format)
 [2025-11-04 21:37:29 UTC] ✅ RealityCheck analysis completed successfully.
+[2025-11-04 21:56:11 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
+[2025-11-04 21:56:11 UTC] ➡️ Starting global analysis …
+[2025-11-04 21:56:11 UTC] ➡️ GPT call → gpt-4o
+[2025-11-04 21:56:28 UTC] 🧮 Tokens: CompletionUsage(completion_tokens=618, prompt_tokens=352, total_tokens=970, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0))
+[2025-11-04 21:56:28 UTC] ✅ gpt-4o OK (3560 chars)
+[2025-11-04 21:56:28 UTC] 💾 Saved analysis (3560 chars)
+[2025-11-04 21:56:28 UTC] ⚙️ Limiting KPI analysis to 4 entries.
+[2025-11-04 21:56:28 UTC] ➡️ GPT call → gpt-4o
+[2025-11-04 21:56:35 UTC] 🧮 Tokens: CompletionUsage(completion_tokens=187, prompt_tokens=188, total_tokens=375, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0))
+[2025-11-04 21:56:35 UTC] ✅ gpt-4o OK (1094 chars)
+[2025-11-04 21:56:36 UTC] ➡️ GPT call → gpt-4o
+[2025-11-04 21:56:41 UTC] 🧮 Tokens: CompletionUsage(completion_tokens=198, prompt_tokens=104, total_tokens=302, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0))
+[2025-11-04 21:56:41 UTC] ✅ gpt-4o OK (1163 chars)
+[2025-11-04 21:56:42 UTC] ➡️ GPT call → gpt-4o
+[2025-11-04 21:56:47 UTC] 🧮 Tokens: CompletionUsage(completion_tokens=201, prompt_tokens=156, total_tokens=357, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0))
+[2025-11-04 21:56:47 UTC] ✅ gpt-4o OK (1214 chars)
+[2025-11-04 21:56:48 UTC] ➡️ GPT call → gpt-4o
+[2025-11-04 21:56:52 UTC] 🧮 Tokens: CompletionUsage(completion_tokens=160, prompt_tokens=130, total_tokens=290, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0))
+[2025-11-04 21:56:52 UTC] ✅ gpt-4o OK (930 chars)
+[2025-11-04 21:56:53 UTC] ✅ KPI analyses saved (61 total)
+[2025-11-04 21:56:53 UTC] 🔎 Computing outliers …
+[2025-11-04 21:56:53 UTC] 💾 Outliers saved (54 KPIs, compact format)
+[2025-11-04 21:56:53 UTC] ✅ RealityCheck analysis completed successfully.
+[2025-11-04 21:57:01 UTC] 🎬 Starting Fun & Safe Haven ranking generation…
+[2025-11-04 21:57:01 UTC] ➡️ Generating Fun Mode via GPT-4-Turbo …
+[2025-11-04 21:57:25 UTC] 💾 Saved data\fun_ranking.json (10 entries)
+[2025-11-04 21:57:25 UTC] ➡️ Generating Safe Haven Mode via GPT-4-Turbo …
+[2025-11-04 21:57:44 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
+[2025-11-04 21:57:44 UTC] ✅ Both rankings generated successfully.
