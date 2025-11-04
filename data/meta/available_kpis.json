@@ -172,7 +172,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "gdp_per_capita_current_us",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal"
   },
   {
@@ -961,7 +961,7 @@
     "actuality": "critical"
   },
   {
-    "title": "Resilience Index",
+    "title": "Inform Resilience Index",
     "description": "This index measures the ability of a country to cope with and recover from disasters. It reflects institutional strength, infrastructure, and access to basic services. Lower scores indicate higher resilience. These data are provided by the European Commission – INFORM Risk and Resilience Index (JRC DRMKC).",
     "unit": "index (0–10)",
     "relation": "",
@@ -985,10 +985,10 @@
     "cluster": "Environment & Sustainability",
     "source": "https://germanwatch.org/en/cri",
     "source_type": "csv",
-    "source_code": "CRI",
+    "source_code": "climate_risk_index.csv",
     "scale": "index",
     "world_kpi": "",
-    "filename": "climate_risk_index.csv",
+    "filename": "climate_risk_index",
     "relevance": "normal",
     "actuality": "stable"
   },
@@ -1007,5 +1007,37 @@
     "filename": "geopolitical_risk_index",
     "relevance": "high",
     "actuality": "critical"
-  }
+  },
+  {
+  "title": "Rule of Law Index",
+  "description": "The Rule of Law Index measures the extent to which countries adhere to the rule of law in practice — including constraints on government powers, absence of corruption, open government, fundamental rights, order and security, regulatory enforcement, civil justice, and criminal justice. Scores range from 0 (weak rule of law) to 1 (strong rule of law). It provides a comprehensive view of how justice and governance function in practice, complementing indicators such as the Democracy Index and Political Corruption Index. These data are compiled by Our World in Data based on the World Justice Project (WJP).",
+  "unit": "index (0–1)",
+  "relation": "",
+  "sort": "higher",
+  "cluster": "Society & Governance",
+  "source": "https://ourworldindata.org/grapher/rule-of-law-index",
+  "source_type": "owid",
+  "source_code": "rule-of-law-index.csv?v=1&csvType=full&useColumnShortNames=true",
+  "scale": "none",
+  "world_kpi": "",
+  "filename": "rule_of_law_index",
+  "relevance": "very_high",
+  "actuality": "normal"
+},
+{
+  "title": "GDP per capita, PPP (current international $)",
+  "description": "GDP per capita based on purchasing power parity (PPP) reflects the average economic output per person, adjusted for differences in price levels between countries. It measures how much a unit of currency can buy in terms of goods and services, providing a more accurate comparison of living standards across nations.",
+  "unit": "USD",
+  "scale": "auto",  
+  "world_kpi": "",
+  "relation": "",  
+  "sort": "higher",
+  "cluster": "Economy & Labor",
+  "relevance": "high",
+  "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD",
+  "source_type": "worldbank",
+  "source_code": "NY.GDP.PCAP.PP.CD",
+  "filename": "purchasing_power_parity",
+  "actuality": "normal"
+}
 ]

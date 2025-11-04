@@ -1,92 +1,127 @@
-# ============================================================
-# 🌍 RealityCheck – Consolidated KPI Split + Gzip Writer
-# ============================================================
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+📦 RealityCheck – Consolidated KPI Split + Gzip Writer (Pathlib-Version)
+──────────────────────────────────────────────────────────────
+• Bündelt alle KPI-JSONs zu mehreren komprimierten Teil-Dateien (≈ 8 MB)
+• Schreibt Index-Datei all_kpis_index.json mit Übersicht
+• Kompatibel mit InfinityFree-Limit (~5 MB pro Datei)
+"""
 
-import os, json, gzip
+import json, gzip
 from datetime import datetime, timezone
+from pathlib import Path
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "..", "data")
-META_PATH = os.path.join(DATA_DIR, "meta", "available_kpis.json")
-OUT_PREFIX = os.path.join(DATA_DIR, "all_kpis_part")
+# ======================================================================
+# 🔧 Pfade (robust gegen OS-Unterschiede)
+# ======================================================================
+SCRIPT_DIR = Path(__file__).parent.resolve()
+ROOT_DIR   = SCRIPT_DIR.parent.resolve()
+DATA_DIR   = ROOT_DIR / "data"
+META_PATH  = DATA_DIR / "meta" / "available_kpis.json"
+OUT_PREFIX = DATA_DIR / "all_kpis_part"
 
-MAX_SIZE_MB = 8.0  # Zielgröße pro Teil (InfinityFree Limit ~5 MB)
+MAX_SIZE_MB = 8.0  # Zielgröße pro Teil (InfinityFree Limit ≈5 MB)
 
-def load_json(path):
+# ======================================================================
+# 🧰 Hilfsfunktionen
+# ======================================================================
+def load_json(path: Path):
     try:
-        with open(path, encoding="utf-8") as f:
+        with path.open(encoding="utf-8") as f:
             return json.load(f)
     except Exception as e:
         print(f"⚠️ Could not load {path}: {e}")
         return {}
 
-def get_file_size_mb(path):
-    return os.path.getsize(path) / (1024 * 1024)
+def get_file_size_mb(path: Path) -> float:
+    return path.stat().st_size / (1024 * 1024)
 
-def gzip_json(data, path):
-    """Write compressed JSON with UTF-8"""
+def gzip_json(data, path: Path):
+    """Write compressed JSON (UTF-8)."""
+    path.parent.mkdir(parents=True, exist_ok=True)
     with gzip.open(path, "wt", encoding="utf-8") as f:
         json.dump(data, f, separators=(",", ":"))
 
+# ======================================================================
+# 💾 Safe Write Helpers
+# ======================================================================
+def safe_write_json(path: Path, data):
+    """Garantiert sicheres Schreiben einer JSON-Datei mit UTF-8 und Verzeichnis-Erstellung."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with path.open("w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"💾 JSON saved successfully → {path.relative_to(ROOT_DIR)} ({len(data)} keys)")
+    except Exception as e:
+        print(f"❌ Failed to write {path}: {e}")
+
+# ======================================================================
+# 🚀 Main
+# ======================================================================
 def main():
-    print("🌍 Building consolidated KPI dataset (split + gzip)...")
+    print("🌍 Building consolidated KPI dataset (split + gzip)…")
 
     meta = load_json(META_PATH)
     if not meta:
         print("❌ No meta loaded – aborting.")
         return
 
+    # === 1️⃣ Alle KPI-Dateien laden ===
     consolidated = {}
     for entry in meta:
         fname = entry.get("filename")
         if not fname:
             continue
-        path = os.path.join(DATA_DIR, f"{fname}.json")
-        if not os.path.exists(path):
+        path = DATA_DIR / f"{fname}.json"
+        if not path.exists():
             continue
         try:
-            with open(path, encoding="utf-8") as f:
+            with path.open(encoding="utf-8") as f:
                 data = json.load(f)
             consolidated[fname] = data
         except Exception as e:
             print(f"⚠️ Failed to read {fname}.json: {e}")
 
-    # 🧩 Split nach Größe
+    # === 2️⃣ Split nach Zielgröße ===
     parts = []
     current = {}
     counter = 1
-    size_estimate = 0
 
     for k, v in consolidated.items():
         current[k] = v
         size_estimate = len(json.dumps(current)) / (1024 * 1024)
         if size_estimate >= MAX_SIZE_MB:
-            out_path = f"{OUT_PREFIX}{counter}.json.gz"
+            out_path = OUT_PREFIX.with_name(f"{OUT_PREFIX.name}{counter}.json.gz")
             gzip_json(current, out_path)
-            parts.append(os.path.basename(out_path))
+            parts.append(out_path.name)
             print(f"✅ Wrote {out_path} ({get_file_size_mb(out_path):.2f} MB)")
             counter += 1
             current = {}
-            size_estimate = 0
 
     # letzter Teil
     if current:
-        out_path = f"{OUT_PREFIX}{counter}.json.gz"
+        out_path = OUT_PREFIX.with_name(f"{OUT_PREFIX.name}{counter}.json.gz")
         gzip_json(current, out_path)
-        parts.append(os.path.basename(out_path))
+        parts.append(out_path.name)
         print(f"✅ Wrote {out_path} ({get_file_size_mb(out_path):.2f} MB)")
 
-    # Index-Datei schreiben
-    index_path = os.path.join(DATA_DIR, "all_kpis_index.json")
-    with open(index_path, "w", encoding="utf-8") as f:
-        json.dump({
-            "parts": parts,
-            "created": datetime.now(timezone.utc).isoformat(),
-            "count": len(parts)
-        }, f, indent=2)
+    # === 3️⃣ Index-Datei sicher schreiben ===
+    index_path = DATA_DIR / "all_kpis_index.json"
+    index_data = {
+        "parts": parts,
+        "created": datetime.now(timezone.utc).isoformat(),
+        "count": len(parts)
+    }
+
+    safe_write_json(index_path, index_data)
+
     print(f"📄 Index written → {index_path}")
     print(f"✅ Done ({len(parts)} parts total).")
 
 
+# ======================================================================
+# ▶ Start
+# ======================================================================
 if __name__ == "__main__":
     main()

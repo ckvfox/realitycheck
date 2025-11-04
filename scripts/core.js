@@ -2,13 +2,33 @@
    🌐 RealityCheck – Core Utilities (shared functions, 2025-10)
    ============================================================ */
 
-// === Load JSON with cache-bypass & error-handling ===
+// === Load JSON with cache-bypass & safe parse (FINAL FIX 2025-11-02) ===
 async function loadJSON(path) {
   try {
     const res = await fetch(path + "?t=" + Date.now(), { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
     const txt = await res.text();
-    return txt ? JSON.parse(txt) : [];
+    if (!txt) return [];
+
+    // 🔧 Sicherstellen, dass wir ein Objekt zurückgeben, kein String
+    let parsed;
+    try {
+      parsed = JSON.parse(txt);
+    } catch (err) {
+      console.warn("⚠️ loadJSON: content not valid JSON → returning raw text", path);
+      parsed = txt;
+    }
+
+    // 🩵 Falls JSON doppelt serialisiert war (z. B. als String mit {...})
+    if (typeof parsed === "string" && parsed.trim().startsWith("{")) {
+      try {
+        parsed = JSON.parse(parsed);
+        console.log("🧩 loadJSON reparsed nested JSON:", path);
+      } catch {/* ignore */}
+    }
+
+    return parsed;
   } catch (e) {
     console.warn("⚠️ loadJSON failed:", path, e);
     return [];

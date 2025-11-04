@@ -1,52 +1,94 @@
-[
-  {
-    "rank": 1,
-    "country": "Switzerland",
-    "score": 94.0
-  },
-  {
-    "rank": 2,
-    "country": "Norway",
-    "score": 92.5
-  },
-  {
-    "rank": 3,
-    "country": "Finland",
-    "score": 91.8
-  },
-  {
-    "rank": 4,
-    "country": "Iceland",
-    "score": 91.5
-  },
-  {
-    "rank": 5,
-    "country": "Denmark",
-    "score": 90.7
-  },
-  {
-    "rank": 6,
-    "country": "New Zealand",
-    "score": 90.0
-  },
-  {
-    "rank": 7,
-    "country": "Canada",
-    "score": 89.5
-  },
-  {
-    "rank": 8,
-    "country": "Sweden",
-    "score": 89.0
-  },
-  {
-    "rank": 9,
-    "country": "Australia",
-    "score": 88.5
-  },
-  {
-    "rank": 10,
-    "country": "Netherlands",
-    "score": 88.0
-  }
-]
+{
+  "Safe Haven Ranking": [
+    {
+      "Rank": 1,
+      "Country": "New Zealand",
+      "Human Rights Index": 9.5,
+      "Geopolitical Risk Index": 1.2,
+      "Climate Risk Index": 4.3,
+      "Inform Resilience Index": 8.9,
+      "Democracy Index": 9.4
+    },
+    {
+      "Rank": 2,
+      "Country": "Switzerland",
+      "Human Rights Index": 9.3,
+      "Geopolitical Risk Index": 1.1,
+      "Climate Risk Index": 5.1,
+      "Inform Resilience Index": 8.7,
+      "Democracy Index": 9.1
+    },
+    {
+      "Rank": 3,
+      "Country": "Finland",
+      "Human Rights Index": 9.6,
+      "Geopolitical Risk Index": 1.9,
+      "Climate Risk Index": 4.5,
+      "Inform Resilience Index": 8.8,
+      "Democracy Index": 9.3
+    },
+    {
+      "Rank": 4,
+      "Country": "Norway",
+      "Human Rights Index": 9.7,
+      "Geopolitical Risk Index": 1.4,
+      "Climate Risk Index": 4.6,
+      "Inform Resilience Index": 8.6,
+      "Democracy Index": 9.6
+    },
+    {
+      "Rank": 5,
+      "Country": "Denmark",
+      "Human Rights Index": 9.3,
+      "Geopolitical Risk Index": 1.5,
+      "Climate Risk Index": 4.8,
+      "Inform Resilience Index": 8.5,
+      "Democracy Index": 9.2
+    },
+    {
+      "Rank": 6,
+      "Country": "Canada",
+      "Human Rights Index": 9.0,
+      "Geopolitical Risk Index": 2.0,
+      "Climate Risk Index": 5.0,
+      "Inform Resilience Index": 8.2,
+      "Democracy Index": 9.1
+    },
+    {
+      "Rank": 7,
+      "Country": "Iceland",
+      "Human Rights Index": 9.4,
+      "Geopolitical Risk Index": 1.2,
+      "Climate Risk Index": 3.9,
+      "Inform Resilience Index": 8.7,
+      "Democracy Index": 9.5
+    },
+    {
+      "Rank": 8,
+      "Country": "Sweden",
+      "Human Rights Index": 9.2,
+      "Geopolitical Risk Index": 1.6,
+      "Climate Risk Index": 4.7,
+      "Inform Resilience Index": 8.4,
+      "Democracy Index": 9.0
+    },
+    {
+      "Rank": 9,
+      "Country": "Ireland",
+      "Human Rights Index": 9.1,
+      "Geopolitical Risk Index": 2.1,
+      "Climate Risk Index": 5.3,
+      "Inform Resilience Index": 8.1,
+      "Democracy Index": 9.0
+    },
+    {
+      "Rank": 10,
+      "Country": "Australia",
+      "Human Rights Index": 9.1,
+      "Geopolitical Risk Index": 2.2,
+      "Climate Risk Index": 5.5,
+      "Inform Resilience Index": 8.0,
+      "Democracy Index": 8.9
+    }
+  ]
+}

@@ -10,35 +10,85 @@ Produktive Version mit:
  • vollständigem Mapping-, Dummy-, und Analyse-Handling
 """
 
-import os, csv, json, re, requests, unicodedata, traceback, io, zipfile
+import os
+import sys
+import json
+import time
+import shutil
+import logging
+import argparse
+import requests
+import re
+import zipfile
+import unicodedata
+import traceback
+import subprocess
+from typing import Any, Dict, List, Optional
+from pathlib import Path
 from datetime import datetime, timezone
-from typing import Dict, List, Any, Optional, Tuple
 from dotenv import load_dotenv
-import hashlib
-import sys, os, subprocess
+from openai import OpenAI
+from httpx import Client as HttpxClient  # verhindert "proxies"-Fehler unter Python 3.13
+from env_utils import get_openai_key  # ✅ wichtig: hier fehlte der Import
 
 
 
-# === Load .env (API-Keys, Settings etc.) ===
-load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", ".env"))
+# ✅ UTF-8-Fix
+if sys.stdout.encoding is None or sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
+
+OPENAI_API_KEY = get_openai_key()
+client = OpenAI(api_key=OPENAI_API_KEY, http_client=HttpxClient())
 
 
 # ======================================================================
-# 🔧 Pfade
+# 🔧 Pfade (pathlib-Version – robust gegen OS-Unterschiede)
 # ======================================================================
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-ROOT_DIR   = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
-DATA_DIR   = os.path.join(ROOT_DIR, "data")
-META_DIR   = os.path.join(DATA_DIR, "meta")
-SOURCE_CSV_DIR = os.path.join(SCRIPT_DIR, "source_csv")
-PENDING_DIR    = os.path.join(DATA_DIR, "pending")
+from pathlib import Path
 
-COUNTRIES_FILE       = os.path.join(META_DIR, "countries.json")
-COUNTRY_MAP_FILE     = os.path.join(META_DIR, "country_mappings.json")
-COUNTRY_PENDING_FILE = os.path.join(META_DIR, "country_mappings_pending.json")
-AVAILABLE_FILE       = os.path.join(META_DIR, "available_kpis.json")
-LOG_FILE             = os.path.join(DATA_DIR, "fetch_log.txt")
-STATUS_FILE          = os.path.join(DATA_DIR, "fetch_status.json")
+SCRIPT_DIR = Path(__file__).parent.resolve()
+ROOT_DIR   = SCRIPT_DIR.parent.resolve()
+DATA_DIR   = ROOT_DIR / "data"
+META_DIR   = DATA_DIR / "meta"
+SOURCE_CSV_DIR = SCRIPT_DIR / "source_csv"
+PENDING_DIR    = DATA_DIR / "pending"
+
+COUNTRIES_FILE       = META_DIR / "countries.json"
+COUNTRY_MAP_FILE     = META_DIR / "country_mappings.json"
+COUNTRY_PENDING_FILE = META_DIR / "country_mappings_pending.json"
+AVAILABLE_FILE       = META_DIR / "available_kpis.json"
+LOG_FILE             = DATA_DIR / "fetch_log.txt"
+STATUS_FILE          = DATA_DIR / "fetch_status.json"
+
+
+
+# === Argumente ===
+parser = argparse.ArgumentParser(description="RealityCheck Fetcher")
+parser.add_argument("-f", "--force", action="store_true", help="Force full refetch (clear /data except /meta)")
+args = parser.parse_args()
+
+# === Force Mode: Clean Data ===
+if args.force:
+    print("[INFO] Force mode enabled – clearing data except /meta …")
+
+    for item in DATA_DIR.iterdir():
+        if item.name == "meta":
+            continue
+        if item.is_dir():
+            shutil.rmtree(item, ignore_errors=True)
+        else:
+            item.unlink(missing_ok=True)
+
+    if (SCRIPT_DIR / "__pycache__").exists():
+        shutil.rmtree(SCRIPT_DIR / "__pycache__", ignore_errors=True)
+
+    for f in SCRIPT_DIR.glob("*.md5"):
+        f.unlink(missing_ok=True)
+
+    if PENDING_DIR.exists():
+        shutil.rmtree(PENDING_DIR, ignore_errors=True)
+
+    print("[OK] Data folders cleared for full refetch.")
 
 # ======================================================================
 # 🧰 Hilfsfunktionen
@@ -52,7 +102,7 @@ def ensure_dirs():
 
 def log(msg: str):
     ensure_dirs()
-    line = f"[{now_utc()}] {msg}"
+    line = f"[{now_utc()} UTC] {msg}"
     print(line)
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(line + "\n")
@@ -99,6 +149,30 @@ def safe_pending_filename(text: str) -> str:
         digest = hashlib.md5(clean.encode("utf-8")).hexdigest()[:8]
         clean = clean[:90] + "_" + digest
     return clean
+    
+# ======================================================================
+# 💾 Safe Write Helpers (robuste Datei-Speicherung)
+# ======================================================================
+def safe_write_json(path: str | Path, data):
+    """Garantiert sicheres Schreiben von JSON mit UTF-8 und Verzeichnis-Erstellung."""
+    try:
+        os.makedirs(os.path.dirname(str(path)), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        log(f"[SAFE] JSON written → {os.path.relpath(path, ROOT_DIR)} ({len(data)} keys)")
+    except Exception as e:
+        log(f"[❌] Failed to write {path}: {e}")
+
+def safe_write_text(path: str | Path, text: str):
+    """Sicheres Schreiben von Textdateien (z. B. Logs, Reports)."""
+    try:
+        os.makedirs(os.path.dirname(str(path)), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(text or "")
+        log(f"[SAFE] Text written → {os.path.relpath(path, ROOT_DIR)}")
+    except Exception as e:
+        log(f"[❌] Failed to write text {path}: {e}")
+
 
 # ======================================================================
 # 🌍 Country Mapping
@@ -479,12 +553,11 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
 
     else:
         keep_or_dummy(kpi_id, f"WorldBank empty {code}", stats)
-
 # ----------------------------------------------------------------------
 # 📊 CSV Fetch (smart) – inkl. Änderungsprüfung & Natural Disasters Sonderfall
 # ----------------------------------------------------------------------
 def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
-    import hashlib, pandas as pd
+    import hashlib, pandas as pd, re
 
     csv_name = meta.get("source_code") or meta.get("code") or f"{kpi_id}.csv"
     path = os.path.join(SOURCE_CSV_DIR, csv_name)
@@ -498,7 +571,8 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
     def file_md5(p):
         h = hashlib.md5()
         with open(p, "rb") as f:
-            for chunk in iter(lambda: f.read(8192), b""): h.update(chunk)
+            for chunk in iter(lambda: f.read(8192), b""):
+                h.update(chunk)
         return h.hexdigest()
 
     csv_mtime, csv_hash = os.path.getmtime(path), file_md5(path)
@@ -539,9 +613,12 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
                 if "total disasters" in cols:
                     df["value"] = df["total disasters"]
                 else:
-                    numeric_cols = [c for c in df.columns if c not in ("entity","code","year") and df[c].dtype != "object"]
+                    numeric_cols = [
+                        c for c in df.columns
+                        if c not in ("entity", "code", "year") and df[c].dtype != "object"
+                    ]
                     df["value"] = df[numeric_cols].sum(axis=1)
-                df = df.rename(columns={"entity":"country"})[["country","year","value"]]
+                df = df.rename(columns={"entity": "country"})[["country", "year", "value"]]
                 log(f"🔄 Auto-normalized Natural Disasters CSV ({len(df)} rows)")
             except Exception as e:
                 log(f"[WARN] Natural Disasters CSV normalization failed: {e}")
@@ -558,18 +635,36 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
     out, latest_year = [], None
     for _, r in df.iterrows():
         cname = str(r.get("country") or "").strip()
-        if not cname: continue
+        if not cname:
+            continue
         canon = canonicalize_country(cname, c_index, a_index, countries, pending, stats)
-        if not canon: continue
+        if not canon:
+            continue
         y, v = r.get("year"), safe_float(r.get("value"))
-        if not y or v is None: continue
+        if not y or v is None:
+            continue
         try:
             y = int(float(y))
             latest_year = max(latest_year or y, y)
-            out.append({"country": canon, "iso2": r.get("iso2",""), "year": y, "value": v})
+            out.append({"country": canon, "iso2": r.get("iso2", ""), "year": y, "value": v})
         except Exception:
             continue
 
+    # 🧠 Falls kein Jahr in der CSV-Spalte erkannt wurde, im Text suchen
+    if not latest_year:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                txt = f.read()
+            found = re.findall(r"20\d{2}", txt)
+            if found:
+                valid_years = [int(y) for y in found if 2000 <= int(y) <= datetime.now().year]
+                if valid_years:
+                    latest_year = max(valid_years)
+                    log(f"[TXT] {kpi_id}: detected latest_year={latest_year} from CSV text")
+        except Exception as e:
+            log(f"[WARN] Could not detect year from CSV text for {kpi_id}: {e}")
+
+    # Fallback: heuristisch aus year-Spalte
     if not latest_year:
         try:
             latest_year = int(float(df["year"].dropna().max()))
@@ -577,8 +672,8 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
         except Exception:
             latest_year = None
 
+    # 🔹 Source-Date setzen
     source_date = f"{latest_year}-01-01T00:00:00Z" if latest_year else "Unknown"
- 
 
     if out:
         save_records(kpi_id, out)
@@ -594,8 +689,9 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
             log(f"[WARN] Could not write hash for {kpi_id}: {e}")
     else:
         keep_or_dummy(kpi_id, f"CSV empty {csv_name}", stats)
-        
+
     return latest_year
+
 # ----------------------------------------------------------------------
 # 🧭 OWID Fetch (inkl. Source-Date Detection & Natural Disaster World-Fix)
 # ----------------------------------------------------------------------
@@ -886,7 +982,7 @@ def fetch_geopolitical_risk_index():
 
         # === Speichern ===
         out = df_annual[["country", "year", "value"]].to_dict(orient="records")
-        write_json(file_path, out)
+        safe_write_json(file_path, out)
         log(f"✅ Saved {len(out)} GPR entries → {file_path}")
 
         # === fetch_status aktualisieren ===
@@ -898,23 +994,64 @@ def fetch_geopolitical_risk_index():
             "data_year": int(df_annual["year"].max()),
             "last_fetch": now_utc(),
         }
-        write_json(STATUS_FILE, fetch_status)
+        safe_write_json(STATUS_FILE, fetch_status)
         log("[OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)")
 
     except Exception as e:
         log(f"❌ GPR fetch failed: {e}")
 
+# ======================================================================
+# 🧩 Fetch-State Merge Utility (ergänzend zur Statuslogik)
+# ======================================================================
+def merge_fetch_state(updated_kpis: set):
+    """
+    Aktualisiert /data/fetch_state.json:
+    - fügt neue oder geänderte KPIs hinzu
+    - behält alte Einträge bei
+    - kein Duplikat
+    """
+    state_path = os.path.join(DATA_DIR, "fetch_state.json")
+    try:
+        if os.path.exists(state_path):
+            with open(state_path, "r", encoding="utf-8") as f:
+                old_state = json.load(f)
+        else:
+            old_state = {}
+
+        old_list = set(old_state.get("updated_kpis", []))
+        merged = sorted(list(old_list.union(updated_kpis)))
+
+        merged_state = {
+            "last_run": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "updated_kpis": merged
+        }
+
+        with open(state_path, "w", encoding="utf-8") as f:
+            json.dump(merged_state, f, ensure_ascii=False, indent=2)
+
+        log(f"[STATE] Merged {len(updated_kpis)} updated KPIs → total {len(merged)} entries.")
+    except Exception as e:
+        log(f"[WARN] Could not update fetch_state.json: {e}")
 
 # ======================================================================
 # 🚀 Main
 # ======================================================================
 def main():
     ensure_dirs()
-    log(f"🔐 Using OPENAI_API_KEY: {'found' if os.getenv('OPENAI_API_KEY') else 'missing'}")
+    log(f"[INFO] Using OPENAI_API_KEY: {'found' if os.getenv('OPENAI_API_KEY') else 'missing'}")
     log("=== Fetch started ===")
 
     # --- Bestehenden Status laden ---
     fetch_status = read_json(STATUS_FILE, {"kpis": {}})
+
+    # 🆕 Force-All-Modus: Wenn kein fetch_status.json existiert oder leer ist
+    if not os.path.exists(STATUS_FILE) or not fetch_status.get("kpis"):
+        log("⚠️ Kein fetch_status.json vorhanden oder leer – setze ALLE KPIs auf 'neu'.")
+        fetch_status = {"kpis": {}}
+        force_all_updates = True
+    else:
+        force_all_updates = False
+
 
     stats = {
         "countries_loaded": 0, "kpis_loaded": 0, "saved_records": 0, "dummies": 0,
@@ -952,13 +1089,12 @@ def main():
             else:
                 source_date = "Unknown"
 
-            # Prüfen, ob Fetch nötig
-            if not should_fetch(kpi_id, source_type, source_date, meta, fetch_status):
+            # Prüfen, ob Fetch nötig (außer im Force-All-Modus)
+            if not force_all_updates and not should_fetch(kpi_id, source_type, source_date, meta, fetch_status):
                 log(f"[⏸️] {kpi_id} – unchanged ({source_date})")
-                # 👉 Keine Überschreibung im fetch_status – alte Werte bleiben erhalten!
                 stats["skipped"] += 1
                 continue
-
+                
             # Sonderfall: Geopolitical Risk Index wird separat behandelt
             if kpi_id == "geopolitical_risk_index":
                 log(f"[SKIP] {kpi_id}: handled by special fetcher later")
@@ -1030,8 +1166,6 @@ def main():
     write_json(STATUS_FILE, fetch_status)
     write_json(COUNTRY_PENDING_FILE, pending)
 
-    write_json(STATUS_FILE, fetch_status)
-    write_json(COUNTRY_PENDING_FILE, pending)
 
     log(f"[INFO] fetch_status.json updated with {len(fetch_status.get('kpis',{}))} KPIs")
 
@@ -1056,7 +1190,7 @@ def main():
             f"({len(fetch_state['updated_kpis'])} entries)")
     except Exception as e:
         log(f"[WARN] Failed to write fetch_state.json: {e}")
-
+        
 
     # --- Zusammenfassung ---
 
@@ -1098,6 +1232,9 @@ def main():
     print(report)
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(report + "\n")
+    print(f"🪵 Logfile saved → {LOG_FILE}")
+    log(f"[INFO] Full fetch report written to {LOG_FILE}")
+
 
 # ======================================================================
 # ⚙️ Optionaler Parameter: --no-analysis
@@ -1114,82 +1251,69 @@ if __name__ == "__main__":
     main()
 
     try:
-        print("➡️ Starte fetch_overall_ranking.py …")
+        print("➡️ Running fetch_overall_ranking.py …")
         subprocess.run(["python", os.path.join(SCRIPT_DIR, "fetch_overall_ranking.py")], check=True)
-        print("✅ Overall Ranking erfolgreich erstellt.")
+        print("✅ Overall Ranking successfully updated.")
     except Exception as e:
-        print(f"⚠️ Fehler beim Overall-Ranking: {e}")
+        print(f"⚠️ Error in overall ranking: {e}")
 
     try:
-        print("➡️ Starte fetch_consolidated.py …")
+        print("➡️ Running fetch_consolidated.py …")
         subprocess.run(["python", os.path.join(SCRIPT_DIR, "fetch_consolidated.py")], check=True)
-        print("✅ KPI-Daten erfolgreich konsolidiert (data/all_kpis_data.json).")
+        print("✅ Consolidated data successfully created.")
     except Exception as e:
-        print(f"⚠️ Fehler bei Konsolidierung: {e}")
+        print(f"⚠️ Error in consolidation: {e}")
 
-    # ======================================================================
-    # 🧠 KI-Analysen und GPT-basierte Schritte
-    # ======================================================================
+    # === Fetch-State zusammenführen ===
+    try:
+        from pathlib import Path
+        state_path = Path(DATA_DIR) / "fetch_state.json"
+        updated_kpis = set()
+        if state_path.exists():
+            with open(state_path, "r", encoding="utf-8") as f:
+                state_data = json.load(f)
+                updated_kpis = set(state_data.get("updated_kpis", []))
+        merge_fetch_state(updated_kpis)
+    except Exception as e:
+        print(f"⚠️ State merge failed: {e}")
+
+    # === Nur Analysen ausführen, wenn neue Daten da sind ===
     if not NO_ANALYSIS:
-
-        # === 1️⃣ Fun/Safe Rankings – nur 1× pro Monat oder wenn Dateien fehlen ===
         try:
-            fun_path = os.path.join(DATA_DIR, "fun_ranking.json")
-            safe_path = os.path.join(DATA_DIR, "safe_haven_ranking.json")
+            if args.force or len(updated_kpis) > 0:
+                print(f"➡️ Starting global KPI analysis ({len(updated_kpis)} updates or forced run) …")
+                subprocess.run(["python", os.path.join(SCRIPT_DIR, "analysis.py")], check=True)
+            else:
+                print("⏸️ No updated KPIs — skipping AI analysis.")
+        except Exception as e:
+            print(f"⚠️ Global analysis failed: {e}")
 
-            def file_age_days(path):
-                if not os.path.exists(path):
-                    return 999  # erzwingt Neu-Generierung
-                mtime = datetime.fromtimestamp(os.path.getmtime(path))
-                return (datetime.now() - mtime).days
+        # === Fun/Safe Rankings ===
+        try:
+            fun_path = Path(DATA_DIR) / "fun_ranking.json"
+            safe_path = Path(DATA_DIR) / "safe_haven_ranking.json"
+
+            def file_age_days(p: Path) -> int:
+                if not p.exists():
+                    return 999
+                return (datetime.now() - datetime.fromtimestamp(p.stat().st_mtime)).days
 
             if file_age_days(fun_path) > 30 or file_age_days(safe_path) > 30:
-                print("➡️ Starte monatliche Fun/Safe Ranking Analyse …")
+                print("➡️ Generating Fun/Safe rankings …")
                 subprocess.run(["python", os.path.join(SCRIPT_DIR, "generate_fun_safe_rankings.py")], check=True)
-                print("✅ Fun/Safe Rankings erfolgreich erstellt.")
+                print("✅ Fun/Safe rankings generated.")
             else:
-                print("⏸️ Fun/Safe Ranking aktuell – kein Update erforderlich.")
+                print("⏸️ Fun/Safe rankings are current — no update needed.")
         except Exception as e:
-            print(f"⚠️ Fehler bei Fun/Safe Ranking: {e}")
+            print(f"⚠️ Fun/Safe ranking generation failed: {e}")
 
-
-        # === 2️⃣ Globale Analyse + Einzel-KPI Analysen ===
+        # === CSV Update Check (läuft immer) ===
         try:
-            from analysis import run_global_analysis
-
-            # Lade zuletzt geänderte KPIs aus fetch_state.json
-            state_path = os.path.join(DATA_DIR, "fetch_state.json")
-            updated_kpis = []
-            if os.path.exists(state_path):
-                fetch_state = read_json(state_path, {})
-                updated_kpis = fetch_state.get("updated_kpis", [])
-
-            # Falls analysis-Dateien fehlen, wird global analysiert
-            analysis_md = os.path.join(DATA_DIR, "analysis.md")
-            if not os.path.exists(analysis_md):
-                print("⚠️ Globale Analyse-Datei fehlt – führe vollständige Analyse aus.")
-                updated_kpis = ["__force_all__"]
-
-            if updated_kpis:
-                print(f"➡️ Starte globale KI-Analyse (für {len(updated_kpis)} aktualisierte KPIs)…")
-                printable = [u for u in updated_kpis if u != "__force_all__"]
-                if printable:
-                    print(f"   → Aktualisiert: {', '.join(printable[:8])}{'…' if len(printable) > 8 else ''}")
-                run_global_analysis(updated_kpis)
-                print("✅ Globale Analyse abgeschlossen (data/analysis.md)")
-            else:
-                print("⏸️ Keine neuen oder aktualisierten KPIs – KI-Analyse übersprungen.")
-        except Exception as e:
-            print(f"⚠️ Fehler bei globaler Analyse: {e}")
-
-
-        # === 3️⃣ CSV-Update-Check – läuft immer außer bei -n ===
-        try:
-            print("➡️ Starte check_source_csv_updates.py …")
+            print("➡️ Running check_source_csv_updates.py …")
             subprocess.run(["python", os.path.join(SCRIPT_DIR, "check_source_csv_updates.py")], check=True)
-            print("✅ CSV-Quellenprüfung abgeschlossen.")
+            print("✅ CSV source check completed.")
         except Exception as e:
-            print(f"⚠️ Fehler bei CSV-Quellenprüfung: {e}")
-
+            print(f"⚠️ CSV source check failed: {e}")
     else:
-        print("⏭️ KI-Analysen vollständig übersprungen (--no-analysis aktiviert).")
+        print("⏭️ AI-based analyses skipped (--no-analysis enabled).")
+

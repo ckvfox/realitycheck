@@ -75,60 +75,73 @@ async function loadGlossary() {
     const kpis = data.kpis || {};
     const nowYear = new Date().getFullYear();
 
+    // Aggregate-Labels, die nie als Outlier im Glossary erscheinen sollen
+    const EXCLUDE = new Set([
+      "World",
+      "European Union",
+      "Euro area",
+      "OECD members"
+    ]);
+
+    // Kurze Datumsausgabe im Format DD.MM.YY
+    function formatShortDate(dateStr) {
+      if (!dateStr) return "–";
+      const d = new Date(dateStr);
+      if (isNaN(d)) return "–";
+      const dd = String(d.getDate()).padStart(2, "0");
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const yy = String(d.getFullYear()).slice(2);
+      return `${dd}.${mm}.${yy}`;
+    }
+
     for (const [id, info] of Object.entries(kpis)) {
       const tr = document.createElement("tr");
       const out = outliers[id] || {};
-      const flagged = out.flagged || [];
 
-      // 🧮 Data Year (Fallback aus Daten)
-      let dy = parseInt(info.data_year);
-      if (!dy || dy < 1900) {
-        try {
-          const kpiFile = await fetch(`data/${id}.json`);
-          if (kpiFile.ok) {
-            const kpiData = await kpiFile.json();
-            const years = Array.isArray(kpiData)
-              ? kpiData.map(e => e.year).filter(y => y)
-              : Object.values(kpiData).map(e => e.year).filter(y => y);
-            if (years.length) dy = Math.max(...years);
-          }
-        } catch {}
-      }
+      // Roh-Arrays aus JSON holen
+      const highsRaw = Array.isArray(out.high_outliers) ? out.high_outliers : [];
+      const lowsRaw  = Array.isArray(out.low_outliers)  ? out.low_outliers  : [];
 
+      // "World" & Co. herausfiltern
+      const highs = highsRaw.filter(e => e && !EXCLUDE.has(e.country));
+      const lows  = lowsRaw.filter(e => e && !EXCLUDE.has(e.country));
+
+      // Outlier-Anzahl
+      const flaggedCount = highs.length + lows.length;
+
+      // Min/Max ermitteln (wertbasiert robust, nicht positionsbasiert)
+      const maxEntry = highs.reduce((a,b) => (a==null || b.value > a.value) ? b : a, null);
+      const minEntry = lows.reduce((a,b)  => (a==null || b.value < a.value) ? b : a, null);
+
+      // Freshness-Klassen
+      const dy = parseInt(info.data_year) || 0;
       const diffY = dy ? nowYear - dy : 99;
       const clsYear = diffY <= 1 ? "fresh" : diffY <= 3 ? "warn" : "stale";
 
-      // 🗓️ Einheitliche Datumsformatierung (DD.MM.YY)
-      function formatShortDate(dateStr) {
-        if (!dateStr) return "–";
-        const d = new Date(dateStr);
-        if (isNaN(d)) return "–";
-        const day = String(d.getDate()).padStart(2, "0");
-        const month = String(d.getMonth() + 1).padStart(2, "0");
-        const year = String(d.getFullYear()).slice(2);
-        return `${day}.${month}.${year}`;
+      const sd = info.source_date;
+      let clsSrc = "stale";
+      if (sd && /\d{4}/.test(sd)) {
+        const y = parseInt(sd.match(/\d{4}/)[0]);
+        const diffS = nowYear - y;
+        clsSrc = diffS <= 1 ? "fresh" : diffS <= 3 ? "warn" : "stale";
       }
 
-      const formattedSourceDate = formatShortDate(info.source_date);
-      const formattedFetch = formatShortDate(info.last_fetch);
-
-      // ⚠️ Outlier-Markierungen
+      // Outlier-Farbklasse
       let clsOut = "";
-      if (flagged.length >= 10) clsOut = "outlier";
-      else if (flagged.length > 0) clsOut = "warn";
+      if (flaggedCount >= 10) clsOut = "outlier";
+      else if (flaggedCount > 0) clsOut = "warn";
 
-      const minInfo = out.min ? `${out.min.country || "?"} (${out.min.year || "?"})` : "–";
-      const maxInfo = out.max ? `${out.max.country || "?"} (${out.max.year || "?"})` : "–";
+      const minInfo = minEntry ? `${minEntry.country} (${minEntry.year})` : "–";
+      const maxInfo = maxEntry ? `${maxEntry.country} (${maxEntry.year})` : "–";
 
-      // 🧾 Tabellenzeile
       tr.innerHTML = `
         <td>${id}</td>
         <td>${info.source ? `<a href="${info.source}" target="_blank">${info.source}</a>` : "?"}</td>
-        <td class="${clsYear}">${dy || "n/a"}</td>
-        <td>${formattedSourceDate}</td>
-        <td>${formattedFetch}</td>
+        <td class="${clsYear}">${info.data_year || "Unknown"}</td>
+        <td class="${clsSrc}">${formatShortDate(info.source_date)}</td>
+        <td>${formatShortDate(info.last_fetch)}</td>
         <td class="${clsOut}">
-          ${flagged.length ? `🔺 ${flagged.length}` : "–"}
+          ${flaggedCount ? `🔺 ${flaggedCount}` : "–"}
           <span class="outlier-info">
             min: ${minInfo}, max: ${maxInfo}
           </span>
@@ -145,6 +158,7 @@ async function loadGlossary() {
 
 window.addEventListener("DOMContentLoaded", loadGlossary);
 </script>
+
 
 </body>
 </html>

@@ -259,32 +259,48 @@ async function buildOverallRanking() {
 
 
 }
-// Global state
+// === Global state ===
 let FUN_SET = new Set();
 let SAFE_SET = new Set();
 let funOn = false;
 let safeOn = false;
 
-// Lädt Top-10 Sets EINMAL (keine Farben, nur Daten)
+// === Lädt Top-10 Sets EINMAL (robust gegen GPT-JSON-Formate) ===
 async function loadFunSafeSets() {
   try {
-    const [fun, safe] = await Promise.all([
+    const [funRaw, safeRaw] = await Promise.all([
       fetch("data/fun_ranking.json").then(r => r.ok ? r.json() : []),
       fetch("data/safe_haven_ranking.json").then(r => r.ok ? r.json() : [])
     ]);
-    FUN_SET = new Set((fun || []).slice(0, 10).map(e => e.country));
-    SAFE_SET = new Set((safe || []).slice(0, 10).map(e => e.country));
+
+    // 🔍 GPT liefert manchmal Objekte mit Schlüsseln wie "Fun Ranking", "Safe Haven Ranking" oder "countries"
+    const funList = Array.isArray(funRaw)
+      ? funRaw
+      : funRaw["Fun Ranking"] || funRaw.countries || Object.values(funRaw);
+
+    const safeList = Array.isArray(safeRaw)
+      ? safeRaw
+      : safeRaw["Safe Haven Ranking"] || safeRaw.countries || Object.values(safeRaw);
+
+    // 🔧 Sichere Konvertierung
+    FUN_SET = new Set((funList || []).slice(0, 10).map(e => e.country || e));
+    SAFE_SET = new Set((safeList || []).slice(0, 10).map(e => e.country || e));
+
+    console.log("😎 FUN_SET loaded:", [...FUN_SET]);
+    console.log("🛡️ SAFE_SET loaded:", [...SAFE_SET]);
   } catch (e) {
     console.warn("⚠️ Could not load fun/safe sets:", e);
-    FUN_SET = new Set(); SAFE_SET = new Set();
+    FUN_SET = new Set();
+    SAFE_SET = new Set();
   }
 }
 
-// Fügt/entfernt ausschließlich die Icons gemäß funOn/safeOn
+// === Fügt/entfernt ausschließlich die Icons gemäß funOn/safeOn ===
 function updateModeIcons() {
   document.querySelectorAll("#overall-table tbody tr").forEach(tr => {
     const nameCell = tr.children[1];
     if (!nameCell) return;
+
     // alte Icons entfernen
     nameCell.querySelectorAll(".mode-icons").forEach(n => n.remove());
 
@@ -292,6 +308,7 @@ function updateModeIcons() {
     let icons = "";
     if (funOn && FUN_SET.has(country)) icons += "😎";
     if (safeOn && SAFE_SET.has(country)) icons += "🛡️";
+
     if (icons) {
       const span = document.createElement("span");
       span.className = "mode-icons";
@@ -300,7 +317,6 @@ function updateModeIcons() {
     }
   });
 }
-
 
 
 /* ---------- Weight Helper ---------- */

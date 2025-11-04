@@ -1,52 +1,120 @@
-[
-  {
-    "rank": 1,
-    "country": "Portugal",
-    "score": 91.2
-  },
-  {
-    "rank": 2,
-    "country": "Spain",
-    "score": 89.5
-  },
-  {
-    "rank": 3,
-    "country": "Greece",
-    "score": 88.0
-  },
-  {
-    "rank": 4,
-    "country": "Italy",
-    "score": 86.7
-  },
-  {
-    "rank": 5,
-    "country": "Australia",
-    "score": 85.4
-  },
-  {
-    "rank": 6,
-    "country": "Mexico",
-    "score": 84.1
-  },
-  {
-    "rank": 7,
-    "country": "Costa Rica",
-    "score": 83.3
-  },
-  {
-    "rank": 8,
-    "country": "South Africa",
-    "score": 82.0
-  },
-  {
-    "rank": 9,
-    "country": "Thailand",
-    "score": 80.5
-  },
-  {
-    "rank": 10,
-    "country": "New Zealand",
-    "score": 79.8
-  }
-]
+{
+  "Fun Ranking": [
+    {
+      "rank": 1,
+      "country": "Australia",
+      "reasons": {
+        "climate": "meets criteria",
+        "sunny_days": "meets criteria",
+        "rainy_days": "meets criteria",
+        "happiness_index": "high",
+        "beer_price": "meets criteria",
+        "livable_cities": {
+          "city": "Melbourne",
+          "ranking_sources": [
+            "EIU Global Liveability Index"
+          ]
+        }
+      }
+    },
+    {
+      "rank": 2,
+      "country": "Spain",
+      "reasons": {
+        "climate": "meets criteria",
+        "sunny_days": "meets criteria",
+        "rainy_days": "meets criteria",
+        "happiness_index": "high",
+        "beer_price": "meets criteria"
+      }
+    },
+    {
+      "rank": 3,
+      "country": "Portugal",
+      "reasons": {
+        "climate": "meets criteria",
+        "sunny_days": "meets criteria",
+        "rainy_days": "meets criteria",
+        "happiness_index": "high",
+        "beer_price": "meets criteria"
+      }
+    },
+    {
+      "rank": 4,
+      "country": "New Zealand",
+      "reasons": {
+        "climate": "meets criteria",
+        "sunny_days": "meets criteria",
+        "rainy_days": "meets criteria",
+        "happiness_index": "high",
+        "beer_price": "meets criteria"
+      }
+    },
+    {
+      "rank": 5,
+      "country": "Chile",
+      "reasons": {
+        "climate": "meets criteria",
+        "sunny_days": "meets criteria",
+        "rainy_days": "meets criteria",
+        "happiness_index": "medium",
+        "beer_price": "meets criteria"
+      }
+    },
+    {
+      "rank": 6,
+      "country": "Mexico",
+      "reasons": {
+        "climate": "meets criteria",
+        "sunny_days": "meets criteria",
+        "rainy_days": "meets criteria",
+        "happiness_index": "medium",
+        "beer_price": "meets criteria"
+      }
+    },
+    {
+      "rank": 7,
+      "country": "Greece",
+      "reasons": {
+        "climate": "meets criteria",
+        "sunny_days": "meets criteria",
+        "rainy_days": "meets criteria",
+        "happiness_index": "high",
+        "beer_price": "meets criteria"
+      }
+    },
+    {
+      "rank": 8,
+      "country": "South Africa",
+      "reasons": {
+        "climate": "meets criteria",
+        "sunny_days": "meets criteria",
+        "rainy_days": "meets criteria",
+        "happiness_index": "medium",
+        "beer_price": "meets criteria"
+      }
+    },
+    {
+      "rank": 9,
+      "country": "Italy",
+      "reasons": {
+        "climate": "meets criteria",
+        "sunny_days": "meets criteria",
+        "rainy_days": "meets criteria",
+        "happiness_index": "high",
+        "beer_price": "meets criteria"
+      }
+    },
+    {
+      "rank": 10,
+      "country": "Costa Rica",
+      "reasons": {
+        "climate": "meets criteria",
+        "sunny_days": "meets criteria",
+        "rainy_days": "meets criteria",
+        "happiness_index": "high",
+        "beer_price": "meets criteria"
+      }
+    }
+  ]
+}

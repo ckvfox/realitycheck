@@ -1,113 +1,180 @@
-# ==============================================================
-# 🌍 RealityCheck – Fun & Safe Haven Rankings (AI-based)
-# ==============================================================
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+🌍 RealityCheck – Fun & Safe Haven Rankings (Nov 2025)
+─────────────────────────────────────────────
+Erzeugt:
+ • fun_ranking.json
+ • safe_haven_ranking.json
+Verwendet dieselbe GPT-Logik wie analysis.py (OpenAI 1.54.x)
+"""
+
 import os
+import sys
 import json
-from openai import OpenAI
+import time
+from datetime import datetime, timezone
 from dotenv import load_dotenv
+from openai import OpenAI
+from pathlib import Path
+from env_utils import get_openai_key
+from httpx import Client as HttpxClient  # 🔧 Fix für Python 3.13 Proxy-Bug
 
-# === Setup ===
-if os.path.exists(".env"):
-    load_dotenv()
-    print("✅ Loaded local .env")
-else:
-    print("🔒 Using GitHub Secrets / Environment Variables")
+# === UTF-8 Fix ===
+if sys.stdout.encoding is None or sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-if not OPENAI_API_KEY:
-    raise ValueError("❌ OPENAI_API_KEY not found. Define in .env or GitHub Secrets.")
+# === OpenAI Setup ===
+load_dotenv()
+OPENAI_API_KEY = get_openai_key()
+client = OpenAI(api_key=OPENAI_API_KEY, http_client=HttpxClient())  # eigener Client für Python 3.13
 
-client = OpenAI(api_key=OPENAI_API_KEY)
+# === Pfade ===
+ROOT_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = ROOT_DIR / "data"
+LOG_FILE = DATA_DIR / "fetch_log.txt"
 
-
-# === Helper functions ===
-def save_json(data, path):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"💾 Saved {path} ({len(data)} entries)")
-
-
-def log_top20(mode_name: str, ranking: list):
-    """Logs ranks 11–20 for transparency/debugging."""
-    if not ranking or len(ranking) < 11:
-        print(f"⚠️  {mode_name}: not enough entries for logging.")
-        return
-    print(f"\n🏁 {mode_name} — Places 11–20:")
-    for entry in ranking[10:20]:
-        print(f"{entry['rank']:>2}. {entry['country']} ({entry['score']:.3f})")
-
-
-# === Prompt definitions ===
-prompt_fun = """
-You are an analyst generating the **Fun Ranking** — Create a JSON list of the Top 10 countries that best match the idea of a 'Fun & Easy Living' lifestyle.
-
-Criteria (orientation targets, not hard thresholds):
-1. Pleasant average annual temperature (~18–26°C, like Southern France)
-2. Many sunny days per year (~300, like Southern France)
-3. Few rainy days per year (<70)
-4. High happiness index (top 40%)
-5. Low cost of beer (<3.50$ in Restaurants)
-6. Optionally: access to beaches or outdoor lifestyle
-
-Return only JSON:
-[
-  {"rank": 1, "country": "Spain", "score": 0.95},
-  {"rank": 2, "country": "Portugal", "score": 0.94},
-  ...
-]
-Make sure scores range roughly between 0.6 and 1.0.
-"""
-
-prompt_safe = """
-You are an analyst generating the **Safe Haven Ranking** — Create a JSON list of the Top 10 safest and most resilient countries to live in.
-
-Criteria:
-1. Strong human rights record
-2. Low risk of war, internal conflict or political instability (e.g. Geopolitical Risk Index)
-3. Low to moderate climate risk (e.g. from Germanwatch Climate Risk Index)
-4. High resilience score (e.g. INFORM Resilience Index)
-5. Stable democratic institutions
-6. Avoid countries bordering current warzones
-
-
-Return only JSON:
-[
-  {"rank": 1, "country": "Switzerland", "score": 0.98},
-  {"rank": 2, "country": "New Zealand", "score": 0.97},
-  ...
-]
-Ensure scores range between 0.6 and 1.0 and are logically consistent.
-"""
-
-# === Core execution ===
-def generate_ranking(mode: str, prompt: str, output_path: str):
-    print(f"\n➡️ Generating {mode} ranking via GPT-5…")
-
-    response = client.chat.completions.create(
-        model="gpt-5",
-        messages=[
-            {"role": "system", "content": "You are a geopolitical and socioeconomic analyst."},
-            {"role": "user", "content": prompt.strip()}
-        ],
-        max_tokens=400,     # 🔹 reicht locker für 20 JSON-Einträge
-        temperature=0.6,    # 🔹 moderate Kreativität, stabilere Reihenfolge
-    )
-
-    # ⚠️ Fallback-Sicherheitsprüfung
-    if not response.choices or not response.choices[0].message or not response.choices[0].message.content.strip():
-        print("⚠️ Empty API response – check API key, model name, or rate limit.")
-        return []
-
-    content = response.choices[0].message.content.strip()
-
+# === Safe Write Helpers ===
+def safe_write_text(path: Path, content: str):
+    """Garantiert UTF-8-Schreiben mit automatischer Ordnererstellung."""
+    path.parent.mkdir(parents=True, exist_ok=True)
     try:
-        data = json.loads(content)
+        with path.open("w", encoding="utf-8") as f:
+            f.write(content or "")
     except Exception as e:
-        print("❌ JSON parse error:", e)
-        print("Response was:", content[:400])
+        print(f"❌ Failed to write text file {path}: {e}")
+
+def safe_write_json(path: Path, data):
+    """Garantiert sicheres Schreiben von JSON-Dateien (UTF-8, exist_ok)."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with path.open("w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"💾 JSON saved: {path.relative_to(Path(__file__).resolve().parent.parent)} ({len(data)} entries)")
+    except Exception as e:
+        print(f"❌ Failed to write JSON file {path}: {e}")
+
+# === Helper ===
+def log(msg: str):
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    line = f"[{ts}] {msg}"
+    print(line)
+    with LOG_FILE.open("a", encoding="utf-8") as f:
+        f.write(line + "\n")
+
+def save_json(data, path: Path):
+    """Schreibt JSON-Datei sicher mit Logging."""
+    if not data:
+        log(f"⚠️ No data to save for {path.name}")
+        return
+    try:
+        safe_write_json(path, data)
+        log(f"💾 Saved {path.relative_to(ROOT_DIR)} ({len(data)} entries)")
+    except Exception as e:
+        log(f"❌ Failed to save {path.name}: {e}")
+def save_json(data, path: Path):
+    """Schreibt JSON-Datei sicher mit Logging."""
+    if not data:
+        log(f"⚠️ No data to save for {path.name}")
+        return
+    try:
+        safe_write_json(path, data)
+        log(f"💾 Saved {path.relative_to(ROOT_DIR)} ({len(data)} entries)")
+    except Exception as e:
+        log(f"❌ Failed to save {path.name}: {e}")
+
+
+# === Prompts ===
+PROMPT_FUN = """
+You are an analyst generating the **Fun Ranking** – create a JSON list of the Top 10 countries that best match a 'Fun & Easy Living' lifestyle.
+Criteria: pleasant climate (18–26 °C), many sunny days (280-300), few rainy days (60-90), high happiness (e.g. World Happiness Index), low beer price in restaurants (< 3.50 USD). If a country has a city that is listed in the top 5 most livable cities according to the EIU Global Liveability Index, Mercer Quality of Living Index, or Monocle Quality of Life Survey, that country should receive an additional bonus in the fun ranking.
+Return the full, valid JSON array and make sure all brackets are properly closed.
+""".strip()
+
+PROMPT_SAFE = """
+You are an analyst generating the **Safe Haven Ranking** – create a JSON list of the Top 10 safest and most resilient countries to live in.
+Criteria: human rights (e.g. Human Rights Index), low conflict risk (e.g. Geopolitical Risk Index), moderate climate risk (e.g. Climate Risk Index), resilience (e.g. Inform Resilience Index), stable democracy (e.g. Democracy Index).
+Return the full, valid JSON array and make sure all brackets are properly closed.
+""".strip()
+
+# === Core ===
+def generate_ranking(mode: str, prompt: str, path: Path):
+    log(f"➡️ Generating {mode} via GPT-4-Turbo…")
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4-turbo",
+            response_format={"type": "json_object"},  # ✅ erzwingt sauberes JSON
+            messages=[
+                {"role": "system", "content": "You are a geopolitical and socioeconomic analyst."},
+                {"role": "user", "content": prompt},
+            ],
+            max_completion_tokens=1000  # 🔼 mehr Platz, verhindert Abschneiden
+        )
+        text = response.choices[0].message.content.strip()
+    except Exception as e:
+        log(f"❌ GPT request failed in {mode}: {e}")
         return []
 
-    save_json(data, output_path)
-    log_top20(mode, data)
+    if not text:
+        log(f"⚠️ Empty response for {mode}")
+        return []
+
+    # === Robust Parsing ===
+    def try_parse_json(txt: str):
+        try:
+            return json.loads(txt)
+        except json.JSONDecodeError:
+            fixed = txt.strip()
+            if fixed.count("{") > fixed.count("}"):
+                fixed += "}" * (fixed.count("{") - fixed.count("}"))
+            if fixed.count("[") > fixed.count("]"):
+                fixed += "]" * (fixed.count("[") - fixed.count("]"))
+            try:
+                return json.loads(fixed)
+            except Exception:
+                return None
+
+    clean = text.strip("` \n")
+    if clean.lower().startswith("json"):
+        clean = clean[4:].strip()
+
+    data = try_parse_json(clean)
+    if not data:
+        # Letzter Rettungsversuch: suche JSON-Fragment
+        import re
+        possible = re.search(r"\{.*\}", clean, re.DOTALL)
+        if possible:
+            frag = possible.group(0)
+            if frag.count("{") > frag.count("}"):
+                frag += "}" * (frag.count("{") - frag.count("}"))
+            try:
+                data = json.loads(frag)
+            except Exception:
+                data = None
+
+    if not data:
+        log(f"❌ JSON parse error in {mode} (repair failed)")
+        log(f"Raw excerpt: {clean[:300]}")
+        return []
+
+    save_json(data, path)
     return data
+
+
+# === Main ===
+if __name__ == "__main__":
+    FUN = DATA_DIR / "fun_ranking.json"
+    SAFE = DATA_DIR / "safe_haven_ranking.json"
+
+    log("🎬 Starting Fun & Safe Haven ranking generation…")
+    fun = generate_ranking("Fun Mode", PROMPT_FUN, FUN)
+    safe = generate_ranking("Safe Haven Mode", PROMPT_SAFE, SAFE)
+
+    if fun and safe:
+        log("✅ Both rankings generated successfully.")
+    elif fun:
+        log("⚠️ Only Fun ranking generated successfully.")
+    elif safe:
+        log("⚠️ Only Safe Haven ranking generated successfully.")
+    else:
+        log("❌ No ranking data generated.")

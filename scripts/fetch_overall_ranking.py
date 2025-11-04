@@ -1,44 +1,45 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-RealityCheck – Overall Ranking Generator (Meta-Version)
--------------------------------------------------------
+📊 RealityCheck – Overall Ranking Generator (Meta-Version)
+─────────────────────────────────────────────
 • Pfade angepasst auf /data/meta/
-• Verzicht auf normalize_name(), stattdessen meta["filename"]
 • Bewertungslogik: only higher / lower / target
 • Ausschluss: relevance="none" oder world_kpi="e"
-• Klarer Fortschritts- und Fehler-Output
+• Fortschritts- und Fehler-Output
 """
 
-import os
 import json
-from datetime import datetime
+import subprocess
+from datetime import datetime, timezone
+from pathlib import Path
 
 # ======================================================================
-# 🔧 Pfade
+# 🔧 Pfade (pathlib-Version – robust gegen OS-Unterschiede)
 # ======================================================================
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-ROOT_DIR   = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
-DATA_DIR   = os.path.join(ROOT_DIR, "data")
-META_DIR   = os.path.join(DATA_DIR, "meta")
+SCRIPT_DIR = Path(__file__).parent.resolve()
+ROOT_DIR   = SCRIPT_DIR.parent.resolve()
+DATA_DIR   = ROOT_DIR / "data"
+META_DIR   = DATA_DIR / "meta"
 
-AVAILABLE_FILE = os.path.join(META_DIR, "available_kpis.json")
-OUTPUT_FILE    = os.path.join(DATA_DIR, "overall_ranking.json")
-LOG_FILE       = os.path.join(DATA_DIR, "fetch_log.txt")
+COUNTRIES_FILE       = META_DIR / "countries.json"
+AVAILABLE_FILE       = META_DIR / "available_kpis.json"
+LOG_FILE             = DATA_DIR / "fetch_log.txt"
+OUTPUT_FILE          = DATA_DIR / "overall_ranking.json"  # ✅ hinzugefügt
 
 # ======================================================================
 # 🧰 Hilfsfunktionen
 # ======================================================================
 def log(msg: str):
     """Schreibt Zeitstempel + Nachricht in Konsole & Logdatei (UTC)."""
-    from datetime import datetime, timezone
-    line = f"[{datetime.now(timezone.utc).isoformat(timespec='seconds')}] {msg}"
+    line = f"[{datetime.now(timezone.utc).isoformat(timespec='seconds')} UTC] {msg}"
     print(line)
-    with open(LOG_FILE, "a", encoding="utf-8") as f:
+    LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with LOG_FILE.open("a", encoding="utf-8") as f:
         f.write(line + "\n")
 
-def load_json(path):
-    with open(path, "r", encoding="utf-8") as f:
+def load_json(path: Path):
+    with path.open("r", encoding="utf-8") as f:
         return json.load(f)
 
 def get_latest_values(entries):
@@ -53,6 +54,18 @@ def get_latest_values(entries):
         if country not in latest or year > latest[country]["year"]:
             latest[country] = {"year": year, "value": value}
     return latest
+# ======================================================================
+# 💾 Safe Write Helper
+# ======================================================================
+def safe_write_json(path: Path, data):
+    """Garantiert sicheres Schreiben einer JSON-Datei mit UTF-8 und Verzeichnis-Erstellung."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with path.open("w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        log(f"💾 JSON saved successfully → {path.relative_to(ROOT_DIR)} ({len(data)} records)")
+    except Exception as e:
+        log(f"❌ Failed to write JSON file {path}: {e}")
 
 # ======================================================================
 # 🚀 Main
@@ -60,7 +73,7 @@ def get_latest_values(entries):
 def main():
     log("=== Overall Ranking Generation Started ===")
 
-    if not os.path.exists(AVAILABLE_FILE):
+    if not AVAILABLE_FILE.exists():
         log(f"[ERR] Missing {AVAILABLE_FILE}")
         return
 
@@ -73,13 +86,12 @@ def main():
         world_kpi = k.get("world_kpi")
         relevance = k.get("relevance", "normal")
 
-        # Ausschlüsse ----------------------------------------------------
         if relevance == "none":
-            continue            # 1️⃣ explizit ausgeschlossen
+            continue
         if world_kpi == "e":
-            continue            # 2️⃣ global-only KPI
+            continue
         if sort not in ["higher", "lower", "target"]:
-            continue            # 3️⃣ kein Ranking-Kriterium
+            continue
 
         filename = k.get("filename")
         if not filename:
@@ -94,8 +106,8 @@ def main():
 
     # === KPI-Durchlauf ===
     for filename, meta in valid_kpis.items():
-        filepath = os.path.join(DATA_DIR, f"{filename}.json")
-        if not os.path.exists(filepath):
+        filepath = DATA_DIR / f"{filename}.json"
+        if not filepath.exists():
             missing.append(filename)
             log(f"⚠️ Missing file: {filename}.json")
             continue
@@ -109,8 +121,8 @@ def main():
         latest = get_latest_values(data)
         sort_type = meta.get("sort")
         target_val = float(meta.get("target_value", 0))
-
         values = [v["value"] for v in latest.values() if isinstance(v.get("value"), (int, float))]
+
         if not values:
             log(f"⚠️ No numeric values for {filename}")
             continue
@@ -138,10 +150,9 @@ def main():
         for country, info in all_ranks.items()
     ]
 
-    # === JSON speichern ===
-    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(result, f, indent=2, ensure_ascii=False)
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    safe_write_json(OUTPUT_FILE, result)
+
 
     log(f"✅ overall_ranking.json written to {OUTPUT_FILE}")
 
@@ -152,17 +163,11 @@ def main():
     # 🧠 Trigger Fun & Safe Haven AI Rankings (safe subprocess)
     # ============================================================
     try:
-        import subprocess
         log("➡️ Starting fun/safe haven ranking generation ...")
-        subprocess.run(
-            ["python", os.path.join(SCRIPT_DIR, "generate_fun_safe_rankings.py")],
-            check=True
-        )
+        subprocess.run(["python", str(SCRIPT_DIR / "generate_fun_safe_rankings.py")], check=True)
         log("✅ Fun & Safe Haven rankings successfully generated.")
     except Exception as e:
         log(f"⚠️ Fun/Safe Haven ranking generation failed: {e}")
-
-
 
 # ======================================================================
 # ▶ Start

@@ -1,57 +1,207 @@
-<!-- analysis.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RealityCheck – Global Analysis</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+📊 RealityCheck – Global KPI Analysis (Stable v4, Nov 2025)
+→ robust GPT extraction • guaranteed min/max • detailed logging
+"""
 
-<body>
-  <section class="page-intro">
-    <h1>🧠 RealityCheck – Global KPI Analysis</h1>
-    <p>
-      This AI-generated report interprets the global dataset across all KPIs, revealing key trends,
-      progress, risks, and interdependencies shaping humanity’s trajectory.
-    </p>
-    <p>
-      It connects developments across domains — economy, environment, society, and governance —
-      to paint a clearer picture of where the world is heading.
-    </p>
-	<p class="note">
-	  🧠 This analysis is automatically generated using <strong>OpenAI GPT-4</strong> based on publicly available data.  
-	  It reflects algorithmic interpretation, not editorial opinion.
-	</p>
+import os, sys, json, time, math, traceback
+from datetime import datetime, timezone, date
+from pathlib import Path
+from statistics import mean, pstdev
+from dotenv import load_dotenv
+from openai import OpenAI
+from httpx import Client as HttpxClient
 
-  </section>
+try:
+    from tqdm import tqdm
+except Exception:
+    def tqdm(x, **k): return x
 
-  <section id="analysis-section">
-    <div id="analysis-content">⏳ Loading analysis...</div>
-  </section>
+from env_utils import get_openai_key
 
-  <!-- Markdown Parser -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+# ─── UTF-8 STDOUT ───────────────────────────────────────────
+if sys.stdout.encoding is None or (sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8"):
+    try: sys.stdout.reconfigure(encoding="utf-8")
+    except Exception: pass
 
-  <script>
-    const section = document.getElementById("analysis-section");
-    const container = document.getElementById("analysis-content");
+# ─── PATHS ──────────────────────────────────────────────────
+SCRIPT_DIR = Path(__file__).parent.resolve()
+ROOT_DIR   = SCRIPT_DIR.parent.resolve()
+DATA_DIR   = ROOT_DIR / "data"
+META_DIR   = DATA_DIR / "meta"
 
-    fetch("data/analysis.md")
-      .then(r => {
-        if (!r.ok) throw new Error("File not found");
-        return r.text();
-      })
-      .then(md => {
-        const html = marked.parse(md.trim());
-        container.innerHTML = html;
-        section.classList.add("loaded");
-      })
-      .catch(() => {
-        container.innerText =
-          "⚠️ No analysis found. Please run fetch_data.py to generate a new report.";
-        section.classList.add("loaded");
-      });
-  </script>
-</body>
-</html>
+AVAILABLE_FILE = META_DIR / "available_kpis.json"
+OUT_MD, OUT_JSON = DATA_DIR / "analysis.md", DATA_DIR / "analysis.json"
+OUT_KPI, OUT_OUTLIERS = DATA_DIR / "kpi_analysis.json", DATA_DIR / "analysis_outliers.json"
+LOG_FILE = DATA_DIR / "fetch_log.txt"
+
+# ─── LOGGING ────────────────────────────────────────────────
+def log(msg:str):
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    line = f"[{ts}] {msg}"
+    print(line)
+    try:
+        with LOG_FILE.open("a", encoding="utf-8") as f: f.write(line+"\n")
+    except Exception: pass
+
+# ─── CLIENT ────────────────────────────────────────────────
+load_dotenv()
+client = OpenAI(api_key=get_openai_key(), http_client=HttpxClient())
+
+# ─── WRITE HELPERS ─────────────────────────────────────────
+def safe_write_text(p, c): p.parent.mkdir(parents=True, exist_ok=True); tmp=p.with_suffix(p.suffix+".tmp"); tmp.write_text(c or "⚠️ empty",encoding="utf-8"); os.replace(tmp,p)
+def safe_write_json(p, d): p.parent.mkdir(parents=True, exist_ok=True); tmp=p.with_suffix(p.suffix+".tmp"); tmp.write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding="utf-8"); os.replace(tmp,p)
+
+# ─── LOADERS ───────────────────────────────────────────────
+def load_meta():
+    with AVAILABLE_FILE.open(encoding="utf-8") as f:
+        meta=json.load(f)
+    return list(meta.values()) if isinstance(meta,dict) else meta
+
+def iter_kpi_records(kpi):
+    f=DATA_DIR/f"{kpi}.json"
+    if not f.exists(): return []
+    try: return json.loads(f.read_text(encoding="utf-8")) or []
+    except: return []
+
+def numeric_values(recs):
+    for r in recs:
+        v=r.get("value")
+        if isinstance(v,(int,float)) and not math.isnan(v): yield float(v)
+
+# ─── ROBUST GPT EXTRACTION ─────────────────────────────────
+def extract_text_v2(resp)->str:
+    try:
+        msg = resp.choices[0].message
+        c = msg.get("content")
+        if isinstance(c,str): return c.strip()
+        if isinstance(c,list):
+            txt="".join([b.get("text","") for b in c if isinstance(b,dict)]).strip()
+            if txt: return txt
+        if isinstance(c,dict) and "text" in c: return c["text"].strip()
+    except Exception as e:
+        log(f"⚠️ extract_text_v2 error: {e}")
+    return ""
+
+# ─── GPT CALLER ────────────────────────────────────────────
+RETRY_MODELS=["gpt-5","gpt-4o","gpt-4-turbo"]
+def gpt_text(prompt,max_tokens=700,temp=0.2):
+    last=None
+    for model in RETRY_MODELS:
+        log(f"➡️ GPT call: {model}")
+        try:
+            rsp=client.chat.completions.create(
+                model=model,
+                response_format={"type":"text"},
+                messages=[
+                    {"role":"system","content":"You analyze global data objectively."},
+                    {"role":"user","content":prompt.strip()}
+                ],
+                max_completion_tokens=max_tokens,
+                temperature=temp,
+            )
+            usage=getattr(rsp,"usage",{})
+            log(f"🧮 Tokens: {usage}")
+            txt=extract_text_v2(rsp)
+            if txt and len(txt)>30:
+                log(f"✅ {model} returned {len(txt)} chars")
+                return txt.strip()
+            log(f"⚠️ Empty/short text from {model}")
+        except Exception as e:
+            last=e; log(f"❌ {model} error: {e}"); time.sleep(1)
+    raise RuntimeError(f"No valid GPT response. Last error: {last}")
+
+# ─── GLOBAL ANALYSIS ───────────────────────────────────────
+def run_global_analysis(updated):
+    log("➡️ Starting global analysis …")
+    meta=load_meta()
+    allowed={m.get("filename","").replace(".json","") for m in meta}
+    targets=sorted(list(allowed if "__force_all__" in updated or not updated else [k for k in updated if k in allowed]))
+    aggs=[]
+    for kpi in targets:
+        vals=list(numeric_values(iter_kpi_records(kpi)))
+        if not vals: continue
+        aggs.append(f"• {kpi}: mean {round(sum(vals)/len(vals),2)} ({len(vals)} values)")
+    if not aggs:
+        txt="⚠️ No KPI values found."; safe_write_text(OUT_MD,txt); safe_write_json(OUT_JSON,{"summary":txt}); return
+    joined="\n".join(aggs)
+    prompt=f"You are a data analyst. Summarize global patterns across economy, environment, society and governance:\n{joined}\nWrite 3 concise paragraphs in plain English."
+    try: text=gpt_text(prompt)
+    except Exception as e: text=f"⚠️ GPT error: {e}"
+    safe_write_text(OUT_MD,text); safe_write_json(OUT_JSON,{"timestamp":datetime.now(timezone.utc).isoformat(),"summary":text})
+
+# ─── KPI ANALYSIS ──────────────────────────────────────────
+def generate_kpi_analyses(updated_only=None):
+    meta=load_meta()
+    if updated_only and "__force_all__" not in updated_only:
+        allow={u.replace(".json","") for u in updated_only}
+        meta=[m for m in meta if m.get("filename","").replace(".json","") in allow]
+    result={}
+    for e in tqdm(meta,desc="🧩 KPI summaries"):
+        fname=e.get("filename","").replace(".json",""); 
+        if not fname: continue
+        title=e.get("title",fname); desc=e.get("description",""); cluster=e.get("cluster",""); unit=e.get("unit","")
+        prompt=f"Write a concise (<900 chars) analysis for '{title}' ({cluster}, unit:{unit}). Describe top and bottom performers, regional trends and outlook. Context:{desc}"
+        try: summary=gpt_text(prompt,400)
+        except Exception as e: summary=f"⚠️ {e}"
+        result[fname]={"summary":summary,"last_update":str(date.today())}
+        time.sleep(0.8)
+    existing=json.loads(OUT_KPI.read_text(encoding="utf-8")) if OUT_KPI.exists() else {}
+    existing.update(result); safe_write_json(OUT_KPI,existing)
+    log(f"✅ KPI analyses saved → {len(existing)} total")
+
+# ─── OUTLIERS ─────────────────────────────────────────────
+EXCLUDE_AGG={"World","European Union","Euro area","OECD members",
+             "High income","Upper middle income","Lower middle income","Low income"}
+
+def compute_outliers():
+    log("🔎 Computing outliers …")
+    meta=load_meta(); out={}
+    for m in tqdm(meta):
+        kid=m.get("filename","").replace(".json","")
+        recs=iter_kpi_records(kid)
+        latest={}
+        for r in recs:
+            c,y,v=r.get("country"),r.get("year"),r.get("value")
+            if not c or c in EXCLUDE_AGG or not isinstance(v,(int,float)): continue
+            try: y=int(float(y))
+            except: continue
+            if c not in latest or y>latest[c][0]: latest[c]=(y,float(v))
+        if not latest: continue
+        values=[v for _,v in latest.values()]
+        mu=mean(values); sigma=pstdev(values) if len(values)>1 else 0.0
+        # always compute min/max
+        min_c,(min_y,min_v)=min(latest.items(),key=lambda kv:kv[1][1])
+        max_c,(max_y,max_v)=max(latest.items(),key=lambda kv:kv[1][1])
+        min_e={"country":min_c,"year":min_y,"value":min_v}
+        max_e={"country":max_c,"year":max_y,"value":max_v}
+        zlist=[]
+        if sigma>0:
+            for c,(y,v) in latest.items():
+                z=(v-mu)/sigma
+                zlist.append({"country":c,"year":y,"value":v,"z":round(z,3)})
+        highs=sorted([e for e in zlist if e["z"]>=2],key=lambda x:-x["z"])[:10]
+        lows=sorted([e for e in zlist if e["z"]<=-2],key=lambda x:x["z"])[:10]
+        out[kid]={"high_outliers":highs,"low_outliers":lows,
+                  "mean":round(mu,3),"stdev":round(sigma,3),
+                  "min_entry":min_e,"max_entry":max_e}
+    safe_write_json(OUT_OUTLIERS,out)
+    log(f"💾 Outliers saved → {len(out)} KPIs")
+
+# ─── MAIN ─────────────────────────────────────────────────
+if __name__=="__main__":
+    log("🚀 Running RealityCheck Analysis (Stable v4)")
+    state=DATA_DIR/"fetch_state.json"
+    updated=[]
+    if state.exists():
+        try: updated=json.load(state.open(encoding="utf-8")).get("updated_kpis",[])
+        except Exception as e: log(f"⚠️ State read error: {e}")
+    if not updated: updated=["__force_all__"]
+    try: run_global_analysis(updated)
+    except Exception as e: log(f"❌ Global analysis failed: {e}\n{traceback.format_exc()}")
+    try: generate_kpi_analyses(updated)
+    except Exception as e: log(f"⚠️ KPI analyses failed: {e}")
+    try: compute_outliers()
+    except Exception as e: log(f"⚠️ Outlier computation failed: {e}")
+    log("✅ RealityCheck analysis completed")

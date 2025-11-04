@@ -1,317 +1,286 @@
-# =============================================
-# 🌍 RealityCheck – Global KPI Analysis Script (B2 Version, Smart Update)
-# =============================================
-
-import json
-import statistics
-from pathlib import Path
-import os
-import time
-from tqdm import tqdm
-from dotenv import load_dotenv
-from openai import OpenAI
-from datetime import date
-
-
-# ============================================================
-# 🧠 Hauptfunktion: Globale + Einzel-KPI-Analysen
-# ============================================================
-def run_global_analysis(updated_kpis=None):
-    """
-    Reads all KPI JSON files from /data, creates an AI-generated global analysis (B2-level reasoning),
-    and saves the result as Markdown and JSON inside /data.
-    Also extracts outlier information (min/max country & year) for data quality review.
-    If 'updated_kpis' is provided, only those KPIs will get new AI summaries.
-    """
-
-    # === 1. Load environment variables ===
-    if os.path.exists(".env"):
-        load_dotenv()
-        print("✅ Loaded local .env file")
-    else:
-        print("🔒 Running with environment secrets (GitHub Actions)")
-
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
-    if not OPENAI_API_KEY:
-        raise ValueError("❌ OPENAI_API_KEY not found. Please define it in .env or GitHub Secrets.")
-
-    # === 2. Paths ===
-    data_dir = Path(__file__).resolve().parents[1] / "data"
-    data_dir.mkdir(parents=True, exist_ok=True)
-
-    output_md = data_dir / "analysis.md"
-    output_json = data_dir / "analysis.json"
-    output_outliers = data_dir / "analysis_outliers.json"
-
-    print("➡️ Starting global AI analysis...")
-    print("📁 Data folder:", data_dir.resolve())
-
-    # === 3. OpenAI client ===
-    client = OpenAI(api_key=OPENAI_API_KEY)
-
-    # === 4. Collect KPI data files ===
-    files = [
-        f for f in data_dir.glob("*.json")
-        if not any(x in f.name for x in ["available", "countries", "analysis"])
-    ]
-    print(f"🔍 Found {len(files)} KPI files to process")
-
-    data_summary = {}
-    outliers = {}
-
-    # === 5. Parse KPI data and compute basic stats ===
-    for f in tqdm(files, desc="📊 Processing KPI files", unit="file"):
-        try:
-            with f.open(encoding="utf-8") as infile:
-                kpi_name = f.stem
-                data = json.load(infile)
-
-                if isinstance(data, dict) and "data" in data:
-                    rows = data["data"]
-                elif isinstance(data, list):
-                    rows = data
-                else:
-                    rows = []
-
-                values = [
-                    v.get("value")
-                    for v in rows
-                    if isinstance(v.get("value"), (int, float))
-                    and v.get("country") not in ["World"]
-                ]
-
-                if not values or len(values) < 5:
-                    continue
-
-                mean = sum(values) / len(values)
-                stdev = statistics.pstdev(values)
-                min_val, max_val = min(values), max(values)
-
-                min_entry = next((r for r in rows if r.get("value") == min_val), None)
-                max_entry = next((r for r in rows if r.get("value") == max_val), None)
-
-                flagged = []
-                if stdev > 0:
-                    for r in rows:
-                        val = r.get("value")
-                        if val is None:
-                            continue
-                        z = abs((val - mean) / stdev)
-                        if z > 3:
-                            flagged.append({
-                                "country": r.get("country"),
-                                "year": r.get("year"),
-                                "value": val,
-                                "z_score": round(z, 2)
-                            })
-
-                data_summary[kpi_name] = {
-                    "count": len(values),
-                    "avg": round(mean, 3),
-                    "std": round(stdev, 3),
-                    "min": min_val,
-                    "max": max_val,
-                    "outlier_count": len(flagged)
-                }
-
-                outliers[kpi_name] = {
-                    "min": {
-                        "value": min_val,
-                        "country": min_entry.get("country") if min_entry else None,
-                        "year": min_entry.get("year") if min_entry else None,
-                    },
-                    "max": {
-                        "value": max_val,
-                        "country": max_entry.get("country") if max_entry else None,
-                        "year": max_entry.get("year") if max_entry else None,
-                    },
-                    "flagged": flagged[:20]
-                }
-
-        except Exception as e:
-            print(f"⚠️ Error processing {f.name}: {e}")
-
-    if not data_summary:
-        print("⚠️ No KPI data found.")
-        return
-
-    # === 6. Save outlier overview ===
-    try:
-        output_outliers.write_text(json.dumps(outliers, ensure_ascii=False, indent=2), encoding="utf-8")
-        print(f"🧩 Outlier data saved to {output_outliers.name}")
-    except Exception as e:
-        print("❌ Error saving outliers:", e)
-
-    # === 7. Prepare AI prompt (B2 reasoning) ===
-    print("\n🧠 Sending KPI summary to AI for analysis (B2 level)...")
-    prompt = (
-        "Analyze the following global KPI summaries with a clear and reasoned tone (CEFR level B2). "
-        "Explain global trends, improvements, deteriorations, and correlations across regions and clusters. "
-        "Pay attention to differences between democracies and autocracies, and how political systems, "
-        "economic power groups (EU, G7, G20, BRICS, OECD, etc.), and resource dependencies influence the results. "
-        "Include reflections on key global challenges such as climate change, inequality, conflict, and migration, "
-        "and identify which countries or groups show positive or negative exceptions.\n\n"
-        "Structure your response as follows:\n"
-        "- Overview (short paragraph)\n"
-        "- Highlights (positive developments)\n"
-        "- Lowlights (negative developments)\n"
-        "- Political & Regional Differences\n"
-        "- Interrelations & Global Dynamics\n"
-        "- Forecast & Outlook\n"
-        "- Short Global Conclusion\n\n"
-        "Here is the aggregated KPI data:\n"
-        f"{json.dumps(data_summary, indent=2)[:12000]}"
-    )
-
-    max_retries = 5
-    for attempt in range(max_retries):
-        try:
-            response = client.chat.completions.create(
-                model="gpt-5",
-                messages=[
-                    {"role": "system", "content": "You are an expert global data analyst specializing in socioeconomic and environmental trends."},
-                    {"role": "user", "content": prompt},
-                ],
-            )
-            # ✅ Wenn erfolgreich: aus Schleife aussteigen
-            break
-
-        except Exception as e:
-            err = str(e)
-            if "429" in err:
-                wait = 30 + attempt * 10  # jedes Mal 10 s länger warten
-                print(f"⚠️ Rate limit hit (try {attempt+1}/{max_retries}) — waiting {wait}s …")
-                time.sleep(wait)
-                continue
-            elif "insufficient_quota" in err or "quota" in err.lower():
-                print("💸 API quota exhausted — skipping global AI analysis.")
-                return
-            else:
-                print(f"❌ Global analysis failed: {e}")
-                return
-    else:
-        print("🚫 Too many retries — skipping global analysis.")
-        return
-
-
-    text = response.choices[0].message.content.strip()
-
-    # === 8. Save results ===
-    import re
-
-    def clean_text(t: str) -> str:
-        """Entfernt durchgestrichene Markdown-Passagen (~~text~~)."""
-        return re.sub(r"~~(.*?)~~", r"\1", t)
-
-    text = clean_text(text)
-
-    try:
-        output_md.write_text(text, encoding="utf-8")
-        output_json.write_text(
-            json.dumps({"analysis_text": text, "summary": data_summary}, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
-
-        # === SMART: nur geänderte KPI-Analysen erzeugen ===
-        if updated_kpis:
-            print(f"\n🧠 Generating AI summaries for {len(updated_kpis)} updated KPIs…")
-            generate_kpi_analyses(client, data_dir, updated_only=updated_kpis)
-        else:
-            print("\n🧠 No specific updated KPIs provided — generating all summaries…")
-            generate_kpi_analyses(client, data_dir)
-
-        print("\n✅ Global B2-level analysis saved successfully!")
-        print("📄 Markdown:", output_md.resolve())
-        print("📊 JSON:", output_json.resolve())
-
-    except Exception as e:
-        print("❌ Error while saving:", e)
-
-
-# ============================================================
-# 🧠 KPI Smart Analysis Generator (supports selective updates)
-# ============================================================
-def generate_kpi_analyses(client, data_dir, updated_only=None):
-    """Generates short AI analyses for each KPI, or only for those updated."""
-    meta_path = data_dir / "meta" / "available_kpis.json"
-    legacy_path = data_dir / "available_kpis.json"
-
-    if not meta_path.exists():
-        if legacy_path.exists():
-            print("⚠️ meta/available_kpis.json not found — using legacy available_kpis.json")
-            meta_path = legacy_path
-        else:
-            print("❌ available_kpis.json not found in /data/meta or /data")
-            return {}
-
-    print(f"📄 Using KPI meta: {meta_path}")
-    with open(meta_path, encoding="utf-8") as f:
-        meta = json.load(f)
-
-    # Meta kann Liste oder Dict sein
-    if isinstance(meta, dict):
-        meta = list(meta.values())
-
-    # Filter auf geänderte KPIs
-    if updated_only:
-        meta = [m for m in meta if m.get("filename") in updated_only]
-        print(f"⚙️ Limiting KPI analysis to {len(meta)} updated entries.")
-
-    result = {}
-    for entry in tqdm(meta, desc="🧩 Generating KPI summaries"):
-        fname   = entry.get("filename")
-        title   = entry.get("title", "")
-        desc    = entry.get("description", "")
-        cluster = entry.get("cluster", "")
-        unit    = entry.get("unit", "")
-
-        if not fname:
-            continue
-
-        prompt = f"""Write a concise (max 1000 characters) analysis for the KPI '{title}'.
-Describe what it measures, highlight top and low performing countries,
-mention noticeable trends or regional differences, possible correlations
-with other indicators in the same cluster ({cluster}), and end with a short outlook.
-Unit: {unit}. Description: {desc}.
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+📊 RealityCheck – Global KPI Analysis (Final GPT-Compat, Nov 2025)
+─────────────────────────────────────────────
+Erzeugt (Schema unverändert):
+ • data/analysis.md
+ • data/analysis.json
+ • data/kpi_analysis.json
+ • data/analysis_outliers.json
+Kompatibel zu openai v1.54 + (Fun/Safe-Logik).
 """
 
+import os, sys, json, time, math, traceback
+from datetime import datetime, timezone, date
+from pathlib import Path
+from statistics import mean, pstdev
+from dotenv import load_dotenv
+from openai import OpenAI
+from httpx import Client as HttpxClient
+
+try:
+    from tqdm import tqdm
+except Exception:
+    def tqdm(x, **k): return x
+
+from env_utils import get_openai_key
+
+# === UTF-8 ===
+if sys.stdout.encoding is None or sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
+
+# === Pfade ===
+SCRIPT_DIR = Path(__file__).parent.resolve()
+ROOT_DIR = SCRIPT_DIR.parent.resolve()
+DATA_DIR = ROOT_DIR / "data"
+META_DIR = DATA_DIR / "meta"
+AVAILABLE_FILE = META_DIR / "available_kpis.json"
+OUT_MD = DATA_DIR / "analysis.md"
+OUT_JSON = DATA_DIR / "analysis.json"
+OUT_KPI = DATA_DIR / "kpi_analysis.json"
+OUT_OUTLIERS = DATA_DIR / "analysis_outliers.json"
+LOG_FILE = DATA_DIR / "fetch_log.txt"
+
+# === OpenAI ===
+load_dotenv()
+client = OpenAI(api_key=get_openai_key(), http_client=HttpxClient())
+
+# === Logging ===
+def log(msg:str):
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    line = f"[{ts}] {msg}"
+    print(line)
+    try:
+        with LOG_FILE.open("a", encoding="utf-8") as f: f.write(line+"\n")
+    except Exception: pass
+
+# === Safe Writes ===
+def safe_write_text(p:Path, c:str):
+    p.parent.mkdir(parents=True, exist_ok=True)
+    tmp=p.with_suffix(p.suffix+".tmp")
+    tmp.write_text(c or "⚠️ Empty content", encoding="utf-8")
+    os.replace(tmp,p)
+
+def safe_write_json(p:Path, d):
+    p.parent.mkdir(parents=True, exist_ok=True)
+    tmp=p.with_suffix(p.suffix+".tmp")
+    tmp.write_text(json.dumps(d, ensure_ascii=False, indent=2), encoding="utf-8")
+    os.replace(tmp,p)
+
+# === Loader ===
+def load_meta():
+    with AVAILABLE_FILE.open(encoding="utf-8") as f:
+        meta=json.load(f)
+    return list(meta.values()) if isinstance(meta,dict) else meta
+
+def iter_kpi_records(kpi):
+    f=DATA_DIR/f"{kpi}.json"
+    if not f.exists(): return []
+    try: return json.load(f.open(encoding="utf-8"))
+    except: return []
+
+def numeric_values(recs):
+    for r in recs:
+        v=r.get("value")
+        if isinstance(v,(int,float)) and not (math.isnan(v) or math.isinf(v)): yield float(v)
+
+# === GPT Helper (Fun/Safe-Style) ===
+def gpt_call(prompt:str, max_tokens:int=700)->str:
+    """Robuster GPT-Call – identisch zu Fun/Safe-Style, mehrere Modelle Fallback."""
+    text=""
+    last_err=None
+    for model in ["gpt-4o","gpt-4-turbo"]:
+        log(f"➡️ GPT call → {model}")
         try:
-            rsp = client.chat.completions.create(
-                model="gpt-5",
+            rsp=client.chat.completions.create(
+                model=model,
                 messages=[
-                    {"role": "system", "content": "You are a global data analyst writing compact KPI summaries."},
-                    {"role": "user", "content": prompt}
+                    {"role":"system","content":"You analyze global datasets objectively."},
+                    {"role":"user","content":prompt.strip()},
                 ],
+                max_completion_tokens=max_tokens
             )
-            summary = (rsp.choices[0].message.content or "").strip()
-            result[fname] = {"summary": summary, "last_update": str(date.today())}
-
-            # 🕐 kurze Pause, um 429-Fehler zu vermeiden
-            time.sleep(2)
-
-        except Exception as e:
-            err = str(e)
-            if "429" in err:
-                print(f"⚠️ Rate limit hit for {fname} — retrying in 20 s …")
-                time.sleep(20)
-                return generate_kpi_analyses(client, data_dir, updated_only)
-            elif "insufficient_quota" in err or "quota" in err.lower():
-                print("💸 Quota exhausted — skipping remaining KPI analyses.")
-                break
+            usage=getattr(rsp,"usage",{})
+            log(f"🧮 Tokens: {usage}")
+            msg=rsp.choices[0].message
+            raw=msg.content  # ✅ new SDK compatible
+            if not raw:
+                log("⚠️ Empty content → next model"); continue
+            text=raw.strip()
+            if len(text)>30:
+                log(f"✅ {model} OK ({len(text)} chars)")
+                return text
             else:
-                print(f"⚠️ Error analyzing {fname}: {e}")
+                log(f"⚠️ Short response ({len(text)} chars) → retry")
+                text=""
+        except Exception as e:
+            last_err=e
+            log(f"❌ {model} error: {e}")
+            time.sleep(1)
+    raise RuntimeError(f"Empty GPT response after retries. Last error: {last_err}")
 
-    out_path = data_dir / "kpi_analysis.json"
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
+# === Globale Analyse ===
+def run_global_analysis(updated):
+    log("➡️ Starting global analysis …")
+    try: meta=load_meta()
+    except Exception as e:
+        log(f"❌ Meta load failed: {e}")
+        safe_write_json(OUT_JSON,{"error":str(e)}); return
+    allowed={m.get("filename","").replace(".json","") for m in meta}
+    targets=sorted(list(allowed if "__force_all__" in updated or not updated else [k for k in updated if k in allowed]))
+    summaries=[]
+    for kid in targets:
+        vals=list(numeric_values(iter_kpi_records(kid)))
+        if not vals: continue
+        summaries.append(f"• {kid}: mean {round(sum(vals)/len(vals),2)} ({len(vals)} values)")
+    if not summaries:
+        txt="⚠️ No KPI values found."; safe_write_text(OUT_MD,txt); safe_write_json(OUT_JSON,{"summary":txt}); return
+    joined="\n".join(summaries)
+    prompt = f"""
+You are a senior geopolitical and socio-economic analyst preparing a comprehensive synthesis of global KPI trends.
 
-    print(f"✅ KPI analyses saved to {out_path} ({len(result)} entries)")
-    return result
+Your task: write a **structured, insightful, and readable report** (8–10 clearly separated sections) interpreting
+cross-domain patterns across economy, environment, society, governance, and technology, based on these aggregated KPIs:
+
+{joined}
+
+**Formatting requirements:**
+• Use Markdown with clear section headers (## Economy, ## Environment, ## Society & Governance, ## Technology, ## Regional Insights, ## Outlook, etc.).
+• Use short paragraphs (max 5 lines each).
+• Add bullet points or numbered lists when summarizing contrasts or correlations.
+• Highlight key figures, countries, or anomalies in **bold**.
+• Avoid walls of text — readability and structure are essential.
+
+**Analytical focus:**
+- Major global progress and regression trends  
+- Interconnections between indicators (e.g., GDP ↔ CO₂, democracy ↔ happiness)  
+- Contrasts between democracies vs autocracies, and rich vs poor countries  
+- Regional differences (Europe, Africa, Asia, Americas)  
+- Long-term implications, risks, and opportunities  
+- Noteworthy outliers or anomalies  
+- A forward-looking outlook (climate, stability, prosperity)
+
+Style: clear, engaging, and accessible English (B2 level).  
+Be factual but interpretative, analytical but not technical.
+"""
+
+    try:
+        text = gpt_call(prompt, 2500)
+    except Exception as e:
+        text = f"⚠️ GPT request failed: {e}"
+
+    safe_write_text(OUT_MD, text)
+    safe_write_json(OUT_JSON, {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "summary": text
+    })
+    log(f"💾 Saved analysis ({len(text)} chars)")
 
 
-# ============================================================
-# ▶ Standalone execution
-# ============================================================
-if __name__ == "__main__":
-    run_global_analysis()
+# === KPI Analysen ===
+def generate_kpi_analyses(client:OpenAI,data_dir:Path,updated_only=None):
+    meta=load_meta()
+    if updated_only and "__force_all__" not in updated_only:
+        allow={u.replace(".json","") for u in updated_only}
+        meta=[m for m in meta if m.get("filename","").replace(".json","") in allow]
+        log(f"⚙️ Limiting KPI analysis to {len(meta)} entries.")
+    result={}
+    for e in tqdm(meta,desc="🧩 KPI summaries"):
+        fname=e.get("filename","").replace(".json","")
+        if not fname: continue
+        title=e.get("title",fname)
+        desc=e.get("description","")
+        cluster=e.get("cluster","")
+        unit=e.get("unit","")
+        prompt=f"""
+Write a concise (≤900 chars) analysis for '{title}' ({cluster}, unit:{unit}).
+Describe what it measures, top/low performers, regional patterns and outlook.
+Context: {desc}
+"""
+        try: summary=gpt_call(prompt,400)
+        except Exception as e: summary=f"⚠️ GPT error: {e}"
+        result[fname]={"summary":summary,"last_update":str(date.today())}
+        time.sleep(0.8)
+    existing=json.load(OUT_KPI.open(encoding="utf-8")) if OUT_KPI.exists() else {}
+    existing.update(result)
+    safe_write_json(OUT_KPI,existing)
+    log(f"✅ KPI analyses saved ({len(existing)} total)")
+
+# === Outlier-Berechnung ===
+EXCLUDE_AGGREGATES={"World","European Union","Euro area","OECD members",
+                     "High income","Upper middle income","Lower middle income","Low income"}
+
+def compute_outliers():
+    """Berechnet statistische Ausreißer (Z-Score-basiert), ohne mean/stdev/min/max-Felder."""
+    log("🔎 Computing outliers …")
+    meta = load_meta()
+    out = {}
+
+    for m in tqdm(meta, desc="📈 KPI outliers"):
+        kid = m.get("filename", "").replace(".json", "")
+        recs = iter_kpi_records(kid)
+        if not recs:
+            continue
+
+        # Letzter bekannter Wert pro Land (ohne Aggregate)
+        latest = {}
+        for r in recs:
+            c, y, v = r.get("country"), r.get("year"), r.get("value")
+            if not c or c in EXCLUDE_AGGREGATES or not isinstance(v, (int, float)):
+                continue
+            try:
+                y = int(float(y))
+            except Exception:
+                continue
+            if c not in latest or y > latest[c][0]:
+                latest[c] = (y, float(v))
+
+        if not latest:
+            continue
+
+        vals = [v for _, v in latest.values()]
+        if len(vals) < 2:
+            continue
+
+        mu = mean(vals)
+        sigma = pstdev(vals)
+        if sigma == 0:
+            continue
+
+        zlist = []
+        for c, (y, v) in latest.items():
+            z = (v - mu) / sigma
+            zlist.append({
+                "country": c,
+                "year": y,
+                "value": v,
+                "z": round(z, 3)
+            })
+
+        highs = sorted([e for e in zlist if e["z"] >= 2], key=lambda x: -x["z"])[:10]
+        lows  = sorted([e for e in zlist if e["z"] <= -2], key=lambda x:  x["z"])[:10]
+
+        if highs or lows:
+            out[kid] = {"high_outliers": highs, "low_outliers": lows}
+
+    safe_write_json(OUT_OUTLIERS, out)
+    log(f"💾 Outliers saved ({len(out)} KPIs, compact format)")
+
+
+# === Main ===
+if __name__=="__main__":
+    log("🚀 Running RealityCheck Global Analysis (Final GPT-Compat)")
+    state=DATA_DIR/"fetch_state.json"
+    updated=[]
+    if state.exists():
+        try: updated=json.load(state.open(encoding="utf-8")).get("updated_kpis",[])
+        except Exception as e: log(f"⚠️ fetch_state read error: {e}")
+    if not updated: updated=["__force_all__"]
+    try: run_global_analysis(updated)
+    except Exception as e: log(f"❌ Global analysis failed: {e}\n{traceback.format_exc()}")
+    try: generate_kpi_analyses(client,DATA_DIR,updated_only=None if "__force_all__" in updated else updated)
+    except Exception as e: log(f"⚠️ KPI summary failed: {e}")
+    try: compute_outliers()
+    except Exception as e: log(f"⚠️ Outlier computation failed: {e}")
+    log("✅ RealityCheck analysis completed successfully.")

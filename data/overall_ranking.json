@@ -5,7 +5,6 @@
       "democracy_index": 1,
       "press_freedom_index": 1,
       "world_happiness_index": 7,
-      "gdp_per_capita_current_us": 7,
       "gni_per_capita_current_us": 2,
       "gini_index": 9,
       "public_debt_of_gdp": 26,
@@ -37,9 +36,11 @@
       "environmental_performance_index": 20,
       "global_peace_index": 32,
       "electric_vehicle_stock": 8,
-      "inform_resilience_index": 16
+      "inform_resilience_index": 16,
+      "rule_of_law_index": 9,
+      "purchasing_power_parity": 5
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "New Zealand",
@@ -47,7 +48,6 @@
       "democracy_index": 2,
       "press_freedom_index": 8,
       "world_happiness_index": 14,
-      "gdp_per_capita_current_us": 25,
       "gni_per_capita_current_us": 24,
       "public_debt_of_gdp": 56,
       "unemployment_rate": 82,
@@ -73,13 +73,15 @@
       "fixed_broadband_subscriptions_per_100_people": 26,
       "education_expenditure_of_gdp": 49,
       "mean_years_of_schooling": 58,
-      "recycling_rate": 66,
+      "recycling_rate": 67,
       "environmental_performance_index": 26,
       "global_peace_index": 3,
       "electric_vehicle_stock": 27,
-      "inform_resilience_index": 7
+      "inform_resilience_index": 7,
+      "rule_of_law_index": 5,
+      "purchasing_power_parity": 34
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Sweden",
@@ -87,7 +89,6 @@
       "democracy_index": 3,
       "press_freedom_index": 3,
       "world_happiness_index": 5,
-      "gdp_per_capita_current_us": 14,
       "gni_per_capita_current_us": 13,
       "gini_index": 28,
       "unemployment_rate": 134,
@@ -118,9 +119,11 @@
       "environmental_performance_index": 5,
       "global_peace_index": 35,
       "electric_vehicle_stock": 11,
-      "inform_resilience_index": 26
+      "inform_resilience_index": 26,
+      "rule_of_law_index": 6,
+      "purchasing_power_parity": 21
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Iceland",
@@ -128,7 +131,6 @@
       "democracy_index": 4,
       "press_freedom_index": 16,
       "world_happiness_index": 4,
-      "gdp_per_capita_current_us": 9,
       "gni_per_capita_current_us": 6,
       "gini_index": 13,
       "public_debt_of_gdp": 87,
@@ -158,9 +160,11 @@
       "environmental_performance_index": 10,
       "global_peace_index": 1,
       "electric_vehicle_stock": 29,
-      "inform_resilience_index": 8
+      "inform_resilience_index": 8,
+      "rule_of_law_index": 14,
+      "purchasing_power_parity": 12
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Switzerland",
@@ -168,7 +172,6 @@
       "democracy_index": 5,
       "press_freedom_index": 10,
       "world_happiness_index": 16,
-      "gdp_per_capita_current_us": 5,
       "gni_per_capita_current_us": 3,
       "gini_index": 69,
       "public_debt_of_gdp": 17,
@@ -199,9 +202,11 @@
       "environmental_performance_index": 9,
       "global_peace_index": 5,
       "electric_vehicle_stock": 17,
-      "inform_resilience_index": 11
+      "inform_resilience_index": 11,
+      "rule_of_law_index": 2,
+      "purchasing_power_parity": 6
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Finland",
@@ -209,7 +214,6 @@
       "democracy_index": 6,
       "press_freedom_index": 2,
       "world_happiness_index": 1,
-      "gdp_per_capita_current_us": 21,
       "gni_per_capita_current_us": 20,
       "gini_index": 18,
       "public_debt_of_gdp": 64,
@@ -240,9 +244,11 @@
       "environmental_performance_index": 3,
       "global_peace_index": 10,
       "electric_vehicle_stock": 20,
-      "inform_resilience_index": 15
+      "inform_resilience_index": 15,
+      "rule_of_law_index": 7,
+      "purchasing_power_parity": 25
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Denmark",
@@ -250,7 +256,6 @@
       "democracy_index": 7,
       "press_freedom_index": 4,
       "world_happiness_index": 3,
-      "gdp_per_capita_current_us": 11,
       "gni_per_capita_current_us": 10,
       "gini_index": 34,
       "public_debt_of_gdp": 82,
@@ -282,9 +287,11 @@
       "environmental_performance_index": 1,
       "global_peace_index": 8,
       "electric_vehicle_stock": 15,
-      "inform_resilience_index": 6
+      "inform_resilience_index": 6,
+      "rule_of_law_index": 1,
+      "purchasing_power_parity": 11
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Ireland",
@@ -292,7 +299,6 @@
       "democracy_index": 8,
       "press_freedom_index": 12,
       "world_happiness_index": 17,
-      "gdp_per_capita_current_us": 4,
       "gni_per_capita_current_us": 7,
       "gini_index": 25,
       "unemployment_rate": 70,
@@ -321,9 +327,11 @@
       "recycling_rate": 12,
       "environmental_performance_index": 24,
       "global_peace_index": 2,
-      "inform_resilience_index": 22
+      "inform_resilience_index": 22,
+      "rule_of_law_index": 10,
+      "purchasing_power_parity": 3
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Netherlands",
@@ -331,7 +339,6 @@
       "democracy_index": 9,
       "press_freedom_index": 6,
       "world_happiness_index": 6,
-      "gdp_per_capita_current_us": 12,
       "gni_per_capita_current_us": 11,
       "gini_index": 7,
       "public_debt_of_gdp": 57,
@@ -362,9 +369,11 @@
       "environmental_performance_index": 11,
       "global_peace_index": 15,
       "electric_vehicle_stock": 7,
-      "inform_resilience_index": 40
+      "inform_resilience_index": 40,
+      "rule_of_law_index": 12,
+      "purchasing_power_parity": 9
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Luxembourg",
@@ -372,7 +381,6 @@
       "democracy_index": 10,
       "press_freedom_index": 20,
       "world_happiness_index": 8,
-      "gdp_per_capita_current_us": 3,
       "gni_per_capita_current_us": 4,
       "gini_index": 65,
       "public_debt_of_gdp": 3,
@@ -400,9 +408,11 @@
       "mean_years_of_schooling": 38,
       "recycling_rate": 13,
       "environmental_performance_index": 6,
-      "inform_resilience_index": 3
+      "inform_resilience_index": 3,
+      "rule_of_law_index": 11,
+      "purchasing_power_parity": 1
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Australia",
@@ -410,7 +420,6 @@
       "democracy_index": 11,
       "press_freedom_index": 25,
       "world_happiness_index": 12,
-      "gdp_per_capita_current_us": 13,
       "gni_per_capita_current_us": 12,
       "gini_index": 68,
       "public_debt_of_gdp": 63,
@@ -441,9 +450,11 @@
       "environmental_performance_index": 17,
       "global_peace_index": 18,
       "electric_vehicle_stock": 18,
-      "inform_resilience_index": 38
+      "inform_resilience_index": 38,
+      "rule_of_law_index": 3,
+      "purchasing_power_parity": 20
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Taiwan",
@@ -455,11 +466,12 @@
       "age_dependency_ratio_total": 25,
       "political_corruption_index": 47,
       "mean_years_of_schooling": 9,
-      "recycling_rate": 121,
-      "environmental_performance_index": 73,
-      "global_peace_index": 40
+      "recycling_rate": 122,
+      "environmental_performance_index": 74,
+      "global_peace_index": 40,
+      "rule_of_law_index": 30
     },
-    "kpi_count": 10
+    "kpi_count": 11
   },
   {
     "country": "Germany",
@@ -467,7 +479,6 @@
       "democracy_index": 13,
       "press_freedom_index": 13,
       "world_happiness_index": 27,
-      "gdp_per_capita_current_us": 17,
       "gni_per_capita_current_us": 14,
       "gini_index": 52,
       "public_debt_of_gdp": 18,
@@ -499,9 +510,11 @@
       "environmental_performance_index": 13,
       "global_peace_index": 20,
       "electric_vehicle_stock": 4,
-      "inform_resilience_index": 47
+      "inform_resilience_index": 47,
+      "rule_of_law_index": 4,
+      "purchasing_power_parity": 16
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Canada",
@@ -509,7 +522,6 @@
       "democracy_index": 14,
       "press_freedom_index": 14,
       "world_happiness_index": 15,
-      "gdp_per_capita_current_us": 18,
       "gni_per_capita_current_us": 18,
       "gini_index": 42,
       "public_debt_of_gdp": 72,
@@ -537,13 +549,15 @@
       "fixed_broadband_subscriptions_per_100_people": 18,
       "education_expenditure_of_gdp": 66,
       "mean_years_of_schooling": 10,
-      "recycling_rate": 58,
-      "environmental_performance_index": 49,
+      "recycling_rate": 59,
+      "environmental_performance_index": 50,
       "global_peace_index": 14,
       "electric_vehicle_stock": 9,
-      "inform_resilience_index": 53
+      "inform_resilience_index": 53,
+      "rule_of_law_index": 17,
+      "purchasing_power_parity": 24
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Uruguay",
@@ -551,7 +565,6 @@
       "democracy_index": 15,
       "press_freedom_index": 18,
       "world_happiness_index": 24,
-      "gdp_per_capita_current_us": 49,
       "gni_per_capita_current_us": 48,
       "gini_index": 124,
       "public_debt_of_gdp": 70,
@@ -580,11 +593,13 @@
       "education_expenditure_of_gdp": 69,
       "mean_years_of_schooling": 89,
       "recycling_rate": 48,
-      "environmental_performance_index": 113,
+      "environmental_performance_index": 115,
       "global_peace_index": 48,
-      "inform_resilience_index": 57
+      "inform_resilience_index": 57,
+      "rule_of_law_index": 24,
+      "purchasing_power_parity": 56
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Japan",
@@ -592,7 +607,6 @@
       "democracy_index": 16,
       "press_freedom_index": 66,
       "world_happiness_index": 46,
-      "gdp_per_capita_current_us": 36,
       "gni_per_capita_current_us": 29,
       "gini_index": 50,
       "unemployment_rate": 25,
@@ -619,13 +633,15 @@
       "fixed_broadband_subscriptions_per_100_people": 22,
       "education_expenditure_of_gdp": 129,
       "mean_years_of_schooling": 12,
-      "recycling_rate": 142,
+      "recycling_rate": 144,
       "environmental_performance_index": 25,
       "global_peace_index": 12,
       "electric_vehicle_stock": 12,
-      "inform_resilience_index": 23
+      "inform_resilience_index": 23,
+      "rule_of_law_index": 23,
+      "purchasing_power_parity": 37
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "United Kingdom",
@@ -633,7 +649,6 @@
       "democracy_index": 17,
       "press_freedom_index": 33,
       "world_happiness_index": 21,
-      "gdp_per_capita_current_us": 22,
       "gni_per_capita_current_us": 23,
       "gini_index": 54,
       "public_debt_of_gdp": 103,
@@ -665,9 +680,11 @@
       "environmental_performance_index": 2,
       "global_peace_index": 30,
       "electric_vehicle_stock": 5,
-      "inform_resilience_index": 21
+      "inform_resilience_index": 21,
+      "rule_of_law_index": 21,
+      "purchasing_power_parity": 29
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Costa Rica",
@@ -675,7 +692,6 @@
       "democracy_index": 18,
       "press_freedom_index": 5,
       "world_happiness_index": 9,
-      "gdp_per_capita_current_us": 58,
       "gni_per_capita_current_us": 60,
       "gini_index": 157,
       "public_debt_of_gdp": 35,
@@ -703,12 +719,14 @@
       "fixed_broadband_subscriptions_per_100_people": 68,
       "education_expenditure_of_gdp": 22,
       "mean_years_of_schooling": 84,
-      "recycling_rate": 178,
-      "environmental_performance_index": 67,
+      "recycling_rate": 180,
+      "environmental_performance_index": 68,
       "global_peace_index": 54,
-      "inform_resilience_index": 84
+      "inform_resilience_index": 85,
+      "rule_of_law_index": 27,
+      "purchasing_power_parity": 67
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Austria",
@@ -716,7 +734,6 @@
       "democracy_index": 19,
       "press_freedom_index": 17,
       "world_happiness_index": 13,
-      "gdp_per_capita_current_us": 15,
       "gni_per_capita_current_us": 16,
       "gini_index": 44,
       "unemployment_rate": 96,
@@ -746,17 +763,18 @@
       "environmental_performance_index": 8,
       "global_peace_index": 4,
       "electric_vehicle_stock": 19,
-      "inform_resilience_index": 35
+      "inform_resilience_index": 35,
+      "rule_of_law_index": 28,
+      "purchasing_power_parity": 18
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Mauritius",
     "ranks": {
       "democracy_index": 20,
       "press_freedom_index": 60,
-      "world_happiness_index": 75,
-      "gdp_per_capita_current_us": 76,
+      "world_happiness_index": 76,
       "gni_per_capita_current_us": 69,
       "gini_index": 98,
       "public_debt_of_gdp": 62,
@@ -782,12 +800,14 @@
       "fixed_broadband_subscriptions_per_100_people": 59,
       "education_expenditure_of_gdp": 97,
       "mean_years_of_schooling": 48,
-      "recycling_rate": 96,
-      "environmental_performance_index": 77,
+      "recycling_rate": 97,
+      "environmental_performance_index": 78,
       "global_peace_index": 26,
-      "inform_resilience_index": 29
+      "inform_resilience_index": 29,
+      "rule_of_law_index": 73,
+      "purchasing_power_parity": 65
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Estonia",
@@ -795,7 +815,6 @@
       "democracy_index": 21,
       "press_freedom_index": 15,
       "world_happiness_index": 37,
-      "gdp_per_capita_current_us": 39,
       "gni_per_capita_current_us": 39,
       "gini_index": 38,
       "unemployment_rate": 127,
@@ -825,9 +844,11 @@
       "recycling_rate": 18,
       "environmental_performance_index": 14,
       "global_peace_index": 24,
-      "inform_resilience_index": 14
+      "inform_resilience_index": 14,
+      "rule_of_law_index": 8,
+      "purchasing_power_parity": 41
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Spain",
@@ -835,7 +856,6 @@
       "democracy_index": 22,
       "press_freedom_index": 29,
       "world_happiness_index": 38,
-      "gdp_per_capita_current_us": 31,
       "gni_per_capita_current_us": 34,
       "gini_index": 62,
       "public_debt_of_gdp": 97,
@@ -868,9 +888,11 @@
       "environmental_performance_index": 27,
       "global_peace_index": 25,
       "electric_vehicle_stock": 16,
-      "inform_resilience_index": 48
+      "inform_resilience_index": 48,
+      "rule_of_law_index": 22,
+      "purchasing_power_parity": 30
     },
-    "kpi_count": 37
+    "kpi_count": 38
   },
   {
     "country": "Czechia",
@@ -878,7 +900,6 @@
       "democracy_index": 23,
       "press_freedom_index": 40,
       "world_happiness_index": 22,
-      "gdp_per_capita_current_us": 38,
       "gni_per_capita_current_us": 37,
       "gini_index": 6,
       "public_debt_of_gdp": 9,
@@ -909,9 +930,11 @@
       "recycling_rate": 20,
       "environmental_performance_index": 19,
       "global_peace_index": 11,
-      "inform_resilience_index": 13
+      "inform_resilience_index": 13,
+      "rule_of_law_index": 26,
+      "purchasing_power_parity": 31
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Portugal",
@@ -919,7 +942,6 @@
       "democracy_index": 24,
       "press_freedom_index": 9,
       "world_happiness_index": 60,
-      "gdp_per_capita_current_us": 43,
       "gni_per_capita_current_us": 41,
       "gini_index": 72,
       "public_debt_of_gdp": 6,
@@ -947,13 +969,15 @@
       "fixed_broadband_subscriptions_per_100_people": 12,
       "education_expenditure_of_gdp": 77,
       "mean_years_of_schooling": 72,
-      "recycling_rate": 57,
-      "environmental_performance_index": 47,
+      "recycling_rate": 58,
+      "environmental_performance_index": 48,
       "global_peace_index": 7,
       "electric_vehicle_stock": 22,
-      "inform_resilience_index": 17
+      "inform_resilience_index": 17,
+      "rule_of_law_index": 32,
+      "purchasing_power_parity": 39
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Greece",
@@ -961,7 +985,6 @@
       "democracy_index": 25,
       "press_freedom_index": 69,
       "world_happiness_index": 65,
-      "gdp_per_capita_current_us": 47,
       "gni_per_capita_current_us": 44,
       "gini_index": 60,
       "unemployment_rate": 142,
@@ -988,13 +1011,15 @@
       "fixed_broadband_subscriptions_per_100_people": 14,
       "education_expenditure_of_gdp": 127,
       "mean_years_of_schooling": 30,
-      "recycling_rate": 62,
+      "recycling_rate": 63,
       "environmental_performance_index": 29,
       "global_peace_index": 45,
       "electric_vehicle_stock": 30,
-      "inform_resilience_index": 70
+      "inform_resilience_index": 70,
+      "rule_of_law_index": 43,
+      "purchasing_power_parity": 47
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "France",
@@ -1002,7 +1027,6 @@
       "democracy_index": 26,
       "press_freedom_index": 34,
       "world_happiness_index": 26,
-      "gdp_per_capita_current_us": 26,
       "gni_per_capita_current_us": 25,
       "gini_index": 47,
       "unemployment_rate": 120,
@@ -1033,9 +1057,11 @@
       "environmental_performance_index": 12,
       "global_peace_index": 74,
       "electric_vehicle_stock": 6,
-      "inform_resilience_index": 54
+      "inform_resilience_index": 54,
+      "rule_of_law_index": 19,
+      "purchasing_power_parity": 26
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Malta",
@@ -1043,7 +1069,6 @@
       "democracy_index": 27,
       "press_freedom_index": 78,
       "world_happiness_index": 39,
-      "gdp_per_capita_current_us": 27,
       "gni_per_capita_current_us": 33,
       "gini_index": 79,
       "public_debt_of_gdp": 24,
@@ -1069,11 +1094,13 @@
       "fixed_broadband_subscriptions_per_100_people": 11,
       "education_expenditure_of_gdp": 71,
       "mean_years_of_schooling": 16,
-      "recycling_rate": 150,
+      "recycling_rate": 152,
       "environmental_performance_index": 4,
-      "inform_resilience_index": 9
+      "inform_resilience_index": 9,
+      "rule_of_law_index": 45,
+      "purchasing_power_parity": 22
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "United States",
@@ -1081,7 +1108,6 @@
       "democracy_index": 28,
       "press_freedom_index": 44,
       "world_happiness_index": 23,
-      "gdp_per_capita_current_us": 8,
       "gni_per_capita_current_us": 5,
       "gini_index": 134,
       "public_debt_of_gdp": 100,
@@ -1109,13 +1135,15 @@
       "fixed_broadband_subscriptions_per_100_people": 24,
       "education_expenditure_of_gdp": 42,
       "mean_years_of_schooling": 6,
-      "recycling_rate": 113,
-      "environmental_performance_index": 42,
+      "recycling_rate": 114,
+      "environmental_performance_index": 43,
       "global_peace_index": 128,
       "electric_vehicle_stock": 3,
-      "inform_resilience_index": 81
+      "inform_resilience_index": 82,
+      "rule_of_law_index": 18,
+      "purchasing_power_parity": 8
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Chile",
@@ -1123,7 +1151,6 @@
       "democracy_index": 29,
       "press_freedom_index": 53,
       "world_happiness_index": 33,
-      "gdp_per_capita_current_us": 61,
       "gni_per_capita_current_us": 59,
       "gini_index": 142,
       "public_debt_of_gdp": 8,
@@ -1151,13 +1178,15 @@
       "fixed_broadband_subscriptions_per_100_people": 66,
       "education_expenditure_of_gdp": 65,
       "mean_years_of_schooling": 47,
-      "recycling_rate": 192,
-      "environmental_performance_index": 64,
+      "recycling_rate": 194,
+      "environmental_performance_index": 65,
       "global_peace_index": 62,
       "electric_vehicle_stock": 31,
-      "inform_resilience_index": 79
+      "inform_resilience_index": 80,
+      "rule_of_law_index": 25,
+      "purchasing_power_parity": 59
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Slovenia",
@@ -1165,7 +1194,6 @@
       "democracy_index": 30,
       "press_freedom_index": 36,
       "world_happiness_index": 20,
-      "gdp_per_capita_current_us": 33,
       "gni_per_capita_current_us": 36,
       "gini_index": 3,
       "public_debt_of_gdp": 12,
@@ -1196,9 +1224,11 @@
       "recycling_rate": 47,
       "environmental_performance_index": 7,
       "global_peace_index": 9,
-      "inform_resilience_index": 43
+      "inform_resilience_index": 43,
+      "rule_of_law_index": 33,
+      "purchasing_power_parity": 32
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Israel",
@@ -1206,7 +1236,6 @@
       "democracy_index": 31,
       "press_freedom_index": 83,
       "world_happiness_index": 2,
-      "gdp_per_capita_current_us": 20,
       "gni_per_capita_current_us": 19,
       "gini_index": 105,
       "public_debt_of_gdp": 92,
@@ -1235,12 +1264,14 @@
       "education_expenditure_of_gdp": 28,
       "mean_years_of_schooling": 27,
       "recycling_rate": 35,
-      "environmental_performance_index": 56,
+      "environmental_performance_index": 57,
       "global_peace_index": 155,
       "electric_vehicle_stock": 23,
-      "inform_resilience_index": 80
+      "inform_resilience_index": 81,
+      "rule_of_law_index": 34,
+      "purchasing_power_parity": 33
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "South Korea",
@@ -1248,7 +1279,6 @@
       "democracy_index": 32,
       "press_freedom_index": 42,
       "world_happiness_index": 61,
-      "gdp_per_capita_current_us": 35,
       "gni_per_capita_current_us": 32,
       "gini_index": 56,
       "public_debt_of_gdp": 51,
@@ -1277,12 +1307,14 @@
       "education_expenditure_of_gdp": 32,
       "mean_years_of_schooling": 2,
       "recycling_rate": 1,
-      "environmental_performance_index": 62,
+      "environmental_performance_index": 63,
       "global_peace_index": 41,
       "electric_vehicle_stock": 13,
-      "inform_resilience_index": 24
+      "inform_resilience_index": 24,
+      "rule_of_law_index": 37,
+      "purchasing_power_parity": 36
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Latvia",
@@ -1290,7 +1322,6 @@
       "democracy_index": 33,
       "press_freedom_index": 22,
       "world_happiness_index": 52,
-      "gdp_per_capita_current_us": 51,
       "gni_per_capita_current_us": 47,
       "gini_index": 73,
       "public_debt_of_gdp": 7,
@@ -1321,9 +1352,11 @@
       "recycling_rate": 33,
       "environmental_performance_index": 15,
       "global_peace_index": 22,
-      "inform_resilience_index": 51
+      "inform_resilience_index": 51,
+      "rule_of_law_index": 15,
+      "purchasing_power_parity": 49
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Belgium",
@@ -1331,7 +1364,6 @@
       "democracy_index": 34,
       "press_freedom_index": 11,
       "world_happiness_index": 18,
-      "gdp_per_capita_current_us": 16,
       "gni_per_capita_current_us": 15,
       "gini_index": 12,
       "unemployment_rate": 101,
@@ -1361,17 +1393,18 @@
       "environmental_performance_index": 21,
       "global_peace_index": 16,
       "electric_vehicle_stock": 10,
-      "inform_resilience_index": 44
+      "inform_resilience_index": 44,
+      "rule_of_law_index": 16,
+      "purchasing_power_parity": 17
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Botswana",
     "ranks": {
       "democracy_index": 35,
       "press_freedom_index": 38,
-      "world_happiness_index": 145,
-      "gdp_per_capita_current_us": 95,
+      "world_happiness_index": 146,
       "gni_per_capita_current_us": 92,
       "gini_index": 168,
       "public_debt_of_gdp": 16,
@@ -1398,12 +1431,14 @@
       "fixed_broadband_subscriptions_per_100_people": 132,
       "education_expenditure_of_gdp": 8,
       "mean_years_of_schooling": 52,
-      "recycling_rate": 70,
+      "recycling_rate": 71,
       "environmental_performance_index": 35,
       "global_peace_index": 43,
-      "inform_resilience_index": 68
+      "inform_resilience_index": 68,
+      "rule_of_law_index": 49,
+      "purchasing_power_parity": 88
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Lithuania",
@@ -1411,7 +1446,6 @@
       "democracy_index": 36,
       "press_freedom_index": 28,
       "world_happiness_index": 10,
-      "gdp_per_capita_current_us": 42,
       "gni_per_capita_current_us": 40,
       "gini_index": 91,
       "unemployment_rate": 122,
@@ -1441,16 +1475,17 @@
       "recycling_rate": 26,
       "environmental_performance_index": 31,
       "global_peace_index": 23,
-      "inform_resilience_index": 25
+      "inform_resilience_index": 25,
+      "rule_of_law_index": 31,
+      "purchasing_power_parity": 35
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Cape Verde",
     "ranks": {
       "democracy_index": 37,
       "press_freedom_index": 27,
-      "gdp_per_capita_current_us": 116,
       "gni_per_capita_current_us": 115,
       "gini_index": 139,
       "unemployment_rate": 154,
@@ -1474,11 +1509,13 @@
       "political_corruption_index": 53,
       "fixed_broadband_subscriptions_per_100_people": 114,
       "education_expenditure_of_gdp": 83,
-      "recycling_rate": 88,
-      "environmental_performance_index": 90,
-      "inform_resilience_index": 27
+      "recycling_rate": 89,
+      "environmental_performance_index": 91,
+      "inform_resilience_index": 27,
+      "rule_of_law_index": 50,
+      "purchasing_power_parity": 123
     },
-    "kpi_count": 29
+    "kpi_count": 30
   },
   {
     "country": "Italy",
@@ -1486,7 +1523,6 @@
       "democracy_index": 38,
       "press_freedom_index": 41,
       "world_happiness_index": 42,
-      "gdp_per_capita_current_us": 28,
       "gni_per_capita_current_us": 27,
       "gini_index": 76,
       "public_debt_of_gdp": 84,
@@ -1518,9 +1554,11 @@
       "environmental_performance_index": 23,
       "global_peace_index": 33,
       "electric_vehicle_stock": 14,
-      "inform_resilience_index": 71
+      "inform_resilience_index": 71,
+      "rule_of_law_index": 40,
+      "purchasing_power_parity": 28
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Poland",
@@ -1528,7 +1566,6 @@
       "democracy_index": 39,
       "press_freedom_index": 63,
       "world_happiness_index": 25,
-      "gdp_per_capita_current_us": 46,
       "gni_per_capita_current_us": 49,
       "gini_index": 23,
       "public_debt_of_gdp": 66,
@@ -1558,12 +1595,14 @@
       "education_expenditure_of_gdp": 86,
       "mean_years_of_schooling": 22,
       "recycling_rate": 19,
-      "environmental_performance_index": 45,
+      "environmental_performance_index": 46,
       "global_peace_index": 36,
       "electric_vehicle_stock": 26,
-      "inform_resilience_index": 42
+      "inform_resilience_index": 42,
+      "rule_of_law_index": 36,
+      "purchasing_power_parity": 40
     },
-    "kpi_count": 37
+    "kpi_count": 38
   },
   {
     "country": "Cyprus",
@@ -1571,7 +1610,6 @@
       "democracy_index": 40,
       "press_freedom_index": 26,
       "world_happiness_index": 70,
-      "gdp_per_capita_current_us": 30,
       "gni_per_capita_current_us": 35,
       "gini_index": 46,
       "public_debt_of_gdp": 54,
@@ -1597,20 +1635,21 @@
       "fixed_broadband_subscriptions_per_100_people": 21,
       "education_expenditure_of_gdp": 70,
       "mean_years_of_schooling": 15,
-      "recycling_rate": 87,
+      "recycling_rate": 88,
       "environmental_performance_index": 22,
       "global_peace_index": 68,
-      "inform_resilience_index": 64
+      "inform_resilience_index": 64,
+      "rule_of_law_index": 39,
+      "purchasing_power_parity": 27
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "India",
     "ranks": {
       "democracy_index": 41,
       "press_freedom_index": 139,
-      "world_happiness_index": 136,
-      "gdp_per_capita_current_us": 142,
+      "world_happiness_index": 137,
       "gni_per_capita_current_us": 142,
       "gini_index": 4,
       "public_debt_of_gdp": 46,
@@ -1638,13 +1677,15 @@
       "fixed_broadband_subscriptions_per_100_people": 137,
       "education_expenditure_of_gdp": 95,
       "mean_years_of_schooling": 103,
-      "recycling_rate": 86,
-      "environmental_performance_index": 177,
+      "recycling_rate": 87,
+      "environmental_performance_index": 179,
       "global_peace_index": 115,
       "electric_vehicle_stock": 21,
-      "inform_resilience_index": 157
+      "inform_resilience_index": 159,
+      "rule_of_law_index": 108,
+      "purchasing_power_parity": 125
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Slovakia",
@@ -1652,7 +1693,6 @@
       "democracy_index": 42,
       "press_freedom_index": 35,
       "world_happiness_index": 32,
-      "gdp_per_capita_current_us": 44,
       "gni_per_capita_current_us": 42,
       "gini_index": 1,
       "unemployment_rate": 91,
@@ -1678,20 +1718,21 @@
       "fixed_broadband_subscriptions_per_100_people": 39,
       "education_expenditure_of_gdp": 74,
       "mean_years_of_schooling": 7,
-      "recycling_rate": 128,
+      "recycling_rate": 130,
       "environmental_performance_index": 18,
       "global_peace_index": 28,
-      "inform_resilience_index": 60
+      "inform_resilience_index": 60,
+      "rule_of_law_index": 59,
+      "purchasing_power_parity": 46
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "South Africa",
     "ranks": {
       "democracy_index": 43,
       "press_freedom_index": 32,
-      "world_happiness_index": 79,
-      "gdp_per_capita_current_us": 110,
+      "world_happiness_index": 80,
       "gni_per_capita_current_us": 105,
       "gini_index": 170,
       "public_debt_of_gdp": 83,
@@ -1720,11 +1761,13 @@
       "education_expenditure_of_gdp": 25,
       "mean_years_of_schooling": 56,
       "recycling_rate": 40,
-      "environmental_performance_index": 114,
+      "environmental_performance_index": 116,
       "global_peace_index": 125,
-      "inform_resilience_index": 134
+      "inform_resilience_index": 136,
+      "rule_of_law_index": 64,
+      "purchasing_power_parity": 109
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Malaysia",
@@ -1732,7 +1775,6 @@
       "democracy_index": 44,
       "press_freedom_index": 116,
       "world_happiness_index": 55,
-      "gdp_per_capita_current_us": 78,
       "gni_per_capita_current_us": 74,
       "gini_index": 129,
       "public_debt_of_gdp": 71,
@@ -1760,12 +1802,14 @@
       "fixed_broadband_subscriptions_per_100_people": 92,
       "education_expenditure_of_gdp": 122,
       "mean_years_of_schooling": 18,
-      "recycling_rate": 65,
-      "environmental_performance_index": 127,
+      "recycling_rate": 66,
+      "environmental_performance_index": 129,
       "global_peace_index": 13,
-      "inform_resilience_index": 87
+      "inform_resilience_index": 88,
+      "rule_of_law_index": 69,
+      "purchasing_power_parity": 55
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Trinidad and Tobago",
@@ -1773,7 +1817,6 @@
       "democracy_index": 45,
       "press_freedom_index": 31,
       "world_happiness_index": 45,
-      "gdp_per_capita_current_us": 56,
       "gni_per_capita_current_us": 54,
       "gini_index": 127,
       "public_debt_of_gdp": 11,
@@ -1799,19 +1842,20 @@
       "fixed_broadband_subscriptions_per_100_people": 60,
       "education_expenditure_of_gdp": 143,
       "mean_years_of_schooling": 42,
-      "recycling_rate": 94,
-      "environmental_performance_index": 58,
+      "recycling_rate": 95,
+      "environmental_performance_index": 59,
       "global_peace_index": 89,
-      "inform_resilience_index": 73
+      "inform_resilience_index": 73,
+      "rule_of_law_index": 35,
+      "purchasing_power_parity": 57
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Timor-Leste",
     "ranks": {
       "democracy_index": 46,
       "press_freedom_index": 70,
-      "gdp_per_capita_current_us": 165,
       "gni_per_capita_current_us": 160,
       "gini_index": 24,
       "unemployment_rate": 13,
@@ -1835,12 +1879,14 @@
       "political_corruption_index": 46,
       "fixed_broadband_subscriptions_per_100_people": 190,
       "education_expenditure_of_gdp": 51,
-      "recycling_rate": 124,
-      "environmental_performance_index": 126,
+      "recycling_rate": 125,
+      "environmental_performance_index": 128,
       "global_peace_index": 44,
-      "inform_resilience_index": 104
+      "inform_resilience_index": 106,
+      "rule_of_law_index": 61,
+      "purchasing_power_parity": 154
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Panama",
@@ -1848,7 +1894,6 @@
       "democracy_index": 47,
       "press_freedom_index": 75,
       "world_happiness_index": 58,
-      "gdp_per_capita_current_us": 57,
       "gni_per_capita_current_us": 56,
       "gini_index": 161,
       "unemployment_rate": 114,
@@ -1874,19 +1919,20 @@
       "fixed_broadband_subscriptions_per_100_people": 80,
       "education_expenditure_of_gdp": 161,
       "mean_years_of_schooling": 53,
-      "recycling_rate": 117,
-      "environmental_performance_index": 46,
+      "recycling_rate": 118,
+      "environmental_performance_index": 47,
       "global_peace_index": 84,
-      "inform_resilience_index": 113
+      "inform_resilience_index": 115,
+      "rule_of_law_index": 67,
+      "purchasing_power_parity": 51
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Suriname",
     "ranks": {
       "democracy_index": 48,
       "press_freedom_index": 19,
-      "gdp_per_capita_current_us": 98,
       "gni_per_capita_current_us": 107,
       "gini_index": 116,
       "unemployment_rate": 119,
@@ -1910,11 +1956,13 @@
       "political_corruption_index": 39,
       "fixed_broadband_subscriptions_per_100_people": 81,
       "education_expenditure_of_gdp": 148,
-      "recycling_rate": 92,
-      "environmental_performance_index": 69,
-      "inform_resilience_index": 77
+      "recycling_rate": 93,
+      "environmental_performance_index": 70,
+      "inform_resilience_index": 78,
+      "rule_of_law_index": 48,
+      "purchasing_power_parity": 82
     },
-    "kpi_count": 29
+    "kpi_count": 30
   },
   {
     "country": "Jamaica",
@@ -1922,7 +1970,6 @@
       "democracy_index": 49,
       "press_freedom_index": 7,
       "world_happiness_index": 69,
-      "gdp_per_capita_current_us": 102,
       "gni_per_capita_current_us": 101,
       "gini_index": 123,
       "public_debt_of_gdp": 96,
@@ -1948,20 +1995,21 @@
       "fixed_broadband_subscriptions_per_100_people": 86,
       "education_expenditure_of_gdp": 36,
       "mean_years_of_schooling": 65,
-      "recycling_rate": 110,
-      "environmental_performance_index": 71,
+      "recycling_rate": 111,
+      "environmental_performance_index": 72,
       "global_peace_index": 93,
-      "inform_resilience_index": 76
+      "inform_resilience_index": 77,
+      "rule_of_law_index": 38,
+      "purchasing_power_parity": 122
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Montenegro",
     "ranks": {
       "democracy_index": 50,
       "press_freedom_index": 101,
-      "world_happiness_index": 76,
-      "gdp_per_capita_current_us": 75,
+      "world_happiness_index": 77,
       "gni_per_capita_current_us": 73,
       "gini_index": 77,
       "unemployment_rate": 161,
@@ -1985,12 +2033,14 @@
       "female_labor_force_participation": 139,
       "political_corruption_index": 87,
       "fixed_broadband_subscriptions_per_100_people": 41,
-      "recycling_rate": 174,
-      "environmental_performance_index": 63,
+      "recycling_rate": 176,
+      "environmental_performance_index": 64,
       "global_peace_index": 34,
-      "inform_resilience_index": 52
+      "inform_resilience_index": 52,
+      "rule_of_law_index": 63,
+      "purchasing_power_parity": 61
     },
-    "kpi_count": 31
+    "kpi_count": 32
   },
   {
     "country": "Philippines",
@@ -1998,7 +2048,6 @@
       "democracy_index": 51,
       "press_freedom_index": 135,
       "world_happiness_index": 59,
-      "gdp_per_capita_current_us": 129,
       "gni_per_capita_current_us": 121,
       "gini_index": 117,
       "public_debt_of_gdp": 42,
@@ -2027,19 +2076,20 @@
       "education_expenditure_of_gdp": 105,
       "mean_years_of_schooling": 77,
       "recycling_rate": 9,
-      "environmental_performance_index": 155,
+      "environmental_performance_index": 157,
       "global_peace_index": 105,
-      "inform_resilience_index": 154
+      "inform_resilience_index": 156,
+      "rule_of_law_index": 115,
+      "purchasing_power_parity": 119
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Dominican Republic",
     "ranks": {
       "democracy_index": 52,
       "press_freedom_index": 49,
-      "world_happiness_index": 82,
-      "gdp_per_capita_current_us": 80,
+      "world_happiness_index": 83,
       "gni_per_capita_current_us": 79,
       "gini_index": 114,
       "public_debt_of_gdp": 13,
@@ -2065,12 +2115,14 @@
       "fixed_broadband_subscriptions_per_100_people": 99,
       "education_expenditure_of_gdp": 111,
       "mean_years_of_schooling": 81,
-      "recycling_rate": 141,
-      "environmental_performance_index": 88,
+      "recycling_rate": 143,
+      "environmental_performance_index": 89,
       "global_peace_index": 79,
-      "inform_resilience_index": 117
+      "inform_resilience_index": 119,
+      "rule_of_law_index": 98,
+      "purchasing_power_parity": 70
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Mongolia",
@@ -2078,7 +2130,6 @@
       "democracy_index": 53,
       "press_freedom_index": 67,
       "world_happiness_index": 74,
-      "gdp_per_capita_current_us": 105,
       "gni_per_capita_current_us": 111,
       "gini_index": 45,
       "public_debt_of_gdp": 73,
@@ -2105,12 +2156,14 @@
       "fixed_broadband_subscriptions_per_100_people": 88,
       "education_expenditure_of_gdp": 116,
       "mean_years_of_schooling": 68,
-      "recycling_rate": 129,
-      "environmental_performance_index": 154,
+      "recycling_rate": 131,
+      "environmental_performance_index": 156,
       "global_peace_index": 37,
-      "inform_resilience_index": 65
+      "inform_resilience_index": 65,
+      "rule_of_law_index": 93,
+      "purchasing_power_parity": 91
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Argentina",
@@ -2118,7 +2171,6 @@
       "democracy_index": 54,
       "press_freedom_index": 68,
       "world_happiness_index": 41,
-      "gdp_per_capita_current_us": 69,
       "gni_per_capita_current_us": 65,
       "gini_index": 138,
       "unemployment_rate": 129,
@@ -2145,12 +2197,14 @@
       "fixed_broadband_subscriptions_per_100_people": 64,
       "education_expenditure_of_gdp": 30,
       "mean_years_of_schooling": 70,
-      "recycling_rate": 161,
-      "environmental_performance_index": 91,
+      "recycling_rate": 163,
+      "environmental_performance_index": 92,
       "global_peace_index": 46,
-      "inform_resilience_index": 67
+      "inform_resilience_index": 67,
+      "rule_of_law_index": 78,
+      "purchasing_power_parity": 66
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Hungary",
@@ -2158,7 +2212,6 @@
       "democracy_index": 55,
       "press_freedom_index": 89,
       "world_happiness_index": 72,
-      "gdp_per_capita_current_us": 52,
       "gni_per_capita_current_us": 52,
       "gini_index": 37,
       "public_debt_of_gdp": 81,
@@ -2189,17 +2242,18 @@
       "recycling_rate": 34,
       "environmental_performance_index": 33,
       "global_peace_index": 17,
-      "inform_resilience_index": 34
+      "inform_resilience_index": 34,
+      "rule_of_law_index": 87,
+      "purchasing_power_parity": 44
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Croatia",
     "ranks": {
       "democracy_index": 56,
       "press_freedom_index": 55,
-      "world_happiness_index": 81,
-      "gdp_per_capita_current_us": 48,
+      "world_happiness_index": 82,
       "gni_per_capita_current_us": 46,
       "gini_index": 36,
       "unemployment_rate": 92,
@@ -2226,12 +2280,14 @@
       "fixed_broadband_subscriptions_per_100_people": 55,
       "education_expenditure_of_gdp": 96,
       "mean_years_of_schooling": 20,
-      "recycling_rate": 74,
+      "recycling_rate": 75,
       "environmental_performance_index": 16,
       "global_peace_index": 19,
-      "inform_resilience_index": 39
+      "inform_resilience_index": 39,
+      "rule_of_law_index": 52,
+      "purchasing_power_parity": 43
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Brazil",
@@ -2239,7 +2295,6 @@
       "democracy_index": 57,
       "press_freedom_index": 108,
       "world_happiness_index": 43,
-      "gdp_per_capita_current_us": 82,
       "gni_per_capita_current_us": 81,
       "gini_index": 165,
       "public_debt_of_gdp": 89,
@@ -2267,21 +2322,22 @@
       "fixed_broadband_subscriptions_per_100_people": 71,
       "education_expenditure_of_gdp": 34,
       "mean_years_of_schooling": 104,
-      "recycling_rate": 188,
-      "environmental_performance_index": 81,
+      "recycling_rate": 190,
+      "environmental_performance_index": 82,
       "global_peace_index": 130,
       "electric_vehicle_stock": 24,
-      "inform_resilience_index": 148
+      "inform_resilience_index": 150,
+      "rule_of_law_index": 44,
+      "purchasing_power_parity": 81
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Namibia",
     "ranks": {
       "democracy_index": 58,
       "press_freedom_index": 24,
-      "world_happiness_index": 102,
-      "gdp_per_capita_current_us": 124,
+      "world_happiness_index": 103,
       "gni_per_capita_current_us": 124,
       "gini_index": 169,
       "public_debt_of_gdp": 5,
@@ -2307,20 +2363,21 @@
       "fixed_broadband_subscriptions_per_100_people": 131,
       "education_expenditure_of_gdp": 4,
       "mean_years_of_schooling": 118,
-      "recycling_rate": 79,
-      "environmental_performance_index": 43,
+      "recycling_rate": 80,
+      "environmental_performance_index": 44,
       "global_peace_index": 50,
-      "inform_resilience_index": 112
+      "inform_resilience_index": 114,
+      "rule_of_law_index": 46,
+      "purchasing_power_parity": 121
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Indonesia",
     "ranks": {
       "democracy_index": 59,
       "press_freedom_index": 110,
-      "world_happiness_index": 80,
-      "gdp_per_capita_current_us": 117,
+      "world_happiness_index": 81,
       "gni_per_capita_current_us": 116,
       "gini_index": 81,
       "public_debt_of_gdp": 25,
@@ -2348,12 +2405,14 @@
       "fixed_broadband_subscriptions_per_100_people": 125,
       "education_expenditure_of_gdp": 184,
       "mean_years_of_schooling": 79,
-      "recycling_rate": 105,
-      "environmental_performance_index": 161,
+      "recycling_rate": 106,
+      "environmental_performance_index": 163,
       "global_peace_index": 49,
-      "inform_resilience_index": 127
+      "inform_resilience_index": 129,
+      "rule_of_law_index": 110,
+      "purchasing_power_parity": 103
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Colombia",
@@ -2361,7 +2420,6 @@
       "democracy_index": 60,
       "press_freedom_index": 131,
       "world_happiness_index": 66,
-      "gdp_per_capita_current_us": 94,
       "gni_per_capita_current_us": 99,
       "gini_index": 166,
       "public_debt_of_gdp": 75,
@@ -2389,19 +2447,20 @@
       "education_expenditure_of_gdp": 50,
       "mean_years_of_schooling": 62,
       "recycling_rate": 38,
-      "environmental_performance_index": 86,
+      "environmental_performance_index": 87,
       "global_peace_index": 140,
-      "inform_resilience_index": 150
+      "inform_resilience_index": 152,
+      "rule_of_law_index": 57,
+      "purchasing_power_parity": 85
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Bulgaria",
     "ranks": {
       "democracy_index": 61,
       "press_freedom_index": 109,
-      "world_happiness_index": 87,
-      "gdp_per_capita_current_us": 60,
+      "world_happiness_index": 88,
       "gni_per_capita_current_us": 61,
       "gini_index": 119,
       "unemployment_rate": 63,
@@ -2428,19 +2487,20 @@
       "education_expenditure_of_gdp": 79,
       "mean_years_of_schooling": 54,
       "recycling_rate": 37,
-      "environmental_performance_index": 40,
+      "environmental_performance_index": 41,
       "global_peace_index": 29,
-      "inform_resilience_index": 45
+      "inform_resilience_index": 45,
+      "rule_of_law_index": 91,
+      "purchasing_power_parity": 53
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "North Macedonia",
     "ranks": {
       "democracy_index": 62,
       "press_freedom_index": 87,
-      "world_happiness_index": 97,
-      "gdp_per_capita_current_us": 85,
+      "world_happiness_index": 98,
       "gni_per_capita_current_us": 88,
       "gini_index": 63,
       "unemployment_rate": 160,
@@ -2465,12 +2525,14 @@
       "political_corruption_index": 131,
       "fixed_broadband_subscriptions_per_100_people": 53,
       "education_expenditure_of_gdp": 130,
-      "recycling_rate": 181,
+      "recycling_rate": 183,
       "environmental_performance_index": 34,
       "global_peace_index": 51,
-      "inform_resilience_index": 59
+      "inform_resilience_index": 59,
+      "rule_of_law_index": 116,
+      "purchasing_power_parity": 72
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Thailand",
@@ -2478,7 +2540,6 @@
       "democracy_index": 63,
       "press_freedom_index": 134,
       "world_happiness_index": 56,
-      "gdp_per_capita_current_us": 99,
       "gni_per_capita_current_us": 98,
       "gini_index": 64,
       "public_debt_of_gdp": 68,
@@ -2507,11 +2568,13 @@
       "education_expenditure_of_gdp": 159,
       "mean_years_of_schooling": 73,
       "recycling_rate": 14,
-      "environmental_performance_index": 106,
+      "environmental_performance_index": 108,
       "global_peace_index": 86,
-      "inform_resilience_index": 122
+      "inform_resilience_index": 124,
+      "rule_of_law_index": 112,
+      "purchasing_power_parity": 76
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Serbia",
@@ -2519,7 +2582,6 @@
       "democracy_index": 64,
       "press_freedom_index": 90,
       "world_happiness_index": 44,
-      "gdp_per_capita_current_us": 71,
       "gni_per_capita_current_us": 76,
       "gini_index": 55,
       "unemployment_rate": 121,
@@ -2545,20 +2607,21 @@
       "fixed_broadband_subscriptions_per_100_people": 45,
       "education_expenditure_of_gdp": 126,
       "mean_years_of_schooling": 33,
-      "recycling_rate": 191,
-      "environmental_performance_index": 78,
+      "recycling_rate": 193,
+      "environmental_performance_index": 79,
       "global_peace_index": 64,
-      "inform_resilience_index": 92
+      "inform_resilience_index": 93,
+      "rule_of_law_index": 101,
+      "purchasing_power_parity": 64
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Ghana",
     "ranks": {
       "democracy_index": 65,
       "press_freedom_index": 30,
-      "world_happiness_index": 131,
-      "gdp_per_capita_current_us": 149,
+      "world_happiness_index": 132,
       "gni_per_capita_current_us": 147,
       "gini_index": 143,
       "unemployment_rate": 39,
@@ -2584,20 +2647,21 @@
       "fixed_broadband_subscriptions_per_100_people": 161,
       "education_expenditure_of_gdp": 144,
       "mean_years_of_schooling": 88,
-      "recycling_rate": 125,
-      "environmental_performance_index": 167,
+      "recycling_rate": 126,
+      "environmental_performance_index": 169,
       "global_peace_index": 61,
-      "inform_resilience_index": 107
+      "inform_resilience_index": 109,
+      "rule_of_law_index": 94,
+      "purchasing_power_parity": 133
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Albania",
     "ranks": {
       "democracy_index": 66,
       "press_freedom_index": 80,
-      "world_happiness_index": 94,
-      "gdp_per_capita_current_us": 83,
+      "world_happiness_index": 95,
       "gni_per_capita_current_us": 84,
       "gini_index": 29,
       "public_debt_of_gdp": 88,
@@ -2624,20 +2688,21 @@
       "fixed_broadband_subscriptions_per_100_people": 69,
       "education_expenditure_of_gdp": 141,
       "mean_years_of_schooling": 61,
-      "recycling_rate": 72,
-      "environmental_performance_index": 61,
+      "recycling_rate": 73,
+      "environmental_performance_index": 62,
       "global_peace_index": 52,
-      "inform_resilience_index": 62
+      "inform_resilience_index": 62,
+      "rule_of_law_index": 88,
+      "purchasing_power_parity": 78
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Sri Lanka",
     "ranks": {
       "democracy_index": 67,
       "press_freedom_index": 124,
-      "world_happiness_index": 132,
-      "gdp_per_capita_current_us": 123,
+      "world_happiness_index": 133,
       "gni_per_capita_current_us": 127,
       "gini_index": 104,
       "public_debt_of_gdp": 79,
@@ -2666,11 +2731,13 @@
       "education_expenditure_of_gdp": 180,
       "mean_years_of_schooling": 60,
       "recycling_rate": 49,
-      "environmental_performance_index": 129,
+      "environmental_performance_index": 131,
       "global_peace_index": 97,
-      "inform_resilience_index": 100
+      "inform_resilience_index": 102,
+      "rule_of_law_index": 66,
+      "purchasing_power_parity": 108
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Singapore",
@@ -2678,7 +2745,6 @@
       "democracy_index": 68,
       "press_freedom_index": 156,
       "world_happiness_index": 29,
-      "gdp_per_capita_current_us": 6,
       "gni_per_capita_current_us": 9,
       "public_debt_of_gdp": 106,
       "unemployment_rate": 48,
@@ -2704,18 +2770,19 @@
       "education_expenditure_of_gdp": 168,
       "mean_years_of_schooling": 4,
       "recycling_rate": 8,
-      "environmental_performance_index": 44,
+      "environmental_performance_index": 45,
       "global_peace_index": 6,
-      "inform_resilience_index": 1
+      "inform_resilience_index": 1,
+      "rule_of_law_index": 20,
+      "purchasing_power_parity": 2
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Guyana",
     "ranks": {
       "democracy_index": 69,
       "press_freedom_index": 50,
-      "gdp_per_capita_current_us": 41,
       "gni_per_capita_current_us": 53,
       "gini_index": 152,
       "unemployment_rate": 143,
@@ -2740,20 +2807,21 @@
       "fixed_broadband_subscriptions_per_100_people": 93,
       "education_expenditure_of_gdp": 81,
       "mean_years_of_schooling": 91,
-      "recycling_rate": 59,
-      "environmental_performance_index": 103,
+      "recycling_rate": 60,
+      "environmental_performance_index": 105,
       "global_peace_index": 106,
-      "inform_resilience_index": 105
+      "inform_resilience_index": 107,
+      "rule_of_law_index": 84,
+      "purchasing_power_parity": 10
     },
-    "kpi_count": 31
+    "kpi_count": 32
   },
   {
     "country": "Lesotho",
     "ranks": {
       "democracy_index": 70,
       "press_freedom_index": 85,
-      "world_happiness_index": 142,
-      "gdp_per_capita_current_us": 178,
+      "world_happiness_index": 143,
       "gni_per_capita_current_us": 169,
       "gini_index": 151,
       "public_debt_of_gdp": 4,
@@ -2779,20 +2847,21 @@
       "fixed_broadband_subscriptions_per_100_people": 165,
       "education_expenditure_of_gdp": 16,
       "mean_years_of_schooling": 111,
-      "recycling_rate": 140,
-      "environmental_performance_index": 138,
+      "recycling_rate": 142,
+      "environmental_performance_index": 140,
       "global_peace_index": 120,
-      "inform_resilience_index": 120
+      "inform_resilience_index": 122,
+      "rule_of_law_index": 70,
+      "purchasing_power_parity": 176
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Moldova",
     "ranks": {
       "democracy_index": 71,
       "press_freedom_index": 86,
-      "world_happiness_index": 77,
-      "gdp_per_capita_current_us": 96,
+      "world_happiness_index": 78,
       "gni_per_capita_current_us": 100,
       "gini_index": 14,
       "public_debt_of_gdp": 31,
@@ -2821,11 +2890,13 @@
       "education_expenditure_of_gdp": 15,
       "mean_years_of_schooling": 51,
       "recycling_rate": 21,
-      "environmental_performance_index": 83,
+      "environmental_performance_index": 84,
       "global_peace_index": 66,
-      "inform_resilience_index": 101
+      "inform_resilience_index": 103,
+      "rule_of_law_index": 51,
+      "purchasing_power_parity": 93
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Romania",
@@ -2833,7 +2904,6 @@
       "democracy_index": 72,
       "press_freedom_index": 47,
       "world_happiness_index": 31,
-      "gdp_per_capita_current_us": 55,
       "gni_per_capita_current_us": 57,
       "gini_index": 33,
       "unemployment_rate": 93,
@@ -2860,19 +2930,20 @@
       "fixed_broadband_subscriptions_per_100_people": 38,
       "education_expenditure_of_gdp": 131,
       "mean_years_of_schooling": 43,
-      "recycling_rate": 130,
+      "recycling_rate": 132,
       "environmental_performance_index": 30,
       "global_peace_index": 38,
-      "inform_resilience_index": 66
+      "inform_resilience_index": 66,
+      "rule_of_law_index": 76,
+      "purchasing_power_parity": 42
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Papua New Guinea",
     "ranks": {
       "democracy_index": 73,
       "press_freedom_index": 46,
-      "gdp_per_capita_current_us": 139,
       "gni_per_capita_current_us": 139,
       "gini_index": 135,
       "public_debt_of_gdp": 52,
@@ -2898,20 +2969,21 @@
       "fixed_broadband_subscriptions_per_100_people": 171,
       "education_expenditure_of_gdp": 188,
       "mean_years_of_schooling": 137,
-      "recycling_rate": 175,
-      "environmental_performance_index": 172,
+      "recycling_rate": 177,
+      "environmental_performance_index": 174,
       "global_peace_index": 116,
-      "inform_resilience_index": 170
+      "inform_resilience_index": 172,
+      "rule_of_law_index": 104,
+      "purchasing_power_parity": 153
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Senegal",
     "ranks": {
       "democracy_index": 74,
       "press_freedom_index": 48,
-      "world_happiness_index": 105,
-      "gdp_per_capita_current_us": 159,
+      "world_happiness_index": 106,
       "gni_per_capita_current_us": 158,
       "gini_index": 94,
       "unemployment_rate": 38,
@@ -2937,12 +3009,14 @@
       "fixed_broadband_subscriptions_per_100_people": 145,
       "education_expenditure_of_gdp": 23,
       "mean_years_of_schooling": 138,
-      "recycling_rate": 139,
-      "environmental_performance_index": 133,
+      "recycling_rate": 141,
+      "environmental_performance_index": 135,
       "global_peace_index": 69,
-      "inform_resilience_index": 125
+      "inform_resilience_index": 127,
+      "rule_of_law_index": 60,
+      "purchasing_power_parity": 152
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Paraguay",
@@ -2950,7 +3024,6 @@
       "democracy_index": 75,
       "press_freedom_index": 97,
       "world_happiness_index": 50,
-      "gdp_per_capita_current_us": 106,
       "gni_per_capita_current_us": 104,
       "gini_index": 148,
       "unemployment_rate": 110,
@@ -2976,20 +3049,21 @@
       "fixed_broadband_subscriptions_per_100_people": 94,
       "education_expenditure_of_gdp": 125,
       "mean_years_of_schooling": 86,
-      "recycling_rate": 84,
-      "environmental_performance_index": 93,
+      "recycling_rate": 85,
+      "environmental_performance_index": 94,
       "global_peace_index": 75,
-      "inform_resilience_index": 72
+      "inform_resilience_index": 72,
+      "rule_of_law_index": 100,
+      "purchasing_power_parity": 96
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Malawi",
     "ranks": {
       "democracy_index": 76,
       "press_freedom_index": 61,
-      "world_happiness_index": 147,
-      "gdp_per_capita_current_us": 192,
+      "world_happiness_index": 148,
       "gni_per_capita_current_us": 189,
       "gini_index": 110,
       "public_debt_of_gdp": 59,
@@ -3016,20 +3090,21 @@
       "fixed_broadband_subscriptions_per_100_people": 181,
       "education_expenditure_of_gdp": 153,
       "mean_years_of_schooling": 132,
-      "recycling_rate": 162,
-      "environmental_performance_index": 96,
+      "recycling_rate": 164,
+      "environmental_performance_index": 97,
       "global_peace_index": 71,
-      "inform_resilience_index": 139
+      "inform_resilience_index": 141,
+      "rule_of_law_index": 86,
+      "purchasing_power_parity": 185
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Zambia",
     "ranks": {
       "democracy_index": 77,
       "press_freedom_index": 112,
-      "world_happiness_index": 150,
-      "gdp_per_capita_current_us": 167,
+      "world_happiness_index": 151,
       "gni_per_capita_current_us": 165,
       "gini_index": 164,
       "public_debt_of_gdp": 76,
@@ -3056,12 +3131,14 @@
       "fixed_broadband_subscriptions_per_100_people": 159,
       "education_expenditure_of_gdp": 99,
       "mean_years_of_schooling": 95,
-      "recycling_rate": 134,
-      "environmental_performance_index": 104,
+      "recycling_rate": 136,
+      "environmental_performance_index": 106,
       "global_peace_index": 65,
-      "inform_resilience_index": 131
+      "inform_resilience_index": 133,
+      "rule_of_law_index": 72,
+      "purchasing_power_parity": 160
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Peru",
@@ -3069,7 +3146,6 @@
       "democracy_index": 78,
       "press_freedom_index": 88,
       "world_happiness_index": 67,
-      "gdp_per_capita_current_us": 90,
       "gni_per_capita_current_us": 95,
       "gini_index": 126,
       "public_debt_of_gdp": 32,
@@ -3097,20 +3173,21 @@
       "fixed_broadband_subscriptions_per_100_people": 105,
       "education_expenditure_of_gdp": 91,
       "mean_years_of_schooling": 67,
-      "recycling_rate": 164,
-      "environmental_performance_index": 100,
+      "recycling_rate": 166,
+      "environmental_performance_index": 101,
       "global_peace_index": 96,
-      "inform_resilience_index": 130
+      "inform_resilience_index": 132,
+      "rule_of_law_index": 81,
+      "purchasing_power_parity": 98
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Bhutan",
     "ranks": {
       "democracy_index": 79,
       "press_freedom_index": 64,
-      "world_happiness_index": 100,
-      "gdp_per_capita_current_us": 131,
+      "world_happiness_index": 101,
       "gni_per_capita_current_us": 129,
       "gini_index": 21,
       "public_debt_of_gdp": 98,
@@ -3135,20 +3212,21 @@
       "political_corruption_index": 34,
       "fixed_broadband_subscriptions_per_100_people": 150,
       "education_expenditure_of_gdp": 31,
-      "recycling_rate": 189,
-      "environmental_performance_index": 84,
+      "recycling_rate": 191,
+      "environmental_performance_index": 85,
       "global_peace_index": 21,
-      "inform_resilience_index": 63
+      "inform_resilience_index": 63,
+      "rule_of_law_index": 42,
+      "purchasing_power_parity": 105
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Liberia",
     "ranks": {
       "democracy_index": 80,
       "press_freedom_index": 95,
-      "world_happiness_index": 133,
-      "gdp_per_capita_current_us": 183,
+      "world_happiness_index": 134,
       "gni_per_capita_current_us": 182,
       "gini_index": 85,
       "unemployment_rate": 35,
@@ -3173,19 +3251,20 @@
       "fixed_broadband_subscriptions_per_100_people": 169,
       "education_expenditure_of_gdp": 166,
       "mean_years_of_schooling": 126,
-      "recycling_rate": 170,
-      "environmental_performance_index": 171,
+      "recycling_rate": 172,
+      "environmental_performance_index": 173,
       "global_peace_index": 70,
-      "inform_resilience_index": 137
+      "inform_resilience_index": 139,
+      "rule_of_law_index": 122,
+      "purchasing_power_parity": 183
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Fiji",
     "ranks": {
       "democracy_index": 81,
       "press_freedom_index": 54,
-      "gdp_per_capita_current_us": 109,
       "gni_per_capita_current_us": 109,
       "gini_index": 39,
       "public_debt_of_gdp": 34,
@@ -3210,19 +3289,20 @@
       "fixed_broadband_subscriptions_per_100_people": 139,
       "education_expenditure_of_gdp": 90,
       "mean_years_of_schooling": 29,
-      "recycling_rate": 95,
-      "environmental_performance_index": 144,
-      "inform_resilience_index": 86
+      "recycling_rate": 96,
+      "environmental_performance_index": 146,
+      "inform_resilience_index": 87,
+      "rule_of_law_index": 53,
+      "purchasing_power_parity": 106
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Armenia",
     "ranks": {
       "democracy_index": 82,
       "press_freedom_index": 62,
-      "world_happiness_index": 86,
-      "gdp_per_capita_current_us": 89,
+      "world_happiness_index": 87,
       "gni_per_capita_current_us": 91,
       "gini_index": 16,
       "public_debt_of_gdp": 47,
@@ -3249,20 +3329,21 @@
       "fixed_broadband_subscriptions_per_100_people": 79,
       "education_expenditure_of_gdp": 162,
       "mean_years_of_schooling": 59,
-      "recycling_rate": 123,
-      "environmental_performance_index": 55,
+      "recycling_rate": 124,
+      "environmental_performance_index": 56,
       "global_peace_index": 58,
-      "inform_resilience_index": 75
+      "inform_resilience_index": 76,
+      "rule_of_law_index": 85,
+      "purchasing_power_parity": 79
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Madagascar",
     "ranks": {
       "democracy_index": 83,
       "press_freedom_index": 56,
-      "world_happiness_index": 135,
-      "gdp_per_capita_current_us": 190,
+      "world_happiness_index": 136,
       "gni_per_capita_current_us": 191,
       "gini_index": 97,
       "unemployment_rate": 40,
@@ -3287,12 +3368,14 @@
       "political_corruption_index": 149,
       "fixed_broadband_subscriptions_per_100_people": 175,
       "education_expenditure_of_gdp": 142,
-      "recycling_rate": 165,
-      "environmental_performance_index": 165,
+      "recycling_rate": 167,
+      "environmental_performance_index": 167,
       "global_peace_index": 60,
-      "inform_resilience_index": 153
+      "inform_resilience_index": 155,
+      "rule_of_law_index": 132,
+      "purchasing_power_parity": 184
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Mexico",
@@ -3300,7 +3383,6 @@
       "democracy_index": 84,
       "press_freedom_index": 140,
       "world_happiness_index": 11,
-      "gdp_per_capita_current_us": 67,
       "gni_per_capita_current_us": 70,
       "gini_index": 144,
       "public_debt_of_gdp": 44,
@@ -3328,13 +3410,15 @@
       "fixed_broadband_subscriptions_per_100_people": 75,
       "education_expenditure_of_gdp": 101,
       "mean_years_of_schooling": 57,
-      "recycling_rate": 160,
-      "environmental_performance_index": 72,
+      "recycling_rate": 162,
+      "environmental_performance_index": 73,
       "global_peace_index": 135,
       "electric_vehicle_stock": 28,
-      "inform_resilience_index": 138
+      "inform_resilience_index": 140,
+      "rule_of_law_index": 113,
+      "purchasing_power_parity": 74
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Ecuador",
@@ -3342,7 +3426,6 @@
       "democracy_index": 85,
       "press_freedom_index": 93,
       "world_happiness_index": 68,
-      "gdp_per_capita_current_us": 103,
       "gni_per_capita_current_us": 102,
       "gini_index": 153,
       "unemployment_rate": 79,
@@ -3369,19 +3452,20 @@
       "education_expenditure_of_gdp": 107,
       "mean_years_of_schooling": 82,
       "recycling_rate": 41,
-      "environmental_performance_index": 65,
+      "environmental_performance_index": 66,
       "global_peace_index": 129,
-      "inform_resilience_index": 152
+      "inform_resilience_index": 154,
+      "rule_of_law_index": 103,
+      "purchasing_power_parity": 107
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Tanzania",
     "ranks": {
       "democracy_index": 86,
       "press_freedom_index": 121,
-      "world_happiness_index": 139,
-      "gdp_per_capita_current_us": 168,
+      "world_happiness_index": 140,
       "gni_per_capita_current_us": 168,
       "gini_index": 128,
       "unemployment_rate": 26,
@@ -3407,18 +3491,19 @@
       "fixed_broadband_subscriptions_per_100_people": 141,
       "education_expenditure_of_gdp": 137,
       "mean_years_of_schooling": 112,
-      "recycling_rate": 136,
-      "environmental_performance_index": 131,
+      "recycling_rate": 138,
+      "environmental_performance_index": 133,
       "global_peace_index": 73,
-      "inform_resilience_index": 142
+      "inform_resilience_index": 144,
+      "rule_of_law_index": 47,
+      "purchasing_power_parity": 161
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "World",
     "ranks": {
       "democracy_index": 87,
-      "gdp_per_capita_current_us": 70,
       "gni_per_capita_current_us": 66,
       "unemployment_rate": 84,
       "human_development_index_hdi": 98,
@@ -3441,16 +3526,18 @@
       "fixed_broadband_subscriptions_per_100_people": 77,
       "education_expenditure_of_gdp": 121,
       "mean_years_of_schooling": 87,
-      "electric_vehicle_stock": 1
+      "electric_vehicle_stock": 1,
+      "rule_of_law_index": 92,
+      "purchasing_power_parity": 77
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Bosnia Herzegovina",
     "ranks": {
       "democracy_index": 88,
       "press_freedom_index": 57,
-      "gdp_per_capita_current_us": 87,
+      "world_happiness_index": 75,
       "gni_per_capita_current_us": 85,
       "gini_index": 58,
       "public_debt_of_gdp": 37,
@@ -3476,17 +3563,21 @@
       "political_corruption_index": 135,
       "fixed_broadband_subscriptions_per_100_people": 54,
       "education_expenditure_of_gdp": 132,
-      "global_peace_index": 59
+      "recycling_rate": 57,
+      "environmental_performance_index": 102,
+      "global_peace_index": 59,
+      "inform_resilience_index": 95,
+      "rule_of_law_index": 102,
+      "purchasing_power_parity": 83
     },
-    "kpi_count": 29
+    "kpi_count": 34
   },
   {
     "country": "Kenya",
     "ranks": {
       "democracy_index": 89,
       "press_freedom_index": 99,
-      "world_happiness_index": 116,
-      "gdp_per_capita_current_us": 151,
+      "world_happiness_index": 117,
       "gni_per_capita_current_us": 151,
       "gini_index": 103,
       "unemployment_rate": 95,
@@ -3512,12 +3603,14 @@
       "fixed_broadband_subscriptions_per_100_people": 142,
       "education_expenditure_of_gdp": 102,
       "mean_years_of_schooling": 114,
-      "recycling_rate": 76,
-      "environmental_performance_index": 145,
+      "recycling_rate": 77,
+      "environmental_performance_index": 147,
       "global_peace_index": 127,
-      "inform_resilience_index": 167
+      "inform_resilience_index": 169,
+      "rule_of_law_index": 74,
+      "purchasing_power_parity": 143
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Honduras",
@@ -3525,7 +3618,6 @@
       "democracy_index": 90,
       "press_freedom_index": 147,
       "world_happiness_index": 63,
-      "gdp_per_capita_current_us": 135,
       "gni_per_capita_current_us": 137,
       "gini_index": 156,
       "unemployment_rate": 109,
@@ -3551,20 +3643,21 @@
       "fixed_broadband_subscriptions_per_100_people": 128,
       "education_expenditure_of_gdp": 78,
       "mean_years_of_schooling": 107,
-      "recycling_rate": 154,
-      "environmental_performance_index": 118,
+      "recycling_rate": 156,
+      "environmental_performance_index": 120,
       "global_peace_index": 124,
-      "inform_resilience_index": 161
+      "inform_resilience_index": 163,
+      "rule_of_law_index": 97,
+      "purchasing_power_parity": 140
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Morocco",
     "ranks": {
       "democracy_index": 91,
       "press_freedom_index": 133,
-      "world_happiness_index": 112,
-      "gdp_per_capita_current_us": 128,
+      "world_happiness_index": 113,
       "gni_per_capita_current_us": 128,
       "gini_index": 120,
       "public_debt_of_gdp": 50,
@@ -3592,19 +3685,20 @@
       "education_expenditure_of_gdp": 26,
       "mean_years_of_schooling": 110,
       "recycling_rate": 45,
-      "environmental_performance_index": 158,
+      "environmental_performance_index": 160,
       "global_peace_index": 85,
-      "inform_resilience_index": 102
+      "inform_resilience_index": 104,
+      "rule_of_law_index": 96,
+      "purchasing_power_parity": 127
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Ukraine",
     "ranks": {
       "democracy_index": 92,
       "press_freedom_index": 94,
-      "world_happiness_index": 110,
-      "gdp_per_capita_current_us": 115,
+      "world_happiness_index": 111,
       "gni_per_capita_current_us": 113,
       "gini_index": 5,
       "public_debt_of_gdp": 65,
@@ -3632,20 +3726,21 @@
       "fixed_broadband_subscriptions_per_100_people": 76,
       "education_expenditure_of_gdp": 57,
       "mean_years_of_schooling": 55,
-      "recycling_rate": 185,
-      "environmental_performance_index": 51,
+      "recycling_rate": 187,
+      "environmental_performance_index": 52,
       "global_peace_index": 161,
-      "inform_resilience_index": 159
+      "inform_resilience_index": 161,
+      "rule_of_law_index": 107,
+      "purchasing_power_parity": 95
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Tunisia",
     "ranks": {
       "democracy_index": 93,
       "press_freedom_index": 72,
-      "world_happiness_index": 124,
-      "gdp_per_capita_current_us": 125,
+      "world_happiness_index": 125,
       "gni_per_capita_current_us": 126,
       "gini_index": 67,
       "public_debt_of_gdp": 41,
@@ -3672,20 +3767,21 @@
       "fixed_broadband_subscriptions_per_100_people": 90,
       "education_expenditure_of_gdp": 14,
       "mean_years_of_schooling": 74,
-      "recycling_rate": 147,
-      "environmental_performance_index": 95,
+      "recycling_rate": 149,
+      "environmental_performance_index": 96,
       "global_peace_index": 81,
-      "inform_resilience_index": 88
+      "inform_resilience_index": 89,
+      "rule_of_law_index": 90,
+      "purchasing_power_parity": 112
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Georgia",
     "ranks": {
       "democracy_index": 94,
       "press_freedom_index": 59,
-      "world_happiness_index": 91,
-      "gdp_per_capita_current_us": 86,
+      "world_happiness_index": 92,
       "gni_per_capita_current_us": 90,
       "gini_index": 70,
       "public_debt_of_gdp": 39,
@@ -3711,12 +3807,14 @@
       "political_corruption_index": 42,
       "fixed_broadband_subscriptions_per_100_people": 52,
       "education_expenditure_of_gdp": 104,
-      "recycling_rate": 78,
-      "environmental_performance_index": 101,
+      "recycling_rate": 79,
+      "environmental_performance_index": 103,
       "global_peace_index": 109,
-      "inform_resilience_index": 90
+      "inform_resilience_index": 91,
+      "rule_of_law_index": 83,
+      "purchasing_power_parity": 68
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "El Salvador",
@@ -3724,7 +3822,6 @@
       "democracy_index": 95,
       "press_freedom_index": 79,
       "world_happiness_index": 30,
-      "gdp_per_capita_current_us": 114,
       "gni_per_capita_current_us": 114,
       "gini_index": 121,
       "public_debt_of_gdp": 95,
@@ -3751,20 +3848,21 @@
       "fixed_broadband_subscriptions_per_100_people": 98,
       "education_expenditure_of_gdp": 136,
       "mean_years_of_schooling": 101,
-      "recycling_rate": 103,
-      "environmental_performance_index": 94,
+      "recycling_rate": 104,
+      "environmental_performance_index": 95,
       "global_peace_index": 104,
-      "inform_resilience_index": 109
+      "inform_resilience_index": 111,
+      "rule_of_law_index": 160,
+      "purchasing_power_parity": 116
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Nepal",
     "ranks": {
       "democracy_index": 96,
       "press_freedom_index": 103,
-      "world_happiness_index": 83,
-      "gdp_per_capita_current_us": 163,
+      "world_happiness_index": 84,
       "gni_per_capita_current_us": 162,
       "gini_index": 35,
       "public_debt_of_gdp": 36,
@@ -3790,12 +3888,14 @@
       "fixed_broadband_subscriptions_per_100_people": 124,
       "education_expenditure_of_gdp": 114,
       "mean_years_of_schooling": 121,
-      "recycling_rate": 183,
-      "environmental_performance_index": 160,
+      "recycling_rate": 185,
+      "environmental_performance_index": 162,
       "global_peace_index": 77,
-      "inform_resilience_index": 129
+      "inform_resilience_index": 131,
+      "rule_of_law_index": 79,
+      "purchasing_power_parity": 149
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Guatemala",
@@ -3803,7 +3903,6 @@
       "democracy_index": 97,
       "press_freedom_index": 113,
       "world_happiness_index": 49,
-      "gdp_per_capita_current_us": 111,
       "gni_per_capita_current_us": 108,
       "gini_index": 154,
       "public_debt_of_gdp": 20,
@@ -3831,20 +3930,21 @@
       "fixed_broadband_subscriptions_per_100_people": 123,
       "education_expenditure_of_gdp": 138,
       "mean_years_of_schooling": 122,
-      "recycling_rate": 153,
-      "environmental_performance_index": 164,
+      "recycling_rate": 155,
+      "environmental_performance_index": 166,
       "global_peace_index": 108,
-      "inform_resilience_index": 151
+      "inform_resilience_index": 153,
+      "rule_of_law_index": 89,
+      "purchasing_power_parity": 113
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Uganda",
     "ranks": {
       "democracy_index": 98,
       "press_freedom_index": 122,
-      "world_happiness_index": 127,
-      "gdp_per_capita_current_us": 171,
+      "world_happiness_index": 128,
       "gni_per_capita_current_us": 173,
       "gini_index": 140,
       "public_debt_of_gdp": 53,
@@ -3872,19 +3972,20 @@
       "education_expenditure_of_gdp": 157,
       "mean_years_of_schooling": 113,
       "recycling_rate": 53,
-      "environmental_performance_index": 122,
+      "environmental_performance_index": 124,
       "global_peace_index": 113,
-      "inform_resilience_index": 160
+      "inform_resilience_index": 162,
+      "rule_of_law_index": 117,
+      "purchasing_power_parity": 171
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Gambia",
     "ranks": {
       "democracy_index": 99,
       "press_freedom_index": 82,
-      "world_happiness_index": 123,
-      "gdp_per_capita_current_us": 180,
+      "world_happiness_index": 124,
       "gni_per_capita_current_us": 178,
       "gini_index": 112,
       "unemployment_rate": 113,
@@ -3909,20 +4010,21 @@
       "fixed_broadband_subscriptions_per_100_people": 170,
       "education_expenditure_of_gdp": 152,
       "mean_years_of_schooling": 136,
-      "recycling_rate": 131,
-      "environmental_performance_index": 119,
+      "recycling_rate": 133,
+      "environmental_performance_index": 121,
       "global_peace_index": 55,
-      "inform_resilience_index": 115
+      "inform_resilience_index": 117,
+      "rule_of_law_index": 54,
+      "purchasing_power_parity": 168
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Bangladesh",
     "ranks": {
       "democracy_index": 100,
       "press_freedom_index": 148,
-      "world_happiness_index": 146,
-      "gdp_per_capita_current_us": 145,
+      "world_happiness_index": 147,
       "gni_per_capita_current_us": 140,
       "gini_index": 41,
       "public_debt_of_gdp": 27,
@@ -3949,20 +4051,21 @@
       "fixed_broadband_subscriptions_per_100_people": 111,
       "education_expenditure_of_gdp": 172,
       "mean_years_of_schooling": 109,
-      "recycling_rate": 97,
-      "environmental_performance_index": 174,
+      "recycling_rate": 98,
+      "environmental_performance_index": 176,
       "global_peace_index": 123,
-      "inform_resilience_index": 165
+      "inform_resilience_index": 167,
+      "rule_of_law_index": 158,
+      "purchasing_power_parity": 129
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Benin",
     "ranks": {
       "democracy_index": 101,
       "press_freedom_index": 111,
-      "world_happiness_index": 128,
-      "gdp_per_capita_current_us": 161,
+      "world_happiness_index": 129,
       "gni_per_capita_current_us": 163,
       "gini_index": 78,
       "unemployment_rate": 14,
@@ -3989,19 +4092,20 @@
       "education_expenditure_of_gdp": 134,
       "mean_years_of_schooling": 115,
       "recycling_rate": 3,
-      "environmental_performance_index": 152,
+      "environmental_performance_index": 154,
       "global_peace_index": 112,
-      "inform_resilience_index": 149
+      "inform_resilience_index": 151,
+      "rule_of_law_index": 55,
+      "purchasing_power_parity": 157
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Sierra Leone",
     "ranks": {
       "democracy_index": 102,
       "press_freedom_index": 74,
-      "world_happiness_index": 152,
-      "gdp_per_capita_current_us": 181,
+      "world_happiness_index": 153,
       "gni_per_capita_current_us": 180,
       "gini_index": 88,
       "unemployment_rate": 45,
@@ -4026,12 +4130,14 @@
       "fixed_broadband_subscriptions_per_100_people": 191,
       "education_expenditure_of_gdp": 156,
       "mean_years_of_schooling": 135,
-      "recycling_rate": 159,
-      "environmental_performance_index": 137,
+      "recycling_rate": 161,
+      "environmental_performance_index": 139,
       "global_peace_index": 57,
-      "inform_resilience_index": 141
+      "inform_resilience_index": 143,
+      "rule_of_law_index": 77,
+      "purchasing_power_parity": 167
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Bolivia",
@@ -4039,7 +4145,6 @@
       "democracy_index": 103,
       "press_freedom_index": 107,
       "world_happiness_index": 64,
-      "gdp_per_capita_current_us": 127,
       "gni_per_capita_current_us": 131,
       "gini_index": 136,
       "public_debt_of_gdp": 74,
@@ -4066,19 +4171,20 @@
       "education_expenditure_of_gdp": 6,
       "mean_years_of_schooling": 83,
       "recycling_rate": 27,
-      "environmental_performance_index": 98,
+      "environmental_performance_index": 99,
       "global_peace_index": 83,
-      "inform_resilience_index": 114
+      "inform_resilience_index": 116,
+      "rule_of_law_index": 123,
+      "purchasing_power_parity": 124
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Turkey",
     "ranks": {
       "democracy_index": 104,
       "press_freedom_index": 149,
-      "world_happiness_index": 120,
-      "gdp_per_capita_current_us": 64,
+      "world_happiness_index": 121,
       "gni_per_capita_current_us": 67,
       "gini_index": 149,
       "public_debt_of_gdp": 29,
@@ -4107,20 +4213,21 @@
       "education_expenditure_of_gdp": 140,
       "mean_years_of_schooling": 90,
       "recycling_rate": 29,
-      "environmental_performance_index": 169,
+      "environmental_performance_index": 171,
       "global_peace_index": 146,
       "electric_vehicle_stock": 25,
-      "inform_resilience_index": 158
+      "inform_resilience_index": 160,
+      "rule_of_law_index": 144,
+      "purchasing_power_parity": 48
     },
-    "kpi_count": 36
+    "kpi_count": 37
   },
   {
     "country": "Ivory Coast",
     "ranks": {
       "democracy_index": 105,
       "press_freedom_index": 65,
-      "world_happiness_index": 106,
-      "gdp_per_capita_current_us": 141,
+      "world_happiness_index": 107,
       "gni_per_capita_current_us": 144,
       "gini_index": 83,
       "public_debt_of_gdp": 104,
@@ -4147,20 +4254,21 @@
       "fixed_broadband_subscriptions_per_100_people": 148,
       "education_expenditure_of_gdp": 124,
       "mean_years_of_schooling": 124,
-      "recycling_rate": 127,
-      "environmental_performance_index": 135,
+      "recycling_rate": 129,
+      "environmental_performance_index": 137,
       "global_peace_index": 94,
-      "inform_resilience_index": 135
+      "inform_resilience_index": 137,
+      "rule_of_law_index": 105,
+      "purchasing_power_parity": 139
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Nigeria",
     "ranks": {
       "democracy_index": 106,
       "press_freedom_index": 117,
-      "world_happiness_index": 115,
-      "gdp_per_capita_current_us": 184,
+      "world_happiness_index": 116,
       "gni_per_capita_current_us": 166,
       "gini_index": 71,
       "unemployment_rate": 37,
@@ -4185,19 +4293,20 @@
       "political_corruption_index": 170,
       "fixed_broadband_subscriptions_per_100_people": 185,
       "education_expenditure_of_gdp": 190,
-      "recycling_rate": 182,
-      "environmental_performance_index": 159,
+      "recycling_rate": 184,
+      "environmental_performance_index": 161,
       "global_peace_index": 148,
-      "inform_resilience_index": 174
+      "inform_resilience_index": 176,
+      "rule_of_law_index": 134,
+      "purchasing_power_parity": 144
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Angola",
     "ranks": {
       "democracy_index": 107,
       "press_freedom_index": 100,
-      "gdp_per_capita_current_us": 155,
       "gni_per_capita_current_us": 149,
       "gini_index": 163,
       "unemployment_rate": 162,
@@ -4221,20 +4330,21 @@
       "political_corruption_index": 91,
       "fixed_broadband_subscriptions_per_100_people": 166,
       "education_expenditure_of_gdp": 160,
-      "recycling_rate": 82,
-      "environmental_performance_index": 148,
+      "recycling_rate": 83,
+      "environmental_performance_index": 150,
       "global_peace_index": 76,
-      "inform_resilience_index": 156
+      "inform_resilience_index": 158,
+      "rule_of_law_index": 109,
+      "purchasing_power_parity": 131
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Mauritania",
     "ranks": {
       "democracy_index": 108,
       "press_freedom_index": 91,
-      "world_happiness_index": 108,
-      "gdp_per_capita_current_us": 156,
+      "world_happiness_index": 109,
       "gni_per_capita_current_us": 152,
       "gini_index": 48,
       "unemployment_rate": 145,
@@ -4260,20 +4370,21 @@
       "fixed_broadband_subscriptions_per_100_people": 160,
       "education_expenditure_of_gdp": 72,
       "mean_years_of_schooling": 131,
-      "recycling_rate": 157,
-      "environmental_performance_index": 162,
+      "recycling_rate": 159,
+      "environmental_performance_index": 164,
       "global_peace_index": 110,
-      "inform_resilience_index": 147
+      "inform_resilience_index": 149,
+      "rule_of_law_index": 147,
+      "purchasing_power_parity": 141
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Lebanon",
     "ranks": {
       "democracy_index": 109,
       "press_freedom_index": 104,
-      "world_happiness_index": 153,
-      "gdp_per_capita_current_us": 134,
+      "world_happiness_index": 154,
       "gni_per_capita_current_us": 130,
       "gini_index": 84,
       "public_debt_of_gdp": 101,
@@ -4300,20 +4411,21 @@
       "political_corruption_index": 156,
       "fixed_broadband_subscriptions_per_100_people": 113,
       "education_expenditure_of_gdp": 186,
-      "recycling_rate": 111,
-      "environmental_performance_index": 139,
+      "recycling_rate": 112,
+      "environmental_performance_index": 141,
       "global_peace_index": 136,
-      "inform_resilience_index": 171
+      "inform_resilience_index": 173,
+      "rule_of_law_index": 137,
+      "purchasing_power_parity": 117
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Algeria",
     "ranks": {
       "democracy_index": 110,
       "press_freedom_index": 143,
-      "world_happiness_index": 93,
-      "gdp_per_capita_current_us": 113,
+      "world_happiness_index": 94,
       "gni_per_capita_current_us": 112,
       "gini_index": 19,
       "unemployment_rate": 150,
@@ -4339,20 +4451,21 @@
       "fixed_broadband_subscriptions_per_100_people": 96,
       "education_expenditure_of_gdp": 35,
       "mean_years_of_schooling": 93,
-      "recycling_rate": 146,
-      "environmental_performance_index": 153,
+      "recycling_rate": 148,
+      "environmental_performance_index": 155,
       "global_peace_index": 92,
-      "inform_resilience_index": 94
+      "inform_resilience_index": 96,
+      "rule_of_law_index": 133,
+      "purchasing_power_parity": 100
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Kyrgyzstan",
     "ranks": {
       "democracy_index": 111,
       "press_freedom_index": 77,
-      "world_happiness_index": 78,
-      "gdp_per_capita_current_us": 148,
+      "world_happiness_index": 79,
       "gni_per_capita_current_us": 150,
       "gini_index": 17,
       "public_debt_of_gdp": 38,
@@ -4379,20 +4492,21 @@
       "fixed_broadband_subscriptions_per_100_people": 119,
       "education_expenditure_of_gdp": 13,
       "mean_years_of_schooling": 44,
-      "recycling_rate": 115,
-      "environmental_performance_index": 123,
+      "recycling_rate": 116,
+      "environmental_performance_index": 125,
       "global_peace_index": 78,
-      "inform_resilience_index": 97
+      "inform_resilience_index": 99,
+      "rule_of_law_index": 121,
+      "purchasing_power_parity": 134
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Palestine",
     "ranks": {
       "democracy_index": 112,
       "press_freedom_index": 129,
-      "world_happiness_index": 104,
-      "gdp_per_capita_current_us": 146,
+      "world_happiness_index": 105,
       "gni_per_capita_current_us": 136,
       "gini_index": 95,
       "unemployment_rate": 176,
@@ -4416,19 +4530,20 @@
       "political_corruption_index": 67,
       "fixed_broadband_subscriptions_per_100_people": 109,
       "education_expenditure_of_gdp": 41,
-      "recycling_rate": 190,
+      "recycling_rate": 192,
       "global_peace_index": 145,
-      "inform_resilience_index": 169
+      "inform_resilience_index": 171,
+      "rule_of_law_index": 125,
+      "purchasing_power_parity": 158
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Mozambique",
     "ranks": {
       "democracy_index": 113,
       "press_freedom_index": 105,
-      "world_happiness_index": 107,
-      "gdp_per_capita_current_us": 187,
+      "world_happiness_index": 108,
       "gni_per_capita_current_us": 188,
       "gini_index": 160,
       "public_debt_of_gdp": 78,
@@ -4455,20 +4570,21 @@
       "fixed_broadband_subscriptions_per_100_people": 172,
       "education_expenditure_of_gdp": 27,
       "mean_years_of_schooling": 141,
-      "recycling_rate": 180,
-      "environmental_performance_index": 142,
+      "recycling_rate": 182,
+      "environmental_performance_index": 144,
       "global_peace_index": 121,
-      "inform_resilience_index": 177
+      "inform_resilience_index": 179,
+      "rule_of_law_index": 131,
+      "purchasing_power_parity": 187
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Rwanda",
     "ranks": {
       "democracy_index": 114,
       "press_freedom_index": 152,
-      "world_happiness_index": 149,
-      "gdp_per_capita_current_us": 175,
+      "world_happiness_index": 150,
       "gni_per_capita_current_us": 171,
       "gini_index": 118,
       "public_debt_of_gdp": 48,
@@ -4494,20 +4610,21 @@
       "fixed_broadband_subscriptions_per_100_people": 163,
       "education_expenditure_of_gdp": 73,
       "mean_years_of_schooling": 133,
-      "recycling_rate": 143,
-      "environmental_performance_index": 136,
+      "recycling_rate": 145,
+      "environmental_performance_index": 138,
       "global_peace_index": 91,
-      "inform_resilience_index": 121
+      "inform_resilience_index": 123,
+      "rule_of_law_index": 111,
+      "purchasing_power_parity": 164
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Jordan",
     "ranks": {
       "democracy_index": 115,
       "press_freedom_index": 126,
-      "world_happiness_index": 121,
-      "gdp_per_capita_current_us": 122,
+      "world_happiness_index": 122,
       "gni_per_capita_current_us": 122,
       "gini_index": 66,
       "public_debt_of_gdp": 93,
@@ -4534,20 +4651,21 @@
       "fixed_broadband_subscriptions_per_100_people": 115,
       "education_expenditure_of_gdp": 120,
       "mean_years_of_schooling": 45,
-      "recycling_rate": 114,
-      "environmental_performance_index": 82,
+      "recycling_rate": 115,
+      "environmental_performance_index": 83,
       "global_peace_index": 72,
-      "inform_resilience_index": 108
+      "inform_resilience_index": 110,
+      "rule_of_law_index": 56,
+      "purchasing_power_parity": 126
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Ethiopia",
     "ranks": {
       "democracy_index": 116,
       "press_freedom_index": 98,
-      "world_happiness_index": 138,
-      "gdp_per_capita_current_us": 174,
+      "world_happiness_index": 139,
       "gni_per_capita_current_us": 174,
       "gini_index": 43,
       "public_debt_of_gdp": 28,
@@ -4573,12 +4691,14 @@
       "political_corruption_index": 92,
       "fixed_broadband_subscriptions_per_100_people": 162,
       "education_expenditure_of_gdp": 165,
-      "recycling_rate": 132,
-      "environmental_performance_index": 140,
+      "recycling_rate": 134,
+      "environmental_performance_index": 142,
       "global_peace_index": 138,
-      "inform_resilience_index": 175
+      "inform_resilience_index": 177,
+      "rule_of_law_index": 127,
+      "purchasing_power_parity": 170
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Qatar",
@@ -4586,7 +4706,6 @@
       "democracy_index": 117,
       "press_freedom_index": 125,
       "world_happiness_index": 36,
-      "gdp_per_capita_current_us": 10,
       "gni_per_capita_current_us": 8,
       "gini_index": 82,
       "unemployment_rate": 1,
@@ -4612,12 +4731,14 @@
       "fixed_broadband_subscriptions_per_100_people": 97,
       "education_expenditure_of_gdp": 133,
       "mean_years_of_schooling": 96,
-      "recycling_rate": 177,
-      "environmental_performance_index": 134,
+      "recycling_rate": 179,
+      "environmental_performance_index": 136,
       "global_peace_index": 27,
-      "inform_resilience_index": 4
+      "inform_resilience_index": 4,
+      "rule_of_law_index": 99,
+      "purchasing_power_parity": 4
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Kazakhstan",
@@ -4625,7 +4746,6 @@
       "democracy_index": 118,
       "press_freedom_index": 151,
       "world_happiness_index": 57,
-      "gdp_per_capita_current_us": 68,
       "gni_per_capita_current_us": 72,
       "gini_index": 26,
       "public_debt_of_gdp": 19,
@@ -4652,12 +4772,14 @@
       "fixed_broadband_subscriptions_per_100_people": 89,
       "education_expenditure_of_gdp": 68,
       "mean_years_of_schooling": 34,
-      "recycling_rate": 186,
-      "environmental_performance_index": 92,
+      "recycling_rate": 188,
+      "environmental_performance_index": 93,
       "global_peace_index": 56,
-      "inform_resilience_index": 55
+      "inform_resilience_index": 55,
+      "rule_of_law_index": 135,
+      "purchasing_power_parity": 54
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "United Arab Emirates",
@@ -4665,7 +4787,6 @@
       "democracy_index": 119,
       "press_freedom_index": 128,
       "world_happiness_index": 19,
-      "gdp_per_capita_current_us": 23,
       "gni_per_capita_current_us": 21,
       "gini_index": 8,
       "public_debt_of_gdp": 2,
@@ -4694,18 +4815,19 @@
       "education_expenditure_of_gdp": 106,
       "mean_years_of_schooling": 76,
       "recycling_rate": 50,
-      "environmental_performance_index": 38,
+      "environmental_performance_index": 39,
       "global_peace_index": 53,
-      "inform_resilience_index": 19
+      "inform_resilience_index": 19,
+      "rule_of_law_index": 75,
+      "purchasing_power_parity": 13
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Oman",
     "ranks": {
       "democracy_index": 120,
       "press_freedom_index": 130,
-      "gdp_per_capita_current_us": 54,
       "gni_per_capita_current_us": 55,
       "unemployment_rate": 47,
       "big_mac_index": 14,
@@ -4728,20 +4850,21 @@
       "political_corruption_index": 51,
       "fixed_broadband_subscriptions_per_100_people": 101,
       "education_expenditure_of_gdp": 88,
-      "recycling_rate": 120,
-      "environmental_performance_index": 147,
+      "recycling_rate": 121,
+      "environmental_performance_index": 149,
       "global_peace_index": 42,
-      "inform_resilience_index": 41
+      "inform_resilience_index": 41,
+      "rule_of_law_index": 82,
+      "purchasing_power_parity": 50
     },
-    "kpi_count": 29
+    "kpi_count": 30
   },
   {
     "country": "Togo",
     "ranks": {
       "democracy_index": 121,
       "press_freedom_index": 73,
-      "world_happiness_index": 126,
-      "gdp_per_capita_current_us": 172,
+      "world_happiness_index": 127,
       "gni_per_capita_current_us": 175,
       "gini_index": 106,
       "unemployment_rate": 15,
@@ -4766,20 +4889,21 @@
       "fixed_broadband_subscriptions_per_100_people": 154,
       "education_expenditure_of_gdp": 94,
       "mean_years_of_schooling": 102,
-      "recycling_rate": 187,
-      "environmental_performance_index": 132,
+      "recycling_rate": 189,
+      "environmental_performance_index": 134,
       "global_peace_index": 126,
-      "inform_resilience_index": 155
+      "inform_resilience_index": 157,
+      "rule_of_law_index": 138,
+      "purchasing_power_parity": 172
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Zimbabwe",
     "ranks": {
       "democracy_index": 122,
       "press_freedom_index": 127,
-      "world_happiness_index": 148,
-      "gdp_per_capita_current_us": 143,
+      "world_happiness_index": 149,
       "gni_per_capita_current_us": 148,
       "gini_index": 162,
       "unemployment_rate": 135,
@@ -4805,20 +4929,21 @@
       "fixed_broadband_subscriptions_per_100_people": 146,
       "education_expenditure_of_gdp": 189,
       "mean_years_of_schooling": 100,
-      "recycling_rate": 67,
-      "environmental_performance_index": 68,
+      "recycling_rate": 68,
+      "environmental_performance_index": 69,
       "global_peace_index": 114,
-      "inform_resilience_index": 146
+      "inform_resilience_index": 148,
+      "rule_of_law_index": 141,
+      "purchasing_power_parity": 163
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Cambodia",
     "ranks": {
       "democracy_index": 123,
       "press_freedom_index": 141,
-      "world_happiness_index": 125,
-      "gdp_per_capita_current_us": 144,
+      "world_happiness_index": 126,
       "gni_per_capita_current_us": 143,
       "public_debt_of_gdp": 49,
       "unemployment_rate": 2,
@@ -4843,20 +4968,21 @@
       "fixed_broadband_subscriptions_per_100_people": 130,
       "education_expenditure_of_gdp": 170,
       "mean_years_of_schooling": 129,
-      "recycling_rate": 135,
-      "environmental_performance_index": 151,
+      "recycling_rate": 137,
+      "environmental_performance_index": 153,
       "global_peace_index": 87,
-      "inform_resilience_index": 128
+      "inform_resilience_index": 130,
+      "rule_of_law_index": 167,
+      "purchasing_power_parity": 135
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Comoros",
     "ranks": {
       "democracy_index": 124,
       "press_freedom_index": 81,
-      "world_happiness_index": 141,
-      "gdp_per_capita_current_us": 157,
+      "world_happiness_index": 142,
       "gni_per_capita_current_us": 156,
       "gini_index": 155,
       "unemployment_rate": 59,
@@ -4880,19 +5006,20 @@
       "political_corruption_index": 155,
       "fixed_broadband_subscriptions_per_100_people": 164,
       "education_expenditure_of_gdp": 163,
-      "recycling_rate": 155,
-      "environmental_performance_index": 85,
-      "inform_resilience_index": 83
+      "recycling_rate": 157,
+      "environmental_performance_index": 86,
+      "inform_resilience_index": 84,
+      "rule_of_law_index": 154,
+      "purchasing_power_parity": 162
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Pakistan",
     "ranks": {
       "democracy_index": 125,
       "press_freedom_index": 142,
-      "world_happiness_index": 114,
-      "gdp_per_capita_current_us": 162,
+      "world_happiness_index": 115,
       "gni_per_capita_current_us": 164,
       "gini_index": 31,
       "public_debt_of_gdp": 58,
@@ -4920,20 +5047,21 @@
       "fixed_broadband_subscriptions_per_100_people": 149,
       "education_expenditure_of_gdp": 176,
       "mean_years_of_schooling": 120,
-      "recycling_rate": 122,
-      "environmental_performance_index": 173,
+      "recycling_rate": 123,
+      "environmental_performance_index": 175,
       "global_peace_index": 144,
-      "inform_resilience_index": 168
+      "inform_resilience_index": 170,
+      "rule_of_law_index": 126,
+      "purchasing_power_parity": 145
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Azerbaijan",
     "ranks": {
       "democracy_index": 126,
       "press_freedom_index": 163,
-      "world_happiness_index": 96,
-      "gdp_per_capita_current_us": 101,
+      "world_happiness_index": 97,
       "gni_per_capita_current_us": 96,
       "gini_index": 10,
       "public_debt_of_gdp": 14,
@@ -4960,20 +5088,21 @@
       "political_corruption_index": 167,
       "fixed_broadband_subscriptions_per_100_people": 72,
       "education_expenditure_of_gdp": 115,
-      "recycling_rate": 116,
-      "environmental_performance_index": 102,
+      "recycling_rate": 117,
+      "environmental_performance_index": 104,
       "global_peace_index": 95,
-      "inform_resilience_index": 123
+      "inform_resilience_index": 125,
+      "rule_of_law_index": 171,
+      "purchasing_power_parity": 75
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Iraq",
     "ranks": {
       "democracy_index": 127,
       "press_freedom_index": 159,
-      "world_happiness_index": 99,
-      "gdp_per_capita_current_us": 112,
+      "world_happiness_index": 100,
       "gni_per_capita_current_us": 106,
       "gini_index": 32,
       "public_debt_of_gdp": 22,
@@ -5000,19 +5129,20 @@
       "fixed_broadband_subscriptions_per_100_people": 82,
       "education_expenditure_of_gdp": 118,
       "mean_years_of_schooling": 92,
-      "recycling_rate": 99,
-      "environmental_performance_index": 166,
+      "recycling_rate": 100,
+      "environmental_performance_index": 168,
       "global_peace_index": 147,
-      "inform_resilience_index": 162
+      "inform_resilience_index": 164,
+      "rule_of_law_index": 128,
+      "purchasing_power_parity": 111
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Republic of the Congo",
     "ranks": {
       "democracy_index": 128,
       "press_freedom_index": 115,
-      "gdp_per_capita_current_us": 147,
       "gni_per_capita_current_us": 146,
       "gini_index": 159,
       "public_debt_of_gdp": 21,
@@ -5039,20 +5169,21 @@
       "fixed_broadband_subscriptions_per_100_people": 152,
       "education_expenditure_of_gdp": 128,
       "mean_years_of_schooling": 116,
-      "recycling_rate": 90,
-      "environmental_performance_index": 99,
+      "recycling_rate": 91,
+      "environmental_performance_index": 100,
       "global_peace_index": 103,
-      "inform_resilience_index": 143
+      "inform_resilience_index": 145,
+      "rule_of_law_index": 143,
+      "purchasing_power_parity": 142
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Egypt",
     "ranks": {
       "democracy_index": 129,
       "press_freedom_index": 162,
-      "world_happiness_index": 134,
-      "gdp_per_capita_current_us": 136,
+      "world_happiness_index": 135,
       "gni_per_capita_current_us": 135,
       "gini_index": 22,
       "public_debt_of_gdp": 91,
@@ -5081,11 +5212,13 @@
       "education_expenditure_of_gdp": 110,
       "mean_years_of_schooling": 98,
       "recycling_rate": 43,
-      "environmental_performance_index": 125,
+      "environmental_performance_index": 127,
       "global_peace_index": 107,
-      "inform_resilience_index": 118
+      "inform_resilience_index": 120,
+      "rule_of_law_index": 119,
+      "purchasing_power_parity": 92
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Kuwait",
@@ -5093,7 +5226,6 @@
       "democracy_index": 130,
       "press_freedom_index": 102,
       "world_happiness_index": 51,
-      "gdp_per_capita_current_us": 37,
       "gni_per_capita_current_us": 26,
       "unemployment_rate": 17,
       "big_mac_index": 44,
@@ -5117,20 +5249,21 @@
       "fixed_broadband_subscriptions_per_100_people": 155,
       "education_expenditure_of_gdp": 18,
       "mean_years_of_schooling": 123,
-      "recycling_rate": 98,
-      "environmental_performance_index": 87,
+      "recycling_rate": 99,
+      "environmental_performance_index": 88,
       "global_peace_index": 31,
-      "inform_resilience_index": 56
+      "inform_resilience_index": 56,
+      "rule_of_law_index": 62,
+      "purchasing_power_parity": 38
     },
-    "kpi_count": 31
+    "kpi_count": 32
   },
   {
     "country": "Haiti",
     "ranks": {
       "democracy_index": 131,
       "press_freedom_index": 84,
-      "world_happiness_index": 140,
-      "gdp_per_capita_current_us": 153,
+      "world_happiness_index": 141,
       "gni_per_capita_current_us": 155,
       "gini_index": 132,
       "unemployment_rate": 163,
@@ -5155,19 +5288,20 @@
       "fixed_broadband_subscriptions_per_100_people": 168,
       "education_expenditure_of_gdp": 187,
       "mean_years_of_schooling": 127,
-      "recycling_rate": 166,
-      "environmental_performance_index": 170,
+      "recycling_rate": 168,
+      "environmental_performance_index": 172,
       "global_peace_index": 141,
-      "inform_resilience_index": 178
+      "inform_resilience_index": 180,
+      "rule_of_law_index": 146,
+      "purchasing_power_parity": 173
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Djibouti",
     "ranks": {
       "democracy_index": 132,
       "press_freedom_index": 172,
-      "gdp_per_capita_current_us": 133,
       "gni_per_capita_current_us": 134,
       "gini_index": 133,
       "unemployment_rate": 177,
@@ -5191,12 +5325,14 @@
       "political_corruption_index": 114,
       "fixed_broadband_subscriptions_per_100_people": 147,
       "education_expenditure_of_gdp": 112,
-      "recycling_rate": 112,
-      "environmental_performance_index": 60,
+      "recycling_rate": 113,
+      "environmental_performance_index": 61,
       "global_peace_index": 122,
-      "inform_resilience_index": 144
+      "inform_resilience_index": 146,
+      "rule_of_law_index": 124,
+      "purchasing_power_parity": 138
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Vietnam",
@@ -5204,7 +5340,6 @@
       "democracy_index": 133,
       "press_freedom_index": 171,
       "world_happiness_index": 40,
-      "gdp_per_capita_current_us": 121,
       "gni_per_capita_current_us": 120,
       "gini_index": 93,
       "unemployment_rate": 9,
@@ -5232,19 +5367,20 @@
       "education_expenditure_of_gdp": 147,
       "mean_years_of_schooling": 94,
       "recycling_rate": 11,
-      "environmental_performance_index": 175,
+      "environmental_performance_index": 177,
       "global_peace_index": 39,
-      "inform_resilience_index": 111
+      "inform_resilience_index": 113,
+      "rule_of_law_index": 118,
+      "purchasing_power_parity": 104
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Eswatini",
     "ranks": {
       "democracy_index": 134,
       "press_freedom_index": 138,
-      "world_happiness_index": 119,
-      "gdp_per_capita_current_us": 130,
+      "world_happiness_index": 120,
       "gni_per_capita_current_us": 133,
       "gini_index": 167,
       "public_debt_of_gdp": 33,
@@ -5271,20 +5407,21 @@
       "fixed_broadband_subscriptions_per_100_people": 136,
       "education_expenditure_of_gdp": 24,
       "mean_years_of_schooling": 117,
-      "recycling_rate": 89,
-      "environmental_performance_index": 75,
+      "recycling_rate": 90,
+      "environmental_performance_index": 76,
       "global_peace_index": 99,
-      "inform_resilience_index": 95
+      "inform_resilience_index": 97,
+      "rule_of_law_index": 136,
+      "purchasing_power_parity": 120
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Cuba",
     "ranks": {
       "democracy_index": 135,
       "press_freedom_index": 167,
-      "world_happiness_index": 85,
-      "gdp_per_capita_current_us": 84,
+      "world_happiness_index": 86,
       "gni_per_capita_current_us": 82,
       "unemployment_rate": 12,
       "human_development_index_hdi": 95,
@@ -5308,9 +5445,10 @@
       "education_expenditure_of_gdp": 5,
       "mean_years_of_schooling": 28,
       "recycling_rate": 44,
-      "environmental_performance_index": 59,
+      "environmental_performance_index": 60,
       "global_peace_index": 102,
-      "inform_resilience_index": 85
+      "inform_resilience_index": 86,
+      "rule_of_law_index": 153
     },
     "kpi_count": 30
   },
@@ -5319,8 +5457,7 @@
     "ranks": {
       "democracy_index": 136,
       "press_freedom_index": 132,
-      "world_happiness_index": 109,
-      "gdp_per_capita_current_us": 158,
+      "world_happiness_index": 110,
       "gni_per_capita_current_us": 157,
       "gini_index": 137,
       "public_debt_of_gdp": 85,
@@ -5347,20 +5484,21 @@
       "fixed_broadband_subscriptions_per_100_people": 144,
       "education_expenditure_of_gdp": 150,
       "mean_years_of_schooling": 108,
-      "recycling_rate": 184,
-      "environmental_performance_index": 150,
+      "recycling_rate": 186,
+      "environmental_performance_index": 152,
       "global_peace_index": 137,
-      "inform_resilience_index": 172
+      "inform_resilience_index": 174,
+      "rule_of_law_index": 163,
+      "purchasing_power_parity": 150
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Burkina Faso",
     "ranks": {
       "democracy_index": 137,
       "press_freedom_index": 37,
-      "world_happiness_index": 111,
-      "gdp_per_capita_current_us": 177,
+      "world_happiness_index": 112,
       "gni_per_capita_current_us": 179,
       "gini_index": 100,
       "public_debt_of_gdp": 69,
@@ -5386,12 +5524,14 @@
       "political_corruption_index": 72,
       "fixed_broadband_subscriptions_per_100_people": 182,
       "education_expenditure_of_gdp": 44,
-      "recycling_rate": 60,
-      "environmental_performance_index": 124,
+      "recycling_rate": 61,
+      "environmental_performance_index": 126,
       "global_peace_index": 152,
-      "inform_resilience_index": 179
+      "inform_resilience_index": 181,
+      "rule_of_law_index": 95,
+      "purchasing_power_parity": 178
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Bahrain",
@@ -5399,7 +5539,6 @@
       "democracy_index": 138,
       "press_freedom_index": 164,
       "world_happiness_index": 47,
-      "gdp_per_capita_current_us": 40,
       "gni_per_capita_current_us": 38,
       "public_debt_of_gdp": 99,
       "unemployment_rate": 7,
@@ -5424,20 +5563,21 @@
       "fixed_broadband_subscriptions_per_100_people": 83,
       "education_expenditure_of_gdp": 178,
       "mean_years_of_schooling": 97,
-      "recycling_rate": 118,
-      "environmental_performance_index": 89,
+      "recycling_rate": 119,
+      "environmental_performance_index": 90,
       "global_peace_index": 100,
-      "inform_resilience_index": 10
+      "inform_resilience_index": 10,
+      "rule_of_law_index": 142,
+      "purchasing_power_parity": 23
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Mali",
     "ranks": {
       "democracy_index": 139,
       "press_freedom_index": 96,
-      "world_happiness_index": 129,
-      "gdp_per_capita_current_us": 169,
+      "world_happiness_index": 130,
       "gni_per_capita_current_us": 172,
       "gini_index": 87,
       "unemployment_rate": 42,
@@ -5463,20 +5603,21 @@
       "fixed_broadband_subscriptions_per_100_people": 157,
       "education_expenditure_of_gdp": 92,
       "mean_years_of_schooling": 142,
-      "recycling_rate": 151,
-      "environmental_performance_index": 156,
+      "recycling_rate": 153,
+      "environmental_performance_index": 158,
       "global_peace_index": 154,
-      "inform_resilience_index": 176
+      "inform_resilience_index": 178,
+      "rule_of_law_index": 120,
+      "purchasing_power_parity": 169
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Libya",
     "ranks": {
       "democracy_index": 140,
       "press_freedom_index": 161,
-      "world_happiness_index": 89,
-      "gdp_per_capita_current_us": 108,
+      "world_happiness_index": 90,
       "gni_per_capita_current_us": 103,
       "unemployment_rate": 170,
       "human_development_index_hdi": 115,
@@ -5501,17 +5642,18 @@
       "mean_years_of_schooling": 71,
       "recycling_rate": 54,
       "global_peace_index": 131,
-      "inform_resilience_index": 145
+      "inform_resilience_index": 147,
+      "rule_of_law_index": 152,
+      "purchasing_power_parity": 115
     },
-    "kpi_count": 29
+    "kpi_count": 30
   },
   {
     "country": "Niger",
     "ranks": {
       "democracy_index": 141,
       "press_freedom_index": 58,
-      "world_happiness_index": 113,
-      "gdp_per_capita_current_us": 185,
+      "world_happiness_index": 114,
       "gni_per_capita_current_us": 185,
       "gini_index": 57,
       "unemployment_rate": 3,
@@ -5536,12 +5678,14 @@
       "fixed_broadband_subscriptions_per_100_people": 176,
       "education_expenditure_of_gdp": 98,
       "mean_years_of_schooling": 143,
-      "recycling_rate": 73,
-      "environmental_performance_index": 108,
+      "recycling_rate": 74,
+      "environmental_performance_index": 110,
       "global_peace_index": 143,
-      "inform_resilience_index": 182
+      "inform_resilience_index": 184,
+      "rule_of_law_index": 80,
+      "purchasing_power_parity": 182
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Venezuela",
@@ -5549,7 +5693,6 @@
       "democracy_index": 142,
       "press_freedom_index": 145,
       "world_happiness_index": 62,
-      "gdp_per_capita_current_us": 62,
       "gni_per_capita_current_us": 68,
       "gini_index": 150,
       "unemployment_rate": 99,
@@ -5576,20 +5719,21 @@
       "fixed_broadband_subscriptions_per_100_people": 104,
       "education_expenditure_of_gdp": 191,
       "mean_years_of_schooling": 80,
-      "recycling_rate": 69,
-      "environmental_performance_index": 66,
+      "recycling_rate": 70,
+      "environmental_performance_index": 67,
       "global_peace_index": 139,
-      "inform_resilience_index": 163
+      "inform_resilience_index": 165,
+      "rule_of_law_index": 174,
+      "purchasing_power_parity": 102
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Gabon",
     "ranks": {
       "democracy_index": 143,
       "press_freedom_index": 114,
-      "world_happiness_index": 98,
-      "gdp_per_capita_current_us": 93,
+      "world_happiness_index": 99,
       "gni_per_capita_current_us": 94,
       "gini_index": 107,
       "unemployment_rate": 174,
@@ -5615,20 +5759,21 @@
       "fixed_broadband_subscriptions_per_100_people": 129,
       "education_expenditure_of_gdp": 164,
       "mean_years_of_schooling": 50,
-      "recycling_rate": 63,
-      "environmental_performance_index": 50,
+      "recycling_rate": 64,
+      "environmental_performance_index": 51,
       "global_peace_index": 117,
-      "inform_resilience_index": 106
+      "inform_resilience_index": 108,
+      "rule_of_law_index": 106,
+      "purchasing_power_parity": 84
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Burundi",
     "ranks": {
       "democracy_index": 144,
       "press_freedom_index": 144,
-      "world_happiness_index": 137,
-      "gdp_per_capita_current_us": 194,
+      "world_happiness_index": 138,
       "gni_per_capita_current_us": 193,
       "gini_index": 102,
       "unemployment_rate": 5,
@@ -5653,12 +5798,14 @@
       "fixed_broadband_subscriptions_per_100_people": 187,
       "education_expenditure_of_gdp": 67,
       "mean_years_of_schooling": 134,
-      "recycling_rate": 171,
-      "environmental_performance_index": 149,
+      "recycling_rate": 173,
+      "environmental_performance_index": 151,
       "global_peace_index": 133,
-      "inform_resilience_index": 164
+      "inform_resilience_index": 166,
+      "rule_of_law_index": 150,
+      "purchasing_power_parity": 191
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "China",
@@ -5666,7 +5813,6 @@
       "democracy_index": 145,
       "press_freedom_index": 173,
       "world_happiness_index": 71,
-      "gdp_per_capita_current_us": 73,
       "gni_per_capita_current_us": 64,
       "gini_index": 90,
       "unemployment_rate": 75,
@@ -5694,12 +5840,14 @@
       "education_expenditure_of_gdp": 103,
       "mean_years_of_schooling": 85,
       "recycling_rate": 51,
-      "environmental_performance_index": 157,
+      "environmental_performance_index": 159,
       "global_peace_index": 98,
       "electric_vehicle_stock": 2,
-      "inform_resilience_index": 69
+      "inform_resilience_index": 69,
+      "rule_of_law_index": 139,
+      "purchasing_power_parity": 71
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Uzbekistan",
@@ -5707,7 +5855,6 @@
       "democracy_index": 146,
       "press_freedom_index": 153,
       "world_happiness_index": 54,
-      "gdp_per_capita_current_us": 138,
       "gni_per_capita_current_us": 138,
       "gini_index": 80,
       "unemployment_rate": 72,
@@ -5733,11 +5880,13 @@
       "fixed_broadband_subscriptions_per_100_people": 48,
       "education_expenditure_of_gdp": 37,
       "recycling_rate": 32,
-      "environmental_performance_index": 105,
+      "environmental_performance_index": 107,
       "global_peace_index": 67,
-      "inform_resilience_index": 82
+      "inform_resilience_index": 83,
+      "rule_of_law_index": 145,
+      "purchasing_power_parity": 118
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Nicaragua",
@@ -5745,7 +5894,6 @@
       "democracy_index": 147,
       "press_freedom_index": 118,
       "world_happiness_index": 34,
-      "gdp_per_capita_current_us": 140,
       "gni_per_capita_current_us": 145,
       "gini_index": 158,
       "unemployment_rate": 76,
@@ -5771,12 +5919,14 @@
       "fixed_broadband_subscriptions_per_100_people": 121,
       "education_expenditure_of_gdp": 149,
       "mean_years_of_schooling": 106,
-      "recycling_rate": 109,
-      "environmental_performance_index": 109,
+      "recycling_rate": 110,
+      "environmental_performance_index": 111,
       "global_peace_index": 111,
-      "inform_resilience_index": 140
+      "inform_resilience_index": 142,
+      "rule_of_law_index": 175,
+      "purchasing_power_parity": 130
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Saudi Arabia",
@@ -5784,7 +5934,6 @@
       "democracy_index": 148,
       "press_freedom_index": 166,
       "world_happiness_index": 35,
-      "gdp_per_capita_current_us": 32,
       "gni_per_capita_current_us": 30,
       "unemployment_rate": 60,
       "big_mac_index": 41,
@@ -5809,20 +5958,21 @@
       "fixed_broadband_subscriptions_per_100_people": 16,
       "education_expenditure_of_gdp": 60,
       "mean_years_of_schooling": 64,
-      "recycling_rate": 83,
-      "environmental_performance_index": 107,
+      "recycling_rate": 84,
+      "environmental_performance_index": 109,
       "global_peace_index": 90,
-      "inform_resilience_index": 36
+      "inform_resilience_index": 36,
+      "rule_of_law_index": 114,
+      "purchasing_power_parity": 19
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Guinea",
     "ranks": {
       "democracy_index": 149,
       "press_freedom_index": 106,
-      "world_happiness_index": 90,
-      "gdp_per_capita_current_us": 160,
+      "world_happiness_index": 91,
       "gni_per_capita_current_us": 161,
       "gini_index": 30,
       "unemployment_rate": 90,
@@ -5847,18 +5997,19 @@
       "fixed_broadband_subscriptions_per_100_people": 189,
       "education_expenditure_of_gdp": 182,
       "recycling_rate": 56,
-      "environmental_performance_index": 143,
+      "environmental_performance_index": 145,
       "global_peace_index": 118,
-      "inform_resilience_index": 136
+      "inform_resilience_index": 138,
+      "rule_of_law_index": 155,
+      "purchasing_power_parity": 156
     },
-    "kpi_count": 31
+    "kpi_count": 32
   },
   {
     "country": "Guinea-Bissau",
     "ranks": {
       "democracy_index": 150,
       "press_freedom_index": 92,
-      "gdp_per_capita_current_us": 179,
       "gni_per_capita_current_us": 177,
       "gini_index": 61,
       "unemployment_rate": 28,
@@ -5882,12 +6033,14 @@
       "political_corruption_index": 144,
       "fixed_broadband_subscriptions_per_100_people": 167,
       "education_expenditure_of_gdp": 174,
-      "recycling_rate": 156,
-      "environmental_performance_index": 97,
+      "recycling_rate": 158,
+      "environmental_performance_index": 98,
       "global_peace_index": 101,
-      "inform_resilience_index": 119
+      "inform_resilience_index": 121,
+      "rule_of_law_index": 130,
+      "purchasing_power_parity": 175
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Russia",
@@ -5895,7 +6048,6 @@
       "democracy_index": 151,
       "press_freedom_index": 146,
       "world_happiness_index": 53,
-      "gdp_per_capita_current_us": 65,
       "gni_per_capita_current_us": 62,
       "gini_index": 59,
       "public_debt_of_gdp": 15,
@@ -5923,12 +6075,14 @@
       "fixed_broadband_subscriptions_per_100_people": 63,
       "education_expenditure_of_gdp": 93,
       "mean_years_of_schooling": 41,
-      "recycling_rate": 179,
-      "environmental_performance_index": 110,
+      "recycling_rate": 181,
+      "environmental_performance_index": 112,
       "global_peace_index": 162,
-      "inform_resilience_index": 124
+      "inform_resilience_index": 126,
+      "rule_of_law_index": 156,
+      "purchasing_power_parity": 45
     },
-    "kpi_count": 35
+    "kpi_count": 36
   },
   {
     "country": "Belarus",
@@ -5936,7 +6090,6 @@
       "democracy_index": 152,
       "press_freedom_index": 154,
       "world_happiness_index": 73,
-      "gdp_per_capita_current_us": 92,
       "gni_per_capita_current_us": 89,
       "gini_index": 2,
       "public_debt_of_gdp": 30,
@@ -5962,19 +6115,20 @@
       "political_corruption_index": 77,
       "fixed_broadband_subscriptions_per_100_people": 37,
       "education_expenditure_of_gdp": 63,
-      "recycling_rate": 81,
-      "environmental_performance_index": 54,
+      "recycling_rate": 82,
+      "environmental_performance_index": 55,
       "global_peace_index": 119,
-      "inform_resilience_index": 46
+      "inform_resilience_index": 46,
+      "rule_of_law_index": 161,
+      "purchasing_power_parity": 63
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Eritrea",
     "ranks": {
       "democracy_index": 153,
       "press_freedom_index": 176,
-      "gdp_per_capita_current_us": 186,
       "gni_per_capita_current_us": 186,
       "unemployment_rate": 102,
       "human_development_index_hdi": 176,
@@ -5995,20 +6149,21 @@
       "political_corruption_index": 127,
       "fixed_broadband_subscriptions_per_100_people": 174,
       "education_expenditure_of_gdp": 171,
-      "recycling_rate": 173,
-      "environmental_performance_index": 141,
+      "recycling_rate": 175,
+      "environmental_performance_index": 143,
       "global_peace_index": 132,
-      "inform_resilience_index": 132
+      "inform_resilience_index": 134,
+      "rule_of_law_index": 166,
+      "purchasing_power_parity": 186
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Iran",
     "ranks": {
       "democracy_index": 154,
       "press_freedom_index": 170,
-      "world_happiness_index": 101,
-      "gdp_per_capita_current_us": 120,
+      "world_happiness_index": 102,
       "gni_per_capita_current_us": 118,
       "gini_index": 89,
       "unemployment_rate": 139,
@@ -6034,20 +6189,21 @@
       "fixed_broadband_subscriptions_per_100_people": 95,
       "education_expenditure_of_gdp": 151,
       "mean_years_of_schooling": 66,
-      "recycling_rate": 93,
-      "environmental_performance_index": 130,
+      "recycling_rate": 94,
+      "environmental_performance_index": 132,
       "global_peace_index": 142,
-      "inform_resilience_index": 166
+      "inform_resilience_index": 168,
+      "rule_of_law_index": 140,
+      "purchasing_power_parity": 97
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Yemen",
     "ranks": {
       "democracy_index": 155,
       "press_freedom_index": 165,
-      "world_happiness_index": 130,
-      "gdp_per_capita_current_us": 189,
+      "world_happiness_index": 131,
       "gni_per_capita_current_us": 183,
       "gini_index": 96,
       "unemployment_rate": 167,
@@ -6072,18 +6228,19 @@
       "fixed_broadband_subscriptions_per_100_people": 151,
       "education_expenditure_of_gdp": 56,
       "mean_years_of_schooling": 128,
-      "recycling_rate": 80,
+      "recycling_rate": 81,
       "global_peace_index": 159,
-      "inform_resilience_index": 186
+      "inform_resilience_index": 188,
+      "rule_of_law_index": 168,
+      "purchasing_power_parity": 174
     },
-    "kpi_count": 31
+    "kpi_count": 32
   },
   {
     "country": "Equatorial Guinea",
     "ranks": {
       "democracy_index": 156,
       "press_freedom_index": 160,
-      "gdp_per_capita_current_us": 104,
       "gni_per_capita_current_us": 117,
       "gini_index": 109,
       "unemployment_rate": 126,
@@ -6108,19 +6265,20 @@
       "fixed_broadband_subscriptions_per_100_people": 178,
       "education_expenditure_of_gdp": 169,
       "recycling_rate": 55,
-      "environmental_performance_index": 76,
+      "environmental_performance_index": 77,
       "global_peace_index": 82,
-      "inform_resilience_index": 91
+      "inform_resilience_index": 92,
+      "rule_of_law_index": 170,
+      "purchasing_power_parity": 99
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Chad",
     "ranks": {
       "democracy_index": 157,
       "press_freedom_index": 120,
-      "world_happiness_index": 118,
-      "gdp_per_capita_current_us": 173,
+      "world_happiness_index": 119,
       "gni_per_capita_current_us": 176,
       "gini_index": 101,
       "unemployment_rate": 6,
@@ -6144,20 +6302,21 @@
       "political_corruption_index": 173,
       "fixed_broadband_subscriptions_per_100_people": 193,
       "education_expenditure_of_gdp": 135,
-      "recycling_rate": 145,
-      "environmental_performance_index": 163,
+      "recycling_rate": 147,
+      "environmental_performance_index": 165,
       "global_peace_index": 134,
-      "inform_resilience_index": 184
+      "inform_resilience_index": 186,
+      "rule_of_law_index": 173,
+      "purchasing_power_parity": 177
     },
-    "kpi_count": 31
+    "kpi_count": 32
   },
   {
     "country": "Tajikistan",
     "ranks": {
       "democracy_index": 158,
       "press_freedom_index": 158,
-      "world_happiness_index": 92,
-      "gdp_per_capita_current_us": 166,
+      "world_happiness_index": 93,
       "gni_per_capita_current_us": 159,
       "gini_index": 92,
       "public_debt_of_gdp": 86,
@@ -6184,20 +6343,21 @@
       "fixed_broadband_subscriptions_per_100_people": 183,
       "education_expenditure_of_gdp": 40,
       "mean_years_of_schooling": 69,
-      "recycling_rate": 119,
-      "environmental_performance_index": 115,
+      "recycling_rate": 120,
+      "environmental_performance_index": 117,
       "global_peace_index": 80,
-      "inform_resilience_index": 110
+      "inform_resilience_index": 112,
+      "rule_of_law_index": 169,
+      "purchasing_power_parity": 151
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Laos",
     "ranks": {
       "democracy_index": 159,
       "press_freedom_index": 168,
-      "world_happiness_index": 103,
-      "gdp_per_capita_current_us": 154,
+      "world_happiness_index": 104,
       "gni_per_capita_current_us": 154,
       "gini_index": 113,
       "unemployment_rate": 8,
@@ -6222,20 +6382,21 @@
       "fixed_broadband_subscriptions_per_100_people": 138,
       "education_expenditure_of_gdp": 185,
       "mean_years_of_schooling": 125,
-      "recycling_rate": 107,
-      "environmental_performance_index": 146,
+      "recycling_rate": 108,
+      "environmental_performance_index": 148,
       "global_peace_index": 47,
-      "inform_resilience_index": 99
+      "inform_resilience_index": 101,
+      "rule_of_law_index": 129,
+      "purchasing_power_parity": 128
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Turkmenistan",
     "ranks": {
       "democracy_index": 160,
       "press_freedom_index": 174,
-      "world_happiness_index": 84,
-      "gdp_per_capita_current_us": 88,
+      "world_happiness_index": 85,
       "gni_per_capita_current_us": 86,
       "gini_index": 131,
       "unemployment_rate": 68,
@@ -6259,20 +6420,21 @@
       "political_corruption_index": 165,
       "fixed_broadband_subscriptions_per_100_people": 122,
       "education_expenditure_of_gdp": 155,
-      "recycling_rate": 102,
-      "environmental_performance_index": 116,
+      "recycling_rate": 103,
+      "environmental_performance_index": 118,
       "global_peace_index": 88,
-      "inform_resilience_index": 78
+      "inform_resilience_index": 79,
+      "rule_of_law_index": 164,
+      "purchasing_power_parity": 89
     },
-    "kpi_count": 31
+    "kpi_count": 32
   },
   {
     "country": "Sudan",
     "ranks": {
       "democracy_index": 161,
       "press_freedom_index": 155,
-      "world_happiness_index": 117,
-      "gdp_per_capita_current_us": 176,
+      "world_happiness_index": 118,
       "gni_per_capita_current_us": 184,
       "gini_index": 75,
       "public_debt_of_gdp": 107,
@@ -6299,20 +6461,21 @@
       "fixed_broadband_subscriptions_per_100_people": 184,
       "education_expenditure_of_gdp": 173,
       "mean_years_of_schooling": 140,
-      "recycling_rate": 168,
-      "environmental_performance_index": 168,
+      "recycling_rate": 170,
+      "environmental_performance_index": 170,
       "global_peace_index": 160,
-      "inform_resilience_index": 183
+      "inform_resilience_index": 185,
+      "rule_of_law_index": 157,
+      "purchasing_power_parity": 181
     },
-    "kpi_count": 34
+    "kpi_count": 35
   },
   {
     "country": "Syria",
     "ranks": {
       "democracy_index": 162,
       "press_freedom_index": 169,
-      "world_happiness_index": 144,
-      "gdp_per_capita_current_us": 182,
+      "world_happiness_index": 145,
       "gni_per_capita_current_us": 181,
       "gini_index": 11,
       "unemployment_rate": 157,
@@ -6338,19 +6501,20 @@
       "fixed_broadband_subscriptions_per_100_people": 117,
       "education_expenditure_of_gdp": 58,
       "mean_years_of_schooling": 105,
-      "recycling_rate": 169,
+      "recycling_rate": 171,
       "global_peace_index": 157,
-      "inform_resilience_index": 180
+      "inform_resilience_index": 182,
+      "rule_of_law_index": 151,
+      "purchasing_power_parity": 155
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "Central African Republic",
     "ranks": {
       "democracy_index": 163,
       "press_freedom_index": 123,
-      "world_happiness_index": 143,
-      "gdp_per_capita_current_us": 191,
+      "world_happiness_index": 144,
       "gni_per_capita_current_us": 190,
       "gini_index": 141,
       "unemployment_rate": 106,
@@ -6375,12 +6539,14 @@
       "fixed_broadband_subscriptions_per_100_people": 188,
       "education_expenditure_of_gdp": 179,
       "mean_years_of_schooling": 139,
-      "recycling_rate": 167,
-      "environmental_performance_index": 74,
+      "recycling_rate": 169,
+      "environmental_performance_index": 75,
       "global_peace_index": 150,
-      "inform_resilience_index": 185
+      "inform_resilience_index": 187,
+      "rule_of_law_index": 159,
+      "purchasing_power_parity": 189
     },
-    "kpi_count": 32
+    "kpi_count": 33
   },
   {
     "country": "North Korea",
@@ -6404,19 +6570,19 @@
       "employment_to_population_ratio": 6,
       "female_labor_force_participation": 7,
       "political_corruption_index": 115,
-      "recycling_rate": 158,
+      "recycling_rate": 160,
       "global_peace_index": 149,
-      "inform_resilience_index": 133
+      "inform_resilience_index": 135,
+      "rule_of_law_index": 172
     },
-    "kpi_count": 22
+    "kpi_count": 23
   },
   {
     "country": "Myanmar",
     "ranks": {
       "democracy_index": 165,
       "press_freedom_index": 137,
-      "world_happiness_index": 122,
-      "gdp_per_capita_current_us": 164,
+      "world_happiness_index": 123,
       "gni_per_capita_current_us": 167,
       "gini_index": 40,
       "unemployment_rate": 41,
@@ -6442,20 +6608,21 @@
       "fixed_broadband_subscriptions_per_100_people": 135,
       "education_expenditure_of_gdp": 175,
       "mean_years_of_schooling": 119,
-      "recycling_rate": 137,
-      "environmental_performance_index": 176,
+      "recycling_rate": 139,
+      "environmental_performance_index": 178,
       "global_peace_index": 153,
-      "inform_resilience_index": 173
+      "inform_resilience_index": 175,
+      "rule_of_law_index": 165,
+      "purchasing_power_parity": 148
     },
-    "kpi_count": 33
+    "kpi_count": 34
   },
   {
     "country": "Afghanistan",
     "ranks": {
       "democracy_index": 166,
       "press_freedom_index": 119,
-      "world_happiness_index": 154,
-      "gdp_per_capita_current_us": 193,
+      "world_happiness_index": 155,
       "gni_per_capita_current_us": 192,
       "unemployment_rate": 158,
       "human_development_index_hdi": 179,
@@ -6478,18 +6645,19 @@
       "fixed_broadband_subscriptions_per_100_people": 180,
       "education_expenditure_of_gdp": 84,
       "mean_years_of_schooling": 130,
-      "recycling_rate": 144,
-      "environmental_performance_index": 80,
+      "recycling_rate": 146,
+      "environmental_performance_index": 81,
       "global_peace_index": 158,
-      "inform_resilience_index": 181
+      "inform_resilience_index": 183,
+      "rule_of_law_index": 162,
+      "purchasing_power_parity": 180
     },
-    "kpi_count": 30
+    "kpi_count": 31
   },
   {
     "country": "Samoa",
     "ranks": {
       "press_freedom_index": 21,
-      "gdp_per_capita_current_us": 118,
       "gni_per_capita_current_us": 119,
       "gini_index": 111,
       "unemployment_rate": 74,
@@ -6513,8 +6681,9 @@
       "fixed_broadband_subscriptions_per_100_people": 156,
       "education_expenditure_of_gdp": 38,
       "recycling_rate": 2,
-      "environmental_performance_index": 120,
-      "inform_resilience_index": 74
+      "environmental_performance_index": 122,
+      "inform_resilience_index": 75,
+      "purchasing_power_parity": 137
     },
     "kpi_count": 27
   },
@@ -6522,7 +6691,6 @@
     "country": "Liechtenstein",
     "ranks": {
       "press_freedom_index": 23,
-      "gdp_per_capita_current_us": 2,
       "gni_per_capita_current_us": 1,
       "human_development_index_hdi": 16,
       "age_dependency_ratio_total": 75,
@@ -6535,13 +6703,12 @@
       "recycling_rate": 7,
       "inform_resilience_index": 2
     },
-    "kpi_count": 13
+    "kpi_count": 12
   },
   {
     "country": "Andorra",
     "ranks": {
       "press_freedom_index": 39,
-      "gdp_per_capita_current_us": 24,
       "gni_per_capita_current_us": 22,
       "human_development_index_hdi": 31,
       "physicians_per_1_000_people": 35,
@@ -6557,7 +6724,8 @@
       "mobile_subscriptions_per_100_inhabitants": 23,
       "fixed_broadband_subscriptions_per_100_people": 2,
       "education_expenditure_of_gdp": 177,
-      "recycling_rate": 106
+      "recycling_rate": 107,
+      "purchasing_power_parity": 15
     },
     "kpi_count": 18
   },
@@ -6565,7 +6733,6 @@
     "country": "Tonga",
     "ranks": {
       "press_freedom_index": 45,
-      "gdp_per_capita_current_us": 119,
       "gni_per_capita_current_us": 110,
       "gini_index": 15,
       "public_debt_of_gdp": 43,
@@ -6590,9 +6757,10 @@
       "fixed_broadband_subscriptions_per_100_people": 110,
       "education_expenditure_of_gdp": 46,
       "mean_years_of_schooling": 40,
-      "recycling_rate": 138,
-      "environmental_performance_index": 79,
-      "inform_resilience_index": 93
+      "recycling_rate": 140,
+      "environmental_performance_index": 80,
+      "inform_resilience_index": 94,
+      "purchasing_power_parity": 136
     },
     "kpi_count": 29
   },
@@ -6600,7 +6768,6 @@
     "country": "Seychelles",
     "ranks": {
       "press_freedom_index": 51,
-      "gdp_per_capita_current_us": 59,
       "gni_per_capita_current_us": 58,
       "gini_index": 49,
       "public_debt_of_gdp": 105,
@@ -6624,15 +6791,16 @@
       "education_expenditure_of_gdp": 80,
       "recycling_rate": 52,
       "environmental_performance_index": 32,
-      "inform_resilience_index": 5
+      "inform_resilience_index": 5,
+      "rule_of_law_index": 13,
+      "purchasing_power_parity": 62
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Belize",
     "ranks": {
       "press_freedom_index": 52,
-      "gdp_per_capita_current_us": 91,
       "gni_per_capita_current_us": 93,
       "gini_index": 122,
       "public_debt_of_gdp": 67,
@@ -6657,9 +6825,10 @@
       "fixed_broadband_subscriptions_per_100_people": 107,
       "education_expenditure_of_gdp": 75,
       "mean_years_of_schooling": 49,
-      "recycling_rate": 152,
-      "environmental_performance_index": 48,
-      "inform_resilience_index": 96
+      "recycling_rate": 154,
+      "environmental_performance_index": 49,
+      "inform_resilience_index": 98,
+      "purchasing_power_parity": 110
     },
     "kpi_count": 29
   },
@@ -6667,8 +6836,7 @@
     "country": "Maldives",
     "ranks": {
       "press_freedom_index": 71,
-      "world_happiness_index": 95,
-      "gdp_per_capita_current_us": 74,
+      "world_happiness_index": 96,
       "gni_per_capita_current_us": 75,
       "gini_index": 27,
       "public_debt_of_gdp": 60,
@@ -6694,18 +6862,19 @@
       "fixed_broadband_subscriptions_per_100_people": 78,
       "education_expenditure_of_gdp": 55,
       "mean_years_of_schooling": 99,
-      "recycling_rate": 71,
-      "environmental_performance_index": 112,
-      "inform_resilience_index": 28
+      "recycling_rate": 72,
+      "environmental_performance_index": 114,
+      "inform_resilience_index": 28,
+      "rule_of_law_index": 65,
+      "purchasing_power_parity": 73
     },
-    "kpi_count": 31
+    "kpi_count": 32
   },
   {
     "country": "Kosovo",
     "ranks": {
       "press_freedom_index": 76,
       "world_happiness_index": 48,
-      "gdp_per_capita_current_us": 100,
       "gni_per_capita_current_us": 97,
       "gini_index": 108,
       "infant_mortality_rate": 70,
@@ -6715,16 +6884,17 @@
       "mobile_subscriptions_per_100_inhabitants": 191,
       "inflation_consumer_price_index": 39,
       "political_corruption_index": 55,
-      "global_peace_index": 63
+      "global_peace_index": 63,
+      "rule_of_law_index": 68,
+      "purchasing_power_parity": 94
     },
-    "kpi_count": 13
+    "kpi_count": 14
   },
   {
     "country": "South Sudan",
     "ranks": {
       "press_freedom_index": 136,
-      "world_happiness_index": 151,
-      "gdp_per_capita_current_us": 170,
+      "world_happiness_index": 152,
       "gni_per_capita_current_us": 170,
       "gini_index": 147,
       "unemployment_rate": 156,
@@ -6747,17 +6917,18 @@
       "political_corruption_index": 151,
       "fixed_broadband_subscriptions_per_100_people": 192,
       "education_expenditure_of_gdp": 183,
-      "recycling_rate": 148,
+      "recycling_rate": 150,
       "global_peace_index": 156,
-      "inform_resilience_index": 188
+      "inform_resilience_index": 190,
+      "rule_of_law_index": 149,
+      "purchasing_power_parity": 190
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Brunei",
     "ranks": {
       "press_freedom_index": 150,
-      "gdp_per_capita_current_us": 34,
       "gni_per_capita_current_us": 28,
       "unemployment_rate": 88,
       "human_development_index_hdi": 59,
@@ -6779,9 +6950,10 @@
       "fixed_broadband_subscriptions_per_100_people": 74,
       "education_expenditure_of_gdp": 82,
       "mean_years_of_schooling": 78,
-      "recycling_rate": 75,
-      "environmental_performance_index": 70,
-      "inform_resilience_index": 33
+      "recycling_rate": 76,
+      "environmental_performance_index": 71,
+      "inform_resilience_index": 33,
+      "purchasing_power_parity": 7
     },
     "kpi_count": 26
   },
@@ -6789,8 +6961,7 @@
     "country": "Somalia",
     "ranks": {
       "press_freedom_index": 157,
-      "world_happiness_index": 88,
-      "gdp_per_capita_current_us": 188,
+      "world_happiness_index": 89,
       "gni_per_capita_current_us": 187,
       "public_debt_of_gdp": 1,
       "unemployment_rate": 171,
@@ -6812,36 +6983,17 @@
       "political_corruption_index": 164,
       "fixed_broadband_subscriptions_per_100_people": 158,
       "education_expenditure_of_gdp": 192,
-      "recycling_rate": 172,
+      "recycling_rate": 174,
       "global_peace_index": 151,
-      "inform_resilience_index": 187
+      "inform_resilience_index": 189,
+      "rule_of_law_index": 148,
+      "purchasing_power_parity": 188
     },
-    "kpi_count": 27
-  },
-  {
-    "country": "Monaco",
-    "ranks": {
-      "gdp_per_capita_current_us": 1,
-      "physicians_per_1_000_people": 2,
-      "hospital_beds_per_1_000_people": 1,
-      "infant_mortality_rate": 16,
-      "maternal_mortality_ratio": 25,
-      "age_dependency_ratio_total": 192,
-      "overall_immunization_coverage": 12,
-      "access_to_basic_drinking_water": 14,
-      "air_quality_pm2_5_exposure": 25,
-      "internet_penetration_rate": 8,
-      "mobile_subscriptions_per_100_inhabitants": 124,
-      "fixed_broadband_subscriptions_per_100_people": 1,
-      "education_expenditure_of_gdp": 181,
-      "recycling_rate": 61
-    },
-    "kpi_count": 14
+    "kpi_count": 28
   },
   {
     "country": "San Marino",
     "ranks": {
-      "gdp_per_capita_current_us": 19,
       "gni_per_capita_current_us": 17,
       "public_debt_of_gdp": 94,
       "human_development_index_hdi": 30,
@@ -6859,14 +7011,14 @@
       "inflation_consumer_price_index": 29,
       "fixed_broadband_subscriptions_per_100_people": 34,
       "education_expenditure_of_gdp": 146,
-      "recycling_rate": 68
+      "recycling_rate": 69,
+      "purchasing_power_parity": 14
     },
     "kpi_count": 19
   },
   {
     "country": "Bahamas",
     "ranks": {
-      "gdp_per_capita_current_us": 29,
       "gni_per_capita_current_us": 31,
       "public_debt_of_gdp": 80,
       "unemployment_rate": 133,
@@ -6889,14 +7041,14 @@
       "education_expenditure_of_gdp": 154,
       "recycling_rate": 46,
       "environmental_performance_index": 28,
-      "inform_resilience_index": 32
+      "inform_resilience_index": 32,
+      "purchasing_power_parity": 52
     },
     "kpi_count": 24
   },
   {
     "country": "Barbados",
     "ranks": {
-      "gdp_per_capita_current_us": 45,
       "gni_per_capita_current_us": 43,
       "gini_index": 74,
       "public_debt_of_gdp": 102,
@@ -6922,43 +7074,17 @@
       "fixed_broadband_subscriptions_per_100_people": 27,
       "education_expenditure_of_gdp": 117,
       "mean_years_of_schooling": 75,
-      "recycling_rate": 149,
+      "recycling_rate": 151,
       "environmental_performance_index": 36,
-      "inform_resilience_index": 20
+      "inform_resilience_index": 20,
+      "rule_of_law_index": 29,
+      "purchasing_power_parity": 80
     },
-    "kpi_count": 29
-  },
-  {
-    "country": "Antigua and Barbuda",
-    "ranks": {
-      "gdp_per_capita_current_us": 50,
-      "gni_per_capita_current_us": 50,
-      "human_development_index_hdi": 52,
-      "physicians_per_1_000_people": 61,
-      "hospital_beds_per_1_000_people": 59,
-      "infant_mortality_rate": 60,
-      "maternal_mortality_ratio": 82,
-      "adult_literacy_rate": 27,
-      "age_dependency_ratio_total": 19,
-      "overall_immunization_coverage": 1,
-      "access_to_basic_drinking_water": 77,
-      "air_quality_pm2_5_exposure": 89,
-      "renewable_energy_share": 181,
-      "internet_penetration_rate": 105,
-      "mobile_subscriptions_per_100_inhabitants": 2,
-      "inflation_consumer_price_index": 140,
-      "fixed_broadband_subscriptions_per_100_people": 103,
-      "education_expenditure_of_gdp": 139,
-      "recycling_rate": 101,
-      "environmental_performance_index": 39,
-      "inform_resilience_index": 18
-    },
-    "kpi_count": 21
+    "kpi_count": 30
   },
   {
     "country": "Saint Kitts and Nevis",
     "ranks": {
-      "gdp_per_capita_current_us": 53,
       "gni_per_capita_current_us": 45,
       "public_debt_of_gdp": 61,
       "human_development_index_hdi": 57,
@@ -6976,15 +7102,70 @@
       "inflation_consumer_price_index": 25,
       "fixed_broadband_subscriptions_per_100_people": 6,
       "education_expenditure_of_gdp": 123,
-      "recycling_rate": 163,
-      "inform_resilience_index": 12
+      "recycling_rate": 165,
+      "inform_resilience_index": 12,
+      "purchasing_power_parity": 58
     },
     "kpi_count": 20
   },
   {
+    "country": "Antigua and Barbuda",
+    "ranks": {
+      "gni_per_capita_current_us": 50,
+      "human_development_index_hdi": 52,
+      "physicians_per_1_000_people": 61,
+      "hospital_beds_per_1_000_people": 59,
+      "infant_mortality_rate": 60,
+      "maternal_mortality_ratio": 82,
+      "adult_literacy_rate": 27,
+      "age_dependency_ratio_total": 19,
+      "overall_immunization_coverage": 1,
+      "access_to_basic_drinking_water": 77,
+      "air_quality_pm2_5_exposure": 89,
+      "renewable_energy_share": 181,
+      "internet_penetration_rate": 105,
+      "mobile_subscriptions_per_100_inhabitants": 2,
+      "inflation_consumer_price_index": 140,
+      "fixed_broadband_subscriptions_per_100_people": 103,
+      "education_expenditure_of_gdp": 139,
+      "recycling_rate": 102,
+      "environmental_performance_index": 40,
+      "inform_resilience_index": 18,
+      "purchasing_power_parity": 60
+    },
+    "kpi_count": 21
+  },
+  {
+    "country": "Nauru",
+    "ranks": {
+      "gni_per_capita_current_us": 51,
+      "gini_index": 53,
+      "human_development_index_hdi": 123,
+      "physicians_per_1_000_people": 108,
+      "hospital_beds_per_1_000_people": 30,
+      "infant_mortality_rate": 71,
+      "maternal_mortality_ratio": 169,
+      "adult_literacy_rate": 57,
+      "age_dependency_ratio_total": 148,
+      "overall_immunization_coverage": 13,
+      "extreme_poverty": 112,
+      "access_to_basic_drinking_water": 92,
+      "air_quality_pm2_5_exposure": 6,
+      "renewable_energy_share": 170,
+      "internet_penetration_rate": 94,
+      "mobile_subscriptions_per_100_inhabitants": 151,
+      "inflation_consumer_price_index": 2,
+      "fixed_broadband_subscriptions_per_100_people": 106,
+      "education_expenditure_of_gdp": 33,
+      "recycling_rate": 86,
+      "inform_resilience_index": 30,
+      "purchasing_power_parity": 114
+    },
+    "kpi_count": 22
+  },
+  {
     "country": "Palau",
     "ranks": {
-      "gdp_per_capita_current_us": 63,
       "gni_per_capita_current_us": 63,
       "public_debt_of_gdp": 90,
       "human_development_index_hdi": 83,
@@ -7003,15 +7184,15 @@
       "inflation_consumer_price_index": 60,
       "fixed_broadband_subscriptions_per_100_people": 112,
       "education_expenditure_of_gdp": 119,
-      "recycling_rate": 64,
-      "inform_resilience_index": 31
+      "recycling_rate": 65,
+      "inform_resilience_index": 31,
+      "purchasing_power_parity": 101
     },
     "kpi_count": 21
   },
   {
     "country": "Saint Lucia",
     "ranks": {
-      "gdp_per_capita_current_us": 66,
       "gni_per_capita_current_us": 71,
       "gini_index": 145,
       "public_debt_of_gdp": 45,
@@ -7034,44 +7215,45 @@
       "female_labor_force_participation": 29,
       "fixed_broadband_subscriptions_per_100_people": 91,
       "education_expenditure_of_gdp": 108,
-      "recycling_rate": 126,
-      "environmental_performance_index": 52,
-      "inform_resilience_index": 50
+      "recycling_rate": 128,
+      "environmental_performance_index": 53,
+      "inform_resilience_index": 50,
+      "purchasing_power_parity": 69
     },
     "kpi_count": 26
   },
   {
-    "country": "Nauru",
+    "country": "Saint Vincent-Grenadines",
     "ranks": {
-      "gdp_per_capita_current_us": 72,
-      "gni_per_capita_current_us": 51,
-      "gini_index": 53,
-      "human_development_index_hdi": 123,
-      "physicians_per_1_000_people": 108,
-      "hospital_beds_per_1_000_people": 30,
-      "infant_mortality_rate": 71,
-      "maternal_mortality_ratio": 169,
-      "adult_literacy_rate": 57,
-      "age_dependency_ratio_total": 148,
-      "overall_immunization_coverage": 13,
-      "extreme_poverty": 112,
-      "access_to_basic_drinking_water": 92,
-      "air_quality_pm2_5_exposure": 6,
-      "renewable_energy_share": 170,
-      "internet_penetration_rate": 94,
-      "mobile_subscriptions_per_100_inhabitants": 151,
-      "inflation_consumer_price_index": 2,
-      "fixed_broadband_subscriptions_per_100_people": 106,
-      "education_expenditure_of_gdp": 33,
-      "recycling_rate": 85,
-      "inform_resilience_index": 30
+      "gni_per_capita_current_us": 77,
+      "public_debt_of_gdp": 55,
+      "unemployment_rate": 169,
+      "physicians_per_1_000_people": 119,
+      "hospital_beds_per_1_000_people": 45,
+      "infant_mortality_rate": 79,
+      "maternal_mortality_ratio": 103,
+      "adult_literacy_rate": 69,
+      "overall_immunization_coverage": 17,
+      "access_to_basic_drinking_water": 83,
+      "air_quality_pm2_5_exposure": 115,
+      "renewable_energy_share": 160,
+      "internet_penetration_rate": 110,
+      "mobile_subscriptions_per_100_inhabitants": 127,
+      "inflation_consumer_price_index": 108,
+      "employment_to_population_ratio": 116,
+      "female_labor_force_participation": 71,
+      "fixed_broadband_subscriptions_per_100_people": 47,
+      "education_expenditure_of_gdp": 17,
+      "recycling_rate": 127,
+      "environmental_performance_index": 37,
+      "inform_resilience_index": 74,
+      "purchasing_power_parity": 87
     },
-    "kpi_count": 22
+    "kpi_count": 23
   },
   {
     "country": "Grenada",
     "ranks": {
-      "gdp_per_capita_current_us": 77,
       "gni_per_capita_current_us": 78,
       "gini_index": 146,
       "human_development_index_hdi": 78,
@@ -7091,42 +7273,16 @@
       "inflation_consumer_price_index": 24,
       "fixed_broadband_subscriptions_per_100_people": 49,
       "education_expenditure_of_gdp": 59,
-      "recycling_rate": 108,
-      "environmental_performance_index": 57,
-      "inform_resilience_index": 49
+      "recycling_rate": 109,
+      "environmental_performance_index": 58,
+      "inform_resilience_index": 49,
+      "purchasing_power_parity": 90
     },
     "kpi_count": 23
   },
   {
-    "country": "Saint Vincent-Grenadines",
-    "ranks": {
-      "gdp_per_capita_current_us": 79,
-      "gni_per_capita_current_us": 77,
-      "public_debt_of_gdp": 55,
-      "unemployment_rate": 169,
-      "physicians_per_1_000_people": 119,
-      "hospital_beds_per_1_000_people": 45,
-      "infant_mortality_rate": 79,
-      "maternal_mortality_ratio": 103,
-      "adult_literacy_rate": 69,
-      "overall_immunization_coverage": 17,
-      "access_to_basic_drinking_water": 83,
-      "air_quality_pm2_5_exposure": 115,
-      "renewable_energy_share": 160,
-      "internet_penetration_rate": 110,
-      "mobile_subscriptions_per_100_inhabitants": 127,
-      "inflation_consumer_price_index": 108,
-      "employment_to_population_ratio": 116,
-      "female_labor_force_participation": 71,
-      "fixed_broadband_subscriptions_per_100_people": 47,
-      "education_expenditure_of_gdp": 17
-    },
-    "kpi_count": 20
-  },
-  {
     "country": "Dominica",
     "ranks": {
-      "gdp_per_capita_current_us": 81,
       "gni_per_capita_current_us": 80,
       "human_development_index_hdi": 96,
       "physicians_per_1_000_people": 112,
@@ -7143,16 +7299,44 @@
       "inflation_consumer_price_index": 69,
       "fixed_broadband_subscriptions_per_100_people": 73,
       "education_expenditure_of_gdp": 43,
-      "recycling_rate": 133,
-      "environmental_performance_index": 41,
-      "inform_resilience_index": 58
+      "recycling_rate": 135,
+      "environmental_performance_index": 42,
+      "inform_resilience_index": 58,
+      "purchasing_power_parity": 86
     },
     "kpi_count": 20
   },
   {
+    "country": "Tuvalu",
+    "ranks": {
+      "gni_per_capita_current_us": 83,
+      "gini_index": 115,
+      "human_development_index_hdi": 128,
+      "physicians_per_1_000_people": 107,
+      "hospital_beds_per_1_000_people": 46,
+      "infant_mortality_rate": 117,
+      "maternal_mortality_ratio": 149,
+      "adult_literacy_rate": 4,
+      "age_dependency_ratio_total": 138,
+      "overall_immunization_coverage": 78,
+      "extreme_poverty": 110,
+      "access_to_basic_drinking_water": 54,
+      "air_quality_pm2_5_exposure": 4,
+      "renewable_energy_share": 159,
+      "internet_penetration_rate": 112,
+      "mobile_subscriptions_per_100_inhabitants": 133,
+      "inflation_consumer_price_index": 11,
+      "fixed_broadband_subscriptions_per_100_people": 126,
+      "education_expenditure_of_gdp": 2,
+      "recycling_rate": 78,
+      "inform_resilience_index": 61,
+      "purchasing_power_parity": 147
+    },
+    "kpi_count": 22
+  },
+  {
     "country": "Marshall Islands",
     "ranks": {
-      "gdp_per_capita_current_us": 97,
       "gni_per_capita_current_us": 87,
       "gini_index": 86,
       "public_debt_of_gdp": 40,
@@ -7173,43 +7357,15 @@
       "fixed_broadband_subscriptions_per_100_people": 143,
       "education_expenditure_of_gdp": 9,
       "recycling_rate": 16,
-      "environmental_performance_index": 121,
-      "inform_resilience_index": 103
+      "environmental_performance_index": 123,
+      "inform_resilience_index": 105,
+      "purchasing_power_parity": 132
     },
     "kpi_count": 23
   },
   {
-    "country": "Tuvalu",
-    "ranks": {
-      "gdp_per_capita_current_us": 107,
-      "gni_per_capita_current_us": 83,
-      "gini_index": 115,
-      "human_development_index_hdi": 128,
-      "physicians_per_1_000_people": 107,
-      "hospital_beds_per_1_000_people": 46,
-      "infant_mortality_rate": 117,
-      "maternal_mortality_ratio": 149,
-      "adult_literacy_rate": 4,
-      "age_dependency_ratio_total": 138,
-      "overall_immunization_coverage": 78,
-      "extreme_poverty": 110,
-      "access_to_basic_drinking_water": 54,
-      "air_quality_pm2_5_exposure": 4,
-      "renewable_energy_share": 159,
-      "internet_penetration_rate": 112,
-      "mobile_subscriptions_per_100_inhabitants": 133,
-      "inflation_consumer_price_index": 11,
-      "fixed_broadband_subscriptions_per_100_people": 126,
-      "education_expenditure_of_gdp": 2,
-      "recycling_rate": 77,
-      "inform_resilience_index": 61
-    },
-    "kpi_count": 22
-  },
-  {
     "country": "Micronesia",
     "ranks": {
-      "gdp_per_capita_current_us": 126,
       "gni_per_capita_current_us": 123,
       "gini_index": 125,
       "public_debt_of_gdp": 23,
@@ -7229,16 +7385,16 @@
       "inflation_consumer_price_index": 133,
       "fixed_broadband_subscriptions_per_100_people": 120,
       "education_expenditure_of_gdp": 3,
-      "recycling_rate": 104,
-      "environmental_performance_index": 111,
-      "inform_resilience_index": 89
+      "recycling_rate": 105,
+      "environmental_performance_index": 113,
+      "inform_resilience_index": 90,
+      "purchasing_power_parity": 159
     },
     "kpi_count": 23
   },
   {
     "country": "Vanuatu",
     "ranks": {
-      "gdp_per_capita_current_us": 132,
       "gni_per_capita_current_us": 125,
       "gini_index": 51,
       "public_debt_of_gdp": 77,
@@ -7264,15 +7420,45 @@
       "fixed_broadband_subscriptions_per_100_people": 153,
       "education_expenditure_of_gdp": 10,
       "recycling_rate": 6,
-      "environmental_performance_index": 117,
-      "inform_resilience_index": 116
+      "environmental_performance_index": 119,
+      "inform_resilience_index": 118,
+      "rule_of_law_index": 41,
+      "purchasing_power_parity": 166
     },
-    "kpi_count": 28
+    "kpi_count": 29
+  },
+  {
+    "country": "Kiribati",
+    "ranks": {
+      "gni_per_capita_current_us": 132,
+      "gini_index": 20,
+      "human_development_index_hdi": 139,
+      "physicians_per_1_000_people": 162,
+      "hospital_beds_per_1_000_people": 118,
+      "infant_mortality_rate": 169,
+      "maternal_mortality_ratio": 121,
+      "adult_literacy_rate": 34,
+      "age_dependency_ratio_total": 139,
+      "overall_immunization_coverage": 74,
+      "extreme_poverty": 104,
+      "access_to_basic_drinking_water": 158,
+      "air_quality_pm2_5_exposure": 36,
+      "renewable_energy_share": 57,
+      "internet_penetration_rate": 66,
+      "mobile_subscriptions_per_100_inhabitants": 183,
+      "inflation_consumer_price_index": 155,
+      "fixed_broadband_subscriptions_per_100_people": 186,
+      "education_expenditure_of_gdp": 1,
+      "recycling_rate": 101,
+      "environmental_performance_index": 54,
+      "inform_resilience_index": 100,
+      "purchasing_power_parity": 165
+    },
+    "kpi_count": 23
   },
   {
     "country": "São Tomé and Príncipe",
     "ranks": {
-      "gdp_per_capita_current_us": 137,
       "gni_per_capita_current_us": 141,
       "gini_index": 130,
       "unemployment_rate": 138,
@@ -7296,45 +7482,17 @@
       "political_corruption_index": 56,
       "fixed_broadband_subscriptions_per_100_people": 140,
       "education_expenditure_of_gdp": 62,
-      "recycling_rate": 91,
-      "environmental_performance_index": 37,
-      "inform_resilience_index": 37
+      "recycling_rate": 92,
+      "environmental_performance_index": 38,
+      "inform_resilience_index": 37,
+      "rule_of_law_index": 58,
+      "purchasing_power_parity": 146
     },
-    "kpi_count": 27
-  },
-  {
-    "country": "Kiribati",
-    "ranks": {
-      "gdp_per_capita_current_us": 150,
-      "gni_per_capita_current_us": 132,
-      "gini_index": 20,
-      "human_development_index_hdi": 139,
-      "physicians_per_1_000_people": 162,
-      "hospital_beds_per_1_000_people": 118,
-      "infant_mortality_rate": 169,
-      "maternal_mortality_ratio": 121,
-      "adult_literacy_rate": 34,
-      "age_dependency_ratio_total": 139,
-      "overall_immunization_coverage": 74,
-      "extreme_poverty": 104,
-      "access_to_basic_drinking_water": 158,
-      "air_quality_pm2_5_exposure": 36,
-      "renewable_energy_share": 57,
-      "internet_penetration_rate": 66,
-      "mobile_subscriptions_per_100_inhabitants": 183,
-      "inflation_consumer_price_index": 155,
-      "fixed_broadband_subscriptions_per_100_people": 186,
-      "education_expenditure_of_gdp": 1,
-      "recycling_rate": 100,
-      "environmental_performance_index": 53,
-      "inform_resilience_index": 98
-    },
-    "kpi_count": 23
+    "kpi_count": 28
   },
   {
     "country": "Solomon Islands",
     "ranks": {
-      "gdp_per_capita_current_us": 152,
       "gni_per_capita_current_us": 153,
       "gini_index": 99,
       "public_debt_of_gdp": 10,
@@ -7359,11 +7517,32 @@
       "political_corruption_index": 100,
       "fixed_broadband_subscriptions_per_100_people": 177,
       "education_expenditure_of_gdp": 7,
-      "recycling_rate": 176,
-      "environmental_performance_index": 128,
-      "inform_resilience_index": 126
+      "recycling_rate": 178,
+      "environmental_performance_index": 130,
+      "inform_resilience_index": 128,
+      "rule_of_law_index": 71,
+      "purchasing_power_parity": 179
     },
-    "kpi_count": 28
+    "kpi_count": 29
+  },
+  {
+    "country": "Monaco",
+    "ranks": {
+      "physicians_per_1_000_people": 2,
+      "hospital_beds_per_1_000_people": 1,
+      "infant_mortality_rate": 16,
+      "maternal_mortality_ratio": 25,
+      "age_dependency_ratio_total": 192,
+      "overall_immunization_coverage": 12,
+      "access_to_basic_drinking_water": 14,
+      "air_quality_pm2_5_exposure": 25,
+      "internet_penetration_rate": 8,
+      "mobile_subscriptions_per_100_inhabitants": 124,
+      "fixed_broadband_subscriptions_per_100_people": 1,
+      "education_expenditure_of_gdp": 181,
+      "recycling_rate": 62
+    },
+    "kpi_count": 13
   },
   {
     "country": "Vatican City",
