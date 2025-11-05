@@ -551,11 +551,44 @@ header img, .header-logo img, nav img, #site-logo {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 99999;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.2s ease;
+  opacity: 0.9;
+  pointer-events: auto;
+	transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 #scroll-top-btn:hover {
   transform: translateY(-2px);
   filter: brightness(1.2);
 }
+#data-table {
+  display: block;
+  overflow: visible !important;   /* statt auto */
+  height: auto !important;        /* sicherstellen, dass es wächst */
+}
+.table-wrapper {
+  overflow: visible !important;   /* raus aus Scrollmodus */
+  height: auto !important;
+}
+#country-table {
+  display: table;
+}
+
+/* === COUNTRIES TABLE CENTER FIX (2025-11-05) === */
+#data-table {
+  display: block !important;
+  text-align: center !important;
+}
+
+#data-table .table-wrapper {
+  display: inline-block !important;
+  width: auto !important;
+  margin: 0 auto !important;
+}
+
+#data-table table#country-table {
+  margin: 0 auto !important;
+  width: 100%;
+  max-width: 1100px;
+  text-align: left;
+}
+

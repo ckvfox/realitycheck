@@ -9,93 +9,95 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-
 </head>
+
 <body>
-	<div id="overlay-spinner" class="hidden"></div>
+  <!-- 🔝 Sprungmarke für Scroll-to-Top -->
+  <a id="page-top"></a>
+
+  <div id="overlay-spinner" class="hidden"></div>
 	 
-	<section class="page-intro">
-	  <h1>🗺️ RealityCheck – Countries Dashboard</h1>
-	  <p>
-		The world is in turmoil. Radicalization, polarization, and populism often dominate the headlines — 
-		and many say that everything used to be better and that today everything is going downhill. 
-		But is that really true?
-	  </p>
-	  <p>
-		<strong>No!</strong> At least not in many areas. The facts paint a different picture. 
-		Prejudices and gut feelings can be refuted with data from reliable sources. 
-		When you compare key figures, put them into context (per capita, per km², per GDP) 
-		and also look at historical developments, you realize that many things are constantly improving — worldwide.
-	  </p>
-	  <p>
-		This project is inspired by <strong><em>Hans Rosling</em></strong>’s book 
-		<a href="https://en.wikipedia.org/wiki/Factfulness" target="_blank" rel="noopener"><em>Factfulness</em></a> 
-		and invites you to discover and classify the data yourself. 
-		In the spirit of <strong><em>W. Edwards Deming</em></strong> – “In God we trust. All others must bring data” – 
-		we aim to foster a more nuanced understanding of global trends.
-	  </p>
-	  <p class="note">
-		Each chart and map below visualizes a key national indicator from the RealityCheck dataset — 
-		offering perspective on where each country stands and how it evolves over time.
-	  </p>
-	</section>
+  <section class="page-intro">
+    <h1>🗺️ RealityCheck – Countries Dashboard</h1>
+    <p>
+      The world is in turmoil. Radicalization, polarization, and populism often dominate the headlines — 
+      and many say that everything used to be better and that today everything is going downhill. 
+      But is that really true?
+    </p>
+    <p>
+      <strong>No!</strong> At least not in many areas. The facts paint a different picture. 
+      Prejudices and gut feelings can be refuted with data from reliable sources. 
+      When you compare key figures, put them into context (per capita, per km², per GDP) 
+      and also look at historical developments, you realize that many things are constantly improving — worldwide.
+    </p>
+    <p>
+      This project is inspired by <strong><em>Hans Rosling</em></strong>’s book 
+      <a href="https://en.wikipedia.org/wiki/Factfulness" target="_blank" rel="noopener"><em>Factfulness</em></a> 
+      and invites you to discover and classify the data yourself. 
+      In the spirit of <strong><em>W. Edwards Deming</em></strong> – “In God we trust. All others must bring data” – 
+      we aim to foster a more nuanced understanding of global trends.
+    </p>
+    <p class="note">
+      Each chart and map below visualizes a key national indicator from the RealityCheck dataset — 
+      offering perspective on where each country stands and how it evolves over time.
+    </p>
+  </section>
 
-	<!-- Controls (zentriert) -->
-	<section id="controls">
+  <!-- Controls -->
+  <section id="controls">
+    <div class="control-pair">
+      <label for="kpiSelect">KPI:</label>
+      <select id="kpiSelect"></select>
+    </div>
+    <div class="control-pair">
+      <label for="yearSelect">Comparison Year:</label>
+      <select id="yearSelect"></select>
+    </div>
+    <div class="control-pair">
+      <label for="relationSelect">Relation:</label>
+      <select id="relationSelect">
+        <option value="absolute">Absolute</option>
+        <option value="percapita">Per Capita</option>
+        <option value="pergdp">Per GDP</option>
+        <option value="perkm2">Per km²</option>
+      </select>
+    </div>
+    <div class="control-pair">
+      <label for="countrySelect">Home Country:</label>
+      <select id="countrySelect"></select>
+    </div>
+  </section>
 
-	  <div class="control-pair">
-		<label for="kpiSelect">KPI:</label>
-		<select id="kpiSelect"></select>
-	  </div>
-	  <div class="control-pair">
-		<label for="yearSelect">Comparison Year:</label>
-		<select id="yearSelect"></select>
-	  </div>
-	  <div class="control-pair">
-		<label for="relationSelect">Relation:</label>
-		<select id="relationSelect">
-		  <option value="absolute">Absolute</option>
-		  <option value="percapita">Per Capita</option>
-		  <option value="pergdp">Per GDP</option>
-		  <option value="perkm2">Per km²</option>
-		</select>
-	  </div>
-
-	  <div class="control-pair">
-		<label for="countrySelect">Home Country:</label>
-		<select id="countrySelect"></select>
-	  </div>
-	</section>
-
-	<!-- Warnbox & KPI-Beschreibung -->
-	<div id="warning-box" class="hidden" style="max-width:var(--max-width);margin:0 auto;">
-	⚠️ <strong>Attention:</strong> No current data is available for some countries. Older values were used.
-	</div>
-	<div id="kpi-description" style="max-width:var(--max-width);margin:.5rem auto 1rem;font-style:italic;"></div>
-	<!-- 🧠 Smart KPI Analysis -->
-	<div id="kpi-analysis">
-	  <em>AI-based insights for this indicator will appear here…</em>
-	</div>
-
-<!-- Tabelle -->
-<section id="data-table">
-  <div class="table-wrapper">
-    <table id="country-table" aria-label="Country data table">
-      <thead>
-        <tr>
-          <th data-col="rank">Rank</th>
-          <th data-col="country">Country</th>
-          <th data-col="value">Value</th>
-          <th title="Change vs previous year">Δ vs Prev</th>
-          <th title="Change vs comparison year">Δ vs Year</th>
-          <th>Update</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+  <!-- Warnbox & KPI-Beschreibung -->
+  <div id="warning-box" class="hidden" style="max-width:var(--max-width);margin:0 auto;">
+    ⚠️ <strong>Attention:</strong> No current data is available for some countries. Older values were used.
   </div>
-</section>
 
+  <div id="kpi-description" style="max-width:var(--max-width);margin:.5rem auto 1rem;font-style:italic;"></div>
+
+  <!-- 🧠 Smart KPI Analysis -->
+  <div id="kpi-analysis">
+    <em>AI-based insights for this indicator will appear here…</em>
+  </div>
+
+  <!-- Tabelle -->
+  <section id="data-table">
+    <div class="table-wrapper">
+      <table id="country-table" aria-label="Country data table">
+        <thead>
+          <tr>
+            <th data-col="rank">Rank</th>
+            <th data-col="country">Country</th>
+            <th data-col="value">Value</th>
+            <th title="Change vs previous year">Δ vs Prev</th>
+            <th title="Change vs comparison year">Δ vs Year</th>
+            <th>Update</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
 
   <!-- Quelle & Datum -->
   <div id="data-meta">
@@ -103,17 +105,17 @@
     Last update: <span id="data-date">---</span>
   </div>
 
-<!-- Chart -->
-	<section id="chart-container">
-	  <canvas id="kpi-chart"></canvas>
+  <!-- Chart -->
+  <section id="chart-container">
+    <canvas id="kpi-chart"></canvas>
 
-	  <div class="chart-selects">
-		<label>Compare:</label>
-		<select id="country1Select"></select>
-		<select id="country2Select"></select>
-		<select id="country3Select"></select>
-	  </div>
-	</section>
+    <div class="chart-selects">
+      <label>Compare:</label>
+      <select id="country1Select"></select>
+      <select id="country2Select"></select>
+      <select id="country3Select"></select>
+    </div>
+  </section>
 
   <!-- Map -->
   <section id="map-section">
@@ -134,63 +136,66 @@
       <li>Groups (e.g. NATO, EU) are shown after countries, calculated as the sum of their members</li>
     </ul>
   </section>
-    <!-- ⚠️ AI Disclaimer -->
-    <p style="text-align:center;font-size:0.85rem;color:#555;margin:1.5rem auto 2rem;max-width:900px;line-height:1.5;">
-      ⚠️ Interpretations and insights on this page may include AI-generated analyses based on public datasets.  
-      Data accuracy and copyright remain with the original publishers (World Bank, UN, OWID, etc.).
+
+  <!-- ⚠️ AI Disclaimer -->
+  <p style="text-align:center;font-size:0.85rem;color:#555;margin:1.5rem auto 2rem;max-width:900px;line-height:1.5;">
+    ⚠️ Interpretations and insights on this page may include AI-generated analyses based on public datasets.  
+    Data accuracy and copyright remain with the original publishers (World Bank, UN, OWID, etc.).
   </p>
-<!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  try {
-    if (window.self !== window.top) {
-      document.body.classList.add("in-iframe");
-    } else {
-      document.body.classList.remove("in-iframe");
-    }
-  } catch(e) {
-    console.warn("iframe detection failed", e);
-  }
-});
-</script>
 
-<script src="scripts/core.js"></script>
-<script src="scripts/script.js"></script>
-
-<script>
-  console.log("✅ countries.html loaded");
-
-  // Map initialisieren, sobald DOM UND Leaflet fertig sind
-  window.addEventListener("DOMContentLoaded", () => {
-    let tries = 0;
-    const maxTries = 20;
-    const timer = setInterval(() => {
-      const mapEl = document.getElementById("map");
-      const leafletReady = typeof L !== "undefined";
-      const initReady = typeof initMap === "function";
-      const visible = mapEl && mapEl.offsetHeight > 0 && mapEl.offsetWidth > 0;
-      tries++;
-
-      console.log(`🗺️ Map check ${tries}: leaflet=${leafletReady}, initMap=${initReady}, visible=${visible}`);
-
-      if (leafletReady && initReady && visible) {
-        clearInterval(timer);
-        console.log("➡️ Starting initMap()");
-        initMap();
-        setTimeout(() => {
-          if (window.map?.invalidateSize) {
-            console.log("➡️ invalidateSize()");
-            window.map.invalidateSize();
-          }
-        }, 800);
-      } else if (tries >= maxTries) {
-        clearInterval(timer);
-        console.warn("⚠️ Map initialization failed after max retries");
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+  
+  <script>
+    // Markiere, ob Seite im iframe läuft (für CSS-Anpassungen)
+    document.addEventListener("DOMContentLoaded", () => {
+      try {
+        if (window.self !== window.top) {
+          document.body.classList.add("in-iframe");
+        } else {
+          document.body.classList.remove("in-iframe");
+        }
+      } catch(e) {
+        console.warn("iframe detection failed", e);
       }
-    }, 250);
-  });
-</script>
+    });
+  </script>
 
+  <script src="scripts/core.js"></script>
+  <script src="scripts/script.js"></script>
+
+  <script>
+    console.log("✅ countries.html loaded");
+
+    // 🌍 Map initialisieren, sobald DOM UND Leaflet bereit sind
+    window.addEventListener("DOMContentLoaded", () => {
+      let tries = 0;
+      const maxTries = 20;
+      const timer = setInterval(() => {
+        const mapEl = document.getElementById("map");
+        const leafletReady = typeof L !== "undefined";
+        const initReady = typeof initMap === "function";
+        const visible = mapEl && mapEl.offsetHeight > 0 && mapEl.offsetWidth > 0;
+        tries++;
+
+        console.log(`🗺️ Map check ${tries}: leaflet=${leafletReady}, initMap=${initReady}, visible=${visible}`);
+
+        if (leafletReady && initReady && visible) {
+          clearInterval(timer);
+          console.log("➡️ Starting initMap()");
+          initMap();
+          setTimeout(() => {
+            if (window.map?.invalidateSize) {
+              console.log("➡️ invalidateSize()");
+              window.map.invalidateSize();
+            }
+          }, 800);
+        } else if (tries >= maxTries) {
+          clearInterval(timer);
+          console.warn("⚠️ Map initialization failed after max retries");
+        }
+      }, 250);
+    });
+  </script>
 </body>
 </html>

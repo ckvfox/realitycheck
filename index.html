@@ -36,7 +36,7 @@
       box-sizing: border-box;
     }
 
-    /* iframe ohne eigenes Scrollen, Höhe per JS */
+    /* iframe: keine eigenen Scrollbalken, Höhe per JS */
     #main-frame {
       display: block;
       width: 100%;
@@ -50,6 +50,30 @@
       position: relative;
       bottom: auto;
       margin-top: 2rem;
+    }
+
+    /* 🔼 Scroll-Button permanent sichtbar */
+    #scroll-top-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--steel-blue, #1a355e);
+      color: #fff;
+      font-size: 1.4rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 99999;
+      opacity: 0.9;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    #scroll-top-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.15);
     }
   </style>
 </head>
@@ -87,6 +111,9 @@
     </p>
   </footer>
 
+  <!-- ============================================================
+       🧭 CORE: Dynamic Loading + Visitor Stats
+       ============================================================ -->
   <script>
     function loadPage(page, link) {
       const frame = document.getElementById("main-frame");
@@ -97,6 +124,10 @@
       loader.classList.add("active");
       document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
       if (link) link.classList.add("active");
+
+      // ⏳ Button ausblenden bei Seitenwechsel
+      const btn = document.getElementById("scroll-top-btn");
+      if (btn) btn.style.opacity = "0.9";
     }
 
     const frame = document.getElementById("main-frame");
@@ -119,35 +150,19 @@
   </script>
 
   <!-- ============================================================
-       🩵 FIXED: Stable iframe auto-resize (no endless growth)
+       🩵 IFRAME AUTO-RESIZE ONLY (no infinite growth)
        ============================================================ -->
   <script>
     function resizeFrame() {
       const frame = document.getElementById('main-frame');
       if (!frame) return;
-
       try {
         const doc = frame.contentDocument || frame.contentWindow?.document;
         if (!doc) return;
-
-        // 🔧 Reset problematische 100%-Höhen in der eingebetteten Seite
-        doc.documentElement.style.height = 'auto';
-        doc.body.style.height = 'auto';
-        doc.documentElement.style.minHeight = '0';
-        doc.body.style.minHeight = '0';
-
-        // Keine inneren Scrollleisten
-        doc.documentElement.style.overflow = 'visible';
-        doc.body.style.overflow = 'visible';
-
-        // Höhe sicher bestimmen
         const rect = doc.body.getBoundingClientRect();
-        const newHeight = Math.ceil(rect.height) + 1; // 1px Puffer
-
+        const newHeight = Math.ceil(rect.height) + 1;
         const current = parseInt(frame.style.height || '0', 10);
-        if (Math.abs(newHeight - current) > 2) {
-          frame.style.height = newHeight + 'px';
-        }
+        if (Math.abs(newHeight - current) > 2) frame.style.height = newHeight + 'px';
       } catch (e) {
         console.debug('resizeFrame skipped:', e);
       }
@@ -160,78 +175,81 @@
       frame.setAttribute('scrolling', 'no');
       frame.style.overflow = 'hidden';
 
-      frame.addEventListener('load', () => {
-        resizeFrame();
+			frame.addEventListener('load', () => {
+				resizeFrame();
 
-        try {
-          const doc = frame.contentDocument || frame.contentWindow?.document;
-          if (!doc) return;
+				try {
+					const doc = frame.contentDocument || frame.contentWindow?.document;
+					if (!doc) return;
 
-          // 🧩 BODY beobachten statt documentElement
-          const target = doc.body || doc.documentElement;
-          const observer = new ResizeObserver(() => resizeFrame());
-          observer.observe(target);
+					const target = doc.body || doc.documentElement;
 
-          // Fallback: ein paar Nachmessungen kurz nach dem Load
-          let tries = 0;
-          const interval = setInterval(() => {
-            resizeFrame();
-            if (++tries > 8) clearInterval(interval);
-          }, 120);
-        } catch (e) {
-          console.debug('observer skipped:', e);
-        }
-      });
+					// 🩵 Reagiere dynamisch auf spätere Layoutänderungen
+					const observer = new ResizeObserver(() => resizeFrame());
+					observer.observe(target);
+
+					// 🕐 Fallback: 10 Sekunden lang nachmessen (Karten/Charts/Table)
+					let tries = 0;
+					const interval = setInterval(() => {
+						resizeFrame();
+						if (++tries > 50) clearInterval(interval); // 50 × 200 ms = 10 s
+					}, 200);
+
+					// 🔁 Sicherheitsmessungen nachträglich
+					setTimeout(resizeFrame, 6000);
+					setTimeout(resizeFrame, 10000);
+				} catch (e) {
+					console.debug("observer skipped:", e);
+				}
+			});
+
 
       window.addEventListener('resize', resizeFrame);
     }
 
     attachAutoResize();
   </script>
-  
-  <!-- 🔼 Scroll-to-Top Button -->
-  <button id="scroll-top-btn" title="on top">↑</button>
 
-	<script>
-	const scrollBtn = document.getElementById("scroll-top-btn");
 
-	if (scrollBtn) {
-		console.log("✅ scroll-top-btn gefunden");
+<!-- 🔼 Scroll-to-Top Button -->
+<button id="scroll-top-btn" title="Back to Top">↑</button>
 
-		// === Klick-Event: sanft nach oben scrollen ===
-		scrollBtn.addEventListener("click", () => {
-			console.log("⬆️ Scroll to top clicked");
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("scroll-top-btn");
+  const frame = document.getElementById("main-frame");
 
-			const frame = document.getElementById("main-frame");
-			if (!frame) return;
+  if (!btn || !frame) return;
 
-			try {
-				// Versuche, im iframe nach oben zu scrollen
-				const innerWindow = frame.contentWindow;
-				if (innerWindow && innerWindow.scrollTo) {
-					innerWindow.scrollTo({ top: 0, behavior: "smooth" });
-					console.log("↕️ Scrolled inside iframe");
-				} else {
-					window.scrollTo({ top: 0, behavior: "smooth" });
-					console.log("↕️ Fallback scroll (outer window)");
-				}
-			} catch (err) {
-				console.warn("⚠️ Scroll inside iframe failed:", err);
-				window.scrollTo({ top: 0, behavior: "smooth" });
-			}
-		});
+  // Klick scrollt innerhalb des Iframes
+  btn.addEventListener("click", () => {
+    try {
+      const innerDoc = frame.contentDocument || frame.contentWindow?.document;
+      if (!innerDoc) return;
 
-		// === Sichtbarkeit steuern (Scroll in Hauptseite, nicht im iframe) ===
-		window.addEventListener("scroll", () => {
-			const y = window.scrollY;
-			scrollBtn.style.opacity = y > 200 ? "1" : "0";
-		});
-  
-	} else {
-		console.warn("❌ scroll-top-btn nicht gefunden");
-	}
-	</script>
+      const target =
+        innerDoc.getElementById("page-top") ||
+        innerDoc.querySelector("h1, h2, .page-intro");
+
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        innerDoc.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // kleiner Klick-Effekt
+      btn.style.transform = "scale(0.9)";
+      setTimeout(() => (btn.style.transform = ""), 150);
+    } catch (err) {
+      console.warn("⚠️ Scroll-to-top failed:", err);
+    }
+  });
+
+  // Button permanent sichtbar
+  btn.style.opacity = "0.9";
+  btn.style.pointerEvents = "auto";
+});
+</script>
 
 </body>
-
 </html>

@@ -108,8 +108,6 @@ async function init() {
       }
       countries = fixed;
       console.log(`✅ Converted ${Object.keys(countries).length} countries to object map.`);
-    } else {
-      console.log("🧭 countries.json already in object format – no fix needed.");
     }
 
     // === Dropdowns & Eventhandler ===
@@ -770,10 +768,7 @@ function updateRelationAvailability(meta) {
 /* ========= MAP INITIALIZATION (ISO-based RealityCheck Version) ========= */
 async function initMap() {
   const el = document.getElementById("map");
-  if (!el) {
-    console.warn("⚠️ Kein #map-Element gefunden – Map nicht initialisiert.");
-    return;
-  }
+  if (!el) return;
 
   // 🌍 Leaflet-Basiskarte
   map = L.map("map", {
@@ -791,349 +786,130 @@ async function initMap() {
   document.body.style.overscrollBehavior = "contain";
   el.addEventListener("touchmove", e => e.stopPropagation(), { passive: true });
 
-  // 🔄 Größe nach kurzer Verzögerung anpassen
   setTimeout(() => map.invalidateSize(), 150);
 
   // 📦 GeoJSON laden (lokal oder Fallback)
   try {
     const res = await fetch("data/meta/world_countries_geo.json", { cache: "no-store" });
-    if (!res.ok) throw new Error("Local GeoJSON missing or blocked");
+    if (!res.ok) throw new Error("Local GeoJSON missing");
     window._worldGeoJSON = await res.json();
-    console.log("🌍 world_countries_geo.json loaded (local)");
-	// 🧩 Sichtbares Debug direkt auf der Seite
-	if (window._worldGeoJSON?.features?.length) {
-	  const props = window._worldGeoJSON.features[0].properties;
-	  const dbg = document.createElement("pre");
-	  dbg.style.cssText = `
-		position: fixed;
-		bottom: 10px;
-		left: 10px;
-		z-index: 9999;
-		background: rgba(255,255,255,0.95);
-		border: 1px solid #ccc;
-		padding: 8px;
-		font-size: 11px;
-		max-width: 90vw;
-		max-height: 40vh;
-		overflow: auto;
-	  `;
-	  dbg.textContent =
-		"🧭 GeoJSON Property Keys:\n" +
-		JSON.stringify(Object.keys(props), null, 2) +
-		"\n\n🧭 Beispiel Properties:\n" +
-		JSON.stringify(props, null, 2);
-	  document.body.appendChild(dbg);
-	}
-
-	// 🧩 Debug: zeige Struktur der GeoJSON-Properties
-	console.log("🧩 Debug: world_countries_geo.json length =", window._worldGeoJSON?.features?.length || 0);
-	if (window._worldGeoJSON?.features?.length) {
-	  const props = window._worldGeoJSON.features[0].properties;
-	  console.log("🧭 GeoJSON Property Keys:", Object.keys(props));
-	  console.log("🧭 Beispiel Properties:", JSON.stringify(props, null, 2));
-	}
-	alert("✅ GeoJSON Debug done – check console for details");
-
-	// 🧩 Debug: zeige Struktur der GeoJSON-Properties
-	if (window._worldGeoJSON?.features?.length) {
-	  const props = window._worldGeoJSON.features[0].properties;
-	  console.log("🧭 GeoJSON Property Keys:", Object.keys(props));
-	  console.log("🧭 Beispiel Properties:", props);
-	}
-
+    console.log("🌍 world_countries_geo.json loaded");
   } catch (e) {
-    console.warn("⚠️ Fallback: loading GeoJSON from GitHub (CORS-safe)");
+    console.warn("⚠️ Fallback: loading GeoJSON from GitHub");
     try {
       const backup = "https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson";
       const res2 = await fetch(backup);
       if (!res2.ok) throw new Error("GitHub fallback failed");
       window._worldGeoJSON = await res2.json();
-      console.log("🌍 Loaded world_countries_geo.json from GitHub (fallback)");
+      console.log("🌍 Loaded fallback GeoJSON");
     } catch (err) {
-      console.error("❌ Both local and fallback GeoJSON failed", err);
+      console.error("❌ GeoJSON load failed:", err);
     }
   }
 }
-/* ========= KPI HEATMAP COLORING (ISO-BASED, FINAL per-country latest) ========= */
+
+/* ========= KPI HEATMAP COLORING (ISO-BASED) ========= */
 async function updateMap() {
   if (!map || !currentKpi || !window._worldGeoJSON) return;
-  
-  // 🧩 GeoJSON Struktur-Test
-  if (window._worldGeoJSON?.features?.length) {
-    const props = window._worldGeoJSON.features[0].properties;
-    console.log("🧭 GeoJSON Property Keys:", Object.keys(props));
-    console.log("🧭 Beispiel Properties:", props);
-  }
 
   const meta = getMetaForCurrent();
   if (!meta) return;
 
-  console.group(`🗺️ updateMap() start for KPI: ${meta.filename || currentKpi}`);
+  const data = ALL_DATA[meta.filename] || [];
+  if (!data.length) return;
 
-  // 🧩 Sicherstellen, dass countries vollständig geladen und gültig ist
-  let retries = 0;
-  while (
-    (!countries || typeof countries !== "object" || Object.keys(countries).length < 10) &&
-    retries < 25
-  ) {
-    console.warn(`⏳ countries.json noch nicht bereit (Versuch ${retries + 1})…`);
-    await new Promise(r => setTimeout(r, 200));
-    retries++;
-  }
-
-  if (!countries || typeof countries !== "object" || !Object.keys(countries).length) {
-    console.error("❌ updateMap() abgebrochen – countries.json leer oder nicht geladen!");
-    console.groupEnd();
-    return;
-  }
-
-  console.log(`✅ countries.json aktiv mit ${Object.keys(countries).length} Einträgen`);
-  const sample = Object.keys(countries)[0];
-  console.log(`🔍 Beispiel-Land: "${sample}", ISO:`, countries[sample]?.iso_a3);
-
-  // alte Layer/Legende entfernen
+  // Entferne alte Layer/Legende
   if (mapLayer) map.removeLayer(mapLayer);
   if (window._legendControl) map.removeControl(window._legendControl);
 
-  // === country_mappings einmalig laden ===
+  // ISO-Mapping vorbereiten
+  const isoByName = {};
+  for (const [name, c] of Object.entries(countries)) {
+    const iso = c.iso_a3 || c.ISO_A3 || c.iso || c.code;
+    if (iso) isoByName[name.toLowerCase()] = iso.toUpperCase();
+  }
+
+  // country_mappings ergänzen
   if (!window._countryMappings) {
     try {
       const res = await fetch("data/meta/country_mappings.json", { cache: "no-store" });
       window._countryMappings = await res.json();
-      console.log(`🧩 country_mappings.json loaded (${Object.keys(window._countryMappings).length} Einträge)`);
-    } catch (e) {
-      console.warn("⚠️ country_mappings.json not found – using empty mapping", e);
+    } catch {
       window._countryMappings = {};
     }
   }
+  for (const [alias, canonical] of Object.entries(window._countryMappings))
+    if (isoByName[canonical.toLowerCase()])
+      isoByName[alias.toLowerCase()] = isoByName[canonical.toLowerCase()];
 
-  // === ISO-Lookups aufbauen (case-insensitive + tolerant) ===
-  const isoByNameCI = {};      // name (lc) -> ISO_A3
-  const canonicalByIso = {};   // ISO_A3 -> Originalname aus countries
-  let withIso = 0;
-
-  for (const [name, c] of Object.entries(countries)) {
-    if (!c || typeof c !== "object") continue;
-
-    // hole ISO-Code mit mehreren Fallbacks
-    const iso =
-      c.iso_a3?.trim() ||
-      c.ISO_A3?.trim() ||
-      c.iso?.trim() ||
-      c.code?.trim() ||
-      c["iso_a3"]?.trim() ||
-      c["ISO_A3"]?.trim() ||
-      null;
-
-    if (iso) {
-      const isoUp = iso.toUpperCase();
-      isoByNameCI[name.toLowerCase()] = isoUp;
-      canonicalByIso[isoUp] = name;
-      withIso++;
-    }
-  }
-
-  // === Aliase aus country_mappings.json hinzufügen ===
-  let aliasCount = 0;
-  for (const [alias, canonical] of Object.entries(window._countryMappings || {})) {
-    const canonIso = isoByNameCI[(canonical || "").toLowerCase()];
-    if (canonIso && !isoByNameCI[alias.toLowerCase()]) {
-      isoByNameCI[alias.toLowerCase()] = canonIso;
-      aliasCount++;
-    }
-  }
-
-  console.log(`🧭 isoByNameCI geladen mit ${withIso} Ländernamen (plus ${aliasCount} Aliase).`);
-
-  // === Daten holen und pro Land den jeweils letzten Wert wählen ===
-  const data = ALL_DATA[meta.filename] || [];
+  // Letzten gültigen KPI-Wert pro Land sammeln
   const latestByCountry = new Map();
-
   for (const d of data) {
-    if (!d || d.country === "World" || d.value == null) continue;
-    const cname = String(d.country).trim();
-    const y = Number(d.year ?? 0);
+    if (!d || !d.country || d.country === "World" || d.value == null) continue;
+    const cname = d.country.trim();
     const prev = latestByCountry.get(cname);
-    if (!prev || (Number.isFinite(y) && y > prev.year)) {
-      latestByCountry.set(cname, { year: y, value: Number(d.value) });
-    }
+    if (!prev || d.year > prev.year)
+      latestByCountry.set(cname, { year: d.year, value: Number(d.value) });
   }
 
-  // === in ISO mapppen ===
-  // 🧩 Debug: detaillierte ISO- und KPI-Überprüfung
-  console.group(`🔍 RealityCheck Debug für KPI: ${meta.filename || currentKpi}`);
-  console.log("📊 Titel:", meta.title || "(unbekannt)");
-  console.log("📏 Einheit:", meta.unit || "(keine)");
-  console.log(`📈 Datensätze geladen: ${data.length}`);
-
-  let debugCount = 0;
-  for (const d of data.slice(0, 20)) { // nur erste 20 für Übersicht
-    if (!d || !d.country) continue;
-    const cname = d.country;
-    const isoGuess =
-      countries[cname]?.iso_a3 ||
-      countries[cname]?.ISO_A3 ||
-      countries[cname?.toLowerCase?.()]?.iso_a3 ||
-      null;
-    const val = d.value;
-    console.log(
-      `🌍 ${cname.padEnd(25)} → ISO: ${isoGuess || "(none)"} | Jahr: ${d.year} | Wert: ${val}`
-    );
-    debugCount++;
-  }
-  console.log(`🧾 Beispiel-Debug für ${debugCount} Länder ausgegeben.`);
-  console.groupEnd();
-
-  const mapDataByIso = {}; // ISO_A3 -> value
-  const missingCountries = new Set();
-  console.log("🗺️ Beispiel mapDataByIso:", Object.entries(mapDataByIso).slice(0, 10));
-
-
+  // ISO→Value map
+  const mapDataByIso = {};
   for (const [rawName, rec] of latestByCountry.entries()) {
-    const lc = rawName.toLowerCase();
-
-    // 1️⃣ direkter Treffer
-    let iso = isoByNameCI[lc];
-
-    // 2️⃣ Mapping-Treffer (Alias → Canonical → ISO)
-    if (!iso) {
-      const mapped =
-        window._countryMappings[rawName] ||
-        window._countryMappings[rawName.toUpperCase()] ||
-        window._countryMappings[lc];
-      if (mapped) iso = isoByNameCI[(mapped || "").toLowerCase()];
-    }
-
-    // 3️⃣ toleranter Vergleich: Teilstring oder exakte CI
-    if (!iso) {
-      for (const [nameLC, isoCode] of Object.entries(isoByNameCI)) {
-        if (nameLC === lc || nameLC.includes(lc) || lc.includes(nameLC)) {
-          iso = isoCode;
-          break;
-        }
-      }
-    }
-
-if (iso) {
-  let valNum = rec.value;
-
-  // 🧮 robusten Zahlen-Cast sicherstellen
-  if (typeof valNum === "string") {
-    valNum = valNum.replace(",", ".").replace(/[^\d.\-]/g, "").trim();
-  }
-  valNum = Number(valNum);
-
-  if (Number.isFinite(valNum)) {
-    mapDataByIso[iso] = valNum;
-  } else {
-    console.debug(`⚠️ Invalid numeric value for ${rawName}:`, rec.value);
-  }
-} else {
-  missingCountries.add(rawName);
-}
+    const iso = isoByName[rawName.toLowerCase()] || null;
+    if (iso && Number.isFinite(rec.value)) mapDataByIso[iso] = rec.value;
   }
 
-  // === Logging ===
-  const totalRows = latestByCountry.size;
-  const mappedCount = Object.keys(mapDataByIso).length;
-  console.group(`🧩 Map Debug for KPI: ${meta.filename}`);
-  console.log(`✅ Latest values: ${totalRows} Länder, ${mappedCount} gemappt, ${missingCountries.size} ohne ISO.`);
-  if (missingCountries.size) {
-    console.warn("🚫 Missing ISO for:", Array.from(missingCountries).sort().join(", "));
-  }
-
-  // zeige eine Beispiel-Zuordnung für Verifikation
-  const exName = Object.keys(isoByNameCI)[0];
-  if (exName)
-    console.log(`🔎 Beispiel-Zuordnung: "${exName}" → ${isoByNameCI[exName]} (${canonicalByIso[isoByNameCI[exName]]})`);
-  console.groupEnd();
-
-  // === Skala bestimmen ===
   const values = Object.values(mapDataByIso).filter(v => Number.isFinite(v));
-  let min = 0, max = 0;
-  if (values.length) {
-    min = Math.min(...values);
-    max = Math.max(...values);
-  }
-
+  const min = Math.min(...values);
+  const max = Math.max(...values);
   const higherIsBetter = (meta.sort || "higher").toLowerCase() === "higher";
+
+  // 🎨 Logarithmische Farbschattierung
   const getColor = val => {
     if (!Number.isFinite(val) || values.length === 0) return "#e6e6e6";
-    const ratio = (val - min) / (max - min || 1);
+    const logMin = Math.log10(min + 1);
+    const logMax = Math.log10(max + 1);
+    const logVal = Math.log10(val + 1);
+    const ratio = (logVal - logMin) / (logMax - logMin || 1);
     const hue = higherIsBetter ? 120 * ratio : 120 * (1 - ratio);
     return `hsl(${hue},80%,45%)`;
   };
 
-// === Länder einfärben (RealityCheck – ISO_A3 normalized) ===
-mapLayer = L.geoJSON(window._worldGeoJSON, {
-  style: f => {
-    const iso = (f.properties.ISO_A3 || "").trim().toUpperCase();
-    const val = mapDataByIso[iso];
-
-    // 🧩 Debug: zeige, welche Werte wirklich an Leaflet übergeben werden
-    if (Number.isFinite(val)) {
-      console.debug(`🎨 ${f.properties.ADMIN || iso}: ${val}`);
+  // 🌍 Länder einfärben
+  mapLayer = L.geoJSON(window._worldGeoJSON, {
+    style: f => {
+      const iso = (f.properties.iso_a3 || f.properties.ADM0_A3 || f.id || "").toUpperCase();
+      const val = mapDataByIso[iso];
+      return {
+        fillColor: getColor(val),
+        fillOpacity: Number.isFinite(val) ? 0.82 : 0.15,
+        color: "#555",
+        weight: 0.4
+      };
+    },
+    onEachFeature: (f, layer) => {
+      const iso = (f.properties.iso_a3 || f.properties.ADM0_A3 || f.id || "").toUpperCase();
+      const cname = Object.entries(countries).find(
+        ([, c]) => c.iso_a3?.toUpperCase() === iso
+      )?.[0] || f.properties.ADMIN || iso;
+      const val = mapDataByIso[iso];
+      const info = countries[cname] || {};
+      layer.bindTooltip(
+        `<strong>${cname}</strong><br>
+         ${Number.isFinite(val) ? `${formatValueAuto(val)} ${meta.unit || ""}` : "no data"}<br>
+         <small>Capital: ${info.capital || "–"} | Gov: ${info.government || "–"}</small>`,
+        { sticky: true }
+      );
+      layer.on({
+        mouseover: e => e.target.setStyle({ weight: 1.2, color: "#000", fillOpacity: 0.9 }),
+        mouseout: e => mapLayer.resetStyle(e.target)
+      });
     }
+  }).addTo(map);
 
-    return {
-      fillColor: getColor(val),
-      fillOpacity: Number.isFinite(val) ? 0.82 : 0.15,
-      color: "#555",
-      weight: 0.4
-    };
-  },
-
-
-  onEachFeature: (f, layer) => {
-    const iso = (f.properties.ISO_A3 || "").trim().toUpperCase();
-    const canonicalName = canonicalByIso[iso] || f.properties.ADMIN || f.properties.NAME || "";
-    const val = mapDataByIso[iso];
-
-    // 🧭 Länderinfo suchen (tolerant, robust)
-    const info =
-      countries[canonicalName] ||
-      countries[canonicalName?.toLowerCase?.()] ||
-      Object.entries(countries).find(([k]) => {
-        if (!k || !canonicalName) return false;
-        const keyLC = String(k).toLowerCase();
-        const nameLC = String(canonicalName).toLowerCase();
-        return keyLC === nameLC || nameLC.includes(keyLC) || keyLC.includes(nameLC);
-      })?.[1] ||
-      {};
-
-    const capital = info.capital || "–";
-    const gov = info.government || "–";
-
-    // 💬 Tooltip mit sicheren Werten
-    layer.bindTooltip(
-      `<strong>${canonicalName}</strong><br>
-       ${Number.isFinite(val)
-         ? `${formatValueAuto(val)} ${meta.unit || ""}`
-         : "no data"}<br>
-       <small>Capital: ${capital} | Gov: ${gov}</small>`,
-      { sticky: true }
-    );
-
-    // 🎨 Hover-Effekte
-    layer.on({
-      mouseover: e => e.target.setStyle({ weight: 1.2, color: "#000", fillOpacity: 0.9 }),
-      mouseout: e => mapLayer.resetStyle(e.target)
-    });
-  }
-}).addTo(map);
-
-// === Legende immer anzeigen (auch wenn grau) ===
-addHeatmapLegend(
-  values.length ? min : 0,
-  values.length ? max : 0,
-  meta.unit || "",
-  meta.title || "KPI"
-);
-
-console.log(`🎨 Map rendering completed for ${meta.title || meta.filename}`);
-console.groupEnd();
+  addHeatmapLegend(min, max, meta.unit || "", meta.title || currentKpi);
+  console.log(`🎨 Map rendered: ${meta.title} (${values.length} Länder)`);
 }
-
 
 /* ========= LEGEND ========= */
 function addHeatmapLegend(min, max, unit, title) {
@@ -1149,8 +925,7 @@ function addHeatmapLegend(min, max, unit, title) {
         <span>${formatValueAuto(min)}</span>
         <span>${formatValueAuto(max)}</span>
       </div>
-      <div style="font-size:0.75em;color:#666;">Unit: ${unit}</div>
-    `;
+      <div style="font-size:0.75em;color:#666;">Unit: ${unit}</div>`;
     return div;
   };
   legend.addTo(map);
