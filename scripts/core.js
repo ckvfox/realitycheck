@@ -249,3 +249,4 @@ window.rcLog = rcLog;
 window.loadAllKPIData = loadAllKPIData;
 window.loadKpiAnalysis = loadKpiAnalysis;
 window.renderKpiAnalysis = renderKpiAnalysis;
+
