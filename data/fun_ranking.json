@@ -3,100 +3,100 @@
     "rank": 1,
     "country": "Australia",
     "reasons": [
-      "Sydney and Melbourne often rank high in liveability indexes.",
-      "Favorable climate with many sunny days.",
-      "High happiness index score."
-    ],
-    "average_beer_price": 3.0
+      "Sydney often ranks high in livability surveys",
+      "Pleasant climate with many sunny days",
+      "High score on Happiness Index",
+      "Affordable beer prices"
+    ]
   },
   {
     "rank": 2,
     "country": "Spain",
     "reasons": [
-      "Several cities like Madrid and Barcelona offer sunny weather and vibrant culture.",
-      "Climate generally fits the desired range, with plenty of sunny days.",
-      "Strong performance in various quality of life surveys."
-    ],
-    "average_beer_price": 2.5
+      "Barcelona and Madrid have high liveability scores",
+      "Ideal climate and high number of sunny days",
+      "Beer prices are generally low",
+      "Consistently high in happiness rankings"
+    ]
   },
   {
     "rank": 3,
     "country": "Portugal",
     "reasons": [
-      "Lisbon has a high score in liveability and lifestyle surveys.",
-      "Balanced climate with abundant sun and limited rain.",
-      "Increasing happiness index ratings."
-    ],
-    "average_beer_price": 2.0
+      "Lisbon features in top livable cities",
+      "Favorable climate and low number of rainy days",
+      "Increasing happiness scores",
+      "Inexpensive beer"
+    ]
   },
   {
     "rank": 4,
-    "country": "Mexico",
+    "country": "Italy",
     "reasons": [
-      "Cities like Guadalajara and Merida offer great weather and festive atmosphere.",
-      "Generally low cost of living, including affordable beverages.",
-      "Benefits from many sunny days a year."
-    ],
-    "average_beer_price": 1.5
+      "Includes cities like Florence on livability indexes",
+      "Good climate balance and plenty of sunshine",
+      "High life satisfaction",
+      "Competitive beer prices"
+    ]
   },
   {
     "rank": 5,
     "country": "New Zealand",
     "reasons": [
-      "Auckland scores well in liveability indexes.",
-      "Mild and pleasant climate conditions.",
-      "High quality of life and happiness levels."
-    ],
-    "average_beer_price": 3.5
+      "Auckland ranks in the top livable cities",
+      "Mild, pleasant weather year-round",
+      "High on the happiness index",
+      "Reasonable beer prices in most areas"
+    ]
   },
   {
     "rank": 6,
-    "country": "Italy",
+    "country": "Chile",
     "reasons": [
-      "Cities like Florence and Rome offer rich culture and good weather.",
-      "Strong presence in lifestyle and liveability surveys.",
-      "Cuisine and local wines add to the enjoyment."
-    ],
-    "average_beer_price": 3.0
+      "Santiago is improving in global liveability rankings",
+      "Many sunny days with moderate temperatures",
+      "Growing happiness rates",
+      "Affordable local beer"
+    ]
   },
   {
     "rank": 7,
     "country": "Greece",
     "reasons": [
-      "Athens and other cities have a bright, sunny climate with warm people.",
-      "Historic sites and Mediterranean cuisine enhance the living experience.",
-      "Enjoyable climate with a long sunny season."
-    ],
-    "average_beer_price": 2.5
+      "Athens is noted for its quality of life improvements",
+      "Warm, sunny climate ideal for outdoor activities",
+      "Climbing happiness scores",
+      "Low-priced beer in many areas"
+    ]
   },
   {
     "rank": 8,
-    "country": "Chile",
+    "country": "Japan",
     "reasons": [
-      "Santiago has been improving in global liveability rankings.",
-      "Ideal climate with lots of sun in many regions.",
-      "Economic stability contributes to lifestyle quality."
-    ],
-    "average_beer_price": 2.0
+      "Cities like Tokyo rank high in the Monocle Survey",
+      "Mild climate in many regions",
+      "High level of life satisfaction",
+      "Beer prices vary, but decent rates can be found"
+    ]
   },
   {
     "rank": 9,
-    "country": "South Africa",
+    "country": "Mexico",
     "reasons": [
-      "Cape Town offers a good balance of lifestyle, weather, and natural beauty.",
-      "Favorable weather with lots of sun.",
-      "Relatively low cost of living."
-    ],
-    "average_beer_price": 1.8
+      "Cities like Mexico City feature in liveability discussions",
+      "Perfect climate almost year-round",
+      "Moderate happiness index",
+      "Very low beer prices"
+    ]
   },
   {
     "rank": 10,
-    "country": "Uruguay",
+    "country": "Costa Rica",
     "reasons": [
-      "Montevideo provides a good quality of life with a relaxed pace.",
-      "Pleasant climate and a growing cultural scene.",
-      "Progressive social and economic policies."
-    ],
-    "average_beer_price": 2.1
+      "Known for its high rankings on the happiness index",
+      "Ideal temperature range and sunny most days",
+      "Few rainy days",
+      "Beer prices are generally low"
+    ]
   }
 ]

@@ -27,8 +27,7 @@ async function initOverall() {
   ALL_DATA = await loadAllKPIData(); // ✅ consolidated dataset
 
   buildRelevanceControls();
-	await buildOverallRanking();   // 🧩 Ranking berechnen und Tabelle rendern
-  await loadFunSafeImmigrationSets();
+  await buildOverallRanking();
 
   showSpinner(false);
   fetchLastUpdated();
@@ -47,23 +46,21 @@ function initModeSwitch() {
   const normalBtn = document.getElementById("normalMode");
   const funBtn = document.getElementById("funMode");
   const safeBtn = document.getElementById("safeMode");
-  const immigrBtn = document.getElementById("immigrationMode");
-
 
   // Normal = Icons aus, Buttons resetten
   normalBtn.addEventListener("click", () => {
     document.querySelectorAll("#mode-switch button").forEach(b => b.classList.remove("active"));
     normalBtn.classList.add("active");
     funOn = false; safeOn = false;
-    funBtn.setAttribute("aria-pressed","false"); funBtn.textContent = "😎 Fun Mode deactivated";
-    safeBtn.setAttribute("aria-pressed","false"); safeBtn.textContent = "🛡️ Safe Haven deactivated";
+    funBtn.setAttribute("aria-pressed","false"); funBtn.textContent = "😎 Fun Mode deaktiviert";
+    safeBtn.setAttribute("aria-pressed","false"); safeBtn.textContent = "🛡️ Safe Haven deaktiviert";
     updateModeIcons();
   });
 
   // Fun toggle
   funBtn.addEventListener("click", () => {
     funOn = !funOn;
-    const label = funOn ? "😎 Fun Mode activated" : "😎 Fun Mode deactivated";
+    const label = funOn ? "😎 Fun Mode aktiviert" : "😎 Fun Mode deaktiviert";
     funBtn.textContent = label;
     funBtn.setAttribute("aria-pressed", funOn ? "true" : "false");
 
@@ -75,24 +72,13 @@ function initModeSwitch() {
   // Safe toggle
   safeBtn.addEventListener("click", () => {
     safeOn = !safeOn;
-    const label = safeOn ? "🛡️ Safe Haven activated" : "🛡️ Safe Haven deactivated";
+    const label = safeOn ? "🛡️ Safe Haven aktiviert" : "🛡️ Safe Haven deaktiviert";
     safeBtn.textContent = label;
     safeBtn.setAttribute("aria-pressed", safeOn ? "true" : "false");
 
     safeBtn.classList.toggle("active", safeOn);
     updateModeIcons();
   });
-  
-  // Immigration toggle 🧳
-  immigrBtn.addEventListener("click", () => {
-    immigrOn = !immigrOn;
-    const label = immigrOn ? "🧳 Immigration Mode activated" : "🧳 Immigration Mode deactivated";
-    immigrBtn.textContent = label;
-    immigrBtn.setAttribute("aria-pressed", immigrOn ? "true" : "false");
-    immigrBtn.classList.toggle("active", immigrOn);
-    updateModeIcons();
-  });
-
 }
 
 
@@ -267,7 +253,7 @@ async function buildOverallRanking() {
 
   renderOverallTable(list);
   renderLegend(prioritizedCount, missingKPIs);
-	await loadFunSafeImmigrationSets();   // Sets laden (inkl. 🧳 Immigration)
+  await loadFunSafeSets();   // Sets laden
   initModeSwitch();          // Buttons sicher initialisieren (einmalig)
   updateModeIcons();         // Icons gemäß aktuellem Toggle-Status (Default: aus)
 
@@ -276,21 +262,18 @@ async function buildOverallRanking() {
 // === Global state ===
 let FUN_SET = new Set();
 let SAFE_SET = new Set();
-let IMMIG_SET = new Set();  // 🧳 neu
 let funOn = false;
 let safeOn = false;
-let immigrOn = false;       // 🧳 neu
-
 
 // === Lädt Top-10 Sets EINMAL (robust gegen GPT-JSON-Formate) ===
-async function loadFunSafeImmigrationSets() {
+async function loadFunSafeSets() {
   try {
-    const [funRaw, safeRaw, immigrRaw] = await Promise.all([
+    const [funRaw, safeRaw] = await Promise.all([
       fetch("data/fun_ranking.json").then(r => r.ok ? r.json() : []),
-      fetch("data/safe_haven_ranking.json").then(r => r.ok ? r.json() : []),
-      fetch("data/immigration_ranking.json").then(r => r.ok ? r.json() : []) // 🧳 neu
+      fetch("data/safe_haven_ranking.json").then(r => r.ok ? r.json() : [])
     ]);
 
+    // 🔍 GPT liefert manchmal Objekte mit Schlüsseln wie "Fun Ranking", "Safe Haven Ranking" oder "countries"
     const funList = Array.isArray(funRaw)
       ? funRaw
       : funRaw["Fun Ranking"] || funRaw.countries || Object.values(funRaw);
@@ -299,25 +282,18 @@ async function loadFunSafeImmigrationSets() {
       ? safeRaw
       : safeRaw["Safe Haven Ranking"] || safeRaw.countries || Object.values(safeRaw);
 
-    const immigrList = Array.isArray(immigrRaw)
-      ? immigrRaw
-      : immigrRaw["Immigration Mode"] || immigrRaw.countries || Object.values(immigrRaw);
-
+    // 🔧 Sichere Konvertierung
     FUN_SET = new Set((funList || []).slice(0, 10).map(e => e.country || e));
     SAFE_SET = new Set((safeList || []).slice(0, 10).map(e => e.country || e));
-    IMMIG_SET = new Set((immigrList || []).slice(0, 10).map(e => e.country || e)); // 🧳 neu
 
     console.log("😎 FUN_SET loaded:", [...FUN_SET]);
     console.log("🛡️ SAFE_SET loaded:", [...SAFE_SET]);
-    console.log("🧳 IMMIG_SET loaded:", [...IMMIG_SET]);
   } catch (e) {
-    console.warn("⚠️ Could not load fun/safe/immigration sets:", e);
+    console.warn("⚠️ Could not load fun/safe sets:", e);
     FUN_SET = new Set();
     SAFE_SET = new Set();
-    IMMIG_SET = new Set();
   }
 }
-
 
 // === Fügt/entfernt ausschließlich die Icons gemäß funOn/safeOn ===
 function updateModeIcons() {
@@ -332,7 +308,6 @@ function updateModeIcons() {
     let icons = "";
     if (funOn && FUN_SET.has(country)) icons += "😎";
     if (safeOn && SAFE_SET.has(country)) icons += "🛡️";
-	if (immigrOn && IMMIG_SET.has(country)) icons += "🧳";
 
     if (icons) {
       const span = document.createElement("span");
@@ -422,7 +397,6 @@ score(country) = Σ(weighted) / KPIs_used
       <h3>🌍 Mode Highlights</h3>
       <p><strong>😎 Fun Mode:</strong> Warm, sunny, happy and relaxed. Good beer, reasonably priced</p>
       <p><strong>🛡️ Safe Haven Mode:</strong> Peaceful, resilient, and rights-respecting democracies with low climate risk.</p>
-	  <p><strong>🧳 Immigration Mode:</strong> Countries open to immigration, with job opportunities and welcoming integration culture.</p>
     </div>
   `;
 }

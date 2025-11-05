@@ -189,55 +189,49 @@
     attachAutoResize();
   </script>
   
-  <button id="scroll-top-btn" title="on top" style="opacity: 0; transition: opacity 0.3s ease;">↑</button>
+  <!-- 🔼 Scroll-to-Top Button -->
+  <button id="scroll-top-btn" title="on top">↑</button>
 
-  <script>
-  const scrollBtn = document.getElementById("scroll-top-btn");
+	<script>
+	const scrollBtn = document.getElementById("scroll-top-btn");
 
-  if (scrollBtn) {
-    console.log("✅ scroll-top-btn gefunden");
+	if (scrollBtn) {
+		console.log("✅ scroll-top-btn gefunden");
 
-    scrollBtn.addEventListener("click", () => {
-      console.log("⬆️ Scroll to top clicked");
+		// === Klick-Event: sanft nach oben scrollen ===
+		scrollBtn.addEventListener("click", () => {
+			console.log("⬆️ Scroll to top clicked");
 
-      const frame = document.getElementById("main-frame");
-      if (!frame) return;
+			const frame = document.getElementById("main-frame");
+			if (!frame) return;
 
-      try {
-        // Versuche, innerhalb des Iframes nach oben zu scrollen
-        const innerWindow = frame.contentWindow;
-        if (innerWindow && innerWindow.scrollTo) {
-          innerWindow.scrollTo({ top: 0, behavior: "smooth" });
-          console.log("↕️ Scrolled inside iframe");
-        } else {
-          // Fallback – falls Zugriff nicht erlaubt oder iframe leer
-          window.scrollTo({ top: 0, behavior: "smooth" });
-          console.log("↕️ Fallback scroll (outer window)");
-        }
-      } catch (err) {
-        console.warn("⚠️ Scroll inside iframe failed:", err);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    });
+			try {
+				// Versuche, im iframe nach oben zu scrollen
+				const innerWindow = frame.contentWindow;
+				if (innerWindow && innerWindow.scrollTo) {
+					innerWindow.scrollTo({ top: 0, behavior: "smooth" });
+					console.log("↕️ Scrolled inside iframe");
+				} else {
+					window.scrollTo({ top: 0, behavior: "smooth" });
+					console.log("↕️ Fallback scroll (outer window)");
+				}
+			} catch (err) {
+				console.warn("⚠️ Scroll inside iframe failed:", err);
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			}
+		});
 
-    // --- Sichtbarkeit des Buttons bei Scroll im iframe steuern ---
-    const frame = document.getElementById("main-frame");
-    frame.addEventListener("load", () => {
-      const doc = frame.contentDocument;
-      if (!doc) return;
-
-      // Scroll-Event im iframe überwachen
-      doc.addEventListener("scroll", () => {
-        const y = frame.contentWindow.scrollY;
-        // Button sichtbar machen, wenn weiter als 200px gescrollt
-        scrollBtn.style.opacity = y > 200 ? "1" : "0";
-      });
-    });
-
-  } else {
-    console.warn("❌ scroll-top-btn nicht gefunden");
-  }
-  </script>
+		// === Sichtbarkeit steuern (Scroll in Hauptseite, nicht im iframe) ===
+		window.addEventListener("scroll", () => {
+			const y = window.scrollY;
+			scrollBtn.style.opacity = y > 200 ? "1" : "0";
+		});
+  
+	} else {
+		console.warn("❌ scroll-top-btn nicht gefunden");
+	}
+	</script>
 
 </body>
+
 </html>

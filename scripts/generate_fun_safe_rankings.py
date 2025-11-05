@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🌍 RealityCheck – Fun & Safe Haven Rankings (Nov 2025)
+🌍 RealityCheck – Fun, Safe Haven & Immigration Rankings (Nov 2025)
 ─────────────────────────────────────────────
 Erzeugt:
  • fun_ranking.json
  • safe_haven_ranking.json
+ • immigration_ranking.json
 Verwendet dieselbe GPT-Logik wie analysis.py (OpenAI 1.54.x)
 """
 
@@ -36,7 +37,6 @@ LOG_FILE = DATA_DIR / "fetch_log.txt"
 
 # === Safe Write Helpers ===
 def safe_write_text(path: Path, content: str):
-    """Garantiert UTF-8-Schreiben mit automatischer Ordnererstellung."""
     path.parent.mkdir(parents=True, exist_ok=True)
     try:
         with path.open("w", encoding="utf-8") as f:
@@ -45,7 +45,6 @@ def safe_write_text(path: Path, content: str):
         print(f"❌ Failed to write text file {path}: {e}")
 
 def safe_write_json(path: Path, data):
-    """Garantiert sicheres Schreiben von JSON-Dateien (UTF-8, exist_ok)."""
     path.parent.mkdir(parents=True, exist_ok=True)
     try:
         with path.open("w", encoding="utf-8") as f:
@@ -54,7 +53,7 @@ def safe_write_json(path: Path, data):
     except Exception as e:
         print(f"❌ Failed to write JSON file {path}: {e}")
 
-# === Helper ===
+# === Logging ===
 def log(msg: str):
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     line = f"[{ts}] {msg}"
@@ -63,7 +62,6 @@ def log(msg: str):
         f.write(line + "\n")
 
 def save_json(data, path: Path):
-    """Schreibt JSON-Datei sicher mit Logging."""
     if not data:
         log(f"⚠️ No data to save for {path.name}")
         return
@@ -72,17 +70,6 @@ def save_json(data, path: Path):
         log(f"💾 Saved {path.relative_to(ROOT_DIR)} ({len(data)} entries)")
     except Exception as e:
         log(f"❌ Failed to save {path.name}: {e}")
-def save_json(data, path: Path):
-    """Schreibt JSON-Datei sicher mit Logging."""
-    if not data:
-        log(f"⚠️ No data to save for {path.name}")
-        return
-    try:
-        safe_write_json(path, data)
-        log(f"💾 Saved {path.relative_to(ROOT_DIR)} ({len(data)} entries)")
-    except Exception as e:
-        log(f"❌ Failed to save {path.name}: {e}")
-
 
 # === Prompts ===
 PROMPT_FUN = """
@@ -97,11 +84,33 @@ Criteria: human rights (e.g. Human Rights Index), low conflict risk (e.g. Geopol
 Return the full, valid JSON array and make sure all brackets are properly closed.
 """.strip()
 
-# === Core (fixed) ===
+PROMPT_IMMIGRATION = f"""
+You are an international migration and labor-mobility analyst.
+
+Your task: Identify and rank the **Top 10 countries that are easiest and most attractive for immigration in {datetime.now().year}**, based on realistic and data-driven reasoning.
+
+Consider these key dimensions:
+• Openness of immigration policies (visa, work permits, permanent residence options)
+• Job opportunities and demand for skilled workers
+• Integration friendliness and social acceptance of migrants
+• Language accessibility (English or major world language)
+• Quality of life and long-term stability
+
+Base your reasoning on global indexes such as:
+– Migration Policy Index
+– Global Talent Competitiveness Index
+– UN Migration Data Portal
+– World Happiness Index
+– Rule of Law, Safety, and Economic Stability
+
+Return a valid JSON array of objects with fields: "rank", "country", and "reason" (2–3 concise sentences).
+Ensure all brackets are properly closed.
+""".strip()
+
+# === Core ===
 def generate_ranking(mode: str, prompt: str, path: Path):
     log(f"➡️ Generating {mode} via GPT-4-Turbo …")
     try:
-        # Kein erzwungenes response_format → GPT darf Array [ ... ] zurückgeben
         response = client.chat.completions.create(
             model="gpt-4-turbo",
             messages=[
@@ -119,7 +128,6 @@ def generate_ranking(mode: str, prompt: str, path: Path):
         log(f"⚠️ Empty response for {mode}")
         return []
 
-    # === Flexible Parsing (funktioniert mit Array oder Objekt) ===
     import re
     clean = text.strip("` \n")
     if clean.lower().startswith("json"):
@@ -142,22 +150,20 @@ def generate_ranking(mode: str, prompt: str, path: Path):
     save_json(data, path)
     return data
 
-
-
 # === Main ===
 if __name__ == "__main__":
     FUN = DATA_DIR / "fun_ranking.json"
     SAFE = DATA_DIR / "safe_haven_ranking.json"
+    IMMIG = DATA_DIR / "immigration_ranking.json"
 
-    log("🎬 Starting Fun & Safe Haven ranking generation…")
+    log("🎬 Starting Fun, Safe & Immigration ranking generation…")
     fun = generate_ranking("Fun Mode", PROMPT_FUN, FUN)
     safe = generate_ranking("Safe Haven Mode", PROMPT_SAFE, SAFE)
+    immigr = generate_ranking("Immigration Mode", PROMPT_IMMIGRATION, IMMIG)
 
-    if fun and safe:
-        log("✅ Both rankings generated successfully.")
-    elif fun:
-        log("⚠️ Only Fun ranking generated successfully.")
-    elif safe:
-        log("⚠️ Only Safe Haven ranking generated successfully.")
+    if fun and safe and immigr:
+        log("✅ All three rankings generated successfully.")
+    elif fun or safe or immigr:
+        log("⚠️ Partial success – at least one ranking generated.")
     else:
         log("❌ No ranking data generated.")
