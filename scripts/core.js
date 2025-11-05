@@ -250,3 +250,46 @@ window.loadAllKPIData = loadAllKPIData;
 window.loadKpiAnalysis = loadKpiAnalysis;
 window.renderKpiAnalysis = renderKpiAnalysis;
 
+/* ============================================================
+   📏 Auto-height Pings an parent (index.html)
+   ============================================================ */
+(function () {
+  const canPost = (() => {
+    try { return window.parent && window.parent !== window; } catch { return false; }
+  })();
+  if (!canPost) return;
+
+  function ping() {
+    const h = Math.max(
+      document.documentElement.scrollHeight,
+      document.body?.scrollHeight || 0
+    );
+    window.parent.postMessage({ type: "rc-iframe-size", h }, "*");
+  }
+
+  // Pinge beim Start und nach typischen Spät-Layouts
+  window.addEventListener("load", () => { ping(); setTimeout(ping, 200); setTimeout(ping, 800); setTimeout(ping, 2000); });
+  document.addEventListener("DOMContentLoaded", () => { ping(); });
+
+  // MutationObserver für spätere Änderungen (Chart, Map, Tabelle)
+  try {
+    const obs = new MutationObserver(() => ping());
+    obs.observe(document.documentElement, { childList: true, subtree: true, attributes: true });
+  } catch {}
+
+  // Pinge auf Anforderung des Parents (z. B. bei window.resize)
+  window.addEventListener("message", (e) => {
+    if (e.data && e.data.type === "rc-iframe-ping") ping();
+  });
+
+  // Bilder/Schriften nachladen
+  window.addEventListener("load", () => {
+    const imgs = Array.from(document.images || []);
+    let left = imgs.length;
+    if (!left) return;
+    imgs.forEach(img => {
+      if (img.complete) { if (--left === 0) ping(); }
+      else { img.addEventListener("load", () => { if (--left === 0) ping(); }); }
+    });
+  });
+})();

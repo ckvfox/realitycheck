@@ -592,3 +592,25 @@ header img, .header-logo img, nav img, #site-logo {
   text-align: left;
 }
 
+/* Umhüllung für horizontales Scrollen */
+.table-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 1rem auto;
+  overflow-x: auto;           /* <- horizontales Scrollen */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tabelle selbst leicht breiter als Handybreite halten,
+   damit ein echter Horizontal-Scrollbalken entsteht */
+#country-table {
+  min-width: 760px;           /* ggf. 900px, je nach Spalten */
+  margin: 0 auto;
+}
+
+/* Zentrierung des Blocks */
+section#data-table {
+  padding: 0 0.6rem;
+  display: flex;
+  justify-content: center;
+}
