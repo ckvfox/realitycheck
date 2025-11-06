@@ -1,4 +1,39 @@
 /* ============================================================
+   🌐 RealityCheck – Core Utilities (shared functions, 2025-11-06)
+   ============================================================ */
+
+/* ============================================================
+   🩵 Iframe Environment Fix (Auto Layout + Scroll Behavior)
+   ============================================================ */
+
+// Wenn Seite im iframe läuft → kein eigener Scroll, volle Höhe an Parent
+/* ✅ Correct iframe scroll behavior */
+if (window.self !== window.top) {
+  try {
+    const styleFix = document.createElement("style");
+    styleFix.textContent = `
+      html, body {
+        overflow-x: hidden !important;
+        overflow-y: visible !important;  /* Seite selbst darf wachsen, Scroll übernimmt index.html */
+        height: auto !important;
+        min-height: 100% !important;
+        overscroll-behavior: contain !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+
+      #data-table, .table-wrapper {
+        overflow-x: auto !important;
+        max-width: 100% !important;
+      }
+    `;
+    document.head.appendChild(styleFix);
+  } catch (e) {
+    console.warn("⚠️ Iframe scroll fix failed:", e);
+  }
+}
+
+
+/* ============================================================
    🌐 RealityCheck – Core Utilities (shared functions, 2025-10)
    ============================================================ */
 
@@ -69,8 +104,6 @@ function showSpinner(show = true, msg = "Loading…") {
     setTimeout(() => sp.classList.add("hidden"), 300);
   }
 }
-
-
 
 // === Normalize KPI/Country names ===
 function normalizeName(str) {
@@ -251,45 +284,119 @@ window.loadKpiAnalysis = loadKpiAnalysis;
 window.renderKpiAnalysis = renderKpiAnalysis;
 
 /* ============================================================
-   📏 Auto-height Pings an parent (index.html)
+   🧱 Footer Loader (RealityCheck modular footer, 2025-11-06, iframe-aware)
    ============================================================ */
-(function () {
-  const canPost = (() => {
-    try { return window.parent && window.parent !== window; } catch { return false; }
-  })();
-  if (!canPost) return;
+(async function loadFooter() {
+  try {
+    // 🚫 1️⃣ Kein Footer, wenn Seite im iframe läuft (z. B. countries.html)
+    if (window.self !== window.top) {
+      console.log("🧩 Detected iframe – skipping footer load.");
+      return;
+    }
 
-  function ping() {
-    const h = Math.max(
-      document.documentElement.scrollHeight,
-      document.body?.scrollHeight || 0
-    );
-    window.parent.postMessage({ type: "rc-iframe-size", h }, "*");
+    // 🛑 2️⃣ Wenn bereits ein Footer vorhanden ist → nicht nochmal laden
+    if (document.querySelector("footer#site-footer")) {
+      console.log("🧭 Footer already exists, skipping load.");
+      return;
+    }
+
+    // 📥 Footer aus externer Datei laden
+    const res = await fetch("footer.html?t=" + Date.now());
+    if (!res.ok) return;
+    const html = await res.text();
+
+    // Footer-ID hinzufügen, damit er eindeutig erkannt wird
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = html.trim();
+    const footer = wrapper.firstElementChild;
+    if (footer) {
+      footer.id = "site-footer";
+      document.body.appendChild(footer);
+    }
+
+    // 👥 Besucherzähler aus tracking.json laden
+    const el = document.getElementById("total-visitors");
+    if (el) {
+      try {
+        const resp = await fetch("tracking.json?nocache=" + Date.now());
+        const data = await resp.json();
+        el.textContent = "Visitors total: " + (data.total || 0);
+      } catch {
+        el.textContent = "Visitors total: unavailable";
+      }
+    }
+  } catch (e) {
+    console.warn("⚠️ Footer-Load failed:", e);
+  }
+})();
+
+/* ============================================================
+   🧭 Navigation + Visitor Stats (moved from index.html)
+   ============================================================ */
+
+// === IFrame Page Loader ===
+window.loadPage = function (page, link) {
+  const frame = document.getElementById("main-frame");
+  const loader = document.getElementById("frame-loader");
+
+  if (!frame) return;
+  if (frame.src.includes(page)) return;
+
+  frame.src = page + "?t=" + Date.now();
+  if (loader) loader.classList.add("active");
+
+  // Active link highlight
+  document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+  if (link) link.classList.add("active");
+};
+
+// === IFrame Load Event ===
+document.addEventListener("DOMContentLoaded", () => {
+  const frame = document.getElementById("main-frame");
+  const loader = document.getElementById("frame-loader");
+
+  if (frame && loader) {
+    frame.addEventListener("load", () => loader.classList.remove("active"));
   }
 
-  // Pinge beim Start und nach typischen Spät-Layouts
-  window.addEventListener("load", () => { ping(); setTimeout(ping, 200); setTimeout(ping, 800); setTimeout(ping, 2000); });
-  document.addEventListener("DOMContentLoaded", () => { ping(); });
+});
 
-  // MutationObserver für spätere Änderungen (Chart, Map, Tabelle)
+/* ============================================================
+   🔼 Global Scroll-to-Top Button (iframe-aware RealityCheck v9.3)
+   ============================================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("scroll-top-btn");
+  const frame = document.getElementById("main-frame");
+  if (!btn) return;
+
+	btn.addEventListener("click", () => {
+		try {
+			if (frame && frame.contentWindow && frame.contentDocument) {
+				const doc = frame.contentDocument;
+				const scrollTarget = doc.scrollingElement || doc.documentElement;
+				scrollTarget.scrollTo({ top: 0, behavior: "smooth" });
+			} else {
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			}
+			btn.style.transform = "scale(0.9)";
+			setTimeout(() => (btn.style.transform = ""), 150);
+		} catch (err) {
+			console.warn("⚠️ Scroll-to-top failed:", err);
+		}
+	});
+
+  // Sichtbar machen
+  btn.style.opacity = "0.9";
+  btn.style.pointerEvents = "auto";
+});
+
+// === RC: Visitor tracking ping ===
+(async function pingTracking() {
   try {
-    const obs = new MutationObserver(() => ping());
-    obs.observe(document.documentElement, { childList: true, subtree: true, attributes: true });
-  } catch {}
-
-  // Pinge auf Anforderung des Parents (z. B. bei window.resize)
-  window.addEventListener("message", (e) => {
-    if (e.data && e.data.type === "rc-iframe-ping") ping();
-  });
-
-  // Bilder/Schriften nachladen
-  window.addEventListener("load", () => {
-    const imgs = Array.from(document.images || []);
-    let left = imgs.length;
-    if (!left) return;
-    imgs.forEach(img => {
-      if (img.complete) { if (--left === 0) ping(); }
-      else { img.addEventListener("load", () => { if (--left === 0) ping(); }); }
-    });
-  });
+    if (window.self !== window.top) return;
+    await fetch("tracking.php", { method: "POST", cache: "no-store" });
+    console.log("📈 Tracking ping sent.");
+  } catch (err) {
+    console.warn("⚠️ Tracking failed:", err);
+  }
 })();

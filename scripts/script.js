@@ -808,7 +808,7 @@ async function initMap() {
   }
 }
 
-/* ========= KPI HEATMAP COLORING (ISO-BASED) ========= */
+/* ========= KPI HEATMAP COLORING (ISO-BASED, FULL VERSION) ========= */
 async function updateMap() {
   if (!map || !currentKpi || !window._worldGeoJSON) return;
 
@@ -818,18 +818,18 @@ async function updateMap() {
   const data = ALL_DATA[meta.filename] || [];
   if (!data.length) return;
 
-  // Entferne alte Layer/Legende
+  // Alte Layer + Legende entfernen
   if (mapLayer) map.removeLayer(mapLayer);
   if (window._legendControl) map.removeControl(window._legendControl);
 
-  // ISO-Mapping vorbereiten
+  // === ISO-Mapping vorbereiten ===
   const isoByName = {};
   for (const [name, c] of Object.entries(countries)) {
     const iso = c.iso_a3 || c.ISO_A3 || c.iso || c.code;
     if (iso) isoByName[name.toLowerCase()] = iso.toUpperCase();
   }
 
-  // country_mappings ergänzen
+  // === Aliase aus country_mappings.json ergänzen ===
   if (!window._countryMappings) {
     try {
       const res = await fetch("data/meta/country_mappings.json", { cache: "no-store" });
@@ -838,11 +838,12 @@ async function updateMap() {
       window._countryMappings = {};
     }
   }
-  for (const [alias, canonical] of Object.entries(window._countryMappings))
-    if (isoByName[canonical.toLowerCase()])
-      isoByName[alias.toLowerCase()] = isoByName[canonical.toLowerCase()];
+  for (const [alias, canonical] of Object.entries(window._countryMappings)) {
+    const canonicalIso = isoByName[canonical.toLowerCase()];
+    if (canonicalIso) isoByName[alias.toLowerCase()] = canonicalIso;
+  }
 
-  // Letzten gültigen KPI-Wert pro Land sammeln
+  // === Letzten gültigen KPI-Wert pro Land bestimmen ===
   const latestByCountry = new Map();
   for (const d of data) {
     if (!d || !d.country || d.country === "World" || d.value == null) continue;
@@ -852,7 +853,7 @@ async function updateMap() {
       latestByCountry.set(cname, { year: d.year, value: Number(d.value) });
   }
 
-  // ISO→Value map
+  // === ISO → Value map erzeugen ===
   const mapDataByIso = {};
   for (const [rawName, rec] of latestByCountry.entries()) {
     const iso = isoByName[rawName.toLowerCase()] || null;
@@ -862,20 +863,60 @@ async function updateMap() {
   const values = Object.values(mapDataByIso).filter(v => Number.isFinite(v));
   const min = Math.min(...values);
   const max = Math.max(...values);
-  const higherIsBetter = (meta.sort || "higher").toLowerCase() === "higher";
 
-  // 🎨 Logarithmische Farbschattierung
+  // === Dynamische Farblogik mit Sort-Modus ===
+  const sortMode = (meta.sort || "neutral").toLowerCase();
+  const targetVal = parseFloat(meta.target_value ?? NaN);
+
+  // 📊 Robust scaling: ignoriert Ausreißer (5.–95. Perzentil)
+  const sortedVals = [...values].sort((a, b) => a - b);
+  const q05 = sortedVals[Math.floor(sortedVals.length * 0.05)] ?? min;
+  const q95 = sortedVals[Math.floor(sortedVals.length * 0.95)] ?? max;
+  const adjMin = Math.min(min, q05);
+  const adjMax = Math.max(max, q95);
+
   const getColor = val => {
     if (!Number.isFinite(val) || values.length === 0) return "#e6e6e6";
-    const logMin = Math.log10(min + 1);
-    const logMax = Math.log10(max + 1);
-    const logVal = Math.log10(val + 1);
+
+    // 🎯 TARGET-basierte Skala (z.B. Inflation)
+    if (sortMode === "target" && Number.isFinite(targetVal)) {
+      const maxDeviation = Math.max(
+        Math.abs(adjMax - targetVal),
+        Math.abs(adjMin - targetVal),
+        1e-6
+      );
+      const deviation = Math.abs(val - targetVal) / maxDeviation; // 0 = perfekt, 1 = schlecht
+      const hue = 120 * (1 - Math.min(deviation, 1)); // 120 = grün, 0 = rot
+      return `hsl(${hue}, 85%, 45%)`;
+    }
+
+    // 📈 Divergierende Skala für KPIs mit negativen & positiven Werten
+    if (adjMin < 0 && adjMax > 0) {
+      const range = Math.max(Math.abs(adjMin), Math.abs(adjMax));
+      const ratio = val / range; // -1 bis +1
+      const hue = ratio >= 0
+        ? 60 + (60 * ratio)    // 60–120 → Gelb bis Grün (positive Werte)
+        : 0 + (60 * (ratio + 1)); // 0–60 → Rot bis Gelb (negative Werte)
+      return `hsl(${hue}, 85%, 50%)`;
+    }
+
+    // 📊 Standard-Logik (nur positive oder nur negative Werte)
+    const safeMin = Math.min(adjMin, 0) + 1;
+    const logMin = Math.log10(Math.abs(safeMin));
+    const logMax = Math.log10(Math.abs(adjMax) + 1);
+    const logVal = Math.log10(Math.abs(val) + 1);
     const ratio = (logVal - logMin) / (logMax - logMin || 1);
-    const hue = higherIsBetter ? 120 * ratio : 120 * (1 - ratio);
-    return `hsl(${hue},80%,45%)`;
+
+    let hue;
+    if (sortMode === "higher") hue = 120 * ratio;
+    else if (sortMode === "lower") hue = 120 * (1 - ratio);
+    else hue = 120 * ratio;
+
+    return `hsl(${hue}, 80%, 45%)`;
   };
 
-  // 🌍 Länder einfärben
+
+  // === Länder einfärben ===
   mapLayer = L.geoJSON(window._worldGeoJSON, {
     style: f => {
       const iso = (f.properties.iso_a3 || f.properties.ADM0_A3 || f.id || "").toUpperCase();
@@ -907,32 +948,49 @@ async function updateMap() {
     }
   }).addTo(map);
 
-  addHeatmapLegend(min, max, meta.unit || "", meta.title || currentKpi);
+  // === Legende anpassen ===
+  addHeatmapLegend(min, max, meta.unit || "", meta.title || currentKpi, sortMode, targetVal);
   console.log(`🎨 Map rendered: ${meta.title} (${values.length} Länder)`);
 }
 
-/* ========= LEGEND ========= */
-function addHeatmapLegend(min, max, unit, title) {
+/* ========= LEGEND (dynamic for sort + target) ========= */
+function addHeatmapLegend(min, max, unit, title, sortMode = "neutral", targetVal = null) {
   const legend = L.control({ position: "bottomright" });
   legend.onAdd = function () {
     const div = L.DomUtil.create("div", "info legend");
+
+    let gradient = "linear-gradient(to right, hsl(0,80%,45%), hsl(120,80%,45%))";
+    let directionNote = "";
+
+    if (sortMode === "lower") {
+      gradient = "linear-gradient(to right, hsl(120,80%,45%), hsl(0,80%,45%))";
+      directionNote = "<span style='color:#0a0'>Lower values = greener</span>";
+    } else if (sortMode === "higher") {
+      gradient = "linear-gradient(to right, hsl(0,80%,45%), hsl(120,80%,45%))";
+      directionNote = "<span style='color:#0a0'>Higher values = greener</span>";
+    } else if (sortMode === "target" && Number.isFinite(targetVal)) {
+      gradient = "linear-gradient(to right, hsl(0,80%,45%), hsl(120,80%,45%), hsl(0,80%,45%))";
+      directionNote = `<span style='color:#0a0'>Closer to target (${targetVal}) = greener</span>`;
+    } else {
+      directionNote = "<span style='color:#0a0'>Quantitative scale</span>";
+    }
+
     div.innerHTML = `
       <strong>${title}</strong><br>
-      <div style="width:160px;height:12px;
-        background:linear-gradient(to right, hsl(0,80%,45%), hsl(120,80%,45%));
+      <div style="width:180px;height:12px;background:${gradient};
         border:1px solid #333;margin:4px 0;"></div>
       <div style="display:flex;justify-content:space-between;font-size:0.8em;">
         <span>${formatValueAuto(min)}</span>
         <span>${formatValueAuto(max)}</span>
       </div>
-      <div style="font-size:0.75em;color:#666;">Unit: ${unit}</div>`;
+      <div style="font-size:0.75em;color:#666;">Unit: ${unit}</div>
+      <div style="font-size:0.75em;margin-top:2px;">${directionNote}</div>
+    `;
     return div;
   };
   legend.addTo(map);
   window._legendControl = legend;
 }
-
-
 
 /* ========= Map Highlight (bestehend, unverändert) ========= */
 function highlightOnMap(country) {

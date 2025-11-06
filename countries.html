@@ -80,24 +80,26 @@
     <em>AI-based insights for this indicator will appear here…</em>
   </div>
 
-  <!-- Tabelle -->
-  <section id="data-table">
-    <div class="table-wrapper">
-      <table id="country-table" aria-label="Country data table">
-        <thead>
-          <tr>
-            <th data-col="rank">Rank</th>
-            <th data-col="country">Country</th>
-            <th data-col="value">Value</th>
-            <th title="Change vs previous year">Δ vs Prev</th>
-            <th title="Change vs comparison year">Δ vs Year</th>
-            <th>Update</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </section>
+	<!-- Tabelle -->
+	<section id="data-table" class="table-section">
+		<div class="table-wrapper">
+			<table id="country-table" aria-label="Country data table">
+				<thead>
+					<tr>
+						<th data-col="rank">Rank</th>
+						<th data-col="country">Country</th>
+						<th data-col="value">Value</th>
+						<th title="Change vs previous year">Δ vs Prev</th>
+						<th title="Change vs comparison year">Δ vs Year</th>
+						<th>Update</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+	</section>
+
+
 
   <!-- Quelle & Datum -->
   <div id="data-meta">
@@ -161,7 +163,8 @@
     });
   </script>
 
-  <script src="scripts/core.js"></script>
+	<!-- 🧠 Shared RealityCheck Core -->
+	<script src="scripts/core.js" defer></script>
   <script src="scripts/script.js"></script>
 
   <script>

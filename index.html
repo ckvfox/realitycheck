@@ -4,78 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>RealityCheck – Interactive Country Comparison</title>
-  
+
   <link rel="stylesheet" href="style.css" />
-  
+
   <!-- 🖼️ Favicon & App Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
   <link rel="apple-touch-icon" href="favicon-180.png">
   <link rel="shortcut icon" href="favicon-32.png" type="image/png">
-  
+
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      display: block;
-      min-height: 100%;
-      overflow-y: auto;
-      overflow-x: hidden;
-      background: #fdfdfd;
-      overscroll-behavior: none;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    main {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* iframe ohne Scrollbalken – Höhe durch JS */
-    #main-frame {
-      display: block;
-      width: 100%;
-      border: none;
-      height: auto;
-      min-height: 60vh;
-      overflow: hidden;
-    }
-
-    footer {
-      position: relative;
-      bottom: auto;
-      margin-top: 2rem;
-    }
-
-    /* 🔼 Scroll-Button permanent sichtbar */
-    #scroll-top-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--steel-blue, #1a355e);
-      color: #fff;
-      font-size: 1.4rem;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      z-index: 99999;
-      opacity: 0.9;
-      transition: transform 0.2s ease, filter 0.2s ease;
-    }
-
-    #scroll-top-btn:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.15);
-    }
-  </style>
 </head>
 
 <body>
@@ -98,127 +38,10 @@
     <iframe id="main-frame" src="countries.html" title="RealityCheck Content"></iframe>
   </main>
 
-  <footer>
-    <div id="tracking-wrapper">
-      <div id="total-visitors">Visitors: loading…</div>
-    </div>
-    <p style="margin-top:.6rem;">
-      © RealityCheck Project —
-      <a href="#" onclick="loadPage('impressum.html', null)">Impressum</a> |
-      <a href="#" onclick="loadPage('privacy.html', null)">Privacy</a> |
-      <a href="#" onclick="loadPage('data_glossary.html', null)">Data Glossary</a> |
-      <a href="#" onclick="loadPage('about.html', null)">About</a>
-    </p>
-  </footer>
-
-  <!-- ============================================================
-       🧭 CORE: Dynamic Loading + Visitor Stats
-       ============================================================ -->
-  <script>
-    function loadPage(page, link) {
-      const frame = document.getElementById("main-frame");
-      const loader = document.getElementById("frame-loader");
-
-      if (frame.src.includes(page)) return;
-      frame.src = page + "?t=" + Date.now();
-      loader.classList.add("active");
-      document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
-      if (link) link.classList.add("active");
-
-      const btn = document.getElementById("scroll-top-btn");
-      if (btn) btn.style.opacity = "0.9";
-    }
-
-    const frame = document.getElementById("main-frame");
-    frame.addEventListener("load", () => {
-      document.getElementById("frame-loader").classList.remove("active");
-    });
-
-    async function loadVisitorStats() {
-      const el = document.getElementById("total-visitors");
-      if (!el) return;
-      try {
-        const resp = await fetch("tracking.json?nocache=" + Date.now());
-        const data = await resp.json();
-        el.textContent = "Visitors total: " + (data.total || 0);
-      } catch {
-        el.textContent = "Visitors total: unavailable";
-      }
-    }
-    loadVisitorStats();
-  </script>
-
-  <!-- ============================================================
-       📏 Auto-Height Communication (Parent)
-       ============================================================ -->
-  <script>
-    (function () {
-      const frame = document.getElementById('main-frame');
-
-      function setH(h) {
-        if (!frame || !h) return;
-        const newH = Math.ceil(h) + 1;
-        const cur = parseInt(frame.style.height || '0', 10);
-        if (Math.abs(newH - cur) > 2) frame.style.height = newH + 'px';
-      }
-
-      // Nachrichten vom iframe empfangen
-      window.addEventListener('message', (e) => {
-        const d = e.data;
-        if (!d || d.type !== 'rc-iframe-size') return;
-        setH(d.h);
-      });
-
-      // Erste und Sicherheitsmessungen
-      frame.addEventListener('load', () => {
-        setH(800);
-        setTimeout(() => setH(1200), 400);
-        setTimeout(() => setH(2000), 1200);
-      });
-
-      // Bei Resize neu abfragen
-      window.addEventListener('resize', () => {
-        if (frame?.contentWindow)
-          frame.contentWindow.postMessage({ type: 'rc-iframe-ping' }, '*');
-      });
-    })();
-  </script>
-
-  <!-- ============================================================
-       🔼 GLOBAL Scroll-to-Top Button
-       ============================================================ -->
   <button id="scroll-top-btn" title="Back to Top">↑</button>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("scroll-top-btn");
-      const frame = document.getElementById("main-frame");
-
-      if (!btn || !frame) return;
-
-      btn.addEventListener("click", () => {
-        try {
-          const innerDoc = frame.contentDocument || frame.contentWindow?.document;
-          if (!innerDoc) return;
-
-          const target =
-            innerDoc.getElementById("page-top") ||
-            innerDoc.querySelector("h1, h2, .page-intro");
-
-          if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-          else innerDoc.documentElement.scrollTo({ top: 0, behavior: "smooth" });
-
-          btn.style.transform = "scale(0.9)";
-          setTimeout(() => (btn.style.transform = ""), 150);
-        } catch (err) {
-          console.warn("⚠️ Scroll-to-top failed:", err);
-        }
-      });
-
-      btn.style.opacity = "0.9";
-      btn.style.pointerEvents = "auto";
-    });
-  </script>
+	<!-- 🧠 Shared RealityCheck Core -->
+	<script src="scripts/core.js" defer></script>
 
 </body>
 </html>

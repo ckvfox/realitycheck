@@ -1384,5 +1384,12 @@
     "lat": 6.3,
     "lon": -10.8,
     "iso_a3": "LBR"
-  }
+  },
+	"Greenland": {
+  "iso_a3": "GRL",
+  "capital": "Nuuk",
+  "government": "Constituent country (Kingdom of Denmark)",
+  "lat": 64.18,
+  "lon": -51.72
+}
 }

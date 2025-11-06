@@ -56,7 +56,7 @@ function initModeSwitch() {
     normalBtn.classList.add("active");
     funOn = false; safeOn = false;
     funBtn.setAttribute("aria-pressed","false"); funBtn.textContent = "😎 Fun Mode deactivated";
-    safeBtn.setAttribute("aria-pressed","false"); safeBtn.textContent = "🛡️ Safe Haven deactivated";
+    safeBtn.setAttribute("aria-pressed","false"); safeBtn.textContent = "🛡️ Safe Haven Mode deactivated";
     updateModeIcons();
   });
 
@@ -75,7 +75,7 @@ function initModeSwitch() {
   // Safe toggle
   safeBtn.addEventListener("click", () => {
     safeOn = !safeOn;
-    const label = safeOn ? "🛡️ Safe Haven activated" : "🛡️ Safe Haven deactivated";
+    const label = safeOn ? "🛡️ Safe Haven Mode activated" : "🛡️ Safe Haven Mode deactivated";
     safeBtn.textContent = label;
     safeBtn.setAttribute("aria-pressed", safeOn ? "true" : "false");
 
@@ -267,7 +267,6 @@ async function buildOverallRanking() {
 
   renderOverallTable(list);
   renderLegend(prioritizedCount, missingKPIs);
-	await loadFunSafeImmigrationSets();   // Sets laden (inkl. 🧳 Immigration)
   initModeSwitch();          // Buttons sicher initialisieren (einmalig)
   updateModeIcons();         // Icons gemäß aktuellem Toggle-Status (Default: aus)
 
