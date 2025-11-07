@@ -1,41 +1,61 @@
 /* ============================================================
-   🌐 RealityCheck – Core Utilities (shared functions, 2025-11-06)
+   🌍 RealityCheck – Shared Header & Footer Loader (no iframes)
    ============================================================ */
 
-/* ============================================================
-   🩵 Iframe Environment Fix (Auto Layout + Scroll Behavior)
-   ============================================================ */
-
-// Wenn Seite im iframe läuft → kein eigener Scroll, volle Höhe an Parent
-/* ✅ Correct iframe scroll behavior */
-if (window.self !== window.top) {
+document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const styleFix = document.createElement("style");
-    styleFix.textContent = `
-      html, body {
-        overflow-x: hidden !important;
-        overflow-y: visible !important;  /* Seite selbst darf wachsen, Scroll übernimmt index.html */
-        height: auto !important;
-        min-height: 100% !important;
-        overscroll-behavior: contain !important;
-        -webkit-overflow-scrolling: touch !important;
-      }
+    // === Header laden ===
+    const headerRes = await fetch("header.html?t=" + Date.now());
+    const headerHtml = await headerRes.text();
+    const header = document.createElement("div");
+    header.innerHTML = headerHtml;
+    document.body.prepend(header);
 
-      #data-table, .table-wrapper {
-        overflow-x: auto !important;
-        max-width: 100% !important;
+    // Aktiven Menüpunkt markieren
+    const current = location.pathname.split("/").pop();
+    header.querySelectorAll("nav a").forEach(a => {
+      if (a.getAttribute("href") === current) a.classList.add("active");
+    });
+
+    // === Footer laden ===
+    const footerRes = await fetch("footer.html?t=" + Date.now());
+    const footerHtml = await footerRes.text();
+    const footer = document.createElement("div");
+    footer.innerHTML = footerHtml;
+    document.body.appendChild(footer);
+
+    // === ⏳ Tracking & Besucherzähler (erst nach Footer) ===
+    setTimeout(async () => {
+      try {
+        // Tracking-Ping nur außerhalb von iframes
+        if (window.self === window.top) {
+          await fetch("tracking.php", { method: "POST", cache: "no-store" });
+          console.log("📈 Tracking ping sent (delayed).");
+        }
+
+        // Besucherzahl aus tracking.json laden
+        const el = document.getElementById("total-visitors");
+        if (el) {
+          const resp = await fetch("tracking.json?nocache=" + Date.now());
+          if (resp.ok) {
+            const data = await resp.json();
+            el.textContent = "Visitors total: " + (data.total ?? "–");
+          } else {
+            el.textContent = "Visitors total: unavailable";
+          }
+        }
+      } catch (err) {
+        console.warn("⚠️ Visitor tracking failed:", err);
+        const el = document.getElementById("total-visitors");
+        if (el) el.textContent = "Visitors total: unavailable";
       }
-    `;
-    document.head.appendChild(styleFix);
-  } catch (e) {
-    console.warn("⚠️ Iframe scroll fix failed:", e);
+    }, 800); // Footer ist nach ~0,8 s sicher eingefügt
+
+  } catch (err) {
+    console.warn("⚠️ Header/Footer load failed:", err);
   }
-}
+});
 
-
-/* ============================================================
-   🌐 RealityCheck – Core Utilities (shared functions, 2025-10)
-   ============================================================ */
 
 // === Load JSON with cache-bypass & safe parse (FINAL FIX 2025-11-02) ===
 async function loadJSON(path) {
@@ -283,56 +303,11 @@ window.loadAllKPIData = loadAllKPIData;
 window.loadKpiAnalysis = loadKpiAnalysis;
 window.renderKpiAnalysis = renderKpiAnalysis;
 
-/* ============================================================
-   🧱 Footer Loader (RealityCheck modular footer, 2025-11-06, iframe-aware)
-   ============================================================ */
-(async function loadFooter() {
-  try {
-    // 🚫 1️⃣ Kein Footer, wenn Seite im iframe läuft (z. B. countries.html)
-    if (window.self !== window.top) {
-      console.log("🧩 Detected iframe – skipping footer load.");
-      return;
-    }
-
-    // 🛑 2️⃣ Wenn bereits ein Footer vorhanden ist → nicht nochmal laden
-    if (document.querySelector("footer#site-footer")) {
-      console.log("🧭 Footer already exists, skipping load.");
-      return;
-    }
-
-    // 📥 Footer aus externer Datei laden
-    const res = await fetch("footer.html?t=" + Date.now());
-    if (!res.ok) return;
-    const html = await res.text();
-
-    // Footer-ID hinzufügen, damit er eindeutig erkannt wird
-    const wrapper = document.createElement("div");
-    wrapper.innerHTML = html.trim();
-    const footer = wrapper.firstElementChild;
-    if (footer) {
-      footer.id = "site-footer";
-      document.body.appendChild(footer);
-    }
-
-    // 👥 Besucherzähler aus tracking.json laden
-    const el = document.getElementById("total-visitors");
-    if (el) {
-      try {
-        const resp = await fetch("tracking.json?nocache=" + Date.now());
-        const data = await resp.json();
-        el.textContent = "Visitors total: " + (data.total || 0);
-      } catch {
-        el.textContent = "Visitors total: unavailable";
-      }
-    }
-  } catch (e) {
-    console.warn("⚠️ Footer-Load failed:", e);
-  }
-})();
 
 /* ============================================================
-   🧭 Navigation + Visitor Stats (moved from index.html)
+   🧭 Navigation + Visitor Stats (index.html integration)
    ============================================================ */
+
 
 // === IFrame Page Loader ===
 window.loadPage = function (page, link) {
@@ -360,6 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
 
 /* ============================================================
    🔼 Global Scroll-to-Top Button (iframe-aware RealityCheck v9.3)
@@ -390,13 +366,42 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.style.pointerEvents = "auto";
 });
 
-// === RC: Visitor tracking ping ===
-(async function pingTracking() {
-  try {
-    if (window.self !== window.top) return;
-    await fetch("tracking.php", { method: "POST", cache: "no-store" });
-    console.log("📈 Tracking ping sent.");
-  } catch (err) {
-    console.warn("⚠️ Tracking failed:", err);
-  }
-})();
+/* ============================================================
+   📱 Mobile Tooltip Popups for Mode Buttons
+   ============================================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  // Nur auf mobilen Geräten aktivieren
+  if (window.innerWidth > 600) return;
+
+  document.querySelectorAll(".mode-button").forEach(btn => {
+    btn.addEventListener("click", e => {
+      // Falls schon ein Tooltip offen ist → entfernen
+      const old = document.querySelector(".mode-tooltip");
+      if (old) old.remove();
+
+      const text = btn.getAttribute("title") || "";
+      if (!text) return;
+
+      // Tooltip-Element erzeugen
+      const tip = document.createElement("div");
+      tip.className = "mode-tooltip";
+      tip.textContent = text;
+      document.body.appendChild(tip);
+
+      // Position über Button berechnen
+      const rect = btn.getBoundingClientRect();
+      tip.style.left = `${rect.left + rect.width / 2}px`;
+      tip.style.top = `${rect.top - 8}px`;
+
+      // Sanft einblenden
+      requestAnimationFrame(() => tip.classList.add("visible"));
+
+      // Nach 1.5s wieder entfernen
+      setTimeout(() => {
+        tip.classList.remove("visible");
+        setTimeout(() => tip.remove(), 300);
+      }, 1500);
+    });
+  });
+});
+

@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <!-- 🔄 Lade-Spinner -->
   <div id="overlay-spinner" class="hidden"></div>
+	<button id="scroll-top-btn" title="Scroll to top">⬆️</button>
 
 	<section class="page-intro">
 	  <h1>🌍 RealityCheck – Overall Country Ranking</h1>
@@ -57,13 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
   <!-- 🌈 Mode Switch Buttons -->
 <section id="mode-switch">
-  <button id="normalMode" class="active">🌍 Normal</button>
-  <button id="funMode" aria-pressed="false">😎 Fun Mode deactivated</button>
-  <button id="safeMode" aria-pressed="false">🛡️ Safe Haven Mode deactivated</button>
-  <button id="immigrationMode" aria-pressed="false">🧳 Immigration Mode deactivated</button> <!-- 🧳 neu -->
+	<button id="normalMode" class="mode-button active" title="Normal Mode"><span class="emoji">🌍</span><span>Normal</span></button>
+	<button id="funMode" class="mode-button" title="Fun Mode"><span class="emoji">😎</span><span>Fun</span></button>
+	<button id="safeMode" class="mode-button" title="Safe Haven Mode"><span class="emoji">🛡️</span><span>Safe</span></button>
+	<button id="immigrationMode" class="mode-button" title="Immigration Mode"><span class="emoji">🧳</span><span>Immigration</span></button>
 </section>
-
-
 
   <!-- 📊 Ergebnis-Tabelle -->
 <section id="overall-results">

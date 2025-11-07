@@ -808,7 +808,7 @@ async function initMap() {
   }
 }
 
-/* ========= KPI HEATMAP COLORING (ISO-BASED, FULL VERSION) ========= */
+/* ========= KPI HEATMAP COLORING (ISO-BASED, ADAPTIVE VERSION, 2025-11-07) ========= */
 async function updateMap() {
   if (!map || !currentKpi || !window._worldGeoJSON) return;
 
@@ -861,6 +861,7 @@ async function updateMap() {
   }
 
   const values = Object.values(mapDataByIso).filter(v => Number.isFinite(v));
+  if (!values.length) return;
   const min = Math.min(...values);
   const max = Math.max(...values);
 
@@ -875,6 +876,7 @@ async function updateMap() {
   const adjMin = Math.min(min, q05);
   const adjMax = Math.max(max, q95);
 
+  // === Farbzuweisung ===
   const getColor = val => {
     if (!Number.isFinite(val) || values.length === 0) return "#e6e6e6";
 
@@ -885,9 +887,9 @@ async function updateMap() {
         Math.abs(adjMin - targetVal),
         1e-6
       );
-      const deviation = Math.abs(val - targetVal) / maxDeviation; // 0 = perfekt, 1 = schlecht
+      const deviation = Math.abs(val - targetVal) / maxDeviation;
       const hue = 120 * (1 - Math.min(deviation, 1)); // 120 = grün, 0 = rot
-      return `hsl(${hue}, 85%, 45%)`;
+      return `hsl(${hue},85%,45%)`;
     }
 
     // 📈 Divergierende Skala für KPIs mit negativen & positiven Werten
@@ -895,26 +897,30 @@ async function updateMap() {
       const range = Math.max(Math.abs(adjMin), Math.abs(adjMax));
       const ratio = val / range; // -1 bis +1
       const hue = ratio >= 0
-        ? 60 + (60 * ratio)    // 60–120 → Gelb bis Grün (positive Werte)
-        : 0 + (60 * (ratio + 1)); // 0–60 → Rot bis Gelb (negative Werte)
-      return `hsl(${hue}, 85%, 50%)`;
+        ? 60 + (60 * ratio)     // 60–120 → Gelb → Grün
+        : 0 + (60 * (ratio + 1)); // 0–60 → Rot → Gelb
+      return `hsl(${hue},85%,50%)`;
     }
 
-    // 📊 Standard-Logik (nur positive oder nur negative Werte)
-    const safeMin = Math.min(adjMin, 0) + 1;
-    const logMin = Math.log10(Math.abs(safeMin));
-    const logMax = Math.log10(Math.abs(adjMax) + 1);
-    const logVal = Math.log10(Math.abs(val) + 1);
-    const ratio = (logVal - logMin) / (logMax - logMin || 1);
+    // 📊 Adaptive lineare Skala + Log-Boost bei extremer Spreizung
+    const range = adjMax - adjMin || 1;
+    let ratio = (val - adjMin) / range;
+
+    // Log-Korrektur bei über 1000× Spreizung (z. B. GDP)
+    const logSpread = Math.log10(Math.max(adjMax / Math.max(adjMin, 1), 1));
+    if (logSpread > 3 && val > 0) {
+      ratio = Math.log10(val / Math.max(adjMin, 1)) / logSpread;
+    }
+
+    const normRatio = Math.min(Math.max(ratio, 0), 1);
 
     let hue;
-    if (sortMode === "higher") hue = 120 * ratio;
-    else if (sortMode === "lower") hue = 120 * (1 - ratio);
-    else hue = 120 * ratio;
+    if (sortMode === "higher") hue = 120 * normRatio;
+    else if (sortMode === "lower") hue = 120 * (1 - normRatio);
+    else hue = 120 * normRatio;
 
-    return `hsl(${hue}, 80%, 45%)`;
+    return `hsl(${hue},80%,45%)`;
   };
-
 
   // === Länder einfärben ===
   mapLayer = L.geoJSON(window._worldGeoJSON, {
@@ -952,6 +958,7 @@ async function updateMap() {
   addHeatmapLegend(min, max, meta.unit || "", meta.title || currentKpi, sortMode, targetVal);
   console.log(`🎨 Map rendered: ${meta.title} (${values.length} Länder)`);
 }
+
 
 /* ========= LEGEND (dynamic for sort + target) ========= */
 function addHeatmapLegend(min, max, unit, title, sortMode = "neutral", targetVal = null) {
@@ -1012,10 +1019,31 @@ window.initMap = initMap;
 window.updateMap = updateMap;
 window.highlightOnMap = highlightOnMap;
 
+/* ========= MAP AUTO-INIT (Retry Logic for Leaflet) ========= */
+window.addEventListener("DOMContentLoaded", () => {
+  let tries = 0;
+  const maxTries = 20;
+  const timer = setInterval(() => {
+    const mapEl = document.getElementById("map");
+    const leafletReady = typeof L !== "undefined";
+    const initReady = typeof initMap === "function";
+    const visible = mapEl && mapEl.offsetHeight > 0 && mapEl.offsetWidth > 0;
+    tries++;
+
+    if (leafletReady && initReady && visible) {
+      clearInterval(timer);
+      console.log("➡️ Starting initMap()");
+      initMap();
+      setTimeout(() => window.map?.invalidateSize?.(), 800);
+    } else if (tries >= maxTries) {
+      clearInterval(timer);
+      console.warn("⚠️ Map initialization failed after max retries");
+    }
+  }, 250);
+});
 
 /* ========= Start ========= */
 document.addEventListener("DOMContentLoaded", () => init());
-
 
 // =====================================================
 // 🔁 loadPage() for navigation (used in index.html <nav>)

@@ -1,47 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RealityCheck – Interactive Country Comparison</title>
-
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- 🖼️ Favicon & App Icons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-  <link rel="apple-touch-icon" href="favicon-180.png">
-  <link rel="shortcut icon" href="favicon-32.png" type="image/png">
-
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=countries.html">
+  <script>window.location.replace('countries.html');</script>
 </head>
-
 <body>
-  <header>
-    <a href="#" id="logo-link" onclick="loadPage('countries.html', this)">
-      <img id="logo" src="images/logo.png" alt="RealityCheck Logo" />
-      <span id="logo-text">RealityCheck</span>
-    </a>
-
-    <nav>
-      <a href="#" onclick="loadPage('countries.html', this)" class="active">Countries</a>
-      <a href="#" onclick="loadPage('world.html', this)">World</a>
-      <a href="#" onclick="loadPage('overall_ranking_countries.html', this)">Overall Ranking</a>
-      <a href="#" onclick="loadPage('analysis.html', this)">Analysis</a>
-    </nav>
-  </header>
-
-  <main>
-    <div id="frame-loader" class="active"><div class="frame-spinner"></div></div>
-    <iframe id="main-frame" src="countries.html" title="RealityCheck Content"></iframe>
-  </main>
-
-  <button id="scroll-top-btn" title="Back to Top">↑</button>
-
-	<!-- 🧠 Shared RealityCheck Core -->
-	<script src="scripts/core.js" defer></script>
-
+  Redirecting to <a href="countries.html">RealityCheck – Countries</a>...
 </body>
 </html>

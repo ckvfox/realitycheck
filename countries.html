@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RealityCheck – Countries</title>
+	<meta name="theme-color" content="#1a355e">
+	<link rel="manifest" href="manifest.json">
+
+	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="apple-touch-icon" href="favicon.png">
 
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -12,10 +17,12 @@
 </head>
 
 <body>
+	<!-- Header wird automatisch über core.js geladen -->
   <!-- 🔝 Sprungmarke für Scroll-to-Top -->
   <a id="page-top"></a>
 
   <div id="overlay-spinner" class="hidden"></div>
+	<button id="scroll-top-btn" title="Scroll to top">⬆️</button>
 	 
   <section class="page-intro">
     <h1>🗺️ RealityCheck – Countries Dashboard</h1>
@@ -99,8 +106,6 @@
 		</div>
 	</section>
 
-
-
   <!-- Quelle & Datum -->
   <div id="data-meta">
     Source: <a id="data-source" href="#" target="_blank" rel="noopener">---</a><br>
@@ -146,59 +151,13 @@
   </p>
 
   <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js" defer></script>
   
-  <script>
-    // Markiere, ob Seite im iframe läuft (für CSS-Anpassungen)
-    document.addEventListener("DOMContentLoaded", () => {
-      try {
-        if (window.self !== window.top) {
-          document.body.classList.add("in-iframe");
-        } else {
-          document.body.classList.remove("in-iframe");
-        }
-      } catch(e) {
-        console.warn("iframe detection failed", e);
-      }
-    });
-  </script>
+  <!-- Footer wird automatisch über core.js geladen -->
+  <!-- 🧠 Shared RealityCheck Core -->
+  <script src="scripts/core.js" defer></script>
+  <script src="scripts/script.js" defer></script>
 
-	<!-- 🧠 Shared RealityCheck Core -->
-	<script src="scripts/core.js" defer></script>
-  <script src="scripts/script.js"></script>
-
-  <script>
-    console.log("✅ countries.html loaded");
-
-    // 🌍 Map initialisieren, sobald DOM UND Leaflet bereit sind
-    window.addEventListener("DOMContentLoaded", () => {
-      let tries = 0;
-      const maxTries = 20;
-      const timer = setInterval(() => {
-        const mapEl = document.getElementById("map");
-        const leafletReady = typeof L !== "undefined";
-        const initReady = typeof initMap === "function";
-        const visible = mapEl && mapEl.offsetHeight > 0 && mapEl.offsetWidth > 0;
-        tries++;
-
-        console.log(`🗺️ Map check ${tries}: leaflet=${leafletReady}, initMap=${initReady}, visible=${visible}`);
-
-        if (leafletReady && initReady && visible) {
-          clearInterval(timer);
-          console.log("➡️ Starting initMap()");
-          initMap();
-          setTimeout(() => {
-            if (window.map?.invalidateSize) {
-              console.log("➡️ invalidateSize()");
-              window.map.invalidateSize();
-            }
-          }, 800);
-        } else if (tries >= maxTries) {
-          clearInterval(timer);
-          console.warn("⚠️ Map initialization failed after max retries");
-        }
-      }, 250);
-    });
-  </script>
 </body>
 </html>
+

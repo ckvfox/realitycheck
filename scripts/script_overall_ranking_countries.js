@@ -426,10 +426,12 @@ score(country) = Σ(weighted) / KPIs_used
   `;
 }
 
-
-/* ---------- Info Box (GDPR notice) ---------- */
+/* ---------- Info Box (GDPR notice – restored popup version) ---------- */
 function createInfoBox() {
+  // Verhindert Mehrfachanzeige
   if (document.getElementById("localinfo-box")) return;
+
+  // Box erzeugen
   const box = document.createElement("div");
   box.id = "localinfo-box";
   box.innerHTML = `
@@ -438,8 +440,18 @@ function createInfoBox() {
     <button id="close-localinfo">×</button>
   `;
   document.body.appendChild(box);
+
+  // Sanft einblenden (zentriert)
+  requestAnimationFrame(() => box.classList.add("show"));
+
+  // Nach 2.5 Sekunden ausblenden, nach 3 Sekunden entfernen
+  setTimeout(() => box.classList.remove("show"), 2500);
+  setTimeout(() => box.remove(), 3000);
+
+  // Manuell schließen möglich
   box.querySelector("#close-localinfo")?.addEventListener("click", () => box.remove());
 }
+
 
 /* ---------- Toast Helper (zentriert + Fade + Auto-hide) ---------- */
 function showToast(msg) {

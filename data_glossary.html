@@ -9,6 +9,8 @@
 </head>
 
 <body>
+	<button id="scroll-top-btn" title="Scroll to top">⬆️</button>
+
   <!-- 🌍 Einheitlicher Intro-Bereich -->
   <section class="page-intro">
     <h1>📊 RealityCheck – Data Glossary</h1>
@@ -57,17 +59,25 @@
     </p>
   </div>
 </section>
-
 <!-- ⚙️ Skript -->
 <script>
 async function loadGlossary() {
   try {
-    const [fetchRes, outlierRes] = await Promise.all([
+    const [fetchRes, outlierRes, metaRes] = await Promise.all([
       fetch("data/fetch_status.json"),
-      fetch("data/analysis_outliers.json")
+      fetch("data/analysis_outliers.json"),
+      fetch("data/meta/available_kpis.json")
     ]);
-    const data = await fetchRes.json();
+
+    const data     = await fetchRes.json();
     const outliers = await outlierRes.json();
+    const meta     = await metaRes.json();
+
+    // 🔹 Mapping filename → title aus available_kpis.json
+    const titleMap = {};
+    for (const m of meta) {
+      if (m.filename) titleMap[m.filename] = m.title || m.id || m.filename;
+    }
 
     const tbody = document.getElementById("glossary-body");
     tbody.innerHTML = "";
@@ -75,7 +85,6 @@ async function loadGlossary() {
     const kpis = data.kpis || {};
     const nowYear = new Date().getFullYear();
 
-    // Aggregate-Labels, die nie als Outlier im Glossary erscheinen sollen
     const EXCLUDE = new Set([
       "World",
       "European Union",
@@ -83,7 +92,6 @@ async function loadGlossary() {
       "OECD members"
     ]);
 
-    // Kurze Datumsausgabe im Format DD.MM.YY
     function formatShortDate(dateStr) {
       if (!dateStr) return "–";
       const d = new Date(dateStr);
@@ -98,22 +106,15 @@ async function loadGlossary() {
       const tr = document.createElement("tr");
       const out = outliers[id] || {};
 
-      // Roh-Arrays aus JSON holen
       const highsRaw = Array.isArray(out.high_outliers) ? out.high_outliers : [];
       const lowsRaw  = Array.isArray(out.low_outliers)  ? out.low_outliers  : [];
-
-      // "World" & Co. herausfiltern
       const highs = highsRaw.filter(e => e && !EXCLUDE.has(e.country));
       const lows  = lowsRaw.filter(e => e && !EXCLUDE.has(e.country));
 
-      // Outlier-Anzahl
       const flaggedCount = highs.length + lows.length;
-
-      // Min/Max ermitteln (wertbasiert robust, nicht positionsbasiert)
       const maxEntry = highs.reduce((a,b) => (a==null || b.value > a.value) ? b : a, null);
       const minEntry = lows.reduce((a,b)  => (a==null || b.value < a.value) ? b : a, null);
 
-      // Freshness-Klassen
       const dy = parseInt(info.data_year) || 0;
       const diffY = dy ? nowYear - dy : 99;
       const clsYear = diffY <= 1 ? "fresh" : diffY <= 3 ? "warn" : "stale";
@@ -126,7 +127,6 @@ async function loadGlossary() {
         clsSrc = diffS <= 1 ? "fresh" : diffS <= 3 ? "warn" : "stale";
       }
 
-      // Outlier-Farbklasse
       let clsOut = "";
       if (flaggedCount >= 10) clsOut = "outlier";
       else if (flaggedCount > 0) clsOut = "warn";
@@ -134,8 +134,11 @@ async function loadGlossary() {
       const minInfo = minEntry ? `${minEntry.country} (${minEntry.year})` : "–";
       const maxInfo = maxEntry ? `${maxEntry.country} (${maxEntry.year})` : "–";
 
+      // 💡 Zeigt den human-readable KPI-Titel an
+      const title = titleMap[id] || id;
+
       tr.innerHTML = `
-        <td>${id}</td>
+        <td>${title}</td>
         <td>${info.source ? `<a href="${info.source}" target="_blank">${info.source}</a>` : "?"}</td>
         <td class="${clsYear}">${info.data_year || "Unknown"}</td>
         <td class="${clsSrc}">${formatShortDate(info.source_date)}</td>
@@ -158,6 +161,7 @@ async function loadGlossary() {
 
 window.addEventListener("DOMContentLoaded", loadGlossary);
 </script>
+
 <!-- 🧠 Shared RealityCheck Core -->
 <script src="scripts/core.js" defer></script>
 
