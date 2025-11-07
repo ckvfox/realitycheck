@@ -32,7 +32,7 @@ async function initOverall() {
 
   showSpinner(false);
   fetchLastUpdated();
-  createInfoBox();
+  
 }
 
 // ============================================================
@@ -50,48 +50,54 @@ function initModeSwitch() {
   const immigrBtn = document.getElementById("immigrationMode");
 
 
-  // Normal = Icons aus, Buttons resetten
-  normalBtn.addEventListener("click", () => {
-    document.querySelectorAll("#mode-switch button").forEach(b => b.classList.remove("active"));
-    normalBtn.classList.add("active");
-    funOn = false; safeOn = false;
-    funBtn.setAttribute("aria-pressed","false"); funBtn.textContent = "😎 Fun Mode deactivated";
-    safeBtn.setAttribute("aria-pressed","false"); safeBtn.textContent = "🛡️ Safe Haven Mode deactivated";
-    updateModeIcons();
-  });
+	// Normal = Icons aus, Buttons resetten
+	normalBtn.addEventListener("click", () => {
+		document.querySelectorAll("#mode-switch button").forEach(b => b.classList.remove("active"));
+		normalBtn.classList.add("active");
 
-  // Fun toggle
-  funBtn.addEventListener("click", () => {
-    funOn = !funOn;
-    const label = funOn ? "😎 Fun Mode activated" : "😎 Fun Mode deactivated";
-    funBtn.textContent = label;
-    funBtn.setAttribute("aria-pressed", funOn ? "true" : "false");
+		// Zustände zurücksetzen
+		funOn = false;
+		safeOn = false;
+		immigrOn = false;
 
-    // Aktiv-Status-Style nur auf Buttons, Normal bleibt unmarkiert
-    funBtn.classList.toggle("active", funOn);
-    updateModeIcons();
-  });
+		// Kurzlabels wiederherstellen
+		funBtn.textContent = "😎 Fun";
+		safeBtn.textContent = "🛡️ Safe";
+		immigrBtn.textContent = "🧳 Immigration";
 
-  // Safe toggle
-  safeBtn.addEventListener("click", () => {
-    safeOn = !safeOn;
-    const label = safeOn ? "🛡️ Safe Haven Mode activated" : "🛡️ Safe Haven Mode deactivated";
-    safeBtn.textContent = label;
-    safeBtn.setAttribute("aria-pressed", safeOn ? "true" : "false");
+		updateModeIcons();
+	});
 
-    safeBtn.classList.toggle("active", safeOn);
-    updateModeIcons();
-  });
-  
-  // Immigration toggle 🧳
-  immigrBtn.addEventListener("click", () => {
-    immigrOn = !immigrOn;
-    const label = immigrOn ? "🧳 Immigration Mode activated" : "🧳 Immigration Mode deactivated";
-    immigrBtn.textContent = label;
-    immigrBtn.setAttribute("aria-pressed", immigrOn ? "true" : "false");
-    immigrBtn.classList.toggle("active", immigrOn);
-    updateModeIcons();
-  });
+	// Fun toggle
+	funBtn.addEventListener("click", () => {
+		funOn = !funOn;
+		const label = funOn ? "😎 Fun Mode activated" : "😎 Fun";
+		funBtn.textContent = label;
+		funBtn.setAttribute("aria-pressed", funOn ? "true" : "false");
+		funBtn.classList.toggle("active", funOn);
+		updateModeIcons();
+	});
+
+	// Safe toggle
+	safeBtn.addEventListener("click", () => {
+		safeOn = !safeOn;
+		const label = safeOn ? "🛡️ Safe Haven Mode activated" : "🛡️ Safe";
+		safeBtn.textContent = label;
+		safeBtn.setAttribute("aria-pressed", safeOn ? "true" : "false");
+		safeBtn.classList.toggle("active", safeOn);
+		updateModeIcons();
+	});
+
+	// Immigration toggle 🧳
+	immigrBtn.addEventListener("click", () => {
+		immigrOn = !immigrOn;
+		const label = immigrOn ? "🧳 Immigration Mode activated" : "🧳 Immigration";
+		immigrBtn.textContent = label;
+		immigrBtn.setAttribute("aria-pressed", immigrOn ? "true" : "false");
+		immigrBtn.classList.toggle("active", immigrOn);
+		updateModeIcons();
+	});
+
 
 }
 
@@ -190,13 +196,36 @@ function buildRelevanceControls() {
     location.reload();
   });
 
-  // Show info box when something changes
-  container.querySelectorAll("select").forEach(sel => {
-    sel.addEventListener("change", () => {
-      const box = document.getElementById("localinfo-box");
-      if (box) box.style.display = "block";
-    });
-  });
+	// === Änderungen an Gewichtungen überwachen ===
+	container.querySelectorAll("select").forEach(sel => {
+		sel.addEventListener("change", () => {
+			hasChangedSinceLastCalc = true;
+		});
+	});
+
+	// === Calculate-Button: Ranking + GDPR-Popup nur bei echten Änderungen ===
+	document.getElementById("calc-btn").addEventListener("click", async () => {
+		for (const meta of kpis) {
+			const sel = container.querySelector(`select[data-kpi="${meta.filename}"]`);
+			if (sel) meta.relevance = sel.value;
+		}
+
+		localStorage.setItem(
+			"overallKPIWeights",
+			JSON.stringify(Object.fromEntries(kpis.map(m => [m.filename, m.relevance || "normal"])))
+		);
+
+		showToast("KPI selection saved");
+
+		// Nur zeigen, wenn etwas verändert wurde
+		if (hasChangedSinceLastCalc) {
+			createInfoBox();
+			hasChangedSinceLastCalc = false;
+		}
+
+		await buildOverallRanking();
+	});
+
 }
 
 /* ---------- Build Overall Ranking ---------- */
@@ -425,31 +454,31 @@ score(country) = Σ(weighted) / KPIs_used
     </div>
   `;
 }
+/* ---------- Info Box (GDPR notice – show only after Calculate if changed) ---------- */
+let hasChangedSinceLastCalc = false;
 
-/* ---------- Info Box (GDPR notice – restored popup version) ---------- */
 function createInfoBox() {
-  // Verhindert Mehrfachanzeige
-  if (document.getElementById("localinfo-box")) return;
-
-  // Box erzeugen
-  const box = document.createElement("div");
-  box.id = "localinfo-box";
-  box.innerHTML = `
-    <strong>ℹ️ Info:</strong> Your weighting settings are stored <b>locally</b> in your browser.<br>
-    No cookies and no data are sent anywhere.
-    <button id="close-localinfo">×</button>
-  `;
-  document.body.appendChild(box);
+  // Bestehende Box wiederverwenden, falls sie noch da ist
+  let box = document.getElementById("localinfo-box");
+  if (!box) {
+    box = document.createElement("div");
+    box.id = "localinfo-box";
+    box.innerHTML = `
+      <strong>ℹ️ Info:</strong> Your weighting settings are stored <b>locally</b> in your browser.<br>
+      No cookies and no data are sent anywhere.
+      <button id="close-localinfo">×</button>
+    `;
+    document.body.appendChild(box);
+    box.querySelector("#close-localinfo")?.addEventListener("click", () => box.remove());
+  }
 
   // Sanft einblenden (zentriert)
   requestAnimationFrame(() => box.classList.add("show"));
 
-  // Nach 2.5 Sekunden ausblenden, nach 3 Sekunden entfernen
-  setTimeout(() => box.classList.remove("show"), 2500);
-  setTimeout(() => box.remove(), 3000);
-
-  // Manuell schließen möglich
-  box.querySelector("#close-localinfo")?.addEventListener("click", () => box.remove());
+  // Langsamer ausblenden (nach 4 s sichtbar, danach 5 s Fade)
+  clearTimeout(box._timeout);
+  box._timeout = setTimeout(() => box.classList.remove("show"), 4000);
+  setTimeout(() => box.remove(), 5000);
 }
 
 
@@ -465,20 +494,22 @@ function showToast(msg) {
     // Basis-Styles (falls CSS fehlt oder noch nicht geladen)
     Object.assign(toast.style, {
       position: "fixed",
-      top: "20px",
+      top: "50%",
       left: "50%",
-      transform: "translateX(-50%) translateY(-20px)",
-      background: "#1a355e",
+      transform: "translate(-50%, -50%) scale(0.9)",
+      background: "rgba(0, 0, 0, 0.8)",
       color: "#fff",
-      padding: "0.75rem 1.25rem",
-      borderRadius: "6px",
-      fontSize: "0.95rem",
+      padding: "1rem 1.6rem",
+      borderRadius: "10px",
+      fontSize: "1rem",
       fontWeight: "500",
-      boxShadow: "0 3px 10px rgba(0,0,0,0.15)",
+      boxShadow: "0 6px 18px rgba(0,0,0,0.35)",
       opacity: "0",
-      transition: "opacity .4s ease, transform .4s ease",
+      transition: "opacity 0.4s ease, transform 0.4s ease",
       zIndex: "99999",
-      pointerEvents: "none"
+      pointerEvents: "none",
+      textAlign: "center",
+      maxWidth: "80%"
     });
   }
 
@@ -486,17 +517,17 @@ function showToast(msg) {
   toast.textContent = msg;
   toast.classList.add("show");
 
-  // Animation: Fade-In (via Inline-Styles, falls CSS noch nicht geladen)
+  // Animation: Fade-In
   requestAnimationFrame(() => {
     toast.style.opacity = "1";
-    toast.style.transform = "translateX(-50%) translateY(0)";
+    toast.style.transform = "translate(-50%, -50%) scale(1)";
   });
 
-  // Automatisches Ausblenden nach 2.5s
+  // Automatisches Ausblenden nach 2.5 s
   clearTimeout(toast._timeout);
   toast._timeout = setTimeout(() => {
     toast.style.opacity = "0";
-    toast.style.transform = "translateX(-50%) translateY(-20px)";
+    toast.style.transform = "translate(-50%, -50%) scale(0.9)";
     toast.classList.remove("show");
   }, 2500);
 }
