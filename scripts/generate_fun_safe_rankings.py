@@ -103,8 +103,18 @@ Base your reasoning on global indexes such as:
 – World Happiness Index
 – Rule of Law, Safety, and Economic Stability
 
-Return a valid JSON array of objects with fields: "rank", "country", and "reason" (2–3 concise sentences).
-Ensure all brackets are properly closed.
+Output STRICTLY as valid JSON array, no comments or text.
+Each entry must have:
+  {
+    "rank": <int>,
+    "country": "<string>",
+    "reason": "<string>"
+  }
+Example:
+[
+  {"rank": 1, "country": "Canada", "reason": "open immigration policies"},
+  ...
+]
 """.strip()
 
 # === Core ===

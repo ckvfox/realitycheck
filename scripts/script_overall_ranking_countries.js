@@ -34,77 +34,77 @@ async function initOverall() {
   fetchLastUpdated();
   
 }
-
 // ============================================================
-// 🌈 Mode Switch (Normal / Fun / Safe Haven)
+// 🌈 Mode Switch (Normal / Fun / Safe Haven / Immigration)
 // ============================================================
 function initModeSwitch() {
-  if (document.getElementById("mode-switch-initialized")) return; // einmalig
+  if (document.getElementById("mode-switch-initialized")) return;
   const marker = document.createElement("div");
   marker.id = "mode-switch-initialized";
   document.body.appendChild(marker);
 
+  // Buttons
   const normalBtn = document.getElementById("normalMode");
-  const funBtn = document.getElementById("funMode");
-  const safeBtn = document.getElementById("safeMode");
+  const funBtn    = document.getElementById("funMode");
+  const safeBtn   = document.getElementById("safeMode");
   const immigrBtn = document.getElementById("immigrationMode");
 
+  if (!normalBtn || !funBtn || !safeBtn || !immigrBtn) {
+    console.warn("⚠️ Mode buttons not found");
+    return;
+  }
 
-	// Normal = Icons aus, Buttons resetten
-	normalBtn.addEventListener("click", () => {
-		document.querySelectorAll("#mode-switch button").forEach(b => b.classList.remove("active"));
-		normalBtn.classList.add("active");
+  // === Global-State benutzen (nicht lokale let!) ===
+  window.funOn = false;
+  window.safeOn = false;
+  window.immigrOn = false;
 
-		// Zustände zurücksetzen
-		funOn = false;
-		safeOn = false;
-		immigrOn = false;
+  // === Helper ===
+  const updateLabel = (btn, text) => {
+    const spans = btn.querySelectorAll("span");
+    if (spans[1]) spans[1].textContent = text;
+  };
 
-		// Kurzlabels wiederherstellen
-		funBtn.textContent = "😎 Fun";
-		safeBtn.textContent = "🛡️ Safe";
-		immigrBtn.textContent = "🧳 Immigration";
+  // === Reset ===
+  normalBtn.addEventListener("click", () => {
+    document.querySelectorAll("#mode-switch button").forEach(b => b.classList.remove("active"));
+    normalBtn.classList.add("active");
 
-		updateModeIcons();
-	});
+    funOn = safeOn = immigrOn = false;
+    updateLabel(funBtn, "Fun");
+    updateLabel(safeBtn, "Safe");
+    updateLabel(immigrBtn, "Immigration");
 
-	// Fun toggle
-	funBtn.addEventListener("click", () => {
-		funOn = !funOn;
-		const label = funOn ? "😎 Fun Mode activated" : "😎 Fun";
-		funBtn.textContent = label;
-		funBtn.setAttribute("aria-pressed", funOn ? "true" : "false");
-		funBtn.classList.toggle("active", funOn);
-		updateModeIcons();
-	});
+    updateModeIcons();
+  });
 
-	// Safe toggle
-	safeBtn.addEventListener("click", () => {
-		safeOn = !safeOn;
-		const label = safeOn ? "🛡️ Safe Haven Mode activated" : "🛡️ Safe";
-		safeBtn.textContent = label;
-		safeBtn.setAttribute("aria-pressed", safeOn ? "true" : "false");
-		safeBtn.classList.toggle("active", safeOn);
-		updateModeIcons();
-	});
+  // === Fun toggle ===
+  funBtn.addEventListener("click", () => {
+    funOn = !funOn;
+    funBtn.classList.toggle("active", funOn);
+    updateLabel(funBtn, funOn ? "Fun Mode activated" : "Fun");
+    updateModeIcons();
+  });
 
-	// Immigration toggle 🧳
-	immigrBtn.addEventListener("click", () => {
-		immigrOn = !immigrOn;
-		const label = immigrOn ? "🧳 Immigration Mode activated" : "🧳 Immigration";
-		immigrBtn.textContent = label;
-		immigrBtn.setAttribute("aria-pressed", immigrOn ? "true" : "false");
-		immigrBtn.classList.toggle("active", immigrOn);
-		updateModeIcons();
-	});
+  // === Safe toggle ===
+  safeBtn.addEventListener("click", () => {
+    safeOn = !safeOn;
+    safeBtn.classList.toggle("active", safeOn);
+    updateLabel(safeBtn, safeOn ? "Safe Haven activated" : "Safe");
+    updateModeIcons();
+  });
 
-
+  // === Immigration toggle ===
+  immigrBtn.addEventListener("click", () => {
+    immigrOn = !immigrOn;
+    immigrBtn.classList.toggle("active", immigrOn);
+    updateLabel(immigrBtn, immigrOn ? "Immigration activated" : "Immigration");
+    updateModeIcons();
+  });
 }
 
+document.addEventListener("DOMContentLoaded", initModeSwitch);
 
-document.addEventListener("DOMContentLoaded", () => {
-  initModeSwitch();
-});
 
 
 /* ---------- Build KPI Cluster Boxes ---------- */

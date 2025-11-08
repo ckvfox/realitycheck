@@ -692,22 +692,7 @@
     "relevance": "none",
     "actuality": "normal"
   },
-  {
-    "title": "Global Conflict Deaths",
-    "description": "Global Conflict Deaths measures the total number of people who lose their lives due to violent political conflicts around the world over an extended period. This indicator is important because it reflects the level of violence and instability in societies, helping us understand the impact of conflict on communities and nations. Factors influencing this number include the intensity of conflicts, the types of weapons used, and the effectiveness of peacekeeping efforts. It is also related to other security metrics, such as military expenditures and refugee numbers, providing a broader picture of global security challenges. These data are compiled by Our World in Data based on the Uppsala Conflict Data Program (UCDP).",
-    "unit": "deaths",
-    "relation": "",
-    "sort": "lower",
-    "cluster": "Security & Defense",
-    "source": "https://ourworldindata.org/grapher/global-deaths-in-violent-political-conflicts-over-the-long-run",
-    "source_type": "owid",
-    "source_code": "global-deaths-in-violent-political-conflicts-over-the-long-run.csv?useColumnShortNames=true",
-    "scale": "auto",
-    "world_kpi": "e",
-    "filename": "global_conflict_deaths",
-    "relevance": "none",
-    "actuality": "normal"
-  },
+
   {
     "title": "Road Traffic Deaths",
     "description": "Road traffic deaths per 100,000 population indicate the safety of transportation systems and road infrastructure. It reflects how effectively a country enforces traffic laws, maintains its roads, and promotes safe driving practices. These data are provided by the World Bank’s World Development Indicators database.",
@@ -837,38 +822,6 @@
     "actuality": "annual"
   },
   {
-    "title": "Olympic Medals (Summer)",
-    "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Summer Olympic Games. It reflects not only elite athletic performance but also the depth of a nation's sports culture, infrastructure, and long-term investment in youth and education. While Olympic success is not a direct measure of social well-being, strong performance often correlates with effective public health systems, access to sports facilities, and widespread participation in physical education. Over time, Summer Olympic results provide insight into global development, population trends, and the influence of national training programs. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
-    "unit": "count",
-    "relation": "*",
-    "sort": "higher",
-    "cluster": "Sports & Culture",
-    "source": "Kaggle athlete_events (preprocessed)",
-    "source_type": "csv",
-    "source_code": "olympic_medals_summer.csv",
-    "scale": "none",
-    "world_kpi": "",
-    "filename": "olympic_medals_summer",
-    "relevance": "none",
-    "actuality": "stable"
-  },
-  {
-    "title": "Olympic Medals (Winter)",
-    "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Winter Olympic Games. Beyond highlighting excellence in winter sports, it also reflects broader factors such as infrastructure, climate, and social investment in physical activity. Countries that perform well often have strong public sports programs, accessible training environments, and policies promoting youth participation. Although not a direct measure of prosperity, success at the Winter Olympics can indicate robust institutions, social cohesion, and an emphasis on national health and education through sport. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
-    "unit": "count",
-    "relation": "*",
-    "sort": "higher",
-    "cluster": "Sports & Culture",
-    "source": "Kaggle athlete_events (preprocessed)",
-    "source_type": "csv",
-    "source_code": "olympic_medals_winter.csv",
-    "scale": "none",
-    "world_kpi": "",
-    "filename": "olympic_medals_winter",
-    "relevance": "none",
-    "actuality": "normal"
-  },
-  {
     "title": "Living Planet Index",
     "description": "The Living Planet Index measures global biodiversity trends by tracking more than 30,000 vertebrate populations — including mammals, birds, fish, reptiles, and amphibians — across thousands of species worldwide. A baseline value of 1.0 in 1970 represents the reference abundance, with declines indicating the average proportional loss in population size relative to that year. The index highlights the extent to which human activity has affected ecosystems and serves as a key indicator of planetary health. These data are compiled by Our World in Data based on WWF and Zoological Society of London – Living Planet Index (2024).",
     "unit": "index (1970 = 1)",
@@ -932,22 +885,7 @@
     "relevance": "critical",
     "actuality": "critical"
   },
-  {
-    "title": "Global Supply Chain Stress Index",
-    "description": "The Global Supply Chain Stress Index (GSSI) measures pressures and disruptions in international supply chains based on global trade, shipping, and logistics data. Higher values indicate increased stress, while lower values signal stable supply networks. These data are published by the Federal Reserve Bank of New York – Global Supply Chain Pressure Index (GSCPI).",
-    "unit": "index (baseline = 0)",
-    "relation": "",
-    "sort": "lower",
-    "cluster": "Economy & Labor",
-    "source": "https://fred.stlouisfed.org/series/GSCPI",
-    "source_type": "csv",
-    "source_code": "global_supply_chain_stress_index.csv",
-    "scale": "index",
-    "world_kpi": "e",
-    "filename": "global_supply_chain_stress_index",
-    "relevance": "normal",
-    "actuality": "critical"
-  },
+
   {
     "title": "Global Temperature Anomaly",
     "description": "Average deviation of Earth's surface temperature relative to the pre-industrial baseline (1850–1900). It reflects the planet’s long-term warming trend driven by greenhouse gas emissions, with recent years consistently exceeding 1 °C above that baseline. The indicator shows how close we are to critical thresholds like +1.5 °C under the Paris Agreement. These data are compiled by Our World in Data based on Berkeley Earth and NASA GISTEMP temperature records.",
@@ -977,22 +915,6 @@
     "scale": "index",
     "world_kpi": "",
     "filename": "inform_resilience_index",
-    "relevance": "normal",
-    "actuality": "stable"
-  },
-  {
-    "title": "Climate Risk Index",
-    "description": "The Global Climate Risk Index analyses to what extent countries have been affected by the impacts of weather-related loss events (storms, floods, heatwaves, etc.). A lower score indicates higher climate risk. These data are published annually by Germanwatch – Global Climate Risk Index Report.",
-    "unit": "index (rank-based)",
-    "relation": "",
-    "sort": "lower",
-    "cluster": "Environment & Sustainability",
-    "source": "https://germanwatch.org/en/cri",
-    "source_type": "csv",
-    "source_code": "climate_risk_index.csv",
-    "scale": "index",
-    "world_kpi": "",
-    "filename": "climate_risk_index",
     "relevance": "normal",
     "actuality": "stable"
   },

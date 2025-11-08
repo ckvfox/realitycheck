@@ -1,169 +1,204 @@
-<!-- data_glossary.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RealityCheck – Data Glossary</title>
+
   <link rel="stylesheet" href="style.css" />
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    try {
+      if (window.self !== window.top) {
+        document.body.classList.add("in-iframe");
+      } else {
+        document.body.classList.remove("in-iframe");
+      }
+    } catch(e) {
+      console.warn("iframe detection failed", e);
+    }
+  });
+  </script>
 </head>
 
-<body>
-	<button id="scroll-top-btn" title="Scroll to top">⬆️</button>
+<body class="glossary-page">
 
-  <!-- 🌍 Einheitlicher Intro-Bereich -->
+  <!-- 🔄 Lade-Spinner -->
+  <div id="overlay-spinner" class="hidden"></div>
+  <button id="scroll-top-btn" title="Scroll to top">⬆️</button>
+
+  <!-- 🌍 Intro -->
   <section class="page-intro">
     <h1>📊 RealityCheck – Data Glossary</h1>
     <p>
       This overview lists all <strong>indicators currently used in RealityCheck</strong>, 
-      including their data sources, latest available year, and freshness status.
+      including their data sources, latest available year, data freshness, and outlier analysis.
     </p>
     <p>
-      It helps you trace where each figure originates from and how recently it was updated — 
-      a transparent foundation for all comparisons and analyses.
+      It helps you trace where each figure originates from, how recent it is, 
+      and how broad the data coverage is across countries.
+      Outlier countries indicate statistical extremes automatically detected in the global dataset.
     </p>
-
   </section>
 
-<!-- 📑 Tabelle -->
-<section id="glossary-container">
-  <table id="glossary-table">
-    <thead>
-      <tr>
-        <th>KPI</th>
-        <th>Source</th>
-        <th>Data Year</th>
-        <th>Source Date</th>
-        <th>Last Fetch</th>
-        <th>Outliers</th>
-      </tr>
-    </thead>
-    <tbody id="glossary-body">
-      <tr>
-        <td colspan="6" style="text-align:center;">Loading data …</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- 📑 Tabelle -->
+  <section id="glossary-container">
+    <table id="glossary-table">
+      <thead>
+        <tr>
+          <th>KPI</th>
+          <th>Source</th>
+          <th>Data Year</th>
+          <th>Source Date</th>
+          <th>Last Fetch</th>
+          <th>Countries</th>
+          <th>Outliers</th>
+        </tr>
+      </thead>
+      <tbody id="glossary-body">
+        <tr><td colspan="7" style="text-align:center;">Loading data…</td></tr>
+      </tbody>
+    </table>
 
-  <!-- 🧭 Legende -->
-  <div id="legend">
-    <p class="note">
-      Data years are color-coded for freshness, and 🔺 marks statistical outliers 
-      detected through automated analysis.
-    </p>
-    <p>
-      <span class="fresh">🟩 Fresh (≤ 1 yr)</span> · 
-      <span class="warn">🟨 Moderate (≤ 3 yrs)</span> · 
-      <span class="stale">🟥 Stale / n a (> 3 yrs)</span> · 
+    <div id="legend">
+      <span class="fresh">🟩 Fresh (≤ 1 yr)</span> ·
+      <span class="warn">🟨 Moderate (≤ 3 yrs)</span> ·
+      <span class="stale">🟥 Stale / Unknown (> 3 yrs)</span> ·
       <span class="outlier">🔺 Data Outliers</span>
-    </p>
-  </div>
-</section>
-<!-- ⚙️ Skript -->
-<script>
-async function loadGlossary() {
-  try {
-    const [fetchRes, outlierRes, metaRes] = await Promise.all([
-      fetch("data/fetch_status.json"),
-      fetch("data/analysis_outliers.json"),
-      fetch("data/meta/available_kpis.json")
-    ]);
+    </div>
+  </section>
 
-    const data     = await fetchRes.json();
-    const outliers = await outlierRes.json();
-    const meta     = await metaRes.json();
+  <!-- gzip support -->
+  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
 
-    // 🔹 Mapping filename → title aus available_kpis.json
-    const titleMap = {};
-    for (const m of meta) {
-      if (m.filename) titleMap[m.filename] = m.title || m.id || m.filename;
+  <script>
+  async function loadAllKPIData() {
+    const ALL = {};
+    const parts = [1, 2, 3, 4];
+    for (const i of parts) {
+      const url = `data/all_kpis_part${i}.json.gz`;
+      try {
+        const resp = await fetch(url, { cache: "no-store" });
+        if (!resp.ok) continue;
+        const buf = await resp.arrayBuffer();
+        const text = new TextDecoder().decode(pako.ungzip(buf));
+        Object.assign(ALL, JSON.parse(text));
+        console.log(`✅ Loaded ${url}`);
+      } catch (e) {
+        console.warn(`⚠️ Could not load ${url}`, e);
+      }
     }
+    return ALL;
+  }
 
-    const tbody = document.getElementById("glossary-body");
-    tbody.innerHTML = "";
+  async function loadGlossary() {
+    try {
+      const [fetchRes, outlierRes, metaRes, countryRes] = await Promise.all([
+        fetch("data/fetch_status.json"),
+        fetch("data/analysis_outliers.json"),
+        fetch("data/meta/available_kpis.json"),
+        fetch("data/meta/countries.json")
+      ]);
 
-    const kpis = data.kpis || {};
-    const nowYear = new Date().getFullYear();
+      const fetchData = await fetchRes.json();
+      const outliers  = await outlierRes.json();
+      const meta      = await metaRes.json();
+      const countries = await countryRes.json();
+      const ALL_DATA  = await loadAllKPIData();
 
-    const EXCLUDE = new Set([
-      "World",
-      "European Union",
-      "Euro area",
-      "OECD members"
-    ]);
+      const totalCountries = Object.keys(countries).length || 200;
+      const tbody = document.getElementById("glossary-body");
+      tbody.innerHTML = "";
 
-    function formatShortDate(dateStr) {
-      if (!dateStr) return "–";
-      const d = new Date(dateStr);
-      if (isNaN(d)) return "–";
-      const dd = String(d.getDate()).padStart(2, "0");
-      const mm = String(d.getMonth() + 1).padStart(2, "0");
-      const yy = String(d.getFullYear()).slice(2);
-      return `${dd}.${mm}.${yy}`;
-    }
+      const kpis = fetchData.kpis || {};
+      const nowYear = new Date().getFullYear();
 
-    for (const [id, info] of Object.entries(kpis)) {
-      const tr = document.createElement("tr");
-      const out = outliers[id] || {};
-
-      const highsRaw = Array.isArray(out.high_outliers) ? out.high_outliers : [];
-      const lowsRaw  = Array.isArray(out.low_outliers)  ? out.low_outliers  : [];
-      const highs = highsRaw.filter(e => e && !EXCLUDE.has(e.country));
-      const lows  = lowsRaw.filter(e => e && !EXCLUDE.has(e.country));
-
-      const flaggedCount = highs.length + lows.length;
-      const maxEntry = highs.reduce((a,b) => (a==null || b.value > a.value) ? b : a, null);
-      const minEntry = lows.reduce((a,b)  => (a==null || b.value < a.value) ? b : a, null);
-
-      const dy = parseInt(info.data_year) || 0;
-      const diffY = dy ? nowYear - dy : 99;
-      const clsYear = diffY <= 1 ? "fresh" : diffY <= 3 ? "warn" : "stale";
-
-      const sd = info.source_date;
-      let clsSrc = "stale";
-      if (sd && /\d{4}/.test(sd)) {
-        const y = parseInt(sd.match(/\d{4}/)[0]);
-        const diffS = nowYear - y;
-        clsSrc = diffS <= 1 ? "fresh" : diffS <= 3 ? "warn" : "stale";
+      const titleMap = {};
+      for (const m of meta) {
+        if (m.filename) titleMap[m.filename] = m.title || m.id || m.filename;
       }
 
-      let clsOut = "";
-      if (flaggedCount >= 10) clsOut = "outlier";
-      else if (flaggedCount > 0) clsOut = "warn";
+      const EXCLUDE = new Set([
+        "World","European Union","Euro area","OECD members",
+        "High income","Upper middle income","Lower middle income","Low income"
+      ]);
 
-      const minInfo = minEntry ? `${minEntry.country} (${minEntry.year})` : "–";
-      const maxInfo = maxEntry ? `${maxEntry.country} (${maxEntry.year})` : "–";
+      const fmtShort = s => {
+        if (!s) return "–";
+        const d = new Date(s);
+        return isNaN(d) ? s : d.toISOString().slice(0,10);
+      };
 
-      // 💡 Zeigt den human-readable KPI-Titel an
-      const title = titleMap[id] || id;
+      function countryCount(filename) {
+        const arr = ALL_DATA[filename];
+        if (!Array.isArray(arr) || arr.length === 0) return 0;
+        const latest = new Map();
+        for (const d of arr) {
+          const v = parseFloat(d.value);
+          if (!d.country || isNaN(v) || EXCLUDE.has(d.country)) continue;
+          const prev = latest.get(d.country);
+          if (!prev || (d.year ?? -Infinity) > (prev.year ?? -Infinity)) latest.set(d.country, d);
+        }
+        return latest.size;
+      }
 
-      tr.innerHTML = `
-        <td>${title}</td>
-        <td>${info.source ? `<a href="${info.source}" target="_blank">${info.source}</a>` : "?"}</td>
-        <td class="${clsYear}">${info.data_year || "Unknown"}</td>
-        <td class="${clsSrc}">${formatShortDate(info.source_date)}</td>
-        <td>${formatShortDate(info.last_fetch)}</td>
-        <td class="${clsOut}">
-          ${flaggedCount ? `🔺 ${flaggedCount}` : "–"}
-          <span class="outlier-info">
-            min: ${minInfo}, max: ${maxInfo}
-          </span>
-        </td>
-      `;
-      tbody.appendChild(tr);
+      // === Hauptschleife ===
+      for (const [id, info] of Object.entries(kpis)) {
+        const tr = document.createElement("tr");
+        const out = outliers[id] || {};
+
+        const highs = Array.isArray(out.high_outliers) ? out.high_outliers : [];
+        const lows  = Array.isArray(out.low_outliers)  ? out.low_outliers  : [];
+        const flaggedCount = highs.length + lows.length;
+
+        const dy = parseInt(info.data_year) || 0;
+        const clsYear = (dy && (nowYear - dy) <= 1) ? "fresh" : (dy && (nowYear - dy) <= 3) ? "warn" : "stale";
+        let clsSrc = "stale";
+        if (info.source_date && /\d{4}/.test(info.source_date)) {
+          const y = parseInt(info.source_date.match(/\d{4}/)[0]);
+          clsSrc = (nowYear - y) <= 1 ? "fresh" : (nowYear - y) <= 3 ? "warn" : "stale";
+        }
+
+        const clsOut = flaggedCount >= 10 ? "outlier" : flaggedCount > 0 ? "warn" : "";
+
+        // jeweils bis zu 3 Länder mit Jahr anzeigen
+        const minList = lows.slice(0,3).map(e => `${e.country} (${e.year})`);
+        const maxList = highs.slice(0,3).map(e => `${e.country} (${e.year})`);
+        const minInfo = minList.length ? minList.join(", ") : "–";
+        const maxInfo = maxList.length ? maxList.join(", ") : "–";
+
+        const n = countryCount(id);
+        const pct = ((n / totalCountries) * 100).toFixed(0);
+        const title = titleMap[id] || id;
+
+        tr.innerHTML = `
+          <td>${title}</td>
+          <td>${info.source ? `<a href="${info.source}" target="_blank">${info.source}</a>` : "?"}</td>
+          <td class="${clsYear}">${info.data_year || "Unknown"}</td>
+          <td class="${clsSrc}">${info.source_date || "Unknown"}</td>
+          <td>${fmtShort(info.last_fetch)}</td>
+          <td title="Coverage: ${pct}%">${n || "–"}</td>
+          <td class="${clsOut}">
+            ${flaggedCount ? `🔺 ${flaggedCount}` : "–"}
+            <span class="outlier-info">
+              <strong>min:</strong> ${minInfo}<br>
+              <strong>max:</strong> ${maxInfo}
+            </span>
+          </td>`;
+        tbody.appendChild(tr);
+      }
+
+    } catch (err) {
+      console.error("Glossary load failed:", err);
+      document.getElementById("glossary-body").innerHTML =
+        `<tr><td colspan="7" style="text-align:center;color:red;">Error loading data</td></tr>`;
     }
-  } catch (err) {
-    console.error("Glossary load failed:", err);
-    document.getElementById("glossary-body").innerHTML =
-      `<tr><td colspan="6" style="text-align:center;color:red;">Error loading data</td></tr>`;
   }
-}
 
-window.addEventListener("DOMContentLoaded", loadGlossary);
-</script>
+  window.addEventListener("DOMContentLoaded", loadGlossary);
+  </script>
 
-<!-- 🧠 Shared RealityCheck Core -->
-<script src="scripts/core.js" defer></script>
-
+  <!-- 🧠 Shared Core -->
+  <script src="scripts/core.js" defer></script>
 </body>
 </html>
