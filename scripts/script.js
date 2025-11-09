@@ -921,38 +921,92 @@ async function updateMap() {
 
     return `hsl(${hue},80%,45%)`;
   };
+// === Länder einfärben (robust gegen ISO-Varianten, inkl. iso_a3_eh-Fix) ===
+mapLayer = L.geoJSON(window._worldGeoJSON, {
+  style: f => {
+    const iso = (
+      f.properties.iso_a3_eh ||   // ✅ Natural Earth „effective“ ISO
+      f.properties.ISO_A3_EH ||
+      f.properties.ISO_A3 ||
+      f.properties.iso_a3 ||
+      f.properties.ADM0_A3 ||
+      f.properties.adm0_a3 ||
+      f.properties.SOV_A3 ||
+      f.properties.sov_a3 ||
+      f.properties.WB_A3 ||
+      f.properties.wb_a3 ||
+      f.properties.gu_a3 ||
+      f.properties.su_a3 ||
+      f.id ||
+      ""
+    ).toUpperCase();
 
-  // === Länder einfärben ===
-  mapLayer = L.geoJSON(window._worldGeoJSON, {
-    style: f => {
-      const iso = (f.properties.iso_a3 || f.properties.ADM0_A3 || f.id || "").toUpperCase();
-      const val = mapDataByIso[iso];
-      return {
-        fillColor: getColor(val),
-        fillOpacity: Number.isFinite(val) ? 0.82 : 0.15,
-        color: "#555",
-        weight: 0.4
-      };
-    },
-    onEachFeature: (f, layer) => {
-      const iso = (f.properties.iso_a3 || f.properties.ADM0_A3 || f.id || "").toUpperCase();
-      const cname = Object.entries(countries).find(
-        ([, c]) => c.iso_a3?.toUpperCase() === iso
-      )?.[0] || f.properties.ADMIN || iso;
-      const val = mapDataByIso[iso];
-      const info = countries[cname] || {};
-      layer.bindTooltip(
-        `<strong>${cname}</strong><br>
-         ${Number.isFinite(val) ? `${formatValueAuto(val)} ${meta.unit || ""}` : "no data"}<br>
-         <small>Capital: ${info.capital || "–"} | Gov: ${info.government || "–"}</small>`,
-        { sticky: true }
-      );
-      layer.on({
-        mouseover: e => e.target.setStyle({ weight: 1.2, color: "#000", fillOpacity: 0.9 }),
-        mouseout: e => mapLayer.resetStyle(e.target)
-      });
-    }
-  }).addTo(map);
+    const val = mapDataByIso[iso];
+    return {
+      fillColor: getColor(val),
+      fillOpacity: Number.isFinite(val) ? 0.82 : 0.15,
+      color: "#555",
+      weight: 0.4
+    };
+  },
+
+  onEachFeature: (f, layer) => {
+    const iso = (
+      f.properties.iso_a3_eh ||
+      f.properties.ISO_A3_EH ||
+      f.properties.ISO_A3 ||
+      f.properties.iso_a3 ||
+      f.properties.ADM0_A3 ||
+      f.properties.adm0_a3 ||
+      f.properties.SOV_A3 ||
+      f.properties.sov_a3 ||
+      f.properties.WB_A3 ||
+      f.properties.wb_a3 ||
+      f.properties.gu_a3 ||
+      f.properties.su_a3 ||
+      f.id ||
+      ""
+    ).toUpperCase();
+
+    // Versuche, den Ländernamen aus countries.json zu finden
+    const cname =
+      Object.entries(countries).find(
+        ([, c]) => (c.iso_a3 || c.ISO_A3)?.toUpperCase() === iso
+      )?.[0] ||
+      f.properties.ADMIN ||
+      f.properties.NAME ||
+      iso;
+
+    const val = mapDataByIso[iso];
+    const info = countries[cname] || {};
+
+    // Tooltip mit hübschem Layout
+    const tooltip = `
+      <strong>${cname}</strong><br>
+      ${Number.isFinite(val)
+        ? `${formatValueAuto(val)} ${meta.unit || ""}`
+        : "no data"}<br>
+      <small>
+        Capital: ${info.capital || "–"} |
+        Gov: ${info.government || "–"}
+      </small>
+    `;
+
+    layer.bindTooltip(tooltip, { sticky: true });
+
+    // Hover-Effekte
+    layer.on({
+      mouseover: e =>
+        e.target.setStyle({
+          weight: 1.2,
+          color: "#000",
+          fillOpacity: 0.9
+        }),
+      mouseout: e => mapLayer.resetStyle(e.target)
+    });
+  }
+}).addTo(map);
+
 
   // === Legende anpassen ===
   addHeatmapLegend(min, max, meta.unit || "", meta.title || currentKpi, sortMode, targetVal);

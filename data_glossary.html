@@ -6,6 +6,17 @@
   <title>RealityCheck – Data Glossary</title>
 
   <link rel="stylesheet" href="style.css" />
+  <style>
+    th.sortable { cursor: pointer; user-select: none; }
+    th.sortable::after {
+      content: " ⇅";
+      font-size: 0.8em;
+      color: #999;
+    }
+    th.sort-asc::after  { content: " ↑"; color: #007bff; }
+    th.sort-desc::after { content: " ↓"; color: #007bff; }
+  </style>
+
   <script>
   document.addEventListener("DOMContentLoaded", () => {
     try {
@@ -34,11 +45,6 @@
       This overview lists all <strong>indicators currently used in RealityCheck</strong>, 
       including their data sources, latest available year, data freshness, and outlier analysis.
     </p>
-    <p>
-      It helps you trace where each figure originates from, how recent it is, 
-      and how broad the data coverage is across countries.
-      Outlier countries indicate statistical extremes automatically detected in the global dataset.
-    </p>
   </section>
 
   <!-- 📑 Tabelle -->
@@ -46,13 +52,13 @@
     <table id="glossary-table">
       <thead>
         <tr>
-          <th>KPI</th>
-          <th>Source</th>
-          <th>Data Year</th>
-          <th>Source Date</th>
-          <th>Last Fetch</th>
-          <th>Countries</th>
-          <th>Outliers</th>
+          <th class="sortable">KPI</th>
+          <th class="sortable">Source</th>
+          <th class="sortable">Data Year</th>
+          <th class="sortable">Source Date</th>
+          <th class="sortable">Last Fetch</th>
+          <th class="sortable">Countries</th>
+          <th class="sortable">Outliers</th>
         </tr>
       </thead>
       <tbody id="glossary-body">
@@ -142,11 +148,9 @@
         return latest.size;
       }
 
-      // === Hauptschleife ===
       for (const [id, info] of Object.entries(kpis)) {
         const tr = document.createElement("tr");
         const out = outliers[id] || {};
-
         const highs = Array.isArray(out.high_outliers) ? out.high_outliers : [];
         const lows  = Array.isArray(out.low_outliers)  ? out.low_outliers  : [];
         const flaggedCount = highs.length + lows.length;
@@ -160,8 +164,6 @@
         }
 
         const clsOut = flaggedCount >= 10 ? "outlier" : flaggedCount > 0 ? "warn" : "";
-
-        // jeweils bis zu 3 Länder mit Jahr anzeigen
         const minList = lows.slice(0,3).map(e => `${e.country} (${e.year})`);
         const maxList = highs.slice(0,3).map(e => `${e.country} (${e.year})`);
         const minInfo = minList.length ? minList.join(", ") : "–";
@@ -174,19 +176,18 @@
         tr.innerHTML = `
           <td>${title}</td>
           <td>${info.source ? `<a href="${info.source}" target="_blank">${info.source}</a>` : "?"}</td>
-          <td class="${clsYear}">${info.data_year || "Unknown"}</td>
-          <td class="${clsSrc}">${info.source_date || "Unknown"}</td>
+          <td>${info.data_year || "Unknown"}</td>
+          <td>${info.source_date || "Unknown"}</td>
           <td>${fmtShort(info.last_fetch)}</td>
           <td title="Coverage: ${pct}%">${n || "–"}</td>
-          <td class="${clsOut}">
+          <td>
             ${flaggedCount ? `🔺 ${flaggedCount}` : "–"}
-            <span class="outlier-info">
-              <strong>min:</strong> ${minInfo}<br>
-              <strong>max:</strong> ${maxInfo}
-            </span>
+            <span class="outlier-info"><strong>min:</strong> ${minInfo}<br><strong>max:</strong> ${maxInfo}</span>
           </td>`;
         tbody.appendChild(tr);
       }
+
+      makeTableSortable("glossary-table");
 
     } catch (err) {
       console.error("Glossary load failed:", err);
@@ -195,10 +196,44 @@
     }
   }
 
+  // === Tabellen-Sortierung ===
+  function makeTableSortable(id) {
+    const table = document.getElementById(id);
+    const headers = table.querySelectorAll("th.sortable");
+    headers.forEach((th, i) => {
+      th.addEventListener("click", () => {
+        const asc = !th.classList.contains("sort-asc");
+        headers.forEach(h => h.classList.remove("sort-asc","sort-desc"));
+        th.classList.toggle("sort-asc", asc);
+        th.classList.toggle("sort-desc", !asc);
+        sortTableByColumn(table, i, asc);
+      });
+    });
+  }
+
+  function sortTableByColumn(table, col, asc = true) {
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+    const dir = asc ? 1 : -1;
+    const parseVal = v => {
+      const num = parseFloat(v.replace(/[^\d.\-]/g,""));
+      if (!isNaN(num)) return num;
+      const date = Date.parse(v);
+      return isNaN(date) ? v.toString().toLowerCase() : date;
+    };
+    rows.sort((a,b)=>{
+      const va = parseVal(a.cells[col].innerText.trim());
+      const vb = parseVal(b.cells[col].innerText.trim());
+      if (va > vb) return 1 * dir;
+      if (va < vb) return -1 * dir;
+      return 0;
+    });
+    rows.forEach(r => tbody.appendChild(r));
+  }
+
   window.addEventListener("DOMContentLoaded", loadGlossary);
   </script>
 
-  <!-- 🧠 Shared Core -->
   <script src="scripts/core.js" defer></script>
 </body>
 </html>
