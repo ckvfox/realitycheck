@@ -309,7 +309,6 @@ window.renderKpiAnalysis = renderKpiAnalysis;
    🧭 Navigation + Visitor Stats (index.html integration)
    ============================================================ */
 
-
 // === IFrame Page Loader ===
 window.loadPage = function (page, link) {
   const frame = document.getElementById("main-frame");
@@ -326,83 +325,77 @@ window.loadPage = function (page, link) {
   if (link) link.classList.add("active");
 };
 
-// === IFrame Load Event ===
-document.addEventListener("DOMContentLoaded", () => {
-  const frame = document.getElementById("main-frame");
-  const loader = document.getElementById("frame-loader");
+/* ============================================================
+   🧭 Unified RealityCheck Init (Header/Footer + ScrollTop + Tooltips)
+   ============================================================ */
 
-  if (frame && loader) {
-    frame.addEventListener("load", () => loader.classList.remove("active"));
+document.addEventListener("DOMContentLoaded", () => {
+	if (window._rcInitDone) return;
+	window._rcInitDone = true;
+  try {
+    // --- Header/Footer werden automatisch über fetch geladen ---
+    // (siehe obersten Block dieses Skripts)
+
+    // === Iframe Loader ===
+    const frame = document.getElementById("main-frame");
+    const loader = document.getElementById("frame-loader");
+    if (frame && loader) {
+      frame.addEventListener("load", () => loader.classList.remove("active"));
+    }
+
+    // === Scroll-to-Top Button ===
+    const btn = document.getElementById("scroll-top-btn");
+    if (btn) {
+      const frame = document.getElementById("main-frame");
+      btn.addEventListener("click", () => {
+        try {
+          if (frame && frame.contentWindow && frame.contentDocument) {
+            const doc = frame.contentDocument;
+            const scrollTarget = doc.scrollingElement || doc.documentElement;
+            scrollTarget.scrollTo({ top: 0, behavior: "smooth" });
+          } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+          btn.style.transform = "scale(0.9)";
+          setTimeout(() => (btn.style.transform = ""), 150);
+        } catch (err) {
+          console.warn("⚠️ Scroll-to-top failed:", err);
+        }
+      });
+      btn.style.opacity = "0.9";
+      btn.style.pointerEvents = "auto";
+    }
+
+    // === Mobile Mode Tooltips (nur auf kleinen Geräten) ===
+    if (window.innerWidth <= 600) {
+      document.querySelectorAll(".mode-button").forEach(btn => {
+        btn.addEventListener("click", e => {
+          const old = document.querySelector(".mode-tooltip");
+          if (old) old.remove();
+          const text = btn.getAttribute("title") || "";
+          if (!text) return;
+
+          const tip = document.createElement("div");
+          tip.className = "mode-tooltip";
+          tip.textContent = text;
+          document.body.appendChild(tip);
+
+          const rect = btn.getBoundingClientRect();
+          tip.style.left = `${rect.left + rect.width / 2}px`;
+          tip.style.top = `${rect.top - 8}px`;
+
+          requestAnimationFrame(() => tip.classList.add("visible"));
+          setTimeout(() => {
+            tip.classList.remove("visible");
+            setTimeout(() => tip.remove(), 300);
+          }, 1500);
+        });
+      });
+    }
+
+    console.log("✅ RealityCheck core init complete");
+  } catch (err) {
+    console.error("❌ RealityCheck init failed:", err);
   }
-
-});
-
-
-/* ============================================================
-   🔼 Global Scroll-to-Top Button (iframe-aware RealityCheck v9.3)
-   ============================================================ */
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("scroll-top-btn");
-  const frame = document.getElementById("main-frame");
-  if (!btn) return;
-
-	btn.addEventListener("click", () => {
-		try {
-			if (frame && frame.contentWindow && frame.contentDocument) {
-				const doc = frame.contentDocument;
-				const scrollTarget = doc.scrollingElement || doc.documentElement;
-				scrollTarget.scrollTo({ top: 0, behavior: "smooth" });
-			} else {
-				window.scrollTo({ top: 0, behavior: "smooth" });
-			}
-			btn.style.transform = "scale(0.9)";
-			setTimeout(() => (btn.style.transform = ""), 150);
-		} catch (err) {
-			console.warn("⚠️ Scroll-to-top failed:", err);
-		}
-	});
-
-  // Sichtbar machen
-  btn.style.opacity = "0.9";
-  btn.style.pointerEvents = "auto";
-});
-
-/* ============================================================
-   📱 Mobile Tooltip Popups for Mode Buttons
-   ============================================================ */
-document.addEventListener("DOMContentLoaded", () => {
-  // Nur auf mobilen Geräten aktivieren
-  if (window.innerWidth > 600) return;
-
-  document.querySelectorAll(".mode-button").forEach(btn => {
-    btn.addEventListener("click", e => {
-      // Falls schon ein Tooltip offen ist → entfernen
-      const old = document.querySelector(".mode-tooltip");
-      if (old) old.remove();
-
-      const text = btn.getAttribute("title") || "";
-      if (!text) return;
-
-      // Tooltip-Element erzeugen
-      const tip = document.createElement("div");
-      tip.className = "mode-tooltip";
-      tip.textContent = text;
-      document.body.appendChild(tip);
-
-      // Position über Button berechnen
-      const rect = btn.getBoundingClientRect();
-      tip.style.left = `${rect.left + rect.width / 2}px`;
-      tip.style.top = `${rect.top - 8}px`;
-
-      // Sanft einblenden
-      requestAnimationFrame(() => tip.classList.add("visible"));
-
-      // Nach 1.5s wieder entfernen
-      setTimeout(() => {
-        tip.classList.remove("visible");
-        setTimeout(() => tip.remove(), 300);
-      }, 1500);
-    });
-  });
 });
 

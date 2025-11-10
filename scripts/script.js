@@ -886,26 +886,43 @@ async function updateMap() {
     return (v - adjMin) / (adjMax - adjMin);
   };
 
-  // === Farbzuweisung (grün–gelb–rot, heller im Mittelbereich) ===
-  const getColor = val => {
-    if (!Number.isFinite(val)) return "#e6e6e6";
+	// === Farbzuweisung (grün–gelb–rot, heller im Mittelbereich) ===
+	const getColor = val => {
+		if (!Number.isFinite(val)) return "#e6e6e6";
 
-    // 🎯 Zielmodus
-    if (sortMode === "target" && Number.isFinite(targetVal)) {
-      const maxDev = Math.max(Math.abs(adjMax - targetVal), Math.abs(adjMin - targetVal), 1e-6);
-      const dev = Math.abs(val - targetVal) / maxDev;
-      const hue = 120 * (1 - Math.min(dev, 1)); // 120=grün, 0=rot
-      return `hsl(${hue},85%,50%)`;
-    }
+		// 🎯 Zielmodus (Zielnähe = grün)
+		if (sortMode === "target" && Number.isFinite(targetVal)) {
+			const maxDev = Math.max(
+				Math.abs(adjMax - targetVal),
+				Math.abs(adjMin - targetVal),
+				1e-6
+			);
+			const dev = Math.abs(val - targetVal) / maxDev;
+			const hue = 120 * (1 - Math.min(dev, 1)); // 120=grün, 0=rot
+			return `hsl(${hue},85%,50%)`;
+		}
 
-    const n = Math.max(0, Math.min(1, normalize(val)));
-    const hue = sortMode === "lower"
-      ? 120 * (1 - n)
-      : 120 - (120 * n);
-    const sat = 85;
-    const light = 40 + n * 20;
-    return `hsl(${hue},${sat}%,${light}%)`;
-  };
+		// 🔁 Normalisierung 0..1
+		const n = Math.max(0, Math.min(1, normalize(val)));
+
+		// ✅ Korrekte Farblogik:
+		// sort:"higher" → hohe Werte sind gut → grün
+		// sort:"lower" → niedrige Werte sind gut → grün
+		let hue;
+		if (sortMode === "higher") {
+			hue = 120 * n; // low=rot → high=grün
+		} else if (sortMode === "lower") {
+			hue = 120 * (1 - n); // low=grün → high=rot
+		} else {
+			// neutral oder unbekannt
+			hue = 120 * n;
+		}
+
+		const sat = 85;
+		const light = 40 + n * 20;
+		return `hsl(${hue},${sat}%,${light}%)`;
+	};
+
 
 	// === Länder einfärben (mit robustem ISO-Resolver & Tooltip-Fix) ===
 	mapLayer = L.geoJSON(window._worldGeoJSON, {
