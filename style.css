@@ -1851,3 +1851,80 @@ Fixes: header/menu overflow, footer overflow, disappearing icons
     display: none !important; /* Nur Emoji sichtbar */
   }
 }
+/* ===== Map Legend under the map (no overlay) ===== */
+#map-legend {
+  margin: 1rem auto 0.5rem;
+  text-align: center;
+  max-width: min(920px, 95vw);
+}
+
+#map-legend .legend-box {
+  display: inline-block;
+  background: rgba(255,255,255,0.92);
+  border-radius: 12px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+#map-legend .legend-title { margin-bottom: 0.35rem; }
+
+#map-legend .legend-bar {
+  height: 12px;
+  width: min(560px, 80vw);
+  border-radius: 8px;
+  margin: 0.4rem auto 0.2rem;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+#map-legend .legend-scale {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #333;
+  margin-top: 0.15rem;
+}
+
+#map-legend .legend-mode {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+#map-legend .legend-target {
+  margin-top: 0.25rem;
+  font-size: 0.86rem;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  #map-legend .legend-box { font-size: 0.9rem; padding: 0.6rem 0.75rem; }
+  #map-legend .legend-bar  { height: 10px; width: 86vw; }
+  #map-legend .legend-scale { font-size: 0.8rem; }
+}
+/* ============================================================
+   📊 RealityCheck – Data Glossary: Outlier Column Layout Fix
+   ============================================================ */
+#glossary-table td:last-child {
+  white-space: normal !important;      /* erlaubt Zeilenumbruch */
+  word-break: break-word !important;   /* bricht bei langen Listen */
+  max-width: 240px;                    /* Desktop: etwas breiter */
+  line-height: 1.3;
+  vertical-align: top;
+}
+
+#glossary-table td:last-child .outlier-info {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  #glossary-table td:last-child {
+    max-width: 160px;                  /* mobil kompakter */
+    font-size: 0.8rem;
+  }
+}

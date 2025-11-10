@@ -13,5 +13,12 @@
   "COD": "Mapping target missing or invalid",
   "CYM": "Mapping target missing or invalid",
   "VCT": "Mapping target missing or invalid",
-  "Democratic Republic of the Congo": "Mapping target missing or invalid"
+  "Democratic Republic of the Congo": "Mapping target missing or invalid",
+  "East Asia and Pacific (WB)": "Unknown alias; please map in country_mappings.json",
+  "Europe and Central Asia (WB)": "Unknown alias; please map in country_mappings.json",
+  "Latin America and Caribbean (WB)": "Unknown alias; please map in country_mappings.json",
+  "Middle East, North Africa, Afghanistan and Pakistan (WB)": "Unknown alias; please map in country_mappings.json",
+  "North America (WB)": "Unknown alias; please map in country_mappings.json",
+  "South Asia (WB)": "Unknown alias; please map in country_mappings.json",
+  "Sub-Saharan Africa (WB)": "Unknown alias; please map in country_mappings.json"
 }

@@ -157,27 +157,26 @@ async function populateKpiSelect() {
       clusters[cl].push({ id, title: meta.title, relation: meta.relation });
     }
 
-    for (const cl of Object.keys(clusters).sort()) {
-      const g = document.createElement("optgroup");
-      g.label = cl;
-      for (const it of clusters[cl].sort((a, b) => a.title.localeCompare(b.title))) {
-        const o = document.createElement("option");
-        o.value = it.id;
-        o.textContent = it.title;
-        try {
-          const d = await loadJSON(`data/${it.id}.json`);
-          if (!Array.isArray(d) || !d.length) {
-            o.style.color = "gray";
-            o.style.fontStyle = "italic";
-          }
-        } catch {
-          o.style.color = "gray";
-          o.style.fontStyle = "italic";
-        }
-        g.appendChild(o);
-      }
-      tmp.push(g);
-    }
+		for (const cl of Object.keys(clusters).sort()) {
+			const g = document.createElement("optgroup");
+			g.label = cl;
+
+			for (const it of clusters[cl].sort((a, b) => a.title.localeCompare(b.title))) {
+				const o = document.createElement("option");
+				o.value = it.id;
+				o.textContent = it.title;
+
+				// ⚡ Schneller: Prüfe nur lokal im ALL_DATA-Cache
+				if (!ALL_DATA[it.id] || !Array.isArray(ALL_DATA[it.id]) || !ALL_DATA[it.id].length) {
+					o.style.color = "gray";
+					o.style.fontStyle = "italic";
+				}
+
+				g.appendChild(o);
+			}
+
+			tmp.push(g);
+		}
 
     sel.innerHTML = "<option value=''>-- none --</option>";
     tmp.forEach(g => sel.appendChild(g));
@@ -808,7 +807,7 @@ async function initMap() {
   }
 }
 
-/* ========= KPI HEATMAP COLORING (ISO-BASED, ADAPTIVE VERSION, 2025-11-07) ========= */
+/* ========= KPI HEATMAP COLORING (ISO-BASED, BALANCED + OUTLIER-CONTROL, 2025-11-10 FINAL) ========= */
 async function updateMap() {
   if (!map || !currentKpi || !window._worldGeoJSON) return;
 
@@ -818,7 +817,7 @@ async function updateMap() {
   const data = ALL_DATA[meta.filename] || [];
   if (!data.length) return;
 
-  // Alte Layer + Legende entfernen
+  // Alte Layer entfernen
   if (mapLayer) map.removeLayer(mapLayer);
   if (window._legendControl) map.removeControl(window._legendControl);
 
@@ -829,7 +828,7 @@ async function updateMap() {
     if (iso) isoByName[name.toLowerCase()] = iso.toUpperCase();
   }
 
-  // === Aliase aus country_mappings.json ergänzen ===
+  // === Aliase ergänzen ===
   if (!window._countryMappings) {
     try {
       const res = await fetch("data/meta/country_mappings.json", { cache: "no-store" });
@@ -843,7 +842,7 @@ async function updateMap() {
     if (canonicalIso) isoByName[alias.toLowerCase()] = canonicalIso;
   }
 
-  // === Letzten gültigen KPI-Wert pro Land bestimmen ===
+  // === Letzten gültigen Wert pro Land bestimmen ===
   const latestByCountry = new Map();
   for (const d of data) {
     if (!d || !d.country || d.country === "World" || d.value == null) continue;
@@ -853,7 +852,7 @@ async function updateMap() {
       latestByCountry.set(cname, { year: d.year, value: Number(d.value) });
   }
 
-  // === ISO → Value map erzeugen ===
+  // === ISO → Value map ===
   const mapDataByIso = {};
   for (const [rawName, rec] of latestByCountry.entries()) {
     const iso = isoByName[rawName.toLowerCase()] || null;
@@ -862,196 +861,199 @@ async function updateMap() {
 
   const values = Object.values(mapDataByIso).filter(v => Number.isFinite(v));
   if (!values.length) return;
-  const min = Math.min(...values);
-  const max = Math.max(...values);
 
-  // === Dynamische Farblogik mit Sort-Modus ===
-  const sortMode = (meta.sort || "neutral").toLowerCase();
+  const sortMode = (meta.sort || "higher").toLowerCase();
   const targetVal = parseFloat(meta.target_value ?? NaN);
 
-  // 📊 Robust scaling: ignoriert Ausreißer (5.–95. Perzentil)
-  const sortedVals = [...values].sort((a, b) => a - b);
-  const q05 = sortedVals[Math.floor(sortedVals.length * 0.05)] ?? min;
-  const q95 = sortedVals[Math.floor(sortedVals.length * 0.95)] ?? max;
-  const adjMin = Math.min(min, q05);
-  const adjMax = Math.max(max, q95);
+  // 📊 Robust scaling (5.–95. Perzentil + log-Dämpfung)
+  const sorted = [...values].sort((a, b) => a - b);
+  const q05 = sorted[Math.floor(sorted.length * 0.05)] ?? Math.min(...values);
+  const q95 = sorted[Math.floor(sorted.length * 0.95)] ?? Math.max(...values);
+  let adjMin = Math.max(q05, Math.min(...values));
+  let adjMax = Math.min(q95, Math.max(...values));
 
-  // === Farbzuweisung ===
-  const getColor = val => {
-    if (!Number.isFinite(val) || values.length === 0) return "#e6e6e6";
+  const spreadRatio = adjMax / Math.max(adjMin, 1e-6);
+  const useLog = spreadRatio > 50; // Log bei sehr großer Spanne
 
-    // 🎯 TARGET-basierte Skala (z.B. Inflation)
-    if (sortMode === "target" && Number.isFinite(targetVal)) {
-      const maxDeviation = Math.max(
-        Math.abs(adjMax - targetVal),
-        Math.abs(adjMin - targetVal),
-        1e-6
-      );
-      const deviation = Math.abs(val - targetVal) / maxDeviation;
-      const hue = 120 * (1 - Math.min(deviation, 1)); // 120 = grün, 0 = rot
-      return `hsl(${hue},85%,45%)`;
+  const normalize = v => {
+    if (!Number.isFinite(v)) return 0.5;
+    if (useLog && v > 0) {
+      const minL = Math.log10(Math.max(adjMin, 1e-6));
+      const maxL = Math.log10(Math.max(adjMax, 1e-6));
+      const x = Math.log10(v);
+      return (x - minL) / (maxL - minL);
     }
+    return (v - adjMin) / (adjMax - adjMin);
+  };
 
-    // 📈 Divergierende Skala für KPIs mit negativen & positiven Werten
-    if (adjMin < 0 && adjMax > 0) {
-      const range = Math.max(Math.abs(adjMin), Math.abs(adjMax));
-      const ratio = val / range; // -1 bis +1
-      const hue = ratio >= 0
-        ? 60 + (60 * ratio)     // 60–120 → Gelb → Grün
-        : 0 + (60 * (ratio + 1)); // 0–60 → Rot → Gelb
+  // === Farbzuweisung (grün–gelb–rot, heller im Mittelbereich) ===
+  const getColor = val => {
+    if (!Number.isFinite(val)) return "#e6e6e6";
+
+    // 🎯 Zielmodus
+    if (sortMode === "target" && Number.isFinite(targetVal)) {
+      const maxDev = Math.max(Math.abs(adjMax - targetVal), Math.abs(adjMin - targetVal), 1e-6);
+      const dev = Math.abs(val - targetVal) / maxDev;
+      const hue = 120 * (1 - Math.min(dev, 1)); // 120=grün, 0=rot
       return `hsl(${hue},85%,50%)`;
     }
 
-    // 📊 Adaptive lineare Skala + Log-Boost bei extremer Spreizung
-    const range = adjMax - adjMin || 1;
-    let ratio = (val - adjMin) / range;
-
-    // Log-Korrektur bei über 1000× Spreizung (z. B. GDP)
-    const logSpread = Math.log10(Math.max(adjMax / Math.max(adjMin, 1), 1));
-    if (logSpread > 3 && val > 0) {
-      ratio = Math.log10(val / Math.max(adjMin, 1)) / logSpread;
-    }
-
-    const normRatio = Math.min(Math.max(ratio, 0), 1);
-
-    let hue;
-    if (sortMode === "higher") hue = 120 * normRatio;
-    else if (sortMode === "lower") hue = 120 * (1 - normRatio);
-    else hue = 120 * normRatio;
-
-    return `hsl(${hue},80%,45%)`;
+    const n = Math.max(0, Math.min(1, normalize(val)));
+    const hue = sortMode === "lower"
+      ? 120 * (1 - n)
+      : 120 - (120 * n);
+    const sat = 85;
+    const light = 40 + n * 20;
+    return `hsl(${hue},${sat}%,${light}%)`;
   };
-// === Länder einfärben (robust gegen ISO-Varianten, inkl. iso_a3_eh-Fix) ===
-mapLayer = L.geoJSON(window._worldGeoJSON, {
-  style: f => {
-    const iso = (
-      f.properties.iso_a3_eh ||   // ✅ Natural Earth „effective“ ISO
-      f.properties.ISO_A3_EH ||
-      f.properties.ISO_A3 ||
-      f.properties.iso_a3 ||
-      f.properties.ADM0_A3 ||
-      f.properties.adm0_a3 ||
-      f.properties.SOV_A3 ||
-      f.properties.sov_a3 ||
-      f.properties.WB_A3 ||
-      f.properties.wb_a3 ||
-      f.properties.gu_a3 ||
-      f.properties.su_a3 ||
-      f.id ||
-      ""
-    ).toUpperCase();
 
-    const val = mapDataByIso[iso];
-    return {
-      fillColor: getColor(val),
-      fillOpacity: Number.isFinite(val) ? 0.82 : 0.15,
-      color: "#555",
-      weight: 0.4
-    };
-  },
+	// === Länder einfärben (mit robustem ISO-Resolver & Tooltip-Fix) ===
+	mapLayer = L.geoJSON(window._worldGeoJSON, {
+		style: f => {
+			// 🧩 ISO-Fallbacks aus diversen GeoJSON-Feldern
+			const iso = (
+				f.properties.iso_a3_eh || f.properties.ISO_A3_EH ||
+				f.properties.ISO_A3 || f.properties.iso_a3 ||
+				f.properties.ADM0_A3 || f.properties.adm0_a3 ||
+				f.properties.SOV_A3 || f.properties.sov_a3 ||
+				f.properties.WB_A3 || f.properties.wb_a3 ||
+				f.properties.gu_a3 || f.properties.su_a3 ||
+				f.id || ""
+			).toUpperCase();
 
-  onEachFeature: (f, layer) => {
-    const iso = (
-      f.properties.iso_a3_eh ||
-      f.properties.ISO_A3_EH ||
-      f.properties.ISO_A3 ||
-      f.properties.iso_a3 ||
-      f.properties.ADM0_A3 ||
-      f.properties.adm0_a3 ||
-      f.properties.SOV_A3 ||
-      f.properties.sov_a3 ||
-      f.properties.WB_A3 ||
-      f.properties.wb_a3 ||
-      f.properties.gu_a3 ||
-      f.properties.su_a3 ||
-      f.id ||
-      ""
-    ).toUpperCase();
+			// 🧭 Versuche, Land über ISO zu finden; falls nicht vorhanden → Name-Mapping
+			let val = mapDataByIso[iso];
+			if (val === undefined) {
+				const name = (
+					f.properties.ADMIN ||
+					f.properties.NAME ||
+					f.properties.COUNTRY ||
+					f.properties.SOVEREIGNT ||
+					""
+				).trim();
+				if (name) {
+					const canonical = window._countryMappings?.[name] || name;
+					const isoFromName = isoByName[canonical.toLowerCase()];
+					if (isoFromName) val = mapDataByIso[isoFromName];
+				}
+			}
 
-    // Versuche, den Ländernamen aus countries.json zu finden
-    const cname =
-      Object.entries(countries).find(
-        ([, c]) => (c.iso_a3 || c.ISO_A3)?.toUpperCase() === iso
-      )?.[0] ||
-      f.properties.ADMIN ||
-      f.properties.NAME ||
-      iso;
+			return {
+				fillColor: getColor(val),
+				fillOpacity: Number.isFinite(val) ? 0.82 : 0.15,
+				color: "#555",
+				weight: 0.4
+			};
+		},
 
-    const val = mapDataByIso[iso];
-    const info = countries[cname] || {};
+		onEachFeature: (f, layer) => {
+			// 🧩 Gleicher ISO-Resolver wie oben
+			const iso = (
+				f.properties.iso_a3_eh || f.properties.ISO_A3_EH ||
+				f.properties.ISO_A3 || f.properties.iso_a3 ||
+				f.properties.ADM0_A3 || f.properties.adm0_a3 ||
+				f.properties.SOV_A3 || f.properties.sov_a3 ||
+				f.properties.WB_A3 || f.properties.wb_a3 ||
+				f.properties.gu_a3 || f.properties.su_a3 ||
+				f.id || ""
+			).toUpperCase();
 
-    // Tooltip mit hübschem Layout
-    const tooltip = `
-      <strong>${cname}</strong><br>
-      ${Number.isFinite(val)
-        ? `${formatValueAuto(val)} ${meta.unit || ""}`
-        : "no data"}<br>
-      <small>
-        Capital: ${info.capital || "–"} |
-        Gov: ${info.government || "–"}
-      </small>
-    `;
+			// 🧭 Fallback auf Namensauflösung
+			let cname =
+				Object.entries(countries).find(
+					([, c]) => (c.iso_a3 || c.ISO_A3)?.toUpperCase() === iso
+				)?.[0] ||
+				f.properties.ADMIN ||
+				f.properties.NAME ||
+				f.properties.COUNTRY ||
+				iso;
 
-    layer.bindTooltip(tooltip, { sticky: true });
+			// Wenn Alias existiert, auf kanonischen Namen umschreiben
+			if (window._countryMappings?.[cname]) {
+				cname = window._countryMappings[cname];
+			}
 
-    // Hover-Effekte
-    layer.on({
-      mouseover: e =>
-        e.target.setStyle({
-          weight: 1.2,
-          color: "#000",
-          fillOpacity: 0.9
-        }),
-      mouseout: e => mapLayer.resetStyle(e.target)
-    });
+			const canonicalIso = isoByName[cname.toLowerCase()];
+			const val =
+				mapDataByIso[iso] ??
+				(canonicalIso ? mapDataByIso[canonicalIso] : undefined);
+
+			const info = countries[cname] || {};
+
+			const tooltip = `
+				<strong>${cname}</strong><br>
+				${Number.isFinite(val)
+					? `${formatValueAuto(val)} ${meta.unit || ""}`
+					: "no data"}<br>
+				<small>Capital: ${info.capital || "–"} | Gov: ${info.government || "–"}</small>
+			`;
+			layer.bindTooltip(tooltip, { sticky: true });
+
+			layer.on({
+				mouseover: e => e.target.setStyle({ weight: 1.2, color: "#000", fillOpacity: 0.9 }),
+				mouseout: e => mapLayer.resetStyle(e.target)
+			});
+		}
+	}).addTo(map);
+
+  // === Neue Legende ===
+  const legendHTML = buildHeatLegendHTML({
+    title: meta.title || currentKpi,
+    unit: meta.unit || "",
+    min: adjMin,
+    max: adjMax,
+    sortMode,
+    targetVal,
+    useLog
+  });
+  const mapLegend = document.getElementById("map-legend");
+  if (mapLegend) mapLegend.innerHTML = legendHTML;
+
+  console.log(`🎨 Map rendered (balanced scale, log=${useLog})`);
+}
+
+/* === Hilfsfunktion: HTML-Farbskala für Heatmap (inkl. Log-Hinweis) === */
+function buildHeatLegendHTML({
+  title, unit, min, max,
+  sortMode = "higher",
+  targetVal = NaN,
+  useLog = false
+}) {
+  const gradientHigher = "linear-gradient(to right, hsl(120,85%,45%), hsl(60,85%,50%), hsl(0,85%,50%))";
+  const gradientLower  = "linear-gradient(to right, hsl(0,85%,50%), hsl(60,85%,50%), hsl(120,85%,45%))";
+  const gradientTarget = "linear-gradient(to right, hsl(120,85%,45%), #ffffff, hsl(0,85%,50%))";
+
+  let bar = gradientHigher;
+  switch (String(sortMode).toLowerCase()) {
+    case "higher": bar = gradientHigher; break;
+    case "lower":  bar = gradientLower;  break;
+    case "target": bar = gradientTarget; break;
   }
-}).addTo(map);
 
+  const minLabel = typeof min === "number" ? formatValueAuto(min) : String(min ?? "");
+  const maxLabel = typeof max === "number" ? formatValueAuto(max) : String(max ?? "");
+  const targetHtml =
+    (String(sortMode).toLowerCase() === "target" && Number.isFinite(targetVal))
+      ? `<div class="legend-target">🎯 Target: <strong>${formatValueAuto(targetVal)} ${unit}</strong></div>`
+      : "";
+  const logInfo = useLog
+      ? `<div class="legend-note">⚙️ log-scaled (extreme values damped)</div>`
+      : "";
 
-  // === Legende anpassen ===
-  addHeatmapLegend(min, max, meta.unit || "", meta.title || currentKpi, sortMode, targetVal);
-  console.log(`🎨 Map rendered: ${meta.title} (${values.length} Länder)`);
+  return `
+  <div class="legend-box">
+    <div class="legend-title"><strong>${title}</strong></div>
+    <div class="legend-bar" style="background:${bar};"></div>
+    <div class="legend-scale">
+      <span>${minLabel} ${unit}</span>
+      <span>${maxLabel} ${unit}</span>
+    </div>
+    <div class="legend-mode">Scale mode: <em>${sortMode}</em></div>
+    ${targetHtml}
+    ${logInfo}
+  </div>`;
 }
 
-
-/* ========= LEGEND (dynamic for sort + target) ========= */
-function addHeatmapLegend(min, max, unit, title, sortMode = "neutral", targetVal = null) {
-  const legend = L.control({ position: "bottomright" });
-  legend.onAdd = function () {
-    const div = L.DomUtil.create("div", "info legend");
-
-    let gradient = "linear-gradient(to right, hsl(0,80%,45%), hsl(120,80%,45%))";
-    let directionNote = "";
-
-    if (sortMode === "lower") {
-      gradient = "linear-gradient(to right, hsl(120,80%,45%), hsl(0,80%,45%))";
-      directionNote = "<span style='color:#0a0'>Lower values = greener</span>";
-    } else if (sortMode === "higher") {
-      gradient = "linear-gradient(to right, hsl(0,80%,45%), hsl(120,80%,45%))";
-      directionNote = "<span style='color:#0a0'>Higher values = greener</span>";
-    } else if (sortMode === "target" && Number.isFinite(targetVal)) {
-      gradient = "linear-gradient(to right, hsl(0,80%,45%), hsl(120,80%,45%), hsl(0,80%,45%))";
-      directionNote = `<span style='color:#0a0'>Closer to target (${targetVal}) = greener</span>`;
-    } else {
-      directionNote = "<span style='color:#0a0'>Quantitative scale</span>";
-    }
-
-    div.innerHTML = `
-      <strong>${title}</strong><br>
-      <div style="width:180px;height:12px;background:${gradient};
-        border:1px solid #333;margin:4px 0;"></div>
-      <div style="display:flex;justify-content:space-between;font-size:0.8em;">
-        <span>${formatValueAuto(min)}</span>
-        <span>${formatValueAuto(max)}</span>
-      </div>
-      <div style="font-size:0.75em;color:#666;">Unit: ${unit}</div>
-      <div style="font-size:0.75em;margin-top:2px;">${directionNote}</div>
-    `;
-    return div;
-  };
-  legend.addTo(map);
-  window._legendControl = legend;
-}
 
 /* ========= Map Highlight (bestehend, unverändert) ========= */
 function highlightOnMap(country) {
@@ -1074,27 +1076,20 @@ window.updateMap = updateMap;
 window.highlightOnMap = highlightOnMap;
 
 /* ========= MAP AUTO-INIT (Retry Logic for Leaflet) ========= */
-window.addEventListener("DOMContentLoaded", () => {
-  let tries = 0;
-  const maxTries = 20;
-  const timer = setInterval(() => {
+window.addEventListener("DOMContentLoaded", async () => {
+  for (let tries = 1; tries <= 5; tries++) {
     const mapEl = document.getElementById("map");
-    const leafletReady = typeof L !== "undefined";
-    const initReady = typeof initMap === "function";
-    const visible = mapEl && mapEl.offsetHeight > 0 && mapEl.offsetWidth > 0;
-    tries++;
-
-    if (leafletReady && initReady && visible) {
-      clearInterval(timer);
-      console.log("➡️ Starting initMap()");
-      initMap();
+    if (mapEl && mapEl.offsetHeight > 0 && typeof L !== "undefined") {
+      console.log("➡️ initMap() after", tries, "tries");
+      await initMap();
       setTimeout(() => window.map?.invalidateSize?.(), 800);
-    } else if (tries >= maxTries) {
-      clearInterval(timer);
-      console.warn("⚠️ Map initialization failed after max retries");
+      return;
     }
-  }, 250);
+    await new Promise(r => setTimeout(r, 300));
+  }
+  console.warn("⚠️ Map initialization failed after 5 retries");
 });
+
 
 /* ========= Start ========= */
 document.addEventListener("DOMContentLoaded", () => init());

@@ -178,30 +178,31 @@ async function loadAllKPIData() {
 
     rcLog(`Found ${index.parts.length} KPI data parts.`);
 
-    const ALL_DATA = {};
-    for (const part of index.parts) {
-      const url = "data/" + part + "?t=" + Date.now();
-      rcLog("⬇️ Loading", url);
+		// ⚡ Parallel laden & entpacken
+		const ALL_DATA = {};
+		await Promise.all(
+			index.parts.map(async part => {
+				const url = "data/" + part + "?t=" + Date.now();
+				rcLog("⬇️ Loading", url);
 
-      const response = await fetch(url);
-      if (!response.ok) throw new Error(`HTTP ${response.status} on ${url}`);
+				const response = await fetch(url);
+				if (!response.ok) throw new Error(`HTTP ${response.status} on ${url}`);
 
-      // 💡 Immer als Binärdaten laden
-      const buffer = await response.arrayBuffer();
-      const bytes = new Uint8Array(buffer);
+				const buffer = await response.arrayBuffer();
+				const bytes = new Uint8Array(buffer);
 
-      let text;
-      try {
-        // zuerst versuchen, als gzip zu entpacken
-        text = pako.ungzip(bytes, { to: "string" });
-      } catch {
-        // falls kein gzip: normal decodieren
-        text = new TextDecoder("utf-8").decode(bytes);
-      }
+				let text;
+				try {
+					text = pako.ungzip(bytes, { to: "string" });
+				} catch {
+					text = new TextDecoder("utf-8").decode(bytes);
+				}
 
-      const json = JSON.parse(text);
-      Object.assign(ALL_DATA, json);
-    }
+				const json = JSON.parse(text);
+				Object.assign(ALL_DATA, json);
+			})
+		);
+
 
     rcLog(`✅ Loaded ${Object.keys(ALL_DATA).length} KPI datasets`);
     return ALL_DATA;

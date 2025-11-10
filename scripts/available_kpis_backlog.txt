@@ -1,3 +1,5 @@
+manuell füllen
+
   {
     "title": "Olympic Medals (Summer)",
     "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Summer Olympic Games. It reflects not only elite athletic performance but also the depth of a nation's sports culture, infrastructure, and long-term investment in youth and education. While Olympic success is not a direct measure of social well-being, strong performance often correlates with effective public health systems, access to sports facilities, and widespread participation in physical education. Over time, Summer Olympic results provide insight into global development, population trends, and the influence of national training programs. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
@@ -30,6 +32,9 @@
     "relevance": "none",
     "actuality": "normal"
   },
+
+beantragt
+
   {
     "title": "Climate Risk Index",
     "description": "The Global Climate Risk Index analyses to what extent countries have been affected by the impacts of weather-related loss events (storms, floods, heatwaves, etc.). A lower score indicates higher climate risk. These data are published annually by Germanwatch – Global Climate Risk Index Report.",
@@ -46,6 +51,9 @@
     "relevance": "normal",
     "actuality": "stable"
   },
+
+?
+
   {
     "title": "Global Supply Chain Stress Index",
     "description": "The Global Supply Chain Stress Index (GSSI) measures pressures and disruptions in international supply chains based on global trade, shipping, and logistics data. Higher values indicate increased stress, while lower values signal stable supply networks. These data are published by the Federal Reserve Bank of New York – Global Supply Chain Pressure Index (GSCPI).",
@@ -62,6 +70,10 @@
     "relevance": "normal",
     "actuality": "critical"
   },
+
+
+alt
+
   {
     "title": "Global Conflict Deaths",
     "description": "Global Conflict Deaths measures the total number of people who lose their lives due to violent political conflicts around the world over an extended period. This indicator is important because it reflects the level of violence and instability in societies, helping us understand the impact of conflict on communities and nations. Factors influencing this number include the intensity of conflicts, the types of weapons used, and the effectiveness of peacekeeping efforts. It is also related to other security metrics, such as military expenditures and refugee numbers, providing a broader picture of global security challenges. These data are compiled by Our World in Data based on the Uppsala Conflict Data Program (UCDP).",
@@ -78,3 +90,27 @@
     "relevance": "none",
     "actuality": "normal"
   },
+
+
+
+
+alternative zu owid
+
+  {
+    "title": "Physicians",
+    "description": "**Physicians per 1,000 People** measures how many doctors are available for every 1,000 individuals in a population. This indicator is important because it helps gauge the accessibility of healthcare services in a country—more physicians generally mean better healthcare availability and outcomes. Factors influencing this number include the country’s healthcare system, medical education capacity, and government health policies. This metric is closely related to other health indicators, such as hospital beds per 1,000 people and overall health expenditure, as they collectively reflect the strength and efficiency of a nation’s healthcare system. These data are provided by the World Bank’s World Development Indicators database.",
+    "unit": "per 1,000 people",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Health & Social",
+    "source": "https://data.worldbank.org/indicator/SH.MED.PHYS.ZS",
+    "source_type": "worldbank",
+    "source_code": "SH.MED.PHYS.ZS",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "physicians_per_1_000_people",
+    "relevance": "normal",
+    "actuality": "normal"
+  },
+
+

@@ -105,17 +105,18 @@ Base your reasoning on global indexes such as:
 
 Output STRICTLY as valid JSON array, no comments or text.
 Each entry must have:
-  {
+  {{
     "rank": <int>,
     "country": "<string>",
     "reason": "<string>"
-  }
+  }}
 Example:
 [
-  {"rank": 1, "country": "Canada", "reason": "open immigration policies"},
+  {{"rank": 1, "country": "Canada", "reason": "open immigration policies"}},
   ...
 ]
 """.strip()
+
 
 # === Core ===
 def generate_ranking(mode: str, prompt: str, path: Path):

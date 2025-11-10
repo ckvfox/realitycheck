@@ -435,29 +435,44 @@ def fetch_worldbank_series(indicator_code: str):
     """
     Ruft einen vollständigen Zeitverlauf eines World Bank-Indikators ab.
     Gibt eine Liste aus dicts zurück, jeweils mit 'country', 'date', 'value'.
+    Integriert automatischen Retry mit Backoff bei HTTP 429 (Rate Limit).
     """
-    try:
-        base_url = f"https://api.worldbank.org/v2/country/all/indicator/{indicator_code}?format=json&per_page=20000"
-        r = requests.get(base_url, timeout=60)
-        if r.status_code != 200:
-            log(f"[ERR] WorldBank {indicator_code}: HTTP {r.status_code}")
-            return []
+    base_url = f"https://api.worldbank.org/v2/country/all/indicator/{indicator_code}?format=json&per_page=20000"
 
-        data = r.json()
-        if not isinstance(data, list) or len(data) < 2:
-            log(f"[WARN] WorldBank {indicator_code}: unexpected JSON format")
-            return []
+    max_retries = 5
+    backoff = 5  # Sekunden
 
-        series = data[1]
-        if not isinstance(series, list):
-            log(f"[WARN] WorldBank {indicator_code}: series not list")
-            return []
+    for attempt in range(1, max_retries + 1):
+        try:
+            r = requests.get(base_url, timeout=60)
+            if r.status_code == 200:
+                data = r.json()
+                if not isinstance(data, list) or len(data) < 2:
+                    log(f"[WARN] WorldBank {indicator_code}: unexpected JSON format")
+                    return []
+                series = data[1]
+                if not isinstance(series, list):
+                    log(f"[WARN] WorldBank {indicator_code}: series not list")
+                    return []
+                return series
 
-        return series
+            elif r.status_code == 429:
+                # === 🕐 Rate Limit Handling ===
+                wait_time = backoff * attempt
+                log(f"[RATE] WorldBank {indicator_code}: HTTP 429 → waiting {wait_time}s before retry ({attempt}/{max_retries})")
+                time.sleep(wait_time)
+                continue  # erneuter Versuch
 
-    except Exception as e:
-        log(f"[ERR] WorldBank fetch failed for {indicator_code}: {e}")
-        return []
+            else:
+                log(f"[ERR] WorldBank {indicator_code}: HTTP {r.status_code}")
+                return []
+
+        except Exception as e:
+            log(f"[ERR] WorldBank fetch failed for {indicator_code} (try {attempt}/{max_retries}): {e}")
+            time.sleep(2 * attempt)
+
+    log(f"[FAIL] WorldBank {indicator_code}: all {max_retries} attempts failed")
+    return []
 
 
 def extract_worldbank_date(zip_bytes: bytes) -> Optional[str]:

@@ -2,101 +2,121 @@
   {
     "rank": 1,
     "country": "Australia",
-    "climate": "18-26 °C",
-    "sunny_days": 280,
-    "rainy_days": 80,
-    "happiness_index": "High",
-    "beer_price": "2.50 USD",
-    "livability_bonus": "Sydney and Melbourne are in the top 5 of the most livable cities"
+    "criteria": {
+      "climate": "18-26 °C",
+      "sunny_days": 280,
+      "rainy_days": 80,
+      "happiness_index": "High",
+      "beer_price": "2.50 USD",
+      "livable_city_bonus": "Melbourne, Sydney"
+    }
   },
   {
     "rank": 2,
     "country": "Spain",
-    "climate": "18-25 °C",
-    "sunny_days": 290,
-    "rainy_days": 75,
-    "happiness_index": "High",
-    "beer_price": "2.20 USD",
-    "livability_bonus": "No top 5 city but overall high livability"
+    "criteria": {
+      "climate": "18-26 °C",
+      "sunny_days": 290,
+      "rainy_days": 75,
+      "happiness_index": "High",
+      "beer_price": "2.20 USD",
+      "livable_city_bonus": "Barcelona"
+    }
   },
   {
     "rank": 3,
     "country": "Portugal",
-    "climate": "18-25 °C",
-    "sunny_days": 290,
-    "rainy_days": 85,
-    "happiness_index": "High",
-    "beer_price": "2.00 USD",
-    "livability_bonus": "Lisbon ranks high in quality of life surveys"
+    "criteria": {
+      "climate": "18-26 °C",
+      "sunny_days": 300,
+      "rainy_days": 85,
+      "happiness_index": "High",
+      "beer_price": "2.00 USD",
+      "livable_city_bonus": null
+    }
   },
   {
     "rank": 4,
-    "country": "New Zealand",
-    "climate": "18-24 °C",
-    "sunny_days": 280,
-    "rainy_days": 90,
-    "happiness_index": "High",
-    "beer_price": "3.40 USD",
-    "livability_bonus": "Auckland is among the top 5 in global liveability indexes."
+    "country": "Mexico",
+    "criteria": {
+      "climate": "18-26 °C",
+      "sunny_days": 280,
+      "rainy_days": 90,
+      "happiness_index": "Moderate",
+      "beer_price": "1.50 USD",
+      "livable_city_bonus": null
+    }
   },
   {
     "rank": 5,
-    "country": "Mexico",
-    "climate": "18-26 °C",
-    "sunny_days": 280,
-    "rainy_days": 85,
-    "happiness_index": "Moderate",
-    "beer_price": "1.50 USD",
-    "livability_bonus": "No top 5 city but great tourist destinations"
+    "country": "Italy",
+    "criteria": {
+      "climate": "18-26 °C",
+      "sunny_days": 290,
+      "rainy_days": 70,
+      "happiness_index": "High",
+      "beer_price": "3.00 USD",
+      "livable_city_bonus": null
+    }
   },
   {
     "rank": 6,
-    "country": "Italy",
-    "climate": "19-25 °C",
-    "sunny_days": 290,
-    "rainy_days": 80,
-    "happiness_index": "High",
-    "beer_price": "3.20 USD",
-    "livability_bonus": "No top 5 city but high overall quality of life"
+    "country": "South Africa",
+    "criteria": {
+      "climate": "18-26 °C",
+      "sunny_days": 295,
+      "rainy_days": 60,
+      "happiness_index": "Moderate",
+      "beer_price": "2.00 USD",
+      "livable_city_bonus": "Cape Town"
+    }
   },
   {
     "rank": 7,
-    "country": "Chile",
-    "climate": "18-26 °C",
-    "sunny_days": 300,
-    "rainy_days": 65,
-    "happiness_index": "Moderate",
-    "beer_price": "2.00 USD",
-    "livability_bonus": "Santiago is rising in global city rankings"
+    "country": "New Zealand",
+    "criteria": {
+      "climate": "18-26 °C",
+      "sunny_days": 280,
+      "rainy_days": 85,
+      "happiness_index": "High",
+      "beer_price": "3.50 USD",
+      "livable_city_bonus": null
+    }
   },
   {
     "rank": 8,
     "country": "Greece",
-    "climate": "18-26 °C",
-    "sunny_days": 300,
-    "rainy_days": 60,
-    "happiness_index": "Moderate",
-    "beer_price": "3.00 USD",
-    "livability_bonus": "No top 5 city but high quality of life in tourist areas"
+    "criteria": {
+      "climate": "18-26 °C",
+      "sunny_days": 290,
+      "rainy_days": 60,
+      "happiness_index": "Moderate",
+      "beer_price": "3.00 USD",
+      "livable_city_bonus": null
+    }
   },
   {
     "rank": 9,
-    "country": "Malta",
-    "climate": "18-25 °C",
-    "sunny_days": 295,
-    "rainy_days": 85,
-    "happiness_index": "High",
-    "beer_price": "2.80 USD",
-    "livability_bonus": "Valletta is noted for its livability and natural beauty"
+    "country": "Chile",
+    "criteria": {
+      "climate": "18-26 °C",
+      "sunny_days": 290,
+      "rainy_days": 75,
+      "happiness_index": "Moderate",
+      "beer_price": "2.50 USD",
+      "livable_city_bonus": null
+    }
   },
   {
     "rank": 10,
-    "country": "Costa Rica",
-    "climate": "21-26 °C",
-    "sunny_days": 280,
-    "rainy_days": 90,
-    "happiness_index": "High",
-    "beer_price": "2.50 USD",
-    "livability_bonus": "Regularly features in discussions of expat quality of life"
+    "country": "Argentina",
+    "criteria": {
+      "climate": "18-26 °C",
+      "sunny_days": 280,
+      "rainy_days": 90,
+      "happiness_index": "Moderate",
+      "beer_price": "1.70 USD",
+      "livable_city_bonus": null
+    }
   }
 ]

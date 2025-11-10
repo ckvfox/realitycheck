@@ -85,40 +85,57 @@ def numeric_values(recs):
         v=r.get("value")
         if isinstance(v,(int,float)) and not (math.isnan(v) or math.isinf(v)): yield float(v)
 
-# === GPT Helper (Fun/Safe-Style) ===
-def gpt_call(prompt:str, max_tokens:int=700)->str:
-    """Robuster GPT-Call – identisch zu Fun/Safe-Style, mehrere Modelle Fallback."""
-    text=""
-    last_err=None
-    for model in ["gpt-4o","gpt-4-turbo"]:
-        log(f"➡️ GPT call → {model}")
+# === GPT Helper (Fun/Safe-Style, mit optionalem Silent Mode) ===
+VERBOSE = False  # ⬅️ auf True setzen, wenn du Debug-Logs brauchst
+
+def gpt_call(prompt: str, max_tokens: int = 700) -> str:
+    """Robuster GPT-Call – mit Fallback und optionalem Silent Mode."""
+    text = ""
+    last_err = None
+
+    for model in ["gpt-4o", "gpt-4-turbo"]:
+        if VERBOSE:
+            log(f"➡️ GPT call → {model}")
         try:
-            rsp=client.chat.completions.create(
+            rsp = client.chat.completions.create(
                 model=model,
                 messages=[
-                    {"role":"system","content":"You analyze global datasets objectively."},
-                    {"role":"user","content":prompt.strip()},
+                    {"role": "system", "content": "You analyze global datasets objectively."},
+                    {"role": "user", "content": prompt.strip()},
                 ],
                 max_completion_tokens=max_tokens
             )
-            usage=getattr(rsp,"usage",{})
-            log(f"🧮 Tokens: {usage}")
-            msg=rsp.choices[0].message
-            raw=msg.content  # ✅ new SDK compatible
+
+            usage = getattr(rsp, "usage", {})
+            if VERBOSE:
+                log(f"🧮 Tokens: {usage}")
+
+            msg = rsp.choices[0].message
+            raw = msg.content  # ✅ new SDK compatible
+
             if not raw:
-                log("⚠️ Empty content → next model"); continue
-            text=raw.strip()
-            if len(text)>30:
-                log(f"✅ {model} OK ({len(text)} chars)")
+                if VERBOSE:
+                    log("⚠️ Empty content → next model")
+                continue
+
+            text = raw.strip()
+            if len(text) > 30:
+                if VERBOSE:
+                    log(f"✅ {model} OK ({len(text)} chars)")
                 return text
             else:
-                log(f"⚠️ Short response ({len(text)} chars) → retry")
-                text=""
+                if VERBOSE:
+                    log(f"⚠️ Short response ({len(text)} chars) → retry")
+                text = ""
+
         except Exception as e:
-            last_err=e
-            log(f"❌ {model} error: {e}")
+            last_err = e
+            if VERBOSE:
+                log(f"❌ {model} error: {e}")
             time.sleep(1)
+
     raise RuntimeError(f"Empty GPT response after retries. Last error: {last_err}")
+
 
 # === Globale Analyse ===
 def run_global_analysis(updated):

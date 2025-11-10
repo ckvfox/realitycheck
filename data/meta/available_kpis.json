@@ -308,38 +308,6 @@
     "actuality": "normal"
   },
   {
-    "title": "Physicians",
-    "description": "**Physicians per 1,000 People** measures how many doctors are available for every 1,000 individuals in a population. This indicator is important because it helps gauge the accessibility of healthcare services in a country—more physicians generally mean better healthcare availability and outcomes. Factors influencing this number include the country’s healthcare system, medical education capacity, and government health policies. This metric is closely related to other health indicators, such as hospital beds per 1,000 people and overall health expenditure, as they collectively reflect the strength and efficiency of a nation’s healthcare system. These data are provided by the World Bank’s World Development Indicators database.",
-    "unit": "per 1,000 people",
-    "relation": "",
-    "sort": "higher",
-    "cluster": "Health & Social",
-    "source": "https://data.worldbank.org/indicator/SH.MED.PHYS.ZS",
-    "source_type": "worldbank",
-    "source_code": "SH.MED.PHYS.ZS",
-    "scale": "none",
-    "world_kpi": "",
-    "filename": "physicians_per_1_000_people",
-    "relevance": "normal",
-    "actuality": "normal"
-  },
-  {
-    "title": "Hospital Beds",
-    "description": "**Hospital Beds per 1,000 People** measures the number of hospital beds available for every 1,000 individuals in a population. This indicator is important because it reflects a country’s healthcare capacity and readiness to provide care during emergencies, such as epidemics or natural disasters. Factors that influence this number include government healthcare policies, funding, and the overall health needs of the population. This metric is often considered alongside other health indicators, such as healthcare workforce numbers and hospital admissions, to give a clearer picture of a country's healthcare system's effectiveness and accessibility. These data are provided by the World Bank’s World Development Indicators database.",
-    "unit": "per 1,000 people",
-    "relation": "",
-    "sort": "higher",
-    "cluster": "Health & Social",
-    "source": "https://data.worldbank.org/indicator/SH.MED.BEDS.ZS",
-    "source_type": "worldbank",
-    "source_code": "SH.MED.BEDS.ZS",
-    "scale": "none",
-    "world_kpi": "",
-    "filename": "hospital_beds_per_1_000_people",
-    "relevance": "normal",
-    "actuality": "normal"
-  },
-  {
     "title": "Infant Mortality Rate",
     "description": "The Infant Mortality Rate measures the number of infants who die before their first birthday for every 1,000 live births in a given year. This indicator is important because it reflects the overall health and well-being of a society, as well as the effectiveness of its healthcare system. Factors that can influence this rate include access to medical care, maternal health, nutrition, and socioeconomic conditions. The Infant Mortality Rate is closely related to other health metrics, such as maternal mortality and child health indicators, providing a broader picture of health challenges within a community. These data are provided by the World Bank’s World Development Indicators database.",
     "unit": "per 1,000 births",
@@ -371,6 +339,40 @@
     "relevance": "normal",
     "actuality": "normal"
   },
+	{
+		"title": "Physicians",
+		"description": "**Physicians per 1,000 People** measures how many doctors are available for every 1,000 individuals in a population. This indicator is important because it helps gauge the accessibility of healthcare services in a country—more physicians generally mean better healthcare availability and outcomes. Factors influencing this number include the country’s healthcare system, medical education capacity, and government health policies. This metric is closely related to other health indicators, such as hospital beds per 1,000 people and overall health expenditure, as they collectively reflect the strength and efficiency of a nation’s healthcare system. These data are compiled by Our World in Data based on WHO and OECD datasets.",
+		"unit": "per 1,000 people",
+		"relation": "",
+		"sort": "higher",
+		"cluster": "Health & Social",
+		"source": "https://ourworldindata.org/grapher/physicians-per-1000-people",
+		"source_type": "owid",
+		"source_code": "physicians-per-1000-people.csv?useColumnShortNames=true",
+		"scale": "none",
+		"world_kpi": "",
+		"filename": "physicians_per_1_000_people",
+		"relevance": "normal",
+		"actuality": "normal"
+	},
+	
+  {
+    "title": "Hospital Beds",
+    "description": "**Hospital Beds per 1,000 People** measures the number of hospital beds available for every 1,000 individuals in a population. This indicator is important because it reflects a country’s healthcare capacity and readiness to provide care during emergencies, such as epidemics or natural disasters. Factors that influence this number include government healthcare policies, funding, and the overall health needs of the population. This metric is often considered alongside other health indicators, such as healthcare workforce numbers and hospital admissions, to give a clearer picture of a country's healthcare system's effectiveness and accessibility. These data are provided by the World Bank’s World Development Indicators database.",
+    "unit": "per 1,000 people",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Health & Social",
+    "source": "https://data.worldbank.org/indicator/SH.MED.BEDS.ZS",
+    "source_type": "worldbank",
+    "source_code": "SH.MED.BEDS.ZS",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "hospital_beds_per_1_000_people",
+    "relevance": "normal",
+    "actuality": "normal"
+  },
+
   {
     "title": "Life Expectancy at Birth",
     "description": "Life expectancy at birth measures the average number of years a newborn is expected to live if current mortality rates continue. This indicator is important because it reflects the overall health and well-being of a population, influencing policies and healthcare investments. Factors that can affect life expectancy include access to healthcare, nutrition, lifestyle choices, and environmental conditions. It is closely related to other health metrics, such as infant mortality rates and disease prevalence, providing a comprehensive view of a society's health status. These data are provided by the World Bank’s World Development Indicators database.",
