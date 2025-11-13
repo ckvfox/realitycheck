@@ -24,6 +24,20 @@ function getWorldSeries(entries) {
 
 /* ========= Chart Renderer mit Tooltip ========= */
 function renderChart(container, title, unit, data) {
+  const previousCanvas = container.querySelector("canvas");
+  if (previousCanvas) {
+    try {
+      const existing =
+        typeof Chart !== "undefined" && typeof Chart.getChart === "function"
+          ? Chart.getChart(previousCanvas)
+          : null;
+      if (existing?.destroy) existing.destroy();
+    } catch (err) {
+      console.warn("⚠️ Failed to dispose old chart:", err);
+    }
+    previousCanvas.remove();
+  }
+
   const canvas = document.createElement("canvas");
   canvas.width = 800;
   canvas.height = 400;
@@ -34,12 +48,10 @@ function renderChart(container, title, unit, data) {
   canvas.style.marginBottom = "1rem";
   canvas.style.background = "#fff";
 
-  const ctx = canvas.getContext("2d");
-  new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: data.years,
-      datasets: [{
+  renderLineChart(canvas, {
+    labels: data.years,
+    datasets: [
+      {
         label: title,
         data: data.values,
         borderColor: "#1a355e",
@@ -48,11 +60,11 @@ function renderChart(container, title, unit, data) {
         pointHoverRadius: 5,
         fill: false,
         tension: 0.25
-      }]
-    },
+      }
+    ],
+    unit,
+    title: "",
     options: {
-      responsive: true,
-      interaction: { mode: "nearest", intersect: false },
       plugins: {
         title: { display: false },
         legend: { display: false },
@@ -61,7 +73,7 @@ function renderChart(container, title, unit, data) {
           callbacks: {
             title: ctx => "Year: " + (ctx[0]?.label ?? ""),
             label: ctx => {
-              const val = ctx.parsed.y;
+              const val = ctx.parsed?.y;
               if (val == null || isNaN(val)) return "No data";
               return `${val.toLocaleString()} ${unit || ""}`.trim();
             }
