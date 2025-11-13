@@ -97,7 +97,7 @@ body, html {
 #map {
   width: 100%;
   max-width: 900px;
-  height: 520px !important;
+  height: 360px !important;
   margin: 0 auto;
   display: block;
 }
@@ -175,14 +175,112 @@ tr.flop10 { background: #ff6f61 !important; color: #fff; }
 
 #legend { max-width: var(--max-width); margin: 1.5rem auto 2rem; padding: 0 2vw; font-size: .9em; color: var(--legend); }
 
+body.countries-page #legend {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+body.countries-page #legend h3 { margin-bottom: 0.75rem; }
+
+body.countries-page #legend ul {
+  list-style: disc;
+  line-height: 1.55;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+body.countries-page #legend li { margin-bottom: 0.35rem; }
+
+body.glossary-page #legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem 1.2rem;
+  text-align: center;
+}
+
+body.glossary-page #legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+}
+
+body.glossary-page #legend span:not(.outlier) {
+  border-radius: 999px;
+}
+
+body.overall-page #legend {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 880px) {
+  body.overall-page #legend {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body.overall-page #legend .legend-block {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  line-height: 1.55;
+}
+
+body.overall-page #legend .legend-block h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+body.overall-page #legend .legend-block p { margin: 0.45rem 0; }
+
+body.overall-page #legend .legend-block ul {
+  margin: 0.8rem 0;
+  padding-left: 1.2rem;
+}
+
+body.overall-page #legend .legend-block li { margin-bottom: 0.35rem; }
+
+body.overall-page #legend .legend-code {
+  background: #0b1220;
+  color: #e6e9ef;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.4rem;
+  line-height: 1.4;
+  overflow: auto;
+  font-family: "Fira Code", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.9rem;
+}
+
+body.overall-page #legend .missing-kpis {
+  margin-top: 1rem;
+  background: rgba(255,215,0,0.1);
+  border-left: 4px solid #f0c419;
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+}
+
+body.overall-page #legend .missing-kpis span {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
 
 #data-meta { text-align: center; font-size: .85em; color: #666; margin: -.5rem 0 1.5rem; }
 
 
 #data-meta a { color: #0b63c5; }
-
-
-  #map { height: 360px !important; }
 
 
 #world-intro { max-width: 900px; margin: 2rem auto 3rem; text-align: center; line-height: 1.6; padding: 0 1rem; }
@@ -1927,4 +2025,25 @@ Fixes: header/menu overflow, footer overflow, disappearing icons
     max-width: 160px;                  /* mobil kompakter */
     font-size: 0.8rem;
   }
+}
+
+body.glossary-page th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+body.glossary-page th.sortable::after {
+  content: " ⇅";
+  font-size: 0.8em;
+  color: #999;
+}
+
+body.glossary-page th.sort-asc::after {
+  content: " ↑";
+  color: #007bff;
+}
+
+body.glossary-page th.sort-desc::after {
+  content: " ↓";
+  color: #007bff;
 }
