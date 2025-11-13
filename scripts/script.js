@@ -11,43 +11,13 @@ let userSort = { col: null, asc: false };
 let currentScale = { factor: 1, suffix: "", label: "Exact values" };
 let sortingBound = false;
 
-/* ========= Frame Loader ========= */
-function loadFrame(page) {
-  const frame = document.getElementById("main-frame");
-  if (frame) frame.src = page;
-}
-
 /* ========= Helpers ========= */
-function chooseScaleFromValues(v) {
-  const m = Math.max(0, ...v.map(x => (x == null ? 0 : Math.abs(x))));
-  if (m >= 1e9) return { factor: 1e9, suffix: "B", label: "Billions" };
-  if (m >= 1e6) return { factor: 1e6, suffix: "M", label: "Millions" };
-  if (m >= 1e3) return { factor: 1e3, suffix: "K", label: "Thousands" };
-  return { factor: 1, suffix: "", label: "Exact values" };
-}
-function formatValueAuto(value, scaleMode = "auto") {
-  if (value === null || value === undefined || isNaN(value)) return "-";
-  const abs = Math.abs(value);
-  if (scaleMode === "%" || scaleMode === "none" || scaleMode === "index")
-    return value.toFixed(2);
-  if (scaleMode === "auto") {
-    if (abs >= 1e12) return (value / 1e12).toFixed(2) + " T";
-    if (abs >= 1e9) return (value / 1e9).toFixed(2) + " B";
-    if (abs >= 1e6) return (value / 1e6).toFixed(2) + " M";
-    if (abs >= 1e3) return (value / 1e3).toFixed(2) + " K";
-    return value.toFixed(2);
-  }
-  return value.toFixed(2);
-}
+// chooseScaleFromValues, formatValueAuto und calcTrend kommen aus scripts/core.js
 function formatWithScale(v) {
   return v == null || isNaN(v)
     ? "-"
     : (v / currentScale.factor).toFixed(2) +
         (currentScale.suffix ? " " + currentScale.suffix : "");
-}
-function calcTrend(a, b) {
-  if (a == null || b == null) return "→";
-  return a > b ? "↑" : a < b ? "↓" : "→";
 }
 function getKpiArray() {
   return Array.isArray(kpis)
@@ -60,13 +30,7 @@ function getKpiArray() {
 /* ========= Init ========= */
 async function init() {
   try {
-    if (
-      document.readyState !== "complete" &&
-      document.readyState !== "interactive"
-    )
-      await new Promise(r =>
-        document.addEventListener("DOMContentLoaded", r, { once: true })
-      );
+    await whenDocumentReady();
 
     if (!document.getElementById("kpiSelect")) {
       console.warn("RealityCheck: #kpiSelect not found -- skipping init.");
@@ -1210,7 +1174,7 @@ window.updateMap = updateMap;
 window.highlightOnMap = highlightOnMap;
 
 /* ========= MAP AUTO-INIT (Retry Logic for Leaflet) ========= */
-window.addEventListener("DOMContentLoaded", async () => {
+onDocumentReady(async () => {
   for (let tries = 1; tries <= 5; tries++) {
     const mapEl = document.getElementById("map");
     if (mapEl && mapEl.offsetHeight > 0 && typeof L !== "undefined") {
@@ -1226,37 +1190,5 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 
 /* ========= Start ========= */
-document.addEventListener("DOMContentLoaded", () => init());
+onDocumentReady(() => init());
 
-// =====================================================
-// 🔁 loadPage() for navigation (used in index.html <nav>)
-// =====================================================
-function loadPage(page, link) {
-  const frame = document.getElementById("main-frame");
-  const loader = document.getElementById("frame-loader");
-
-  if (!frame) {
-    console.warn("⚠️ main-frame element not found!");
-    return;
-  }
-
-  // Loader aktivieren
-  if (loader) loader.classList.add("active");
-
-  // Seite neu laden (mit Cache-Bypass)
-  frame.src = page + "?t=" + Date.now();
-
-  // Aktiven Menüpunkt markieren
-  document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
-  if (link) link.classList.add("active");
-
-  // Wenn Frame fertig geladen ist → Loader ausblenden
-  frame.addEventListener(
-    "load",
-    () => loader && loader.classList.remove("active"),
-    { once: true }
-  );
-}
-
-// Damit onclick="loadPage(...)" im HTML funktioniert
-window.loadPage = loadPage;

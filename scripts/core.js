@@ -90,6 +90,25 @@ async function loadJSON(path) {
   }
 }
 
+// === DOM ready helpers (promise + callback) ===
+function whenDocumentReady() {
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    return Promise.resolve();
+  }
+  return new Promise(resolve =>
+    document.addEventListener("DOMContentLoaded", resolve, { once: true })
+  );
+}
+
+function onDocumentReady(handler) {
+  if (typeof handler !== "function") return;
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    handler();
+  } else {
+    document.addEventListener("DOMContentLoaded", handler, { once: true });
+  }
+}
+
 // === Spinner (zentriert + fade) ===
 function showSpinner(show = true, msg = "Loading…") {
   const sp = document.getElementById("overlay-spinner");
@@ -158,6 +177,46 @@ function calculateGroupValues(group, dataset) {
     : records.reduce((a, r) => a + (r.value || 0), 0);
   const year = Math.max(...records.map(r => r.year || 0));
   return { country: group.title || group.id, value: val, year };
+}
+
+// === Shared number helpers ===
+function chooseScaleFromValues(values = []) {
+  const numbers = Array.isArray(values) ? values : [];
+  const maxValue = numbers.reduce((max, value) => {
+    const numeric = value == null ? 0 : Math.abs(Number(value));
+    return numeric > max ? numeric : max;
+  }, 0);
+
+  if (maxValue >= 1e9) return { factor: 1e9, suffix: "B", label: "Billions" };
+  if (maxValue >= 1e6) return { factor: 1e6, suffix: "M", label: "Millions" };
+  if (maxValue >= 1e3) return { factor: 1e3, suffix: "K", label: "Thousands" };
+  return { factor: 1, suffix: "", label: "Exact values" };
+}
+
+function formatValueAuto(value, scaleMode = "auto") {
+  if (value === null || value === undefined || Number.isNaN(value)) return "-";
+  const abs = Math.abs(Number(value));
+
+  if (scaleMode === "%" || scaleMode === "none" || scaleMode === "index") {
+    return Number(value).toFixed(2);
+  }
+
+  if (scaleMode === "auto") {
+    if (abs >= 1e12) return (value / 1e12).toFixed(2) + " T";
+    if (abs >= 1e9) return (value / 1e9).toFixed(2) + " B";
+    if (abs >= 1e6) return (value / 1e6).toFixed(2) + " M";
+    if (abs >= 1e3) return (value / 1e3).toFixed(2) + " K";
+    return Number(value).toFixed(2);
+  }
+
+  return Number(value).toFixed(2);
+}
+
+function calcTrend(current, previous) {
+  if (current == null || previous == null) return "→";
+  if (current > previous) return "↑";
+  if (current < previous) return "↓";
+  return "→";
 }
 
 // === Deep merge helper (for Chart option overrides) ===
@@ -453,10 +512,15 @@ async function renderKpiAnalysis(metaOrId, targetId = "kpi-analysis") {
 // === Expose globally for non-module pages ===
 window.loadJSON = loadJSON;
 window.showSpinner = showSpinner;
+window.whenDocumentReady = whenDocumentReady;
+window.onDocumentReady = onDocumentReady;
 window.normalizeName = normalizeName;
 window.resolveCountryName = resolveCountryName;
 window.calculateGroupValues = calculateGroupValues;
 window.groupKpisByCluster = groupKpisByCluster;
+window.chooseScaleFromValues = chooseScaleFromValues;
+window.formatValueAuto = formatValueAuto;
+window.calcTrend = calcTrend;
 window.rcLog = rcLog;
 window.loadAllKPIData = loadAllKPIData;
 window.renderLineChart = renderLineChart;

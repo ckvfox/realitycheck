@@ -17,19 +17,6 @@
     th.sort-desc::after { content: " ↓"; color: #007bff; }
   </style>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    try {
-      if (window.self !== window.top) {
-        document.body.classList.add("in-iframe");
-      } else {
-        document.body.classList.remove("in-iframe");
-      }
-    } catch(e) {
-      console.warn("iframe detection failed", e);
-    }
-  });
-  </script>
 </head>
 
 <body class="glossary-page">
@@ -75,28 +62,9 @@
   </section>
 
   <!-- gzip support -->
-  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js" defer></script>
 
   <script>
-  async function loadAllKPIData() {
-    const ALL = {};
-    const parts = [1, 2, 3, 4];
-    for (const i of parts) {
-      const url = `data/all_kpis_part${i}.json.gz`;
-      try {
-        const resp = await fetch(url, { cache: "no-store" });
-        if (!resp.ok) continue;
-        const buf = await resp.arrayBuffer();
-        const text = new TextDecoder().decode(pako.ungzip(buf));
-        Object.assign(ALL, JSON.parse(text));
-        console.log(`✅ Loaded ${url}`);
-      } catch (e) {
-        console.warn(`⚠️ Could not load ${url}`, e);
-      }
-    }
-    return ALL;
-  }
-
   async function loadGlossary() {
     try {
       const [fetchRes, outlierRes, metaRes, countryRes] = await Promise.all([
@@ -233,7 +201,11 @@
     rows.forEach(r => tbody.appendChild(r));
   }
 
-  window.addEventListener("DOMContentLoaded", loadGlossary);
+  if (typeof onDocumentReady === "function") {
+    onDocumentReady(loadGlossary);
+  } else {
+    window.addEventListener("DOMContentLoaded", loadGlossary);
+  }
   </script>
 
   <script src="scripts/core.js" defer></script>

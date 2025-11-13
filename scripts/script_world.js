@@ -265,4 +265,8 @@ async function initWorldPage() {
 }
 
 // === Seite initialisieren ===
-document.addEventListener("DOMContentLoaded", initWorldPage);
+if (typeof onDocumentReady === "function") {
+  onDocumentReady(initWorldPage);
+} else {
+  document.addEventListener("DOMContentLoaded", initWorldPage);
+}
