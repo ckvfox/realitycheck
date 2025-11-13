@@ -129,10 +129,11 @@
         "High income","Upper middle income","Lower middle income","Low income"
       ]);
 
+      // ✅ Einheitliches Datumsformat
       const fmtShort = s => {
-        if (!s) return "–";
+        if (!s) return "Unknown";
         const d = new Date(s);
-        return isNaN(d) ? s : d.toISOString().slice(0,10);
+        return isNaN(d) ? "Unknown" : d.toISOString().slice(0,10);
       };
 
       function countryCount(filename) {
@@ -173,12 +174,13 @@
         const pct = ((n / totalCountries) * 100).toFixed(0);
         const title = titleMap[id] || id;
 
+        // ✅ Farblich markierte Datumsspalten + einheitliches Format
         tr.innerHTML = `
           <td>${title}</td>
           <td>${info.source ? `<a href="${info.source}" target="_blank">${info.source}</a>` : "?"}</td>
-          <td>${info.data_year || "Unknown"}</td>
-          <td>${info.source_date || "Unknown"}</td>
-          <td>${fmtShort(info.last_fetch)}</td>
+          <td class="${clsYear}">${info.data_year || "Unknown"}</td>
+          <td class="${clsSrc}">${fmtShort(info.source_date)}</td>
+          <td class="${clsSrc}">${fmtShort(info.last_fetch)}</td>
           <td title="Coverage: ${pct}%">${n || "–"}</td>
           <td>
             ${flaggedCount ? `🔺 ${flaggedCount}` : "–"}

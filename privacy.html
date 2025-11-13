@@ -23,15 +23,16 @@
     </p>
 
     <p>
-      The backend stores anonymous server logs (via <code>tracking.php</code>), including:
-      <br>– Anonymized IP address
-      <br>– Date and time of access
-      <br>– Requested page or file
-      <br>– Browser type and version
+      The backend uses a simple internal counter (<code>tracking.php</code>) to record 
+      the total number of visits. The data is stored anonymously in 
+      <code>tracking.json</code> and includes only:
+      <br>– Total visit count
+      <br>– Country code (if detectable)
     </p>
 
     <p>
-      These logs are not linked to individuals and are used solely for performance monitoring and abuse prevention.
+      No IP addresses, browser fingerprints, or personal identifiers are stored.  
+      The information is used solely for anonymous visit statistics.
     </p>
 
     <p class="note">
