@@ -233,7 +233,14 @@ function renderLineChart(canvas, config = {}) {
     options = {}
   } = config;
 
-  if (existingChart?.destroy) existingChart.destroy();
+  const registryChart =
+    existingChart && typeof existingChart.destroy === "function"
+      ? existingChart
+      : typeof Chart !== "undefined" && typeof Chart.getChart === "function"
+      ? Chart.getChart(canvas)
+      : null;
+
+  if (registryChart?.destroy) registryChart.destroy();
 
   const safeLabels = labels.length ? labels : [0, 1, 2];
   const baseFallback = fallbackDataset || {
@@ -253,6 +260,7 @@ function renderLineChart(canvas, config = {}) {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: true,
       maintainAspectRatio: false,
       interaction: { mode: "nearest", intersect: false },
       layout: { padding: { top: 16, bottom: 12, left: 8, right: 8 } },

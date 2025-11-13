@@ -24,6 +24,20 @@ function getWorldSeries(entries) {
 
 /* ========= Chart Renderer mit Tooltip ========= */
 function renderChart(container, title, unit, data) {
+  const previousCanvas = container.querySelector("canvas");
+  if (previousCanvas) {
+    try {
+      const existing =
+        typeof Chart !== "undefined" && typeof Chart.getChart === "function"
+          ? Chart.getChart(previousCanvas)
+          : null;
+      if (existing?.destroy) existing.destroy();
+    } catch (err) {
+      console.warn("⚠️ Failed to dispose old chart:", err);
+    }
+    previousCanvas.remove();
+  }
+
   const canvas = document.createElement("canvas");
   canvas.width = 800;
   canvas.height = 400;
