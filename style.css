@@ -362,7 +362,7 @@ body.overall-page #legend .missing-kpis span {
 body.overall-page #priority-container { display: flex!important; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 1rem; width: 100%; max-width: 1100px; margin: 2rem auto; overflow: visible; height: auto!important; min-height: 200px; box-sizing: border-box; transition: min-height .3s ease; padding: 0 .5rem; }
 
 
-body.overall-page .cluster-box { flex: 1 1 100%; max-width: 100%; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; box-shadow: 0 2px 6px #0000d; display: flex; flex-direction: column; justify-content: flex-start; min-height: 360px; height: auto; box-sizing: border-box; transition: all .2s ease; }
+body.overall-page .cluster-box { flex: 1 1 100%; max-width: 100%; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; box-shadow: 0 2px 6px #0000d; display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box; transition: all .2s ease; }
 
 
 body.overall-page .kpi-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: .4rem; }
