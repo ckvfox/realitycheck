@@ -13,7 +13,7 @@
 
   <!-- 🔄 Lade-Spinner -->
   <div id="overlay-spinner" class="hidden"></div>
-  <button id="scroll-top-btn" title="Scroll to top">⬆️</button>
+  <button id="scroll-top-btn" title="Scroll to top" aria-label="Scroll to top">⬆️</button>
 
   <!-- 🌍 Intro -->
   <section class="page-intro">
@@ -29,13 +29,13 @@
     <table id="glossary-table">
       <thead>
         <tr>
-          <th class="sortable">KPI</th>
-          <th class="sortable">Source</th>
-          <th class="sortable">Data Year</th>
-          <th class="sortable">Source Date</th>
-          <th class="sortable">Last Fetch</th>
-          <th class="sortable">Countries</th>
-          <th class="sortable">Outliers</th>
+          <th scope="col" class="sortable">KPI</th>
+          <th scope="col" class="sortable">Source</th>
+          <th scope="col" class="sortable">Data Year</th>
+          <th scope="col" class="sortable">Source Date</th>
+          <th scope="col" class="sortable">Last Fetch</th>
+          <th scope="col" class="sortable">Countries</th>
+          <th scope="col" class="sortable">Outliers</th>
         </tr>
       </thead>
       <tbody id="glossary-body">
