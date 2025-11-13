@@ -1392,21 +1392,21 @@
     "high_outliers": [
       {
         "country": "China",
-        "year": 2023,
-        "value": 11902503000.0,
-        "z": 12.244
+        "year": 2024,
+        "value": 12289037000.0,
+        "z": 12.31
       },
       {
         "country": "United States",
-        "year": 2023,
-        "value": 4911391000.0,
-        "z": 4.937
+        "year": 2024,
+        "value": 4904120000.0,
+        "z": 4.795
       },
       {
         "country": "India",
-        "year": 2023,
-        "value": 3062324500.0,
-        "z": 3.004
+        "year": 2024,
+        "value": 3193478100.0,
+        "z": 3.054
       }
     ],
     "low_outliers": []
@@ -2252,21 +2252,21 @@
     "high_outliers": [
       {
         "country": "China",
-        "year": 2023,
-        "value": 11902503000.0,
-        "z": 12.244
+        "year": 2024,
+        "value": 12289037000.0,
+        "z": 12.31
       },
       {
         "country": "United States",
-        "year": 2023,
-        "value": 4911391000.0,
-        "z": 4.937
+        "year": 2024,
+        "value": 4904120000.0,
+        "z": 4.795
       },
       {
         "country": "India",
-        "year": 2023,
-        "value": 3062324500.0,
-        "z": 3.004
+        "year": 2024,
+        "value": 3193478100.0,
+        "z": 3.054
       }
     ],
     "low_outliers": []
