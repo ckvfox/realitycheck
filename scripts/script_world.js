@@ -26,43 +26,18 @@ function getWorldSeries(entries) {
 function renderChart(container, title, unit, data) {
   if (!container) return;
 
-  let canvas = container.querySelector("canvas");
-  if (!canvas) {
-    canvas = document.createElement("canvas");
-    container.appendChild(canvas);
+  let canvasEl = container.querySelector("canvas");
+  if (!canvasEl) {
+    canvasEl = document.createElement("canvas");
+    container.appendChild(canvasEl);
   }
 
-  const existingChart = canvas.__rcChart;
-  if (existingChart?.destroy) {
-    existingChart.destroy();
-    canvas.__rcChart = null;
-  }
-  const previousCanvas = container.querySelector("canvas");
-  if (previousCanvas) {
-    try {
-      const existing =
-        typeof Chart !== "undefined" && typeof Chart.getChart === "function"
-          ? Chart.getChart(previousCanvas)
-          : null;
-      if (existing?.destroy) existing.destroy();
-    } catch (err) {
-      console.warn("⚠️ Failed to dispose old chart:", err);
-    }
-    previousCanvas.remove();
-  }
+  canvasEl.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
+  canvasEl.style.borderRadius = "8px";
+  canvasEl.style.marginBottom = "1rem";
+  canvasEl.style.background = "#fff";
 
-  const canvas = document.createElement("canvas");
-  canvas.width = 800;
-  canvas.height = 400;
-  container.appendChild(canvas);
-
-  canvas.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
-  canvas.style.borderRadius = "8px";
-  canvas.style.marginBottom = "1rem";
-  canvas.style.background = "#fff";
-
-  const chart = renderLineChart(canvas, {
-  renderLineChart(canvas, {
+  const chart = renderLineChart(canvasEl, {
     labels: data.years,
     datasets: [
       {
@@ -78,6 +53,7 @@ function renderChart(container, title, unit, data) {
     ],
     unit,
     title: "",
+    existingChart: canvasEl.__rcChart,
     options: {
       plugins: {
         title: { display: false },
@@ -108,7 +84,7 @@ function renderChart(container, title, unit, data) {
     }
   });
 
-  canvas.__rcChart = chart;
+  canvasEl.__rcChart = chart;
 }
 
 /* ========= Einzel-Render-Funktion ========= */
@@ -118,20 +94,61 @@ async function renderWorldKpi(container, kpi) {
   const desc = kpi.description || "";
   const unit = kpi.unit || "";
 
-  const block = document.createElement("div");
-  block.className = "graph-block";
-  block.innerHTML = `<h3>${title}</h3>`;
-  container.appendChild(block);
+  let safeIdBase = window.normalizeName
+    ? window.normalizeName(filename || title)
+    : (filename || title || "").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  safeIdBase = (safeIdBase || "kpi").replace(/^-+|-+$/g, "");
+  const blockId = `world-kpi-${safeIdBase}`;
+
+  let block = container.querySelector(`#${blockId}`);
+  if (!block) {
+    block = document.createElement("div");
+    block.className = "graph-block";
+    block.id = blockId;
+    container.appendChild(block);
+  }
+
+  let titleEl = block.querySelector("h3");
+  if (!titleEl) {
+    titleEl = document.createElement("h3");
+    block.prepend(titleEl);
+  }
+  titleEl.textContent = title;
+
+  const existingCanvas = block.querySelector("canvas") || null;
+  Array.from(block.children).forEach(child => {
+    if (child.tagName === "H3" || child === existingCanvas) return;
+    if (child.tagName === "CANVAS" && child !== existingCanvas && child.__rcChart?.destroy) {
+      child.__rcChart.destroy();
+    }
+    child.remove();
+  });
 
   const data = ALL_DATA[filename] || [];
   if (!Array.isArray(data) || data.length === 0) {
-    block.innerHTML += `<p style="color:#666;font-style:italic;">No data available.</p>`;
+    block.querySelectorAll("canvas").forEach(c => {
+      if (c.__rcChart?.destroy) c.__rcChart.destroy();
+      c.remove();
+    });
+    const msg = document.createElement("p");
+    msg.style.color = "#666";
+    msg.style.fontStyle = "italic";
+    msg.textContent = "No data available.";
+    block.appendChild(msg);
     return;
   }
 
   const worldData = getWorldSeries(data);
   if (worldData.years.length === 0) {
-    block.innerHTML += `<p style="color:#666;font-style:italic;">No global values in dataset.</p>`;
+    block.querySelectorAll("canvas").forEach(c => {
+      if (c.__rcChart?.destroy) c.__rcChart.destroy();
+      c.remove();
+    });
+    const msg = document.createElement("p");
+    msg.style.color = "#666";
+    msg.style.fontStyle = "italic";
+    msg.textContent = "No global values in dataset.";
+    block.appendChild(msg);
     return;
   }
 
@@ -205,15 +222,37 @@ async function initWorldPage() {
 
     // === Rendern nach Cluster ===
     for (const [cluster, list] of Object.entries(grouped)) {
-      const h2 = document.createElement("h2");
-      h2.textContent = cluster;
-      h2.style.margin = "2rem auto 1rem";
-      h2.style.textAlign = "center";
-      h2.style.color = "var(--steel-blue)";
-      worldContainer.appendChild(h2);
+      const clusterKey = window.normalizeName
+        ? window.normalizeName(cluster)
+        : (cluster || "cluster").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      const clusterId = `world-cluster-${clusterKey || "group"}`;
+
+      let clusterSection = worldContainer.querySelector(`#${clusterId}`);
+      if (!clusterSection) {
+        clusterSection = document.createElement("section");
+        clusterSection.id = clusterId;
+        clusterSection.className = "world-cluster";
+
+        const h2 = document.createElement("h2");
+        h2.textContent = cluster;
+        h2.style.margin = "2rem auto 1rem";
+        h2.style.textAlign = "center";
+        h2.style.color = "var(--steel-blue)";
+        clusterSection.appendChild(h2);
+
+        worldContainer.appendChild(clusterSection);
+      } else {
+        // Clean out previous KPI blocks before rerendering the cluster.
+        clusterSection.querySelectorAll(".graph-block").forEach(block => {
+          block.querySelectorAll("canvas").forEach(c => {
+            if (c.__rcChart?.destroy) c.__rcChart.destroy();
+          });
+          block.remove();
+        });
+      }
 
       for (const kpi of list) {
-        await renderWorldKpi(worldContainer, kpi);
+        await renderWorldKpi(clusterSection, kpi);
       }
     }
   } catch (err) {
