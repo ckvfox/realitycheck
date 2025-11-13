@@ -2,7 +2,7 @@
 
 # 🌍 RealityCheck – Interactive Country Comparison
 
-**Version:** 2.1 (as of October 31, 2025)  
+**Version:** 2.1.1 (as of November 13, 2025)  
 **Project Lead:** Carsten Winterling  
 **AI Collaboration:** GPT-5  
 **Hosting:** InfinityFree  
@@ -185,12 +185,10 @@ Maps aliases (ISO, German, historic, OWID, WB names) to canonical form:
 ## 🚧 Open To-Do List (as of Oct 31, 2025)
 
 ### 🧭 UI / Frontend
-- [ ] Center `#overlay-spinner` inside iframe (currently full-page overlay)
-- [ ] Fix horizontal scrollbar on `#country-table`
-- [ ] “Bring me to top” button: scroll behavior inside iframe
+
 
 ### 🧩 Data & Logic
-- [ ] Extract chatbot logic into `/scripts/chatbot.js`
+- [ ] Implement chatbot logic into
 - [ ] Implement fuzzy loader for file fallbacks
 
 
