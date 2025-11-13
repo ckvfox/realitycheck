@@ -103,7 +103,11 @@ function initModeSwitch() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", initModeSwitch);
+if (typeof onDocumentReady === "function") {
+  onDocumentReady(initModeSwitch);
+} else {
+  document.addEventListener("DOMContentLoaded", initModeSwitch);
+}
 
 
 
@@ -538,4 +542,8 @@ async function fetchLastUpdated() {
 }
 
 /* ---------- Start ---------- */
-window.addEventListener("DOMContentLoaded", initOverall);
+if (typeof onDocumentReady === "function") {
+  onDocumentReady(initOverall);
+} else {
+  window.addEventListener("DOMContentLoaded", initOverall);
+}

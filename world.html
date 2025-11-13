@@ -7,21 +7,7 @@
   <title>RealityCheck – World Trends Dashboard</title>
 
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    try {
-      if (window.self !== window.top) {
-        document.body.classList.add("in-iframe");
-      } else {
-        document.body.classList.remove("in-iframe");
-      }
-    } catch(e) {
-      console.warn("iframe detection failed", e);
-    }
-  });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
 
 <body class="world-page">
@@ -59,9 +45,9 @@
   </p>
 
   <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
-	<!-- 🧠 Shared RealityCheck Core -->
-	<script src="scripts/core.js" defer></script>
-  <script src="scripts/script_world.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js" defer></script>
+        <!-- 🧠 Shared RealityCheck Core -->
+        <script src="scripts/core.js" defer></script>
+  <script src="scripts/script_world.js" defer></script>
 </body>
 </html>
