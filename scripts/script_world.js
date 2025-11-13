@@ -37,6 +37,24 @@ function renderChart(container, title, unit, data) {
     existingChart.destroy();
     canvas.__rcChart = null;
   }
+  const previousCanvas = container.querySelector("canvas");
+  if (previousCanvas) {
+    try {
+      const existing =
+        typeof Chart !== "undefined" && typeof Chart.getChart === "function"
+          ? Chart.getChart(previousCanvas)
+          : null;
+      if (existing?.destroy) existing.destroy();
+    } catch (err) {
+      console.warn("⚠️ Failed to dispose old chart:", err);
+    }
+    previousCanvas.remove();
+  }
+
+  const canvas = document.createElement("canvas");
+  canvas.width = 800;
+  canvas.height = 400;
+  container.appendChild(canvas);
 
   canvas.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
   canvas.style.borderRadius = "8px";
@@ -44,6 +62,7 @@ function renderChart(container, title, unit, data) {
   canvas.style.background = "#fff";
 
   const chart = renderLineChart(canvas, {
+  renderLineChart(canvas, {
     labels: data.years,
     datasets: [
       {

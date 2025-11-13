@@ -240,15 +240,7 @@ function renderLineChart(canvas, config = {}) {
       ? Chart.getChart(canvas)
       : null;
 
-  if (registryChart?.destroy) {
-    registryChart.destroy();
-  }
-
-  const attachedChart = canvas.__rcChart;
-  if (attachedChart && attachedChart !== registryChart && attachedChart.destroy) {
-    attachedChart.destroy();
-  }
-  canvas.__rcChart = null;
+  if (registryChart?.destroy) registryChart.destroy();
 
   const safeLabels = labels.length ? labels : [0, 1, 2];
   const baseFallback = fallbackDataset || {
@@ -269,6 +261,7 @@ function renderLineChart(canvas, config = {}) {
     options: {
       responsive: true,
       maintainAspectRatio: true,
+      maintainAspectRatio: false,
       interaction: { mode: "nearest", intersect: false },
       layout: { padding: { top: 16, bottom: 12, left: 8, right: 8 } },
       plugins: {
@@ -312,9 +305,7 @@ function renderLineChart(canvas, config = {}) {
   deepMerge(configObj.options, options);
 
   const ctx = canvas.getContext("2d");
-  const chart = new Chart(ctx, configObj);
-  canvas.__rcChart = chart;
-  return chart;
+  return new Chart(ctx, configObj);
 }
 
 // === Simple console logging helper ===
