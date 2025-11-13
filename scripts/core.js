@@ -160,6 +160,163 @@ function calculateGroupValues(group, dataset) {
   return { country: group.title || group.id, value: val, year };
 }
 
+// === Deep merge helper (for Chart option overrides) ===
+function deepMerge(target, ...sources) {
+  if (!target) target = {};
+  for (const src of sources) {
+    if (!src || typeof src !== "object") continue;
+    for (const [key, value] of Object.entries(src)) {
+      if (
+        value &&
+        typeof value === "object" &&
+        !Array.isArray(value) &&
+        typeof target[key] === "object" &&
+        !Array.isArray(target[key])
+      ) {
+        deepMerge(target[key], value);
+      } else {
+        target[key] = value;
+      }
+    }
+  }
+  return target;
+}
+
+// === Shared KPI cluster grouping ===
+function groupKpisByCluster(list, options = {}) {
+  const {
+    filter,
+    mapItem,
+    sortClusters = true,
+    itemSorter
+  } = options;
+
+  if (!Array.isArray(list)) return [];
+
+  const clusters = new Map();
+  for (const meta of list) {
+    if (filter && !filter(meta)) continue;
+    const clusterName = meta?.cluster || "Other";
+    if (!clusters.has(clusterName)) clusters.set(clusterName, []);
+    clusters.get(clusterName).push(mapItem ? mapItem(meta) : meta);
+  }
+
+  const entries = Array.from(clusters.entries());
+  if (sortClusters) entries.sort((a, b) => a[0].localeCompare(b[0]));
+
+  for (const [, items] of entries) {
+    if (typeof itemSorter === "function") {
+      items.sort(itemSorter);
+    } else {
+      items.sort((a, b) => {
+        const aKey = (a?.title || a?.label || a?.id || "").toString();
+        const bKey = (b?.title || b?.label || b?.id || "").toString();
+        return aKey.localeCompare(bKey);
+      });
+    }
+  }
+
+  return entries;
+}
+
+// === Shared Chart.js renderer ===
+function renderLineChart(canvas, config = {}) {
+  if (!canvas || typeof canvas.getContext !== "function") return null;
+
+  const {
+    labels = [],
+    datasets = [],
+    title = "",
+    unit = "",
+    existingChart = null,
+    fallbackDataset = null,
+    options = {}
+  } = config;
+
+  const registryChart =
+    existingChart && typeof existingChart.destroy === "function"
+      ? existingChart
+      : typeof Chart !== "undefined" && typeof Chart.getChart === "function"
+      ? Chart.getChart(canvas)
+      : null;
+
+  if (registryChart?.destroy) {
+    registryChart.destroy();
+  }
+
+  const attachedChart = canvas.__rcChart;
+  if (attachedChart && attachedChart !== registryChart && attachedChart.destroy) {
+    attachedChart.destroy();
+  }
+  canvas.__rcChart = null;
+
+  const safeLabels = labels.length ? labels : [0, 1, 2];
+  const baseFallback = fallbackDataset || {
+    label: "No data available",
+    data: safeLabels.map(() => null),
+    borderColor: "rgba(180,180,180,0.5)",
+    borderWidth: 1,
+    pointRadius: 0,
+    fill: false
+  };
+
+  const configObj = {
+    type: "line",
+    data: {
+      labels: safeLabels,
+      datasets: datasets.length ? datasets : [baseFallback]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      interaction: { mode: "nearest", intersect: false },
+      layout: { padding: { top: 16, bottom: 12, left: 8, right: 8 } },
+      plugins: {
+        title: { display: !!title, text: title },
+        legend: { display: datasets.length > 0 },
+        tooltip: {
+          enabled: true,
+          callbacks: {
+            title: ctx =>
+              ctx?.length ? `Year: ${ctx[0].label ?? ""}` : "",
+            label: ctx => {
+              const datasetLabel = ctx.dataset?.label
+                ? `${ctx.dataset.label}: `
+                : "";
+              const value = ctx.parsed?.y;
+              if (value == null || isNaN(value)) {
+                return `${datasetLabel}no data`;
+              }
+              const formatted = Number(value).toLocaleString();
+              return unit
+                ? `${datasetLabel}${formatted} ${unit}`.trim()
+                : `${datasetLabel}${formatted}`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: { display: !!unit, text: unit || "" },
+          grid: { color: "rgba(0,0,0,0.1)" }
+        },
+        x: {
+          ticks: { autoSkip: true, maxTicksLimit: 12 },
+          grid: { color: "rgba(0,0,0,0.05)" }
+        }
+      }
+    }
+  };
+
+  deepMerge(configObj.options, options);
+
+  const ctx = canvas.getContext("2d");
+  const chart = new Chart(ctx, configObj);
+  canvas.__rcChart = chart;
+  return chart;
+}
+
 // === Simple console logging helper ===
 function rcLog(...msg) {
   console.log("🧭 RealityCheck:", ...msg);
@@ -299,8 +456,10 @@ window.showSpinner = showSpinner;
 window.normalizeName = normalizeName;
 window.resolveCountryName = resolveCountryName;
 window.calculateGroupValues = calculateGroupValues;
+window.groupKpisByCluster = groupKpisByCluster;
 window.rcLog = rcLog;
 window.loadAllKPIData = loadAllKPIData;
+window.renderLineChart = renderLineChart;
 window.loadKpiAnalysis = loadKpiAnalysis;
 window.renderKpiAnalysis = renderKpiAnalysis;
 

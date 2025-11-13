@@ -112,49 +112,41 @@ function buildRelevanceControls() {
   const container = document.getElementById("priority-container");
   container.innerHTML = "";
 
-  const clusters = {};
-  kpis
-    .filter(
-      k =>
-        ["higher", "lower", "target"].includes(k.sort) &&
-        k.world_kpi !== "e" &&
-        (k.relevance ?? "normal") !== "none"
-    )
-    .forEach(meta => {
-      const cl = meta.cluster || "Other";
-      if (!clusters[cl]) clusters[cl] = [];
-      clusters[cl].push(meta);
-    });
+  const relevantGroups = groupKpisByCluster(kpis, {
+    filter: k =>
+      ["higher", "lower", "target"].includes(k.sort) &&
+      k.world_kpi !== "e" &&
+      (k.relevance ?? "normal") !== "none",
+    itemSorter: (a, b) => (a.title || "").localeCompare(b.title || "")
+  });
 
-  for (const [clusterName, list] of Object.entries(clusters)) {
+  for (const [clusterName, list] of relevantGroups) {
     const group = document.createElement("div");
     group.className = "cluster-box";
     const h3 = document.createElement("h3");
     h3.textContent = clusterName;
     group.appendChild(h3);
 
-    list
-      .sort((a, b) => a.title.localeCompare(b.title))
-      .forEach(meta => {
-        const row = document.createElement("div");
-        row.className = "kpi-row";
-        const label = document.createElement("label");
-        label.textContent = meta.title + ": ";
+    list.forEach(meta => {
+      const row = document.createElement("div");
+      row.className = "kpi-row";
+      const label = document.createElement("label");
+      label.textContent = meta.title + ": ";
 
-        const sel = document.createElement("select");
-        ["very_high", "high", "normal", "low", "irrelevant"].forEach(opt => {
-          const o = document.createElement("option");
-          o.value = opt;
-          o.textContent = opt.replace("_", " ");
-          if (opt === (meta.relevance || "normal")) o.selected = true;
-          sel.appendChild(o);
-        });
-
-        sel.dataset.kpi = meta.filename;
-        row.appendChild(label);
-        row.appendChild(sel);
-        group.appendChild(row);
+      const sel = document.createElement("select");
+      ["very_high", "high", "normal", "low", "irrelevant"].forEach(opt => {
+        const o = document.createElement("option");
+        o.value = opt;
+        o.textContent = opt.replace("_", " ");
+        if (opt === (meta.relevance || "normal")) o.selected = true;
+        sel.appendChild(o);
       });
+
+      sel.dataset.kpi = meta.filename;
+      row.appendChild(label);
+      row.appendChild(sel);
+      group.appendChild(row);
+    });
 
     container.appendChild(group);
   }
