@@ -261,6 +261,7 @@ function renderLineChart(canvas, config = {}) {
     options: {
       responsive: true,
       maintainAspectRatio: true,
+      maintainAspectRatio: false,
       interaction: { mode: "nearest", intersect: false },
       layout: { padding: { top: 16, bottom: 12, left: 8, right: 8 } },
       plugins: {
