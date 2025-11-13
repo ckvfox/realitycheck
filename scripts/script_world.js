@@ -24,22 +24,29 @@ function getWorldSeries(entries) {
 
 /* ========= Chart Renderer mit Tooltip ========= */
 function renderChart(container, title, unit, data) {
-  const canvas = document.createElement("canvas");
-  canvas.width = 800;
-  canvas.height = 400;
-  container.appendChild(canvas);
+  if (!container) return;
+
+  let canvas = container.querySelector("canvas");
+  if (!canvas) {
+    canvas = document.createElement("canvas");
+    container.appendChild(canvas);
+  }
+
+  const existingChart = canvas.__rcChart;
+  if (existingChart?.destroy) {
+    existingChart.destroy();
+    canvas.__rcChart = null;
+  }
 
   canvas.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
   canvas.style.borderRadius = "8px";
   canvas.style.marginBottom = "1rem";
   canvas.style.background = "#fff";
 
-  const ctx = canvas.getContext("2d");
-  new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: data.years,
-      datasets: [{
+  const chart = renderLineChart(canvas, {
+    labels: data.years,
+    datasets: [
+      {
         label: title,
         data: data.values,
         borderColor: "#1a355e",
@@ -48,11 +55,11 @@ function renderChart(container, title, unit, data) {
         pointHoverRadius: 5,
         fill: false,
         tension: 0.25
-      }]
-    },
+      }
+    ],
+    unit,
+    title: "",
     options: {
-      responsive: true,
-      interaction: { mode: "nearest", intersect: false },
       plugins: {
         title: { display: false },
         legend: { display: false },
@@ -61,7 +68,7 @@ function renderChart(container, title, unit, data) {
           callbacks: {
             title: ctx => "Year: " + (ctx[0]?.label ?? ""),
             label: ctx => {
-              const val = ctx.parsed.y;
+              const val = ctx.parsed?.y;
               if (val == null || isNaN(val)) return "No data";
               return `${val.toLocaleString()} ${unit || ""}`.trim();
             }
@@ -81,6 +88,8 @@ function renderChart(container, title, unit, data) {
       }
     }
   });
+
+  canvas.__rcChart = chart;
 }
 
 /* ========= Einzel-Render-Funktion ========= */
@@ -141,6 +150,10 @@ async function renderWorldKpi(container, kpi) {
 
 /* ========= Hauptlogik ========= */
 async function initWorldPage() {
+  if (initWorldPage.__running) {
+    return;
+  }
+  initWorldPage.__running = true;
   try {
     // 🌀 Zeige globalen Spinner (aus core.js)
     showSpinner(true, "Loading world data…");
@@ -169,6 +182,8 @@ async function initWorldPage() {
       return;
     }
 
+    worldContainer.innerHTML = "";
+
     // === Rendern nach Cluster ===
     for (const [cluster, list] of Object.entries(grouped)) {
       const h2 = document.createElement("h2");
@@ -187,6 +202,7 @@ async function initWorldPage() {
   } finally {
     // ✅ Spinner immer ausblenden
     showSpinner(false);
+    initWorldPage.__running = false;
   }
 }
 
