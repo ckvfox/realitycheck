@@ -427,7 +427,7 @@ function renderLegend(prioritizedCount, missing = []) {
       <p>
         For each KPI the <b>latest country value</b> is normalized to <code>[0,1]</code>:
       </p>
-      <pre style="background:#0b1220;color:#e6e9ef;padding:.6rem;border-radius:.4rem;line-height:1.4;overflow:auto;">
+      <pre class="legend-code">
 norm = (value - min) / (max - min)
 if sort == "lower": norm = 1 - norm
 weighted = norm × relevance_weight
