@@ -352,31 +352,36 @@ function updateTable() {
   tbody.innerHTML = "";
 
   const compYearEl = document.getElementById("yearSelect");
-  const compYear = compYearEl && compYearEl.value !== "" ? parseInt(compYearEl.value) : null;
-
+  const compYear =
+    compYearEl && compYearEl.value !== ""
+      ? parseInt(compYearEl.value)
+      : null;
 
   const meta = getMetaForCurrent() || {};
   const unit = (meta.unit || "").trim();
   const scaleMode = meta.scale || "auto";
 
-  // === Länderzeilen ===
+  /* ===========================================
+     1) Länder normal berechnen
+     =========================================== */
   const rows = [];
   for (const c of Object.keys(countries)) {
     const vals = currentData.filter(r => r.country === c);
     if (!vals.length) continue;
 
     const latest = vals.sort((a, b) => b.year - a.year)[0];
-    const prev   = vals.find(r => r.year === latest.year - 1);
-    const comp   = compYear ? vals.find(r => r.year === compYear) : null;
+    const prev = vals.find(r => r.year === latest.year - 1);
+    const comp = compYear ? vals.find(r => r.year === compYear) : null;
 
     const lv = applyRelation(latest.value, c, latest.year);
     const pv = prev ? applyRelation(prev.value, c, prev.year) : null;
     const cv = comp ? applyRelation(comp.value, c, comp.year) : null;
 
     const arrow = pv != null ? calcTrend(lv, pv) : "→";
-    const dAbs  = pv != null ? lv - pv : null;
-    const dPct  = pv ? ((lv - pv) / pv) * 100 : null;
-    const dComp = cv != null ? (((lv - cv) / cv) * 100).toFixed(2) + "%" : "-";
+    const dAbs = pv != null ? lv - pv : null;
+    const dPct = pv ? ((lv - pv) / pv) * 100 : null;
+    const dComp =
+      cv != null ? (((lv - cv) / cv) * 100).toFixed(2) + "%" : "-";
 
     rows.push({
       country: c,
@@ -390,118 +395,176 @@ function updateTable() {
     });
   }
 
-  // === Adaptive Skalierung bestimmen ===
+  /* ===========================================
+     2) Adaptive Skalierung bestimmen
+     =========================================== */
   let scaleInfo = { divisor: 1, suffix: "" };
   if (meta.scale === "auto") {
     const allValues = rows.map(r => r.value).filter(v => !isNaN(v));
     scaleInfo = determineAdaptiveScale(allValues);
   }
 
-	// === Gruppenberechnung (Summe oder Durchschnitt, inkl. World) ===
-	const groupRows = [];
+  /* ========= WORLD CALCULATION (ALWAYS GENERATED) ========= */
+  (function generateWorld() {
+    if (!rows.length) return;
 
-	for (const [gKey, gDef] of Object.entries(groups)) {
-		const members = gDef.members || [];
-		const title   = gDef.title || gKey;
+    const isRelative =
+      (meta.unit || "").includes("%") ||
+      ["index", "ratio", "none"].includes(meta.scale);
 
-		// 🔹 Spezialfall: "World" = berechnete Gruppe über alle Länder
-		if (gKey === "World" || gKey === "Welt") {
-			const valid = rows.filter(r => !r.isGroup && Number.isFinite(r.value));
-			if (!valid.length) continue;
+    const valid = rows.filter(r => Number.isFinite(r.value));
+    if (!valid.length) return;
 
-			const isRelative =
-				(meta.unit || "").includes("%") ||
-				["index", "ratio", "none"].includes(meta.scale);
+    const val = isRelative
+      ? valid.reduce((a, r) => a + (r.value || 0), 0) / valid.length
+      : valid.reduce((a, r) => a + (r.value || 0), 0);
 
-			const val = isRelative
-				? valid.reduce((a, r) => a + (r.value || 0), 0) / valid.length
-				: valid.reduce((a, r) => a + (r.value || 0), 0);
+    const lastYear = Math.max(...valid.map(r => r.update));
 
-			const lastYear = Math.max(...valid.map(r => r.update));
-
-			groupRows.push({
-				country: "World",
-				value: val,
-				deltaPrevArrow: "-",
-				deltaPrevAbs: null,
-				deltaPrevPct: null,
-				deltaComp: "-",
-				update: lastYear,
-				isGroup: false,          // ❗ wichtig: kein group-row styling, bleibt eigene Klasse
-				isWorld: true,           // 💠 Flag für spätere Hervorhebung
-				aggregationType: isRelative ? "average" : "sum"
-			});
-			continue;
-		}
-
-		// 🔹 Normale Gruppen (EU, OECD, G7 …)
-		const mrows = rows.filter(r => members.includes(r.country));
-		if (!mrows.length) continue;
-
-		const isRelative =
-			(meta.unit || "").includes("%") ||
-			["index", "ratio", "none"].includes(meta.scale);
-
-		const agg = isRelative
-			? mrows.reduce((a, r) => a + (r.value || 0), 0) / mrows.length
-			: mrows.reduce((a, r) => a + (r.value || 0), 0);
-
-		const lastYear = Math.max(...mrows.map(r => r.update));
-
-		groupRows.push({
-			country: title,
-			value: agg,
-			deltaPrevArrow: "-",
-			deltaPrevAbs: null,
-			deltaPrevPct: null,
-			deltaComp: "-",
-			update: lastYear,
-			isGroup: true,
-			aggregationType: isRelative ? "average" : "sum"
-		});
-	}
+    // World wird wie ein echtes Land in rows eingefügt
+    rows.push({
+      country: "World",
+      value: val,
+      deltaPrevArrow: "-",
+      deltaPrevAbs: null,
+      deltaPrevPct: null,
+      deltaComp: "-",
+      update: lastYear,
+      isGroup: false,
+      isWorld: true,
+      aggregationType: isRelative ? "average" : "sum"
+    });
+  })();
 
 
-  // === Sortierung bestimmen ===
+  /* ===========================================
+     3) Gruppen inkl. World berechnen
+     =========================================== */
+  const groupRows = [];
+
+  for (const [gKey, gDef] of Object.entries(groups)) {
+    const members = gDef.members || [];
+    const title = gDef.title || gKey;
+
+    const isRelative =
+      (meta.unit || "").includes("%") ||
+      ["index", "ratio", "none"].includes(meta.scale);
+
+    /* ---------- SPEZIALFALL: WORLD ---------- */
+    if (gKey === "World" || gKey === "Welt") {
+      const valid = rows.filter(
+        r => !r.isGroup && Number.isFinite(r.value)
+      );
+      if (!valid.length) continue;
+
+      const val = isRelative
+        ? valid.reduce((a, r) => a + (r.value || 0), 0) / valid.length
+        : valid.reduce((a, r) => a + (r.value || 0), 0);
+
+      const lastYear = Math.max(...valid.map(r => r.update));
+
+      groupRows.push({
+        country: "World",
+        value: val,
+        deltaPrevArrow: "-",
+        deltaPrevAbs: null,
+        deltaPrevPct: null,
+        deltaComp: "-",
+        update: lastYear,
+        isGroup: false, // WICHTIG → Verhalten wie Land
+        isWorld: true,  // Flag für spätere Formatierung
+        aggregationType: isRelative ? "average" : "sum"
+      });
+
+      continue;
+    }
+
+    /* ---------- Normale Gruppen ---------- */
+    const mrows = rows.filter(r => members.includes(r.country));
+    if (!mrows.length) continue;
+
+    const agg = isRelative
+      ? mrows.reduce((a, r) => a + (r.value || 0), 0) / mrows.length
+      : mrows.reduce((a, r) => a + (r.value || 0), 0);
+
+    const lastYear = Math.max(...mrows.map(r => r.update));
+
+    groupRows.push({
+      country: title,
+      value: agg,
+      deltaPrevArrow: "-",
+      deltaPrevAbs: null,
+      deltaPrevPct: null,
+      deltaComp: "-",
+      update: lastYear,
+      isGroup: true,
+      aggregationType: isRelative ? "average" : "sum"
+    });
+  }
+
+  /* ===========================================
+     4) Sortierung
+     =========================================== */
   let sortedRows = [...rows];
-  const sortType  = (meta.sort || "higher").toLowerCase();
+  const sortType = (meta.sort || "higher").toLowerCase();
   const targetVal = parseFloat(meta.target_value || 0);
 
   if (userSort.col && userSort.col !== "rank") {
     const { col, asc } = userSort;
     sortedRows.sort((a, b) => {
-      const A = a[col] ?? 0, B = b[col] ?? 0;
+      const A = a[col] ?? 0,
+        B = b[col] ?? 0;
       if (A === B) return 0;
       return asc ? (A > B ? 1 : -1) : (A < B ? 1 : -1);
     });
   } else {
-    if (sortType === "higher") sortedRows.sort((a, b) => (b.value || 0) - (a.value || 0));
-    else if (sortType === "lower") sortedRows.sort((a, b) => (a.value || 0) - (b.value || 0));
+    if (sortType === "higher")
+      sortedRows.sort((a, b) => (b.value || 0) - (a.value || 0));
+    else if (sortType === "lower")
+      sortedRows.sort((a, b) => (a.value || 0) - (b.value || 0));
     else if (sortType === "target") {
       sortedRows.sort((a, b) => {
         const devA = Math.abs((a.value ?? 0) - targetVal);
         const devB = Math.abs((b.value ?? 0) - targetVal);
         return devA - devB;
       });
-    } else sortedRows.sort((a, b) => (b.value || 0) - (a.value || 0));
+    } else {
+      sortedRows.sort((a, b) => (b.value || 0) - (a.value || 0));
+    }
   }
 
-  // === Ränge zuweisen ===
+  /* ===========================================
+     5) Rangvergabe
+     =========================================== */
   const rankMap = new Map();
   let rankCounter = 0;
+
   sortedRows.forEach(r => {
-    if (["World","Welt"].includes(r.country)) rankMap.set(r.country, "🌍");
-    else {
+    if (["World", "Welt"].includes(r.country)) {
+      rankMap.set(r.country, "🌍"); // World-Badge
+    } else {
       rankCounter++;
       rankMap.set(r.country, rankCounter);
     }
   });
 
+  /* ===========================================
+     6) Länder + Gruppen kombinieren
+     =========================================== */
   const final = [
-    ...sortedRows.map(r => ({ ...r, rank: rankMap.get(r.country) })),
-    ...groupRows.map(r => ({ ...r, rank: "–" }))
+    ...sortedRows.map(r => ({
+      ...r,
+      rank: rankMap.get(r.country)
+    })),
+    ...groupRows.map(r => ({
+      ...r,
+      rank: "–"
+    }))
   ];
-    // === Home Country sticky/top + highlight ===
+
+  /* ===========================================
+     7) Home Country nach oben
+     =========================================== */
   const home = document.getElementById("countrySelect")?.value;
   if (home) {
     const i = final.findIndex(r => r.country === home);
@@ -512,16 +575,20 @@ function updateTable() {
     }
   }
 
-  // === Tabelle rendern ===
+  /* ===========================================
+     8) Rendering der Tabelle
+     =========================================== */
   final.forEach(r => {
     const tr = document.createElement("tr");
+
     if (r.highlight) tr.classList.add("highlight");
     if (r.isGroup) tr.classList.add("group-row");
-    if (["World","Welt"].includes(r.country)) tr.classList.add("world-row");
+    if (r.isWorld) tr.classList.add("world-row");
 
-    // 🔹 Tooltip für Gruppen: Summe oder Durchschnitt
     if (r.isGroup) {
-      tr.title = `Group value = ${r.aggregationType === "average" ? "Average" : "Sum"} of members`;
+      tr.title = `Group value = ${
+        r.aggregationType === "average" ? "Average" : "Sum"
+      } of members`;
     }
 
     tr.addEventListener("click", () => {
@@ -530,8 +597,13 @@ function updateTable() {
 
     const deltaTitle =
       r.deltaPrevAbs != null
-        ? `title="Δ vs Prev: ${formatValueAuto(r.deltaPrevAbs, meta.scale)} (${
-            r.deltaPrevPct != null ? r.deltaPrevPct.toFixed(2) + "%" : "n/a"
+        ? `title="Δ vs Prev: ${formatValueAuto(
+            r.deltaPrevAbs,
+            meta.scale
+          )} (${
+            r.deltaPrevPct != null
+              ? r.deltaPrevPct.toFixed(2) + "%"
+              : "n/a"
           })"`
         : `title="No previous year data"`;
 
@@ -540,29 +612,38 @@ function updateTable() {
       <td>${r.country}</td>
       <td>${
         meta.scale === "auto"
-          ? (r.value / scaleInfo.divisor).toFixed(2) + " " + scaleInfo.suffix
+          ? (r.value / scaleInfo.divisor).toFixed(2) +
+            " " +
+            scaleInfo.suffix
           : formatValueAuto(r.value, meta.scale)
       }${unit ? " " + unit : ""}</td>
       <td class="trend" ${deltaTitle}>${r.deltaPrevArrow}</td>
       <td>${r.deltaComp ?? "-"}</td>
       <td>${r.update ?? "-"}</td>
     `;
+
     tbody.appendChild(tr);
   });
 
-  // === Header-Pfeile aktualisieren ===
-  document.querySelectorAll("#country-table th[data-col]").forEach(th => {
-    const col = th.dataset.col;
-    const label = th.textContent.replace(/[▲▼]/g, "").trim();
-    th.textContent = label;
-    th.classList.remove("active-col");
-    if (userSort.col === col) {
-      th.textContent = label + (userSort.asc ? " ▲" : " ▼");
-      th.classList.add("active-col");
-    }
-  });
+  /* ===========================================
+     9) Header-Pfeile aktualisieren
+     =========================================== */
+  document
+    .querySelectorAll("#country-table th[data-col]")
+    .forEach(th => {
+      const col = th.dataset.col;
+      const label = th.textContent.replace(/[▲▼]/g, "").trim();
+      th.textContent = label;
+      th.classList.remove("active-col");
+      if (userSort.col === col) {
+        th.textContent = label + (userSort.asc ? " ▲" : " ▼");
+        th.classList.add("active-col");
+      }
+    });
 
-  // === Sortierspalte visuell hervorheben ===
+  /* ===========================================
+     10) Sortierspalte kurz highlighten
+     =========================================== */
   const activeCol = userSort.col;
   if (activeCol) {
     const colIndex = { rank: 0, country: 1, value: 2 }[activeCol];
@@ -578,7 +659,9 @@ function updateTable() {
     }
   }
 
-  // === Legenden-Hinweis aktualisieren ===
+  /* ===========================================
+     11) Legendenhinweis (Scaling)
+     =========================================== */
   const roundInfo = document.getElementById("rounding-info");
   if (roundInfo) {
     if (scaleMode === "auto") {
@@ -596,6 +679,7 @@ function updateTable() {
     }
   }
 }
+
 
 /* ========= Chart ========= */
 function updateChart() {
