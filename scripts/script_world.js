@@ -24,6 +24,19 @@ function getWorldSeries(entries) {
 
 /* ========= Chart Renderer mit Tooltip ========= */
 function renderChart(container, title, unit, data) {
+  if (!container) return;
+
+  let canvas = container.querySelector("canvas");
+  if (!canvas) {
+    canvas = document.createElement("canvas");
+    container.appendChild(canvas);
+  }
+
+  const existingChart = canvas.__rcChart;
+  if (existingChart?.destroy) {
+    existingChart.destroy();
+    canvas.__rcChart = null;
+  }
   const previousCanvas = container.querySelector("canvas");
   if (previousCanvas) {
     try {
@@ -48,6 +61,7 @@ function renderChart(container, title, unit, data) {
   canvas.style.marginBottom = "1rem";
   canvas.style.background = "#fff";
 
+  const chart = renderLineChart(canvas, {
   renderLineChart(canvas, {
     labels: data.years,
     datasets: [
@@ -93,6 +107,8 @@ function renderChart(container, title, unit, data) {
       }
     }
   });
+
+  canvas.__rcChart = chart;
 }
 
 /* ========= Einzel-Render-Funktion ========= */
@@ -153,6 +169,10 @@ async function renderWorldKpi(container, kpi) {
 
 /* ========= Hauptlogik ========= */
 async function initWorldPage() {
+  if (initWorldPage.__running) {
+    return;
+  }
+  initWorldPage.__running = true;
   try {
     // 🌀 Zeige globalen Spinner (aus core.js)
     showSpinner(true, "Loading world data…");
@@ -181,6 +201,8 @@ async function initWorldPage() {
       return;
     }
 
+    worldContainer.innerHTML = "";
+
     // === Rendern nach Cluster ===
     for (const [cluster, list] of Object.entries(grouped)) {
       const h2 = document.createElement("h2");
@@ -199,6 +221,7 @@ async function initWorldPage() {
   } finally {
     // ✅ Spinner immer ausblenden
     showSpinner(false);
+    initWorldPage.__running = false;
   }
 }
 
