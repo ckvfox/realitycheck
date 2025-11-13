@@ -408,11 +408,15 @@ function showSpinner(show = true, msg = "Loading…") {
     sp.classList.remove("hidden");
     sp.style.opacity = "1";
 
-    // Spinner immer im sichtbaren Bereich halten (auch im iframe)
-    try {
-      window.scrollTo({ top: 0, behavior: "instant" });
-    } catch {
-      /* ignore */
+    // Nur beim ersten Einblenden nach dem Laden automatisch nach oben springen,
+    // um unerwartete Fokuswechsel bei wiederholter Nutzung zu vermeiden.
+    if (!sp.dataset.scrolled) {
+      try {
+        window.scrollTo({ top: 0, behavior: "instant" });
+      } catch {
+        /* ignore */
+      }
+      sp.dataset.scrolled = "1";
     }
   } else {
     sp.style.opacity = "0";
