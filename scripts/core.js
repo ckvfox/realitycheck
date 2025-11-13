@@ -2,6 +2,27 @@
    🌍 RealityCheck – Shared Header & Footer Loader (no iframes)
    ============================================================ */
 
+const TRANSLATOR_SESSION_KEY = "rc_google_translate_consent";
+const translatorState = {
+  button: null,
+  panel: null,
+  closeBtn: null,
+  overlay: null,
+  dialog: null,
+  confirmBtn: null,
+  cancelBtn: null,
+  consent: false,
+  previousFocus: null,
+  scriptPromise: null,
+  ready: false,
+  pendingOpen: false,
+  initialized: false,
+  listenersAttached: false
+};
+
+let translatorInitResolve;
+let translatorInitReject;
+
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     // === Header laden ===
@@ -16,6 +37,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     header.querySelectorAll("nav a").forEach(a => {
       if (a.getAttribute("href") === current) a.classList.add("active");
     });
+
+    setupTranslatorControls();
 
     // === Footer laden ===
     const footerRes = await fetch("footer.html?t=" + Date.now());
@@ -55,6 +78,259 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.warn("⚠️ Header/Footer load failed:", err);
   }
 });
+function setupTranslatorControls() {
+  if (translatorState.initialized) return;
+
+  const button = document.getElementById("translator-toggle");
+  const panel = document.getElementById("translator-panel");
+  if (!button || !panel) return;
+
+  translatorState.button = button;
+  translatorState.panel = panel;
+  translatorState.closeBtn = panel.querySelector(".translator-close");
+  translatorState.initialized = true;
+
+  button.addEventListener("click", handleTranslatorButtonClick);
+  button.setAttribute("aria-expanded", "false");
+
+  translatorState.closeBtn?.addEventListener("click", event => {
+    event.preventDefault();
+    hideTranslatorPanel();
+    translatorState.button?.focus();
+  });
+
+  panel.addEventListener("click", event => event.stopPropagation());
+
+  if (!translatorState.listenersAttached) {
+    document.addEventListener("click", handleTranslatorDocumentClick);
+    document.addEventListener("keydown", handleTranslatorKeydown, true);
+    translatorState.listenersAttached = true;
+  }
+
+  createTranslatorConsentOverlay();
+
+  translatorState.consent = sessionStorage.getItem(TRANSLATOR_SESSION_KEY) === "true";
+
+  if (translatorState.consent) {
+    ensureGoogleTranslate().catch(err => {
+      console.warn("⚠️ Google Translate could not be loaded:", err);
+      updateTranslatorMessage("Google Translate could not be loaded.");
+    });
+  }
+}
+
+function handleTranslatorButtonClick(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  if (!translatorState.consent) {
+    openTranslatorConsentDialog();
+    return;
+  }
+
+  if (!translatorState.ready) {
+    translatorState.pendingOpen = true;
+    showTranslatorPanel();
+    ensureGoogleTranslate().catch(err => {
+      console.warn("⚠️ Google Translate could not be loaded:", err);
+      updateTranslatorMessage("Google Translate could not be loaded.");
+      translatorState.pendingOpen = false;
+    });
+    return;
+  }
+
+  if (translatorState.panel.hidden) {
+    showTranslatorPanel();
+  } else {
+    hideTranslatorPanel();
+  }
+}
+
+function handleTranslatorDocumentClick(event) {
+  if (!translatorState.panel || translatorState.panel.hidden) return;
+  if (translatorState.button && event.target === translatorState.button) return;
+  if (translatorState.panel.contains(event.target)) return;
+  hideTranslatorPanel();
+}
+
+function handleTranslatorKeydown(event) {
+  if (event.key !== "Escape") return;
+
+  if (translatorState.overlay && !translatorState.overlay.hidden) {
+    closeTranslatorConsentDialog();
+    event.stopPropagation();
+    event.preventDefault();
+    return;
+  }
+
+  if (translatorState.panel && !translatorState.panel.hidden) {
+    hideTranslatorPanel();
+    event.stopPropagation();
+    event.preventDefault();
+  }
+}
+
+function showTranslatorPanel() {
+  if (!translatorState.panel) return;
+  translatorState.panel.hidden = false;
+  translatorState.button?.setAttribute("aria-expanded", "true");
+}
+
+function hideTranslatorPanel() {
+  if (!translatorState.panel) return;
+  translatorState.panel.hidden = true;
+  translatorState.button?.setAttribute("aria-expanded", "false");
+  translatorState.pendingOpen = false;
+}
+
+function createTranslatorConsentOverlay() {
+  if (translatorState.overlay) return;
+
+  const overlay = document.createElement("div");
+  overlay.id = "translator-consent-overlay";
+  overlay.className = "translator-consent-overlay";
+  overlay.hidden = true;
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-modal", "true");
+  overlay.setAttribute("aria-labelledby", "translator-consent-title");
+  overlay.innerHTML = `
+    <div class="translator-consent-dialog" tabindex="-1">
+      <h2 id="translator-consent-title">Activate Google Translate</h2>
+      <p>We offer an optional translation feature powered by Google Translate. A connection to Google is only established after you confirm.</p>
+      <p class="translator-consent-note">Without your consent, no data is sent to Google. Your decision applies to this session and can be withdrawn at any time.</p>
+      <div class="translator-consent-actions">
+        <button type="button" class="translator-consent-cancel" id="translator-consent-cancel">Cancel</button>
+        <button type="button" class="translator-consent-accept" id="translator-consent-accept">Agree – launch Google Translate</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  translatorState.overlay = overlay;
+  translatorState.dialog = overlay.querySelector(".translator-consent-dialog");
+  translatorState.confirmBtn = overlay.querySelector("#translator-consent-accept");
+  translatorState.cancelBtn = overlay.querySelector("#translator-consent-cancel");
+
+  translatorState.dialog?.addEventListener("click", event => event.stopPropagation());
+  translatorState.confirmBtn?.addEventListener("click", confirmTranslatorConsent);
+  translatorState.cancelBtn?.addEventListener("click", closeTranslatorConsentDialog);
+  overlay.addEventListener("click", event => {
+    if (event.target === overlay) {
+      closeTranslatorConsentDialog();
+    }
+  });
+}
+
+function openTranslatorConsentDialog() {
+  if (!translatorState.overlay) createTranslatorConsentOverlay();
+  hideTranslatorPanel();
+  translatorState.previousFocus = document.activeElement;
+  translatorState.overlay.hidden = false;
+
+  requestAnimationFrame(() => {
+    translatorState.confirmBtn?.focus();
+  });
+}
+
+function closeTranslatorConsentDialog() {
+  if (!translatorState.overlay) return;
+  translatorState.overlay.hidden = true;
+  if (translatorState.previousFocus && typeof translatorState.previousFocus.focus === "function") {
+    translatorState.previousFocus.focus();
+  } else {
+    translatorState.button?.focus();
+  }
+  translatorState.previousFocus = null;
+}
+
+function confirmTranslatorConsent() {
+  translatorState.consent = true;
+  sessionStorage.setItem(TRANSLATOR_SESSION_KEY, "true");
+  closeTranslatorConsentDialog();
+  translatorState.pendingOpen = true;
+  showTranslatorPanel();
+  ensureGoogleTranslate().catch(err => {
+    console.warn("⚠️ Google Translate could not be loaded:", err);
+    updateTranslatorMessage("Google Translate could not be loaded.");
+    translatorState.pendingOpen = false;
+  });
+}
+
+function ensureGoogleTranslate() {
+  if (translatorState.ready) return Promise.resolve();
+  if (translatorState.scriptPromise) return translatorState.scriptPromise;
+
+  updateTranslatorMessage("Google Translate is loading…");
+
+  translatorState.scriptPromise = new Promise((resolve, reject) => {
+    translatorInitResolve = resolve;
+    translatorInitReject = reject;
+
+    const script = document.createElement("script");
+    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    script.async = true;
+    script.onerror = () => {
+      script.remove();
+      translatorInitResolve = null;
+      translatorInitReject = null;
+      translatorState.scriptPromise = null;
+      updateTranslatorMessage("Google Translate could not be loaded.");
+      reject(new Error("Google Translate script failed to load."));
+    };
+    document.head.appendChild(script);
+  });
+
+  return translatorState.scriptPromise;
+}
+
+function updateTranslatorMessage(message) {
+  const msgEl = document.querySelector(".translator-loading-message");
+  if (!msgEl) return;
+  msgEl.textContent = message;
+  msgEl.hidden = false;
+}
+
+window.googleTranslateElementInit = function googleTranslateElementInit() {
+  try {
+    const pageLanguage = document.documentElement.lang || "en";
+    const layout = google.translate?.TranslateElement?.InlineLayout?.SIMPLE;
+    new google.translate.TranslateElement({
+      pageLanguage,
+      includedLanguages: "de,en,es,fr",
+      layout: layout ?? undefined,
+      autoDisplay: false
+    }, "google_translate_element");
+
+    translatorState.ready = true;
+    translatorState.scriptPromise = Promise.resolve();
+
+    const msgEl = document.querySelector(".translator-loading-message");
+    if (msgEl) msgEl.hidden = true;
+
+    if (translatorState.pendingOpen) {
+      showTranslatorPanel();
+      const select = document.querySelector("#google_translate_element select");
+      if (select) {
+        requestAnimationFrame(() => select.focus());
+      }
+    }
+    translatorState.pendingOpen = false;
+
+    if (typeof translatorInitResolve === "function") translatorInitResolve();
+  } catch (err) {
+    translatorState.ready = false;
+    translatorState.scriptPromise = null;
+    translatorState.pendingOpen = false;
+    updateTranslatorMessage("Google Translate could not be loaded.");
+    if (typeof translatorInitReject === "function") translatorInitReject(err);
+    console.warn("⚠️ googleTranslateElementInit error", err);
+  } finally {
+    translatorInitResolve = null;
+    translatorInitReject = null;
+  }
+};
+
 
 
 // === Load JSON with cache-bypass & safe parse (FINAL FIX 2025-11-02) ===
