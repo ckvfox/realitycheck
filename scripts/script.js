@@ -397,40 +397,70 @@ function updateTable() {
     scaleInfo = determineAdaptiveScale(allValues);
   }
 
-  // === Gruppenberechnung (Summe oder Durchschnitt) ===
-  const groupRows = [];
-  for (const [gKey, gDef] of Object.entries(groups)) {
-    const members = gDef.members || [];
-    const title = gDef.title || gKey;
-    const mrows = rows.filter(r => members.includes(r.country));
-    if (!mrows.length) continue;
+	// === Gruppenberechnung (Summe oder Durchschnitt, inkl. World) ===
+	const groupRows = [];
 
-    let agg;
-    const isRelative =
-      (meta.unit || "").includes("%") ||
-      ["index", "ratio", "none"].includes(meta.scale);
+	for (const [gKey, gDef] of Object.entries(groups)) {
+		const members = gDef.members || [];
+		const title   = gDef.title || gKey;
 
-    if (isRelative) {
-      // relative Kennzahlen → Durchschnitt
-      agg = mrows.reduce((a, r) => a + (r.value || 0), 0) / mrows.length;
-    } else {
-      // absolute Kennzahlen → Summe
-      agg = mrows.reduce((a, r) => a + (r.value || 0), 0);
-    }
+		// 🔹 Spezialfall: "World" = berechnete Gruppe über alle Länder
+		if (gKey === "World" || gKey === "Welt") {
+			const valid = rows.filter(r => !r.isGroup && Number.isFinite(r.value));
+			if (!valid.length) continue;
 
-    const lastYear = Math.max(...mrows.map(r => r.update));
-    groupRows.push({
-      country: title,
-      value: agg,
-      deltaPrevArrow: "-",
-      deltaPrevAbs: null,
-      deltaPrevPct: null,
-      deltaComp: "-",
-      update: lastYear,
-      isGroup: true,
-      aggregationType: isRelative ? "average" : "sum"
-    });
-  }
+			const isRelative =
+				(meta.unit || "").includes("%") ||
+				["index", "ratio", "none"].includes(meta.scale);
+
+			const val = isRelative
+				? valid.reduce((a, r) => a + (r.value || 0), 0) / valid.length
+				: valid.reduce((a, r) => a + (r.value || 0), 0);
+
+			const lastYear = Math.max(...valid.map(r => r.update));
+
+			groupRows.push({
+				country: "World",
+				value: val,
+				deltaPrevArrow: "-",
+				deltaPrevAbs: null,
+				deltaPrevPct: null,
+				deltaComp: "-",
+				update: lastYear,
+				isGroup: false,          // ❗ wichtig: kein group-row styling, bleibt eigene Klasse
+				isWorld: true,           // 💠 Flag für spätere Hervorhebung
+				aggregationType: isRelative ? "average" : "sum"
+			});
+			continue;
+		}
+
+		// 🔹 Normale Gruppen (EU, OECD, G7 …)
+		const mrows = rows.filter(r => members.includes(r.country));
+		if (!mrows.length) continue;
+
+		const isRelative =
+			(meta.unit || "").includes("%") ||
+			["index", "ratio", "none"].includes(meta.scale);
+
+		const agg = isRelative
+			? mrows.reduce((a, r) => a + (r.value || 0), 0) / mrows.length
+			: mrows.reduce((a, r) => a + (r.value || 0), 0);
+
+		const lastYear = Math.max(...mrows.map(r => r.update));
+
+		groupRows.push({
+			country: title,
+			value: agg,
+			deltaPrevArrow: "-",
+			deltaPrevAbs: null,
+			deltaPrevPct: null,
+			deltaComp: "-",
+			update: lastYear,
+			isGroup: true,
+			aggregationType: isRelative ? "average" : "sum"
+		});
+	}
+
 
   // === Sortierung bestimmen ===
   let sortedRows = [...rows];
@@ -1029,33 +1059,44 @@ async function updateMap() {
   console.log(`🎨 Map rendered (balanced scale, log=${useLog})`);
 }
 
-/* === Hilfsfunktion: HTML-Farbskala für Heatmap (inkl. Log-Hinweis) === */
+/* === Hilfsfunktion: HTML-Farbskala für Heatmap (inkl. Log-Hinweis, 2025-11-13 FIXED) === */
 function buildHeatLegendHTML({
   title, unit, min, max,
   sortMode = "higher",
   targetVal = NaN,
   useLog = false
 }) {
-  const gradientHigher = "linear-gradient(to right, hsl(120,85%,45%), hsl(60,85%,50%), hsl(0,85%,50%))";
-  const gradientLower  = "linear-gradient(to right, hsl(0,85%,50%), hsl(60,85%,50%), hsl(120,85%,45%))";
-  const gradientTarget = "linear-gradient(to right, hsl(120,85%,45%), #ffffff, hsl(0,85%,50%))";
+  // ✅ Richtige Richtung: Grün = besser
+  const gradientHigher = "linear-gradient(to right, hsl(0,85%,50%), hsl(60,85%,50%), hsl(120,85%,45%))";  // low=rot → high=grün
+  const gradientLower  = "linear-gradient(to right, hsl(120,85%,45%), hsl(60,85%,50%), hsl(0,85%,50%))";  // low=grün → high=rot
+  const gradientTarget = "linear-gradient(to right, hsl(0,85%,50%), #ffffff, hsl(120,85%,45%))";          // Mitte = Ziel
 
   let bar = gradientHigher;
+  let modeText = "Higher values = greener";
+
   switch (String(sortMode).toLowerCase()) {
-    case "higher": bar = gradientHigher; break;
-    case "lower":  bar = gradientLower;  break;
-    case "target": bar = gradientTarget; break;
+    case "higher":
+      bar = gradientHigher;
+      modeText = "Higher values = greener";
+      break;
+    case "lower":
+      bar = gradientLower;
+      modeText = "Lower values = greener";
+      break;
+    case "target":
+      bar = gradientTarget;
+      modeText = `Closer to target (${formatValueAuto(targetVal)} ${unit}) = greener`;
+      break;
+    default:
+      bar = gradientHigher;
+      modeText = "Quantitative scale (higher = greener)";
   }
 
   const minLabel = typeof min === "number" ? formatValueAuto(min) : String(min ?? "");
   const maxLabel = typeof max === "number" ? formatValueAuto(max) : String(max ?? "");
-  const targetHtml =
-    (String(sortMode).toLowerCase() === "target" && Number.isFinite(targetVal))
-      ? `<div class="legend-target">🎯 Target: <strong>${formatValueAuto(targetVal)} ${unit}</strong></div>`
-      : "";
   const logInfo = useLog
-      ? `<div class="legend-note">⚙️ log-scaled (extreme values damped)</div>`
-      : "";
+    ? `<div class="legend-note">⚙️ log-scaled (extreme values damped)</div>`
+    : "";
 
   return `
   <div class="legend-box">
@@ -1065,8 +1106,7 @@ function buildHeatLegendHTML({
       <span>${minLabel} ${unit}</span>
       <span>${maxLabel} ${unit}</span>
     </div>
-    <div class="legend-mode">Scale mode: <em>${sortMode}</em></div>
-    ${targetHtml}
+    <div class="legend-mode" style="font-size:0.8em;color:#0a0;">${modeText}</div>
     ${logInfo}
   </div>`;
 }

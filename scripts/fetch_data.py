@@ -1115,7 +1115,6 @@ def main():
                 log(f"[SKIP] {kpi_id}: handled by special fetcher later")
                 continue
 
-
             # === Quelle verarbeiten ===
             try:
                 if source_type == "worldbank":
@@ -1133,7 +1132,15 @@ def main():
 
                 # Erfolgreiches Update protokollieren
                 stats["updated"] += 1
-                # ✅ Verwende die ggf. heuristisch angepassten Werte aus meta
+
+                # ✅ Preserve old data_year and source_date if not newly detected
+                old_meta = fetch_status.get("kpis", {}).get(kpi_id, {})
+                if not meta.get("_latest_year") and old_meta.get("data_year"):
+                    meta["_latest_year"] = old_meta["data_year"]
+                if (not meta.get("_source_date") or meta.get("_source_date") in ("Unknown", None)) and old_meta.get("source_date"):
+                    meta["_source_date"] = old_meta["source_date"]
+
+                # ✅ Verwende ggf. angepasste Werte aus meta
                 used_source_date = meta.get("_source_date") or source_date or "Unknown"
                 used_data_year   = meta.get("_latest_year") or None
 
@@ -1146,7 +1153,6 @@ def main():
                 }
 
                 log(f"[STATUS] {kpi_id}: stored source_date={used_source_date}, data_year={used_data_year}")
-
 
             except Exception as e:  # 👈 muss in dieser Einrückungsebene stehen
                 stats["errors"] += 1

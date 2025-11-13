@@ -79,7 +79,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "fertility_rate",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal"
   },
   {
@@ -127,7 +127,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "press_freedom_index",
-    "relevance": "very_high",
+    "relevance": "none",
     "actuality": "critical"
   },
   {
@@ -143,7 +143,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "world_happiness_index",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal"
   },
   {
@@ -191,7 +191,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "gni_per_capita_current_us",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal"
   },
   {
@@ -434,7 +434,7 @@
     "scale": "%",
     "world_kpi": "",
     "filename": "old_age_dependency_ratio",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal"
   },
   {
@@ -450,7 +450,7 @@
     "scale": "%",
     "world_kpi": "",
     "filename": "age_dependency_ratio_total",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal"
   },
   {
@@ -530,7 +530,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "air_quality_pm2_5_exposure",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal"
   },
   {
@@ -546,7 +546,7 @@
     "scale": "%",
     "world_kpi": "",
     "filename": "renewable_energy_share",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal"
   },
   {
@@ -756,7 +756,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "mean_years_of_schooling",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal"
   },
   {
@@ -788,7 +788,7 @@
     "scale": "%",
     "world_kpi": "",
     "filename": "recycling_rate",
-    "relevance": "high",
+    "relevance": "none",
     "actuality": "normal"
   },
   {
@@ -949,7 +949,7 @@
   "scale": "none",
   "world_kpi": "",
   "filename": "rule_of_law_index",
-  "relevance": "very_high",
+  "relevance": "none",
   "actuality": "normal"
 },
 {
