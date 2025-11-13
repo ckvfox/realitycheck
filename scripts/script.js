@@ -146,42 +146,52 @@ async function populateKpiSelect() {
   sel.disabled = true;
   sel.innerHTML = "<option>Loading KPIs…</option>";
 
-  const clusters = {};
-  const tmp = [];
+  const optgroups = [];
 
   try {
-    for (const meta of getKpiArray().filter(k => k.world_kpi !== "e")) {
-      const id = meta.filename;
-      const cl = meta.cluster || "Other";
-      if (!clusters[cl]) clusters[cl] = [];
-      clusters[cl].push({ id, title: meta.title, relation: meta.relation });
-    }
-
-		for (const cl of Object.keys(clusters).sort()) {
-			const g = document.createElement("optgroup");
-			g.label = cl;
-
-			for (const it of clusters[cl].sort((a, b) => a.title.localeCompare(b.title))) {
-				const o = document.createElement("option");
-				o.value = it.id;
-				o.textContent = it.title;
-
-				// ⚡ Schneller: Prüfe nur lokal im ALL_DATA-Cache
-				if (!ALL_DATA[it.id] || !Array.isArray(ALL_DATA[it.id]) || !ALL_DATA[it.id].length) {
-					o.style.color = "gray";
-					o.style.fontStyle = "italic";
-				}
-
-				g.appendChild(o);
-			}
-
-			tmp.push(g);
-		}
+    const grouped = groupKpisByCluster(getKpiArray(), {
+      filter: k => k.world_kpi !== "e",
+      mapItem: meta => ({
+        id: meta.filename,
+        title: meta.title || meta.filename || "Unnamed KPI"
+      })
+    });
 
     sel.innerHTML = "<option value=''>-- none --</option>";
-    tmp.forEach(g => sel.appendChild(g));
+
+    grouped.forEach(([clusterName, list]) => {
+      const g = document.createElement("optgroup");
+      g.label = clusterName;
+
+      list.forEach(item => {
+        if (!item?.id) return;
+        const o = document.createElement("option");
+        o.value = item.id;
+        o.textContent = item.title;
+
+        if (
+          !ALL_DATA[item.id] ||
+          !Array.isArray(ALL_DATA[item.id]) ||
+          !ALL_DATA[item.id].length
+        ) {
+          o.style.color = "gray";
+          o.style.fontStyle = "italic";
+        }
+
+        g.appendChild(o);
+      });
+
+      optgroups.push(g);
+    });
+
+    if (!optgroups.length) {
+      sel.innerHTML = "<option value=''>No KPIs available</option>";
+    } else {
+      optgroups.forEach(g => sel.appendChild(g));
+    }
   } catch (e) {
     console.error("populateKpiSelect() failed:", e);
+    sel.innerHTML = "<option value=''>Failed to load KPIs</option>";
   } finally {
     sel.classList.remove("loading");
     sel.disabled = false;
@@ -712,69 +722,52 @@ function updateChart() {
     });
   });
 
-  const ctx = ctxEl.getContext("2d");
-  if (chartInstance) chartInstance.destroy();
+  const fallbackLabels = years.length ? years : [0, 1, 2];
 
-  // 💡 Chart.js mit Tooltip, Responsive, World-Styling
-  chartInstance = new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: years.length ? years : [0, 1, 2],
-      datasets:
-        datasets.length > 0
-          ? datasets
-          : [
-              {
-                label: "Select countries to display data",
-                data: [null, null, null],
-                borderColor: "rgba(200,200,200,0.3)",
-                borderWidth: 1,
-                fill: false
-              }
-            ]
+  chartInstance = renderLineChart(ctxEl, {
+    labels: years,
+    datasets,
+    title: meta.title || "No data selected",
+    unit: meta.unit || "",
+    existingChart: chartInstance,
+    fallbackDataset: {
+      label: "Select countries to display data",
+      data: fallbackLabels.map(() => null),
+      borderColor: "rgba(200,200,200,0.3)",
+      borderWidth: 1,
+      fill: false
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: false, // ✅ Responsive Höhe durch css
-	  aspectRatio: 2, // stabilisiert Höhe-Breite-Verhältnis
+      maintainAspectRatio: false,
+      aspectRatio: 2,
       layout: {
         padding: { top: 20, bottom: 10, left: 10, right: 10 }
       },
       plugins: {
-        title: { 
-          display: true, 
-          text: meta.title || "No data selected" 
-        },
-        legend: { 
-          display: datasets.length > 0 
-        },
+        title: { text: meta.title || "No data selected" },
+        legend: { display: datasets.length > 0 },
         tooltip: {
-          enabled: true,
           callbacks: {
-            label: function(ctx) {
-              const country = ctx.dataset.label || '';
+            label: ctx => {
+              const country = ctx.dataset.label || "";
               const year = ctx.label;
-              const value = ctx.parsed.y;
-              if (value == null || isNaN(value)) return `${country}: no data (${year})`;
+              const value = ctx.parsed?.y;
+              if (value == null || isNaN(value)) {
+                return `${country}: no data (${year})`;
+              }
               return `${country}: ${value.toLocaleString()} (${year})`;
             },
-            title: function(ctx) {
-              return "Year: " + (ctx[0]?.label ?? "");
-            }
+            title: ctx => "Year: " + (ctx[0]?.label ?? "")
           }
         }
       },
-      interaction: {
-        mode: 'nearest',
-        intersect: false
-      },
       scales: {
-        y: { 
-          beginAtZero: true, 
-          title: { display: true, text: meta.unit || "" },
+        y: {
+          beginAtZero: true,
+          title: { display: !!(meta.unit || ""), text: meta.unit || "" },
           grid: { color: "rgba(255,255,255,0.05)" }
         },
-        x: { 
+        x: {
           grid: { color: "rgba(255,255,255,0.05)" }
         }
       }
