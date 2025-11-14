@@ -12,8 +12,10 @@ Verwendet dieselbe GPT-Logik wie analysis.py (OpenAI 1.54.x)
 
 import sys
 import json
-from datetime import datetime, timezone
+import re
+from datetime import datetime
 from pathlib import Path
+from typing import Any, Optional
 
 from env_utils import get_openai_client
 from script_utils import ensure_utf8_stdout, safe_write_json, setup_logger
@@ -95,6 +97,33 @@ Example:
 
 
 # === Core ===
+def _attempt_json_load(raw_json: str, mode: str) -> Optional[Any]:
+    """Try to parse ``raw_json`` and repair common minor issues."""
+    try:
+        return json.loads(raw_json)
+    except json.JSONDecodeError as exc:
+        # Handle trailing commas before ``]`` or ``}``
+        cleaned = re.sub(r",(\s*[}\]])", r"\1", raw_json)
+        if cleaned != raw_json:
+            try:
+                return json.loads(cleaned)
+            except json.JSONDecodeError:
+                pass
+
+        # Replace fancy quotes with straight quotes – occasionally returned by the model
+        normalized = cleaned.replace("“", '"').replace("”", '"').replace("’", "'")
+        if normalized != cleaned:
+            try:
+                return json.loads(normalized)
+            except json.JSONDecodeError:
+                pass
+
+        log(f"⚠️ JSON parse error in {mode}: {exc}")
+        snippet = raw_json[:200].replace("\n", " ")
+        log(f"Raw excerpt: {snippet}")
+        return None
+
+
 def generate_ranking(mode: str, prompt: str, path: Path):
     log(f"➡️ Generating {mode} via GPT-4-Turbo …")
     client = get_openai_client()
@@ -116,7 +145,6 @@ def generate_ranking(mode: str, prompt: str, path: Path):
         log(f"⚠️ Empty response for {mode}")
         return []
 
-    import re
     clean = text.strip("` \n")
     if clean.lower().startswith("json"):
         clean = clean[4:].strip()
@@ -128,15 +156,12 @@ def generate_ranking(mode: str, prompt: str, path: Path):
         return []
 
     raw_json = match.group(1)
-    try:
-        data = json.loads(raw_json)
-    except Exception as e:
-        log(f"⚠️ JSON parse error in {mode}: {e}")
-        log(f"Raw excerpt: {raw_json[:200]}")
+    parsed = _attempt_json_load(raw_json, mode)
+    if parsed is None:
         return []
 
-    save_json(data, path)
-    return data
+    save_json(parsed, path)
+    return parsed
 
 # === Main ===
 if __name__ == "__main__":
