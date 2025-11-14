@@ -4,16 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RealityCheck – Countries</title>
-	<meta name="theme-color" content="#1a355e">
-	<link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#1a355e">
+        <meta name="rc-build-version" content="2025-10-24">
+        <link rel="manifest" href="manifest.json">
 
 	<link rel="icon" type="image/png" href="favicon.png">
 	<link rel="apple-touch-icon" href="favicon.png">
 
   <link rel="stylesheet" href="style.css" />
-	<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
-	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.min.js" integrity="sha512-TrzZNOcdTjzp6FQnXUlYrt08pfmmNWYCqfjkVK9sJmLrVo/NBuRnTL2FCg4JMjgm2xbn1MVhDbtedqFIppA6cQ==" crossorigin="anonymous" defer></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous" defer></script>
 
 </head>
 
@@ -77,11 +78,11 @@
   </section>
 
   <!-- Warnbox & KPI-Beschreibung -->
-  <div id="warning-box" class="hidden" style="max-width:var(--max-width);margin:0 auto;">
+  <div id="warning-box" class="hidden max-width-container">
     ⚠️ <strong>Attention:</strong> No current data is available for some countries. Older values were used.
   </div>
 
-  <div id="kpi-description" style="max-width:var(--max-width);margin:.5rem auto 1rem;font-style:italic;"></div>
+  <div id="kpi-description" class="max-width-container"></div>
 
   <!-- 🧠 Smart KPI Analysis -->
   <div id="kpi-analysis">
@@ -147,13 +148,13 @@
   </section>
 
   <!-- ⚠️ AI Disclaimer -->
-  <p style="text-align:center;font-size:0.85rem;color:#555;margin:1.5rem auto 2rem;max-width:900px;line-height:1.5;">
-    ⚠️ Interpretations and insights on this page may include AI-generated analyses based on public datasets.  
+  <p class="page-disclaimer">
+    ⚠️ Interpretations and insights on this page may include AI-generated analyses based on public datasets.
     Data accuracy and copyright remain with the original publishers (World Bank, UN, OWID, etc.).
   </p>
 
   <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js" integrity="sha512-g2TeAWw5GPnX7z0Kn8nFbYfeHcvAu/tx6d6mrLe/90mkCxO+RcptyYpksUz35EO337F83bZwcmUyHiHamspkfg==" crossorigin="anonymous" defer></script>
   
   <!-- Footer wird automatisch über core.js geladen -->
   <!-- 🧠 Shared RealityCheck Core -->

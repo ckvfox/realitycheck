@@ -25,14 +25,27 @@ let translatorInitReject;
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    // === Header laden ===
-    const headerRes = await fetch("header.html?t=" + Date.now());
-    const headerHtml = await headerRes.text();
+    const assetVersion =
+      document.querySelector('meta[name="rc-build-version"]')?.content ||
+      window.__RC_ASSET_VERSION__ ||
+      "1";
+    const fetchOptions = { cache: "no-cache" };
+
+    const [headerHtml, footerHtml] = await Promise.all([
+      fetch(`header.html?v=${assetVersion}`, fetchOptions).then(res => {
+        if (!res.ok) throw new Error(`Header fetch failed: ${res.status}`);
+        return res.text();
+      }),
+      fetch(`footer.html?v=${assetVersion}`, fetchOptions).then(res => {
+        if (!res.ok) throw new Error(`Footer fetch failed: ${res.status}`);
+        return res.text();
+      })
+    ]);
+
     const header = document.createElement("div");
     header.innerHTML = headerHtml;
     document.body.prepend(header);
 
-    // Aktiven Menüpunkt markieren
     const current = location.pathname.split("/").pop();
     header.querySelectorAll("nav a").forEach(a => {
       if (a.getAttribute("href") === current) a.classList.add("active");
@@ -40,26 +53,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     setupTranslatorControls();
 
-    // === Footer laden ===
-    const footerRes = await fetch("footer.html?t=" + Date.now());
-    const footerHtml = await footerRes.text();
     const footer = document.createElement("div");
     footer.innerHTML = footerHtml;
     document.body.appendChild(footer);
 
-    // === ⏳ Tracking & Besucherzähler (erst nach Footer) ===
     setTimeout(async () => {
       try {
-        // Tracking-Ping nur außerhalb von iframes
         if (window.self === window.top) {
           await fetch("tracking.php", { method: "POST", cache: "no-store" });
           console.log("📈 Tracking ping sent (delayed).");
         }
 
-        // Besucherzahl aus tracking.json laden
         const el = document.getElementById("total-visitors");
         if (el) {
-          const resp = await fetch("tracking.json?nocache=" + Date.now());
+          const resp = await fetch(`tracking.json?v=${assetVersion}`);
           if (resp.ok) {
             const data = await resp.json();
             el.textContent = "Visitors total: " + (data.total ?? "–");
@@ -72,8 +79,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const el = document.getElementById("total-visitors");
         if (el) el.textContent = "Visitors total: unavailable";
       }
-    }, 800); // Footer ist nach ~0,8 s sicher eingefügt
-
+    }, 400);
   } catch (err) {
     console.warn("⚠️ Header/Footer load failed:", err);
   }
