@@ -11,8 +11,9 @@
 
 import json
 import subprocess
-from datetime import datetime, timezone
 from pathlib import Path
+
+from script_utils import ensure_utf8_stdout, safe_write_json, setup_logger
 
 # ======================================================================
 # 🔧 Pfade (pathlib-Version – robust gegen OS-Unterschiede)
@@ -30,13 +31,13 @@ OUTPUT_FILE          = DATA_DIR / "overall_ranking.json"  # ✅ hinzugefügt
 # ======================================================================
 # 🧰 Hilfsfunktionen
 # ======================================================================
-def log(msg: str):
-    """Schreibt Zeitstempel + Nachricht in Konsole & Logdatei (UTC)."""
-    line = f"[{datetime.now(timezone.utc).isoformat(timespec='seconds')} UTC] {msg}"
-    print(line)
-    LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with LOG_FILE.open("a", encoding="utf-8") as f:
-        f.write(line + "\n")
+ensure_utf8_stdout()
+logger = setup_logger("overall_ranking", LOG_FILE)
+
+
+def log(message: str) -> None:
+    logger.info(message)
+
 
 def load_json(path: Path):
     with path.open("r", encoding="utf-8") as f:
@@ -54,19 +55,6 @@ def get_latest_values(entries):
         if country not in latest or year > latest[country]["year"]:
             latest[country] = {"year": year, "value": value}
     return latest
-# ======================================================================
-# 💾 Safe Write Helper
-# ======================================================================
-def safe_write_json(path: Path, data):
-    """Garantiert sicheres Schreiben einer JSON-Datei mit UTF-8 und Verzeichnis-Erstellung."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        with path.open("w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        log(f"💾 JSON saved successfully → {path.relative_to(ROOT_DIR)} ({len(data)} records)")
-    except Exception as e:
-        log(f"❌ Failed to write JSON file {path}: {e}")
-
 # ======================================================================
 # 🚀 Main
 # ======================================================================
@@ -151,7 +139,16 @@ def main():
     ]
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-    safe_write_json(OUTPUT_FILE, result)
+    try:
+        safe_write_json(
+            OUTPUT_FILE,
+            result,
+            logger=logger,
+            note=f"💾 JSON saved successfully → {OUTPUT_FILE.relative_to(ROOT_DIR)} ({len(result)} records)",
+        )
+    except Exception as exc:
+        log(f"❌ Failed to write JSON file {OUTPUT_FILE}: {exc}")
+        return
 
 
     log(f"✅ overall_ranking.json written to {OUTPUT_FILE}")
