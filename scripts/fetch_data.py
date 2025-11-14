@@ -26,9 +26,6 @@ import subprocess
 from typing import Any, Dict, List, Optional
 from pathlib import Path
 from datetime import datetime, timezone
-from dotenv import load_dotenv
-from openai import OpenAI
-from httpx import Client as HttpxClient  # verhindert "proxies"-Fehler unter Python 3.13
 from env_utils import get_openai_key  # ✅ wichtig: hier fehlte der Import
 
 
@@ -37,15 +34,10 @@ from env_utils import get_openai_key  # ✅ wichtig: hier fehlte der Import
 if sys.stdout.encoding is None or sys.stdout.encoding.lower() != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
 
-OPENAI_API_KEY = get_openai_key()
-client = OpenAI(api_key=OPENAI_API_KEY, http_client=HttpxClient())
-
 
 # ======================================================================
 # 🔧 Pfade (pathlib-Version – robust gegen OS-Unterschiede)
 # ======================================================================
-from pathlib import Path
-
 SCRIPT_DIR = Path(__file__).parent.resolve()
 ROOT_DIR   = SCRIPT_DIR.parent.resolve()
 DATA_DIR   = ROOT_DIR / "data"
@@ -63,13 +55,31 @@ STATUS_FILE          = DATA_DIR / "fetch_status.json"
 
 
 # === Argumente ===
-parser = argparse.ArgumentParser(description="RealityCheck Fetcher")
-parser.add_argument("-f", "--force", action="store_true", help="Force full refetch (clear /data except /meta)")
-args = parser.parse_args()
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="RealityCheck Fetcher")
+    parser.add_argument(
+        "-f",
+        "--force",
+        action="store_true",
+        help="Force full refetch (clear /data except /meta)",
+    )
+    parser.add_argument(
+        "-n",
+        "--no-analysis",
+        action="store_true",
+        help="Skip AI-based analysis and ranking follow-up tasks",
+    )
+    return parser
 
-# === Force Mode: Clean Data ===
-if args.force:
+
+def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
+    return build_parser().parse_args(argv)
+
+
+def handle_force_cleanup() -> None:
     print("[INFO] Force mode enabled – clearing data except /meta …")
+
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     for item in DATA_DIR.iterdir():
         if item.name == "meta":
@@ -1051,9 +1061,20 @@ def merge_fetch_state(updated_kpis: set):
 # ======================================================================
 # 🚀 Main
 # ======================================================================
-def main():
+def main(args: argparse.Namespace) -> None:
+    if args.force:
+        handle_force_cleanup()
+
     ensure_dirs()
-    log(f"[INFO] Using OPENAI_API_KEY: {'found' if os.getenv('OPENAI_API_KEY') else 'missing'}")
+
+    try:
+        get_openai_key()
+        key_status = "found"
+    except ValueError as exc:
+        key_status = "missing"
+        log(f"[WARN] {exc}")
+
+    log(f"[INFO] Using OPENAI_API_KEY: {key_status}")
     log("=== Fetch started ===")
 
     # --- Bestehenden Status laden ---
@@ -1258,18 +1279,15 @@ def main():
 
 
 # ======================================================================
-# ⚙️ Optionaler Parameter: --no-analysis
-# ======================================================================
-NO_ANALYSIS = ("--no-analysis" in sys.argv or "-n" in sys.argv)
-if NO_ANALYSIS:
-    print("⏸️ Smart analyses and GPT-based tasks are disabled (local test mode).")
-
-
-# ======================================================================
 # ▶ Start
 # ======================================================================
 if __name__ == "__main__":
-    main()
+    cli_args = parse_args()
+
+    if cli_args.no_analysis:
+        print("⏸️ Smart analyses and GPT-based tasks are disabled (local test mode).")
+
+    main(cli_args)
 
     try:
         print("➡️ Running fetch_overall_ranking.py …")
@@ -1287,7 +1305,6 @@ if __name__ == "__main__":
 
     # === Fetch-State zusammenführen ===
     try:
-        from pathlib import Path
         state_path = Path(DATA_DIR) / "fetch_state.json"
         updated_kpis = set()
         if state_path.exists():
@@ -1299,9 +1316,9 @@ if __name__ == "__main__":
         print(f"⚠️ State merge failed: {e}")
 
     # === Nur Analysen ausführen, wenn neue Daten da sind ===
-    if not NO_ANALYSIS:
+    if not cli_args.no_analysis:
         try:
-            if args.force or len(updated_kpis) > 0:
+            if cli_args.force or len(updated_kpis) > 0:
                 print(f"➡️ Starting global KPI analysis ({len(updated_kpis)} updates or forced run) …")
                 subprocess.run(["python", os.path.join(SCRIPT_DIR, "analysis.py")], check=True)
             else:
