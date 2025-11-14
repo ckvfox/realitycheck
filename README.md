@@ -167,6 +167,23 @@ Maps aliases (ISO, German, historic, OWID, WB names) to canonical form:
 | `analysis.py` | Produces the AI-generated global analysis (analysis.md) |
 | `check_source_csv_updates.py` | Scans manual CSVs for newer dataset versions |
 
+### Running the KPI fetcher
+
+Use Python from the repository root unless noted otherwise. The command
+accepts the existing `-f/--force` and `-n/--no-analysis` switches, plus the
+new KPI filter shorthand. Typical invocations:
+
+- **Single KPI from the project root**: `python scripts/fetch_data.py -k political_corruption_index`
+- **Single KPI while already inside `scripts/`**: `python fetch_data.py -k political_corruption_index`
+- **Module form (works from `scripts/` as well)**: `python -m fetch_data -political_corruption_index`
+
+> ℹ️ Python resolves relative paths against the *current* working
+directory. Running `python scripts/fetch_data.py …` after `cd scripts`
+makes Python look for `scripts/scripts/fetch_data.py`, which does not
+exist. Drop the extra `scripts/` prefix or switch back to the repository
+root before executing the fetcher.
+
+
 ---
 
 ## 📊 Main Pages & Their Roles

@@ -1142,6 +1142,24 @@ def merge_fetch_state(updated_kpis: set):
 # 🚀 Main
 # ======================================================================
 def main(args: argparse.Namespace) -> None:
+    def derive_kpi_id(meta: Dict[str, Any]) -> str:
+        try:
+            resolver = globals().get("resolve_kpi_id")
+            if callable(resolver):
+                return resolver(meta)
+        except Exception:
+            pass
+
+        if not isinstance(meta, dict):
+            return "kpi"
+
+        return (
+            str(meta.get("filename") or "").strip()
+            or str(meta.get("id") or "").strip()
+            or str(meta.get("title") or "").strip()
+            or "kpi"
+        )
+
     if args.force:
         handle_force_cleanup()
 
