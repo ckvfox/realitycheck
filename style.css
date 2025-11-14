@@ -265,6 +265,8 @@ body.overall-page #legend {
   display: grid;
   gap: 1.5rem;
   margin-top: 2.5rem;
+  padding-inline: clamp(16px, 5vw, 40px);
+  box-sizing: border-box;
 }
 
 @media (min-width: 880px) {
