@@ -10,6 +10,14 @@ let map = null, mapLayer = null;
 let userSort = { col: null, asc: false };
 let currentScale = { factor: 1, suffix: "", label: "Exact values" };
 let sortingBound = false;
+let sortedCountryNames = [];
+
+const countryNameCollator = new Intl.Collator(undefined, { sensitivity: "base" });
+const relationLookups = {
+  percapita: new Map(),
+  pergdp: new Map(),
+  perkm2: new Map()
+};
 
 /* ========= Helpers ========= */
 // chooseScaleFromValues, formatValueAuto und calcTrend kommen aus scripts/core.js
@@ -25,6 +33,36 @@ function getKpiArray() {
     : kpis && typeof kpis === "object"
     ? Object.values(kpis)
     : [];
+}
+
+function relationKey(country, year) {
+  return `${country}__${year}`;
+}
+
+function normalizeYear(year) {
+  if (year == null) return null;
+  const n = typeof year === "string" ? parseInt(year, 10) : year;
+  return Number.isFinite(n) ? n : null;
+}
+
+function buildLookupMap(source) {
+  const map = new Map();
+  if (!Array.isArray(source)) return map;
+  source.forEach(entry => {
+    if (!entry || entry.value == null) return;
+    const { country } = entry;
+    const year = normalizeYear(entry.year);
+    const numericValue = typeof entry.value === "string" ? parseFloat(entry.value) : entry.value;
+    if (!country || !Number.isFinite(numericValue) || year == null) return;
+    map.set(relationKey(country, year), numericValue);
+  });
+  return map;
+}
+
+function rebuildRelationLookups() {
+  relationLookups.percapita = buildLookupMap(populationData);
+  relationLookups.pergdp = buildLookupMap(gdpData);
+  relationLookups.perkm2 = buildLookupMap(areaData);
 }
 
 /* ========= Init ========= */
@@ -55,11 +93,12 @@ async function init() {
 	
     groups = await loadJSON("data/meta/groups.json");
     fetchStatus = await loadJSON("data/fetch_status.json");
-	    populationData = await loadJSON("data/population.json");
+            populationData = await loadJSON("data/population.json");
     gdpData = await loadJSON("data/gdp.json");
     areaData = await loadJSON("data/area.json");
+    rebuildRelationLookups();
     ALL_DATA = await loadAllKPIData(); // ✅ Consolidated dataset
-	console.log(`✅ init(): loaded ${Object.keys(countries).length} countries, ${Object.keys(kpis).length} KPIs`);
+        console.log(`✅ init(): loaded ${Object.keys(countries).length} countries, ${Object.keys(kpis).length} KPIs`);
 
 
     /* ---------- AUTO-FIX COUNTRIES STRUCTURE ---------- */
@@ -73,6 +112,10 @@ async function init() {
       countries = fixed;
       console.log(`✅ Converted ${Object.keys(countries).length} countries to object map.`);
     }
+
+    sortedCountryNames = Object.keys(countries || {}).sort((a, b) =>
+      countryNameCollator.compare(a, b)
+    );
 
     // === Dropdowns & Eventhandler ===
     await populateKpiSelect();
@@ -168,30 +211,32 @@ function populateHomeCountrySelect() {
   const s = document.getElementById("countrySelect");
   if (!s) return;
   s.innerHTML = "<option value=''>-- none --</option>";
-  Object.keys(countries)
-    .sort()
-    .forEach(n => {
+  const names = sortedCountryNames.length
+    ? sortedCountryNames
+    : Object.keys(countries || {}).sort((a, b) => countryNameCollator.compare(a, b));
+  names.forEach(n => {
+    const o = document.createElement("option");
+    o.value = n;
+    o.textContent = n;
+    s.appendChild(o);
+  });
+}
+
+function populateCountrySelects() {
+  const ids = ["country1Select", "country2Select", "country3Select"];
+  const names = sortedCountryNames.length
+    ? sortedCountryNames
+    : Object.keys(countries || {}).sort((a, b) => countryNameCollator.compare(a, b));
+  ids.forEach(id => {
+    const s = document.getElementById(id);
+    if (!s) return;
+    s.innerHTML = "<option value=''>-- none --</option>";
+    names.forEach(n => {
       const o = document.createElement("option");
       o.value = n;
       o.textContent = n;
       s.appendChild(o);
     });
-}
-
-function populateCountrySelects() {
-  const ids = ["country1Select", "country2Select", "country3Select"];
-  ids.forEach(id => {
-    const s = document.getElementById(id);
-    if (!s) return;
-    s.innerHTML = "<option value=''>-- none --</option>";
-    Object.keys(countries)
-      .sort()
-      .forEach(n => {
-        const o = document.createElement("option");
-        o.value = n;
-        o.textContent = n;
-        s.appendChild(o);
-      });
   });
 }
 // ============================================================
@@ -235,21 +280,16 @@ setTimeout(syncHomeToChart, 0);
 function applyRelation(v, c, y) {
   const rel = document.getElementById("relationSelect");
   const m = getMetaForCurrent();
-  if (!v) return v;
+  if (v == null) return v;
   if (!m || m.relation !== "*") return v;
-  if (rel?.value === "percapita") {
-    const p = populationData.find(r => r.country === c && r.year === y);
-    return p ? v / p.value : null;
-  }
-  if (rel?.value === "pergdp") {
-    const g = gdpData.find(r => r.country === c && r.year === y);
-    return g ? v / g.value : null;
-  }
-  if (rel?.value === "perkm2") {
-    const a = areaData.find(r => r.country === c && r.year === y);
-    return a ? v / a.value : null;
-  }
-  return v;
+  const relation = rel?.value;
+  if (!relation || relation === "absolute") return v;
+  const lookup = relationLookups[relation];
+  if (!lookup || !lookup.size) return v;
+  const key = relationKey(c, normalizeYear(y));
+  const divisor = lookup.get(key);
+  if (!Number.isFinite(divisor) || divisor === 0) return null;
+  return v / divisor;
 }
 
 /* ========= View ========= */
@@ -276,20 +316,21 @@ function determineAdaptiveScale(values) {
 
 /* ========= Sorting Header Binding ========= */
 function bindHeaderSorting() {
-  const headers = document.querySelectorAll("#country-table th[data-col]");
-  if (!headers.length) return;
+  if (sortingBound) return;
+  const thead = document.querySelector("#country-table thead");
+  if (!thead) return;
 
-  headers.forEach(th => th.replaceWith(th.cloneNode(true)));
-  const freshHeaders = document.querySelectorAll("#country-table th[data-col]");
-  freshHeaders.forEach(th => {
-    th.addEventListener("click", () => {
-      const col = th.dataset.col;
-      if (!col) return;
-      if (userSort.col === col) userSort.asc = !userSort.asc;
-      else userSort = { col, asc: col === "country" || col === "rank" };
-      updateTable();
-    });
+  thead.addEventListener("click", event => {
+    const th = event.target.closest("th[data-col]");
+    if (!th) return;
+    const col = th.dataset.col;
+    if (!col) return;
+    if (userSort.col === col) userSort.asc = !userSort.asc;
+    else userSort = { col, asc: col === "country" || col === "rank" };
+    updateTable();
   });
+
+  sortingBound = true;
 }
 
 /* ========= Year Select (Comparison) ========= */
@@ -339,26 +380,48 @@ function updateTable() {
      1) Länder normal berechnen
      =========================================== */
   const rows = [];
-  for (const c of Object.keys(countries)) {
-    const vals = currentData.filter(r => r.country === c);
-    if (!vals.length) continue;
+  const grouped = new Map();
 
-    const latest = vals.sort((a, b) => b.year - a.year)[0];
-    const prev = vals.find(r => r.year === latest.year - 1);
-    const comp = compYear ? vals.find(r => r.year === compYear) : null;
+  currentData.forEach(entry => {
+    if (!entry || !entry.country) return;
+    const country = entry.country;
+    const year = normalizeYear(entry.year);
+    if (year == null) return;
 
-    const lv = applyRelation(latest.value, c, latest.year);
-    const pv = prev ? applyRelation(prev.value, c, prev.year) : null;
-    const cv = comp ? applyRelation(comp.value, c, comp.year) : null;
+    let bucket = grouped.get(country);
+    if (!bucket) {
+      bucket = { latest: null, byYear: new Map() };
+      grouped.set(country, bucket);
+    }
 
-    const arrow = pv != null ? calcTrend(lv, pv) : "→";
-    const dAbs = pv != null ? lv - pv : null;
-    const dPct = pv ? ((lv - pv) / pv) * 100 : null;
+    const normalizedEntry = { ...entry, year };
+    bucket.byYear.set(year, normalizedEntry);
+    if (!bucket.latest || year > bucket.latest.year) {
+      bucket.latest = normalizedEntry;
+    }
+  });
+
+  grouped.forEach((bucket, country) => {
+    if (!bucket.latest) return;
+    const latest = bucket.latest;
+    const prev = bucket.byYear.get(latest.year - 1) || null;
+    const comp =
+      compYear != null && bucket.byYear.has(compYear)
+        ? bucket.byYear.get(compYear)
+        : null;
+
+    const lv = applyRelation(latest.value, country, latest.year);
+    const pv = prev ? applyRelation(prev.value, country, prev.year) : null;
+    const cv = comp ? applyRelation(comp.value, country, comp.year) : null;
+
+    const arrow = pv != null && lv != null ? calcTrend(lv, pv) : "→";
+    const dAbs = pv != null && lv != null ? lv - pv : null;
+    const dPct = pv != null && lv != null ? ((lv - pv) / pv) * 100 : null;
     const dComp =
-      cv != null ? (((lv - cv) / cv) * 100).toFixed(2) + "%" : "-";
+      cv != null && lv != null ? (((lv - cv) / cv) * 100).toFixed(2) + "%" : "-";
 
     rows.push({
-      country: c,
+      country,
       value: lv,
       deltaPrevArrow: arrow,
       deltaPrevAbs: dAbs,
@@ -367,7 +430,7 @@ function updateTable() {
       update: latest.year,
       isGroup: false
     });
-  }
+  });
 
   /* ===========================================
      2) Adaptive Skalierung bestimmen
