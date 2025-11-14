@@ -159,6 +159,13 @@ def safe_pending_filename(text: str) -> str:
         digest = hashlib.md5(clean.encode("utf-8")).hexdigest()[:8]
         clean = clean[:90] + "_" + digest
     return clean
+
+
+def mark_skip(stats: Dict[str, Any], reason: str) -> None:
+    """Increment skipped counters and keep a human-readable breakdown."""
+    stats["skipped"] += 1
+    breakdown = stats.setdefault("skipped_breakdown", {})
+    breakdown[reason] = breakdown.get(reason, 0) + 1
     
 # ======================================================================
 # 💾 Safe Write Helpers (robuste Datei-Speicherung)
@@ -228,6 +235,35 @@ def canonicalize_country(name: str, c_index, a_index, countries, pending, stats)
 # ======================================================================
 # 💾 Speicherung / Dummy
 # ======================================================================
+def maybe_invert_records(kpi_id: str, meta: Dict[str, Any] | None, records: List[Dict[str, Any]]):
+    """Apply post-fetch inversions for KPIs flagged with invert="*"."""
+    if not isinstance(meta, dict):
+        return records
+
+    invert_flag = str(meta.get("invert", "")).strip()
+    if invert_flag != "*":
+        return records
+
+    inverted: List[Dict[str, Any]] = []
+    for row in records:
+        new_row = dict(row)
+        value = safe_float(new_row.get("value"))
+        if value is None:
+            inverted.append(new_row)
+            continue
+
+        if 0 <= value <= 1:
+            new_value = 1 - value
+        else:
+            new_value = 100 - value
+
+        new_row["value"] = round(new_value, 6)
+        inverted.append(new_row)
+
+    log(f"[TRANSFORM] {kpi_id}: applied invert='*' to {len(records)} rows")
+    return inverted
+
+
 def save_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
     """
     Speichert Daten im Standardformat, entfernt automatisch alle Jahre < 1900
@@ -564,6 +600,7 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
 
     # === 4️⃣ Speichern ===
     if out:
+        out = maybe_invert_records(kpi_id, meta, out)
         save_records(kpi_id, out)
         stats["wb_success"] += 1
         stats["saved_records"] += len(out)
@@ -609,7 +646,7 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
             json_mtime = os.path.getmtime(json_path)
             if csv_mtime <= json_mtime and csv_hash == old_hash:
                 log(f"[⏸️] {kpi_id} – CSV unchanged (hash & mtime match)")
-                stats["skipped"] += 1
+                mark_skip(stats, "CSV unchanged (hash & mtime)")
                 return
         except Exception as e:
             log(f"[WARN] Hash check failed for {kpi_id}: {e}")
@@ -701,6 +738,7 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
     source_date = f"{latest_year}-01-01T00:00:00Z" if latest_year else "Unknown"
 
     if out:
+        out = maybe_invert_records(kpi_id, meta, out)
         save_records(kpi_id, out)
         stats["csv_success"] += 1
         stats["saved_records"] += len(out)
@@ -844,6 +882,7 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
 
     # --- Speichern ---
     if out:
+        out = maybe_invert_records(kpi_id, meta, out)
         save_records(kpi_id, out)
         stats["owid_success"] += 1
         stats["saved_records"] += len(out)
@@ -937,6 +976,7 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
             continue
 
     if out:
+        out = maybe_invert_records(kpi_id, meta, out)
         save_records(kpi_id, out)
         stats["unhcr_success"] = stats.get("unhcr_success", 0) + 1
         stats["saved_records"] += len(out)
@@ -1093,8 +1133,11 @@ def main(args: argparse.Namespace) -> None:
         "countries_loaded": 0, "kpis_loaded": 0, "saved_records": 0, "dummies": 0,
         "mapped_ok": 0, "mapped_drop": 0, "mapped_pending": 0, "new_pending": set(),
         "wb_success": 0, "csv_success": 0, "owid_success": 0, "unhcr_success": 0,
-        "errors": 0, "skipped": 0,
-        "updated": 0                      # 🔹 NEU: zählt erfolgreiche Updates
+        "errors": 0, "skipped": 0, "skipped_breakdown": {},
+        "updated": 0,                     # 🔹 NEU: zählt erfolgreiche Updates
+        "updated_kpis": set(),
+        "trimmed_records": 0,
+        "trimmed_kpis": set(),
     }
 
 
@@ -1128,7 +1171,7 @@ def main(args: argparse.Namespace) -> None:
             # Prüfen, ob Fetch nötig (außer im Force-All-Modus)
             if not force_all_updates and not should_fetch(kpi_id, source_type, source_date, meta, fetch_status):
                 log(f"[⏸️] {kpi_id} – unchanged ({source_date})")
-                stats["skipped"] += 1
+                mark_skip(stats, "Remote data unchanged")
                 continue
                 
             # Sonderfall: Geopolitical Risk Index wird separat behandelt
@@ -1137,6 +1180,9 @@ def main(args: argparse.Namespace) -> None:
                 continue
 
             # === Quelle verarbeiten ===
+            updated_set = stats.setdefault("updated_kpis", set())
+            already_marked = kpi_id in updated_set
+
             try:
                 if source_type == "worldbank":
                     process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
@@ -1152,7 +1198,8 @@ def main(args: argparse.Namespace) -> None:
                     keep_or_dummy(kpi_id, f"unknown source_type {source_type}", stats)
 
                 # Erfolgreiches Update protokollieren
-                stats["updated"] += 1
+                if kpi_id in updated_set and not already_marked:
+                    stats["updated"] += 1
 
                 # ✅ Preserve old data_year and source_date if not newly detected
                 old_meta = fetch_status.get("kpis", {}).get(kpi_id, {})
@@ -1187,9 +1234,13 @@ def main(args: argparse.Namespace) -> None:
     # 🌍 Spezial-Quelle: Geopolitical Risk Index (Matteo Iacoviello)
     # ---------------------------------------------------------------
     try:
+        updated_set = stats.setdefault("updated_kpis", set())
+        already_marked = "geopolitical_risk_index" in updated_set
+
         fetch_geopolitical_risk_index()
-        stats.setdefault("updated_kpis", set()).add("geopolitical_risk_index")
-        stats["updated"] += 1
+        updated_set.add("geopolitical_risk_index")
+        if not already_marked:
+            stats["updated"] += 1
         log("[OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)")
     except Exception as e:
         stats["errors"] += 1
@@ -1264,6 +1315,19 @@ def main(args: argparse.Namespace) -> None:
         summary.append(
             f"Pre-1900 cuts:    {stats['trimmed_records']} rows in {len(stats.get('trimmed_kpis', []))} KPIs"
         )
+
+    updated_names = sorted(stats.get("updated_kpis", set()))
+    if updated_names:
+        summary.append("")
+        summary.append("Updated KPI files:")
+        summary.extend([f"  - {name}" for name in updated_names])
+
+    skipped_breakdown = stats.get("skipped_breakdown", {})
+    if skipped_breakdown:
+        summary.append("")
+        summary.append("Skipped breakdown:")
+        for reason, count in sorted(skipped_breakdown.items()):
+            summary.append(f"  - {reason}: {count}")
 
     summary.extend([
         "=================================",

@@ -13,7 +13,8 @@
     "filename": "area",
     "world_kpi": "",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Population",
@@ -29,7 +30,8 @@
     "filename": "population",
     "world_kpi": "",
     "relevance": "none",
-    "actuality": "stable"
+    "actuality": "stable",
+    "invert": ""
   },
   {
     "title": "Population Growth",
@@ -37,7 +39,7 @@
     "unit": "% per year",
     "relation": "",
     "sort": "target",
-		"target_value": 1,
+    "target_value": 1,
     "cluster": "Society & Governance",
     "source": "https://data.worldbank.org/indicator/SP.POP.GROW",
     "source_type": "worldbank",
@@ -46,7 +48,8 @@
     "world_kpi": "",
     "filename": "population_growth",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Median Age",
@@ -54,7 +57,7 @@
     "unit": "years",
     "relation": "",
     "sort": "target",
-		"target_value": 40,
+    "target_value": 40,
     "cluster": "Society & Governance",
     "source": "https://ourworldindata.org/grapher/median-age",
     "source_type": "owid",
@@ -63,7 +66,8 @@
     "world_kpi": "",
     "filename": "median_age",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Fertility Rate",
@@ -71,7 +75,7 @@
     "unit": "births per woman",
     "relation": "",
     "sort": "target",
-		"target_value": 2.1,
+    "target_value": 2.1,
     "cluster": "Society & Governance",
     "source": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
     "source_type": "worldbank",
@@ -80,7 +84,8 @@
     "world_kpi": "",
     "filename": "fertility_rate",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Urbanization Rate",
@@ -96,7 +101,8 @@
     "world_kpi": "",
     "filename": "urbanization_rate",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Democracy Index",
@@ -112,7 +118,8 @@
     "world_kpi": "",
     "filename": "democracy_index",
     "relevance": "very_high",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Press Freedom Index",
@@ -128,7 +135,8 @@
     "world_kpi": "",
     "filename": "press_freedom_index",
     "relevance": "none",
-    "actuality": "critical"
+    "actuality": "critical",
+    "invert": ""
   },
   {
     "title": "World Happiness Index",
@@ -144,7 +152,8 @@
     "world_kpi": "",
     "filename": "world_happiness_index",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "GDP",
@@ -160,7 +169,8 @@
     "filename": "gdp",
     "world_kpi": "",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "GDP per Capita",
@@ -176,7 +186,8 @@
     "world_kpi": "",
     "filename": "gdp_per_capita_current_us",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "GNI per capita",
@@ -192,7 +203,8 @@
     "world_kpi": "",
     "filename": "gni_per_capita_current_us",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Gini Index",
@@ -208,7 +220,8 @@
     "world_kpi": "",
     "filename": "gini_index",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Public Debt",
@@ -224,7 +237,8 @@
     "world_kpi": "",
     "filename": "public_debt_of_gdp",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Tax Revenue",
@@ -237,11 +251,12 @@
     "source_type": "worldbank",
     "source_code": "GC.TAX.TOTL.GD.ZS",
     "scale": "%",
-		"target_value": 35,
+    "target_value": 35,
     "world_kpi": "",
     "filename": "tax_revenue_of_gdp",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Unemployment Rate",
@@ -257,7 +272,8 @@
     "world_kpi": "",
     "filename": "unemployment_rate",
     "relevance": "normal",
-    "actuality": "critical"
+    "actuality": "critical",
+    "invert": ""
   },
   {
     "title": "Big Mac Index",
@@ -273,7 +289,8 @@
     "world_kpi": "",
     "filename": "big_mac_index",
     "relevance": "irrelevant",
-    "actuality": "critical"
+    "actuality": "critical",
+    "invert": ""
   },
   {
     "title": "Human Development Index",
@@ -289,7 +306,8 @@
     "world_kpi": "",
     "filename": "human_development_index_hdi",
     "relevance": "very_high",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Health Expenditure per Capita",
@@ -305,7 +323,8 @@
     "world_kpi": "",
     "filename": "health_expenditure_per_capita",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Infant Mortality Rate",
@@ -321,7 +340,8 @@
     "world_kpi": "",
     "filename": "infant_mortality_rate",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Maternal Mortality Ratio",
@@ -337,25 +357,26 @@
     "world_kpi": "",
     "filename": "maternal_mortality_ratio",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
-	{
-		"title": "Physicians",
-		"description": "**Physicians per 1,000 People** measures how many doctors are available for every 1,000 individuals in a population. This indicator is important because it helps gauge the accessibility of healthcare services in a country—more physicians generally mean better healthcare availability and outcomes. Factors influencing this number include the country’s healthcare system, medical education capacity, and government health policies. This metric is closely related to other health indicators, such as hospital beds per 1,000 people and overall health expenditure, as they collectively reflect the strength and efficiency of a nation’s healthcare system. These data are compiled by Our World in Data based on WHO and OECD datasets.",
-		"unit": "per 1,000 people",
-		"relation": "",
-		"sort": "higher",
-		"cluster": "Health & Social",
-		"source": "https://ourworldindata.org/grapher/physicians-per-1000-people",
-		"source_type": "owid",
-		"source_code": "physicians-per-1000-people.csv?useColumnShortNames=true",
-		"scale": "none",
-		"world_kpi": "",
-		"filename": "physicians_per_1_000_people",
-		"relevance": "normal",
-		"actuality": "normal"
-	},
-	
+  {
+    "title": "Physicians",
+    "description": "**Physicians per 1,000 People** measures how many doctors are available for every 1,000 individuals in a population. This indicator is important because it helps gauge the accessibility of healthcare services in a country—more physicians generally mean better healthcare availability and outcomes. Factors influencing this number include the country’s healthcare system, medical education capacity, and government health policies. This metric is closely related to other health indicators, such as hospital beds per 1,000 people and overall health expenditure, as they collectively reflect the strength and efficiency of a nation’s healthcare system. These data are compiled by Our World in Data based on WHO and OECD datasets.",
+    "unit": "per 1,000 people",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Health & Social",
+    "source": "https://ourworldindata.org/grapher/physicians-per-1000-people",
+    "source_type": "owid",
+    "source_code": "physicians-per-1000-people.csv?useColumnShortNames=true",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "physicians_per_1_000_people",
+    "relevance": "normal",
+    "actuality": "normal",
+    "invert": ""
+  },
   {
     "title": "Hospital Beds",
     "description": "**Hospital Beds per 1,000 People** measures the number of hospital beds available for every 1,000 individuals in a population. This indicator is important because it reflects a country’s healthcare capacity and readiness to provide care during emergencies, such as epidemics or natural disasters. Factors that influence this number include government healthcare policies, funding, and the overall health needs of the population. This metric is often considered alongside other health indicators, such as healthcare workforce numbers and hospital admissions, to give a clearer picture of a country's healthcare system's effectiveness and accessibility. These data are provided by the World Bank’s World Development Indicators database.",
@@ -370,9 +391,9 @@
     "world_kpi": "",
     "filename": "hospital_beds_per_1_000_people",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
-
   {
     "title": "Life Expectancy at Birth",
     "description": "Life expectancy at birth measures the average number of years a newborn is expected to live if current mortality rates continue. This indicator is important because it reflects the overall health and well-being of a population, influencing policies and healthcare investments. Factors that can affect life expectancy include access to healthcare, nutrition, lifestyle choices, and environmental conditions. It is closely related to other health metrics, such as infant mortality rates and disease prevalence, providing a comprehensive view of a society's health status. These data are provided by the World Bank’s World Development Indicators database.",
@@ -387,7 +408,8 @@
     "world_kpi": "",
     "filename": "life_expectancy_at_birth",
     "relevance": "none",
-    "actuality": "stable"
+    "actuality": "stable",
+    "invert": ""
   },
   {
     "title": "Adult Literacy Rate",
@@ -403,7 +425,8 @@
     "world_kpi": "",
     "filename": "adult_literacy_rate",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Homelessness Rate",
@@ -419,7 +442,8 @@
     "world_kpi": "",
     "filename": "homelessness_rate",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Old-Age Dependency Ratio",
@@ -435,7 +459,8 @@
     "world_kpi": "",
     "filename": "old_age_dependency_ratio",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Age Dependency Ratio",
@@ -451,7 +476,8 @@
     "world_kpi": "",
     "filename": "age_dependency_ratio_total",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Overall Immunization Coverage",
@@ -467,7 +493,8 @@
     "world_kpi": "",
     "filename": "overall_immunization_coverage",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Extreme Poverty",
@@ -483,7 +510,8 @@
     "world_kpi": "",
     "filename": "extreme_poverty",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Access to Basic Drinking Water",
@@ -499,7 +527,8 @@
     "world_kpi": "",
     "filename": "access_to_basic_drinking_water",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "CO₂ Emissions",
@@ -515,7 +544,8 @@
     "world_kpi": "j",
     "filename": "co2_emissions",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Air Quality",
@@ -531,7 +561,8 @@
     "world_kpi": "",
     "filename": "air_quality_pm2_5_exposure",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Renewable Energy Share",
@@ -547,7 +578,8 @@
     "world_kpi": "",
     "filename": "renewable_energy_share",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Internet Penetration Rate",
@@ -563,7 +595,8 @@
     "world_kpi": "",
     "filename": "internet_penetration_rate",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Mobile Subscriptions",
@@ -579,7 +612,8 @@
     "world_kpi": "",
     "filename": "mobile_subscriptions_per_100_inhabitants",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Railway Length",
@@ -595,7 +629,8 @@
     "world_kpi": "",
     "filename": "railway_length",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Inflation (Consumer Price Index)",
@@ -612,7 +647,8 @@
     "target_value": 0,
     "filename": "inflation_consumer_price_index",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Employment-to-population ratio",
@@ -628,7 +664,8 @@
     "world_kpi": "",
     "filename": "employment_to_population_ratio",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Female Labor Force Participation",
@@ -644,7 +681,8 @@
     "world_kpi": "",
     "filename": "female_labor_force_participation",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Political Corruption Index",
@@ -660,7 +698,8 @@
     "world_kpi": "",
     "filename": "political_corruption_index",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": "*"
   },
   {
     "title": "Military Spending",
@@ -676,7 +715,8 @@
     "world_kpi": "",
     "filename": "military_spending_sipri",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Number of Armed Conflicts",
@@ -692,9 +732,9 @@
     "world_kpi": "e",
     "filename": "number_of_armed_conflicts",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
-
   {
     "title": "Road Traffic Deaths",
     "description": "Road traffic deaths per 100,000 population indicate the safety of transportation systems and road infrastructure. It reflects how effectively a country enforces traffic laws, maintains its roads, and promotes safe driving practices. These data are provided by the World Bank’s World Development Indicators database.",
@@ -709,7 +749,8 @@
     "world_kpi": "",
     "filename": "road_traffic_deaths_per_100k_people",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Fixed Broadband Subscriptions",
@@ -725,7 +766,8 @@
     "world_kpi": "",
     "filename": "fixed_broadband_subscriptions_per_100_people",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Education Expenditure",
@@ -741,7 +783,8 @@
     "world_kpi": "",
     "filename": "education_expenditure_of_gdp",
     "relevance": "normal",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Mean Years of Schooling",
@@ -757,7 +800,8 @@
     "world_kpi": "",
     "filename": "mean_years_of_schooling",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Military Expenditure",
@@ -773,7 +817,8 @@
     "world_kpi": "",
     "filename": "military_expenditure_of_gdp",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Recycling Rate",
@@ -789,7 +834,8 @@
     "world_kpi": "",
     "filename": "recycling_rate",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "invert": ""
   },
   {
     "title": "Environmental Performance Index",
@@ -805,7 +851,8 @@
     "world_kpi": "",
     "filename": "environmental_performance_index",
     "relevance": "very_high",
-    "actuality": "annual"
+    "actuality": "annual",
+    "invert": ""
   },
   {
     "title": "Global Peace Index",
@@ -821,7 +868,8 @@
     "world_kpi": "",
     "filename": "global_peace_index",
     "relevance": "very_high",
-    "actuality": "annual"
+    "actuality": "annual",
+    "invert": ""
   },
   {
     "title": "Living Planet Index",
@@ -837,7 +885,8 @@
     "world_kpi": "e",
     "filename": "living_planet_index",
     "relevance": "normal",
-    "actuality": "critical"
+    "actuality": "critical",
+    "invert": ""
   },
   {
     "title": "Electric Vehicle Stock",
@@ -853,7 +902,8 @@
     "world_kpi": "",
     "filename": "electric_vehicle_stock",
     "relevance": "normal",
-    "actuality": "critical"
+    "actuality": "critical",
+    "invert": ""
   },
   {
     "title": "Number of Recorded Natural Disasters",
@@ -869,7 +919,8 @@
     "world_kpi": "e",
     "filename": "number_of_recorded_natural_disasters",
     "relevance": "none",
-    "actuality": "critical"
+    "actuality": "critical",
+    "invert": ""
   },
   {
     "title": "Global CO₂ Emissions",
@@ -885,9 +936,9 @@
     "world_kpi": "e",
     "filename": "global_co2_emissions",
     "relevance": "critical",
-    "actuality": "critical"
+    "actuality": "critical",
+    "invert": ""
   },
-
   {
     "title": "Global Temperature Anomaly",
     "description": "Average deviation of Earth's surface temperature relative to the pre-industrial baseline (1850–1900). It reflects the planet’s long-term warming trend driven by greenhouse gas emissions, with recent years consistently exceeding 1 °C above that baseline. The indicator shows how close we are to critical thresholds like +1.5 °C under the Paris Agreement. These data are compiled by Our World in Data based on Berkeley Earth and NASA GISTEMP temperature records.",
@@ -902,7 +953,8 @@
     "world_kpi": "e",
     "filename": "global_temperature_anomaly",
     "relevance": "critical",
-    "actuality": "critical"
+    "actuality": "critical",
+    "invert": ""
   },
   {
     "title": "Inform Resilience Index",
@@ -918,7 +970,8 @@
     "world_kpi": "",
     "filename": "inform_resilience_index",
     "relevance": "normal",
-    "actuality": "stable"
+    "actuality": "stable",
+    "invert": ""
   },
   {
     "title": "Geopolitical Risk Index",
@@ -934,38 +987,41 @@
     "world_kpi": "e",
     "filename": "geopolitical_risk_index",
     "relevance": "high",
-    "actuality": "critical"
+    "actuality": "critical",
+    "invert": ""
   },
   {
-  "title": "Rule of Law Index",
-  "description": "The Rule of Law Index measures the extent to which countries adhere to the rule of law in practice — including constraints on government powers, absence of corruption, open government, fundamental rights, order and security, regulatory enforcement, civil justice, and criminal justice. Scores range from 0 (weak rule of law) to 1 (strong rule of law). It provides a comprehensive view of how justice and governance function in practice, complementing indicators such as the Democracy Index and Political Corruption Index. These data are compiled by Our World in Data based on the World Justice Project (WJP).",
-  "unit": "index (0–1)",
-  "relation": "",
-  "sort": "higher",
-  "cluster": "Society & Governance",
-  "source": "https://ourworldindata.org/grapher/rule-of-law-index",
-  "source_type": "owid",
-  "source_code": "rule-of-law-index.csv?v=1&csvType=full&useColumnShortNames=true",
-  "scale": "none",
-  "world_kpi": "",
-  "filename": "rule_of_law_index",
-  "relevance": "none",
-  "actuality": "normal"
-},
-{
-  "title": "GDP per capita, PPP (current international $)",
-  "description": "GDP per capita based on purchasing power parity (PPP) reflects the average economic output per person, adjusted for differences in price levels between countries. It measures how much a unit of currency can buy in terms of goods and services, providing a more accurate comparison of living standards across nations.",
-  "unit": "USD",
-  "scale": "auto",  
-  "world_kpi": "",
-  "relation": "",  
-  "sort": "higher",
-  "cluster": "Economy & Labor",
-  "relevance": "high",
-  "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD",
-  "source_type": "worldbank",
-  "source_code": "NY.GDP.PCAP.PP.CD",
-  "filename": "purchasing_power_parity",
-  "actuality": "normal"
-}
+    "title": "Rule of Law Index",
+    "description": "The Rule of Law Index measures the extent to which countries adhere to the rule of law in practice — including constraints on government powers, absence of corruption, open government, fundamental rights, order and security, regulatory enforcement, civil justice, and criminal justice. Scores range from 0 (weak rule of law) to 1 (strong rule of law). It provides a comprehensive view of how justice and governance function in practice, complementing indicators such as the Democracy Index and Political Corruption Index. These data are compiled by Our World in Data based on the World Justice Project (WJP).",
+    "unit": "index (0–1)",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Society & Governance",
+    "source": "https://ourworldindata.org/grapher/rule-of-law-index",
+    "source_type": "owid",
+    "source_code": "rule-of-law-index.csv?v=1&csvType=full&useColumnShortNames=true",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "rule_of_law_index",
+    "relevance": "none",
+    "actuality": "normal",
+    "invert": ""
+  },
+  {
+    "title": "GDP per capita, PPP (current international $)",
+    "description": "GDP per capita based on purchasing power parity (PPP) reflects the average economic output per person, adjusted for differences in price levels between countries. It measures how much a unit of currency can buy in terms of goods and services, providing a more accurate comparison of living standards across nations.",
+    "unit": "USD",
+    "scale": "auto",
+    "world_kpi": "",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Economy & Labor",
+    "relevance": "high",
+    "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD",
+    "source_type": "worldbank",
+    "source_code": "NY.GDP.PCAP.PP.CD",
+    "filename": "purchasing_power_parity",
+    "actuality": "normal",
+    "invert": ""
+  }
 ]
