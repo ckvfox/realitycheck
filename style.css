@@ -1797,7 +1797,7 @@ header#main-header nav a.active {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.3rem;
   cursor: pointer;
   transition: background 0.25s ease, transform 0.15s ease;
 }
@@ -2021,8 +2021,8 @@ Fixes: header/menu overflow, footer overflow, disappearing icons
 /* Beschriftung leicht nach rechts statt unten (mobil lesbar) */
 #mode-switch .mode-button span:not(.emoji) {
   display: inline-block !important;
-  font-size: 0.85rem;
-  margin-left: 0.2rem;
+  font-size: 0.8rem;
+  margin-left: 0.15rem;
 }
 
 /* Mobile Optimierung – kleinere Buttons */
