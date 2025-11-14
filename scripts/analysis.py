@@ -15,20 +15,17 @@ import os, sys, json, time, math, traceback
 from datetime import datetime, timezone, date
 from pathlib import Path
 from statistics import mean, pstdev
-from dotenv import load_dotenv
-from openai import OpenAI
-from httpx import Client as HttpxClient
 
 try:
     from tqdm import tqdm
 except Exception:
     def tqdm(x, **k): return x
 
-from env_utils import get_openai_key
+from env_utils import get_openai_client
+from script_utils import ensure_utf8_stdout, safe_write_json, safe_write_text, setup_logger
 
 # === UTF-8 ===
-if sys.stdout.encoding is None or sys.stdout.encoding.lower() != "utf-8":
-    sys.stdout.reconfigure(encoding="utf-8")
+ensure_utf8_stdout()
 
 # === Pfade ===
 SCRIPT_DIR = Path(__file__).parent.resolve()
@@ -42,31 +39,12 @@ OUT_KPI = DATA_DIR / "kpi_analysis.json"
 OUT_OUTLIERS = DATA_DIR / "analysis_outliers.json"
 LOG_FILE = DATA_DIR / "fetch_log.txt"
 
-# === OpenAI ===
-load_dotenv()
-client = OpenAI(api_key=get_openai_key(), http_client=HttpxClient())
-
 # === Logging ===
-def log(msg:str):
-    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-    line = f"[{ts}] {msg}"
-    print(line)
-    try:
-        with LOG_FILE.open("a", encoding="utf-8") as f: f.write(line+"\n")
-    except Exception: pass
+logger = setup_logger("analysis", LOG_FILE)
 
-# === Safe Writes ===
-def safe_write_text(p:Path, c:str):
-    p.parent.mkdir(parents=True, exist_ok=True)
-    tmp=p.with_suffix(p.suffix+".tmp")
-    tmp.write_text(c or "⚠️ Empty content", encoding="utf-8")
-    os.replace(tmp,p)
 
-def safe_write_json(p:Path, d):
-    p.parent.mkdir(parents=True, exist_ok=True)
-    tmp=p.with_suffix(p.suffix+".tmp")
-    tmp.write_text(json.dumps(d, ensure_ascii=False, indent=2), encoding="utf-8")
-    os.replace(tmp,p)
+def log(msg: str) -> None:
+    logger.info(msg)
 
 # === Loader ===
 def load_meta():
@@ -92,6 +70,7 @@ def gpt_call(prompt: str, max_tokens: int = 700) -> str:
     """Robuster GPT-Call – mit Fallback und optionalem Silent Mode."""
     text = ""
     last_err = None
+    client = get_openai_client()
 
     for model in ["gpt-4o", "gpt-4-turbo"]:
         if VERBOSE:
@@ -196,7 +175,7 @@ Be factual but interpretative, analytical but not technical.
 
 
 # === KPI Analysen ===
-def generate_kpi_analyses(client:OpenAI,data_dir:Path,updated_only=None):
+def generate_kpi_analyses(data_dir: Path, updated_only=None):
     meta=load_meta()
     if updated_only and "__force_all__" not in updated_only:
         allow={u.replace(".json","") for u in updated_only}
@@ -296,7 +275,11 @@ if __name__=="__main__":
     if not updated: updated=["__force_all__"]
     try: run_global_analysis(updated)
     except Exception as e: log(f"❌ Global analysis failed: {e}\n{traceback.format_exc()}")
-    try: generate_kpi_analyses(client,DATA_DIR,updated_only=None if "__force_all__" in updated else updated)
+    try:
+        generate_kpi_analyses(
+            DATA_DIR,
+            updated_only=None if "__force_all__" in updated else updated,
+        )
     except Exception as e: log(f"⚠️ KPI summary failed: {e}")
     try: compute_outliers()
     except Exception as e: log(f"⚠️ Outlier computation failed: {e}")

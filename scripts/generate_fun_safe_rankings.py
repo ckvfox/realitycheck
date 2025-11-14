@@ -10,64 +10,40 @@ Erzeugt:
 Verwendet dieselbe GPT-Logik wie analysis.py (OpenAI 1.54.x)
 """
 
-import os
 import sys
 import json
-import time
 from datetime import datetime, timezone
-from dotenv import load_dotenv
-from openai import OpenAI
 from pathlib import Path
-from env_utils import get_openai_key
-from httpx import Client as HttpxClient  # 🔧 Fix für Python 3.13 Proxy-Bug
+
+from env_utils import get_openai_client
+from script_utils import ensure_utf8_stdout, safe_write_json, setup_logger
 
 # === UTF-8 Fix ===
-if sys.stdout.encoding is None or sys.stdout.encoding.lower() != "utf-8":
-    sys.stdout.reconfigure(encoding="utf-8")
-
-# === OpenAI Setup ===
-load_dotenv()
-OPENAI_API_KEY = get_openai_key()
-client = OpenAI(api_key=OPENAI_API_KEY, http_client=HttpxClient())  # eigener Client für Python 3.13
+ensure_utf8_stdout()
 
 # === Pfade ===
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT_DIR / "data"
 LOG_FILE = DATA_DIR / "fetch_log.txt"
 
-# === Safe Write Helpers ===
-def safe_write_text(path: Path, content: str):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        with path.open("w", encoding="utf-8") as f:
-            f.write(content or "")
-    except Exception as e:
-        print(f"❌ Failed to write text file {path}: {e}")
-
-def safe_write_json(path: Path, data):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        with path.open("w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"💾 JSON saved: {path.relative_to(Path(__file__).resolve().parent.parent)} ({len(data)} entries)")
-    except Exception as e:
-        print(f"❌ Failed to write JSON file {path}: {e}")
-
 # === Logging ===
-def log(msg: str):
-    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-    line = f"[{ts}] {msg}"
-    print(line)
-    with LOG_FILE.open("a", encoding="utf-8") as f:
-        f.write(line + "\n")
+logger = setup_logger("fun_safe_rankings", LOG_FILE)
+
+
+def log(msg: str) -> None:
+    logger.info(msg)
 
 def save_json(data, path: Path):
     if not data:
         log(f"⚠️ No data to save for {path.name}")
         return
     try:
-        safe_write_json(path, data)
-        log(f"💾 Saved {path.relative_to(ROOT_DIR)} ({len(data)} entries)")
+        safe_write_json(
+            path,
+            data,
+            logger=logger,
+            note=f"💾 Saved {path.relative_to(ROOT_DIR)} ({len(data)} entries)",
+        )
     except Exception as e:
         log(f"❌ Failed to save {path.name}: {e}")
 
@@ -121,6 +97,7 @@ Example:
 # === Core ===
 def generate_ranking(mode: str, prompt: str, path: Path):
     log(f"➡️ Generating {mode} via GPT-4-Turbo …")
+    client = get_openai_client()
     try:
         response = client.chat.completions.create(
             model="gpt-4-turbo",

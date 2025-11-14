@@ -50,6 +50,14 @@ header { background: var(--steel-blue); color: #fff; padding: .5rem .8rem; displ
   align-items: center;
   gap: 1rem;
   flex: 0 1 auto;
+  box-sizing: border-box;
+  padding-right: 3.5rem;
+}
+
+@supports (padding-right: calc(3.5rem + env(safe-area-inset-right))) {
+  .header-actions {
+    padding-right: calc(3.5rem + env(safe-area-inset-right));
+  }
 }
 
 
@@ -67,10 +75,25 @@ nav { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; justify-c
   .header-actions {
     width: 100%;
     justify-content: space-between;
+    padding-right: 2.75rem;
+  }
+
+  @supports (padding-right: calc(2.75rem + env(safe-area-inset-right))) {
+    .header-actions {
+      padding-right: calc(2.75rem + env(safe-area-inset-right));
+    }
   }
 
   .translator-launcher {
-    margin-left: auto;
+    top: .75rem;
+    right: .75rem;
+  }
+
+  @supports (top: calc(.75rem + env(safe-area-inset-top))) {
+    .translator-launcher {
+      top: calc(.75rem + env(safe-area-inset-top));
+      right: calc(.75rem + env(safe-area-inset-right));
+    }
   }
 }
 
@@ -2110,10 +2133,20 @@ body.glossary-page th.sort-desc::after {
 
 /* === Translator Controls === */
 .translator-launcher {
-  position: relative;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3000;
+}
+
+@supports (top: calc(1rem + env(safe-area-inset-top))) {
+  .translator-launcher {
+    top: calc(1rem + env(safe-area-inset-top));
+    right: calc(1rem + env(safe-area-inset-right));
+  }
 }
 
 .translator-button {
