@@ -26,7 +26,7 @@
       "url": "",
       "source_date": "2023-01-01",
       "data_year": 2023,
-      "last_fetch": "2025-11-14T16:35:27Z"
+      "last_fetch": "2025-11-14T20:35:42Z"
     },
     "fertility_rate": {
       "source": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
@@ -59,9 +59,9 @@
     "world_happiness_index": {
       "source": "https://worldhappiness.report/",
       "url": "",
-      "source_date": "2022-01-01T00:00:00Z",
-      "data_year": 2022,
-      "last_fetch": "2025-11-14T16:35:32Z"
+      "source_date": "2024-01-01T00:00:00Z",
+      "data_year": 2024,
+      "last_fetch": "2025-11-14T20:35:50Z"
     },
     "gdp": {
       "source": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
@@ -115,9 +115,9 @@
     "big_mac_index": {
       "source": "https://www.economist.com/big-mac-index",
       "url": "",
-      "source_date": "2022-01-01T00:00:00Z",
-      "data_year": 2022,
-      "last_fetch": "2025-11-14T16:35:43Z"
+      "source_date": "2025-01-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2025-11-14T20:35:59Z"
     },
     "human_development_index_hdi": {
       "source": "https://ourworldindata.org/grapher/human-development-index",
@@ -327,7 +327,7 @@
       "url": "",
       "source_date": "2025-01-01",
       "data_year": 2025,
-      "last_fetch": "2025-11-14T16:36:27Z"
+      "last_fetch": "2025-11-14T20:36:35Z"
     },
     "military_expenditure_of_gdp": {
       "source": "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS",
@@ -341,21 +341,21 @@
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-14T16:36:28Z"
+      "last_fetch": "2025-11-14T20:36:36Z"
     },
     "environmental_performance_index": {
       "source": "https://epi.yale.edu/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-14T16:36:28Z"
+      "last_fetch": "2025-11-14T20:36:36Z"
     },
     "global_peace_index": {
       "source": "https://www.visionofhumanity.org/maps/#/global-peace-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2025-11-14T16:36:28Z"
+      "last_fetch": "2025-11-14T20:36:36Z"
     },
     "living_planet_index": {
       "source": "https://ourworldindata.org/grapher/global-living-planet-index",
@@ -390,14 +390,14 @@
       "url": "",
       "source_date": "2025-01-01",
       "data_year": 2025,
-      "last_fetch": "2025-11-14T16:36:34Z"
+      "last_fetch": "2025-11-14T20:36:41Z"
     },
     "inform_resilience_index": {
       "source": "https://drmkc.jrc.ec.europa.eu/inform-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2025-11-14T16:36:34Z"
+      "last_fetch": "2025-11-14T20:36:41Z"
     },
     "rule_of_law_index": {
       "source": "https://ourworldindata.org/grapher/rule-of-law-index",
@@ -412,11 +412,18 @@
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
       "last_fetch": "2025-11-13T16:44:00Z"
+    },
+    "olympic_medals_summer": {
+      "source": "Kaggle athlete_events (preprocessed)",
+      "url": "",
+      "source_date": "2024-01-01T00:00:00Z",
+      "data_year": 2024,
+      "last_fetch": "2025-11-14T20:35:53Z"
     }
   },
   "summary": {
-    "lastRun": "2025-11-14T16:36:39Z",
-    "updated": 4,
+    "lastRun": "2025-11-14T20:36:45Z",
+    "updated": 5,
     "skipped": 56,
     "errors": 0
   }

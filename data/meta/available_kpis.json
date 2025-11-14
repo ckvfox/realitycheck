@@ -189,6 +189,22 @@
     "actuality": "normal",
     "invert": ""
   },
+    {
+    "title": "Olympic Medals (Summer)",
+    "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Summer Olympic Games. It reflects not only elite athletic performance but also the depth of a nation's sports culture, infrastructure, and long-term investment in youth and education. While Olympic success is not a direct measure of social well-being, strong performance often correlates with effective public health systems, access to sports facilities, and widespread participation in physical education. Over time, Summer Olympic results provide insight into global development, population trends, and the influence of national training programs. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
+    "unit": "count",
+    "relation": "*",
+    "sort": "higher",
+    "cluster": "Sports & Culture",
+    "source": "Kaggle athlete_events (preprocessed)",
+    "source_type": "csv",
+    "source_code": "olympic_medals_summer.csv",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "olympic_medals_summer",
+    "relevance": "none",
+    "actuality": "stable"
+  },
   {
     "title": "GNI per capita",
     "description": "GNI per capita (current US$) measures the average income earned by a country's residents, including income from abroad, expressed in U.S. dollars. This indicator is important because it provides insight into the economic well-being of a country's population and helps compare living standards across different nations. Factors that can influence GNI per capita include economic growth, employment rates, and international trade. It is closely related to other economic metrics like GDP per capita and poverty rates, offering a broader picture of economic health and quality of life in a country. These data are provided by the World Bank’s World Development Indicators database.",

@@ -1,21 +1,6 @@
 manuell füllen
 
-  {
-    "title": "Olympic Medals (Summer)",
-    "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Summer Olympic Games. It reflects not only elite athletic performance but also the depth of a nation's sports culture, infrastructure, and long-term investment in youth and education. While Olympic success is not a direct measure of social well-being, strong performance often correlates with effective public health systems, access to sports facilities, and widespread participation in physical education. Over time, Summer Olympic results provide insight into global development, population trends, and the influence of national training programs. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
-    "unit": "count",
-    "relation": "*",
-    "sort": "higher",
-    "cluster": "Sports & Culture",
-    "source": "Kaggle athlete_events (preprocessed)",
-    "source_type": "csv",
-    "source_code": "olympic_medals_summer.csv",
-    "scale": "none",
-    "world_kpi": "",
-    "filename": "olympic_medals_summer",
-    "relevance": "none",
-    "actuality": "stable"
-  },
+
   {
     "title": "Olympic Medals (Winter)",
     "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Winter Olympic Games. Beyond highlighting excellence in winter sports, it also reflects broader factors such as infrastructure, climate, and social investment in physical activity. Countries that perform well often have strong public sports programs, accessible training environments, and policies promoting youth participation. Although not a direct measure of prosperity, success at the Winter Olympics can indicate robust institutions, social cohesion, and an emphasis on national health and education through sport. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
