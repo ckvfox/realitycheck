@@ -284,11 +284,21 @@ body.glossary-page #legend span:not(.outlier) {
   border-radius: 999px;
 }
 
+body.overall-page .table-wrapper {
+  padding-inline: clamp(16px, 5vw, 40px);
+  box-sizing: border-box;
+}
+
+body.overall-page .table-wrapper > * {
+  max-width: min(100%, var(--max-width));
+  margin-inline: auto;
+}
+
 body.overall-page #legend {
   display: grid;
   gap: 1.5rem;
   margin-top: 2.5rem;
-  padding-inline: clamp(16px, 5vw, 40px);
+  padding-inline: 0;
   box-sizing: border-box;
 }
 
@@ -328,6 +338,8 @@ body.overall-page #legend .legend-code {
   border-radius: 0.4rem;
   line-height: 1.4;
   overflow: auto;
+  max-width: 100%;
+  box-sizing: border-box;
   font-family: "Fira Code", "SFMono-Regular", Consolas, monospace;
   font-size: 0.9rem;
 }
