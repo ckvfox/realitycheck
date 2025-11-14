@@ -12,6 +12,17 @@ let currentScale = { factor: 1, suffix: "", label: "Exact values" };
 let sortingBound = false;
 let sortedCountryNames = [];
 
+function isKnownCountry(name) {
+  if (!name) return false;
+  if (Array.isArray(countries)) {
+    return countries.some(entry => (entry?.name || entry?.country) === name);
+  }
+  if (countries && typeof countries === "object") {
+    return Object.prototype.hasOwnProperty.call(countries, name);
+  }
+  return false;
+}
+
 const countryNameCollator = new Intl.Collator(undefined, { sensitivity: "base" });
 const relationLookups = {
   percapita: new Map(),
@@ -387,6 +398,7 @@ function updateTable() {
     const country = entry.country;
     const year = normalizeYear(entry.year);
     if (year == null) return;
+    if (!isKnownCountry(country)) return;
 
     let bucket = grouped.get(country);
     if (!bucket) {
