@@ -27,12 +27,17 @@ from typing import Any, Dict, List, Optional
 from pathlib import Path
 from datetime import datetime, timezone
 from env_utils import get_openai_key  # ✅ wichtig: hier fehlte der Import
+from script_utils import (
+    ensure_utf8_stdout,
+    read_json as load_json_file,
+    safe_write_json as write_json_atomic,
+    safe_write_text as write_text_atomic,
+)
 
 
 
 # ✅ UTF-8-Fix
-if sys.stdout.encoding is None or sys.stdout.encoding.lower() != "utf-8":
-    sys.stdout.reconfigure(encoding="utf-8")
+ensure_utf8_stdout()
 
 
 # ======================================================================
@@ -117,17 +122,27 @@ def log(msg: str):
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(line + "\n")
 
-def read_json(path: str, default):
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except Exception:
-        return default
 
-def write_json(path: str, obj):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(obj, f, ensure_ascii=False, indent=2)
+def write_json(path: str | Path, obj):
+    path = Path(path)
+    write_json_atomic(path, obj)
+    length = None
+    try:
+        length = len(obj)
+    except Exception:
+        length = None
+    rel_path = os.path.relpath(path, ROOT_DIR)
+    if length is not None:
+        log(f"[SAFE] JSON written → {rel_path} ({length} entries)")
+    else:
+        log(f"[SAFE] JSON written → {rel_path}")
+
+
+def write_text(path: str | Path, content: str):
+    path = Path(path)
+    write_text_atomic(path, content or "")
+    rel_path = os.path.relpath(path, ROOT_DIR)
+    log(f"[SAFE] Text written → {rel_path}")
 
 def safe_float(x) -> Optional[float]:
     try:
@@ -139,26 +154,23 @@ def safe_float(x) -> Optional[float]:
 
 import hashlib
 
+
+def _sanitize_filename(text: str) -> str:
+    cleaned = re.sub(r"[^a-zA-Z0-9_.-]", "_", str(text))
+    if len(cleaned) > 100:
+        digest = hashlib.md5(cleaned.encode("utf-8")).hexdigest()[:8]
+        cleaned = cleaned[:90] + "_" + digest
+    return cleaned
+
+
 def safe_filename(text: str) -> str:
     """Sanitize and shorten filenames safely (handles long URLs and special chars)."""
-    text = str(text)
-    # Grundbereinigung
-    text = re.sub(r'[^a-zA-Z0-9_.-]', '_', text)
-    # Wenn zu lang, hinten Hash ergänzen
-    if len(text) > 100:
-        digest = hashlib.md5(text.encode("utf-8")).hexdigest()[:8]
-        text = text[:90] + "_" + digest
-    return text
+    return _sanitize_filename(text)
 
 
 def safe_pending_filename(text: str) -> str:
     """Erzeugt einen sicheren, kurzen Dateinamen für Pending-Files (z. B. bei OWID-404s)."""
-    text = str(text)
-    clean = re.sub(r'[^a-zA-Z0-9_.-]', '_', text)
-    if len(clean) > 100:
-        digest = hashlib.md5(clean.encode("utf-8")).hexdigest()[:8]
-        clean = clean[:90] + "_" + digest
-    return clean
+    return _sanitize_filename(text)
 
 
 def mark_skip(stats: Dict[str, Any], reason: str) -> None:
@@ -170,27 +182,6 @@ def mark_skip(stats: Dict[str, Any], reason: str) -> None:
 # ======================================================================
 # 💾 Safe Write Helpers (robuste Datei-Speicherung)
 # ======================================================================
-def safe_write_json(path: str | Path, data):
-    """Garantiert sicheres Schreiben von JSON mit UTF-8 und Verzeichnis-Erstellung."""
-    try:
-        os.makedirs(os.path.dirname(str(path)), exist_ok=True)
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        log(f"[SAFE] JSON written → {os.path.relpath(path, ROOT_DIR)} ({len(data)} keys)")
-    except Exception as e:
-        log(f"[❌] Failed to write {path}: {e}")
-
-def safe_write_text(path: str | Path, text: str):
-    """Sicheres Schreiben von Textdateien (z. B. Logs, Reports)."""
-    try:
-        os.makedirs(os.path.dirname(str(path)), exist_ok=True)
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(text or "")
-        log(f"[SAFE] Text written → {os.path.relpath(path, ROOT_DIR)}")
-    except Exception as e:
-        log(f"[❌] Failed to write text {path}: {e}")
-
-
 # ======================================================================
 # 🌍 Country Mapping
 # ======================================================================
@@ -1047,11 +1038,11 @@ def fetch_geopolitical_risk_index():
 
         # === Speichern ===
         out = df_annual[["country", "year", "value"]].to_dict(orient="records")
-        safe_write_json(file_path, out)
+        write_json(file_path, out)
         log(f"✅ Saved {len(out)} GPR entries → {file_path}")
 
         # === fetch_status aktualisieren ===
-        fetch_status = read_json(STATUS_FILE, {"kpis": {}})
+        fetch_status = load_json_file(STATUS_FILE, {"kpis": {}})
         fetch_status.setdefault("kpis", {})[kpi_name] = {
             "source": "https://www.matteoiacoviello.com/gpr.htm",
             "url": url,
@@ -1059,7 +1050,7 @@ def fetch_geopolitical_risk_index():
             "data_year": int(df_annual["year"].max()),
             "last_fetch": now_utc(),
         }
-        safe_write_json(STATUS_FILE, fetch_status)
+        write_json(STATUS_FILE, fetch_status)
         log("[OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)")
 
     except Exception as e:
@@ -1118,7 +1109,7 @@ def main(args: argparse.Namespace) -> None:
     log("=== Fetch started ===")
 
     # --- Bestehenden Status laden ---
-    fetch_status = read_json(STATUS_FILE, {"kpis": {}})
+    fetch_status = load_json_file(STATUS_FILE, {"kpis": {}})
 
     # 🆕 Force-All-Modus: Wenn kein fetch_status.json existiert oder leer ist
     if not os.path.exists(STATUS_FILE) or not fetch_status.get("kpis"):
@@ -1143,13 +1134,13 @@ def main(args: argparse.Namespace) -> None:
 
 
     # --- Metadaten & Mapping laden ---
-    countries = read_json(COUNTRIES_FILE, {})
-    mapping   = read_json(COUNTRY_MAP_FILE, {})
-    pending   = read_json(COUNTRY_PENDING_FILE, {})
+    countries = load_json_file(COUNTRIES_FILE, {})
+    mapping   = load_json_file(COUNTRY_MAP_FILE, {})
+    pending   = load_json_file(COUNTRY_PENDING_FILE, {})
     c_index, a_index = build_country_indices(countries, mapping)
     stats["countries_loaded"] = len(countries)
 
-    raw_kpis = read_json(AVAILABLE_FILE, [])
+    raw_kpis = load_json_file(AVAILABLE_FILE, [])
     kpi_list = [v for v in raw_kpis if isinstance(v, dict)]
     stats["kpis_loaded"] = len(kpi_list)
 
