@@ -4,1385 +4,1781 @@
     "government": "Constitutional Monarchy",
     "lat": 17.99702,
     "lon": -76.79358,
-    "iso_a3": "JAM"
+    "iso_a3": "JAM",
+    "iso_a2": "JM",
+    "flag": "images/flag/jm.svg"
   },
   "Comoros": {
     "capital": "Moroni",
     "government": "Federal Republic",
     "lat": -11.7,
     "lon": 43.23,
-    "iso_a3": "COM"
+    "iso_a3": "COM",
+    "iso_a2": "KM",
+    "flag": "images/flag/km.svg"
   },
   "Zimbabwe": {
     "capital": "Harare",
     "government": "Presidential Republic",
     "lat": -17.82,
     "lon": 31.03,
-    "iso_a3": "ZWE"
+    "iso_a3": "ZWE",
+    "iso_a2": "ZW",
+    "flag": "images/flag/zw.svg"
   },
   "Laos": {
     "capital": "Vientiane",
     "government": "Single-party State",
     "lat": 17.97,
     "lon": 102.6,
-    "iso_a3": "LAO"
+    "iso_a3": "LAO",
+    "iso_a2": "LA",
+    "flag": "images/flag/la.svg"
   },
   "Latvia": {
     "capital": "Riga",
     "government": "Parliamentary Republic",
     "lat": 56.95,
     "lon": 24.1,
-    "iso_a3": "LVA"
+    "iso_a3": "LVA",
+    "iso_a2": "LV",
+    "flag": "images/flag/lv.svg"
   },
   "Tajikistan": {
     "capital": "Dushanbe",
     "government": "Parliamentary Republic",
     "lat": 38.55,
     "lon": 68.77,
-    "iso_a3": "TJK"
+    "iso_a3": "TJK",
+    "iso_a2": "TJ",
+    "flag": "images/flag/tj.svg"
   },
   "United Kingdom": {
     "capital": "London",
     "government": "Constitutional Monarchy",
     "lat": 51.5,
     "lon": -0.08,
-    "iso_a3": "GBR"
+    "iso_a3": "GBR",
+    "iso_a2": "GB",
+    "flag": "images/flag/gb.svg"
   },
   "Nicaragua": {
     "capital": "Managua",
     "government": "Presidential Republic",
     "lat": 12.13,
     "lon": -86.25,
-    "iso_a3": "NIC"
+    "iso_a3": "NIC",
+    "iso_a2": "NI",
+    "flag": "images/flag/ni.svg"
   },
   "Sudan": {
     "capital": "Khartoum",
     "government": "Presidential Republic",
     "lat": 15.6,
     "lon": 32.53,
-    "iso_a3": "SDN"
+    "iso_a3": "SDN",
+    "iso_a2": "SD",
+    "flag": "images/flag/sd.svg"
   },
   "Greece": {
     "capital": "Athens",
     "government": "Parliamentary Republic",
     "lat": 37.98,
     "lon": 23.73,
-    "iso_a3": "GRC"
+    "iso_a3": "GRC",
+    "iso_a2": "GR",
+    "flag": "images/flag/gr.svg"
   },
   "Lithuania": {
     "capital": "Vilnius",
     "government": "Parliamentary Republic",
     "lat": 54.68,
     "lon": 25.32,
-    "iso_a3": "LTU"
+    "iso_a3": "LTU",
+    "iso_a2": "LT",
+    "flag": "images/flag/lt.svg"
   },
   "Rwanda": {
     "capital": "Kigali",
     "government": "Presidential Republic",
     "lat": -1.95,
     "lon": 30.05,
-    "iso_a3": "RWA"
+    "iso_a3": "RWA",
+    "iso_a2": "RW",
+    "flag": "images/flag/rw.svg"
   },
   "Senegal": {
     "capital": "Dakar",
     "government": "Presidential Republic",
     "lat": 14.73,
     "lon": -17.63,
-    "iso_a3": "SEN"
+    "iso_a3": "SEN",
+    "iso_a2": "SN",
+    "flag": "images/flag/sn.svg"
   },
   "Monaco": {
     "capital": "Monaco",
     "government": "Constitutional Monarchy",
     "lat": 43.73,
     "lon": 7.42,
-    "iso_a3": "MCO"
+    "iso_a3": "MCO",
+    "iso_a2": "MC",
+    "flag": "images/flag/mc.svg"
   },
   "Lesotho": {
     "capital": "Maseru",
     "government": "Constitutional Monarchy",
     "lat": -29.32,
     "lon": 27.48,
-    "iso_a3": "LSO"
+    "iso_a3": "LSO",
+    "iso_a2": "LS",
+    "flag": "images/flag/ls.svg"
   },
   "Tunisia": {
     "capital": "Tunis",
     "government": "Presidential Republic",
     "lat": 36.8,
     "lon": 10.18,
-    "iso_a3": "TUN"
+    "iso_a3": "TUN",
+    "iso_a2": "TN",
+    "flag": "images/flag/tn.svg"
   },
   "Vanuatu": {
     "capital": "Port Vila",
     "government": "Parliamentary Republic",
     "lat": -17.73,
     "lon": 168.32,
-    "iso_a3": "VUT"
+    "iso_a3": "VUT",
+    "iso_a2": "VU",
+    "flag": "images/flag/vu.svg"
   },
   "Ecuador": {
     "capital": "Quito",
     "government": "Presidential Republic",
     "lat": -0.22,
     "lon": -78.5,
-    "iso_a3": "ECU"
+    "iso_a3": "ECU",
+    "iso_a2": "EC",
+    "flag": "images/flag/ec.svg"
   },
   "Kuwait": {
     "capital": "Kuwait City",
     "government": "Constitutional Monarchy",
     "lat": 29.37,
     "lon": 47.97,
-    "iso_a3": "KWT"
+    "iso_a3": "KWT",
+    "iso_a2": "KW",
+    "flag": "images/flag/kw.svg"
   },
   "Philippines": {
     "capital": "Manila",
     "government": "Presidential Republic",
     "lat": 14.6,
     "lon": 120.97,
-    "iso_a3": "PHL"
+    "iso_a3": "PHL",
+    "iso_a2": "PH",
+    "flag": "images/flag/ph.svg"
   },
   "Chile": {
     "capital": "Santiago",
     "government": "Presidential Republic",
     "lat": -33.45,
     "lon": -70.67,
-    "iso_a3": "CHL"
+    "iso_a3": "CHL",
+    "iso_a2": "CL",
+    "flag": "images/flag/cl.svg"
   },
   "Bahamas": {
     "capital": "Nassau",
     "government": "Constitutional Monarchy",
     "lat": 25.08,
     "lon": -77.35,
-    "iso_a3": "BHS"
+    "iso_a3": "BHS",
+    "iso_a2": "BS",
+    "flag": "images/flag/bs.svg"
   },
   "Tanzania": {
     "capital": "Dodoma",
     "government": "Presidential Republic",
     "lat": -6.163,
     "lon": 35.7516,
-    "iso_a3": "TZA"
+    "iso_a3": "TZA",
+    "iso_a2": "TZ",
+    "flag": "images/flag/tz.svg"
   },
   "Costa Rica": {
     "capital": "San José",
     "government": "Presidential Republic",
     "lat": 9.93,
     "lon": -84.09,
-    "iso_a3": "CRI"
+    "iso_a3": "CRI",
+    "iso_a2": "CR",
+    "flag": "images/flag/cr.svg"
   },
   "Morocco": {
     "capital": "Rabat",
     "government": "Constitutional Monarchy",
     "lat": 34.02,
     "lon": -6.82,
-    "iso_a3": "MAR"
+    "iso_a3": "MAR",
+    "iso_a2": "MA",
+    "flag": "images/flag/ma.svg"
   },
   "Montenegro": {
     "capital": "Podgorica",
     "government": "Parliamentary Republic",
     "lat": 42.43,
     "lon": 19.27,
-    "iso_a3": "MNE"
+    "iso_a3": "MNE",
+    "iso_a2": "ME",
+    "flag": "images/flag/me.svg"
   },
   "Micronesia": {
     "capital": "Palikir",
     "government": "Federal Republic",
     "lat": 6.92,
     "lon": 158.15,
-    "iso_a3": "FSM"
+    "iso_a3": "FSM",
+    "iso_a2": "FM",
+    "flag": "images/flag/fm.svg"
   },
   "Portugal": {
     "capital": "Lisbon",
     "government": "Parliamentary Republic",
     "lat": 38.72,
     "lon": -9.13,
-    "iso_a3": "PRT"
+    "iso_a3": "PRT",
+    "iso_a2": "PT",
+    "flag": "images/flag/pt.svg"
   },
   "United Arab Emirates": {
     "capital": "Abu Dhabi",
     "government": "Federal Republic",
     "lat": 24.47,
     "lon": 54.37,
-    "iso_a3": "ARE"
+    "iso_a3": "ARE",
+    "iso_a2": "AE",
+    "flag": "images/flag/ae.svg"
   },
   "Libya": {
     "capital": "Tripoli",
     "government": "Presidential Republic",
     "lat": 32.88,
     "lon": 13.17,
-    "iso_a3": "LBY"
+    "iso_a3": "LBY",
+    "iso_a2": "LY",
+    "flag": "images/flag/ly.svg"
   },
   "Luxembourg": {
     "capital": "Luxembourg",
     "government": "Constitutional Monarchy",
     "lat": 49.6,
     "lon": 6.12,
-    "iso_a3": "LUX"
+    "iso_a3": "LUX",
+    "iso_a2": "LU",
+    "flag": "images/flag/lu.svg"
   },
   "Solomon Islands": {
     "capital": "Honiara",
     "government": "Constitutional Monarchy",
     "lat": -9.43,
     "lon": 159.95,
-    "iso_a3": "SLB"
+    "iso_a3": "SLB",
+    "iso_a2": "SB",
+    "flag": "images/flag/sb.svg"
   },
   "Algeria": {
     "capital": "Algiers",
     "government": "Presidential Republic",
     "lat": 36.75,
     "lon": 3.05,
-    "iso_a3": "DZA"
+    "iso_a3": "DZA",
+    "iso_a2": "DZ",
+    "flag": "images/flag/dz.svg"
   },
   "Antigua and Barbuda": {
     "capital": "Saint John's",
     "government": "Constitutional Monarchy",
     "lat": 17.12,
     "lon": -61.85,
-    "iso_a3": "ATG"
+    "iso_a3": "ATG",
+    "iso_a2": "AG",
+    "flag": "images/flag/ag.svg"
   },
   "Brazil": {
     "capital": "Brasília",
     "government": "Federal Republic",
     "lat": -15.79,
     "lon": -47.88,
-    "iso_a3": "BRA"
+    "iso_a3": "BRA",
+    "iso_a2": "BR",
+    "flag": "images/flag/br.svg"
   },
   "Mali": {
     "capital": "Bamako",
     "government": "Presidential Republic",
     "lat": 12.65,
     "lon": -8.0,
-    "iso_a3": "MLI"
+    "iso_a3": "MLI",
+    "iso_a2": "ML",
+    "flag": "images/flag/ml.svg"
   },
   "Pakistan": {
     "capital": "Islamabad",
     "government": "Federal Republic",
     "lat": 33.68,
     "lon": 73.05,
-    "iso_a3": "PAK"
+    "iso_a3": "PAK",
+    "iso_a2": "PK",
+    "flag": "images/flag/pk.svg"
   },
   "Trinidad and Tobago": {
     "capital": "Port of Spain",
     "government": "Presidential Republic",
     "lat": 10.65,
     "lon": -61.52,
-    "iso_a3": "TTO"
+    "iso_a3": "TTO",
+    "iso_a2": "TT",
+    "flag": "images/flag/tt.svg"
   },
   "Armenia": {
     "capital": "Yerevan",
     "government": "Parliamentary Republic",
     "lat": 40.17,
     "lon": 44.5,
-    "iso_a3": "ARM"
+    "iso_a3": "ARM",
+    "iso_a2": "AM",
+    "flag": "images/flag/am.svg"
   },
   "Bangladesh": {
     "capital": "Dhaka",
     "government": "Parliamentary Republic",
     "lat": 23.72,
     "lon": 90.4,
-    "iso_a3": "BGD"
+    "iso_a3": "BGD",
+    "iso_a2": "BD",
+    "flag": "images/flag/bd.svg"
   },
   "Turkmenistan": {
     "capital": "Ashgabat",
     "government": "Parliamentary Republic",
     "lat": 37.95,
     "lon": 58.38,
-    "iso_a3": "TKM"
+    "iso_a3": "TKM",
+    "iso_a2": "TM",
+    "flag": "images/flag/tm.svg"
   },
   "Palau": {
     "capital": "Ngerulmud",
     "government": "Parliamentary Republic",
     "lat": 7.5,
     "lon": 134.62,
-    "iso_a3": "PLW"
+    "iso_a3": "PLW",
+    "iso_a2": "PW",
+    "flag": "images/flag/pw.svg"
   },
   "Cuba": {
     "capital": "Havana",
     "government": "Single-party State",
     "lat": 23.12,
     "lon": -82.35,
-    "iso_a3": "CUB"
+    "iso_a3": "CUB",
+    "iso_a2": "CU",
+    "flag": "images/flag/cu.svg"
   },
   "Chad": {
     "capital": "N'Djamena",
     "government": "Presidential Republic",
     "lat": 12.1,
     "lon": 15.03,
-    "iso_a3": "TCD"
+    "iso_a3": "TCD",
+    "iso_a2": "TD",
+    "flag": "images/flag/td.svg"
   },
   "Bosnia Herzegovina": {
     "capital": "Sarajevo",
     "government": "Federal Republic",
     "lat": 43.87,
     "lon": 18.42,
-    "iso_a3": "BIH"
+    "iso_a3": "BIH",
+    "iso_a2": "BA",
+    "flag": "images/flag/ba.svg"
   },
   "Botswana": {
     "capital": "Gaborone",
     "government": "Presidential Republic",
     "lat": -24.63,
     "lon": 25.9,
-    "iso_a3": "BWA"
+    "iso_a3": "BWA",
+    "iso_a2": "BW",
+    "flag": "images/flag/bw.svg"
   },
   "Estonia": {
     "capital": "Tallinn",
     "government": "Parliamentary Republic",
     "lat": 59.43,
     "lon": 24.72,
-    "iso_a3": "EST"
+    "iso_a3": "EST",
+    "iso_a2": "EE",
+    "flag": "images/flag/ee.svg"
   },
   "Bahrain": {
     "capital": "Manama",
     "government": "Constitutional Monarchy",
     "lat": 26.23,
     "lon": 50.57,
-    "iso_a3": "BHR"
+    "iso_a3": "BHR",
+    "iso_a2": "BH",
+    "flag": "images/flag/bh.svg"
   },
   "Dominican Republic": {
     "capital": "Santo Domingo",
     "government": "Presidential Republic",
     "lat": 18.47,
     "lon": -69.9,
-    "iso_a3": "DOM"
+    "iso_a3": "DOM",
+    "iso_a2": "DO",
+    "flag": "images/flag/do.svg"
   },
   "United States": {
     "capital": "Washington, D.C.",
     "government": "Federal Republic",
     "lat": 38.89,
     "lon": -77.05,
-    "iso_a3": "USA"
+    "iso_a3": "USA",
+    "iso_a2": "US",
+    "flag": "images/flag/us.svg"
   },
   "Colombia": {
     "capital": "Bogotá",
     "government": "Federal Republic",
     "lat": 4.71,
     "lon": -74.07,
-    "iso_a3": "COL"
+    "iso_a3": "COL",
+    "iso_a2": "CO",
+    "flag": "images/flag/co.svg"
   },
   "Guinea": {
     "capital": "Conakry",
     "government": "Presidential Republic",
     "lat": 9.5,
     "lon": -13.7,
-    "iso_a3": "GIN"
+    "iso_a3": "GIN",
+    "iso_a2": "GN",
+    "flag": "images/flag/gn.svg"
   },
   "Ireland": {
     "capital": "Dublin",
     "government": "Parliamentary Republic",
     "lat": 53.32,
     "lon": -6.23,
-    "iso_a3": "IRL"
+    "iso_a3": "IRL",
+    "iso_a2": "IE",
+    "flag": "images/flag/ie.svg"
   },
   "Maldives": {
     "capital": "Malé",
     "government": "Parliamentary Republic",
     "lat": 4.17,
     "lon": 73.51,
-    "iso_a3": "MDV"
+    "iso_a3": "MDV",
+    "iso_a2": "MV",
+    "flag": "images/flag/mv.svg"
   },
   "Panama": {
     "capital": "Panama City",
     "government": "Presidential Republic",
     "lat": 8.97,
     "lon": -79.53,
-    "iso_a3": "PAN"
+    "iso_a3": "PAN",
+    "iso_a2": "PA",
+    "flag": "images/flag/pa.svg"
   },
   "Mozambique": {
     "capital": "Maputo",
     "government": "Presidential Republic",
     "lat": -25.95,
     "lon": 32.58,
-    "iso_a3": "MOZ"
+    "iso_a3": "MOZ",
+    "iso_a2": "MZ",
+    "flag": "images/flag/mz.svg"
   },
   "Oman": {
     "capital": "Muscat",
     "government": "Absolute Monarchy",
     "lat": 23.62,
     "lon": 58.58,
-    "iso_a3": "OMN"
+    "iso_a3": "OMN",
+    "iso_a2": "OM",
+    "flag": "images/flag/om.svg"
   },
   "Czechia": {
     "capital": "Prague",
     "government": "Parliamentary Republic",
     "lat": 50.08,
     "lon": 14.47,
-    "iso_a3": "CZE"
+    "iso_a3": "CZE",
+    "iso_a2": "CZ",
+    "flag": "images/flag/cz.svg"
   },
   "Saint Vincent-Grenadines": {
     "capital": "Kingstown",
     "government": "Constitutional Monarchy",
     "lat": 13.13,
     "lon": -61.22,
-    "iso_a3": "VCT"
+    "iso_a3": "VCT",
+    "iso_a2": "VC",
+    "flag": "images/flag/vc.svg"
   },
   "Haiti": {
     "capital": "Port-au-Prince",
     "government": "Presidential Republic",
     "lat": 18.53,
     "lon": -72.33,
-    "iso_a3": "HTI"
+    "iso_a3": "HTI",
+    "iso_a2": "HT",
+    "flag": "images/flag/ht.svg"
   },
   "Nigeria": {
     "capital": "Abuja",
     "government": "Federal Republic",
     "lat": 9.08,
     "lon": 7.53,
-    "iso_a3": "NGA"
+    "iso_a3": "NGA",
+    "iso_a2": "NG",
+    "flag": "images/flag/ng.svg"
   },
   "Namibia": {
     "capital": "Windhoek",
     "government": "Presidential Republic",
     "lat": -22.57,
     "lon": 17.08,
-    "iso_a3": "NAM"
+    "iso_a3": "NAM",
+    "iso_a2": "NA",
+    "flag": "images/flag/na.svg"
   },
   "Dominica": {
     "capital": "Roseau",
     "government": "Presidential Republic",
     "lat": 15.3,
     "lon": -61.4,
-    "iso_a3": "DMA"
+    "iso_a3": "DMA",
+    "iso_a2": "DM",
+    "flag": "images/flag/dm.svg"
   },
   "Canada": {
     "capital": "Ottawa",
     "government": "Constitutional Monarchy",
     "lat": 45.42,
     "lon": -75.7,
-    "iso_a3": "CAN"
+    "iso_a3": "CAN",
+    "iso_a2": "CA",
+    "flag": "images/flag/ca.svg"
   },
   "Niger": {
     "capital": "Niamey",
     "government": "Presidential Republic",
     "lat": 13.52,
     "lon": 2.12,
-    "iso_a3": "NER"
+    "iso_a3": "NER",
+    "iso_a2": "NE",
+    "flag": "images/flag/ne.svg"
   },
   "Indonesia": {
     "capital": "Jakarta",
     "government": "Parliamentary Republic",
     "lat": -6.17,
     "lon": 106.82,
-    "iso_a3": "IDN"
+    "iso_a3": "IDN",
+    "iso_a2": "ID",
+    "flag": "images/flag/id.svg"
   },
   "Yemen": {
     "capital": "Sana'a",
     "government": "Parliamentary Republic",
     "lat": 15.37,
     "lon": 44.19,
-    "iso_a3": "YEM"
+    "iso_a3": "YEM",
+    "iso_a2": "YE",
+    "flag": "images/flag/ye.svg"
   },
   "Palestine": {
     "capital": "East Jerusalem",
     "government": "Transitional Government",
     "lat": 31.7683,
     "lon": 35.2137,
-    "iso_a3": "PSE"
+    "iso_a3": "PSE",
+    "iso_a2": "PS",
+    "flag": "images/flag/ps.svg"
   },
   "Gabon": {
     "capital": "Libreville",
     "government": "Presidential Republic",
     "lat": 0.38,
     "lon": 9.45,
-    "iso_a3": "GAB"
+    "iso_a3": "GAB",
+    "iso_a2": "GA",
+    "flag": "images/flag/ga.svg"
   },
   "Eritrea": {
     "capital": "Asmara",
     "government": "Single-party State",
     "lat": 15.33,
     "lon": 38.93,
-    "iso_a3": "ERI"
+    "iso_a3": "ERI",
+    "iso_a2": "ER",
+    "flag": "images/flag/er.svg"
   },
   "Cyprus": {
     "capital": "Nicosia",
     "government": "Parliamentary Republic",
     "lat": 35.17,
     "lon": 33.37,
-    "iso_a3": "CYP"
+    "iso_a3": "CYP",
+    "iso_a2": "CY",
+    "flag": "images/flag/cy.svg"
   },
   "Slovakia": {
     "capital": "Bratislava",
     "government": "Parliamentary Republic",
     "lat": 48.15,
     "lon": 17.12,
-    "iso_a3": "SVK"
+    "iso_a3": "SVK",
+    "iso_a2": "SK",
+    "flag": "images/flag/sk.svg"
   },
   "Slovenia": {
     "capital": "Ljubljana",
     "government": "Parliamentary Republic",
     "lat": 46.05,
     "lon": 14.52,
-    "iso_a3": "SVN"
+    "iso_a3": "SVN",
+    "iso_a2": "SI",
+    "flag": "images/flag/si.svg"
   },
   "Kiribati": {
     "capital": "South Tarawa",
     "government": "Parliamentary Republic",
     "lat": 1.33,
     "lon": 172.98,
-    "iso_a3": "KIR"
+    "iso_a3": "KIR",
+    "iso_a2": "KI",
+    "flag": "images/flag/ki.svg"
   },
   "Germany": {
     "capital": "Berlin",
     "government": "Federal Republic",
     "lat": 52.52,
     "lon": 13.4,
-    "iso_a3": "DEU"
+    "iso_a3": "DEU",
+    "iso_a2": "DE",
+    "flag": "images/flag/de.svg"
   },
   "Kosovo": {
     "capital": "Pristina",
     "government": "Parliamentary Republic",
     "lat": 42.6629,
     "lon": 21.1655,
-    "iso_a3": "XKX"
+    "iso_a3": "XKX",
+    "iso_a2": "XK",
+    "flag": "images/flag/xk.svg"
   },
   "Ivory Coast": {
     "capital": "Yamoussoukro",
     "government": "Presidential Republic",
     "lat": 6.82,
     "lon": -5.27,
-    "iso_a3": "CIV"
+    "iso_a3": "CIV",
+    "iso_a2": "CI",
+    "flag": "images/flag/ci.svg"
   },
   "Sri Lanka": {
     "capital": "Sri Jayawardenepura Kotte",
     "government": "Parliamentary Republic",
     "lat": 6.9147,
     "lon": 79.9733,
-    "iso_a3": "LKA"
+    "iso_a3": "LKA",
+    "iso_a2": "LK",
+    "flag": "images/flag/lk.svg"
   },
   "Belgium": {
     "capital": "Brussels",
     "government": "Constitutional Monarchy",
     "lat": 50.83,
     "lon": 4.33,
-    "iso_a3": "BEL"
+    "iso_a3": "BEL",
+    "iso_a2": "BE",
+    "flag": "images/flag/be.svg"
   },
   "Israel": {
     "capital": "Jerusalem",
     "government": "Parliamentary Republic",
     "lat": 31.77,
     "lon": 35.23,
-    "iso_a3": "ISR"
+    "iso_a3": "ISR",
+    "iso_a2": "IL",
+    "flag": "images/flag/il.svg"
   },
   "Denmark": {
     "capital": "Copenhagen",
     "government": "Constitutional Monarchy",
     "lat": 55.67,
     "lon": 12.58,
-    "iso_a3": "DNK"
+    "iso_a3": "DNK",
+    "iso_a2": "DK",
+    "flag": "images/flag/dk.svg"
   },
   "Syria": {
     "capital": "Damascus",
     "government": "Parliamentary Republic",
     "lat": 33.5,
     "lon": 36.3,
-    "iso_a3": "SYR"
+    "iso_a3": "SYR",
+    "iso_a2": "SY",
+    "flag": "images/flag/sy.svg"
   },
   "Timor-Leste": {
     "capital": "Dili",
     "government": "Parliamentary Republic",
     "lat": -8.58,
     "lon": 125.6,
-    "iso_a3": "TLS"
+    "iso_a3": "TLS",
+    "iso_a2": "TL",
+    "flag": "images/flag/tl.svg"
   },
   "San Marino": {
     "capital": "City of San Marino",
     "government": "Parliamentary Republic",
     "lat": 43.94,
     "lon": 12.45,
-    "iso_a3": "SMR"
+    "iso_a3": "SMR",
+    "iso_a2": "SM",
+    "flag": "images/flag/sm.svg"
   },
   "Gambia": {
     "capital": "Banjul",
     "government": "Presidential Republic",
     "lat": 13.45,
     "lon": -16.57,
-    "iso_a3": "GMB"
+    "iso_a3": "GMB",
+    "iso_a2": "GM",
+    "flag": "images/flag/gm.svg"
   },
   "Peru": {
     "capital": "Lima",
     "government": "Presidential Republic",
     "lat": -12.05,
     "lon": -77.05,
-    "iso_a3": "PER"
+    "iso_a3": "PER",
+    "iso_a2": "PE",
+    "flag": "images/flag/pe.svg"
   },
   "Guinea-Bissau": {
     "capital": "Bissau",
     "government": "Presidential Republic",
     "lat": 11.85,
     "lon": -15.58,
-    "iso_a3": "GNB"
+    "iso_a3": "GNB",
+    "iso_a2": "GW",
+    "flag": "images/flag/gw.svg"
   },
   "Sierra Leone": {
     "capital": "Freetown",
     "government": "Presidential Republic",
     "lat": 8.48,
     "lon": -13.23,
-    "iso_a3": "SLE"
+    "iso_a3": "SLE",
+    "iso_a2": "SL",
+    "flag": "images/flag/sl.svg"
   },
   "Turkey": {
     "capital": "Ankara",
     "government": "Parliamentary Republic",
     "lat": 39.93,
     "lon": 32.87,
-    "iso_a3": "TUR"
+    "iso_a3": "TUR",
+    "iso_a2": "TR",
+    "flag": "images/flag/tr.svg"
   },
   "Bolivia": {
     "capital": "Sucre",
     "government": "Federal Republic",
     "lat": -19.0196,
     "lon": -65.2619,
-    "iso_a3": "BOL"
+    "iso_a3": "BOL",
+    "iso_a2": "BO",
+    "flag": "images/flag/bo.svg"
   },
   "Norway": {
     "capital": "Oslo",
     "government": "Constitutional Monarchy",
     "lat": 59.92,
     "lon": 10.75,
-    "iso_a3": "NOR"
+    "iso_a3": "NOR",
+    "iso_a2": "NO",
+    "flag": "images/flag/no.svg"
   },
   "Republic of the Congo": {
     "capital": "Brazzaville",
     "government": "Presidential Republic",
     "lat": -4.25,
     "lon": 15.28,
-    "iso_a3": "COG"
+    "iso_a3": "COG",
+    "iso_a2": "CG",
+    "flag": "images/flag/cg.svg"
   },
   "Eswatini": {
     "capital": "Mbabane",
     "government": "Absolute Monarchy",
     "lat": -26.32,
     "lon": 31.13,
-    "iso_a3": "SWZ"
+    "iso_a3": "SWZ",
+    "iso_a2": "SZ",
+    "flag": "images/flag/sz.svg"
   },
   "Paraguay": {
     "capital": "Asunción",
     "government": "Federal Republic",
     "lat": -25.28,
     "lon": -57.57,
-    "iso_a3": "PRY"
+    "iso_a3": "PRY",
+    "iso_a2": "PY",
+    "flag": "images/flag/py.svg"
   },
   "Ukraine": {
     "capital": "Kyiv",
     "government": "Parliamentary Republic",
     "lat": 50.43,
     "lon": 30.52,
-    "iso_a3": "UKR"
+    "iso_a3": "UKR",
+    "iso_a2": "UA",
+    "flag": "images/flag/ua.svg"
   },
   "Malaysia": {
     "capital": "Kuala Lumpur",
     "government": "Constitutional Monarchy",
     "lat": 3.17,
     "lon": 101.7,
-    "iso_a3": "MYS"
+    "iso_a3": "MYS",
+    "iso_a2": "MY",
+    "flag": "images/flag/my.svg"
   },
   "Tonga": {
     "capital": "Nuku'alofa",
     "government": "Constitutional Monarchy",
     "lat": -21.13,
     "lon": -175.2,
-    "iso_a3": "TON"
+    "iso_a3": "TON",
+    "iso_a2": "TO",
+    "flag": "images/flag/to.svg"
   },
   "Benin": {
     "capital": "Porto-Novo",
     "government": "Presidential Republic",
     "lat": 6.4969,
     "lon": 2.6289,
-    "iso_a3": "BEN"
+    "iso_a3": "BEN",
+    "iso_a2": "BJ",
+    "flag": "images/flag/bj.svg"
   },
   "Sweden": {
     "capital": "Stockholm",
     "government": "Constitutional Monarchy",
     "lat": 59.33,
     "lon": 18.05,
-    "iso_a3": "SWE"
+    "iso_a3": "SWE",
+    "iso_a2": "SE",
+    "flag": "images/flag/se.svg"
   },
   "Tuvalu": {
     "capital": "Funafuti",
     "government": "Constitutional Monarchy",
     "lat": -8.52,
     "lon": 179.22,
-    "iso_a3": "TUV"
+    "iso_a3": "TUV",
+    "iso_a2": "TV",
+    "flag": "images/flag/tv.svg"
   },
   "Mongolia": {
     "capital": "Ulan Bator",
     "government": "Parliamentary Republic",
     "lat": 47.92,
     "lon": 106.91,
-    "iso_a3": "MNG"
+    "iso_a3": "MNG",
+    "iso_a2": "MN",
+    "flag": "images/flag/mn.svg"
   },
   "South Africa": {
     "capital": "Pretoria",
     "government": "Presidential Republic",
     "lat": -25.7479,
     "lon": 28.2293,
-    "iso_a3": "ZAF"
+    "iso_a3": "ZAF",
+    "iso_a2": "ZA",
+    "flag": "images/flag/za.svg"
   },
   "Australia": {
     "capital": "Canberra",
     "government": "Constitutional Monarchy",
     "lat": -35.27,
     "lon": 149.13,
-    "iso_a3": "AUS"
+    "iso_a3": "AUS",
+    "iso_a2": "AU",
+    "flag": "images/flag/au.svg"
   },
   "Saint Kitts and Nevis": {
     "capital": "Basseterre",
     "government": "Constitutional Monarchy",
     "lat": 17.3,
     "lon": -62.72,
-    "iso_a3": "KNA"
+    "iso_a3": "KNA",
+    "iso_a2": "KN",
+    "flag": "images/flag/kn.svg"
   },
   "Ghana": {
     "capital": "Accra",
     "government": "Presidential Republic",
     "lat": 5.55,
     "lon": -0.22,
-    "iso_a3": "GHA"
+    "iso_a3": "GHA",
+    "iso_a2": "GH",
+    "flag": "images/flag/gh.svg"
   },
   "Iraq": {
     "capital": "Baghdad",
     "government": "Parliamentary Republic",
     "lat": 33.33,
     "lon": 44.4,
-    "iso_a3": "IRQ"
+    "iso_a3": "IRQ",
+    "iso_a2": "IQ",
+    "flag": "images/flag/iq.svg"
   },
   "Vietnam": {
     "capital": "Hanoi",
     "government": "Single-party State",
     "lat": 21.03,
     "lon": 105.85,
-    "iso_a3": "VNM"
+    "iso_a3": "VNM",
+    "iso_a2": "VN",
+    "flag": "images/flag/vn.svg"
   },
   "Guyana": {
     "capital": "Georgetown",
     "government": "Presidential Republic",
     "lat": 6.8,
     "lon": -58.15,
-    "iso_a3": "GUY"
+    "iso_a3": "GUY",
+    "iso_a2": "GY",
+    "flag": "images/flag/gy.svg"
   },
   "Azerbaijan": {
     "capital": "Baku",
     "government": "Parliamentary Republic",
     "lat": 40.38,
     "lon": 49.87,
-    "iso_a3": "AZE"
+    "iso_a3": "AZE",
+    "iso_a2": "AZ",
+    "flag": "images/flag/az.svg"
   },
   "Cameroon": {
     "capital": "Yaoundé",
     "government": "Presidential Republic",
     "lat": 3.85,
     "lon": 11.5,
-    "iso_a3": "CMR"
+    "iso_a3": "CMR",
+    "iso_a2": "CM",
+    "flag": "images/flag/cm.svg"
   },
   "Egypt": {
     "capital": "Cairo",
     "government": "Presidential Republic",
     "lat": 30.05,
     "lon": 31.25,
-    "iso_a3": "EGY"
+    "iso_a3": "EGY",
+    "iso_a2": "EG",
+    "flag": "images/flag/eg.svg"
   },
   "Iceland": {
     "capital": "Reykjavik",
     "government": "Parliamentary Republic",
     "lat": 64.15,
     "lon": -21.95,
-    "iso_a3": "ISL"
+    "iso_a3": "ISL",
+    "iso_a2": "IS",
+    "flag": "images/flag/is.svg"
   },
   "Venezuela": {
     "capital": "Caracas",
     "government": "Federal Republic",
     "lat": 10.48,
     "lon": -66.87,
-    "iso_a3": "VEN"
+    "iso_a3": "VEN",
+    "iso_a2": "VE",
+    "flag": "images/flag/ve.svg"
   },
   "Barbados": {
     "capital": "Bridgetown",
     "government": "Presidential Republic",
     "lat": 13.1,
     "lon": -59.62,
-    "iso_a3": "BRB"
+    "iso_a3": "BRB",
+    "iso_a2": "BB",
+    "flag": "images/flag/bb.svg"
   },
   "Malawi": {
     "capital": "Lilongwe",
     "government": "Presidential Republic",
     "lat": -13.97,
     "lon": 33.78,
-    "iso_a3": "MWI"
+    "iso_a3": "MWI",
+    "iso_a2": "MW",
+    "flag": "images/flag/mw.svg"
   },
   "Kyrgyzstan": {
     "capital": "Bishkek",
     "government": "Parliamentary Republic",
     "lat": 42.87,
     "lon": 74.6,
-    "iso_a3": "KGZ"
+    "iso_a3": "KGZ",
+    "iso_a2": "KG",
+    "flag": "images/flag/kg.svg"
   },
   "Taiwan": {
     "capital": "Taipei",
     "government": "Presidential Republic",
     "lat": 25.033,
     "lon": 121.5654,
-    "iso_a3": "TWN"
+    "iso_a3": "TWN",
+    "iso_a2": "TW",
+    "flag": "images/flag/tw.svg"
   },
   "Bulgaria": {
     "capital": "Sofia",
     "government": "Parliamentary Republic",
     "lat": 42.68,
     "lon": 23.32,
-    "iso_a3": "BGR"
+    "iso_a3": "BGR",
+    "iso_a2": "BG",
+    "flag": "images/flag/bg.svg"
   },
   "North Korea": {
     "capital": "Pyongyang",
     "government": "Single-party State",
     "lat": 39.02,
     "lon": 125.75,
-    "iso_a3": "PRK"
+    "iso_a3": "PRK",
+    "iso_a2": "KP",
+    "flag": "images/flag/kp.svg"
   },
   "Andorra": {
     "capital": "Andorra la Vella",
     "government": "Constitutional Monarchy",
     "lat": 42.5,
     "lon": 1.52,
-    "iso_a3": "AND"
+    "iso_a3": "AND",
+    "iso_a2": "AD",
+    "flag": "images/flag/ad.svg"
   },
   "Angola": {
     "capital": "Luanda",
     "government": "Presidential Republic",
     "lat": -8.83,
     "lon": 13.22,
-    "iso_a3": "AGO"
+    "iso_a3": "AGO",
+    "iso_a2": "AO",
+    "flag": "images/flag/ao.svg"
   },
   "Russia": {
     "capital": "Moscow",
     "government": "Federal Republic",
     "lat": 55.75,
     "lon": 37.6,
-    "iso_a3": "RUS"
+    "iso_a3": "RUS",
+    "iso_a2": "RU",
+    "flag": "images/flag/ru.svg"
   },
   "Burkina Faso": {
     "capital": "Ouagadougou",
     "government": "Presidential Republic",
     "lat": 12.37,
     "lon": -1.52,
-    "iso_a3": "BFA"
+    "iso_a3": "BFA",
+    "iso_a2": "BF",
+    "flag": "images/flag/bf.svg"
   },
   "Vatican City": {
     "capital": "Vatican City",
     "government": "Theocracy",
     "lat": 41.9,
     "lon": 12.45,
-    "iso_a3": "VAT"
+    "iso_a3": "VAT",
+    "iso_a2": "VA",
+    "flag": "images/flag/va.svg"
   },
   "Afghanistan": {
     "capital": "Kabul",
     "government": "Parliamentary Republic",
     "lat": 34.52,
     "lon": 69.18,
-    "iso_a3": "AFG"
+    "iso_a3": "AFG",
+    "iso_a2": "AF",
+    "flag": "images/flag/af.svg"
   },
   "Croatia": {
     "capital": "Zagreb",
     "government": "Parliamentary Republic",
     "lat": 45.8,
     "lon": 16.0,
-    "iso_a3": "HRV"
+    "iso_a3": "HRV",
+    "iso_a2": "HR",
+    "flag": "images/flag/hr.svg"
   },
   "Bhutan": {
     "capital": "Thimphu",
     "government": "Parliamentary Republic",
     "lat": 27.47,
     "lon": 89.63,
-    "iso_a3": "BTN"
+    "iso_a3": "BTN",
+    "iso_a2": "BT",
+    "flag": "images/flag/bt.svg"
   },
   "Belarus": {
     "capital": "Minsk",
     "government": "Parliamentary Republic",
     "lat": 53.9,
     "lon": 27.57,
-    "iso_a3": "BLR"
+    "iso_a3": "BLR",
+    "iso_a2": "BY",
+    "flag": "images/flag/by.svg"
   },
   "New Zealand": {
     "capital": "Wellington",
     "government": "Constitutional Monarchy",
     "lat": -41.3,
     "lon": 174.78,
-    "iso_a3": "NZL"
+    "iso_a3": "NZL",
+    "iso_a2": "NZ",
+    "flag": "images/flag/nz.svg"
   },
   "Madagascar": {
     "capital": "Antananarivo",
     "government": "Presidential Republic",
     "lat": -18.92,
     "lon": 47.52,
-    "iso_a3": "MDG"
+    "iso_a3": "MDG",
+    "iso_a2": "MG",
+    "flag": "images/flag/mg.svg"
   },
   "Thailand": {
     "capital": "Bangkok",
     "government": "Constitutional Monarchy",
     "lat": 13.75,
     "lon": 100.52,
-    "iso_a3": "THA"
+    "iso_a3": "THA",
+    "iso_a2": "TH",
+    "flag": "images/flag/th.svg"
   },
   "Georgia": {
     "capital": "Tbilisi",
     "government": "Parliamentary Republic",
     "lat": 41.68,
     "lon": 44.83,
-    "iso_a3": "GEO"
+    "iso_a3": "GEO",
+    "iso_a2": "GE",
+    "flag": "images/flag/ge.svg"
   },
   "India": {
     "capital": "New Delhi",
     "government": "Federal Republic",
     "lat": 28.6,
     "lon": 77.2,
-    "iso_a3": "IND"
+    "iso_a3": "IND",
+    "iso_a2": "IN",
+    "flag": "images/flag/in.svg"
   },
   "China": {
     "capital": "Beijing",
     "government": "Single-party State",
     "lat": 39.92,
     "lon": 116.38,
-    "iso_a3": "CHN"
+    "iso_a3": "CHN",
+    "iso_a2": "CN",
+    "flag": "images/flag/cn.svg"
   },
   "Djibouti": {
     "capital": "Djibouti",
     "government": "Presidential Republic",
     "lat": 11.58,
     "lon": 43.15,
-    "iso_a3": "DJI"
+    "iso_a3": "DJI",
+    "iso_a2": "DJ",
+    "flag": "images/flag/dj.svg"
   },
   "Saudi Arabia": {
     "capital": "Riyadh",
     "government": "Absolute Monarchy",
     "lat": 24.65,
     "lon": 46.7,
-    "iso_a3": "SAU"
+    "iso_a3": "SAU",
+    "iso_a2": "SA",
+    "flag": "images/flag/sa.svg"
   },
   "Iran": {
     "capital": "Tehran",
     "government": "Theocracy",
     "lat": 35.7,
     "lon": 51.42,
-    "iso_a3": "IRN"
+    "iso_a3": "IRN",
+    "iso_a2": "IR",
+    "flag": "images/flag/ir.svg"
   },
   "Zambia": {
     "capital": "Lusaka",
     "government": "Presidential Republic",
     "lat": -15.42,
     "lon": 28.28,
-    "iso_a3": "ZMB"
+    "iso_a3": "ZMB",
+    "iso_a2": "ZM",
+    "flag": "images/flag/zm.svg"
   },
   "Ethiopia": {
     "capital": "Addis Ababa",
     "government": "Federal Republic",
     "lat": 9.03,
     "lon": 38.7,
-    "iso_a3": "ETH"
+    "iso_a3": "ETH",
+    "iso_a2": "ET",
+    "flag": "images/flag/et.svg"
   },
   "Guatemala": {
     "capital": "Guatemala City",
     "government": "Presidential Republic",
     "lat": 14.62,
     "lon": -90.52,
-    "iso_a3": "GTM"
+    "iso_a3": "GTM",
+    "iso_a2": "GT",
+    "flag": "images/flag/gt.svg"
   },
   "Suriname": {
     "capital": "Paramaribo",
     "government": "Presidential Republic",
     "lat": 5.83,
     "lon": -55.17,
-    "iso_a3": "SUR"
+    "iso_a3": "SUR",
+    "iso_a2": "SR",
+    "flag": "images/flag/sr.svg"
   },
   "Uruguay": {
     "capital": "Montevideo",
     "government": "Federal Republic",
     "lat": -34.85,
     "lon": -56.17,
-    "iso_a3": "URY"
+    "iso_a3": "URY",
+    "iso_a2": "UY",
+    "flag": "images/flag/uy.svg"
   },
   "Italy": {
     "capital": "Rome",
     "government": "Parliamentary Republic",
     "lat": 41.9,
     "lon": 12.48,
-    "iso_a3": "ITA"
+    "iso_a3": "ITA",
+    "iso_a2": "IT",
+    "flag": "images/flag/it.svg"
   },
   "Fiji": {
     "capital": "Suva",
     "government": "Parliamentary Republic",
     "lat": -18.13,
     "lon": 178.42,
-    "iso_a3": "FJI"
+    "iso_a3": "FJI",
+    "iso_a2": "FJ",
+    "flag": "images/flag/fj.svg"
   },
   "São Tomé and Príncipe": {
     "capital": "São Tomé",
     "government": "Presidential Republic",
     "lat": 0.34,
     "lon": 6.73,
-    "iso_a3": "STP"
+    "iso_a3": "STP",
+    "iso_a2": "ST",
+    "flag": "images/flag/st.svg"
   },
   "Switzerland": {
     "capital": "Bern",
     "government": "Federal Republic",
     "lat": 46.9481,
     "lon": 7.4474,
-    "iso_a3": "CHE"
+    "iso_a3": "CHE",
+    "iso_a2": "CH",
+    "flag": "images/flag/ch.svg"
   },
   "Democratic Republic of the Congo": {
     "capital": "Kinshasa",
     "government": "Presidential Republic",
     "lat": -4.32,
     "lon": 15.3,
-    "iso_a3": "COD"
+    "iso_a3": "COD",
+    "iso_a2": "CD",
+    "flag": "images/flag/cd.svg"
   },
   "Finland": {
     "capital": "Helsinki",
     "government": "Parliamentary Republic",
     "lat": 60.17,
     "lon": 24.93,
-    "iso_a3": "FIN"
+    "iso_a3": "FIN",
+    "iso_a2": "FI",
+    "flag": "images/flag/fi.svg"
   },
   "Malta": {
     "capital": "Valletta",
     "government": "Parliamentary Republic",
     "lat": 35.88,
     "lon": 14.5,
-    "iso_a3": "MLT"
+    "iso_a3": "MLT",
+    "iso_a2": "MT",
+    "flag": "images/flag/mt.svg"
   },
   "El Salvador": {
     "capital": "San Salvador",
     "government": "Presidential Republic",
     "lat": 13.7,
     "lon": -89.2,
-    "iso_a3": "SLV"
+    "iso_a3": "SLV",
+    "iso_a2": "SV",
+    "flag": "images/flag/sv.svg"
   },
   "Jordan": {
     "capital": "Amman",
     "government": "Constitutional Monarchy",
     "lat": 31.95,
     "lon": 35.93,
-    "iso_a3": "JOR"
+    "iso_a3": "JOR",
+    "iso_a2": "JO",
+    "flag": "images/flag/jo.svg"
   },
   "Nauru": {
     "capital": "Yaren",
     "government": "Parliamentary Republic",
     "lat": -0.5477,
     "lon": 166.9211,
-    "iso_a3": "NRU"
+    "iso_a3": "NRU",
+    "iso_a2": "NR",
+    "flag": "images/flag/nr.svg"
   },
   "Poland": {
     "capital": "Warsaw",
     "government": "Parliamentary Republic",
     "lat": 52.25,
     "lon": 21.0,
-    "iso_a3": "POL"
+    "iso_a3": "POL",
+    "iso_a2": "PL",
+    "flag": "images/flag/pl.svg"
   },
   "Mauritania": {
     "capital": "Nouakchott",
     "government": "Presidential Republic",
     "lat": 18.07,
     "lon": -15.97,
-    "iso_a3": "MRT"
+    "iso_a3": "MRT",
+    "iso_a2": "MR",
+    "flag": "images/flag/mr.svg"
   },
   "North Macedonia": {
     "capital": "Skopje",
     "government": "Parliamentary Republic",
     "lat": 42.0,
     "lon": 21.43,
-    "iso_a3": "MKD"
+    "iso_a3": "MKD",
+    "iso_a2": "MK",
+    "flag": "images/flag/mk.svg"
   },
   "Togo": {
     "capital": "Lomé",
     "government": "Presidential Republic",
     "lat": 6.14,
     "lon": 1.21,
-    "iso_a3": "TGO"
+    "iso_a3": "TGO",
+    "iso_a2": "TG",
+    "flag": "images/flag/tg.svg"
   },
   "Myanmar": {
     "capital": "Naypyidaw",
     "government": "Federal Republic",
     "lat": 19.76,
     "lon": 96.07,
-    "iso_a3": "MMR"
+    "iso_a3": "MMR",
+    "iso_a2": "MM",
+    "flag": "images/flag/mm.svg"
   },
   "Qatar": {
     "capital": "Doha",
     "government": "Constitutional Monarchy",
     "lat": 25.28,
     "lon": 51.53,
-    "iso_a3": "QAT"
+    "iso_a3": "QAT",
+    "iso_a2": "QA",
+    "flag": "images/flag/qa.svg"
   },
   "France": {
     "capital": "Paris",
     "government": "Parliamentary Republic",
     "lat": 48.87,
     "lon": 2.33,
-    "iso_a3": "FRA"
+    "iso_a3": "FRA",
+    "iso_a2": "FR",
+    "flag": "images/flag/fr.svg"
   },
   "Seychelles": {
     "capital": "Victoria",
     "government": "Presidential Republic",
     "lat": -4.62,
     "lon": 55.45,
-    "iso_a3": "SYC"
+    "iso_a3": "SYC",
+    "iso_a2": "SC",
+    "flag": "images/flag/sc.svg"
   },
   "Moldova": {
     "capital": "Chișinău",
     "government": "Parliamentary Republic",
     "lat": 47.01,
     "lon": 28.9,
-    "iso_a3": "MDA"
+    "iso_a3": "MDA",
+    "iso_a2": "MD",
+    "flag": "images/flag/md.svg"
   },
   "South Sudan": {
     "capital": "Juba",
     "government": "Federal Republic",
     "lat": 4.85,
     "lon": 31.62,
-    "iso_a3": "SSD"
+    "iso_a3": "SSD",
+    "iso_a2": "SS",
+    "flag": "images/flag/ss.svg"
   },
   "Brunei": {
     "capital": "Bandar Seri Begawan",
     "government": "Absolute Monarchy",
     "lat": 4.88,
     "lon": 114.93,
-    "iso_a3": "BRN"
+    "iso_a3": "BRN",
+    "iso_a2": "BN",
+    "flag": "images/flag/bn.svg"
   },
   "Japan": {
     "capital": "Tokyo",
     "government": "Constitutional Monarchy",
     "lat": 35.68,
     "lon": 139.75,
-    "iso_a3": "JPN"
+    "iso_a3": "JPN",
+    "iso_a2": "JP",
+    "flag": "images/flag/jp.svg"
   },
   "Grenada": {
     "capital": "St. George's",
     "government": "Constitutional Monarchy",
     "lat": 12.05,
     "lon": -61.75,
-    "iso_a3": "GRD"
+    "iso_a3": "GRD",
+    "iso_a2": "GD",
+    "flag": "images/flag/gd.svg"
   },
   "Spain": {
     "capital": "Madrid",
     "government": "Constitutional Monarchy",
     "lat": 40.4,
     "lon": -3.68,
-    "iso_a3": "ESP"
+    "iso_a3": "ESP",
+    "iso_a2": "ES",
+    "flag": "images/flag/es.svg"
   },
   "Papua New Guinea": {
     "capital": "Port Moresby",
     "government": "Constitutional Monarchy",
     "lat": -9.45,
     "lon": 147.18,
-    "iso_a3": "PNG"
+    "iso_a3": "PNG",
+    "iso_a2": "PG",
+    "flag": "images/flag/pg.svg"
   },
   "Uzbekistan": {
     "capital": "Tashkent",
     "government": "Parliamentary Republic",
     "lat": 41.32,
     "lon": 69.25,
-    "iso_a3": "UZB"
+    "iso_a3": "UZB",
+    "iso_a2": "UZ",
+    "flag": "images/flag/uz.svg"
   },
   "Argentina": {
     "capital": "Buenos Aires",
     "government": "Federal Republic",
     "lat": -34.58,
     "lon": -58.67,
-    "iso_a3": "ARG"
+    "iso_a3": "ARG",
+    "iso_a2": "AR",
+    "flag": "images/flag/ar.svg"
   },
   "South Korea": {
     "capital": "Seoul",
     "government": "Parliamentary Republic",
     "lat": 37.55,
     "lon": 126.98,
-    "iso_a3": "KOR"
+    "iso_a3": "KOR",
+    "iso_a2": "KR",
+    "flag": "images/flag/kr.svg"
   },
   "Belize": {
     "capital": "Belmopan",
     "government": "Constitutional Monarchy",
     "lat": 17.25,
     "lon": -88.77,
-    "iso_a3": "BLZ"
+    "iso_a3": "BLZ",
+    "iso_a2": "BZ",
+    "flag": "images/flag/bz.svg"
   },
   "Mexico": {
     "capital": "Mexico City",
     "government": "Federal Republic",
     "lat": 19.43,
     "lon": -99.13,
-    "iso_a3": "MEX"
+    "iso_a3": "MEX",
+    "iso_a2": "MX",
+    "flag": "images/flag/mx.svg"
   },
   "Serbia": {
     "capital": "Belgrade",
     "government": "Parliamentary Republic",
     "lat": 44.83,
     "lon": 20.5,
-    "iso_a3": "SRB"
+    "iso_a3": "SRB",
+    "iso_a2": "RS",
+    "flag": "images/flag/rs.svg"
   },
   "Cape Verde": {
     "capital": "Praia",
     "government": "Presidential Republic",
     "lat": 14.92,
     "lon": -23.52,
-    "iso_a3": "CPV"
+    "iso_a3": "CPV",
+    "iso_a2": "CV",
+    "flag": "images/flag/cv.svg"
   },
   "Cambodia": {
     "capital": "Phnom Penh",
     "government": "Constitutional Monarchy",
     "lat": 11.55,
     "lon": 104.92,
-    "iso_a3": "KHM"
+    "iso_a3": "KHM",
+    "iso_a2": "KH",
+    "flag": "images/flag/kh.svg"
   },
   "Romania": {
     "capital": "Bucharest",
     "government": "Parliamentary Republic",
     "lat": 44.43,
     "lon": 26.1,
-    "iso_a3": "ROU"
+    "iso_a3": "ROU",
+    "iso_a2": "RO",
+    "flag": "images/flag/ro.svg"
   },
   "Hungary": {
     "capital": "Budapest",
     "government": "Parliamentary Republic",
     "lat": 47.5,
     "lon": 19.08,
-    "iso_a3": "HUN"
+    "iso_a3": "HUN",
+    "iso_a2": "HU",
+    "flag": "images/flag/hu.svg"
   },
   "Marshall Islands": {
     "capital": "Majuro",
     "government": "Parliamentary Republic",
     "lat": 7.1,
     "lon": 171.38,
-    "iso_a3": "MHL"
+    "iso_a3": "MHL",
+    "iso_a2": "MH",
+    "flag": "images/flag/mh.svg"
   },
   "Somalia": {
     "capital": "Mogadishu",
     "government": "Federal Republic",
     "lat": 2.07,
     "lon": 45.33,
-    "iso_a3": "SOM"
+    "iso_a3": "SOM",
+    "iso_a2": "SO",
+    "flag": "images/flag/so.svg"
   },
   "Albania": {
     "capital": "Tirana",
     "government": "Parliamentary Republic",
     "lat": 41.32,
     "lon": 19.82,
-    "iso_a3": "ALB"
+    "iso_a3": "ALB",
+    "iso_a2": "AL",
+    "flag": "images/flag/al.svg"
   },
   "Burundi": {
     "capital": "Gitega",
     "government": "Presidential Republic",
     "lat": -3.43,
     "lon": 29.93,
-    "iso_a3": "BDI"
+    "iso_a3": "BDI",
+    "iso_a2": "BI",
+    "flag": "images/flag/bi.svg"
   },
   "Central African Republic": {
     "capital": "Bangui",
     "government": "Presidential Republic",
     "lat": 4.37,
     "lon": 18.58,
-    "iso_a3": "CAF"
+    "iso_a3": "CAF",
+    "iso_a2": "CF",
+    "flag": "images/flag/cf.svg"
   },
   "Saint Lucia": {
     "capital": "Castries",
     "government": "Constitutional Monarchy",
     "lat": 14.0,
     "lon": -61.0,
-    "iso_a3": "LCA"
+    "iso_a3": "LCA",
+    "iso_a2": "LC",
+    "flag": "images/flag/lc.svg"
   },
   "Uganda": {
     "capital": "Kampala",
     "government": "Presidential Republic",
     "lat": 0.32,
     "lon": 32.55,
-    "iso_a3": "UGA"
+    "iso_a3": "UGA",
+    "iso_a2": "UG",
+    "flag": "images/flag/ug.svg"
   },
   "Honduras": {
     "capital": "Tegucigalpa",
     "government": "Presidential Republic",
     "lat": 14.1,
     "lon": -87.22,
-    "iso_a3": "HND"
+    "iso_a3": "HND",
+    "iso_a2": "HN",
+    "flag": "images/flag/hn.svg"
   },
   "Kazakhstan": {
     "capital": "Astana",
     "government": "Parliamentary Republic",
     "lat": 51.16,
     "lon": 71.45,
-    "iso_a3": "KAZ"
+    "iso_a3": "KAZ",
+    "iso_a2": "KZ",
+    "flag": "images/flag/kz.svg"
   },
   "Kenya": {
     "capital": "Nairobi",
     "government": "Presidential Republic",
     "lat": -1.28,
     "lon": 36.82,
-    "iso_a3": "KEN"
+    "iso_a3": "KEN",
+    "iso_a2": "KE",
+    "flag": "images/flag/ke.svg"
   },
   "Samoa": {
     "capital": "Apia",
     "government": "Parliamentary Republic",
     "lat": -13.82,
     "lon": -171.77,
-    "iso_a3": "WSM"
+    "iso_a3": "WSM",
+    "iso_a2": "WS",
+    "flag": "images/flag/ws.svg"
   },
   "Nepal": {
     "capital": "Kathmandu",
     "government": "Federal Republic",
     "lat": 27.72,
     "lon": 85.32,
-    "iso_a3": "NPL"
+    "iso_a3": "NPL",
+    "iso_a2": "NP",
+    "flag": "images/flag/np.svg"
   },
   "Equatorial Guinea": {
     "capital": "Malabo",
     "government": "Presidential Republic",
     "lat": 3.75,
     "lon": 8.78,
-    "iso_a3": "GNQ"
+    "iso_a3": "GNQ",
+    "iso_a2": "GQ",
+    "flag": "images/flag/gq.svg"
   },
   "Lebanon": {
     "capital": "Beirut",
     "government": "Parliamentary Republic",
     "lat": 33.87,
     "lon": 35.5,
-    "iso_a3": "LBN"
+    "iso_a3": "LBN",
+    "iso_a2": "LB",
+    "flag": "images/flag/lb.svg"
   },
   "Mauritius": {
     "capital": "Port Louis",
     "government": "Presidential Republic",
     "lat": -20.15,
     "lon": 57.48,
-    "iso_a3": "MUS"
+    "iso_a3": "MUS",
+    "iso_a2": "MU",
+    "flag": "images/flag/mu.svg"
   },
   "Liechtenstein": {
     "capital": "Vaduz",
     "government": "Constitutional Monarchy",
     "lat": 47.13,
     "lon": 9.52,
-    "iso_a3": "LIE"
+    "iso_a3": "LIE",
+    "iso_a2": "LI",
+    "flag": "images/flag/li.svg"
   },
   "Austria": {
     "capital": "Vienna",
     "government": "Federal Republic",
     "lat": 48.2,
     "lon": 16.37,
-    "iso_a3": "AUT"
+    "iso_a3": "AUT",
+    "iso_a2": "AT",
+    "flag": "images/flag/at.svg"
   },
   "Netherlands": {
     "capital": "Amsterdam",
     "government": "Constitutional Monarchy",
     "lat": 52.3676,
     "lon": 4.9041,
-    "iso_a3": "NLD"
+    "iso_a3": "NLD",
+    "iso_a2": "NL",
+    "flag": "images/flag/nl.svg"
   },
   "Singapore": {
     "capital": "Singapore",
     "government": "Parliamentary Republic",
     "lat": 1.28,
     "lon": 103.85,
-    "iso_a3": "SGP"
+    "iso_a3": "SGP",
+    "iso_a2": "SG",
+    "flag": "images/flag/sg.svg"
   },
   "Liberia": {
     "capital": "Monrovia",
     "government": "Presidential Republic",
     "lat": 6.3,
     "lon": -10.8,
-    "iso_a3": "LBR"
+    "iso_a3": "LBR",
+    "iso_a2": "LR",
+    "flag": "images/flag/lr.svg"
   },
-	"Greenland": {
-  "iso_a3": "GRL",
-  "capital": "Nuuk",
-  "government": "Constituent country (Kingdom of Denmark)",
-  "lat": 64.18,
-  "lon": -51.72
-}
+  "Greenland": {
+    "iso_a3": "GRL",
+    "capital": "Nuuk",
+    "government": "Constituent country (Kingdom of Denmark)",
+    "lat": 64.18,
+    "lon": -51.72,
+    "iso_a2": "GL",
+    "flag": "images/flag/gl.svg"
+  }
 }
