@@ -26,7 +26,7 @@
       "url": "",
       "source_date": "2023-01-01",
       "data_year": 2023,
-      "last_fetch": "2025-11-14T11:37:11Z"
+      "last_fetch": "2025-11-14T16:35:27Z"
     },
     "fertility_rate": {
       "source": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
@@ -61,7 +61,7 @@
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-14T11:37:18Z"
+      "last_fetch": "2025-11-14T16:35:32Z"
     },
     "gdp": {
       "source": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
@@ -117,7 +117,7 @@
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-14T11:37:29Z"
+      "last_fetch": "2025-11-14T16:35:43Z"
     },
     "human_development_index_hdi": {
       "source": "https://ourworldindata.org/grapher/human-development-index",
@@ -327,7 +327,7 @@
       "url": "",
       "source_date": "2025-01-01",
       "data_year": 2025,
-      "last_fetch": "2025-11-14T11:38:06Z"
+      "last_fetch": "2025-11-14T16:36:27Z"
     },
     "military_expenditure_of_gdp": {
       "source": "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS",
@@ -341,21 +341,21 @@
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-14T11:38:08Z"
+      "last_fetch": "2025-11-14T16:36:28Z"
     },
     "environmental_performance_index": {
       "source": "https://epi.yale.edu/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-14T11:38:08Z"
+      "last_fetch": "2025-11-14T16:36:28Z"
     },
     "global_peace_index": {
       "source": "https://www.visionofhumanity.org/maps/#/global-peace-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2025-11-14T11:38:08Z"
+      "last_fetch": "2025-11-14T16:36:28Z"
     },
     "living_planet_index": {
       "source": "https://ourworldindata.org/grapher/global-living-planet-index",
@@ -390,14 +390,14 @@
       "url": "",
       "source_date": "2025-01-01",
       "data_year": 2025,
-      "last_fetch": "2025-11-14T11:38:13Z"
+      "last_fetch": "2025-11-14T16:36:34Z"
     },
     "inform_resilience_index": {
       "source": "https://drmkc.jrc.ec.europa.eu/inform-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2025-11-14T11:38:13Z"
+      "last_fetch": "2025-11-14T16:36:34Z"
     },
     "rule_of_law_index": {
       "source": "https://ourworldindata.org/grapher/rule-of-law-index",
@@ -415,7 +415,7 @@
     }
   },
   "summary": {
-    "lastRun": "2025-11-14T11:38:17Z",
+    "lastRun": "2025-11-14T16:36:39Z",
     "updated": 4,
     "skipped": 56,
     "errors": 0
