@@ -2,121 +2,51 @@
   {
     "rank": 1,
     "country": "Australia",
-    "criteria": {
-      "climate": "18-26 °C",
-      "sunny_days": "280-300",
-      "rainy_days": "60-90",
-      "happiness_index": "High",
-      "beer_price": "< 3.50 USD",
-      "livable_cities_bonus": "Melbourne and Sydney"
-    }
+    "reason": "Sydney and Melbourne often rank high in liveability with a great climate and high happiness scores."
   },
   {
     "rank": 2,
     "country": "Spain",
-    "criteria": {
-      "climate": "18-26 °C",
-      "sunny_days": "290",
-      "rainy_days": "75",
-      "happiness_index": "High",
-      "beer_price": "< 3.50 USD",
-      "livable_cities_bonus": null
-    }
+    "reason": "Cities like Barcelona offer sunny days, pleasant climate, high happiness, and affordability in lifestyle."
   },
   {
     "rank": 3,
     "country": "Portugal",
-    "criteria": {
-      "climate": "18-26 °C",
-      "sunny_days": "280",
-      "rainy_days": "85",
-      "happiness_index": "High",
-      "beer_price": "< 3.50 USD",
-      "livable_cities_bonus": "Lisbon"
-    }
+    "reason": "Lisbon has great weather, low beer prices, and high life quality rankings."
   },
   {
     "rank": 4,
-    "country": "New Zealand",
-    "criteria": {
-      "climate": "18-26 °C",
-      "sunny_days": "285",
-      "rainy_days": "80",
-      "happiness_index": "High",
-      "beer_price": "< 3.50 USD",
-      "livable_cities_bonus": "Auckland"
-    }
+    "country": "Italy",
+    "reason": "Rome and other cities provide a pleasant climate, good food, and a high happiness index."
   },
   {
     "rank": 5,
-    "country": "Italy",
-    "criteria": {
-      "climate": "18-26 °C",
-      "sunny_days": "290",
-      "rainy_days": "90",
-      "happiness_index": "Moderate to high",
-      "beer_price": "< 3.50 USD",
-      "livable_cities_bonus": null
-    }
+    "country": "Greece",
+    "reason": "Athens enjoys a large number of sunny days, mild winters, and vibrant social life."
   },
   {
     "rank": 6,
-    "country": "Greece",
-    "criteria": {
-      "climate": "18-26 °C",
-      "sunny_days": "300",
-      "rainy_days": "60",
-      "happiness_index": "Moderate",
-      "beer_price": "< 3.50 USD",
-      "livable_cities_bonus": null
-    }
+    "country": "New Zealand",
+    "reason": "Auckland ranks well in liveability surveys with its great climate and relaxed lifestyle."
   },
   {
     "rank": 7,
     "country": "Chile",
-    "criteria": {
-      "climate": "18-26 °C",
-      "sunny_days": "280",
-      "rainy_days": "70",
-      "happiness_index": "Moderate",
-      "beer_price": "< 3.50 USD",
-      "livable_cities_bonus": null
-    }
+    "reason": "Santiago offers a stable climate, growing economy, and increasing scores on happiness indexes."
   },
   {
     "rank": 8,
-    "country": "South Africa",
-    "criteria": {
-      "climate": "18-26 °C",
-      "sunny_days": "295",
-      "rainy_days": "85",
-      "happiness_index": "Moderate",
-      "beer_price": "< 3.50 USD",
-      "livable_cities_bonus": "Cape Town"
-    }
+    "country": "Mexico",
+    "reason": "Cities like Guadalajara have pleasant weather, low living costs, and thriving cultural scenes."
   },
   {
     "rank": 9,
-    "country": "Mexico",
-    "criteria": {
-      "climate": "18-26 °C",
-      "sunny_days": "290",
-      "rainy_days": "85",
-      "happiness_index": "Moderate",
-      "beer_price": "< 3.50 USD",
-      "livable_cities_bonus": null
-    }
+    "country": "Costa Rica",
+    "reason": "Known for its biodiversity, pleasant climate, and high happiness scores."
   },
   {
     "rank": 10,
-    "country": "Costa Rica",
-    "criteria": {
-      "climate": "18-26 °C",
-      "sunny_days": "280",
-      "rainy_days": "90",
-      "happiness_index": "High",
-      "beer_price": "< 3.50 USD",
-      "livable_cities_bonus": null
-    }
+    "country": "South Africa",
+    "reason": "Cape Town boasts a great environment for fun living with good weather and reasonable costs."
   }
 ]
