@@ -741,7 +741,8 @@ function updateChart() {
     : [];
 
   const datasets = [];
-  ["country1Select", "country2Select", "country3Select"].forEach(id => {
+  const compareSelectIds = ["country1Select", "country2Select", "country3Select"];
+  compareSelectIds.forEach((id, idx) => {
     const sel = document.getElementById(id);
     if (!sel || !sel.value) return;
     const country = sel.value;
@@ -753,7 +754,9 @@ function updateChart() {
       label: country,
       data: vals,
       borderWidth: 2,
-      borderColor: getColorForCountry(country),
+      borderColor: getColorForCountry(country, idx),
+      backgroundColor: getColorForCountry(country, idx),
+      pointBackgroundColor: getColorForCountry(country, idx),
       pointRadius: 3,
       pointHoverRadius: 5,
       fill: false,
@@ -815,7 +818,11 @@ function updateChart() {
 }
 
 /* ========= Hilfsfunktion: Farbzuteilung ========= */
-function getColorForCountry(name) {
+function getColorForCountry(name, compareIndex = null) {
+  const comparePalette = ["#1a355e", "#4ea64f", "#d94f4f"];
+  if (typeof compareIndex === "number" && compareIndex >= 0 && compareIndex < comparePalette.length) {
+    return comparePalette[compareIndex];
+  }
   const palette = [
     "#1a355e", "#d94f4f", "#4ea64f", "#e5a22f", "#7c4eea", "#49b9cc"
   ];
