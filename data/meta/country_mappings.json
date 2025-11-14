@@ -93,7 +93,6 @@
   "Comoros": "Comoros",
   "COM": "Comoros",
   "Congo, Dem. Rep.": "Democratic Republic of the Congo",
-  "Democratic Republic of the Congo": "Democratic Republic of the Congo",
   "DR Congo": "Democratic Republic of the Congo",
   "COD": "Democratic Republic of the Congo",
   "Congo, Rep.": "Republic of the Congo",
@@ -585,7 +584,7 @@
   "Albanien": "Albania",
   "Indonesien": "Indonesia",
   "Südafrika": "South Africa",
-  "Republik Kongo": "Democratic Republic of the Congo",
+  "Republik Kongo": "Republic of the Congo",
   "Nordmazedonien": "North Macedonia",
   "Georgien": "Georgia",
   "Elfenbeinküste": "Ivory Coast",
@@ -881,5 +880,15 @@
   "Unified Team-1": "",
   "Unified Team-2": "",
   "Republic of the Congo": "Republic of the Congo",
-  "Dschibuti": "Djibouti"
+  "Dschibuti": "Djibouti",
+	"Bosnien und Herzegowina": "Bosnia Herzegovina",
+	"BIH": "Bosnia Herzegovina",
+  "East Asia and Pacific (WB)": "",
+  "Europe and Central Asia (WB)": "",
+  "Latin America and Caribbean (WB)": "",
+  "Middle East, North Africa, Afghanistan and Pakistan (WB)": "",
+  "North America (WB)": "",
+  "South Asia (WB)": "",
+  "Sub-Saharan Africa (WB)": "",
+  "World": ""
 }
