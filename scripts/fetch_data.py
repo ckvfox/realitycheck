@@ -1133,6 +1133,7 @@ def main(args: argparse.Namespace) -> None:
         "countries_loaded": 0, "kpis_loaded": 0, "saved_records": 0, "dummies": 0,
         "mapped_ok": 0, "mapped_drop": 0, "mapped_pending": 0, "new_pending": set(),
         "wb_success": 0, "csv_success": 0, "owid_success": 0, "unhcr_success": 0,
+        "others_success": 0,
         "errors": 0, "skipped": 0, "skipped_breakdown": {},
         "updated": 0,                     # 🔹 NEU: zählt erfolgreiche Updates
         "updated_kpis": set(),
@@ -1238,6 +1239,7 @@ def main(args: argparse.Namespace) -> None:
         already_marked = "geopolitical_risk_index" in updated_set
 
         fetch_geopolitical_risk_index()
+        stats["others_success"] += 1
         updated_set.add("geopolitical_risk_index")
         if not already_marked:
             stats["updated"] += 1
@@ -1297,6 +1299,7 @@ def main(args: argparse.Namespace) -> None:
         f"CSV KPIs:          {stats['csv_success']}",
         f"OWID KPIs:         {stats['owid_success']}",
         f"UNHCR KPIs:        {stats['unhcr_success']}",
+        f"Others KPIs:       {stats['others_success']}",
         "",
         f"Mapping OK:        {stats['mapped_ok']}",
         f"Mapping dropped:   {stats['mapped_drop']}",
