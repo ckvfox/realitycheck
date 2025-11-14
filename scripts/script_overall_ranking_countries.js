@@ -408,11 +408,19 @@ function renderOverallTable(list) {
 /* ---------- Legend (unter Tabelle) ---------- */
 function renderLegend(prioritizedCount, missing = []) {
   let leg = document.getElementById("legend");
+  const table = document.getElementById("overall-table");
+  const wrapper = table?.closest(".table-wrapper");
+
   if (!leg) {
     leg = document.createElement("div");
     leg.id = "legend";
-    const table = document.getElementById("overall-table");
-    table.insertAdjacentElement("afterend", leg);
+    if (wrapper) {
+      wrapper.insertAdjacentElement("afterend", leg);
+    } else if (table) {
+      table.insertAdjacentElement("afterend", leg);
+    }
+  } else if (wrapper && leg.parentElement !== wrapper.parentElement) {
+    wrapper.insertAdjacentElement("afterend", leg);
   }
 
   const missingList = missing.length
