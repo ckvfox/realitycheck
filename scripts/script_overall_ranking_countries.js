@@ -455,6 +455,7 @@ score(country) = Σ(weighted) / KPIs_used
       <p><strong>😎 Fun Mode:</strong> Warm, sunny, happy and relaxed. Good beer, reasonably priced</p>
       <p><strong>🛡️ Safe Haven Mode:</strong> Peaceful, resilient, and rights-respecting democracies with low climate risk.</p>
 	  <p><strong>🧳 Immigration Mode:</strong> Countries open to immigration, with job opportunities and welcoming integration culture.</p>
+    <p><strong>! Feature disabled while Google Translate is on! Switch to the original version to continue !  </strong> </p>
     </div>
   `;
 }
