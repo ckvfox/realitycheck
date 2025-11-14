@@ -191,38 +191,6 @@ def mark_skip(stats: Dict[str, Any], reason: str) -> None:
     stats["skipped"] += 1
     breakdown = stats.setdefault("skipped_breakdown", {})
     breakdown[reason] = breakdown.get(reason, 0) + 1
-
-
-def resolve_kpi_id(meta: Dict[str, Any]) -> str:
-    """Bestmögliche ID eines KPI-Metadatensatzes (Dateiname bevorzugt)."""
-    if not isinstance(meta, dict):
-        return "kpi"
-
-    return (
-        str(meta.get("filename") or "").strip()
-        or str(meta.get("id") or "").strip()
-        or str(meta.get("title") or "").strip()
-        or "kpi"
-    )
-
-
-def derive_kpi_id(meta: Dict[str, Any]) -> str:
-    """Alias, damit alle Aufrufer dieselbe robuste ID-Auflösung verwenden."""
-    try:
-        return resolve_kpi_id(meta)
-    except Exception:
-        if not isinstance(meta, dict):
-            return "kpi"
-        filename = str(meta.get("filename") or "").strip()
-        if filename:
-            return filename
-        legacy_id = str(meta.get("id") or "").strip()
-        if legacy_id:
-            return legacy_id
-        title = str(meta.get("title") or "").strip()
-        if title:
-            return title
-        return "kpi"
     
 # ======================================================================
 # 💾 Safe Write Helpers (robuste Datei-Speicherung)
@@ -1174,6 +1142,24 @@ def merge_fetch_state(updated_kpis: set):
 # 🚀 Main
 # ======================================================================
 def main(args: argparse.Namespace) -> None:
+    def derive_kpi_id(meta: Dict[str, Any]) -> str:
+        try:
+            resolver = globals().get("resolve_kpi_id")
+            if callable(resolver):
+                return resolver(meta)
+        except Exception:
+            pass
+
+        if not isinstance(meta, dict):
+            return "kpi"
+
+        return (
+            str(meta.get("filename") or "").strip()
+            or str(meta.get("id") or "").strip()
+            or str(meta.get("title") or "").strip()
+            or "kpi"
+        )
+
     if args.force:
         handle_force_cleanup()
 
@@ -1204,7 +1190,7 @@ def main(args: argparse.Namespace) -> None:
     stats = {
         "countries_loaded": 0, "kpis_loaded": 0, "saved_records": 0, "dummies": 0,
         "mapped_ok": 0, "mapped_drop": 0, "mapped_pending": 0, "new_pending": set(),
-        "wb_success": 0, "csv_success": 0, "owid_success": 0, "unhcr_success": 0, "other_success": 0,
+        "wb_success": 0, "csv_success": 0, "owid_success": 0, "unhcr_success": 0,
         "errors": 0, "skipped": 0, "skipped_breakdown": {},
         "updated": 0,                     # 🔹 NEU: zählt erfolgreiche Updates
         "updated_kpis": set(),
@@ -1228,11 +1214,11 @@ def main(args: argparse.Namespace) -> None:
         filtered: List[Dict[str, Any]] = []
         missing = set(filter_set)
         for meta in kpi_list:
-            kpi_id = derive_kpi_id(meta)
+            kpi_id = resolve_kpi_id(meta)
             if kpi_id in filter_set:
                 filtered.append(meta)
                 missing.discard(kpi_id)
-        matched_ids = sorted(derive_kpi_id(meta) for meta in filtered)
+        matched_ids = sorted(resolve_kpi_id(meta) for meta in filtered)
         if matched_ids:
             log(f"[INFO] KPI filter active → {', '.join(matched_ids)}")
         if missing:
@@ -1244,7 +1230,7 @@ def main(args: argparse.Namespace) -> None:
     # --- KPI-Schleife ---
     for meta in kpi_list:
         try:
-            kpi_id = derive_kpi_id(meta)
+            kpi_id = resolve_kpi_id(meta)
             source_type = (meta.get("source_type") or meta.get("type") or "").lower().strip()
             source_code = meta.get("source_code") or meta.get("code") or ""
             source_date = None
@@ -1322,11 +1308,18 @@ def main(args: argparse.Namespace) -> None:
     # ---------------------------------------------------------------
     # 🌍 Spezial-Quelle: Geopolitical Risk Index (Matteo Iacoviello)
     # ---------------------------------------------------------------
-    should_fetch_special = (not filter_set) or ("geopolitical_risk_index" in filter_set)
-    if should_fetch_special:
-        success = fetch_geopolitical_risk_index(stats)
-        if not success:
-            log("[❌] Special fetch geopolitical_risk_index failed – see details above")
+    try:
+        updated_set = stats.setdefault("updated_kpis", set())
+        already_marked = "geopolitical_risk_index" in updated_set
+
+        fetch_geopolitical_risk_index()
+        updated_set.add("geopolitical_risk_index")
+        if not already_marked:
+            stats["updated"] += 1
+        log("[OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)")
+    except Exception as e:
+        stats["errors"] += 1
+        log(f"[❌] Special fetch geopolitical_risk_index failed: {e}")
 
 
 
@@ -1375,11 +1368,11 @@ def main(args: argparse.Namespace) -> None:
         f"KPIs processed:    {stats['kpis_loaded']}",
         f"Saved records:     {stats['saved_records']}",
         "",
-        f"WorldBank KPIs:    {stats.get('wb_success', 0)}",
-        f"CSV KPIs:          {stats.get('csv_success', 0)}",
-        f"OWID KPIs:         {stats.get('owid_success', 0)}",
-        f"UNHCR KPIs:        {stats.get('unhcr_success', 0)}",
-        f"Other KPIs:        {stats.get('other_success', 0)}",
+        f"WorldBank KPIs:    {stats['wb_success']}",
+        f"CSV KPIs:          {stats['csv_success']}",
+        f"OWID KPIs:         {stats['owid_success']}",
+        f"UNHCR KPIs:        {stats['unhcr_success']}",
+        f"Other KPIs:        {stats['other_success']}",
         "",
         f"Mapping OK:        {stats['mapped_ok']}",
         f"Mapping dropped:   {stats['mapped_drop']}",

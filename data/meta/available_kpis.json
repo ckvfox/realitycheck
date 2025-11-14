@@ -689,7 +689,7 @@
     "description": "The Political Corruption Index measures the level of corruption in a country’s political system, with a score ranging from 0 to 1, where higher scores indicate lower levels of corruption. This indicator is important because high corruption can undermine democracy, hinder economic development, and erode public trust in government. Factors that influence this index include the effectiveness of law enforcement, the transparency of political processes, and the accountability of public officials. It is closely related to other metrics in the Society & Governance cluster, such as government integrity and public sector accountability, providing a comprehensive view of how corruption impacts overall governance. These data are compiled by Our World in Data based on the Varieties of Democracy (V-Dem) dataset.",
     "unit": "index (0–1)",
     "relation": "",
-    "sort": "lower",
+    "sort": "higher",
     "cluster": "Society & Governance",
     "source": "https://ourworldindata.org/grapher/political-corruption-index",
     "source_type": "owid",
