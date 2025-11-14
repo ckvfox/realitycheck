@@ -531,3 +531,2053 @@ Updated KPIs:      10
 [2025-11-13T19:38:08 UTC] 🤖 GPT response for 'Inform Resilience Index': Unknown
 [2025-11-13T19:38:11 UTC] ❓ No newer version for 'Inform Resilience Index' found.
 [2025-11-13T19:38:11 UTC] ✅ Smart CSV update check completed.
+[2025-11-14T08:16:27Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-14T08:16:27Z UTC] === Fetch started ===
+[2025-11-14T08:16:28Z UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:28Z UTC] [CHECK] area: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:28Z UTC] [⏸️] area – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:29Z UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:29Z UTC] [CHECK] population: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:29Z UTC] [⏸️] population – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:31Z UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:31Z UTC] [CHECK] population_growth: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:31Z UTC] [⏸️] population_growth – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:32Z UTC] [CHECK] median_age: max_year=2100 → fetch (possible update)
+[2025-11-14T08:16:33Z UTC] [HEUR] OWID median_age → inferred source_date 2023-01-01
+[2025-11-14T08:16:33Z UTC] [OK] OWID KPI saved: median_age (14652 rows, last updated 2023-01-01)
+[2025-11-14T08:16:34Z UTC] [STATUS] median_age: stored source_date=2023-01-01, data_year=2023
+[2025-11-14T08:16:35Z UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:35Z UTC] [CHECK] fertility_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:35Z UTC] [⏸️] fertility_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:36Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:36Z UTC] [CHECK] urbanization_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:36Z UTC] [⏸️] urbanization_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:37Z UTC] [CHECK] democracy_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:16:37Z UTC] [⏸️] democracy_index – unchanged (None)
+[2025-11-14T08:16:38Z UTC] [CHECK] press_freedom_index: max_year=2021 < 2025, fetched this year → skip
+[2025-11-14T08:16:38Z UTC] [⏸️] press_freedom_index – unchanged (None)
+[2025-11-14T08:16:38Z UTC] [WARN] world_happiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:16:41Z UTC] [⏸️] world_happiness_index – CSV unchanged (hash & mtime match)
+[2025-11-14T08:16:41Z UTC] [STATUS] world_happiness_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T08:16:42Z UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:42Z UTC] [CHECK] gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:42Z UTC] [⏸️] gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:44Z UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:44Z UTC] [CHECK] gdp_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:44Z UTC] [⏸️] gdp_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:48Z UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:48Z UTC] [CHECK] gni_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:48Z UTC] [⏸️] gni_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:51Z UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:51Z UTC] [CHECK] gini_index: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:51Z UTC] [⏸️] gini_index – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:53Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:53Z UTC] [CHECK] public_debt_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:53Z UTC] [⏸️] public_debt_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:54Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:54Z UTC] [CHECK] tax_revenue_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:54Z UTC] [⏸️] tax_revenue_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:56Z UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:56Z UTC] [CHECK] unemployment_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:56Z UTC] [⏸️] unemployment_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:16:56Z UTC] [WARN] big_mac_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:16:56Z UTC] [⏸️] big_mac_index – CSV unchanged (hash & mtime match)
+[2025-11-14T08:16:56Z UTC] [STATUS] big_mac_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T08:16:57Z UTC] [CHECK] human_development_index_hdi: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T08:16:57Z UTC] [⏸️] human_development_index_hdi – unchanged (None)
+[2025-11-14T08:16:58Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:16:58Z UTC] [CHECK] health_expenditure_per_capita: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:16:58Z UTC] [⏸️] health_expenditure_per_capita – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:00Z UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:00Z UTC] [CHECK] infant_mortality_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:00Z UTC] [⏸️] infant_mortality_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:01Z UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:01Z UTC] [CHECK] maternal_mortality_ratio: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:01Z UTC] [⏸️] maternal_mortality_ratio – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:02Z UTC] [CHECK] physicians_per_1_000_people: max_year=2022 < 2025, fetched this year → skip
+[2025-11-14T08:17:02Z UTC] [⏸️] physicians_per_1_000_people – unchanged (None)
+[2025-11-14T08:17:04Z UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:04Z UTC] [CHECK] hospital_beds_per_1_000_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:04Z UTC] [⏸️] hospital_beds_per_1_000_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:05Z UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:05Z UTC] [CHECK] life_expectancy_at_birth: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:05Z UTC] [⏸️] life_expectancy_at_birth – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:07Z UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:07Z UTC] [CHECK] adult_literacy_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:07Z UTC] [⏸️] adult_literacy_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:08Z UTC] [CHECK] homelessness_rate: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T08:17:08Z UTC] [⏸️] homelessness_rate – unchanged (None)
+[2025-11-14T08:17:09Z UTC] [CHECK] old_age_dependency_ratio: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T08:17:09Z UTC] [⏸️] old_age_dependency_ratio – unchanged (None)
+[2025-11-14T08:17:10Z UTC] [CHECK] age_dependency_ratio_total: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T08:17:10Z UTC] [⏸️] age_dependency_ratio_total – unchanged (None)
+[2025-11-14T08:17:12Z UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:12Z UTC] [CHECK] overall_immunization_coverage: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:12Z UTC] [⏸️] overall_immunization_coverage – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:13Z UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:13Z UTC] [CHECK] extreme_poverty: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:13Z UTC] [⏸️] extreme_poverty – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:14Z UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:14Z UTC] [CHECK] access_to_basic_drinking_water: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:14Z UTC] [⏸️] access_to_basic_drinking_water – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:16Z UTC] [CHECK] co2_emissions: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:17:16Z UTC] [⏸️] co2_emissions – unchanged (None)
+[2025-11-14T08:17:17Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:17Z UTC] [CHECK] air_quality_pm2_5_exposure: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:17Z UTC] [⏸️] air_quality_pm2_5_exposure – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:18Z UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:18Z UTC] [CHECK] renewable_energy_share: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:18Z UTC] [⏸️] renewable_energy_share – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:20Z UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:20Z UTC] [CHECK] internet_penetration_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:20Z UTC] [⏸️] internet_penetration_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:21Z UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:21Z UTC] [CHECK] mobile_subscriptions_per_100_inhabitants: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:21Z UTC] [⏸️] mobile_subscriptions_per_100_inhabitants – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:22Z UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:22Z UTC] [CHECK] railway_length: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:22Z UTC] [⏸️] railway_length – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:23Z UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:23Z UTC] [CHECK] inflation_consumer_price_index: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:23Z UTC] [⏸️] inflation_consumer_price_index – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:25Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:25Z UTC] [CHECK] employment_to_population_ratio: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:25Z UTC] [⏸️] employment_to_population_ratio – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:27Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:27Z UTC] [CHECK] female_labor_force_participation: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:27Z UTC] [⏸️] female_labor_force_participation – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:28Z UTC] [CHECK] political_corruption_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:17:28Z UTC] [⏸️] political_corruption_index – unchanged (None)
+[2025-11-14T08:17:29Z UTC] [CHECK] military_spending_sipri: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:17:29Z UTC] [⏸️] military_spending_sipri – unchanged (None)
+[2025-11-14T08:17:31Z UTC] [CHECK] number_of_armed_conflicts: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:17:31Z UTC] [⏸️] number_of_armed_conflicts – unchanged (None)
+[2025-11-14T08:17:32Z UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:32Z UTC] [CHECK] road_traffic_deaths_per_100k_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:32Z UTC] [⏸️] road_traffic_deaths_per_100k_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:34Z UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:34Z UTC] [CHECK] fixed_broadband_subscriptions_per_100_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:34Z UTC] [⏸️] fixed_broadband_subscriptions_per_100_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:35Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:35Z UTC] [CHECK] education_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:35Z UTC] [⏸️] education_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:37Z UTC] [CHECK] mean_years_of_schooling: max_year=2040 → fetch (possible update)
+[2025-11-14T08:17:38Z UTC] [HEUR] OWID mean_years_of_schooling → inferred source_date 2040-01-01
+[2025-11-14T08:17:38Z UTC] [TRIM] mean_years_of_schooling: removed 1092 out-of-range records (before 1900 or >2025)
+[2025-11-14T08:17:38Z UTC] [FIX] mean_years_of_schooling: future year 2040 detected → correcting to 2025
+[2025-11-14T08:17:38Z UTC] [OK] OWID KPI saved: mean_years_of_schooling (4054 rows, last updated 2025-01-01)
+[2025-11-14T08:17:38Z UTC] [STATUS] mean_years_of_schooling: stored source_date=2025-01-01, data_year=2025
+[2025-11-14T08:17:39Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:39Z UTC] [CHECK] military_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:39Z UTC] [⏸️] military_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:39Z UTC] [WARN] recycling_rate: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:17:39Z UTC] [⏸️] recycling_rate – CSV unchanged (hash & mtime match)
+[2025-11-14T08:17:39Z UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T08:17:39Z UTC] [WARN] environmental_performance_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:17:39Z UTC] [⏸️] environmental_performance_index – CSV unchanged (hash & mtime match)
+[2025-11-14T08:17:39Z UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T08:17:39Z UTC] [WARN] global_peace_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:17:39Z UTC] [⏸️] global_peace_index – CSV unchanged (hash & mtime match)
+[2025-11-14T08:17:39Z UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-14T08:17:40Z UTC] [CHECK] living_planet_index: max_year=2020 < 2025, fetched this year → skip
+[2025-11-14T08:17:40Z UTC] [⏸️] living_planet_index – unchanged (None)
+[2025-11-14T08:17:41Z UTC] [CHECK] electric_vehicle_stock: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:17:41Z UTC] [⏸️] electric_vehicle_stock – unchanged (None)
+[2025-11-14T08:17:42Z UTC] [CHECK] number_of_recorded_natural_disasters: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T08:17:42Z UTC] [⏸️] number_of_recorded_natural_disasters – unchanged (None)
+[2025-11-14T08:17:44Z UTC] [CHECK] global_co2_emissions: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:17:44Z UTC] [⏸️] global_co2_emissions – unchanged (None)
+[2025-11-14T08:17:45Z UTC] [CHECK] global_temperature_anomaly: max_year=2025 → fetch (possible update)
+[2025-11-14T08:17:46Z UTC] [HEUR] OWID global_temperature_anomaly → inferred source_date 2025-01-01
+[2025-11-14T08:17:46Z UTC] [TRIM] global_temperature_anomaly: removed 50 out-of-range records (before 1900 or >2025)
+[2025-11-14T08:17:46Z UTC] [OK] OWID KPI saved: global_temperature_anomaly (176 rows, last updated 2025-01-01)
+[2025-11-14T08:17:46Z UTC] [STATUS] global_temperature_anomaly: stored source_date=2025-01-01, data_year=2025
+[2025-11-14T08:17:46Z UTC] [WARN] inform_resilience_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:17:46Z UTC] [⏸️] inform_resilience_index – CSV unchanged (hash & mtime match)
+[2025-11-14T08:17:46Z UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-14T08:17:46Z UTC] [CHECK] geopolitical_risk_index: no previous data → fetch now
+[2025-11-14T08:17:46Z UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
+[2025-11-14T08:17:47Z UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:17:47Z UTC] [⏸️] rule_of_law_index – unchanged (None)
+[2025-11-14T08:17:48Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:17:48Z UTC] [CHECK] purchasing_power_parity: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:17:48Z UTC] [⏸️] purchasing_power_parity – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:17:48Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2025-11-14T08:17:50Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 keys)
+[2025-11-14T08:17:50Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
+[2025-11-14T08:17:50Z UTC] [SAFE] JSON written → data\fetch_status.json (2 keys)
+[2025-11-14T08:17:50Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T08:17:50Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T08:17:50Z UTC] [INFO] fetch_status.json updated with 59 KPIs
+[2025-11-14T08:17:50Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (4 entries)
+=== RealityCheck Fetch Report ===
+Countries loaded:   198
+KPIs processed:    60
+Saved records:     18882
+
+WorldBank KPIs:    0
+CSV KPIs:          0
+OWID KPIs:         3
+UNHCR KPIs:        0
+
+Mapping OK:        33766
+Mapping dropped:   8159
+Mapping pending:   1117
+
+Dummies created:   0
+Skipped (up-to-date): 56
+Errors:            0
+Updated KPIs:      10
+=================================
+✅ Fetch completed successfully
+
+[2025-11-14T08:17:50Z UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
+[2025-11-14T09:17:50 UTC] === Overall Ranking Generation Started ===
+[2025-11-14T09:17:50 UTC] ✅ 29 KPIs considered for ranking
+[2025-11-14T09:17:50 UTC] 💾 JSON saved successfully → data\overall_ranking.json (198 records)
+[2025-11-14T09:17:50 UTC] ✅ overall_ranking.json written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\overall_ranking.json
+[2025-11-14T09:17:50 UTC] ➡️ Starting fun/safe haven ranking generation ...
+[2025-11-14T09:17:50 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
+[2025-11-14T09:17:50 UTC] ➡️ Generating Fun Mode via GPT-4-Turbo …
+[2025-11-14T09:18:11 UTC] 💾 Saved data\fun_ranking.json (10 entries)
+[2025-11-14T09:18:11 UTC] ➡️ Generating Safe Haven Mode via GPT-4-Turbo …
+[2025-11-14T09:18:31 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
+[2025-11-14T09:18:31 UTC] ➡️ Generating Immigration Mode via GPT-4-Turbo …
+[2025-11-14T09:18:48 UTC] 💾 Saved data\immigration_ranking.json (10 entries)
+[2025-11-14T09:18:48 UTC] ✅ All three rankings generated successfully.
+[2025-11-14T09:18:48 UTC] ✅ Fun & Safe Haven rankings successfully generated.
+[2025-11-14T08:18:57Z UTC] [STATE] Merged 4 updated KPIs → total 4 entries.
+[2025-11-14T09:18:57 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
+[2025-11-14T09:18:57 UTC] ➡️ Starting global analysis …
+[2025-11-14T09:19:19 UTC] 💾 Saved analysis (4880 chars)
+[2025-11-14T09:19:19 UTC] ⚙️ Limiting KPI analysis to 4 entries.
+[2025-11-14T09:19:41 UTC] ✅ KPI analyses saved (60 total)
+[2025-11-14T09:19:41 UTC] 🔎 Computing outliers …
+[2025-11-14T09:19:41 UTC] 💾 Outliers saved (54 KPIs, compact format)
+[2025-11-14T09:19:41 UTC] ✅ RealityCheck analysis completed successfully.
+[2025-11-14T09:19:42 UTC] ➡️ Starting CSV update check for 6 KPIs…
+[2025-11-14T09:19:42 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2022)
+[2025-11-14T09:19:44 UTC] 🤖 GPT response for 'World Happiness Index': 2023
+[2025-11-14T09:19:47 UTC] 🆕 Possibly updated: 'World Happiness Index' → 2023 > 2022.
+[2025-11-14T09:19:47 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2022)
+[2025-11-14T09:19:47 UTC] 🤖 GPT response for 'Big Mac Index': 2023
+[2025-11-14T09:19:50 UTC] 🆕 Possibly updated: 'Big Mac Index' → 2023 > 2022.
+[2025-11-14T09:19:50 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
+[2025-11-14T09:19:52 UTC] 🤖 GPT response for 'Recycling Rate': Unknown
+[2025-11-14T09:19:55 UTC] ❓ No newer version for 'Recycling Rate' found.
+[2025-11-14T09:19:55 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
+[2025-11-14T09:19:56 UTC] 🤖 GPT response for 'Environmental Performance Index': 2022
+[2025-11-14T09:19:59 UTC] ⏸️ Up-to-date (2022 = 2022)
+[2025-11-14T09:19:59 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
+[2025-11-14T09:20:00 UTC] 🤖 GPT response for 'Global Peace Index': Unknown
+[2025-11-14T09:20:03 UTC] ❓ No newer version for 'Global Peace Index' found.
+[2025-11-14T09:20:03 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
+[2025-11-14T09:20:03 UTC] 🤖 GPT response for 'Inform Resilience Index': Unknown
+[2025-11-14T09:20:06 UTC] ❓ No newer version for 'Inform Resilience Index' found.
+[2025-11-14T09:20:06 UTC] ✅ Smart CSV update check completed.
+[2025-11-14T08:44:20Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-14T08:44:20Z UTC] === Fetch started ===
+[2025-11-14T08:44:22Z UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:22Z UTC] [CHECK] area: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:22Z UTC] [⏸️] area – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:23Z UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:23Z UTC] [CHECK] population: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:23Z UTC] [⏸️] population – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:24Z UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:24Z UTC] [CHECK] population_growth: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:24Z UTC] [⏸️] population_growth – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:25Z UTC] [CHECK] median_age: max_year=2100 → fetch (possible update)
+[2025-11-14T08:44:26Z UTC] [HEUR] OWID median_age → inferred source_date 2023-01-01
+[2025-11-14T08:44:26Z UTC] [OK] OWID KPI saved: median_age (14652 rows, last updated 2023-01-01)
+[2025-11-14T08:44:26Z UTC] [STATUS] median_age: stored source_date=2023-01-01, data_year=2023
+[2025-11-14T08:44:28Z UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:28Z UTC] [CHECK] fertility_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:28Z UTC] [⏸️] fertility_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:30Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:30Z UTC] [CHECK] urbanization_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:30Z UTC] [⏸️] urbanization_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:31Z UTC] [CHECK] democracy_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:44:31Z UTC] [⏸️] democracy_index – unchanged (None)
+[2025-11-14T08:44:32Z UTC] [CHECK] press_freedom_index: max_year=2021 < 2025, fetched this year → skip
+[2025-11-14T08:44:32Z UTC] [⏸️] press_freedom_index – unchanged (None)
+[2025-11-14T08:44:32Z UTC] [WARN] world_happiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:44:32Z UTC] [⏸️] world_happiness_index – CSV unchanged (hash & mtime match)
+[2025-11-14T08:44:32Z UTC] [STATUS] world_happiness_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T08:44:34Z UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:34Z UTC] [CHECK] gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:34Z UTC] [⏸️] gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:35Z UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:35Z UTC] [CHECK] gdp_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:35Z UTC] [⏸️] gdp_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:36Z UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:36Z UTC] [CHECK] gni_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:36Z UTC] [⏸️] gni_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:38Z UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:38Z UTC] [CHECK] gini_index: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:38Z UTC] [⏸️] gini_index – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:39Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:39Z UTC] [CHECK] public_debt_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:39Z UTC] [⏸️] public_debt_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:41Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:41Z UTC] [CHECK] tax_revenue_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:41Z UTC] [⏸️] tax_revenue_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:42Z UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:42Z UTC] [CHECK] unemployment_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:42Z UTC] [⏸️] unemployment_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:42Z UTC] [WARN] big_mac_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:44:42Z UTC] [⏸️] big_mac_index – CSV unchanged (hash & mtime match)
+[2025-11-14T08:44:42Z UTC] [STATUS] big_mac_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T08:44:43Z UTC] [CHECK] human_development_index_hdi: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T08:44:43Z UTC] [⏸️] human_development_index_hdi – unchanged (None)
+[2025-11-14T08:44:50Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:50Z UTC] [CHECK] health_expenditure_per_capita: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:50Z UTC] [⏸️] health_expenditure_per_capita – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:52Z UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:52Z UTC] [CHECK] infant_mortality_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:52Z UTC] [⏸️] infant_mortality_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:53Z UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:53Z UTC] [CHECK] maternal_mortality_ratio: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:53Z UTC] [⏸️] maternal_mortality_ratio – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:55Z UTC] [CHECK] physicians_per_1_000_people: max_year=2022 < 2025, fetched this year → skip
+[2025-11-14T08:44:55Z UTC] [⏸️] physicians_per_1_000_people – unchanged (None)
+[2025-11-14T08:44:56Z UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:56Z UTC] [CHECK] hospital_beds_per_1_000_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:56Z UTC] [⏸️] hospital_beds_per_1_000_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:58Z UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:58Z UTC] [CHECK] life_expectancy_at_birth: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:58Z UTC] [⏸️] life_expectancy_at_birth – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:44:59Z UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:44:59Z UTC] [CHECK] adult_literacy_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:44:59Z UTC] [⏸️] adult_literacy_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:00Z UTC] [CHECK] homelessness_rate: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T08:45:00Z UTC] [⏸️] homelessness_rate – unchanged (None)
+[2025-11-14T08:45:01Z UTC] [CHECK] old_age_dependency_ratio: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T08:45:01Z UTC] [⏸️] old_age_dependency_ratio – unchanged (None)
+[2025-11-14T08:45:02Z UTC] [CHECK] age_dependency_ratio_total: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T08:45:02Z UTC] [⏸️] age_dependency_ratio_total – unchanged (None)
+[2025-11-14T08:45:04Z UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:04Z UTC] [CHECK] overall_immunization_coverage: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:04Z UTC] [⏸️] overall_immunization_coverage – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:05Z UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:05Z UTC] [CHECK] extreme_poverty: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:05Z UTC] [⏸️] extreme_poverty – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:06Z UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:06Z UTC] [CHECK] access_to_basic_drinking_water: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:06Z UTC] [⏸️] access_to_basic_drinking_water – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:08Z UTC] [CHECK] co2_emissions: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:45:08Z UTC] [⏸️] co2_emissions – unchanged (None)
+[2025-11-14T08:45:09Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:09Z UTC] [CHECK] air_quality_pm2_5_exposure: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:09Z UTC] [⏸️] air_quality_pm2_5_exposure – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:11Z UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:11Z UTC] [CHECK] renewable_energy_share: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:11Z UTC] [⏸️] renewable_energy_share – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:12Z UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:12Z UTC] [CHECK] internet_penetration_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:12Z UTC] [⏸️] internet_penetration_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:13Z UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:13Z UTC] [CHECK] mobile_subscriptions_per_100_inhabitants: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:13Z UTC] [⏸️] mobile_subscriptions_per_100_inhabitants – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:15Z UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:15Z UTC] [CHECK] railway_length: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:15Z UTC] [⏸️] railway_length – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:16Z UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:16Z UTC] [CHECK] inflation_consumer_price_index: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:16Z UTC] [⏸️] inflation_consumer_price_index – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:17Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:17Z UTC] [CHECK] employment_to_population_ratio: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:17Z UTC] [⏸️] employment_to_population_ratio – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:19Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:19Z UTC] [CHECK] female_labor_force_participation: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:19Z UTC] [⏸️] female_labor_force_participation – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:20Z UTC] [CHECK] political_corruption_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:45:20Z UTC] [⏸️] political_corruption_index – unchanged (None)
+[2025-11-14T08:45:21Z UTC] [CHECK] military_spending_sipri: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:45:21Z UTC] [⏸️] military_spending_sipri – unchanged (None)
+[2025-11-14T08:45:22Z UTC] [CHECK] number_of_armed_conflicts: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:45:22Z UTC] [⏸️] number_of_armed_conflicts – unchanged (None)
+[2025-11-14T08:45:23Z UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:23Z UTC] [CHECK] road_traffic_deaths_per_100k_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:23Z UTC] [⏸️] road_traffic_deaths_per_100k_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:25Z UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:25Z UTC] [CHECK] fixed_broadband_subscriptions_per_100_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:25Z UTC] [⏸️] fixed_broadband_subscriptions_per_100_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:27Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:27Z UTC] [CHECK] education_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:27Z UTC] [⏸️] education_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:28Z UTC] [CHECK] mean_years_of_schooling: max_year=2040 → fetch (possible update)
+[2025-11-14T08:45:29Z UTC] [HEUR] OWID mean_years_of_schooling → inferred source_date 2040-01-01
+[2025-11-14T08:45:29Z UTC] [TRIM] mean_years_of_schooling: removed 1092 out-of-range records (before 1900 or >2025)
+[2025-11-14T08:45:29Z UTC] [FIX] mean_years_of_schooling: future year 2040 detected → correcting to 2025
+[2025-11-14T08:45:29Z UTC] [OK] OWID KPI saved: mean_years_of_schooling (4054 rows, last updated 2025-01-01)
+[2025-11-14T08:45:29Z UTC] [STATUS] mean_years_of_schooling: stored source_date=2025-01-01, data_year=2025
+[2025-11-14T08:45:31Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:31Z UTC] [CHECK] military_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:31Z UTC] [⏸️] military_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:31Z UTC] [WARN] recycling_rate: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:45:31Z UTC] [⏸️] recycling_rate – CSV unchanged (hash & mtime match)
+[2025-11-14T08:45:31Z UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T08:45:31Z UTC] [WARN] environmental_performance_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:45:31Z UTC] [⏸️] environmental_performance_index – CSV unchanged (hash & mtime match)
+[2025-11-14T08:45:31Z UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T08:45:31Z UTC] [WARN] global_peace_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:45:31Z UTC] [⏸️] global_peace_index – CSV unchanged (hash & mtime match)
+[2025-11-14T08:45:31Z UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-14T08:45:32Z UTC] [CHECK] living_planet_index: max_year=2020 < 2025, fetched this year → skip
+[2025-11-14T08:45:32Z UTC] [⏸️] living_planet_index – unchanged (None)
+[2025-11-14T08:45:33Z UTC] [CHECK] electric_vehicle_stock: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:45:33Z UTC] [⏸️] electric_vehicle_stock – unchanged (None)
+[2025-11-14T08:45:34Z UTC] [CHECK] number_of_recorded_natural_disasters: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T08:45:34Z UTC] [⏸️] number_of_recorded_natural_disasters – unchanged (None)
+[2025-11-14T08:45:35Z UTC] [CHECK] global_co2_emissions: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:45:35Z UTC] [⏸️] global_co2_emissions – unchanged (None)
+[2025-11-14T08:45:36Z UTC] [CHECK] global_temperature_anomaly: max_year=2025 → fetch (possible update)
+[2025-11-14T08:45:37Z UTC] [HEUR] OWID global_temperature_anomaly → inferred source_date 2025-01-01
+[2025-11-14T08:45:37Z UTC] [TRIM] global_temperature_anomaly: removed 50 out-of-range records (before 1900 or >2025)
+[2025-11-14T08:45:37Z UTC] [OK] OWID KPI saved: global_temperature_anomaly (176 rows, last updated 2025-01-01)
+[2025-11-14T08:45:37Z UTC] [STATUS] global_temperature_anomaly: stored source_date=2025-01-01, data_year=2025
+[2025-11-14T08:45:37Z UTC] [WARN] inform_resilience_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T08:45:37Z UTC] [⏸️] inform_resilience_index – CSV unchanged (hash & mtime match)
+[2025-11-14T08:45:37Z UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-14T08:45:37Z UTC] [CHECK] geopolitical_risk_index: no previous data → fetch now
+[2025-11-14T08:45:37Z UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
+[2025-11-14T08:45:38Z UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T08:45:38Z UTC] [⏸️] rule_of_law_index – unchanged (None)
+[2025-11-14T08:45:40Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T08:45:40Z UTC] [CHECK] purchasing_power_parity: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T08:45:40Z UTC] [⏸️] purchasing_power_parity – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T08:45:40Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2025-11-14T08:45:41Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 keys)
+[2025-11-14T08:45:41Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
+[2025-11-14T08:45:41Z UTC] [SAFE] JSON written → data\fetch_status.json (2 keys)
+[2025-11-14T08:45:41Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T08:45:41Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T08:45:41Z UTC] [INFO] fetch_status.json updated with 59 KPIs
+[2025-11-14T08:45:41Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (4 entries)
+=== RealityCheck Fetch Report ===
+Countries loaded:   198
+KPIs processed:    60
+Saved records:     18882
+
+WorldBank KPIs:    0
+CSV KPIs:          0
+OWID KPIs:         3
+UNHCR KPIs:        0
+
+Mapping OK:        33766
+Mapping dropped:   8159
+Mapping pending:   1117
+
+Dummies created:   0
+Skipped (up-to-date): 56
+Errors:            0
+Updated KPIs:      4
+
+Updated KPI files:
+  - geopolitical_risk_index
+  - global_temperature_anomaly
+  - mean_years_of_schooling
+  - median_age
+
+Skipped breakdown:
+  - CSV unchanged (hash & mtime): 6
+  - Remote data unchanged: 50
+=================================
+✅ Fetch completed successfully
+
+[2025-11-14T08:45:41Z UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
+[2025-11-14T09:45:41 UTC] === Overall Ranking Generation Started ===
+[2025-11-14T09:45:41 UTC] ✅ 29 KPIs considered for ranking
+[2025-11-14T09:45:41 UTC] 💾 JSON saved successfully → data\overall_ranking.json (198 records)
+[2025-11-14T09:45:41 UTC] ✅ overall_ranking.json written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\overall_ranking.json
+[2025-11-14T09:45:41 UTC] ➡️ Starting fun/safe haven ranking generation ...
+[2025-11-14T09:45:41 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
+[2025-11-14T09:45:41 UTC] ➡️ Generating Fun Mode via GPT-4-Turbo …
+[2025-11-14T09:46:03 UTC] 💾 Saved data\fun_ranking.json (10 entries)
+[2025-11-14T09:46:03 UTC] ➡️ Generating Safe Haven Mode via GPT-4-Turbo …
+[2025-11-14T09:46:29 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
+[2025-11-14T09:46:29 UTC] ➡️ Generating Immigration Mode via GPT-4-Turbo …
+[2025-11-14T09:46:41 UTC] 💾 Saved data\immigration_ranking.json (10 entries)
+[2025-11-14T09:46:41 UTC] ✅ All three rankings generated successfully.
+[2025-11-14T09:46:41 UTC] ✅ Fun & Safe Haven rankings successfully generated.
+[2025-11-14T08:46:48Z UTC] [STATE] Merged 4 updated KPIs → total 4 entries.
+[2025-11-14T09:46:48 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
+[2025-11-14T09:46:48 UTC] ➡️ Starting global analysis …
+[2025-11-14T09:47:02 UTC] 💾 Saved analysis (4311 chars)
+[2025-11-14T09:47:02 UTC] ⚙️ Limiting KPI analysis to 4 entries.
+[2025-11-14T09:47:20 UTC] ✅ KPI analyses saved (60 total)
+[2025-11-14T09:47:20 UTC] 🔎 Computing outliers …
+[2025-11-14T09:47:21 UTC] 💾 Outliers saved (54 KPIs, compact format)
+[2025-11-14T09:47:21 UTC] ✅ RealityCheck analysis completed successfully.
+[2025-11-14T09:47:21 UTC] ➡️ Starting CSV update check for 6 KPIs…
+[2025-11-14T09:47:21 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2022)
+[2025-11-14T09:47:23 UTC] 🤖 GPT response for 'World Happiness Index': 2023
+[2025-11-14T09:47:26 UTC] 🆕 Possibly updated: 'World Happiness Index' → 2023 > 2022.
+[2025-11-14T09:47:26 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2022)
+[2025-11-14T09:47:26 UTC] 🤖 GPT response for 'Big Mac Index': 2023
+[2025-11-14T09:47:29 UTC] 🆕 Possibly updated: 'Big Mac Index' → 2023 > 2022.
+[2025-11-14T09:47:29 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
+[2025-11-14T09:47:30 UTC] 🤖 GPT response for 'Recycling Rate': Unknown
+[2025-11-14T09:47:33 UTC] ❓ No newer version for 'Recycling Rate' found.
+[2025-11-14T09:47:33 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
+[2025-11-14T09:47:34 UTC] 🤖 GPT response for 'Environmental Performance Index': 2022
+[2025-11-14T09:47:37 UTC] ⏸️ Up-to-date (2022 = 2022)
+[2025-11-14T09:47:37 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
+[2025-11-14T09:47:38 UTC] 🤖 GPT response for 'Global Peace Index': Unknown
+[2025-11-14T09:47:41 UTC] ❓ No newer version for 'Global Peace Index' found.
+[2025-11-14T09:47:41 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
+[2025-11-14T09:47:41 UTC] 🤖 GPT response for 'Inform Resilience Index': Unknown
+[2025-11-14T09:47:44 UTC] ❓ No newer version for 'Inform Resilience Index' found.
+[2025-11-14T09:47:44 UTC] ✅ Smart CSV update check completed.
+[2025-11-14T10:12:55Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-14T10:12:55Z UTC] === Fetch started ===
+[2025-11-14T10:26:31Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-14T10:26:31Z UTC] === Fetch started ===
+[2025-11-14T10:26:54Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-14T10:26:54Z UTC] === Fetch started ===
+[2025-11-14T10:26:54Z UTC] [ERR] Land Area failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Population failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Population Growth failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Median Age failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Fertility Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Urbanization Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Democracy Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Press Freedom Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] World Happiness Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] GDP failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] GDP per Capita failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] GNI per capita failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Gini Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Public Debt failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Tax Revenue failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Unemployment Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Big Mac Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Human Development Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Health Expenditure per Capita failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Infant Mortality Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Maternal Mortality Ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Physicians failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Hospital Beds failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Life Expectancy at Birth failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Adult Literacy Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Homelessness Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Old-Age Dependency Ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Age Dependency Ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Overall Immunization Coverage failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Extreme Poverty failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Access to Basic Drinking Water failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] CO₂ Emissions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Air Quality failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Renewable Energy Share failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Internet Penetration Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Mobile Subscriptions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Railway Length failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Inflation (Consumer Price Index) failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Employment-to-population ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Female Labor Force Participation failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Political Corruption Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Military Spending failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Number of Armed Conflicts failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Road Traffic Deaths failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Fixed Broadband Subscriptions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Education Expenditure failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Mean Years of Schooling failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Military Expenditure failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Recycling Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Environmental Performance Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Global Peace Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Living Planet Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Electric Vehicle Stock failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Number of Recorded Natural Disasters failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Global CO₂ Emissions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Global Temperature Anomaly failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Inform Resilience Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Geopolitical Risk Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] Rule of Law Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [ERR] GDP per capita, PPP (current international $) failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:26:54Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2025-11-14T10:26:55Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 keys)
+[2025-11-14T10:26:55Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
+[2025-11-14T10:26:55Z UTC] [SAFE] JSON written → data\fetch_status.json (2 keys)
+[2025-11-14T10:26:55Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T10:26:55Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T10:26:55Z UTC] [INFO] fetch_status.json updated with 59 KPIs
+[2025-11-14T10:26:56Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (1 entries)
+[2025-11-14T10:42:15Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-14T10:42:15Z UTC] === Fetch started ===
+[2025-11-14T10:48:12Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-14T10:48:12Z UTC] === Fetch started ===
+[2025-11-14T10:48:17Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-14T10:48:17Z UTC] === Fetch started ===
+[2025-11-14T10:48:17Z UTC] [ERR] Land Area failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Population failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Population Growth failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Median Age failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Fertility Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Urbanization Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Democracy Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Press Freedom Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] World Happiness Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] GDP failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] GDP per Capita failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] GNI per capita failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Gini Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Public Debt failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Tax Revenue failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Unemployment Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Big Mac Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Human Development Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Health Expenditure per Capita failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Infant Mortality Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Maternal Mortality Ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Physicians failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Hospital Beds failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Life Expectancy at Birth failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Adult Literacy Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Homelessness Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Old-Age Dependency Ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Age Dependency Ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Overall Immunization Coverage failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Extreme Poverty failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Access to Basic Drinking Water failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] CO₂ Emissions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Air Quality failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Renewable Energy Share failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Internet Penetration Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Mobile Subscriptions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Railway Length failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Inflation (Consumer Price Index) failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Employment-to-population ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Female Labor Force Participation failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Political Corruption Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Military Spending failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Number of Armed Conflicts failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Road Traffic Deaths failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Fixed Broadband Subscriptions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Education Expenditure failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Mean Years of Schooling failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Military Expenditure failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Recycling Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Environmental Performance Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Global Peace Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Living Planet Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Electric Vehicle Stock failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Number of Recorded Natural Disasters failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Global CO₂ Emissions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Global Temperature Anomaly failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Inform Resilience Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Geopolitical Risk Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] Rule of Law Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [ERR] GDP per capita, PPP (current international $) failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1233, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined. Did you mean: 'derive_kpi_id'?
+
+[2025-11-14T10:48:17Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2025-11-14T10:48:18Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 keys)
+[2025-11-14T10:48:18Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
+[2025-11-14T10:48:18Z UTC] [SAFE] JSON written → data\fetch_status.json (2 keys)
+[2025-11-14T10:48:18Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T10:48:18Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T10:48:18Z UTC] [INFO] fetch_status.json updated with 59 KPIs
+[2025-11-14T10:48:18Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (1 entries)
+[2025-11-14T11:19:00Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-14T11:19:00Z UTC] === Fetch started ===
+[2025-11-14T11:19:00Z UTC] [ERR] Land Area failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Population failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Population Growth failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Median Age failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Fertility Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Urbanization Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Democracy Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Press Freedom Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] World Happiness Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] GDP failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] GDP per Capita failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] GNI per capita failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Gini Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Public Debt failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Tax Revenue failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Unemployment Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Big Mac Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Human Development Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Health Expenditure per Capita failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Infant Mortality Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Maternal Mortality Ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Physicians failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Hospital Beds failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Life Expectancy at Birth failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Adult Literacy Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Homelessness Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Old-Age Dependency Ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Age Dependency Ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Overall Immunization Coverage failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Extreme Poverty failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Access to Basic Drinking Water failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] CO₂ Emissions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Air Quality failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Renewable Energy Share failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Internet Penetration Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Mobile Subscriptions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Railway Length failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Inflation (Consumer Price Index) failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Employment-to-population ratio failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Female Labor Force Participation failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Political Corruption Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Military Spending failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Number of Armed Conflicts failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Road Traffic Deaths failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Fixed Broadband Subscriptions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Education Expenditure failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Mean Years of Schooling failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Military Expenditure failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Recycling Rate failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Environmental Performance Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Global Peace Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Living Planet Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Electric Vehicle Stock failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Number of Recorded Natural Disasters failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Global CO₂ Emissions failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Global Temperature Anomaly failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Inform Resilience Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Geopolitical Risk Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] Rule of Law Index failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [ERR] GDP per capita, PPP (current international $) failed: name 'resolve_kpi_id' is not defined
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\fetch_data.py", line 1215, in main
+    kpi_id = resolve_kpi_id(meta)
+             ^^^^^^^^^^^^^^
+NameError: name 'resolve_kpi_id' is not defined
+
+[2025-11-14T11:19:00Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2025-11-14T11:19:01Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 keys)
+[2025-11-14T11:19:01Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
+[2025-11-14T11:19:01Z UTC] [SAFE] JSON written → data\fetch_status.json (2 keys)
+[2025-11-14T11:19:01Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T11:19:01Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T11:19:01Z UTC] [INFO] fetch_status.json updated with 59 KPIs
+[2025-11-14T11:19:01Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (1 entries)
+[2025-11-14T11:19:52Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-14T11:19:52Z UTC] === Fetch started ===
+[2025-11-14T11:19:53Z UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:19:53Z UTC] [CHECK] area: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:19:53Z UTC] [⏸️] area – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:19:54Z UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:19:54Z UTC] [CHECK] population: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:19:54Z UTC] [⏸️] population – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:19:56Z UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:19:56Z UTC] [CHECK] population_growth: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:19:56Z UTC] [⏸️] population_growth – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:19:57Z UTC] [CHECK] median_age: max_year=2100 → fetch (possible update)
+[2025-11-14T11:19:58Z UTC] [HEUR] OWID median_age → inferred source_date 2023-01-01
+[2025-11-14T11:19:59Z UTC] [OK] OWID KPI saved: median_age (14652 rows, last updated 2023-01-01)
+[2025-11-14T11:19:59Z UTC] [STATUS] median_age: stored source_date=2023-01-01, data_year=2023
+[2025-11-14T11:20:00Z UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:00Z UTC] [CHECK] fertility_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:00Z UTC] [⏸️] fertility_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:01Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:01Z UTC] [CHECK] urbanization_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:01Z UTC] [⏸️] urbanization_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:02Z UTC] [CHECK] democracy_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T11:20:02Z UTC] [⏸️] democracy_index – unchanged (None)
+[2025-11-14T11:20:03Z UTC] [CHECK] press_freedom_index: max_year=2021 < 2025, fetched this year → skip
+[2025-11-14T11:20:03Z UTC] [⏸️] press_freedom_index – unchanged (None)
+[2025-11-14T11:20:03Z UTC] [WARN] world_happiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T11:20:03Z UTC] [⏸️] world_happiness_index – CSV unchanged (hash & mtime match)
+[2025-11-14T11:20:03Z UTC] [STATUS] world_happiness_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T11:20:05Z UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:05Z UTC] [CHECK] gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:05Z UTC] [⏸️] gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:06Z UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:06Z UTC] [CHECK] gdp_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:06Z UTC] [⏸️] gdp_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:07Z UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:07Z UTC] [CHECK] gni_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:07Z UTC] [⏸️] gni_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:08Z UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:08Z UTC] [CHECK] gini_index: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:08Z UTC] [⏸️] gini_index – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:10Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:10Z UTC] [CHECK] public_debt_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:10Z UTC] [⏸️] public_debt_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:13Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:13Z UTC] [CHECK] tax_revenue_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:13Z UTC] [⏸️] tax_revenue_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:15Z UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:15Z UTC] [CHECK] unemployment_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:15Z UTC] [⏸️] unemployment_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:15Z UTC] [WARN] big_mac_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T11:20:15Z UTC] [⏸️] big_mac_index – CSV unchanged (hash & mtime match)
+[2025-11-14T11:20:15Z UTC] [STATUS] big_mac_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T11:20:16Z UTC] [CHECK] human_development_index_hdi: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T11:20:16Z UTC] [⏸️] human_development_index_hdi – unchanged (None)
+[2025-11-14T11:20:17Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:17Z UTC] [CHECK] health_expenditure_per_capita: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:17Z UTC] [⏸️] health_expenditure_per_capita – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:19Z UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:19Z UTC] [CHECK] infant_mortality_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:19Z UTC] [⏸️] infant_mortality_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:20Z UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:20Z UTC] [CHECK] maternal_mortality_ratio: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:20Z UTC] [⏸️] maternal_mortality_ratio – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:21Z UTC] [CHECK] physicians_per_1_000_people: max_year=2022 < 2025, fetched this year → skip
+[2025-11-14T11:20:21Z UTC] [⏸️] physicians_per_1_000_people – unchanged (None)
+[2025-11-14T11:20:22Z UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:22Z UTC] [CHECK] hospital_beds_per_1_000_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:22Z UTC] [⏸️] hospital_beds_per_1_000_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:23Z UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:23Z UTC] [CHECK] life_expectancy_at_birth: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:23Z UTC] [⏸️] life_expectancy_at_birth – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:25Z UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:25Z UTC] [CHECK] adult_literacy_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:25Z UTC] [⏸️] adult_literacy_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:26Z UTC] [CHECK] homelessness_rate: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T11:20:26Z UTC] [⏸️] homelessness_rate – unchanged (None)
+[2025-11-14T11:20:27Z UTC] [CHECK] old_age_dependency_ratio: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T11:20:27Z UTC] [⏸️] old_age_dependency_ratio – unchanged (None)
+[2025-11-14T11:20:28Z UTC] [CHECK] age_dependency_ratio_total: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T11:20:28Z UTC] [⏸️] age_dependency_ratio_total – unchanged (None)
+[2025-11-14T11:20:29Z UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:29Z UTC] [CHECK] overall_immunization_coverage: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:29Z UTC] [⏸️] overall_immunization_coverage – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:30Z UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:30Z UTC] [CHECK] extreme_poverty: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:30Z UTC] [⏸️] extreme_poverty – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:32Z UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:32Z UTC] [CHECK] access_to_basic_drinking_water: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:32Z UTC] [⏸️] access_to_basic_drinking_water – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:33Z UTC] [CHECK] co2_emissions: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T11:20:33Z UTC] [⏸️] co2_emissions – unchanged (None)
+[2025-11-14T11:20:34Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:34Z UTC] [CHECK] air_quality_pm2_5_exposure: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:34Z UTC] [⏸️] air_quality_pm2_5_exposure – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:35Z UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:35Z UTC] [CHECK] renewable_energy_share: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:35Z UTC] [⏸️] renewable_energy_share – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:36Z UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:36Z UTC] [CHECK] internet_penetration_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:36Z UTC] [⏸️] internet_penetration_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:37Z UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:37Z UTC] [CHECK] mobile_subscriptions_per_100_inhabitants: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:37Z UTC] [⏸️] mobile_subscriptions_per_100_inhabitants – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:39Z UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:39Z UTC] [CHECK] railway_length: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:39Z UTC] [⏸️] railway_length – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:40Z UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:40Z UTC] [CHECK] inflation_consumer_price_index: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:40Z UTC] [⏸️] inflation_consumer_price_index – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:41Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:41Z UTC] [CHECK] employment_to_population_ratio: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:41Z UTC] [⏸️] employment_to_population_ratio – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:42Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:42Z UTC] [CHECK] female_labor_force_participation: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:42Z UTC] [⏸️] female_labor_force_participation – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:44Z UTC] [CHECK] political_corruption_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T11:20:44Z UTC] [⏸️] political_corruption_index – unchanged (None)
+[2025-11-14T11:20:45Z UTC] [CHECK] military_spending_sipri: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T11:20:45Z UTC] [⏸️] military_spending_sipri – unchanged (None)
+[2025-11-14T11:20:46Z UTC] [CHECK] number_of_armed_conflicts: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T11:20:46Z UTC] [⏸️] number_of_armed_conflicts – unchanged (None)
+[2025-11-14T11:20:47Z UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:47Z UTC] [CHECK] road_traffic_deaths_per_100k_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:47Z UTC] [⏸️] road_traffic_deaths_per_100k_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:49Z UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:49Z UTC] [CHECK] fixed_broadband_subscriptions_per_100_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:49Z UTC] [⏸️] fixed_broadband_subscriptions_per_100_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:50Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:50Z UTC] [CHECK] education_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:50Z UTC] [⏸️] education_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:51Z UTC] [CHECK] mean_years_of_schooling: max_year=2040 → fetch (possible update)
+[2025-11-14T11:20:52Z UTC] [HEUR] OWID mean_years_of_schooling → inferred source_date 2040-01-01
+[2025-11-14T11:20:52Z UTC] [TRIM] mean_years_of_schooling: removed 1092 out-of-range records (before 1900 or >2025)
+[2025-11-14T11:20:52Z UTC] [FIX] mean_years_of_schooling: future year 2040 detected → correcting to 2025
+[2025-11-14T11:20:52Z UTC] [OK] OWID KPI saved: mean_years_of_schooling (4054 rows, last updated 2025-01-01)
+[2025-11-14T11:20:52Z UTC] [STATUS] mean_years_of_schooling: stored source_date=2025-01-01, data_year=2025
+[2025-11-14T11:20:53Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:20:53Z UTC] [CHECK] military_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:20:53Z UTC] [⏸️] military_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:20:53Z UTC] [WARN] recycling_rate: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T11:20:53Z UTC] [⏸️] recycling_rate – CSV unchanged (hash & mtime match)
+[2025-11-14T11:20:53Z UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T11:20:53Z UTC] [WARN] environmental_performance_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T11:20:53Z UTC] [⏸️] environmental_performance_index – CSV unchanged (hash & mtime match)
+[2025-11-14T11:20:53Z UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-14T11:20:53Z UTC] [WARN] global_peace_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T11:20:53Z UTC] [⏸️] global_peace_index – CSV unchanged (hash & mtime match)
+[2025-11-14T11:20:53Z UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-14T11:20:54Z UTC] [CHECK] living_planet_index: max_year=2020 < 2025, fetched this year → skip
+[2025-11-14T11:20:54Z UTC] [⏸️] living_planet_index – unchanged (None)
+[2025-11-14T11:20:55Z UTC] [CHECK] electric_vehicle_stock: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T11:20:55Z UTC] [⏸️] electric_vehicle_stock – unchanged (None)
+[2025-11-14T11:20:56Z UTC] [CHECK] number_of_recorded_natural_disasters: max_year=2023 < 2025, fetched this year → skip
+[2025-11-14T11:20:56Z UTC] [⏸️] number_of_recorded_natural_disasters – unchanged (None)
+[2025-11-14T11:20:57Z UTC] [CHECK] global_co2_emissions: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T11:20:57Z UTC] [⏸️] global_co2_emissions – unchanged (None)
+[2025-11-14T11:20:58Z UTC] [CHECK] global_temperature_anomaly: max_year=2025 → fetch (possible update)
+[2025-11-14T11:20:59Z UTC] [HEUR] OWID global_temperature_anomaly → inferred source_date 2025-01-01
+[2025-11-14T11:20:59Z UTC] [TRIM] global_temperature_anomaly: removed 50 out-of-range records (before 1900 or >2025)
+[2025-11-14T11:20:59Z UTC] [OK] OWID KPI saved: global_temperature_anomaly (176 rows, last updated 2025-01-01)
+[2025-11-14T11:20:59Z UTC] [STATUS] global_temperature_anomaly: stored source_date=2025-01-01, data_year=2025
+[2025-11-14T11:20:59Z UTC] [WARN] inform_resilience_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-14T11:20:59Z UTC] [⏸️] inform_resilience_index – CSV unchanged (hash & mtime match)
+[2025-11-14T11:20:59Z UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-14T11:20:59Z UTC] [CHECK] geopolitical_risk_index: no previous data → fetch now
+[2025-11-14T11:20:59Z UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
+[2025-11-14T11:21:01Z UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-14T11:21:01Z UTC] [⏸️] rule_of_law_index – unchanged (None)
+[2025-11-14T11:21:02Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-14T11:21:02Z UTC] [CHECK] purchasing_power_parity: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-14T11:21:02Z UTC] [⏸️] purchasing_power_parity – unchanged (2025-10-07T00:00:00Z)
+[2025-11-14T11:21:02Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2025-11-14T11:21:03Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 keys)
+[2025-11-14T11:21:03Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
+[2025-11-14T11:21:03Z UTC] [SAFE] JSON written → data\fetch_status.json (2 keys)
+[2025-11-14T11:21:03Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T11:21:03Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-14T11:21:03Z UTC] [INFO] fetch_status.json updated with 59 KPIs
+[2025-11-14T11:21:03Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (4 entries)
+=== RealityCheck Fetch Report ===
+Countries loaded:   198
+KPIs processed:    60
+Saved records:     18882
+
+WorldBank KPIs:    0
+CSV KPIs:          0
+OWID KPIs:         3
+UNHCR KPIs:        0
+
+Mapping OK:        33766
+Mapping dropped:   8159
+Mapping pending:   1117
+
+Dummies created:   0
+Skipped (up-to-date): 56
+Errors:            0
+Updated KPIs:      4
+
+Updated KPI files:
+  - geopolitical_risk_index
+  - global_temperature_anomaly
+  - mean_years_of_schooling
+  - median_age
+
+Skipped breakdown:
+  - CSV unchanged (hash & mtime): 6
+  - Remote data unchanged: 50
+=================================
+✅ Fetch completed successfully
+
+[2025-11-14T11:21:03Z UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
+[2025-11-14T12:21:03 UTC] === Overall Ranking Generation Started ===
+[2025-11-14T12:21:03 UTC] ✅ 29 KPIs considered for ranking
+[2025-11-14T12:21:04 UTC] 💾 JSON saved successfully → data\overall_ranking.json (198 records)
+[2025-11-14T12:21:04 UTC] ✅ overall_ranking.json written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\overall_ranking.json
+[2025-11-14T12:21:04 UTC] ➡️ Starting fun/safe haven ranking generation ...
+[2025-11-14T12:21:04 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
+[2025-11-14T12:21:04 UTC] ➡️ Generating Fun Mode via GPT-4-Turbo …
+[2025-11-14T12:21:20 UTC] 💾 Saved data\fun_ranking.json (10 entries)
+[2025-11-14T12:21:20 UTC] ➡️ Generating Safe Haven Mode via GPT-4-Turbo …
+[2025-11-14T12:21:44 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
+[2025-11-14T12:21:44 UTC] ➡️ Generating Immigration Mode via GPT-4-Turbo …
+[2025-11-14T12:21:57 UTC] 💾 Saved data\immigration_ranking.json (10 entries)
+[2025-11-14T12:21:57 UTC] ✅ All three rankings generated successfully.
+[2025-11-14T12:21:57 UTC] ✅ Fun & Safe Haven rankings successfully generated.
+[2025-11-14T11:22:04Z UTC] [STATE] Merged 4 updated KPIs → total 4 entries.
+[2025-11-14T12:22:04 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
+[2025-11-14T12:22:04 UTC] ➡️ Starting global analysis …
+[2025-11-14T12:22:20 UTC] 💾 Saved analysis (4162 chars)
+[2025-11-14T12:22:20 UTC] ⚙️ Limiting KPI analysis to 4 entries.
+[2025-11-14T12:22:49 UTC] ✅ KPI analyses saved (60 total)
+[2025-11-14T12:22:49 UTC] 🔎 Computing outliers …
+[2025-11-14T12:22:49 UTC] 💾 Outliers saved (54 KPIs, compact format)
+[2025-11-14T12:22:49 UTC] ✅ RealityCheck analysis completed successfully.
+[2025-11-14T12:22:49 UTC] ➡️ Starting CSV update check for 6 KPIs…
+[2025-11-14T12:22:49 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2022)
+[2025-11-14T12:22:51 UTC] 🤖 GPT response for 'World Happiness Index': 2023
+[2025-11-14T12:22:54 UTC] 🆕 Possibly updated: 'World Happiness Index' → 2023 > 2022.
+[2025-11-14T12:22:54 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2022)
+[2025-11-14T12:22:55 UTC] 🤖 GPT response for 'Big Mac Index': 2023
+[2025-11-14T12:22:58 UTC] 🆕 Possibly updated: 'Big Mac Index' → 2023 > 2022.
+[2025-11-14T12:22:58 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
+[2025-11-14T12:22:58 UTC] 🤖 GPT response for 'Recycling Rate': Unknown
+[2025-11-14T12:23:01 UTC] ❓ No newer version for 'Recycling Rate' found.
+[2025-11-14T12:23:01 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
+[2025-11-14T12:23:03 UTC] 🤖 GPT response for 'Environmental Performance Index': 2022
+[2025-11-14T12:23:06 UTC] ⏸️ Up-to-date (2022 = 2022)
+[2025-11-14T12:23:06 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
+[2025-11-14T12:23:06 UTC] 🤖 GPT response for 'Global Peace Index': Unknown
+[2025-11-14T12:23:09 UTC] ❓ No newer version for 'Global Peace Index' found.
+[2025-11-14T12:23:09 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
+[2025-11-14T12:23:11 UTC] 🤖 GPT response for 'Inform Resilience Index': Unknown
+[2025-11-14T12:23:14 UTC] ❓ No newer version for 'Inform Resilience Index' found.
+[2025-11-14T12:23:14 UTC] ✅ Smart CSV update check completed.

@@ -23,7 +23,7 @@ import zipfile
 import unicodedata
 import traceback
 import subprocess
-from typing import Any, Dict, List, Optional, Set
+from typing import Any, Dict, List, Optional
 from pathlib import Path
 from datetime import datetime, timezone
 from env_utils import get_openai_key  # ✅ wichtig: hier fehlte der Import
@@ -69,36 +69,11 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Skip AI-based analysis and ranking follow-up tasks",
     )
-    parser.add_argument(
-        "-k",
-        "--kpi",
-        dest="kpi_filters",
-        action="append",
-        default=[],
-        metavar="ID",
-        help="Fetch only the given KPI identifier (repeatable)",
-    )
     return parser
 
 
 def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
-    parser = build_parser()
-    args, unknown = parser.parse_known_args(argv)
-
-    extra_filters: List[str] = []
-    for token in unknown:
-        if token.startswith("-") and len(token) > 1:
-            extra_filters.append(token.lstrip("-"))
-        else:
-            parser.error(f"Unrecognized argument: {token}")
-
-    if extra_filters:
-        args.kpi_filters.extend(extra_filters)
-
-    # Normalisiere IDs (leerzeichen entfernen)
-    args.kpi_filters = [k.strip() for k in args.kpi_filters if k and k.strip()]
-
-    return args
+    return build_parser().parse_args(argv)
 
 
 def handle_force_cleanup() -> None:
@@ -1012,7 +987,7 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
 # ----------------------------------------------------------------------
 # 🌍 Special Fetch: Geopolitical Risk Index (Matteo Iacoviello)
 # ----------------------------------------------------------------------
-def fetch_geopolitical_risk_index(stats: Optional[Dict[str, Any]] = None) -> bool:
+def fetch_geopolitical_risk_index():
     """
     Fetches the monthly Geopolitical Risk Index (GPR) from Matteo Iacoviello.
     The Excel file contains one sheet (Sheet1) with columns 'Month' (TT.MM.YYYY)
@@ -1075,16 +1050,6 @@ def fetch_geopolitical_risk_index(stats: Optional[Dict[str, Any]] = None) -> boo
         safe_write_json(file_path, out)
         log(f"✅ Saved {len(out)} GPR entries → {file_path}")
 
-        if stats is not None:
-            stats.setdefault("saved_records", 0)
-            stats["saved_records"] += len(out)
-            updated_set = stats.setdefault("updated_kpis", set())
-            was_new = kpi_name not in updated_set
-            updated_set.add(kpi_name)
-            if was_new:
-                stats["updated"] += 1
-            stats["other_success"] = stats.get("other_success", 0) + 1
-
         # === fetch_status aktualisieren ===
         fetch_status = read_json(STATUS_FILE, {"kpis": {}})
         fetch_status.setdefault("kpis", {})[kpi_name] = {
@@ -1097,13 +1062,8 @@ def fetch_geopolitical_risk_index(stats: Optional[Dict[str, Any]] = None) -> boo
         safe_write_json(STATUS_FILE, fetch_status)
         log("[OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)")
 
-        return True
-
     except Exception as e:
         log(f"❌ GPR fetch failed: {e}")
-        if stats is not None:
-            stats["errors"] += 1
-        return False
 
 # ======================================================================
 # 🧩 Fetch-State Merge Utility (ergänzend zur Statuslogik)
@@ -1142,24 +1102,6 @@ def merge_fetch_state(updated_kpis: set):
 # 🚀 Main
 # ======================================================================
 def main(args: argparse.Namespace) -> None:
-    def derive_kpi_id(meta: Dict[str, Any]) -> str:
-        try:
-            resolver = globals().get("resolve_kpi_id")
-            if callable(resolver):
-                return resolver(meta)
-        except Exception:
-            pass
-
-        if not isinstance(meta, dict):
-            return "kpi"
-
-        return (
-            str(meta.get("filename") or "").strip()
-            or str(meta.get("id") or "").strip()
-            or str(meta.get("title") or "").strip()
-            or "kpi"
-        )
-
     if args.force:
         handle_force_cleanup()
 
@@ -1208,29 +1150,12 @@ def main(args: argparse.Namespace) -> None:
 
     raw_kpis = read_json(AVAILABLE_FILE, [])
     kpi_list = [v for v in raw_kpis if isinstance(v, dict)]
-
-    filter_set: Set[str] = set(args.kpi_filters or [])
-    if filter_set:
-        filtered: List[Dict[str, Any]] = []
-        missing = set(filter_set)
-        for meta in kpi_list:
-            kpi_id = resolve_kpi_id(meta)
-            if kpi_id in filter_set:
-                filtered.append(meta)
-                missing.discard(kpi_id)
-        matched_ids = sorted(resolve_kpi_id(meta) for meta in filtered)
-        if matched_ids:
-            log(f"[INFO] KPI filter active → {', '.join(matched_ids)}")
-        if missing:
-            log(f"[WARN] Unknown KPI filter(s): {', '.join(sorted(missing))}")
-        kpi_list = filtered
-
     stats["kpis_loaded"] = len(kpi_list)
 
     # --- KPI-Schleife ---
     for meta in kpi_list:
         try:
-            kpi_id = resolve_kpi_id(meta)
+            kpi_id = meta.get("filename") or meta.get("id") or meta.get("title") or "kpi"
             source_type = (meta.get("source_type") or meta.get("type") or "").lower().strip()
             source_code = meta.get("source_code") or meta.get("code") or ""
             source_date = None
@@ -1372,7 +1297,6 @@ def main(args: argparse.Namespace) -> None:
         f"CSV KPIs:          {stats['csv_success']}",
         f"OWID KPIs:         {stats['owid_success']}",
         f"UNHCR KPIs:        {stats['unhcr_success']}",
-        f"Other KPIs:        {stats['other_success']}",
         "",
         f"Mapping OK:        {stats['mapped_ok']}",
         f"Mapping dropped:   {stats['mapped_drop']}",
