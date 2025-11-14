@@ -69,30 +69,38 @@ nav { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; justify-c
 @media (max-width: 720px) {
   #main-header {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    text-align: center;
+  }
+
+  #main-header .header-branding {
+    justify-content: center;
+    flex: 0 0 auto;
+    min-width: 0;
   }
 
   .header-actions {
     width: 100%;
-    justify-content: space-between;
-    padding-right: 2.75rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .75rem;
+    padding-right: 0;
   }
 
-  @supports (padding-right: calc(2.75rem + env(safe-area-inset-right))) {
-    .header-actions {
-      padding-right: calc(2.75rem + env(safe-area-inset-right));
-    }
+  .header-actions nav {
+    justify-content: center;
   }
 
   .translator-launcher {
-    top: .75rem;
-    right: .75rem;
+    top: 1.875rem;
+    right: 1.875rem;
   }
 
-  @supports (top: calc(.75rem + env(safe-area-inset-top))) {
+  @supports (top: calc(1.875rem + env(safe-area-inset-top))) {
     .translator-launcher {
-      top: calc(.75rem + env(safe-area-inset-top));
-      right: calc(.75rem + env(safe-area-inset-right));
+      top: calc(1.875rem + env(safe-area-inset-top));
+      right: calc(1.875rem + env(safe-area-inset-right));
     }
   }
 }
@@ -2134,18 +2142,18 @@ body.glossary-page th.sort-desc::after {
 /* === Translator Controls === */
 .translator-launcher {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 1.875rem;
+  right: 1.875rem;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 3000;
 }
 
-@supports (top: calc(1rem + env(safe-area-inset-top))) {
+@supports (top: calc(1.875rem + env(safe-area-inset-top))) {
   .translator-launcher {
-    top: calc(1rem + env(safe-area-inset-top));
-    right: calc(1rem + env(safe-area-inset-right));
+    top: calc(1.875rem + env(safe-area-inset-top));
+    right: calc(1.875rem + env(safe-area-inset-right));
   }
 }
 
