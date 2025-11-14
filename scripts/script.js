@@ -1148,15 +1148,27 @@ async function updateMap() {
 				mapDataByIso[iso] ??
 				(canonicalIso ? mapDataByIso[canonicalIso] : undefined);
 
-			const info = countries[cname] || {};
+                        const info = countries[cname] || {};
+                        const flagSrc =
+                                info.flag ||
+                                (info.iso_a2
+                                        ? `images/flag/${String(info.iso_a2).toLowerCase()}.svg`
+                                        : "images/flag/question.svg");
+                        const valueUnit = meta.unit ? ` ${meta.unit}` : "";
+                        const displayValue = Number.isFinite(val)
+                                ? `${formatValueAuto(val)}${valueUnit}`
+                                : "no data";
 
-			const tooltip = `
-				<strong>${cname}</strong><br>
-				${Number.isFinite(val)
-					? `${formatValueAuto(val)} ${meta.unit || ""}`
-					: "no data"}<br>
-				<small>Capital: ${info.capital || "–"} | Gov: ${info.government || "–"}</small>
-			`;
+                        const tooltip = `
+                                <div class="map-tooltip">
+                                        <div class="map-tooltip__header">
+                                                <img class="map-tooltip__flag" src="${flagSrc}" alt="Flag of ${cname}" loading="lazy" onerror="this.onerror=null;this.src='images/flag/question.svg';" />
+                                                <div class="map-tooltip__title">${cname}</div>
+                                        </div>
+                                        <div class="map-tooltip__value">${displayValue}</div>
+                                        <div class="map-tooltip__meta">Capital: ${info.capital || "–"} | Gov: ${info.government || "–"}</div>
+                                </div>
+                        `;
 			layer.bindTooltip(tooltip, { sticky: true });
 
 			layer.on({

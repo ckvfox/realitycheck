@@ -1703,6 +1703,40 @@ header#main-header nav a.active {
   opacity: 1;
 }
 
+.map-tooltip {
+  display: grid;
+  gap: 0.35rem;
+  max-width: 220px;
+}
+
+.map-tooltip__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.map-tooltip__flag {
+  width: 32px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.map-tooltip__title {
+  font-weight: 600;
+}
+
+.map-tooltip__value {
+  font-weight: 500;
+}
+
+.map-tooltip__meta {
+  font-size: 0.75rem;
+  color: #444;
+}
+
 /* 📱 Mobile Pure Icon Mode (nur Emojis sichtbar, Tooltip via title) */
 @media (max-width: 600px) {
   .mode-button {
