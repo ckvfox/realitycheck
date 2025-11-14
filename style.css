@@ -2022,7 +2022,7 @@ Fixes: header/menu overflow, footer overflow, disappearing icons
 #mode-switch .mode-button span:not(.emoji) {
   display: inline-block !important;
   font-size: 0.85rem;
-  margin-left: 0.3rem;
+  margin-left: 0.2rem;
 }
 
 /* Mobile Optimierung – kleinere Buttons */
