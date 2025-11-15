@@ -1768,12 +1768,14 @@ header#main-header nav a.active {
   display: grid;
   gap: 0.35rem;
   max-width: 220px;
+  text-align: center;
 }
 
 .map-tooltip__header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
 }
 
 .map-tooltip__flag {
@@ -1794,8 +1796,14 @@ header#main-header nav a.active {
 }
 
 .map-tooltip__meta {
+  display: grid;
+  gap: 0.25rem;
   font-size: 0.75rem;
   color: #444;
+}
+
+.map-tooltip__meta-row {
+  white-space: normal;
 }
 
 /* 📱 Mobile Pure Icon Mode (nur Emojis sichtbar, Tooltip via title) */
