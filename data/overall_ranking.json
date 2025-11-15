@@ -25,9 +25,11 @@
       "human_development_index_hdi": 64,
       "physicians_per_1_000_people": 15,
       "political_corruption_index": 75,
-      "global_peace_index": 115
+      "environmental_performance_index": 55,
+      "global_peace_index": 115,
+      "inform_resilience_index": 46
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Slovenia",
@@ -56,9 +58,11 @@
       "physicians_per_1_000_people": 46,
       "political_corruption_index": 22,
       "big_mac_index": 14,
-      "global_peace_index": 9
+      "environmental_performance_index": 7,
+      "global_peace_index": 9,
+      "inform_resilience_index": 43
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "India",
@@ -88,9 +92,11 @@
       "political_corruption_index": 109,
       "electric_vehicle_stock": 21,
       "big_mac_index": 4,
-      "global_peace_index": 111
+      "environmental_performance_index": 180,
+      "global_peace_index": 111,
+      "inform_resilience_index": 159
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Ukraine",
@@ -119,9 +125,11 @@
       "physicians_per_1_000_people": 56,
       "political_corruption_index": 99,
       "big_mac_index": 7,
-      "global_peace_index": 156
+      "environmental_performance_index": 52,
+      "global_peace_index": 156,
+      "inform_resilience_index": 161
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Czechia",
@@ -150,9 +158,11 @@
       "homelessness_rate": 16,
       "political_corruption_index": 29,
       "big_mac_index": 42,
-      "global_peace_index": 11
+      "environmental_performance_index": 19,
+      "global_peace_index": 11,
+      "inform_resilience_index": 13
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Netherlands",
@@ -181,9 +191,11 @@
       "political_corruption_index": 5,
       "electric_vehicle_stock": 7,
       "big_mac_index": 44,
-      "global_peace_index": 15
+      "environmental_performance_index": 11,
+      "global_peace_index": 15,
+      "inform_resilience_index": 40
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "United Arab Emirates",
@@ -212,9 +224,11 @@
       "physicians_per_1_000_people": 60,
       "political_corruption_index": 31,
       "big_mac_index": 52,
-      "global_peace_index": 53
+      "environmental_performance_index": 39,
+      "global_peace_index": 53,
+      "inform_resilience_index": 19
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Norway",
@@ -244,9 +258,11 @@
       "political_corruption_index": 4,
       "electric_vehicle_stock": 8,
       "big_mac_index": 68,
-      "global_peace_index": 32
+      "environmental_performance_index": 20,
+      "global_peace_index": 32,
+      "inform_resilience_index": 16
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Azerbaijan",
@@ -275,9 +291,11 @@
       "physicians_per_1_000_people": 53,
       "political_corruption_index": 162,
       "big_mac_index": 21,
-      "global_peace_index": 91
+      "environmental_performance_index": 104,
+      "global_peace_index": 91,
+      "inform_resilience_index": 125
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Belgium",
@@ -305,9 +323,11 @@
       "political_corruption_index": 15,
       "electric_vehicle_stock": 10,
       "big_mac_index": 48,
-      "global_peace_index": 16
+      "environmental_performance_index": 21,
+      "global_peace_index": 16,
+      "inform_resilience_index": 44
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Iceland",
@@ -335,9 +355,11 @@
       "homelessness_rate": 14,
       "political_corruption_index": 7,
       "electric_vehicle_stock": 29,
-      "global_peace_index": 1
+      "environmental_performance_index": 10,
+      "global_peace_index": 1,
+      "inform_resilience_index": 8
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Moldova",
@@ -366,9 +388,11 @@
       "physicians_per_1_000_people": 48,
       "political_corruption_index": 64,
       "big_mac_index": 18,
-      "global_peace_index": 64
+      "environmental_performance_index": 84,
+      "global_peace_index": 64,
+      "inform_resilience_index": 103
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Tonga",
@@ -392,9 +416,11 @@
       "education_expenditure_of_gdp": 41,
       "purchasing_power_parity": 119,
       "human_development_index_hdi": 89,
-      "physicians_per_1_000_people": 116
+      "physicians_per_1_000_people": 116,
+      "environmental_performance_index": 80,
+      "inform_resilience_index": 94
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Armenia",
@@ -422,9 +448,11 @@
       "human_development_index_hdi": 68,
       "physicians_per_1_000_people": 52,
       "political_corruption_index": 67,
-      "global_peace_index": 57
+      "environmental_performance_index": 56,
+      "global_peace_index": 57,
+      "inform_resilience_index": 76
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Finland",
@@ -453,9 +481,11 @@
       "political_corruption_index": 9,
       "electric_vehicle_stock": 20,
       "big_mac_index": 61,
-      "global_peace_index": 10
+      "environmental_performance_index": 3,
+      "global_peace_index": 10,
+      "inform_resilience_index": 15
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Algeria",
@@ -482,9 +512,11 @@
       "human_development_index_hdi": 93,
       "physicians_per_1_000_people": 117,
       "political_corruption_index": 108,
-      "global_peace_index": 89
+      "environmental_performance_index": 156,
+      "global_peace_index": 89,
+      "inform_resilience_index": 96
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Kiribati",
@@ -504,9 +536,11 @@
       "education_expenditure_of_gdp": 1,
       "purchasing_power_parity": 142,
       "human_development_index_hdi": 137,
-      "physicians_per_1_000_people": 158
+      "physicians_per_1_000_people": 158,
+      "environmental_performance_index": 54,
+      "inform_resilience_index": 100
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Bhutan",
@@ -533,9 +567,11 @@
       "human_development_index_hdi": 123,
       "physicians_per_1_000_people": 134,
       "political_corruption_index": 35,
-      "global_peace_index": 21
+      "environmental_performance_index": 85,
+      "global_peace_index": 21,
+      "inform_resilience_index": 63
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Poland",
@@ -566,9 +602,11 @@
       "political_corruption_index": 28,
       "electric_vehicle_stock": 26,
       "big_mac_index": 57,
-      "global_peace_index": 36
+      "environmental_performance_index": 46,
+      "global_peace_index": 36,
+      "inform_resilience_index": 42
     },
-    "kpi_count": 27
+    "kpi_count": 29
   },
   {
     "country": "Timor-Leste",
@@ -590,9 +628,11 @@
       "fixed_broadband_subscriptions_per_100_people": 164,
       "education_expenditure_of_gdp": 46,
       "purchasing_power_parity": 134,
-      "global_peace_index": 44
+      "environmental_performance_index": 129,
+      "global_peace_index": 44,
+      "inform_resilience_index": 106
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Ireland",
@@ -619,9 +659,11 @@
       "physicians_per_1_000_people": 24,
       "political_corruption_index": 16,
       "big_mac_index": 54,
-      "global_peace_index": 2
+      "environmental_performance_index": 24,
+      "global_peace_index": 2,
+      "inform_resilience_index": 22
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Kazakhstan",
@@ -649,9 +691,11 @@
       "human_development_index_hdi": 60,
       "physicians_per_1_000_people": 25,
       "political_corruption_index": 114,
-      "global_peace_index": 55
+      "environmental_performance_index": 93,
+      "global_peace_index": 55,
+      "inform_resilience_index": 55
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Maldives",
@@ -676,9 +720,11 @@
       "purchasing_power_parity": 66,
       "human_development_index_hdi": 90,
       "physicians_per_1_000_people": 82,
-      "political_corruption_index": 74
+      "political_corruption_index": 74,
+      "environmental_performance_index": 114,
+      "inform_resilience_index": 28
     },
-    "kpi_count": 21
+    "kpi_count": 23
   },
   {
     "country": "Sweden",
@@ -707,9 +753,11 @@
       "political_corruption_index": 2,
       "electric_vehicle_stock": 11,
       "big_mac_index": 64,
-      "global_peace_index": 35
+      "environmental_performance_index": 5,
+      "global_peace_index": 35,
+      "inform_resilience_index": 26
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Albania",
@@ -737,9 +785,11 @@
       "human_development_index_hdi": 70,
       "physicians_per_1_000_people": 90,
       "political_corruption_index": 101,
-      "global_peace_index": 52
+      "environmental_performance_index": 62,
+      "global_peace_index": 52,
+      "inform_resilience_index": 62
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Guinea",
@@ -765,9 +815,11 @@
       "human_development_index_hdi": 171,
       "physicians_per_1_000_people": 187,
       "political_corruption_index": 157,
-      "global_peace_index": 114
+      "environmental_performance_index": 146,
+      "global_peace_index": 114,
+      "inform_resilience_index": 138
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Pakistan",
@@ -796,9 +848,11 @@
       "physicians_per_1_000_people": 113,
       "political_corruption_index": 141,
       "big_mac_index": 24,
-      "global_peace_index": 139
+      "environmental_performance_index": 176,
+      "global_peace_index": 139,
+      "inform_resilience_index": 170
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Iraq",
@@ -826,9 +880,11 @@
       "human_development_index_hdi": 125,
       "physicians_per_1_000_people": 115,
       "political_corruption_index": 152,
-      "global_peace_index": 141
+      "environmental_performance_index": 169,
+      "global_peace_index": 141,
+      "inform_resilience_index": 164
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Romania",
@@ -856,9 +912,11 @@
       "physicians_per_1_000_people": 40,
       "political_corruption_index": 68,
       "big_mac_index": 15,
-      "global_peace_index": 38
+      "environmental_performance_index": 30,
+      "global_peace_index": 38,
+      "inform_resilience_index": 66
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Denmark",
@@ -888,9 +946,11 @@
       "political_corruption_index": 1,
       "electric_vehicle_stock": 15,
       "big_mac_index": 63,
-      "global_peace_index": 8
+      "environmental_performance_index": 1,
+      "global_peace_index": 8,
+      "inform_resilience_index": 6
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Nepal",
@@ -917,9 +977,11 @@
       "human_development_index_hdi": 140,
       "physicians_per_1_000_people": 119,
       "political_corruption_index": 100,
-      "global_peace_index": 75
+      "environmental_performance_index": 163,
+      "global_peace_index": 75,
+      "inform_resilience_index": 131
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Croatia",
@@ -947,9 +1009,11 @@
       "physicians_per_1_000_people": 36,
       "political_corruption_index": 52,
       "big_mac_index": 22,
-      "global_peace_index": 19
+      "environmental_performance_index": 16,
+      "global_peace_index": 19,
+      "inform_resilience_index": 39
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Hungary",
@@ -978,9 +1042,11 @@
       "physicians_per_1_000_people": 47,
       "political_corruption_index": 83,
       "big_mac_index": 20,
-      "global_peace_index": 17
+      "environmental_performance_index": 33,
+      "global_peace_index": 17,
+      "inform_resilience_index": 34
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Estonia",
@@ -1008,9 +1074,11 @@
       "physicians_per_1_000_people": 41,
       "political_corruption_index": 10,
       "big_mac_index": 16,
-      "global_peace_index": 24
+      "environmental_performance_index": 14,
+      "global_peace_index": 24,
+      "inform_resilience_index": 14
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Fiji",
@@ -1035,9 +1103,11 @@
       "democracy_index": 80,
       "human_development_index_hdi": 110,
       "physicians_per_1_000_people": 122,
-      "political_corruption_index": 58
+      "political_corruption_index": 58,
+      "environmental_performance_index": 147,
+      "inform_resilience_index": 87
     },
-    "kpi_count": 21
+    "kpi_count": 23
   },
   {
     "country": "Myanmar",
@@ -1064,9 +1134,11 @@
       "human_development_index_hdi": 144,
       "physicians_per_1_000_people": 126,
       "political_corruption_index": 147,
-      "global_peace_index": 147
+      "environmental_performance_index": 179,
+      "global_peace_index": 147,
+      "inform_resilience_index": 175
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Bangladesh",
@@ -1094,9 +1166,11 @@
       "human_development_index_hdi": 128,
       "physicians_per_1_000_people": 131,
       "political_corruption_index": 163,
-      "global_peace_index": 119
+      "environmental_performance_index": 177,
+      "global_peace_index": 119,
+      "inform_resilience_index": 167
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Canada",
@@ -1126,9 +1200,11 @@
       "political_corruption_index": 12,
       "electric_vehicle_stock": 9,
       "big_mac_index": 62,
-      "global_peace_index": 14
+      "environmental_performance_index": 50,
+      "global_peace_index": 14,
+      "inform_resilience_index": 53
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Ethiopia",
@@ -1156,9 +1232,11 @@
       "human_development_index_hdi": 172,
       "physicians_per_1_000_people": 172,
       "political_corruption_index": 90,
-      "global_peace_index": 133
+      "environmental_performance_index": 143,
+      "global_peace_index": 133,
+      "inform_resilience_index": 177
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Austria",
@@ -1186,9 +1264,11 @@
       "political_corruption_index": 32,
       "electric_vehicle_stock": 19,
       "big_mac_index": 36,
-      "global_peace_index": 4
+      "environmental_performance_index": 8,
+      "global_peace_index": 4,
+      "inform_resilience_index": 35
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Mongolia",
@@ -1216,9 +1296,11 @@
       "human_development_index_hdi": 102,
       "physicians_per_1_000_people": 29,
       "political_corruption_index": 117,
-      "global_peace_index": 37
+      "environmental_performance_index": 157,
+      "global_peace_index": 37,
+      "inform_resilience_index": 65
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Cyprus",
@@ -1245,9 +1327,11 @@
       "human_development_index_hdi": 32,
       "physicians_per_1_000_people": 39,
       "political_corruption_index": 37,
-      "global_peace_index": 66
+      "environmental_performance_index": 22,
+      "global_peace_index": 66,
+      "inform_resilience_index": 64
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "France",
@@ -1276,9 +1360,11 @@
       "political_corruption_index": 20,
       "electric_vehicle_stock": 6,
       "big_mac_index": 50,
-      "global_peace_index": 72
+      "environmental_performance_index": 12,
+      "global_peace_index": 72,
+      "inform_resilience_index": 54
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Mauritania",
@@ -1305,9 +1391,11 @@
       "human_development_index_hdi": 156,
       "physicians_per_1_000_people": 151,
       "political_corruption_index": 155,
-      "global_peace_index": 106
+      "environmental_performance_index": 165,
+      "global_peace_index": 106,
+      "inform_resilience_index": 149
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Seychelles",
@@ -1329,9 +1417,11 @@
       "purchasing_power_parity": 56,
       "human_development_index_hdi": 53,
       "physicians_per_1_000_people": 31,
-      "political_corruption_index": 18
+      "political_corruption_index": 18,
+      "environmental_performance_index": 32,
+      "inform_resilience_index": 5
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Japan",
@@ -1360,9 +1450,11 @@
       "political_corruption_index": 23,
       "electric_vehicle_stock": 12,
       "big_mac_index": 12,
-      "global_peace_index": 12
+      "environmental_performance_index": 25,
+      "global_peace_index": 12,
+      "inform_resilience_index": 23
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Vanuatu",
@@ -1387,9 +1479,11 @@
       "purchasing_power_parity": 143,
       "human_development_index_hdi": 141,
       "physicians_per_1_000_people": 163,
-      "political_corruption_index": 59
+      "political_corruption_index": 59,
+      "environmental_performance_index": 120,
+      "inform_resilience_index": 118
     },
-    "kpi_count": 21
+    "kpi_count": 23
   },
   {
     "country": "Germany",
@@ -1419,9 +1513,11 @@
       "political_corruption_index": 6,
       "electric_vehicle_stock": 4,
       "big_mac_index": 45,
-      "global_peace_index": 20
+      "environmental_performance_index": 13,
+      "global_peace_index": 20,
+      "inform_resilience_index": 47
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Nauru",
@@ -1441,9 +1537,10 @@
       "education_expenditure_of_gdp": 29,
       "purchasing_power_parity": 100,
       "human_development_index_hdi": 122,
-      "physicians_per_1_000_people": 107
+      "physicians_per_1_000_people": 107,
+      "inform_resilience_index": 30
     },
-    "kpi_count": 16
+    "kpi_count": 17
   },
   {
     "country": "United Kingdom",
@@ -1473,9 +1570,11 @@
       "political_corruption_index": 17,
       "electric_vehicle_stock": 5,
       "big_mac_index": 65,
-      "global_peace_index": 30
+      "environmental_performance_index": 2,
+      "global_peace_index": 30,
+      "inform_resilience_index": 21
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Serbia",
@@ -1502,9 +1601,11 @@
       "human_development_index_hdi": 62,
       "physicians_per_1_000_people": 62,
       "political_corruption_index": 129,
-      "global_peace_index": 62
+      "environmental_performance_index": 79,
+      "global_peace_index": 62,
+      "inform_resilience_index": 93
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Niger",
@@ -1530,9 +1631,11 @@
       "human_development_index_hdi": 181,
       "physicians_per_1_000_people": 184,
       "political_corruption_index": 94,
-      "global_peace_index": 138
+      "environmental_performance_index": 110,
+      "global_peace_index": 138,
+      "inform_resilience_index": 184
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Greece",
@@ -1561,9 +1664,11 @@
       "political_corruption_index": 48,
       "electric_vehicle_stock": 30,
       "big_mac_index": 31,
-      "global_peace_index": 45
+      "environmental_performance_index": 29,
+      "global_peace_index": 45,
+      "inform_resilience_index": 70
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Guinea-Bissau",
@@ -1589,9 +1694,11 @@
       "human_development_index_hdi": 166,
       "physicians_per_1_000_people": 153,
       "political_corruption_index": 140,
-      "global_peace_index": 97
+      "environmental_performance_index": 98,
+      "global_peace_index": 97,
+      "inform_resilience_index": 121
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Spain",
@@ -1622,9 +1729,11 @@
       "political_corruption_index": 30,
       "electric_vehicle_stock": 16,
       "big_mac_index": 46,
-      "global_peace_index": 25
+      "environmental_performance_index": 27,
+      "global_peace_index": 25,
+      "inform_resilience_index": 48
     },
-    "kpi_count": 27
+    "kpi_count": 29
   },
   {
     "country": "North Macedonia",
@@ -1651,9 +1760,11 @@
       "human_development_index_hdi": 67,
       "physicians_per_1_000_people": 59,
       "political_corruption_index": 128,
-      "global_peace_index": 51
+      "environmental_performance_index": 34,
+      "global_peace_index": 51,
+      "inform_resilience_index": 59
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Thailand",
@@ -1682,9 +1793,11 @@
       "physicians_per_1_000_people": 118,
       "political_corruption_index": 106,
       "big_mac_index": 29,
-      "global_peace_index": 83
+      "environmental_performance_index": 108,
+      "global_peace_index": 83,
+      "inform_resilience_index": 124
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Luxembourg",
@@ -1710,9 +1823,11 @@
       "democracy_index": 10,
       "human_development_index_hdi": 24,
       "physicians_per_1_000_people": 57,
-      "political_corruption_index": 13
+      "political_corruption_index": 13,
+      "environmental_performance_index": 6,
+      "inform_resilience_index": 3
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Jordan",
@@ -1740,9 +1855,11 @@
       "physicians_per_1_000_people": 72,
       "political_corruption_index": 76,
       "big_mac_index": 19,
-      "global_peace_index": 70
+      "environmental_performance_index": 83,
+      "global_peace_index": 70,
+      "inform_resilience_index": 110
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Tunisia",
@@ -1770,9 +1887,11 @@
       "human_development_index_hdi": 103,
       "physicians_per_1_000_people": 103,
       "political_corruption_index": 72,
-      "global_peace_index": 78
+      "environmental_performance_index": 96,
+      "global_peace_index": 78,
+      "inform_resilience_index": 89
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Australia",
@@ -1801,9 +1920,11 @@
       "political_corruption_index": 11,
       "electric_vehicle_stock": 18,
       "big_mac_index": 51,
-      "global_peace_index": 18
+      "environmental_performance_index": 17,
+      "global_peace_index": 18,
+      "inform_resilience_index": 38
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Switzerland",
@@ -1832,9 +1953,11 @@
       "political_corruption_index": 8,
       "electric_vehicle_stock": 17,
       "big_mac_index": 71,
-      "global_peace_index": 5
+      "environmental_performance_index": 9,
+      "global_peace_index": 5,
+      "inform_resilience_index": 11
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Georgia",
@@ -1862,9 +1985,11 @@
       "human_development_index_hdi": 56,
       "physicians_per_1_000_people": 6,
       "political_corruption_index": 43,
-      "global_peace_index": 105
+      "environmental_performance_index": 103,
+      "global_peace_index": 105,
+      "inform_resilience_index": 91
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Nigeria",
@@ -1891,9 +2016,11 @@
       "human_development_index_hdi": 157,
       "physicians_per_1_000_people": 142,
       "political_corruption_index": 165,
-      "global_peace_index": 142
+      "environmental_performance_index": 162,
+      "global_peace_index": 142,
+      "inform_resilience_index": 176
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Portugal",
@@ -1923,9 +2050,11 @@
       "political_corruption_index": 38,
       "electric_vehicle_stock": 22,
       "big_mac_index": 32,
-      "global_peace_index": 7
+      "environmental_performance_index": 48,
+      "global_peace_index": 7,
+      "inform_resilience_index": 17
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Latvia",
@@ -1954,9 +2083,11 @@
       "physicians_per_1_000_people": 44,
       "political_corruption_index": 25,
       "big_mac_index": 11,
-      "global_peace_index": 22
+      "environmental_performance_index": 15,
+      "global_peace_index": 22,
+      "inform_resilience_index": 51
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Barbados",
@@ -1981,9 +2112,11 @@
       "purchasing_power_parity": 72,
       "human_development_index_hdi": 69,
       "physicians_per_1_000_people": 58,
-      "political_corruption_index": 24
+      "political_corruption_index": 24,
+      "environmental_performance_index": 36,
+      "inform_resilience_index": 20
     },
-    "kpi_count": 21
+    "kpi_count": 23
   },
   {
     "country": "Sudan",
@@ -2011,9 +2144,11 @@
       "human_development_index_hdi": 168,
       "physicians_per_1_000_people": 146,
       "political_corruption_index": 139,
-      "global_peace_index": 155
+      "environmental_performance_index": 171,
+      "global_peace_index": 155,
+      "inform_resilience_index": 185
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Italy",
@@ -2043,9 +2178,11 @@
       "political_corruption_index": 45,
       "electric_vehicle_stock": 14,
       "big_mac_index": 58,
-      "global_peace_index": 33
+      "environmental_performance_index": 23,
+      "global_peace_index": 33,
+      "inform_resilience_index": 71
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Montenegro",
@@ -2071,9 +2208,11 @@
       "human_development_index_hdi": 47,
       "physicians_per_1_000_people": 64,
       "political_corruption_index": 85,
-      "global_peace_index": 34
+      "environmental_performance_index": 64,
+      "global_peace_index": 34,
+      "inform_resilience_index": 52
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Benin",
@@ -2100,9 +2239,11 @@
       "human_development_index_hdi": 165,
       "physicians_per_1_000_people": 155,
       "political_corruption_index": 42,
-      "global_peace_index": 108
+      "environmental_performance_index": 155,
+      "global_peace_index": 108,
+      "inform_resilience_index": 151
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Malta",
@@ -2128,9 +2269,11 @@
       "democracy_index": 27,
       "human_development_index_hdi": 23,
       "physicians_per_1_000_people": 20,
-      "political_corruption_index": 44
+      "political_corruption_index": 44,
+      "environmental_performance_index": 4,
+      "inform_resilience_index": 9
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Uzbekistan",
@@ -2157,9 +2300,11 @@
       "human_development_index_hdi": 105,
       "physicians_per_1_000_people": 63,
       "political_corruption_index": 148,
-      "global_peace_index": 65
+      "environmental_performance_index": 107,
+      "global_peace_index": 65,
+      "inform_resilience_index": 83
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Indonesia",
@@ -2188,9 +2333,11 @@
       "physicians_per_1_000_people": 129,
       "political_corruption_index": 130,
       "big_mac_index": 3,
-      "global_peace_index": 49
+      "environmental_performance_index": 164,
+      "global_peace_index": 49,
+      "inform_resilience_index": 129
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Qatar",
@@ -2217,9 +2364,11 @@
       "physicians_per_1_000_people": 73,
       "political_corruption_index": 66,
       "big_mac_index": 34,
-      "global_peace_index": 27
+      "environmental_performance_index": 137,
+      "global_peace_index": 27,
+      "inform_resilience_index": 4
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Lebanon",
@@ -2248,9 +2397,11 @@
       "physicians_per_1_000_people": 66,
       "political_corruption_index": 151,
       "big_mac_index": 60,
-      "global_peace_index": 131
+      "environmental_performance_index": 142,
+      "global_peace_index": 131,
+      "inform_resilience_index": 173
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Liberia",
@@ -2276,9 +2427,11 @@
       "human_development_index_hdi": 169,
       "physicians_per_1_000_people": 160,
       "political_corruption_index": 158,
-      "global_peace_index": 68
+      "environmental_performance_index": 174,
+      "global_peace_index": 68,
+      "inform_resilience_index": 139
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Marshall Islands",
@@ -2298,9 +2451,11 @@
       "education_expenditure_of_gdp": 8,
       "purchasing_power_parity": 116,
       "human_development_index_hdi": 108,
-      "physicians_per_1_000_people": 140
+      "physicians_per_1_000_people": 140,
+      "environmental_performance_index": 124,
+      "inform_resilience_index": 105
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Mali",
@@ -2327,9 +2482,11 @@
       "human_development_index_hdi": 180,
       "physicians_per_1_000_people": 157,
       "political_corruption_index": 127,
-      "global_peace_index": 148
+      "environmental_performance_index": 159,
+      "global_peace_index": 148,
+      "inform_resilience_index": 178
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Sierra Leone",
@@ -2355,9 +2512,11 @@
       "human_development_index_hdi": 177,
       "physicians_per_1_000_people": 182,
       "political_corruption_index": 84,
-      "global_peace_index": 56
+      "environmental_performance_index": 140,
+      "global_peace_index": 56,
+      "inform_resilience_index": 143
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "China",
@@ -2386,9 +2545,11 @@
       "political_corruption_index": 91,
       "electric_vehicle_stock": 2,
       "big_mac_index": 17,
-      "global_peace_index": 94
+      "environmental_performance_index": 160,
+      "global_peace_index": 94,
+      "inform_resilience_index": 69
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Lithuania",
@@ -2416,9 +2577,11 @@
       "physicians_per_1_000_people": 9,
       "political_corruption_index": 39,
       "big_mac_index": 13,
-      "global_peace_index": 23
+      "environmental_performance_index": 31,
+      "global_peace_index": 23,
+      "inform_resilience_index": 25
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Tajikistan",
@@ -2446,9 +2609,11 @@
       "human_development_index_hdi": 126,
       "physicians_per_1_000_people": 87,
       "political_corruption_index": 153,
-      "global_peace_index": 77
+      "environmental_performance_index": 117,
+      "global_peace_index": 77,
+      "inform_resilience_index": 112
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Senegal",
@@ -2475,9 +2640,11 @@
       "human_development_index_hdi": 162,
       "physicians_per_1_000_people": 170,
       "political_corruption_index": 60,
-      "global_peace_index": 67
+      "environmental_performance_index": 136,
+      "global_peace_index": 67,
+      "inform_resilience_index": 127
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Madagascar",
@@ -2504,9 +2671,11 @@
       "human_development_index_hdi": 175,
       "physicians_per_1_000_people": 156,
       "political_corruption_index": 145,
-      "global_peace_index": 58
+      "environmental_performance_index": 168,
+      "global_peace_index": 58,
+      "inform_resilience_index": 155
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Mauritius",
@@ -2533,9 +2702,11 @@
       "human_development_index_hdi": 72,
       "physicians_per_1_000_people": 108,
       "political_corruption_index": 79,
-      "global_peace_index": 26
+      "environmental_performance_index": 78,
+      "global_peace_index": 26,
+      "inform_resilience_index": 29
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Solomon Islands",
@@ -2560,9 +2731,11 @@
       "purchasing_power_parity": 154,
       "human_development_index_hdi": 150,
       "physicians_per_1_000_people": 159,
-      "political_corruption_index": 98
+      "political_corruption_index": 98,
+      "environmental_performance_index": 131,
+      "inform_resilience_index": 128
     },
-    "kpi_count": 21
+    "kpi_count": 23
   },
   {
     "country": "Burkina Faso",
@@ -2590,9 +2763,11 @@
       "human_development_index_hdi": 178,
       "physicians_per_1_000_people": 165,
       "political_corruption_index": 70,
-      "global_peace_index": 146
+      "environmental_performance_index": 127,
+      "global_peace_index": 146,
+      "inform_resilience_index": 181
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Chad",
@@ -2618,9 +2793,11 @@
       "human_development_index_hdi": 182,
       "physicians_per_1_000_people": 175,
       "political_corruption_index": 168,
-      "global_peace_index": 129
+      "environmental_performance_index": 166,
+      "global_peace_index": 129,
+      "inform_resilience_index": 186
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Burundi",
@@ -2646,9 +2823,11 @@
       "human_development_index_hdi": 179,
       "physicians_per_1_000_people": 179,
       "political_corruption_index": 133,
-      "global_peace_index": 128
+      "environmental_performance_index": 152,
+      "global_peace_index": 128,
+      "inform_resilience_index": 166
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Kenya",
@@ -2675,9 +2854,11 @@
       "human_development_index_hdi": 139,
       "physicians_per_1_000_people": 174,
       "political_corruption_index": 88,
-      "global_peace_index": 123
+      "environmental_performance_index": 148,
+      "global_peace_index": 123,
+      "inform_resilience_index": 169
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Sri Lanka",
@@ -2706,9 +2887,11 @@
       "physicians_per_1_000_people": 109,
       "political_corruption_index": 80,
       "big_mac_index": 23,
-      "global_peace_index": 93
+      "environmental_performance_index": 132,
+      "global_peace_index": 93,
+      "inform_resilience_index": 102
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Israel",
@@ -2738,9 +2921,11 @@
       "political_corruption_index": 33,
       "electric_vehicle_stock": 23,
       "big_mac_index": 47,
-      "global_peace_index": 149
+      "environmental_performance_index": 57,
+      "global_peace_index": 149,
+      "inform_resilience_index": 81
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Togo",
@@ -2766,9 +2951,11 @@
       "human_development_index_hdi": 154,
       "physicians_per_1_000_people": 176,
       "political_corruption_index": 131,
-      "global_peace_index": 122
+      "environmental_performance_index": 135,
+      "global_peace_index": 122,
+      "inform_resilience_index": 157
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Gabon",
@@ -2795,9 +2982,11 @@
       "human_development_index_hdi": 107,
       "physicians_per_1_000_people": 139,
       "political_corruption_index": 118,
-      "global_peace_index": 113
+      "environmental_performance_index": 51,
+      "global_peace_index": 113,
+      "inform_resilience_index": 108
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Kosovo",
@@ -2838,9 +3027,11 @@
       "human_development_index_hdi": 131,
       "physicians_per_1_000_people": 166,
       "political_corruption_index": 149,
-      "global_peace_index": 79
+      "environmental_performance_index": 77,
+      "global_peace_index": 79,
+      "inform_resilience_index": 92
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Malawi",
@@ -2868,9 +3059,11 @@
       "human_development_index_hdi": 164,
       "physicians_per_1_000_people": 181,
       "political_corruption_index": 119,
-      "global_peace_index": 69
+      "environmental_performance_index": 97,
+      "global_peace_index": 69,
+      "inform_resilience_index": 141
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Samoa",
@@ -2893,9 +3086,11 @@
       "education_expenditure_of_gdp": 34,
       "purchasing_power_parity": 120,
       "human_development_index_hdi": 120,
-      "physicians_per_1_000_people": 136
+      "physicians_per_1_000_people": 136,
+      "environmental_performance_index": 123,
+      "inform_resilience_index": 75
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Dominican Republic",
@@ -2922,9 +3117,11 @@
       "human_development_index_hdi": 86,
       "physicians_per_1_000_people": 79,
       "political_corruption_index": 116,
-      "global_peace_index": 76
+      "environmental_performance_index": 89,
+      "global_peace_index": 76,
+      "inform_resilience_index": 119
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Tuvalu",
@@ -2944,9 +3141,10 @@
       "education_expenditure_of_gdp": 2,
       "purchasing_power_parity": 127,
       "human_development_index_hdi": 127,
-      "physicians_per_1_000_people": 106
+      "physicians_per_1_000_people": 106,
+      "inform_resilience_index": 61
     },
-    "kpi_count": 16
+    "kpi_count": 17
   },
   {
     "country": "Suriname",
@@ -2971,9 +3169,11 @@
       "democracy_index": 47,
       "human_development_index_hdi": 112,
       "physicians_per_1_000_people": 100,
-      "political_corruption_index": 40
+      "political_corruption_index": 40,
+      "environmental_performance_index": 70,
+      "inform_resilience_index": 78
     },
-    "kpi_count": 21
+    "kpi_count": 23
   },
   {
     "country": "Philippines",
@@ -3002,9 +3202,11 @@
       "physicians_per_1_000_people": 125,
       "political_corruption_index": 156,
       "big_mac_index": 8,
-      "global_peace_index": 101
+      "environmental_performance_index": 158,
+      "global_peace_index": 101,
+      "inform_resilience_index": 156
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Rwanda",
@@ -3031,9 +3233,11 @@
       "human_development_index_hdi": 152,
       "physicians_per_1_000_people": 171,
       "political_corruption_index": 73,
-      "global_peace_index": 88
+      "environmental_performance_index": 139,
+      "global_peace_index": 88,
+      "inform_resilience_index": 123
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Bulgaria",
@@ -3060,9 +3264,11 @@
       "human_development_index_hdi": 54,
       "physicians_per_1_000_people": 10,
       "political_corruption_index": 96,
-      "global_peace_index": 29
+      "environmental_performance_index": 41,
+      "global_peace_index": 29,
+      "inform_resilience_index": 45
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Morocco",
@@ -3090,9 +3296,11 @@
       "human_development_index_hdi": 118,
       "physicians_per_1_000_people": 127,
       "political_corruption_index": 102,
-      "global_peace_index": 82
+      "environmental_performance_index": 161,
+      "global_peace_index": 82,
+      "inform_resilience_index": 104
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "El Salvador",
@@ -3120,9 +3328,11 @@
       "human_development_index_hdi": 130,
       "physicians_per_1_000_people": 98,
       "political_corruption_index": 113,
-      "global_peace_index": 100
+      "environmental_performance_index": 95,
+      "global_peace_index": 100,
+      "inform_resilience_index": 111
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Belize",
@@ -3146,9 +3356,11 @@
       "education_expenditure_of_gdp": 66,
       "purchasing_power_parity": 96,
       "human_development_index_hdi": 113,
-      "physicians_per_1_000_people": 114
+      "physicians_per_1_000_people": 114,
+      "environmental_performance_index": 49,
+      "inform_resilience_index": 98
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Jamaica",
@@ -3175,9 +3387,11 @@
       "human_development_index_hdi": 115,
       "physicians_per_1_000_people": 135,
       "political_corruption_index": 41,
-      "global_peace_index": 90
+      "environmental_performance_index": 72,
+      "global_peace_index": 90,
+      "inform_resilience_index": 77
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Uruguay",
@@ -3206,9 +3420,11 @@
       "physicians_per_1_000_people": 11,
       "political_corruption_index": 21,
       "big_mac_index": 69,
-      "global_peace_index": 48
+      "environmental_performance_index": 115,
+      "global_peace_index": 48,
+      "inform_resilience_index": 57
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Peru",
@@ -3237,9 +3453,11 @@
       "physicians_per_1_000_people": 96,
       "political_corruption_index": 107,
       "big_mac_index": 39,
-      "global_peace_index": 92
+      "environmental_performance_index": 101,
+      "global_peace_index": 92,
+      "inform_resilience_index": 132
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Trinidad and Tobago",
@@ -3266,9 +3484,11 @@
       "human_development_index_hdi": 71,
       "physicians_per_1_000_people": 42,
       "political_corruption_index": 27,
-      "global_peace_index": 86
+      "environmental_performance_index": 59,
+      "global_peace_index": 86,
+      "inform_resilience_index": 73
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Tanzania",
@@ -3295,9 +3515,11 @@
       "human_development_index_hdi": 158,
       "physicians_per_1_000_people": 169,
       "political_corruption_index": 50,
-      "global_peace_index": 71
+      "environmental_performance_index": 134,
+      "global_peace_index": 71,
+      "inform_resilience_index": 144
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Malaysia",
@@ -3326,9 +3548,11 @@
       "physicians_per_1_000_people": 76,
       "political_corruption_index": 62,
       "big_mac_index": 9,
-      "global_peace_index": 13
+      "environmental_performance_index": 130,
+      "global_peace_index": 13,
+      "inform_resilience_index": 88
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Turkmenistan",
@@ -3354,9 +3578,11 @@
       "human_development_index_hdi": 92,
       "physicians_per_1_000_people": 85,
       "political_corruption_index": 160,
-      "global_peace_index": 85
+      "environmental_performance_index": 118,
+      "global_peace_index": 85,
+      "inform_resilience_index": 79
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Haiti",
@@ -3382,9 +3608,11 @@
       "human_development_index_hdi": 159,
       "physicians_per_1_000_people": 150,
       "political_corruption_index": 132,
-      "global_peace_index": 136
+      "environmental_performance_index": 173,
+      "global_peace_index": 136,
+      "inform_resilience_index": 180
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Djibouti",
@@ -3410,9 +3638,11 @@
       "human_development_index_hdi": 167,
       "physicians_per_1_000_people": 154,
       "political_corruption_index": 111,
-      "global_peace_index": 118
+      "environmental_performance_index": 61,
+      "global_peace_index": 118,
+      "inform_resilience_index": 146
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "United States",
@@ -3441,9 +3671,11 @@
       "homelessness_rate": 15,
       "political_corruption_index": 19,
       "electric_vehicle_stock": 3,
-      "big_mac_index": 66
+      "big_mac_index": 66,
+      "environmental_performance_index": 43,
+      "inform_resilience_index": 82
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Papua New Guinea",
@@ -3470,9 +3702,11 @@
       "human_development_index_hdi": 153,
       "physicians_per_1_000_people": 180,
       "political_corruption_index": 120,
-      "global_peace_index": 112
+      "environmental_performance_index": 175,
+      "global_peace_index": 112,
+      "inform_resilience_index": 172
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Bolivia",
@@ -3499,9 +3733,11 @@
       "human_development_index_hdi": 106,
       "physicians_per_1_000_people": 105,
       "political_corruption_index": 105,
-      "global_peace_index": 80
+      "environmental_performance_index": 99,
+      "global_peace_index": 80,
+      "inform_resilience_index": 116
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Cameroon",
@@ -3529,9 +3765,11 @@
       "human_development_index_hdi": 149,
       "physicians_per_1_000_people": 168,
       "political_corruption_index": 166,
-      "global_peace_index": 132
+      "environmental_performance_index": 153,
+      "global_peace_index": 132,
+      "inform_resilience_index": 174
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Argentina",
@@ -3559,9 +3797,11 @@
       "physicians_per_1_000_people": 23,
       "political_corruption_index": 69,
       "big_mac_index": 70,
-      "global_peace_index": 46
+      "environmental_performance_index": 92,
+      "global_peace_index": 46,
+      "inform_resilience_index": 67
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Uganda",
@@ -3589,9 +3829,11 @@
       "human_development_index_hdi": 151,
       "physicians_per_1_000_people": 161,
       "political_corruption_index": 138,
-      "global_peace_index": 109
+      "environmental_performance_index": 125,
+      "global_peace_index": 109,
+      "inform_resilience_index": 162
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Central African Republic",
@@ -3617,9 +3859,11 @@
       "human_development_index_hdi": 183,
       "physicians_per_1_000_people": 186,
       "political_corruption_index": 154,
-      "global_peace_index": 144
+      "environmental_performance_index": 75,
+      "global_peace_index": 144,
+      "inform_resilience_index": 187
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Chile",
@@ -3649,9 +3893,11 @@
       "political_corruption_index": 26,
       "electric_vehicle_stock": 31,
       "big_mac_index": 41,
-      "global_peace_index": 60
+      "environmental_performance_index": 65,
+      "global_peace_index": 60,
+      "inform_resilience_index": 80
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Ghana",
@@ -3678,9 +3924,11 @@
       "human_development_index_hdi": 138,
       "physicians_per_1_000_people": 167,
       "political_corruption_index": 103,
-      "global_peace_index": 59
+      "environmental_performance_index": 170,
+      "global_peace_index": 59,
+      "inform_resilience_index": 109
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Mexico",
@@ -3710,9 +3958,11 @@
       "political_corruption_index": 93,
       "electric_vehicle_stock": 28,
       "big_mac_index": 43,
-      "global_peace_index": 130
+      "environmental_performance_index": 73,
+      "global_peace_index": 130,
+      "inform_resilience_index": 140
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Grenada",
@@ -3732,9 +3982,11 @@
       "education_expenditure_of_gdp": 52,
       "purchasing_power_parity": 80,
       "human_development_index_hdi": 77,
-      "physicians_per_1_000_people": 102
+      "physicians_per_1_000_people": 102,
+      "environmental_performance_index": 58,
+      "inform_resilience_index": 49
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "South Sudan",
@@ -3758,9 +4010,10 @@
       "human_development_index_hdi": 185,
       "physicians_per_1_000_people": 183,
       "political_corruption_index": 146,
-      "global_peace_index": 150
+      "global_peace_index": 150,
+      "inform_resilience_index": 191
     },
-    "kpi_count": 20
+    "kpi_count": 21
   },
   {
     "country": "Paraguay",
@@ -3787,9 +4040,11 @@
       "human_development_index_hdi": 96,
       "physicians_per_1_000_people": 28,
       "political_corruption_index": 137,
-      "global_peace_index": 73
+      "environmental_performance_index": 94,
+      "global_peace_index": 73,
+      "inform_resilience_index": 72
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Lesotho",
@@ -3816,9 +4071,11 @@
       "human_development_index_hdi": 160,
       "physicians_per_1_000_people": 164,
       "political_corruption_index": 87,
-      "global_peace_index": 116
+      "environmental_performance_index": 141,
+      "global_peace_index": 116,
+      "inform_resilience_index": 122
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Guyana",
@@ -3844,9 +4101,11 @@
       "human_development_index_hdi": 87,
       "physicians_per_1_000_people": 101,
       "political_corruption_index": 77,
-      "global_peace_index": 102
+      "environmental_performance_index": 105,
+      "global_peace_index": 102,
+      "inform_resilience_index": 107
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Ecuador",
@@ -3873,9 +4132,11 @@
       "human_development_index_hdi": 85,
       "physicians_per_1_000_people": 77,
       "political_corruption_index": 104,
-      "global_peace_index": 124
+      "environmental_performance_index": 66,
+      "global_peace_index": 124,
+      "inform_resilience_index": 154
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Guatemala",
@@ -3904,9 +4165,11 @@
       "physicians_per_1_000_people": 104,
       "political_corruption_index": 115,
       "big_mac_index": 28,
-      "global_peace_index": 104
+      "environmental_performance_index": 167,
+      "global_peace_index": 104,
+      "inform_resilience_index": 153
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Comoros",
@@ -3931,9 +4194,11 @@
       "democracy_index": 121,
       "human_development_index_hdi": 146,
       "physicians_per_1_000_people": 141,
-      "political_corruption_index": 150
+      "political_corruption_index": 150,
+      "environmental_performance_index": 86,
+      "inform_resilience_index": 84
     },
-    "kpi_count": 21
+    "kpi_count": 23
   },
   {
     "country": "Honduras",
@@ -3960,9 +4225,11 @@
       "physicians_per_1_000_people": 138,
       "political_corruption_index": 126,
       "big_mac_index": 33,
-      "global_peace_index": 120
+      "environmental_performance_index": 121,
+      "global_peace_index": 120,
+      "inform_resilience_index": 163
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Costa Rica",
@@ -3991,9 +4258,11 @@
       "physicians_per_1_000_people": 65,
       "political_corruption_index": 46,
       "big_mac_index": 67,
-      "global_peace_index": 54
+      "environmental_performance_index": 68,
+      "global_peace_index": 54,
+      "inform_resilience_index": 85
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Nicaragua",
@@ -4020,9 +4289,11 @@
       "physicians_per_1_000_people": 132,
       "political_corruption_index": 167,
       "big_mac_index": 37,
-      "global_peace_index": 107
+      "environmental_performance_index": 111,
+      "global_peace_index": 107,
+      "inform_resilience_index": 142
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Mozambique",
@@ -4050,9 +4321,11 @@
       "human_development_index_hdi": 174,
       "physicians_per_1_000_people": 177,
       "political_corruption_index": 122,
-      "global_peace_index": 117
+      "environmental_performance_index": 145,
+      "global_peace_index": 117,
+      "inform_resilience_index": 179
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Panama",
@@ -4079,9 +4352,11 @@
       "human_development_index_hdi": 58,
       "physicians_per_1_000_people": 93,
       "political_corruption_index": 81,
-      "global_peace_index": 81
+      "environmental_performance_index": 47,
+      "global_peace_index": 81,
+      "inform_resilience_index": 115
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Zimbabwe",
@@ -4108,9 +4383,11 @@
       "human_development_index_hdi": 147,
       "physicians_per_1_000_people": 162,
       "political_corruption_index": 142,
-      "global_peace_index": 110
+      "environmental_performance_index": 69,
+      "global_peace_index": 110,
+      "inform_resilience_index": 148
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "Angola",
@@ -4136,9 +4413,11 @@
       "human_development_index_hdi": 143,
       "physicians_per_1_000_people": 149,
       "political_corruption_index": 89,
-      "global_peace_index": 74
+      "environmental_performance_index": 151,
+      "global_peace_index": 74,
+      "inform_resilience_index": 158
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Zambia",
@@ -4166,9 +4445,11 @@
       "human_development_index_hdi": 148,
       "physicians_per_1_000_people": 147,
       "political_corruption_index": 65,
-      "global_peace_index": 63
+      "environmental_performance_index": 106,
+      "global_peace_index": 63,
+      "inform_resilience_index": 133
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Brazil",
@@ -4198,9 +4479,11 @@
       "political_corruption_index": 78,
       "electric_vehicle_stock": 24,
       "big_mac_index": 30,
-      "global_peace_index": 125
+      "environmental_performance_index": 82,
+      "global_peace_index": 125,
+      "inform_resilience_index": 150
     },
-    "kpi_count": 26
+    "kpi_count": 28
   },
   {
     "country": "Colombia",
@@ -4228,9 +4511,11 @@
       "physicians_per_1_000_people": 75,
       "political_corruption_index": 71,
       "big_mac_index": 55,
-      "global_peace_index": 135
+      "environmental_performance_index": 87,
+      "global_peace_index": 135,
+      "inform_resilience_index": 152
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Eswatini",
@@ -4258,9 +4543,11 @@
       "human_development_index_hdi": 124,
       "physicians_per_1_000_people": 97,
       "political_corruption_index": 95,
-      "global_peace_index": 95
+      "environmental_performance_index": 76,
+      "global_peace_index": 95,
+      "inform_resilience_index": 97
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Botswana",
@@ -4288,9 +4575,11 @@
       "human_development_index_hdi": 109,
       "physicians_per_1_000_people": 143,
       "political_corruption_index": 49,
-      "global_peace_index": 43
+      "environmental_performance_index": 35,
+      "global_peace_index": 43,
+      "inform_resilience_index": 68
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Namibia",
@@ -4317,9 +4606,11 @@
       "human_development_index_hdi": 134,
       "physicians_per_1_000_people": 137,
       "political_corruption_index": 57,
-      "global_peace_index": 50
+      "environmental_performance_index": 44,
+      "global_peace_index": 50,
+      "inform_resilience_index": 114
     },
-    "kpi_count": 23
+    "kpi_count": 25
   },
   {
     "country": "South Africa",
@@ -4348,9 +4639,11 @@
       "physicians_per_1_000_people": 123,
       "political_corruption_index": 92,
       "big_mac_index": 6,
-      "global_peace_index": 121
+      "environmental_performance_index": 116,
+      "global_peace_index": 121,
+      "inform_resilience_index": 136
     },
-    "kpi_count": 25
+    "kpi_count": 27
   },
   {
     "country": "Cambodia",
@@ -4376,9 +4669,11 @@
       "human_development_index_hdi": 145,
       "physicians_per_1_000_people": 152,
       "political_corruption_index": 161,
-      "global_peace_index": 84
+      "environmental_performance_index": 154,
+      "global_peace_index": 84,
+      "inform_resilience_index": 130
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "New Zealand",
@@ -4406,9 +4701,11 @@
       "political_corruption_index": 3,
       "electric_vehicle_stock": 27,
       "big_mac_index": 49,
-      "global_peace_index": 3
+      "environmental_performance_index": 26,
+      "global_peace_index": 3,
+      "inform_resilience_index": 7
     },
-    "kpi_count": 24
+    "kpi_count": 26
   },
   {
     "country": "Palau",
@@ -4427,9 +4724,10 @@
       "education_expenditure_of_gdp": 105,
       "purchasing_power_parity": 89,
       "human_development_index_hdi": 82,
-      "physicians_per_1_000_people": 92
+      "physicians_per_1_000_people": 92,
+      "inform_resilience_index": 31
     },
-    "kpi_count": 15
+    "kpi_count": 16
   },
   {
     "country": "San Marino",
@@ -4476,9 +4774,11 @@
       "physicians_per_1_000_people": 120,
       "political_corruption_index": 86,
       "big_mac_index": 38,
-      "global_peace_index": 96
+      "environmental_performance_index": 90,
+      "global_peace_index": 96,
+      "inform_resilience_index": 10
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Singapore",
@@ -4504,9 +4804,11 @@
       "physicians_per_1_000_people": 68,
       "political_corruption_index": 14,
       "big_mac_index": 56,
-      "global_peace_index": 6
+      "environmental_performance_index": 45,
+      "global_peace_index": 6,
+      "inform_resilience_index": 1
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Cuba",
@@ -4529,9 +4831,11 @@
       "human_development_index_hdi": 94,
       "physicians_per_1_000_people": 1,
       "political_corruption_index": 97,
-      "global_peace_index": 98
+      "environmental_performance_index": 60,
+      "global_peace_index": 98,
+      "inform_resilience_index": 86
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Kuwait",
@@ -4556,9 +4860,11 @@
       "physicians_per_1_000_people": 78,
       "political_corruption_index": 61,
       "big_mac_index": 40,
-      "global_peace_index": 31
+      "environmental_performance_index": 88,
+      "global_peace_index": 31,
+      "inform_resilience_index": 56
     },
-    "kpi_count": 21
+    "kpi_count": 23
   },
   {
     "country": "Oman",
@@ -4583,9 +4889,11 @@
       "physicians_per_1_000_people": 88,
       "political_corruption_index": 51,
       "big_mac_index": 26,
-      "global_peace_index": 42
+      "environmental_performance_index": 150,
+      "global_peace_index": 42,
+      "inform_resilience_index": 41
     },
-    "kpi_count": 21
+    "kpi_count": 23
   },
   {
     "country": "Saudi Arabia",
@@ -4611,9 +4919,11 @@
       "physicians_per_1_000_people": 54,
       "political_corruption_index": 63,
       "big_mac_index": 53,
-      "global_peace_index": 87
+      "environmental_performance_index": 109,
+      "global_peace_index": 87,
+      "inform_resilience_index": 36
     },
-    "kpi_count": 22
+    "kpi_count": 24
   },
   {
     "country": "Eritrea",
@@ -4636,9 +4946,11 @@
       "human_development_index_hdi": 170,
       "physicians_per_1_000_people": 178,
       "political_corruption_index": 124,
-      "global_peace_index": 127
+      "environmental_performance_index": 144,
+      "global_peace_index": 127,
+      "inform_resilience_index": 134
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Afghanistan",
@@ -4662,9 +4974,11 @@
       "human_development_index_hdi": 173,
       "physicians_per_1_000_people": 148,
       "political_corruption_index": 110,
-      "global_peace_index": 152
+      "environmental_performance_index": 81,
+      "global_peace_index": 152,
+      "inform_resilience_index": 183
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Libya",
@@ -4688,9 +5002,10 @@
       "human_development_index_hdi": 114,
       "physicians_per_1_000_people": 83,
       "political_corruption_index": 143,
-      "global_peace_index": 126
+      "global_peace_index": 126,
+      "inform_resilience_index": 147
     },
-    "kpi_count": 20
+    "kpi_count": 21
   },
   {
     "country": "Monaco",
@@ -4742,9 +5057,11 @@
       "education_expenditure_of_gdp": 120,
       "purchasing_power_parity": 54,
       "human_development_index_hdi": 52,
-      "physicians_per_1_000_people": 61
+      "physicians_per_1_000_people": 61,
+      "environmental_performance_index": 40,
+      "inform_resilience_index": 18
     },
-    "kpi_count": 14
+    "kpi_count": 16
   },
   {
     "country": "Dominica",
@@ -4761,9 +5078,11 @@
       "education_expenditure_of_gdp": 38,
       "purchasing_power_parity": 77,
       "human_development_index_hdi": 95,
-      "physicians_per_1_000_people": 112
+      "physicians_per_1_000_people": 112,
+      "environmental_performance_index": 42,
+      "inform_resilience_index": 58
     },
-    "kpi_count": 13
+    "kpi_count": 15
   },
   {
     "country": "Greenland",
@@ -4786,9 +5105,10 @@
       "mobile_subscriptions_per_100_inhabitants": 57,
       "fixed_broadband_subscriptions_per_100_people": 3,
       "education_expenditure_of_gdp": 134,
-      "human_development_index_hdi": 16
+      "human_development_index_hdi": 16,
+      "inform_resilience_index": 2
     },
-    "kpi_count": 6
+    "kpi_count": 7
   },
   {
     "country": "Taiwan",
@@ -4796,9 +5116,10 @@
       "democracy_index": 12,
       "political_corruption_index": 47,
       "big_mac_index": 2,
+      "environmental_performance_index": 74,
       "global_peace_index": 40
     },
-    "kpi_count": 4
+    "kpi_count": 5
   },
   {
     "country": "South Korea",
@@ -4809,9 +5130,11 @@
       "political_corruption_index": 36,
       "electric_vehicle_stock": 13,
       "big_mac_index": 25,
-      "global_peace_index": 41
+      "environmental_performance_index": 63,
+      "global_peace_index": 41,
+      "inform_resilience_index": 24
     },
-    "kpi_count": 7
+    "kpi_count": 9
   },
   {
     "country": "Cape Verde",
@@ -4819,9 +5142,11 @@
       "democracy_index": 37,
       "human_development_index_hdi": 133,
       "physicians_per_1_000_people": 124,
-      "political_corruption_index": 53
+      "political_corruption_index": 53,
+      "environmental_performance_index": 91,
+      "inform_resilience_index": 27
     },
-    "kpi_count": 4
+    "kpi_count": 6
   },
   {
     "country": "Slovakia",
@@ -4831,9 +5156,11 @@
       "physicians_per_1_000_people": 33,
       "political_corruption_index": 56,
       "big_mac_index": 27,
-      "global_peace_index": 28
+      "environmental_performance_index": 18,
+      "global_peace_index": 28,
+      "inform_resilience_index": 60
     },
-    "kpi_count": 6
+    "kpi_count": 8
   },
   {
     "country": "World",
@@ -4851,9 +5178,11 @@
       "democracy_index": 97,
       "human_development_index_hdi": 163,
       "physicians_per_1_000_people": 173,
-      "political_corruption_index": 54
+      "political_corruption_index": 54,
+      "environmental_performance_index": 122,
+      "inform_resilience_index": 117
     },
-    "kpi_count": 4
+    "kpi_count": 6
   },
   {
     "country": "Turkey",
@@ -4863,9 +5192,11 @@
       "physicians_per_1_000_people": 81,
       "political_corruption_index": 144,
       "electric_vehicle_stock": 25,
-      "big_mac_index": 59
+      "big_mac_index": 59,
+      "environmental_performance_index": 172,
+      "inform_resilience_index": 160
     },
-    "kpi_count": 6
+    "kpi_count": 8
   },
   {
     "country": "Kyrgyzstan",
@@ -4873,9 +5204,11 @@
       "democracy_index": 108,
       "human_development_index_hdi": 116,
       "physicians_per_1_000_people": 84,
-      "political_corruption_index": 136
+      "political_corruption_index": 136,
+      "environmental_performance_index": 126,
+      "inform_resilience_index": 99
     },
-    "kpi_count": 4
+    "kpi_count": 6
   },
   {
     "country": "Palestine",
@@ -4884,9 +5217,10 @@
       "human_development_index_hdi": 132,
       "physicians_per_1_000_people": 80,
       "political_corruption_index": 34,
-      "global_peace_index": 140
+      "global_peace_index": 140,
+      "inform_resilience_index": 171
     },
-    "kpi_count": 5
+    "kpi_count": 6
   },
   {
     "country": "Egypt",
@@ -4896,9 +5230,11 @@
       "physicians_per_1_000_people": 130,
       "political_corruption_index": 121,
       "big_mac_index": 5,
-      "global_peace_index": 103
+      "environmental_performance_index": 128,
+      "global_peace_index": 103,
+      "inform_resilience_index": 120
     },
-    "kpi_count": 6
+    "kpi_count": 8
   },
   {
     "country": "Vietnam",
@@ -4908,9 +5244,11 @@
       "physicians_per_1_000_people": 121,
       "political_corruption_index": 82,
       "big_mac_index": 10,
-      "global_peace_index": 39
+      "environmental_performance_index": 178,
+      "global_peace_index": 39,
+      "inform_resilience_index": 113
     },
-    "kpi_count": 6
+    "kpi_count": 8
   },
   {
     "country": "Venezuela",
@@ -4920,9 +5258,11 @@
       "physicians_per_1_000_people": 95,
       "political_corruption_index": 169,
       "big_mac_index": 35,
-      "global_peace_index": 134
+      "environmental_performance_index": 67,
+      "global_peace_index": 134,
+      "inform_resilience_index": 165
     },
-    "kpi_count": 6
+    "kpi_count": 8
   },
   {
     "country": "Russia",
@@ -4932,9 +5272,11 @@
       "physicians_per_1_000_people": 30,
       "political_corruption_index": 135,
       "big_mac_index": 1,
-      "global_peace_index": 157
+      "environmental_performance_index": 112,
+      "global_peace_index": 157,
+      "inform_resilience_index": 126
     },
-    "kpi_count": 6
+    "kpi_count": 8
   },
   {
     "country": "Iran",
@@ -4943,9 +5285,11 @@
       "human_development_index_hdi": 73,
       "physicians_per_1_000_people": 99,
       "political_corruption_index": 134,
-      "global_peace_index": 137
+      "environmental_performance_index": 133,
+      "global_peace_index": 137,
+      "inform_resilience_index": 168
     },
-    "kpi_count": 5
+    "kpi_count": 7
   },
   {
     "country": "Yemen",
@@ -4954,9 +5298,10 @@
       "human_development_index_hdi": 176,
       "physicians_per_1_000_people": 145,
       "political_corruption_index": 164,
-      "global_peace_index": 153
+      "global_peace_index": 153,
+      "inform_resilience_index": 189
     },
-    "kpi_count": 5
+    "kpi_count": 6
   },
   {
     "country": "Laos",
@@ -4965,9 +5310,11 @@
       "human_development_index_hdi": 142,
       "physicians_per_1_000_people": 144,
       "political_corruption_index": 125,
-      "global_peace_index": 47
+      "environmental_performance_index": 149,
+      "global_peace_index": 47,
+      "inform_resilience_index": 101
     },
-    "kpi_count": 5
+    "kpi_count": 7
   },
   {
     "country": "Syria",
@@ -4976,9 +5323,10 @@
       "human_development_index_hdi": 155,
       "physicians_per_1_000_people": 110,
       "political_corruption_index": 123,
-      "global_peace_index": 151
+      "global_peace_index": 151,
+      "inform_resilience_index": 182
     },
-    "kpi_count": 5
+    "kpi_count": 6
   },
   {
     "country": "North Korea",
@@ -4986,41 +5334,49 @@
       "democracy_index": 160,
       "physicians_per_1_000_people": 34,
       "political_corruption_index": 112,
-      "global_peace_index": 143
+      "global_peace_index": 143,
+      "inform_resilience_index": 135
     },
-    "kpi_count": 4
+    "kpi_count": 5
   },
   {
     "country": "Saint Kitts and Nevis",
     "ranks": {
       "human_development_index_hdi": 57,
-      "physicians_per_1_000_people": 55
+      "physicians_per_1_000_people": 55,
+      "inform_resilience_index": 12
     },
-    "kpi_count": 2
+    "kpi_count": 3
   },
   {
     "country": "Brunei",
     "ranks": {
       "human_development_index_hdi": 59,
-      "physicians_per_1_000_people": 89
+      "physicians_per_1_000_people": 89,
+      "environmental_performance_index": 71,
+      "inform_resilience_index": 33
     },
-    "kpi_count": 2
+    "kpi_count": 4
   },
   {
     "country": "Bahamas",
     "ranks": {
       "human_development_index_hdi": 65,
-      "physicians_per_1_000_people": 91
+      "physicians_per_1_000_people": 91,
+      "environmental_performance_index": 28,
+      "inform_resilience_index": 32
     },
-    "kpi_count": 2
+    "kpi_count": 4
   },
   {
     "country": "Saint Lucia",
     "ranks": {
       "human_development_index_hdi": 101,
-      "physicians_per_1_000_people": 133
+      "physicians_per_1_000_people": 133,
+      "environmental_performance_index": 53,
+      "inform_resilience_index": 50
     },
-    "kpi_count": 2
+    "kpi_count": 4
   },
   {
     "country": "Somalia",
@@ -5028,22 +5384,67 @@
       "human_development_index_hdi": 184,
       "physicians_per_1_000_people": 185,
       "political_corruption_index": 159,
-      "global_peace_index": 145
+      "global_peace_index": 145,
+      "inform_resilience_index": 190
     },
-    "kpi_count": 4
+    "kpi_count": 5
+  },
+  {
+    "country": "Saint Vincent-Grenadines",
+    "ranks": {
+      "environmental_performance_index": 37,
+      "inform_resilience_index": 74
+    },
+    "kpi_count": 2
+  },
+  {
+    "country": "São Tomé and Príncipe",
+    "ranks": {
+      "environmental_performance_index": 38,
+      "inform_resilience_index": 37
+    },
+    "kpi_count": 2
   },
   {
     "country": "Republic of the Congo",
     "ranks": {
-      "global_peace_index": 99
+      "environmental_performance_index": 100,
+      "global_peace_index": 99,
+      "inform_resilience_index": 145
     },
-    "kpi_count": 1
+    "kpi_count": 3
+  },
+  {
+    "country": "Bosnia Herzegovina",
+    "ranks": {
+      "environmental_performance_index": 102,
+      "inform_resilience_index": 95
+    },
+    "kpi_count": 2
+  },
+  {
+    "country": "Micronesia",
+    "ranks": {
+      "environmental_performance_index": 113,
+      "inform_resilience_index": 90
+    },
+    "kpi_count": 2
   },
   {
     "country": "Democratic Republic of the Congo",
     "ranks": {
-      "global_peace_index": 154
+      "environmental_performance_index": 119,
+      "global_peace_index": 154,
+      "inform_resilience_index": 188
     },
-    "kpi_count": 1
+    "kpi_count": 3
+  },
+  {
+    "country": "Ivory Coast",
+    "ranks": {
+      "environmental_performance_index": 138,
+      "inform_resilience_index": 137
+    },
+    "kpi_count": 2
   }
 ]

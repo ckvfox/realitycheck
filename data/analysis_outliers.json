@@ -1464,13 +1464,13 @@
         "country": "Monaco",
         "year": 2023,
         "value": 54.356,
-        "z": 2.582
+        "z": 2.586
       },
       {
         "country": "Japan",
         "year": 2023,
         "value": 48.958,
-        "z": 2.006
+        "z": 2.01
       }
     ],
     "low_outliers": []
@@ -2007,6 +2007,112 @@
       }
     ]
   },
+  "recycling_rate": {
+    "high_outliers": [
+      {
+        "country": "South Korea",
+        "year": 2022,
+        "value": 67.1,
+        "z": 3.777
+      },
+      {
+        "country": "Samoa",
+        "year": 2022,
+        "value": 57.57,
+        "z": 3.016
+      },
+      {
+        "country": "Benin",
+        "year": 2022,
+        "value": 56.87,
+        "z": 2.96
+      },
+      {
+        "country": "Iceland",
+        "year": 2022,
+        "value": 55.51,
+        "z": 2.851
+      },
+      {
+        "country": "Australia",
+        "year": 2022,
+        "value": 52.87,
+        "z": 2.64
+      },
+      {
+        "country": "Vanuatu",
+        "year": 2022,
+        "value": 52.86,
+        "z": 2.64
+      },
+      {
+        "country": "Liechtenstein",
+        "year": 2022,
+        "value": 52.81,
+        "z": 2.636
+      },
+      {
+        "country": "Singapore",
+        "year": 2022,
+        "value": 51.7,
+        "z": 2.547
+      },
+      {
+        "country": "Philippines",
+        "year": 2022,
+        "value": 49.89,
+        "z": 2.402
+      },
+      {
+        "country": "Germany",
+        "year": 2022,
+        "value": 49.77,
+        "z": 2.393
+      }
+    ],
+    "low_outliers": []
+  },
+  "environmental_performance_index": {
+    "high_outliers": [
+      {
+        "country": "Denmark",
+        "year": 2022,
+        "value": 77.9,
+        "z": 2.837
+      },
+      {
+        "country": "United Kingdom",
+        "year": 2022,
+        "value": 77.7,
+        "z": 2.821
+      },
+      {
+        "country": "Finland",
+        "year": 2022,
+        "value": 76.5,
+        "z": 2.723
+      },
+      {
+        "country": "Malta",
+        "year": 2022,
+        "value": 75.2,
+        "z": 2.617
+      },
+      {
+        "country": "Sweden",
+        "year": 2022,
+        "value": 72.7,
+        "z": 2.413
+      },
+      {
+        "country": "Luxembourg",
+        "year": 2022,
+        "value": 72.3,
+        "z": 2.381
+      }
+    ],
+    "low_outliers": []
+  },
   "global_peace_index": {
     "high_outliers": [
       {
@@ -2062,6 +2168,71 @@
         "year": 2025,
         "value": 3.108,
         "z": 2.01
+      }
+    ],
+    "low_outliers": []
+  },
+  "inform_resilience_index": {
+    "high_outliers": [
+      {
+        "country": "South Sudan",
+        "year": 2025,
+        "value": 8.5,
+        "z": 2.638
+      },
+      {
+        "country": "Somalia",
+        "year": 2025,
+        "value": 8.4,
+        "z": 2.581
+      },
+      {
+        "country": "Yemen",
+        "year": 2025,
+        "value": 8.2,
+        "z": 2.465
+      },
+      {
+        "country": "Central African Republic",
+        "year": 2025,
+        "value": 8.1,
+        "z": 2.408
+      },
+      {
+        "country": "Democratic Republic of the Congo",
+        "year": 2025,
+        "value": 8.1,
+        "z": 2.408
+      },
+      {
+        "country": "Chad",
+        "year": 2025,
+        "value": 8.0,
+        "z": 2.35
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2025,
+        "value": 7.8,
+        "z": 2.235
+      },
+      {
+        "country": "Niger",
+        "year": 2025,
+        "value": 7.8,
+        "z": 2.235
+      },
+      {
+        "country": "Sudan",
+        "year": 2025,
+        "value": 7.8,
+        "z": 2.235
+      },
+      {
+        "country": "Syria",
+        "year": 2025,
+        "value": 7.7,
+        "z": 2.177
       }
     ],
     "low_outliers": []

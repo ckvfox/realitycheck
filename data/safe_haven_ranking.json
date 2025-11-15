@@ -2,91 +2,91 @@
   {
     "rank": 1,
     "country": "Norway",
-    "human_rights_index": "High",
-    "conflict_risk": "Very Low",
-    "climate_risk": "Low",
-    "resilience_index": "Very High",
-    "democracy_index": "Very High"
+    "human_rights_index": 9.8,
+    "geopolitical_risk_index": 9.4,
+    "climate_risk_index": 8.7,
+    "resilience_index": 9.5,
+    "democracy_index": 9.9
   },
   {
     "rank": 2,
     "country": "New Zealand",
-    "human_rights_index": "High",
-    "conflict_risk": "Very Low",
-    "climate_risk": "Moderate",
-    "resilience_index": "High",
-    "democracy_index": "Very High"
+    "human_rights_index": 9.6,
+    "geopolitical_risk_index": 9.6,
+    "climate_risk_index": 8.2,
+    "resilience_index": 9.2,
+    "democracy_index": 9.7
   },
   {
     "rank": 3,
     "country": "Finland",
-    "human_rights_index": "High",
-    "conflict_risk": "Very Low",
-    "climate_risk": "Low",
-    "resilience_index": "Very High",
-    "democracy_index": "Very High"
+    "human_rights_index": 9.7,
+    "geopolitical_risk_index": 9.3,
+    "climate_risk_index": 8.6,
+    "resilience_index": 9.3,
+    "democracy_index": 9.8
   },
   {
     "rank": 4,
     "country": "Switzerland",
-    "human_rights_index": "High",
-    "conflict_risk": "Very Low",
-    "climate_risk": "Moderate",
-    "resilience_index": "High",
-    "democracy_index": "Very High"
+    "human_rights_index": 9.5,
+    "geopolitical_risk_index": 9.5,
+    "climate_risk_index": 8.8,
+    "resilience_index": 9.1,
+    "democracy_index": 9.4
   },
   {
     "rank": 5,
     "country": "Denmark",
-    "human_rights_index": "High",
-    "conflict_risk": "Very Low",
-    "climate_risk": "Low",
-    "resilience_index": "High",
-    "democracy_index": "Very High"
+    "human_rights_index": 9.7,
+    "geopolitical_risk_index": 9.2,
+    "climate_risk_index": 8.9,
+    "resilience_index": 9.4,
+    "democracy_index": 9.6
   },
   {
     "rank": 6,
     "country": "Iceland",
-    "human_rights_index": "High",
-    "conflict_risk": "Very Low",
-    "climate_risk": "Low",
-    "resilience_index": "High",
-    "democracy_index": "Very High"
+    "human_rights_index": 9.8,
+    "geopolitical_risk_index": 9.8,
+    "climate_risk_index": 7.9,
+    "resilience_index": 9.0,
+    "democracy_index": 9.5
   },
   {
     "rank": 7,
     "country": "Sweden",
-    "human_rights_index": "High",
-    "conflict_risk": "Low",
-    "climate_risk": "Low",
-    "resilience_index": "High",
-    "democracy_index": "Very High"
+    "human_rights_index": 9.6,
+    "geopolitical_risk_index": 9.2,
+    "climate_risk_index": 8.5,
+    "resilience_index": 9.2,
+    "democracy_index": 9.6
   },
   {
     "rank": 8,
     "country": "Canada",
-    "human_rights_index": "High",
-    "conflict_risk": "Low",
-    "climate_risk": "Moderate",
-    "resilience_index": "High",
-    "democracy_index": "High"
+    "human_rights_index": 9.4,
+    "geopolitical_risk_index": 9.1,
+    "climate_risk_index": 7.7,
+    "resilience_index": 8.9,
+    "democracy_index": 9.3
   },
   {
     "rank": 9,
-    "country": "Ireland",
-    "human_rights_index": "High",
-    "conflict_risk": "Very Low",
-    "climate_risk": "Moderate",
-    "resilience_index": "High",
-    "democracy_index": "High"
+    "country": "Australia",
+    "human_rights_index": 9.2,
+    "geopolitical_risk_index": 9.0,
+    "climate_risk_index": 7.3,
+    "resilience_index": 8.8,
+    "democracy_index": 9.4
   },
   {
     "rank": 10,
-    "country": "Germany",
-    "human_rights_index": "High",
-    "conflict_risk": "Low",
-    "climate_risk": "Moderate",
-    "resilience_index": "High",
-    "democracy_index": "High"
+    "country": "Netherlands",
+    "human_rights_index": 9.6,
+    "geopolitical_risk_index": 9.1,
+    "climate_risk_index": 8.4,
+    "resilience_index": 9.0,
+    "democracy_index": 9.5
   }
 ]

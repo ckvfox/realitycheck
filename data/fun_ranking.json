@@ -1,122 +1,72 @@
 [
   {
     "rank": 1,
-    "country": "Spain",
-    "criteria_matches": {
-      "climate": "mostly 18-26°C",
-      "sunny_days": "approximately 300",
-      "rainy_days": "about 70",
-      "happiness_index": "high",
-      "beer_price": "around 2.50 USD",
-      "livability_bonus": "Barcelona in top 5 of Monocle"
-    }
+    "country": "Australia",
+    "reasons": [
+      "Pleasant climate, happy population, low beer prices, and Sydney ranked high in global liveability indexes."
+    ]
   },
   {
     "rank": 2,
-    "country": "Australia",
-    "criteria_matches": {
-      "climate": "varies, but cities like Sydney fit",
-      "sunny_days": "about 280",
-      "rainy_days": "few",
-      "happiness_index": "high",
-      "beer_price": "around 3.50 USD",
-      "livability_bonus": "Melbourne in top 5 EIU & Monocle"
-    }
+    "country": "Spain",
+    "reasons": [
+      "Matches climate and sunny days criteria exceptionally, low beer prices, high happiness index, and cities like Barcelona featured in liveability indexes."
+    ]
   },
   {
     "rank": 3,
     "country": "Portugal",
-    "criteria_matches": {
-      "climate": "generally 18-26°C",
-      "sunny_days": "around 300",
-      "rainy_days": "90",
-      "happiness_index": "high",
-      "beer_price": "around 2.00 USD",
-      "livability_bonus": "Lisbon often highly ranked"
-    }
+    "reasons": [
+      "Ideal climate, high number of sunny days, generally low beer prices, and consistent high scores in quality of life and happiness indexes."
+    ]
   },
   {
     "rank": 4,
-    "country": "Greece",
-    "criteria_matches": {
-      "climate": "20-26°C",
-      "sunny_days": "over 280",
-      "rainy_days": "80",
-      "happiness_index": "high",
-      "beer_price": "around 3.00 USD",
-      "livability_bonus": null
-    }
+    "country": "New Zealand",
+    "reasons": [
+      "Pleasant climate, high happiness index, Auckland scores well in global liveability surveys. Slightly higher beer prices but offset by other factors."
+    ]
   },
   {
     "rank": 5,
     "country": "Italy",
-    "criteria_matches": {
-      "climate": "typically 18-26°C in many regions",
-      "sunny_days": "around 280",
-      "rainy_days": "90",
-      "happiness_index": "high",
-      "beer_price": "around 3.50 USD",
-      "livability_bonus": "none specifically but Rome and Milan regarded well"
-    }
+    "reasons": [
+      "Great climate, known for sunny weather, rich culture enhancing lifestyle, low beer prices, and Rome ranks well in quality of living indexes."
+    ]
   },
   {
     "rank": 6,
-    "country": "Chile",
-    "criteria_matches": {
-      "climate": "Santiago 18-26°C",
-      "sunny_days": "over 300",
-      "rainy_days": "little",
-      "happiness_index": "moderately high",
-      "beer_price": "around 2.50 USD",
-      "livability_bonus": null
-    }
+    "country": "Greece",
+    "reasons": [
+      "Excellent Mediterranean climate, abundant sunshine, low beer prices, rising happiness scores and improving liveability metrics."
+    ]
   },
   {
     "rank": 7,
     "country": "Mexico",
-    "criteria_matches": {
-      "climate": "cities like Guadalajara fit the climate range",
-      "sunny_days": "about 300",
-      "rainy_days": "around 60",
-      "happiness_index": "high",
-      "beer_price": "under 2.00 USD",
-      "livability_bonus": null
-    }
+    "reasons": [
+      "Fits climate profile, sunny most of the year, very low beer prices, high happiness levels, particularly in cities like Mexico City increasingly cited for improved liveability."
+    ]
   },
   {
     "rank": 8,
-    "country": "Israel",
-    "criteria_matches": {
-      "climate": "Tel Aviv 18-26°C",
-      "sunny_days": "over 300",
-      "rainy_days": "less than 60",
-      "happiness_index": "high",
-      "beer_price": "around 3.00 USD",
-      "livability_bonus": null
-    }
+    "country": "Chile",
+    "reasons": [
+      "Good climate, plenty of sunny days, low beer prices, consistently high happiness scores, and Santiago is occasionally highlighted in quality of living discussions."
+    ]
   },
   {
     "rank": 9,
-    "country": "United States",
-    "criteria_matches": {
-      "climate": "cities like San Diego fit",
-      "sunny_days": "around 280",
-      "rainy_days": "less than 90",
-      "happiness_index": "high",
-      "beer_price": "varies, some cities under 3.50 USD",
-      "livability_bonus": "Several cities high in Mercer Index"
-    }
+    "country": "Costa Rica",
+    "reasons": [
+      "Ideal climate, high number of sunny days, low beer prices, very high happiness index, and often mentioned for its quality of life."
+    ]
   },
   {
     "rank": 10,
-    "country": "New Zealand",
-    "criteria_matches": {
-      "climate": "cities like Auckland fit the preferred range but slightly cooler",
-      "sunny_days": "200+, but long daylight hours in summer",
-      "rainy_days": "90-120",
-      "happiness_index": "high",
-      "beer_price": "around 3.50 USD",
-      "livability_bonus": "Auckland highly ranked in Mercer"
-    }
+    "country": "South Africa",
+    "reasons": [
+      "Good climate with many sunny days, relatively low beer prices, and cities like Cape Town feature in liveability and happiness indexes despite some challenges."
+    ]
   }
 ]
