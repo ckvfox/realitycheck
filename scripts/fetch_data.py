@@ -269,7 +269,23 @@ def _norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", s)
 
 def build_country_indices(countries: Dict[str, Any], mapping: Dict[str, str]):
-    c_index = { _norm(k): k for k in countries.keys() }
+    """Create lookup tables for canonical names and aliases.
+
+    Besides normalized country names we now also index ISO2/ISO3 codes so that
+    CSV sources which only provide codes (e.g. "AFG" or "DE") are resolved
+    without requiring manual aliases.
+    """
+
+    c_index = {}
+    for cname, meta in (countries or {}).items():
+        c_index[_norm(cname)] = cname
+
+        if isinstance(meta, dict):
+            for key in ("iso_a2", "iso2", "alpha2", "iso_a3", "iso3", "alpha3"):
+                code = meta.get(key)
+                if code:
+                    c_index[_norm(code)] = cname
+
     a_index = {}
     for alias, target in (mapping or {}).items():
         if not target or str(target).strip() == "":
@@ -286,6 +302,9 @@ def canonicalize_country(name: str, c_index, a_index, countries, pending, stats)
         stats["mapped_ok"] += 1
         return name
     n = _norm(name)
+    if n in c_index:
+        stats["mapped_ok"] += 1
+        return c_index[n]
     if n in a_index:
         target = a_index[n]
         if target == "":
