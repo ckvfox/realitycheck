@@ -67,9 +67,11 @@ def safe_write_json(path: Path, data: Any, *, logger: Optional[logging.Logger] =
         logger.info(note or f"JSON written → {path}")
 
 
-def read_json(path: Path, default: Any = None) -> Any:
+def read_json(path: Path, default: Any = None, *, logger: Optional[logging.Logger] = None) -> Any:
     """Read JSON content returning ``default`` on failure."""
     try:
         return json.loads(path.read_text(encoding="utf-8"))
-    except Exception:
+    except Exception as exc:
+        if logger:
+            logger.warning("Could not read %s: %s", path, exc)
         return default

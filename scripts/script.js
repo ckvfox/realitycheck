@@ -192,8 +192,7 @@ async function populateKpiSelect() {
           !Array.isArray(ALL_DATA[item.id]) ||
           !ALL_DATA[item.id].length
         ) {
-          o.style.color = "gray";
-          o.style.fontStyle = "italic";
+          o.classList.add("option-no-data");
         }
 
         g.appendChild(o);
@@ -700,9 +699,8 @@ function updateTable() {
       tbody.querySelectorAll("tr").forEach(tr => {
         const cell = tr.children[colIndex];
         if (cell) {
-          cell.style.transition = "background 0.3s ease";
-          cell.style.background = "rgba(255,255,0,0.07)";
-          setTimeout(() => (cell.style.background = ""), 300);
+          cell.classList.add("table-highlight");
+          setTimeout(() => cell.classList.remove("table-highlight"), 300);
         }
       });
     }
@@ -934,8 +932,8 @@ async function initMap() {
   }).addTo(map);
 
   // 🩵 Mobile Touch-Fix
-  el.style.touchAction = "pan-x pan-y";
-  document.body.style.overscrollBehavior = "contain";
+  el.classList.add("map-touch-pan");
+  document.body.classList.add("body-overscroll-contain");
   el.addEventListener("touchmove", e => e.stopPropagation(), { passive: true });
 
   setTimeout(() => map.invalidateSize(), 150);
@@ -1202,28 +1200,25 @@ function buildHeatLegendHTML({
   useLog = false
 }) {
   // ✅ Richtige Richtung: Grün = besser
-  const gradientHigher = "linear-gradient(to right, hsl(0,85%,50%), hsl(60,85%,50%), hsl(120,85%,45%))";  // low=rot → high=grün
-  const gradientLower  = "linear-gradient(to right, hsl(120,85%,45%), hsl(60,85%,50%), hsl(0,85%,50%))";  // low=grün → high=rot
-  const gradientTarget = "linear-gradient(to right, hsl(0,85%,50%), #ffffff, hsl(120,85%,45%))";          // Mitte = Ziel
-
-  let bar = gradientHigher;
+  const sortVariant = String(sortMode).toLowerCase();
+  let variant = "higher";
   let modeText = "Higher values = greener";
 
-  switch (String(sortMode).toLowerCase()) {
-    case "higher":
-      bar = gradientHigher;
-      modeText = "Higher values = greener";
-      break;
+  switch (sortVariant) {
     case "lower":
-      bar = gradientLower;
+      variant = "lower";
       modeText = "Lower values = greener";
       break;
     case "target":
-      bar = gradientTarget;
+      variant = "target";
       modeText = `Closer to target (${formatValueAuto(targetVal)} ${unit}) = greener`;
       break;
+    case "higher":
+      variant = "higher";
+      modeText = "Higher values = greener";
+      break;
     default:
-      bar = gradientHigher;
+      variant = "higher";
       modeText = "Quantitative scale (higher = greener)";
   }
 
@@ -1236,12 +1231,12 @@ function buildHeatLegendHTML({
   return `
   <div class="legend-box">
     <div class="legend-title"><strong>${title}</strong></div>
-    <div class="legend-bar" style="background:${bar};"></div>
+    <div class="legend-bar legend-bar--${variant}"></div>
     <div class="legend-scale">
       <span>${minLabel} ${unit}</span>
       <span>${maxLabel} ${unit}</span>
     </div>
-    <div class="legend-mode" style="font-size:0.8em;color:#0a0;">${modeText}</div>
+    <div class="legend-mode legend-mode--${variant}">${modeText}</div>
     ${logInfo}
   </div>`;
 }

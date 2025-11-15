@@ -29,13 +29,11 @@ function renderChart(container, title, unit, data) {
   let canvasEl = container.querySelector("canvas");
   if (!canvasEl) {
     canvasEl = document.createElement("canvas");
+    canvasEl.classList.add("chart-canvas");
     container.appendChild(canvasEl);
+  } else {
+    canvasEl.classList.add("chart-canvas");
   }
-
-  canvasEl.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
-  canvasEl.style.borderRadius = "8px";
-  canvasEl.style.marginBottom = "1rem";
-  canvasEl.style.background = "#fff";
 
   const chart = renderLineChart(canvasEl, {
     labels: data.years,
@@ -131,8 +129,7 @@ async function renderWorldKpi(container, kpi) {
       c.remove();
     });
     const msg = document.createElement("p");
-    msg.style.color = "#666";
-    msg.style.fontStyle = "italic";
+    msg.className = "kpi-message";
     msg.textContent = "No data available.";
     block.appendChild(msg);
     return;
@@ -145,8 +142,7 @@ async function renderWorldKpi(container, kpi) {
       c.remove();
     });
     const msg = document.createElement("p");
-    msg.style.color = "#666";
-    msg.style.fontStyle = "italic";
+    msg.className = "kpi-message";
     msg.textContent = "No global values in dataset.";
     block.appendChild(msg);
     return;
@@ -173,8 +169,19 @@ async function renderWorldKpi(container, kpi) {
   source.className = "chart-source";
   if (kpi.source) {
     try {
-      const hostname = new URL(kpi.source).hostname.replace("www.", "");
-      source.innerHTML = `Source: <a href="${kpi.source}" target="_blank" rel="noopener">${hostname}</a>`;
+      const url = new URL(kpi.source, window.location.href);
+      if (["http:", "https:"].includes(url.protocol)) {
+        const hostname = url.hostname.replace(/^www\./, "");
+        const link = document.createElement("a");
+        link.href = url.href;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = hostname;
+        source.textContent = "Source: ";
+        source.appendChild(link);
+      } else {
+        source.textContent = `Source: ${kpi.source}`;
+      }
     } catch {
       source.textContent = `Source: ${kpi.source}`;
     }
@@ -214,7 +221,11 @@ async function initWorldPage() {
     }
 
     if (Object.keys(grouped).length === 0) {
-      worldContainer.innerHTML = `<p style="text-align:center;margin-top:2rem;">No global KPIs found.</p>`;
+      worldContainer.innerHTML = "";
+      const emptyMsg = document.createElement("p");
+      emptyMsg.className = "world-empty";
+      emptyMsg.textContent = "No global KPIs found.";
+      worldContainer.appendChild(emptyMsg);
       return;
     }
 
@@ -235,9 +246,7 @@ async function initWorldPage() {
 
         const h2 = document.createElement("h2");
         h2.textContent = cluster;
-        h2.style.margin = "2rem auto 1rem";
-        h2.style.textAlign = "center";
-        h2.style.color = "var(--steel-blue)";
+        h2.className = "world-cluster-title";
         clusterSection.appendChild(h2);
 
         worldContainer.appendChild(clusterSection);
