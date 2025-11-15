@@ -57,6 +57,66 @@ AVAILABLE_FILE       = META_DIR / "available_kpis.json"
 LOG_FILE             = DATA_DIR / "fetch_log.txt"
 STATUS_FILE          = DATA_DIR / "fetch_status.json"
 
+# ======================================================================
+# 🌐 Netzwerk-Header & Requests-Defaults
+# ======================================================================
+WORLD_BANK_HEADERS = {
+    "User-Agent": "RealityCheckFetcher/2025 (+https://realitycheck.global)",
+    "Accept": "application/json, */*;q=0.1",
+}
+WORLD_BANK_ZIP_HEADERS = {
+    **WORLD_BANK_HEADERS,
+    "Accept": "application/zip, application/octet-stream;q=0.9, */*;q=0.1",
+}
+
+RETRYABLE_STATUS_CODES = {429}
+
+
+def worldbank_request(
+    url: str,
+    *,
+    timeout: int,
+    headers: Optional[Dict[str, str]] = None,
+    label: str,
+    attempts: int = 3,
+    wait_base: int = 3,
+):
+    """Perform a World Bank request with retry/backoff handling."""
+
+    last_response = None
+
+    for attempt in range(1, attempts + 1):
+        try:
+            response = requests.get(url, timeout=timeout, headers=headers)
+        except Exception as exc:  # pragma: no cover - network failure handling
+            last_response = None
+            if attempt == attempts:
+                log(f"[ERR] {label}: request failed after {attempts} attempts ({exc})")
+                return None
+
+            wait = wait_base * attempt
+            log(f"[WARN] {label}: request error {exc} → retry in {wait}s ({attempt}/{attempts})")
+            time.sleep(wait)
+            continue
+
+        last_response = response
+
+        if response.status_code == 200:
+            return response
+
+        retryable = (
+            response.status_code in RETRYABLE_STATUS_CODES or 500 <= response.status_code < 600
+        )
+
+        if attempt == attempts or not retryable:
+            return response
+
+        wait = wait_base * attempt
+        log(f"[WARN] {label}: HTTP {response.status_code} → retry in {wait}s ({attempt}/{attempts})")
+        time.sleep(wait)
+
+    return last_response
+
 
 
 # === Argumente ===
@@ -341,8 +401,15 @@ def get_source_date_from_worldbank(code: str) -> Optional[str]:
     try:
         # --- 1) JSON ---
         url_json = f"https://api.worldbank.org/v2/indicator/{code}?format=json"
-        rj = requests.get(url_json, timeout=20)
-        if rj.status_code == 200:
+        rj = worldbank_request(
+            url_json,
+            timeout=20,
+            headers=WORLD_BANK_HEADERS,
+            label=f"WorldBank meta {code}",
+            attempts=3,
+            wait_base=3,
+        )
+        if rj and rj.status_code == 200:
             data = rj.json()
             if isinstance(data, list) and data:
                 meta = data[0]
@@ -356,8 +423,16 @@ def get_source_date_from_worldbank(code: str) -> Optional[str]:
 
         # --- 2) CSV-Header (A3-Zeile) ---
         url_zip = f"https://api.worldbank.org/v2/en/indicator/{code}?downloadformat=csv"
-        rz = requests.get(url_zip, timeout=30)
-        if rz.status_code == 200 and rz.content[:2] == b"PK":
+        rz = worldbank_request(
+            url_zip,
+            timeout=30,
+            headers=WORLD_BANK_ZIP_HEADERS,
+            label=f"WorldBank meta ZIP {code}",
+            attempts=3,
+            wait_base=3,
+        )
+
+        if rz and rz.status_code == 200 and rz.content[:2] == b"PK":
             with zipfile.ZipFile(io.BytesIO(rz.content)) as zf:
                 data_csv = next((n for n in zf.namelist() if n.lower().endswith(".csv") and "metadata" not in n.lower()), None)
                 if data_csv:
@@ -494,48 +569,171 @@ def should_fetch(kpi_id: str, source_type: str, source_date: Optional[str], meta
 # ----------------------------------------------------------------------
 # 🧩 Hilfsfunktionen für World Bank Download
 # ----------------------------------------------------------------------
-def fetch_worldbank_series(indicator_code: str):
+def download_worldbank_zip(indicator_code: str, purpose: str) -> Optional[bytes]:
+    """Download the ZIP package for a World Bank indicator with retries."""
+
+    url = f"https://api.worldbank.org/v2/en/indicator/{indicator_code}?downloadformat=csv"
+    response = worldbank_request(
+        url,
+        timeout=60,
+        headers=WORLD_BANK_ZIP_HEADERS,
+        label=purpose,
+        attempts=4,
+        wait_base=4,
+    )
+
+    if response and response.status_code == 200 and response.content[:2] == b"PK":
+        return response.content
+
+    if response is None:
+        log(f"[ERR] {purpose}: request failed (no response)")
+    else:
+        log(f"[ERR] {purpose}: HTTP {response.status_code}")
+    return None
+
+
+def fetch_worldbank_series_via_zip(indicator_code: str) -> tuple[List[Dict[str, Any]], Optional[str]]:
+    """Fallback: parse the World Bank CSV ZIP to reconstruct the series."""
+
+    zip_bytes = download_worldbank_zip(indicator_code, f"WorldBank ZIP {indicator_code}")
+    if not zip_bytes:
+        return [], None
+
+    try:
+        with zipfile.ZipFile(io.BytesIO(zip_bytes)) as zf:
+            data_csv = next(
+                (
+                    name
+                    for name in zf.namelist()
+                    if name.lower().endswith(".csv")
+                    and "metadata" not in name.lower()
+                    and "api" in name.lower()
+                ),
+                None,
+            )
+
+            if not data_csv:
+                data_csv = next(
+                    (
+                        name
+                        for name in zf.namelist()
+                        if name.lower().endswith(".csv") and "metadata" not in name.lower()
+                    ),
+                    None,
+                )
+
+            if not data_csv:
+                log(f"[WARN] WorldBank {indicator_code}: ZIP fallback missing data CSV")
+                return [], None
+
+            raw_csv = zf.read(data_csv).decode("utf-8-sig", errors="replace")
+    except Exception as exc:
+        log(f"[WARN] WorldBank {indicator_code}: could not parse ZIP fallback ({exc})")
+        return [], None
+
+    stream = io.StringIO(raw_csv)
+    reader = csv.reader(stream)
+    header: Optional[List[str]] = None
+    fallback_date: Optional[str] = None
+
+    for row in reader:
+        if not row or all(not cell.strip() for cell in row):
+            continue
+
+        if len(row) >= 2 and "last updated date" in row[0].lower():
+            candidate = row[1].strip()
+            if re.match(r"^\d{4}-\d{2}-\d{2}$", candidate):
+                fallback_date = candidate + "T00:00:00Z"
+
+        if len(row) >= 4 and row[0].strip() == "Country Name" and row[1].strip() == "Country Code":
+            header = row
+            break
+
+    if header is None:
+        log(f"[WARN] WorldBank {indicator_code}: ZIP fallback missing header row")
+        return [], fallback_date
+
+    data_rows = list(reader)
+
+    year_columns = [
+        (idx, col.strip())
+        for idx, col in enumerate(header)
+        if idx >= 4 and re.match(r"^\d{4}$", col or "")
+    ]
+
+    series: List[Dict[str, Any]] = []
+    for row in data_rows:
+        if not row or len(row) < 4:
+            continue
+
+        country_name = row[0].strip()
+        iso3 = row[1].strip()
+        if not country_name:
+            continue
+
+        for idx, year in year_columns:
+            if idx >= len(row):
+                continue
+            value = safe_float(row[idx])
+            if value is None:
+                continue
+
+            series.append(
+                {
+                    "country": {"value": country_name},
+                    "countryiso3code": iso3,
+                    "date": year,
+                    "value": value,
+                }
+            )
+
+    return series, fallback_date
+
+
+def fetch_worldbank_series(indicator_code: str) -> tuple[List[Dict[str, Any]], Optional[str]]:
     """
     Ruft einen vollständigen Zeitverlauf eines World Bank-Indikators ab.
     Gibt eine Liste aus dicts zurück, jeweils mit 'country', 'date', 'value'.
+    Liefert zusätzlich ein mögliches Änderungsdatum aus ZIP-Fallbacks.
     Integriert automatischen Retry mit Backoff bei HTTP 429 (Rate Limit).
     """
     base_url = f"https://api.worldbank.org/v2/country/all/indicator/{indicator_code}?format=json&per_page=20000"
 
-    max_retries = 5
-    backoff = 5  # Sekunden
+    json_response = worldbank_request(
+        base_url,
+        timeout=60,
+        headers=WORLD_BANK_HEADERS,
+        label=f"WorldBank {indicator_code}",
+        attempts=5,
+        wait_base=5,
+    )
 
-    for attempt in range(1, max_retries + 1):
-        try:
-            r = requests.get(base_url, timeout=60)
-            if r.status_code == 200:
-                data = r.json()
-                if not isinstance(data, list) or len(data) < 2:
-                    log(f"[WARN] WorldBank {indicator_code}: unexpected JSON format")
-                    return []
-                series = data[1]
-                if not isinstance(series, list):
-                    log(f"[WARN] WorldBank {indicator_code}: series not list")
-                    return []
-                return series
+    if json_response and json_response.status_code == 200:
+        data = json_response.json()
+        if not isinstance(data, list) or len(data) < 2:
+            log(f"[WARN] WorldBank {indicator_code}: unexpected JSON format")
+        else:
+            series = data[1]
+            if isinstance(series, list):
+                return series, None
+            log(f"[WARN] WorldBank {indicator_code}: series not list")
 
-            elif r.status_code == 429:
-                # === 🕐 Rate Limit Handling ===
-                wait_time = backoff * attempt
-                log(f"[RATE] WorldBank {indicator_code}: HTTP 429 → waiting {wait_time}s before retry ({attempt}/{max_retries})")
-                time.sleep(wait_time)
-                continue  # erneuter Versuch
+    else:
+        if json_response is None:
+            log(f"[WARN] WorldBank {indicator_code}: JSON endpoint unreachable after retries")
+        else:
+            log(f"[WARN] WorldBank {indicator_code}: JSON endpoint returned HTTP {json_response.status_code}")
 
-            else:
-                log(f"[ERR] WorldBank {indicator_code}: HTTP {r.status_code}")
-                return []
+    # --- ZIP-Fallback ---
+    fallback_rows, fallback_date = fetch_worldbank_series_via_zip(indicator_code)
+    if fallback_rows:
+        log(
+            f"[FALLBACK] WorldBank {indicator_code}: using ZIP data ({len(fallback_rows)} rows)"
+        )
+        return fallback_rows, fallback_date
 
-        except Exception as e:
-            log(f"[ERR] WorldBank fetch failed for {indicator_code} (try {attempt}/{max_retries}): {e}")
-            time.sleep(2 * attempt)
-
-    log(f"[FAIL] WorldBank {indicator_code}: all {max_retries} attempts failed")
-    return []
+    log(f"[FAIL] WorldBank {indicator_code}: all fetch attempts failed")
+    return [], None
 
 
 def extract_worldbank_date(zip_bytes: bytes) -> Optional[str]:
@@ -570,7 +768,7 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
     if not source_date or source_date in ("Unknown", ""):
         try:
             zip_url = f"https://api.worldbank.org/v2/en/indicator/{code}?downloadformat=csv"
-            r_zip = requests.get(zip_url, timeout=30)
+            r_zip = requests.get(zip_url, timeout=30, headers=WORLD_BANK_ZIP_HEADERS)
             if r_zip.status_code == 200:
                 zip_date = extract_worldbank_date(r_zip.content)
                 if zip_date:
@@ -579,7 +777,7 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
         except Exception as e:
             log(f"[WARN] WorldBank ZIP date extract failed for {code}: {e}")
      
-    rows = fetch_worldbank_series(code)
+    rows, fallback_source_date = fetch_worldbank_series(code)
     if not rows:
         keep_or_dummy(kpi_id, f"WorldBank fetch failed ({code})", stats)
         return
@@ -610,6 +808,10 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
 
     # === 3️⃣ Heuristik: falls source_date generisch oder unbekannt, ersetze durch jüngstes Jahr ===
     latest_year = max(all_years) if all_years else None
+    if (not source_date or source_date == "Unknown") and fallback_source_date:
+        source_date = fallback_source_date
+        log(f"[META] WorldBank {code} → date inferred from ZIP data {source_date}")
+
     # ✅ Nur heuristisch, wenn wirklich KEIN Datum gefunden wurde
     if (not source_date or source_date == "Unknown") and latest_year:
         source_date = f"{latest_year}-01-01T00:00:00Z"
