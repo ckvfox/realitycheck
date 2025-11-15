@@ -9,11 +9,10 @@
 • Fortschritts- und Fehler-Output
 """
 
-import json
 import subprocess
 from pathlib import Path
 
-from script_utils import ensure_utf8_stdout, safe_write_json, setup_logger
+from script_utils import ensure_utf8_stdout, read_json, safe_write_json, setup_logger
 
 # ======================================================================
 # 🔧 Pfade (pathlib-Version – robust gegen OS-Unterschiede)
@@ -37,12 +36,6 @@ logger = setup_logger("overall_ranking", LOG_FILE)
 
 def log(message: str) -> None:
     logger.info(message)
-
-
-def load_json(path: Path):
-    with path.open("r", encoding="utf-8") as f:
-        return json.load(f)
-
 def get_latest_values(entries):
     """Findet den neuesten Wert pro Land."""
     latest = {}
@@ -65,7 +58,7 @@ def main():
         log(f"[ERR] Missing {AVAILABLE_FILE}")
         return
 
-    available = load_json(AVAILABLE_FILE)
+    available = read_json(AVAILABLE_FILE, default=[], logger=logger)
     valid_kpis = {}
 
     # === KPI-Auswahl (Filterung) ===
@@ -101,7 +94,7 @@ def main():
             continue
 
         try:
-            data = load_json(filepath)
+            data = read_json(filepath, default=[], logger=logger)
         except Exception as e:
             log(f"⚠️ Could not read {filename}: {e}")
             continue

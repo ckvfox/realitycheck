@@ -12,6 +12,8 @@ import json, gzip
 from datetime import datetime, timezone
 from pathlib import Path
 
+from script_utils import read_json, safe_write_json
+
 # ======================================================================
 # 🔧 Pfade (robust gegen OS-Unterschiede)
 # ======================================================================
@@ -26,13 +28,6 @@ MAX_SIZE_MB = 8.0  # Zielgröße pro Teil (InfinityFree Limit ≈5 MB)
 # ======================================================================
 # 🧰 Hilfsfunktionen
 # ======================================================================
-def load_json(path: Path):
-    try:
-        with path.open(encoding="utf-8") as f:
-            return json.load(f)
-    except Exception as e:
-        print(f"⚠️ Could not load {path}: {e}")
-        return {}
 
 def get_file_size_mb(path: Path) -> float:
     return path.stat().st_size / (1024 * 1024)
@@ -44,25 +39,12 @@ def gzip_json(data, path: Path):
         json.dump(data, f, separators=(",", ":"))
 
 # ======================================================================
-# 💾 Safe Write Helpers
-# ======================================================================
-def safe_write_json(path: Path, data):
-    """Garantiert sicheres Schreiben einer JSON-Datei mit UTF-8 und Verzeichnis-Erstellung."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        with path.open("w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"💾 JSON saved successfully → {path.relative_to(ROOT_DIR)} ({len(data)} keys)")
-    except Exception as e:
-        print(f"❌ Failed to write {path}: {e}")
-
-# ======================================================================
 # 🚀 Main
 # ======================================================================
 def main():
     print("🌍 Building consolidated KPI dataset (split + gzip)…")
 
-    meta = load_json(META_PATH)
+    meta = read_json(META_PATH, default=[])
     if not meta:
         print("❌ No meta loaded – aborting.")
         return
@@ -115,7 +97,6 @@ def main():
     }
 
     safe_write_json(index_path, index_data)
-
     print(f"📄 Index written → {index_path}")
     print(f"✅ Done ({len(parts)} parts total).")
 

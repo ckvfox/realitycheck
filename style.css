@@ -175,11 +175,125 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
   line-height: 1.5;
 }
 
+.table-placeholder,
+.table-status {
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.table-status {
+  margin-top: 1rem;
+}
+
+.table-status--error {
+  color: #c0392b;
+}
+
+.chart-canvas {
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+}
+
+.kpi-message {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.world-cluster {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  padding: 0 1.5rem 1rem;
+}
+
+.world-cluster-title {
+  margin: 2rem auto 1rem;
+  text-align: center;
+  color: var(--steel-blue);
+}
+
+.world-empty {
+  text-align: center;
+  margin: 2rem 0;
+  color: #666;
+}
+
+.option-no-data {
+  color: #666;
+  font-style: italic;
+}
+
+.table-highlight {
+  background: rgba(255, 255, 0, 0.12);
+  transition: background 0.3s ease;
+}
+
+.map-touch-pan {
+  touch-action: pan-x pan-y;
+}
+
+.body-overscroll-contain {
+  overscroll-behavior: contain;
+}
+
+.legend-bar {
+  height: 12px;
+  border-radius: 999px;
+  margin: 0.5rem 0;
+}
+
+.legend-bar--higher {
+  background: linear-gradient(to right, hsl(0, 85%, 50%), hsl(60, 85%, 50%), hsl(120, 85%, 45%));
+}
+
+.legend-bar--lower {
+  background: linear-gradient(to right, hsl(120, 85%, 45%), hsl(60, 85%, 50%), hsl(0, 85%, 50%));
+}
+
+.legend-bar--target {
+  background: linear-gradient(to right, hsl(0, 85%, 50%), #ffffff, hsl(120, 85%, 45%));
+}
+
+.legend-mode {
+  font-size: 0.8em;
+  margin-top: 0.25rem;
+}
+
+.legend-mode--higher,
+.legend-mode--target {
+  color: #0a0;
+}
+
+.legend-mode--lower {
+  color: #c0392b;
+}
+
+.legend-note {
+  margin-top: 0.5rem;
+  font-size: 0.8em;
+  color: #666;
+}
+
+#world-kpis .graph-block {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+  padding: 1rem 1.25rem 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
 
 #data-table,
 #chart-container,
-#map-section,
-#world-kpis {
+#map-section {
   text-align: center;
 }
 
@@ -412,7 +526,15 @@ body.overall-page #legend .missing-kpis span {
 #world-intro { max-width: 900px; margin: 2rem auto 3rem; text-align: center; line-height: 1.6; padding: 0 1rem; }
 
 
-#world-kpis { display: flex; flex-direction: column; align-items: center; gap: 2rem; padding: 0 1rem; max-width: 1100px; margin: 0 auto 3rem; }
+#world-kpis {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1.5rem 3rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
 
 
 .graph-block { width: 100%; max-width: 1000px; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1rem 1.5rem; text-align: center; box-shadow: 0 0 10px #0000d; }
@@ -532,7 +654,8 @@ body:not(.overall-page) #controls select { flex: 1 1 auto; padding: .4rem .6rem;
 #glossary-container thead th { background: var(--table-head); color: var(--table-head-text); position: static; }
 
 
-td.outlier { background: #f0014; font-weight: 600; }
+td.outlier,
+.outlier { background: #f0014; font-weight: 600; }
 
 
 td.warn { background: #ffa50014; }
@@ -561,22 +684,6 @@ body.world-page,body.world-page * { font-family: "Segoe UI",Roboto,Arial,sans-se
 
 #site-logo { height: 100%; width: auto; object-fit: contain; image-rendering: crisp-edges; }
 
-
-*/
-.leaflet-container { touch-action: pan-x pan-y!important; }
-
-
-.map-container { height: auto !important; overflow: visible !important; }
-
-
-body,html { overscroll-behavior: contain; }
-
-
-
-canvas { max-width: 100%!important; height: auto!important; }
-
-
-.chart-selects { display: flex; flex-direction: column; gap: .3rem; max-width: 280px; margin: .5rem auto 1rem; }
 
 
 .chart-selects select { width: 100%; padding: .45rem .5rem; border: 1px solid #ccc; border-radius: 6px; background: #fafafa; font-size: .95rem; }
@@ -648,7 +755,6 @@ body.world-page { overflow-x: hidden; }
 #logo { height: 40px; width: auto; object-fit: contain; display: block; margin-bottom: .5rem; content: url("images/logo.png"); max-height: 70px; border-radius: 50%; transition: transform .3s ease; }
 
 
-*/
 #about-section { max-width: 900px; margin: 2rem auto 4rem; padding: 0 1.5rem; line-height: 1.6; }
 
 
@@ -679,11 +785,9 @@ body.world-page { overflow-x: hidden; }
 .chart-source a:hover { text-decoration: underline; }
 
 
-*/
 @supports (-webkit-touch-callout: none) { #logoheight: auto!important; max-height: 48px!important; margin: .4rem 0; }
 
 
-*/
 tr.fun-mode { background-color: #fff7cc!important; }
 
 
@@ -774,17 +878,6 @@ tr.fun-mode,tr.safe-mode,tr.fun-safe { background: transparent!important; }
 
 #overlay-spinner.hidden { opacity: 0; pointer-events: none; }
 
- */
-/* #spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid #ccc; border-top: 3px solid var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin-left: 6px; vertical-align: middle; visibility: hidden; }
-
-
-#spinner.active { visibility: visible; }
-
-
-to { transform: rotate(360deg); }
-
- */
-
 /* ============================================================
    🌍 REALITYCHECK – STRUCTURE + RESPONSIVE FIX v9 (2025-11-01)
    Zentrierung • Tables • Charts • Map • Spinner • Logo
@@ -803,7 +896,7 @@ to { transform: rotate(360deg); }
 
 /* === 2️⃣ Allgemeine Container-Zentrierung === */
 #controls, #data-table, #data-meta, #chart-container,
-#map-section, #legend, #world-kpis {
+#map-section, #legend {
   margin: 1.2rem auto;
   max-width: 1100px;
   width: 100%;
@@ -948,38 +1041,6 @@ to { transform: rotate(360deg); }
   height: auto !important;
   display: block;
   margin: 0 auto;
-}
-
-
-
-/* === World KPI Section === */
-#world-kpis {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.6rem;
-}
-
-
-#world-kpis .graph-block {
-  max-width: 900px;
-  padding: 1rem;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-
-
-/* ============================================================
-   MAP
-   ============================================================ */
-
-#map-section {
-  max-width: 900px;
-  text-align: center;
-  margin: 2rem auto;
-  padding: 0 1rem;
 }
 
 
