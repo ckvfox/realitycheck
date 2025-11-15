@@ -1,348 +1,358 @@
-[2025-11-15T14:01:12Z UTC] [INFO] Using OPENAI_API_KEY: found
-[2025-11-15T14:01:12Z UTC] === Fetch started ===
-[2025-11-15T14:01:12Z UTC] ⚠️ Kein fetch_status.json vorhanden oder leer – setze ALLE KPIs auf 'neu'.
-[2025-11-15T14:01:13Z UTC] [META] WorldBank AG.SRF.TOTL.K2: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:14Z UTC] [META] WorldBank AG.SRF.TOTL.K2: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:15Z UTC] [ERR] WorldBank AG.SRF.TOTL.K2: HTTP 502
-[2025-11-15T14:01:15Z UTC] [SAFE] JSON written → data\area.json (0 entries)
-[2025-11-15T14:01:15Z UTC] [WARN] Dummy created for area (WorldBank fetch failed (AG.SRF.TOTL.K2))
-[2025-11-15T14:01:15Z UTC] [STATUS] area: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:16Z UTC] [META] WorldBank SP.POP.TOTL: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:17Z UTC] [META] WorldBank SP.POP.TOTL: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:18Z UTC] [ERR] WorldBank SP.POP.TOTL: HTTP 502
-[2025-11-15T14:01:18Z UTC] [SAFE] JSON written → data\population.json (0 entries)
-[2025-11-15T14:01:18Z UTC] [WARN] Dummy created for population (WorldBank fetch failed (SP.POP.TOTL))
-[2025-11-15T14:01:18Z UTC] [STATUS] population: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:19Z UTC] [META] WorldBank SP.POP.GROW: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:21Z UTC] [META] WorldBank SP.POP.GROW: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:22Z UTC] [ERR] WorldBank SP.POP.GROW: HTTP 502
-[2025-11-15T14:01:22Z UTC] [SAFE] JSON written → data\population_growth.json (0 entries)
-[2025-11-15T14:01:22Z UTC] [WARN] Dummy created for population_growth (WorldBank fetch failed (SP.POP.GROW))
-[2025-11-15T14:01:22Z UTC] [STATUS] population_growth: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:23Z UTC] [HEUR] OWID median_age → inferred source_date 2023-01-01
-[2025-11-15T14:01:23Z UTC] [SAFE] JSON written → data\median_age.json (14652 entries)
-[2025-11-15T14:01:23Z UTC] [OK] OWID KPI saved: median_age (14652 rows, last updated 2023-01-01)
-[2025-11-15T14:01:23Z UTC] [STATUS] median_age: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T14:01:24Z UTC] [META] WorldBank SP.DYN.TFRT.IN: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:25Z UTC] [META] WorldBank SP.DYN.TFRT.IN: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:26Z UTC] [ERR] WorldBank SP.DYN.TFRT.IN: HTTP 502
-[2025-11-15T14:01:26Z UTC] [SAFE] JSON written → data\fertility_rate.json (0 entries)
-[2025-11-15T14:01:26Z UTC] [WARN] Dummy created for fertility_rate (WorldBank fetch failed (SP.DYN.TFRT.IN))
-[2025-11-15T14:01:26Z UTC] [STATUS] fertility_rate: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:27Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:28Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:29Z UTC] [ERR] WorldBank SP.URB.TOTL.IN.ZS: HTTP 502
-[2025-11-15T14:01:29Z UTC] [SAFE] JSON written → data\urbanization_rate.json (0 entries)
-[2025-11-15T14:01:29Z UTC] [WARN] Dummy created for urbanization_rate (WorldBank fetch failed (SP.URB.TOTL.IN.ZS))
-[2025-11-15T14:01:29Z UTC] [STATUS] urbanization_rate: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:31Z UTC] [HEUR] OWID democracy_index → inferred source_date 2024-01-01
-[2025-11-15T14:01:31Z UTC] [SAFE] JSON written → data\democracy_index.json (2839 entries)
-[2025-11-15T14:01:31Z UTC] [OK] OWID KPI saved: democracy_index (2839 rows, last updated 2024-01-01)
-[2025-11-15T14:01:31Z UTC] [STATUS] democracy_index: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T14:01:32Z UTC] [HEUR] OWID press_freedom_index → inferred source_date 2021-01-01
-[2025-11-15T14:01:32Z UTC] [SAFE] JSON written → data\press_freedom_index.json (1601 entries)
-[2025-11-15T14:01:32Z UTC] [OK] OWID KPI saved: press_freedom_index (1601 rows, last updated 2021-01-01)
-[2025-11-15T14:01:32Z UTC] [STATUS] press_freedom_index: stored source_date=2021-01-01, data_year=2021
-[2025-11-15T14:01:32Z UTC] [SAFE] JSON written → data\world_happiness_index.json (1429 entries)
-[2025-11-15T14:01:32Z UTC] [OK] CSV KPI saved: world_happiness_index (1429 rows, last updated 2024-01-01T00:00:00Z)
-[2025-11-15T14:01:32Z UTC] [STATUS] world_happiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T14:01:33Z UTC] [META] WorldBank NY.GDP.MKTP.CD: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:34Z UTC] [META] WorldBank NY.GDP.MKTP.CD: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:35Z UTC] [ERR] WorldBank NY.GDP.MKTP.CD: HTTP 502
-[2025-11-15T14:01:35Z UTC] [SAFE] JSON written → data\gdp.json (0 entries)
-[2025-11-15T14:01:35Z UTC] [WARN] Dummy created for gdp (WorldBank fetch failed (NY.GDP.MKTP.CD))
-[2025-11-15T14:01:35Z UTC] [STATUS] gdp: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:37Z UTC] [META] WorldBank NY.GDP.PCAP.CD: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:38Z UTC] [META] WorldBank NY.GDP.PCAP.CD: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:39Z UTC] [ERR] WorldBank NY.GDP.PCAP.CD: HTTP 502
-[2025-11-15T14:01:39Z UTC] [SAFE] JSON written → data\gdp_per_capita_current_us.json (0 entries)
-[2025-11-15T14:01:39Z UTC] [WARN] Dummy created for gdp_per_capita_current_us (WorldBank fetch failed (NY.GDP.PCAP.CD))
-[2025-11-15T14:01:39Z UTC] [STATUS] gdp_per_capita_current_us: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:39Z UTC] [TRIM] olympic_medals_summer: removed 10 out-of-range records (before 1900 or >2025)
-[2025-11-15T14:01:39Z UTC] [SAFE] JSON written → data\olympic_medals_summer.json (1266 entries)
-[2025-11-15T14:01:39Z UTC] [OK] CSV KPI saved: olympic_medals_summer (1276 rows, last updated 2024-01-01T00:00:00Z)
-[2025-11-15T14:01:39Z UTC] [STATUS] olympic_medals_summer: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T14:01:40Z UTC] [META] WorldBank NY.GNP.PCAP.CD: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:41Z UTC] [META] WorldBank NY.GNP.PCAP.CD: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:42Z UTC] [ERR] WorldBank NY.GNP.PCAP.CD: HTTP 502
-[2025-11-15T14:01:42Z UTC] [SAFE] JSON written → data\gni_per_capita_current_us.json (0 entries)
-[2025-11-15T14:01:42Z UTC] [WARN] Dummy created for gni_per_capita_current_us (WorldBank fetch failed (NY.GNP.PCAP.CD))
-[2025-11-15T14:01:42Z UTC] [STATUS] gni_per_capita_current_us: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:43Z UTC] [META] WorldBank SI.POV.GINI: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:44Z UTC] [META] WorldBank SI.POV.GINI: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:45Z UTC] [ERR] WorldBank SI.POV.GINI: HTTP 502
-[2025-11-15T14:01:45Z UTC] [SAFE] JSON written → data\gini_index.json (0 entries)
-[2025-11-15T14:01:45Z UTC] [WARN] Dummy created for gini_index (WorldBank fetch failed (SI.POV.GINI))
-[2025-11-15T14:01:45Z UTC] [STATUS] gini_index: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:46Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:47Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:48Z UTC] [ERR] WorldBank GC.DOD.TOTL.GD.ZS: HTTP 502
-[2025-11-15T14:01:48Z UTC] [SAFE] JSON written → data\public_debt_of_gdp.json (0 entries)
-[2025-11-15T14:01:48Z UTC] [WARN] Dummy created for public_debt_of_gdp (WorldBank fetch failed (GC.DOD.TOTL.GD.ZS))
-[2025-11-15T14:01:48Z UTC] [STATUS] public_debt_of_gdp: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:49Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:50Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:51Z UTC] [ERR] WorldBank GC.TAX.TOTL.GD.ZS: HTTP 502
-[2025-11-15T14:01:51Z UTC] [SAFE] JSON written → data\tax_revenue_of_gdp.json (0 entries)
-[2025-11-15T14:01:51Z UTC] [WARN] Dummy created for tax_revenue_of_gdp (WorldBank fetch failed (GC.TAX.TOTL.GD.ZS))
-[2025-11-15T14:01:51Z UTC] [STATUS] tax_revenue_of_gdp: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:52Z UTC] [META] WorldBank SL.UEM.TOTL.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:53Z UTC] [META] WorldBank SL.UEM.TOTL.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:54Z UTC] [ERR] WorldBank SL.UEM.TOTL.ZS: HTTP 502
-[2025-11-15T14:01:54Z UTC] [SAFE] JSON written → data\unemployment_rate.json (0 entries)
-[2025-11-15T14:01:54Z UTC] [WARN] Dummy created for unemployment_rate (WorldBank fetch failed (SL.UEM.TOTL.ZS))
-[2025-11-15T14:01:54Z UTC] [STATUS] unemployment_rate: stored source_date=Unknown, data_year=None
-[2025-11-15T14:01:54Z UTC] [SAFE] JSON written → data\big_mac_index.json (1267 entries)
-[2025-11-15T14:01:54Z UTC] [OK] CSV KPI saved: big_mac_index (1267 rows, last updated 2025-01-01T00:00:00Z)
-[2025-11-15T14:01:54Z UTC] [STATUS] big_mac_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T14:01:56Z UTC] [HEUR] OWID human_development_index_hdi → inferred source_date 2023-01-01
-[2025-11-15T14:01:56Z UTC] [SAFE] JSON written → data\human_development_index_hdi.json (5916 entries)
-[2025-11-15T14:01:56Z UTC] [OK] OWID KPI saved: human_development_index_hdi (5916 rows, last updated 2023-01-01)
-[2025-11-15T14:01:56Z UTC] [STATUS] human_development_index_hdi: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T14:01:57Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:58Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:01:59Z UTC] [ERR] WorldBank SH.XPD.CHEX.PC.CD: HTTP 502
-[2025-11-15T14:01:59Z UTC] [SAFE] JSON written → data\health_expenditure_per_capita.json (0 entries)
-[2025-11-15T14:01:59Z UTC] [WARN] Dummy created for health_expenditure_per_capita (WorldBank fetch failed (SH.XPD.CHEX.PC.CD))
-[2025-11-15T14:01:59Z UTC] [STATUS] health_expenditure_per_capita: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:00Z UTC] [META] WorldBank SP.DYN.IMRT.IN: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:01Z UTC] [META] WorldBank SP.DYN.IMRT.IN: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:02Z UTC] [ERR] WorldBank SP.DYN.IMRT.IN: HTTP 502
-[2025-11-15T14:02:02Z UTC] [SAFE] JSON written → data\infant_mortality_rate.json (0 entries)
-[2025-11-15T14:02:02Z UTC] [WARN] Dummy created for infant_mortality_rate (WorldBank fetch failed (SP.DYN.IMRT.IN))
-[2025-11-15T14:02:02Z UTC] [STATUS] infant_mortality_rate: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:03Z UTC] [META] WorldBank SH.STA.MMRT: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:04Z UTC] [META] WorldBank SH.STA.MMRT: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:05Z UTC] [ERR] WorldBank SH.STA.MMRT: HTTP 502
-[2025-11-15T14:02:05Z UTC] [SAFE] JSON written → data\maternal_mortality_ratio.json (0 entries)
-[2025-11-15T14:02:05Z UTC] [WARN] Dummy created for maternal_mortality_ratio (WorldBank fetch failed (SH.STA.MMRT))
-[2025-11-15T14:02:05Z UTC] [STATUS] maternal_mortality_ratio: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:07Z UTC] [HEUR] OWID physicians_per_1_000_people → inferred source_date 2022-01-01
-[2025-11-15T14:02:07Z UTC] [SAFE] JSON written → data\physicians_per_1_000_people.json (5091 entries)
-[2025-11-15T14:02:07Z UTC] [OK] OWID KPI saved: physicians_per_1_000_people (5091 rows, last updated 2022-01-01)
-[2025-11-15T14:02:07Z UTC] [STATUS] physicians_per_1_000_people: stored source_date=2022-01-01, data_year=2022
-[2025-11-15T14:02:08Z UTC] [META] WorldBank SH.MED.BEDS.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:09Z UTC] [META] WorldBank SH.MED.BEDS.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:10Z UTC] [ERR] WorldBank SH.MED.BEDS.ZS: HTTP 502
-[2025-11-15T14:02:10Z UTC] [SAFE] JSON written → data\hospital_beds_per_1_000_people.json (0 entries)
-[2025-11-15T14:02:10Z UTC] [WARN] Dummy created for hospital_beds_per_1_000_people (WorldBank fetch failed (SH.MED.BEDS.ZS))
-[2025-11-15T14:02:10Z UTC] [STATUS] hospital_beds_per_1_000_people: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:11Z UTC] [META] WorldBank SP.DYN.LE00.IN: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:12Z UTC] [META] WorldBank SP.DYN.LE00.IN: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:13Z UTC] [ERR] WorldBank SP.DYN.LE00.IN: HTTP 502
-[2025-11-15T14:02:13Z UTC] [SAFE] JSON written → data\life_expectancy_at_birth.json (0 entries)
-[2025-11-15T14:02:13Z UTC] [WARN] Dummy created for life_expectancy_at_birth (WorldBank fetch failed (SP.DYN.LE00.IN))
-[2025-11-15T14:02:13Z UTC] [STATUS] life_expectancy_at_birth: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:14Z UTC] [META] WorldBank SE.ADT.LITR.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:15Z UTC] [META] WorldBank SE.ADT.LITR.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:16Z UTC] [ERR] WorldBank SE.ADT.LITR.ZS: HTTP 502
-[2025-11-15T14:02:16Z UTC] [SAFE] JSON written → data\adult_literacy_rate.json (0 entries)
-[2025-11-15T14:02:16Z UTC] [WARN] Dummy created for adult_literacy_rate (WorldBank fetch failed (SE.ADT.LITR.ZS))
-[2025-11-15T14:02:16Z UTC] [STATUS] adult_literacy_rate: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:18Z UTC] [HEUR] OWID homelessness_rate → inferred source_date 2023-01-01
-[2025-11-15T14:02:18Z UTC] [SAFE] JSON written → data\homelessness_rate.json (16 entries)
-[2025-11-15T14:02:18Z UTC] [OK] OWID KPI saved: homelessness_rate (16 rows, last updated 2023-01-01)
-[2025-11-15T14:02:18Z UTC] [STATUS] homelessness_rate: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T14:02:19Z UTC] [HEUR] OWID old_age_dependency_ratio → inferred source_date 2023-01-01
-[2025-11-15T14:02:19Z UTC] [SAFE] JSON written → data\old_age_dependency_ratio.json (14652 entries)
-[2025-11-15T14:02:19Z UTC] [OK] OWID KPI saved: old_age_dependency_ratio (14652 rows, last updated 2023-01-01)
-[2025-11-15T14:02:19Z UTC] [STATUS] old_age_dependency_ratio: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T14:02:21Z UTC] [HEUR] OWID age_dependency_ratio_total → inferred source_date 2023-01-01
-[2025-11-15T14:02:21Z UTC] [SAFE] JSON written → data\age_dependency_ratio_total.json (14652 entries)
-[2025-11-15T14:02:21Z UTC] [OK] OWID KPI saved: age_dependency_ratio_total (14652 rows, last updated 2023-01-01)
-[2025-11-15T14:02:21Z UTC] [STATUS] age_dependency_ratio_total: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T14:02:22Z UTC] [META] WorldBank SH.IMM.IDPT: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:23Z UTC] [META] WorldBank SH.IMM.IDPT: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:24Z UTC] [ERR] WorldBank SH.IMM.IDPT: HTTP 502
-[2025-11-15T14:02:24Z UTC] [SAFE] JSON written → data\overall_immunization_coverage.json (0 entries)
-[2025-11-15T14:02:24Z UTC] [WARN] Dummy created for overall_immunization_coverage (WorldBank fetch failed (SH.IMM.IDPT))
-[2025-11-15T14:02:24Z UTC] [STATUS] overall_immunization_coverage: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:25Z UTC] [META] WorldBank SI.POV.DDAY: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:26Z UTC] [META] WorldBank SI.POV.DDAY: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:27Z UTC] [ERR] WorldBank SI.POV.DDAY: HTTP 502
-[2025-11-15T14:02:27Z UTC] [SAFE] JSON written → data\extreme_poverty.json (0 entries)
-[2025-11-15T14:02:27Z UTC] [WARN] Dummy created for extreme_poverty (WorldBank fetch failed (SI.POV.DDAY))
-[2025-11-15T14:02:27Z UTC] [STATUS] extreme_poverty: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:28Z UTC] [META] WorldBank SH.H2O.BASW.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:29Z UTC] [META] WorldBank SH.H2O.BASW.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:30Z UTC] [ERR] WorldBank SH.H2O.BASW.ZS: HTTP 502
-[2025-11-15T14:02:30Z UTC] [SAFE] JSON written → data\access_to_basic_drinking_water.json (0 entries)
-[2025-11-15T14:02:30Z UTC] [WARN] Dummy created for access_to_basic_drinking_water (WorldBank fetch failed (SH.H2O.BASW.ZS))
-[2025-11-15T14:02:30Z UTC] [STATUS] access_to_basic_drinking_water: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:31Z UTC] [HEUR] OWID co2_emissions → inferred source_date 2024-01-01
-[2025-11-15T14:02:31Z UTC] [TRIM] co2_emissions: removed 3771 out-of-range records (before 1900 or >2025)
-[2025-11-15T14:02:31Z UTC] [SAFE] JSON written → data\co2_emissions.json (18480 entries)
-[2025-11-15T14:02:31Z UTC] [OK] OWID KPI saved: co2_emissions (22251 rows, last updated 2024-01-01)
-[2025-11-15T14:02:31Z UTC] [STATUS] co2_emissions: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T14:02:32Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:33Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:34Z UTC] [ERR] WorldBank EN.ATM.PM25.MC.M3: HTTP 502
-[2025-11-15T14:02:34Z UTC] [SAFE] JSON written → data\air_quality_pm2_5_exposure.json (0 entries)
-[2025-11-15T14:02:34Z UTC] [WARN] Dummy created for air_quality_pm2_5_exposure (WorldBank fetch failed (EN.ATM.PM25.MC.M3))
-[2025-11-15T14:02:34Z UTC] [STATUS] air_quality_pm2_5_exposure: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:35Z UTC] [META] WorldBank EG.FEC.RNEW.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:36Z UTC] [META] WorldBank EG.FEC.RNEW.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:37Z UTC] [ERR] WorldBank EG.FEC.RNEW.ZS: HTTP 502
-[2025-11-15T14:02:37Z UTC] [SAFE] JSON written → data\renewable_energy_share.json (0 entries)
-[2025-11-15T14:02:37Z UTC] [WARN] Dummy created for renewable_energy_share (WorldBank fetch failed (EG.FEC.RNEW.ZS))
-[2025-11-15T14:02:37Z UTC] [STATUS] renewable_energy_share: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:38Z UTC] [META] WorldBank IT.NET.USER.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:39Z UTC] [META] WorldBank IT.NET.USER.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:40Z UTC] [ERR] WorldBank IT.NET.USER.ZS: HTTP 502
-[2025-11-15T14:02:40Z UTC] [SAFE] JSON written → data\internet_penetration_rate.json (0 entries)
-[2025-11-15T14:02:40Z UTC] [WARN] Dummy created for internet_penetration_rate (WorldBank fetch failed (IT.NET.USER.ZS))
-[2025-11-15T14:02:40Z UTC] [STATUS] internet_penetration_rate: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:41Z UTC] [META] WorldBank IT.CEL.SETS.P2: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:42Z UTC] [META] WorldBank IT.CEL.SETS.P2: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:43Z UTC] [ERR] WorldBank IT.CEL.SETS.P2: HTTP 502
-[2025-11-15T14:02:43Z UTC] [SAFE] JSON written → data\mobile_subscriptions_per_100_inhabitants.json (0 entries)
-[2025-11-15T14:02:43Z UTC] [WARN] Dummy created for mobile_subscriptions_per_100_inhabitants (WorldBank fetch failed (IT.CEL.SETS.P2))
-[2025-11-15T14:02:43Z UTC] [STATUS] mobile_subscriptions_per_100_inhabitants: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:44Z UTC] [META] WorldBank IS.RRS.TOTL.KM: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:45Z UTC] [META] WorldBank IS.RRS.TOTL.KM: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:46Z UTC] [ERR] WorldBank IS.RRS.TOTL.KM: HTTP 502
-[2025-11-15T14:02:46Z UTC] [SAFE] JSON written → data\railway_length.json (0 entries)
-[2025-11-15T14:02:46Z UTC] [WARN] Dummy created for railway_length (WorldBank fetch failed (IS.RRS.TOTL.KM))
-[2025-11-15T14:02:46Z UTC] [STATUS] railway_length: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:48Z UTC] [META] WorldBank FP.CPI.TOTL.ZG: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:49Z UTC] [META] WorldBank FP.CPI.TOTL.ZG: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:49Z UTC] [ERR] WorldBank FP.CPI.TOTL.ZG: HTTP 502
-[2025-11-15T14:02:49Z UTC] [SAFE] JSON written → data\inflation_consumer_price_index.json (0 entries)
-[2025-11-15T14:02:49Z UTC] [WARN] Dummy created for inflation_consumer_price_index (WorldBank fetch failed (FP.CPI.TOTL.ZG))
-[2025-11-15T14:02:49Z UTC] [STATUS] inflation_consumer_price_index: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:50Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:52Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:53Z UTC] [ERR] WorldBank SL.EMP.TOTL.SP.ZS: HTTP 502
-[2025-11-15T14:02:53Z UTC] [SAFE] JSON written → data\employment_to_population_ratio.json (0 entries)
-[2025-11-15T14:02:53Z UTC] [WARN] Dummy created for employment_to_population_ratio (WorldBank fetch failed (SL.EMP.TOTL.SP.ZS))
-[2025-11-15T14:02:53Z UTC] [STATUS] employment_to_population_ratio: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:54Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:55Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:02:56Z UTC] [ERR] WorldBank SL.TLF.CACT.FE.ZS: HTTP 502
-[2025-11-15T14:02:56Z UTC] [SAFE] JSON written → data\female_labor_force_participation.json (0 entries)
-[2025-11-15T14:02:56Z UTC] [WARN] Dummy created for female_labor_force_participation (WorldBank fetch failed (SL.TLF.CACT.FE.ZS))
-[2025-11-15T14:02:56Z UTC] [STATUS] female_labor_force_participation: stored source_date=Unknown, data_year=None
-[2025-11-15T14:02:57Z UTC] [HEUR] OWID political_corruption_index → inferred source_date 2024-01-01
-[2025-11-15T14:02:57Z UTC] [TRANSFORM] political_corruption_index: applied invert='*' to 26567 rows
-[2025-11-15T14:02:57Z UTC] [TRIM] political_corruption_index: removed 7289 out-of-range records (before 1900 or >2025)
-[2025-11-15T14:02:57Z UTC] [SAFE] JSON written → data\political_corruption_index.json (19278 entries)
-[2025-11-15T14:02:57Z UTC] [OK] OWID KPI saved: political_corruption_index (26567 rows, last updated 2024-01-01)
-[2025-11-15T14:02:57Z UTC] [STATUS] political_corruption_index: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T14:02:59Z UTC] [HEUR] OWID military_spending_sipri → inferred source_date 2024-01-01
-[2025-11-15T14:02:59Z UTC] [SAFE] JSON written → data\military_spending_sipri.json (8292 entries)
-[2025-11-15T14:02:59Z UTC] [OK] OWID KPI saved: military_spending_sipri (8292 rows, last updated 2024-01-01)
-[2025-11-15T14:02:59Z UTC] [STATUS] military_spending_sipri: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T14:03:01Z UTC] [HEUR] OWID number_of_armed_conflicts → inferred source_date 2024-01-01
-[2025-11-15T14:03:01Z UTC] [SAFE] JSON written → data\number_of_armed_conflicts.json (7272 entries)
-[2025-11-15T14:03:01Z UTC] [OK] OWID KPI saved: number_of_armed_conflicts (7272 rows, last updated 2024-01-01)
-[2025-11-15T14:03:01Z UTC] [STATUS] number_of_armed_conflicts: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T14:03:02Z UTC] [META] WorldBank SH.STA.TRAF.P5: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:03:04Z UTC] [META] WorldBank SH.STA.TRAF.P5: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:03:05Z UTC] [ERR] WorldBank SH.STA.TRAF.P5: HTTP 502
-[2025-11-15T14:03:05Z UTC] [SAFE] JSON written → data\road_traffic_deaths_per_100k_people.json (0 entries)
-[2025-11-15T14:03:05Z UTC] [WARN] Dummy created for road_traffic_deaths_per_100k_people (WorldBank fetch failed (SH.STA.TRAF.P5))
-[2025-11-15T14:03:05Z UTC] [STATUS] road_traffic_deaths_per_100k_people: stored source_date=Unknown, data_year=None
-[2025-11-15T14:03:06Z UTC] [META] WorldBank IT.NET.BBND.P2: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:03:07Z UTC] [META] WorldBank IT.NET.BBND.P2: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:03:08Z UTC] [ERR] WorldBank IT.NET.BBND.P2: HTTP 502
-[2025-11-15T14:03:08Z UTC] [SAFE] JSON written → data\fixed_broadband_subscriptions_per_100_people.json (0 entries)
-[2025-11-15T14:03:08Z UTC] [WARN] Dummy created for fixed_broadband_subscriptions_per_100_people (WorldBank fetch failed (IT.NET.BBND.P2))
-[2025-11-15T14:03:08Z UTC] [STATUS] fixed_broadband_subscriptions_per_100_people: stored source_date=Unknown, data_year=None
-[2025-11-15T14:03:09Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:03:10Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:03:11Z UTC] [ERR] WorldBank SE.XPD.TOTL.GD.ZS: HTTP 502
-[2025-11-15T14:03:11Z UTC] [SAFE] JSON written → data\education_expenditure_of_gdp.json (0 entries)
-[2025-11-15T14:03:11Z UTC] [WARN] Dummy created for education_expenditure_of_gdp (WorldBank fetch failed (SE.XPD.TOTL.GD.ZS))
-[2025-11-15T14:03:11Z UTC] [STATUS] education_expenditure_of_gdp: stored source_date=Unknown, data_year=None
-[2025-11-15T14:03:13Z UTC] [HEUR] OWID mean_years_of_schooling → inferred source_date 2040-01-01
-[2025-11-15T14:03:13Z UTC] [TRIM] mean_years_of_schooling: removed 1092 out-of-range records (before 1900 or >2025)
-[2025-11-15T14:03:13Z UTC] [SAFE] JSON written → data\mean_years_of_schooling.json (2962 entries)
-[2025-11-15T14:03:13Z UTC] [FIX] mean_years_of_schooling: future year 2040 detected → correcting to 2025
-[2025-11-15T14:03:13Z UTC] [OK] OWID KPI saved: mean_years_of_schooling (4054 rows, last updated 2025-01-01)
-[2025-11-15T14:03:13Z UTC] [STATUS] mean_years_of_schooling: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T14:03:14Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:03:15Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:03:16Z UTC] [ERR] WorldBank MS.MIL.XPND.GD.ZS: HTTP 502
-[2025-11-15T14:03:16Z UTC] [SAFE] JSON written → data\military_expenditure_of_gdp.json (0 entries)
-[2025-11-15T14:03:16Z UTC] [WARN] Dummy created for military_expenditure_of_gdp (WorldBank fetch failed (MS.MIL.XPND.GD.ZS))
-[2025-11-15T14:03:16Z UTC] [STATUS] military_expenditure_of_gdp: stored source_date=Unknown, data_year=None
-[2025-11-15T14:03:16Z UTC] [SAFE] JSON written → data\recycling_rate.json (5488 entries)
-[2025-11-15T14:03:16Z UTC] [OK] CSV KPI saved: recycling_rate (5488 rows, last updated 2022-01-01T00:00:00Z)
-[2025-11-15T14:03:16Z UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
-[2025-11-15T14:03:16Z UTC] [SAFE] JSON written → data\environmental_performance_index.json (180 entries)
-[2025-11-15T14:03:16Z UTC] [OK] CSV KPI saved: environmental_performance_index (180 rows, last updated 2022-01-01T00:00:00Z)
-[2025-11-15T14:03:16Z UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
-[2025-11-15T14:03:16Z UTC] [SAFE] JSON written → data\global_peace_index.json (2922 entries)
-[2025-11-15T14:03:16Z UTC] [OK] CSV KPI saved: global_peace_index (2922 rows, last updated 2025-01-01T00:00:00Z)
-[2025-11-15T14:03:16Z UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T14:03:17Z UTC] [HEUR] OWID living_planet_index → inferred source_date 2020-01-01
-[2025-11-15T14:03:17Z UTC] [SAFE] JSON written → data\living_planet_index.json (51 entries)
-[2025-11-15T14:03:17Z UTC] [OK] OWID KPI saved: living_planet_index (51 rows, last updated 2020-01-01)
-[2025-11-15T14:03:17Z UTC] [STATUS] living_planet_index: stored source_date=2020-01-01, data_year=2020
-[2025-11-15T14:03:19Z UTC] [HEUR] OWID electric_vehicle_stock → inferred source_date 2024-01-01
-[2025-11-15T14:03:19Z UTC] [SAFE] JSON written → data\electric_vehicle_stock.json (391 entries)
-[2025-11-15T14:03:19Z UTC] [OK] OWID KPI saved: electric_vehicle_stock (391 rows, last updated 2024-01-01)
-[2025-11-15T14:03:19Z UTC] [STATUS] electric_vehicle_stock: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T14:03:20Z UTC] [HEUR] OWID number_of_recorded_natural_disasters → inferred source_date 2023-01-01
-[2025-11-15T14:03:20Z UTC] [SAFE] JSON written → data\number_of_recorded_natural_disasters.json (124 entries)
-[2025-11-15T14:03:20Z UTC] [OK] OWID KPI saved: number_of_recorded_natural_disasters (124 rows, last updated 2023-01-01)
-[2025-11-15T14:03:20Z UTC] [STATUS] number_of_recorded_natural_disasters: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T14:03:22Z UTC] [HEUR] OWID global_co2_emissions → inferred source_date 2024-01-01
-[2025-11-15T14:03:22Z UTC] [TRIM] global_co2_emissions: removed 3771 out-of-range records (before 1900 or >2025)
-[2025-11-15T14:03:22Z UTC] [SAFE] JSON written → data\global_co2_emissions.json (18480 entries)
-[2025-11-15T14:03:22Z UTC] [OK] OWID KPI saved: global_co2_emissions (22251 rows, last updated 2024-01-01)
-[2025-11-15T14:03:22Z UTC] [STATUS] global_co2_emissions: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T14:03:24Z UTC] [HEUR] OWID global_temperature_anomaly → inferred source_date 2025-01-01
-[2025-11-15T14:03:24Z UTC] [TRIM] global_temperature_anomaly: removed 50 out-of-range records (before 1900 or >2025)
-[2025-11-15T14:03:24Z UTC] [SAFE] JSON written → data\global_temperature_anomaly.json (126 entries)
-[2025-11-15T14:03:24Z UTC] [OK] OWID KPI saved: global_temperature_anomaly (176 rows, last updated 2025-01-01)
-[2025-11-15T14:03:24Z UTC] [STATUS] global_temperature_anomaly: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T14:03:24Z UTC] [SAFE] JSON written → data\inform_resilience_index.json (1910 entries)
-[2025-11-15T14:03:24Z UTC] [OK] CSV KPI saved: inform_resilience_index (1910 rows, last updated 2025-01-01T00:00:00Z)
-[2025-11-15T14:03:24Z UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T14:03:24Z UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
-[2025-11-15T14:03:26Z UTC] [HEUR] OWID rule_of_law_index → inferred source_date 2024-01-01
-[2025-11-15T14:03:26Z UTC] [TRIM] rule_of_law_index: removed 10523 out-of-range records (before 1900 or >2025)
-[2025-11-15T14:03:26Z UTC] [SAFE] JSON written → data\rule_of_law_index.json (21390 entries)
-[2025-11-15T14:03:26Z UTC] [OK] OWID KPI saved: rule_of_law_index (31913 rows, last updated 2024-01-01)
-[2025-11-15T14:03:26Z UTC] [STATUS] rule_of_law_index: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T14:03:27Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:03:28Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T14:03:29Z UTC] [ERR] WorldBank NY.GDP.PCAP.PP.CD: HTTP 502
-[2025-11-15T14:03:29Z UTC] [SAFE] JSON written → data\purchasing_power_parity.json (0 entries)
-[2025-11-15T14:03:29Z UTC] [WARN] Dummy created for purchasing_power_parity (WorldBank fetch failed (NY.GDP.PCAP.PP.CD))
-[2025-11-15T14:03:29Z UTC] [STATUS] purchasing_power_parity: stored source_date=Unknown, data_year=None
-[2025-11-15T14:03:29Z UTC] [SAFE] JSON written → data\olympic_medals_winter.json (0 entries)
-[2025-11-15T14:03:29Z UTC] [WARN] Dummy created for olympic_medals_winter (CSV missing olympic_medals_winter.csv)
-[2025-11-15T14:03:29Z UTC] [STATUS] olympic_medals_winter: stored source_date=Unknown, data_year=None
-[2025-11-15T14:03:29Z UTC] [SAFE] JSON written → data\pisa_overall_score.json (0 entries)
-[2025-11-15T14:03:29Z UTC] [WARN] Dummy created for pisa_overall_score (CSV missing pisa_overall_score)
-[2025-11-15T14:03:29Z UTC] [STATUS] pisa_overall_score: stored source_date=Unknown, data_year=None
-[2025-11-15T14:03:29Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
-[2025-11-15T14:03:30Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 entries)
-[2025-11-15T14:03:30Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
-[2025-11-15T14:03:30Z UTC] [SAFE] JSON written → data\fetch_status.json (1 entries)
-[2025-11-15T14:03:30Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T14:03:30Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T14:03:30Z UTC] [SAFE] JSON written → data\fetch_status.json (2 entries)
-[2025-11-15T14:03:30Z UTC] [SAFE] JSON written → data\meta\country_mappings_pending.json (95 entries)
-[2025-11-15T14:03:30Z UTC] [INFO] fetch_status.json updated with 62 KPIs
-[2025-11-15T14:03:30Z UTC] [SAFE] JSON written → data\fetch_state.json (3 entries)
-[2025-11-15T14:03:30Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (27 entries)
+[2025-11-15T14:27:17Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-15T14:27:17Z UTC] === Fetch started ===
+[2025-11-15T14:27:17Z UTC] ⚠️ Kein fetch_status.json vorhanden oder leer – setze ALLE KPIs auf 'neu'.
+[2025-11-15T14:27:18Z UTC] [META] WorldBank AG.SRF.TOTL.K2: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:19Z UTC] [META] WorldBank AG.SRF.TOTL.K2: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:20Z UTC] [ERR] WorldBank AG.SRF.TOTL.K2: HTTP 502
+[2025-11-15T14:27:20Z UTC] [SAFE] JSON written → data\area.json (0 entries)
+[2025-11-15T14:27:20Z UTC] [WARN] Dummy created for area (WorldBank fetch failed (AG.SRF.TOTL.K2))
+[2025-11-15T14:27:20Z UTC] [STATUS] area: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:21Z UTC] [META] WorldBank SP.POP.TOTL: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:22Z UTC] [META] WorldBank SP.POP.TOTL: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:23Z UTC] [ERR] WorldBank SP.POP.TOTL: HTTP 502
+[2025-11-15T14:27:23Z UTC] [SAFE] JSON written → data\population.json (0 entries)
+[2025-11-15T14:27:23Z UTC] [WARN] Dummy created for population (WorldBank fetch failed (SP.POP.TOTL))
+[2025-11-15T14:27:23Z UTC] [STATUS] population: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:24Z UTC] [META] WorldBank SP.POP.GROW: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:25Z UTC] [META] WorldBank SP.POP.GROW: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:26Z UTC] [ERR] WorldBank SP.POP.GROW: HTTP 502
+[2025-11-15T14:27:26Z UTC] [SAFE] JSON written → data\population_growth.json (0 entries)
+[2025-11-15T14:27:26Z UTC] [WARN] Dummy created for population_growth (WorldBank fetch failed (SP.POP.GROW))
+[2025-11-15T14:27:26Z UTC] [STATUS] population_growth: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:27Z UTC] [META] WorldBank SP.DYN.TFRT.IN: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:28Z UTC] [META] WorldBank SP.DYN.TFRT.IN: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:29Z UTC] [ERR] WorldBank SP.DYN.TFRT.IN: HTTP 502
+[2025-11-15T14:27:29Z UTC] [SAFE] JSON written → data\fertility_rate.json (0 entries)
+[2025-11-15T14:27:29Z UTC] [WARN] Dummy created for fertility_rate (WorldBank fetch failed (SP.DYN.TFRT.IN))
+[2025-11-15T14:27:29Z UTC] [STATUS] fertility_rate: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:30Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:31Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:32Z UTC] [ERR] WorldBank SP.URB.TOTL.IN.ZS: HTTP 502
+[2025-11-15T14:27:32Z UTC] [SAFE] JSON written → data\urbanization_rate.json (0 entries)
+[2025-11-15T14:27:32Z UTC] [WARN] Dummy created for urbanization_rate (WorldBank fetch failed (SP.URB.TOTL.IN.ZS))
+[2025-11-15T14:27:32Z UTC] [STATUS] urbanization_rate: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:33Z UTC] [META] WorldBank NY.GDP.MKTP.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:34Z UTC] [META] WorldBank NY.GDP.MKTP.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:35Z UTC] [ERR] WorldBank NY.GDP.MKTP.CD: HTTP 502
+[2025-11-15T14:27:35Z UTC] [SAFE] JSON written → data\gdp.json (0 entries)
+[2025-11-15T14:27:35Z UTC] [WARN] Dummy created for gdp (WorldBank fetch failed (NY.GDP.MKTP.CD))
+[2025-11-15T14:27:35Z UTC] [STATUS] gdp: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:36Z UTC] [META] WorldBank NY.GDP.PCAP.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:37Z UTC] [META] WorldBank NY.GDP.PCAP.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:38Z UTC] [ERR] WorldBank NY.GDP.PCAP.CD: HTTP 502
+[2025-11-15T14:27:38Z UTC] [SAFE] JSON written → data\gdp_per_capita_current_us.json (0 entries)
+[2025-11-15T14:27:38Z UTC] [WARN] Dummy created for gdp_per_capita_current_us (WorldBank fetch failed (NY.GDP.PCAP.CD))
+[2025-11-15T14:27:38Z UTC] [STATUS] gdp_per_capita_current_us: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:39Z UTC] [META] WorldBank NY.GNP.PCAP.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:40Z UTC] [META] WorldBank NY.GNP.PCAP.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:41Z UTC] [ERR] WorldBank NY.GNP.PCAP.CD: HTTP 502
+[2025-11-15T14:27:41Z UTC] [SAFE] JSON written → data\gni_per_capita_current_us.json (0 entries)
+[2025-11-15T14:27:41Z UTC] [WARN] Dummy created for gni_per_capita_current_us (WorldBank fetch failed (NY.GNP.PCAP.CD))
+[2025-11-15T14:27:41Z UTC] [STATUS] gni_per_capita_current_us: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:42Z UTC] [META] WorldBank SI.POV.GINI: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:43Z UTC] [META] WorldBank SI.POV.GINI: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:44Z UTC] [ERR] WorldBank SI.POV.GINI: HTTP 502
+[2025-11-15T14:27:44Z UTC] [SAFE] JSON written → data\gini_index.json (0 entries)
+[2025-11-15T14:27:44Z UTC] [WARN] Dummy created for gini_index (WorldBank fetch failed (SI.POV.GINI))
+[2025-11-15T14:27:44Z UTC] [STATUS] gini_index: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:45Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:47Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:48Z UTC] [ERR] WorldBank GC.DOD.TOTL.GD.ZS: HTTP 502
+[2025-11-15T14:27:48Z UTC] [SAFE] JSON written → data\public_debt_of_gdp.json (0 entries)
+[2025-11-15T14:27:48Z UTC] [WARN] Dummy created for public_debt_of_gdp (WorldBank fetch failed (GC.DOD.TOTL.GD.ZS))
+[2025-11-15T14:27:48Z UTC] [STATUS] public_debt_of_gdp: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:49Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:50Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:51Z UTC] [ERR] WorldBank GC.TAX.TOTL.GD.ZS: HTTP 502
+[2025-11-15T14:27:51Z UTC] [SAFE] JSON written → data\tax_revenue_of_gdp.json (0 entries)
+[2025-11-15T14:27:51Z UTC] [WARN] Dummy created for tax_revenue_of_gdp (WorldBank fetch failed (GC.TAX.TOTL.GD.ZS))
+[2025-11-15T14:27:51Z UTC] [STATUS] tax_revenue_of_gdp: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:52Z UTC] [META] WorldBank SL.UEM.TOTL.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:53Z UTC] [META] WorldBank SL.UEM.TOTL.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:54Z UTC] [ERR] WorldBank SL.UEM.TOTL.ZS: HTTP 502
+[2025-11-15T14:27:54Z UTC] [SAFE] JSON written → data\unemployment_rate.json (0 entries)
+[2025-11-15T14:27:54Z UTC] [WARN] Dummy created for unemployment_rate (WorldBank fetch failed (SL.UEM.TOTL.ZS))
+[2025-11-15T14:27:54Z UTC] [STATUS] unemployment_rate: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:55Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:56Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:57Z UTC] [ERR] WorldBank SH.XPD.CHEX.PC.CD: HTTP 502
+[2025-11-15T14:27:57Z UTC] [SAFE] JSON written → data\health_expenditure_per_capita.json (0 entries)
+[2025-11-15T14:27:57Z UTC] [WARN] Dummy created for health_expenditure_per_capita (WorldBank fetch failed (SH.XPD.CHEX.PC.CD))
+[2025-11-15T14:27:57Z UTC] [STATUS] health_expenditure_per_capita: stored source_date=Unknown, data_year=None
+[2025-11-15T14:27:58Z UTC] [META] WorldBank SP.DYN.IMRT.IN: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:27:59Z UTC] [META] WorldBank SP.DYN.IMRT.IN: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:00Z UTC] [ERR] WorldBank SP.DYN.IMRT.IN: HTTP 502
+[2025-11-15T14:28:00Z UTC] [SAFE] JSON written → data\infant_mortality_rate.json (0 entries)
+[2025-11-15T14:28:00Z UTC] [WARN] Dummy created for infant_mortality_rate (WorldBank fetch failed (SP.DYN.IMRT.IN))
+[2025-11-15T14:28:00Z UTC] [STATUS] infant_mortality_rate: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:01Z UTC] [META] WorldBank SH.STA.MMRT: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:02Z UTC] [META] WorldBank SH.STA.MMRT: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:03Z UTC] [ERR] WorldBank SH.STA.MMRT: HTTP 502
+[2025-11-15T14:28:03Z UTC] [SAFE] JSON written → data\maternal_mortality_ratio.json (0 entries)
+[2025-11-15T14:28:03Z UTC] [WARN] Dummy created for maternal_mortality_ratio (WorldBank fetch failed (SH.STA.MMRT))
+[2025-11-15T14:28:03Z UTC] [STATUS] maternal_mortality_ratio: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:04Z UTC] [META] WorldBank SH.MED.BEDS.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:05Z UTC] [META] WorldBank SH.MED.BEDS.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:06Z UTC] [ERR] WorldBank SH.MED.BEDS.ZS: HTTP 502
+[2025-11-15T14:28:06Z UTC] [SAFE] JSON written → data\hospital_beds_per_1_000_people.json (0 entries)
+[2025-11-15T14:28:06Z UTC] [WARN] Dummy created for hospital_beds_per_1_000_people (WorldBank fetch failed (SH.MED.BEDS.ZS))
+[2025-11-15T14:28:06Z UTC] [STATUS] hospital_beds_per_1_000_people: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:07Z UTC] [META] WorldBank SP.DYN.LE00.IN: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:08Z UTC] [META] WorldBank SP.DYN.LE00.IN: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:09Z UTC] [ERR] WorldBank SP.DYN.LE00.IN: HTTP 502
+[2025-11-15T14:28:09Z UTC] [SAFE] JSON written → data\life_expectancy_at_birth.json (0 entries)
+[2025-11-15T14:28:09Z UTC] [WARN] Dummy created for life_expectancy_at_birth (WorldBank fetch failed (SP.DYN.LE00.IN))
+[2025-11-15T14:28:09Z UTC] [STATUS] life_expectancy_at_birth: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:10Z UTC] [META] WorldBank SE.ADT.LITR.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:11Z UTC] [META] WorldBank SE.ADT.LITR.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:12Z UTC] [ERR] WorldBank SE.ADT.LITR.ZS: HTTP 502
+[2025-11-15T14:28:12Z UTC] [SAFE] JSON written → data\adult_literacy_rate.json (0 entries)
+[2025-11-15T14:28:12Z UTC] [WARN] Dummy created for adult_literacy_rate (WorldBank fetch failed (SE.ADT.LITR.ZS))
+[2025-11-15T14:28:12Z UTC] [STATUS] adult_literacy_rate: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:13Z UTC] [META] WorldBank SH.IMM.IDPT: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:14Z UTC] [META] WorldBank SH.IMM.IDPT: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:15Z UTC] [ERR] WorldBank SH.IMM.IDPT: HTTP 502
+[2025-11-15T14:28:15Z UTC] [SAFE] JSON written → data\overall_immunization_coverage.json (0 entries)
+[2025-11-15T14:28:15Z UTC] [WARN] Dummy created for overall_immunization_coverage (WorldBank fetch failed (SH.IMM.IDPT))
+[2025-11-15T14:28:15Z UTC] [STATUS] overall_immunization_coverage: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:16Z UTC] [META] WorldBank SI.POV.DDAY: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:17Z UTC] [META] WorldBank SI.POV.DDAY: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:18Z UTC] [ERR] WorldBank SI.POV.DDAY: HTTP 502
+[2025-11-15T14:28:18Z UTC] [SAFE] JSON written → data\extreme_poverty.json (0 entries)
+[2025-11-15T14:28:18Z UTC] [WARN] Dummy created for extreme_poverty (WorldBank fetch failed (SI.POV.DDAY))
+[2025-11-15T14:28:18Z UTC] [STATUS] extreme_poverty: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:19Z UTC] [META] WorldBank SH.H2O.BASW.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:20Z UTC] [META] WorldBank SH.H2O.BASW.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:21Z UTC] [ERR] WorldBank SH.H2O.BASW.ZS: HTTP 502
+[2025-11-15T14:28:21Z UTC] [SAFE] JSON written → data\access_to_basic_drinking_water.json (0 entries)
+[2025-11-15T14:28:21Z UTC] [WARN] Dummy created for access_to_basic_drinking_water (WorldBank fetch failed (SH.H2O.BASW.ZS))
+[2025-11-15T14:28:21Z UTC] [STATUS] access_to_basic_drinking_water: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:22Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:23Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:24Z UTC] [ERR] WorldBank EN.ATM.PM25.MC.M3: HTTP 502
+[2025-11-15T14:28:24Z UTC] [SAFE] JSON written → data\air_quality_pm2_5_exposure.json (0 entries)
+[2025-11-15T14:28:24Z UTC] [WARN] Dummy created for air_quality_pm2_5_exposure (WorldBank fetch failed (EN.ATM.PM25.MC.M3))
+[2025-11-15T14:28:24Z UTC] [STATUS] air_quality_pm2_5_exposure: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:25Z UTC] [META] WorldBank EG.FEC.RNEW.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:26Z UTC] [META] WorldBank EG.FEC.RNEW.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:27Z UTC] [ERR] WorldBank EG.FEC.RNEW.ZS: HTTP 502
+[2025-11-15T14:28:27Z UTC] [SAFE] JSON written → data\renewable_energy_share.json (0 entries)
+[2025-11-15T14:28:27Z UTC] [WARN] Dummy created for renewable_energy_share (WorldBank fetch failed (EG.FEC.RNEW.ZS))
+[2025-11-15T14:28:27Z UTC] [STATUS] renewable_energy_share: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:28Z UTC] [META] WorldBank IT.NET.USER.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:29Z UTC] [META] WorldBank IT.NET.USER.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:30Z UTC] [ERR] WorldBank IT.NET.USER.ZS: HTTP 502
+[2025-11-15T14:28:30Z UTC] [SAFE] JSON written → data\internet_penetration_rate.json (0 entries)
+[2025-11-15T14:28:30Z UTC] [WARN] Dummy created for internet_penetration_rate (WorldBank fetch failed (IT.NET.USER.ZS))
+[2025-11-15T14:28:30Z UTC] [STATUS] internet_penetration_rate: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:31Z UTC] [META] WorldBank IT.CEL.SETS.P2: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:32Z UTC] [META] WorldBank IT.CEL.SETS.P2: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:33Z UTC] [ERR] WorldBank IT.CEL.SETS.P2: HTTP 502
+[2025-11-15T14:28:33Z UTC] [SAFE] JSON written → data\mobile_subscriptions_per_100_inhabitants.json (0 entries)
+[2025-11-15T14:28:33Z UTC] [WARN] Dummy created for mobile_subscriptions_per_100_inhabitants (WorldBank fetch failed (IT.CEL.SETS.P2))
+[2025-11-15T14:28:33Z UTC] [STATUS] mobile_subscriptions_per_100_inhabitants: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:34Z UTC] [META] WorldBank IS.RRS.TOTL.KM: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:35Z UTC] [META] WorldBank IS.RRS.TOTL.KM: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:36Z UTC] [ERR] WorldBank IS.RRS.TOTL.KM: HTTP 502
+[2025-11-15T14:28:36Z UTC] [SAFE] JSON written → data\railway_length.json (0 entries)
+[2025-11-15T14:28:36Z UTC] [WARN] Dummy created for railway_length (WorldBank fetch failed (IS.RRS.TOTL.KM))
+[2025-11-15T14:28:36Z UTC] [STATUS] railway_length: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:37Z UTC] [META] WorldBank FP.CPI.TOTL.ZG: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:38Z UTC] [META] WorldBank FP.CPI.TOTL.ZG: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:39Z UTC] [ERR] WorldBank FP.CPI.TOTL.ZG: HTTP 502
+[2025-11-15T14:28:39Z UTC] [SAFE] JSON written → data\inflation_consumer_price_index.json (0 entries)
+[2025-11-15T14:28:39Z UTC] [WARN] Dummy created for inflation_consumer_price_index (WorldBank fetch failed (FP.CPI.TOTL.ZG))
+[2025-11-15T14:28:39Z UTC] [STATUS] inflation_consumer_price_index: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:40Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:41Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:42Z UTC] [ERR] WorldBank SL.EMP.TOTL.SP.ZS: HTTP 502
+[2025-11-15T14:28:42Z UTC] [SAFE] JSON written → data\employment_to_population_ratio.json (0 entries)
+[2025-11-15T14:28:42Z UTC] [WARN] Dummy created for employment_to_population_ratio (WorldBank fetch failed (SL.EMP.TOTL.SP.ZS))
+[2025-11-15T14:28:42Z UTC] [STATUS] employment_to_population_ratio: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:43Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:44Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:45Z UTC] [ERR] WorldBank SL.TLF.CACT.FE.ZS: HTTP 502
+[2025-11-15T14:28:45Z UTC] [SAFE] JSON written → data\female_labor_force_participation.json (0 entries)
+[2025-11-15T14:28:45Z UTC] [WARN] Dummy created for female_labor_force_participation (WorldBank fetch failed (SL.TLF.CACT.FE.ZS))
+[2025-11-15T14:28:45Z UTC] [STATUS] female_labor_force_participation: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:46Z UTC] [META] WorldBank SH.STA.TRAF.P5: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:47Z UTC] [META] WorldBank SH.STA.TRAF.P5: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:49Z UTC] [ERR] WorldBank SH.STA.TRAF.P5: HTTP 502
+[2025-11-15T14:28:49Z UTC] [SAFE] JSON written → data\road_traffic_deaths_per_100k_people.json (0 entries)
+[2025-11-15T14:28:49Z UTC] [WARN] Dummy created for road_traffic_deaths_per_100k_people (WorldBank fetch failed (SH.STA.TRAF.P5))
+[2025-11-15T14:28:49Z UTC] [STATUS] road_traffic_deaths_per_100k_people: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:50Z UTC] [META] WorldBank IT.NET.BBND.P2: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:51Z UTC] [META] WorldBank IT.NET.BBND.P2: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:52Z UTC] [ERR] WorldBank IT.NET.BBND.P2: HTTP 502
+[2025-11-15T14:28:52Z UTC] [SAFE] JSON written → data\fixed_broadband_subscriptions_per_100_people.json (0 entries)
+[2025-11-15T14:28:52Z UTC] [WARN] Dummy created for fixed_broadband_subscriptions_per_100_people (WorldBank fetch failed (IT.NET.BBND.P2))
+[2025-11-15T14:28:52Z UTC] [STATUS] fixed_broadband_subscriptions_per_100_people: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:53Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:54Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:55Z UTC] [ERR] WorldBank SE.XPD.TOTL.GD.ZS: HTTP 502
+[2025-11-15T14:28:55Z UTC] [SAFE] JSON written → data\education_expenditure_of_gdp.json (0 entries)
+[2025-11-15T14:28:55Z UTC] [WARN] Dummy created for education_expenditure_of_gdp (WorldBank fetch failed (SE.XPD.TOTL.GD.ZS))
+[2025-11-15T14:28:55Z UTC] [STATUS] education_expenditure_of_gdp: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:56Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:57Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:28:58Z UTC] [ERR] WorldBank MS.MIL.XPND.GD.ZS: HTTP 502
+[2025-11-15T14:28:58Z UTC] [SAFE] JSON written → data\military_expenditure_of_gdp.json (0 entries)
+[2025-11-15T14:28:58Z UTC] [WARN] Dummy created for military_expenditure_of_gdp (WorldBank fetch failed (MS.MIL.XPND.GD.ZS))
+[2025-11-15T14:28:58Z UTC] [STATUS] military_expenditure_of_gdp: stored source_date=Unknown, data_year=None
+[2025-11-15T14:28:59Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:29:00Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:29:01Z UTC] [ERR] WorldBank NY.GDP.PCAP.PP.CD: HTTP 502
+[2025-11-15T14:29:01Z UTC] [SAFE] JSON written → data\purchasing_power_parity.json (0 entries)
+[2025-11-15T14:29:01Z UTC] [WARN] Dummy created for purchasing_power_parity (WorldBank fetch failed (NY.GDP.PCAP.PP.CD))
+[2025-11-15T14:29:01Z UTC] [STATUS] purchasing_power_parity: stored source_date=Unknown, data_year=None
+[2025-11-15T14:29:02Z UTC] [HEUR] OWID median_age → inferred source_date 2023-01-01
+[2025-11-15T14:29:02Z UTC] [SAFE] JSON written → data\median_age.json (14652 entries)
+[2025-11-15T14:29:02Z UTC] [OK] OWID KPI saved: median_age (14652 rows, last updated 2023-01-01)
+[2025-11-15T14:29:02Z UTC] [STATUS] median_age: stored source_date=2023-01-01, data_year=2023
+[2025-11-15T14:29:03Z UTC] [HEUR] OWID democracy_index → inferred source_date 2024-01-01
+[2025-11-15T14:29:03Z UTC] [SAFE] JSON written → data\democracy_index.json (2839 entries)
+[2025-11-15T14:29:03Z UTC] [OK] OWID KPI saved: democracy_index (2839 rows, last updated 2024-01-01)
+[2025-11-15T14:29:03Z UTC] [STATUS] democracy_index: stored source_date=2024-01-01, data_year=2024
+[2025-11-15T14:29:04Z UTC] [HEUR] OWID press_freedom_index → inferred source_date 2021-01-01
+[2025-11-15T14:29:04Z UTC] [SAFE] JSON written → data\press_freedom_index.json (1601 entries)
+[2025-11-15T14:29:04Z UTC] [OK] OWID KPI saved: press_freedom_index (1601 rows, last updated 2021-01-01)
+[2025-11-15T14:29:04Z UTC] [STATUS] press_freedom_index: stored source_date=2021-01-01, data_year=2021
+[2025-11-15T14:29:06Z UTC] [HEUR] OWID human_development_index_hdi → inferred source_date 2023-01-01
+[2025-11-15T14:29:06Z UTC] [SAFE] JSON written → data\human_development_index_hdi.json (5916 entries)
+[2025-11-15T14:29:06Z UTC] [OK] OWID KPI saved: human_development_index_hdi (5916 rows, last updated 2023-01-01)
+[2025-11-15T14:29:06Z UTC] [STATUS] human_development_index_hdi: stored source_date=2023-01-01, data_year=2023
+[2025-11-15T14:29:07Z UTC] [HEUR] OWID physicians_per_1_000_people → inferred source_date 2022-01-01
+[2025-11-15T14:29:07Z UTC] [SAFE] JSON written → data\physicians_per_1_000_people.json (5091 entries)
+[2025-11-15T14:29:07Z UTC] [OK] OWID KPI saved: physicians_per_1_000_people (5091 rows, last updated 2022-01-01)
+[2025-11-15T14:29:07Z UTC] [STATUS] physicians_per_1_000_people: stored source_date=2022-01-01, data_year=2022
+[2025-11-15T14:29:08Z UTC] [HEUR] OWID homelessness_rate → inferred source_date 2023-01-01
+[2025-11-15T14:29:08Z UTC] [SAFE] JSON written → data\homelessness_rate.json (16 entries)
+[2025-11-15T14:29:08Z UTC] [OK] OWID KPI saved: homelessness_rate (16 rows, last updated 2023-01-01)
+[2025-11-15T14:29:08Z UTC] [STATUS] homelessness_rate: stored source_date=2023-01-01, data_year=2023
+[2025-11-15T14:29:09Z UTC] [HEUR] OWID old_age_dependency_ratio → inferred source_date 2023-01-01
+[2025-11-15T14:29:09Z UTC] [SAFE] JSON written → data\old_age_dependency_ratio.json (14652 entries)
+[2025-11-15T14:29:09Z UTC] [OK] OWID KPI saved: old_age_dependency_ratio (14652 rows, last updated 2023-01-01)
+[2025-11-15T14:29:09Z UTC] [STATUS] old_age_dependency_ratio: stored source_date=2023-01-01, data_year=2023
+[2025-11-15T14:29:11Z UTC] [HEUR] OWID age_dependency_ratio_total → inferred source_date 2023-01-01
+[2025-11-15T14:29:11Z UTC] [SAFE] JSON written → data\age_dependency_ratio_total.json (14652 entries)
+[2025-11-15T14:29:11Z UTC] [OK] OWID KPI saved: age_dependency_ratio_total (14652 rows, last updated 2023-01-01)
+[2025-11-15T14:29:11Z UTC] [STATUS] age_dependency_ratio_total: stored source_date=2023-01-01, data_year=2023
+[2025-11-15T14:29:12Z UTC] [HEUR] OWID co2_emissions → inferred source_date 2024-01-01
+[2025-11-15T14:29:12Z UTC] [TRIM] co2_emissions: removed 3771 out-of-range records (before 1900 or >2025)
+[2025-11-15T14:29:12Z UTC] [SAFE] JSON written → data\co2_emissions.json (18480 entries)
+[2025-11-15T14:29:12Z UTC] [OK] OWID KPI saved: co2_emissions (22251 rows, last updated 2024-01-01)
+[2025-11-15T14:29:12Z UTC] [STATUS] co2_emissions: stored source_date=2024-01-01, data_year=2024
+[2025-11-15T14:29:13Z UTC] [HEUR] OWID political_corruption_index → inferred source_date 2024-01-01
+[2025-11-15T14:29:13Z UTC] [TRANSFORM] political_corruption_index: applied invert='*' to 26567 rows
+[2025-11-15T14:29:13Z UTC] [TRIM] political_corruption_index: removed 7289 out-of-range records (before 1900 or >2025)
+[2025-11-15T14:29:13Z UTC] [SAFE] JSON written → data\political_corruption_index.json (19278 entries)
+[2025-11-15T14:29:13Z UTC] [OK] OWID KPI saved: political_corruption_index (26567 rows, last updated 2024-01-01)
+[2025-11-15T14:29:13Z UTC] [STATUS] political_corruption_index: stored source_date=2024-01-01, data_year=2024
+[2025-11-15T14:29:15Z UTC] [HEUR] OWID military_spending_sipri → inferred source_date 2024-01-01
+[2025-11-15T14:29:15Z UTC] [SAFE] JSON written → data\military_spending_sipri.json (8292 entries)
+[2025-11-15T14:29:15Z UTC] [OK] OWID KPI saved: military_spending_sipri (8292 rows, last updated 2024-01-01)
+[2025-11-15T14:29:15Z UTC] [STATUS] military_spending_sipri: stored source_date=2024-01-01, data_year=2024
+[2025-11-15T14:29:16Z UTC] [HEUR] OWID number_of_armed_conflicts → inferred source_date 2024-01-01
+[2025-11-15T14:29:16Z UTC] [SAFE] JSON written → data\number_of_armed_conflicts.json (7272 entries)
+[2025-11-15T14:29:16Z UTC] [OK] OWID KPI saved: number_of_armed_conflicts (7272 rows, last updated 2024-01-01)
+[2025-11-15T14:29:16Z UTC] [STATUS] number_of_armed_conflicts: stored source_date=2024-01-01, data_year=2024
+[2025-11-15T14:29:17Z UTC] [HEUR] OWID mean_years_of_schooling → inferred source_date 2040-01-01
+[2025-11-15T14:29:17Z UTC] [TRIM] mean_years_of_schooling: removed 1092 out-of-range records (before 1900 or >2025)
+[2025-11-15T14:29:17Z UTC] [SAFE] JSON written → data\mean_years_of_schooling.json (2962 entries)
+[2025-11-15T14:29:17Z UTC] [FIX] mean_years_of_schooling: future year 2040 detected → correcting to 2025
+[2025-11-15T14:29:17Z UTC] [OK] OWID KPI saved: mean_years_of_schooling (4054 rows, last updated 2025-01-01)
+[2025-11-15T14:29:17Z UTC] [STATUS] mean_years_of_schooling: stored source_date=2025-01-01, data_year=2025
+[2025-11-15T14:29:19Z UTC] [HEUR] OWID living_planet_index → inferred source_date 2020-01-01
+[2025-11-15T14:29:19Z UTC] [SAFE] JSON written → data\living_planet_index.json (51 entries)
+[2025-11-15T14:29:19Z UTC] [OK] OWID KPI saved: living_planet_index (51 rows, last updated 2020-01-01)
+[2025-11-15T14:29:19Z UTC] [STATUS] living_planet_index: stored source_date=2020-01-01, data_year=2020
+[2025-11-15T14:29:20Z UTC] [HEUR] OWID electric_vehicle_stock → inferred source_date 2024-01-01
+[2025-11-15T14:29:20Z UTC] [SAFE] JSON written → data\electric_vehicle_stock.json (391 entries)
+[2025-11-15T14:29:20Z UTC] [OK] OWID KPI saved: electric_vehicle_stock (391 rows, last updated 2024-01-01)
+[2025-11-15T14:29:20Z UTC] [STATUS] electric_vehicle_stock: stored source_date=2024-01-01, data_year=2024
+[2025-11-15T14:29:21Z UTC] [HEUR] OWID number_of_recorded_natural_disasters → inferred source_date 2023-01-01
+[2025-11-15T14:29:21Z UTC] [SAFE] JSON written → data\number_of_recorded_natural_disasters.json (124 entries)
+[2025-11-15T14:29:21Z UTC] [OK] OWID KPI saved: number_of_recorded_natural_disasters (124 rows, last updated 2023-01-01)
+[2025-11-15T14:29:21Z UTC] [STATUS] number_of_recorded_natural_disasters: stored source_date=2023-01-01, data_year=2023
+[2025-11-15T14:29:23Z UTC] [HEUR] OWID global_co2_emissions → inferred source_date 2024-01-01
+[2025-11-15T14:29:23Z UTC] [TRIM] global_co2_emissions: removed 3771 out-of-range records (before 1900 or >2025)
+[2025-11-15T14:29:23Z UTC] [SAFE] JSON written → data\global_co2_emissions.json (18480 entries)
+[2025-11-15T14:29:23Z UTC] [OK] OWID KPI saved: global_co2_emissions (22251 rows, last updated 2024-01-01)
+[2025-11-15T14:29:23Z UTC] [STATUS] global_co2_emissions: stored source_date=2024-01-01, data_year=2024
+[2025-11-15T14:29:24Z UTC] [HEUR] OWID global_temperature_anomaly → inferred source_date 2025-01-01
+[2025-11-15T14:29:24Z UTC] [TRIM] global_temperature_anomaly: removed 50 out-of-range records (before 1900 or >2025)
+[2025-11-15T14:29:24Z UTC] [SAFE] JSON written → data\global_temperature_anomaly.json (126 entries)
+[2025-11-15T14:29:24Z UTC] [OK] OWID KPI saved: global_temperature_anomaly (176 rows, last updated 2025-01-01)
+[2025-11-15T14:29:24Z UTC] [STATUS] global_temperature_anomaly: stored source_date=2025-01-01, data_year=2025
+[2025-11-15T14:29:25Z UTC] [HEUR] OWID rule_of_law_index → inferred source_date 2024-01-01
+[2025-11-15T14:29:25Z UTC] [TRIM] rule_of_law_index: removed 10523 out-of-range records (before 1900 or >2025)
+[2025-11-15T14:29:25Z UTC] [SAFE] JSON written → data\rule_of_law_index.json (21390 entries)
+[2025-11-15T14:29:25Z UTC] [OK] OWID KPI saved: rule_of_law_index (31913 rows, last updated 2024-01-01)
+[2025-11-15T14:29:25Z UTC] [STATUS] rule_of_law_index: stored source_date=2024-01-01, data_year=2024
+[2025-11-15T14:29:26Z UTC] [SAFE] JSON written → data\world_happiness_index.json (1429 entries)
+[2025-11-15T14:29:26Z UTC] [OK] CSV KPI saved: world_happiness_index (1429 rows, last updated 2024-01-01T00:00:00Z)
+[2025-11-15T14:29:26Z UTC] [STATUS] world_happiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2025-11-15T14:29:26Z UTC] [TRIM] olympic_medals_summer: removed 10 out-of-range records (before 1900 or >2025)
+[2025-11-15T14:29:26Z UTC] [SAFE] JSON written → data\olympic_medals_summer.json (1266 entries)
+[2025-11-15T14:29:26Z UTC] [OK] CSV KPI saved: olympic_medals_summer (1276 rows, last updated 2024-01-01T00:00:00Z)
+[2025-11-15T14:29:26Z UTC] [STATUS] olympic_medals_summer: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2025-11-15T14:29:26Z UTC] [SAFE] JSON written → data\big_mac_index.json (1267 entries)
+[2025-11-15T14:29:26Z UTC] [OK] CSV KPI saved: big_mac_index (1267 rows, last updated 2025-01-01T00:00:00Z)
+[2025-11-15T14:29:26Z UTC] [STATUS] big_mac_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-15T14:29:26Z UTC] [SAFE] JSON written → data\recycling_rate.json (5488 entries)
+[2025-11-15T14:29:26Z UTC] [OK] CSV KPI saved: recycling_rate (5488 rows, last updated 2022-01-01T00:00:00Z)
+[2025-11-15T14:29:26Z UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-15T14:29:26Z UTC] [SAFE] JSON written → data\environmental_performance_index.json (180 entries)
+[2025-11-15T14:29:26Z UTC] [OK] CSV KPI saved: environmental_performance_index (180 rows, last updated 2022-01-01T00:00:00Z)
+[2025-11-15T14:29:26Z UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-15T14:29:26Z UTC] [SAFE] JSON written → data\global_peace_index.json (2922 entries)
+[2025-11-15T14:29:26Z UTC] [OK] CSV KPI saved: global_peace_index (2922 rows, last updated 2025-01-01T00:00:00Z)
+[2025-11-15T14:29:26Z UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-15T14:29:26Z UTC] [SAFE] JSON written → data\inform_resilience_index.json (1910 entries)
+[2025-11-15T14:29:26Z UTC] [OK] CSV KPI saved: inform_resilience_index (1910 rows, last updated 2025-01-01T00:00:00Z)
+[2025-11-15T14:29:26Z UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-15T14:29:26Z UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
+[2025-11-15T14:29:29Z UTC] [HEUR] OWID rule_of_law_index → inferred source_date 2024-01-01
+[2025-11-15T14:29:29Z UTC] [TRIM] rule_of_law_index: removed 10523 out-of-range records (before 1900 or >2025)
+[2025-11-15T14:29:29Z UTC] [SAFE] JSON written → data\rule_of_law_index.json (21390 entries)
+[2025-11-15T14:29:29Z UTC] [OK] OWID KPI saved: rule_of_law_index (31913 rows, last updated 2024-01-01)
+[2025-11-15T14:29:29Z UTC] [STATUS] rule_of_law_index: stored source_date=2024-01-01, data_year=2024
+[2025-11-15T14:29:30Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:29:32Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD: no valid date found (JSON/CSV/ZIP)
+[2025-11-15T14:29:33Z UTC] [ERR] WorldBank NY.GDP.PCAP.PP.CD: HTTP 502
+[2025-11-15T14:29:33Z UTC] [WARN] Keeping old data for purchasing_power_parity (WorldBank fetch failed (NY.GDP.PCAP.PP.CD))
+[2025-11-15T14:29:33Z UTC] [STATUS] purchasing_power_parity: stored source_date=Unknown, data_year=None
+[2025-11-15T14:29:33Z UTC] [SAFE] JSON written → data\olympic_medals_winter.json (0 entries)
+[2025-11-15T14:29:33Z UTC] [WARN] Dummy created for olympic_medals_winter (CSV missing olympic_medals_winter.csv)
+[2025-11-15T14:29:33Z UTC] [STATUS] olympic_medals_winter: stored source_date=Unknown, data_year=None
+[2025-11-15T14:29:33Z UTC] [SAFE] JSON written → data\pisa_overall_score.json (0 entries)
+[2025-11-15T14:29:33Z UTC] [WARN] Dummy created for pisa_overall_score (CSV missing pisa_overall_score)
+[2025-11-15T14:29:33Z UTC] [STATUS] pisa_overall_score: stored source_date=Unknown, data_year=None
+[2025-11-15T14:29:33Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2025-11-15T14:29:35Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 entries)
+[2025-11-15T14:29:35Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
+[2025-11-15T14:29:35Z UTC] [SAFE] JSON written → data\fetch_status.json (1 entries)
+[2025-11-15T14:29:35Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-15T14:29:35Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-15T14:29:35Z UTC] [SAFE] JSON written → data\fetch_status.json (2 entries)
+[2025-11-15T14:29:35Z UTC] [SAFE] JSON written → data\meta\country_mappings_pending.json (95 entries)
+[2025-11-15T14:29:35Z UTC] [INFO] fetch_status.json updated with 62 KPIs
+[2025-11-15T14:29:35Z UTC] [SAFE] JSON written → data\fetch_state.json (3 entries)
+[2025-11-15T14:29:35Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (27 entries)
 === RealityCheck Fetch Report ===
 Countries loaded:   198
-KPIs processed:    63
-Saved records:     197233
+KPIs processed:    65
+Saved records:     229146
 
 WorldBank KPIs:    0
 CSV KPIs:          7
-OWID KPIs:         19
+OWID KPIs:         20
 UNHCR KPIs:        0
 Others KPIs:       1
 
-Mapping OK:        211089
-Mapping dropped:   39866
-Mapping pending:   1958
+Mapping OK:        242807
+Mapping dropped:   43036
+Mapping pending:   1963
 
 Dummies created:   36
 Skipped (up-to-date): 0
@@ -380,76 +390,76 @@ Updated KPI files:
 =================================
 ✅ Fetch completed successfully
 
-[2025-11-15T14:03:30Z UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
-[2025-11-15T15:03:30 UTC] === Overall Ranking Generation Started ===
-[2025-11-15T15:03:30 UTC] ✅ 30 KPIs considered for ranking
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for gini_index
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for public_debt_of_gdp
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for unemployment_rate
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for infant_mortality_rate
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for maternal_mortality_ratio
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for hospital_beds_per_1_000_people
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for adult_literacy_rate
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for overall_immunization_coverage
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for extreme_poverty
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for access_to_basic_drinking_water
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for internet_penetration_rate
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for mobile_subscriptions_per_100_inhabitants
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for railway_length
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for inflation_consumer_price_index
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for employment_to_population_ratio
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for female_labor_force_participation
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for fixed_broadband_subscriptions_per_100_people
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for education_expenditure_of_gdp
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for purchasing_power_parity
-[2025-11-15T15:03:30 UTC] ⚠️ No numeric values for pisa_overall_score
-[2025-11-15T15:03:30 UTC] 💾 JSON saved successfully → data\overall_ranking.json (198 records)
-[2025-11-15T15:03:30 UTC] ✅ overall_ranking.json written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\overall_ranking.json
-[2025-11-15T15:03:30 UTC] ➡️ Starting fun/safe haven ranking generation ...
-[2025-11-15T15:03:30 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
-[2025-11-15T15:03:30 UTC] ➡️ Generating Fun Mode via GPT-4-Turbo …
-[2025-11-15T15:03:50 UTC] 💾 Saved data\fun_ranking.json (10 entries)
-[2025-11-15T15:03:50 UTC] ➡️ Generating Safe Haven Mode via GPT-4-Turbo …
-[2025-11-15T15:04:10 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
-[2025-11-15T15:04:10 UTC] ➡️ Generating Immigration Mode via GPT-4-Turbo …
-[2025-11-15T15:04:21 UTC] 💾 Saved data\immigration_ranking.json (10 entries)
-[2025-11-15T15:04:21 UTC] ✅ All three rankings generated successfully.
-[2025-11-15T15:04:21 UTC] ✅ Fun & Safe Haven rankings successfully generated.
-[2025-11-15T14:04:24Z UTC] [STATE] Merged 27 updated KPIs → total 27 entries.
-[2025-11-15T15:04:24 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
-[2025-11-15T15:04:24 UTC] ➡️ Starting global analysis …
-[2025-11-15T15:04:40 UTC] 💾 Saved analysis (4113 chars)
-[2025-11-15T15:04:40 UTC] ⚙️ Limiting KPI analysis to 27 entries.
-[2025-11-15T15:06:44 UTC] ✅ KPI analyses saved (27 total)
-[2025-11-15T15:06:44 UTC] 🔎 Computing outliers …
-[2025-11-15T15:06:44 UTC] 💾 Outliers saved (21 KPIs, compact format)
-[2025-11-15T15:06:44 UTC] ✅ RealityCheck analysis completed successfully.
-[2025-11-15T15:06:44 UTC] ➡️ Starting CSV update check for 9 KPIs…
-[2025-11-15T15:06:44 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2024)
-[2025-11-15T15:06:46 UTC] 🤖 GPT response for 'World Happiness Index': Unknown
-[2025-11-15T15:06:49 UTC] ❓ No newer version for 'World Happiness Index' found.
-[2025-11-15T15:06:49 UTC] 🔍 Checking 'Olympic Medals (Summer)' (last known year: 2024)
-[2025-11-15T15:06:49 UTC] 🤖 GPT response for 'Olympic Medals (Summer)': Unknown
-[2025-11-15T15:06:52 UTC] ❓ No newer version for 'Olympic Medals (Summer)' found.
-[2025-11-15T15:06:52 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2025)
-[2025-11-15T15:06:53 UTC] 🤖 GPT response for 'Big Mac Index': 2025
-[2025-11-15T15:06:56 UTC] ⏸️ Up-to-date (2025 = 2025)
-[2025-11-15T15:06:56 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
-[2025-11-15T15:06:57 UTC] 🤖 GPT response for 'Recycling Rate': Unknown
-[2025-11-15T15:07:00 UTC] ❓ No newer version for 'Recycling Rate' found.
-[2025-11-15T15:07:00 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
-[2025-11-15T15:07:01 UTC] 🤖 GPT response for 'Environmental Performance Index': 2022
-[2025-11-15T15:07:04 UTC] ⏸️ Up-to-date (2022 = 2022)
-[2025-11-15T15:07:04 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
-[2025-11-15T15:07:05 UTC] 🤖 GPT response for 'Global Peace Index': Unknown
-[2025-11-15T15:07:08 UTC] ❓ No newer version for 'Global Peace Index' found.
-[2025-11-15T15:07:08 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
-[2025-11-15T15:07:09 UTC] 🤖 GPT response for 'Inform Resilience Index': Unknown
-[2025-11-15T15:07:12 UTC] ❓ No newer version for 'Inform Resilience Index' found.
-[2025-11-15T15:07:12 UTC] 🔍 Checking 'Olympic Medals (Winter)' (last known year: None)
-[2025-11-15T15:07:12 UTC] 🤖 GPT response for 'Olympic Medals (Winter)': Unknown
-[2025-11-15T15:07:15 UTC] ❓ No newer version for 'Olympic Medals (Winter)' found.
-[2025-11-15T15:07:15 UTC] 🔍 Checking 'PISA Overall Score' (last known year: None)
-[2025-11-15T15:07:16 UTC] 🤖 GPT response for 'PISA Overall Score': Unknown
-[2025-11-15T15:07:19 UTC] ❓ No newer version for 'PISA Overall Score' found.
-[2025-11-15T15:07:19 UTC] ✅ Smart CSV update check completed.
+[2025-11-15T14:29:35Z UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
+[2025-11-15T15:29:35 UTC] === Overall Ranking Generation Started ===
+[2025-11-15T15:29:35 UTC] ✅ 30 KPIs considered for ranking
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for gini_index
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for public_debt_of_gdp
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for unemployment_rate
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for infant_mortality_rate
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for maternal_mortality_ratio
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for hospital_beds_per_1_000_people
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for adult_literacy_rate
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for overall_immunization_coverage
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for extreme_poverty
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for access_to_basic_drinking_water
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for internet_penetration_rate
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for mobile_subscriptions_per_100_inhabitants
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for railway_length
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for inflation_consumer_price_index
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for employment_to_population_ratio
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for female_labor_force_participation
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for fixed_broadband_subscriptions_per_100_people
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for education_expenditure_of_gdp
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for purchasing_power_parity
+[2025-11-15T15:29:35 UTC] ⚠️ No numeric values for pisa_overall_score
+[2025-11-15T15:29:35 UTC] 💾 JSON saved successfully → data\overall_ranking.json (198 records)
+[2025-11-15T15:29:35 UTC] ✅ overall_ranking.json written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\overall_ranking.json
+[2025-11-15T15:29:35 UTC] ➡️ Starting fun/safe haven ranking generation ...
+[2025-11-15T15:29:35 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
+[2025-11-15T15:29:35 UTC] ➡️ Generating Fun Mode via GPT-4-Turbo …
+[2025-11-15T15:29:53 UTC] 💾 Saved data\fun_ranking.json (10 entries)
+[2025-11-15T15:29:53 UTC] ➡️ Generating Safe Haven Mode via GPT-4-Turbo …
+[2025-11-15T15:30:10 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
+[2025-11-15T15:30:10 UTC] ➡️ Generating Immigration Mode via GPT-4-Turbo …
+[2025-11-15T15:30:22 UTC] 💾 Saved data\immigration_ranking.json (10 entries)
+[2025-11-15T15:30:22 UTC] ✅ All three rankings generated successfully.
+[2025-11-15T15:30:22 UTC] ✅ Fun & Safe Haven rankings successfully generated.
+[2025-11-15T14:30:24Z UTC] [STATE] Merged 27 updated KPIs → total 27 entries.
+[2025-11-15T15:30:24 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
+[2025-11-15T15:30:24 UTC] ➡️ Starting global analysis …
+[2025-11-15T15:30:47 UTC] 💾 Saved analysis (4688 chars)
+[2025-11-15T15:30:47 UTC] ⚙️ Limiting KPI analysis to 28 entries.
+[2025-11-15T15:32:50 UTC] ✅ KPI analyses saved (27 total)
+[2025-11-15T15:32:50 UTC] 🔎 Computing outliers …
+[2025-11-15T15:32:50 UTC] 💾 Outliers saved (21 KPIs, compact format)
+[2025-11-15T15:32:50 UTC] ✅ RealityCheck analysis completed successfully.
+[2025-11-15T15:32:50 UTC] ➡️ Starting CSV update check for 9 KPIs…
+[2025-11-15T15:32:50 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2024)
+[2025-11-15T15:32:51 UTC] 🤖 GPT response for 'World Happiness Index': Unknown
+[2025-11-15T15:32:54 UTC] ❓ No newer version for 'World Happiness Index' found.
+[2025-11-15T15:32:54 UTC] 🔍 Checking 'Olympic Medals (Summer)' (last known year: 2024)
+[2025-11-15T15:32:56 UTC] 🤖 GPT response for 'Olympic Medals (Summer)': Unknown
+[2025-11-15T15:32:59 UTC] ❓ No newer version for 'Olympic Medals (Summer)' found.
+[2025-11-15T15:32:59 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2025)
+[2025-11-15T15:32:59 UTC] 🤖 GPT response for 'Big Mac Index': Unknown
+[2025-11-15T15:33:02 UTC] ❓ No newer version for 'Big Mac Index' found.
+[2025-11-15T15:33:02 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
+[2025-11-15T15:33:03 UTC] 🤖 GPT response for 'Recycling Rate': Unknown
+[2025-11-15T15:33:06 UTC] ❓ No newer version for 'Recycling Rate' found.
+[2025-11-15T15:33:06 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
+[2025-11-15T15:33:06 UTC] 🤖 GPT response for 'Environmental Performance Index': 2022
+[2025-11-15T15:33:09 UTC] ⏸️ Up-to-date (2022 = 2022)
+[2025-11-15T15:33:09 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
+[2025-11-15T15:33:10 UTC] 🤖 GPT response for 'Global Peace Index': Unknown
+[2025-11-15T15:33:13 UTC] ❓ No newer version for 'Global Peace Index' found.
+[2025-11-15T15:33:13 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
+[2025-11-15T15:33:14 UTC] 🤖 GPT response for 'Inform Resilience Index': Unknown
+[2025-11-15T15:33:17 UTC] ❓ No newer version for 'Inform Resilience Index' found.
+[2025-11-15T15:33:17 UTC] 🔍 Checking 'Olympic Medals (Winter)' (last known year: None)
+[2025-11-15T15:33:18 UTC] 🤖 GPT response for 'Olympic Medals (Winter)': Unknown
+[2025-11-15T15:33:21 UTC] ❓ No newer version for 'Olympic Medals (Winter)' found.
+[2025-11-15T15:33:21 UTC] 🔍 Checking 'PISA Overall Score' (last known year: None)
+[2025-11-15T15:33:22 UTC] 🤖 GPT response for 'PISA Overall Score': Unknown
+[2025-11-15T15:33:25 UTC] ❓ No newer version for 'PISA Overall Score' found.
+[2025-11-15T15:33:25 UTC] ✅ Smart CSV update check completed.

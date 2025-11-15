@@ -86,112 +86,6 @@
     ],
     "low_outliers": []
   },
-  "world_happiness_index": {
-    "high_outliers": [],
-    "low_outliers": [
-      {
-        "country": "Afghanistan",
-        "year": 2024,
-        "value": 1.721,
-        "z": -3.116
-      },
-      {
-        "country": "Lebanon",
-        "year": 2024,
-        "value": 2.707,
-        "z": -2.292
-      },
-      {
-        "country": "South Sudan",
-        "year": 2022,
-        "value": 2.817,
-        "z": -2.2
-      }
-    ]
-  },
-  "olympic_medals_summer": {
-    "high_outliers": [
-      {
-        "country": "United States",
-        "year": 2024,
-        "value": 126.0,
-        "z": 6.831
-      },
-      {
-        "country": "China",
-        "year": 2024,
-        "value": 91.0,
-        "z": 4.796
-      },
-      {
-        "country": "United Kingdom",
-        "year": 2024,
-        "value": 65.0,
-        "z": 3.285
-      },
-      {
-        "country": "France",
-        "year": 2024,
-        "value": 64.0,
-        "z": 3.226
-      },
-      {
-        "country": "Russia",
-        "year": 2016,
-        "value": 56.0,
-        "z": 2.761
-      },
-      {
-        "country": "Australia",
-        "year": 2024,
-        "value": 53.0,
-        "z": 2.587
-      },
-      {
-        "country": "Japan",
-        "year": 2024,
-        "value": 45.0,
-        "z": 2.122
-      }
-    ],
-    "low_outliers": []
-  },
-  "big_mac_index": {
-    "high_outliers": [
-      {
-        "country": "Switzerland",
-        "year": 2025,
-        "value": 7.99,
-        "z": 3.167
-      },
-      {
-        "country": "Argentina",
-        "year": 2025,
-        "value": 6.95,
-        "z": 2.264
-      },
-      {
-        "country": "Uruguay",
-        "year": 2025,
-        "value": 6.91,
-        "z": 2.229
-      },
-      {
-        "country": "Norway",
-        "year": 2025,
-        "value": 6.67,
-        "z": 2.021
-      }
-    ],
-    "low_outliers": [
-      {
-        "country": "Russia",
-        "year": 2022,
-        "value": 1.744,
-        "z": -2.258
-      }
-    ]
-  },
   "human_development_index_hdi": {
     "high_outliers": [],
     "low_outliers": [
@@ -514,6 +408,146 @@
       }
     ]
   },
+  "electric_vehicle_stock": {
+    "high_outliers": [
+      {
+        "country": "China",
+        "year": 2024,
+        "value": 34000000.0,
+        "z": 5.276
+      }
+    ],
+    "low_outliers": []
+  },
+  "global_co2_emissions": {
+    "high_outliers": [
+      {
+        "country": "China",
+        "year": 2024,
+        "value": 12289037000.0,
+        "z": 12.31
+      },
+      {
+        "country": "United States",
+        "year": 2024,
+        "value": 4904120000.0,
+        "z": 4.795
+      },
+      {
+        "country": "India",
+        "year": 2024,
+        "value": 3193478100.0,
+        "z": 3.054
+      }
+    ],
+    "low_outliers": []
+  },
+  "world_happiness_index": {
+    "high_outliers": [],
+    "low_outliers": [
+      {
+        "country": "Afghanistan",
+        "year": 2024,
+        "value": 1.721,
+        "z": -3.116
+      },
+      {
+        "country": "Lebanon",
+        "year": 2024,
+        "value": 2.707,
+        "z": -2.292
+      },
+      {
+        "country": "South Sudan",
+        "year": 2022,
+        "value": 2.817,
+        "z": -2.2
+      }
+    ]
+  },
+  "olympic_medals_summer": {
+    "high_outliers": [
+      {
+        "country": "United States",
+        "year": 2024,
+        "value": 126.0,
+        "z": 6.831
+      },
+      {
+        "country": "China",
+        "year": 2024,
+        "value": 91.0,
+        "z": 4.796
+      },
+      {
+        "country": "United Kingdom",
+        "year": 2024,
+        "value": 65.0,
+        "z": 3.285
+      },
+      {
+        "country": "France",
+        "year": 2024,
+        "value": 64.0,
+        "z": 3.226
+      },
+      {
+        "country": "Russia",
+        "year": 2016,
+        "value": 56.0,
+        "z": 2.761
+      },
+      {
+        "country": "Australia",
+        "year": 2024,
+        "value": 53.0,
+        "z": 2.587
+      },
+      {
+        "country": "Japan",
+        "year": 2024,
+        "value": 45.0,
+        "z": 2.122
+      }
+    ],
+    "low_outliers": []
+  },
+  "big_mac_index": {
+    "high_outliers": [
+      {
+        "country": "Switzerland",
+        "year": 2025,
+        "value": 7.99,
+        "z": 3.167
+      },
+      {
+        "country": "Argentina",
+        "year": 2025,
+        "value": 6.95,
+        "z": 2.264
+      },
+      {
+        "country": "Uruguay",
+        "year": 2025,
+        "value": 6.91,
+        "z": 2.229
+      },
+      {
+        "country": "Norway",
+        "year": 2025,
+        "value": 6.67,
+        "z": 2.021
+      }
+    ],
+    "low_outliers": [
+      {
+        "country": "Russia",
+        "year": 2022,
+        "value": 1.744,
+        "z": -2.258
+      }
+    ]
+  },
   "recycling_rate": {
     "high_outliers": [
       {
@@ -675,40 +709,6 @@
         "year": 2025,
         "value": 3.108,
         "z": 2.021
-      }
-    ],
-    "low_outliers": []
-  },
-  "electric_vehicle_stock": {
-    "high_outliers": [
-      {
-        "country": "China",
-        "year": 2024,
-        "value": 34000000.0,
-        "z": 5.276
-      }
-    ],
-    "low_outliers": []
-  },
-  "global_co2_emissions": {
-    "high_outliers": [
-      {
-        "country": "China",
-        "year": 2024,
-        "value": 12289037000.0,
-        "z": 12.31
-      },
-      {
-        "country": "United States",
-        "year": 2024,
-        "value": 4904120000.0,
-        "z": 4.795
-      },
-      {
-        "country": "India",
-        "year": 2024,
-        "value": 3193478100.0,
-        "z": 3.054
       }
     ],
     "low_outliers": []
