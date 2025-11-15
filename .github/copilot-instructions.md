@@ -31,6 +31,19 @@ RealityCheck is a data-driven interactive platform for comparing 190+ countries 
 
 ## Python Backend Workflows
 
+### Dependencies
+Install required packages before running any scripts:
+```bash
+pip install requests pandas tqdm python-dotenv openai
+```
+
+Core dependencies:
+- `requests` – API calls to World Bank, OWID
+- `pandas` – CSV processing and data normalization
+- `tqdm` – Progress bars for batch operations
+- `python-dotenv` – Load `OPENAI_API_KEY` from `.env` file
+- `openai` – GPT-4o integration for analysis generation
+
 ### Main Scripts (run from repository root)
 ```bash
 # Fetch all KPIs (World Bank, OWID, CSV sources)
@@ -60,13 +73,22 @@ python scripts/fetch_overall_ranking.py
 
 ### Data Fetcher Architecture (`fetch_data.py`)
 - Reads `available_kpis.json` to determine which datasets to fetch
-- Supports three source types via `source_type` field:
-  - `worldbank` → World Bank API via `source_code` (e.g., `SP.DYN.TFRT.IN`)
-  - `owid` → Our World in Data CSV download
-  - `csv` → Manual CSV files in `scripts/source_csv/`
+- Supports four source types via `source_type` field (priority order):
+  1. **`owid`** – Our World in Data CSV download (preferred for comprehensive global data)
+  2. **`worldbank`** – World Bank API via `source_code` (e.g., `SP.DYN.TFRT.IN`)
+  3. **`others`** – Specialized sources (UNHCR, WHO, IMF, Yale EPI)
+  4. **`csv`** – Manual CSV files in `scripts/source_csv/` (custom datasets like Big Mac Index, Olympic Medals)
 - Uses `country_mappings.json` for fuzzy matching (handles "USA" → "United States", "DEU" → "Germany")
 - Creates `country_mappings_pending.json` for unmapped names (review manually)
 - Outputs to `/data/{filename}.json` with standardized schema
+
+**Country Mapping Workflow:**
+When the fetcher encounters an unknown country name (e.g., "United States of America" from OWID):
+1. Checks `country_mappings.json` for existing alias → canonical name mapping
+2. If not found, adds to `country_mappings_pending.json` with placeholder canonical name
+3. Review pending file manually and move verified mappings to `country_mappings.json`
+4. Re-run fetch script to apply new mappings
+5. Never edit canonical names in `countries.json` to match source data – always map source → canonical
 
 ### GPT Integration Pattern
 All GPT calls use `env_utils.py`:
@@ -138,6 +160,11 @@ rebuildRelationLookups(); // Populates relationLookups.percapita/pergdp/perkm2
 - Page-specific logic in `scripts/script.js`, `scripts/script_world.js`, etc.
 - Use `showSpinner(true/false, message)` for loading states
 - All Chart.js instances stored in global `chartInstance` variable (destroy before recreating)
+
+**Chatbot Integration (In Development):**
+- Chatbot logic will be isolated in `/scripts/floating_chat.js` (incomplete)
+- Planned features: KPI-specific Q&A, country comparisons, trend explanations
+- Do not modify chatbot code without checking current development status in `/ai_workspace/todos.md`
 
 ### GPT Analysis Generation
 - `analysis.py` generates three outputs: `analysis.md` (rendered by `analysis.html`), `analysis.json`, `analysis_outliers.json`
