@@ -1,9 +1,5 @@
-[2025-11-15T16:24:43Z UTC] [INFO] Using OPENAI_API_KEY: found
-[2025-11-15T16:24:43Z UTC] === Fetch started ===
-[2025-11-15T16:24:43Z UTC] ⚠️ Kein fetch_status.json vorhanden oder leer – setze ALLE KPIs auf 'neu'.
-[2025-11-15T16:24:44Z UTC] [WARN] WorldBank meta AG.SRF.TOTL.K2: HTTP 502 → retry in 3s (1/3)
-[2025-11-15T16:24:47Z UTC] [WARN] WorldBank meta AG.SRF.TOTL.K2: HTTP 502 → retry in 6s (2/3)
-[2025-11-15T16:24:54Z UTC] [WARN] WorldBank meta AG.SRF.TOTL.K2: HTTP 502 → retry in 9s (3/3)
-[2025-11-15T16:25:03Z UTC] [WARN] WorldBank meta ZIP AG.SRF.TOTL.K2: HTTP 502 → retry in 3s (1/3)
-[2025-11-15T16:25:07Z UTC] [WARN] WorldBank meta ZIP AG.SRF.TOTL.K2: HTTP 502 → retry in 6s (2/3)
-[2025-11-15T16:25:13Z UTC] [WARN] WorldBank meta ZIP AG.SRF.TOTL.K2: HTTP 502 → retry in 9s (3/3)
+[2025-11-15T16:49:07Z UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-15T16:49:07Z UTC] === Fetch started ===
+[2025-11-15T16:49:07Z UTC] ⚠️ Kein fetch_status.json vorhanden oder leer – setze ALLE KPIs auf 'neu'.
+[2025-11-15T16:49:08Z UTC] [WARN] WorldBank meta AG.SRF.TOTL.K2: HTTP 502 → retry in 3s (1/3)
+[2025-11-15T16:49:11Z UTC] [WARN] WorldBank meta AG.SRF.TOTL.K2: HTTP 502 → retry in 6s (2/3)

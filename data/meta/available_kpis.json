@@ -906,6 +906,23 @@
     "invert": ""
   },
   {
+  "title": "State-based Conflict Deaths (Global)",
+  "description": "This indicator counts the number of deaths caused by state-based armed conflicts worldwide. It covers organized violence involving at least one government actor and uses Uppsala Conflict Data Program (UCDP) definitions. The dataset includes annual conflict deaths for all global regions and enables a consistent long-term perspective on war intensity across continents. It provides crucial insight into the severity and geographical spread of modern conflicts.",
+  "unit": "deaths",
+  "relation": "",
+  "sort": "lower",
+  "cluster": "Security & Defense",
+  "source": "https://ourworldindata.org/grapher/deaths-in-state-based-conflicts-by-region",
+  "source_type": "owid",
+  "source_code": "deaths-in-state-based-conflicts-by-region.csv?useColumnShortNames=true",
+  "scale": "auto",
+  "world_kpi": "e",
+  "filename": "state_based_conflict_deaths",
+  "relevance": "normal",
+  "actuality": "normal",
+  "invert": ""
+},
+  {
     "title": "World Happiness Index",
     "description": "The World Happiness Index measures how happy people feel in different countries, based on their life satisfaction and well-being. This index is important because it reflects the overall quality of life and can influence government policies aimed at improving citizens' happiness. Factors that affect this score include income, social support, freedom, and levels of corruption. The World Happiness Index is closely related to other metrics in the Society & Governance cluster, such as social equality and mental health indicators, as they all contribute to the overall well-being of a society. These data are provided by the World Happiness Report published by the UN Sustainable Development Solutions Network.",
     "unit": "index (0–10)",
