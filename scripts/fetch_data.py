@@ -442,6 +442,13 @@ def should_fetch(kpi_id: str, source_type: str, source_date: Optional[str], meta
     - Für OWID: Heuristik (siehe oben)
     - Für CSV/UNHCR: immer neu laden (keine API-Daten)
     """
+    # 🔁 Sicherheitsnetz: Falls lokale Dateien fehlen, immer neu laden
+    json_path = DATA_DIR / f"{kpi_id}.json"
+    csv_path = DATA_DIR / f"{kpi_id}.csv"
+    if not json_path.exists() or not csv_path.exists():
+        log(f"[CHECK] {kpi_id}: local files missing → fetch now")
+        return True
+
     if source_type == "owid":
         return should_fetch_owid(kpi_id, meta, fetch_status)
 
