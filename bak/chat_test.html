@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>RealityCheck Chatbot Test</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; padding: 2rem; }
+  h1 { text-align: center; }
+
+  /* --- Button + Fenster --- */
+  #chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: #007bff;
+    color: #fff; font-size: 1.8rem;
+    display: flex; justify-content: center; align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,.3);
+  }
+  #chatbot-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px; height: 420px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+  }
+  #chatbot-window h2 {
+    background: #007bff;
+    color: #fff;
+    margin: 0;
+    padding: .6rem 1rem;
+    font-size: 1rem;
+  }
+  #chat-content {
+    padding: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>🧩 Chatbot Testseite</h1>
+<p>Wenn alles funktioniert, sollte rechts unten ein 💬-Button erscheinen. Klick öffnet das Chatfenster.</p>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("🧠 Testscript gestartet");
+
+  // Button
+  const btn = document.createElement("div");
+  btn.id = "chatbot-button";
+  btn.textContent = "💬";
+  document.body.appendChild(btn);
+
+  // Fenster
+  const win = document.createElement("div");
+  win.id = "chatbot-window";
+  win.innerHTML = `<h2>RealityCheck Chat (Test)</h2><div id="chat-content">✅ Chat erfolgreich geladen!</div>`;
+  document.body.appendChild(win);
+
+  // Öffnen/Schließen
+  btn.addEventListener("click", () => {
+    const hidden = win.style.display === "none" || win.style.display === "";
+    if (hidden) {
+      win.style.display = "block";
+      requestAnimationFrame(() => (win.style.opacity = "1"));
+    } else {
+      win.style.opacity = "0";
+      setTimeout(() => (win.style.display = "none"), 300);
+    }
+  });
+
+  console.log("✅ Chat-Button & Fenster erzeugt");
+});
+</script>
+
+</body>
+</html>
