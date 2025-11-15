@@ -39,7 +39,7 @@
         </tr>
       </thead>
       <tbody id="glossary-body">
-        <tr><td colspan="7" style="text-align:center;">Loading data…</td></tr>
+        <tr><td colspan="7" class="table-placeholder">Loading data…</td></tr>
       </tbody>
     </table>
 
@@ -107,6 +107,15 @@
         return latest.size;
       }
 
+      const isSafeUrl = url => {
+        try {
+          const parsed = new URL(url, window.location.href);
+          return ["http:", "https:"].includes(parsed.protocol);
+        } catch {
+          return false;
+        }
+      };
+
       for (const [id, info] of Object.entries(kpis)) {
         const tr = document.createElement("tr");
         const out = outliers[id] || {};
@@ -132,18 +141,68 @@
         const pct = ((n / totalCountries) * 100).toFixed(0);
         const title = titleMap[id] || id;
 
-        // ✅ Farblich markierte Datumsspalten + einheitliches Format
-        tr.innerHTML = `
-          <td>${title}</td>
-          <td>${info.source ? `<a href="${info.source}" target="_blank">${info.source}</a>` : "?"}</td>
-          <td class="${clsYear}">${info.data_year || "Unknown"}</td>
-          <td class="${clsSrc}">${fmtShort(info.source_date)}</td>
-          <td class="${clsSrc}">${fmtShort(info.last_fetch)}</td>
-          <td title="Coverage: ${pct}%">${n || "–"}</td>
-          <td>
-            ${flaggedCount ? `🔺 ${flaggedCount}` : "–"}
-            <span class="outlier-info"><strong>min:</strong> ${minInfo}<br><strong>max:</strong> ${maxInfo}</span>
-          </td>`;
+        const cellTitle = document.createElement("td");
+        cellTitle.textContent = title;
+        tr.appendChild(cellTitle);
+
+        const cellSource = document.createElement("td");
+        if (info.source && isSafeUrl(info.source)) {
+          const link = document.createElement("a");
+          link.href = info.source;
+          link.target = "_blank";
+          link.rel = "noopener";
+          link.textContent = info.source;
+          cellSource.appendChild(link);
+        } else {
+          cellSource.textContent = info.source || "?";
+        }
+        tr.appendChild(cellSource);
+
+        const cellDataYear = document.createElement("td");
+        cellDataYear.className = clsYear;
+        cellDataYear.textContent = info.data_year || "Unknown";
+        tr.appendChild(cellDataYear);
+
+        const cellSourceDate = document.createElement("td");
+        cellSourceDate.className = clsSrc;
+        cellSourceDate.textContent = fmtShort(info.source_date);
+        tr.appendChild(cellSourceDate);
+
+        const cellLastFetch = document.createElement("td");
+        cellLastFetch.className = clsSrc;
+        cellLastFetch.textContent = fmtShort(info.last_fetch);
+        tr.appendChild(cellLastFetch);
+
+        const cellCoverage = document.createElement("td");
+        cellCoverage.title = `Coverage: ${pct}%`;
+        cellCoverage.textContent = n || "–";
+        tr.appendChild(cellCoverage);
+
+        const cellOutliers = document.createElement("td");
+        if (flaggedCount) {
+          const badge = document.createElement("span");
+          badge.textContent = `🔺 ${flaggedCount}`;
+          badge.className = clsOut;
+          cellOutliers.appendChild(badge);
+        } else {
+          cellOutliers.textContent = "–";
+        }
+
+        const detail = document.createElement("span");
+        detail.className = "outlier-info";
+        const minStrong = document.createElement("strong");
+        minStrong.textContent = "min:";
+        const maxStrong = document.createElement("strong");
+        maxStrong.textContent = "max:";
+        detail.appendChild(minStrong);
+        detail.appendChild(document.createTextNode(` ${minInfo}`));
+        detail.appendChild(document.createElement("br"));
+        detail.appendChild(maxStrong);
+        detail.appendChild(document.createTextNode(` ${maxInfo}`));
+        cellOutliers.appendChild(detail);
+
+        tr.appendChild(cellOutliers);
+
         tbody.appendChild(tr);
       }
 
@@ -151,8 +210,15 @@
 
     } catch (err) {
       console.error("Glossary load failed:", err);
-      document.getElementById("glossary-body").innerHTML =
-        `<tr><td colspan="7" style="text-align:center;color:red;">Error loading data</td></tr>`;
+      const body = document.getElementById("glossary-body");
+      body.innerHTML = "";
+      const row = document.createElement("tr");
+      const cell = document.createElement("td");
+      cell.colSpan = 7;
+      cell.className = "table-status table-status--error";
+      cell.textContent = "Error loading data";
+      row.appendChild(cell);
+      body.appendChild(row);
     }
   }
 

@@ -3,6 +3,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const send = document.getElementById("send");
   const messages = document.getElementById("messages");
 
+  const loadJSONSafe = async (path, fallback = {}) => {
+    try {
+      if (typeof window.loadJSON === "function") {
+        const result = await window.loadJSON(path);
+        if (
+          result == null ||
+          (Array.isArray(result) && !result.length && fallback !== undefined)
+        ) {
+          return fallback;
+        }
+        return result;
+      }
+
+      const response = await fetch(path);
+      if (!response.ok) throw new Error(`Failed to fetch ${path}`);
+      return await response.json();
+    } catch (error) {
+      console.warn("chat_demo: loadJSONSafe fallback", error);
+      return fallback;
+    }
+  };
+
   send.addEventListener("click", handleMessage);
   input.addEventListener("keypress", e => { if (e.key === "Enter") handleMessage(); });
 
@@ -26,8 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const q = question.toLowerCase();
 
     // === Korrekte Pfade gemäß deiner Struktur ===
-    const countries = await loadJSON("countries.json").catch(() => ({}));
-    const available = await loadJSON("available_kpi.json").catch(() => ({}));
+    const countries = await loadJSONSafe("countries.json", {});
+    const available = await loadJSONSafe("available_kpi.json", {});
 
     // === Kontext laden ===
     const contextCountry = localStorage.getItem("currentCountry");
@@ -40,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // === Falls allgemeine Frage mit Kontext ===
     if (q.includes("wie steht") && contextCountry && contextKPI) {
       try {
-        const data = await loadJSON(`data/${contextKPI}.json`);
+        const data = await loadJSONSafe(`data/${contextKPI}.json`, []);
         const entry = findCountryData(data, contextCountry);
         if (entry) {
           return `${contextCountry} hat beim KPI '${contextKPI}' aktuell einen Wert von ${entry.value} (${entry.year}).`;
@@ -54,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (country && kpi) {
       try {
-        const data = await loadJSON(`data/${kpi}.json`);
+        const data = await loadJSONSafe(`data/${kpi}.json`, []);
         const entry = findCountryData(data, country);
         if (entry) return `${country} hat beim KPI '${kpi}' aktuell einen Wert von ${entry.value} (${entry.year}).`;
         else return `Für ${country} liegen keine Daten zu '${kpi}' vor.`;
@@ -90,13 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
                    .sort((a,b)=>b.year - a.year)[0];
     return entry || null;
   }
-
-  async function loadJSON(path) {
-    const res = await fetch(path);
-    if (!res.ok) throw new Error(`Fehler beim Laden von ${path}`);
-    return res.json();
-  }
-
   function greetWithContext() {
     const c = localStorage.getItem("currentCountry");
     const k = localStorage.getItem("currentKPI");
