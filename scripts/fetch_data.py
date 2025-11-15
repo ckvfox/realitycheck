@@ -57,6 +57,18 @@ AVAILABLE_FILE       = META_DIR / "available_kpis.json"
 LOG_FILE             = DATA_DIR / "fetch_log.txt"
 STATUS_FILE          = DATA_DIR / "fetch_status.json"
 
+# ======================================================================
+# 🌐 Netzwerk-Header & Requests-Defaults
+# ======================================================================
+WORLD_BANK_HEADERS = {
+    "User-Agent": "RealityCheckFetcher/2025 (+https://realitycheck.global)",
+    "Accept": "application/json, */*;q=0.1",
+}
+WORLD_BANK_ZIP_HEADERS = {
+    **WORLD_BANK_HEADERS,
+    "Accept": "application/zip, application/octet-stream;q=0.9, */*;q=0.1",
+}
+
 
 
 # === Argumente ===
@@ -341,23 +353,46 @@ def get_source_date_from_worldbank(code: str) -> Optional[str]:
     try:
         # --- 1) JSON ---
         url_json = f"https://api.worldbank.org/v2/indicator/{code}?format=json"
-        rj = requests.get(url_json, timeout=20)
-        if rj.status_code == 200:
-            data = rj.json()
-            if isinstance(data, list) and data:
-                meta = data[0]
-                for key in ["Last Updated Date","lastupdated","LastUpdated","metadata_updated","date","Date"]:
-                    if key in meta and meta[key]:
-                        d = str(meta[key]).strip()
-                        if re.match(r"^\d{4}-\d{2}-\d{2}$", d):
-                            d += "T00:00:00Z"
-                        log(f"[META] WorldBank {code} → JSON Last Updated {d}")
-                        return d
+        for attempt in range(1, 4):
+            rj = requests.get(url_json, timeout=20, headers=WORLD_BANK_HEADERS)
+            if rj.status_code == 200:
+                data = rj.json()
+                if isinstance(data, list) and data:
+                    meta = data[0]
+                    for key in ["Last Updated Date","lastupdated","LastUpdated","metadata_updated","date","Date"]:
+                        if key in meta and meta[key]:
+                            d = str(meta[key]).strip()
+                            if re.match(r"^\d{4}-\d{2}-\d{2}$", d):
+                                d += "T00:00:00Z"
+                            log(f"[META] WorldBank {code} → JSON Last Updated {d}")
+                            return d
+                break
+            if rj.status_code in (429,) or 500 <= rj.status_code < 600:
+                wait = 3 * attempt
+                log(f"[WARN] WorldBank meta {code}: HTTP {rj.status_code} → retry in {wait}s ({attempt}/3)")
+                time.sleep(wait)
+                continue
+            break
 
         # --- 2) CSV-Header (A3-Zeile) ---
         url_zip = f"https://api.worldbank.org/v2/en/indicator/{code}?downloadformat=csv"
-        rz = requests.get(url_zip, timeout=30)
-        if rz.status_code == 200 and rz.content[:2] == b"PK":
+        rz = None
+        for attempt in range(1, 4):
+            candidate = requests.get(url_zip, timeout=30, headers=WORLD_BANK_ZIP_HEADERS)
+            if candidate.status_code == 200 and candidate.content[:2] == b"PK":
+                rz = candidate
+                break
+            if candidate.status_code in (429,) or 500 <= candidate.status_code < 600:
+                wait = 3 * attempt
+                log(
+                    f"[WARN] WorldBank meta ZIP {code}: HTTP {candidate.status_code} → retry in {wait}s ({attempt}/3)"
+                )
+                time.sleep(wait)
+                continue
+            rz = candidate
+            break
+
+        if rz and rz.status_code == 200 and rz.content[:2] == b"PK":
             with zipfile.ZipFile(io.BytesIO(rz.content)) as zf:
                 data_csv = next((n for n in zf.namelist() if n.lower().endswith(".csv") and "metadata" not in n.lower()), None)
                 if data_csv:
@@ -507,7 +542,7 @@ def fetch_worldbank_series(indicator_code: str):
 
     for attempt in range(1, max_retries + 1):
         try:
-            r = requests.get(base_url, timeout=60)
+            r = requests.get(base_url, timeout=60, headers=WORLD_BANK_HEADERS)
             if r.status_code == 200:
                 data = r.json()
                 if not isinstance(data, list) or len(data) < 2:
@@ -519,10 +554,12 @@ def fetch_worldbank_series(indicator_code: str):
                     return []
                 return series
 
-            elif r.status_code == 429:
-                # === 🕐 Rate Limit Handling ===
+            elif r.status_code == 429 or 500 <= r.status_code < 600:
+                # === 🕐 Rate Limit & Server Error Handling ===
                 wait_time = backoff * attempt
-                log(f"[RATE] WorldBank {indicator_code}: HTTP 429 → waiting {wait_time}s before retry ({attempt}/{max_retries})")
+                log(
+                    f"[RATE] WorldBank {indicator_code}: HTTP {r.status_code} → waiting {wait_time}s before retry ({attempt}/{max_retries})"
+                )
                 time.sleep(wait_time)
                 continue  # erneuter Versuch
 
@@ -570,7 +607,7 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
     if not source_date or source_date in ("Unknown", ""):
         try:
             zip_url = f"https://api.worldbank.org/v2/en/indicator/{code}?downloadformat=csv"
-            r_zip = requests.get(zip_url, timeout=30)
+            r_zip = requests.get(zip_url, timeout=30, headers=WORLD_BANK_ZIP_HEADERS)
             if r_zip.status_code == 200:
                 zip_date = extract_worldbank_date(r_zip.content)
                 if zip_date:
