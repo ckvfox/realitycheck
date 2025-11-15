@@ -189,3 +189,97 @@
 1992,Winter,2025-10-30T14:20:42.359513,19,North Korea,0,0,1,1.0
 1992,Winter,2025-10-30T14:20:42.359513,Spain,0,0,1,1,
 1992,Winter,2025-10-30T14:20:42.359513,Totals (20 entries),57,58,56,171,
+1924,Winter,2025-11-15T14:31:28.636165,# -*- coding: utf-8 -*-
+1924,Winter,2025-11-15T14:31:28.636165,"""
+RealityCheck – PISA Overall Score Generator (final version)
+-----------------------------------------------------------
+Reads OECD PISA raw dataset from:
+
+    /scripts/source_raw/OECD PISA data.csv
+
+Produces RealityCheck target-format CSV:
+
+    /scripts/source_csv/pisa_overall_score.csv
+
+Output format:
+    country,year,value
+
+Method:
+ • All PISA domains (Math, Reading, Science, etc.)
+ • All demographic groups (Boy, Girl, Male, Female, All, etc.)
+ • Unweighted arithmetic mean – transparent & academically defensible
+ • Kaufmännisches Runden (0.5 -> aufrunden)
+
+Author: RealityCheck AI Assistant
+"""
+1924,Winter,2025-11-15T14:31:28.636165,import pandas as pd
+1924,Winter,2025-11-15T14:31:28.636165,import numpy as np
+1924,Winter,2025-11-15T14:31:28.636165,import os
+1924,Winter,2025-11-15T14:31:28.636165,# ---------------------------------------------------------------------------
+1924,Winter,2025-11-15T14:31:28.636165,"# Build safe, relative paths based on script location"
+1924,Winter,2025-11-15T14:31:28.636165,# ---------------------------------------------------------------------------
+1924,Winter,2025-11-15T14:31:28.636165,BASE_DIR = os.path.dirname(os.path.abspath(__file__))        # …/scripts/helper
+1924,Winter,2025-11-15T14:31:28.636165,"RAW_DIR  = os.path.join(BASE_DIR, "".."", ""source_raw"")"
+1924,Winter,2025-11-15T14:31:28.636165,"CSV_DIR  = os.path.join(BASE_DIR, "".."", ""source_csv"")"
+1924,Winter,2025-11-15T14:31:28.636165,"BASE_IN  = os.path.join(RAW_DIR, ""OECD PISA data.csv"")"
+1924,Winter,2025-11-15T14:31:28.636165,"BASE_OUT = os.path.join(CSV_DIR, ""pisa_overall_score.csv"")"
+1924,Winter,2025-11-15T14:31:28.636165,# ---------------------------------------------------------------------------
+1924,Winter,2025-11-15T14:31:28.636165,# Helpers
+1924,Winter,2025-11-15T14:31:28.636165,# ---------------------------------------------------------------------------
+1924,Winter,2025-11-15T14:31:28.636165,def normalize_iso3(code):
+1924,Winter,2025-11-15T14:31:28.636165,"""""""Normalize to uppercase ISO3."""""""
+1924,Winter,2025-11-15T14:31:28.636165,"if not isinstance(code, str):"
+1924,Winter,2025-11-15T14:31:28.636165,return None
+1924,Winter,2025-11-15T14:31:28.636165,return code.strip().upper()
+1924,Winter,2025-11-15T14:31:28.636165,def load_dataset(path):
+1924,Winter,2025-11-15T14:31:28.636165,"""""""Load CSV file robustly (supports comma or semicolon)."""""""
+1924,Winter,2025-11-15T14:31:28.636165,try:
+1924,Winter,2025-11-15T14:31:28.636165,return pd.read_csv(path)
+1924,Winter,2025-11-15T14:31:28.636165,except Exception:
+1924,Winter,2025-11-15T14:31:28.636165,"return pd.read_csv(path, sep="";"")"
+1924,Winter,2025-11-15T14:31:28.636165,def compute_overall(df):
+1924,Winter,2025-11-15T14:31:28.636165,"""""""Compute unweighted mean across all domains + genders."""""""
+1924,Winter,2025-11-15T14:31:28.636165,"required = [""LOCATION"", ""TIME"", ""Value""]"
+1924,Winter,2025-11-15T14:31:28.636165,for col in required:
+1924,Winter,2025-11-15T14:31:28.636165,if col not in df.columns:
+1924,Winter,2025-11-15T14:31:28.636165,"raise ValueError(f""Required column '{col}' not found in dataset."")"
+1924,Winter,2025-11-15T14:31:28.636165,df = df.copy()
+1924,Winter,2025-11-15T14:31:28.636165,"df[""LOCATION""] = df[""LOCATION""].apply(normalize_iso3)"
+1924,Winter,2025-11-15T14:31:28.636165,"df[""Value""]    = pd.to_numeric(df[""Value""], errors=""coerce"")"
+1924,Winter,2025-11-15T14:31:28.636165,# Group by ISO3 country code + year
+1924,Winter,2025-11-15T14:31:28.636165,result = (
+1924,Winter,2025-11-15T14:31:28.636165,"df.groupby([""LOCATION"", ""TIME""])[""Value""]"
+1924,Winter,2025-11-15T14:31:28.636165,.mean()
+1924,Winter,2025-11-15T14:31:28.636165,.reset_index()
+1924,Winter,2025-11-15T14:31:28.636165,)
+1924,Winter,2025-11-15T14:31:28.636165,# Rename to RealityCheck schema
+1924,Winter,2025-11-15T14:31:28.636165,result = result.rename(columns={
+1924,Winter,2025-11-15T14:31:28.636165,"""LOCATION"": ""country"","
+1924,Winter,2025-11-15T14:31:28.636165,"""TIME"":     ""year"","
+1924,Winter,2025-11-15T14:31:28.636165,"""Value"":    ""value"""
+1924,Winter,2025-11-15T14:31:28.636165,"}).sort_values([""country"", ""year""])"
+1924,Winter,2025-11-15T14:31:28.636165,# -------------------------------------------------------------------
+1924,Winter,2025-11-15T14:31:28.636165,# Kaufmännisches Runden (Österreichisches / deutsches Runden)
+1924,Winter,2025-11-15T14:31:28.636165,# Beispiel: 524.83 -> 525
+1924,Winter,2025-11-15T14:31:28.636165,# -------------------------------------------------------------------
+1924,Winter,2025-11-15T14:31:28.636165,"result[""value""] = result[""value""].round(0).astype(int)"
+1924,Winter,2025-11-15T14:31:28.636165,return result
+1924,Winter,2025-11-15T14:31:28.636165,# ---------------------------------------------------------------------------
+1924,Winter,2025-11-15T14:31:28.636165,# Main
+1924,Winter,2025-11-15T14:31:28.636165,# ---------------------------------------------------------------------------
+1924,Winter,2025-11-15T14:31:28.636165,def main():
+1924,Winter,2025-11-15T14:31:28.636165,"print(""📥 Reading raw file:"", BASE_IN)"
+1924,Winter,2025-11-15T14:31:28.636165,if not os.path.exists(BASE_IN):
+1924,Winter,2025-11-15T14:31:28.636165,"raise FileNotFoundError(f""ERROR: Raw PISA file not found at:\n{BASE_IN}"")"
+1924,Winter,2025-11-15T14:31:28.636165,df = load_dataset(BASE_IN)
+1924,Winter,2025-11-15T14:31:28.636165,"print(""📊 Columns detected:"", list(df.columns))"
+1924,Winter,2025-11-15T14:31:28.636165,result = compute_overall(df)
+1924,Winter,2025-11-15T14:31:28.636165,# Ensure output directory exists
+1924,Winter,2025-11-15T14:31:28.636165,"os.makedirs(CSV_DIR, exist_ok=True)"
+1924,Winter,2025-11-15T14:31:28.636165,"result.to_csv(BASE_OUT, index=False, encoding=""utf-8"")"
+1924,Winter,2025-11-15T14:31:28.636165,"print(f""✅ Created: {BASE_OUT}"")"
+1924,Winter,2025-11-15T14:31:28.636165,"print(f""📄 Rows: {len(result)}"")"
+1924,Winter,2025-11-15T14:31:28.636165,"print(""\n🔎 Preview:"")"
+1924,Winter,2025-11-15T14:31:28.636165,print(result.head())
+1924,Winter,2025-11-15T14:31:28.636165,"if __name__ == ""__main__"":"
+1924,Winter,2025-11-15T14:31:28.636165,main()

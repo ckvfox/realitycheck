@@ -1039,6 +1039,7 @@
     "relevance": "high",
     "actuality": "critical",
     "invert": ""
+<<<<<<< HEAD
   },
   {
     "title": "Rule of Law Index",
@@ -1108,4 +1109,7 @@
   "invert": ""
 }
 
+=======
+  }
+>>>>>>> c601fd38f63711f144fbb05b24663b9c5e43a5da
 ]

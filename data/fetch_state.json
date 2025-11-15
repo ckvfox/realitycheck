@@ -1,10 +1,32 @@
 {
-  "last_run": "2025-11-14T20:37:58Z",
+  "last_run": "2025-11-15T14:04:24Z",
   "updated_kpis": [
+    "age_dependency_ratio_total",
+    "big_mac_index",
+    "co2_emissions",
+    "democracy_index",
+    "electric_vehicle_stock",
+    "environmental_performance_index",
     "geopolitical_risk_index",
+    "global_co2_emissions",
+    "global_peace_index",
     "global_temperature_anomaly",
+    "homelessness_rate",
+    "human_development_index_hdi",
+    "inform_resilience_index",
+    "living_planet_index",
     "mean_years_of_schooling",
     "median_age",
-    "olympic_medals_summer"
+    "military_spending_sipri",
+    "number_of_armed_conflicts",
+    "number_of_recorded_natural_disasters",
+    "old_age_dependency_ratio",
+    "olympic_medals_summer",
+    "physicians_per_1_000_people",
+    "political_corruption_index",
+    "press_freedom_index",
+    "recycling_rate",
+    "rule_of_law_index",
+    "world_happiness_index"
   ]
 }
