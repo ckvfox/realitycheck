@@ -60,9 +60,10 @@
       "big_mac_index": 14,
       "environmental_performance_index": 7,
       "global_peace_index": 9,
-      "inform_resilience_index": 43
+      "inform_resilience_index": 43,
+      "pisa_overall_score": 20
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "India",
@@ -127,9 +128,10 @@
       "big_mac_index": 7,
       "environmental_performance_index": 52,
       "global_peace_index": 156,
-      "inform_resilience_index": 161
+      "inform_resilience_index": 161,
+      "pisa_overall_score": 41
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Czechia",
@@ -160,9 +162,10 @@
       "big_mac_index": 42,
       "environmental_performance_index": 19,
       "global_peace_index": 11,
-      "inform_resilience_index": 13
+      "inform_resilience_index": 13,
+      "pisa_overall_score": 14
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Netherlands",
@@ -193,9 +196,10 @@
       "big_mac_index": 44,
       "environmental_performance_index": 11,
       "global_peace_index": 15,
-      "inform_resilience_index": 40
+      "inform_resilience_index": 40,
+      "pisa_overall_score": 24
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "United Arab Emirates",
@@ -226,9 +230,10 @@
       "big_mac_index": 52,
       "environmental_performance_index": 39,
       "global_peace_index": 53,
-      "inform_resilience_index": 19
+      "inform_resilience_index": 19,
+      "pisa_overall_score": 46
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Norway",
@@ -260,9 +265,10 @@
       "big_mac_index": 68,
       "environmental_performance_index": 20,
       "global_peace_index": 32,
-      "inform_resilience_index": 16
+      "inform_resilience_index": 16,
+      "pisa_overall_score": 32
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Azerbaijan",
@@ -325,9 +331,10 @@
       "big_mac_index": 48,
       "environmental_performance_index": 21,
       "global_peace_index": 16,
-      "inform_resilience_index": 44
+      "inform_resilience_index": 44,
+      "pisa_overall_score": 19
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Iceland",
@@ -357,9 +364,10 @@
       "electric_vehicle_stock": 29,
       "environmental_performance_index": 10,
       "global_peace_index": 1,
-      "inform_resilience_index": 8
+      "inform_resilience_index": 8,
+      "pisa_overall_score": 39
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Moldova",
@@ -390,9 +398,10 @@
       "big_mac_index": 18,
       "environmental_performance_index": 84,
       "global_peace_index": 64,
-      "inform_resilience_index": 103
+      "inform_resilience_index": 103,
+      "pisa_overall_score": 50
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Tonga",
@@ -483,9 +492,10 @@
       "big_mac_index": 61,
       "environmental_performance_index": 3,
       "global_peace_index": 10,
-      "inform_resilience_index": 15
+      "inform_resilience_index": 15,
+      "pisa_overall_score": 10
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Algeria",
@@ -604,9 +614,10 @@
       "big_mac_index": 57,
       "environmental_performance_index": 46,
       "global_peace_index": 36,
-      "inform_resilience_index": 42
+      "inform_resilience_index": 42,
+      "pisa_overall_score": 13
     },
-    "kpi_count": 29
+    "kpi_count": 30
   },
   {
     "country": "Timor-Leste",
@@ -661,9 +672,10 @@
       "big_mac_index": 54,
       "environmental_performance_index": 24,
       "global_peace_index": 2,
-      "inform_resilience_index": 22
+      "inform_resilience_index": 22,
+      "pisa_overall_score": 7
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Kazakhstan",
@@ -693,9 +705,10 @@
       "political_corruption_index": 114,
       "environmental_performance_index": 93,
       "global_peace_index": 55,
-      "inform_resilience_index": 55
+      "inform_resilience_index": 55,
+      "pisa_overall_score": 51
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Maldives",
@@ -755,9 +768,10 @@
       "big_mac_index": 64,
       "environmental_performance_index": 5,
       "global_peace_index": 35,
-      "inform_resilience_index": 26
+      "inform_resilience_index": 26,
+      "pisa_overall_score": 17
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Albania",
@@ -787,9 +801,10 @@
       "political_corruption_index": 101,
       "environmental_performance_index": 62,
       "global_peace_index": 52,
-      "inform_resilience_index": 62
+      "inform_resilience_index": 62,
+      "pisa_overall_score": 69
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Guinea",
@@ -914,9 +929,10 @@
       "big_mac_index": 15,
       "environmental_performance_index": 30,
       "global_peace_index": 38,
-      "inform_resilience_index": 66
+      "inform_resilience_index": 66,
+      "pisa_overall_score": 45
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Denmark",
@@ -948,9 +964,10 @@
       "big_mac_index": 63,
       "environmental_performance_index": 1,
       "global_peace_index": 8,
-      "inform_resilience_index": 6
+      "inform_resilience_index": 6,
+      "pisa_overall_score": 15
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Nepal",
@@ -1011,9 +1028,10 @@
       "big_mac_index": 22,
       "environmental_performance_index": 16,
       "global_peace_index": 19,
-      "inform_resilience_index": 39
+      "inform_resilience_index": 39,
+      "pisa_overall_score": 33
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Hungary",
@@ -1044,9 +1062,10 @@
       "big_mac_index": 20,
       "environmental_performance_index": 33,
       "global_peace_index": 17,
-      "inform_resilience_index": 34
+      "inform_resilience_index": 34,
+      "pisa_overall_score": 28
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Estonia",
@@ -1076,9 +1095,10 @@
       "big_mac_index": 16,
       "environmental_performance_index": 14,
       "global_peace_index": 24,
-      "inform_resilience_index": 14
+      "inform_resilience_index": 14,
+      "pisa_overall_score": 5
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Fiji",
@@ -1202,9 +1222,10 @@
       "big_mac_index": 62,
       "environmental_performance_index": 50,
       "global_peace_index": 14,
-      "inform_resilience_index": 53
+      "inform_resilience_index": 53,
+      "pisa_overall_score": 6
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Ethiopia",
@@ -1266,9 +1287,10 @@
       "big_mac_index": 36,
       "environmental_performance_index": 8,
       "global_peace_index": 4,
-      "inform_resilience_index": 35
+      "inform_resilience_index": 35,
+      "pisa_overall_score": 18
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Mongolia",
@@ -1298,9 +1320,10 @@
       "political_corruption_index": 117,
       "environmental_performance_index": 157,
       "global_peace_index": 37,
-      "inform_resilience_index": 65
+      "inform_resilience_index": 65,
+      "pisa_overall_score": 53
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Cyprus",
@@ -1329,9 +1352,10 @@
       "political_corruption_index": 37,
       "environmental_performance_index": 22,
       "global_peace_index": 66,
-      "inform_resilience_index": 64
+      "inform_resilience_index": 64,
+      "pisa_overall_score": 57
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "France",
@@ -1362,9 +1386,10 @@
       "big_mac_index": 50,
       "environmental_performance_index": 12,
       "global_peace_index": 72,
-      "inform_resilience_index": 54
+      "inform_resilience_index": 54,
+      "pisa_overall_score": 25
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Mauritania",
@@ -1452,9 +1477,10 @@
       "big_mac_index": 12,
       "environmental_performance_index": 25,
       "global_peace_index": 12,
-      "inform_resilience_index": 23
+      "inform_resilience_index": 23,
+      "pisa_overall_score": 2
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Vanuatu",
@@ -1515,9 +1541,10 @@
       "big_mac_index": 45,
       "environmental_performance_index": 13,
       "global_peace_index": 20,
-      "inform_resilience_index": 47
+      "inform_resilience_index": 47,
+      "pisa_overall_score": 22
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Nauru",
@@ -1572,9 +1599,10 @@
       "big_mac_index": 65,
       "environmental_performance_index": 2,
       "global_peace_index": 30,
-      "inform_resilience_index": 21
+      "inform_resilience_index": 21,
+      "pisa_overall_score": 12
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Serbia",
@@ -1603,9 +1631,10 @@
       "political_corruption_index": 129,
       "environmental_performance_index": 79,
       "global_peace_index": 62,
-      "inform_resilience_index": 93
+      "inform_resilience_index": 93,
+      "pisa_overall_score": 40
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Niger",
@@ -1666,9 +1695,10 @@
       "big_mac_index": 31,
       "environmental_performance_index": 29,
       "global_peace_index": 45,
-      "inform_resilience_index": 70
+      "inform_resilience_index": 70,
+      "pisa_overall_score": 43
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Guinea-Bissau",
@@ -1731,9 +1761,10 @@
       "big_mac_index": 46,
       "environmental_performance_index": 27,
       "global_peace_index": 25,
-      "inform_resilience_index": 48
+      "inform_resilience_index": 48,
+      "pisa_overall_score": 27
     },
-    "kpi_count": 29
+    "kpi_count": 30
   },
   {
     "country": "North Macedonia",
@@ -1762,9 +1793,10 @@
       "political_corruption_index": 128,
       "environmental_performance_index": 34,
       "global_peace_index": 51,
-      "inform_resilience_index": 59
+      "inform_resilience_index": 59,
+      "pisa_overall_score": 67
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Thailand",
@@ -1795,9 +1827,10 @@
       "big_mac_index": 29,
       "environmental_performance_index": 108,
       "global_peace_index": 83,
-      "inform_resilience_index": 124
+      "inform_resilience_index": 124,
+      "pisa_overall_score": 63
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Luxembourg",
@@ -1825,9 +1858,10 @@
       "physicians_per_1_000_people": 57,
       "political_corruption_index": 13,
       "environmental_performance_index": 6,
-      "inform_resilience_index": 3
+      "inform_resilience_index": 3,
+      "pisa_overall_score": 31
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Jordan",
@@ -1857,9 +1891,10 @@
       "big_mac_index": 19,
       "environmental_performance_index": 83,
       "global_peace_index": 70,
-      "inform_resilience_index": 110
+      "inform_resilience_index": 110,
+      "pisa_overall_score": 73
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Tunisia",
@@ -1922,9 +1957,10 @@
       "big_mac_index": 51,
       "environmental_performance_index": 17,
       "global_peace_index": 18,
-      "inform_resilience_index": 38
+      "inform_resilience_index": 38,
+      "pisa_overall_score": 9
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Switzerland",
@@ -1955,9 +1991,10 @@
       "big_mac_index": 71,
       "environmental_performance_index": 9,
       "global_peace_index": 5,
-      "inform_resilience_index": 11
+      "inform_resilience_index": 11,
+      "pisa_overall_score": 8
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Georgia",
@@ -1987,9 +2024,10 @@
       "political_corruption_index": 43,
       "environmental_performance_index": 103,
       "global_peace_index": 105,
-      "inform_resilience_index": 91
+      "inform_resilience_index": 91,
+      "pisa_overall_score": 65
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Nigeria",
@@ -2052,9 +2090,10 @@
       "big_mac_index": 32,
       "environmental_performance_index": 48,
       "global_peace_index": 7,
-      "inform_resilience_index": 17
+      "inform_resilience_index": 17,
+      "pisa_overall_score": 26
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Latvia",
@@ -2085,9 +2124,10 @@
       "big_mac_index": 11,
       "environmental_performance_index": 15,
       "global_peace_index": 22,
-      "inform_resilience_index": 51
+      "inform_resilience_index": 51,
+      "pisa_overall_score": 21
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Barbados",
@@ -2180,9 +2220,10 @@
       "big_mac_index": 58,
       "environmental_performance_index": 23,
       "global_peace_index": 33,
-      "inform_resilience_index": 71
+      "inform_resilience_index": 71,
+      "pisa_overall_score": 29
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Montenegro",
@@ -2210,9 +2251,10 @@
       "political_corruption_index": 85,
       "environmental_performance_index": 64,
       "global_peace_index": 34,
-      "inform_resilience_index": 52
+      "inform_resilience_index": 52,
+      "pisa_overall_score": 54
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Benin",
@@ -2271,9 +2313,10 @@
       "physicians_per_1_000_people": 20,
       "political_corruption_index": 44,
       "environmental_performance_index": 4,
-      "inform_resilience_index": 9
+      "inform_resilience_index": 9,
+      "pisa_overall_score": 37
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Uzbekistan",
@@ -2302,9 +2345,10 @@
       "political_corruption_index": 148,
       "environmental_performance_index": 107,
       "global_peace_index": 65,
-      "inform_resilience_index": 83
+      "inform_resilience_index": 83,
+      "pisa_overall_score": 76
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Indonesia",
@@ -2335,9 +2379,10 @@
       "big_mac_index": 3,
       "environmental_performance_index": 164,
       "global_peace_index": 49,
-      "inform_resilience_index": 129
+      "inform_resilience_index": 129,
+      "pisa_overall_score": 68
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Qatar",
@@ -2366,9 +2411,10 @@
       "big_mac_index": 34,
       "environmental_performance_index": 137,
       "global_peace_index": 27,
-      "inform_resilience_index": 4
+      "inform_resilience_index": 4,
+      "pisa_overall_score": 48
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Lebanon",
@@ -2579,9 +2625,10 @@
       "big_mac_index": 13,
       "environmental_performance_index": 31,
       "global_peace_index": 23,
-      "inform_resilience_index": 25
+      "inform_resilience_index": 25,
+      "pisa_overall_score": 30
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Tajikistan",
@@ -2923,9 +2970,10 @@
       "big_mac_index": 47,
       "environmental_performance_index": 57,
       "global_peace_index": 149,
-      "inform_resilience_index": 81
+      "inform_resilience_index": 81,
+      "pisa_overall_score": 35
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Togo",
@@ -3119,9 +3167,10 @@
       "political_corruption_index": 116,
       "environmental_performance_index": 89,
       "global_peace_index": 76,
-      "inform_resilience_index": 119
+      "inform_resilience_index": 119,
+      "pisa_overall_score": 77
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Tuvalu",
@@ -3204,9 +3253,10 @@
       "big_mac_index": 8,
       "environmental_performance_index": 158,
       "global_peace_index": 101,
-      "inform_resilience_index": 156
+      "inform_resilience_index": 156,
+      "pisa_overall_score": 75
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Rwanda",
@@ -3266,9 +3316,10 @@
       "political_corruption_index": 96,
       "environmental_performance_index": 41,
       "global_peace_index": 29,
-      "inform_resilience_index": 45
+      "inform_resilience_index": 45,
+      "pisa_overall_score": 49
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Morocco",
@@ -3298,9 +3349,10 @@
       "political_corruption_index": 102,
       "environmental_performance_index": 161,
       "global_peace_index": 82,
-      "inform_resilience_index": 104
+      "inform_resilience_index": 104,
+      "pisa_overall_score": 74
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "El Salvador",
@@ -3330,9 +3382,10 @@
       "political_corruption_index": 113,
       "environmental_performance_index": 95,
       "global_peace_index": 100,
-      "inform_resilience_index": 111
+      "inform_resilience_index": 111,
+      "pisa_overall_score": 71
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Belize",
@@ -3389,9 +3442,10 @@
       "political_corruption_index": 41,
       "environmental_performance_index": 72,
       "global_peace_index": 90,
-      "inform_resilience_index": 77
+      "inform_resilience_index": 77,
+      "pisa_overall_score": 61
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Uruguay",
@@ -3422,9 +3476,10 @@
       "big_mac_index": 69,
       "environmental_performance_index": 115,
       "global_peace_index": 48,
-      "inform_resilience_index": 57
+      "inform_resilience_index": 57,
+      "pisa_overall_score": 47
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Peru",
@@ -3455,9 +3510,10 @@
       "big_mac_index": 39,
       "environmental_performance_index": 101,
       "global_peace_index": 92,
-      "inform_resilience_index": 132
+      "inform_resilience_index": 132,
+      "pisa_overall_score": 58
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Trinidad and Tobago",
@@ -3550,9 +3606,10 @@
       "big_mac_index": 9,
       "environmental_performance_index": 130,
       "global_peace_index": 13,
-      "inform_resilience_index": 88
+      "inform_resilience_index": 88,
+      "pisa_overall_score": 56
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Turkmenistan",
@@ -3673,9 +3730,10 @@
       "electric_vehicle_stock": 3,
       "big_mac_index": 66,
       "environmental_performance_index": 43,
-      "inform_resilience_index": 82
+      "inform_resilience_index": 82,
+      "pisa_overall_score": 16
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Papua New Guinea",
@@ -3799,9 +3857,10 @@
       "big_mac_index": 70,
       "environmental_performance_index": 92,
       "global_peace_index": 46,
-      "inform_resilience_index": 67
+      "inform_resilience_index": 67,
+      "pisa_overall_score": 62
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Uganda",
@@ -3895,9 +3954,10 @@
       "big_mac_index": 41,
       "environmental_performance_index": 65,
       "global_peace_index": 60,
-      "inform_resilience_index": 80
+      "inform_resilience_index": 80,
+      "pisa_overall_score": 44
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Ghana",
@@ -3960,9 +4020,10 @@
       "big_mac_index": 43,
       "environmental_performance_index": 73,
       "global_peace_index": 130,
-      "inform_resilience_index": 140
+      "inform_resilience_index": 140,
+      "pisa_overall_score": 52
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Grenada",
@@ -4042,9 +4103,10 @@
       "political_corruption_index": 137,
       "environmental_performance_index": 94,
       "global_peace_index": 73,
-      "inform_resilience_index": 72
+      "inform_resilience_index": 72,
+      "pisa_overall_score": 72
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Lesotho",
@@ -4167,9 +4229,10 @@
       "big_mac_index": 28,
       "environmental_performance_index": 167,
       "global_peace_index": 104,
-      "inform_resilience_index": 153
+      "inform_resilience_index": 153,
+      "pisa_overall_score": 70
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Comoros",
@@ -4260,9 +4323,10 @@
       "big_mac_index": 67,
       "environmental_performance_index": 68,
       "global_peace_index": 54,
-      "inform_resilience_index": 85
+      "inform_resilience_index": 85,
+      "pisa_overall_score": 55
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Nicaragua",
@@ -4354,9 +4418,10 @@
       "political_corruption_index": 81,
       "environmental_performance_index": 47,
       "global_peace_index": 81,
-      "inform_resilience_index": 115
+      "inform_resilience_index": 115,
+      "pisa_overall_score": 66
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Zimbabwe",
@@ -4481,9 +4546,10 @@
       "big_mac_index": 30,
       "environmental_performance_index": 82,
       "global_peace_index": 125,
-      "inform_resilience_index": 150
+      "inform_resilience_index": 150,
+      "pisa_overall_score": 60
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Colombia",
@@ -4513,9 +4579,10 @@
       "big_mac_index": 55,
       "environmental_performance_index": 87,
       "global_peace_index": 135,
-      "inform_resilience_index": 152
+      "inform_resilience_index": 152,
+      "pisa_overall_score": 59
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Eswatini",
@@ -4671,9 +4738,10 @@
       "political_corruption_index": 161,
       "environmental_performance_index": 154,
       "global_peace_index": 84,
-      "inform_resilience_index": 130
+      "inform_resilience_index": 130,
+      "pisa_overall_score": 78
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "New Zealand",
@@ -4703,9 +4771,10 @@
       "big_mac_index": 49,
       "environmental_performance_index": 26,
       "global_peace_index": 3,
-      "inform_resilience_index": 7
+      "inform_resilience_index": 7,
+      "pisa_overall_score": 11
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Palau",
@@ -4806,9 +4875,10 @@
       "big_mac_index": 56,
       "environmental_performance_index": 45,
       "global_peace_index": 6,
-      "inform_resilience_index": 1
+      "inform_resilience_index": 1,
+      "pisa_overall_score": 1
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Cuba",
@@ -4921,9 +4991,10 @@
       "big_mac_index": 53,
       "environmental_performance_index": 109,
       "global_peace_index": 87,
-      "inform_resilience_index": 36
+      "inform_resilience_index": 36,
+      "pisa_overall_score": 64
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Eritrea",
@@ -5117,9 +5188,10 @@
       "political_corruption_index": 47,
       "big_mac_index": 2,
       "environmental_performance_index": 74,
-      "global_peace_index": 40
+      "global_peace_index": 40,
+      "pisa_overall_score": 3
     },
-    "kpi_count": 5
+    "kpi_count": 6
   },
   {
     "country": "South Korea",
@@ -5132,9 +5204,10 @@
       "big_mac_index": 25,
       "environmental_performance_index": 63,
       "global_peace_index": 41,
-      "inform_resilience_index": 24
+      "inform_resilience_index": 24,
+      "pisa_overall_score": 4
     },
-    "kpi_count": 9
+    "kpi_count": 10
   },
   {
     "country": "Cape Verde",
@@ -5158,9 +5231,10 @@
       "big_mac_index": 27,
       "environmental_performance_index": 18,
       "global_peace_index": 28,
-      "inform_resilience_index": 60
+      "inform_resilience_index": 60,
+      "pisa_overall_score": 38
     },
-    "kpi_count": 8
+    "kpi_count": 9
   },
   {
     "country": "World",
@@ -5194,9 +5268,10 @@
       "electric_vehicle_stock": 25,
       "big_mac_index": 59,
       "environmental_performance_index": 172,
-      "inform_resilience_index": 160
+      "inform_resilience_index": 160,
+      "pisa_overall_score": 36
     },
-    "kpi_count": 8
+    "kpi_count": 9
   },
   {
     "country": "Kyrgyzstan",
@@ -5246,9 +5321,10 @@
       "big_mac_index": 10,
       "environmental_performance_index": 178,
       "global_peace_index": 39,
-      "inform_resilience_index": 113
+      "inform_resilience_index": 113,
+      "pisa_overall_score": 34
     },
-    "kpi_count": 8
+    "kpi_count": 9
   },
   {
     "country": "Venezuela",
@@ -5274,9 +5350,10 @@
       "big_mac_index": 1,
       "environmental_performance_index": 112,
       "global_peace_index": 157,
-      "inform_resilience_index": 126
+      "inform_resilience_index": 126,
+      "pisa_overall_score": 23
     },
-    "kpi_count": 8
+    "kpi_count": 9
   },
   {
     "country": "Iran",
@@ -5354,9 +5431,10 @@
       "human_development_index_hdi": 59,
       "physicians_per_1_000_people": 89,
       "environmental_performance_index": 71,
-      "inform_resilience_index": 33
+      "inform_resilience_index": 33,
+      "pisa_overall_score": 42
     },
-    "kpi_count": 4
+    "kpi_count": 5
   },
   {
     "country": "Bahamas",

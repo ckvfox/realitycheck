@@ -1,12 +1,11 @@
 {
-  "last_run": "2025-11-15T22:43:15Z",
+  "last_run": "2025-11-15T23:45:33Z",
   "updated_kpis": [
-    "environmental_performance_index",
     "geopolitical_risk_index",
     "global_temperature_anomaly",
-    "inform_resilience_index",
     "mean_years_of_schooling",
     "median_age",
-    "recycling_rate"
+    "olympic_medals_winter",
+    "pisa_overall_score"
   ]
 }

@@ -1461,16 +1461,16 @@
   "median_age": {
     "high_outliers": [
       {
+        "country": "Vatican City",
+        "year": 2023,
+        "value": 59.625,
+        "z": 3.058
+      },
+      {
         "country": "Monaco",
         "year": 2023,
         "value": 54.356,
-        "z": 2.586
-      },
-      {
-        "country": "Japan",
-        "year": 2023,
-        "value": 48.958,
-        "z": 2.01
+        "z": 2.513
       }
     ],
     "low_outliers": []
@@ -1869,13 +1869,13 @@
         "country": "Niger",
         "year": 2025,
         "value": 3.75,
-        "z": -2.482
+        "z": -2.429
       },
       {
         "country": "Mali",
         "year": 2025,
         "value": 4.36,
-        "z": -2.229
+        "z": -2.179
       }
     ]
   },
@@ -2233,6 +2233,34 @@
         "year": 2025,
         "value": 7.7,
         "z": 2.177
+      }
+    ],
+    "low_outliers": []
+  },
+  "olympic_medals_winter": {
+    "high_outliers": [
+      {
+        "country": "Norway",
+        "year": 2022,
+        "value": 37.0,
+        "z": 2.815
+      },
+      {
+        "country": "Russia",
+        "year": 2014,
+        "value": 30.0,
+        "z": 2.116
+      }
+    ],
+    "low_outliers": []
+  },
+  "pisa_overall_score": {
+    "high_outliers": [
+      {
+        "country": "Singapore",
+        "year": 2022,
+        "value": 560.0,
+        "z": 2.238
       }
     ],
     "low_outliers": []
