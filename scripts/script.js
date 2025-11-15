@@ -1164,7 +1164,10 @@ async function updateMap() {
                                                 <div class="map-tooltip__title">${cname}</div>
                                         </div>
                                         <div class="map-tooltip__value">${displayValue}</div>
-                                        <div class="map-tooltip__meta">Capital: ${info.capital || "–"} | Gov: ${info.government || "–"}</div>
+                                        <div class="map-tooltip__meta">
+                                                <div class="map-tooltip__meta-row">Capital: ${info.capital || "–"}</div>
+                                                <div class="map-tooltip__meta-row">Gov: ${info.government || "–"}</div>
+                                        </div>
                                 </div>
                         `;
 			layer.bindTooltip(tooltip, { sticky: true });
