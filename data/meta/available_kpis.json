@@ -573,7 +573,7 @@
     "relation": "",
     "sort": "higher",
     "cluster": "Economy & Labor",
-    "relevance": "high",
+    "relevance": "very_high",
     "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD",
     "source_type": "worldbank",
     "source_code": "NY.GDP.PCAP.PP.CD",
@@ -1074,23 +1074,6 @@
     "actuality": "normal",
     "invert": ""
   },
-  {
-    "title": "GDP per capita, PPP (current international $)",
-    "description": "GDP per capita based on purchasing power parity (PPP) reflects the average economic output per person, adjusted for differences in price levels between countries. It measures how much a unit of currency can buy in terms of goods and services, providing a more accurate comparison of living standards across nations.",
-    "unit": "USD",
-    "scale": "auto",
-    "world_kpi": "",
-    "relation": "",
-    "sort": "higher",
-    "cluster": "Economy & Labor",
-    "relevance": "high",
-    "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD",
-    "source_type": "worldbank",
-    "source_code": "NY.GDP.PCAP.PP.CD",
-    "filename": "purchasing_power_parity",
-    "actuality": "normal",
-    "invert": ""
-  },
     {
     "title": "Olympic Medals (Winter)",
     "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Winter Olympic Games. Beyond highlighting excellence in winter sports, it also reflects broader factors such as infrastructure, climate, and social investment in physical activity. Countries that perform well often have strong public sports programs, accessible training environments, and policies promoting youth participation. Although not a direct measure of prosperity, success at the Winter Olympics can indicate robust institutions, social cohesion, and an emphasis on national health and education through sport. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
@@ -1100,7 +1083,7 @@
     "cluster": "Sports & Culture",
     "source": "Kaggle athlete_events (preprocessed)",
     "source_type": "csv",
-    "source_code": "olympic_medals_winter.csv",
+    "source_code": "olympic_medals_winter",
     "scale": "none",
     "world_kpi": "",
     "filename": "olympic_medals_winter",
@@ -1120,7 +1103,7 @@
   "scale": "none",
   "world_kpi": "",
   "filename": "pisa_overall_score",
-  "relevance": "high",
+  "relevance": "normal",
   "actuality": "normal",
   "invert": ""
 }
