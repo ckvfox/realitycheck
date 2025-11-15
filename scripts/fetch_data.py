@@ -178,7 +178,26 @@ def mark_skip(stats: Dict[str, Any], reason: str) -> None:
     stats["skipped"] += 1
     breakdown = stats.setdefault("skipped_breakdown", {})
     breakdown[reason] = breakdown.get(reason, 0) + 1
-    
+
+
+def resolve_kpi_id(meta: Dict[str, Any] | None) -> str:
+    """Return a stable KPI identifier from assorted metadata fields.
+
+    Older versions of the fetcher called this helper directly, so it doubles
+    as a backwards-compatibility shim for environments that still expect the
+    function to exist.
+    """
+
+    if not isinstance(meta, dict):
+        return "kpi"
+
+    for key in ("filename", "id", "slug", "name", "title"):
+        value = meta.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+
+    return "kpi"
+
 # ======================================================================
 # 💾 Safe Write Helpers (robuste Datei-Speicherung)
 # ======================================================================
@@ -1154,7 +1173,7 @@ def main(args: argparse.Namespace) -> None:
     # --- KPI-Schleife ---
     for meta in kpi_list:
         try:
-            kpi_id = meta.get("filename") or meta.get("id") or meta.get("title") or "kpi"
+            kpi_id = resolve_kpi_id(meta)
             source_type = (meta.get("source_type") or meta.get("type") or "").lower().strip()
             source_code = meta.get("source_code") or meta.get("code") or ""
             source_date = None
