@@ -1,22 +1,7 @@
 manuell füllen
 
 
-  {
-    "title": "Olympic Medals (Winter)",
-    "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Winter Olympic Games. Beyond highlighting excellence in winter sports, it also reflects broader factors such as infrastructure, climate, and social investment in physical activity. Countries that perform well often have strong public sports programs, accessible training environments, and policies promoting youth participation. Although not a direct measure of prosperity, success at the Winter Olympics can indicate robust institutions, social cohesion, and an emphasis on national health and education through sport. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
-    "unit": "count",
-    "relation": "*",
-    "sort": "higher",
-    "cluster": "Sports & Culture",
-    "source": "Kaggle athlete_events (preprocessed)",
-    "source_type": "csv",
-    "source_code": "olympic_medals_winter.csv",
-    "scale": "none",
-    "world_kpi": "",
-    "filename": "olympic_medals_winter",
-    "relevance": "none",
-    "actuality": "normal"
-  },
+
 
 beantragt
 

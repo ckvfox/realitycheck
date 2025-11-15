@@ -1039,5 +1039,39 @@
     "filename": "purchasing_power_parity",
     "actuality": "normal",
     "invert": ""
-  }
+  },
+    {
+    "title": "Olympic Medals (Winter)",
+    "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Winter Olympic Games. Beyond highlighting excellence in winter sports, it also reflects broader factors such as infrastructure, climate, and social investment in physical activity. Countries that perform well often have strong public sports programs, accessible training environments, and policies promoting youth participation. Although not a direct measure of prosperity, success at the Winter Olympics can indicate robust institutions, social cohesion, and an emphasis on national health and education through sport. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
+    "unit": "count",
+    "relation": "*",
+    "sort": "higher",
+    "cluster": "Sports & Culture",
+    "source": "Kaggle athlete_events (preprocessed)",
+    "source_type": "csv",
+    "source_code": "olympic_medals_winter.csv",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "olympic_medals_winter",
+    "relevance": "none",
+    "actuality": "normal"
+  },
+  {
+  "title": "PISA Overall Score",
+  "description": "The PISA Overall Score reflects a country’s average performance across all PISA assessment domains (Reading, Mathematics, Science, and any additional tested skills such as Creative Thinking) and all available demographic groups (e.g., female, male, overall). As the OECD does not publish an official combined index, this indicator uses a transparent and widely accepted methodology: for each country and year, all available scores across all domains and all genders are averaged without weighting. This avoids biases from differing national gender distributions or OECD focus-weighting schemes and ensures a neutral, reproducible, and academically defensible composite score.",
+  "unit": "PISA points (0–800)",
+  "relation": "",
+  "sort": "higher",
+  "cluster": "Education",
+  "source": "https://www.oecd.org/pisa/data/",
+  "source_type": "csv",
+  "source_code": "pisa_overall_score",
+  "scale": "none",
+  "world_kpi": "",
+  "filename": "pisa_overall_score",
+  "relevance": "high",
+  "actuality": "normal",
+  "invert": ""
+}
+
 ]
