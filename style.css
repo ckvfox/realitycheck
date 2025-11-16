@@ -1,4 +1,10 @@
-:root { --steel-blue: #1a355e; --link-muted: #d1d5db; --link-hover: #fff; --content-bg: #f7f9fc; --text: #111; --legend: #444; --table-head: #333; --table-head-text: #fff; --row-alt: #f5f7fa; --row-base: #fff; --border: #e5e7eb; --accent: #09f; --accent-light: #66bfff; --max-width: 1200px; --radius: 10px; --header-footer-border: #fff1ff; }
+:root { --steel-blue: #1a355e; --link-muted: #d1d5db; --link-hover: #fff; --content-bg: #f7f9fc; --text: #111; --legend: #444; --table-head: #333; --table-head-text: #fff; --row-alt: #f5f7fa; --row-base: #fff; --border: #e5e7eb; --accent: #09f; --accent-light: #66bfff; --max-width: 1200px; --radius: 10px; --header-footer-border: #fff1ff; --floating-btn-offset: 30px; }
+
+@media (max-width: 640px) {
+  :root {
+    --floating-btn-offset: 20px;
+  }
+}
 
 html {
   margin: 0;
@@ -104,14 +110,14 @@ nav { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; justify-c
   }
 
   .translator-launcher {
-    top: 1.875rem;
-    right: 1.875rem;
+    top: var(--floating-btn-offset);
+    right: var(--floating-btn-offset);
   }
 
   @supports (top: calc(1.875rem + env(safe-area-inset-top))) {
     .translator-launcher {
-      top: calc(1.875rem + env(safe-area-inset-top));
-      right: calc(1.875rem + env(safe-area-inset-right));
+      top: calc(var(--floating-btn-offset) + env(safe-area-inset-top));
+      right: calc(var(--floating-btn-offset) + env(safe-area-inset-right));
     }
   }
 }
@@ -1043,6 +1049,17 @@ tr.fun-mode,tr.safe-mode,tr.fun-safe { background: transparent!important; }
   margin: 0 auto;
 }
 
+body.world-page .graph-block canvas {
+  height: min(380px, 60vh) !important;
+  max-height: 420px;
+}
+
+@media (max-width: 768px) {
+  body.world-page .graph-block canvas {
+    height: min(300px, 55vh) !important;
+  }
+}
+
 
 
 /* ============================================================
@@ -1163,8 +1180,8 @@ header img, .header-logo img, nav img, #site-logo {
 /* =====================  Button to Top  ===================== */
 #scroll-top-btn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: var(--floating-btn-offset);
+  right: var(--floating-btn-offset);
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -2256,6 +2273,69 @@ Fixes: header/menu overflow, footer overflow, disappearing icons
   }
 }
 
+/* === Data Glossary Table – desktop width should not force scroll === */
+body.glossary-page #glossary-container {
+  width: min(96vw, 1600px) !important;
+  max-width: none !important;
+  margin: 1.5rem auto 2.5rem;
+  padding: 0 clamp(0.75rem, 2vw, 2.5rem);
+  display: block !important;
+  overflow: visible !important;
+  position: relative;
+}
+
+body.glossary-page .glossary-table-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  border-radius: 18px;
+  background: transparent;
+  transition: box-shadow 0.2s ease;
+}
+
+body.glossary-page .glossary-table-wrapper.glossary-wrapper-scrollable {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: inset 0 -6px 12px -10px rgba(0, 0, 0, 0.45);
+  padding-bottom: 0.35rem;
+}
+
+body.glossary-page #glossary-container table {
+  width: 100%;
+  min-width: 0 !important;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+body.glossary-page #glossary-container th,
+body.glossary-page #glossary-container td {
+  white-space: normal !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+body.glossary-page #glossary-container td a {
+  display: inline-block;
+  max-width: 100%;
+  word-break: break-all;
+}
+
+body.glossary-page #glossary-table td:nth-child(2) {
+  word-break: break-all;
+}
+
+@media (max-width: 1200px) {
+  body.glossary-page #glossary-container table {
+    min-width: 860px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  body.glossary-page #glossary-container table {
+    min-width: 720px !important;
+  }
+}
+
 body.glossary-page th.sortable {
   cursor: pointer;
   user-select: none;
@@ -2280,8 +2360,8 @@ body.glossary-page th.sort-desc::after {
 /* === Translator Controls === */
 .translator-launcher {
   position: fixed;
-  top: 1.875rem;
-  right: 1.875rem;
+  top: var(--floating-btn-offset);
+  right: var(--floating-btn-offset);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2290,8 +2370,8 @@ body.glossary-page th.sort-desc::after {
 
 @supports (top: calc(1.875rem + env(safe-area-inset-top))) {
   .translator-launcher {
-    top: calc(1.875rem + env(safe-area-inset-top));
-    right: calc(1.875rem + env(safe-area-inset-right));
+    top: calc(var(--floating-btn-offset) + env(safe-area-inset-top));
+    right: calc(var(--floating-btn-offset) + env(safe-area-inset-right));
   }
 }
 

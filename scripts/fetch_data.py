@@ -146,13 +146,29 @@ def handle_force_cleanup() -> None:
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
+    def _remove_file(path: Path) -> None:
+        try:
+            path.unlink()
+        except FileNotFoundError:
+            return
+        except PermissionError as exc:
+            print(f"[WARN] Cannot delete {path.name} ({exc}). Trying to clear file instead …")
+            try:
+                path.write_text("", encoding="utf-8")
+                print(f"[OK] {path.name} cleared – close external viewers to delete fully.")
+            except Exception as inner_exc:  # pragma: no cover - defensive only
+                print(
+                    f"[WARN] Could not clear {path.name}: {inner_exc}. "
+                    "Please close the file and rerun if necessary."
+                )
+
     for item in DATA_DIR.iterdir():
         if item.name == "meta":
             continue
         if item.is_dir():
             shutil.rmtree(item, ignore_errors=True)
         else:
-            item.unlink(missing_ok=True)
+            _remove_file(item)
 
     if (SCRIPT_DIR / "__pycache__").exists():
         shutil.rmtree(SCRIPT_DIR / "__pycache__", ignore_errors=True)
