@@ -608,15 +608,39 @@ const FALLBACK_CHART_OPTIONS = {
 };
 
 function cloneChartOptions(obj) {
-  if (!obj) return {};
+  if (obj == null) return {};
+
   if (typeof structuredClone === "function") {
-    return structuredClone(obj);
+    try {
+      return structuredClone(obj);
+    } catch {
+      /* ignored, fall back to manual deep clone below */
+    }
   }
-  try {
-    return JSON.parse(JSON.stringify(obj));
-  } catch {
-    return {};
+
+  return deepCloneWithFunctions(obj);
+}
+
+function deepCloneWithFunctions(value) {
+  if (value == null || typeof value !== "object") {
+    return value;
   }
+  if (value instanceof Date) {
+    return new Date(value.getTime());
+  }
+  if (Array.isArray(value)) {
+    return value.map(item => deepCloneWithFunctions(item));
+  }
+
+  const cloned = {};
+  for (const [key, entry] of Object.entries(value)) {
+    if (typeof entry === "function") {
+      cloned[key] = entry;
+    } else {
+      cloned[key] = deepCloneWithFunctions(entry);
+    }
+  }
+  return cloned;
 }
 
 function resolveChartOptions({ title = "", unit = "", datasetCount = 0, overrides = {} }) {
