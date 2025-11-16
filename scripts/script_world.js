@@ -54,30 +54,11 @@ function renderChart(container, title, unit, data) {
     existingChart: canvasEl.__rcChart,
     options: {
       plugins: {
-        title: { display: false },
         legend: { display: false },
-        tooltip: {
-          enabled: true,
-          callbacks: {
-            title: ctx => "Year: " + (ctx[0]?.label ?? ""),
-            label: ctx => {
-              const val = ctx.parsed?.y;
-              if (val == null || isNaN(val)) return "No data";
-              return `${val.toLocaleString()} ${unit || ""}`.trim();
-            }
-          }
-        }
+        title: { display: false }
       },
       scales: {
-        y: {
-          beginAtZero: false,
-          title: { display: !!unit, text: unit || "" },
-          grid: { color: "rgba(0,0,0,0.05)" }
-        },
-        x: {
-          ticks: { autoSkip: true, maxTicksLimit: 10 },
-          grid: { color: "rgba(0,0,0,0.05)" }
-        }
+        y: { beginAtZero: false }
       }
     }
   });

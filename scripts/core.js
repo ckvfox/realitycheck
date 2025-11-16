@@ -52,6 +52,56 @@ const TRANSLATOR_LAUNCHER_MARKUP = `
   </div>
 `;
 
+const TRANSLATOR_LAUNCHER_MARKUP = `
+  <button
+    type="button"
+    id="translator-toggle"
+    class="translator-button"
+    title="Translate this page"
+    aria-label="Translate this page"
+    aria-haspopup="dialog"
+    aria-controls="translator-panel"
+    aria-expanded="false"
+  >
+    <img src="images/translate.png" alt="" class="translator-icon" aria-hidden="true" />
+  </button>
+  <div id="translator-panel" class="translator-panel" role="region" aria-label="Google Translate" hidden>
+    <div class="translator-panel-header">
+      <span>Google Translate</span>
+      <button type="button" class="translator-close" aria-label="Close translator" title="Close">&times;</button>
+    </div>
+    <div class="translator-panel-body">
+      <p class="translator-loading-message">Google Translate is loading…</p>
+      <div id="google_translate_element" class="translator-widget"></div>
+    </div>
+  </div>
+`;
+
+const TRANSLATOR_LAUNCHER_MARKUP = `
+  <button
+    type="button"
+    id="translator-toggle"
+    class="translator-button"
+    title="Translator"
+    aria-haspopup="dialog"
+    aria-controls="translator-panel"
+    aria-expanded="false"
+  >
+    <span class="sr-only">Translator</span>
+    <img src="images/translate.png" alt="" class="translator-icon" aria-hidden="true" />
+  </button>
+  <div id="translator-panel" class="translator-panel" role="region" aria-label="Google Translate" hidden>
+    <div class="translator-panel-header">
+      <span>Google Translate</span>
+      <button type="button" class="translator-close" aria-label="Close translator" title="Close">&times;</button>
+    </div>
+    <div class="translator-panel-body">
+      <p class="translator-loading-message">Google Translate is loading…</p>
+      <div id="google_translate_element" class="translator-widget"></div>
+    </div>
+  </div>
+`;
+
 let translatorInitResolve;
 let translatorInitReject;
 
@@ -586,6 +636,16 @@ function calcTrend(current, previous) {
   return "→";
 }
 
+function escapeHTML(value) {
+  if (value === null || value === undefined) return "";
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 // === Deep merge helper (for Chart option overrides) ===
 function deepMerge(target, ...sources) {
   if (!target) target = {};
@@ -646,6 +706,117 @@ function groupKpisByCluster(list, options = {}) {
 }
 
 // === Shared Chart.js renderer ===
+const FALLBACK_CHART_OPTIONS = {
+  responsive: true,
+  maintainAspectRatio: false,
+  layout: { padding: { top: 16, bottom: 12, left: 8, right: 8 } },
+  interaction: { mode: "nearest", intersect: false },
+  plugins: {
+    title: { display: false, text: "" },
+    legend: { display: true },
+    tooltip: {
+      enabled: true,
+      callbacks: {
+        title: ctx => (ctx?.length ? `Year: ${ctx[0].label ?? ""}` : ""),
+        label: ctx => {
+          const datasetLabel = ctx.dataset?.label ? `${ctx.dataset.label}: ` : "";
+          const value = ctx.parsed?.y;
+          if (value == null || isNaN(value)) {
+            return `${datasetLabel}no data`;
+          }
+          return `${datasetLabel}${Number(value).toLocaleString()}`;
+        }
+      }
+    }
+  },
+  scales: {
+    y: { beginAtZero: false, grid: { color: "rgba(0,0,0,0.1)" } },
+    x: {
+      ticks: { autoSkip: true, maxTicksLimit: 12 },
+      grid: { color: "rgba(0,0,0,0.05)" }
+    }
+  }
+};
+
+function cloneChartOptions(obj) {
+  if (obj == null) return {};
+
+  if (typeof structuredClone === "function") {
+    try {
+      return structuredClone(obj);
+    } catch {
+      /* ignored, fall back to manual deep clone below */
+    }
+  }
+
+  return deepCloneWithFunctions(obj);
+}
+
+function deepCloneWithFunctions(value) {
+  if (value == null || typeof value !== "object") {
+    return value;
+  }
+  if (value instanceof Date) {
+    return new Date(value.getTime());
+  }
+  if (Array.isArray(value)) {
+    return value.map(item => deepCloneWithFunctions(item));
+  }
+
+  const cloned = {};
+  for (const [key, entry] of Object.entries(value)) {
+    if (typeof entry === "function") {
+      cloned[key] = entry;
+    } else {
+      cloned[key] = deepCloneWithFunctions(entry);
+    }
+  }
+  return cloned;
+}
+
+function resolveChartOptions({ title = "", unit = "", datasetCount = 0, overrides = {} }) {
+  const base =
+    (typeof window !== "undefined" && window.DEFAULT_CHART_OPTIONS) || FALLBACK_CHART_OPTIONS;
+  const merged = cloneChartOptions(base);
+
+  merged.plugins = merged.plugins || {};
+  merged.plugins.title = merged.plugins.title || { display: false, text: "" };
+  merged.plugins.title.display = !!title;
+  merged.plugins.title.text = title || "";
+
+  if (merged.plugins.legend) {
+    merged.plugins.legend.display = datasetCount > 0;
+  }
+
+  merged.scales = merged.scales || {};
+  merged.scales.y = merged.scales.y || {};
+  merged.scales.y.title = unit
+    ? { display: true, text: unit }
+    : { display: false, text: "" };
+
+  const tooltip = merged.plugins.tooltip || {};
+  merged.plugins.tooltip = tooltip;
+  tooltip.callbacks = tooltip.callbacks || {};
+  const baseLabel = tooltip.callbacks.label;
+  tooltip.callbacks.label = ctx => {
+    if (typeof baseLabel === "function" && !unit) {
+      return baseLabel(ctx);
+    }
+    const datasetLabel = ctx.dataset?.label ? `${ctx.dataset.label}: ` : "";
+    const value = ctx.parsed?.y;
+    if (value == null || isNaN(value)) {
+      return `${datasetLabel}no data`;
+    }
+    const formatted = Number(value).toLocaleString();
+    return unit ? `${datasetLabel}${formatted} ${unit}`.trim() : `${datasetLabel}${formatted}`;
+  };
+  if (!tooltip.callbacks.title) {
+    tooltip.callbacks.title = ctx => (ctx?.length ? `Year: ${ctx[0].label ?? ""}` : "");
+  }
+
+  return deepMerge(merged, overrides || {});
+}
+
 function renderLineChart(canvas, config = {}) {
   if (!canvas || typeof canvas.getContext !== "function") return null;
 
@@ -692,50 +863,13 @@ function renderLineChart(canvas, config = {}) {
       labels: safeLabels,
       datasets: datasets.length ? datasets : [baseFallback]
     },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      interaction: { mode: "nearest", intersect: false },
-      layout: { padding: { top: 16, bottom: 12, left: 8, right: 8 } },
-      plugins: {
-        title: { display: !!title, text: title },
-        legend: { display: datasets.length > 0 },
-        tooltip: {
-          enabled: true,
-          callbacks: {
-            title: ctx =>
-              ctx?.length ? `Year: ${ctx[0].label ?? ""}` : "",
-            label: ctx => {
-              const datasetLabel = ctx.dataset?.label
-                ? `${ctx.dataset.label}: `
-                : "";
-              const value = ctx.parsed?.y;
-              if (value == null || isNaN(value)) {
-                return `${datasetLabel}no data`;
-              }
-              const formatted = Number(value).toLocaleString();
-              return unit
-                ? `${datasetLabel}${formatted} ${unit}`.trim()
-                : `${datasetLabel}${formatted}`;
-            }
-          }
-        }
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
-          title: { display: !!unit, text: unit || "" },
-          grid: { color: "rgba(0,0,0,0.1)" }
-        },
-        x: {
-          ticks: { autoSkip: true, maxTicksLimit: 12 },
-          grid: { color: "rgba(0,0,0,0.05)" }
-        }
-      }
-    }
+    options: resolveChartOptions({
+      title,
+      unit,
+      datasetCount: datasets.length,
+      overrides: options
+    })
   };
-
-  deepMerge(configObj.options, options);
 
   const ctx = canvas.getContext("2d");
   const chart = new Chart(ctx, configObj);
@@ -888,6 +1022,7 @@ window.groupKpisByCluster = groupKpisByCluster;
 window.chooseScaleFromValues = chooseScaleFromValues;
 window.formatValueAuto = formatValueAuto;
 window.calcTrend = calcTrend;
+window.escapeHTML = escapeHTML;
 window.rcLog = rcLog;
 window.loadAllKPIData = loadAllKPIData;
 window.renderLineChart = renderLineChart;
