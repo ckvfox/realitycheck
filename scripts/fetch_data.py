@@ -1518,6 +1518,26 @@ def main(args: argparse.Namespace) -> None:
     write_json(STATUS_FILE, fetch_status)
     write_json(COUNTRY_PENDING_FILE, pending)
 
+    # 🤖 Automatische Verarbeitung von pending country mappings
+    try:
+        if stats.get("mapped_pending", 0) > 0 or stats.get("new_pending"):
+            log("🤖 Running auto country mapping resolution...")
+            import subprocess
+            result = subprocess.run(
+                ["python", os.path.join(SCRIPT_DIR, "auto_resolve_pending_mappings.py")], 
+                capture_output=True, text=True, check=False
+            )
+            if result.returncode == 0:
+                log("✅ Auto mapping agent completed successfully")
+                if result.stdout:
+                    # Log nur die wichtigsten Zeilen aus dem Agent
+                    for line in result.stdout.split('\n'):
+                        if any(keyword in line for keyword in ['AUTO-RESOLVED', 'ZUSAMMENFASSUNG', 'resolved:', 'pending:']):
+                            log(f"[AGENT] {line}")
+            else:
+                log(f"⚠️ Auto mapping agent failed: {result.stderr}")
+    except Exception as e:
+        log(f"⚠️ Auto mapping agent error: {e}")
 
     log(f"[INFO] fetch_status.json updated with {len(fetch_status.get('kpis',{}))} KPIs")
 
