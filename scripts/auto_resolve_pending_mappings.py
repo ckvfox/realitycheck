@@ -21,7 +21,10 @@ import json
 import re
 from pathlib import Path
 from typing import Dict, Set, List, Tuple
-from script_utils import safe_write_json, setup_logger
+from script_utils import safe_write_json, setup_logger, ensure_utf8_stdout
+
+# UTF-8 Fix für Windows
+ensure_utf8_stdout()
 
 # === Pfade ===
 SCRIPT_DIR = Path(__file__).parent.resolve()
@@ -38,7 +41,12 @@ logger = setup_logger("auto_mapping", LOG_FILE)
 
 def log(msg: str) -> None:
     """Log message to both console and file"""
-    print(msg)
+    try:
+        print(msg)
+    except UnicodeEncodeError:
+        # Fallback ohne Emojis für Windows-Terminals
+        safe_msg = msg.encode('ascii', 'replace').decode('ascii')
+        print(safe_msg)
     logger.info(msg)
 
 class CountryMappingAgent:
@@ -395,7 +403,7 @@ class CountryMappingAgent:
             # Soll dieser Alias ausgeschlossen werden?
             if self._should_exclude(alias):
                 remaining[alias] = "Unknown alias; please map in country_mappings.json"
-                log_entries.append(f"🚫 AUSGESCHLOSSEN (Gruppe/Region): '{alias}'")
+                log_entries.append(f"EXCLUDED (Gruppe/Region): '{alias}'")
                 continue
             
             # Versuche automatisches Mapping zu finden
@@ -403,17 +411,17 @@ class CountryMappingAgent:
             
             if target:
                 resolved[alias] = target
-                log_entries.append(f"✅ AUTO-RESOLVED: '{alias}' → '{target}'")
+                log_entries.append(f"AUTO-RESOLVED: '{alias}' -> '{target}'")
             else:
                 remaining[alias] = "Unknown alias; please map in country_mappings.json"
-                log_entries.append(f"⏳ VERBLEIBT PENDING: '{alias}' (keine eindeutige Zuordnung)")
+                log_entries.append(f"REMAINS PENDING: '{alias}' (keine eindeutige Zuordnung)")
         
         return resolved, remaining, log_entries
     
     def update_mappings_file(self, resolved_mappings: Dict) -> None:
         """Aktualisiere country_mappings.json mit resolved mappings"""
         if not resolved_mappings:
-            log("ℹ️ Keine neuen Mappings zum Hinzufügen")
+            log("INFO: Keine neuen Mappings zum Hinzufügen")
             return
             
         # Merge mit bestehenden mappings
@@ -424,28 +432,28 @@ class CountryMappingAgent:
         
         # Schreibe zurück
         safe_write_json(MAPPINGS_FILE, sorted_mappings)
-        log(f"✅ {len(resolved_mappings)} neue Mappings zu country_mappings.json hinzugefügt")
+        log(f"SUCCESS: {len(resolved_mappings)} neue Mappings zu country_mappings.json hinzugefügt")
     
     def update_pending_file(self, remaining_pending: Dict) -> None:
         """Aktualisiere country_mappings_pending.json mit verbleibenden Einträgen"""
         if remaining_pending:
             safe_write_json(PENDING_FILE, remaining_pending)
-            log(f"⏳ {len(remaining_pending)} Einträge verbleiben in pending für manuelle Prüfung")
+            log(f"PENDING: {len(remaining_pending)} Einträge verbleiben in pending für manuelle Prüfung")
         else:
             # Lösche pending file wenn alles resolved wurde
             if PENDING_FILE.exists():
                 PENDING_FILE.unlink()
-            log("🎉 Alle pending mappings resolved! Pending-Datei gelöscht.")
+            log("SUCCESS: Alle pending mappings resolved! Pending-Datei gelöscht.")
     
     def run(self) -> None:
         """Hauptfunktion: Führe automatische Mapping-Resolution aus"""
-        log("🤖 Starting Auto Country Mapping Agent...")
+        log("Starting Auto Country Mapping Agent...")
         
         if not self.pending_mappings:
-            log("ℹ️ Keine pending mappings gefunden. Nichts zu tun.")
+            log("INFO: Keine pending mappings gefunden. Nichts zu tun.")
             return
         
-        log(f"📋 {len(self.pending_mappings)} pending mappings gefunden")
+        log(f"FOUND: {len(self.pending_mappings)} pending mappings gefunden")
         
         # Verarbeite pending mappings
         resolved, remaining, log_entries = self.process_pending_mappings()
@@ -462,11 +470,11 @@ class CountryMappingAgent:
         
         # Zusammenfassung
         log(f"""
-🏁 ZUSAMMENFASSUNG:
-   ✅ Automatisch resolved: {len(resolved)}
-   ⏳ Verbleiben pending:    {len(remaining)}
-   📊 Total processed:      {len(self.pending_mappings)}
-   📁 Countries verfügbar:  {len(self.countries)}
+ZUSAMMENFASSUNG:
+   Automatisch resolved: {len(resolved)}
+   Verbleiben pending:    {len(remaining)}
+   Total processed:      {len(self.pending_mappings)}
+   Countries verfügbar:  {len(self.countries)}
         """)
 
 def main():
@@ -475,9 +483,9 @@ def main():
         agent = CountryMappingAgent()
         agent.run()
     except Exception as e:
-        log(f"❌ FEHLER: {e}")
+        log(f"ERROR: {e}")
         import traceback
-        log(f"🔍 Traceback:\n{traceback.format_exc()}")
+        log(f"Traceback:\n{traceback.format_exc()}")
         return 1
     return 0
 
