@@ -120,13 +120,12 @@ nav { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; justify-c
       right: calc(var(--floating-btn-offset) + env(safe-area-inset-right));
     }
   }
+
+  #logo-text {
+    font-size: 1.1rem;
+  }
+
 }
-
-
-nav a { color: var(--link-muted); font-weight: 500; }
-
-
-nav a:hover,nav a.active { color: var(--link-hover); font-weight: 700; text-decoration: underline; }
 
 
 main { flex: 1; position: relative; display: flex; flex-direction: column; }
@@ -179,6 +178,29 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
   margin: 1.5rem auto 2rem;
   max-width: 900px;
   line-height: 1.5;
+}
+
+.footer-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+.footer-github-link svg {
+  flex-shrink: 0;
+}
+.footer-github-link:hover span {
+  text-decoration: underline;
+}
+
+.about-note {
+  font-style: italic;
+  color: #555;
+  line-height: 1.5;
+}
+.about-note--spaced {
+  margin-top: 1rem;
 }
 
 .table-placeholder,
@@ -1370,28 +1392,26 @@ iframe {
 /* ============================================================
    📱 Responsive Table Fix for countries & data_glossary
    ============================================================ */
-#data-table, #glossary-container {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin: 0 auto 2rem;
-  padding: 0 0.5rem;
-  box-sizing: border-box;
+@media (max-width: 1100px) {
+  #data-table, #glossary-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 auto 2rem;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
+
+  #data-table table, #glossary-container table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
 }
-
-
-
-#data-table table, #glossary-container table {
-  width: 100%;
-  min-width: 720px;
-  border-collapse: collapse;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-
-
 
 @media (max-width: 768px) {
   #country-table th:nth-child(2),
@@ -1610,6 +1630,22 @@ footer#site-footer {
   margin-top: auto;
   flex-shrink: 0;
 }
+
+@media (max-width: 720px) {
+  footer#site-footer p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    line-height: 1.4;
+    font-size: 0.85rem;
+    margin: 0.4rem auto 0;
+  }
+
+  footer#site-footer a {
+    white-space: nowrap;
+  }
+}
 /* === Footer fix: always at bottom of iframe page === */
 html, body {
   min-height: 100vh;
@@ -1692,73 +1728,6 @@ header#main-header nav a.active {
 }
 
 
-/* ============================================================
-🎛️ Mode Buttons – Equal Size + Centered
-============================================================ */
-
-.mode-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.mode-button {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: none;
-  background: #1a355e;
-  color: #fff;
-  font-size: 0.85rem;
-  text-align: center;
-  line-height: 1.3;
-  cursor: pointer;
-  transition: transform 0.25s ease, background 0.3s ease;
-  padding: 0.5rem;
-}
-
-.mode-button:hover {
-  transform: scale(1.07);
-  background: #244a8f;
-}
-
-.mode-button.active {
-  background: #0078d4;
-  color: #fff;
-  box-shadow: 0 0 10px rgba(0,120,212,0.5);
-}
-
-/* 📱 Mobile: kompakte Buttons mit Symbol + kurzem Label */
-@media (max-width: 600px) {
-  .mode-button {
-    border-radius: 10px;
-    width: 80px;
-    height: 80px;
-    font-size: 0.9rem;
-    line-height: 1.2;
-    padding: 0.4rem;
-    white-space: normal;
-  }
-
-  .mode-button span {
-    display: block;
-    font-size: 0.8rem;
-    line-height: 1.1;
-    margin-top: 0.15rem;
-  }
-
-  .mode-button .emoji {
-    font-size: 1.5rem;
-    display: block;
-  }
-}
 
 /* ============================================================
 💬 Mobile Mode Tooltip (Floating Bubble)
@@ -1823,28 +1792,6 @@ header#main-header nav a.active {
   white-space: normal;
 }
 
-/* 📱 Mobile Pure Icon Mode (nur Emojis sichtbar, Tooltip via title) */
-@media (max-width: 600px) {
-  .mode-button {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    padding: 0;
-    font-size: 1.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mode-button span {
-    display: none !important;
-  }
-
-  .mode-button .emoji {
-    font-size: 1.8rem;
-    line-height: 1;
-  }
-}
 
 /* ============================================================
 🩵 Scroll-to-top Button – Always Above Footer
@@ -1933,7 +1880,7 @@ header#main-header nav a.active {
 }
 
 /* ============================================================
-🌈 MODE SWITCH BUTTONS – FINAL CONSISTENT (Desktop + Mobile)
+🌈 Mode Switch Buttons (single source of truth)
 ============================================================ */
 #mode-switch {
   display: flex;
@@ -1943,259 +1890,84 @@ header#main-header nav a.active {
   margin: 1.5rem auto;
 }
 
-/* Desktop */
 .mode-button {
-  background: var(--steel-blue);
-  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
   border: none;
-  border-radius: 10px;
-  padding: 10px 18px;
+  background: #102542;
+  color: #fff;
   font-weight: 600;
   font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
   cursor: pointer;
-  transition: background 0.25s ease, transform 0.15s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: visible;
+  -webkit-text-size-adjust: 100%;
 }
-.mode-button:hover { background: var(--accent); transform: translateY(-1px); }
-.mode-button.active { background: #2196f3; box-shadow: 0 0 10px rgba(33,150,243,0.4); }
 
-/* Emoji inside buttons (desktop baseline) */
 .mode-button .emoji {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1;
 }
 
-/* ============================================================
-📱 MOBILE (≤640px): round buttons with visible icons
-============================================================ */
+.mode-button:hover {
+  transform: translateY(-1px);
+  background: var(--accent);
+}
+
+.mode-button.active {
+  background: #2196f3;
+  box-shadow: 0 0 12px rgba(33,150,243,0.45);
+}
+
+@media (max-width: 720px) {
+  .mode-button {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.95rem;
+  }
+}
+
 @media (max-width: 640px) {
   .mode-button {
-    width: 64px;
-    height: 64px;
+    width: 78px;
+    height: 78px;
     border-radius: 50%;
-    padding: 0;
     flex-direction: column;
-    font-size: 1.6rem;
-    background: #0b2345;
-    overflow: visible;
-  }
-  .mode-button.active {
-    background: #2196f3;
-    box-shadow: 0 0 12px rgba(33,150,243,0.5);
-  }
-  .mode-button .emoji {
-    font-size: 1.6rem;
-    line-height: 1;
-  }
-  .mode-button span:not(.emoji) { display: none; } /* only icon */
-}
-
-/* ============================================================
-🧩 MICRO ICON VISIBILITY FIX – very small devices (<380px)
-============================================================ */
-@media (max-width: 380px) {
-  .mode-button {
-    position: relative;
-    overflow: visible !important; /* prevent Safari clipping */
-    font-size: 1.6rem;
-    line-height: 1 !important;
-    text-align: center;
-  }
-  .mode-button .emoji {
-    font-size: inherit;
-    line-height: 1;
-    transform: translateZ(0); /* Safari repaint fix */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-/* ============================================================
-   🛟 Mini-Viewport Fallback: erzwinge Icons per ::before (<380px)
-   — keine Änderungen für größere Geräte —
-   ============================================================ */
-@media (max-width: 380px) {
-  #mode-switch .mode-button {
-    position: relative;
-    overflow: visible;       /* kein Clipping */
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-  }
-
-  /* Kinder (Text/Emoji) ausblenden – wir zeichnen das Icon per ::before */
-  #mode-switch .mode-button > span { display: none !important; }
-
-  /* zentriertes Fallback-Icon */
-  #mode-switch .mode-button::before {
-    display: inline-block;
-    font-size: 1.6rem;       /* gleiche Größe wie sonst */
-    line-height: 1;
-    transform: translateZ(0);/* Safari-Repaint-Fix */
-    content: "";
-  }
-
-  /* Icons je Button-ID */
-  #normalMode::before      { content: "⚙️"; }
-  #funMode::before         { content: "😎"; }
-  #safeMode::before        { content: "🛡️"; }
-  #immigrationMode::before { content: "🧳"; }
-}
-/* ============================================================
-   🖼️ ICON IMAGE FALLBACK – very small devices (<380px)
-   ============================================================ */
-@media (max-width: 380px) {
-  #mode-switch .mode-button {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: none;
-    padding: 0;
-    overflow: hidden;
-    box-shadow: none;
-    transition: box-shadow 0.3s ease;
-  }
-
-  /* Hover glow */
-  #mode-switch .mode-button:hover {
-    box-shadow: 0 0 12px rgba(33,150,243,0.6);
-  }
-
-  /* Text & Emoji ausblenden */
-  #mode-switch .mode-button > span { display: none !important; }
-
-  /* Fallback-Bilder */
-  #normalMode      { background-image: url("images/buttons/btn_normal.png"); }
-  #funMode         { background-image: url("images/buttons/btn_fun.png"); }
-  #safeMode        { background-image: url("images/buttons/btn_safe.png"); }
-  #immigrationMode { background-image: url("images/buttons/btn_immigration.png"); }
-
-  /* Active glow */
-  #mode-switch .mode-button.active {
-    box-shadow: 0 0 16px rgba(33,150,243,0.8);
-  }
-}
-/* ============================================================
-📱 REALITYCHECK – MOBILE CONSISTENCY FIX (Nov 2025)
-Fixes: header/menu overflow, footer overflow, disappearing icons
-============================================================ */
-
-/* 1️⃣ HEADER – flexible, wraps cleanly */
-@media (max-width: 720px) {
-  header#main-header nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4rem;
-  }
-  header#main-header nav a {
+    gap: 0.2rem;
     font-size: 0.85rem;
-    padding: 0.25rem 0.4rem;
-    white-space: nowrap;
   }
-  #logo-text {
-    font-size: 1.1rem;
-  }
-}
 
-/* 2️⃣ FOOTER – links wrap within screen */
-@media (max-width: 720px) {
-  footer#site-footer p {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-    line-height: 1.4;
-    font-size: 0.85rem;
-    margin: 0.4rem auto 0;
-  }
-  footer#site-footer a {
-    white-space: nowrap;
-  }
-}
-
-/* 3️⃣ MODE BUTTONS – keep emojis visible on iOS Safari */
-#mode-switch .mode-button {
-  overflow: visible !important;     /* critical Safari fix */
-  line-height: 1 !important;
-  -webkit-text-size-adjust: 100%;
-  transform: translateZ(0);         /* force repaint */
-}
-
-#mode-switch .mode-button .emoji {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  line-height: 1;
-  transform: translateZ(0);
-}
-
-/* Slightly smaller on very narrow devices */
-@media (max-width: 420px) {
-  #mode-switch .mode-button {
-    width: 58px;
-    height: 58px;
+  .mode-button .emoji {
     font-size: 1.5rem;
   }
 }
-/* ============================================================
-📱 RealityCheck – iOS Emoji Visibility Fix (2025-11-09)
-============================================================ */
 
-/* Stelle sicher, dass Emojis innerhalb der Buttons immer sichtbar sind */
-#mode-switch .mode-button {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  flex-direction: row !important;   /* ← KEIN column mehr → verhindert Emoji-Verschwinden */
-  overflow: visible !important;     /* Safari darf nichts clippen */
-  line-height: 1 !important;
-  -webkit-text-size-adjust: 100% !important;
-  transform: translateZ(0) !important; /* Repaint-Fix */
-  text-rendering: optimizeLegibility;
+@media (max-width: 400px) {
+  .mode-button {
+    width: 64px;
+    height: 64px;
+  }
 }
 
-/* Emoji selbst */
-#mode-switch .mode-button .emoji {
-  display: inline-block !important;
-  font-size: 1.8rem !important;
-  line-height: 1 !important;
-  transform: translateZ(0);
-  margin: 0 !important;
-  padding: 0 !important;
+.mode-button--icon-only {
+  letter-spacing: 0.01em;
 }
 
-/* Beschriftung leicht nach rechts statt unten (mobil lesbar) */
-#mode-switch .mode-button span:not(.emoji) {
-  display: inline-block !important;
-  font-size: 0.8rem;
-  margin-left: 0.15rem;
-}
-
-/* Mobile Optimierung – kleinere Buttons */
 @media (max-width: 640px) {
-  #mode-switch .mode-button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+  .mode-button--icon-only {
     padding: 0;
+    font-size: 1.8rem;
   }
-  #mode-switch .mode-button span:not(.emoji) {
-    display: none !important; /* Nur Emoji sichtbar */
+
+  .mode-button--icon-only span:not(.emoji) {
+    display: none;
   }
 }
-/* ===== Map Legend under the map (no overlay) ===== */
+
+#map-legend {
 #map-legend {
   margin: 1rem auto 0.5rem;
   text-align: center;
@@ -2341,6 +2113,20 @@ body.glossary-page th.sort-desc::after {
   .translator-launcher {
     top: calc(var(--floating-btn-offset) + env(safe-area-inset-top));
     right: calc(var(--floating-btn-offset) + env(safe-area-inset-right));
+  }
+}
+
+@media (max-width: 720px) {
+  .translator-launcher {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  @supports (top: calc(1.5rem + env(safe-area-inset-top))) {
+    .translator-launcher {
+      top: calc(1.5rem + env(safe-area-inset-top));
+      right: calc(1.5rem + env(safe-area-inset-right));
+    }
   }
 }
 

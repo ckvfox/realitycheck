@@ -32,6 +32,7 @@ from script_utils import (
     read_json as load_json_file,
     safe_write_json as write_json_atomic,
     safe_write_text as write_text_atomic,
+    setup_logger,
 )
 
 
@@ -56,6 +57,8 @@ COUNTRY_PENDING_FILE = META_DIR / "country_mappings_pending.json"
 AVAILABLE_FILE       = META_DIR / "available_kpis.json"
 LOG_FILE             = DATA_DIR / "fetch_log.txt"
 STATUS_FILE          = DATA_DIR / "fetch_status.json"
+
+LOGGER = setup_logger("fetch_data", LOG_FILE)
 
 # ======================================================================
 # 🌐 Netzwerk-Header & Requests-Defaults
@@ -191,34 +194,34 @@ def ensure_dirs():
     os.makedirs(DATA_DIR, exist_ok=True)
     os.makedirs(PENDING_DIR, exist_ok=True)
 
-def log(msg: str):
-    ensure_dirs()
-    line = f"[{now_utc()} UTC] {msg}"
-    print(line)
-    with open(LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(line + "\n")
+def log(msg: str, level: str = "info"):
+    level_name = (level or "info").lower()
+    if level_name == "error":
+        LOGGER.error(msg)
+    elif level_name in {"warn", "warning"}:
+        LOGGER.warning(msg)
+    else:
+        LOGGER.info(msg)
 
 
 def write_json(path: str | Path, obj):
     path = Path(path)
-    write_json_atomic(path, obj)
     length = None
     try:
         length = len(obj)
     except Exception:
         length = None
     rel_path = os.path.relpath(path, ROOT_DIR)
+    note = f"JSON written → {rel_path}"
     if length is not None:
-        log(f"[SAFE] JSON written → {rel_path} ({length} entries)")
-    else:
-        log(f"[SAFE] JSON written → {rel_path}")
+        note += f" ({length} entries)"
+    write_json_atomic(path, obj, logger=LOGGER, note=note)
 
 
 def write_text(path: str | Path, content: str):
     path = Path(path)
-    write_text_atomic(path, content or "")
     rel_path = os.path.relpath(path, ROOT_DIR)
-    log(f"[SAFE] Text written → {rel_path}")
+    write_text_atomic(path, content or "", logger=LOGGER, note=f"Text written → {rel_path}")
 
 def safe_float(x) -> Optional[float]:
     try:
