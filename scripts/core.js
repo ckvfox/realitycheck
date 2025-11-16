@@ -1,6 +1,14 @@
-/* ============================================================
-   🌍 RealityCheck – Shared Header & Footer Loader (no iframes)
-   ============================================================ */
+(() => {
+  if (window.__RC_CORE_LOADED__) {
+    console.warn("⚠️ RealityCheck core.js was loaded twice – ignoring duplicate include.");
+    return;
+  }
+
+  window.__RC_CORE_LOADED__ = true;
+
+  /* ============================================================
+     🌍 RealityCheck – Shared Header & Footer Loader (no iframes)
+     ============================================================ */
 
 const TRANSLATOR_SESSION_KEY = "rc_google_translate_consent";
 const translatorState = {
@@ -20,10 +28,36 @@ const translatorState = {
   listenersAttached: false
 };
 
+const TRANSLATOR_LAUNCHER_MARKUP = `
+  <button
+    type="button"
+    id="translator-toggle"
+    class="translator-button"
+    title="Translate this page"
+    aria-label="Translate this page"
+    aria-haspopup="dialog"
+    aria-controls="translator-panel"
+    aria-expanded="false"
+  >
+    <img src="images/translate.png" alt="" class="translator-icon" aria-hidden="true" />
+  </button>
+  <div id="translator-panel" class="translator-panel" role="region" aria-label="Google Translate" hidden>
+    <div class="translator-panel-header">
+      <span>Google Translate</span>
+      <button type="button" class="translator-close" aria-label="Close translator" title="Close">&times;</button>
+    </div>
+    <div class="translator-panel-body">
+      <p class="translator-loading-message">Google Translate is loading…</p>
+      <div id="google_translate_element" class="translator-widget"></div>
+    </div>
+  </div>
+`;
+
 let translatorInitResolve;
 let translatorInitReject;
 
 document.addEventListener("DOMContentLoaded", async () => {
+  let launcher = ensureTranslatorLauncherMounted();
   try {
     const assetVersion =
       document.querySelector('meta[name="rc-build-version"]')?.content ||
@@ -44,6 +78,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const header = document.createElement("div");
     header.innerHTML = headerHtml;
+    header.querySelectorAll(".translator-launcher").forEach(node => node.remove());
     document.body.prepend(header);
 
     const current = location.pathname.split("/").pop();
@@ -51,10 +86,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (a.getAttribute("href") === current) a.classList.add("active");
     });
 
-    setupTranslatorControls();
-
     const footer = document.createElement("div");
     footer.innerHTML = footerHtml;
+    footer.querySelectorAll(".translator-launcher").forEach(node => node.remove());
     document.body.appendChild(footer);
 
     setTimeout(async () => {
@@ -83,7 +117,55 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (err) {
     console.warn("⚠️ Header/Footer load failed:", err);
   }
+
+  launcher = ensureTranslatorLauncherMounted();
+  if (launcher) setupTranslatorControls();
 });
+
+function ensureTranslatorLauncherMounted() {
+  const launchers = document.querySelectorAll(".translator-launcher");
+  if (launchers.length > 1) {
+    launchers.forEach((node, idx) => {
+      if (idx === 0) return;
+      node.remove();
+    });
+  }
+
+  let existing = launchers[0];
+  if (existing) {
+    syncTranslatorLauncherPosition(existing);
+    return existing;
+  }
+
+  const container = document.createElement("div");
+  container.className = "translator-launcher";
+  container.innerHTML = TRANSLATOR_LAUNCHER_MARKUP.trim();
+  syncTranslatorLauncherPosition(container);
+
+  const scrollButton = document.getElementById("scroll-top-btn");
+  if (scrollButton && scrollButton.parentNode === document.body) {
+    document.body.insertBefore(container, scrollButton.nextSibling);
+  } else {
+    document.body.appendChild(container);
+  }
+
+  return container;
+}
+
+function syncTranslatorLauncherPosition(node) {
+  if (!node || node.dataset.positionSynced) return;
+  node.style.position = "fixed";
+  node.style.top = "var(--floating-btn-offset)";
+  node.style.right = "var(--floating-btn-offset)";
+  node.style.left = "auto";
+  node.style.bottom = "auto";
+  node.style.margin = "0";
+  node.style.zIndex = "3000";
+  node.style.display = "flex";
+  node.style.alignItems = "center";
+  node.style.justifyContent = "center";
+  node.dataset.positionSynced = "true";
+}
 function setupTranslatorControls() {
   if (translatorState.initialized) return;
 
@@ -839,8 +921,8 @@ window.loadPage = function (page, link) {
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
-	if (window._rcInitDone) return;
-	window._rcInitDone = true;
+  if (window._rcInitDone) return;
+  window._rcInitDone = true;
   try {
     // --- Header/Footer werden automatisch über fetch geladen ---
     // (siehe obersten Block dieses Skripts)
@@ -907,4 +989,5 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("❌ RealityCheck init failed:", err);
   }
 });
+})();
 

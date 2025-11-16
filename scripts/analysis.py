@@ -22,6 +22,10 @@ except Exception:
     def tqdm(x, **k): return x
 
 from env_utils import get_openai_client
+from prompt_templates import (
+    build_global_analysis_prompt,
+    build_kpi_summary_prompt,
+)
 from script_utils import ensure_utf8_stdout, safe_write_json, safe_write_text, setup_logger
 
 # === UTF-8 ===
@@ -133,33 +137,7 @@ def run_global_analysis(updated):
     if not summaries:
         txt="⚠️ No KPI values found."; safe_write_text(OUT_MD,txt); safe_write_json(OUT_JSON,{"summary":txt}); return
     joined="\n".join(summaries)
-    prompt = f"""
-You are a senior geopolitical and socio-economic analyst preparing a comprehensive synthesis of global KPI trends.
-
-Your task: write a **structured, insightful, and readable report** (8–10 clearly separated sections) interpreting
-cross-domain patterns across economy, environment, society, governance, and technology, based on these aggregated KPIs:
-
-{joined}
-
-**Formatting requirements:**
-• Use Markdown with clear section headers (## Economy, ## Environment, ## Society & Governance, ## Technology, ## Regional Insights, ## Outlook, etc.).
-• Use short paragraphs (max 5 lines each).
-• Add bullet points or numbered lists when summarizing contrasts or correlations.
-• Highlight key figures, countries, or anomalies in **bold**.
-• Avoid walls of text — readability and structure are essential.
-
-**Analytical focus:**
-- Major global progress and regression trends  
-- Interconnections between indicators (e.g., GDP ↔ CO₂, democracy ↔ happiness)  
-- Contrasts between democracies vs autocracies, and rich vs poor countries  
-- Regional differences (Europe, Africa, Asia, Americas)  
-- Long-term implications, risks, and opportunities  
-- Noteworthy outliers or anomalies  
-- A forward-looking outlook (climate, stability, prosperity)
-
-Style: clear, engaging, and accessible English (B2 level).  
-Be factual but interpretative, analytical but not technical.
-"""
+    prompt = build_global_analysis_prompt(summaries)
 
     try:
         text = gpt_call(prompt, 2500)
@@ -189,11 +167,12 @@ def generate_kpi_analyses(data_dir: Path, updated_only=None):
         desc=e.get("description","")
         cluster=e.get("cluster","")
         unit=e.get("unit","")
-        prompt=f"""
-Write a concise (≤900 chars) analysis for '{title}' ({cluster}, unit:{unit}).
-Describe what it measures, top/low performers, regional patterns and outlook.
-Context: {desc}
-"""
+        prompt = build_kpi_summary_prompt(
+            title=title,
+            cluster=cluster,
+            unit=unit,
+            description=desc,
+        )
         try: summary=gpt_call(prompt,400)
         except Exception as e: summary=f"⚠️ GPT error: {e}"
         result[fname]={"summary":summary,"last_update":str(date.today())}
