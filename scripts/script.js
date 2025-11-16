@@ -6,6 +6,8 @@ let ALL_DATA = {};  // consolidated dataset
 let kpis = {}, countries = {}, groups = {}, fetchStatus = {};
 let populationData = [], gdpData = [], areaData = [];
 let currentKpi = null, currentData = [], chartInstance = null;
+let currentYearList = [];
+let currentValueLookup = new Map();
 let map = null, mapLayer = null;
 let userSort = { col: null, asc: false };
 let currentScale = { factor: 1, suffix: "", label: "Exact values" };
@@ -74,6 +76,28 @@ function rebuildRelationLookups() {
   relationLookups.percapita = buildLookupMap(populationData);
   relationLookups.pergdp = buildLookupMap(gdpData);
   relationLookups.perkm2 = buildLookupMap(areaData);
+}
+
+function rebuildCurrentValueLookup(data) {
+  currentYearList = [];
+  currentValueLookup = new Map();
+  if (!Array.isArray(data) || !data.length) return;
+
+  const yearSet = new Set();
+
+  data.forEach(entry => {
+    if (!entry?.country) return;
+    const year = normalizeYear(entry.year);
+    if (year == null) return;
+    yearSet.add(year);
+
+    if (!currentValueLookup.has(entry.country)) {
+      currentValueLookup.set(entry.country, new Map());
+    }
+    currentValueLookup.get(entry.country).set(year, entry);
+  });
+
+  currentYearList = Array.from(yearSet).sort((a, b) => a - b);
 }
 
 /* ========= Init ========= */
@@ -348,8 +372,8 @@ function populateYearSelect() {
   const sel = document.getElementById("yearSelect");
   if (!sel) return;
 
-  const years = Array.isArray(currentData)
-    ? [...new Set(currentData.map(r => r.year))].filter(y => Number.isFinite(y)).sort((a,b) => b - a)
+  const years = currentYearList.length
+    ? [...currentYearList].sort((a, b) => b - a)
     : [];
 
   // Vorherige Auswahl merken (falls z.B. beim KPI-Wechsel vorhanden)
@@ -734,9 +758,7 @@ function updateChart() {
   if (!ctxEl) return;
 
   const meta = getMetaForCurrent() || { title: currentKpi || "Selected KPI", unit: "" };
-  const years = currentData.length
-    ? [...new Set(currentData.map(r => r.year))].sort((a, b) => a - b)
-    : [];
+  const years = currentYearList.length ? [...currentYearList] : [];
 
   const datasets = [];
   const compareSelectIds = ["country1Select", "country2Select", "country3Select"];
@@ -744,9 +766,10 @@ function updateChart() {
     const sel = document.getElementById(id);
     if (!sel || !sel.value) return;
     const country = sel.value;
-    const vals = years.map(y => {
-      const rec = currentData.find(r => r.country === country && r.year === y);
-      return rec ? applyRelation(rec.value, country, rec.year) : null;
+    const countryLookup = currentValueLookup.get(country);
+    const vals = years.map(year => {
+      const record = countryLookup?.get(year);
+      return record ? applyRelation(record.value, country, record.year) : null;
     });
     datasets.push({
       label: country,
@@ -783,28 +806,9 @@ function updateChart() {
       layout: {
         padding: { top: 20, bottom: 10, left: 10, right: 10 }
       },
-      plugins: {
-        title: { text: meta.title || "No data selected" },
-        legend: { display: datasets.length > 0 },
-        tooltip: {
-          callbacks: {
-            label: ctx => {
-              const country = ctx.dataset.label || "";
-              const year = ctx.label;
-              const value = ctx.parsed?.y;
-              if (value == null || isNaN(value)) {
-                return `${country}: no data (${year})`;
-              }
-              return `${country}: ${value.toLocaleString()} (${year})`;
-            },
-            title: ctx => "Year: " + (ctx[0]?.label ?? "")
-          }
-        }
-      },
       scales: {
         y: {
           beginAtZero: true,
-          title: { display: !!(meta.unit || ""), text: meta.unit || "" },
           grid: { color: "rgba(255,255,255,0.05)" }
         },
         x: {
@@ -849,7 +853,8 @@ function updateView() {
 
     const filename = meta.filename || meta.id || meta.title;
 
-	currentData = ALL_DATA[filename] || [];
+        currentData = ALL_DATA[filename] || [];
+        rebuildCurrentValueLookup(currentData);
 
       console.log(`✅ updateView(): ${filename} → ${currentData.length} records`);
 

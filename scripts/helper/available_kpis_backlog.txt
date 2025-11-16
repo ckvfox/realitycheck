@@ -42,26 +42,8 @@ beantragt
   },
 
 
-alt
 
-  {
-    "title": "Global Conflict Deaths",
-    "description": "Global Conflict Deaths measures the total number of people who lose their lives due to violent political conflicts around the world over an extended period. This indicator is important because it reflects the level of violence and instability in societies, helping us understand the impact of conflict on communities and nations. Factors influencing this number include the intensity of conflicts, the types of weapons used, and the effectiveness of peacekeeping efforts. It is also related to other security metrics, such as military expenditures and refugee numbers, providing a broader picture of global security challenges. These data are compiled by Our World in Data based on the Uppsala Conflict Data Program (UCDP).",
-    "unit": "deaths",
-    "relation": "",
-    "sort": "lower",
-    "cluster": "Security & Defense",
-    "source": "https://ourworldindata.org/grapher/global-deaths-in-violent-political-conflicts-over-the-long-run",
-    "source_type": "owid",
-    "source_code": "global-deaths-in-violent-political-conflicts-over-the-long-run.csv?useColumnShortNames=true",
-    "scale": "auto",
-    "world_kpi": "e",
-    "filename": "global_conflict_deaths",
-    "relevance": "none",
-    "actuality": "normal"
-  },
-
-
+https://sensoneo.com/global-waste-index/
 
 
 alternative zu owid

@@ -71,11 +71,8 @@
     const table = wrapper?.querySelector("#glossary-table");
     if (!host || !wrapper || !table) return;
 
-    const tableWidth = Math.ceil(table.getBoundingClientRect().width || table.scrollWidth);
-    const wrapperWidth = Math.floor(wrapper.getBoundingClientRect().width || wrapper.clientWidth);
-    const tolerance = Math.max(16, Math.round(wrapperWidth * 0.015));
-    const needsScroll = tableWidth - wrapperWidth > tolerance;
-
+    const tolerance = window.devicePixelRatio > 1 ? 4 : 2;
+    const needsScroll = table.scrollWidth - wrapper.clientWidth > tolerance;
     host.classList.toggle("glossary-scrollable", needsScroll);
     wrapper.classList.toggle("glossary-wrapper-scrollable", needsScroll);
     host.dataset.scrollable = needsScroll ? "true" : "false";
@@ -295,6 +292,7 @@
   }
   </script>
 
+  <script src="scripts/utils_ui.js" defer></script>
   <script src="scripts/core.js" defer></script>
 </body>
 </html>

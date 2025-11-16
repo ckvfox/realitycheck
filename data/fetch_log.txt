@@ -1,336 +1,361 @@
-[2025-11-15T17:56:40Z UTC] [INFO] Using OPENAI_API_KEY: found
-[2025-11-15T17:56:40Z UTC] === Fetch started ===
-[2025-11-15T17:56:40Z UTC] ⚠️ Kein fetch_status.json vorhanden oder leer – setze ALLE KPIs auf 'neu'.
-[2025-11-15T17:56:42Z UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:56:43Z UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:56:44Z UTC] [SAFE] JSON written → data\area.json (10399 entries)
-[2025-11-15T17:56:44Z UTC] [OK] WorldBank KPI saved: area (10399 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:56:44Z UTC] [STATUS] area: stored source_date=2025-10-07T00:00:00Z, data_year=2023
-[2025-11-15T17:56:45Z UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:56:46Z UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:56:48Z UTC] [SAFE] JSON written → data\population.json (10920 entries)
-[2025-11-15T17:56:48Z UTC] [OK] WorldBank KPI saved: population (10920 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:56:48Z UTC] [STATUS] population: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:56:49Z UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:56:51Z UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:56:51Z UTC] [SAFE] JSON written → data\population_growth.json (10750 entries)
-[2025-11-15T17:56:51Z UTC] [OK] WorldBank KPI saved: population_growth (10750 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:56:51Z UTC] [STATUS] population_growth: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:56:53Z UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:56:54Z UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:56:55Z UTC] [SAFE] JSON written → data\fertility_rate.json (10750 entries)
-[2025-11-15T17:56:55Z UTC] [OK] WorldBank KPI saved: fertility_rate (10750 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:56:55Z UTC] [STATUS] fertility_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2023
-[2025-11-15T17:56:56Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:56:57Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:56:58Z UTC] [SAFE] JSON written → data\urbanization_rate.json (10855 entries)
-[2025-11-15T17:56:58Z UTC] [OK] WorldBank KPI saved: urbanization_rate (10855 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:56:58Z UTC] [STATUS] urbanization_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:56:59Z UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:01Z UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:01Z UTC] [SAFE] JSON written → data\gdp.json (9428 entries)
-[2025-11-15T17:57:01Z UTC] [OK] WorldBank KPI saved: gdp (9428 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:01Z UTC] [STATUS] gdp: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:57:03Z UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:04Z UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:05Z UTC] [SAFE] JSON written → data\gdp_per_capita_current_us.json (9428 entries)
-[2025-11-15T17:57:05Z UTC] [OK] WorldBank KPI saved: gdp_per_capita_current_us (9428 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:05Z UTC] [STATUS] gdp_per_capita_current_us: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:57:06Z UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:07Z UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:08Z UTC] [SAFE] JSON written → data\gni_per_capita_current_us.json (8662 entries)
-[2025-11-15T17:57:08Z UTC] [OK] WorldBank KPI saved: gni_per_capita_current_us (8662 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:08Z UTC] [STATUS] gni_per_capita_current_us: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:57:10Z UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:11Z UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:12Z UTC] [SAFE] JSON written → data\gini_index.json (2176 entries)
-[2025-11-15T17:57:12Z UTC] [OK] WorldBank KPI saved: gini_index (2176 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:12Z UTC] [STATUS] gini_index: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:57:13Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:14Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:15Z UTC] [SAFE] JSON written → data\public_debt_of_gdp.json (1412 entries)
-[2025-11-15T17:57:15Z UTC] [OK] WorldBank KPI saved: public_debt_of_gdp (1412 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:15Z UTC] [STATUS] public_debt_of_gdp: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:57:16Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:18Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:18Z UTC] [SAFE] JSON written → data\tax_revenue_of_gdp.json (4073 entries)
-[2025-11-15T17:57:18Z UTC] [OK] WorldBank KPI saved: tax_revenue_of_gdp (4073 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:18Z UTC] [STATUS] tax_revenue_of_gdp: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:57:20Z UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:21Z UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:21Z UTC] [SAFE] JSON written → data\unemployment_rate.json (5195 entries)
-[2025-11-15T17:57:21Z UTC] [OK] WorldBank KPI saved: unemployment_rate (5195 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:21Z UTC] [STATUS] unemployment_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:57:23Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:24Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:25Z UTC] [SAFE] JSON written → data\health_expenditure_per_capita.json (3766 entries)
-[2025-11-15T17:57:25Z UTC] [OK] WorldBank KPI saved: health_expenditure_per_capita (3766 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:25Z UTC] [STATUS] health_expenditure_per_capita: stored source_date=2025-10-07T00:00:00Z, data_year=2023
-[2025-11-15T17:57:26Z UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:28Z UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:29Z UTC] [SAFE] JSON written → data\infant_mortality_rate.json (9831 entries)
-[2025-11-15T17:57:29Z UTC] [OK] WorldBank KPI saved: infant_mortality_rate (9831 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:29Z UTC] [STATUS] infant_mortality_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2023
-[2025-11-15T17:57:30Z UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:31Z UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:32Z UTC] [SAFE] JSON written → data\maternal_mortality_ratio.json (6435 entries)
-[2025-11-15T17:57:32Z UTC] [OK] WorldBank KPI saved: maternal_mortality_ratio (6435 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:32Z UTC] [STATUS] maternal_mortality_ratio: stored source_date=2025-10-07T00:00:00Z, data_year=2023
-[2025-11-15T17:57:34Z UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:35Z UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:36Z UTC] [SAFE] JSON written → data\hospital_beds_per_1_000_people.json (4080 entries)
-[2025-11-15T17:57:36Z UTC] [OK] WorldBank KPI saved: hospital_beds_per_1_000_people (4080 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:36Z UTC] [STATUS] hospital_beds_per_1_000_people: stored source_date=2025-10-07T00:00:00Z, data_year=2021
-[2025-11-15T17:57:37Z UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:38Z UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:39Z UTC] [SAFE] JSON written → data\life_expectancy_at_birth.json (10748 entries)
-[2025-11-15T17:57:39Z UTC] [OK] WorldBank KPI saved: life_expectancy_at_birth (10748 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:39Z UTC] [STATUS] life_expectancy_at_birth: stored source_date=2025-10-07T00:00:00Z, data_year=2023
-[2025-11-15T17:57:40Z UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:42Z UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:42Z UTC] [SAFE] JSON written → data\adult_literacy_rate.json (936 entries)
-[2025-11-15T17:57:42Z UTC] [OK] WorldBank KPI saved: adult_literacy_rate (936 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:42Z UTC] [STATUS] adult_literacy_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:57:44Z UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:46Z UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:47Z UTC] [SAFE] JSON written → data\overall_immunization_coverage.json (6879 entries)
-[2025-11-15T17:57:47Z UTC] [OK] WorldBank KPI saved: overall_immunization_coverage (6879 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:47Z UTC] [STATUS] overall_immunization_coverage: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:57:49Z UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:50Z UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:51Z UTC] [SAFE] JSON written → data\extreme_poverty.json (2176 entries)
-[2025-11-15T17:57:51Z UTC] [OK] WorldBank KPI saved: extreme_poverty (2176 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:51Z UTC] [STATUS] extreme_poverty: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:57:52Z UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:53Z UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:54Z UTC] [SAFE] JSON written → data\access_to_basic_drinking_water.json (3735 entries)
-[2025-11-15T17:57:54Z UTC] [OK] WorldBank KPI saved: access_to_basic_drinking_water (3735 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:54Z UTC] [STATUS] access_to_basic_drinking_water: stored source_date=2025-10-07T00:00:00Z, data_year=2022
-[2025-11-15T17:57:55Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:57Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:57:57Z UTC] [SAFE] JSON written → data\air_quality_pm2_5_exposure.json (5146 entries)
-[2025-11-15T17:57:57Z UTC] [OK] WorldBank KPI saved: air_quality_pm2_5_exposure (5146 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:57:57Z UTC] [STATUS] air_quality_pm2_5_exposure: stored source_date=2025-10-07T00:00:00Z, data_year=2020
-[2025-11-15T17:57:58Z UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:00Z UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:01Z UTC] [SAFE] JSON written → data\renewable_energy_share.json (5253 entries)
-[2025-11-15T17:58:01Z UTC] [OK] WorldBank KPI saved: renewable_energy_share (5253 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:01Z UTC] [STATUS] renewable_energy_share: stored source_date=2025-10-07T00:00:00Z, data_year=2022
-[2025-11-15T17:58:02Z UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:04Z UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:04Z UTC] [SAFE] JSON written → data\internet_penetration_rate.json (4965 entries)
-[2025-11-15T17:58:04Z UTC] [OK] WorldBank KPI saved: internet_penetration_rate (4965 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:04Z UTC] [STATUS] internet_penetration_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:58:05Z UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:07Z UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:07Z UTC] [SAFE] JSON written → data\mobile_subscriptions_per_100_inhabitants.json (8331 entries)
-[2025-11-15T17:58:07Z UTC] [OK] WorldBank KPI saved: mobile_subscriptions_per_100_inhabitants (8331 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:07Z UTC] [STATUS] mobile_subscriptions_per_100_inhabitants: stored source_date=2025-10-07T00:00:00Z, data_year=2023
-[2025-11-15T17:58:09Z UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:10Z UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:11Z UTC] [SAFE] JSON written → data\railway_length.json (1813 entries)
-[2025-11-15T17:58:11Z UTC] [OK] WorldBank KPI saved: railway_length (1813 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:11Z UTC] [STATUS] railway_length: stored source_date=2025-10-07T00:00:00Z, data_year=2021
-[2025-11-15T17:58:12Z UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:13Z UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:14Z UTC] [SAFE] JSON written → data\inflation_consumer_price_index.json (4465 entries)
-[2025-11-15T17:58:14Z UTC] [OK] WorldBank KPI saved: inflation_consumer_price_index (4465 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:14Z UTC] [STATUS] inflation_consumer_price_index: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:58:15Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:17Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:18Z UTC] [SAFE] JSON written → data\employment_to_population_ratio.json (5195 entries)
-[2025-11-15T17:58:18Z UTC] [OK] WorldBank KPI saved: employment_to_population_ratio (5195 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:18Z UTC] [STATUS] employment_to_population_ratio: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:58:19Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:21Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:21Z UTC] [SAFE] JSON written → data\female_labor_force_participation.json (5348 entries)
-[2025-11-15T17:58:21Z UTC] [OK] WorldBank KPI saved: female_labor_force_participation (5348 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:21Z UTC] [STATUS] female_labor_force_participation: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:58:23Z UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:24Z UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:25Z UTC] [SAFE] JSON written → data\road_traffic_deaths_per_100k_people.json (3148 entries)
-[2025-11-15T17:58:25Z UTC] [OK] WorldBank KPI saved: road_traffic_deaths_per_100k_people (3148 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:25Z UTC] [STATUS] road_traffic_deaths_per_100k_people: stored source_date=2025-10-07T00:00:00Z, data_year=2019
-[2025-11-15T17:58:26Z UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:27Z UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:28Z UTC] [SAFE] JSON written → data\fixed_broadband_subscriptions_per_100_people.json (3389 entries)
-[2025-11-15T17:58:28Z UTC] [OK] WorldBank KPI saved: fixed_broadband_subscriptions_per_100_people (3389 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:28Z UTC] [STATUS] fixed_broadband_subscriptions_per_100_people: stored source_date=2025-10-07T00:00:00Z, data_year=2023
-[2025-11-15T17:58:29Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:31Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:31Z UTC] [SAFE] JSON written → data\education_expenditure_of_gdp.json (4312 entries)
-[2025-11-15T17:58:31Z UTC] [OK] WorldBank KPI saved: education_expenditure_of_gdp (4312 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:31Z UTC] [STATUS] education_expenditure_of_gdp: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:58:33Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:34Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:35Z UTC] [SAFE] JSON written → data\military_expenditure_of_gdp.json (6903 entries)
-[2025-11-15T17:58:35Z UTC] [OK] WorldBank KPI saved: military_expenditure_of_gdp (6903 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:35Z UTC] [STATUS] military_expenditure_of_gdp: stored source_date=2025-10-07T00:00:00Z, data_year=2023
-[2025-11-15T17:58:36Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:37Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:58:38Z UTC] [SAFE] JSON written → data\purchasing_power_parity.json (5653 entries)
-[2025-11-15T17:58:38Z UTC] [OK] WorldBank KPI saved: purchasing_power_parity (5653 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:58:38Z UTC] [STATUS] purchasing_power_parity: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:58:40Z UTC] [HEUR] OWID median_age → inferred source_date 2023-01-01
-[2025-11-15T17:58:40Z UTC] [SAFE] JSON written → data\median_age.json (14060 entries)
-[2025-11-15T17:58:40Z UTC] [OK] OWID KPI saved: median_age (14060 rows, last updated 2023-01-01)
-[2025-11-15T17:58:40Z UTC] [STATUS] median_age: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T17:58:41Z UTC] [HEUR] OWID democracy_index → inferred source_date 2024-01-01
-[2025-11-15T17:58:41Z UTC] [SAFE] JSON written → data\democracy_index.json (2754 entries)
-[2025-11-15T17:58:41Z UTC] [OK] OWID KPI saved: democracy_index (2754 rows, last updated 2024-01-01)
-[2025-11-15T17:58:41Z UTC] [STATUS] democracy_index: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T17:58:42Z UTC] [HEUR] OWID press_freedom_index → inferred source_date 2021-01-01
-[2025-11-15T17:58:42Z UTC] [SAFE] JSON written → data\press_freedom_index.json (1546 entries)
-[2025-11-15T17:58:42Z UTC] [OK] OWID KPI saved: press_freedom_index (1546 rows, last updated 2021-01-01)
-[2025-11-15T17:58:42Z UTC] [STATUS] press_freedom_index: stored source_date=2021-01-01, data_year=2021
-[2025-11-15T17:58:44Z UTC] [HEUR] OWID human_development_index_hdi → inferred source_date 2023-01-01
-[2025-11-15T17:58:44Z UTC] [SAFE] JSON written → data\human_development_index_hdi.json (5723 entries)
-[2025-11-15T17:58:44Z UTC] [OK] OWID KPI saved: human_development_index_hdi (5723 rows, last updated 2023-01-01)
-[2025-11-15T17:58:44Z UTC] [STATUS] human_development_index_hdi: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T17:58:45Z UTC] [HEUR] OWID physicians_per_1_000_people → inferred source_date 2022-01-01
-[2025-11-15T17:58:45Z UTC] [SAFE] JSON written → data\physicians_per_1_000_people.json (4978 entries)
-[2025-11-15T17:58:45Z UTC] [OK] OWID KPI saved: physicians_per_1_000_people (4978 rows, last updated 2022-01-01)
-[2025-11-15T17:58:45Z UTC] [STATUS] physicians_per_1_000_people: stored source_date=2022-01-01, data_year=2022
-[2025-11-15T17:58:46Z UTC] [HEUR] OWID homelessness_rate → inferred source_date 2023-01-01
-[2025-11-15T17:58:46Z UTC] [SAFE] JSON written → data\homelessness_rate.json (16 entries)
-[2025-11-15T17:58:46Z UTC] [OK] OWID KPI saved: homelessness_rate (16 rows, last updated 2023-01-01)
-[2025-11-15T17:58:46Z UTC] [STATUS] homelessness_rate: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T17:58:48Z UTC] [HEUR] OWID old_age_dependency_ratio → inferred source_date 2023-01-01
-[2025-11-15T17:58:48Z UTC] [SAFE] JSON written → data\old_age_dependency_ratio.json (14060 entries)
-[2025-11-15T17:58:48Z UTC] [OK] OWID KPI saved: old_age_dependency_ratio (14060 rows, last updated 2023-01-01)
-[2025-11-15T17:58:48Z UTC] [STATUS] old_age_dependency_ratio: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T17:58:49Z UTC] [HEUR] OWID age_dependency_ratio_total → inferred source_date 2023-01-01
-[2025-11-15T17:58:49Z UTC] [SAFE] JSON written → data\age_dependency_ratio_total.json (14060 entries)
-[2025-11-15T17:58:49Z UTC] [OK] OWID KPI saved: age_dependency_ratio_total (14060 rows, last updated 2023-01-01)
-[2025-11-15T17:58:49Z UTC] [STATUS] age_dependency_ratio_total: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T17:58:51Z UTC] [HEUR] OWID co2_emissions → inferred source_date 2024-01-01
-[2025-11-15T17:58:51Z UTC] [TRIM] co2_emissions: removed 3760 out-of-range records (before 1900 or >2025)
-[2025-11-15T17:58:51Z UTC] [SAFE] JSON written → data\co2_emissions.json (17969 entries)
-[2025-11-15T17:58:51Z UTC] [OK] OWID KPI saved: co2_emissions (21729 rows, last updated 2024-01-01)
-[2025-11-15T17:58:51Z UTC] [STATUS] co2_emissions: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T17:58:53Z UTC] [HEUR] OWID political_corruption_index → inferred source_date 2024-01-01
-[2025-11-15T17:58:53Z UTC] [TRANSFORM] political_corruption_index: applied invert='*' to 24390 rows
-[2025-11-15T17:58:53Z UTC] [TRIM] political_corruption_index: removed 6293 out-of-range records (before 1900 or >2025)
-[2025-11-15T17:58:53Z UTC] [SAFE] JSON written → data\political_corruption_index.json (18097 entries)
-[2025-11-15T17:58:53Z UTC] [OK] OWID KPI saved: political_corruption_index (24390 rows, last updated 2024-01-01)
-[2025-11-15T17:58:53Z UTC] [STATUS] political_corruption_index: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T17:58:54Z UTC] [HEUR] OWID military_spending_sipri → inferred source_date 2024-01-01
-[2025-11-15T17:58:54Z UTC] [SAFE] JSON written → data\military_spending_sipri.json (8095 entries)
-[2025-11-15T17:58:54Z UTC] [OK] OWID KPI saved: military_spending_sipri (8095 rows, last updated 2024-01-01)
-[2025-11-15T17:58:54Z UTC] [STATUS] military_spending_sipri: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T17:58:55Z UTC] [HEUR] OWID number_of_armed_conflicts → inferred source_date 2024-01-01
-[2025-11-15T17:58:55Z UTC] [SAFE] JSON written → data\number_of_armed_conflicts.json (6876 entries)
-[2025-11-15T17:58:55Z UTC] [OK] OWID KPI saved: number_of_armed_conflicts (6876 rows, last updated 2024-01-01)
-[2025-11-15T17:58:55Z UTC] [STATUS] number_of_armed_conflicts: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T17:58:57Z UTC] [HEUR] OWID mean_years_of_schooling → inferred source_date 2040-01-01
-[2025-11-15T17:58:57Z UTC] [TRIM] mean_years_of_schooling: removed 1071 out-of-range records (before 1900 or >2025)
-[2025-11-15T17:58:57Z UTC] [SAFE] JSON written → data\mean_years_of_schooling.json (2907 entries)
-[2025-11-15T17:58:57Z UTC] [FIX] mean_years_of_schooling: future year 2040 detected → correcting to 2025
-[2025-11-15T17:58:57Z UTC] [OK] OWID KPI saved: mean_years_of_schooling (3978 rows, last updated 2025-01-01)
-[2025-11-15T17:58:57Z UTC] [STATUS] mean_years_of_schooling: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T17:58:58Z UTC] [HEUR] OWID living_planet_index → inferred source_date 2020-01-01
-[2025-11-15T17:58:58Z UTC] [SAFE] JSON written → data\living_planet_index.json (51 entries)
-[2025-11-15T17:58:58Z UTC] [OK] OWID KPI saved: living_planet_index (51 rows, last updated 2020-01-01)
-[2025-11-15T17:58:58Z UTC] [STATUS] living_planet_index: stored source_date=2020-01-01, data_year=2020
-[2025-11-15T17:58:59Z UTC] [HEUR] OWID electric_vehicle_stock → inferred source_date 2024-01-01
-[2025-11-15T17:58:59Z UTC] [SAFE] JSON written → data\electric_vehicle_stock.json (391 entries)
-[2025-11-15T17:58:59Z UTC] [OK] OWID KPI saved: electric_vehicle_stock (391 rows, last updated 2024-01-01)
-[2025-11-15T17:58:59Z UTC] [STATUS] electric_vehicle_stock: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T17:59:01Z UTC] [HEUR] OWID number_of_recorded_natural_disasters → inferred source_date 2023-01-01
-[2025-11-15T17:59:01Z UTC] [SAFE] JSON written → data\number_of_recorded_natural_disasters.json (124 entries)
-[2025-11-15T17:59:01Z UTC] [OK] OWID KPI saved: number_of_recorded_natural_disasters (124 rows, last updated 2023-01-01)
-[2025-11-15T17:59:01Z UTC] [STATUS] number_of_recorded_natural_disasters: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T17:59:02Z UTC] [HEUR] OWID global_co2_emissions → inferred source_date 2024-01-01
-[2025-11-15T17:59:02Z UTC] [TRIM] global_co2_emissions: removed 3760 out-of-range records (before 1900 or >2025)
-[2025-11-15T17:59:02Z UTC] [SAFE] JSON written → data\global_co2_emissions.json (17969 entries)
-[2025-11-15T17:59:02Z UTC] [OK] OWID KPI saved: global_co2_emissions (21729 rows, last updated 2024-01-01)
-[2025-11-15T17:59:02Z UTC] [STATUS] global_co2_emissions: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T17:59:04Z UTC] [HEUR] OWID global_temperature_anomaly → inferred source_date 2025-01-01
-[2025-11-15T17:59:04Z UTC] [TRIM] global_temperature_anomaly: removed 50 out-of-range records (before 1900 or >2025)
-[2025-11-15T17:59:04Z UTC] [SAFE] JSON written → data\global_temperature_anomaly.json (126 entries)
-[2025-11-15T17:59:04Z UTC] [OK] OWID KPI saved: global_temperature_anomaly (176 rows, last updated 2025-01-01)
-[2025-11-15T17:59:04Z UTC] [STATUS] global_temperature_anomaly: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T17:59:05Z UTC] [HEUR] OWID rule_of_law_index → inferred source_date 2024-01-01
-[2025-11-15T17:59:05Z UTC] [TRIM] rule_of_law_index: removed 9337 out-of-range records (before 1900 or >2025)
-[2025-11-15T17:59:05Z UTC] [SAFE] JSON written → data\rule_of_law_index.json (20109 entries)
-[2025-11-15T17:59:05Z UTC] [OK] OWID KPI saved: rule_of_law_index (29446 rows, last updated 2024-01-01)
-[2025-11-15T17:59:05Z UTC] [STATUS] rule_of_law_index: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T17:59:06Z UTC] [HEUR] OWID state_based_conflict_deaths → inferred source_date 2024-01-01
-[2025-11-15T17:59:06Z UTC] [SAFE] JSON written → data\state_based_conflict_deaths.json (79 entries)
-[2025-11-15T17:59:06Z UTC] [OK] OWID KPI saved: state_based_conflict_deaths (79 rows, last updated 2024-01-01)
-[2025-11-15T17:59:06Z UTC] [STATUS] state_based_conflict_deaths: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T17:59:07Z UTC] [SAFE] JSON written → data\world_happiness_index.json (671 entries)
-[2025-11-15T17:59:07Z UTC] [OK] CSV KPI saved: world_happiness_index (671 rows, last updated 2024-01-01T00:00:00Z)
-[2025-11-15T17:59:07Z UTC] [STATUS] world_happiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T17:59:07Z UTC] [TRIM] olympic_medals_summer: removed 9 out-of-range records (before 1900 or >2025)
-[2025-11-15T17:59:07Z UTC] [SAFE] JSON written → data\olympic_medals_summer.json (1209 entries)
-[2025-11-15T17:59:07Z UTC] [OK] CSV KPI saved: olympic_medals_summer (1218 rows, last updated 2024-01-01T00:00:00Z)
-[2025-11-15T17:59:07Z UTC] [STATUS] olympic_medals_summer: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T17:59:07Z UTC] [SAFE] JSON written → data\big_mac_index.json (1207 entries)
-[2025-11-15T17:59:07Z UTC] [OK] CSV KPI saved: big_mac_index (1207 rows, last updated 2025-01-01T00:00:00Z)
-[2025-11-15T17:59:07Z UTC] [STATUS] big_mac_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T17:59:07Z UTC] [TXT] recycling_rate: detected latest_year=2022 from CSV text
-[2025-11-15T17:59:07Z UTC] [SAFE] JSON written → data\recycling_rate.json (0 entries)
-[2025-11-15T17:59:07Z UTC] [WARN] Dummy created for recycling_rate (CSV empty recycling_rate.csv)
-[2025-11-15T17:59:07Z UTC] [STATUS] recycling_rate: stored source_date=Unknown, data_year=2022
-[2025-11-15T17:59:07Z UTC] [TXT] environmental_performance_index: detected latest_year=2022 from CSV text
-[2025-11-15T17:59:07Z UTC] [SAFE] JSON written → data\environmental_performance_index.json (0 entries)
-[2025-11-15T17:59:07Z UTC] [WARN] Dummy created for environmental_performance_index (CSV empty environmental_performance_index.csv)
-[2025-11-15T17:59:07Z UTC] [STATUS] environmental_performance_index: stored source_date=Unknown, data_year=2022
-[2025-11-15T17:59:07Z UTC] [SAFE] JSON written → data\global_peace_index.json (2814 entries)
-[2025-11-15T17:59:07Z UTC] [OK] CSV KPI saved: global_peace_index (2814 rows, last updated 2025-01-01T00:00:00Z)
-[2025-11-15T17:59:07Z UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T17:59:07Z UTC] [TXT] inform_resilience_index: detected latest_year=2025 from CSV text
-[2025-11-15T17:59:07Z UTC] [SAFE] JSON written → data\inform_resilience_index.json (0 entries)
-[2025-11-15T17:59:07Z UTC] [WARN] Dummy created for inform_resilience_index (CSV empty inform_resilience_index.csv)
-[2025-11-15T17:59:07Z UTC] [STATUS] inform_resilience_index: stored source_date=Unknown, data_year=2025
-[2025-11-15T17:59:07Z UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
-[2025-11-15T17:59:08Z UTC] [HEUR] OWID rule_of_law_index → inferred source_date 2024-01-01
-[2025-11-15T17:59:08Z UTC] [TRIM] rule_of_law_index: removed 9337 out-of-range records (before 1900 or >2025)
-[2025-11-15T17:59:08Z UTC] [SAFE] JSON written → data\rule_of_law_index.json (20109 entries)
-[2025-11-15T17:59:08Z UTC] [OK] OWID KPI saved: rule_of_law_index (29446 rows, last updated 2024-01-01)
-[2025-11-15T17:59:08Z UTC] [STATUS] rule_of_law_index: stored source_date=2024-01-01, data_year=2024
-[2025-11-15T17:59:10Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:59:11Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T17:59:12Z UTC] [SAFE] JSON written → data\purchasing_power_parity.json (5653 entries)
-[2025-11-15T17:59:12Z UTC] [OK] WorldBank KPI saved: purchasing_power_parity (5653 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T17:59:12Z UTC] [STATUS] purchasing_power_parity: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T17:59:12Z UTC] [SAFE] JSON written → data\olympic_medals_winter.json (0 entries)
-[2025-11-15T17:59:12Z UTC] [WARN] Dummy created for olympic_medals_winter (CSV missing olympic_medals_winter)
-[2025-11-15T17:59:12Z UTC] [STATUS] olympic_medals_winter: stored source_date=Unknown, data_year=None
-[2025-11-15T17:59:12Z UTC] [SAFE] JSON written → data\pisa_overall_score.json (0 entries)
-[2025-11-15T17:59:12Z UTC] [WARN] Dummy created for pisa_overall_score (CSV missing pisa_overall_score)
-[2025-11-15T17:59:12Z UTC] [STATUS] pisa_overall_score: stored source_date=Unknown, data_year=None
-[2025-11-15T17:59:12Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
-[2025-11-15T17:59:13Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 entries)
-[2025-11-15T17:59:13Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
-[2025-11-15T17:59:13Z UTC] [SAFE] JSON written → data\fetch_status.json (1 entries)
-[2025-11-15T17:59:13Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T17:59:13Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T17:59:13Z UTC] [SAFE] JSON written → data\fetch_status.json (2 entries)
-[2025-11-15T17:59:13Z UTC] [SAFE] JSON written → data\meta\country_mappings_pending.json (679 entries)
-[2025-11-15T17:59:13Z UTC] [INFO] fetch_status.json updated with 63 KPIs
-[2025-11-15T17:59:13Z UTC] [SAFE] JSON written → data\fetch_state.json (3 entries)
-[2025-11-15T17:59:13Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (59 entries)
+[2025-11-16T12:03:42 UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-16T12:03:42 UTC] === Fetch started ===
+[2025-11-16T12:03:42 UTC] ⚠️ Kein fetch_status.json vorhanden oder leer – setze ALLE KPIs auf 'neu'.
+[2025-11-16T12:03:43 UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:03:45 UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:03:45 UTC] JSON written → data\area.json (12163 entries)
+[2025-11-16T12:03:45 UTC] [OK] WorldBank KPI saved: area (12163 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:03:45 UTC] [STATUS] area: stored source_date=2025-10-07T00:00:00Z, data_year=2023
+[2025-11-16T12:03:47 UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:03:49 UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:03:49 UTC] JSON written → data\population.json (12710 entries)
+[2025-11-16T12:03:49 UTC] [OK] WorldBank KPI saved: population (12710 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:03:49 UTC] [STATUS] population: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:03:51 UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:03:52 UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:03:54 UTC] JSON written → data\population_growth.json (12512 entries)
+[2025-11-16T12:03:54 UTC] [OK] WorldBank KPI saved: population_growth (12512 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:03:54 UTC] [STATUS] population_growth: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:03:56 UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:03:57 UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:03:58 UTC] JSON written → data\fertility_rate.json (12512 entries)
+[2025-11-16T12:03:58 UTC] [OK] WorldBank KPI saved: fertility_rate (12512 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:03:58 UTC] [STATUS] fertility_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2023
+[2025-11-16T12:03:59 UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:00 UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:01 UTC] JSON written → data\urbanization_rate.json (12675 entries)
+[2025-11-16T12:04:01 UTC] [OK] WorldBank KPI saved: urbanization_rate (12675 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:01 UTC] [STATUS] urbanization_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:04:03 UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:04 UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:05 UTC] JSON written → data\gdp.json (10863 entries)
+[2025-11-16T12:04:05 UTC] [OK] WorldBank KPI saved: gdp (10863 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:05 UTC] [STATUS] gdp: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:04:06 UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:08 UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:09 UTC] JSON written → data\gdp_per_capita_current_us.json (10863 entries)
+[2025-11-16T12:04:09 UTC] [OK] WorldBank KPI saved: gdp_per_capita_current_us (10863 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:09 UTC] [STATUS] gdp_per_capita_current_us: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:04:10 UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:13 UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:13 UTC] JSON written → data\gni_per_capita_current_us.json (9992 entries)
+[2025-11-16T12:04:13 UTC] [OK] WorldBank KPI saved: gni_per_capita_current_us (9992 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:13 UTC] [STATUS] gni_per_capita_current_us: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:04:15 UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:16 UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:17 UTC] JSON written → data\gini_index.json (2402 entries)
+[2025-11-16T12:04:17 UTC] [OK] WorldBank KPI saved: gini_index (2402 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:17 UTC] [STATUS] gini_index: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:04:18 UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:20 UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:20 UTC] JSON written → data\public_debt_of_gdp.json (1604 entries)
+[2025-11-16T12:04:20 UTC] [OK] WorldBank KPI saved: public_debt_of_gdp (1604 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:20 UTC] [STATUS] public_debt_of_gdp: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:04:22 UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:24 UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:24 UTC] JSON written → data\tax_revenue_of_gdp.json (4529 entries)
+[2025-11-16T12:04:24 UTC] [OK] WorldBank KPI saved: tax_revenue_of_gdp (4529 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:24 UTC] [STATUS] tax_revenue_of_gdp: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:04:26 UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:27 UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:28 UTC] JSON written → data\unemployment_rate.json (6077 entries)
+[2025-11-16T12:04:28 UTC] [OK] WorldBank KPI saved: unemployment_rate (6077 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:28 UTC] [STATUS] unemployment_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:04:29 UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:31 UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:31 UTC] JSON written → data\health_expenditure_per_capita.json (4357 entries)
+[2025-11-16T12:04:31 UTC] [OK] WorldBank KPI saved: health_expenditure_per_capita (4357 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:31 UTC] [STATUS] health_expenditure_per_capita: stored source_date=2025-10-07T00:00:00Z, data_year=2023
+[2025-11-16T12:04:33 UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:35 UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:37 UTC] JSON written → data\infant_mortality_rate.json (11466 entries)
+[2025-11-16T12:04:37 UTC] [OK] WorldBank KPI saved: infant_mortality_rate (11466 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:37 UTC] [STATUS] infant_mortality_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2023
+[2025-11-16T12:04:39 UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:41 UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:41 UTC] JSON written → data\maternal_mortality_ratio.json (7527 entries)
+[2025-11-16T12:04:41 UTC] [OK] WorldBank KPI saved: maternal_mortality_ratio (7527 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:41 UTC] [STATUS] maternal_mortality_ratio: stored source_date=2025-10-07T00:00:00Z, data_year=2023
+[2025-11-16T12:04:43 UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:44 UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:45 UTC] JSON written → data\hospital_beds_per_1_000_people.json (4698 entries)
+[2025-11-16T12:04:45 UTC] [OK] WorldBank KPI saved: hospital_beds_per_1_000_people (4698 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:45 UTC] [STATUS] hospital_beds_per_1_000_people: stored source_date=2025-10-07T00:00:00Z, data_year=2021
+[2025-11-16T12:04:47 UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:49 UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:49 UTC] JSON written → data\life_expectancy_at_birth.json (12510 entries)
+[2025-11-16T12:04:49 UTC] [OK] WorldBank KPI saved: life_expectancy_at_birth (12510 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:49 UTC] [STATUS] life_expectancy_at_birth: stored source_date=2025-10-07T00:00:00Z, data_year=2023
+[2025-11-16T12:04:51 UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:52 UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:54 UTC] JSON written → data\adult_literacy_rate.json (1088 entries)
+[2025-11-16T12:04:54 UTC] [OK] WorldBank KPI saved: adult_literacy_rate (1088 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:54 UTC] [STATUS] adult_literacy_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:04:56 UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:58 UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:04:59 UTC] JSON written → data\overall_immunization_coverage.json (8054 entries)
+[2025-11-16T12:04:59 UTC] [OK] WorldBank KPI saved: overall_immunization_coverage (8054 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:04:59 UTC] [STATUS] overall_immunization_coverage: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:05:00 UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:02 UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:03 UTC] JSON written → data\extreme_poverty.json (2402 entries)
+[2025-11-16T12:05:03 UTC] [OK] WorldBank KPI saved: extreme_poverty (2402 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:03 UTC] [STATUS] extreme_poverty: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:05:04 UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:06 UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:06 UTC] JSON written → data\access_to_basic_drinking_water.json (4362 entries)
+[2025-11-16T12:05:06 UTC] [OK] WorldBank KPI saved: access_to_basic_drinking_water (4362 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:06 UTC] [STATUS] access_to_basic_drinking_water: stored source_date=2025-10-07T00:00:00Z, data_year=2022
+[2025-11-16T12:05:08 UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:09 UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:10 UTC] JSON written → data\air_quality_pm2_5_exposure.json (6014 entries)
+[2025-11-16T12:05:10 UTC] [OK] WorldBank KPI saved: air_quality_pm2_5_exposure (6014 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:10 UTC] [STATUS] air_quality_pm2_5_exposure: stored source_date=2025-10-07T00:00:00Z, data_year=2020
+[2025-11-16T12:05:12 UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:13 UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:14 UTC] JSON written → data\renewable_energy_share.json (6158 entries)
+[2025-11-16T12:05:14 UTC] [OK] WorldBank KPI saved: renewable_energy_share (6158 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:14 UTC] [STATUS] renewable_energy_share: stored source_date=2025-10-07T00:00:00Z, data_year=2022
+[2025-11-16T12:05:16 UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:18 UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:19 UTC] JSON written → data\internet_penetration_rate.json (5771 entries)
+[2025-11-16T12:05:19 UTC] [OK] WorldBank KPI saved: internet_penetration_rate (5771 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:19 UTC] [STATUS] internet_penetration_rate: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:05:20 UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:22 UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:23 UTC] JSON written → data\mobile_subscriptions_per_100_inhabitants.json (9739 entries)
+[2025-11-16T12:05:23 UTC] [OK] WorldBank KPI saved: mobile_subscriptions_per_100_inhabitants (9739 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:23 UTC] [STATUS] mobile_subscriptions_per_100_inhabitants: stored source_date=2025-10-07T00:00:00Z, data_year=2023
+[2025-11-16T12:05:26 UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:29 UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:35 UTC] JSON written → data\railway_length.json (2136 entries)
+[2025-11-16T12:05:35 UTC] [OK] WorldBank KPI saved: railway_length (2136 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:35 UTC] [STATUS] railway_length: stored source_date=2025-10-07T00:00:00Z, data_year=2021
+[2025-11-16T12:05:37 UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:39 UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:40 UTC] JSON written → data\inflation_consumer_price_index.json (5032 entries)
+[2025-11-16T12:05:40 UTC] [OK] WorldBank KPI saved: inflation_consumer_price_index (5032 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:40 UTC] [STATUS] inflation_consumer_price_index: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:05:41 UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:42 UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:43 UTC] JSON written → data\employment_to_population_ratio.json (6077 entries)
+[2025-11-16T12:05:43 UTC] [OK] WorldBank KPI saved: employment_to_population_ratio (6077 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:43 UTC] [STATUS] employment_to_population_ratio: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:05:45 UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:46 UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:46 UTC] JSON written → data\female_labor_force_participation.json (6256 entries)
+[2025-11-16T12:05:47 UTC] [OK] WorldBank KPI saved: female_labor_force_participation (6256 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:47 UTC] [STATUS] female_labor_force_participation: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:05:48 UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:50 UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:50 UTC] JSON written → data\road_traffic_deaths_per_100k_people.json (3669 entries)
+[2025-11-16T12:05:50 UTC] [OK] WorldBank KPI saved: road_traffic_deaths_per_100k_people (3669 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:50 UTC] [STATUS] road_traffic_deaths_per_100k_people: stored source_date=2025-10-07T00:00:00Z, data_year=2019
+[2025-11-16T12:05:52 UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:53 UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:54 UTC] JSON written → data\fixed_broadband_subscriptions_per_100_people.json (3926 entries)
+[2025-11-16T12:05:54 UTC] [OK] WorldBank KPI saved: fixed_broadband_subscriptions_per_100_people (3926 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:54 UTC] [STATUS] fixed_broadband_subscriptions_per_100_people: stored source_date=2025-10-07T00:00:00Z, data_year=2023
+[2025-11-16T12:05:55 UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:56 UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:05:57 UTC] JSON written → data\education_expenditure_of_gdp.json (4929 entries)
+[2025-11-16T12:05:57 UTC] [OK] WorldBank KPI saved: education_expenditure_of_gdp (4929 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:05:57 UTC] [STATUS] education_expenditure_of_gdp: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:05:59 UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:06:02 UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:06:02 UTC] JSON written → data\military_expenditure_of_gdp.json (7749 entries)
+[2025-11-16T12:06:02 UTC] [OK] WorldBank KPI saved: military_expenditure_of_gdp (7749 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:06:02 UTC] [STATUS] military_expenditure_of_gdp: stored source_date=2025-10-07T00:00:00Z, data_year=2023
+[2025-11-16T12:06:04 UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:06:06 UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-16T12:06:06 UTC] JSON written → data\purchasing_power_parity.json (6540 entries)
+[2025-11-16T12:06:06 UTC] [OK] WorldBank KPI saved: purchasing_power_parity (6540 rows, last updated 2025-10-07T00:00:00Z)
+[2025-11-16T12:06:06 UTC] [STATUS] purchasing_power_parity: stored source_date=2025-10-07T00:00:00Z, data_year=2024
+[2025-11-16T12:06:08 UTC] [HEUR] OWID median_age → inferred source_date 2023-01-01
+[2025-11-16T12:06:08 UTC] JSON written → data\median_age.json (14652 entries)
+[2025-11-16T12:06:08 UTC] [OK] OWID KPI saved: median_age (14652 rows, last updated 2023-01-01)
+[2025-11-16T12:06:08 UTC] [STATUS] median_age: stored source_date=2023-01-01, data_year=2023
+[2025-11-16T12:06:10 UTC] [HEUR] OWID democracy_index → inferred source_date 2024-01-01
+[2025-11-16T12:06:10 UTC] JSON written → data\democracy_index.json (2839 entries)
+[2025-11-16T12:06:10 UTC] [OK] OWID KPI saved: democracy_index (2839 rows, last updated 2024-01-01)
+[2025-11-16T12:06:10 UTC] [STATUS] democracy_index: stored source_date=2024-01-01, data_year=2024
+[2025-11-16T12:06:12 UTC] [HEUR] OWID press_freedom_index → inferred source_date 2021-01-01
+[2025-11-16T12:06:12 UTC] JSON written → data\press_freedom_index.json (1601 entries)
+[2025-11-16T12:06:12 UTC] [OK] OWID KPI saved: press_freedom_index (1601 rows, last updated 2021-01-01)
+[2025-11-16T12:06:12 UTC] [STATUS] press_freedom_index: stored source_date=2021-01-01, data_year=2021
+[2025-11-16T12:06:13 UTC] [HEUR] OWID human_development_index_hdi → inferred source_date 2023-01-01
+[2025-11-16T12:06:13 UTC] JSON written → data\human_development_index_hdi.json (5916 entries)
+[2025-11-16T12:06:13 UTC] [OK] OWID KPI saved: human_development_index_hdi (5916 rows, last updated 2023-01-01)
+[2025-11-16T12:06:13 UTC] [STATUS] human_development_index_hdi: stored source_date=2023-01-01, data_year=2023
+[2025-11-16T12:06:15 UTC] [HEUR] OWID physicians_per_1_000_people → inferred source_date 2022-01-01
+[2025-11-16T12:06:15 UTC] JSON written → data\physicians_per_1_000_people.json (5091 entries)
+[2025-11-16T12:06:15 UTC] [OK] OWID KPI saved: physicians_per_1_000_people (5091 rows, last updated 2022-01-01)
+[2025-11-16T12:06:15 UTC] [STATUS] physicians_per_1_000_people: stored source_date=2022-01-01, data_year=2022
+[2025-11-16T12:06:16 UTC] [HEUR] OWID homelessness_rate → inferred source_date 2023-01-01
+[2025-11-16T12:06:16 UTC] JSON written → data\homelessness_rate.json (16 entries)
+[2025-11-16T12:06:16 UTC] [OK] OWID KPI saved: homelessness_rate (16 rows, last updated 2023-01-01)
+[2025-11-16T12:06:16 UTC] [STATUS] homelessness_rate: stored source_date=2023-01-01, data_year=2023
+[2025-11-16T12:06:18 UTC] [HEUR] OWID old_age_dependency_ratio → inferred source_date 2023-01-01
+[2025-11-16T12:06:18 UTC] JSON written → data\old_age_dependency_ratio.json (14652 entries)
+[2025-11-16T12:06:18 UTC] [OK] OWID KPI saved: old_age_dependency_ratio (14652 rows, last updated 2023-01-01)
+[2025-11-16T12:06:18 UTC] [STATUS] old_age_dependency_ratio: stored source_date=2023-01-01, data_year=2023
+[2025-11-16T12:06:20 UTC] [HEUR] OWID age_dependency_ratio_total → inferred source_date 2023-01-01
+[2025-11-16T12:06:20 UTC] JSON written → data\age_dependency_ratio_total.json (14652 entries)
+[2025-11-16T12:06:20 UTC] [OK] OWID KPI saved: age_dependency_ratio_total (14652 rows, last updated 2023-01-01)
+[2025-11-16T12:06:20 UTC] [STATUS] age_dependency_ratio_total: stored source_date=2023-01-01, data_year=2023
+[2025-11-16T12:06:22 UTC] [HEUR] OWID co2_emissions → inferred source_date 2024-01-01
+[2025-11-16T12:06:22 UTC] [TRIM] co2_emissions: removed 3771 out-of-range records (before 1900 or >2025)
+[2025-11-16T12:06:22 UTC] JSON written → data\co2_emissions.json (18480 entries)
+[2025-11-16T12:06:22 UTC] [OK] OWID KPI saved: co2_emissions (22251 rows, last updated 2024-01-01)
+[2025-11-16T12:06:22 UTC] [STATUS] co2_emissions: stored source_date=2024-01-01, data_year=2024
+[2025-11-16T12:06:24 UTC] [HEUR] OWID political_corruption_index → inferred source_date 2024-01-01
+[2025-11-16T12:06:24 UTC] [TRANSFORM] political_corruption_index: applied invert='*' to 26567 rows
+[2025-11-16T12:06:24 UTC] [TRIM] political_corruption_index: removed 7289 out-of-range records (before 1900 or >2025)
+[2025-11-16T12:06:24 UTC] JSON written → data\political_corruption_index.json (19278 entries)
+[2025-11-16T12:06:24 UTC] [OK] OWID KPI saved: political_corruption_index (26567 rows, last updated 2024-01-01)
+[2025-11-16T12:06:24 UTC] [STATUS] political_corruption_index: stored source_date=2024-01-01, data_year=2024
+[2025-11-16T12:06:25 UTC] [HEUR] OWID military_spending_sipri → inferred source_date 2024-01-01
+[2025-11-16T12:06:25 UTC] JSON written → data\military_spending_sipri.json (8292 entries)
+[2025-11-16T12:06:25 UTC] [OK] OWID KPI saved: military_spending_sipri (8292 rows, last updated 2024-01-01)
+[2025-11-16T12:06:25 UTC] [STATUS] military_spending_sipri: stored source_date=2024-01-01, data_year=2024
+[2025-11-16T12:06:27 UTC] [HEUR] OWID number_of_armed_conflicts → inferred source_date 2024-01-01
+[2025-11-16T12:06:27 UTC] JSON written → data\number_of_armed_conflicts.json (7272 entries)
+[2025-11-16T12:06:27 UTC] [OK] OWID KPI saved: number_of_armed_conflicts (7272 rows, last updated 2024-01-01)
+[2025-11-16T12:06:27 UTC] [STATUS] number_of_armed_conflicts: stored source_date=2024-01-01, data_year=2024
+[2025-11-16T12:06:29 UTC] [HEUR] OWID mean_years_of_schooling → inferred source_date 2040-01-01
+[2025-11-16T12:06:29 UTC] [TRIM] mean_years_of_schooling: removed 1092 out-of-range records (before 1900 or >2025)
+[2025-11-16T12:06:29 UTC] JSON written → data\mean_years_of_schooling.json (2962 entries)
+[2025-11-16T12:06:29 UTC] [FIX] mean_years_of_schooling: future year 2040 detected → correcting to 2025
+[2025-11-16T12:06:29 UTC] [OK] OWID KPI saved: mean_years_of_schooling (4054 rows, last updated 2025-01-01)
+[2025-11-16T12:06:29 UTC] [STATUS] mean_years_of_schooling: stored source_date=2025-01-01, data_year=2025
+[2025-11-16T12:06:30 UTC] [HEUR] OWID living_planet_index → inferred source_date 2020-01-01
+[2025-11-16T12:06:30 UTC] JSON written → data\living_planet_index.json (51 entries)
+[2025-11-16T12:06:30 UTC] [OK] OWID KPI saved: living_planet_index (51 rows, last updated 2020-01-01)
+[2025-11-16T12:06:30 UTC] [STATUS] living_planet_index: stored source_date=2020-01-01, data_year=2020
+[2025-11-16T12:06:32 UTC] [HEUR] OWID electric_vehicle_stock → inferred source_date 2024-01-01
+[2025-11-16T12:06:32 UTC] JSON written → data\electric_vehicle_stock.json (391 entries)
+[2025-11-16T12:06:32 UTC] [OK] OWID KPI saved: electric_vehicle_stock (391 rows, last updated 2024-01-01)
+[2025-11-16T12:06:32 UTC] [STATUS] electric_vehicle_stock: stored source_date=2024-01-01, data_year=2024
+[2025-11-16T12:06:33 UTC] [HEUR] OWID number_of_recorded_natural_disasters → inferred source_date 2023-01-01
+[2025-11-16T12:06:33 UTC] JSON written → data\number_of_recorded_natural_disasters.json (124 entries)
+[2025-11-16T12:06:33 UTC] [OK] OWID KPI saved: number_of_recorded_natural_disasters (124 rows, last updated 2023-01-01)
+[2025-11-16T12:06:33 UTC] [STATUS] number_of_recorded_natural_disasters: stored source_date=2023-01-01, data_year=2023
+[2025-11-16T12:06:35 UTC] [HEUR] OWID global_co2_emissions → inferred source_date 2024-01-01
+[2025-11-16T12:06:35 UTC] [TRIM] global_co2_emissions: removed 3771 out-of-range records (before 1900 or >2025)
+[2025-11-16T12:06:36 UTC] JSON written → data\global_co2_emissions.json (18480 entries)
+[2025-11-16T12:06:36 UTC] [OK] OWID KPI saved: global_co2_emissions (22251 rows, last updated 2024-01-01)
+[2025-11-16T12:06:36 UTC] [STATUS] global_co2_emissions: stored source_date=2024-01-01, data_year=2024
+[2025-11-16T12:06:37 UTC] [HEUR] OWID global_temperature_anomaly → inferred source_date 2025-01-01
+[2025-11-16T12:06:37 UTC] [TRIM] global_temperature_anomaly: removed 50 out-of-range records (before 1900 or >2025)
+[2025-11-16T12:06:37 UTC] JSON written → data\global_temperature_anomaly.json (126 entries)
+[2025-11-16T12:06:37 UTC] [OK] OWID KPI saved: global_temperature_anomaly (176 rows, last updated 2025-01-01)
+[2025-11-16T12:06:38 UTC] [STATUS] global_temperature_anomaly: stored source_date=2025-01-01, data_year=2025
+[2025-11-16T12:06:40 UTC] [HEUR] OWID rule_of_law_index → inferred source_date 2024-01-01
+[2025-11-16T12:06:40 UTC] [TRIM] rule_of_law_index: removed 10523 out-of-range records (before 1900 or >2025)
+[2025-11-16T12:06:40 UTC] JSON written → data\rule_of_law_index.json (21390 entries)
+[2025-11-16T12:06:40 UTC] [OK] OWID KPI saved: rule_of_law_index (31913 rows, last updated 2024-01-01)
+[2025-11-16T12:06:40 UTC] [STATUS] rule_of_law_index: stored source_date=2024-01-01, data_year=2024
+[2025-11-16T12:06:41 UTC] [HEUR] OWID state_based_conflict_deaths → inferred source_date 2024-01-01
+[2025-11-16T12:06:41 UTC] JSON written → data\state_based_conflict_deaths.json (79 entries)
+[2025-11-16T12:06:41 UTC] [OK] OWID KPI saved: state_based_conflict_deaths (79 rows, last updated 2024-01-01)
+[2025-11-16T12:06:41 UTC] [STATUS] state_based_conflict_deaths: stored source_date=2024-01-01, data_year=2024
+[2025-11-16T12:06:42 UTC] JSON written → data\world_happiness_index.json (1435 entries)
+[2025-11-16T12:06:42 UTC] [OK] CSV KPI saved: world_happiness_index (1435 rows, last updated 2024-01-01T00:00:00Z)
+[2025-11-16T12:06:42 UTC] [STATUS] world_happiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2025-11-16T12:06:42 UTC] [TRIM] olympic_medals_summer: removed 10 out-of-range records (before 1900 or >2025)
+[2025-11-16T12:06:42 UTC] JSON written → data\olympic_medals_summer.json (1349 entries)
+[2025-11-16T12:06:42 UTC] [OK] CSV KPI saved: olympic_medals_summer (1359 rows, last updated 2024-01-01T00:00:00Z)
+[2025-11-16T12:06:42 UTC] [STATUS] olympic_medals_summer: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2025-11-16T12:06:42 UTC] JSON written → data\big_mac_index.json (1267 entries)
+[2025-11-16T12:06:42 UTC] [OK] CSV KPI saved: big_mac_index (1267 rows, last updated 2025-01-01T00:00:00Z)
+[2025-11-16T12:06:42 UTC] [STATUS] big_mac_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-16T12:06:42 UTC] JSON written → data\recycling_rate.json (5488 entries)
+[2025-11-16T12:06:42 UTC] [OK] CSV KPI saved: recycling_rate (5488 rows, last updated 2022-01-01T00:00:00Z)
+[2025-11-16T12:06:42 UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-16T12:06:42 UTC] JSON written → data\environmental_performance_index.json (180 entries)
+[2025-11-16T12:06:42 UTC] [OK] CSV KPI saved: environmental_performance_index (180 rows, last updated 2022-01-01T00:00:00Z)
+[2025-11-16T12:06:42 UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-16T12:06:42 UTC] JSON written → data\global_peace_index.json (2922 entries)
+[2025-11-16T12:06:42 UTC] [OK] CSV KPI saved: global_peace_index (2922 rows, last updated 2025-01-01T00:00:00Z)
+[2025-11-16T12:06:42 UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-16T12:06:42 UTC] JSON written → data\inform_resilience_index.json (1910 entries)
+[2025-11-16T12:06:42 UTC] [OK] CSV KPI saved: inform_resilience_index (1910 rows, last updated 2025-01-01T00:00:00Z)
+[2025-11-16T12:06:42 UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-16T12:06:42 UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
+[2025-11-16T12:06:44 UTC] [HEUR] OWID rule_of_law_index → inferred source_date 2024-01-01
+[2025-11-16T12:06:44 UTC] [TRIM] rule_of_law_index: removed 10523 out-of-range records (before 1900 or >2025)
+[2025-11-16T12:06:44 UTC] JSON written → data\rule_of_law_index.json (21390 entries)
+[2025-11-16T12:06:44 UTC] [OK] OWID KPI saved: rule_of_law_index (31913 rows, last updated 2024-01-01)
+[2025-11-16T12:06:44 UTC] [STATUS] rule_of_law_index: stored source_date=2024-01-01, data_year=2024
+[2025-11-16T12:06:44 UTC] JSON written → data\olympic_medals_winter.json (325 entries)
+[2025-11-16T12:06:44 UTC] [OK] CSV KPI saved: olympic_medals_winter (325 rows, last updated 2022-01-01T00:00:00Z)
+[2025-11-16T12:06:44 UTC] [STATUS] olympic_medals_winter: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-16T12:06:44 UTC] JSON written → data\pisa_overall_score.json (336 entries)
+[2025-11-16T12:06:44 UTC] [OK] CSV KPI saved: pisa_overall_score (336 rows, last updated 2022-01-01T00:00:00Z)
+[2025-11-16T12:06:44 UTC] [STATUS] pisa_overall_score: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-16T12:06:44 UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2025-11-16T12:06:46 UTC] JSON written → data\geopolitical_risk_index.json (41 entries)
+[2025-11-16T12:06:46 UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
+[2025-11-16T12:06:46 UTC] JSON written → data\fetch_status.json (1 entries)
+[2025-11-16T12:06:46 UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-16T12:06:46 UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-16T12:06:46 UTC] JSON written → data\fetch_status.json (2 entries)
+[2025-11-16T12:06:46 UTC] JSON written → data\meta\country_mappings_pending.json (716 entries)
+[2025-11-16T12:06:46 UTC] 🤖 Running auto country mapping resolution...
+[2025-11-16T12:06:46 UTC] ⚠️ Auto mapping agent failed: Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\auto_resolve_pending_mappings.py", line 476, in main
+    agent.run()
+    ~~~~~~~~~^^
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\auto_resolve_pending_mappings.py", line 442, in run
+    log("\U0001f916 Starting Auto Country Mapping Agent...")
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\auto_resolve_pending_mappings.py", line 41, in log
+    print(msg)
+    ~~~~~^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f916' in position 0: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\auto_resolve_pending_mappings.py", line 485, in <module>
+    exit(main())
+         ~~~~^^
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\auto_resolve_pending_mappings.py", line 478, in main
+    log(f"\u274c FEHLER: {e}")
+    ~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\scripts\auto_resolve_pending_mappings.py", line 41, in log
+    print(msg)
+    ~~~~~^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 0: character maps to <undefined>
+
+[2025-11-16T12:06:46 UTC] [INFO] fetch_status.json updated with 63 KPIs
+[2025-11-16T12:06:46 UTC] JSON written → data\fetch_state.json (3 entries)
+[2025-11-16T12:06:46 UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (64 entries)
 === RealityCheck Fetch Report ===
 Countries loaded:   198
-KPIs processed:    66
-Saved records:     421825
+KPIs processed:    65
+Saved records:     469337
 
-WorldBank KPIs:    35
-CSV KPIs:          4
+WorldBank KPIs:    34
+CSV KPIs:          9
 OWID KPIs:         21
 UNHCR KPIs:        0
 Others KPIs:       1
 
-Mapping OK:        434670
-Mapping dropped:   0
-Mapping pending:   174222
+Mapping OK:        482919
+Mapping dropped:   115684
+Mapping pending:   2565
 
-Dummies created:   5
+Dummies created:   0
 Skipped (up-to-date): 0
 Errors:            0
-Updated KPIs:      59
+Updated KPIs:      64
 
 Updated KPI files:
   - access_to_basic_drinking_water
@@ -344,6 +369,7 @@ Updated KPI files:
   - education_expenditure_of_gdp
   - electric_vehicle_stock
   - employment_to_population_ratio
+  - environmental_performance_index
   - extreme_poverty
   - female_labor_force_participation
   - fertility_rate
@@ -362,6 +388,7 @@ Updated KPI files:
   - human_development_index_hdi
   - infant_mortality_rate
   - inflation_consumer_price_index
+  - inform_resilience_index
   - internet_penetration_rate
   - life_expectancy_at_birth
   - living_planet_index
@@ -375,8 +402,10 @@ Updated KPI files:
   - number_of_recorded_natural_disasters
   - old_age_dependency_ratio
   - olympic_medals_summer
+  - olympic_medals_winter
   - overall_immunization_coverage
   - physicians_per_1_000_people
+  - pisa_overall_score
   - political_corruption_index
   - population
   - population_growth
@@ -384,6 +413,7 @@ Updated KPI files:
   - public_debt_of_gdp
   - purchasing_power_parity
   - railway_length
+  - recycling_rate
   - renewable_energy_share
   - road_traffic_deaths_per_100k_people
   - rule_of_law_index
@@ -395,1223 +425,155 @@ Updated KPI files:
 =================================
 ✅ Fetch completed successfully
 
-[2025-11-15T17:59:13Z UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
-[2025-11-15T18:59:13 UTC] === Overall Ranking Generation Started ===
-[2025-11-15T18:59:13 UTC] ✅ 30 KPIs considered for ranking
-[2025-11-15T18:59:13 UTC] ⚠️ No numeric values for environmental_performance_index
-[2025-11-15T18:59:13 UTC] ⚠️ No numeric values for inform_resilience_index
-[2025-11-15T18:59:13 UTC] ⚠️ No numeric values for pisa_overall_score
-[2025-11-15T18:59:13 UTC] 💾 JSON saved successfully → data\overall_ranking.json (193 records)
-[2025-11-15T18:59:13 UTC] ✅ overall_ranking.json written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\overall_ranking.json
-[2025-11-15T18:59:13 UTC] ➡️ Starting fun/safe haven ranking generation ...
-[2025-11-15T18:59:13 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
-[2025-11-15T18:59:13 UTC] ➡️ Generating Fun Mode via GPT-4-Turbo …
-[2025-11-15T18:59:37 UTC] 💾 Saved data\fun_ranking.json (10 entries)
-[2025-11-15T18:59:37 UTC] ➡️ Generating Safe Haven Mode via GPT-4-Turbo …
-[2025-11-15T19:00:01 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
-[2025-11-15T19:00:01 UTC] ➡️ Generating Immigration Mode via GPT-4-Turbo …
-[2025-11-15T19:00:13 UTC] 💾 Saved data\immigration_ranking.json (10 entries)
-[2025-11-15T19:00:13 UTC] ✅ All three rankings generated successfully.
-[2025-11-15T19:00:13 UTC] ✅ Fun & Safe Haven rankings successfully generated.
-[2025-11-15T18:00:19Z UTC] [STATE] Merged 59 updated KPIs → total 59 entries.
-[2025-11-15T19:00:19 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
-[2025-11-15T19:00:19 UTC] ➡️ Starting global analysis …
-[2025-11-15T19:00:31 UTC] 💾 Saved analysis (4282 chars)
-[2025-11-15T19:00:31 UTC] ⚙️ Limiting KPI analysis to 61 entries.
-[2025-11-15T19:06:21 UTC] ✅ KPI analyses saved (59 total)
-[2025-11-15T19:06:21 UTC] 🔎 Computing outliers …
-[2025-11-15T19:06:22 UTC] 💾 Outliers saved (52 KPIs, compact format)
-[2025-11-15T19:06:22 UTC] ✅ RealityCheck analysis completed successfully.
-[2025-11-15T19:06:22 UTC] ➡️ Starting CSV update check for 9 KPIs…
-[2025-11-15T19:06:22 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2024)
-[2025-11-15T19:06:24 UTC] 🤖 GPT response for 'World Happiness Index': Unknown
-[2025-11-15T19:06:27 UTC] ❓ No newer version for 'World Happiness Index' found.
-[2025-11-15T19:06:27 UTC] 🔍 Checking 'Olympic Medals (Summer)' (last known year: 2024)
-[2025-11-15T19:06:27 UTC] 🤖 GPT response for 'Olympic Medals (Summer)': Unknown
-[2025-11-15T19:06:30 UTC] ❓ No newer version for 'Olympic Medals (Summer)' found.
-[2025-11-15T19:06:30 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2025)
-[2025-11-15T19:06:31 UTC] 🤖 GPT response for 'Big Mac Index': Unknown
-[2025-11-15T19:06:34 UTC] ❓ No newer version for 'Big Mac Index' found.
-[2025-11-15T19:06:34 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
-[2025-11-15T19:06:35 UTC] 🤖 GPT response for 'Recycling Rate': Unknown
-[2025-11-15T19:06:38 UTC] ❓ No newer version for 'Recycling Rate' found.
-[2025-11-15T19:06:38 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
-[2025-11-15T19:06:38 UTC] 🤖 GPT response for 'Environmental Performance Index': 2022
-[2025-11-15T19:06:41 UTC] ⏸️ Up-to-date (2022 = 2022)
-[2025-11-15T19:06:41 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
-[2025-11-15T19:06:42 UTC] 🤖 GPT response for 'Global Peace Index': Unknown
-[2025-11-15T19:06:45 UTC] ❓ No newer version for 'Global Peace Index' found.
-[2025-11-15T19:06:45 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
-[2025-11-15T19:06:45 UTC] 🤖 GPT response for 'Inform Resilience Index': Unknown
-[2025-11-15T19:06:48 UTC] ❓ No newer version for 'Inform Resilience Index' found.
-[2025-11-15T19:06:48 UTC] 🔍 Checking 'Olympic Medals (Winter)' (last known year: None)
-[2025-11-15T19:06:49 UTC] 🤖 GPT response for 'Olympic Medals (Winter)': Unknown
-[2025-11-15T19:06:52 UTC] ❓ No newer version for 'Olympic Medals (Winter)' found.
-[2025-11-15T19:06:52 UTC] 🔍 Checking 'PISA Overall Score' (last known year: None)
-[2025-11-15T19:06:53 UTC] 🤖 GPT response for 'PISA Overall Score': Unknown
-[2025-11-15T19:06:56 UTC] ❓ No newer version for 'PISA Overall Score' found.
-[2025-11-15T19:06:56 UTC] ✅ Smart CSV update check completed.
-[2025-11-15T22:16:40Z UTC] [INFO] Using OPENAI_API_KEY: found
-[2025-11-15T22:16:40Z UTC] === Fetch started ===
-[2025-11-15T22:17:04Z UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:17:04Z UTC] [CHECK] area: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:17:04Z UTC] [⏸️] area – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:17:35Z UTC] [WARN] WorldBank meta ZIP SP.POP.TOTL: request error HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=30) → retry in 3s (1/3)
-[2025-11-15T22:18:09Z UTC] [WARN] WorldBank meta ZIP SP.POP.TOTL: request error HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=30) → retry in 6s (2/3)
-[2025-11-15T22:18:45Z UTC] [ERR] WorldBank meta ZIP SP.POP.TOTL: request failed after 3 attempts (HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=30))
-[2025-11-15T22:18:45Z UTC] [META] WorldBank SP.POP.TOTL: no valid date found (JSON/CSV/ZIP)
-[2025-11-15T22:18:45Z UTC] [CHECK] population: missing or unknown date → fetch now
-[2025-11-15T22:19:13Z UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:19:14Z UTC] [SAFE] JSON written → data\population.json (10920 entries)
-[2025-11-15T22:19:14Z UTC] [OK] WorldBank KPI saved: population (10920 rows, last updated 2025-10-07T00:00:00Z)
-[2025-11-15T22:19:14Z UTC] [STATUS] population: stored source_date=2025-10-07T00:00:00Z, data_year=2024
-[2025-11-15T22:19:44Z UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:19:44Z UTC] [CHECK] population_growth: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:19:44Z UTC] [⏸️] population_growth – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:20:04Z UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:20:04Z UTC] [CHECK] fertility_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:20:04Z UTC] [⏸️] fertility_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:20:22Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:20:22Z UTC] [CHECK] urbanization_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:20:22Z UTC] [⏸️] urbanization_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:20:41Z UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:20:41Z UTC] [CHECK] gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:20:41Z UTC] [⏸️] gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:20:47Z UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:20:47Z UTC] [CHECK] gdp_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:20:47Z UTC] [⏸️] gdp_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:20:54Z UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:20:54Z UTC] [CHECK] gni_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:20:54Z UTC] [⏸️] gni_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:21:04Z UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:21:04Z UTC] [CHECK] gini_index: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:21:04Z UTC] [⏸️] gini_index – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:21:20Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:21:20Z UTC] [CHECK] public_debt_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:21:20Z UTC] [⏸️] public_debt_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:21:39Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:21:39Z UTC] [CHECK] tax_revenue_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:21:39Z UTC] [⏸️] tax_revenue_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:21:50Z UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:21:50Z UTC] [CHECK] unemployment_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:21:50Z UTC] [⏸️] unemployment_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:21:58Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:21:58Z UTC] [CHECK] health_expenditure_per_capita: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:21:58Z UTC] [⏸️] health_expenditure_per_capita – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:22:05Z UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:22:05Z UTC] [CHECK] infant_mortality_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:22:05Z UTC] [⏸️] infant_mortality_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:22:17Z UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:22:17Z UTC] [CHECK] maternal_mortality_ratio: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:22:17Z UTC] [⏸️] maternal_mortality_ratio – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:22:26Z UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:22:26Z UTC] [CHECK] hospital_beds_per_1_000_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:22:26Z UTC] [⏸️] hospital_beds_per_1_000_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:22:32Z UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:22:32Z UTC] [CHECK] life_expectancy_at_birth: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:22:32Z UTC] [⏸️] life_expectancy_at_birth – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:22:35Z UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:22:35Z UTC] [CHECK] adult_literacy_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:22:35Z UTC] [⏸️] adult_literacy_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:22:42Z UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:22:43Z UTC] [CHECK] overall_immunization_coverage: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:22:43Z UTC] [⏸️] overall_immunization_coverage – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:22:54Z UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:22:54Z UTC] [CHECK] extreme_poverty: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:22:54Z UTC] [⏸️] extreme_poverty – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:23:09Z UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:23:09Z UTC] [CHECK] access_to_basic_drinking_water: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:23:09Z UTC] [⏸️] access_to_basic_drinking_water – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:23:19Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:23:19Z UTC] [CHECK] air_quality_pm2_5_exposure: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:23:19Z UTC] [⏸️] air_quality_pm2_5_exposure – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:23:28Z UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:23:28Z UTC] [CHECK] renewable_energy_share: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:23:28Z UTC] [⏸️] renewable_energy_share – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:23:40Z UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:23:40Z UTC] [CHECK] internet_penetration_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:23:40Z UTC] [⏸️] internet_penetration_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:23:52Z UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:23:52Z UTC] [CHECK] mobile_subscriptions_per_100_inhabitants: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:23:52Z UTC] [⏸️] mobile_subscriptions_per_100_inhabitants – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:24:00Z UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:24:00Z UTC] [CHECK] railway_length: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:24:00Z UTC] [⏸️] railway_length – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:24:08Z UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:24:08Z UTC] [CHECK] inflation_consumer_price_index: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:24:08Z UTC] [⏸️] inflation_consumer_price_index – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:24:20Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:24:20Z UTC] [CHECK] employment_to_population_ratio: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:24:20Z UTC] [⏸️] employment_to_population_ratio – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:24:32Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:24:32Z UTC] [CHECK] female_labor_force_participation: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:24:32Z UTC] [⏸️] female_labor_force_participation – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:24:40Z UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:24:40Z UTC] [CHECK] road_traffic_deaths_per_100k_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:24:40Z UTC] [⏸️] road_traffic_deaths_per_100k_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:24:41Z UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:24:41Z UTC] [CHECK] fixed_broadband_subscriptions_per_100_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:24:41Z UTC] [⏸️] fixed_broadband_subscriptions_per_100_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:24:43Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:24:43Z UTC] [CHECK] education_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:24:43Z UTC] [⏸️] education_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:24:44Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:24:44Z UTC] [CHECK] military_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:24:44Z UTC] [⏸️] military_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:24:46Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:24:46Z UTC] [CHECK] purchasing_power_parity: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:24:46Z UTC] [⏸️] purchasing_power_parity – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:24:47Z UTC] [CHECK] median_age: max_year=2100 → fetch (possible update)
-[2025-11-15T22:24:48Z UTC] [HEUR] OWID median_age → inferred source_date 2023-01-01
-[2025-11-15T22:24:48Z UTC] [SAFE] JSON written → data\median_age.json (14060 entries)
-[2025-11-15T22:24:48Z UTC] [OK] OWID KPI saved: median_age (14060 rows, last updated 2023-01-01)
-[2025-11-15T22:24:48Z UTC] [STATUS] median_age: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T22:24:49Z UTC] [CHECK] democracy_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:24:49Z UTC] [⏸️] democracy_index – unchanged (None)
-[2025-11-15T22:24:50Z UTC] [CHECK] press_freedom_index: max_year=2021 < 2025, fetched this year → skip
-[2025-11-15T22:24:50Z UTC] [⏸️] press_freedom_index – unchanged (None)
-[2025-11-15T22:24:51Z UTC] [CHECK] human_development_index_hdi: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:24:51Z UTC] [⏸️] human_development_index_hdi – unchanged (None)
-[2025-11-15T22:24:52Z UTC] [CHECK] physicians_per_1_000_people: max_year=2022 < 2025, fetched this year → skip
-[2025-11-15T22:24:52Z UTC] [⏸️] physicians_per_1_000_people – unchanged (None)
-[2025-11-15T22:24:53Z UTC] [CHECK] homelessness_rate: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:24:53Z UTC] [⏸️] homelessness_rate – unchanged (None)
-[2025-11-15T22:24:54Z UTC] [CHECK] old_age_dependency_ratio: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:24:54Z UTC] [⏸️] old_age_dependency_ratio – unchanged (None)
-[2025-11-15T22:24:56Z UTC] [CHECK] age_dependency_ratio_total: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:24:56Z UTC] [⏸️] age_dependency_ratio_total – unchanged (None)
-[2025-11-15T22:24:57Z UTC] [CHECK] co2_emissions: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:24:57Z UTC] [⏸️] co2_emissions – unchanged (None)
-[2025-11-15T22:24:58Z UTC] [CHECK] political_corruption_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:24:58Z UTC] [⏸️] political_corruption_index – unchanged (None)
-[2025-11-15T22:24:59Z UTC] [CHECK] military_spending_sipri: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:24:59Z UTC] [⏸️] military_spending_sipri – unchanged (None)
-[2025-11-15T22:25:00Z UTC] [CHECK] number_of_armed_conflicts: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:25:00Z UTC] [⏸️] number_of_armed_conflicts – unchanged (None)
-[2025-11-15T22:25:01Z UTC] [CHECK] mean_years_of_schooling: max_year=2040 → fetch (possible update)
-[2025-11-15T22:25:02Z UTC] [HEUR] OWID mean_years_of_schooling → inferred source_date 2040-01-01
-[2025-11-15T22:25:02Z UTC] [TRIM] mean_years_of_schooling: removed 1071 out-of-range records (before 1900 or >2025)
-[2025-11-15T22:25:02Z UTC] [SAFE] JSON written → data\mean_years_of_schooling.json (2907 entries)
-[2025-11-15T22:25:02Z UTC] [FIX] mean_years_of_schooling: future year 2040 detected → correcting to 2025
-[2025-11-15T22:25:02Z UTC] [OK] OWID KPI saved: mean_years_of_schooling (3978 rows, last updated 2025-01-01)
-[2025-11-15T22:25:02Z UTC] [STATUS] mean_years_of_schooling: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T22:25:03Z UTC] [CHECK] living_planet_index: max_year=2020 < 2025, fetched this year → skip
-[2025-11-15T22:25:03Z UTC] [⏸️] living_planet_index – unchanged (None)
-[2025-11-15T22:25:04Z UTC] [CHECK] electric_vehicle_stock: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:25:04Z UTC] [⏸️] electric_vehicle_stock – unchanged (None)
-[2025-11-15T22:25:05Z UTC] [CHECK] number_of_recorded_natural_disasters: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:25:05Z UTC] [⏸️] number_of_recorded_natural_disasters – unchanged (None)
-[2025-11-15T22:25:07Z UTC] [CHECK] global_co2_emissions: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:25:07Z UTC] [⏸️] global_co2_emissions – unchanged (None)
-[2025-11-15T22:25:08Z UTC] [CHECK] global_temperature_anomaly: max_year=2025 → fetch (possible update)
-[2025-11-15T22:25:09Z UTC] [HEUR] OWID global_temperature_anomaly → inferred source_date 2025-01-01
-[2025-11-15T22:25:09Z UTC] [TRIM] global_temperature_anomaly: removed 50 out-of-range records (before 1900 or >2025)
-[2025-11-15T22:25:09Z UTC] [SAFE] JSON written → data\global_temperature_anomaly.json (126 entries)
-[2025-11-15T22:25:09Z UTC] [OK] OWID KPI saved: global_temperature_anomaly (176 rows, last updated 2025-01-01)
-[2025-11-15T22:25:09Z UTC] [STATUS] global_temperature_anomaly: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T22:25:10Z UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:25:10Z UTC] [⏸️] rule_of_law_index – unchanged (None)
-[2025-11-15T22:25:11Z UTC] [CHECK] state_based_conflict_deaths: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:25:11Z UTC] [⏸️] state_based_conflict_deaths – unchanged (None)
-[2025-11-15T22:25:11Z UTC] [WARN] world_happiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:25:11Z UTC] [⏸️] world_happiness_index – CSV unchanged (hash & mtime match)
-[2025-11-15T22:25:11Z UTC] [STATUS] world_happiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T22:25:11Z UTC] [WARN] olympic_medals_summer: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:25:11Z UTC] [TRIM] olympic_medals_summer: removed 9 out-of-range records (before 1900 or >2025)
-[2025-11-15T22:25:11Z UTC] [SAFE] JSON written → data\olympic_medals_summer.json (1209 entries)
-[2025-11-15T22:25:11Z UTC] [OK] CSV KPI saved: olympic_medals_summer (1218 rows, last updated 2024-01-01T00:00:00Z)
-[2025-11-15T22:25:11Z UTC] [STATUS] olympic_medals_summer: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T22:25:11Z UTC] [WARN] big_mac_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:25:11Z UTC] [⏸️] big_mac_index – CSV unchanged (hash & mtime match)
-[2025-11-15T22:25:11Z UTC] [STATUS] big_mac_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T22:25:11Z UTC] [CHECK] recycling_rate: missing or unknown date → fetch now
-[2025-11-15T22:25:11Z UTC] [TXT] recycling_rate: detected latest_year=2022 from CSV text
-[2025-11-15T22:25:11Z UTC] [WARN] Keeping old data for recycling_rate (CSV empty recycling_rate.csv)
-[2025-11-15T22:25:11Z UTC] [STATUS] recycling_rate: stored source_date=Unknown, data_year=2022
-[2025-11-15T22:25:11Z UTC] [CHECK] environmental_performance_index: missing or unknown date → fetch now
-[2025-11-15T22:25:11Z UTC] [TXT] environmental_performance_index: detected latest_year=2022 from CSV text
-[2025-11-15T22:25:12Z UTC] [WARN] Keeping old data for environmental_performance_index (CSV empty environmental_performance_index.csv)
-[2025-11-15T22:25:12Z UTC] [STATUS] environmental_performance_index: stored source_date=Unknown, data_year=2022
-[2025-11-15T22:25:12Z UTC] [WARN] global_peace_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:25:12Z UTC] [⏸️] global_peace_index – CSV unchanged (hash & mtime match)
-[2025-11-15T22:25:12Z UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T22:25:12Z UTC] [CHECK] inform_resilience_index: missing or unknown date → fetch now
-[2025-11-15T22:25:12Z UTC] [TXT] inform_resilience_index: detected latest_year=2025 from CSV text
-[2025-11-15T22:25:12Z UTC] [WARN] Keeping old data for inform_resilience_index (CSV empty inform_resilience_index.csv)
-[2025-11-15T22:25:12Z UTC] [STATUS] inform_resilience_index: stored source_date=Unknown, data_year=2025
-[2025-11-15T22:25:12Z UTC] [CHECK] geopolitical_risk_index: local files missing → fetch now
-[2025-11-15T22:25:12Z UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
-[2025-11-15T22:25:13Z UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:25:13Z UTC] [⏸️] rule_of_law_index – unchanged (None)
-[2025-11-15T22:25:13Z UTC] [CHECK] olympic_medals_winter: missing or unknown date → fetch now
-[2025-11-15T22:25:13Z UTC] [WARN] Keeping old data for olympic_medals_winter (CSV missing olympic_medals_winter)
-[2025-11-15T22:25:13Z UTC] [STATUS] olympic_medals_winter: stored source_date=Unknown, data_year=None
-[2025-11-15T22:25:13Z UTC] [CHECK] pisa_overall_score: missing or unknown date → fetch now
-[2025-11-15T22:25:13Z UTC] [WARN] Keeping old data for pisa_overall_score (CSV missing pisa_overall_score)
-[2025-11-15T22:25:13Z UTC] [STATUS] pisa_overall_score: stored source_date=Unknown, data_year=None
-[2025-11-15T22:25:13Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
-[2025-11-15T22:25:14Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 entries)
-[2025-11-15T22:25:14Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
-[2025-11-15T22:25:14Z UTC] [SAFE] JSON written → data\fetch_status.json (2 entries)
-[2025-11-15T22:25:14Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T22:25:14Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T22:25:14Z UTC] [SAFE] JSON written → data\fetch_status.json (2 entries)
-[2025-11-15T22:25:14Z UTC] [SAFE] JSON written → data\meta\country_mappings_pending.json (679 entries)
-[2025-11-15T22:25:14Z UTC] [INFO] fetch_status.json updated with 63 KPIs
-[2025-11-15T22:25:14Z UTC] [SAFE] JSON written → data\fetch_state.json (3 entries)
-[2025-11-15T22:25:14Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (6 entries)
-=== RealityCheck Fetch Report ===
-Countries loaded:   198
-KPIs processed:    65
-Saved records:     30352
-
-WorldBank KPIs:    1
-CSV KPIs:          1
-OWID KPIs:         3
-UNHCR KPIs:        0
-Others KPIs:       1
-
-Mapping OK:        44620
-Mapping dropped:   0
-Mapping pending:   24995
-
-Dummies created:   0
-Skipped (up-to-date): 54
-Errors:            0
-Updated KPIs:      6
-
-Updated KPI files:
-  - geopolitical_risk_index
-  - global_temperature_anomaly
-  - mean_years_of_schooling
-  - median_age
-  - olympic_medals_summer
-  - population
-
-Skipped breakdown:
-  - CSV unchanged (hash & mtime): 3
-  - Remote data unchanged: 51
-=================================
-✅ Fetch completed successfully
-
-[2025-11-15T22:25:14Z UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
-[2025-11-15T23:25:14 UTC] === Overall Ranking Generation Started ===
-[2025-11-15T23:25:14 UTC] ✅ 30 KPIs considered for ranking
-[2025-11-15T23:25:14 UTC] ⚠️ No numeric values for environmental_performance_index
-[2025-11-15T23:25:14 UTC] ⚠️ No numeric values for inform_resilience_index
-[2025-11-15T23:25:14 UTC] ⚠️ No numeric values for pisa_overall_score
-[2025-11-15T23:25:14 UTC] 💾 JSON saved successfully → data\overall_ranking.json (193 records)
-[2025-11-15T23:25:14 UTC] ✅ overall_ranking.json written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\overall_ranking.json
-[2025-11-15T23:25:14 UTC] ➡️ Starting fun/safe haven ranking generation ...
-[2025-11-15T23:25:14 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
-[2025-11-15T23:25:14 UTC] ➡️ Generating Fun Mode via GPT-4-Turbo …
-[2025-11-15T23:25:37 UTC] 💾 Saved data\fun_ranking.json (10 entries)
-[2025-11-15T23:25:37 UTC] ➡️ Generating Safe Haven Mode via GPT-4-Turbo …
-[2025-11-15T23:25:52 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
-[2025-11-15T23:25:52 UTC] ➡️ Generating Immigration Mode via GPT-4-Turbo …
-[2025-11-15T23:26:04 UTC] 💾 Saved data\immigration_ranking.json (10 entries)
-[2025-11-15T23:26:04 UTC] ✅ All three rankings generated successfully.
-[2025-11-15T23:26:04 UTC] ✅ Fun & Safe Haven rankings successfully generated.
-[2025-11-15T22:26:11Z UTC] [STATE] Merged 6 updated KPIs → total 6 entries.
-[2025-11-15T23:26:11 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
-[2025-11-15T23:26:11 UTC] ➡️ Starting global analysis …
-[2025-11-15T23:26:24 UTC] 💾 Saved analysis (3944 chars)
-[2025-11-15T23:26:24 UTC] ⚙️ Limiting KPI analysis to 6 entries.
-[2025-11-15T23:26:49 UTC] ✅ KPI analyses saved (59 total)
-[2025-11-15T23:26:49 UTC] 🔎 Computing outliers …
-[2025-11-15T23:26:50 UTC] 💾 Outliers saved (52 KPIs, compact format)
-[2025-11-15T23:26:50 UTC] ✅ RealityCheck analysis completed successfully.
-[2025-11-15T23:26:50 UTC] ➡️ Starting CSV update check for 9 KPIs…
-[2025-11-15T23:26:50 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2024)
-[2025-11-15T23:26:51 UTC] 🤖 GPT response for 'World Happiness Index': Unknown
-[2025-11-15T23:26:54 UTC] ❓ No newer version for 'World Happiness Index' found.
-[2025-11-15T23:26:54 UTC] 🔍 Checking 'Olympic Medals (Summer)' (last known year: 2024)
-[2025-11-15T23:26:55 UTC] 🤖 GPT response for 'Olympic Medals (Summer)': Unknown
-[2025-11-15T23:26:58 UTC] ❓ No newer version for 'Olympic Medals (Summer)' found.
-[2025-11-15T23:26:58 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2025)
-[2025-11-15T23:26:59 UTC] 🤖 GPT response for 'Big Mac Index': Unknown
-[2025-11-15T23:27:02 UTC] ❓ No newer version for 'Big Mac Index' found.
-[2025-11-15T23:27:02 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
-[2025-11-15T23:27:02 UTC] 🤖 GPT response for 'Recycling Rate': Unknown
-[2025-11-15T23:27:05 UTC] ❓ No newer version for 'Recycling Rate' found.
-[2025-11-15T23:27:05 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
-[2025-11-15T23:27:06 UTC] 🤖 GPT response for 'Environmental Performance Index': 2022
-[2025-11-15T23:27:09 UTC] ⏸️ Up-to-date (2022 = 2022)
-[2025-11-15T23:27:09 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
-[2025-11-15T23:27:10 UTC] 🤖 GPT response for 'Global Peace Index': Unknown
-[2025-11-15T23:27:13 UTC] ❓ No newer version for 'Global Peace Index' found.
-[2025-11-15T23:27:13 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
-[2025-11-15T23:27:14 UTC] 🤖 GPT response for 'Inform Resilience Index': Unknown
-[2025-11-15T23:27:17 UTC] ❓ No newer version for 'Inform Resilience Index' found.
-[2025-11-15T23:27:17 UTC] 🔍 Checking 'Olympic Medals (Winter)' (last known year: None)
-[2025-11-15T23:27:18 UTC] 🤖 GPT response for 'Olympic Medals (Winter)': Unknown
-[2025-11-15T23:27:21 UTC] ❓ No newer version for 'Olympic Medals (Winter)' found.
-[2025-11-15T23:27:21 UTC] 🔍 Checking 'PISA Overall Score' (last known year: None)
-[2025-11-15T23:27:22 UTC] 🤖 GPT response for 'PISA Overall Score': Unknown
-[2025-11-15T23:27:25 UTC] ❓ No newer version for 'PISA Overall Score' found.
-[2025-11-15T23:27:25 UTC] ✅ Smart CSV update check completed.
-[2025-11-15T22:40:59Z UTC] [INFO] Using OPENAI_API_KEY: found
-[2025-11-15T22:40:59Z UTC] === Fetch started ===
-[2025-11-15T22:41:01Z UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:01Z UTC] [CHECK] area: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:01Z UTC] [⏸️] area – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:03Z UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:03Z UTC] [CHECK] population: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:03Z UTC] [⏸️] population – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:04Z UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:04Z UTC] [CHECK] population_growth: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:04Z UTC] [⏸️] population_growth – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:07Z UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:07Z UTC] [CHECK] fertility_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:07Z UTC] [⏸️] fertility_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:08Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:08Z UTC] [CHECK] urbanization_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:08Z UTC] [⏸️] urbanization_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:12Z UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:12Z UTC] [CHECK] gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:12Z UTC] [⏸️] gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:13Z UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:13Z UTC] [CHECK] gdp_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:13Z UTC] [⏸️] gdp_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:15Z UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:15Z UTC] [CHECK] gni_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:15Z UTC] [⏸️] gni_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:16Z UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:16Z UTC] [CHECK] gini_index: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:16Z UTC] [⏸️] gini_index – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:17Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:17Z UTC] [CHECK] public_debt_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:17Z UTC] [⏸️] public_debt_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:20Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:20Z UTC] [CHECK] tax_revenue_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:20Z UTC] [⏸️] tax_revenue_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:22Z UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:22Z UTC] [CHECK] unemployment_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:22Z UTC] [⏸️] unemployment_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:24Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:24Z UTC] [CHECK] health_expenditure_per_capita: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:24Z UTC] [⏸️] health_expenditure_per_capita – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:25Z UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:25Z UTC] [CHECK] infant_mortality_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:25Z UTC] [⏸️] infant_mortality_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:27Z UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:27Z UTC] [CHECK] maternal_mortality_ratio: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:27Z UTC] [⏸️] maternal_mortality_ratio – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:29Z UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:29Z UTC] [CHECK] hospital_beds_per_1_000_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:29Z UTC] [⏸️] hospital_beds_per_1_000_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:31Z UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:31Z UTC] [CHECK] life_expectancy_at_birth: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:31Z UTC] [⏸️] life_expectancy_at_birth – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:32Z UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:32Z UTC] [CHECK] adult_literacy_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:32Z UTC] [⏸️] adult_literacy_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:34Z UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:34Z UTC] [CHECK] overall_immunization_coverage: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:34Z UTC] [⏸️] overall_immunization_coverage – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:35Z UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:35Z UTC] [CHECK] extreme_poverty: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:35Z UTC] [⏸️] extreme_poverty – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:37Z UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:37Z UTC] [CHECK] access_to_basic_drinking_water: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:37Z UTC] [⏸️] access_to_basic_drinking_water – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:39Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:39Z UTC] [CHECK] air_quality_pm2_5_exposure: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:39Z UTC] [⏸️] air_quality_pm2_5_exposure – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:40Z UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:40Z UTC] [CHECK] renewable_energy_share: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:40Z UTC] [⏸️] renewable_energy_share – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:43Z UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:43Z UTC] [CHECK] internet_penetration_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:43Z UTC] [⏸️] internet_penetration_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:44Z UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:44Z UTC] [CHECK] mobile_subscriptions_per_100_inhabitants: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:44Z UTC] [⏸️] mobile_subscriptions_per_100_inhabitants – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:46Z UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:46Z UTC] [CHECK] railway_length: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:46Z UTC] [⏸️] railway_length – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:48Z UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:48Z UTC] [CHECK] inflation_consumer_price_index: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:48Z UTC] [⏸️] inflation_consumer_price_index – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:50Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:50Z UTC] [CHECK] employment_to_population_ratio: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:50Z UTC] [⏸️] employment_to_population_ratio – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:53Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:53Z UTC] [CHECK] female_labor_force_participation: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:53Z UTC] [⏸️] female_labor_force_participation – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:54Z UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:54Z UTC] [CHECK] road_traffic_deaths_per_100k_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:54Z UTC] [⏸️] road_traffic_deaths_per_100k_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:56Z UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:56Z UTC] [CHECK] fixed_broadband_subscriptions_per_100_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:56Z UTC] [⏸️] fixed_broadband_subscriptions_per_100_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:41:57Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:41:57Z UTC] [CHECK] education_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:41:57Z UTC] [⏸️] education_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:42:00Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:42:00Z UTC] [CHECK] military_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:42:00Z UTC] [⏸️] military_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:42:01Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:42:01Z UTC] [CHECK] purchasing_power_parity: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:42:01Z UTC] [⏸️] purchasing_power_parity – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:42:02Z UTC] [CHECK] median_age: max_year=2100 → fetch (possible update)
-[2025-11-15T22:42:03Z UTC] [HEUR] OWID median_age → inferred source_date 2023-01-01
-[2025-11-15T22:42:03Z UTC] [SAFE] JSON written → data\median_age.json (14134 entries)
-[2025-11-15T22:42:03Z UTC] [OK] OWID KPI saved: median_age (14134 rows, last updated 2023-01-01)
-[2025-11-15T22:42:03Z UTC] [STATUS] median_age: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T22:42:04Z UTC] [CHECK] democracy_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:42:04Z UTC] [⏸️] democracy_index – unchanged (None)
-[2025-11-15T22:42:05Z UTC] [CHECK] press_freedom_index: max_year=2021 < 2025, fetched this year → skip
-[2025-11-15T22:42:05Z UTC] [⏸️] press_freedom_index – unchanged (None)
-[2025-11-15T22:42:06Z UTC] [CHECK] human_development_index_hdi: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:42:06Z UTC] [⏸️] human_development_index_hdi – unchanged (None)
-[2025-11-15T22:42:07Z UTC] [CHECK] physicians_per_1_000_people: max_year=2022 < 2025, fetched this year → skip
-[2025-11-15T22:42:07Z UTC] [⏸️] physicians_per_1_000_people – unchanged (None)
-[2025-11-15T22:42:08Z UTC] [CHECK] homelessness_rate: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:42:08Z UTC] [⏸️] homelessness_rate – unchanged (None)
-[2025-11-15T22:42:09Z UTC] [CHECK] old_age_dependency_ratio: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:42:09Z UTC] [⏸️] old_age_dependency_ratio – unchanged (None)
-[2025-11-15T22:42:10Z UTC] [CHECK] age_dependency_ratio_total: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:42:10Z UTC] [⏸️] age_dependency_ratio_total – unchanged (None)
-[2025-11-15T22:42:10Z UTC] [CHECK] co2_emissions: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:42:10Z UTC] [⏸️] co2_emissions – unchanged (None)
-[2025-11-15T22:42:11Z UTC] [CHECK] political_corruption_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:42:11Z UTC] [⏸️] political_corruption_index – unchanged (None)
-[2025-11-15T22:42:12Z UTC] [CHECK] military_spending_sipri: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:42:12Z UTC] [⏸️] military_spending_sipri – unchanged (None)
-[2025-11-15T22:42:13Z UTC] [CHECK] number_of_armed_conflicts: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:42:13Z UTC] [⏸️] number_of_armed_conflicts – unchanged (None)
-[2025-11-15T22:42:14Z UTC] [CHECK] mean_years_of_schooling: max_year=2040 → fetch (possible update)
-[2025-11-15T22:42:15Z UTC] [HEUR] OWID mean_years_of_schooling → inferred source_date 2040-01-01
-[2025-11-15T22:42:15Z UTC] [TRIM] mean_years_of_schooling: removed 1071 out-of-range records (before 1900 or >2025)
-[2025-11-15T22:42:15Z UTC] [SAFE] JSON written → data\mean_years_of_schooling.json (2907 entries)
-[2025-11-15T22:42:15Z UTC] [FIX] mean_years_of_schooling: future year 2040 detected → correcting to 2025
-[2025-11-15T22:42:15Z UTC] [OK] OWID KPI saved: mean_years_of_schooling (3978 rows, last updated 2025-01-01)
-[2025-11-15T22:42:15Z UTC] [STATUS] mean_years_of_schooling: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T22:42:16Z UTC] [CHECK] living_planet_index: max_year=2020 < 2025, fetched this year → skip
-[2025-11-15T22:42:16Z UTC] [⏸️] living_planet_index – unchanged (None)
-[2025-11-15T22:42:17Z UTC] [CHECK] electric_vehicle_stock: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:42:17Z UTC] [⏸️] electric_vehicle_stock – unchanged (None)
-[2025-11-15T22:42:18Z UTC] [CHECK] number_of_recorded_natural_disasters: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:42:18Z UTC] [⏸️] number_of_recorded_natural_disasters – unchanged (None)
-[2025-11-15T22:42:19Z UTC] [CHECK] global_co2_emissions: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:42:19Z UTC] [⏸️] global_co2_emissions – unchanged (None)
-[2025-11-15T22:42:20Z UTC] [CHECK] global_temperature_anomaly: max_year=2025 → fetch (possible update)
-[2025-11-15T22:42:21Z UTC] [HEUR] OWID global_temperature_anomaly → inferred source_date 2025-01-01
-[2025-11-15T22:42:21Z UTC] [TRIM] global_temperature_anomaly: removed 50 out-of-range records (before 1900 or >2025)
-[2025-11-15T22:42:21Z UTC] [SAFE] JSON written → data\global_temperature_anomaly.json (126 entries)
-[2025-11-15T22:42:21Z UTC] [OK] OWID KPI saved: global_temperature_anomaly (176 rows, last updated 2025-01-01)
-[2025-11-15T22:42:21Z UTC] [STATUS] global_temperature_anomaly: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T22:42:22Z UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:42:22Z UTC] [⏸️] rule_of_law_index – unchanged (None)
-[2025-11-15T22:42:23Z UTC] [CHECK] state_based_conflict_deaths: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:42:23Z UTC] [⏸️] state_based_conflict_deaths – unchanged (None)
-[2025-11-15T22:42:23Z UTC] [WARN] world_happiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:42:23Z UTC] [⏸️] world_happiness_index – CSV unchanged (hash & mtime match)
-[2025-11-15T22:42:23Z UTC] [STATUS] world_happiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T22:42:23Z UTC] [WARN] olympic_medals_summer: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:42:23Z UTC] [⏸️] olympic_medals_summer – CSV unchanged (hash & mtime match)
-[2025-11-15T22:42:23Z UTC] [STATUS] olympic_medals_summer: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T22:42:23Z UTC] [WARN] big_mac_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:42:23Z UTC] [⏸️] big_mac_index – CSV unchanged (hash & mtime match)
-[2025-11-15T22:42:23Z UTC] [STATUS] big_mac_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T22:42:23Z UTC] [CHECK] recycling_rate: missing or unknown date → fetch now
-[2025-11-15T22:42:23Z UTC] [SAFE] JSON written → data\recycling_rate.json (5488 entries)
-[2025-11-15T22:42:23Z UTC] [OK] CSV KPI saved: recycling_rate (5488 rows, last updated 2022-01-01T00:00:00Z)
-[2025-11-15T22:42:23Z UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
-[2025-11-15T22:42:23Z UTC] [CHECK] environmental_performance_index: missing or unknown date → fetch now
-[2025-11-15T22:42:23Z UTC] [SAFE] JSON written → data\environmental_performance_index.json (180 entries)
-[2025-11-15T22:42:23Z UTC] [OK] CSV KPI saved: environmental_performance_index (180 rows, last updated 2022-01-01T00:00:00Z)
-[2025-11-15T22:42:23Z UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
-[2025-11-15T22:42:23Z UTC] [WARN] global_peace_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:42:23Z UTC] [⏸️] global_peace_index – CSV unchanged (hash & mtime match)
-[2025-11-15T22:42:24Z UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T22:42:24Z UTC] [CHECK] inform_resilience_index: missing or unknown date → fetch now
-[2025-11-15T22:42:24Z UTC] [SAFE] JSON written → data\inform_resilience_index.json (1910 entries)
-[2025-11-15T22:42:24Z UTC] [OK] CSV KPI saved: inform_resilience_index (1910 rows, last updated 2025-01-01T00:00:00Z)
-[2025-11-15T22:42:24Z UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T22:42:24Z UTC] [CHECK] geopolitical_risk_index: local files missing → fetch now
-[2025-11-15T22:42:24Z UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
-[2025-11-15T22:42:25Z UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:42:25Z UTC] [⏸️] rule_of_law_index – unchanged (None)
-[2025-11-15T22:42:25Z UTC] [CHECK] olympic_medals_winter: missing or unknown date → fetch now
-[2025-11-15T22:42:25Z UTC] [WARN] Keeping old data for olympic_medals_winter (CSV missing olympic_medals_winter)
-[2025-11-15T22:42:25Z UTC] [STATUS] olympic_medals_winter: stored source_date=Unknown, data_year=None
-[2025-11-15T22:42:25Z UTC] [CHECK] pisa_overall_score: missing or unknown date → fetch now
-[2025-11-15T22:42:25Z UTC] [WARN] Keeping old data for pisa_overall_score (CSV missing pisa_overall_score)
-[2025-11-15T22:42:25Z UTC] [STATUS] pisa_overall_score: stored source_date=Unknown, data_year=None
-[2025-11-15T22:42:25Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
-[2025-11-15T22:42:26Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 entries)
-[2025-11-15T22:42:26Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
-[2025-11-15T22:42:26Z UTC] [SAFE] JSON written → data\fetch_status.json (2 entries)
-[2025-11-15T22:42:26Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T22:42:26Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T22:42:26Z UTC] [SAFE] JSON written → data\fetch_status.json (2 entries)
-[2025-11-15T22:42:26Z UTC] [SAFE] JSON written → data\meta\country_mappings_pending.json (679 entries)
-[2025-11-15T22:42:26Z UTC] [INFO] fetch_status.json updated with 63 KPIs
-[2025-11-15T22:42:26Z UTC] [SAFE] JSON written → data\fetch_state.json (3 entries)
-[2025-11-15T22:42:26Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (7 entries)
-=== RealityCheck Fetch Report ===
-Countries loaded:   198
-KPIs processed:    65
-Saved records:     25866
-
-WorldBank KPIs:    0
-CSV KPIs:          3
-OWID KPIs:         3
-UNHCR KPIs:        0
-Others KPIs:       1
-
-Mapping OK:        40211
-Mapping dropped:   0
-Mapping pending:   10773
-
-Dummies created:   0
-Skipped (up-to-date): 56
-Errors:            0
-Updated KPIs:      7
-
-Updated KPI files:
-  - environmental_performance_index
-  - geopolitical_risk_index
-  - global_temperature_anomaly
-  - inform_resilience_index
-  - mean_years_of_schooling
-  - median_age
-  - recycling_rate
-
-Skipped breakdown:
-  - CSV unchanged (hash & mtime): 4
-  - Remote data unchanged: 52
-=================================
-✅ Fetch completed successfully
-
-[2025-11-15T22:42:26Z UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
-[2025-11-15T23:42:26 UTC] === Overall Ranking Generation Started ===
-[2025-11-15T23:42:26 UTC] ✅ 30 KPIs considered for ranking
-[2025-11-15T23:42:26 UTC] ⚠️ No numeric values for pisa_overall_score
-[2025-11-15T23:42:26 UTC] 💾 JSON saved successfully → data\overall_ranking.json (198 records)
-[2025-11-15T23:42:26 UTC] ✅ overall_ranking.json written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\overall_ranking.json
-[2025-11-15T23:42:26 UTC] ➡️ Starting fun/safe haven ranking generation ...
-[2025-11-15T23:42:26 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
-[2025-11-15T23:42:26 UTC] ➡️ Generating Fun Mode via GPT-4-Turbo …
-[2025-11-15T23:42:42 UTC] 💾 Saved data\fun_ranking.json (10 entries)
-[2025-11-15T23:42:42 UTC] ➡️ Generating Safe Haven Mode via GPT-4-Turbo …
-[2025-11-15T23:42:58 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
-[2025-11-15T23:42:58 UTC] ➡️ Generating Immigration Mode via GPT-4-Turbo …
-[2025-11-15T23:43:09 UTC] 💾 Saved data\immigration_ranking.json (10 entries)
-[2025-11-15T23:43:09 UTC] ✅ All three rankings generated successfully.
-[2025-11-15T23:43:09 UTC] ✅ Fun & Safe Haven rankings successfully generated.
-[2025-11-15T22:43:15Z UTC] [STATE] Merged 7 updated KPIs → total 7 entries.
-[2025-11-15T23:43:15 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
-[2025-11-15T23:43:15 UTC] ➡️ Starting global analysis …
-[2025-11-15T23:43:24 UTC] 💾 Saved analysis (4156 chars)
-[2025-11-15T23:43:24 UTC] ⚙️ Limiting KPI analysis to 7 entries.
-[2025-11-15T23:43:52 UTC] ✅ KPI analyses saved (62 total)
-[2025-11-15T23:43:52 UTC] 🔎 Computing outliers …
-[2025-11-15T23:43:52 UTC] 💾 Outliers saved (55 KPIs, compact format)
-[2025-11-15T23:43:52 UTC] ✅ RealityCheck analysis completed successfully.
-[2025-11-15T23:43:52 UTC] ➡️ Starting CSV update check for 9 KPIs…
-[2025-11-15T23:43:52 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2024)
-[2025-11-15T23:43:54 UTC] 🤖 GPT response for 'World Happiness Index': Unknown
-[2025-11-15T23:43:57 UTC] ❓ No newer version for 'World Happiness Index' found.
-[2025-11-15T23:43:57 UTC] 🔍 Checking 'Olympic Medals (Summer)' (last known year: 2024)
-[2025-11-15T23:43:58 UTC] 🤖 GPT response for 'Olympic Medals (Summer)': 2024
-[2025-11-15T23:44:01 UTC] ⏸️ Up-to-date (2024 = 2024)
-[2025-11-15T23:44:01 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2025)
-[2025-11-15T23:44:02 UTC] 🤖 GPT response for 'Big Mac Index': Unknown
-[2025-11-15T23:44:05 UTC] ❓ No newer version for 'Big Mac Index' found.
-[2025-11-15T23:44:05 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
-[2025-11-15T23:44:06 UTC] 🤖 GPT response for 'Recycling Rate': Unknown
-[2025-11-15T23:44:09 UTC] ❓ No newer version for 'Recycling Rate' found.
-[2025-11-15T23:44:09 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
-[2025-11-15T23:44:10 UTC] 🤖 GPT response for 'Environmental Performance Index': 2022
-[2025-11-15T23:44:13 UTC] ⏸️ Up-to-date (2022 = 2022)
-[2025-11-15T23:44:13 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
-[2025-11-15T23:44:14 UTC] 🤖 GPT response for 'Global Peace Index': 2025
-[2025-11-15T23:44:17 UTC] ⏸️ Up-to-date (2025 = 2025)
-[2025-11-15T23:44:17 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
-[2025-11-15T23:44:17 UTC] 🤖 GPT response for 'Inform Resilience Index': Unknown
-[2025-11-15T23:44:20 UTC] ❓ No newer version for 'Inform Resilience Index' found.
-[2025-11-15T23:44:20 UTC] 🔍 Checking 'Olympic Medals (Winter)' (last known year: None)
-[2025-11-15T23:44:21 UTC] 🤖 GPT response for 'Olympic Medals (Winter)': Unknown
-[2025-11-15T23:44:24 UTC] ❓ No newer version for 'Olympic Medals (Winter)' found.
-[2025-11-15T23:44:24 UTC] 🔍 Checking 'PISA Overall Score' (last known year: None)
-[2025-11-15T23:44:24 UTC] 🤖 GPT response for 'PISA Overall Score': Unknown
-[2025-11-15T23:44:27 UTC] ❓ No newer version for 'PISA Overall Score' found.
-[2025-11-15T23:44:27 UTC] ✅ Smart CSV update check completed.
-[2025-11-15T22:56:34Z UTC] [INFO] Using OPENAI_API_KEY: found
-[2025-11-15T22:56:34Z UTC] === Fetch started ===
-[2025-11-15T22:56:36Z UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:36Z UTC] [CHECK] area: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:36Z UTC] [⏸️] area – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:37Z UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:37Z UTC] [CHECK] population: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:37Z UTC] [⏸️] population – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:39Z UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:39Z UTC] [CHECK] population_growth: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:39Z UTC] [⏸️] population_growth – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:40Z UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:40Z UTC] [CHECK] fertility_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:40Z UTC] [⏸️] fertility_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:41Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:41Z UTC] [CHECK] urbanization_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:41Z UTC] [⏸️] urbanization_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:43Z UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:43Z UTC] [CHECK] gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:43Z UTC] [⏸️] gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:44Z UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:44Z UTC] [CHECK] gdp_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:44Z UTC] [⏸️] gdp_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:45Z UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:45Z UTC] [CHECK] gni_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:45Z UTC] [⏸️] gni_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:47Z UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:47Z UTC] [CHECK] gini_index: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:47Z UTC] [⏸️] gini_index – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:48Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:48Z UTC] [CHECK] public_debt_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:48Z UTC] [⏸️] public_debt_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:49Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:49Z UTC] [CHECK] tax_revenue_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:49Z UTC] [⏸️] tax_revenue_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:51Z UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:51Z UTC] [CHECK] unemployment_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:51Z UTC] [⏸️] unemployment_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:52Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:52Z UTC] [CHECK] health_expenditure_per_capita: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:52Z UTC] [⏸️] health_expenditure_per_capita – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:54Z UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:54Z UTC] [CHECK] infant_mortality_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:54Z UTC] [⏸️] infant_mortality_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:55Z UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:55Z UTC] [CHECK] maternal_mortality_ratio: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:55Z UTC] [⏸️] maternal_mortality_ratio – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:56Z UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:56Z UTC] [CHECK] hospital_beds_per_1_000_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:56Z UTC] [⏸️] hospital_beds_per_1_000_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:57Z UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:57Z UTC] [CHECK] life_expectancy_at_birth: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:57Z UTC] [⏸️] life_expectancy_at_birth – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:56:59Z UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:56:59Z UTC] [CHECK] adult_literacy_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:56:59Z UTC] [⏸️] adult_literacy_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:00Z UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:00Z UTC] [CHECK] overall_immunization_coverage: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:00Z UTC] [⏸️] overall_immunization_coverage – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:02Z UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:02Z UTC] [CHECK] extreme_poverty: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:02Z UTC] [⏸️] extreme_poverty – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:03Z UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:03Z UTC] [CHECK] access_to_basic_drinking_water: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:03Z UTC] [⏸️] access_to_basic_drinking_water – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:05Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:05Z UTC] [CHECK] air_quality_pm2_5_exposure: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:05Z UTC] [⏸️] air_quality_pm2_5_exposure – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:06Z UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:06Z UTC] [CHECK] renewable_energy_share: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:06Z UTC] [⏸️] renewable_energy_share – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:07Z UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:07Z UTC] [CHECK] internet_penetration_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:07Z UTC] [⏸️] internet_penetration_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:09Z UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:09Z UTC] [CHECK] mobile_subscriptions_per_100_inhabitants: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:09Z UTC] [⏸️] mobile_subscriptions_per_100_inhabitants – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:10Z UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:10Z UTC] [CHECK] railway_length: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:10Z UTC] [⏸️] railway_length – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:11Z UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:11Z UTC] [CHECK] inflation_consumer_price_index: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:11Z UTC] [⏸️] inflation_consumer_price_index – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:13Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:13Z UTC] [CHECK] employment_to_population_ratio: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:13Z UTC] [⏸️] employment_to_population_ratio – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:14Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:14Z UTC] [CHECK] female_labor_force_participation: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:14Z UTC] [⏸️] female_labor_force_participation – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:15Z UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:15Z UTC] [CHECK] road_traffic_deaths_per_100k_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:15Z UTC] [⏸️] road_traffic_deaths_per_100k_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:17Z UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:17Z UTC] [CHECK] fixed_broadband_subscriptions_per_100_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:17Z UTC] [⏸️] fixed_broadband_subscriptions_per_100_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:18Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:18Z UTC] [CHECK] education_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:18Z UTC] [⏸️] education_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:19Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:19Z UTC] [CHECK] military_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:19Z UTC] [⏸️] military_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:21Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T22:57:21Z UTC] [CHECK] purchasing_power_parity: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T22:57:21Z UTC] [⏸️] purchasing_power_parity – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T22:57:22Z UTC] [CHECK] median_age: max_year=2100 → fetch (possible update)
-[2025-11-15T22:57:23Z UTC] [HEUR] OWID median_age → inferred source_date 2023-01-01
-[2025-11-15T22:57:23Z UTC] [SAFE] JSON written → data\median_age.json (14134 entries)
-[2025-11-15T22:57:23Z UTC] [OK] OWID KPI saved: median_age (14134 rows, last updated 2023-01-01)
-[2025-11-15T22:57:23Z UTC] [STATUS] median_age: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T22:57:24Z UTC] [CHECK] democracy_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:57:24Z UTC] [⏸️] democracy_index – unchanged (None)
-[2025-11-15T22:57:25Z UTC] [CHECK] press_freedom_index: max_year=2021 < 2025, fetched this year → skip
-[2025-11-15T22:57:25Z UTC] [⏸️] press_freedom_index – unchanged (None)
-[2025-11-15T22:57:26Z UTC] [CHECK] human_development_index_hdi: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:57:26Z UTC] [⏸️] human_development_index_hdi – unchanged (None)
-[2025-11-15T22:57:26Z UTC] [CHECK] physicians_per_1_000_people: max_year=2022 < 2025, fetched this year → skip
-[2025-11-15T22:57:26Z UTC] [⏸️] physicians_per_1_000_people – unchanged (None)
-[2025-11-15T22:57:27Z UTC] [CHECK] homelessness_rate: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:57:27Z UTC] [⏸️] homelessness_rate – unchanged (None)
-[2025-11-15T22:57:28Z UTC] [CHECK] old_age_dependency_ratio: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:57:28Z UTC] [⏸️] old_age_dependency_ratio – unchanged (None)
-[2025-11-15T22:57:29Z UTC] [CHECK] age_dependency_ratio_total: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:57:29Z UTC] [⏸️] age_dependency_ratio_total – unchanged (None)
-[2025-11-15T22:57:30Z UTC] [CHECK] co2_emissions: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:57:30Z UTC] [⏸️] co2_emissions – unchanged (None)
-[2025-11-15T22:57:31Z UTC] [CHECK] political_corruption_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:57:31Z UTC] [⏸️] political_corruption_index – unchanged (None)
-[2025-11-15T22:57:32Z UTC] [CHECK] military_spending_sipri: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:57:32Z UTC] [⏸️] military_spending_sipri – unchanged (None)
-[2025-11-15T22:57:33Z UTC] [CHECK] number_of_armed_conflicts: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:57:33Z UTC] [⏸️] number_of_armed_conflicts – unchanged (None)
-[2025-11-15T22:57:34Z UTC] [CHECK] mean_years_of_schooling: max_year=2040 → fetch (possible update)
-[2025-11-15T22:57:35Z UTC] [HEUR] OWID mean_years_of_schooling → inferred source_date 2040-01-01
-[2025-11-15T22:57:35Z UTC] [TRIM] mean_years_of_schooling: removed 1071 out-of-range records (before 1900 or >2025)
-[2025-11-15T22:57:35Z UTC] [SAFE] JSON written → data\mean_years_of_schooling.json (2907 entries)
-[2025-11-15T22:57:35Z UTC] [FIX] mean_years_of_schooling: future year 2040 detected → correcting to 2025
-[2025-11-15T22:57:35Z UTC] [OK] OWID KPI saved: mean_years_of_schooling (3978 rows, last updated 2025-01-01)
-[2025-11-15T22:57:35Z UTC] [STATUS] mean_years_of_schooling: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T22:57:36Z UTC] [CHECK] living_planet_index: max_year=2020 < 2025, fetched this year → skip
-[2025-11-15T22:57:36Z UTC] [⏸️] living_planet_index – unchanged (None)
-[2025-11-15T22:57:36Z UTC] [CHECK] electric_vehicle_stock: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:57:36Z UTC] [⏸️] electric_vehicle_stock – unchanged (None)
-[2025-11-15T22:57:37Z UTC] [CHECK] number_of_recorded_natural_disasters: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T22:57:37Z UTC] [⏸️] number_of_recorded_natural_disasters – unchanged (None)
-[2025-11-15T22:57:38Z UTC] [CHECK] global_co2_emissions: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:57:39Z UTC] [⏸️] global_co2_emissions – unchanged (None)
-[2025-11-15T22:57:39Z UTC] [CHECK] global_temperature_anomaly: max_year=2025 → fetch (possible update)
-[2025-11-15T22:57:40Z UTC] [HEUR] OWID global_temperature_anomaly → inferred source_date 2025-01-01
-[2025-11-15T22:57:40Z UTC] [TRIM] global_temperature_anomaly: removed 50 out-of-range records (before 1900 or >2025)
-[2025-11-15T22:57:40Z UTC] [SAFE] JSON written → data\global_temperature_anomaly.json (126 entries)
-[2025-11-15T22:57:40Z UTC] [OK] OWID KPI saved: global_temperature_anomaly (176 rows, last updated 2025-01-01)
-[2025-11-15T22:57:40Z UTC] [STATUS] global_temperature_anomaly: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T22:57:41Z UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:57:41Z UTC] [⏸️] rule_of_law_index – unchanged (None)
-[2025-11-15T22:57:42Z UTC] [CHECK] state_based_conflict_deaths: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:57:42Z UTC] [⏸️] state_based_conflict_deaths – unchanged (None)
-[2025-11-15T22:57:42Z UTC] [WARN] world_happiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:57:42Z UTC] [⏸️] world_happiness_index – CSV unchanged (hash & mtime match)
-[2025-11-15T22:57:42Z UTC] [STATUS] world_happiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T22:57:42Z UTC] [WARN] olympic_medals_summer: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:57:42Z UTC] [⏸️] olympic_medals_summer – CSV unchanged (hash & mtime match)
-[2025-11-15T22:57:42Z UTC] [STATUS] olympic_medals_summer: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T22:57:42Z UTC] [WARN] big_mac_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:57:42Z UTC] [⏸️] big_mac_index – CSV unchanged (hash & mtime match)
-[2025-11-15T22:57:42Z UTC] [STATUS] big_mac_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T22:57:42Z UTC] [WARN] recycling_rate: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:57:42Z UTC] [⏸️] recycling_rate – CSV unchanged (hash & mtime match)
-[2025-11-15T22:57:42Z UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
-[2025-11-15T22:57:42Z UTC] [WARN] environmental_performance_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:57:42Z UTC] [⏸️] environmental_performance_index – CSV unchanged (hash & mtime match)
-[2025-11-15T22:57:42Z UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
-[2025-11-15T22:57:42Z UTC] [WARN] global_peace_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:57:42Z UTC] [⏸️] global_peace_index – CSV unchanged (hash & mtime match)
-[2025-11-15T22:57:42Z UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T22:57:42Z UTC] [WARN] inform_resilience_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T22:57:42Z UTC] [⏸️] inform_resilience_index – CSV unchanged (hash & mtime match)
-[2025-11-15T22:57:42Z UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T22:57:42Z UTC] [CHECK] geopolitical_risk_index: local files missing → fetch now
-[2025-11-15T22:57:42Z UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
-[2025-11-15T22:57:43Z UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T22:57:43Z UTC] [⏸️] rule_of_law_index – unchanged (None)
-[2025-11-15T22:57:43Z UTC] [CHECK] olympic_medals_winter: missing or unknown date → fetch now
-[2025-11-15T22:57:43Z UTC] [SAFE] JSON written → data\olympic_medals_winter.json (307 entries)
-[2025-11-15T22:57:43Z UTC] [OK] CSV KPI saved: olympic_medals_winter (307 rows, last updated 2022-01-01T00:00:00Z)
-[2025-11-15T22:57:43Z UTC] [STATUS] olympic_medals_winter: stored source_date=2022-01-01T00:00:00Z, data_year=2022
-[2025-11-15T22:57:43Z UTC] [CHECK] pisa_overall_score: missing or unknown date → fetch now
-[2025-11-15T22:57:43Z UTC] [SAFE] JSON written → data\pisa_overall_score.json (261 entries)
-[2025-11-15T22:57:43Z UTC] [OK] CSV KPI saved: pisa_overall_score (261 rows, last updated 2018-01-01T00:00:00Z)
-[2025-11-15T22:57:43Z UTC] [STATUS] pisa_overall_score: stored source_date=2018-01-01T00:00:00Z, data_year=2018
-[2025-11-15T22:57:43Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
-[2025-11-15T22:57:54Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 entries)
-[2025-11-15T22:57:54Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
-[2025-11-15T22:57:54Z UTC] [SAFE] JSON written → data\fetch_status.json (2 entries)
-[2025-11-15T22:57:54Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T22:57:54Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T22:57:54Z UTC] [SAFE] JSON written → data\fetch_status.json (2 entries)
-[2025-11-15T22:57:54Z UTC] [SAFE] JSON written → data\meta\country_mappings_pending.json (716 entries)
-[2025-11-15T22:57:54Z UTC] [INFO] fetch_status.json updated with 63 KPIs
-[2025-11-15T22:57:54Z UTC] [SAFE] JSON written → data\fetch_state.json (3 entries)
-[2025-11-15T22:57:54Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (6 entries)
-=== RealityCheck Fetch Report ===
-Countries loaded:   198
-KPIs processed:    65
-Saved records:     18856
-
-WorldBank KPIs:    0
-CSV KPIs:          2
-OWID KPIs:         3
-UNHCR KPIs:        0
-Others KPIs:       1
-
-Mapping OK:        33201
-Mapping dropped:   0
-Mapping pending:   10549
-
-Dummies created:   0
-Skipped (up-to-date): 59
-Errors:            0
-Updated KPIs:      6
-
-Updated KPI files:
-  - geopolitical_risk_index
-  - global_temperature_anomaly
-  - mean_years_of_schooling
-  - median_age
-  - olympic_medals_winter
-  - pisa_overall_score
-
-Skipped breakdown:
-  - CSV unchanged (hash & mtime): 7
-  - Remote data unchanged: 52
-=================================
-✅ Fetch completed successfully
-
-[2025-11-15T22:57:54Z UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
-[2025-11-15T23:57:55 UTC] === Overall Ranking Generation Started ===
-[2025-11-15T23:57:55 UTC] ✅ 30 KPIs considered for ranking
-[2025-11-15T23:57:55 UTC] 💾 JSON saved successfully → data\overall_ranking.json (198 records)
-[2025-11-15T23:57:55 UTC] ✅ overall_ranking.json written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\overall_ranking.json
-[2025-11-15T23:57:55 UTC] ➡️ Starting fun/safe haven ranking generation ...
-[2025-11-15T23:57:55 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
-[2025-11-15T23:57:55 UTC] ➡️ Generating Fun Mode via GPT-4-Turbo …
-[2025-11-15T23:58:08 UTC] ⚠️ JSON parse error in Fun Mode: Expecting property name enclosed in double quotes: line 43 column 1 (char 1514)
-[2025-11-15T23:58:08 UTC] Raw excerpt: [   {     "rank": 1,     "country": "Australia",     "reason": "Sydney and Melbourne feature in top livable cities, meets all climate and happiness criteria, relatively low beer prices."   },   {     
-[2025-11-15T23:58:08 UTC] ➡️ Generating Safe Haven Mode via GPT-4-Turbo …
-[2025-11-15T23:58:25 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
-[2025-11-15T23:58:25 UTC] ➡️ Generating Immigration Mode via GPT-4-Turbo …
-[2025-11-15T23:58:37 UTC] 💾 Saved data\immigration_ranking.json (10 entries)
-[2025-11-15T23:58:37 UTC] ⚠️ Partial success – at least one ranking generated.
-[2025-11-15T23:58:37 UTC] ✅ Fun & Safe Haven rankings successfully generated.
-[2025-11-15T22:58:43Z UTC] [STATE] Merged 6 updated KPIs → total 6 entries.
-[2025-11-15T23:58:44 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
-[2025-11-15T23:58:44 UTC] ➡️ Starting global analysis …
-[2025-11-15T23:58:54 UTC] 💾 Saved analysis (3888 chars)
-[2025-11-15T23:58:54 UTC] ⚙️ Limiting KPI analysis to 6 entries.
-[2025-11-15T23:59:17 UTC] ✅ KPI analyses saved (64 total)
-[2025-11-15T23:59:17 UTC] 🔎 Computing outliers …
-[2025-11-15T23:59:17 UTC] 💾 Outliers saved (57 KPIs, compact format)
-[2025-11-15T23:59:17 UTC] ✅ RealityCheck analysis completed successfully.
-[2025-11-15T23:59:17 UTC] ➡️ Starting CSV update check for 9 KPIs…
-[2025-11-15T23:59:17 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2024)
-[2025-11-15T23:59:19 UTC] 🤖 GPT response for 'World Happiness Index': Unknown
-[2025-11-15T23:59:22 UTC] ❓ No newer version for 'World Happiness Index' found.
-[2025-11-15T23:59:22 UTC] 🔍 Checking 'Olympic Medals (Summer)' (last known year: 2024)
-[2025-11-15T23:59:23 UTC] 🤖 GPT response for 'Olympic Medals (Summer)': Unknown
-[2025-11-15T23:59:26 UTC] ❓ No newer version for 'Olympic Medals (Summer)' found.
-[2025-11-15T23:59:26 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2025)
-[2025-11-15T23:59:27 UTC] 🤖 GPT response for 'Big Mac Index': Unknown
-[2025-11-15T23:59:30 UTC] ❓ No newer version for 'Big Mac Index' found.
-[2025-11-15T23:59:30 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
-[2025-11-15T23:59:31 UTC] 🤖 GPT response for 'Recycling Rate': Unknown
-[2025-11-15T23:59:34 UTC] ❓ No newer version for 'Recycling Rate' found.
-[2025-11-15T23:59:34 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
-[2025-11-15T23:59:34 UTC] 🤖 GPT response for 'Environmental Performance Index': 2022
-[2025-11-15T23:59:37 UTC] ⏸️ Up-to-date (2022 = 2022)
-[2025-11-15T23:59:37 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
-[2025-11-15T23:59:38 UTC] 🤖 GPT response for 'Global Peace Index': Unknown
-[2025-11-15T23:59:41 UTC] ❓ No newer version for 'Global Peace Index' found.
-[2025-11-15T23:59:41 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
-[2025-11-15T23:59:42 UTC] 🤖 GPT response for 'Inform Resilience Index': Unknown.
-[2025-11-15T23:59:45 UTC] ❓ No newer version for 'Inform Resilience Index' found.
-[2025-11-15T23:59:45 UTC] 🔍 Checking 'Olympic Medals (Winter)' (last known year: 2022)
-[2025-11-15T23:59:46 UTC] 🤖 GPT response for 'Olympic Medals (Winter)': Unknown
-[2025-11-15T23:59:49 UTC] ❓ No newer version for 'Olympic Medals (Winter)' found.
-[2025-11-15T23:59:49 UTC] 🔍 Checking 'PISA Overall Score' (last known year: 2018)
-[2025-11-15T23:59:50 UTC] 🤖 GPT response for 'PISA Overall Score': 2021
-[2025-11-15T23:59:53 UTC] 🆕 Possibly updated: 'PISA Overall Score' → 2021 > 2018.
-[2025-11-15T23:59:53 UTC] ✅ Smart CSV update check completed.
-[2025-11-15T23:43:07Z UTC] [INFO] Using OPENAI_API_KEY: found
-[2025-11-15T23:43:07Z UTC] === Fetch started ===
-[2025-11-15T23:43:08Z UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:08Z UTC] [CHECK] area: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:08Z UTC] [⏸️] area – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:09Z UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:09Z UTC] [CHECK] population: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:09Z UTC] [⏸️] population – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:11Z UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:11Z UTC] [CHECK] population_growth: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:11Z UTC] [⏸️] population_growth – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:12Z UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:12Z UTC] [CHECK] fertility_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:12Z UTC] [⏸️] fertility_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:13Z UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:13Z UTC] [CHECK] urbanization_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:13Z UTC] [⏸️] urbanization_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:14Z UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:14Z UTC] [CHECK] gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:14Z UTC] [⏸️] gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:16Z UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:16Z UTC] [CHECK] gdp_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:16Z UTC] [⏸️] gdp_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:17Z UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:17Z UTC] [CHECK] gni_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:17Z UTC] [⏸️] gni_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:18Z UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:18Z UTC] [CHECK] gini_index: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:18Z UTC] [⏸️] gini_index – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:20Z UTC] [META] WorldBank GC.DOD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:20Z UTC] [CHECK] public_debt_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:20Z UTC] [⏸️] public_debt_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:21Z UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:21Z UTC] [CHECK] tax_revenue_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:21Z UTC] [⏸️] tax_revenue_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:22Z UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:22Z UTC] [CHECK] unemployment_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:22Z UTC] [⏸️] unemployment_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:23Z UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:23Z UTC] [CHECK] health_expenditure_per_capita: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:23Z UTC] [⏸️] health_expenditure_per_capita – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:25Z UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:25Z UTC] [CHECK] infant_mortality_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:25Z UTC] [⏸️] infant_mortality_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:26Z UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:26Z UTC] [CHECK] maternal_mortality_ratio: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:26Z UTC] [⏸️] maternal_mortality_ratio – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:27Z UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:27Z UTC] [CHECK] hospital_beds_per_1_000_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:27Z UTC] [⏸️] hospital_beds_per_1_000_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:29Z UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:29Z UTC] [CHECK] life_expectancy_at_birth: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:29Z UTC] [⏸️] life_expectancy_at_birth – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:30Z UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:30Z UTC] [CHECK] adult_literacy_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:30Z UTC] [⏸️] adult_literacy_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:31Z UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:31Z UTC] [CHECK] overall_immunization_coverage: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:31Z UTC] [⏸️] overall_immunization_coverage – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:33Z UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:33Z UTC] [CHECK] extreme_poverty: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:33Z UTC] [⏸️] extreme_poverty – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:34Z UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:34Z UTC] [CHECK] access_to_basic_drinking_water: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:34Z UTC] [⏸️] access_to_basic_drinking_water – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:36Z UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:36Z UTC] [CHECK] air_quality_pm2_5_exposure: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:36Z UTC] [⏸️] air_quality_pm2_5_exposure – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:37Z UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:37Z UTC] [CHECK] renewable_energy_share: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:37Z UTC] [⏸️] renewable_energy_share – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:38Z UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:38Z UTC] [CHECK] internet_penetration_rate: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:38Z UTC] [⏸️] internet_penetration_rate – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:39Z UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:39Z UTC] [CHECK] mobile_subscriptions_per_100_inhabitants: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:39Z UTC] [⏸️] mobile_subscriptions_per_100_inhabitants – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:40Z UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:40Z UTC] [CHECK] railway_length: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:40Z UTC] [⏸️] railway_length – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:42Z UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:42Z UTC] [CHECK] inflation_consumer_price_index: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:42Z UTC] [⏸️] inflation_consumer_price_index – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:43Z UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:43Z UTC] [CHECK] employment_to_population_ratio: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:43Z UTC] [⏸️] employment_to_population_ratio – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:44Z UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:44Z UTC] [CHECK] female_labor_force_participation: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:44Z UTC] [⏸️] female_labor_force_participation – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:45Z UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:45Z UTC] [CHECK] road_traffic_deaths_per_100k_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:45Z UTC] [⏸️] road_traffic_deaths_per_100k_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:47Z UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:47Z UTC] [CHECK] fixed_broadband_subscriptions_per_100_people: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:47Z UTC] [⏸️] fixed_broadband_subscriptions_per_100_people – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:48Z UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:48Z UTC] [CHECK] education_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:48Z UTC] [⏸️] education_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:49Z UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:49Z UTC] [CHECK] military_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:49Z UTC] [⏸️] military_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:51Z UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
-[2025-11-15T23:43:51Z UTC] [CHECK] purchasing_power_parity: remote=2025-10-07 local=2025-10-07 → skip
-[2025-11-15T23:43:51Z UTC] [⏸️] purchasing_power_parity – unchanged (2025-10-07T00:00:00Z)
-[2025-11-15T23:43:52Z UTC] [CHECK] median_age: max_year=2100 → fetch (possible update)
-[2025-11-15T23:43:53Z UTC] [HEUR] OWID median_age → inferred source_date 2023-01-01
-[2025-11-15T23:43:53Z UTC] [SAFE] JSON written → data\median_age.json (14652 entries)
-[2025-11-15T23:43:53Z UTC] [OK] OWID KPI saved: median_age (14652 rows, last updated 2023-01-01)
-[2025-11-15T23:43:53Z UTC] [STATUS] median_age: stored source_date=2023-01-01, data_year=2023
-[2025-11-15T23:43:53Z UTC] [CHECK] democracy_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T23:43:53Z UTC] [⏸️] democracy_index – unchanged (None)
-[2025-11-15T23:43:54Z UTC] [CHECK] press_freedom_index: max_year=2021 < 2025, fetched this year → skip
-[2025-11-15T23:43:54Z UTC] [⏸️] press_freedom_index – unchanged (None)
-[2025-11-15T23:43:55Z UTC] [CHECK] human_development_index_hdi: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T23:43:55Z UTC] [⏸️] human_development_index_hdi – unchanged (None)
-[2025-11-15T23:43:56Z UTC] [CHECK] physicians_per_1_000_people: max_year=2022 < 2025, fetched this year → skip
-[2025-11-15T23:43:56Z UTC] [⏸️] physicians_per_1_000_people – unchanged (None)
-[2025-11-15T23:43:57Z UTC] [CHECK] homelessness_rate: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T23:43:57Z UTC] [⏸️] homelessness_rate – unchanged (None)
-[2025-11-15T23:43:57Z UTC] [CHECK] old_age_dependency_ratio: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T23:43:57Z UTC] [⏸️] old_age_dependency_ratio – unchanged (None)
-[2025-11-15T23:43:58Z UTC] [CHECK] age_dependency_ratio_total: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T23:43:58Z UTC] [⏸️] age_dependency_ratio_total – unchanged (None)
-[2025-11-15T23:43:59Z UTC] [CHECK] co2_emissions: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T23:43:59Z UTC] [⏸️] co2_emissions – unchanged (None)
-[2025-11-15T23:44:00Z UTC] [CHECK] political_corruption_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T23:44:00Z UTC] [⏸️] political_corruption_index – unchanged (None)
-[2025-11-15T23:44:01Z UTC] [CHECK] military_spending_sipri: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T23:44:01Z UTC] [⏸️] military_spending_sipri – unchanged (None)
-[2025-11-15T23:44:02Z UTC] [CHECK] number_of_armed_conflicts: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T23:44:02Z UTC] [⏸️] number_of_armed_conflicts – unchanged (None)
-[2025-11-15T23:44:04Z UTC] [CHECK] mean_years_of_schooling: max_year=2040 → fetch (possible update)
-[2025-11-15T23:44:05Z UTC] [HEUR] OWID mean_years_of_schooling → inferred source_date 2040-01-01
-[2025-11-15T23:44:05Z UTC] [TRIM] mean_years_of_schooling: removed 1092 out-of-range records (before 1900 or >2025)
-[2025-11-15T23:44:05Z UTC] [SAFE] JSON written → data\mean_years_of_schooling.json (2962 entries)
-[2025-11-15T23:44:05Z UTC] [FIX] mean_years_of_schooling: future year 2040 detected → correcting to 2025
-[2025-11-15T23:44:05Z UTC] [OK] OWID KPI saved: mean_years_of_schooling (4054 rows, last updated 2025-01-01)
-[2025-11-15T23:44:05Z UTC] [STATUS] mean_years_of_schooling: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T23:44:06Z UTC] [CHECK] living_planet_index: max_year=2020 < 2025, fetched this year → skip
-[2025-11-15T23:44:06Z UTC] [⏸️] living_planet_index – unchanged (None)
-[2025-11-15T23:44:06Z UTC] [CHECK] electric_vehicle_stock: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T23:44:06Z UTC] [⏸️] electric_vehicle_stock – unchanged (None)
-[2025-11-15T23:44:07Z UTC] [CHECK] number_of_recorded_natural_disasters: max_year=2023 < 2025, fetched this year → skip
-[2025-11-15T23:44:07Z UTC] [⏸️] number_of_recorded_natural_disasters – unchanged (None)
-[2025-11-15T23:44:08Z UTC] [CHECK] global_co2_emissions: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T23:44:08Z UTC] [⏸️] global_co2_emissions – unchanged (None)
-[2025-11-15T23:44:09Z UTC] [CHECK] global_temperature_anomaly: max_year=2025 → fetch (possible update)
-[2025-11-15T23:44:10Z UTC] [HEUR] OWID global_temperature_anomaly → inferred source_date 2025-01-01
-[2025-11-15T23:44:10Z UTC] [TRIM] global_temperature_anomaly: removed 50 out-of-range records (before 1900 or >2025)
-[2025-11-15T23:44:10Z UTC] [SAFE] JSON written → data\global_temperature_anomaly.json (126 entries)
-[2025-11-15T23:44:10Z UTC] [OK] OWID KPI saved: global_temperature_anomaly (176 rows, last updated 2025-01-01)
-[2025-11-15T23:44:10Z UTC] [STATUS] global_temperature_anomaly: stored source_date=2025-01-01, data_year=2025
-[2025-11-15T23:44:11Z UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T23:44:11Z UTC] [⏸️] rule_of_law_index – unchanged (None)
-[2025-11-15T23:44:12Z UTC] [CHECK] state_based_conflict_deaths: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T23:44:12Z UTC] [⏸️] state_based_conflict_deaths – unchanged (None)
-[2025-11-15T23:44:12Z UTC] [WARN] world_happiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T23:44:12Z UTC] [⏸️] world_happiness_index – CSV unchanged (hash & mtime match)
-[2025-11-15T23:44:12Z UTC] [STATUS] world_happiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T23:44:12Z UTC] [WARN] olympic_medals_summer: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T23:44:12Z UTC] [⏸️] olympic_medals_summer – CSV unchanged (hash & mtime match)
-[2025-11-15T23:44:12Z UTC] [STATUS] olympic_medals_summer: stored source_date=2024-01-01T00:00:00Z, data_year=2024
-[2025-11-15T23:44:12Z UTC] [WARN] big_mac_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T23:44:12Z UTC] [⏸️] big_mac_index – CSV unchanged (hash & mtime match)
-[2025-11-15T23:44:12Z UTC] [STATUS] big_mac_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T23:44:12Z UTC] [WARN] recycling_rate: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T23:44:12Z UTC] [⏸️] recycling_rate – CSV unchanged (hash & mtime match)
-[2025-11-15T23:44:12Z UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
-[2025-11-15T23:44:12Z UTC] [WARN] environmental_performance_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T23:44:12Z UTC] [⏸️] environmental_performance_index – CSV unchanged (hash & mtime match)
-[2025-11-15T23:44:12Z UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
-[2025-11-15T23:44:12Z UTC] [WARN] global_peace_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T23:44:12Z UTC] [⏸️] global_peace_index – CSV unchanged (hash & mtime match)
-[2025-11-15T23:44:12Z UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T23:44:12Z UTC] [WARN] inform_resilience_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T23:44:12Z UTC] [⏸️] inform_resilience_index – CSV unchanged (hash & mtime match)
-[2025-11-15T23:44:12Z UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
-[2025-11-15T23:44:12Z UTC] [CHECK] geopolitical_risk_index: local files missing → fetch now
-[2025-11-15T23:44:12Z UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
-[2025-11-15T23:44:13Z UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
-[2025-11-15T23:44:13Z UTC] [⏸️] rule_of_law_index – unchanged (None)
-[2025-11-15T23:44:13Z UTC] [WARN] olympic_medals_winter: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T23:44:13Z UTC] [SAFE] JSON written → data\olympic_medals_winter.json (325 entries)
-[2025-11-15T23:44:13Z UTC] [OK] CSV KPI saved: olympic_medals_winter (325 rows, last updated 2022-01-01T00:00:00Z)
-[2025-11-15T23:44:13Z UTC] [STATUS] olympic_medals_winter: stored source_date=2022-01-01T00:00:00Z, data_year=2022
-[2025-11-15T23:44:13Z UTC] [WARN] pisa_overall_score: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
-[2025-11-15T23:44:13Z UTC] [SAFE] JSON written → data\pisa_overall_score.json (336 entries)
-[2025-11-15T23:44:13Z UTC] [OK] CSV KPI saved: pisa_overall_score (336 rows, last updated 2022-01-01T00:00:00Z)
-[2025-11-15T23:44:13Z UTC] [STATUS] pisa_overall_score: stored source_date=2022-01-01T00:00:00Z, data_year=2022
-[2025-11-15T23:44:13Z UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
-[2025-11-15T23:44:14Z UTC] [SAFE] JSON written → data\geopolitical_risk_index.json (41 entries)
-[2025-11-15T23:44:15Z UTC] ✅ Saved 41 GPR entries → C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.json
-[2025-11-15T23:44:15Z UTC] [SAFE] JSON written → data\fetch_status.json (2 entries)
-[2025-11-15T23:44:15Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T23:44:15Z UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
-[2025-11-15T23:44:15Z UTC] [SAFE] JSON written → data\fetch_status.json (2 entries)
-[2025-11-15T23:44:15Z UTC] [SAFE] JSON written → data\meta\country_mappings_pending.json (716 entries)
-[2025-11-15T23:44:15Z UTC] [INFO] fetch_status.json updated with 63 KPIs
-[2025-11-15T23:44:15Z UTC] [SAFE] JSON written → data\fetch_state.json (3 entries)
-[2025-11-15T23:44:15Z UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (6 entries)
-=== RealityCheck Fetch Report ===
-Countries loaded:   198
-KPIs processed:    65
-Saved records:     19543
-
-WorldBank KPIs:    0
-CSV KPIs:          2
-OWID KPIs:         3
-UNHCR KPIs:        0
-Others KPIs:       1
-
-Mapping OK:        34427
-Mapping dropped:   8524
-Mapping pending:   874
-
-Dummies created:   0
-Skipped (up-to-date): 59
-Errors:            0
-Updated KPIs:      6
-
-Updated KPI files:
-  - geopolitical_risk_index
-  - global_temperature_anomaly
-  - mean_years_of_schooling
-  - median_age
-  - olympic_medals_winter
-  - pisa_overall_score
-
-Skipped breakdown:
-  - CSV unchanged (hash & mtime): 7
-  - Remote data unchanged: 52
-=================================
-✅ Fetch completed successfully
-
-[2025-11-15T23:44:15Z UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
-[2025-11-16T00:44:15 UTC] === Overall Ranking Generation Started ===
-[2025-11-16T00:44:15 UTC] ✅ 30 KPIs considered for ranking
-[2025-11-16T00:44:15 UTC] 💾 JSON saved successfully → data\overall_ranking.json (198 records)
-[2025-11-16T00:44:15 UTC] ✅ overall_ranking.json written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\overall_ranking.json
-[2025-11-16T00:44:15 UTC] ➡️ Starting fun/safe haven ranking generation ...
-[2025-11-16T00:44:15 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
-[2025-11-16T00:44:15 UTC] ➡️ Generating Fun Mode via GPT-4-Turbo …
-[2025-11-16T00:44:51 UTC] 💾 Saved data\fun_ranking.json (10 entries)
-[2025-11-16T00:44:51 UTC] ➡️ Generating Safe Haven Mode via GPT-4-Turbo …
-[2025-11-16T00:45:10 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
-[2025-11-16T00:45:10 UTC] ➡️ Generating Immigration Mode via GPT-4-Turbo …
-[2025-11-16T00:45:27 UTC] 💾 Saved data\immigration_ranking.json (10 entries)
-[2025-11-16T00:45:27 UTC] ✅ All three rankings generated successfully.
-[2025-11-16T00:45:27 UTC] ✅ Fun & Safe Haven rankings successfully generated.
-[2025-11-15T23:45:33Z UTC] [STATE] Merged 6 updated KPIs → total 6 entries.
-[2025-11-16T00:45:33 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
-[2025-11-16T00:45:33 UTC] ➡️ Starting global analysis …
-[2025-11-16T00:45:44 UTC] 💾 Saved analysis (3884 chars)
-[2025-11-16T00:45:44 UTC] ⚙️ Limiting KPI analysis to 6 entries.
-[2025-11-16T00:46:13 UTC] ✅ KPI analyses saved (64 total)
-[2025-11-16T00:46:13 UTC] 🔎 Computing outliers …
-[2025-11-16T00:46:13 UTC] 💾 Outliers saved (57 KPIs, compact format)
-[2025-11-16T00:46:13 UTC] ✅ RealityCheck analysis completed successfully.
-[2025-11-16T00:46:13 UTC] ➡️ Starting CSV update check for 9 KPIs…
-[2025-11-16T00:46:13 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2024)
-[2025-11-16T00:46:15 UTC] 🤖 GPT response for 'World Happiness Index': Unknown
-[2025-11-16T00:46:18 UTC] ❓ No newer version for 'World Happiness Index' found.
-[2025-11-16T00:46:18 UTC] 🔍 Checking 'Olympic Medals (Summer)' (last known year: 2024)
-[2025-11-16T00:46:19 UTC] 🤖 GPT response for 'Olympic Medals (Summer)': Unknown
-[2025-11-16T00:46:22 UTC] ❓ No newer version for 'Olympic Medals (Summer)' found.
-[2025-11-16T00:46:22 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2025)
-[2025-11-16T00:46:22 UTC] 🤖 GPT response for 'Big Mac Index': Unknown
-[2025-11-16T00:46:25 UTC] ❓ No newer version for 'Big Mac Index' found.
-[2025-11-16T00:46:25 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
-[2025-11-16T00:46:26 UTC] 🤖 GPT response for 'Recycling Rate': Unknown
-[2025-11-16T00:46:29 UTC] ❓ No newer version for 'Recycling Rate' found.
-[2025-11-16T00:46:29 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
-[2025-11-16T00:46:30 UTC] 🤖 GPT response for 'Environmental Performance Index': **Unknown**
-[2025-11-16T00:46:33 UTC] ❓ No newer version for 'Environmental Performance Index' found.
-[2025-11-16T00:46:33 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
-[2025-11-16T00:46:33 UTC] 🤖 GPT response for 'Global Peace Index': Unknown
-[2025-11-16T00:46:36 UTC] ❓ No newer version for 'Global Peace Index' found.
-[2025-11-16T00:46:36 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
-[2025-11-16T00:46:37 UTC] 🤖 GPT response for 'Inform Resilience Index': Unknown
-[2025-11-16T00:46:40 UTC] ❓ No newer version for 'Inform Resilience Index' found.
-[2025-11-16T00:46:40 UTC] 🔍 Checking 'Olympic Medals (Winter)' (last known year: 2022)
-[2025-11-16T00:46:41 UTC] 🤖 GPT response for 'Olympic Medals (Winter)': 2022
-[2025-11-16T00:46:44 UTC] ⏸️ Up-to-date (2022 = 2022)
-[2025-11-16T00:46:44 UTC] 🔍 Checking 'PISA Overall Score' (last known year: 2022)
-[2025-11-16T00:46:44 UTC] 🤖 GPT response for 'PISA Overall Score': 2022
-[2025-11-16T00:46:47 UTC] ⏸️ Up-to-date (2022 = 2022)
-[2025-11-16T00:46:47 UTC] ✅ Smart CSV update check completed.
+[2025-11-16T12:06:46 UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
+[2025-11-16T12:06:46 UTC] === Overall Ranking Generation Started ===
+[2025-11-16T12:06:46 UTC] ✅ 30 KPIs considered for ranking
+[2025-11-16T12:06:47 UTC] 💾 JSON saved successfully → data\overall_ranking.json (198 records)
+[2025-11-16T12:06:47 UTC] ✅ overall_ranking.json written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\overall_ranking.json
+[2025-11-16T12:06:47 UTC] ➡️ Starting fun/safe haven ranking generation ...
+[2025-11-16T12:06:47 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
+[2025-11-16T12:06:47 UTC] ➡️ Generating Fun Mode via GPT-4o-Mini …
+[2025-11-16T12:07:00 UTC] 💾 Saved data\fun_ranking.json (10 entries)
+[2025-11-16T12:07:00 UTC] ➡️ Generating Safe Haven Mode via GPT-4o-Mini …
+[2025-11-16T12:07:10 UTC] 💾 Saved data\safe_haven_ranking.json (10 entries)
+[2025-11-16T12:07:10 UTC] ➡️ Generating Immigration Mode via GPT-4o-Mini …
+[2025-11-16T12:07:22 UTC] 💾 Saved data\immigration_ranking.json (10 entries)
+[2025-11-16T12:07:22 UTC] ✅ All three rankings generated successfully.
+[2025-11-16T12:07:22 UTC] ✅ Fun & Safe Haven rankings successfully generated.
+[2025-11-16T12:07:28 UTC] [STATE] Merged 64 updated KPIs → total 64 entries.
+[2025-11-16T12:07:28 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
+[2025-11-16T12:07:28 UTC] ➡️ Starting global analysis …
+[2025-11-16T12:07:44 UTC] 💾 Saved analysis (3872 chars)
+[2025-11-16T12:07:44 UTC] ⚙️ Limiting KPI analysis to 65 entries.
+[2025-11-16T12:12:51 UTC] ✅ KPI analyses saved (64 total)
+[2025-11-16T12:12:51 UTC] 🔎 Computing outliers …
+[2025-11-16T12:12:51 UTC] 💾 Outliers saved (57 KPIs, compact format)
+[2025-11-16T12:12:51 UTC] ✅ RealityCheck analysis completed successfully.
+[2025-11-16T12:12:51 UTC] ➡️ Starting CSV update check for 9 KPIs…
+[2025-11-16T12:12:51 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2024)
+[2025-11-16T12:12:54 UTC] 🤖 GPT response for 'World Happiness Index': {
+  "dataset": "World Happiness Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official website indicates that the most recent report was released in 2024, with no mention of a future release year."
+}
+[2025-11-16T12:12:56 UTC] 🤖 GPT response for 'World Happiness Index': {
+  "dataset": "World Happiness Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official World Happiness Report website indicates that the latest available data is from 2024, with no mention of a newer release."
+}
+[2025-11-16T12:12:59 UTC] ❓ No newer version for 'World Happiness Index' found.
+[2025-11-16T12:12:59 UTC] 🔍 Checking 'Olympic Medals (Summer)' (last known year: 2024)
+[2025-11-16T12:13:00 UTC] 🤖 GPT response for 'Olympic Medals (Summer)': {
+  "dataset": "Olympic Medals (Summer)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "No public release or download page mentions a year greater than 2024."
+}
+[2025-11-16T12:13:09 UTC] 🤖 GPT response for 'Olympic Medals (Summer)': {
+  "dataset": "Olympic Medals (Summer)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "No newer releases mentioned beyond 2024 were found on the publisher's page."
+}
+[2025-11-16T12:13:12 UTC] ❓ No newer version for 'Olympic Medals (Summer)' found.
+[2025-11-16T12:13:12 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2025)
+[2025-11-16T12:13:13 UTC] 🤖 GPT response for 'Big Mac Index': {
+  "dataset": "Big Mac Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The latest publication found on the Economist website for the Big Mac Index confirms data only up to the year 2025."
+}
+[2025-11-16T12:13:18 UTC] 🤖 GPT response for 'Big Mac Index': {
+  "dataset": "Big Mac Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official Big Mac Index page does not mention any release year beyond 2025, indicating that no newer data is currently available."
+}
+[2025-11-16T12:13:21 UTC] ❓ No newer version for 'Big Mac Index' found.
+[2025-11-16T12:13:21 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
+[2025-11-16T12:13:22 UTC] 🤖 GPT response for 'Recycling Rate': {
+  "dataset": "Recycling Rate",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "No newer publication year is mentioned on the OECD link, indicating the last available data remains from 2022."
+}
+[2025-11-16T12:13:24 UTC] 🤖 GPT response for 'Recycling Rate': {
+  "dataset": "Recycling Rate",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official OECD page does not indicate any new data release beyond 2022."
+}
+[2025-11-16T12:13:27 UTC] ❓ No newer version for 'Recycling Rate' found.
+[2025-11-16T12:13:27 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
+[2025-11-16T12:13:28 UTC] 🤖 GPT response for 'Environmental Performance Index': {
+  "dataset": "Environmental Performance Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official EPI website indicates that the latest available data is from 2022, with no mention of a newer release."
+}
+[2025-11-16T12:13:29 UTC] 🤖 GPT response for 'Environmental Performance Index': {
+  "dataset": "Environmental Performance Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official EPI website does not list a new release year beyond 2022."
+}
+[2025-11-16T12:13:32 UTC] ❓ No newer version for 'Environmental Performance Index' found.
+[2025-11-16T12:13:32 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
+[2025-11-16T12:13:36 UTC] 🤖 GPT response for 'Global Peace Index': {
+  "dataset": "Global Peace Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official page indicates the latest index was released in 2025, with no references to updates or new releases beyond that year."
+}
+[2025-11-16T12:13:38 UTC] 🤖 GPT response for 'Global Peace Index': {
+  "dataset": "Global Peace Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official site only provides Global Peace Index data up to the year 2025 with no mention of a newer release."
+}
+[2025-11-16T12:13:41 UTC] ❓ No newer version for 'Global Peace Index' found.
+[2025-11-16T12:13:41 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
+[2025-11-16T12:13:42 UTC] 🤖 GPT response for 'Inform Resilience Index': {
+  "dataset": "Inform Resilience Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "No newer release year past 2025 is mentioned on the official publisher link."
+}
+[2025-11-16T12:13:43 UTC] 🤖 GPT response for 'Inform Resilience Index': {
+  "dataset": "Inform Resilience Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official publisher link shows the latest data as up to 2025 without mention of any future release."
+}
+[2025-11-16T12:13:46 UTC] ❓ No newer version for 'Inform Resilience Index' found.
+[2025-11-16T12:13:46 UTC] 🔍 Checking 'Olympic Medals (Winter)' (last known year: 2022)
+[2025-11-16T12:13:48 UTC] 🤖 GPT response for 'Olympic Medals (Winter)': {
+  "dataset": "Olympic Medals (Winter)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "No newer release found on Kaggle or official Olympic sources; last update remains 2022."
+}
+[2025-11-16T12:13:49 UTC] 🤖 GPT response for 'Olympic Medals (Winter)': {
+  "dataset": "Olympic Medals (Winter)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "No newer release information was found on the Kaggle page or other reliable sources."
+}
+[2025-11-16T12:13:52 UTC] ❓ No newer version for 'Olympic Medals (Winter)' found.
+[2025-11-16T12:13:52 UTC] 🔍 Checking 'PISA Overall Score' (last known year: 2022)
+[2025-11-16T12:13:53 UTC] 🤖 GPT response for 'PISA Overall Score': {
+  "dataset": "PISA Overall Score",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The OECD PISA data page indicates that the latest release available for download is from 2022, with no newer releases mentioned."
+}
+[2025-11-16T12:13:55 UTC] 🤖 GPT response for 'PISA Overall Score': {
+  "dataset": "PISA Overall Score",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official OECD PISA data page does not indicate any release year beyond 2022."
+}
+[2025-11-16T12:13:58 UTC] ❓ No newer version for 'PISA Overall Score' found.
+[2025-11-16T12:13:58 UTC] ✅ Smart CSV update check completed.
