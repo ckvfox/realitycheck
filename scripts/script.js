@@ -1266,7 +1266,19 @@ window.updateMap = updateMap;
 window.highlightOnMap = highlightOnMap;
 
 /* ========= MAP AUTO-INIT (Retry Logic for Leaflet) ========= */
-onDocumentReady(async () => {
+const runWhenReady =
+  typeof onDocumentReady === "function"
+    ? onDocumentReady
+    : handler => {
+        if (typeof handler !== "function") return;
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", handler, { once: true });
+        } else {
+          handler();
+        }
+      };
+
+runWhenReady(async () => {
   for (let tries = 1; tries <= 5; tries++) {
     const mapEl = document.getElementById("map");
     if (mapEl && mapEl.offsetHeight > 0 && typeof L !== "undefined") {
@@ -1282,5 +1294,5 @@ onDocumentReady(async () => {
 
 
 /* ========= Start ========= */
-onDocumentReady(() => init());
+runWhenReady(() => init());
 
