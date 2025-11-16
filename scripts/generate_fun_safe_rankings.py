@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from __future__ import annotations
+
 """
 🌍 RealityCheck – Fun, Safe Haven & Immigration Rankings (Nov 2025)
 ─────────────────────────────────────────────
@@ -18,6 +20,11 @@ from pathlib import Path
 from typing import Any, Optional
 
 from env_utils import get_openai_client
+from prompt_templates import (
+    build_fun_ranking_prompt,
+    build_safe_haven_prompt,
+    build_immigration_prompt,
+)
 from script_utils import ensure_utf8_stdout, safe_write_json, setup_logger
 
 # === UTF-8 Fix ===
@@ -50,50 +57,6 @@ def save_json(data, path: Path):
         log(f"❌ Failed to save {path.name}: {e}")
 
 # === Prompts ===
-PROMPT_FUN = """
-You are an analyst generating the **Fun Ranking** – create a JSON list of the Top 10 countries that best match a 'Fun & Easy Living' lifestyle.
-Criteria: pleasant climate (18–26 °C), many sunny days (280-300), few rainy days (60-90), high happiness (e.g. World Happiness Index), low beer price in restaurants (< 3.50 USD). If a country has a city that is listed in the top 5 most livable cities according to the EIU Global Liveability Index, Mercer Quality of Living Index, or Monocle Quality of Life Survey, that country should receive an additional bonus in the fun ranking.
-Return the full, valid JSON array and make sure all brackets are properly closed.
-""".strip()
-
-PROMPT_SAFE = """
-You are an analyst generating the **Safe Haven Ranking** – create a JSON list of the Top 10 safest and most resilient countries to live in.
-Criteria: human rights (e.g. Human Rights Index), low conflict risk (e.g. Geopolitical Risk Index), moderate climate risk (e.g. Climate Risk Index), resilience (e.g. Inform Resilience Index), stable democracy (e.g. Democracy Index).
-Return the full, valid JSON array and make sure all brackets are properly closed.
-""".strip()
-
-PROMPT_IMMIGRATION = f"""
-You are an international migration and labor-mobility analyst.
-
-Your task: Identify and rank the **Top 10 countries that are easiest and most attractive for immigration in {datetime.now().year}**, based on realistic and data-driven reasoning.
-
-Consider these key dimensions:
-• Openness of immigration policies (visa, work permits, permanent residence options)
-• Job opportunities and demand for skilled workers
-• Integration friendliness and social acceptance of migrants
-• Language accessibility (English or major world language)
-• Quality of life and long-term stability
-
-Base your reasoning on global indexes such as:
-– Migration Policy Index
-– Global Talent Competitiveness Index
-– UN Migration Data Portal
-– World Happiness Index
-– Rule of Law, Safety, and Economic Stability
-
-Output STRICTLY as valid JSON array, no comments or text.
-Each entry must have:
-  {{
-    "rank": <int>,
-    "country": "<string>",
-    "reason": "<string>"
-  }}
-Example:
-[
-  {{"rank": 1, "country": "Canada", "reason": "open immigration policies"}},
-  ...
-]
-""".strip()
 
 
 # === Core ===
@@ -124,44 +87,101 @@ def _attempt_json_load(raw_json: str, mode: str) -> Optional[Any]:
         return None
 
 
-def generate_ranking(mode: str, prompt: str, path: Path):
-    log(f"➡️ Generating {mode} via GPT-4-Turbo …")
-    client = get_openai_client()
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4-turbo",
-            messages=[
-                {"role": "system", "content": "You are a geopolitical and socioeconomic analyst."},
-                {"role": "user", "content": prompt},
-            ],
-            max_completion_tokens=1000
-        )
-        text = response.choices[0].message.content.strip()
-    except Exception as e:
-        log(f"❌ GPT request failed in {mode}: {e}")
-        return []
+def _validate_ranking_payload(data: Any) -> tuple[bool, str]:
+    if not isinstance(data, list):
+        return False, "Response is not a JSON array"
+    if len(data) == 0:
+        return False, "JSON array is empty"
+    if len(data) > 10:
+        return False, "JSON array exceeds 10 entries"
 
-    if not text:
-        log(f"⚠️ Empty response for {mode}")
-        return []
+    for entry in data:
+        if not isinstance(entry, dict):
+            return False, "Entry is not an object"
+        rank = entry.get("rank")
+        country = entry.get("country")
+        reason = entry.get("reason")
+        if not isinstance(rank, int):
+            return False, "Missing integer rank"
+        if not isinstance(country, str) or not country.strip():
+            return False, "Missing country string"
+        if not isinstance(reason, str) or not reason.strip():
+            return False, "Missing reason string"
+        if len(reason) > 220:
+            return False, "Reason exceeds 220 characters"
+    return True, ""
 
+
+def _extract_json_snippet(text: str) -> str | None:
     clean = text.strip("` \n")
     if clean.lower().startswith("json"):
         clean = clean[4:].strip()
-
     match = re.search(r"(\[.*\]|\{.*\})", clean, re.DOTALL)
-    if not match:
-        log(f"⚠️ No JSON found in GPT response for {mode}")
-        log(f"Raw excerpt: {clean[:200]}")
-        return []
+    if match:
+        return match.group(1)
+    return clean if clean.startswith("[") else None
 
-    raw_json = match.group(1)
-    parsed = _attempt_json_load(raw_json, mode)
-    if parsed is None:
-        return []
 
-    save_json(parsed, path)
-    return parsed
+def generate_ranking(mode: str, prompt: str, path: Path):
+    log(f"➡️ Generating {mode} via GPT-4o-Mini …")
+    client = get_openai_client()
+    messages = [
+        {"role": "system", "content": "You answer with JSON arrays that follow the requested schema."},
+        {"role": "user", "content": prompt},
+    ]
+
+    for attempt in range(2):
+        try:
+            response = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=messages,
+                max_completion_tokens=1000,
+            )
+        except Exception as e:
+            log(f"❌ GPT request failed in {mode} (attempt {attempt+1}): {e}")
+            continue
+
+        text = (response.choices[0].message.content or "").strip()
+        if not text:
+            log(f"⚠️ Empty response for {mode} (attempt {attempt+1})")
+            messages.append({
+                "role": "user",
+                "content": "Reply again with a JSON array matching the schema.",
+            })
+            continue
+
+        snippet = _extract_json_snippet(text)
+        if not snippet:
+            log(f"⚠️ No JSON found in GPT response for {mode}")
+            log(f"Raw excerpt: {text[:200]}")
+            messages.append({
+                "role": "user",
+                "content": "No valid JSON array detected. Reply with array only.",
+            })
+            continue
+
+        parsed = _attempt_json_load(snippet, mode)
+        if parsed is None:
+            messages.append({
+                "role": "user",
+                "content": "Previous JSON was invalid. Provide a clean JSON array only.",
+            })
+            continue
+
+        valid, reason = _validate_ranking_payload(parsed)
+        if not valid:
+            log(f"⚠️ Validation failed for {mode}: {reason}")
+            messages.append({
+                "role": "user",
+                "content": f"Your JSON did not match the schema ({reason}). Return a corrected JSON array.",
+            })
+            continue
+
+        save_json(parsed, path)
+        return parsed
+
+    log(f"❌ Unable to generate valid JSON for {mode} after retries.")
+    return []
 
 # === Main ===
 if __name__ == "__main__":
@@ -170,9 +190,9 @@ if __name__ == "__main__":
     IMMIG = DATA_DIR / "immigration_ranking.json"
 
     log("🎬 Starting Fun, Safe & Immigration ranking generation…")
-    fun = generate_ranking("Fun Mode", PROMPT_FUN, FUN)
-    safe = generate_ranking("Safe Haven Mode", PROMPT_SAFE, SAFE)
-    immigr = generate_ranking("Immigration Mode", PROMPT_IMMIGRATION, IMMIG)
+    fun = generate_ranking("Fun Mode", build_fun_ranking_prompt(), FUN)
+    safe = generate_ranking("Safe Haven Mode", build_safe_haven_prompt(), SAFE)
+    immigr = generate_ranking("Immigration Mode", build_immigration_prompt(datetime.now().year), IMMIG)
 
     if fun and safe and immigr:
         log("✅ All three rankings generated successfully.")
