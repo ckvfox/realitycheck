@@ -16,40 +16,14 @@ function showToast(msg) {
     toast = document.createElement("div");
     toast.id = "toast";
     document.body.appendChild(toast);
-
-    Object.assign(toast.style, {
-      position: "fixed",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%) scale(0.9)",
-      background: "rgba(0, 0, 0, 0.8)",
-      color: "#fff",
-      padding: "1rem 1.6rem",
-      borderRadius: "10px",
-      fontSize: "1rem",
-      fontWeight: "500",
-      boxShadow: "0 6px 18px rgba(0,0,0,0.35)",
-      opacity: "0",
-      transition: "opacity 0.4s ease, transform 0.4s ease",
-      zIndex: "99999",
-      pointerEvents: "none",
-      textAlign: "center",
-      maxWidth: "80%"
-    });
   }
 
   toast.textContent = msg;
 
   toast.classList.add("show");
-  requestAnimationFrame(() => {
-    toast.style.opacity = "1";
-    toast.style.transform = "translate(-50%, -50%) scale(1)";
-  });
 
   clearTimeout(toast._timeout);
   toast._timeout = setTimeout(() => {
-    toast.style.opacity = "0";
-    toast.style.transform = "translate(-50%, -50%) scale(0.9)";
     toast.classList.remove("show");
   }, 2500);
 }
