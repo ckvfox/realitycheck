@@ -55,6 +55,26 @@
   <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js" defer></script>
 
   <script>
+  const debounce = (fn, wait = 120) => {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn.apply(null, args), wait);
+    };
+  };
+
+  const updateGlossaryScrollState = () => {
+    const container = document.getElementById("glossary-container");
+    const table = container?.querySelector("#glossary-table");
+    if (!container || !table) return;
+
+    const needsScroll = table.scrollWidth > container.clientWidth + 2;
+    container.classList.toggle("glossary-scrollable", needsScroll);
+    container.dataset.scrollable = needsScroll ? "true" : "false";
+  };
+
+  window.addEventListener("resize", debounce(updateGlossaryScrollState, 160));
+
   async function loadGlossary() {
     try {
       const [fetchRes, outlierRes, metaRes, countryRes] = await Promise.all([
@@ -207,6 +227,7 @@
       }
 
       makeTableSortable("glossary-table");
+      requestAnimationFrame(updateGlossaryScrollState);
 
     } catch (err) {
       console.error("Glossary load failed:", err);
@@ -219,6 +240,7 @@
       cell.textContent = "Error loading data";
       row.appendChild(cell);
       body.appendChild(row);
+      requestAnimationFrame(updateGlossaryScrollState);
     }
   }
 
