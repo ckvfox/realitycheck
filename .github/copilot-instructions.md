@@ -86,9 +86,20 @@ python scripts/fetch_overall_ranking.py
 When the fetcher encounters an unknown country name (e.g., "United States of America" from OWID):
 1. Checks `country_mappings.json` for existing alias → canonical name mapping
 2. If not found, adds to `country_mappings_pending.json` with placeholder canonical name
-3. Review pending file manually and move verified mappings to `country_mappings.json`
-4. Re-run fetch script to apply new mappings
+3. **Auto-Resolution Agent** (`auto_resolve_pending_mappings.py`) automatically processes pending entries:
+   - Resolves ISO 2/3 codes (DEU → Germany, GBR → United Kingdom)
+   - Maps German names (Deutschland → Germany, Frankreich → France)
+   - Handles known variants (United States of America → United States)
+   - Maps Olympic codes (GER → Germany, USA → United States)
+   - **Excludes** regional groups, historical entities, non-countries for manual review
+4. Remaining unclear entries stay in pending for manual review
 5. Never edit canonical names in `countries.json` to match source data – always map source → canonical
+
+**Auto-Mapping Agent Features:**
+- Runs automatically after each fetch when new pending mappings are detected
+- Processes ~80% of common country name variations automatically
+- Leaves ambiguous cases (World Bank regions, Soviet Union, Mixed teams) for manual review
+- Test with: `python scripts/test_auto_mapping.py`
 
 ### GPT Integration Pattern
 All GPT calls use `env_utils.py`:

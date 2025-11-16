@@ -1,58 +1,39 @@
 # Global KPI Trends Report
 
 ## Economy
-
-- The **geopolitical risk index** registers a mean of **103.03**, indicating moderate risk levels. This affects economic stability and investor confidence globally.
-- Economic disparities are visible when correlating the **mean years of schooling** (4.75) with GDP per capita, highlighting that countries with higher education tend to have stronger economies.
-- Countries with underdeveloped education systems often face economic challenges, as poor educational infrastructure hinders market competitiveness.
+Global GDP, with an average of **$204.5 billion**, indicates varied economic growth across regions. Countries with higher GDP also tend to show a higher **purchasing power parity** (mean **$16,020.66**). However, **tax revenue of GDP** is only **17.03%**, hinting at potential inefficiencies in tax collection or lower economic activity in regions with lower GDP per capita (mean **$8,426.21**). Notably, the **Big Mac Index** at a mean of **$3.55** suggests valuation disparities that reflect currency strength.
 
 ## Environment
-
-- The **global temperature anomaly** mean is **0.42**, reflecting ongoing challenges of climate change, with significant deviations from historical temperature baselines.
-- A rise in these anomalies is often associated with increased economic activities without adequate environmental regulations, heightening the need for global cooperation in emissions reductions.
-- Economic growth in developing regions can result in exacerbated environmental impacts if unaccompanied by sustainable practices.
+Environmental performance shows mixed progress. The **air quality PM2.5 exposure** averages **27.37**, indicating significant pollution, while **co2 emissions** average a substantial **192.8 million**. **Renewable energy** contributes **33.47%** of total energy, signaling a transition towards sustainable sources. However, the **global temperature anomaly** of **0.42°C** emphasizes ongoing climate change.
 
 ## Society & Governance
-
-- The **median age** of **23.31** suggests a youthful global population, with significant variations between regions; aging populations in Europe versus youthful demographics in Africa.
-- Educational outcomes measured by the **PISA overall score** average of **476.24** show disparities, particularly between richer (typically higher scores) and poorer nations.
-- Stable governance structures generally witness higher educational achievements, emphasizing the importance of democracy and governance in socio-economic progress.
+Social indicators reveal challenges and progress. The **adult literacy rate** (mean **80.97%**) and **life expectancy** (mean **64.36 years**) show signs of improvement but are uneven. The **democracy index** averages **5.43**, highlighting governance issues, while the **political corruption index** (mean **0.57**) remains high, affecting governance quality.
 
 ## Technology
-
-- Technological advancements contribute significantly to education and healthcare improvements, which can lead to higher **mean years of schooling** and increase the **PISA** scores.
-- Digital access remains uneven, with technological innovation skewed towards developed economies, challenging low-income countries to keep pace.
+Technology access shows varied penetration. **Internet penetration** stands at **30.59%**, while **fixed broadband subscriptions** are at **10.47 per 100 people**, indicating digital divides. The surge in **electric vehicle stock** (mean **867,251.67**) is a positive technological trend, promoting cleaner transportation.
 
 ## Regional Insights
+- **Europe** shows high democracy and literacy rates but grapples with aging populations.
+- **Africa** faces challenges with higher poverty and lower HDI, but has significant economic growth potential.
+- **Asia** exhibits large disparities, with rapid technological progress in some regions and significant environmental challenges.
+- **Americas** have varying GDPs, with emerging economies and established ones side by side.
 
-- **Europe**: Aging population, high educational achievement, yet faced with immigration and integration challenges.
-- **Africa**: Young demographic, educational improvements needed, climate vulnerability high.
-- **Asia**: Rapid technological growth contrasting with environmental stresses and varied governance models.
-- **Americas**: Economic and political diversity, with North America more stable compared to South America's volatility.
+## Major Progress and Regression Trends
+- **Progress:** Improvements in **education expenditure** (mean **4.33% of GDP**) and **ev stock** mirror efforts in sustainable and human capital investment.
+- **Regression:** Rising **co2 emissions** and low **air quality** remain critical concerns, with **extreme poverty** affecting **11.46%** of the global population.
 
-## Progress and Regression
+## Indicator Interconnections
+- **GDP ↔ CO2 Emissions:** Nations with higher GDP generally have higher CO2 emissions, except for those investing heavily in renewables.
+- **Democracy ↔ Happiness:** Countries with higher democracy scores tend to also score better on the **World Happiness Index** (mean **5.54**).
 
-- *Progress*: Increased access to education and technology is slowly narrowing the socio-economic divide.
-- *Regression*: Environmental challenges persist despite advancements, and geopolitical risks threaten stability.
-
-## Interconnections
-
-- Education and governance quality are tightly interwoven, impacting economic output and societal wellbeing.
-- Countries with low geopolitical risk typically correlate with better educational and economic outcomes.
+## Long-Term Implications
+The low **urbanization rate** (49.69%) implies potential infrastructural growth for developing countries. **Global CO2 emissions** and climate anomalies suggest urgent action is necessary to mitigate long-term environmental impact.
 
 ## Noteworthy Outliers
-
-- **Finland** stands out with high PISA scores and strong governance, showing the cumulative benefits of stable policies.
-- **Qatar**: High median age growth due to expatriate workers contrasts with regional norms.
+- **High CO2 emissions** but low GDP might indicate inefficient energy use.
+- **High democracy scores** in some African countries show unexpected governance improvement.
 
 ## Outlook
+Continued focus on **renewable energy** and **technological integration** presents opportunities for growth and environmental preservation. Addressing **political corruption** and enhancing **healthcare access**, indicated by **hospital beds per 1,000 people** (mean **4.19**), can foster stability and prosperity.
 
-- Climate risk remains a significant concern; proactive policies are needed to avert severe economic and humanitarian impacts.
-- Education and technology enhancements are key to global prosperity, offering tools to mitigate risks and foster innovation.
-
-## Conclusion
-
-- A concerted global effort is essential to address disparities. Democracies with strong governance and robust education systems lead in societal progress.
-- While technological innovations offer opportunities, sustainable practices must be prioritized to combat climate threats effectively.
-
-This report highlights the interconnected nature of these KPIs and underscores the need for collaborative, forward-thinking strategies across global domains.
+In summary, this report highlights a world of contrasts, linking economic prosperity and technological advancements with persistent environmental challenges and socio-political issues. Collaborative global efforts could bridge these divides, driving future success.

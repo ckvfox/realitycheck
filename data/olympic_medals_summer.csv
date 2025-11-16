@@ -29,6 +29,8 @@ Argentina,,2012,4.0
 Argentina,,2016,4.0
 Argentina,,2020,3.0
 Argentina,,2024,3.0
+Argentina,,1932,4.0
+Argentina,,1960,2.0
 Armenia,,1996,2.0
 Armenia,,2000,1.0
 Armenia,,2008,5.0
@@ -61,6 +63,8 @@ Australia,,2012,35.0
 Australia,,2016,29.0
 Australia,,2020,46.0
 Australia,,2024,53.0
+Australia,,1932,5.0
+Australia,,1960,22.0
 Austria,,1900,6.0
 Austria,,1904,3.0
 Austria,,1912,4.0
@@ -84,6 +88,9 @@ Austria,,2008,3.0
 Austria,,2016,1.0
 Austria,,2020,7.0
 Austria,,2024,5.0
+Austria,,1908,1.0
+Austria,,1932,5.0
+Austria,,1960,2.0
 Azerbaijan,,1996,1.0
 Azerbaijan,,2000,3.0
 Azerbaijan,,2004,5.0
@@ -139,6 +146,9 @@ Belgium,,2012,3.0
 Belgium,,2016,6.0
 Belgium,,2020,7.0
 Belgium,,2024,10.0
+Belgium,,1908,8.0
+Belgium,,1932,1.0
+Belgium,,1960,4.0
 Botswana,,2012,1.0
 Botswana,,2020,1.0
 Botswana,,2024,2.0
@@ -162,6 +172,7 @@ Brazil,,2012,17.0
 Brazil,,2016,19.0
 Brazil,,2020,21.0
 Brazil,,2024,20.0
+Brazil,,1960,2.0
 Bulgaria,,1952,1.0
 Bulgaria,,1956,5.0
 Bulgaria,,1964,10.0
@@ -179,6 +190,7 @@ Bulgaria,,2012,3.0
 Bulgaria,,2016,3.0
 Bulgaria,,2020,6.0
 Bulgaria,,2024,7.0
+Bulgaria,,1960,7.0
 Burkina Faso,,2020,1.0
 Burundi,,1996,1.0
 Burundi,,2016,1.0
@@ -212,7 +224,11 @@ Canada,,2012,18.0
 Canada,,2016,22.0
 Canada,,2020,24.0
 Canada,,2024,27.0
+Canada,,1908,16.0
+Canada,,1932,16.0
+Canada,,1960,1.0
 Cape Verde,,2024,1.0
+Sri Lanka,,1948,1.0
 Chile,,1928,1.0
 Chile,,1952,2.0
 Chile,,1956,4.0
@@ -232,6 +248,16 @@ China,,2012,92.0
 China,,2016,70.0
 China,,2020,89.0
 China,,2024,91.0
+Taiwan,,1984,1.0
+Taiwan,,1992,1.0
+Taiwan,,1996,1.0
+Taiwan,,2000,5.0
+Taiwan,,2004,5.0
+Taiwan,,2008,4.0
+Taiwan,,2012,2.0
+Taiwan,,2016,3.0
+Taiwan,,2020,12.0
+Taiwan,,2024,7.0
 Colombia,,1972,3.0
 Colombia,,1984,1.0
 Colombia,,1988,1.0
@@ -274,6 +300,14 @@ Cuba,,2020,15.0
 Cuba,,2024,9.0
 Cyprus,,2012,1.0
 Cyprus,,2024,1.0
+Czechia,,1996,11.0
+Czechia,,2000,8.0
+Czechia,,2004,9.0
+Czechia,,2008,7.0
+Czechia,,2012,11.0
+Czechia,,2016,10.0
+Czechia,,2020,11.0
+Czechia,,2024,5.0
 Denmark,,1900,6.0
 Denmark,,1912,12.0
 Denmark,,1920,13.0
@@ -299,6 +333,9 @@ Denmark,,2012,9.0
 Denmark,,2016,15.0
 Denmark,,2020,11.0
 Denmark,,2024,9.0
+Denmark,,1908,5.0
+Denmark,,1932,8.0
+Denmark,,1960,6.0
 Djibouti,,1988,1.0
 Dominica,,2024,1.0
 Dominican Republic,,1984,1.0
@@ -348,6 +385,7 @@ Ethiopia,,2012,8.0
 Ethiopia,,2016,8.0
 Ethiopia,,2020,4.0
 Ethiopia,,2024,4.0
+Ethiopia,,1960,1.0
 Fiji,,2016,1.0
 Fiji,,2020,2.0
 Fiji,,2024,1.0
@@ -374,6 +412,10 @@ Finland,,2008,4.0
 Finland,,2012,3.0
 Finland,,2016,1.0
 Finland,,2020,2.0
+Finland,,1908,5.0
+Finland,,1932,25.0
+Finland,,1960,5.0
+Taiwan,,1960,1.0
 France,,1900,112.0
 France,,1904,1.0
 France,,1912,15.0
@@ -400,6 +442,9 @@ France,,2012,35.0
 France,,2016,42.0
 France,,2020,33.0
 France,,2024,64.0
+France,,1908,19.0
+France,,1932,20.0
+France,,1960,5.0
 Gabon,,2012,1.0
 Georgia,,1996,2.0
 Georgia,,2000,6.0
@@ -424,10 +469,42 @@ Germany,,2012,44.0
 Germany,,2016,42.0
 Germany,,2020,37.0
 Germany,,2024,33.0
+Germany,,1932,24.0
+Germany,,1908,13.0
 Ghana,,1964,1.0
 Ghana,,1972,1.0
 Ghana,,1992,1.0
 Ghana,,2020,1.0
+Ghana,,1960,1.0
+United Kingdom,,1900,37.0
+United Kingdom,,1904,2.0
+United Kingdom,,1912,41.0
+United Kingdom,,1920,42.0
+United Kingdom,,1924,34.0
+United Kingdom,,1928,20.0
+United Kingdom,,1936,14.0
+United Kingdom,,1948,27.0
+United Kingdom,,1952,11.0
+United Kingdom,,1956,24.0
+United Kingdom,,1964,18.0
+United Kingdom,,1968,13.0
+United Kingdom,,1972,18.0
+United Kingdom,,1976,13.0
+United Kingdom,,1980,21.0
+United Kingdom,,1984,37.0
+United Kingdom,,1988,24.0
+United Kingdom,,1992,20.0
+United Kingdom,,1996,15.0
+United Kingdom,,2000,28.0
+United Kingdom,,2004,30.0
+United Kingdom,,2008,51.0
+United Kingdom,,2012,65.0
+United Kingdom,,2016,67.0
+United Kingdom,,2020,64.0
+United Kingdom,,2024,65.0
+United Kingdom,,1932,17.0
+United Kingdom,,1960,20.0
+United Kingdom,,1908,146.0
 Greece,,1904,2.0
 Greece,,1912,2.0
 Greece,,1920,1.0
@@ -446,6 +523,8 @@ Greece,,2012,2.0
 Greece,,2016,6.0
 Greece,,2020,4.0
 Greece,,2024,8.0
+Greece,,1960,1.0
+Greece,,1908,4.0
 Grenada,,2012,1.0
 Grenada,,2016,1.0
 Grenada,,2020,1.0
@@ -479,6 +558,9 @@ Hungary,,2012,18.0
 Hungary,,2016,15.0
 Hungary,,2020,20.0
 Hungary,,2024,19.0
+Hungary,,1908,9.0
+Hungary,,1932,16.0
+Hungary,,1960,21.0
 Iceland,,1956,1.0
 Iceland,,1984,1.0
 Iceland,,2000,1.0
@@ -501,6 +583,8 @@ India,,2012,6.0
 India,,2016,2.0
 India,,2020,7.0
 India,,2024,6.0
+India,,1932,1.0
+India,,1960,1.0
 Indonesia,,1988,1.0
 Indonesia,,1992,5.0
 Indonesia,,1996,4.0
@@ -528,6 +612,8 @@ Iran,,2012,13.0
 Iran,,2016,8.0
 Iran,,2020,7.0
 Iran,,2024,12.0
+Iran,,1960,4.0
+Iraq,,1960,1.0
 Ireland,,1928,1.0
 Ireland,,1948,1.0
 Ireland,,1952,1.0
@@ -543,6 +629,7 @@ Ireland,,2012,6.0
 Ireland,,2016,2.0
 Ireland,,2020,4.0
 Ireland,,2024,7.0
+Ireland,,1932,2.0
 Israel,,1992,2.0
 Israel,,1996,1.0
 Israel,,2000,1.0
@@ -576,6 +663,9 @@ Italy,,2012,28.0
 Italy,,2016,28.0
 Italy,,2020,40.0
 Italy,,2024,40.0
+Italy,,1908,4.0
+Italy,,1932,36.0
+Italy,,1960,36.0
 Ivory Coast,,1984,1.0
 Ivory Coast,,2016,2.0
 Ivory Coast,,2020,1.0
@@ -618,6 +708,8 @@ Japan,,2012,38.0
 Japan,,2016,41.0
 Japan,,2020,58.0
 Japan,,2024,45.0
+Japan,,1932,18.0
+Japan,,1960,18.0
 Jordan,,2016,1.0
 Jordan,,2020,2.0
 Jordan,,2024,1.0
@@ -661,6 +753,7 @@ Latvia,,2004,4.0
 Latvia,,2008,3.0
 Latvia,,2012,2.0
 Latvia,,2020,2.0
+Latvia,,1932,1.0
 Lebanon,,1952,2.0
 Lebanon,,1972,1.0
 Lebanon,,1980,1.0
@@ -675,6 +768,7 @@ Lithuania,,2020,1.0
 Lithuania,,2024,4.0
 Luxembourg,,1920,1.0
 Luxembourg,,1952,1.0
+North Macedonia,,2000,1.0
 Malaysia,,1992,1.0
 Malaysia,,1996,2.0
 Malaysia,,2008,1.0
@@ -703,6 +797,8 @@ Mexico,,2012,8.0
 Mexico,,2016,5.0
 Mexico,,2020,4.0
 Mexico,,2024,5.0
+Mexico,,1932,2.0
+Mexico,,1960,1.0
 Moldova,,1996,2.0
 Moldova,,2000,2.0
 Moldova,,2008,1.0
@@ -733,6 +829,7 @@ Morocco,,2012,1.0
 Morocco,,2016,1.0
 Morocco,,2020,1.0
 Morocco,,2024,2.0
+Morocco,,1960,1.0
 Mozambique,,1996,1.0
 Mozambique,,2000,1.0
 Namibia,,1992,2.0
@@ -762,6 +859,9 @@ Netherlands,,2012,20.0
 Netherlands,,2016,19.0
 Netherlands,,2020,36.0
 Netherlands,,2024,34.0
+Netherlands,,1908,2.0
+Netherlands,,1932,8.0
+Netherlands,,1960,3.0
 New Zealand,,1920,1.0
 New Zealand,,1924,1.0
 New Zealand,,1928,1.0
@@ -783,6 +883,8 @@ New Zealand,,2012,13.0
 New Zealand,,2016,18.0
 New Zealand,,2020,20.0
 New Zealand,,2024,20.0
+New Zealand,,1932,1.0
+New Zealand,,1960,3.0
 Niger,,1972,1.0
 Niger,,2016,1.0
 Nigeria,,1964,1.0
@@ -831,6 +933,8 @@ Norway,,2012,4.0
 Norway,,2016,4.0
 Norway,,2020,8.0
 Norway,,2024,8.0
+Norway,,1908,8.0
+Norway,,1960,1.0
 Pakistan,,1956,1.0
 Pakistan,,1964,1.0
 Pakistan,,1968,1.0
@@ -840,6 +944,7 @@ Pakistan,,1984,1.0
 Pakistan,,1988,1.0
 Pakistan,,1992,1.0
 Pakistan,,2024,1.0
+Pakistan,,1960,2.0
 Panama,,1948,2.0
 Panama,,2008,1.0
 Panama,,2024,1.0
@@ -858,6 +963,7 @@ Philippines,,1996,1.0
 Philippines,,2016,1.0
 Philippines,,2020,4.0
 Philippines,,2024,4.0
+Philippines,,1932,3.0
 Poland,,1924,2.0
 Poland,,1928,5.0
 Poland,,1936,9.0
@@ -879,6 +985,8 @@ Poland,,2012,11.0
 Poland,,2016,11.0
 Poland,,2020,14.0
 Poland,,2024,10.0
+Poland,,1932,9.0
+Poland,,1960,21.0
 Portugal,,1924,1.0
 Portugal,,1928,1.0
 Portugal,,1936,1.0
@@ -895,6 +1003,7 @@ Portugal,,2012,1.0
 Portugal,,2016,1.0
 Portugal,,2020,4.0
 Portugal,,2024,4.0
+Portugal,,1960,1.0
 Qatar,,1992,1.0
 Qatar,,2000,1.0
 Qatar,,2012,2.0
@@ -921,6 +1030,7 @@ Romania,,2012,7.0
 Romania,,2016,4.0
 Romania,,2020,4.0
 Romania,,2024,9.0
+Romania,,1960,10.0
 Russia,,1996,63.0
 Russia,,2000,89.0
 Russia,,2004,90.0
@@ -943,6 +1053,7 @@ Singapore,,2008,1.0
 Singapore,,2012,2.0
 Singapore,,2016,1.0
 Singapore,,2024,1.0
+Singapore,,1960,1.0
 Slovakia,,1996,3.0
 Slovakia,,2000,5.0
 Slovakia,,2004,6.0
@@ -977,6 +1088,9 @@ South Africa,,2012,6.0
 South Africa,,2016,10.0
 South Africa,,2020,3.0
 South Africa,,2024,6.0
+South Africa,,1908,2.0
+South Africa,,1932,5.0
+South Africa,,1960,3.0
 South Korea,,1948,2.0
 South Korea,,1952,2.0
 South Korea,,1956,2.0
@@ -995,6 +1109,14 @@ South Korea,,2012,31.0
 South Korea,,2016,21.0
 South Korea,,2020,20.0
 South Korea,,2024,32.0
+Russia,,1952,71.0
+Russia,,1956,98.0
+Russia,,1964,96.0
+Russia,,1968,91.0
+Russia,,1972,99.0
+Russia,,1976,125.0
+Russia,,1980,195.0
+Russia,,1988,132.0
 Spain,,1900,1.0
 Spain,,1920,2.0
 Spain,,1928,1.0
@@ -1014,6 +1136,8 @@ Spain,,2012,20.0
 Spain,,2016,17.0
 Spain,,2020,17.0
 Spain,,2024,18.0
+Spain,,1932,1.0
+Spain,,1960,1.0
 Sri Lanka,,2000,1.0
 Sudan,,2008,1.0
 Suriname,,1988,1.0
@@ -1043,6 +1167,9 @@ Sweden,,2012,8.0
 Sweden,,2016,11.0
 Sweden,,2020,9.0
 Sweden,,2024,11.0
+Sweden,,1908,25.0
+Sweden,,1932,24.0
+Sweden,,1960,6.0
 Switzerland,,1900,10.0
 Switzerland,,1904,3.0
 Switzerland,,1912,1.0
@@ -1069,6 +1196,8 @@ Switzerland,,2012,4.0
 Switzerland,,2016,7.0
 Switzerland,,2020,13.0
 Switzerland,,2024,8.0
+Switzerland,,1932,1.0
+Switzerland,,1960,6.0
 Syria,,1984,1.0
 Syria,,1996,1.0
 Syria,,2004,1.0
@@ -1130,6 +1259,7 @@ Turkey,,2012,3.0
 Turkey,,2016,8.0
 Turkey,,2020,13.0
 Turkey,,2024,8.0
+Turkey,,1960,9.0
 Turkmenistan,,2020,1.0
 Uganda,,1968,2.0
 Uganda,,1972,2.0
@@ -1173,6 +1303,9 @@ United States,,2012,105.0
 United States,,2016,121.0
 United States,,2020,113.0
 United States,,2024,126.0
+United States,,1908,47.0
+United States,,1932,110.0
+United States,,1960,71.0
 Uruguay,,1924,1.0
 Uruguay,,1928,1.0
 Uruguay,,1948,2.0
@@ -1180,6 +1313,7 @@ Uruguay,,1952,2.0
 Uruguay,,1956,1.0
 Uruguay,,1964,1.0
 Uruguay,,2000,1.0
+Uruguay,,1932,1.0
 Uzbekistan,,1996,2.0
 Uzbekistan,,2000,4.0
 Uzbekistan,,2004,5.0
@@ -1198,10 +1332,16 @@ Venezuela,,2008,1.0
 Venezuela,,2012,1.0
 Venezuela,,2016,3.0
 Venezuela,,2020,4.0
+Venezuela,,1960,1.0
 Vietnam,,2000,1.0
 Vietnam,,2008,1.0
 Vietnam,,2012,1.0
 Vietnam,,2016,2.0
+Germany,,1968,26.0
+Germany,,1972,40.0
+Germany,,1976,39.0
+Germany,,1984,59.0
+Germany,,1988,40.0
 Zambia,,1984,1.0
 Zambia,,1996,1.0
 Zambia,,2024,1.0

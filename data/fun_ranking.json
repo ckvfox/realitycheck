@@ -1,92 +1,52 @@
 [
   {
     "rank": 1,
-    "country": "Australia",
-    "climate": "pleasant temperatures, many sunny days",
-    "happiness_index": "high",
-    "beer_price": "low",
-    "liveable_cities": "Sydney and Melbourne often rank high in global indexes",
-    "bonus_points": "2 top cities in liveability indexes"
+    "country": "Spain",
+    "reason": "Spain boasts a pleasant Mediterranean climate, abundant sunshine, high happiness levels, and affordable beer prices in vibrant cities like Barcelona."
   },
   {
     "rank": 2,
-    "country": "Spain",
-    "climate": "pleasant temperatures, many sunny days",
-    "happiness_index": "high",
-    "beer_price": "low",
-    "liveable_cities": "Barcelona and Madrid rank high in some liveability studies",
-    "bonus_points": "2 notable cities in liveability indexes"
+    "country": "Portugal",
+    "reason": "With regionally favorable weather, many sunny days, and low beer prices, Portugal ranks high for its quality of life, particularly in Lisbon."
   },
   {
     "rank": 3,
-    "country": "Portugal",
-    "climate": "pleasant temperatures, many sunny days",
-    "happiness_index": "high",
-    "beer_price": "low",
-    "liveable_cities": "Lisbon has been featured in several liveability rankings",
-    "bonus_points": "1 notable city in liveability indexes"
+    "country": "Australia",
+    "reason": "Australia offers a warm climate, high happiness scores, plenty of sunny days, and low restaurant beer prices, particularly in Brisbane."
   },
   {
     "rank": 4,
     "country": "New Zealand",
-    "climate": "varies but generally pleasant",
-    "happiness_index": "very high",
-    "beer_price": "moderately low",
-    "liveable_cities": "Auckland often features in livability rankings",
-    "bonus_points": "1 top city in liveability indexes"
+    "reason": "New Zealand features a temperate climate, sunny environments, a high happiness index, and reasonable beer prices in cities like Auckland."
   },
   {
     "rank": 5,
-    "country": "Italy",
-    "climate": "pleasant temperatures, many sunny days",
-    "happiness_index": "high",
-    "beer_price": "low",
-    "liveable_cities": "No cities in the top rankings but general high quality of life",
-    "bonus_points": "No bonus"
+    "country": "Costa Rica",
+    "reason": "Known for its warm weather, numerous sunny days, low beer costs, and high happiness ratings, Costa Rica is a prime choice for easy living."
   },
   {
     "rank": 6,
-    "country": "Mexico",
-    "climate": "pleasant temperatures, many sunny days",
-    "happiness_index": "high",
-    "beer_price": "very low",
-    "liveable_cities": "No cities in the top rankings but good tourism appeal",
-    "bonus_points": "No bonus"
+    "country": "Chile",
+    "reason": "Chile combines a pleasant climate with plenty of sunshine, low rainfall, high happiness, and affordable beer, making it a great lifestyle choice."
   },
   {
     "rank": 7,
     "country": "Greece",
-    "climate": "pleasant temperatures, many sunny days",
-    "happiness_index": "moderately high",
-    "beer_price": "low",
-    "liveable_cities": "Athens improving in lifestyle features",
-    "bonus_points": "Emerging liveable city"
+    "reason": "Greece is renowned for its sunny days, favorable climate, low beer prices, and high happiness, particularly on its beautiful islands."
   },
   {
     "rank": 8,
-    "country": "Chile",
-    "climate": "varies widely but pleasant in coastal regions",
-    "happiness_index": "high",
-    "beer_price": "low",
-    "liveable_cities": "Santiago is sometimes mentioned in good living conditions reports",
-    "bonus_points": "1 emerging city in liveability aspects"
+    "country": "Italy",
+    "reason": "Italy enjoys a moderate climate, extensive sunny days, high happiness, and affordable dining options, especially in cities like Florence."
   },
   {
     "rank": 9,
-    "country": "Costa Rica",
-    "climate": "pleasant temperatures, many sunny days",
-    "happiness_index": "very high",
-    "beer_price": "low",
-    "liveable_cities": "Cities are growing in appeal",
-    "bonus_points": "No bonus"
+    "country": "South Africa",
+    "reason": "South Africa features a warm climate, numerous sunny days, and competitive beer prices, combining adventure with comfortable living."
   },
   {
     "rank": 10,
-    "country": "South Africa",
-    "climate": "pleasant temperatures, many sunny days",
-    "happiness_index": "moderate",
-    "beer_price": "very low",
-    "liveable_cities": "Cape Town has been ranked in liveability surveys",
-    "bonus_points": "1 notable city in liveability aspects"
+    "country": "Malta",
+    "reason": "Malta has a mild climate, many sunny days, high happiness scores, and great beer prices, making it an attractive destination for fun living."
   }
 ]
