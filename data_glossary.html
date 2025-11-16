@@ -26,22 +26,24 @@
 
   <!-- 📑 Tabelle -->
   <section id="glossary-container">
-    <table id="glossary-table">
-      <thead>
-        <tr>
-          <th scope="col" class="sortable">KPI</th>
-          <th scope="col" class="sortable">Source</th>
-          <th scope="col" class="sortable">Data Year</th>
-          <th scope="col" class="sortable">Source Date</th>
-          <th scope="col" class="sortable">Last Fetch</th>
-          <th scope="col" class="sortable">Countries</th>
-          <th scope="col" class="sortable">Outliers</th>
-        </tr>
-      </thead>
-      <tbody id="glossary-body">
-        <tr><td colspan="7" class="table-placeholder">Loading data…</td></tr>
-      </tbody>
-    </table>
+    <div class="glossary-table-wrapper" id="glossary-table-wrapper">
+      <table id="glossary-table">
+        <thead>
+          <tr>
+            <th scope="col" class="sortable">KPI</th>
+            <th scope="col" class="sortable">Source</th>
+            <th scope="col" class="sortable">Data Year</th>
+            <th scope="col" class="sortable">Source Date</th>
+            <th scope="col" class="sortable">Last Fetch</th>
+            <th scope="col" class="sortable">Countries</th>
+            <th scope="col" class="sortable">Outliers</th>
+          </tr>
+        </thead>
+        <tbody id="glossary-body">
+          <tr><td colspan="7" class="table-placeholder">Loading data…</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <div id="legend">
       <span class="fresh">🟩 Fresh (≤ 1 yr)</span> ·
@@ -64,13 +66,17 @@
   };
 
   const updateGlossaryScrollState = () => {
-    const container = document.getElementById("glossary-container");
-    const table = container?.querySelector("#glossary-table");
-    if (!container || !table) return;
+    const host = document.getElementById("glossary-container");
+    const wrapper = document.getElementById("glossary-table-wrapper") || host;
+    const table = wrapper?.querySelector("#glossary-table");
+    if (!host || !wrapper || !table) return;
 
-    const needsScroll = table.scrollWidth > container.clientWidth + 2;
-    container.classList.toggle("glossary-scrollable", needsScroll);
-    container.dataset.scrollable = needsScroll ? "true" : "false";
+    const tolerance = window.devicePixelRatio > 1 ? 4 : 2;
+    const needsScroll = table.scrollWidth - wrapper.clientWidth > tolerance;
+    host.classList.toggle("glossary-scrollable", needsScroll);
+    wrapper.classList.toggle("glossary-wrapper-scrollable", needsScroll);
+    host.dataset.scrollable = needsScroll ? "true" : "false";
+    wrapper.dataset.scrollable = host.dataset.scrollable;
   };
 
   window.addEventListener("resize", debounce(updateGlossaryScrollState, 160));
