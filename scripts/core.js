@@ -51,6 +51,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (a.getAttribute("href") === current) a.classList.add("active");
     });
 
+    const translatorLauncher = header.querySelector(".translator-launcher");
+    if (translatorLauncher) {
+      const nextSibling = header.nextSibling;
+      if (nextSibling) {
+        document.body.insertBefore(translatorLauncher, nextSibling);
+      } else {
+        document.body.appendChild(translatorLauncher);
+      }
+    }
+
     setupTranslatorControls();
 
     const footer = document.createElement("div");
