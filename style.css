@@ -2047,31 +2047,49 @@ header#main-header nav a.active {
 
 /* === Data Glossary Table – desktop width should not force scroll === */
 body.glossary-page #glossary-container {
-  overflow-x: visible !important;
-  justify-content: center;
+  width: min(96vw, 1600px);
+  max-width: none;
+  margin: 1.5rem auto 2.5rem;
+  padding: 0 clamp(0.75rem, 2vw, 2.5rem);
   display: block;
+  overflow-x: visible !important;
 }
 
 body.glossary-page #glossary-container table {
-  min-width: 0 !important;
   width: 100%;
+  min-width: 0 !important;
+  table-layout: fixed;
+  border-collapse: collapse;
 }
 
 body.glossary-page #glossary-container th,
 body.glossary-page #glossary-container td {
   white-space: normal !important;
   word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+body.glossary-page #glossary-container td a {
+  display: inline-block;
+  max-width: 100%;
+  word-break: break-all;
 }
 
 body.glossary-page #glossary-table td:nth-child(2) {
   word-break: break-all;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   body.glossary-page #glossary-container {
     overflow-x: auto !important;
   }
 
+  body.glossary-page #glossary-container table {
+    min-width: 860px !important;
+  }
+}
+
+@media (max-width: 900px) {
   body.glossary-page #glossary-container table {
     min-width: 720px !important;
   }
@@ -2113,20 +2131,6 @@ body.glossary-page th.sort-desc::after {
   .translator-launcher {
     top: calc(var(--floating-btn-offset) + env(safe-area-inset-top));
     right: calc(var(--floating-btn-offset) + env(safe-area-inset-right));
-  }
-}
-
-@media (max-width: 720px) {
-  .translator-launcher {
-    top: 1.5rem;
-    right: 1.5rem;
-  }
-
-  @supports (top: calc(1.5rem + env(safe-area-inset-top))) {
-    .translator-launcher {
-      top: calc(1.5rem + env(safe-area-inset-top));
-      right: calc(1.5rem + env(safe-area-inset-right));
-    }
   }
 }
 

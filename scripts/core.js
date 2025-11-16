@@ -20,10 +20,36 @@ const translatorState = {
   listenersAttached: false
 };
 
+const TRANSLATOR_LAUNCHER_MARKUP = `
+  <button
+    type="button"
+    id="translator-toggle"
+    class="translator-button"
+    title="Translator"
+    aria-haspopup="dialog"
+    aria-controls="translator-panel"
+    aria-expanded="false"
+  >
+    <span class="sr-only">Translator</span>
+    <img src="images/translate.png" alt="" class="translator-icon" aria-hidden="true" />
+  </button>
+  <div id="translator-panel" class="translator-panel" role="region" aria-label="Google Translate" hidden>
+    <div class="translator-panel-header">
+      <span>Google Translate</span>
+      <button type="button" class="translator-close" aria-label="Close translator" title="Close">&times;</button>
+    </div>
+    <div class="translator-panel-body">
+      <p class="translator-loading-message">Google Translate is loading…</p>
+      <div id="google_translate_element" class="translator-widget"></div>
+    </div>
+  </div>
+`;
+
 let translatorInitResolve;
 let translatorInitReject;
 
 document.addEventListener("DOMContentLoaded", async () => {
+  const launcher = ensureTranslatorLauncherMounted();
   try {
     const assetVersion =
       document.querySelector('meta[name="rc-build-version"]')?.content ||
@@ -50,18 +76,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     header.querySelectorAll("nav a").forEach(a => {
       if (a.getAttribute("href") === current) a.classList.add("active");
     });
-
-    const translatorLauncher = header.querySelector(".translator-launcher");
-    if (translatorLauncher) {
-      const nextSibling = header.nextSibling;
-      if (nextSibling) {
-        document.body.insertBefore(translatorLauncher, nextSibling);
-      } else {
-        document.body.appendChild(translatorLauncher);
-      }
-    }
-
-    setupTranslatorControls();
 
     const footer = document.createElement("div");
     footer.innerHTML = footerHtml;
@@ -93,7 +107,27 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (err) {
     console.warn("⚠️ Header/Footer load failed:", err);
   }
+
+  if (launcher) setupTranslatorControls();
 });
+
+function ensureTranslatorLauncherMounted() {
+  const existing = document.querySelector(".translator-launcher");
+  if (existing) return existing;
+
+  const container = document.createElement("div");
+  container.className = "translator-launcher";
+  container.innerHTML = TRANSLATOR_LAUNCHER_MARKUP.trim();
+
+  const scrollButton = document.getElementById("scroll-top-btn");
+  if (scrollButton && scrollButton.parentNode === document.body) {
+    document.body.insertBefore(container, scrollButton.nextSibling);
+  } else {
+    document.body.appendChild(container);
+  }
+
+  return container;
+}
 function setupTranslatorControls() {
   if (translatorState.initialized) return;
 
