@@ -1,4 +1,10 @@
-:root { --steel-blue: #1a355e; --link-muted: #d1d5db; --link-hover: #fff; --content-bg: #f7f9fc; --text: #111; --legend: #444; --table-head: #333; --table-head-text: #fff; --row-alt: #f5f7fa; --row-base: #fff; --border: #e5e7eb; --accent: #09f; --accent-light: #66bfff; --max-width: 1200px; --radius: 10px; --header-footer-border: #fff1ff; }
+:root { --steel-blue: #1a355e; --link-muted: #d1d5db; --link-hover: #fff; --content-bg: #f7f9fc; --text: #111; --legend: #444; --table-head: #333; --table-head-text: #fff; --row-alt: #f5f7fa; --row-base: #fff; --border: #e5e7eb; --accent: #09f; --accent-light: #66bfff; --max-width: 1200px; --radius: 10px; --header-footer-border: #fff1ff; --floating-btn-offset: 30px; }
+
+@media (max-width: 640px) {
+  :root {
+    --floating-btn-offset: 20px;
+  }
+}
 
 html {
   margin: 0;
@@ -103,15 +109,16 @@ nav { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; justify-c
     justify-content: center;
   }
 
-  header#main-header nav {
-    flex-wrap: wrap;
-    gap: 0.4rem;
+  .translator-launcher {
+    top: var(--floating-btn-offset);
+    right: var(--floating-btn-offset);
   }
 
-  header#main-header nav a {
-    font-size: 0.85rem;
-    padding: 0.25rem 0.4rem;
-    white-space: nowrap;
+  @supports (top: calc(1.875rem + env(safe-area-inset-top))) {
+    .translator-launcher {
+      top: calc(var(--floating-btn-offset) + env(safe-area-inset-top));
+      right: calc(var(--floating-btn-offset) + env(safe-area-inset-right));
+    }
   }
 
   #logo-text {
@@ -1064,6 +1071,17 @@ tr.fun-mode,tr.safe-mode,tr.fun-safe { background: transparent!important; }
   margin: 0 auto;
 }
 
+body.world-page .graph-block canvas {
+  height: min(380px, 60vh) !important;
+  max-height: 420px;
+}
+
+@media (max-width: 768px) {
+  body.world-page .graph-block canvas {
+    height: min(300px, 55vh) !important;
+  }
+}
+
 
 
 /* ============================================================
@@ -1184,8 +1202,8 @@ header img, .header-logo img, nav img, #site-logo {
 /* =====================  Button to Top  ===================== */
 #scroll-top-btn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: var(--floating-btn-offset);
+  right: var(--floating-btn-offset);
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -2027,6 +2045,38 @@ header#main-header nav a.active {
   }
 }
 
+/* === Data Glossary Table – desktop width should not force scroll === */
+body.glossary-page #glossary-container {
+  overflow-x: visible !important;
+  justify-content: center;
+  display: block;
+}
+
+body.glossary-page #glossary-container table {
+  min-width: 0 !important;
+  width: 100%;
+}
+
+body.glossary-page #glossary-container th,
+body.glossary-page #glossary-container td {
+  white-space: normal !important;
+  word-break: break-word;
+}
+
+body.glossary-page #glossary-table td:nth-child(2) {
+  word-break: break-all;
+}
+
+@media (max-width: 900px) {
+  body.glossary-page #glossary-container {
+    overflow-x: auto !important;
+  }
+
+  body.glossary-page #glossary-container table {
+    min-width: 720px !important;
+  }
+}
+
 body.glossary-page th.sortable {
   cursor: pointer;
   user-select: none;
@@ -2051,8 +2101,8 @@ body.glossary-page th.sort-desc::after {
 /* === Translator Controls === */
 .translator-launcher {
   position: fixed;
-  top: 1.875rem;
-  right: 1.875rem;
+  top: var(--floating-btn-offset);
+  right: var(--floating-btn-offset);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2061,8 +2111,8 @@ body.glossary-page th.sort-desc::after {
 
 @supports (top: calc(1.875rem + env(safe-area-inset-top))) {
   .translator-launcher {
-    top: calc(1.875rem + env(safe-area-inset-top));
-    right: calc(1.875rem + env(safe-area-inset-right));
+    top: calc(var(--floating-btn-offset) + env(safe-area-inset-top));
+    right: calc(var(--floating-btn-offset) + env(safe-area-inset-right));
   }
 }
 
