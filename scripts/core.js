@@ -25,12 +25,12 @@ const TRANSLATOR_LAUNCHER_MARKUP = `
     type="button"
     id="translator-toggle"
     class="translator-button"
-    title="Translator"
+    title="Translate this page"
+    aria-label="Translate this page"
     aria-haspopup="dialog"
     aria-controls="translator-panel"
     aria-expanded="false"
   >
-    <span class="sr-only">Translator</span>
     <img src="images/translate.png" alt="" class="translator-icon" aria-hidden="true" />
   </button>
   <div id="translator-panel" class="translator-panel" role="region" aria-label="Google Translate" hidden>
@@ -49,7 +49,7 @@ let translatorInitResolve;
 let translatorInitReject;
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const launcher = ensureTranslatorLauncherMounted();
+  let launcher = ensureTranslatorLauncherMounted();
   try {
     const assetVersion =
       document.querySelector('meta[name="rc-build-version"]')?.content ||
@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const header = document.createElement("div");
     header.innerHTML = headerHtml;
+    header.querySelectorAll(".translator-launcher").forEach(node => node.remove());
     document.body.prepend(header);
 
     const current = location.pathname.split("/").pop();
@@ -79,6 +80,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const footer = document.createElement("div");
     footer.innerHTML = footerHtml;
+    footer.querySelectorAll(".translator-launcher").forEach(node => node.remove());
     document.body.appendChild(footer);
 
     setTimeout(async () => {
@@ -108,16 +110,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.warn("⚠️ Header/Footer load failed:", err);
   }
 
+  launcher = ensureTranslatorLauncherMounted();
   if (launcher) setupTranslatorControls();
 });
 
 function ensureTranslatorLauncherMounted() {
-  const existing = document.querySelector(".translator-launcher");
-  if (existing) return existing;
+  const launchers = document.querySelectorAll(".translator-launcher");
+  if (launchers.length > 1) {
+    launchers.forEach((node, idx) => {
+      if (idx === 0) return;
+      node.remove();
+    });
+  }
+
+  let existing = launchers[0];
+  if (existing) {
+    syncTranslatorLauncherPosition(existing);
+    return existing;
+  }
 
   const container = document.createElement("div");
   container.className = "translator-launcher";
   container.innerHTML = TRANSLATOR_LAUNCHER_MARKUP.trim();
+  syncTranslatorLauncherPosition(container);
 
   const scrollButton = document.getElementById("scroll-top-btn");
   if (scrollButton && scrollButton.parentNode === document.body) {
@@ -127,6 +142,18 @@ function ensureTranslatorLauncherMounted() {
   }
 
   return container;
+}
+
+function syncTranslatorLauncherPosition(node) {
+  if (!node || node.dataset.positionSynced) return;
+  node.style.position = "fixed";
+  node.style.top = "var(--floating-btn-offset)";
+  node.style.right = "var(--floating-btn-offset)";
+  node.style.zIndex = "3000";
+  node.style.display = "flex";
+  node.style.alignItems = "center";
+  node.style.justifyContent = "center";
+  node.dataset.positionSynced = "true";
 }
 function setupTranslatorControls() {
   if (translatorState.initialized) return;

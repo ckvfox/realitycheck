@@ -2275,12 +2275,17 @@ Fixes: header/menu overflow, footer overflow, disappearing icons
 
 /* === Data Glossary Table – desktop width should not force scroll === */
 body.glossary-page #glossary-container {
-  width: min(96vw, 1600px);
-  max-width: none;
+  width: min(96vw, 1600px) !important;
+  max-width: none !important;
   margin: 1.5rem auto 2.5rem;
   padding: 0 clamp(0.75rem, 2vw, 2.5rem);
-  display: block;
-  overflow-x: visible !important;
+  display: block !important;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+body.glossary-page #glossary-container.glossary-scrollable {
+  overflow-x: auto !important;
 }
 
 body.glossary-page #glossary-container table {
@@ -2308,10 +2313,6 @@ body.glossary-page #glossary-table td:nth-child(2) {
 }
 
 @media (max-width: 1200px) {
-  body.glossary-page #glossary-container {
-    overflow-x: auto !important;
-  }
-
   body.glossary-page #glossary-container table {
     min-width: 860px !important;
   }
