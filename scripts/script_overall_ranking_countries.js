@@ -376,10 +376,16 @@ function getRelevanceWeight(r) {
 /* ---------- Render Table ---------- */
 function renderOverallTable(list) {
   const tbody = document.querySelector("#overall-table tbody");
-  tbody.innerHTML = "";
+  if (!tbody) return;
+  tbody.textContent = "";
 
   if (!list.length) {
-    tbody.innerHTML = `<tr><td colspan="4">No countries meet the 60 % data coverage requirement.</td></tr>`;
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 4;
+    td.textContent = "No countries meet the 60 % data coverage requirement.";
+    tr.appendChild(td);
+    tbody.appendChild(tr);
     return;
   }
 
@@ -388,12 +394,23 @@ function renderOverallTable(list) {
     const rank = i + 1;
     const medal = rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : rank;
     const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${medal}</td>
-      <td>${entry.country}</td>
-      <td>${(entry.score * 100).toFixed(2)}</td>
-      <td>${entry.used}</td>
-    `;
+
+    const rankCell = document.createElement("td");
+    rankCell.textContent = medal;
+    tr.appendChild(rankCell);
+
+    const countryCell = document.createElement("td");
+    countryCell.textContent = entry.country;
+    tr.appendChild(countryCell);
+
+    const scoreCell = document.createElement("td");
+    scoreCell.textContent = (entry.score * 100).toFixed(2);
+    tr.appendChild(scoreCell);
+
+    const usedCell = document.createElement("td");
+    usedCell.textContent = entry.used;
+    tr.appendChild(usedCell);
+
     if (rank <= 10) tr.classList.add("top10");
     if (rank > total - 10) tr.classList.add("flop10");
     tbody.appendChild(tr);
@@ -423,10 +440,15 @@ function renderLegend(prioritizedCount, missing = []) {
     wrapper.insertAdjacentElement("afterend", leg);
   }
 
+  const escapeValue =
+    typeof window !== "undefined" && typeof window.escapeHTML === "function"
+      ? window.escapeHTML
+      : value => (value ?? "").toString();
+
   const missingList = missing.length
-    ? `<div class="missing-kpis"><strong>📉 KPIs currently without country-level data:</strong><br><span>${missing.join(
-        ", "
-      )}</span></div>`
+    ? `<div class="missing-kpis"><strong>📉 KPIs currently without country-level data:</strong><br><span>${missing
+        .map(item => escapeValue(item))
+        .join(", ")}</span></div>`
     : "";
 
   leg.innerHTML = `
@@ -484,57 +506,6 @@ function createInfoBox() {
   clearTimeout(box._timeout);
   box._timeout = setTimeout(() => box.classList.remove("show"), 4000);
   setTimeout(() => box.remove(), 5000);
-}
-
-
-/* ---------- Toast Helper (zentriert + Fade + Auto-hide) ---------- */
-function showToast(msg) {
-  // Reuse existing toast element if present
-  let toast = document.getElementById("toast");
-  if (!toast) {
-    toast = document.createElement("div");
-    toast.id = "toast";
-    document.body.appendChild(toast);
-
-    // Basis-Styles (falls CSS fehlt oder noch nicht geladen)
-    Object.assign(toast.style, {
-      position: "fixed",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%) scale(0.9)",
-      background: "rgba(0, 0, 0, 0.8)",
-      color: "#fff",
-      padding: "1rem 1.6rem",
-      borderRadius: "10px",
-      fontSize: "1rem",
-      fontWeight: "500",
-      boxShadow: "0 6px 18px rgba(0,0,0,0.35)",
-      opacity: "0",
-      transition: "opacity 0.4s ease, transform 0.4s ease",
-      zIndex: "99999",
-      pointerEvents: "none",
-      textAlign: "center",
-      maxWidth: "80%"
-    });
-  }
-
-  // Aktualisieren und sichtbar machen
-  toast.textContent = msg;
-  toast.classList.add("show");
-
-  // Animation: Fade-In
-  requestAnimationFrame(() => {
-    toast.style.opacity = "1";
-    toast.style.transform = "translate(-50%, -50%) scale(1)";
-  });
-
-  // Automatisches Ausblenden nach 2.5 s
-  clearTimeout(toast._timeout);
-  toast._timeout = setTimeout(() => {
-    toast.style.opacity = "0";
-    toast.style.transform = "translate(-50%, -50%) scale(0.9)";
-    toast.classList.remove("show");
-  }, 2500);
 }
 
 
