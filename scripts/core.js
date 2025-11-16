@@ -106,6 +106,31 @@ const TRANSLATOR_LAUNCHER_MARKUP = `
     type="button"
     id="translator-toggle"
     class="translator-button"
+    title="Translate this page"
+    aria-label="Translate this page"
+    aria-haspopup="dialog"
+    aria-controls="translator-panel"
+    aria-expanded="false"
+  >
+    <img src="images/translate.png" alt="" class="translator-icon" aria-hidden="true" />
+  </button>
+  <div id="translator-panel" class="translator-panel" role="region" aria-label="Google Translate" hidden>
+    <div class="translator-panel-header">
+      <span>Google Translate</span>
+      <button type="button" class="translator-close" aria-label="Close translator" title="Close">&times;</button>
+    </div>
+    <div class="translator-panel-body">
+      <p class="translator-loading-message">Google Translate is loading…</p>
+      <div id="google_translate_element" class="translator-widget"></div>
+    </div>
+  </div>
+`;
+
+const TRANSLATOR_LAUNCHER_MARKUP = `
+  <button
+    type="button"
+    id="translator-toggle"
+    class="translator-button"
     title="Translator"
     aria-haspopup="dialog"
     aria-controls="translator-panel"
