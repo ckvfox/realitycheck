@@ -1,4 +1,76 @@
 country,iso2,year,value
+Georgia,OWID_ABK,1989,0.0
+Georgia,OWID_ABK,1990,0.0
+Georgia,OWID_ABK,1991,0.0
+Georgia,OWID_ABK,1992,0.0
+Georgia,OWID_ABK,1993,0.0
+Georgia,OWID_ABK,1994,0.0
+Georgia,OWID_ABK,1995,0.0
+Georgia,OWID_ABK,1996,0.0
+Georgia,OWID_ABK,1997,0.0
+Georgia,OWID_ABK,1998,0.0
+Georgia,OWID_ABK,1999,0.0
+Georgia,OWID_ABK,2000,0.0
+Georgia,OWID_ABK,2001,0.0
+Georgia,OWID_ABK,2002,0.0
+Georgia,OWID_ABK,2003,0.0
+Georgia,OWID_ABK,2004,0.0
+Georgia,OWID_ABK,2005,0.0
+Georgia,OWID_ABK,2006,0.0
+Georgia,OWID_ABK,2007,0.0
+Georgia,OWID_ABK,2008,0.0
+Georgia,OWID_ABK,2009,0.0
+Georgia,OWID_ABK,2010,0.0
+Georgia,OWID_ABK,2011,0.0
+Georgia,OWID_ABK,2012,0.0
+Georgia,OWID_ABK,2013,0.0
+Georgia,OWID_ABK,2014,0.0
+Georgia,OWID_ABK,2015,0.0
+Georgia,OWID_ABK,2016,0.0
+Georgia,OWID_ABK,2017,0.0
+Georgia,OWID_ABK,2018,0.0
+Georgia,OWID_ABK,2019,0.0
+Georgia,OWID_ABK,2020,0.0
+Georgia,OWID_ABK,2021,0.0
+Georgia,OWID_ABK,2022,0.0
+Georgia,OWID_ABK,2023,0.0
+Georgia,OWID_ABK,2024,0.0
+South Sudan,,1989,0.0
+South Sudan,,1990,0.0
+South Sudan,,1991,0.0
+South Sudan,,1992,0.0
+South Sudan,,1993,0.0
+South Sudan,,1994,0.0
+South Sudan,,1995,0.0
+South Sudan,,1996,0.0
+South Sudan,,1997,1.0
+South Sudan,,1998,1.0
+South Sudan,,1999,0.0
+South Sudan,,2000,0.0
+South Sudan,,2001,0.0
+South Sudan,,2002,0.0
+South Sudan,,2003,0.0
+South Sudan,,2004,0.0
+South Sudan,,2005,0.0
+South Sudan,,2006,0.0
+South Sudan,,2007,0.0
+South Sudan,,2008,1.0
+South Sudan,,2009,0.0
+South Sudan,,2010,0.0
+South Sudan,,2011,0.0
+South Sudan,,2012,0.0
+South Sudan,,2013,0.0
+South Sudan,,2014,0.0
+South Sudan,,2015,0.0
+South Sudan,,2016,0.0
+South Sudan,,2017,0.0
+South Sudan,,2018,0.0
+South Sudan,,2019,0.0
+South Sudan,,2020,0.0
+South Sudan,,2021,0.0
+South Sudan,,2022,0.0
+South Sudan,,2023,0.0
+South Sudan,,2024,0.0
 Afghanistan,AFG,1989,0.0
 Afghanistan,AFG,1990,0.0
 Afghanistan,AFG,1991,0.0
@@ -755,6 +827,42 @@ Bolivia,BOL,2021,0.0
 Bolivia,BOL,2022,0.0
 Bolivia,BOL,2023,0.0
 Bolivia,BOL,2024,0.0
+Bosnia Herzegovina,BIH,1989,0.0
+Bosnia Herzegovina,BIH,1990,0.0
+Bosnia Herzegovina,BIH,1991,0.0
+Bosnia Herzegovina,BIH,1992,3.0
+Bosnia Herzegovina,BIH,1993,3.0
+Bosnia Herzegovina,BIH,1994,1.0
+Bosnia Herzegovina,BIH,1995,3.0
+Bosnia Herzegovina,BIH,1996,0.0
+Bosnia Herzegovina,BIH,1997,0.0
+Bosnia Herzegovina,BIH,1998,0.0
+Bosnia Herzegovina,BIH,1999,0.0
+Bosnia Herzegovina,BIH,2000,0.0
+Bosnia Herzegovina,BIH,2001,0.0
+Bosnia Herzegovina,BIH,2002,0.0
+Bosnia Herzegovina,BIH,2003,0.0
+Bosnia Herzegovina,BIH,2004,0.0
+Bosnia Herzegovina,BIH,2005,0.0
+Bosnia Herzegovina,BIH,2006,0.0
+Bosnia Herzegovina,BIH,2007,0.0
+Bosnia Herzegovina,BIH,2008,0.0
+Bosnia Herzegovina,BIH,2009,0.0
+Bosnia Herzegovina,BIH,2010,0.0
+Bosnia Herzegovina,BIH,2011,0.0
+Bosnia Herzegovina,BIH,2012,0.0
+Bosnia Herzegovina,BIH,2013,0.0
+Bosnia Herzegovina,BIH,2014,0.0
+Bosnia Herzegovina,BIH,2015,0.0
+Bosnia Herzegovina,BIH,2016,0.0
+Bosnia Herzegovina,BIH,2017,0.0
+Bosnia Herzegovina,BIH,2018,0.0
+Bosnia Herzegovina,BIH,2019,0.0
+Bosnia Herzegovina,BIH,2020,0.0
+Bosnia Herzegovina,BIH,2021,0.0
+Bosnia Herzegovina,BIH,2022,0.0
+Bosnia Herzegovina,BIH,2023,0.0
+Bosnia Herzegovina,BIH,2024,0.0
 Botswana,BWA,1989,0.0
 Botswana,BWA,1990,1.0
 Botswana,BWA,1991,0.0
@@ -1331,6 +1439,42 @@ Comoros,COM,2021,0.0
 Comoros,COM,2022,0.0
 Comoros,COM,2023,0.0
 Comoros,COM,2024,0.0
+Republic of the Congo,COG,1989,0.0
+Republic of the Congo,COG,1990,0.0
+Republic of the Congo,COG,1991,0.0
+Republic of the Congo,COG,1992,0.0
+Republic of the Congo,COG,1993,1.0
+Republic of the Congo,COG,1994,0.0
+Republic of the Congo,COG,1995,0.0
+Republic of the Congo,COG,1996,0.0
+Republic of the Congo,COG,1997,3.0
+Republic of the Congo,COG,1998,3.0
+Republic of the Congo,COG,1999,1.0
+Republic of the Congo,COG,2000,0.0
+Republic of the Congo,COG,2001,0.0
+Republic of the Congo,COG,2002,1.0
+Republic of the Congo,COG,2003,1.0
+Republic of the Congo,COG,2004,0.0
+Republic of the Congo,COG,2005,0.0
+Republic of the Congo,COG,2006,0.0
+Republic of the Congo,COG,2007,0.0
+Republic of the Congo,COG,2008,0.0
+Republic of the Congo,COG,2009,0.0
+Republic of the Congo,COG,2010,0.0
+Republic of the Congo,COG,2011,0.0
+Republic of the Congo,COG,2012,0.0
+Republic of the Congo,COG,2013,0.0
+Republic of the Congo,COG,2014,0.0
+Republic of the Congo,COG,2015,0.0
+Republic of the Congo,COG,2016,0.0
+Republic of the Congo,COG,2017,0.0
+Republic of the Congo,COG,2018,0.0
+Republic of the Congo,COG,2019,0.0
+Republic of the Congo,COG,2020,0.0
+Republic of the Congo,COG,2021,0.0
+Republic of the Congo,COG,2022,1.0
+Republic of the Congo,COG,2023,0.0
+Republic of the Congo,COG,2024,2.0
 Costa Rica,CRI,1989,0.0
 Costa Rica,CRI,1990,0.0
 Costa Rica,CRI,1991,0.0
@@ -1367,6 +1511,42 @@ Costa Rica,CRI,2021,0.0
 Costa Rica,CRI,2022,0.0
 Costa Rica,CRI,2023,0.0
 Costa Rica,CRI,2024,0.0
+Ivory Coast,CIV,1989,0.0
+Ivory Coast,CIV,1990,0.0
+Ivory Coast,CIV,1991,0.0
+Ivory Coast,CIV,1992,0.0
+Ivory Coast,CIV,1993,1.0
+Ivory Coast,CIV,1994,1.0
+Ivory Coast,CIV,1995,1.0
+Ivory Coast,CIV,1996,0.0
+Ivory Coast,CIV,1997,0.0
+Ivory Coast,CIV,1998,0.0
+Ivory Coast,CIV,1999,0.0
+Ivory Coast,CIV,2000,1.0
+Ivory Coast,CIV,2001,0.0
+Ivory Coast,CIV,2002,2.0
+Ivory Coast,CIV,2003,3.0
+Ivory Coast,CIV,2004,1.0
+Ivory Coast,CIV,2005,0.0
+Ivory Coast,CIV,2006,0.0
+Ivory Coast,CIV,2007,0.0
+Ivory Coast,CIV,2008,0.0
+Ivory Coast,CIV,2009,0.0
+Ivory Coast,CIV,2010,1.0
+Ivory Coast,CIV,2011,4.0
+Ivory Coast,CIV,2012,0.0
+Ivory Coast,CIV,2013,0.0
+Ivory Coast,CIV,2014,0.0
+Ivory Coast,CIV,2015,0.0
+Ivory Coast,CIV,2016,1.0
+Ivory Coast,CIV,2017,0.0
+Ivory Coast,CIV,2018,0.0
+Ivory Coast,CIV,2019,0.0
+Ivory Coast,CIV,2020,0.0
+Ivory Coast,CIV,2021,0.0
+Ivory Coast,CIV,2022,0.0
+Ivory Coast,CIV,2023,0.0
+Ivory Coast,CIV,2024,0.0
 Croatia,HRV,1989,0.0
 Croatia,HRV,1990,0.0
 Croatia,HRV,1991,0.0
@@ -1511,6 +1691,42 @@ Czechia,CZE,2021,0.0
 Czechia,CZE,2022,0.0
 Czechia,CZE,2023,0.0
 Czechia,CZE,2024,0.0
+Democratic Republic of the Congo,COD,1989,1.0
+Democratic Republic of the Congo,COD,1990,1.0
+Democratic Republic of the Congo,COD,1991,1.0
+Democratic Republic of the Congo,COD,1992,1.0
+Democratic Republic of the Congo,COD,1993,3.0
+Democratic Republic of the Congo,COD,1994,2.0
+Democratic Republic of the Congo,COD,1995,2.0
+Democratic Republic of the Congo,COD,1996,9.0
+Democratic Republic of the Congo,COD,1997,4.0
+Democratic Republic of the Congo,COD,1998,5.0
+Democratic Republic of the Congo,COD,1999,6.0
+Democratic Republic of the Congo,COD,2000,7.0
+Democratic Republic of the Congo,COD,2001,4.0
+Democratic Republic of the Congo,COD,2002,12.0
+Democratic Republic of the Congo,COD,2003,9.0
+Democratic Republic of the Congo,COD,2004,9.0
+Democratic Republic of the Congo,COD,2005,4.0
+Democratic Republic of the Congo,COD,2006,3.0
+Democratic Republic of the Congo,COD,2007,4.0
+Democratic Republic of the Congo,COD,2008,5.0
+Democratic Republic of the Congo,COD,2009,5.0
+Democratic Republic of the Congo,COD,2010,5.0
+Democratic Republic of the Congo,COD,2011,1.0
+Democratic Republic of the Congo,COD,2012,8.0
+Democratic Republic of the Congo,COD,2013,7.0
+Democratic Republic of the Congo,COD,2014,4.0
+Democratic Republic of the Congo,COD,2015,5.0
+Democratic Republic of the Congo,COD,2016,6.0
+Democratic Republic of the Congo,COD,2017,8.0
+Democratic Republic of the Congo,COD,2018,4.0
+Democratic Republic of the Congo,COD,2019,6.0
+Democratic Republic of the Congo,COD,2020,13.0
+Democratic Republic of the Congo,COD,2021,6.0
+Democratic Republic of the Congo,COD,2022,15.0
+Democratic Republic of the Congo,COD,2023,11.0
+Democratic Republic of the Congo,COD,2024,10.0
 Denmark,DNK,1989,0.0
 Denmark,DNK,1990,0.0
 Denmark,DNK,1991,0.0
@@ -1655,6 +1871,42 @@ Dominican Republic,DOM,2021,0.0
 Dominican Republic,DOM,2022,0.0
 Dominican Republic,DOM,2023,0.0
 Dominican Republic,DOM,2024,0.0
+Timor-Leste,TLS,1989,0.0
+Timor-Leste,TLS,1990,1.0
+Timor-Leste,TLS,1991,1.0
+Timor-Leste,TLS,1992,0.0
+Timor-Leste,TLS,1993,0.0
+Timor-Leste,TLS,1994,0.0
+Timor-Leste,TLS,1995,1.0
+Timor-Leste,TLS,1996,0.0
+Timor-Leste,TLS,1997,1.0
+Timor-Leste,TLS,1998,1.0
+Timor-Leste,TLS,1999,1.0
+Timor-Leste,TLS,2000,0.0
+Timor-Leste,TLS,2001,0.0
+Timor-Leste,TLS,2002,0.0
+Timor-Leste,TLS,2003,0.0
+Timor-Leste,TLS,2004,0.0
+Timor-Leste,TLS,2005,0.0
+Timor-Leste,TLS,2006,0.0
+Timor-Leste,TLS,2007,0.0
+Timor-Leste,TLS,2008,0.0
+Timor-Leste,TLS,2009,0.0
+Timor-Leste,TLS,2010,0.0
+Timor-Leste,TLS,2011,0.0
+Timor-Leste,TLS,2012,0.0
+Timor-Leste,TLS,2013,0.0
+Timor-Leste,TLS,2014,0.0
+Timor-Leste,TLS,2015,0.0
+Timor-Leste,TLS,2016,0.0
+Timor-Leste,TLS,2017,0.0
+Timor-Leste,TLS,2018,0.0
+Timor-Leste,TLS,2019,0.0
+Timor-Leste,TLS,2020,0.0
+Timor-Leste,TLS,2021,0.0
+Timor-Leste,TLS,2022,0.0
+Timor-Leste,TLS,2023,0.0
+Timor-Leste,TLS,2024,0.0
 Ecuador,ECU,1989,0.0
 Ecuador,ECU,1990,0.0
 Ecuador,ECU,1991,0.0
@@ -5255,6 +5507,42 @@ San Marino,SMR,2021,0.0
 San Marino,SMR,2022,0.0
 San Marino,SMR,2023,0.0
 San Marino,SMR,2024,0.0
+São Tomé and Príncipe,STP,1989,0.0
+São Tomé and Príncipe,STP,1990,0.0
+São Tomé and Príncipe,STP,1991,0.0
+São Tomé and Príncipe,STP,1992,0.0
+São Tomé and Príncipe,STP,1993,0.0
+São Tomé and Príncipe,STP,1994,0.0
+São Tomé and Príncipe,STP,1995,0.0
+São Tomé and Príncipe,STP,1996,0.0
+São Tomé and Príncipe,STP,1997,0.0
+São Tomé and Príncipe,STP,1998,0.0
+São Tomé and Príncipe,STP,1999,0.0
+São Tomé and Príncipe,STP,2000,0.0
+São Tomé and Príncipe,STP,2001,0.0
+São Tomé and Príncipe,STP,2002,0.0
+São Tomé and Príncipe,STP,2003,0.0
+São Tomé and Príncipe,STP,2004,0.0
+São Tomé and Príncipe,STP,2005,0.0
+São Tomé and Príncipe,STP,2006,0.0
+São Tomé and Príncipe,STP,2007,0.0
+São Tomé and Príncipe,STP,2008,0.0
+São Tomé and Príncipe,STP,2009,0.0
+São Tomé and Príncipe,STP,2010,0.0
+São Tomé and Príncipe,STP,2011,0.0
+São Tomé and Príncipe,STP,2012,0.0
+São Tomé and Príncipe,STP,2013,0.0
+São Tomé and Príncipe,STP,2014,0.0
+São Tomé and Príncipe,STP,2015,0.0
+São Tomé and Príncipe,STP,2016,0.0
+São Tomé and Príncipe,STP,2017,0.0
+São Tomé and Príncipe,STP,2018,0.0
+São Tomé and Príncipe,STP,2019,0.0
+São Tomé and Príncipe,STP,2020,0.0
+São Tomé and Príncipe,STP,2021,0.0
+São Tomé and Príncipe,STP,2022,0.0
+São Tomé and Príncipe,STP,2023,0.0
+São Tomé and Príncipe,STP,2024,0.0
 Saudi Arabia,SAU,1989,0.0
 Saudi Arabia,SAU,1990,0.0
 Saudi Arabia,SAU,1991,0.0
@@ -5687,6 +5975,42 @@ South Korea,KOR,2021,0.0
 South Korea,KOR,2022,0.0
 South Korea,KOR,2023,0.0
 South Korea,KOR,2024,0.0
+Georgia,OWID_SOS,1989,0.0
+Georgia,OWID_SOS,1990,0.0
+Georgia,OWID_SOS,1991,0.0
+Georgia,OWID_SOS,1992,0.0
+Georgia,OWID_SOS,1993,0.0
+Georgia,OWID_SOS,1994,0.0
+Georgia,OWID_SOS,1995,0.0
+Georgia,OWID_SOS,1996,0.0
+Georgia,OWID_SOS,1997,0.0
+Georgia,OWID_SOS,1998,0.0
+Georgia,OWID_SOS,1999,0.0
+Georgia,OWID_SOS,2000,0.0
+Georgia,OWID_SOS,2001,0.0
+Georgia,OWID_SOS,2002,0.0
+Georgia,OWID_SOS,2003,0.0
+Georgia,OWID_SOS,2004,0.0
+Georgia,OWID_SOS,2005,0.0
+Georgia,OWID_SOS,2006,0.0
+Georgia,OWID_SOS,2007,0.0
+Georgia,OWID_SOS,2008,0.0
+Georgia,OWID_SOS,2009,0.0
+Georgia,OWID_SOS,2010,0.0
+Georgia,OWID_SOS,2011,0.0
+Georgia,OWID_SOS,2012,0.0
+Georgia,OWID_SOS,2013,0.0
+Georgia,OWID_SOS,2014,0.0
+Georgia,OWID_SOS,2015,0.0
+Georgia,OWID_SOS,2016,0.0
+Georgia,OWID_SOS,2017,0.0
+Georgia,OWID_SOS,2018,0.0
+Georgia,OWID_SOS,2019,0.0
+Georgia,OWID_SOS,2020,0.0
+Georgia,OWID_SOS,2021,0.0
+Georgia,OWID_SOS,2022,0.0
+Georgia,OWID_SOS,2023,0.0
+Georgia,OWID_SOS,2024,0.0
 South Sudan,SSD,1989,0.0
 South Sudan,SSD,1990,1.0
 South Sudan,SSD,1991,1.0
@@ -6731,6 +7055,42 @@ Vietnam,VNM,2021,0.0
 Vietnam,VNM,2022,0.0
 Vietnam,VNM,2023,0.0
 Vietnam,VNM,2024,0.0
+Germany,OWID_GFR,1989,0.0
+Germany,OWID_GFR,1990,0.0
+Germany,OWID_GFR,1991,0.0
+Germany,OWID_GFR,1992,0.0
+Germany,OWID_GFR,1993,0.0
+Germany,OWID_GFR,1994,0.0
+Germany,OWID_GFR,1995,0.0
+Germany,OWID_GFR,1996,0.0
+Germany,OWID_GFR,1997,0.0
+Germany,OWID_GFR,1998,0.0
+Germany,OWID_GFR,1999,0.0
+Germany,OWID_GFR,2000,0.0
+Germany,OWID_GFR,2001,0.0
+Germany,OWID_GFR,2002,0.0
+Germany,OWID_GFR,2003,0.0
+Germany,OWID_GFR,2004,0.0
+Germany,OWID_GFR,2005,0.0
+Germany,OWID_GFR,2006,0.0
+Germany,OWID_GFR,2007,0.0
+Germany,OWID_GFR,2008,0.0
+Germany,OWID_GFR,2009,0.0
+Germany,OWID_GFR,2010,0.0
+Germany,OWID_GFR,2011,0.0
+Germany,OWID_GFR,2012,0.0
+Germany,OWID_GFR,2013,0.0
+Germany,OWID_GFR,2014,0.0
+Germany,OWID_GFR,2015,0.0
+Germany,OWID_GFR,2016,0.0
+Germany,OWID_GFR,2017,0.0
+Germany,OWID_GFR,2018,0.0
+Germany,OWID_GFR,2019,0.0
+Germany,OWID_GFR,2020,0.0
+Germany,OWID_GFR,2021,0.0
+Germany,OWID_GFR,2022,0.0
+Germany,OWID_GFR,2023,0.0
+Germany,OWID_GFR,2024,0.0
 World,OWID_WRL,1989,26.0
 World,OWID_WRL,1990,38.0
 World,OWID_WRL,1991,36.0
@@ -6803,6 +7163,42 @@ Yemen,YEM,2021,2.0
 Yemen,YEM,2022,0.0
 Yemen,YEM,2023,0.0
 Yemen,YEM,2024,0.0
+Yemen,OWID_YPR,1989,0.0
+Yemen,OWID_YPR,1990,0.0
+Yemen,OWID_YPR,1991,0.0
+Yemen,OWID_YPR,1992,0.0
+Yemen,OWID_YPR,1993,0.0
+Yemen,OWID_YPR,1994,0.0
+Yemen,OWID_YPR,1995,0.0
+Yemen,OWID_YPR,1996,0.0
+Yemen,OWID_YPR,1997,0.0
+Yemen,OWID_YPR,1998,0.0
+Yemen,OWID_YPR,1999,0.0
+Yemen,OWID_YPR,2000,0.0
+Yemen,OWID_YPR,2001,0.0
+Yemen,OWID_YPR,2002,0.0
+Yemen,OWID_YPR,2003,0.0
+Yemen,OWID_YPR,2004,0.0
+Yemen,OWID_YPR,2005,0.0
+Yemen,OWID_YPR,2006,0.0
+Yemen,OWID_YPR,2007,0.0
+Yemen,OWID_YPR,2008,0.0
+Yemen,OWID_YPR,2009,0.0
+Yemen,OWID_YPR,2010,0.0
+Yemen,OWID_YPR,2011,0.0
+Yemen,OWID_YPR,2012,0.0
+Yemen,OWID_YPR,2013,0.0
+Yemen,OWID_YPR,2014,0.0
+Yemen,OWID_YPR,2015,0.0
+Yemen,OWID_YPR,2016,0.0
+Yemen,OWID_YPR,2017,0.0
+Yemen,OWID_YPR,2018,0.0
+Yemen,OWID_YPR,2019,0.0
+Yemen,OWID_YPR,2020,0.0
+Yemen,OWID_YPR,2021,0.0
+Yemen,OWID_YPR,2022,0.0
+Yemen,OWID_YPR,2023,0.0
+Yemen,OWID_YPR,2024,0.0
 Zambia,ZMB,1989,1.0
 Zambia,ZMB,1990,1.0
 Zambia,ZMB,1991,0.0
