@@ -936,37 +936,7 @@ function groupKpisByCluster(list, options = {}) {
 }
 
 // === Shared Chart.js renderer ===
-const FALLBACK_CHART_OPTIONS = {
-  responsive: true,
-  maintainAspectRatio: false,
-  layout: { padding: { top: 16, bottom: 12, left: 8, right: 8 } },
-  interaction: { mode: "nearest", intersect: false },
-  plugins: {
-    title: { display: false, text: "" },
-    legend: { display: true },
-    tooltip: {
-      enabled: true,
-      callbacks: {
-        title: ctx => (ctx?.length ? `Year: ${ctx[0].label ?? ""}` : ""),
-        label: ctx => {
-          const datasetLabel = ctx.dataset?.label ? `${ctx.dataset.label}: ` : "";
-          const value = ctx.parsed?.y;
-          if (value == null || isNaN(value)) {
-            return `${datasetLabel}no data`;
-          }
-          return `${datasetLabel}${Number(value).toLocaleString()}`;
-        }
-      }
-    }
-  },
-  scales: {
-    y: { beginAtZero: false, grid: { color: "rgba(0,0,0,0.1)" } },
-    x: {
-      ticks: { autoSkip: true, maxTicksLimit: 12 },
-      grid: { color: "rgba(0,0,0,0.05)" }
-    }
-  }
-};
+// Chart options are now managed centrally in utils_ui.js
 
 function cloneChartOptions(obj) {
   if (obj == null) return {};
@@ -1005,8 +975,13 @@ function deepCloneWithFunctions(value) {
 }
 
 function resolveChartOptions({ title = "", unit = "", datasetCount = 0, overrides = {} }) {
-  const base =
-    (typeof window !== "undefined" && window.DEFAULT_CHART_OPTIONS) || FALLBACK_CHART_OPTIONS;
+  // Use centralized chart options from utils_ui.js
+  const base = window.DEFAULT_CHART_OPTIONS || {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { title: { display: false }, legend: { display: true } },
+    scales: { y: { beginAtZero: false }, x: { ticks: { autoSkip: true } } }
+  };
   const merged = cloneChartOptions(base);
 
   merged.plugins = merged.plugins || {};

@@ -4,27 +4,7 @@
   <meta charset="UTF-8" />
   <title>RealityCheck – About</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css?v=20251116-1845" />
-  <script>
-    // Earth Overshoot Timer – calculates how far we are beyond Earth's yearly capacity
-    function updateOvershootTimer() {
-      const today = new Date();
-      const year = today.getFullYear();
-      const overshootDate = new Date(`${year}-07-25T00:00:00`);
-      const diff = today - overshootDate;
-      const daysAfter = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const element = document.getElementById("overshoot-timer");
-
-      if (daysAfter < 0) {
-        element.innerHTML = `🌱 Humanity is still living <b>within</b> Earth's yearly means – for now.<br>
-          <small>Overshoot Day in ${Math.abs(daysAfter)} days (${overshootDate.toDateString()}).</small>`;
-      } else {
-        element.innerHTML = `🌍 Since <b>${overshootDate.toDateString()}</b>, humanity has been living <b>beyond</b> Earth's yearly means.<br>
-          <small>That's ${daysAfter} days of ecological overshoot this year.</small>`;
-      }
-    }
-    window.addEventListener("load", updateOvershootTimer);
-  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -240,16 +220,10 @@
     </div>
   </section>
   
-  <script>
-  // Fade-In wie bei Analysis
-  window.addEventListener("load", () => {
-    document.getElementById("about-section").classList.add("loaded");
-  });
-</script>
-
 <!-- 🧠 Shared RealityCheck Core -->
 <script src="scripts/utils_ui.js" defer></script>
 <script src="scripts/core.js" defer></script>
+<script src="scripts/page_about.js" defer></script>
 
 </body>
 </html>
