@@ -2804,3 +2804,17 @@ div[role="dialog"][aria-modal="true"][aria-labelledby="translator-consent-title"
   position: relative !important;
   margin: 0 !important;
 }
+
+/* === World Map Styles (formerly inline) === */
+#world-map {
+  height: 500px;
+  margin: 20px 0;
+}
+
+.legend-color-blue {
+  background: #2196F3;
+}
+
+.legend-color-gray {
+  background: #ddd;
+}

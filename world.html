@@ -9,7 +9,7 @@
   <meta http-equiv="Expires" content="0" />
   <title>RealityCheck – World Trends Dashboard</title>
 
-  <link rel="stylesheet" href="style.css?v=20251117-1650-tooltipfix" />
+  <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
   <!-- 🗺️ Leaflet für World Map -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
@@ -76,16 +76,16 @@
       </div>
       
       <div id="world-map-container">
-        <div id="world-map" style="height: 500px; margin: 20px 0;"></div>
+        <div id="world-map"></div>
       </div>
       
       <div id="world-map-legend" class="map-legend">
         <div class="legend-item">
-          <span class="legend-color" style="background: #2196F3;"></span>
+          <span class="legend-color legend-color-blue"></span>
           <span>Selected Group</span>
         </div>
         <div class="legend-item">
-          <span class="legend-color" style="background: #ddd;"></span>
+          <span class="legend-color legend-color-gray"></span>
           <span>Other Countries</span>
         </div>
       </div>

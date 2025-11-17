@@ -3,7 +3,7 @@ if (window.__RC_CORE_LOADED__) {
 } else {
   window.__RC_CORE_LOADED__ = true;
 
-// ✅ Globale Utility-Funktionen (außerhalb IIFE für bessere Verfügbarkeit)
+// ✅ Global Utility Functions (outside IIFE for better availability)
 function whenDocumentReady() {
   if (document.readyState === "complete" || document.readyState === "interactive") {
     return Promise.resolve();
