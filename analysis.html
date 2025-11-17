@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RealityCheck – Global Analysis</title>
-  <link rel="stylesheet" href="style.css?v=20251116-1920-modal-fix" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -34,30 +34,10 @@
   <!-- Markdown Parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-  <script>
-    const section = document.getElementById("analysis-section");
-    const container = document.getElementById("analysis-content");
-
-    fetch("data/analysis.md")
-      .then(r => {
-        if (!r.ok) throw new Error("File not found");
-        return r.text();
-      })
-      .then(md => {
-        const html = marked.parse(md.trim());
-        container.innerHTML = html;
-        section.classList.add("loaded");
-      })
-      .catch(() => {
-        container.innerText =
-          "⚠️ No analysis found. Please run fetch_data.py to generate a new report.";
-        section.classList.add("loaded");
-      });
-  </script>	
-
-        <!-- 🧠 Shared RealityCheck Core -->
-        <script src="scripts/utils_ui.js" defer></script>
-        <script src="scripts/core.js" defer></script>
+  <!-- 🧠 Shared RealityCheck Core -->
+  <script src="scripts/utils_ui.js" defer></script>
+  <script src="scripts/core.js" defer></script>
+  <script src="scripts/page_analysis.js" defer></script>
 	
 </body>
 </html>
