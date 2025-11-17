@@ -353,7 +353,7 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
 
 
 
-/* Karten- und Chart-Größe */
+/* Map and Chart Sizing */
 #map, #world-map {
   width: 100%;
   max-width: 900px;
@@ -362,7 +362,7 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
   display: block;
 }
 
-/* World Map Container Integration - Chart-ähnliches Styling */
+/* World Map Container Integration - Chart-like Styling */
 .world-map-section {
   margin: 2rem auto 3rem;
   max-width: var(--max-width);
@@ -483,7 +483,7 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
 
 
 
-/* Konsistente Innenabstände für Fließtexte und Überschriften */
+/* Consistent Inner Spacing for Text and Headings */
 main p,
 main h1,
 main h2,
@@ -537,7 +537,7 @@ th[data-col] { cursor: pointer; user-select: none; }
 th[data-col]:hover { text-decoration: underline; }
 
 
-/* Tabellen-Highlights für bessere UX */
+/* Table Highlights for Better UX */
 .group-row { background: #eef4ff; font-style: italic; }
 .world-row { background: #e6f3ff; font-weight: 600; }
 .highlight { background: #fff3cd; box-shadow: 0 0 8px rgba(255,215,0,0.35); }
@@ -1502,7 +1502,7 @@ header img, .header-logo img, nav img, #site-logo {
 #data-table {
   display: block;
   overflow: visible !important;   /* statt auto */
-  height: auto !important;        /* sicherstellen, dass es wächst */
+  height: auto !important;        /* Ensure it can grow */
 }
 
 
@@ -1548,7 +1548,7 @@ header img, .header-logo img, nav img, #site-logo {
 
 
 
-/* Umhüllung für horizontales Scrollen */
+/* Wrapper for Horizontal Scrolling */
 .table-wrapper {
   width: 100%;
   max-width: 1100px;
@@ -1835,17 +1835,17 @@ iframe {
   }
 }
 
-/* 2) Countries Tabelle: horizontales Scrollen nicht blockieren */
+/* Countries Table: Enable horizontal scrolling */
 #data-table {
-  overflow-x: auto !important;   /* überschreibt früheres overflow: visible !important; */
+  overflow-x: auto !important;   /* Override previous overflow: visible */
   overflow-y: visible !important;
 }
 
-/* 3) iFrame-Kinderseiten: Höhe vom Inhalt bestimmen lassen */
+/* iframe Child Pages: Let content determine height */
 html, body {
-  height: auto !important;   /* statt 100% */
+  height: auto !important;   /* Instead of 100% */
   min-height: 0 !important;
-  display: block !important; /* kein Flex erzwingen */
+  display: block !important; /* Prevent forced flex layout */
 }
 /* === RC Spinner Restore (2025-11-06) === */
 @keyframes rc-spin { 
