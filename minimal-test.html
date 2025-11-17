@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimal Test</title>
+</head>
+<body>
+    <h1>Minimal Test</h1>
+    <div id="debug-output"></div>
+    
+    <script>
+        const output = document.getElementById('debug-output');
+        function log(msg) {
+            console.log(msg);
+            output.innerHTML += '<p>' + msg + '</p>';
+        }
+        
+        log('1. Minimal test page loaded');
+        
+        // Test script loading errors
+        window.addEventListener('error', (e) => {
+            log('❌ JavaScript Error: ' + e.message + ' at ' + e.filename + ':' + e.lineno);
+        });
+    </script>
+    
+    <script src="scripts/core.js?v=20251117-1330-debug" defer></script>
+    <script src="scripts/minimal-test.js?v=20251117-1330-debug" defer></script>
+</body>
+</html>

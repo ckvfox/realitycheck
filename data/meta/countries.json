@@ -1,7 +1,7 @@
 {
   "Jamaica": {
     "capital": "Kingston",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 17.99702,
     "lon": -76.79358,
     "iso_a3": "JAM",
@@ -11,7 +11,7 @@
   },
   "Comoros": {
     "capital": "Moroni",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": -11.7,
     "lon": 43.23,
     "iso_a3": "COM",
@@ -21,7 +21,7 @@
   },
   "Zimbabwe": {
     "capital": "Harare",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -17.82,
     "lon": 31.03,
     "iso_a3": "ZWE",
@@ -31,7 +31,7 @@
   },
   "Laos": {
     "capital": "Vientiane",
-    "government": "Single-party State",
+    "government": "Authoritarian Regime",
     "lat": 17.97,
     "lon": 102.6,
     "iso_a3": "LAO",
@@ -41,7 +41,7 @@
   },
   "Latvia": {
     "capital": "Riga",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 56.95,
     "lon": 24.1,
     "iso_a3": "LVA",
@@ -51,7 +51,7 @@
   },
   "Tajikistan": {
     "capital": "Dushanbe",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 38.55,
     "lon": 68.77,
     "iso_a3": "TJK",
@@ -61,7 +61,7 @@
   },
   "United Kingdom": {
     "capital": "London",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 51.5,
     "lon": -0.08,
     "iso_a3": "GBR",
@@ -71,7 +71,7 @@
   },
   "Nicaragua": {
     "capital": "Managua",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 12.13,
     "lon": -86.25,
     "iso_a3": "NIC",
@@ -81,7 +81,7 @@
   },
   "Sudan": {
     "capital": "Khartoum",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 15.6,
     "lon": 32.53,
     "iso_a3": "SDN",
@@ -91,7 +91,7 @@
   },
   "Greece": {
     "capital": "Athens",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 37.98,
     "lon": 23.73,
     "iso_a3": "GRC",
@@ -101,7 +101,7 @@
   },
   "Lithuania": {
     "capital": "Vilnius",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 54.68,
     "lon": 25.32,
     "iso_a3": "LTU",
@@ -111,7 +111,7 @@
   },
   "Rwanda": {
     "capital": "Kigali",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -1.95,
     "lon": 30.05,
     "iso_a3": "RWA",
@@ -121,7 +121,7 @@
   },
   "Senegal": {
     "capital": "Dakar",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 14.73,
     "lon": -17.63,
     "iso_a3": "SEN",
@@ -131,7 +131,7 @@
   },
   "Monaco": {
     "capital": "Monaco",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 43.73,
     "lon": 7.42,
     "iso_a3": "MCO",
@@ -141,7 +141,7 @@
   },
   "Lesotho": {
     "capital": "Maseru",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": -29.32,
     "lon": 27.48,
     "iso_a3": "LSO",
@@ -151,7 +151,7 @@
   },
   "Tunisia": {
     "capital": "Tunis",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 36.8,
     "lon": 10.18,
     "iso_a3": "TUN",
@@ -161,7 +161,7 @@
   },
   "Vanuatu": {
     "capital": "Port Vila",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": -17.73,
     "lon": 168.32,
     "iso_a3": "VUT",
@@ -171,7 +171,7 @@
   },
   "Ecuador": {
     "capital": "Quito",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -0.22,
     "lon": -78.5,
     "iso_a3": "ECU",
@@ -181,7 +181,7 @@
   },
   "Kuwait": {
     "capital": "Kuwait City",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 29.37,
     "lon": 47.97,
     "iso_a3": "KWT",
@@ -191,7 +191,7 @@
   },
   "Philippines": {
     "capital": "Manila",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 14.6,
     "lon": 120.97,
     "iso_a3": "PHL",
@@ -201,7 +201,7 @@
   },
   "Chile": {
     "capital": "Santiago",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -33.45,
     "lon": -70.67,
     "iso_a3": "CHL",
@@ -211,7 +211,7 @@
   },
   "Bahamas": {
     "capital": "Nassau",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 25.08,
     "lon": -77.35,
     "iso_a3": "BHS",
@@ -221,7 +221,7 @@
   },
   "Tanzania": {
     "capital": "Dodoma",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -6.163,
     "lon": 35.7516,
     "iso_a3": "TZA",
@@ -231,7 +231,7 @@
   },
   "Costa Rica": {
     "capital": "San José",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 9.93,
     "lon": -84.09,
     "iso_a3": "CRI",
@@ -241,7 +241,7 @@
   },
   "Morocco": {
     "capital": "Rabat",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 34.02,
     "lon": -6.82,
     "iso_a3": "MAR",
@@ -251,7 +251,7 @@
   },
   "Montenegro": {
     "capital": "Podgorica",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 42.43,
     "lon": 19.27,
     "iso_a3": "MNE",
@@ -261,7 +261,7 @@
   },
   "Micronesia": {
     "capital": "Palikir",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 6.92,
     "lon": 158.15,
     "iso_a3": "FSM",
@@ -271,7 +271,7 @@
   },
   "Portugal": {
     "capital": "Lisbon",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 38.72,
     "lon": -9.13,
     "iso_a3": "PRT",
@@ -281,7 +281,7 @@
   },
   "United Arab Emirates": {
     "capital": "Abu Dhabi",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 24.47,
     "lon": 54.37,
     "iso_a3": "ARE",
@@ -291,7 +291,7 @@
   },
   "Libya": {
     "capital": "Tripoli",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 32.88,
     "lon": 13.17,
     "iso_a3": "LBY",
@@ -301,7 +301,7 @@
   },
   "Luxembourg": {
     "capital": "Luxembourg",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 49.6,
     "lon": 6.12,
     "iso_a3": "LUX",
@@ -311,7 +311,7 @@
   },
   "Solomon Islands": {
     "capital": "Honiara",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": -9.43,
     "lon": 159.95,
     "iso_a3": "SLB",
@@ -321,7 +321,7 @@
   },
   "Algeria": {
     "capital": "Algiers",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 36.75,
     "lon": 3.05,
     "iso_a3": "DZA",
@@ -331,7 +331,7 @@
   },
   "Antigua and Barbuda": {
     "capital": "Saint John's",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 17.12,
     "lon": -61.85,
     "iso_a3": "ATG",
@@ -341,7 +341,7 @@
   },
   "Brazil": {
     "capital": "Brasília",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": -15.79,
     "lon": -47.88,
     "iso_a3": "BRA",
@@ -351,7 +351,7 @@
   },
   "Mali": {
     "capital": "Bamako",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 12.65,
     "lon": -8.0,
     "iso_a3": "MLI",
@@ -361,7 +361,7 @@
   },
   "Pakistan": {
     "capital": "Islamabad",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 33.68,
     "lon": 73.05,
     "iso_a3": "PAK",
@@ -371,7 +371,7 @@
   },
   "Trinidad and Tobago": {
     "capital": "Port of Spain",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 10.65,
     "lon": -61.52,
     "iso_a3": "TTO",
@@ -381,7 +381,7 @@
   },
   "Armenia": {
     "capital": "Yerevan",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 40.17,
     "lon": 44.5,
     "iso_a3": "ARM",
@@ -391,7 +391,7 @@
   },
   "Bangladesh": {
     "capital": "Dhaka",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 23.72,
     "lon": 90.4,
     "iso_a3": "BGD",
@@ -401,7 +401,7 @@
   },
   "Turkmenistan": {
     "capital": "Ashgabat",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 37.95,
     "lon": 58.38,
     "iso_a3": "TKM",
@@ -411,7 +411,7 @@
   },
   "Palau": {
     "capital": "Ngerulmud",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 7.5,
     "lon": 134.62,
     "iso_a3": "PLW",
@@ -421,7 +421,7 @@
   },
   "Cuba": {
     "capital": "Havana",
-    "government": "Single-party State",
+    "government": "Authoritarian Regime",
     "lat": 23.12,
     "lon": -82.35,
     "iso_a3": "CUB",
@@ -431,7 +431,7 @@
   },
   "Chad": {
     "capital": "N'Djamena",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 12.1,
     "lon": 15.03,
     "iso_a3": "TCD",
@@ -441,7 +441,7 @@
   },
   "Bosnia Herzegovina": {
     "capital": "Sarajevo",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 43.87,
     "lon": 18.42,
     "iso_a3": "BIH",
@@ -451,7 +451,7 @@
   },
   "Botswana": {
     "capital": "Gaborone",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -24.63,
     "lon": 25.9,
     "iso_a3": "BWA",
@@ -461,7 +461,7 @@
   },
   "Estonia": {
     "capital": "Tallinn",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 59.43,
     "lon": 24.72,
     "iso_a3": "EST",
@@ -471,7 +471,7 @@
   },
   "Bahrain": {
     "capital": "Manama",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 26.23,
     "lon": 50.57,
     "iso_a3": "BHR",
@@ -481,7 +481,7 @@
   },
   "Dominican Republic": {
     "capital": "Santo Domingo",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 18.47,
     "lon": -69.9,
     "iso_a3": "DOM",
@@ -491,7 +491,7 @@
   },
   "United States": {
     "capital": "Washington, D.C.",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 38.89,
     "lon": -77.05,
     "iso_a3": "USA",
@@ -501,7 +501,7 @@
   },
   "Colombia": {
     "capital": "Bogotá",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 4.71,
     "lon": -74.07,
     "iso_a3": "COL",
@@ -511,7 +511,7 @@
   },
   "Guinea": {
     "capital": "Conakry",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 9.5,
     "lon": -13.7,
     "iso_a3": "GIN",
@@ -521,7 +521,7 @@
   },
   "Ireland": {
     "capital": "Dublin",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 53.32,
     "lon": -6.23,
     "iso_a3": "IRL",
@@ -531,7 +531,7 @@
   },
   "Maldives": {
     "capital": "Malé",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 4.17,
     "lon": 73.51,
     "iso_a3": "MDV",
@@ -541,7 +541,7 @@
   },
   "Panama": {
     "capital": "Panama City",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 8.97,
     "lon": -79.53,
     "iso_a3": "PAN",
@@ -551,7 +551,7 @@
   },
   "Mozambique": {
     "capital": "Maputo",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -25.95,
     "lon": 32.58,
     "iso_a3": "MOZ",
@@ -561,7 +561,7 @@
   },
   "Oman": {
     "capital": "Muscat",
-    "government": "Absolute Monarchy",
+    "government": "Authoritarian Regime",
     "lat": 23.62,
     "lon": 58.58,
     "iso_a3": "OMN",
@@ -571,7 +571,7 @@
   },
   "Czechia": {
     "capital": "Prague",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 50.08,
     "lon": 14.47,
     "iso_a3": "CZE",
@@ -581,7 +581,7 @@
   },
   "Saint Vincent-Grenadines": {
     "capital": "Kingstown",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 13.13,
     "lon": -61.22,
     "iso_a3": "VCT",
@@ -591,7 +591,7 @@
   },
   "Haiti": {
     "capital": "Port-au-Prince",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 18.53,
     "lon": -72.33,
     "iso_a3": "HTI",
@@ -601,7 +601,7 @@
   },
   "Nigeria": {
     "capital": "Abuja",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 9.08,
     "lon": 7.53,
     "iso_a3": "NGA",
@@ -611,7 +611,7 @@
   },
   "Namibia": {
     "capital": "Windhoek",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -22.57,
     "lon": 17.08,
     "iso_a3": "NAM",
@@ -621,7 +621,7 @@
   },
   "Dominica": {
     "capital": "Roseau",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 15.3,
     "lon": -61.4,
     "iso_a3": "DMA",
@@ -631,7 +631,7 @@
   },
   "Canada": {
     "capital": "Ottawa",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 45.42,
     "lon": -75.7,
     "iso_a3": "CAN",
@@ -641,7 +641,7 @@
   },
   "Niger": {
     "capital": "Niamey",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 13.52,
     "lon": 2.12,
     "iso_a3": "NER",
@@ -651,7 +651,7 @@
   },
   "Indonesia": {
     "capital": "Jakarta",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": -6.17,
     "lon": 106.82,
     "iso_a3": "IDN",
@@ -661,7 +661,7 @@
   },
   "Yemen": {
     "capital": "Sana'a",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 15.37,
     "lon": 44.19,
     "iso_a3": "YEM",
@@ -671,7 +671,7 @@
   },
   "Palestine": {
     "capital": "East Jerusalem",
-    "government": "Transitional Government",
+    "government": "Hybrid Regime",
     "lat": 31.7683,
     "lon": 35.2137,
     "iso_a3": "PSE",
@@ -681,7 +681,7 @@
   },
   "Gabon": {
     "capital": "Libreville",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 0.38,
     "lon": 9.45,
     "iso_a3": "GAB",
@@ -691,7 +691,7 @@
   },
   "Eritrea": {
     "capital": "Asmara",
-    "government": "Single-party State",
+    "government": "Authoritarian Regime",
     "lat": 15.33,
     "lon": 38.93,
     "iso_a3": "ERI",
@@ -701,7 +701,7 @@
   },
   "Cyprus": {
     "capital": "Nicosia",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 35.17,
     "lon": 33.37,
     "iso_a3": "CYP",
@@ -711,7 +711,7 @@
   },
   "Slovakia": {
     "capital": "Bratislava",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 48.15,
     "lon": 17.12,
     "iso_a3": "SVK",
@@ -721,7 +721,7 @@
   },
   "Slovenia": {
     "capital": "Ljubljana",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 46.05,
     "lon": 14.52,
     "iso_a3": "SVN",
@@ -731,7 +731,7 @@
   },
   "Kiribati": {
     "capital": "South Tarawa",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 1.33,
     "lon": 172.98,
     "iso_a3": "KIR",
@@ -741,7 +741,7 @@
   },
   "Germany": {
     "capital": "Berlin",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 52.52,
     "lon": 13.4,
     "iso_a3": "DEU",
@@ -751,7 +751,7 @@
   },
   "Kosovo": {
     "capital": "Pristina",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 42.6629,
     "lon": 21.1655,
     "iso_a3": "XKX",
@@ -761,7 +761,7 @@
   },
   "Ivory Coast": {
     "capital": "Yamoussoukro",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 6.82,
     "lon": -5.27,
     "iso_a3": "CIV",
@@ -771,7 +771,7 @@
   },
   "Sri Lanka": {
     "capital": "Sri Jayawardenepura Kotte",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 6.9147,
     "lon": 79.9733,
     "iso_a3": "LKA",
@@ -781,7 +781,7 @@
   },
   "Belgium": {
     "capital": "Brussels",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 50.83,
     "lon": 4.33,
     "iso_a3": "BEL",
@@ -791,7 +791,7 @@
   },
   "Israel": {
     "capital": "Jerusalem",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 31.77,
     "lon": 35.23,
     "iso_a3": "ISR",
@@ -801,7 +801,7 @@
   },
   "Denmark": {
     "capital": "Copenhagen",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 55.67,
     "lon": 12.58,
     "iso_a3": "DNK",
@@ -811,7 +811,7 @@
   },
   "Syria": {
     "capital": "Damascus",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 33.5,
     "lon": 36.3,
     "iso_a3": "SYR",
@@ -821,7 +821,7 @@
   },
   "Timor-Leste": {
     "capital": "Dili",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": -8.58,
     "lon": 125.6,
     "iso_a3": "TLS",
@@ -831,7 +831,7 @@
   },
   "San Marino": {
     "capital": "City of San Marino",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 43.94,
     "lon": 12.45,
     "iso_a3": "SMR",
@@ -841,7 +841,7 @@
   },
   "Gambia": {
     "capital": "Banjul",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 13.45,
     "lon": -16.57,
     "iso_a3": "GMB",
@@ -851,7 +851,7 @@
   },
   "Peru": {
     "capital": "Lima",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -12.05,
     "lon": -77.05,
     "iso_a3": "PER",
@@ -861,7 +861,7 @@
   },
   "Guinea-Bissau": {
     "capital": "Bissau",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 11.85,
     "lon": -15.58,
     "iso_a3": "GNB",
@@ -871,7 +871,7 @@
   },
   "Sierra Leone": {
     "capital": "Freetown",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 8.48,
     "lon": -13.23,
     "iso_a3": "SLE",
@@ -881,7 +881,7 @@
   },
   "Turkey": {
     "capital": "Ankara",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 39.93,
     "lon": 32.87,
     "iso_a3": "TUR",
@@ -891,7 +891,7 @@
   },
   "Bolivia": {
     "capital": "Sucre",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": -19.0196,
     "lon": -65.2619,
     "iso_a3": "BOL",
@@ -901,7 +901,7 @@
   },
   "Norway": {
     "capital": "Oslo",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 59.92,
     "lon": 10.75,
     "iso_a3": "NOR",
@@ -911,7 +911,7 @@
   },
   "Republic of the Congo": {
     "capital": "Brazzaville",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -4.25,
     "lon": 15.28,
     "iso_a3": "COG",
@@ -921,7 +921,7 @@
   },
   "Eswatini": {
     "capital": "Mbabane",
-    "government": "Absolute Monarchy",
+    "government": "Authoritarian Regime",
     "lat": -26.32,
     "lon": 31.13,
     "iso_a3": "SWZ",
@@ -931,7 +931,7 @@
   },
   "Paraguay": {
     "capital": "Asunción",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": -25.28,
     "lon": -57.57,
     "iso_a3": "PRY",
@@ -941,7 +941,7 @@
   },
   "Ukraine": {
     "capital": "Kyiv",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 50.43,
     "lon": 30.52,
     "iso_a3": "UKR",
@@ -951,7 +951,7 @@
   },
   "Malaysia": {
     "capital": "Kuala Lumpur",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 3.17,
     "lon": 101.7,
     "iso_a3": "MYS",
@@ -961,7 +961,7 @@
   },
   "Tonga": {
     "capital": "Nuku'alofa",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": -21.13,
     "lon": -175.2,
     "iso_a3": "TON",
@@ -971,7 +971,7 @@
   },
   "Benin": {
     "capital": "Porto-Novo",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 6.4969,
     "lon": 2.6289,
     "iso_a3": "BEN",
@@ -981,7 +981,7 @@
   },
   "Sweden": {
     "capital": "Stockholm",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 59.33,
     "lon": 18.05,
     "iso_a3": "SWE",
@@ -991,7 +991,7 @@
   },
   "Tuvalu": {
     "capital": "Funafuti",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": -8.52,
     "lon": 179.22,
     "iso_a3": "TUV",
@@ -1001,7 +1001,7 @@
   },
   "Mongolia": {
     "capital": "Ulan Bator",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 47.92,
     "lon": 106.91,
     "iso_a3": "MNG",
@@ -1011,7 +1011,7 @@
   },
   "South Africa": {
     "capital": "Pretoria",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -25.7479,
     "lon": 28.2293,
     "iso_a3": "ZAF",
@@ -1021,7 +1021,7 @@
   },
   "Australia": {
     "capital": "Canberra",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": -35.27,
     "lon": 149.13,
     "iso_a3": "AUS",
@@ -1031,7 +1031,7 @@
   },
   "Saint Kitts and Nevis": {
     "capital": "Basseterre",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 17.3,
     "lon": -62.72,
     "iso_a3": "KNA",
@@ -1041,7 +1041,7 @@
   },
   "Ghana": {
     "capital": "Accra",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 5.55,
     "lon": -0.22,
     "iso_a3": "GHA",
@@ -1051,7 +1051,7 @@
   },
   "Iraq": {
     "capital": "Baghdad",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 33.33,
     "lon": 44.4,
     "iso_a3": "IRQ",
@@ -1061,7 +1061,7 @@
   },
   "Vietnam": {
     "capital": "Hanoi",
-    "government": "Single-party State",
+    "government": "Authoritarian Regime",
     "lat": 21.03,
     "lon": 105.85,
     "iso_a3": "VNM",
@@ -1071,7 +1071,7 @@
   },
   "Guyana": {
     "capital": "Georgetown",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 6.8,
     "lon": -58.15,
     "iso_a3": "GUY",
@@ -1081,7 +1081,7 @@
   },
   "Azerbaijan": {
     "capital": "Baku",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 40.38,
     "lon": 49.87,
     "iso_a3": "AZE",
@@ -1091,7 +1091,7 @@
   },
   "Cameroon": {
     "capital": "Yaoundé",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 3.85,
     "lon": 11.5,
     "iso_a3": "CMR",
@@ -1101,7 +1101,7 @@
   },
   "Egypt": {
     "capital": "Cairo",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 30.05,
     "lon": 31.25,
     "iso_a3": "EGY",
@@ -1111,7 +1111,7 @@
   },
   "Iceland": {
     "capital": "Reykjavik",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 64.15,
     "lon": -21.95,
     "iso_a3": "ISL",
@@ -1121,7 +1121,7 @@
   },
   "Venezuela": {
     "capital": "Caracas",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 10.48,
     "lon": -66.87,
     "iso_a3": "VEN",
@@ -1131,7 +1131,7 @@
   },
   "Barbados": {
     "capital": "Bridgetown",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 13.1,
     "lon": -59.62,
     "iso_a3": "BRB",
@@ -1141,7 +1141,7 @@
   },
   "Malawi": {
     "capital": "Lilongwe",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -13.97,
     "lon": 33.78,
     "iso_a3": "MWI",
@@ -1151,7 +1151,7 @@
   },
   "Kyrgyzstan": {
     "capital": "Bishkek",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 42.87,
     "lon": 74.6,
     "iso_a3": "KGZ",
@@ -1161,7 +1161,7 @@
   },
   "Taiwan": {
     "capital": "Taipei",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 25.033,
     "lon": 121.5654,
     "iso_a3": "TWN",
@@ -1171,7 +1171,7 @@
   },
   "Bulgaria": {
     "capital": "Sofia",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 42.68,
     "lon": 23.32,
     "iso_a3": "BGR",
@@ -1181,7 +1181,7 @@
   },
   "North Korea": {
     "capital": "Pyongyang",
-    "government": "Single-party State",
+    "government": "Authoritarian Regime",
     "lat": 39.02,
     "lon": 125.75,
     "iso_a3": "PRK",
@@ -1191,7 +1191,7 @@
   },
   "Andorra": {
     "capital": "Andorra la Vella",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 42.5,
     "lon": 1.52,
     "iso_a3": "AND",
@@ -1201,7 +1201,7 @@
   },
   "Angola": {
     "capital": "Luanda",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -8.83,
     "lon": 13.22,
     "iso_a3": "AGO",
@@ -1211,7 +1211,7 @@
   },
   "Russia": {
     "capital": "Moscow",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 55.75,
     "lon": 37.6,
     "iso_a3": "RUS",
@@ -1221,7 +1221,7 @@
   },
   "Burkina Faso": {
     "capital": "Ouagadougou",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 12.37,
     "lon": -1.52,
     "iso_a3": "BFA",
@@ -1231,7 +1231,7 @@
   },
   "Vatican City": {
     "capital": "Vatican City",
-    "government": "Theocracy",
+    "government": "Authoritarian Regime",
     "lat": 41.9,
     "lon": 12.45,
     "iso_a3": "VAT",
@@ -1241,7 +1241,7 @@
   },
   "Afghanistan": {
     "capital": "Kabul",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 34.52,
     "lon": 69.18,
     "iso_a3": "AFG",
@@ -1251,7 +1251,7 @@
   },
   "Croatia": {
     "capital": "Zagreb",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 45.8,
     "lon": 16.0,
     "iso_a3": "HRV",
@@ -1261,7 +1261,7 @@
   },
   "Bhutan": {
     "capital": "Thimphu",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 27.47,
     "lon": 89.63,
     "iso_a3": "BTN",
@@ -1271,7 +1271,7 @@
   },
   "Belarus": {
     "capital": "Minsk",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 53.9,
     "lon": 27.57,
     "iso_a3": "BLR",
@@ -1281,7 +1281,7 @@
   },
   "New Zealand": {
     "capital": "Wellington",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": -41.3,
     "lon": 174.78,
     "iso_a3": "NZL",
@@ -1291,7 +1291,7 @@
   },
   "Madagascar": {
     "capital": "Antananarivo",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -18.92,
     "lon": 47.52,
     "iso_a3": "MDG",
@@ -1301,7 +1301,7 @@
   },
   "Thailand": {
     "capital": "Bangkok",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 13.75,
     "lon": 100.52,
     "iso_a3": "THA",
@@ -1311,7 +1311,7 @@
   },
   "Georgia": {
     "capital": "Tbilisi",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 41.68,
     "lon": 44.83,
     "iso_a3": "GEO",
@@ -1321,7 +1321,7 @@
   },
   "India": {
     "capital": "New Delhi",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 28.6,
     "lon": 77.2,
     "iso_a3": "IND",
@@ -1331,7 +1331,7 @@
   },
   "China": {
     "capital": "Beijing",
-    "government": "Single-party State",
+    "government": "Authoritarian Regime",
     "lat": 39.92,
     "lon": 116.38,
     "iso_a3": "CHN",
@@ -1341,7 +1341,7 @@
   },
   "Djibouti": {
     "capital": "Djibouti",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 11.58,
     "lon": 43.15,
     "iso_a3": "DJI",
@@ -1351,7 +1351,7 @@
   },
   "Saudi Arabia": {
     "capital": "Riyadh",
-    "government": "Absolute Monarchy",
+    "government": "Authoritarian Regime",
     "lat": 24.65,
     "lon": 46.7,
     "iso_a3": "SAU",
@@ -1361,7 +1361,7 @@
   },
   "Iran": {
     "capital": "Tehran",
-    "government": "Theocracy",
+    "government": "Authoritarian Regime",
     "lat": 35.7,
     "lon": 51.42,
     "iso_a3": "IRN",
@@ -1371,7 +1371,7 @@
   },
   "Zambia": {
     "capital": "Lusaka",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -15.42,
     "lon": 28.28,
     "iso_a3": "ZMB",
@@ -1381,7 +1381,7 @@
   },
   "Ethiopia": {
     "capital": "Addis Ababa",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 9.03,
     "lon": 38.7,
     "iso_a3": "ETH",
@@ -1391,7 +1391,7 @@
   },
   "Guatemala": {
     "capital": "Guatemala City",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 14.62,
     "lon": -90.52,
     "iso_a3": "GTM",
@@ -1401,7 +1401,7 @@
   },
   "Suriname": {
     "capital": "Paramaribo",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 5.83,
     "lon": -55.17,
     "iso_a3": "SUR",
@@ -1411,7 +1411,7 @@
   },
   "Uruguay": {
     "capital": "Montevideo",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": -34.85,
     "lon": -56.17,
     "iso_a3": "URY",
@@ -1421,7 +1421,7 @@
   },
   "Italy": {
     "capital": "Rome",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 41.9,
     "lon": 12.48,
     "iso_a3": "ITA",
@@ -1431,7 +1431,7 @@
   },
   "Fiji": {
     "capital": "Suva",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": -18.13,
     "lon": 178.42,
     "iso_a3": "FJI",
@@ -1441,7 +1441,7 @@
   },
   "São Tomé and Príncipe": {
     "capital": "São Tomé",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 0.34,
     "lon": 6.73,
     "iso_a3": "STP",
@@ -1451,7 +1451,7 @@
   },
   "Switzerland": {
     "capital": "Bern",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 46.9481,
     "lon": 7.4474,
     "iso_a3": "CHE",
@@ -1461,7 +1461,7 @@
   },
   "Democratic Republic of the Congo": {
     "capital": "Kinshasa",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -4.32,
     "lon": 15.3,
     "iso_a3": "COD",
@@ -1471,7 +1471,7 @@
   },
   "Finland": {
     "capital": "Helsinki",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 60.17,
     "lon": 24.93,
     "iso_a3": "FIN",
@@ -1481,7 +1481,7 @@
   },
   "Malta": {
     "capital": "Valletta",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 35.88,
     "lon": 14.5,
     "iso_a3": "MLT",
@@ -1491,7 +1491,7 @@
   },
   "El Salvador": {
     "capital": "San Salvador",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 13.7,
     "lon": -89.2,
     "iso_a3": "SLV",
@@ -1501,7 +1501,7 @@
   },
   "Jordan": {
     "capital": "Amman",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 31.95,
     "lon": 35.93,
     "iso_a3": "JOR",
@@ -1511,7 +1511,7 @@
   },
   "Nauru": {
     "capital": "Yaren",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": -0.5477,
     "lon": 166.9211,
     "iso_a3": "NRU",
@@ -1521,7 +1521,7 @@
   },
   "Poland": {
     "capital": "Warsaw",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 52.25,
     "lon": 21.0,
     "iso_a3": "POL",
@@ -1531,7 +1531,7 @@
   },
   "Mauritania": {
     "capital": "Nouakchott",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 18.07,
     "lon": -15.97,
     "iso_a3": "MRT",
@@ -1541,7 +1541,7 @@
   },
   "North Macedonia": {
     "capital": "Skopje",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 42.0,
     "lon": 21.43,
     "iso_a3": "MKD",
@@ -1551,7 +1551,7 @@
   },
   "Togo": {
     "capital": "Lomé",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 6.14,
     "lon": 1.21,
     "iso_a3": "TGO",
@@ -1561,7 +1561,7 @@
   },
   "Myanmar": {
     "capital": "Naypyidaw",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 19.76,
     "lon": 96.07,
     "iso_a3": "MMR",
@@ -1571,7 +1571,7 @@
   },
   "Qatar": {
     "capital": "Doha",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 25.28,
     "lon": 51.53,
     "iso_a3": "QAT",
@@ -1581,7 +1581,7 @@
   },
   "France": {
     "capital": "Paris",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 48.87,
     "lon": 2.33,
     "iso_a3": "FRA",
@@ -1591,7 +1591,7 @@
   },
   "Seychelles": {
     "capital": "Victoria",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -4.62,
     "lon": 55.45,
     "iso_a3": "SYC",
@@ -1601,7 +1601,7 @@
   },
   "Moldova": {
     "capital": "Chișinău",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 47.01,
     "lon": 28.9,
     "iso_a3": "MDA",
@@ -1611,7 +1611,7 @@
   },
   "South Sudan": {
     "capital": "Juba",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 4.85,
     "lon": 31.62,
     "iso_a3": "SSD",
@@ -1621,7 +1621,7 @@
   },
   "Brunei": {
     "capital": "Bandar Seri Begawan",
-    "government": "Absolute Monarchy",
+    "government": "Authoritarian Regime",
     "lat": 4.88,
     "lon": 114.93,
     "iso_a3": "BRN",
@@ -1631,7 +1631,7 @@
   },
   "Japan": {
     "capital": "Tokyo",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 35.68,
     "lon": 139.75,
     "iso_a3": "JPN",
@@ -1641,7 +1641,7 @@
   },
   "Grenada": {
     "capital": "St. George's",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 12.05,
     "lon": -61.75,
     "iso_a3": "GRD",
@@ -1651,7 +1651,7 @@
   },
   "Spain": {
     "capital": "Madrid",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 40.4,
     "lon": -3.68,
     "iso_a3": "ESP",
@@ -1661,7 +1661,7 @@
   },
   "Papua New Guinea": {
     "capital": "Port Moresby",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": -9.45,
     "lon": 147.18,
     "iso_a3": "PNG",
@@ -1671,7 +1671,7 @@
   },
   "Uzbekistan": {
     "capital": "Tashkent",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 41.32,
     "lon": 69.25,
     "iso_a3": "UZB",
@@ -1681,7 +1681,7 @@
   },
   "Argentina": {
     "capital": "Buenos Aires",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": -34.58,
     "lon": -58.67,
     "iso_a3": "ARG",
@@ -1691,7 +1691,7 @@
   },
   "South Korea": {
     "capital": "Seoul",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 37.55,
     "lon": 126.98,
     "iso_a3": "KOR",
@@ -1701,7 +1701,7 @@
   },
   "Belize": {
     "capital": "Belmopan",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 17.25,
     "lon": -88.77,
     "iso_a3": "BLZ",
@@ -1711,7 +1711,7 @@
   },
   "Mexico": {
     "capital": "Mexico City",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 19.43,
     "lon": -99.13,
     "iso_a3": "MEX",
@@ -1721,7 +1721,7 @@
   },
   "Serbia": {
     "capital": "Belgrade",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 44.83,
     "lon": 20.5,
     "iso_a3": "SRB",
@@ -1731,7 +1731,7 @@
   },
   "Cape Verde": {
     "capital": "Praia",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 14.92,
     "lon": -23.52,
     "iso_a3": "CPV",
@@ -1741,7 +1741,7 @@
   },
   "Cambodia": {
     "capital": "Phnom Penh",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 11.55,
     "lon": 104.92,
     "iso_a3": "KHM",
@@ -1751,7 +1751,7 @@
   },
   "Romania": {
     "capital": "Bucharest",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 44.43,
     "lon": 26.1,
     "iso_a3": "ROU",
@@ -1761,7 +1761,7 @@
   },
   "Hungary": {
     "capital": "Budapest",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 47.5,
     "lon": 19.08,
     "iso_a3": "HUN",
@@ -1771,7 +1771,7 @@
   },
   "Marshall Islands": {
     "capital": "Majuro",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 7.1,
     "lon": 171.38,
     "iso_a3": "MHL",
@@ -1781,7 +1781,7 @@
   },
   "Somalia": {
     "capital": "Mogadishu",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 2.07,
     "lon": 45.33,
     "iso_a3": "SOM",
@@ -1791,7 +1791,7 @@
   },
   "Albania": {
     "capital": "Tirana",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 41.32,
     "lon": 19.82,
     "iso_a3": "ALB",
@@ -1801,7 +1801,7 @@
   },
   "Burundi": {
     "capital": "Gitega",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -3.43,
     "lon": 29.93,
     "iso_a3": "BDI",
@@ -1811,7 +1811,7 @@
   },
   "Central African Republic": {
     "capital": "Bangui",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 4.37,
     "lon": 18.58,
     "iso_a3": "CAF",
@@ -1821,7 +1821,7 @@
   },
   "Saint Lucia": {
     "capital": "Castries",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 14.0,
     "lon": -61.0,
     "iso_a3": "LCA",
@@ -1831,7 +1831,7 @@
   },
   "Uganda": {
     "capital": "Kampala",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 0.32,
     "lon": 32.55,
     "iso_a3": "UGA",
@@ -1841,7 +1841,7 @@
   },
   "Honduras": {
     "capital": "Tegucigalpa",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 14.1,
     "lon": -87.22,
     "iso_a3": "HND",
@@ -1851,7 +1851,7 @@
   },
   "Kazakhstan": {
     "capital": "Astana",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 51.16,
     "lon": 71.45,
     "iso_a3": "KAZ",
@@ -1861,7 +1861,7 @@
   },
   "Kenya": {
     "capital": "Nairobi",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -1.28,
     "lon": 36.82,
     "iso_a3": "KEN",
@@ -1871,7 +1871,7 @@
   },
   "Samoa": {
     "capital": "Apia",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": -13.82,
     "lon": -171.77,
     "iso_a3": "WSM",
@@ -1881,7 +1881,7 @@
   },
   "Nepal": {
     "capital": "Kathmandu",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 27.72,
     "lon": 85.32,
     "iso_a3": "NPL",
@@ -1891,7 +1891,7 @@
   },
   "Equatorial Guinea": {
     "capital": "Malabo",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 3.75,
     "lon": 8.78,
     "iso_a3": "GNQ",
@@ -1901,7 +1901,7 @@
   },
   "Lebanon": {
     "capital": "Beirut",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 33.87,
     "lon": 35.5,
     "iso_a3": "LBN",
@@ -1911,7 +1911,7 @@
   },
   "Mauritius": {
     "capital": "Port Louis",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": -20.15,
     "lon": 57.48,
     "iso_a3": "MUS",
@@ -1921,7 +1921,7 @@
   },
   "Liechtenstein": {
     "capital": "Vaduz",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 47.13,
     "lon": 9.52,
     "iso_a3": "LIE",
@@ -1931,7 +1931,7 @@
   },
   "Austria": {
     "capital": "Vienna",
-    "government": "Federal Republic",
+    "government": "Full Democracy",
     "lat": 48.2,
     "lon": 16.37,
     "iso_a3": "AUT",
@@ -1941,7 +1941,7 @@
   },
   "Netherlands": {
     "capital": "Amsterdam",
-    "government": "Constitutional Monarchy",
+    "government": "Full Democracy",
     "lat": 52.3676,
     "lon": 4.9041,
     "iso_a3": "NLD",
@@ -1951,7 +1951,7 @@
   },
   "Singapore": {
     "capital": "Singapore",
-    "government": "Parliamentary Republic",
+    "government": "Full Democracy",
     "lat": 1.28,
     "lon": 103.85,
     "iso_a3": "SGP",
@@ -1961,7 +1961,7 @@
   },
   "Liberia": {
     "capital": "Monrovia",
-    "government": "Presidential Republic",
+    "government": "Flawed Democracy",
     "lat": 6.3,
     "lon": -10.8,
     "iso_a3": "LBR",
@@ -1972,7 +1972,7 @@
   "Greenland": {
     "iso_a3": "GRL",
     "capital": "Nuuk",
-    "government": "Constituent country (Kingdom of Denmark)",
+    "government": "Full Democracy",
     "lat": 64.18,
     "lon": -51.72,
     "iso_a2": "GL",

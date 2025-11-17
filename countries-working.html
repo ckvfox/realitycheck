@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealityCheck – Countries (WORKING)</title>
+  <meta name="theme-color" content="#1a355e">
+  <link rel="stylesheet" href="style.css?v=20251117-1255-fix" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.min.js" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+</head>
+
+<body class="countries-page">
+  <div id="overlay-spinner" class="hidden"></div>
+  
+  <section class="page-intro">
+    <h1>🗺️ Countries Dashboard (WORKING VERSION)</h1>
+    <p>Testing the working version of the RealityCheck countries dashboard.</p>
+  </section>
+
+  <main class="page-main">
+    <div class="controls-container">
+      <div class="controls-grid">
+        <div class="control-group">
+          <label for="kpiSelect">KPI:</label>
+          <select id="kpiSelect"></select>
+        </div>
+        <div class="control-group">
+          <label for="relationSelect">Relation:</label>
+          <select id="relationSelect">
+            <option value="">Exact values</option>
+            <option value="percapita">Per capita</option>
+            <option value="pergdp">Per GDP</option>
+            <option value="perkm2">Per km²</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="yearSelect">Year:</label>
+          <select id="yearSelect"></select>
+        </div>
+        <div class="control-group">
+          <label for="scaleSelect">Scale:</label>
+          <select id="scaleSelect"></select>
+        </div>
+        <div class="control-group">
+          <label for="countrySelect">Home Country:</label>
+          <select id="countrySelect"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-container">
+      <div class="dashboard-grid">
+        <div class="dashboard-item map-container">
+          <div id="map"></div>
+        </div>
+        <div class="dashboard-item chart-container">
+          <canvas id="chart"></canvas>
+        </div>
+        <div class="dashboard-item table-container">
+          <div class="table-wrapper">
+            <table id="dataTable">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Country</th>
+                  <th>Value</th>
+                  <th>Trend</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Core scripts - Order matters! -->
+  <script src="scripts/utils_ui.js?v=20251117-working"></script>
+  <script src="scripts/core.js?v=20251117-working"></script>
+  
+  <script>
+    // Direct initialization after core.js loads
+    console.log('WORKING VERSION: Direct init approach');
+    
+    // Simple delay to ensure everything is loaded
+    setTimeout(() => {
+      console.log('WORKING: Checking for functions...');
+      
+      if (typeof loadJSON === 'function') {
+        console.log('WORKING: loadJSON available, testing...');
+        
+        loadJSON('data/meta/available_kpis.json').then(data => {
+          console.log('WORKING: KPIs loaded successfully:', data ? Object.keys(data).length : 0, 'items');
+          
+          // Populate KPI select
+          const kpiSelect = document.getElementById('kpiSelect');
+          if (kpiSelect && data) {
+            Object.entries(data).forEach(([filename, kpi]) => {
+              const option = document.createElement('option');
+              option.value = filename;
+              option.textContent = kpi.title || filename;
+              kpiSelect.appendChild(option);
+            });
+            console.log('WORKING: KPI select populated');
+          }
+          
+        }).catch(err => {
+          console.error('WORKING: KPI loading failed:', err);
+        });
+        
+      } else {
+        console.error('WORKING: loadJSON not available');
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

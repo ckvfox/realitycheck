@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Map Debug Test</title>
+    <link rel="stylesheet" href="style.css?v=20251117-1510-allfix" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous" defer></script>
+</head>
+<body class="world-page">
+    <div style="padding: 20px; background: #1a355e; min-height: 100vh;">
+        <section class="world-map-section chart-block">
+            <div class="chart-container">
+                <h2 style="color: white;">🗺️ World Map Debug Test</h2>
+                <p style="color: white;">Testing country highlighting with better visibility.</p>
+                
+                <div class="map-controls">
+                    <div class="select-wrapper">
+                        <label for="groupingSelect">Grouping:</label>
+                        <select id="groupingSelect">
+                            <option value="">Select grouping...</option>
+                            <option value="groups">Groups (EU, G7, BRICS, etc.)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="select-wrapper">
+                        <label for="categorySelect">Category:</label>
+                        <select id="categorySelect" disabled>
+                            <option value="">Select category...</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="world-map-container">
+                    <div id="world-map" style="height: 400px;"></div>
+                </div>
+                
+                <div id="world-map-legend" class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #2196F3;"></span>
+                        <span>Selected Group</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #ddd;"></span>
+                        <span>Other Countries</span>
+                    </div>
+                </div>
+                
+                <!-- Debug Panel -->
+                <div style="margin-top: 20px; padding: 15px; background: rgba(0,0,0,0.5); border-radius: 8px; color: white; font-family: monospace;">
+                    <h4>Debug Info:</h4>
+                    <div id="debug-info">Loading...</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/utils_ui.js?v=20251117-1520-simple" defer></script>
+    <script src="scripts/core.js?v=20251117-1520-simple" defer></script>
+    
+    <script>
+        // Simplified World Map Test
+        let worldMap = null;
+        let worldMapLayer = null;
+        let worldMapCountries = {};
+        let worldMapGroups = {};
+        let debugInfo = document.getElementById('debug-info');
+        
+        // HARDCODED TEST DATA für sofortiges Debugging
+        const TEST_EU_COUNTRIES = [
+            'Germany', 'France', 'Italy', 'Spain', 'Netherlands', 
+            'Belgium', 'Austria', 'Sweden', 'Denmark', 'Finland'
+        ];
+
+        async function initDebugWorldMap() {
+            try {
+                debugInfo.innerHTML = 'Loading data...';
+                
+                // Load data
+                worldMapCountries = await loadJSON("data/meta/countries.json");
+                worldMapGroups = await loadJSON("data/meta/groups.json");
+                
+                debugInfo.innerHTML = `
+                    Countries loaded: ${Object.keys(worldMapCountries).length}<br>
+                    Groups loaded: ${Object.keys(worldMapGroups).length}<br>
+                    Sample groups: ${Object.keys(worldMapGroups).slice(0, 5).join(', ')}<br>
+                `;
+                
+                // Load GeoJSON
+                const res = await fetch("data/meta/world_countries_geo.json", { cache: "no-store" });
+                if (!res.ok) throw new Error("GeoJSON load failed");
+                window._worldGeoJSON = await res.json();
+                
+                debugInfo.innerHTML += `GeoJSON features: ${window._worldGeoJSON.features.length}<br>`;
+                
+                // Initialize map
+                worldMap = L.map('world-map').setView([20, 0], 2);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(worldMap);
+                
+                // Event listeners
+                document.getElementById('groupingSelect').addEventListener('change', updateDebugCategories);
+                document.getElementById('categorySelect').addEventListener('change', testHighlighting);
+                
+                debugInfo.innerHTML += 'Map initialized! Ready to test.<br>';
+                
+            } catch (err) {
+                debugInfo.innerHTML = `ERROR: ${err.message}`;
+                console.error('Debug test failed:', err);
+            }
+        }
+
+        function updateDebugCategories() {
+            const groupingSelect = document.getElementById('groupingSelect');
+            const categorySelect = document.getElementById('categorySelect');
+            
+            if (groupingSelect.value === 'groups') {
+                categorySelect.innerHTML = '<option value="">Select category...</option>';
+                Object.keys(worldMapGroups).forEach(groupName => {
+                    const option = document.createElement('option');
+                    option.value = groupName;
+                    option.textContent = `${groupName} (${worldMapGroups[groupName].length})`;
+                    categorySelect.appendChild(option);
+                });
+                categorySelect.disabled = false;
+                debugInfo.innerHTML += `Categories populated: ${Object.keys(worldMapGroups).length}<br>`;
+            }
+        }
+
+        function testHighlighting() {
+            const category = document.getElementById('categorySelect').value;
+            if (!category || !window._worldGeoJSON) return;
+            
+            // Remove existing layer
+            if (worldMapLayer) {
+                worldMap.removeLayer(worldMapLayer);
+            }
+            
+            // USE HARDCODED DATA FOR TESTING
+            let relevantCountries = [];
+            if (category === 'EU') {
+                relevantCountries = TEST_EU_COUNTRIES;
+            } else {
+                relevantCountries = worldMapGroups[category] || [];
+            }
+            
+            const relevantSet = new Set(relevantCountries.map(c => c.toLowerCase()));
+            
+            debugInfo.innerHTML += `Testing ${category}: ${relevantCountries.length} countries<br>`;
+            debugInfo.innerHTML += `Countries: ${relevantCountries.slice(0, 5).join(', ')}...<br>`;
+            
+            let matchedCount = 0;
+            let testedCount = 0;
+            
+            // Create GeoJSON layer with highlighting
+            worldMapLayer = L.geoJSON(window._worldGeoJSON, {
+                style: feature => {
+                    testedCount++;
+                    const name = (
+                        feature.properties.ADMIN ||
+                        feature.properties.NAME ||
+                        feature.properties.COUNTRY ||
+                        feature.properties.SOVEREIGNT ||
+                        ""
+                    ).trim();
+                    
+                    // MULTIPLE MATCHING STRATEGIES
+                    let isRelevant = false;
+                    
+                    // 1. Direct match
+                    if (relevantSet.has(name.toLowerCase())) {
+                        isRelevant = true;
+                    }
+                    
+                    // 2. Partial match
+                    if (!isRelevant) {
+                        isRelevant = relevantCountries.some(c => {
+                            const countryLower = c.toLowerCase();
+                            const nameLower = name.toLowerCase();
+                            return nameLower === countryLower || 
+                                   nameLower.includes(countryLower) || 
+                                   countryLower.includes(nameLower);
+                        });
+                    }
+                    
+                    // 3. Special mappings
+                    if (!isRelevant && name) {
+                        const specialMappings = {
+                            'United States of America': 'United States',
+                            'Russian Federation': 'Russia',
+                            'United Kingdom': 'United Kingdom'
+                        };
+                        const mapped = specialMappings[name];
+                        if (mapped) {
+                            isRelevant = relevantSet.has(mapped.toLowerCase());
+                        }
+                    }
+                    
+                    if (isRelevant) {
+                        matchedCount++;
+                        console.log(`✅ Matched: "${name}"`);
+                    } else if (testedCount <= 10) {
+                        console.log(`❌ No match: "${name}"`);
+                    }
+                    
+                    return {
+                        fillColor: isRelevant ? '#FF0000' : '#dddddd',  // RED for visibility!
+                        weight: isRelevant ? 3 : 1,
+                        opacity: 1,
+                        color: isRelevant ? '#CC0000' : '#999999',
+                        fillOpacity: isRelevant ? 0.9 : 0.2
+                    };
+                },
+                onEachFeature: (feature, layer) => {
+                    const name = feature.properties.ADMIN || feature.properties.NAME || "";
+                    layer.bindTooltip(`<strong>${name}</strong>`);
+                }
+            }).addTo(worldMap);
+            
+            debugInfo.innerHTML += `Matched ${matchedCount} countries on map<br>`;
+        }
+
+        // Initialize when ready
+        document.addEventListener('DOMContentLoaded', initDebugWorldMap);
+    </script>
+</body>
+</html>

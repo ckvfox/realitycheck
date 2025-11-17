@@ -9,8 +9,11 @@
   <meta http-equiv="Expires" content="0" />
   <title>RealityCheck – World Trends Dashboard</title>
 
-  <link rel="stylesheet" href="style.css?v=20251117-0220-aggressive-mobile" />
+  <link rel="stylesheet" href="style.css?v=20251117-1650-tooltipfix" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <!-- 🗺️ Leaflet für World Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous" defer></script>
 </head>
 
 <body class="world-page">
@@ -47,11 +50,53 @@
     Data accuracy and rights remain with the original publishers (World Bank, UN, OWID, etc.).
   </p>
 
+  <!-- 🗺️ Gruppierungs-Map Section -->
+  <section class="world-map-section chart-block">
+    <div class="chart-container">
+      <h2>🗺️ Country Groupings Explorer</h2>
+      <p>Explore countries by their groups, government types, or languages. Select a category below to highlight countries on the map.</p>
+      
+      <div class="map-controls">
+        <div class="select-wrapper">
+          <label for="groupingSelect">Grouping:</label>
+          <select id="groupingSelect">
+            <option value="">Select grouping...</option>
+            <option value="groups">Groups (EU, G7, BRICS, etc.)</option>
+            <option value="government">Government Type</option>
+            <option value="language">Language</option>
+          </select>
+        </div>
+        
+        <div class="select-wrapper">
+          <label for="categorySelect">Category:</label>
+          <select id="categorySelect" disabled>
+            <option value="">Select category...</option>
+          </select>
+        </div>
+      </div>
+      
+      <div id="world-map-container">
+        <div id="world-map" style="height: 500px; margin: 20px 0;"></div>
+      </div>
+      
+      <div id="world-map-legend" class="map-legend">
+        <div class="legend-item">
+          <span class="legend-color" style="background: #2196F3;"></span>
+          <span>Selected Group</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background: #ddd;"></span>
+          <span>Other Countries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js" defer></script>
         <!-- 🧠 Shared RealityCheck Core -->
-        <script src="scripts/utils_ui.js" defer></script>
-        <script src="scripts/core.js?v=20251117-0200-fix" defer></script>
-        <script src="scripts/script_world.js?v=20251117-0200-fix" defer></script>
+        <script src="scripts/utils_ui.js?v=20251117-1510-allfix" defer></script>
+        <script src="scripts/core.js?v=20251117-1650-tooltipfix" defer></script>
+        <script src="scripts/script_world.js?v=20251117-1650-tooltipfix" defer></script>
 </body>
 </html>

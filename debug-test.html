@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RealityCheck Debug Test</title>
+</head>
+<body>
+    <h1>Debug Test</h1>
+    <div id="debug-output"></div>
+    
+    <script>
+        const output = document.getElementById('debug-output');
+        function log(msg) {
+            console.log(msg);
+            output.innerHTML += '<p>' + msg + '</p>';
+        }
+        
+        log('1. Test page loaded');
+    </script>
+    
+    <script src="scripts/core.js?v=20251117-1330-debug" defer></script>
+    <script src="scripts/script.js?v=20251117-1330-debug" defer></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            log('2. DOMContentLoaded triggered');
+            log('3. loadJSON type: ' + typeof loadJSON);
+            log('4. showSpinner type: ' + typeof showSpinner);
+            log('5. init type: ' + typeof init);
+            
+            if (typeof loadJSON === 'function') {
+                log('6. Testing loadJSON...');
+                loadJSON('data/meta/available_kpis.json').then(data => {
+                    log('7. loadJSON SUCCESS: ' + (data ? 'data loaded' : 'no data'));
+                }).catch(err => {
+                    log('7. loadJSON ERROR: ' + err.message);
+                });
+            } else {
+                log('6. loadJSON not available');
+            }
+        });
+    </script>
+</body>
+</html>

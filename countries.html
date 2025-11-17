@@ -11,7 +11,7 @@
 	<link rel="icon" type="image/png" href="favicon.png">
 	<link rel="apple-touch-icon" href="favicon.png">
 
-  <link rel="stylesheet" href="style.css?v=20251116-1920-modal-fix" />
+  <link rel="stylesheet" href="style.css?v=20251117-1700-containerfix" />
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.min.js" integrity="sha512-TrzZNOcdTjzp6FQnXUlYrt08pfmmNWYCqfjkVK9sJmLrVo/NBuRnTL2FCg4JMjgm2xbn1MVhDbtedqFIppA6cQ==" crossorigin="anonymous" defer></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous" defer></script>
@@ -53,39 +53,41 @@
   </section>
 
   <!-- Controls -->
-  <section id="controls">
-    <div class="control-pair">
-      <label for="kpiSelect">KPI:</label>
-      <select id="kpiSelect"></select>
-    </div>
-    <div class="control-pair">
-      <label for="yearSelect">Comparison Year:</label>
-      <select id="yearSelect"></select>
-    </div>
-    <div class="control-pair">
-      <label for="relationSelect">Relation:</label>
-      <select id="relationSelect">
-        <option value="absolute">Absolute</option>
-        <option value="percapita">Per Capita</option>
-        <option value="pergdp">Per GDP</option>
-        <option value="perkm2">Per km²</option>
-      </select>
-    </div>
-    <div class="control-pair">
-      <label for="countrySelect">Home Country:</label>
-      <select id="countrySelect"></select>
-    </div>
-  </section>
+  <div class="page-intro">
+    <section id="controls">
+      <div class="control-pair">
+        <label for="kpiSelect">KPI:</label>
+        <select id="kpiSelect"></select>
+      </div>
+      <div class="control-pair">
+        <label for="yearSelect">Comparison Year:</label>
+        <select id="yearSelect"></select>
+      </div>
+      <div class="control-pair">
+        <label for="relationSelect">Relation:</label>
+        <select id="relationSelect">
+          <option value="absolute">Absolute</option>
+          <option value="percapita">Per Capita</option>
+          <option value="pergdp">Per GDP</option>
+          <option value="perkm2">Per km²</option>
+        </select>
+      </div>
+      <div class="control-pair">
+        <label for="countrySelect">Home Country:</label>
+        <select id="countrySelect"></select>
+      </div>
+    </section>
+  </div>
 
   <!-- Warnbox & KPI-Beschreibung -->
-  <div id="warning-box" class="hidden max-width-container">
+  <div id="warning-box" class="hidden page-intro">
     ⚠️ <strong>Attention:</strong> No current data is available for some countries. Older values were used.
   </div>
 
-  <div id="kpi-description" class="max-width-container"></div>
+  <div id="kpi-description" class="page-intro"></div>
 
   <!-- 🧠 Smart KPI Analysis -->
-  <div id="kpi-analysis">
+  <div id="kpi-analysis" class="page-intro">
     <em>AI-based insights for this indicator will appear here…</em>
   </div>
 
@@ -158,9 +160,9 @@
   
   <!-- Footer wird automatisch über core.js geladen -->
   <!-- 🧠 Shared RealityCheck Core -->
-  <script src="scripts/utils_ui.js" defer></script>
-  <script src="scripts/core.js?v=20251116-2100-languages" defer></script>
-  <script src="scripts/script.js?v=20251116-2100-languages" defer></script>
+  <script src="scripts/utils_ui.js?v=20251117-1700-containerfix" defer></script>
+  <script src="scripts/core.js?v=20251117-1700-containerfix" defer></script>
+  <script src="scripts/script.js?v=20251117-1700-containerfix" defer></script>
 
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Script Debug Test</title>
+</head>
+<body>
+    <h1>Script Debug Test</h1>
+    <div id="debug-output"></div>
+    
+    <script>
+        const output = document.getElementById('debug-output');
+        function log(msg) {
+            console.log(msg);
+            output.innerHTML += '<p>' + msg + '</p>';
+        }
+        
+        log('1. Test page loaded');
+        
+        // Test script loading errors
+        window.addEventListener('error', (e) => {
+            log('❌ JavaScript Error: ' + e.message + ' at ' + e.filename + ':' + e.lineno);
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            log('2. DOMContentLoaded triggered');
+            log('3. startInit type: ' + typeof startInit);
+            log('4. init type: ' + typeof init);
+            
+            if (typeof startInit === 'function') {
+                log('5. Attempting startInit...');
+                try {
+                    startInit();
+                    log('6. startInit called successfully');
+                } catch (err) {
+                    log('6. startInit ERROR: ' + err.message);
+                }
+            } else {
+                log('5. startInit not available');
+            }
+        });
+    </script>
+    
+    <script src="scripts/core.js?v=20251117-1330-debug" defer></script>
+    <script src="scripts/script.js?v=20251117-1330-debug" defer></script>
+</body>
+</html>

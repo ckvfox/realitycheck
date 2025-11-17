@@ -1,0 +1,57 @@
+# RealityCheck Security & Performance Headers
+# Created: 2025-11-17 - CSS Optimization & CSP Implementation
+
+# Content Security Policy - Basic but effective
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net unpkg.com translate.google.com translate.googleapis.com; style-src 'self' 'unsafe-inline' unpkg.com; img-src 'self' data: *.tile.openstreetmap.org *.googleapis.com *.gstatic.com; connect-src 'self' api.worldbank.org raw.githubusercontent.com; font-src 'self' fonts.googleapis.com fonts.gstatic.com; object-src 'none'; frame-src translate.google.com; upgrade-insecure-requests;"
+
+# X-Frame-Options to prevent clickjacking
+Header always set X-Frame-Options "SAMEORIGIN"
+
+# X-Content-Type-Options to prevent MIME sniffing
+Header always set X-Content-Type-Options "nosniff"
+
+# X-XSS-Protection (legacy but still useful)
+Header always set X-XSS-Protection "1; mode=block"
+
+# Referrer Policy - moderate privacy protection
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Performance: Enable compression for text files
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Performance: Browser caching for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType application/x-javascript "access plus 7 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/jpg "access plus 30 days"
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/gif "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+    ExpiresByType application/json "access plus 1 day"
+</IfModule>
+
+# Security: Prevent access to backup files
+<FilesMatch "\.(backup|bak|old|tmp)$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Security: Prevent access to Python scripts
+<FilesMatch "\.py$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>

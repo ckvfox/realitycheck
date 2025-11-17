@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>Final Debug</title></head>
+<body>
+    <h1>Final Debug Test</h1>
+    <p>Testing core functionality...</p>
+    
+    <!-- Required elements for script.js -->
+    <select id="kpiSelect"></select>
+    
+    <script>
+        console.log('Inline script: Page loaded');
+    </script>
+    
+    <script src="scripts/core.js?v=20251117-1342-visual"></script>
+    <script>
+        // Test right after core.js loads
+        if (typeof loadJSON === 'function') {
+            console.log('SUCCESS: loadJSON available after core.js');
+            
+            // Test loadJSON directly
+            loadJSON('data/meta/available_kpis.json').then(data => {
+                console.log('SUCCESS: Direct loadJSON worked:', data ? 'data loaded' : 'no data');
+            }).catch(err => {
+                console.error('ERROR: Direct loadJSON failed:', err);
+            });
+        } else {
+            console.error('ERROR: loadJSON not available after core.js');
+        }
+    </script>
+    
+    <script src="scripts/script.js?v=20251117-1342-visual"></script>
+</body>
+</html>

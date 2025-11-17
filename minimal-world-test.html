@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINIMAL World Map Test</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 20px; 
+            background: #1a355e; 
+            color: white; 
+            font-family: Arial, sans-serif; 
+        }
+        #map { 
+            height: 400px; 
+            width: 100%; 
+            border: 2px solid white; 
+            margin: 20px 0; 
+        }
+        button { 
+            padding: 10px 20px; 
+            margin: 5px; 
+            background: #2196F3; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+        #debug { 
+            background: rgba(0,0,0,0.5); 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin: 20px 0; 
+            font-family: monospace; 
+        }
+    </style>
+</head>
+<body>
+    <h1>🗺️ MINIMAL World Map Test</h1>
+    <p>Testing basic country highlighting with hardcoded data.</p>
+    
+    <button onclick="testEU()">Test EU Countries</button>
+    <button onclick="testG7()">Test G7 Countries</button>
+    <button onclick="resetMap()">Reset Map</button>
+    
+    <div id="map"></div>
+    
+    <div id="debug">
+        <h3>Debug Log:</h3>
+        <div id="log">Loading...</div>
+    </div>
+
+    <script>
+        let map = null;
+        let mapLayer = null;
+        let geoJsonData = null;
+        const log = document.getElementById('log');
+        
+        // HARDCODED TEST DATA
+        const EU_COUNTRIES = [
+            'Germany', 'France', 'Italy', 'Spain', 'Netherlands', 
+            'Belgium', 'Austria', 'Poland', 'Sweden', 'Denmark'
+        ];
+        
+        const G7_COUNTRIES = [
+            'United States', 'Germany', 'Japan', 'United Kingdom', 
+            'France', 'Italy', 'Canada'
+        ];
+        
+        function addLog(message) {
+            log.innerHTML += message + '<br>';
+            console.log(message);
+        }
+        
+        async function initMap() {
+            try {
+                addLog('🗺️ Initializing map...');
+                
+                // Initialize Leaflet map
+                map = L.map('map').setView([20, 0], 2);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+                
+                addLog('✅ Map initialized');
+                
+                // Load GeoJSON
+                addLog('📦 Loading GeoJSON...');
+                const response = await fetch('data/meta/world_countries_geo.json');
+                if (!response.ok) throw new Error('GeoJSON load failed');
+                
+                geoJsonData = await response.json();
+                addLog(`✅ GeoJSON loaded: ${geoJsonData.features.length} features`);
+                
+                // Test with a simple layer first
+                addLog('🎨 Creating base layer...');
+                mapLayer = L.geoJSON(geoJsonData, {
+                    style: {
+                        fillColor: '#cccccc',
+                        weight: 1,
+                        opacity: 1,
+                        color: '#666666',
+                        fillOpacity: 0.3
+                    }
+                }).addTo(map);
+                
+                addLog('✅ Base layer created. Ready for testing!');
+                
+            } catch (error) {
+                addLog(`❌ ERROR: ${error.message}`);
+            }
+        }
+        
+        function testEU() {
+            if (!geoJsonData) {
+                addLog('❌ No GeoJSON data available');
+                return;
+            }
+            
+            addLog('🇪🇺 Testing EU Countries...');
+            highlightCountries(EU_COUNTRIES, '#2196F3', 'EU');
+        }
+        
+        function testG7() {
+            if (!geoJsonData) {
+                addLog('❌ No GeoJSON data available');
+                return;
+            }
+            
+            addLog('🌍 Testing G7 Countries...');
+            highlightCountries(G7_COUNTRIES, '#FF9800', 'G7');
+        }
+        
+        function highlightCountries(targetCountries, color, groupName) {
+            // Remove existing layer
+            if (mapLayer) {
+                map.removeLayer(mapLayer);
+            }
+            
+            const targetSet = new Set(targetCountries.map(c => c.toLowerCase()));
+            let matchedCount = 0;
+            let totalFeatures = geoJsonData.features.length;
+            
+            addLog(`🎯 Looking for ${targetCountries.length} ${groupName} countries...`);
+            addLog(`📋 Target: ${targetCountries.join(', ')}`);
+            
+            // Create new layer with highlighting
+            mapLayer = L.geoJSON(geoJsonData, {
+                style: feature => {
+                    const name = (
+                        feature.properties.ADMIN ||
+                        feature.properties.NAME ||
+                        feature.properties.COUNTRY ||
+                        ''
+                    ).trim();
+                    
+                    // Try multiple matching strategies
+                    let isMatch = false;
+                    let matchReason = '';
+                    
+                    // 1. Direct name match
+                    if (targetSet.has(name.toLowerCase())) {
+                        isMatch = true;
+                        matchReason = 'exact';
+                    }
+                    
+                    // 2. Special mappings for common GeoJSON naming issues
+                    if (!isMatch && name) {
+                        const mappings = {
+                            'United States of America': 'United States',
+                            'United Kingdom of Great Britain and Northern Ireland': 'United Kingdom',
+                            'Russian Federation': 'Russia',
+                            'Iran (Islamic Republic of)': 'Iran',
+                            'Korea, Republic of': 'South Korea',
+                            'Venezuela (Bolivarian Republic of)': 'Venezuela',
+                            'Bolivia (Plurinational State of)': 'Bolivia',
+                            'Republic of the Congo': 'Congo',
+                            'Democratic Republic of the Congo': 'Democratic Republic of Congo',
+                            'Lao People\'s Democratic Republic': 'Laos',
+                            'Syrian Arab Republic': 'Syria',
+                            'Republic of Serbia': 'Serbia',
+                            'Czech Republic': 'Czechia',
+                            'Slovak Republic': 'Slovakia'
+                        };
+                        const mapped = mappings[name];
+                        if (mapped && targetSet.has(mapped.toLowerCase())) {
+                            isMatch = true;
+                            matchReason = 'mapped';
+                        }
+                    }
+                    
+                    // 3. Intelligent partial matching
+                    if (!isMatch) {
+                        isMatch = targetCountries.some(target => {
+                            const targetLower = target.toLowerCase();
+                            const nameLower = name.toLowerCase();
+                            
+                            // Exact match
+                            if (nameLower === targetLower) {
+                                matchReason = 'exact-partial';
+                                return true;
+                            }
+                            
+                            // Target contains full country name (e.g., "Germany" in "Germany, Federal Republic of")
+                            if (targetLower.length > 4 && nameLower.includes(targetLower)) {
+                                matchReason = 'contains-target';
+                                return true;
+                            }
+                            
+                            // Country name contains target (e.g., "United States" contains "States")
+                            if (nameLower.length > 10 && targetLower.length > 4 && nameLower.includes(targetLower)) {
+                                matchReason = 'contains-keyword';
+                                return true;
+                            }
+                            
+                            return false;
+                        });
+                    }
+                        if (mapped && targetSet.has(mapped.toLowerCase())) {
+                            isMatch = true;
+                        }
+                    }
+                    
+                    if (isMatch) {
+                        matchedCount++;
+                        addLog(`✅ MATCHED: "${name}"`);
+                    }
+                    
+                    return {
+                        fillColor: isMatch ? color : '#dddddd',
+                        weight: isMatch ? 3 : 1,
+                        opacity: 1,
+                        color: isMatch ? color : '#666666',
+                        fillOpacity: isMatch ? 0.8 : 0.2
+                    };
+                },
+                onEachFeature: (feature, layer) => {
+                    const name = feature.properties.ADMIN || feature.properties.NAME || 'Unknown';
+                    layer.bindTooltip(`<strong>${name}</strong>`);
+                }
+            }).addTo(map);
+            
+            addLog(`📊 RESULT: ${matchedCount}/${targetCountries.length} countries matched (${totalFeatures} total features)`);
+            
+            if (matchedCount === 0) {
+                addLog('⚠️ NO COUNTRIES MATCHED! Checking first 10 feature names:');
+                geoJsonData.features.slice(0, 10).forEach((feature, i) => {
+                    const name = feature.properties.ADMIN || feature.properties.NAME || 'Unknown';
+                    addLog(`${i+1}. "${name}"`);
+                });
+            }
+        }
+        
+        function resetMap() {
+            if (mapLayer) {
+                map.removeLayer(mapLayer);
+            }
+            
+            mapLayer = L.geoJSON(geoJsonData, {
+                style: {
+                    fillColor: '#cccccc',
+                    weight: 1,
+                    opacity: 1,
+                    color: '#666666',
+                    fillOpacity: 0.3
+                }
+            }).addTo(map);
+            
+            addLog('🔄 Map reset to base state');
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initMap);
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Map Test - Container & GeoJSON</title>
+    <link rel="stylesheet" href="style.css?v=20251117-1500-fixes" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous" defer></script>
+</head>
+<body class="world-page">
+    <div class="main-container">
+        <!-- Test der neuen Container-Struktur -->
+        <section class="world-map-section chart-block">
+            <div class="chart-container">
+                <h2>🗺️ World Map Test - Container & GeoJSON</h2>
+                <p>Testing the new container layout and GeoJSON-based country highlighting.</p>
+                
+                <div class="map-controls">
+                    <div class="select-wrapper">
+                        <label for="groupingSelect">Grouping:</label>
+                        <select id="groupingSelect">
+                            <option value="">Select grouping...</option>
+                            <option value="groups">Groups (EU, G7, BRICS, etc.)</option>
+                            <option value="government">Government Type</option>
+                            <option value="language">Language</option>
+                        </select>
+                    </div>
+                    
+                    <div class="select-wrapper">
+                        <label for="categorySelect">Category:</label>
+                        <select id="categorySelect" disabled>
+                            <option value="">Select category...</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="world-map-container">
+                    <div id="world-map" style="height: 500px; margin: 20px 0;"></div>
+                </div>
+                
+                <div id="world-map-legend" class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #2196F3;"></span>
+                        <span>Selected Group</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #ddd;"></span>
+                        <span>Other Countries</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Debug Output -->
+        <div id="debug" style="position: fixed; top: 10px; right: 10px; background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 5px; font-family: monospace; z-index: 9999; max-width: 300px;">
+            <div>Status: <span id="status">Loading...</span></div>
+            <div>GeoJSON: <span id="geojson-status">Not loaded</span></div>
+            <div>Groups: <span id="groups-status">Not loaded</span></div>
+            <div>Countries: <span id="countries-status">Not loaded</span></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/utils_ui.js?v=20251117-1500-fixes" defer></script>
+    <script src="scripts/core.js?v=20251117-1500-fixes" defer></script>
+    
+    <script>
+        // Minimal Test-Script für World Map Funktionalität
+        let worldMap = null;
+        let worldMapLayer = null;
+        let worldMapCountries = {};
+        let worldMapGroups = {};
+        let worldMapCountryMappings = {};
+
+        async function testWorldMap() {
+            try {
+                document.getElementById('status').textContent = 'Loading data...';
+                
+                // Lade Basisdaten
+                worldMapCountries = await loadJSON("data/meta/countries.json");
+                document.getElementById('countries-status').textContent = `✅ ${Object.keys(worldMapCountries).length} countries`;
+                
+                worldMapGroups = await loadJSON("data/meta/groups.json");
+                document.getElementById('groups-status').textContent = `✅ ${Object.keys(worldMapGroups).length} groups`;
+                
+                worldMapCountryMappings = await loadJSON("data/meta/country_mappings.json");
+                
+                // Lade GeoJSON
+                const res = await fetch("data/meta/world_countries_geo.json", { cache: "no-store" });
+                if (!res.ok) throw new Error("GeoJSON load failed");
+                window._worldGeoJSON = await res.json();
+                document.getElementById('geojson-status').textContent = `✅ ${window._worldGeoJSON.features.length} features`;
+                
+                // Initialisiere Map
+                worldMap = L.map('world-map').setView([20, 0], 2);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors',
+                    maxZoom: 18
+                }).addTo(worldMap);
+                
+                // Event Listeners
+                document.getElementById('groupingSelect').addEventListener('change', updateCategoryOptions);
+                document.getElementById('categorySelect').addEventListener('change', testGeoJSONHighlight);
+                
+                document.getElementById('status').textContent = '✅ Ready!';
+                
+            } catch (err) {
+                console.error('Test failed:', err);
+                document.getElementById('status').textContent = '❌ Error: ' + err.message;
+            }
+        }
+
+        function updateCategoryOptions() {
+            const groupingSelect = document.getElementById('groupingSelect');
+            const categorySelect = document.getElementById('categorySelect');
+            
+            const grouping = groupingSelect.value;
+            categorySelect.innerHTML = '<option value="">Select category...</option>';
+            categorySelect.disabled = !grouping;
+            
+            if (grouping === 'groups') {
+                Object.keys(worldMapGroups).forEach(groupName => {
+                    const option = document.createElement('option');
+                    option.value = groupName;
+                    option.textContent = `${groupName} (${worldMapGroups[groupName].length} countries)`;
+                    categorySelect.appendChild(option);
+                });
+            } else if (grouping === 'government' || grouping === 'language') {
+                const values = new Set();
+                Object.values(worldMapCountries).forEach(country => {
+                    const value = country[grouping];
+                    if (value && Array.isArray(value)) {
+                        value.forEach(v => values.add(v));
+                    } else if (value) {
+                        values.add(value);
+                    }
+                });
+                
+                Array.from(values).sort().forEach(value => {
+                    const option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = value;
+                    categorySelect.appendChild(option);
+                });
+            }
+            
+            categorySelect.disabled = false;
+        }
+
+        function testGeoJSONHighlight() {
+            const groupingSelect = document.getElementById('groupingSelect');
+            const categorySelect = document.getElementById('categorySelect');
+            
+            if (!worldMap || !window._worldGeoJSON) return;
+            
+            const grouping = groupingSelect.value;
+            const category = categorySelect.value;
+            
+            // Entferne bestehende Layer
+            if (worldMapLayer) {
+                worldMap.removeLayer(worldMapLayer);
+                worldMapLayer = null;
+            }
+            
+            if (!grouping || !category) return;
+            
+            // Finde relevante Länder
+            let relevantCountries = [];
+            if (grouping === 'groups' && worldMapGroups[category]) {
+                relevantCountries = worldMapGroups[category];
+                console.log(`Selected ${category}: ${relevantCountries.length} countries`, relevantCountries);
+            }
+            
+            const relevantSet = new Set(relevantCountries.map(c => c.toLowerCase()));
+            
+            // Erstelle GeoJSON Layer
+            worldMapLayer = L.geoJSON(window._worldGeoJSON, {
+                style: feature => {
+                    const name = (
+                        feature.properties.ADMIN ||
+                        feature.properties.NAME ||
+                        feature.properties.COUNTRY ||
+                        ""
+                    ).trim();
+                    
+                    const canonical = worldMapCountryMappings[name] || name;
+                    const isRelevant = relevantSet.has(canonical.toLowerCase());
+                    
+                    if (isRelevant) {
+                        console.log(`Highlighting: ${canonical} (from ${name})`);
+                    }
+                    
+                    return {
+                        fillColor: isRelevant ? '#2196F3' : '#ddd',
+                        weight: isRelevant ? 2 : 1,
+                        opacity: 1,
+                        color: isRelevant ? '#1976D2' : '#999',
+                        fillOpacity: isRelevant ? 0.7 : 0.3
+                    };
+                },
+                onEachFeature: (feature, layer) => {
+                    const name = feature.properties.ADMIN || feature.properties.NAME || "";
+                    layer.bindTooltip(`<strong>${name}</strong>`);
+                }
+            }).addTo(worldMap);
+        }
+
+        // Initialize when document is ready
+        document.addEventListener('DOMContentLoaded', testWorldMap);
+    </script>
+</body>
+</html>
