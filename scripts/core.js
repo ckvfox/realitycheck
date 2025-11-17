@@ -3,6 +3,153 @@ if (window.__RC_CORE_LOADED__) {
 } else {
   window.__RC_CORE_LOADED__ = true;
 
+// ✅ Globale Utility-Funktionen (außerhalb IIFE für bessere Verfügbarkeit)
+function whenDocumentReady() {
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    return Promise.resolve();
+  }
+  return new Promise(resolve =>
+    document.addEventListener("DOMContentLoaded", resolve, { once: true })
+  );
+}
+
+function onDocumentReady(handler) {
+  if (typeof handler !== "function") return;
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    handler();
+  } else {
+    document.addEventListener("DOMContentLoaded", handler, { once: true });
+  }
+}
+
+function showSpinner(show = true, msg = "Loading…") {
+  const spinner = document.getElementById("overlay-spinner");
+  if (!spinner) return;
+  
+  if (show) {
+    spinner.classList.remove("hidden");
+    spinner.classList.add("active");
+    spinner.innerHTML = `<div class="spinner-content"><p>${msg}</p></div>`;
+  } else {
+    spinner.classList.add("hidden");
+    spinner.classList.remove("active");
+  }
+}
+
+async function loadJSON(path) {
+  try {
+    const response = await fetch(path, { cache: "no-cache" });
+    if (!response.ok) {
+      console.warn(`⚠️ loadJSON: HTTP ${response.status} for ${path}`);
+      return [];
+    }
+    
+    const txt = await response.text();
+    if (!txt.trim()) {
+      console.warn("⚠️ loadJSON: empty response from", path);
+      return [];
+    }
+
+    let parsed;
+    try {
+      parsed = JSON.parse(txt);
+    } catch (err) {
+      console.warn("⚠️ loadJSON: content not valid JSON → returning raw text", path);
+      parsed = txt;
+    }
+
+    if (typeof parsed === "string") {
+      try {
+        parsed = JSON.parse(parsed);
+        console.log("🧩 loadJSON: double-parsed JSON string", path);
+      } catch {
+        // Bleibt String
+      }
+    }
+
+    return parsed || [];
+  } catch (e) {
+    console.warn("⚠️ loadJSON failed:", path, e);
+    return [];
+  }
+}
+
+function chooseScaleFromValues(values) {
+  const numbers = Array.isArray(values) ? values : [];
+  const maxValue = numbers.reduce((max, value) => {
+    const numeric = value == null ? 0 : Math.abs(Number(value));
+    return numeric > max ? numeric : max;
+  }, 0);
+
+  if (maxValue >= 1e9) return { factor: 1e9, suffix: "B", label: "Billions" };
+  if (maxValue >= 1e6) return { factor: 1e6, suffix: "M", label: "Millions" };
+  if (maxValue >= 1e3) return { factor: 1e3, suffix: "K", label: "Thousands" };
+  return { factor: 1, suffix: "", label: "Exact values" };
+}
+
+function formatValueAuto(value, scaleMode = "auto") {
+  if (value === null || value === undefined || Number.isNaN(value)) return "-";
+  const abs = Math.abs(Number(value));
+
+  if (scaleMode === "%" || scaleMode === "none" || scaleMode === "index") {
+    return Number(value).toFixed(2);
+  }
+
+  if (scaleMode === "auto") {
+    if (abs >= 1e12) return (value / 1e12).toFixed(2) + " T";
+    if (abs >= 1e9) return (value / 1e9).toFixed(2) + " B";
+    if (abs >= 1e6) return (value / 1e6).toFixed(2) + " M";
+    if (abs >= 1e3) return (value / 1e3).toFixed(2) + " K";
+    return Number(value).toFixed(2);
+  }
+
+  return Number(value).toFixed(2);
+}
+
+function calcTrend(current, previous) {
+  if (current == null || previous == null) return "→";
+  if (current > previous) return "↑";
+  if (current < previous) return "↓";
+  return "→";
+}
+
+function escapeHTML(value) {
+  if (value === null || value === undefined) return "";
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function deepMerge(target, ...sources) {
+  if (!target) target = {};
+  for (const source of sources) {
+    if (!source) continue;
+    for (const key of Object.keys(source)) {
+      const value = source[key];
+      if (value && typeof value === "object" && !Array.isArray(value)) {
+        target[key] = deepMerge(target[key] || {}, value);
+      } else {
+        target[key] = value;
+      }
+    }
+  }
+  return target;
+}
+
+// ✅ Sofort globale Exports für kritische Funktionen
+window.whenDocumentReady = whenDocumentReady;
+window.onDocumentReady = onDocumentReady;
+window.showSpinner = showSpinner;
+window.loadJSON = loadJSON;
+window.chooseScaleFromValues = chooseScaleFromValues;
+window.formatValueAuto = formatValueAuto;
+window.calcTrend = calcTrend;
+window.escapeHTML = escapeHTML;
+window.deepMerge = deepMerge;
+
   (() => {
   /* ============================================================
      🌍 RealityCheck – Shared Header & Footer Loader (no iframes)
@@ -37,106 +184,6 @@ const TRANSLATOR_LAUNCHER_MARKUP = `
     aria-controls="translator-panel"
     aria-expanded="false"
   >
-    <img src="images/translate.png" alt="" class="translator-icon" aria-hidden="true" />
-  </button>
-  <div id="translator-panel" class="translator-panel" role="region" aria-label="Google Translate" hidden>
-    <div class="translator-panel-header">
-      <span>Google Translate</span>
-      <button type="button" class="translator-close" aria-label="Close translator" title="Close">&times;</button>
-    </div>
-    <div class="translator-panel-body">
-      <p class="translator-loading-message">Google Translate is loading…</p>
-      <div id="google_translate_element" class="translator-widget"></div>
-    </div>
-  </div>
-`;
-
-const TRANSLATOR_LAUNCHER_MARKUP = `
-  <button
-    type="button"
-    id="translator-toggle"
-    class="translator-button"
-    title="Translate this page"
-    aria-label="Translate this page"
-    aria-haspopup="dialog"
-    aria-controls="translator-panel"
-    aria-expanded="false"
-  >
-    <img src="images/translate.png" alt="" class="translator-icon" aria-hidden="true" />
-  </button>
-  <div id="translator-panel" class="translator-panel" role="region" aria-label="Google Translate" hidden>
-    <div class="translator-panel-header">
-      <span>Google Translate</span>
-      <button type="button" class="translator-close" aria-label="Close translator" title="Close">&times;</button>
-    </div>
-    <div class="translator-panel-body">
-      <p class="translator-loading-message">Google Translate is loading…</p>
-      <div id="google_translate_element" class="translator-widget"></div>
-    </div>
-  </div>
-`;
-
-const TRANSLATOR_LAUNCHER_MARKUP = `
-  <button
-    type="button"
-    id="translator-toggle"
-    class="translator-button"
-    title="Translate this page"
-    aria-label="Translate this page"
-    aria-haspopup="dialog"
-    aria-controls="translator-panel"
-    aria-expanded="false"
-  >
-    <img src="images/translate.png" alt="" class="translator-icon" aria-hidden="true" />
-  </button>
-  <div id="translator-panel" class="translator-panel" role="region" aria-label="Google Translate" hidden>
-    <div class="translator-panel-header">
-      <span>Google Translate</span>
-      <button type="button" class="translator-close" aria-label="Close translator" title="Close">&times;</button>
-    </div>
-    <div class="translator-panel-body">
-      <p class="translator-loading-message">Google Translate is loading…</p>
-      <div id="google_translate_element" class="translator-widget"></div>
-    </div>
-  </div>
-`;
-
-const TRANSLATOR_LAUNCHER_MARKUP = `
-  <button
-    type="button"
-    id="translator-toggle"
-    class="translator-button"
-    title="Translate this page"
-    aria-label="Translate this page"
-    aria-haspopup="dialog"
-    aria-controls="translator-panel"
-    aria-expanded="false"
-  >
-    <img src="images/translate.png" alt="" class="translator-icon" aria-hidden="true" />
-  </button>
-  <div id="translator-panel" class="translator-panel" role="region" aria-label="Google Translate" hidden>
-    <div class="translator-panel-header">
-      <span>Google Translate</span>
-      <button type="button" class="translator-close" aria-label="Close translator" title="Close">&times;</button>
-    </div>
-    <div class="translator-panel-body">
-      <p class="translator-loading-message">Google Translate is loading…</p>
-      <div id="google_translate_element" class="translator-widget"></div>
-    </div>
-  </div>
-`;
-
-const TRANSLATOR_LAUNCHER_MARKUP = `
-  <button
-    type="button"
-    id="translator-toggle"
-    class="translator-button"
-    title="Translator"
-    aria-haspopup="dialog"
-    aria-controls="translator-panel"
-    aria-expanded="false"
-  >
-    <span class="sr-only">Translator</span>
     <img src="images/translate.png" alt="" class="translator-icon" aria-hidden="true" />
   </button>
   <div id="translator-panel" class="translator-panel" role="region" aria-label="Google Translate" hidden>
@@ -239,6 +286,44 @@ function ensureTranslatorLauncherMounted() {
   container.className = "translator-launcher";
   container.innerHTML = TRANSLATOR_LAUNCHER_MARKUP.trim();
   syncTranslatorLauncherPosition(container);
+  
+  // 🎨 Force glassmorphism styles for translator button
+  const btn = container.querySelector(".translator-button");
+  if (btn) {
+    Object.assign(btn.style, {
+      background: "rgba(255, 255, 255, 0.15)",
+      backdropFilter: "blur(12px)",
+      border: "1px solid rgba(255, 255, 255, 0.2)",
+      borderRadius: "50%",
+      width: "48px",
+      height: "48px",
+      boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.05)",
+      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    });
+    
+    // 🌟 Hover effects
+    btn.addEventListener("mouseenter", () => {
+      Object.assign(btn.style, {
+        background: "rgba(255, 255, 255, 0.25)",
+        borderColor: "rgba(255, 255, 255, 0.4)",
+        transform: "translateY(-2px) scale(1.05)",
+        boxShadow: "0 8px 30px rgba(0, 0, 0, 0.15), 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 0 4px rgba(255, 255, 255, 0.1)"
+      });
+    });
+    
+    btn.addEventListener("mouseleave", () => {
+      Object.assign(btn.style, {
+        background: "rgba(255, 255, 255, 0.15)",
+        borderColor: "rgba(255, 255, 255, 0.2)",
+        transform: "translateY(0) scale(1)",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.05)"
+      });
+    });
+  }
 
   const scrollButton = document.getElementById("scroll-top-btn");
   if (scrollButton && scrollButton.parentNode === document.body) {
@@ -373,7 +458,6 @@ function createTranslatorConsentOverlay() {
   if (translatorState.overlay) return;
 
   const overlay = document.createElement("div");
-  overlay.id = "translator-consent-overlay";
   overlay.className = "translator-consent-overlay";
   overlay.hidden = true;
   overlay.setAttribute("role", "dialog");
@@ -391,13 +475,156 @@ function createTranslatorConsentOverlay() {
     </div>
   `;
 
+  // 🎨 Force glassmorphism modal styles directly (but keep it hidden initially!)
+  Object.assign(overlay.style, {
+    position: "fixed",
+    top: "0",
+    left: "0",
+    width: "100vw",
+    height: "100vh",
+    background: "rgba(17, 25, 40, 0.7)",
+    backdropFilter: "blur(8px)",
+    display: "none", // 🚫 Wichtig: Versteckt beim Start!
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: "999999",
+    visibility: "hidden", // 🔒 Doppelte Sicherheit
+    opacity: "0"
+  });
+
   document.body.appendChild(overlay);
+  
+  // 🌟 Style the dialog box with premium glassmorphism
+  const dialog = overlay.querySelector(".translator-consent-dialog");
+  if (dialog) {
+    Object.assign(dialog.style, {
+      background: "rgba(255, 255, 255, 0.95)",
+      backdropFilter: "blur(25px)",
+      border: "1px solid rgba(255, 255, 255, 0.3)",
+      borderRadius: "24px",
+      padding: "3rem",
+      maxWidth: "560px",
+      width: "90%",
+      boxShadow: "0 30px 100px rgba(0, 0, 0, 0.25), 0 15px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6)",
+      position: "relative",
+      zIndex: "1000000",
+      fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+    });
+    
+    // Style the title
+    const title = dialog.querySelector("h2");
+    if (title) {
+      Object.assign(title.style, {
+        fontSize: "1.75rem",
+        fontWeight: "700",
+        color: "#1a202c",
+        textAlign: "center",
+        marginBottom: "1.5rem",
+        letterSpacing: "-0.025em"
+      });
+    }
+    
+    // Style paragraphs
+    dialog.querySelectorAll("p").forEach(p => {
+      Object.assign(p.style, {
+        fontSize: "1.1rem",
+        lineHeight: "1.7",
+        color: "#4a5568",
+        marginBottom: "1.25rem"
+      });
+    });
+    
+    // Style the note
+    const note = dialog.querySelector(".translator-consent-note");
+    if (note) {
+      Object.assign(note.style, {
+        fontSize: "0.95rem",
+        color: "#718096",
+        fontStyle: "italic",
+        marginBottom: "2.5rem"
+      });
+    }
+  }
 
   translatorState.overlay = overlay;
-  translatorState.dialog = overlay.querySelector(".translator-consent-dialog");
+  translatorState.dialog = dialog;
   translatorState.confirmBtn = overlay.querySelector("#translator-consent-accept");
   translatorState.cancelBtn = overlay.querySelector("#translator-consent-cancel");
+  
+  // 🎨 Style the action buttons
+  const actions = overlay.querySelector(".translator-consent-actions");
+  if (actions) {
+    Object.assign(actions.style, {
+      display: "flex",
+      gap: "1rem",
+      justifyContent: "center",
+      marginTop: "2rem"
+    });
+  }
+  
+  if (translatorState.cancelBtn) {
+    Object.assign(translatorState.cancelBtn.style, {
+      padding: "0.875rem 2rem",
+      border: "2px solid rgba(226, 232, 240, 0.8)",
+      borderRadius: "14px",
+      background: "rgba(248, 250, 252, 0.9)",
+      color: "#2d3748",
+      fontWeight: "600",
+      fontSize: "1rem",
+      cursor: "pointer",
+      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      backdropFilter: "blur(10px)"
+    });
+    
+    translatorState.cancelBtn.addEventListener("mouseenter", () => {
+      Object.assign(translatorState.cancelBtn.style, {
+        background: "rgba(237, 242, 247, 0.95)",
+        borderColor: "rgba(203, 213, 224, 0.9)",
+        transform: "translateY(-1px)",
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)"
+      });
+    });
+    
+    translatorState.cancelBtn.addEventListener("mouseleave", () => {
+      Object.assign(translatorState.cancelBtn.style, {
+        background: "rgba(248, 250, 252, 0.9)",
+        borderColor: "rgba(226, 232, 240, 0.8)",
+        transform: "translateY(0)",
+        boxShadow: "none"
+      });
+    });
+  }
+  
+  if (translatorState.confirmBtn) {
+    Object.assign(translatorState.confirmBtn.style, {
+      padding: "0.875rem 2rem",
+      border: "none",
+      borderRadius: "14px",
+      background: "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+      color: "white",
+      fontWeight: "600",
+      fontSize: "1rem",
+      cursor: "pointer",
+      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      boxShadow: "0 6px 20px rgba(102, 126, 234, 0.4)"
+    });
+    
+    translatorState.confirmBtn.addEventListener("mouseenter", () => {
+      Object.assign(translatorState.confirmBtn.style, {
+        transform: "translateY(-2px)",
+        boxShadow: "0 8px 30px rgba(102, 126, 234, 0.5)"
+      });
+    });
+    
+    translatorState.confirmBtn.addEventListener("mouseleave", () => {
+      Object.assign(translatorState.confirmBtn.style, {
+        transform: "translateY(0)",
+        boxShadow: "0 6px 20px rgba(102, 126, 234, 0.4)"
+      });
+    });
+  }
 
+  // 🔗 Wichtig: Event-Handler wieder hinzufügen!
   translatorState.dialog?.addEventListener("click", event => event.stopPropagation());
   translatorState.confirmBtn?.addEventListener("click", confirmTranslatorConsent);
   translatorState.cancelBtn?.addEventListener("click", closeTranslatorConsentDialog);
@@ -412,7 +639,14 @@ function openTranslatorConsentDialog() {
   if (!translatorState.overlay) createTranslatorConsentOverlay();
   hideTranslatorPanel();
   translatorState.previousFocus = document.activeElement;
+  
+  // 🎯 Show modal with glassmorphism styles
   translatorState.overlay.hidden = false;
+  Object.assign(translatorState.overlay.style, {
+    display: "flex",
+    visibility: "visible",
+    opacity: "1"
+  });
 
   requestAnimationFrame(() => {
     translatorState.confirmBtn?.focus();
@@ -421,7 +655,15 @@ function openTranslatorConsentDialog() {
 
 function closeTranslatorConsentDialog() {
   if (!translatorState.overlay) return;
+  
+  // 🎯 Hide modal completely
   translatorState.overlay.hidden = true;
+  Object.assign(translatorState.overlay.style, {
+    display: "none",
+    visibility: "hidden",
+    opacity: "0"
+  });
+  
   if (translatorState.previousFocus && typeof translatorState.previousFocus.focus === "function") {
     translatorState.previousFocus.focus();
   } else {
@@ -481,9 +723,10 @@ window.googleTranslateElementInit = function googleTranslateElementInit() {
   try {
     const pageLanguage = document.documentElement.lang || "en";
     const layout = google.translate?.TranslateElement?.InlineLayout?.SIMPLE;
+    // 🌍 Top 5 world languages + German: English, Mandarin Chinese, Hindi, Spanish, French, German, Arabic, Portuguese
     new google.translate.TranslateElement({
       pageLanguage,
-      includedLanguages: "de,en,es,fr",
+      includedLanguages: "en,zh,hi,es,fr,de,ar,pt,ru,ja",
       layout: layout ?? undefined,
       autoDisplay: false
     }, "google_translate_element");
@@ -494,6 +737,81 @@ window.googleTranslateElementInit = function googleTranslateElementInit() {
     const msgEl = document.querySelector(".translator-loading-message");
     if (msgEl) msgEl.hidden = true;
 
+    // 🎨 Style the Google Translate panel
+    setTimeout(() => {
+      const panel = document.getElementById("translator-panel");
+      const widget = document.getElementById("google_translate_element");
+      
+      if (panel) {
+        Object.assign(panel.style, {
+          background: "rgba(255, 255, 255, 0.95)",
+          backdropFilter: "blur(20px)",
+          border: "1px solid rgba(255, 255, 255, 0.3)",
+          borderRadius: "16px",
+          boxShadow: "0 20px 60px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5)",
+          padding: "1.5rem",
+          minWidth: "280px"
+        });
+        
+        const header = panel.querySelector(".translator-panel-header");
+        if (header) {
+          Object.assign(header.style, {
+            fontSize: "1.1rem",
+            fontWeight: "600",
+            color: "#1a202c",
+            marginBottom: "1rem",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center"
+          });
+        }
+        
+        const closeBtn = panel.querySelector(".translator-close");
+        if (closeBtn) {
+          Object.assign(closeBtn.style, {
+            background: "rgba(226, 232, 240, 0.8)",
+            border: "none",
+            borderRadius: "8px",
+            width: "28px",
+            height: "28px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "1.2rem",
+            color: "#4a5568",
+            cursor: "pointer",
+            transition: "all 0.2s ease"
+          });
+        }
+      }
+      
+      if (widget) {
+        // Style Google Translate dropdown
+        const select = widget.querySelector("select");
+        if (select) {
+          Object.assign(select.style, {
+            background: "rgba(248, 250, 252, 0.9)",
+            border: "2px solid rgba(226, 232, 240, 0.8)",
+            borderRadius: "12px",
+            padding: "0.75rem 1rem",
+            fontSize: "1rem",
+            color: "#2d3748",
+            fontWeight: "500",
+            cursor: "pointer",
+            width: "100%",
+            backdropFilter: "blur(5px)"
+          });
+        }
+        
+        // Hide Google branding
+        const powered = widget.querySelector(".goog-logo-link");
+        if (powered) powered.style.display = "none";
+        
+        const logo = widget.querySelector(".goog-te-gadget-simple .goog-te-menu-value span:first-child");
+        if (logo) logo.style.display = "none";
+      }
+    }, 500);
+    
     if (translatorState.pendingOpen) {
       showTranslatorPanel();
       const select = document.querySelector("#google_translate_element select");
@@ -519,96 +837,7 @@ window.googleTranslateElementInit = function googleTranslateElementInit() {
 
 
 
-// === Load JSON with cache-bypass & safe parse (FINAL FIX 2025-11-02) ===
-async function loadJSON(path) {
-  try {
-    const res = await fetch(path + "?t=" + Date.now(), { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    const txt = await res.text();
-    if (!txt) return [];
-
-    // 🔧 Sicherstellen, dass wir ein Objekt zurückgeben, kein String
-    let parsed;
-    try {
-      parsed = JSON.parse(txt);
-    } catch (err) {
-      console.warn("⚠️ loadJSON: content not valid JSON → returning raw text", path);
-      parsed = txt;
-    }
-
-    // 🩵 Falls JSON doppelt serialisiert war (z. B. als String mit {...})
-    if (typeof parsed === "string" && parsed.trim().startsWith("{")) {
-      try {
-        parsed = JSON.parse(parsed);
-        console.log("🧩 loadJSON reparsed nested JSON:", path);
-      } catch {/* ignore */}
-    }
-
-    return parsed;
-  } catch (e) {
-    console.warn("⚠️ loadJSON failed:", path, e);
-    return [];
-  }
-}
-
-// === DOM ready helpers (promise + callback) ===
-function whenDocumentReady() {
-  if (document.readyState === "complete" || document.readyState === "interactive") {
-    return Promise.resolve();
-  }
-  return new Promise(resolve =>
-    document.addEventListener("DOMContentLoaded", resolve, { once: true })
-  );
-}
-
-function onDocumentReady(handler) {
-  if (typeof handler !== "function") return;
-  if (document.readyState === "complete" || document.readyState === "interactive") {
-    handler();
-  } else {
-    document.addEventListener("DOMContentLoaded", handler, { once: true });
-  }
-}
-
-// === Spinner (zentriert + fade) ===
-function showSpinner(show = true, msg = "Loading…") {
-  const sp = document.getElementById("overlay-spinner");
-  if (!sp) return;
-
-  // Struktur bei erstem Aufruf automatisch einfügen
-  if (!sp.dataset.init) {
-    sp.innerHTML = `
-      <div class="spinner-circle"></div>
-      <p class="spinner-text"></p>
-    `;
-    sp.dataset.init = "1";
-  }
-
-  // Text aktualisieren
-  const textEl = sp.querySelector(".spinner-text");
-  if (textEl) textEl.textContent = msg || "Loading…";
-
-  // Sichtbarkeit steuern mit Fade-Effekt
-  if (show) {
-    sp.classList.remove("hidden");
-    sp.style.opacity = "1";
-
-    // Nur beim ersten Einblenden nach dem Laden automatisch nach oben springen,
-    // um unerwartete Fokuswechsel bei wiederholter Nutzung zu vermeiden.
-    if (!sp.dataset.scrolled) {
-      try {
-        window.scrollTo({ top: 0, behavior: "instant" });
-      } catch {
-        /* ignore */
-      }
-      sp.dataset.scrolled = "1";
-    }
-  } else {
-    sp.style.opacity = "0";
-    setTimeout(() => sp.classList.add("hidden"), 300);
-  }
-}
 
 // === Normalize KPI/Country names ===
 function normalizeName(str) {
@@ -645,55 +874,7 @@ function calculateGroupValues(group, dataset) {
   return { country: group.title || group.id, value: val, year };
 }
 
-// === Shared number helpers ===
-function chooseScaleFromValues(values = []) {
-  const numbers = Array.isArray(values) ? values : [];
-  const maxValue = numbers.reduce((max, value) => {
-    const numeric = value == null ? 0 : Math.abs(Number(value));
-    return numeric > max ? numeric : max;
-  }, 0);
 
-  if (maxValue >= 1e9) return { factor: 1e9, suffix: "B", label: "Billions" };
-  if (maxValue >= 1e6) return { factor: 1e6, suffix: "M", label: "Millions" };
-  if (maxValue >= 1e3) return { factor: 1e3, suffix: "K", label: "Thousands" };
-  return { factor: 1, suffix: "", label: "Exact values" };
-}
-
-function formatValueAuto(value, scaleMode = "auto") {
-  if (value === null || value === undefined || Number.isNaN(value)) return "-";
-  const abs = Math.abs(Number(value));
-
-  if (scaleMode === "%" || scaleMode === "none" || scaleMode === "index") {
-    return Number(value).toFixed(2);
-  }
-
-  if (scaleMode === "auto") {
-    if (abs >= 1e12) return (value / 1e12).toFixed(2) + " T";
-    if (abs >= 1e9) return (value / 1e9).toFixed(2) + " B";
-    if (abs >= 1e6) return (value / 1e6).toFixed(2) + " M";
-    if (abs >= 1e3) return (value / 1e3).toFixed(2) + " K";
-    return Number(value).toFixed(2);
-  }
-
-  return Number(value).toFixed(2);
-}
-
-function calcTrend(current, previous) {
-  if (current == null || previous == null) return "→";
-  if (current > previous) return "↑";
-  if (current < previous) return "↓";
-  return "→";
-}
-
-function escapeHTML(value) {
-  if (value === null || value === undefined) return "";
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
 
 // === Deep merge helper (for Chart option overrides) ===
 function deepMerge(target, ...sources) {
@@ -1059,24 +1240,7 @@ async function renderKpiAnalysis(metaOrId, targetId = "kpi-analysis") {
   setTimeout(() => box.classList.add("loaded"), 50);
 }
 
-// === Expose globally for non-module pages ===
-window.loadJSON = loadJSON;
-window.showSpinner = showSpinner;
-window.whenDocumentReady = whenDocumentReady;
-window.onDocumentReady = onDocumentReady;
-window.normalizeName = normalizeName;
-window.resolveCountryName = resolveCountryName;
-window.calculateGroupValues = calculateGroupValues;
-window.groupKpisByCluster = groupKpisByCluster;
-window.chooseScaleFromValues = chooseScaleFromValues;
-window.formatValueAuto = formatValueAuto;
-window.calcTrend = calcTrend;
-window.escapeHTML = escapeHTML;
-window.rcLog = rcLog;
-window.loadAllKPIData = loadAllKPIData;
-window.renderLineChart = renderLineChart;
-window.loadKpiAnalysis = loadKpiAnalysis;
-window.renderKpiAnalysis = renderKpiAnalysis;
+
 
 
 /* ============================================================
@@ -1171,9 +1335,19 @@ document.addEventListener("DOMContentLoaded", () => {
   } catch (err) {
     console.error("❌ RealityCheck init failed:", err);
   }
+
+  // ✅ Exportiere IIFE-interne Funktionen global
+  window.normalizeName = normalizeName;
+  window.resolveCountryName = resolveCountryName;
+  window.calculateGroupValues = calculateGroupValues;
+  window.groupKpisByCluster = groupKpisByCluster;
+  window.rcLog = rcLog;
+  window.loadAllKPIData = loadAllKPIData;
+  window.renderLineChart = renderLineChart;
+  window.loadKpiAnalysis = loadKpiAnalysis;
+  window.renderKpiAnalysis = renderKpiAnalysis;
 });
+
   })();
 }
-
-})();
 

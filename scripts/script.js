@@ -1172,6 +1172,7 @@ async function updateMap() {
                                         <div class="map-tooltip__meta">
                                                 <div class="map-tooltip__meta-row">Capital: ${info.capital || "–"}</div>
                                                 <div class="map-tooltip__meta-row">Gov: ${info.government || "–"}</div>
+                                                <div class="map-tooltip__meta-row">Languages: ${info.languages || "–"}</div>
                                         </div>
                                 </div>
                         `;

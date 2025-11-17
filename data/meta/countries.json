@@ -6,7 +6,8 @@
     "lon": -76.79358,
     "iso_a3": "JAM",
     "iso_a2": "JM",
-    "flag": "images/flag/jm.svg"
+    "flag": "images/flag/jm.svg",
+    "languages": "English"
   },
   "Comoros": {
     "capital": "Moroni",
@@ -15,7 +16,8 @@
     "lon": 43.23,
     "iso_a3": "COM",
     "iso_a2": "KM",
-    "flag": "images/flag/km.svg"
+    "flag": "images/flag/km.svg",
+    "languages": "Comorian, French, Arabic"
   },
   "Zimbabwe": {
     "capital": "Harare",
@@ -24,7 +26,8 @@
     "lon": 31.03,
     "iso_a3": "ZWE",
     "iso_a2": "ZW",
-    "flag": "images/flag/zw.svg"
+    "flag": "images/flag/zw.svg",
+    "languages": "English, Shona, Ndebele"
   },
   "Laos": {
     "capital": "Vientiane",
@@ -33,7 +36,8 @@
     "lon": 102.6,
     "iso_a3": "LAO",
     "iso_a2": "LA",
-    "flag": "images/flag/la.svg"
+    "flag": "images/flag/la.svg",
+    "languages": "Lao"
   },
   "Latvia": {
     "capital": "Riga",
@@ -42,7 +46,8 @@
     "lon": 24.1,
     "iso_a3": "LVA",
     "iso_a2": "LV",
-    "flag": "images/flag/lv.svg"
+    "flag": "images/flag/lv.svg",
+    "languages": "Latvian"
   },
   "Tajikistan": {
     "capital": "Dushanbe",
@@ -51,7 +56,8 @@
     "lon": 68.77,
     "iso_a3": "TJK",
     "iso_a2": "TJ",
-    "flag": "images/flag/tj.svg"
+    "flag": "images/flag/tj.svg",
+    "languages": "Tajik"
   },
   "United Kingdom": {
     "capital": "London",
@@ -60,7 +66,8 @@
     "lon": -0.08,
     "iso_a3": "GBR",
     "iso_a2": "GB",
-    "flag": "images/flag/gb.svg"
+    "flag": "images/flag/gb.svg",
+    "languages": "English"
   },
   "Nicaragua": {
     "capital": "Managua",
@@ -69,7 +76,8 @@
     "lon": -86.25,
     "iso_a3": "NIC",
     "iso_a2": "NI",
-    "flag": "images/flag/ni.svg"
+    "flag": "images/flag/ni.svg",
+    "languages": "Spanish"
   },
   "Sudan": {
     "capital": "Khartoum",
@@ -78,7 +86,8 @@
     "lon": 32.53,
     "iso_a3": "SDN",
     "iso_a2": "SD",
-    "flag": "images/flag/sd.svg"
+    "flag": "images/flag/sd.svg",
+    "languages": "Arabic"
   },
   "Greece": {
     "capital": "Athens",
@@ -87,7 +96,8 @@
     "lon": 23.73,
     "iso_a3": "GRC",
     "iso_a2": "GR",
-    "flag": "images/flag/gr.svg"
+    "flag": "images/flag/gr.svg",
+    "languages": "Greek"
   },
   "Lithuania": {
     "capital": "Vilnius",
@@ -96,7 +106,8 @@
     "lon": 25.32,
     "iso_a3": "LTU",
     "iso_a2": "LT",
-    "flag": "images/flag/lt.svg"
+    "flag": "images/flag/lt.svg",
+    "languages": "Lithuanian"
   },
   "Rwanda": {
     "capital": "Kigali",
@@ -105,7 +116,8 @@
     "lon": 30.05,
     "iso_a3": "RWA",
     "iso_a2": "RW",
-    "flag": "images/flag/rw.svg"
+    "flag": "images/flag/rw.svg",
+    "languages": "Kinyarwanda, English, French"
   },
   "Senegal": {
     "capital": "Dakar",
@@ -114,7 +126,8 @@
     "lon": -17.63,
     "iso_a3": "SEN",
     "iso_a2": "SN",
-    "flag": "images/flag/sn.svg"
+    "flag": "images/flag/sn.svg",
+    "languages": "French"
   },
   "Monaco": {
     "capital": "Monaco",
@@ -123,7 +136,8 @@
     "lon": 7.42,
     "iso_a3": "MCO",
     "iso_a2": "MC",
-    "flag": "images/flag/mc.svg"
+    "flag": "images/flag/mc.svg",
+    "languages": "French"
   },
   "Lesotho": {
     "capital": "Maseru",
@@ -132,7 +146,8 @@
     "lon": 27.48,
     "iso_a3": "LSO",
     "iso_a2": "LS",
-    "flag": "images/flag/ls.svg"
+    "flag": "images/flag/ls.svg",
+    "languages": "English, Sesotho"
   },
   "Tunisia": {
     "capital": "Tunis",
@@ -141,7 +156,8 @@
     "lon": 10.18,
     "iso_a3": "TUN",
     "iso_a2": "TN",
-    "flag": "images/flag/tn.svg"
+    "flag": "images/flag/tn.svg",
+    "languages": "Arabic"
   },
   "Vanuatu": {
     "capital": "Port Vila",
@@ -150,7 +166,8 @@
     "lon": 168.32,
     "iso_a3": "VUT",
     "iso_a2": "VU",
-    "flag": "images/flag/vu.svg"
+    "flag": "images/flag/vu.svg",
+    "languages": "English, French, Bislama"
   },
   "Ecuador": {
     "capital": "Quito",
@@ -159,7 +176,8 @@
     "lon": -78.5,
     "iso_a3": "ECU",
     "iso_a2": "EC",
-    "flag": "images/flag/ec.svg"
+    "flag": "images/flag/ec.svg",
+    "languages": "Spanish"
   },
   "Kuwait": {
     "capital": "Kuwait City",
@@ -168,7 +186,8 @@
     "lon": 47.97,
     "iso_a3": "KWT",
     "iso_a2": "KW",
-    "flag": "images/flag/kw.svg"
+    "flag": "images/flag/kw.svg",
+    "languages": "Arabic"
   },
   "Philippines": {
     "capital": "Manila",
@@ -177,7 +196,8 @@
     "lon": 120.97,
     "iso_a3": "PHL",
     "iso_a2": "PH",
-    "flag": "images/flag/ph.svg"
+    "flag": "images/flag/ph.svg",
+    "languages": "Filipino, English"
   },
   "Chile": {
     "capital": "Santiago",
@@ -186,7 +206,8 @@
     "lon": -70.67,
     "iso_a3": "CHL",
     "iso_a2": "CL",
-    "flag": "images/flag/cl.svg"
+    "flag": "images/flag/cl.svg",
+    "languages": "Spanish"
   },
   "Bahamas": {
     "capital": "Nassau",
@@ -195,7 +216,8 @@
     "lon": -77.35,
     "iso_a3": "BHS",
     "iso_a2": "BS",
-    "flag": "images/flag/bs.svg"
+    "flag": "images/flag/bs.svg",
+    "languages": "English"
   },
   "Tanzania": {
     "capital": "Dodoma",
@@ -204,7 +226,8 @@
     "lon": 35.7516,
     "iso_a3": "TZA",
     "iso_a2": "TZ",
-    "flag": "images/flag/tz.svg"
+    "flag": "images/flag/tz.svg",
+    "languages": "English, Swahili"
   },
   "Costa Rica": {
     "capital": "San José",
@@ -213,7 +236,8 @@
     "lon": -84.09,
     "iso_a3": "CRI",
     "iso_a2": "CR",
-    "flag": "images/flag/cr.svg"
+    "flag": "images/flag/cr.svg",
+    "languages": "Spanish"
   },
   "Morocco": {
     "capital": "Rabat",
@@ -222,7 +246,8 @@
     "lon": -6.82,
     "iso_a3": "MAR",
     "iso_a2": "MA",
-    "flag": "images/flag/ma.svg"
+    "flag": "images/flag/ma.svg",
+    "languages": "Arabic, Berber"
   },
   "Montenegro": {
     "capital": "Podgorica",
@@ -231,7 +256,8 @@
     "lon": 19.27,
     "iso_a3": "MNE",
     "iso_a2": "ME",
-    "flag": "images/flag/me.svg"
+    "flag": "images/flag/me.svg",
+    "languages": "Montenegrin"
   },
   "Micronesia": {
     "capital": "Palikir",
@@ -240,7 +266,8 @@
     "lon": 158.15,
     "iso_a3": "FSM",
     "iso_a2": "FM",
-    "flag": "images/flag/fm.svg"
+    "flag": "images/flag/fm.svg",
+    "languages": "English"
   },
   "Portugal": {
     "capital": "Lisbon",
@@ -249,7 +276,8 @@
     "lon": -9.13,
     "iso_a3": "PRT",
     "iso_a2": "PT",
-    "flag": "images/flag/pt.svg"
+    "flag": "images/flag/pt.svg",
+    "languages": "Portuguese"
   },
   "United Arab Emirates": {
     "capital": "Abu Dhabi",
@@ -258,7 +286,8 @@
     "lon": 54.37,
     "iso_a3": "ARE",
     "iso_a2": "AE",
-    "flag": "images/flag/ae.svg"
+    "flag": "images/flag/ae.svg",
+    "languages": "Arabic"
   },
   "Libya": {
     "capital": "Tripoli",
@@ -267,7 +296,8 @@
     "lon": 13.17,
     "iso_a3": "LBY",
     "iso_a2": "LY",
-    "flag": "images/flag/ly.svg"
+    "flag": "images/flag/ly.svg",
+    "languages": "Arabic"
   },
   "Luxembourg": {
     "capital": "Luxembourg",
@@ -276,7 +306,8 @@
     "lon": 6.12,
     "iso_a3": "LUX",
     "iso_a2": "LU",
-    "flag": "images/flag/lu.svg"
+    "flag": "images/flag/lu.svg",
+    "languages": "Luxembourgish, French, German"
   },
   "Solomon Islands": {
     "capital": "Honiara",
@@ -285,7 +316,8 @@
     "lon": 159.95,
     "iso_a3": "SLB",
     "iso_a2": "SB",
-    "flag": "images/flag/sb.svg"
+    "flag": "images/flag/sb.svg",
+    "languages": "English"
   },
   "Algeria": {
     "capital": "Algiers",
@@ -294,7 +326,8 @@
     "lon": 3.05,
     "iso_a3": "DZA",
     "iso_a2": "DZ",
-    "flag": "images/flag/dz.svg"
+    "flag": "images/flag/dz.svg",
+    "languages": "Arabic"
   },
   "Antigua and Barbuda": {
     "capital": "Saint John's",
@@ -303,7 +336,8 @@
     "lon": -61.85,
     "iso_a3": "ATG",
     "iso_a2": "AG",
-    "flag": "images/flag/ag.svg"
+    "flag": "images/flag/ag.svg",
+    "languages": "English"
   },
   "Brazil": {
     "capital": "Brasília",
@@ -312,7 +346,8 @@
     "lon": -47.88,
     "iso_a3": "BRA",
     "iso_a2": "BR",
-    "flag": "images/flag/br.svg"
+    "flag": "images/flag/br.svg",
+    "languages": "Portuguese"
   },
   "Mali": {
     "capital": "Bamako",
@@ -321,7 +356,8 @@
     "lon": -8.0,
     "iso_a3": "MLI",
     "iso_a2": "ML",
-    "flag": "images/flag/ml.svg"
+    "flag": "images/flag/ml.svg",
+    "languages": "French"
   },
   "Pakistan": {
     "capital": "Islamabad",
@@ -330,7 +366,8 @@
     "lon": 73.05,
     "iso_a3": "PAK",
     "iso_a2": "PK",
-    "flag": "images/flag/pk.svg"
+    "flag": "images/flag/pk.svg",
+    "languages": "Urdu, English"
   },
   "Trinidad and Tobago": {
     "capital": "Port of Spain",
@@ -339,7 +376,8 @@
     "lon": -61.52,
     "iso_a3": "TTO",
     "iso_a2": "TT",
-    "flag": "images/flag/tt.svg"
+    "flag": "images/flag/tt.svg",
+    "languages": "English"
   },
   "Armenia": {
     "capital": "Yerevan",
@@ -348,7 +386,8 @@
     "lon": 44.5,
     "iso_a3": "ARM",
     "iso_a2": "AM",
-    "flag": "images/flag/am.svg"
+    "flag": "images/flag/am.svg",
+    "languages": "Armenian"
   },
   "Bangladesh": {
     "capital": "Dhaka",
@@ -357,7 +396,8 @@
     "lon": 90.4,
     "iso_a3": "BGD",
     "iso_a2": "BD",
-    "flag": "images/flag/bd.svg"
+    "flag": "images/flag/bd.svg",
+    "languages": "Bengali"
   },
   "Turkmenistan": {
     "capital": "Ashgabat",
@@ -366,7 +406,8 @@
     "lon": 58.38,
     "iso_a3": "TKM",
     "iso_a2": "TM",
-    "flag": "images/flag/tm.svg"
+    "flag": "images/flag/tm.svg",
+    "languages": "Turkmen"
   },
   "Palau": {
     "capital": "Ngerulmud",
@@ -375,7 +416,8 @@
     "lon": 134.62,
     "iso_a3": "PLW",
     "iso_a2": "PW",
-    "flag": "images/flag/pw.svg"
+    "flag": "images/flag/pw.svg",
+    "languages": "English, Palauan"
   },
   "Cuba": {
     "capital": "Havana",
@@ -384,7 +426,8 @@
     "lon": -82.35,
     "iso_a3": "CUB",
     "iso_a2": "CU",
-    "flag": "images/flag/cu.svg"
+    "flag": "images/flag/cu.svg",
+    "languages": "Spanish"
   },
   "Chad": {
     "capital": "N'Djamena",
@@ -393,7 +436,8 @@
     "lon": 15.03,
     "iso_a3": "TCD",
     "iso_a2": "TD",
-    "flag": "images/flag/td.svg"
+    "flag": "images/flag/td.svg",
+    "languages": "French, Arabic"
   },
   "Bosnia Herzegovina": {
     "capital": "Sarajevo",
@@ -402,7 +446,8 @@
     "lon": 18.42,
     "iso_a3": "BIH",
     "iso_a2": "BA",
-    "flag": "images/flag/ba.svg"
+    "flag": "images/flag/ba.svg",
+    "languages": "Bosnian, Croatian, Serbian"
   },
   "Botswana": {
     "capital": "Gaborone",
@@ -411,7 +456,8 @@
     "lon": 25.9,
     "iso_a3": "BWA",
     "iso_a2": "BW",
-    "flag": "images/flag/bw.svg"
+    "flag": "images/flag/bw.svg",
+    "languages": "English, Setswana"
   },
   "Estonia": {
     "capital": "Tallinn",
@@ -420,7 +466,8 @@
     "lon": 24.72,
     "iso_a3": "EST",
     "iso_a2": "EE",
-    "flag": "images/flag/ee.svg"
+    "flag": "images/flag/ee.svg",
+    "languages": "Estonian"
   },
   "Bahrain": {
     "capital": "Manama",
@@ -429,7 +476,8 @@
     "lon": 50.57,
     "iso_a3": "BHR",
     "iso_a2": "BH",
-    "flag": "images/flag/bh.svg"
+    "flag": "images/flag/bh.svg",
+    "languages": "Arabic"
   },
   "Dominican Republic": {
     "capital": "Santo Domingo",
@@ -438,7 +486,8 @@
     "lon": -69.9,
     "iso_a3": "DOM",
     "iso_a2": "DO",
-    "flag": "images/flag/do.svg"
+    "flag": "images/flag/do.svg",
+    "languages": "Spanish"
   },
   "United States": {
     "capital": "Washington, D.C.",
@@ -447,7 +496,8 @@
     "lon": -77.05,
     "iso_a3": "USA",
     "iso_a2": "US",
-    "flag": "images/flag/us.svg"
+    "flag": "images/flag/us.svg",
+    "languages": "English"
   },
   "Colombia": {
     "capital": "Bogotá",
@@ -456,7 +506,8 @@
     "lon": -74.07,
     "iso_a3": "COL",
     "iso_a2": "CO",
-    "flag": "images/flag/co.svg"
+    "flag": "images/flag/co.svg",
+    "languages": "Spanish"
   },
   "Guinea": {
     "capital": "Conakry",
@@ -465,7 +516,8 @@
     "lon": -13.7,
     "iso_a3": "GIN",
     "iso_a2": "GN",
-    "flag": "images/flag/gn.svg"
+    "flag": "images/flag/gn.svg",
+    "languages": "French"
   },
   "Ireland": {
     "capital": "Dublin",
@@ -474,7 +526,8 @@
     "lon": -6.23,
     "iso_a3": "IRL",
     "iso_a2": "IE",
-    "flag": "images/flag/ie.svg"
+    "flag": "images/flag/ie.svg",
+    "languages": "English, Irish Gaelic"
   },
   "Maldives": {
     "capital": "Malé",
@@ -483,7 +536,8 @@
     "lon": 73.51,
     "iso_a3": "MDV",
     "iso_a2": "MV",
-    "flag": "images/flag/mv.svg"
+    "flag": "images/flag/mv.svg",
+    "languages": "Dhivehi"
   },
   "Panama": {
     "capital": "Panama City",
@@ -492,7 +546,8 @@
     "lon": -79.53,
     "iso_a3": "PAN",
     "iso_a2": "PA",
-    "flag": "images/flag/pa.svg"
+    "flag": "images/flag/pa.svg",
+    "languages": "Spanish"
   },
   "Mozambique": {
     "capital": "Maputo",
@@ -501,7 +556,8 @@
     "lon": 32.58,
     "iso_a3": "MOZ",
     "iso_a2": "MZ",
-    "flag": "images/flag/mz.svg"
+    "flag": "images/flag/mz.svg",
+    "languages": "Portuguese"
   },
   "Oman": {
     "capital": "Muscat",
@@ -510,7 +566,8 @@
     "lon": 58.58,
     "iso_a3": "OMN",
     "iso_a2": "OM",
-    "flag": "images/flag/om.svg"
+    "flag": "images/flag/om.svg",
+    "languages": "Arabic"
   },
   "Czechia": {
     "capital": "Prague",
@@ -519,7 +576,8 @@
     "lon": 14.47,
     "iso_a3": "CZE",
     "iso_a2": "CZ",
-    "flag": "images/flag/cz.svg"
+    "flag": "images/flag/cz.svg",
+    "languages": "Czech"
   },
   "Saint Vincent-Grenadines": {
     "capital": "Kingstown",
@@ -528,7 +586,8 @@
     "lon": -61.22,
     "iso_a3": "VCT",
     "iso_a2": "VC",
-    "flag": "images/flag/vc.svg"
+    "flag": "images/flag/vc.svg",
+    "languages": "English"
   },
   "Haiti": {
     "capital": "Port-au-Prince",
@@ -537,7 +596,8 @@
     "lon": -72.33,
     "iso_a3": "HTI",
     "iso_a2": "HT",
-    "flag": "images/flag/ht.svg"
+    "flag": "images/flag/ht.svg",
+    "languages": "French, Haitian Creole"
   },
   "Nigeria": {
     "capital": "Abuja",
@@ -546,7 +606,8 @@
     "lon": 7.53,
     "iso_a3": "NGA",
     "iso_a2": "NG",
-    "flag": "images/flag/ng.svg"
+    "flag": "images/flag/ng.svg",
+    "languages": "English"
   },
   "Namibia": {
     "capital": "Windhoek",
@@ -555,7 +616,8 @@
     "lon": 17.08,
     "iso_a3": "NAM",
     "iso_a2": "NA",
-    "flag": "images/flag/na.svg"
+    "flag": "images/flag/na.svg",
+    "languages": "English"
   },
   "Dominica": {
     "capital": "Roseau",
@@ -564,7 +626,8 @@
     "lon": -61.4,
     "iso_a3": "DMA",
     "iso_a2": "DM",
-    "flag": "images/flag/dm.svg"
+    "flag": "images/flag/dm.svg",
+    "languages": "English"
   },
   "Canada": {
     "capital": "Ottawa",
@@ -573,7 +636,8 @@
     "lon": -75.7,
     "iso_a3": "CAN",
     "iso_a2": "CA",
-    "flag": "images/flag/ca.svg"
+    "flag": "images/flag/ca.svg",
+    "languages": "English, French"
   },
   "Niger": {
     "capital": "Niamey",
@@ -582,7 +646,8 @@
     "lon": 2.12,
     "iso_a3": "NER",
     "iso_a2": "NE",
-    "flag": "images/flag/ne.svg"
+    "flag": "images/flag/ne.svg",
+    "languages": "French"
   },
   "Indonesia": {
     "capital": "Jakarta",
@@ -591,7 +656,8 @@
     "lon": 106.82,
     "iso_a3": "IDN",
     "iso_a2": "ID",
-    "flag": "images/flag/id.svg"
+    "flag": "images/flag/id.svg",
+    "languages": "Indonesian"
   },
   "Yemen": {
     "capital": "Sana'a",
@@ -600,7 +666,8 @@
     "lon": 44.19,
     "iso_a3": "YEM",
     "iso_a2": "YE",
-    "flag": "images/flag/ye.svg"
+    "flag": "images/flag/ye.svg",
+    "languages": "Arabic"
   },
   "Palestine": {
     "capital": "East Jerusalem",
@@ -609,7 +676,8 @@
     "lon": 35.2137,
     "iso_a3": "PSE",
     "iso_a2": "PS",
-    "flag": "images/flag/ps.svg"
+    "flag": "images/flag/ps.svg",
+    "languages": "Arabic"
   },
   "Gabon": {
     "capital": "Libreville",
@@ -618,7 +686,8 @@
     "lon": 9.45,
     "iso_a3": "GAB",
     "iso_a2": "GA",
-    "flag": "images/flag/ga.svg"
+    "flag": "images/flag/ga.svg",
+    "languages": "French"
   },
   "Eritrea": {
     "capital": "Asmara",
@@ -627,7 +696,8 @@
     "lon": 38.93,
     "iso_a3": "ERI",
     "iso_a2": "ER",
-    "flag": "images/flag/er.svg"
+    "flag": "images/flag/er.svg",
+    "languages": "Tigrinya, Arabic, English"
   },
   "Cyprus": {
     "capital": "Nicosia",
@@ -636,7 +706,8 @@
     "lon": 33.37,
     "iso_a3": "CYP",
     "iso_a2": "CY",
-    "flag": "images/flag/cy.svg"
+    "flag": "images/flag/cy.svg",
+    "languages": "Greek, Turkish"
   },
   "Slovakia": {
     "capital": "Bratislava",
@@ -645,7 +716,8 @@
     "lon": 17.12,
     "iso_a3": "SVK",
     "iso_a2": "SK",
-    "flag": "images/flag/sk.svg"
+    "flag": "images/flag/sk.svg",
+    "languages": "Slovak"
   },
   "Slovenia": {
     "capital": "Ljubljana",
@@ -654,7 +726,8 @@
     "lon": 14.52,
     "iso_a3": "SVN",
     "iso_a2": "SI",
-    "flag": "images/flag/si.svg"
+    "flag": "images/flag/si.svg",
+    "languages": "Slovenian"
   },
   "Kiribati": {
     "capital": "South Tarawa",
@@ -663,7 +736,8 @@
     "lon": 172.98,
     "iso_a3": "KIR",
     "iso_a2": "KI",
-    "flag": "images/flag/ki.svg"
+    "flag": "images/flag/ki.svg",
+    "languages": "English, Gilbertese"
   },
   "Germany": {
     "capital": "Berlin",
@@ -672,7 +746,8 @@
     "lon": 13.4,
     "iso_a3": "DEU",
     "iso_a2": "DE",
-    "flag": "images/flag/de.svg"
+    "flag": "images/flag/de.svg",
+    "languages": "German"
   },
   "Kosovo": {
     "capital": "Pristina",
@@ -681,7 +756,8 @@
     "lon": 21.1655,
     "iso_a3": "XKX",
     "iso_a2": "XK",
-    "flag": "images/flag/xk.svg"
+    "flag": "images/flag/xk.svg",
+    "languages": "Albanian, Serbian"
   },
   "Ivory Coast": {
     "capital": "Yamoussoukro",
@@ -690,7 +766,8 @@
     "lon": -5.27,
     "iso_a3": "CIV",
     "iso_a2": "CI",
-    "flag": "images/flag/ci.svg"
+    "flag": "images/flag/ci.svg",
+    "languages": "French"
   },
   "Sri Lanka": {
     "capital": "Sri Jayawardenepura Kotte",
@@ -699,7 +776,8 @@
     "lon": 79.9733,
     "iso_a3": "LKA",
     "iso_a2": "LK",
-    "flag": "images/flag/lk.svg"
+    "flag": "images/flag/lk.svg",
+    "languages": "Sinhala, Tamil"
   },
   "Belgium": {
     "capital": "Brussels",
@@ -708,7 +786,8 @@
     "lon": 4.33,
     "iso_a3": "BEL",
     "iso_a2": "BE",
-    "flag": "images/flag/be.svg"
+    "flag": "images/flag/be.svg",
+    "languages": "Dutch, French, German"
   },
   "Israel": {
     "capital": "Jerusalem",
@@ -717,7 +796,8 @@
     "lon": 35.23,
     "iso_a3": "ISR",
     "iso_a2": "IL",
-    "flag": "images/flag/il.svg"
+    "flag": "images/flag/il.svg",
+    "languages": "Hebrew, Arabic"
   },
   "Denmark": {
     "capital": "Copenhagen",
@@ -726,7 +806,8 @@
     "lon": 12.58,
     "iso_a3": "DNK",
     "iso_a2": "DK",
-    "flag": "images/flag/dk.svg"
+    "flag": "images/flag/dk.svg",
+    "languages": "Danish"
   },
   "Syria": {
     "capital": "Damascus",
@@ -735,7 +816,8 @@
     "lon": 36.3,
     "iso_a3": "SYR",
     "iso_a2": "SY",
-    "flag": "images/flag/sy.svg"
+    "flag": "images/flag/sy.svg",
+    "languages": "Arabic"
   },
   "Timor-Leste": {
     "capital": "Dili",
@@ -744,7 +826,8 @@
     "lon": 125.6,
     "iso_a3": "TLS",
     "iso_a2": "TL",
-    "flag": "images/flag/tl.svg"
+    "flag": "images/flag/tl.svg",
+    "languages": "Portuguese, Tetum"
   },
   "San Marino": {
     "capital": "City of San Marino",
@@ -753,7 +836,8 @@
     "lon": 12.45,
     "iso_a3": "SMR",
     "iso_a2": "SM",
-    "flag": "images/flag/sm.svg"
+    "flag": "images/flag/sm.svg",
+    "languages": "Italian"
   },
   "Gambia": {
     "capital": "Banjul",
@@ -762,7 +846,8 @@
     "lon": -16.57,
     "iso_a3": "GMB",
     "iso_a2": "GM",
-    "flag": "images/flag/gm.svg"
+    "flag": "images/flag/gm.svg",
+    "languages": "English"
   },
   "Peru": {
     "capital": "Lima",
@@ -771,7 +856,8 @@
     "lon": -77.05,
     "iso_a3": "PER",
     "iso_a2": "PE",
-    "flag": "images/flag/pe.svg"
+    "flag": "images/flag/pe.svg",
+    "languages": "Spanish"
   },
   "Guinea-Bissau": {
     "capital": "Bissau",
@@ -780,7 +866,8 @@
     "lon": -15.58,
     "iso_a3": "GNB",
     "iso_a2": "GW",
-    "flag": "images/flag/gw.svg"
+    "flag": "images/flag/gw.svg",
+    "languages": "Portuguese"
   },
   "Sierra Leone": {
     "capital": "Freetown",
@@ -789,7 +876,8 @@
     "lon": -13.23,
     "iso_a3": "SLE",
     "iso_a2": "SL",
-    "flag": "images/flag/sl.svg"
+    "flag": "images/flag/sl.svg",
+    "languages": "English"
   },
   "Turkey": {
     "capital": "Ankara",
@@ -798,7 +886,8 @@
     "lon": 32.87,
     "iso_a3": "TUR",
     "iso_a2": "TR",
-    "flag": "images/flag/tr.svg"
+    "flag": "images/flag/tr.svg",
+    "languages": "Turkish"
   },
   "Bolivia": {
     "capital": "Sucre",
@@ -807,7 +896,8 @@
     "lon": -65.2619,
     "iso_a3": "BOL",
     "iso_a2": "BO",
-    "flag": "images/flag/bo.svg"
+    "flag": "images/flag/bo.svg",
+    "languages": "Spanish"
   },
   "Norway": {
     "capital": "Oslo",
@@ -816,7 +906,8 @@
     "lon": 10.75,
     "iso_a3": "NOR",
     "iso_a2": "NO",
-    "flag": "images/flag/no.svg"
+    "flag": "images/flag/no.svg",
+    "languages": "Norwegian"
   },
   "Republic of the Congo": {
     "capital": "Brazzaville",
@@ -825,7 +916,8 @@
     "lon": 15.28,
     "iso_a3": "COG",
     "iso_a2": "CG",
-    "flag": "images/flag/cg.svg"
+    "flag": "images/flag/cg.svg",
+    "languages": "French"
   },
   "Eswatini": {
     "capital": "Mbabane",
@@ -834,7 +926,8 @@
     "lon": 31.13,
     "iso_a3": "SWZ",
     "iso_a2": "SZ",
-    "flag": "images/flag/sz.svg"
+    "flag": "images/flag/sz.svg",
+    "languages": "English, Swati"
   },
   "Paraguay": {
     "capital": "Asunción",
@@ -843,7 +936,8 @@
     "lon": -57.57,
     "iso_a3": "PRY",
     "iso_a2": "PY",
-    "flag": "images/flag/py.svg"
+    "flag": "images/flag/py.svg",
+    "languages": "Spanish, Guarani"
   },
   "Ukraine": {
     "capital": "Kyiv",
@@ -852,7 +946,8 @@
     "lon": 30.52,
     "iso_a3": "UKR",
     "iso_a2": "UA",
-    "flag": "images/flag/ua.svg"
+    "flag": "images/flag/ua.svg",
+    "languages": "Ukrainian"
   },
   "Malaysia": {
     "capital": "Kuala Lumpur",
@@ -861,7 +956,8 @@
     "lon": 101.7,
     "iso_a3": "MYS",
     "iso_a2": "MY",
-    "flag": "images/flag/my.svg"
+    "flag": "images/flag/my.svg",
+    "languages": "Malay"
   },
   "Tonga": {
     "capital": "Nuku'alofa",
@@ -870,7 +966,8 @@
     "lon": -175.2,
     "iso_a3": "TON",
     "iso_a2": "TO",
-    "flag": "images/flag/to.svg"
+    "flag": "images/flag/to.svg",
+    "languages": "English, Tongan"
   },
   "Benin": {
     "capital": "Porto-Novo",
@@ -879,7 +976,8 @@
     "lon": 2.6289,
     "iso_a3": "BEN",
     "iso_a2": "BJ",
-    "flag": "images/flag/bj.svg"
+    "flag": "images/flag/bj.svg",
+    "languages": "French"
   },
   "Sweden": {
     "capital": "Stockholm",
@@ -888,7 +986,8 @@
     "lon": 18.05,
     "iso_a3": "SWE",
     "iso_a2": "SE",
-    "flag": "images/flag/se.svg"
+    "flag": "images/flag/se.svg",
+    "languages": "Swedish"
   },
   "Tuvalu": {
     "capital": "Funafuti",
@@ -897,7 +996,8 @@
     "lon": 179.22,
     "iso_a3": "TUV",
     "iso_a2": "TV",
-    "flag": "images/flag/tv.svg"
+    "flag": "images/flag/tv.svg",
+    "languages": "English, Tuvaluan"
   },
   "Mongolia": {
     "capital": "Ulan Bator",
@@ -906,7 +1006,8 @@
     "lon": 106.91,
     "iso_a3": "MNG",
     "iso_a2": "MN",
-    "flag": "images/flag/mn.svg"
+    "flag": "images/flag/mn.svg",
+    "languages": "Mongolian"
   },
   "South Africa": {
     "capital": "Pretoria",
@@ -915,7 +1016,8 @@
     "lon": 28.2293,
     "iso_a3": "ZAF",
     "iso_a2": "ZA",
-    "flag": "images/flag/za.svg"
+    "flag": "images/flag/za.svg",
+    "languages": "English, Afrikaans, Zulu"
   },
   "Australia": {
     "capital": "Canberra",
@@ -924,7 +1026,8 @@
     "lon": 149.13,
     "iso_a3": "AUS",
     "iso_a2": "AU",
-    "flag": "images/flag/au.svg"
+    "flag": "images/flag/au.svg",
+    "languages": "English"
   },
   "Saint Kitts and Nevis": {
     "capital": "Basseterre",
@@ -933,7 +1036,8 @@
     "lon": -62.72,
     "iso_a3": "KNA",
     "iso_a2": "KN",
-    "flag": "images/flag/kn.svg"
+    "flag": "images/flag/kn.svg",
+    "languages": "English"
   },
   "Ghana": {
     "capital": "Accra",
@@ -942,7 +1046,8 @@
     "lon": -0.22,
     "iso_a3": "GHA",
     "iso_a2": "GH",
-    "flag": "images/flag/gh.svg"
+    "flag": "images/flag/gh.svg",
+    "languages": "English"
   },
   "Iraq": {
     "capital": "Baghdad",
@@ -951,7 +1056,8 @@
     "lon": 44.4,
     "iso_a3": "IRQ",
     "iso_a2": "IQ",
-    "flag": "images/flag/iq.svg"
+    "flag": "images/flag/iq.svg",
+    "languages": "Arabic, Kurdish"
   },
   "Vietnam": {
     "capital": "Hanoi",
@@ -960,7 +1066,8 @@
     "lon": 105.85,
     "iso_a3": "VNM",
     "iso_a2": "VN",
-    "flag": "images/flag/vn.svg"
+    "flag": "images/flag/vn.svg",
+    "languages": "Vietnamese"
   },
   "Guyana": {
     "capital": "Georgetown",
@@ -969,7 +1076,8 @@
     "lon": -58.15,
     "iso_a3": "GUY",
     "iso_a2": "GY",
-    "flag": "images/flag/gy.svg"
+    "flag": "images/flag/gy.svg",
+    "languages": "English"
   },
   "Azerbaijan": {
     "capital": "Baku",
@@ -978,7 +1086,8 @@
     "lon": 49.87,
     "iso_a3": "AZE",
     "iso_a2": "AZ",
-    "flag": "images/flag/az.svg"
+    "flag": "images/flag/az.svg",
+    "languages": "Azerbaijani"
   },
   "Cameroon": {
     "capital": "Yaoundé",
@@ -987,7 +1096,8 @@
     "lon": 11.5,
     "iso_a3": "CMR",
     "iso_a2": "CM",
-    "flag": "images/flag/cm.svg"
+    "flag": "images/flag/cm.svg",
+    "languages": "French, English"
   },
   "Egypt": {
     "capital": "Cairo",
@@ -996,7 +1106,8 @@
     "lon": 31.25,
     "iso_a3": "EGY",
     "iso_a2": "EG",
-    "flag": "images/flag/eg.svg"
+    "flag": "images/flag/eg.svg",
+    "languages": "Arabic"
   },
   "Iceland": {
     "capital": "Reykjavik",
@@ -1005,7 +1116,8 @@
     "lon": -21.95,
     "iso_a3": "ISL",
     "iso_a2": "IS",
-    "flag": "images/flag/is.svg"
+    "flag": "images/flag/is.svg",
+    "languages": "Icelandic"
   },
   "Venezuela": {
     "capital": "Caracas",
@@ -1014,7 +1126,8 @@
     "lon": -66.87,
     "iso_a3": "VEN",
     "iso_a2": "VE",
-    "flag": "images/flag/ve.svg"
+    "flag": "images/flag/ve.svg",
+    "languages": "Spanish"
   },
   "Barbados": {
     "capital": "Bridgetown",
@@ -1023,7 +1136,8 @@
     "lon": -59.62,
     "iso_a3": "BRB",
     "iso_a2": "BB",
-    "flag": "images/flag/bb.svg"
+    "flag": "images/flag/bb.svg",
+    "languages": "English"
   },
   "Malawi": {
     "capital": "Lilongwe",
@@ -1032,7 +1146,8 @@
     "lon": 33.78,
     "iso_a3": "MWI",
     "iso_a2": "MW",
-    "flag": "images/flag/mw.svg"
+    "flag": "images/flag/mw.svg",
+    "languages": "English, Chichewa"
   },
   "Kyrgyzstan": {
     "capital": "Bishkek",
@@ -1041,7 +1156,8 @@
     "lon": 74.6,
     "iso_a3": "KGZ",
     "iso_a2": "KG",
-    "flag": "images/flag/kg.svg"
+    "flag": "images/flag/kg.svg",
+    "languages": "Kyrgyz, Russian"
   },
   "Taiwan": {
     "capital": "Taipei",
@@ -1050,7 +1166,8 @@
     "lon": 121.5654,
     "iso_a3": "TWN",
     "iso_a2": "TW",
-    "flag": "images/flag/tw.svg"
+    "flag": "images/flag/tw.svg",
+    "languages": "Mandarin Chinese"
   },
   "Bulgaria": {
     "capital": "Sofia",
@@ -1059,7 +1176,8 @@
     "lon": 23.32,
     "iso_a3": "BGR",
     "iso_a2": "BG",
-    "flag": "images/flag/bg.svg"
+    "flag": "images/flag/bg.svg",
+    "languages": "Bulgarian"
   },
   "North Korea": {
     "capital": "Pyongyang",
@@ -1068,7 +1186,8 @@
     "lon": 125.75,
     "iso_a3": "PRK",
     "iso_a2": "KP",
-    "flag": "images/flag/kp.svg"
+    "flag": "images/flag/kp.svg",
+    "languages": "Korean"
   },
   "Andorra": {
     "capital": "Andorra la Vella",
@@ -1077,7 +1196,8 @@
     "lon": 1.52,
     "iso_a3": "AND",
     "iso_a2": "AD",
-    "flag": "images/flag/ad.svg"
+    "flag": "images/flag/ad.svg",
+    "languages": "Catalan"
   },
   "Angola": {
     "capital": "Luanda",
@@ -1086,7 +1206,8 @@
     "lon": 13.22,
     "iso_a3": "AGO",
     "iso_a2": "AO",
-    "flag": "images/flag/ao.svg"
+    "flag": "images/flag/ao.svg",
+    "languages": "Portuguese"
   },
   "Russia": {
     "capital": "Moscow",
@@ -1095,7 +1216,8 @@
     "lon": 37.6,
     "iso_a3": "RUS",
     "iso_a2": "RU",
-    "flag": "images/flag/ru.svg"
+    "flag": "images/flag/ru.svg",
+    "languages": "Russian"
   },
   "Burkina Faso": {
     "capital": "Ouagadougou",
@@ -1104,7 +1226,8 @@
     "lon": -1.52,
     "iso_a3": "BFA",
     "iso_a2": "BF",
-    "flag": "images/flag/bf.svg"
+    "flag": "images/flag/bf.svg",
+    "languages": "French"
   },
   "Vatican City": {
     "capital": "Vatican City",
@@ -1113,7 +1236,8 @@
     "lon": 12.45,
     "iso_a3": "VAT",
     "iso_a2": "VA",
-    "flag": "images/flag/va.svg"
+    "flag": "images/flag/va.svg",
+    "languages": "Italian, Latin"
   },
   "Afghanistan": {
     "capital": "Kabul",
@@ -1122,7 +1246,8 @@
     "lon": 69.18,
     "iso_a3": "AFG",
     "iso_a2": "AF",
-    "flag": "images/flag/af.svg"
+    "flag": "images/flag/af.svg",
+    "languages": "Pashto, Dari"
   },
   "Croatia": {
     "capital": "Zagreb",
@@ -1131,7 +1256,8 @@
     "lon": 16.0,
     "iso_a3": "HRV",
     "iso_a2": "HR",
-    "flag": "images/flag/hr.svg"
+    "flag": "images/flag/hr.svg",
+    "languages": "Croatian"
   },
   "Bhutan": {
     "capital": "Thimphu",
@@ -1140,7 +1266,8 @@
     "lon": 89.63,
     "iso_a3": "BTN",
     "iso_a2": "BT",
-    "flag": "images/flag/bt.svg"
+    "flag": "images/flag/bt.svg",
+    "languages": "Dzongkha"
   },
   "Belarus": {
     "capital": "Minsk",
@@ -1149,7 +1276,8 @@
     "lon": 27.57,
     "iso_a3": "BLR",
     "iso_a2": "BY",
-    "flag": "images/flag/by.svg"
+    "flag": "images/flag/by.svg",
+    "languages": "Belarusian, Russian"
   },
   "New Zealand": {
     "capital": "Wellington",
@@ -1158,7 +1286,8 @@
     "lon": 174.78,
     "iso_a3": "NZL",
     "iso_a2": "NZ",
-    "flag": "images/flag/nz.svg"
+    "flag": "images/flag/nz.svg",
+    "languages": "English"
   },
   "Madagascar": {
     "capital": "Antananarivo",
@@ -1167,7 +1296,8 @@
     "lon": 47.52,
     "iso_a3": "MDG",
     "iso_a2": "MG",
-    "flag": "images/flag/mg.svg"
+    "flag": "images/flag/mg.svg",
+    "languages": "Malagasy, French"
   },
   "Thailand": {
     "capital": "Bangkok",
@@ -1176,7 +1306,8 @@
     "lon": 100.52,
     "iso_a3": "THA",
     "iso_a2": "TH",
-    "flag": "images/flag/th.svg"
+    "flag": "images/flag/th.svg",
+    "languages": "Thai"
   },
   "Georgia": {
     "capital": "Tbilisi",
@@ -1185,7 +1316,8 @@
     "lon": 44.83,
     "iso_a3": "GEO",
     "iso_a2": "GE",
-    "flag": "images/flag/ge.svg"
+    "flag": "images/flag/ge.svg",
+    "languages": "Georgian"
   },
   "India": {
     "capital": "New Delhi",
@@ -1194,7 +1326,8 @@
     "lon": 77.2,
     "iso_a3": "IND",
     "iso_a2": "IN",
-    "flag": "images/flag/in.svg"
+    "flag": "images/flag/in.svg",
+    "languages": "Hindi, English"
   },
   "China": {
     "capital": "Beijing",
@@ -1203,7 +1336,8 @@
     "lon": 116.38,
     "iso_a3": "CHN",
     "iso_a2": "CN",
-    "flag": "images/flag/cn.svg"
+    "flag": "images/flag/cn.svg",
+    "languages": "Mandarin Chinese"
   },
   "Djibouti": {
     "capital": "Djibouti",
@@ -1212,7 +1346,8 @@
     "lon": 43.15,
     "iso_a3": "DJI",
     "iso_a2": "DJ",
-    "flag": "images/flag/dj.svg"
+    "flag": "images/flag/dj.svg",
+    "languages": "French, Arabic"
   },
   "Saudi Arabia": {
     "capital": "Riyadh",
@@ -1221,7 +1356,8 @@
     "lon": 46.7,
     "iso_a3": "SAU",
     "iso_a2": "SA",
-    "flag": "images/flag/sa.svg"
+    "flag": "images/flag/sa.svg",
+    "languages": "Arabic"
   },
   "Iran": {
     "capital": "Tehran",
@@ -1230,7 +1366,8 @@
     "lon": 51.42,
     "iso_a3": "IRN",
     "iso_a2": "IR",
-    "flag": "images/flag/ir.svg"
+    "flag": "images/flag/ir.svg",
+    "languages": "Persian"
   },
   "Zambia": {
     "capital": "Lusaka",
@@ -1239,7 +1376,8 @@
     "lon": 28.28,
     "iso_a3": "ZMB",
     "iso_a2": "ZM",
-    "flag": "images/flag/zm.svg"
+    "flag": "images/flag/zm.svg",
+    "languages": "English"
   },
   "Ethiopia": {
     "capital": "Addis Ababa",
@@ -1248,7 +1386,8 @@
     "lon": 38.7,
     "iso_a3": "ETH",
     "iso_a2": "ET",
-    "flag": "images/flag/et.svg"
+    "flag": "images/flag/et.svg",
+    "languages": "Amharic"
   },
   "Guatemala": {
     "capital": "Guatemala City",
@@ -1257,7 +1396,8 @@
     "lon": -90.52,
     "iso_a3": "GTM",
     "iso_a2": "GT",
-    "flag": "images/flag/gt.svg"
+    "flag": "images/flag/gt.svg",
+    "languages": "Spanish"
   },
   "Suriname": {
     "capital": "Paramaribo",
@@ -1266,7 +1406,8 @@
     "lon": -55.17,
     "iso_a3": "SUR",
     "iso_a2": "SR",
-    "flag": "images/flag/sr.svg"
+    "flag": "images/flag/sr.svg",
+    "languages": "Dutch"
   },
   "Uruguay": {
     "capital": "Montevideo",
@@ -1275,7 +1416,8 @@
     "lon": -56.17,
     "iso_a3": "URY",
     "iso_a2": "UY",
-    "flag": "images/flag/uy.svg"
+    "flag": "images/flag/uy.svg",
+    "languages": "Spanish"
   },
   "Italy": {
     "capital": "Rome",
@@ -1284,7 +1426,8 @@
     "lon": 12.48,
     "iso_a3": "ITA",
     "iso_a2": "IT",
-    "flag": "images/flag/it.svg"
+    "flag": "images/flag/it.svg",
+    "languages": "Italian"
   },
   "Fiji": {
     "capital": "Suva",
@@ -1293,7 +1436,8 @@
     "lon": 178.42,
     "iso_a3": "FJI",
     "iso_a2": "FJ",
-    "flag": "images/flag/fj.svg"
+    "flag": "images/flag/fj.svg",
+    "languages": "English, Fijian"
   },
   "São Tomé and Príncipe": {
     "capital": "São Tomé",
@@ -1302,7 +1446,8 @@
     "lon": 6.73,
     "iso_a3": "STP",
     "iso_a2": "ST",
-    "flag": "images/flag/st.svg"
+    "flag": "images/flag/st.svg",
+    "languages": "Portuguese"
   },
   "Switzerland": {
     "capital": "Bern",
@@ -1311,7 +1456,8 @@
     "lon": 7.4474,
     "iso_a3": "CHE",
     "iso_a2": "CH",
-    "flag": "images/flag/ch.svg"
+    "flag": "images/flag/ch.svg",
+    "languages": "German, French, Italian, Romansh"
   },
   "Democratic Republic of the Congo": {
     "capital": "Kinshasa",
@@ -1320,7 +1466,8 @@
     "lon": 15.3,
     "iso_a3": "COD",
     "iso_a2": "CD",
-    "flag": "images/flag/cd.svg"
+    "flag": "images/flag/cd.svg",
+    "languages": "French"
   },
   "Finland": {
     "capital": "Helsinki",
@@ -1329,7 +1476,8 @@
     "lon": 24.93,
     "iso_a3": "FIN",
     "iso_a2": "FI",
-    "flag": "images/flag/fi.svg"
+    "flag": "images/flag/fi.svg",
+    "languages": "Finnish, Swedish"
   },
   "Malta": {
     "capital": "Valletta",
@@ -1338,7 +1486,8 @@
     "lon": 14.5,
     "iso_a3": "MLT",
     "iso_a2": "MT",
-    "flag": "images/flag/mt.svg"
+    "flag": "images/flag/mt.svg",
+    "languages": "Maltese, English"
   },
   "El Salvador": {
     "capital": "San Salvador",
@@ -1347,7 +1496,8 @@
     "lon": -89.2,
     "iso_a3": "SLV",
     "iso_a2": "SV",
-    "flag": "images/flag/sv.svg"
+    "flag": "images/flag/sv.svg",
+    "languages": "Spanish"
   },
   "Jordan": {
     "capital": "Amman",
@@ -1356,7 +1506,8 @@
     "lon": 35.93,
     "iso_a3": "JOR",
     "iso_a2": "JO",
-    "flag": "images/flag/jo.svg"
+    "flag": "images/flag/jo.svg",
+    "languages": "Arabic"
   },
   "Nauru": {
     "capital": "Yaren",
@@ -1365,7 +1516,8 @@
     "lon": 166.9211,
     "iso_a3": "NRU",
     "iso_a2": "NR",
-    "flag": "images/flag/nr.svg"
+    "flag": "images/flag/nr.svg",
+    "languages": "English, Nauruan"
   },
   "Poland": {
     "capital": "Warsaw",
@@ -1374,7 +1526,8 @@
     "lon": 21.0,
     "iso_a3": "POL",
     "iso_a2": "PL",
-    "flag": "images/flag/pl.svg"
+    "flag": "images/flag/pl.svg",
+    "languages": "Polish"
   },
   "Mauritania": {
     "capital": "Nouakchott",
@@ -1383,7 +1536,8 @@
     "lon": -15.97,
     "iso_a3": "MRT",
     "iso_a2": "MR",
-    "flag": "images/flag/mr.svg"
+    "flag": "images/flag/mr.svg",
+    "languages": "Arabic"
   },
   "North Macedonia": {
     "capital": "Skopje",
@@ -1392,7 +1546,8 @@
     "lon": 21.43,
     "iso_a3": "MKD",
     "iso_a2": "MK",
-    "flag": "images/flag/mk.svg"
+    "flag": "images/flag/mk.svg",
+    "languages": "Macedonian"
   },
   "Togo": {
     "capital": "Lomé",
@@ -1401,7 +1556,8 @@
     "lon": 1.21,
     "iso_a3": "TGO",
     "iso_a2": "TG",
-    "flag": "images/flag/tg.svg"
+    "flag": "images/flag/tg.svg",
+    "languages": "French"
   },
   "Myanmar": {
     "capital": "Naypyidaw",
@@ -1410,7 +1566,8 @@
     "lon": 96.07,
     "iso_a3": "MMR",
     "iso_a2": "MM",
-    "flag": "images/flag/mm.svg"
+    "flag": "images/flag/mm.svg",
+    "languages": "Burmese"
   },
   "Qatar": {
     "capital": "Doha",
@@ -1419,7 +1576,8 @@
     "lon": 51.53,
     "iso_a3": "QAT",
     "iso_a2": "QA",
-    "flag": "images/flag/qa.svg"
+    "flag": "images/flag/qa.svg",
+    "languages": "Arabic"
   },
   "France": {
     "capital": "Paris",
@@ -1428,7 +1586,8 @@
     "lon": 2.33,
     "iso_a3": "FRA",
     "iso_a2": "FR",
-    "flag": "images/flag/fr.svg"
+    "flag": "images/flag/fr.svg",
+    "languages": "French"
   },
   "Seychelles": {
     "capital": "Victoria",
@@ -1437,7 +1596,8 @@
     "lon": 55.45,
     "iso_a3": "SYC",
     "iso_a2": "SC",
-    "flag": "images/flag/sc.svg"
+    "flag": "images/flag/sc.svg",
+    "languages": "English, French, Seychellois Creole"
   },
   "Moldova": {
     "capital": "Chișinău",
@@ -1446,7 +1606,8 @@
     "lon": 28.9,
     "iso_a3": "MDA",
     "iso_a2": "MD",
-    "flag": "images/flag/md.svg"
+    "flag": "images/flag/md.svg",
+    "languages": "Romanian"
   },
   "South Sudan": {
     "capital": "Juba",
@@ -1455,7 +1616,8 @@
     "lon": 31.62,
     "iso_a3": "SSD",
     "iso_a2": "SS",
-    "flag": "images/flag/ss.svg"
+    "flag": "images/flag/ss.svg",
+    "languages": "English"
   },
   "Brunei": {
     "capital": "Bandar Seri Begawan",
@@ -1464,7 +1626,8 @@
     "lon": 114.93,
     "iso_a3": "BRN",
     "iso_a2": "BN",
-    "flag": "images/flag/bn.svg"
+    "flag": "images/flag/bn.svg",
+    "languages": "Malay"
   },
   "Japan": {
     "capital": "Tokyo",
@@ -1473,7 +1636,8 @@
     "lon": 139.75,
     "iso_a3": "JPN",
     "iso_a2": "JP",
-    "flag": "images/flag/jp.svg"
+    "flag": "images/flag/jp.svg",
+    "languages": "Japanese"
   },
   "Grenada": {
     "capital": "St. George's",
@@ -1482,7 +1646,8 @@
     "lon": -61.75,
     "iso_a3": "GRD",
     "iso_a2": "GD",
-    "flag": "images/flag/gd.svg"
+    "flag": "images/flag/gd.svg",
+    "languages": "English"
   },
   "Spain": {
     "capital": "Madrid",
@@ -1491,7 +1656,8 @@
     "lon": -3.68,
     "iso_a3": "ESP",
     "iso_a2": "ES",
-    "flag": "images/flag/es.svg"
+    "flag": "images/flag/es.svg",
+    "languages": "Spanish"
   },
   "Papua New Guinea": {
     "capital": "Port Moresby",
@@ -1500,7 +1666,8 @@
     "lon": 147.18,
     "iso_a3": "PNG",
     "iso_a2": "PG",
-    "flag": "images/flag/pg.svg"
+    "flag": "images/flag/pg.svg",
+    "languages": "English"
   },
   "Uzbekistan": {
     "capital": "Tashkent",
@@ -1509,7 +1676,8 @@
     "lon": 69.25,
     "iso_a3": "UZB",
     "iso_a2": "UZ",
-    "flag": "images/flag/uz.svg"
+    "flag": "images/flag/uz.svg",
+    "languages": "Uzbek"
   },
   "Argentina": {
     "capital": "Buenos Aires",
@@ -1518,7 +1686,8 @@
     "lon": -58.67,
     "iso_a3": "ARG",
     "iso_a2": "AR",
-    "flag": "images/flag/ar.svg"
+    "flag": "images/flag/ar.svg",
+    "languages": "Spanish"
   },
   "South Korea": {
     "capital": "Seoul",
@@ -1527,7 +1696,8 @@
     "lon": 126.98,
     "iso_a3": "KOR",
     "iso_a2": "KR",
-    "flag": "images/flag/kr.svg"
+    "flag": "images/flag/kr.svg",
+    "languages": "Korean"
   },
   "Belize": {
     "capital": "Belmopan",
@@ -1536,7 +1706,8 @@
     "lon": -88.77,
     "iso_a3": "BLZ",
     "iso_a2": "BZ",
-    "flag": "images/flag/bz.svg"
+    "flag": "images/flag/bz.svg",
+    "languages": "English"
   },
   "Mexico": {
     "capital": "Mexico City",
@@ -1545,7 +1716,8 @@
     "lon": -99.13,
     "iso_a3": "MEX",
     "iso_a2": "MX",
-    "flag": "images/flag/mx.svg"
+    "flag": "images/flag/mx.svg",
+    "languages": "Spanish"
   },
   "Serbia": {
     "capital": "Belgrade",
@@ -1554,7 +1726,8 @@
     "lon": 20.5,
     "iso_a3": "SRB",
     "iso_a2": "RS",
-    "flag": "images/flag/rs.svg"
+    "flag": "images/flag/rs.svg",
+    "languages": "Serbian"
   },
   "Cape Verde": {
     "capital": "Praia",
@@ -1563,7 +1736,8 @@
     "lon": -23.52,
     "iso_a3": "CPV",
     "iso_a2": "CV",
-    "flag": "images/flag/cv.svg"
+    "flag": "images/flag/cv.svg",
+    "languages": "Portuguese"
   },
   "Cambodia": {
     "capital": "Phnom Penh",
@@ -1572,7 +1746,8 @@
     "lon": 104.92,
     "iso_a3": "KHM",
     "iso_a2": "KH",
-    "flag": "images/flag/kh.svg"
+    "flag": "images/flag/kh.svg",
+    "languages": "Khmer"
   },
   "Romania": {
     "capital": "Bucharest",
@@ -1581,7 +1756,8 @@
     "lon": 26.1,
     "iso_a3": "ROU",
     "iso_a2": "RO",
-    "flag": "images/flag/ro.svg"
+    "flag": "images/flag/ro.svg",
+    "languages": "Romanian"
   },
   "Hungary": {
     "capital": "Budapest",
@@ -1590,7 +1766,8 @@
     "lon": 19.08,
     "iso_a3": "HUN",
     "iso_a2": "HU",
-    "flag": "images/flag/hu.svg"
+    "flag": "images/flag/hu.svg",
+    "languages": "Hungarian"
   },
   "Marshall Islands": {
     "capital": "Majuro",
@@ -1599,7 +1776,8 @@
     "lon": 171.38,
     "iso_a3": "MHL",
     "iso_a2": "MH",
-    "flag": "images/flag/mh.svg"
+    "flag": "images/flag/mh.svg",
+    "languages": "English, Marshallese"
   },
   "Somalia": {
     "capital": "Mogadishu",
@@ -1608,7 +1786,8 @@
     "lon": 45.33,
     "iso_a3": "SOM",
     "iso_a2": "SO",
-    "flag": "images/flag/so.svg"
+    "flag": "images/flag/so.svg",
+    "languages": "Somali, Arabic"
   },
   "Albania": {
     "capital": "Tirana",
@@ -1617,7 +1796,8 @@
     "lon": 19.82,
     "iso_a3": "ALB",
     "iso_a2": "AL",
-    "flag": "images/flag/al.svg"
+    "flag": "images/flag/al.svg",
+    "languages": "Albanian"
   },
   "Burundi": {
     "capital": "Gitega",
@@ -1626,7 +1806,8 @@
     "lon": 29.93,
     "iso_a3": "BDI",
     "iso_a2": "BI",
-    "flag": "images/flag/bi.svg"
+    "flag": "images/flag/bi.svg",
+    "languages": "Kirundi, French"
   },
   "Central African Republic": {
     "capital": "Bangui",
@@ -1635,7 +1816,8 @@
     "lon": 18.58,
     "iso_a3": "CAF",
     "iso_a2": "CF",
-    "flag": "images/flag/cf.svg"
+    "flag": "images/flag/cf.svg",
+    "languages": "French"
   },
   "Saint Lucia": {
     "capital": "Castries",
@@ -1644,7 +1826,8 @@
     "lon": -61.0,
     "iso_a3": "LCA",
     "iso_a2": "LC",
-    "flag": "images/flag/lc.svg"
+    "flag": "images/flag/lc.svg",
+    "languages": "English"
   },
   "Uganda": {
     "capital": "Kampala",
@@ -1653,7 +1836,8 @@
     "lon": 32.55,
     "iso_a3": "UGA",
     "iso_a2": "UG",
-    "flag": "images/flag/ug.svg"
+    "flag": "images/flag/ug.svg",
+    "languages": "English, Swahili"
   },
   "Honduras": {
     "capital": "Tegucigalpa",
@@ -1662,7 +1846,8 @@
     "lon": -87.22,
     "iso_a3": "HND",
     "iso_a2": "HN",
-    "flag": "images/flag/hn.svg"
+    "flag": "images/flag/hn.svg",
+    "languages": "Spanish"
   },
   "Kazakhstan": {
     "capital": "Astana",
@@ -1671,7 +1856,8 @@
     "lon": 71.45,
     "iso_a3": "KAZ",
     "iso_a2": "KZ",
-    "flag": "images/flag/kz.svg"
+    "flag": "images/flag/kz.svg",
+    "languages": "Kazakh, Russian"
   },
   "Kenya": {
     "capital": "Nairobi",
@@ -1680,7 +1866,8 @@
     "lon": 36.82,
     "iso_a3": "KEN",
     "iso_a2": "KE",
-    "flag": "images/flag/ke.svg"
+    "flag": "images/flag/ke.svg",
+    "languages": "English, Swahili"
   },
   "Samoa": {
     "capital": "Apia",
@@ -1689,7 +1876,8 @@
     "lon": -171.77,
     "iso_a3": "WSM",
     "iso_a2": "WS",
-    "flag": "images/flag/ws.svg"
+    "flag": "images/flag/ws.svg",
+    "languages": "English, Samoan"
   },
   "Nepal": {
     "capital": "Kathmandu",
@@ -1698,7 +1886,8 @@
     "lon": 85.32,
     "iso_a3": "NPL",
     "iso_a2": "NP",
-    "flag": "images/flag/np.svg"
+    "flag": "images/flag/np.svg",
+    "languages": "Nepali"
   },
   "Equatorial Guinea": {
     "capital": "Malabo",
@@ -1707,7 +1896,8 @@
     "lon": 8.78,
     "iso_a3": "GNQ",
     "iso_a2": "GQ",
-    "flag": "images/flag/gq.svg"
+    "flag": "images/flag/gq.svg",
+    "languages": "Spanish, French, Portuguese"
   },
   "Lebanon": {
     "capital": "Beirut",
@@ -1716,7 +1906,8 @@
     "lon": 35.5,
     "iso_a3": "LBN",
     "iso_a2": "LB",
-    "flag": "images/flag/lb.svg"
+    "flag": "images/flag/lb.svg",
+    "languages": "Arabic"
   },
   "Mauritius": {
     "capital": "Port Louis",
@@ -1725,7 +1916,8 @@
     "lon": 57.48,
     "iso_a3": "MUS",
     "iso_a2": "MU",
-    "flag": "images/flag/mu.svg"
+    "flag": "images/flag/mu.svg",
+    "languages": "English"
   },
   "Liechtenstein": {
     "capital": "Vaduz",
@@ -1734,7 +1926,8 @@
     "lon": 9.52,
     "iso_a3": "LIE",
     "iso_a2": "LI",
-    "flag": "images/flag/li.svg"
+    "flag": "images/flag/li.svg",
+    "languages": "German"
   },
   "Austria": {
     "capital": "Vienna",
@@ -1743,7 +1936,8 @@
     "lon": 16.37,
     "iso_a3": "AUT",
     "iso_a2": "AT",
-    "flag": "images/flag/at.svg"
+    "flag": "images/flag/at.svg",
+    "languages": "German"
   },
   "Netherlands": {
     "capital": "Amsterdam",
@@ -1752,7 +1946,8 @@
     "lon": 4.9041,
     "iso_a3": "NLD",
     "iso_a2": "NL",
-    "flag": "images/flag/nl.svg"
+    "flag": "images/flag/nl.svg",
+    "languages": "Dutch"
   },
   "Singapore": {
     "capital": "Singapore",
@@ -1761,7 +1956,8 @@
     "lon": 103.85,
     "iso_a3": "SGP",
     "iso_a2": "SG",
-    "flag": "images/flag/sg.svg"
+    "flag": "images/flag/sg.svg",
+    "languages": "English, Malay, Mandarin Chinese, Tamil"
   },
   "Liberia": {
     "capital": "Monrovia",
@@ -1770,7 +1966,8 @@
     "lon": -10.8,
     "iso_a3": "LBR",
     "iso_a2": "LR",
-    "flag": "images/flag/lr.svg"
+    "flag": "images/flag/lr.svg",
+    "languages": "English"
   },
   "Greenland": {
     "iso_a3": "GRL",
@@ -1779,6 +1976,7 @@
     "lat": 64.18,
     "lon": -51.72,
     "iso_a2": "GL",
-    "flag": "images/flag/gl.svg"
+    "flag": "images/flag/gl.svg",
+    "languages": "Danish, Greenlandic"
   }
 }
