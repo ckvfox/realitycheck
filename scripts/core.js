@@ -1351,3 +1351,141 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 }
 
+/* ========= SHARED MAP LIBRARY ========= */
+window.RCMap = {
+  // Shared GeoJSON cache
+  _worldGeoJSON: null,
+
+  // Create a new Leaflet map instance
+  createMap(containerId, options = {}) {
+    const defaultOptions = {
+      scrollWheelZoom: false,
+      dragging: true,
+      tap: true,
+      ...options
+    };
+    
+    const map = L.map(containerId, defaultOptions);
+    
+    // Add default tile layer
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors",
+      maxZoom: 18
+    }).addTo(map);
+
+    // Mobile touch fixes
+    const el = document.getElementById(containerId);
+    if (el) {
+      el.classList.add("map-touch-pan");
+      document.body.classList.add("body-overscroll-contain");
+      el.addEventListener("touchmove", e => e.stopPropagation(), { passive: true });
+    }
+
+    // Fix size after creation
+    setTimeout(() => map.invalidateSize(), 150);
+    
+    return map;
+  },
+
+  // Load GeoJSON data (shared between maps)
+  async loadGeoJSON() {
+    if (this._worldGeoJSON) return this._worldGeoJSON;
+    
+    try {
+      const res = await fetch("data/meta/world_countries_geo.json", { cache: "no-store" });
+      if (!res.ok) throw new Error("Local GeoJSON missing");
+      this._worldGeoJSON = await res.json();
+      console.log("🌍 world_countries_geo.json loaded (shared)");
+      return this._worldGeoJSON;
+    } catch (e) {
+      console.warn("⚠️ Fallback: loading GeoJSON from GitHub");
+      try {
+        const backup = "https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson";
+        const res2 = await fetch(backup);
+        if (!res2.ok) throw new Error("GitHub fallback failed");
+        this._worldGeoJSON = await res2.json();
+        console.log("🌍 Loaded fallback GeoJSON (shared)");
+        return this._worldGeoJSON;
+      } catch (err) {
+        console.error("❌ GeoJSON load failed:", err);
+        return null;
+      }
+    }
+  },
+
+  // Get country name from GeoJSON properties
+  getCountryName(feature) {
+    const props = feature.properties;
+    if (!props) return null;
+    
+    // Priority: name, NAME, NAME_EN, ADMIN, ISO_A3
+    return props.name || props.NAME || props.NAME_EN || props.ADMIN || props.ISO_A3 || null;
+  },
+
+  // Add GeoJSON layer to map with highlighting
+  addGeoJSONLayer(map, geoJsonData, styleFunction, onEachFeature) {
+    return L.geoJSON(geoJsonData, {
+      style: styleFunction || (() => ({
+        fillColor: '#e0e0e0',
+        weight: 1,
+        opacity: 1,
+        color: '#999',
+        fillOpacity: 0.7
+      })),
+      onEachFeature: onEachFeature || (() => {})
+    }).addTo(map);
+  },
+
+  // Create legend control
+  createLegend(legendItems) {
+    const legend = L.control({ position: 'bottomright' });
+    
+    legend.onAdd = function() {
+      const div = L.DomUtil.create('div', 'info legend');
+      div.innerHTML = legendItems.map(item => 
+        `<i style="background:${item.color}"></i> ${item.label}`
+      ).join('<br>');
+      return div;
+    };
+    
+    return legend;
+  },
+
+  // Smart tooltip positioning - uses capital coordinates for precise positioning
+  createSmartTooltip(feature, tooltipContent, countriesData, countryMappings = {}) {
+    const props = feature.properties;
+    if (!props) return null;
+    
+    // Get country name with priority
+    const countryName = this.getCountryName(feature);
+    if (!countryName) return null;
+    
+    // Resolve canonical name
+    const canonical = countryMappings[countryName] || countryName;
+    
+    // Get country data for capital coordinates
+    const countryData = countriesData[canonical];
+    if (!countryData || !countryData.lat || !countryData.lon) {
+      // Fallback to sticky tooltip if no capital coordinates
+      return { 
+        type: 'sticky',
+        content: tooltipContent,
+        options: { sticky: true }
+      };
+    }
+    
+    // Return capital-positioned tooltip data
+    return {
+      type: 'fixed',
+      position: [countryData.lat, countryData.lon],
+      content: tooltipContent,
+      canonical: canonical,
+      options: {
+        direction: 'top',
+        offset: [0, -10],
+        permanent: false
+      }
+    };
+  }
+};
+

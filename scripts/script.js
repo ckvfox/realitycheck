@@ -925,41 +925,32 @@ async function initMap() {
   const el = document.getElementById("map");
   if (!el) return;
 
-  // 🌍 Leaflet-Basiskarte
-  map = L.map("map", {
-    scrollWheelZoom: false,
-    dragging: true,
-    tap: true
-  }).setView([20, 0], 2);
+  // 🌍 Create map using shared library
+  map = window.RCMap.createMap("map", { scrollWheelZoom: false });
+  map.setView([20, 0], 2);
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "&copy; OpenStreetMap contributors"
-  }).addTo(map);
-
-  // 🩵 Mobile Touch-Fix
-  el.classList.add("map-touch-pan");
-  document.body.classList.add("body-overscroll-contain");
-  el.addEventListener("touchmove", e => e.stopPropagation(), { passive: true });
-
-  setTimeout(() => map.invalidateSize(), 150);
-
-  // 📦 GeoJSON laden (lokal oder Fallback)
-  try {
-    const res = await fetch("data/meta/world_countries_geo.json", { cache: "no-store" });
-    if (!res.ok) throw new Error("Local GeoJSON missing");
-    window._worldGeoJSON = await res.json();
-    console.log("🌍 world_countries_geo.json loaded");
-  } catch (e) {
-    console.warn("⚠️ Fallback: loading GeoJSON from GitHub");
-    try {
-      const backup = "https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson";
-      const res2 = await fetch(backup);
-      if (!res2.ok) throw new Error("GitHub fallback failed");
-      window._worldGeoJSON = await res2.json();
-      console.log("🌍 Loaded fallback GeoJSON");
-    } catch (err) {
-      console.error("❌ GeoJSON load failed:", err);
-    }
+  // 📦 Load shared GeoJSON
+  window._worldGeoJSON = await window.RCMap.loadGeoJSON();
+  
+  // 🗺️ Always show basic country outlines
+  if (window._worldGeoJSON) {
+    const basicLayer = L.geoJSON(window._worldGeoJSON, {
+      style: () => ({
+        fillColor: '#e0e0e0',
+        weight: 1,
+        opacity: 1,
+        color: '#999',
+        fillOpacity: 0.7
+      })
+    }).addTo(map);
+    
+    // Store as initial layer
+    mapLayer = basicLayer;
+  }
+  
+  // 🎨 Update with KPI data if available
+  if (currentKpi) {
+    await updateMap();
   }
 }
 
