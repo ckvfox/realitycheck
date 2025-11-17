@@ -53,6 +53,8 @@ function renderChart(container, title, unit, data) {
     title: "",
     existingChart: canvasEl.__rcChart,
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
         title: { display: false }
