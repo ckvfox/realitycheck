@@ -602,12 +602,15 @@ function updateWorldMapGeoJSON() {
             }
           }
           
-          // Flaggen-URL
-          const flagUrl = `images/flag/${canonical.toLowerCase().replace(/\\s+/g, '_')}.png`;
+          // Flaggen-URL: Use ISO-2 code from GeoJSON (like countries.html)
+          const iso2 = feature.properties.iso_a2 || feature.properties.ISO_A2;
+          const flagUrl = iso2 
+            ? `images/flag/${iso2.toLowerCase()}.svg`
+            : `images/flag/question.svg`;
           
           layer.bindTooltip(`
             <div style="text-align: center;">
-              <img src="${flagUrl}" alt="${canonical}" style="width: 24px; height: auto; margin-bottom: 5px;" onerror="this.style.display='none'">
+              <img src="${flagUrl}" alt="${canonical}" style="width: 24px; height: auto; margin-bottom: 5px;" onerror="this.src='images/flag/question.svg'">
               <br><strong>${canonical}</strong>
               <br>Population: ${population}
             </div>
