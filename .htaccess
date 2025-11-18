@@ -1,8 +1,8 @@
 # RealityCheck Security & Performance Headers
 # Created: 2025-11-17 - CSS Optimization & CSP Implementation
 
-# Content Security Policy - InfinityFree + Google Translate support
-Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net translate.google.com translate.googleapis.com; style-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net translate.googleapis.com; img-src 'self' data: *.tile.openstreetmap.org *.infinityfree.net translate.google.com translate.googleapis.com; connect-src 'self' api.worldbank.org raw.githubusercontent.com unpkg.com cdn.jsdelivr.net translate.googleapis.com; font-src 'self' translate.googleapis.com; object-src 'none';"
+# Content Security Policy - InfinityFree compatible (no Google Translate)
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net; img-src 'self' data: *.tile.openstreetmap.org *.infinityfree.net; connect-src 'self' api.worldbank.org raw.githubusercontent.com unpkg.com cdn.jsdelivr.net; font-src 'self'; object-src 'none';"
 
 # X-Frame-Options to prevent clickjacking
 Header always set X-Frame-Options "SAMEORIGIN"

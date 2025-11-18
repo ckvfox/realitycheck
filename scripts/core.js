@@ -263,6 +263,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.warn("⚠️ Header/Footer load failed:", err);
   }
 
+  // Skip Google Translate on InfinityFree due to CSP restrictions
+  const isInfinityFree = window.location.hostname.includes('infinityfree') || 
+                         window.location.hostname.includes('rf.gd') ||
+                         window.location.hostname.includes('wuaze.com');
+  
+  if (isInfinityFree) {
+    console.log("🚫 Google Translate disabled on InfinityFree hosting due to CSP restrictions");
+    return;
+  }
+
   launcher = ensureTranslatorLauncherMounted();
   if (launcher) setupTranslatorControls();
 });
