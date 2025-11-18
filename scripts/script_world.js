@@ -641,39 +641,51 @@ function updateMapLegend(grouping, category, countryCount) {
   
   if (grouping === 'groups') {
     const groupDescriptions = {
-      'EU': 'The European Union is a political and economic union of 27 member states primarily located in Europe. It operates through a system of supranational institutions and intergovernmental negotiated decisions, with a common market allowing free movement of people, goods, services, and capital.',
-      'G7': 'The Group of Seven is an intergovernmental forum consisting of Canada, France, Germany, Italy, Japan, the United Kingdom, and the United States. These countries are among the world\'s largest advanced economies and democracies, representing about 40% of global GDP.',
-      'G20': 'The Group of Twenty is an intergovernmental forum comprising 19 countries, the European Union, and the African Union. It represents the world\'s major economies, accounting for approximately 85% of global GDP, over 75% of global trade, and about two-thirds of the world population.',
-      'BRICS': 'BRICS is an intergovernmental organization comprising Brazil, Russia, India, China, and South Africa. These emerging economies represent over 40% of the world\'s population and are characterized by their significant influence on regional and global affairs.',
-      'OECD': 'The Organisation for Economic Co-operation and Development promotes policies to improve economic and social well-being worldwide. Its 38 member countries span the globe and include many of the world\'s most advanced economies as well as emerging countries.',
-      'NATO': 'The North Atlantic Treaty Organization is an intergovernmental military alliance of 31 member states. Founded in 1949, NATO constitutes a system of collective security whereby its member states agree to mutual defense in response to an attack by any external party.',
-      'OPEC': 'The Organization of the Petroleum Exporting Countries coordinates petroleum policies among member countries to secure fair and stable prices for petroleum producers, ensure an efficient and regular supply to consumers, and provide a fair return on capital for investors.',
-      'Arab League': 'The Arab League is a regional organization of Arab countries in the Middle East and North Africa. It aims to strengthen ties among member states, coordinate policies, and promote Arab interests and unity.',
-      'ASEAN': 'The Association of Southeast Asian Nations is a regional organization promoting intergovernmental cooperation and facilitating economic, political, security, military, educational, and sociocultural integration among its members and other countries in Asia.',
-      'Commonwealth': 'The Commonwealth of Nations is a political association of 56 member states, most of which are former territories of the British Empire. Members cooperate on shared goals like development, democracy, and peace.'
+      'EU': 'The European Union seeks to ensure peace, stability, and shared prosperity in Europe. It creates a single market with free movement of goods, people, services, and capital. The EU coordinates policies on trade, climate, agriculture, and consumer protection. It supports democracy, human rights, and the rule of law among its members. The EU also provides funding for regional development. Its mission is deeper integration and long-term cooperation across Europe.',
+      'G7': 'The G7 unites advanced industrial democracies to coordinate global economic policy. It focuses on financial stability, sustainable growth, and international security. The group discusses challenges such as climate change, development, and geopolitical tensions. G7 meetings help align positions before major global negotiations. The group has no formal treaties but influences global governance through joint statements. Its mission is to promote a stable and rules-based international order.',
+      'G20': 'The G20 brings together the world\'s largest economies to address global financial and economic challenges. It promotes international cooperation on trade, investment, and fiscal policy. Members work to stabilize markets during crises and support sustainable development. The G20 also addresses climate change, health threats, and digital transformation. Although not a formal organization, it shapes major economic decisions worldwide. Its goal is to strengthen global economic resilience.',
+      'BRICS': 'BRICS brings together major emerging economies to promote cooperation outside traditional Western-led institutions. The group focuses on economic development, trade, and financial coordination. It aims to increase the global influence of member states. BRICS created its own development bank to support infrastructure and growth projects. Members also discuss geopolitical issues and alternative governance models. The goal is a more balanced and multipolar world order.',
+      'OECD': 'The OECD promotes economic growth, good governance, and social well-being. It provides research, policy recommendations, and data to help countries improve their economies. Members cooperate on taxation, education, trade, and environmental issues. The organization encourages transparent and evidence-based policymaking. It also monitors global trends and supports fair and sustainable development. The OECD\'s mission is to build better policies for better lives.',
+      'NATO': 'NATO is a collective defense alliance committed to protecting the security of its members. An attack on one is considered an attack on all. The alliance promotes military cooperation, joint exercises, and crisis management. It also engages in peacekeeping and stabilizing missions worldwide. NATO supports democratic values and helps partners modernize their armed forces. Its core purpose is to ensure peace and security across the North Atlantic region.',
+      'ASEAN': 'ASEAN seeks to strengthen political and economic cooperation in Southeast Asia. It supports regional stability, conflict prevention, and peaceful dialogue. The group works to integrate economies through trade agreements and shared development goals. ASEAN also cooperates on education, health, and environmental issues. It promotes cultural exchange and regional identity. Its long-term aim is a more unified and resilient Southeast Asia.',
+      'Mercosur': 'Mercosur promotes economic integration among South American countries. It aims to create a free-trade area with reduced tariffs and common external policies. Members cooperate on infrastructure, industry, and agricultural development. The bloc also works to coordinate foreign policy positions. Mercosur supports regional mobility and cultural exchange. Its mission is a more unified and competitive South American market.',
+      'APEC': 'APEC works to promote free and open trade across the Asia-Pacific region. It aims to reduce barriers to commerce and support sustainable economic growth. The group emphasizes cooperation rather than binding treaties. APEC also supports innovation, digital transformation, and economic integration. Its projects help improve productivity and strengthen supply chains. The core mission is to create a stable, prosperous Asia-Pacific community.',
+      'AfricanUnion': 'The African Union promotes unity and cooperation among African states. It aims to support economic development, peace, and political stability across the continent. The AU works to coordinate policies on trade, infrastructure, and security. It also plays a major role in conflict resolution and peacekeeping. The organization advocates for Africa\'s interests on the global stage. Its long-term mission is to build a more integrated and prosperous Africa.'
     };
     
     title = `${category} (${countryCount} countries)`;
     content = groupDescriptions[category] || `${category} is an international grouping of ${countryCount} countries.`;
     
   } else if (grouping === 'language') {
-    // Calculate speakers (simplified - would need actual data)
-    const speakerEstimates = {
-      'English': '1.5 billion',
-      'Mandarin Chinese': '1.1 billion',
-      'Hindi': '600 million',
-      'Spanish': '550 million',
-      'French': '300 million',
-      'Arabic': '420 million',
-      'Portuguese': '260 million',
-      'Russian': '260 million',
-      'German': '130 million',
-      'Japanese': '125 million'
-    };
+    // Calculate total speakers from actual population data
+    let totalPopulation = 0;
     
-    const speakers = speakerEstimates[category] || 'millions of';
+    // Get all countries where this language is spoken
+    const languageCountries = Object.keys(worldMapCountries).filter(country => {
+      const langs = worldMapCountries[country].languages || '';
+      return langs.split(',').map(l => l.trim()).includes(category);
+    });
+    
+    // Sum up their populations (use latest year available)
+    languageCountries.forEach(country => {
+      const popData = worldMapPopulation.find(p => p.country === country && p.year >= 2020);
+      if (popData && popData.value) {
+        totalPopulation += popData.value;
+      }
+    });
+    
+    // Format population nicely
+    let speakers = '';
+    if (totalPopulation >= 1000000000) {
+      speakers = (totalPopulation / 1000000000).toFixed(1) + ' billion';
+    } else if (totalPopulation >= 1000000) {
+      speakers = (totalPopulation / 1000000).toFixed(0) + ' million';
+    } else {
+      speakers = totalPopulation.toLocaleString();
+    }
+    
     title = `${category} Language`;
-    content = `${category} is spoken in ${countryCount} countries by approximately ${speakers} people worldwide.`;
+    content = `${category} is an official language in ${countryCount} countries with a combined population of approximately ${speakers} people.`;
     
   } else if (grouping === 'government') {
     const govDescriptions = {
