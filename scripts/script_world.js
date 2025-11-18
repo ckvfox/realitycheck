@@ -261,7 +261,7 @@ let worldMap = null;
 let worldMapLayer = null;
 let worldMapCountries = {};
 let worldMapGroups = {};
-let worldMapPopulation = {};
+let worldMapPopulation = []; // Changed from {} to [] for array operations
 let worldMapCountryMappings = {};
 
 async function initWorldMap() {
@@ -270,13 +270,7 @@ async function initWorldMap() {
     worldMapCountries = await loadJSON("data/meta/countries.json");
     worldMapGroups = await loadJSON("data/meta/groups.json");
     worldMapCountryMappings = await loadJSON("data/meta/country_mappings.json");
-    const populationData = await loadJSON("data/population.json");
-    
-    // Verarbeite Population-Daten für Tooltips
-    populationData.forEach(entry => {
-      const key = `${entry.country}_${entry.year}`;
-      worldMapPopulation[key] = entry.value;
-    });
+    worldMapPopulation = await loadJSON("data/population.json"); // Store as array for language calculations
 
     // Lade GeoJSON für Länder-Polygone
     await loadWorldGeoJSON();
@@ -596,9 +590,9 @@ function updateWorldMapGeoJSON() {
           const currentYear = new Date().getFullYear();
           let population = 'N/A';
           for (let year = currentYear; year >= currentYear - 5; year--) {
-            const popKey = `${canonical}_${year}`;
-            if (worldMapPopulation[popKey]) {
-              population = (worldMapPopulation[popKey] / 1000000).toFixed(1) + 'M';
+            const popData = worldMapPopulation.find(p => p.country === canonical && p.year === year);
+            if (popData && popData.value) {
+              population = (popData.value / 1000000).toFixed(1) + 'M';
               break;
             }
           }
