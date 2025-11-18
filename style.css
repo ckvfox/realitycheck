@@ -407,7 +407,7 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
   backdrop-filter: blur(10px);
   border-radius: var(--radius, 12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 2rem;
+  padding: 1rem;  /* Reduced from 2rem to match chart padding */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
@@ -2720,8 +2720,12 @@ body.glossary-page th.sort-desc::after {
   }
   
   .world-map-section {
-    padding: 20px;
-    margin: 20px 0;
+    padding: 0.5rem;  /* Reduced from 20px for better mobile space utilization */
+    margin: 1rem 0;   /* Reduced from 20px */
+  }
+  
+  .world-map-section .chart-container {
+    padding: 0.75rem; /* Even tighter on mobile */
   }
   
   #world-map {
@@ -2851,3 +2855,45 @@ div[role="dialog"][aria-modal="true"][aria-labelledby="translator-consent-title"
 .legend-color-gray {
   background: #ddd;
 }
+
+/* === World Map Context Legend === */
+#world-map-legend {
+  max-width: 900px;
+  margin: 1.5rem auto 0;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+#world-map-legend.hidden {
+  display: none;
+}
+
+#world-map-legend h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--steel-blue);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#world-map-legend p {
+  margin: 0.5rem 0 0 0;
+}
+
+@media (max-width: 768px) {
+  #world-map-legend {
+    margin: 1rem auto 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  #world-map-legend h4 {
+    font-size: 1rem;
+  }
+}
+

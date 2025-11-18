@@ -79,7 +79,14 @@
         <div id="world-map"></div>
       </div>
       
-      <div id="world-map-legend" class="map-legend">
+      <!-- Dynamic Context Legend -->
+      <div id="world-map-legend" class="hidden">
+        <h4 id="legend-title"></h4>
+        <p id="legend-content"></p>
+      </div>
+      
+      <!-- Visual Color Legend (always visible) -->
+      <div class="map-legend">
         <div class="legend-item">
           <span class="legend-color legend-color-blue"></span>
           <span>Selected Group</span>

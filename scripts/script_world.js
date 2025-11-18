@@ -497,14 +497,15 @@ function updateWorldMapGeoJSON() {
           }
         }
         
-        // 3. Partial Name Matching für komplexe Namen
-        if (!isRelevant && name.length > 3) {
-          isRelevant = relevantCountries.some(country => {
-            const countryLower = country.toLowerCase();
-            const nameLower = name.toLowerCase();
-            return countryLower.includes(nameLower) || nameLower.includes(countryLower);
-          });
-        }
+        // 3. Partial Name Matching für komplexe Namen (DISABLED - caused Oman/Romania bug)
+        // Removed: Was matching "Oman" inside "Romania" for EU group
+        // if (!isRelevant && name.length > 3) {
+        //   isRelevant = relevantCountries.some(country => {
+        //     const countryLower = country.toLowerCase();
+        //     const nameLower = name.toLowerCase();
+        //     return countryLower.includes(nameLower) || nameLower.includes(countryLower);
+        //   });
+        // }
         
         // 4. Erweiterte GeoJSON-Name-Mappings
         if (!isRelevant) {
@@ -622,6 +623,77 @@ function updateWorldMapGeoJSON() {
       }
     }
   }).addTo(worldMap);
+  
+  // Update context legend
+  updateMapLegend(grouping, category, relevantCountries.length);
+}
+
+// === Update Context Legend Box ===
+function updateMapLegend(grouping, category, countryCount) {
+  const legendBox = document.getElementById('world-map-legend');
+  const legendTitle = document.getElementById('legend-title');
+  const legendContent = document.getElementById('legend-content');
+  
+  if (!legendBox || !legendTitle || !legendContent) return;
+  
+  let title = '';
+  let content = '';
+  
+  if (grouping === 'groups') {
+    const groupDescriptions = {
+      'EU': 'The European Union is a political and economic union of 27 member states primarily located in Europe. It operates through a system of supranational institutions and intergovernmental negotiated decisions, with a common market allowing free movement of people, goods, services, and capital.',
+      'G7': 'The Group of Seven is an intergovernmental forum consisting of Canada, France, Germany, Italy, Japan, the United Kingdom, and the United States. These countries are among the world\'s largest advanced economies and democracies, representing about 40% of global GDP.',
+      'G20': 'The Group of Twenty is an intergovernmental forum comprising 19 countries, the European Union, and the African Union. It represents the world\'s major economies, accounting for approximately 85% of global GDP, over 75% of global trade, and about two-thirds of the world population.',
+      'BRICS': 'BRICS is an intergovernmental organization comprising Brazil, Russia, India, China, and South Africa. These emerging economies represent over 40% of the world\'s population and are characterized by their significant influence on regional and global affairs.',
+      'OECD': 'The Organisation for Economic Co-operation and Development promotes policies to improve economic and social well-being worldwide. Its 38 member countries span the globe and include many of the world\'s most advanced economies as well as emerging countries.',
+      'NATO': 'The North Atlantic Treaty Organization is an intergovernmental military alliance of 31 member states. Founded in 1949, NATO constitutes a system of collective security whereby its member states agree to mutual defense in response to an attack by any external party.',
+      'OPEC': 'The Organization of the Petroleum Exporting Countries coordinates petroleum policies among member countries to secure fair and stable prices for petroleum producers, ensure an efficient and regular supply to consumers, and provide a fair return on capital for investors.',
+      'Arab League': 'The Arab League is a regional organization of Arab countries in the Middle East and North Africa. It aims to strengthen ties among member states, coordinate policies, and promote Arab interests and unity.',
+      'ASEAN': 'The Association of Southeast Asian Nations is a regional organization promoting intergovernmental cooperation and facilitating economic, political, security, military, educational, and sociocultural integration among its members and other countries in Asia.',
+      'Commonwealth': 'The Commonwealth of Nations is a political association of 56 member states, most of which are former territories of the British Empire. Members cooperate on shared goals like development, democracy, and peace.'
+    };
+    
+    title = `${category} (${countryCount} countries)`;
+    content = groupDescriptions[category] || `${category} is an international grouping of ${countryCount} countries.`;
+    
+  } else if (grouping === 'language') {
+    // Calculate speakers (simplified - would need actual data)
+    const speakerEstimates = {
+      'English': '1.5 billion',
+      'Mandarin Chinese': '1.1 billion',
+      'Hindi': '600 million',
+      'Spanish': '550 million',
+      'French': '300 million',
+      'Arabic': '420 million',
+      'Portuguese': '260 million',
+      'Russian': '260 million',
+      'German': '130 million',
+      'Japanese': '125 million'
+    };
+    
+    const speakers = speakerEstimates[category] || 'millions of';
+    title = `${category} Language`;
+    content = `${category} is spoken in ${countryCount} countries by approximately ${speakers} people worldwide.`;
+    
+  } else if (grouping === 'government') {
+    const govDescriptions = {
+      'Full Democracy': 'Full democracies feature free and fair elections, strong institutions that protect civil liberties and fundamental rights, separation of powers with effective checks and balances, and independent judiciary systems that ensure the rule of law.',
+      'Flawed Democracy': 'Flawed democracies maintain democratic elections but face challenges including media freedom restrictions, political polarization, corruption issues, or weakened democratic institutions that prevent them from functioning as full democracies.',
+      'Hybrid Regime': 'Hybrid regimes conduct elections that are neither fully free nor fair, feature a very strong executive branch with weak checks and balances, have compromised rule of law, and often suppress opposition voices and civil society.',
+      'Authoritarian Regime': 'Authoritarian regimes lack genuine democratic elections, actively suppress political opposition and dissent, severely restrict civil liberties and fundamental rights, and concentrate power in the hands of a single leader or small elite group.'
+    };
+    
+    title = `${category} (${countryCount} countries)`;
+    content = govDescriptions[category] || `${category} governance system is present in ${countryCount} countries.`;
+  }
+  
+  if (title && content) {
+    legendTitle.textContent = title;
+    legendContent.textContent = content;
+    legendBox.classList.remove('hidden');
+  } else {
+    legendBox.classList.add('hidden');
+  }
 }
 
 // === Seite initialisieren ===
