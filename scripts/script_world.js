@@ -560,64 +560,58 @@ function updateWorldMapGeoJSON() {
       };
     },
     onEachFeature: (feature, layer) => {
-      const name = (
-        feature.properties.name ||
-        feature.properties.NAME ||
-        feature.properties.ADMIN ||
-        feature.properties.COUNTRY ||
-        ""
-      ).trim();
+      // ISO-Code Resolution (same as script.js)
+      const iso = (
+        feature.properties.iso_a3_eh || feature.properties.ISO_A3_EH ||
+        feature.properties.ISO_A3 || feature.properties.iso_a3 ||
+        feature.properties.ADM0_A3 || feature.properties.adm0_a3 ||
+        feature.properties.SOV_A3 || feature.properties.sov_a3 ||
+        feature.properties.WB_A3 || feature.properties.wb_a3 ||
+        feature.properties.gu_a3 || feature.properties.su_a3 ||
+        feature.id || ""
+      ).toUpperCase();
       
-      if (name) {
-        const canonical = worldMapCountryMappings[name] || name;
-        
-        // Nur Tooltip für Hauptländer, nicht für Überseegebiete
-        const isMainland = !feature.properties.type || 
-                          feature.properties.type === 'Sovereign country' ||
-                          feature.properties.type === 'Country' ||
-                          (feature.properties.homepart && feature.properties.homepart === 1);
-                          
-        // Spezielle Behandlung für bekannte Überseegebiete
-        // Prüfe ob admin (lokaler Name) und sovereignt (Souverän) unterschiedlich sind
-        const isOverseasTerritory = 
-          feature.properties.admin !== feature.properties.sovereignt ||
-          name.includes('French Guiana') || name.includes('Guyana') ||
-          name.includes('Martinique') || name.includes('Guadeloupe') ||
-          name.includes('Réunion') || name.includes('Mayotte') ||
-          name.includes('New Caledonia') || name.includes('Polynesia') ||
-          name.includes('Sakhalin') || name.includes('Kamchatka') ||
-          name.includes('Kuril') || name.includes('Siberia');
-          
-        if (isMainland && !isOverseasTerritory) {
-          // Hole Population für Tooltip
-          const currentYear = new Date().getFullYear();
-          let population = 'N/A';
-          for (let year = currentYear; year >= currentYear - 5; year--) {
-            const popData = worldMapPopulation.find(p => p.country === canonical && p.year === year);
-            if (popData && popData.value) {
-              population = (popData.value / 1000000).toFixed(1) + 'M';
-              break;
-            }
+      // Fallback to name resolution
+      let cname = Object.entries(worldMapCountries).find(
+        ([, c]) => (c.iso_a3 || c.ISO_A3)?.toUpperCase() === iso
+      )?.[0] ||
+        feature.properties.ADMIN ||
+        feature.properties.NAME ||
+        feature.properties.COUNTRY ||
+        iso;
+      
+      // Apply country mappings for canonical name
+      const canonical = worldMapCountryMappings[cname] || cname;
+      
+      if (canonical && worldMapCountries[canonical]) {
+        // Get population for tooltip
+        const currentYear = new Date().getFullYear();
+        let population = 'N/A';
+        for (let year = currentYear; year >= currentYear - 5; year--) {
+          const popData = worldMapPopulation.find(p => p.country === canonical && p.year === year);
+          if (popData && popData.value) {
+            population = (popData.value / 1000000).toFixed(1) + 'M';
+            break;
           }
-          
-          // Flag URL: Use canonical country data (not GeoJSON iso_a2 which can be -99)
-          const countryInfo = worldMapCountries[canonical] || {};
-          const flagUrl = countryInfo.flag || 
-            (countryInfo.iso_a2 && countryInfo.iso_a2 !== '-99' 
-              ? `images/flag/${countryInfo.iso_a2.toLowerCase()}.svg`
-              : 'images/flag/question.svg');
-          
-          layer.bindTooltip(`
-            <div style="text-align: center;">
-              <img src="${flagUrl}" alt="${canonical}" style="width: 24px; height: auto; margin-bottom: 5px;" onerror="this.src='images/flag/question.svg'">
-              <br><strong>${canonical}</strong>
-              <br>Population: ${population}
-            </div>
-          `, {
-            direction: 'top',
-            offset: [0, -10]
-          });
         }
+        
+        // Flag URL: Use canonical country data (same as script.js)
+        const countryInfo = worldMapCountries[canonical] || {};
+        const flagUrl = countryInfo.flag || 
+          (countryInfo.iso_a2
+            ? `images/flag/${String(countryInfo.iso_a2).toLowerCase()}.svg`
+            : 'images/flag/question.svg');
+        
+        layer.bindTooltip(`
+          <div style="text-align: center;">
+            <img src="${flagUrl}" alt="${canonical}" style="width: 24px; height: auto; margin-bottom: 5px;" onerror="this.onerror=null;this.src='images/flag/question.svg'">
+            <br><strong>${canonical}</strong>
+            <br>Population: ${population}
+          </div>
+        `, {
+          direction: 'top',
+          offset: [0, -10]
+        });
       }
     }
   }).addTo(worldMap);
