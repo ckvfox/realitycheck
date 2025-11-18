@@ -2,12 +2,13 @@
 
 # 🌍 RealityCheck – Interactive Country Comparison
 
-**Version:** 2.1.1 (as of November 13, 2025)  
+**Version:** 2.2.0 (as of November 18, 2025)  
 **Project Lead:** Carsten Winterling  
-**AI Collaboration:** GPT-5  
+**AI Collaboration:** Claude Sonnet 4 + GPT-4o  
 **Hosting:** InfinityFree  
-**Frontend:** HTML, CSS, JS (Chart.js, Leaflet, marked.js)  
-**Backend:** Python (data fetchers, GPT-based analysis & rankings)
+**Frontend:** Modular HTML/CSS/JS (Chart.js, Leaflet, marked.js)  
+**Backend:** Python (data fetchers, GPT-based analysis & rankings)  
+**Architecture:** Clean separation of concerns, externalized inline code
 
 ---
 
@@ -62,17 +63,28 @@ It’s both analytical and exploratory — you can:
 ├── privacy.html                    # Privacy policy (no cookies, no tracking)
 │
 ├── /scripts/
-│   ├── core.js
-│   ├── script.js
-│   ├── script_world.js
-│   ├── script_overall_ranking_countries.js
-│   ├── floating_chat.js
-│   ├── analysis.py
-│   ├── fetch_data.py
-│   ├── fetch_overall_ranking.py
-│   ├── generate_fun_safe_rankings.py
-│   ├── fetch_consolidated.py
-│   ├── check_source_csv_updates.py
+│   │
+│   ├── # 🧠 Frontend JavaScript (Modular Architecture)
+│   ├── core.js                           # Global utilities, header/footer loading, Chart.js config
+│   ├── utils_ui.js                       # UI utilities, modal system, Chart.js defaults
+│   ├── script.js                         # Countries page main logic
+│   ├── script_world.js                   # World trends dashboard
+│   ├── script_overall_ranking_countries.js # Interactive ranking system
+│   ├── page_about.js                     # About page (Earth Overshoot Timer)
+│   ├── page_index.js                     # Index page redirect logic
+│   ├── page_data_glossary.js            # Data glossary table generation & sorting
+│   ├── page_analysis.js                 # Analysis page Markdown loader
+│   ├── floating_chat.js                 # Chatbot integration (in development)
+│   │
+│   ├── # 🐍 Backend Python Scripts
+│   ├── analysis.py                       # AI-powered global analysis generator
+│   ├── fetch_data.py                     # Main KPI data fetcher (World Bank, OWID, CSV)
+│   ├── fetch_overall_ranking.py          # Fun & Safe Haven ranking generator
+│   ├── generate_fun_safe_rankings.py     # GPT-based ranking algorithms
+│   ├── fetch_consolidated.py             # Data normalization & gzip compression
+│   ├── check_source_csv_updates.py       # Manual CSV update scanner
+│   ├── env_utils.py                      # OpenAI API utilities
+│   └── auto_resolve_pending_mappings.py  # Automatic country name mapping
 
 │
 ├── /data/
@@ -199,18 +211,43 @@ root before executing the fetcher.
 
 ---
 
-## 🚧 Open To-Do List (as of Oct 31, 2025)
+## ✅ Recent Major Updates (November 2025)
+
+### 🏗️ **Code Refactoring & Architecture Improvements**
+- **✅ Modular JavaScript Architecture**: All inline JS externalized into dedicated files
+- **✅ Chart.js Consolidation**: Eliminated duplicate configurations, centralized defaults  
+- **✅ CSS Cleanup**: Removed version strings, externalized inline styles, improved maintainability
+- **✅ Clean Separation**: HTML/CSS/JS properly separated for better development workflow
+- **✅ Page-Specific Modules**: Each major page now has dedicated JavaScript module
+- **✅ English Documentation**: Critical comments translated from German for better accessibility
+
+### 📁 **New File Structure**
+```
+scripts/
+├── page_about.js         # Earth Overshoot Timer & animations
+├── page_index.js         # Redirect logic 
+├── page_data_glossary.js # Table generation & sorting (200+ lines)
+├── page_analysis.js      # Markdown analysis loader
+├── core.js              # Global utilities & Chart.js config
+└── utils_ui.js          # UI components & defaults
+```
+
+## 🚧 Open To-Do List (as of November 18, 2025)
 
 ### 🧭 UI / Frontend
+- [ ] Complete chatbot integration (`floating_chat.js`)
+- [ ] Mobile responsiveness improvements
+- [ ] Advanced filtering UI for KPI explorer
 
-
-### 🧩 Data & Logic
-- [ ] Implement chatbot logic into
+### 🧩 Data & Logic  
 - [ ] Implement fuzzy loader for file fallbacks
-
+- [ ] Enhanced country grouping logic
+- [ ] Performance optimization for large datasets
 
 ### 🧠 Backend
-x
+- [ ] Enhanced GPT prompt engineering for analysis
+- [ ] Automated data quality monitoring
+- [ ] API rate limiting improvements
 
 ---
 
