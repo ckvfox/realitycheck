@@ -1,43 +1,52 @@
 {
   "AfricanUnion": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/African_Union\" target=\"_blank\" rel=\"noopener\">African Union</a>",
+    "description": "The African Union promotes unity and cooperation among African states. It aims to support economic development, peace, and political stability across the continent. The AU works to coordinate policies on trade, infrastructure, and security. It also plays a major role in conflict resolution and peacekeeping. The organization advocates for Africa’s interests on the global stage. Its long-term mission is to build a more integrated and prosperous Africa.",
     "members": [ "Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cape Verde", "Cameroon", "Central African Republic", "Chad", "Comoros", "Democratic Republic of the Congo", "Republic of the Congo", "Ivory Coast", "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique", "Namibia", "Niger", "Nigeria", "Rwanda", "São Tomé and Príncipe", "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe" ]
   },
   "APEC": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/APEC\" target=\"_blank\" rel=\"noopener\">APEC</a>",
+    "description": "APEC works to promote free and open trade across the Asia-Pacific region. It aims to reduce barriers to commerce and support sustainable economic growth. The group emphasizes cooperation rather than binding treaties. APEC also supports innovation, digital transformation, and economic integration. Its projects help improve productivity and strengthen supply chains. The core mission is to create a stable, prosperous Asia-Pacific community.",
     "members": [ "Australia", "Brunei", "Canada", "Chile", "China", "Hong Kong", "Indonesia", "Japan", "South Korea", "Malaysia", "Mexico", "New Zealand", "Papua New Guinea", "Peru", "Philippines", "Russia", "Singapore", "Taiwan", "Thailand", "United States", "Vietnam" ]
   },
   "ASEAN": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/ASEAN\" target=\"_blank\" rel=\"noopener\">ASEAN</a>",
+    "description": "ASEAN seeks to strengthen political and economic cooperation in Southeast Asia. It supports regional stability, conflict prevention, and peaceful dialogue. The group works to integrate economies through trade agreements and shared development goals. ASEAN also cooperates on education, health, and environmental issues. It promotes cultural exchange and regional identity. Its long-term aim is a more unified and resilient Southeast Asia.",
     "members": [ "Brunei", "Cambodia", "Indonesia", "Laos", "Malaysia", "Myanmar", "Philippines", "Singapore", "Thailand", "Vietnam" ]
   },
   "BRICS": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/BRICS\" target=\"_blank\" rel=\"noopener\">BRICS</a>",
+    "description": "BRICS brings together major emerging economies to promote cooperation outside traditional Western-led institutions. The group focuses on economic development, trade, and financial coordination. It aims to increase the global influence of member states. BRICS created its own development bank to support infrastructure and growth projects. Members also discuss geopolitical issues and alternative governance models. The goal is a more balanced and multipolar world order.",
     "members": [ "Brazil", "Russia", "India", "China", "South Africa", "Egypt", "Ethiopia", "Iran", "Saudi Arabia", "United Arab Emirates" ]
   },
   "EU": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/European_Union\" target=\"_blank\" rel=\"noopener\">European Union</a>",
+    "description": "The European Union seeks to ensure peace, stability, and shared prosperity in Europe. It creates a single market with free movement of goods, people, services, and capital. The EU coordinates policies on trade, climate, agriculture, and consumer protection. It supports democracy, human rights, and the rule of law among its members. The EU also provides funding for regional development. Its mission is deeper integration and long-term cooperation across Europe.",
     "members": [ "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden" ]
   },
   "G7": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/G7\" target=\"_blank\" rel=\"noopener\">G7</a>",
+    "description": "The G7 unites advanced industrial democracies to coordinate global economic policy. It focuses on financial stability, sustainable growth, and international security. The group discusses challenges such as climate change, development, and geopolitical tensions. G7 meetings help align positions before major global negotiations. The group has no formal treaties but influences global governance through joint statements. Its mission is to promote a stable and rules-based international order.",
     "members": [ "Canada", "France", "Germany", "Italy", "Japan", "United Kingdom", "United States" ]
   },
   "G20": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/G20\" target=\"_blank\" rel=\"noopener\">G20</a>",
+    "description": "The G20 brings together the world’s largest economies to address global financial and economic challenges. It promotes international cooperation on trade, investment, and fiscal policy. Members work to stabilize markets during crises and support sustainable development. The G20 also addresses climate change, health threats, and digital transformation. Although not a formal organization, it shapes major economic decisions worldwide. Its goal is to strengthen global economic resilience.",
     "members": [ "Argentina", "Australia", "Brazil", "Canada", "China", "France", "Germany", "India", "Indonesia", "Italy", "Japan", "South Korea", "Mexico", "Russia", "Saudi Arabia", "South Africa", "Turkey", "United Kingdom", "United States", "European Union" ]
   },
   "Mercosur": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/Mercosur\" target=\"_blank\" rel=\"noopener\">Mercosur</a>",
+    "description": "Mercosur promotes economic integration among South American countries. It aims to create a free-trade area with reduced tariffs and common external policies. Members cooperate on infrastructure, industry, and agricultural development. The bloc also works to coordinate foreign policy positions. Mercosur supports regional mobility and cultural exchange. Its mission is a more unified and competitive South American market.",
     "members": [ "Argentina", "Brazil", "Paraguay", "Uruguay", "Bolivia" ]
   },
   "NATO": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/NATO\" target=\"_blank\" rel=\"noopener\">NATO</a>",
+    "description": "NATO is a collective defense alliance committed to protecting the security of its members. An attack on one is considered an attack on all. The alliance promotes military cooperation, joint exercises, and crisis management. It also engages in peacekeeping and stabilizing missions worldwide. NATO supports democratic values and helps partners modernize their armed forces. Its core purpose is to ensure peace and security across the North Atlantic region.",
     "members": [ "Albania", "Belgium", "Bulgaria", "Canada", "Croatia", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Montenegro", "Netherlands", "North Macedonia", "Norway", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Turkey", "United Kingdom", "United States" ]
   },
   "OECD": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/OECD\" target=\"_blank\" rel=\"noopener\">OECD</a>",
+    "description": "The OECD promotes economic growth, good governance, and social well-being. It provides research, policy recommendations, and data to help countries improve their economies. Members cooperate on taxation, education, trade, and environmental issues. The organization encourages transparent and evidence-based policymaking. It also monitors global trends and supports fair and sustainable development. The OECD’s mission is to build better policies for better lives.",
     "members": [ "Australia", "Austria", "Belgium", "Canada", "Chile", "Colombia", "Costa Rica", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Israel", "Italy", "Japan", "South Korea", "Latvia", "Lithuania", "Luxembourg", "Mexico", "Netherlands", "New Zealand", "Norway", "Poland", "Portugal", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Turkey", "United Kingdom", "United States" ]
   }
-
 }
