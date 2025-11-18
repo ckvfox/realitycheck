@@ -2,13 +2,13 @@
 
 # 🌍 RealityCheck – Interactive Country Comparison
 
-**Version:** 3.0.0 (as of November 18, 2025)  
+**Version:** 3.1.0 (as of November 18, 2025)  
 **Project Lead:** Carsten Winterling  
 **AI Collaboration:** Claude Sonnet 4 + GPT-4o  
 **Hosting:** InfinityFree  
 **Frontend:** Modular HTML/CSS/JS (Chart.js, Leaflet, marked.js)  
 **Backend:** Python (data fetchers, GPT-based analysis & rankings)  
-**Architecture:** ✨ **REFACTORED** Clean modular structure with externalized JavaScript
+**Architecture:** ✨ **OPTIMIZED** Enhanced UX, dynamic legends, CSS optimization
 
 ---
 
@@ -42,9 +42,30 @@ It’s both analytical and exploratory — you can:
 
 ---------------------------------------------------------------------
 
-## 🚀 **MAJOR REFACTORING (November 2025)**
+## 🚀 **LATEST UPDATES (Version 3.1.0 - November 2025)**
 
-**Version 3.0.0** brings significant architectural improvements:
+### ✨ **World Map Enhancements:**
+- **Context-Sensitive Legends**: Dynamic descriptions for country groups (EU, G7, BRICS, NATO, etc.), languages (with real population data), and government types
+- **Real Language Statistics**: Language speaker counts calculated from actual population data instead of estimates
+- **Improved Tooltips**: Consistent tooltip style across all maps, showing population, capital, government, and languages
+- **Bug Fixes**: Fixed Oman appearing in EU group (partial matching disabled), corrected flag loading for Norway/France/Russia
+- **Mobile Optimization**: Reduced padding and margins for better map display on mobile devices
+
+### ✅ **CSS Optimization:**
+- Reduced `!important` declarations from 189 to 118 (-37.5%)
+- Introduced 13 new CSS variables for consistent chart heights and z-index layers
+- Improved maintainability and performance
+
+### 🛡️ **Safety Baselines Available:**
+- `BASELINE-V3.1-CSS-OPTIMIZED-2025-11-18-11h05`
+- `BASELINE-REFACTORING-2025-11-17-20h02`
+- `BASELINE-CSS-CLEANUP-2025-11-17-22h54`
+
+---
+
+## 🚀 **MAJOR REFACTORING (Version 3.0.0 - November 2025)**
+
+**Version 3.0.0** brought significant architectural improvements:
 
 ### ✅ **Completed Modernization:**
 - **Modular JavaScript**: All inline JS externalized to page-specific modules
@@ -53,15 +74,11 @@ It’s both analytical and exploratory — you can:
 - **Performance**: Reduced HTTP requests, better caching, modular loading
 - **Maintainability**: English documentation, consistent file structure
 
-### 📁 **New JavaScript Modules:**
+### 📁 **JavaScript Modules:**
 - `page_about.js` - Earth Overshoot Timer & animations
 - `page_index.js` - Redirect logic  
 - `page_data_glossary.js` - Table generation & sorting (200+ lines)
 - `page_analysis.js` - Markdown analysis loader
-
-### 🛡️ **Safety Baselines Available:**
-- `BASELINE-REFACTORING-2025-11-17-20h02` (pre-refactoring)
-- `BASELINE-CSS-CLEANUP-2025-11-17-22h54` (post-cleanup)
 
 ---------------------------------------------------------------------
 
