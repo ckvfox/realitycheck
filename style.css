@@ -452,23 +452,20 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.map-controls .select-wrapper,
-#controls .select-wrapper {
+.map-controls .select-wrapper {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.map-controls label,
-#controls .select-wrapper label {
+.map-controls label {
   font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
   font-size: 0.9rem;
   margin-bottom: 0.25rem;
 }
 
-.map-controls select,
-#controls .select-wrapper select {
+.map-controls select {
   padding: 0.5rem;
   background: rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -477,14 +474,12 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
   font-size: 0.9rem;
 }
 
-.map-controls select option,
-#controls .select-wrapper select option {
+.map-controls select option {
   background: rgba(0, 0, 0, 0.9);
   color: #ffffff;
 }
 
-.map-controls select:focus,
-#controls .select-wrapper select:focus {
+.map-controls select:focus {
   outline: none;
   border-color: rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.15);
