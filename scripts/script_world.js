@@ -559,55 +559,75 @@ function updateWorldMapGeoJSON() {
         fillOpacity: isRelevant ? 0.7 : 0.3
       };
     },
-    onEachFeature: (feature, layer) => {
-      // No tooltips on features - we'll add markers on capitals instead
+    onEachFeature: (f, layer) => {
+      // 🧩 ISO-Resolver (same as countries.html)
+      const iso = (
+        f.properties.iso_a3_eh || f.properties.ISO_A3_EH ||
+        f.properties.ISO_A3 || f.properties.iso_a3 ||
+        f.properties.ADM0_A3 || f.properties.adm0_a3 ||
+        f.properties.SOV_A3 || f.properties.sov_a3 ||
+        f.properties.WB_A3 || f.properties.wb_a3 ||
+        f.properties.gu_a3 || f.properties.su_a3 ||
+        f.id || ""
+      ).toUpperCase();
+
+      // 🧭 Fallback to name resolution
+      let cname = Object.entries(worldMapCountries).find(
+        ([, c]) => (c.iso_a3 || c.ISO_A3)?.toUpperCase() === iso
+      )?.[0] ||
+        f.properties.ADMIN ||
+        f.properties.NAME ||
+        f.properties.COUNTRY ||
+        iso;
+
+      // Apply country mappings for canonical name
+      if (worldMapCountryMappings?.[cname]) {
+        cname = worldMapCountryMappings[cname];
+      }
+
+      // Get population value
+      const currentYear = new Date().getFullYear();
+      let popValue = null;
+      for (let year = currentYear; year >= currentYear - 5; year--) {
+        const popData = worldMapPopulation.find(p => p.country === cname && p.year === year);
+        if (popData && popData.value) {
+          popValue = popData.value;
+          break;
+        }
+      }
+
+      const info = worldMapCountries[cname] || {};
+      const flagSrc = info.flag ||
+        (info.iso_a2
+          ? `images/flag/${String(info.iso_a2).toLowerCase()}.svg`
+          : "images/flag/question.svg");
+      
+      const displayValue = Number.isFinite(popValue)
+        ? `${(popValue / 1000000).toFixed(1)}M`
+        : "no data";
+
+      const tooltip = `
+        <div class="map-tooltip">
+          <div class="map-tooltip__header">
+            <img class="map-tooltip__flag" src="${flagSrc}" alt="Flag of ${cname}" loading="lazy" onerror="this.onerror=null;this.src='images/flag/question.svg';" />
+            <div class="map-tooltip__title">${cname}</div>
+          </div>
+          <div class="map-tooltip__value">${displayValue}</div>
+          <div class="map-tooltip__meta">
+            <div class="map-tooltip__meta-row">Capital: ${info.capital || "–"}</div>
+            <div class="map-tooltip__meta-row">Gov: ${info.government || "–"}</div>
+            <div class="map-tooltip__meta-row">Languages: ${info.languages || "–"}</div>
+          </div>
+        </div>
+      `;
+      layer.bindTooltip(tooltip, { sticky: true });
+
+      layer.on({
+        mouseover: e => e.target.setStyle({ weight: 1.2, color: "#000", fillOpacity: 0.9 }),
+        mouseout: e => worldMapLayer.resetStyle(e.target)
+      });
     }
   }).addTo(worldMap);
-  
-  // Add invisible markers on ALL capital cities for tooltips
-  Object.keys(worldMapCountries).forEach(countryName => {
-    const countryInfo = worldMapCountries[countryName];
-    if (!countryInfo || !countryInfo.lat || !countryInfo.lon) return;
-    
-    // Get population
-    const currentYear = new Date().getFullYear();
-    let population = 'N/A';
-    for (let year = currentYear; year >= currentYear - 5; year--) {
-      const popData = worldMapPopulation.find(p => p.country === countryName && p.year === year);
-      if (popData && popData.value) {
-        population = (popData.value / 1000000).toFixed(1) + 'M';
-        break;
-      }
-    }
-    
-    // Flag URL
-    const flagUrl = countryInfo.flag || 
-      (countryInfo.iso_a2
-        ? `images/flag/${String(countryInfo.iso_a2).toLowerCase()}.svg`
-        : 'images/flag/question.svg');
-    
-    // Create invisible marker at capital coordinates
-    const marker = L.circleMarker([countryInfo.lat, countryInfo.lon], {
-      radius: 0,
-      opacity: 0,
-      fillOpacity: 0
-    });
-    
-    marker.bindTooltip(`
-      <div style="text-align: center;">
-        <img src="${flagUrl}" alt="${countryName}" style="width: 24px; height: auto; margin-bottom: 5px;" onerror="this.onerror=null;this.src='images/flag/question.svg'">
-        <br><strong>${countryName}</strong>
-        <br>Population: ${population}
-        <br>Capital: ${countryInfo.capital || 'N/A'}
-      </div>
-    `, {
-      permanent: false,
-      direction: 'top',
-      offset: [0, -10]
-    });
-    
-    marker.addTo(worldMap);
-  });
   
   // Update context legend
   updateMapLegend(grouping, category, relevantCountries.length);
