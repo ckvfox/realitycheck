@@ -1,4 +1,37 @@
-:root { --steel-blue: #1a355e; --link-muted: #d1d5db; --link-hover: #fff; --content-bg: #f7f9fc; --text: #111; --legend: #444; --table-head: #333; --table-head-text: #fff; --row-alt: #f5f7fa; --row-base: #fff; --border: #e5e7eb; --accent: #09f; --accent-light: #66bfff; --max-width: 1200px; --radius: 10px; --header-footer-border: #fff1ff; --floating-btn-offset: 30px; }
+:root { 
+  /* Colors */
+  --steel-blue: #1a355e; 
+  --link-muted: #d1d5db; 
+  --link-hover: #fff; 
+  --content-bg: #f7f9fc; 
+  --text: #111; 
+  --legend: #444; 
+  --table-head: #333; 
+  --table-head-text: #fff; 
+  --row-alt: #f5f7fa; 
+  --row-base: #fff; 
+  --border: #e5e7eb; 
+  --accent: #09f; 
+  --accent-light: #66bfff; 
+  --header-footer-border: #fff1ff; 
+  
+  /* Layout & Spacing */
+  --max-width: 1200px; 
+  --radius: 10px; 
+  --floating-btn-offset: 30px;
+  
+  /* Chart Heights (standardized) */
+  --chart-height-large: 500px;
+  --chart-height-medium: 300px;
+  --chart-height-small: 250px;
+  --chart-height-xsmall: 200px;
+  
+  /* Z-Index Layers */
+  --z-header: 1000;
+  --z-modal: 99999;
+  --z-translator: 3000;
+  --z-tooltip: 9999;
+}
 
 @media (max-width: 640px) {
   :root {
@@ -37,7 +70,7 @@ a { color: #0b63c5; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 
-header { background: var(--steel-blue); color: #fff; padding: .5rem .8rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--header-footer-border); min-height: 72px; position: relative; z-index: 1000; flex-wrap: wrap; gap: .75rem; }
+header { background: var(--steel-blue); color: #fff; padding: .5rem .8rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--header-footer-border); min-height: 72px; position: relative; z-index: var(--z-header); flex-wrap: wrap; gap: .75rem; }
 
 #main-header {
   display: flex;
@@ -402,8 +435,8 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
 }
 
 #world-map {
-  height: 500px !important;
-  width: 100% !important;
+  height: var(--chart-height-large);
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -1285,16 +1318,16 @@ tr.fun-mode, tr.safe-mode, tr.fun-safe { background: transparent; }
 }
 
 body.world-page .graph-block canvas {
-  height: 300px;
+  height: var(--chart-height-medium);
   aspect-ratio: auto;
-  min-height: 300px;
-  max-height: 300px;
+  min-height: var(--chart-height-medium);
+  max-height: var(--chart-height-medium);
 }
 
 /* Force Chart.js canvas to respect height on world page */
 body.world-page .graph-block canvas[role="img"] {
-  height: 300px !important;
-  width: 100% !important;
+  height: var(--chart-height-medium);
+  width: 100%;
 }
 
 /* Mobile optimization for world page - aggressive space utilization */
@@ -1309,7 +1342,7 @@ body.world-page .graph-block canvas[role="img"] {
   }
   
   body.world-page .graph-block canvas {
-    height: 250px !important;
+    height: var(--chart-height-small);
   }
   
   body.world-page .page-intro {
@@ -1329,7 +1362,7 @@ body.world-page .graph-block canvas[role="img"] {
   }
   
   body.world-page .graph-block canvas {
-    height: 200px !important;
+    height: var(--chart-height-xsmall);
   }
   
   body.world-page .page-intro {
@@ -1485,7 +1518,7 @@ header img, .header-logo img, nav img, #site-logo {
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 99999;
+  z-index: var(--z-modal);
   opacity: 0.9;
   pointer-events: auto;
 	transition: transform 0.2s ease, filter 0.2s ease;
@@ -1501,14 +1534,14 @@ header img, .header-logo img, nav img, #site-logo {
 
 #data-table {
   display: block;
-  overflow: visible !important;   /* Allow overflow instead of auto */
-  height: auto !important;        /* Ensure it can grow */
+  overflow: visible;   /* Allow overflow instead of auto */
+  height: auto;        /* Ensure it can grow */
 }
 
 
 .table-wrapper {
-  overflow: visible !important;   /* Exit scroll mode */
-  height: auto !important;
+  overflow: visible;   /* Exit scroll mode */
+  height: auto;
 }
 
 
@@ -1524,8 +1557,8 @@ header img, .header-logo img, nav img, #site-logo {
 
 /* === COUNTRIES TABLE CENTER FIX (2025-11-05) === */
 #data-table {
-  display: block !important;
-  text-align: center !important;
+  display: block;
+  text-align: center;
 }
 
 
@@ -1540,7 +1573,7 @@ header img, .header-logo img, nav img, #site-logo {
 
 
 #data-table table#country-table {
-  margin: 0 auto !important;
+  margin: 0 auto;
   width: 100%;
   max-width: 1100px;
   text-align: left;
@@ -1798,7 +1831,7 @@ iframe {
 
 /* Country and Glossary tables differ only by ID, same behavior */
 #country-table, #glossary-table {
-  table-layout: fixed !important; /* Fixed column widths for control */
+  table-layout: fixed; /* Fixed column widths for control */
   width: 100%;
   border-collapse: collapse;
 }
@@ -1806,27 +1839,27 @@ iframe {
 
 /* 1) Glossary: responsive horizontal scroll (nur bei Bedarf) */
 #glossary-container {
-  overflow-x: auto !important;
-  overflow-y: visible !important;
+  overflow-x: auto;
+  overflow-y: visible;
 }
 #glossary-container table {
-  width: 100% !important;
-  min-width: fit-content !important;
-  table-layout: fixed !important;
+  width: 100%;
+  min-width: fit-content;
+  table-layout: fixed;
 }
 
 /* Global override for all glossary table cells */
 #glossary-table * {
-  max-width: 100% !important;
-  box-sizing: border-box !important;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 #glossary-table td,
 #glossary-table th {
-  word-wrap: break-word !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  white-space: normal !important;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 @media (max-width: 768px) {
@@ -1837,15 +1870,15 @@ iframe {
 
 /* Countries Table: Enable horizontal scrolling */
 #data-table {
-  overflow-x: auto !important;   /* Override previous overflow: visible */
-  overflow-y: visible !important;
+  overflow-x: auto;   /* Override previous overflow: visible */
+  overflow-y: visible;
 }
 
 /* iframe Child Pages: Let content determine height */
 html, body {
-  height: auto !important;   /* Instead of 100% */
-  min-height: 0 !important;
-  display: block !important; /* Prevent forced flex layout */
+  height: auto;   /* Instead of 100% */
+  min-height: 0;
+  display: block; /* Prevent forced flex layout */
 }
 /* === RC Spinner Restore (2025-11-06) === */
 @keyframes rc-spin { 
@@ -1884,11 +1917,11 @@ footer {
   overflow: visible;
 }
 #glossary-container {
-  display: block !important;   /* statt flex */
+  display: block;   /* statt flex */
   text-align: left;
 }
 #country-table {
-  table-layout: auto !important;
+  table-layout: auto;
 }
 
 #country-table th, #country-table td {
@@ -1964,7 +1997,7 @@ footer#site-footer {
 header#main-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: var(--z-header);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2037,7 +2070,7 @@ header#main-header nav a.active {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  z-index: 9999;
+  z-index: var(--z-tooltip);
   white-space: nowrap;
 }
 .mode-tooltip.visible {
@@ -2091,10 +2124,10 @@ header#main-header nav a.active {
 🩵 Scroll-to-top Button – Always Above Footer
 ============================================================ */
 #scroll-top-btn {
-  position: fixed !important;
-  bottom: 90px !important;
-  right: 25px !important;
-  z-index: 99999 !important;
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  z-index: var(--z-modal);
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
@@ -2105,8 +2138,8 @@ header#main-header nav a.active {
 
 @media (max-width: 600px) {
   #scroll-top-btn {
-    bottom: 75px !important;
-    right: 20px !important;
+    bottom: 75px;
+    right: 20px;
   }
 }
 
@@ -2114,7 +2147,7 @@ header#main-header nav a.active {
 🔒 GDPR Local Info Popup (centered, auto-hide like toast)
 ============================================================ */
 #localinfo-box {
-  position: fixed !important;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.9);
@@ -2127,7 +2160,7 @@ header#main-header nav a.active {
   line-height: 1.4;
   max-width: 90%;
   text-align: center;
-  z-index: 99999;
+  z-index: var(--z-modal);
   opacity: 0;
   transition: opacity .5s ease, transform .4s ease;
 }
@@ -2163,7 +2196,7 @@ header#main-header nav a.active {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.4s ease;
-  z-index: 99999;
+  z-index: var(--z-modal);
   pointer-events: none;
   text-align: center;
   max-width: 80%;
@@ -2318,8 +2351,8 @@ header#main-header nav a.active {
    📊 RealityCheck – Data Glossary: Outlier Column Layout Fix
    ============================================================ */
 #glossary-table td:last-child {
-  white-space: normal !important;      /* erlaubt Zeilenumbruch */
-  word-break: break-word !important;   /* bricht bei langen Listen */
+  white-space: normal;      /* erlaubt Zeilenumbruch */
+  word-break: break-word;   /* bricht bei langen Listen */
   max-width: 240px;                    /* Desktop: etwas breiter */
   line-height: 1.3;
   vertical-align: top;
@@ -2341,12 +2374,12 @@ header#main-header nav a.active {
 
 /* === Data Glossary Table – desktop width should not force scroll === */
 body.glossary-page #glossary-container {
-  width: min(96vw, 1600px) !important;
-  max-width: none !important;
+  width: min(96vw, 1600px);
+  max-width: none;
   margin: 1.5rem auto 2.5rem;
   padding: 0 clamp(0.75rem, 2vw, 2.5rem);
-  display: block !important;
-  overflow: visible !important;
+  display: block;
+  overflow: visible;
   position: relative;
 }
 
@@ -2375,7 +2408,7 @@ body.glossary-page #glossary-container table {
 
 body.glossary-page #glossary-container th,
 body.glossary-page #glossary-container td {
-  white-space: normal !important;
+  white-space: normal;
   word-break: break-word;
   vertical-align: top;
   overflow-wrap: break-word;
@@ -2389,29 +2422,29 @@ body.glossary-page #glossary-container td {
 /* Specific column widths for better control */
 body.glossary-page #glossary-table th:nth-child(1),
 body.glossary-page #glossary-table td:nth-child(1) {
-  width: 25% !important;
-  max-width: 200px !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  white-space: normal !important;
-  overflow: hidden !important;
-  hyphens: auto !important;
+  width: 25%;
+  max-width: 200px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  overflow: hidden;
+  hyphens: auto;
 }
 
 body.glossary-page #glossary-table th:nth-child(2),
 body.glossary-page #glossary-table td:nth-child(2) {
   width: 20%;
   max-width: 150px;
-  word-break: break-all !important;
-  overflow-wrap: anywhere !important;
-  white-space: normal !important;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  white-space: normal;
   overflow: hidden;
 }
 
 /* Special treatment for links in source column */
 body.glossary-page #glossary-table td:nth-child(2) a {
-  word-break: break-all !important;
-  overflow-wrap: anywhere !important;
+  word-break: break-all;
+  overflow-wrap: anywhere;
   display: inline-block;
   max-width: 100%;
   text-decoration: underline;
@@ -2436,23 +2469,23 @@ body.glossary-page #glossary-table td:nth-child(6) {
 
 body.glossary-page #glossary-table th:nth-child(7),
 body.glossary-page #glossary-table td:nth-child(7) {
-  width: 21% !important;
-  max-width: 200px !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  white-space: normal !important;
-  overflow: hidden !important;
-  hyphens: auto !important;
+  width: 21%;
+  max-width: 200px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  overflow: hidden;
+  hyphens: auto;
   font-size: 0.9em;
   line-height: 1.3;
 }
 
 /* Special treatment for outlier content */
 body.glossary-page #glossary-table td:nth-child(7) .outlier-info {
-  word-break: break-word !important;
-  overflow-wrap: anywhere !important;
-  white-space: normal !important;
-  display: block !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  display: block;
 }
   overflow-wrap: anywhere;
 }
@@ -2469,13 +2502,13 @@ body.glossary-page #glossary-table td:nth-child(2) {
 
 @media (max-width: 1200px) {
   body.glossary-page #glossary-container table {
-    min-width: 860px !important;
+    min-width: 860px;
   }
 }
 
 @media (max-width: 900px) {
   body.glossary-page #glossary-container table {
-    min-width: 720px !important;
+    min-width: 720px;
   }
 }
 
@@ -2508,7 +2541,7 @@ body.glossary-page th.sort-desc::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3000;
+  z-index: var(--z-translator);
 }
 
 @supports (top: calc(1.875rem + env(safe-area-inset-top))) {
@@ -2692,7 +2725,7 @@ body.glossary-page th.sort-desc::after {
   }
   
   #world-map {
-    height: 300px;
+    height: var(--chart-height-medium);
   }
   animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
@@ -2807,7 +2840,7 @@ div[role="dialog"][aria-modal="true"][aria-labelledby="translator-consent-title"
 
 /* === World Map Styles (formerly inline) === */
 #world-map {
-  height: 500px;
+  height: var(--chart-height-large);
   margin: 20px 0;
 }
 
