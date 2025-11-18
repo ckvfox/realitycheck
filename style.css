@@ -443,13 +443,16 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
 
 .map-controls {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   margin-bottom: 1.5rem;
   padding: 1rem;
   background: rgba(0, 0, 0, 0.2);
   border-radius: var(--radius, 8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .map-controls .select-wrapper {
@@ -2709,8 +2712,16 @@ body.glossary-page th.sort-desc::after {
 /* Mobile Responsive for World Map */
 @media (max-width: 768px) {
   .map-controls {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-controls {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 1rem;
   }
   
   .map-legend {
