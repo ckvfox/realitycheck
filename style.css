@@ -441,16 +441,17 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
   margin: 0 auto;
 }
 
-.map-controls {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin: 0 auto 1.5rem auto;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius, 8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  max-width: 900px;
+#controls.map-controls {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 1.5rem !important;
+  margin: 0 auto 1.5rem auto !important;
+  padding: 1rem !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-radius: var(--radius, 8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  max-width: 900px !important;
+  flex-direction: row !important;
 }
 
 .map-controls .select-wrapper {
