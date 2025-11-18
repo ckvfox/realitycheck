@@ -2,7 +2,7 @@
 
 # 🌍 RealityCheck – Interactive Country Comparison
 
-**Version:** 3.1.0 (as of November 18, 2025)  
+**Version:** 3.1.1 (as of November 18, 2025)  
 **Project Lead:** Carsten Winterling  
 **AI Collaboration:** Claude Sonnet 4 + GPT-4o  
 **Hosting:** InfinityFree  
@@ -42,9 +42,15 @@ It’s both analytical and exploratory — you can:
 
 ---------------------------------------------------------------------
 
-## 🚀 **LATEST UPDATES (Version 3.1.0 - November 2025)**
+## 🚀 **LATEST UPDATES (Version 3.1.1 - November 2025)**
 
-### ✨ **World Map Enhancements:**
+### 🎨 **UI Consistency & Responsive Design:**
+- **Unified Select Controls**: Countries and World pages now use identical select box styling with dark theme
+- **Responsive Layout**: Select controls automatically adjust from 4→3→2→1 columns based on screen width
+- **CSS Optimization**: Improved specificity handling for consistent styling across all pages
+- **Mobile-First**: Enhanced responsive breakpoints for better mobile experience
+
+### ✨ **Previous Updates (Version 3.1.0):**
 - **Context-Sensitive Legends**: Dynamic descriptions for country groups (EU, G7, BRICS, NATO, etc.), languages (with real population data), and government types
 - **Real Language Statistics**: Language speaker counts calculated from actual population data instead of estimates
 - **Improved Tooltips**: Consistent tooltip style across all maps, showing population, capital, government, and languages
