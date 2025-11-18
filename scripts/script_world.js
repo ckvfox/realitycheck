@@ -564,8 +564,8 @@ function updateWorldMapGeoJSON() {
     }
   }).addTo(worldMap);
   
-  // Add invisible markers on capital cities for tooltips
-  relevantCountries.forEach(countryName => {
+  // Add invisible markers on ALL capital cities for tooltips
+  Object.keys(worldMapCountries).forEach(countryName => {
     const countryInfo = worldMapCountries[countryName];
     if (!countryInfo || !countryInfo.lat || !countryInfo.lon) return;
     
