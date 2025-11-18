@@ -578,12 +578,15 @@ function updateWorldMapGeoJSON() {
                           (feature.properties.homepart && feature.properties.homepart === 1);
                           
         // Spezielle Behandlung für bekannte Überseegebiete
+        // Prüfe ob admin (lokaler Name) und sovereignt (Souverän) unterschiedlich sind
         const isOverseasTerritory = 
+          feature.properties.admin !== feature.properties.sovereignt ||
           name.includes('French Guiana') || name.includes('Guyana') ||
           name.includes('Martinique') || name.includes('Guadeloupe') ||
           name.includes('Réunion') || name.includes('Mayotte') ||
           name.includes('New Caledonia') || name.includes('Polynesia') ||
-          feature.properties.admin !== feature.properties.sovereignt;
+          name.includes('Sakhalin') || name.includes('Kamchatka') ||
+          name.includes('Kuril') || name.includes('Siberia');
           
         if (isMainland && !isOverseasTerritory) {
           // Hole Population für Tooltip
@@ -597,11 +600,12 @@ function updateWorldMapGeoJSON() {
             }
           }
           
-          // Flaggen-URL: Use ISO-2 code from GeoJSON (like countries.html)
-          const iso2 = feature.properties.iso_a2 || feature.properties.ISO_A2;
-          const flagUrl = iso2 
-            ? `images/flag/${iso2.toLowerCase()}.svg`
-            : `images/flag/question.svg`;
+          // Flag URL: Use canonical country data (not GeoJSON iso_a2 which can be -99)
+          const countryInfo = worldMapCountries[canonical] || {};
+          const flagUrl = countryInfo.flag || 
+            (countryInfo.iso_a2 && countryInfo.iso_a2 !== '-99' 
+              ? `images/flag/${countryInfo.iso_a2.toLowerCase()}.svg`
+              : 'images/flag/question.svg');
           
           layer.bindTooltip(`
             <div style="text-align: center;">
