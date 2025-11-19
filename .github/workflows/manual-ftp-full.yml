@@ -16,26 +16,39 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: FTP Upload (Full Clean)
+      - name: FTP Upload (Full Production)
         uses: SamKirkland/ftp-deploy-action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir: data/
-          server-dir: ${{ secrets.FTP_DIR }}/data/
+          local-dir: ./
+          server-dir: ${{ secrets.FTP_DIR }}/
           dangerous-clean-slate: true
-          state-name: .ftp-deploy-sync-state-data.json
+          state-name: .ftp-deploy-sync-state-full.json
           log-level: verbose
           exclude: |
             **/.git*
-            **/.github*
+            **/.github/
+            **/ai_workspace/
+            **/bak/
             **/__pycache__/
             **/*.py
             **/*.md
             **/*.yml
             **/*.csv
+            **/*.txt
+            **/FEATURES_IMPLEMENTED.md
+            **/FIXES_IMPLEMENTED.md
+            **/README.md
+            **/CONTRIBUTING.md
+            **/CODE_OF_CONDUCT.md
+            **/SECURITY.md
+            **/licence
+            **/tracking.json
+            **/.env
+            **/.gitignore
 
       - name: 🕐 Get current UTC date
         id: date
@@ -48,11 +61,13 @@ jobs:
           script: |
             const title = `🚀 Full FTP Upload – ${{ job.status }}`;
             const body = `
-            🧭 **Full FTP upload completed**
+            🚀 **Full production deployment completed**
             
             - **Status**: ${{ job.status }}
             - **Date**: ${{ steps.date.outputs.date }}
-            - **Mode**: Complete clean slate upload
+            - **Mode**: Complete frontend + data upload (production-ready files only)
+            - **Deployed**: HTML, CSS, JS, JSON data, images, robots.txt, sitemap.xml
+            - **Excluded**: Python scripts, markdown docs, CSV sources, GitHub files
             - **Run**: [View full log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
             
             ---
