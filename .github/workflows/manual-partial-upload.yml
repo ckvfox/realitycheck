@@ -11,6 +11,8 @@ on:
 jobs:
   ftp_partial:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     env:
       TZ: Europe/Berlin
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

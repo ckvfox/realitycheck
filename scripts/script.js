@@ -1228,15 +1228,22 @@ function buildHeatLegendHTML({
     ? `<div class="legend-note">⚙️ log-scaled (extreme values damped)</div>`
     : "";
 
+  // Escape HTML to prevent XSS
+  const safeTitle = escapeHTML(String(title || ""));
+  const safeUnit = escapeHTML(String(unit || ""));
+  const safeMinLabel = escapeHTML(String(minLabel));
+  const safeMaxLabel = escapeHTML(String(maxLabel));
+  const safeModeText = escapeHTML(String(modeText));
+
   return `
   <div class="legend-box">
-    <div class="legend-title"><strong>${title}</strong></div>
+    <div class="legend-title"><strong>${safeTitle}</strong></div>
     <div class="legend-bar legend-bar--${variant}"></div>
     <div class="legend-scale">
-      <span>${minLabel} ${unit}</span>
-      <span>${maxLabel} ${unit}</span>
+      <span>${safeMinLabel} ${safeUnit}</span>
+      <span>${safeMaxLabel} ${safeUnit}</span>
     </div>
-    <div class="legend-mode legend-mode--${variant}">${modeText}</div>
+    <div class="legend-mode legend-mode--${variant}">${safeModeText}</div>
     ${logInfo}
   </div>`;
 }
