@@ -33,19 +33,32 @@ jobs:
             **/*.md
             **/*.yml
 
-      - name: 📧 Send notification email
+      - name: 🕐 Get current UTC date
+        id: date
+        run: echo "date=$(date -u '+%a, %d %b %Y %H:%M:%S UTC')" >> $GITHUB_OUTPUT
+
+      - name: 📱 Create GitHub Issue for status
         if: always()
-        uses: dawidd6/action-send-mail@v3
+        uses: actions/github-script@v7
         with:
-          server_address: ${{ secrets.SMTP_SERVER }}
-          server_port: ${{ secrets.SMTP_PORT }}
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "RealityCheck FTP Sync – ${{ job.status }}"
-          to: ${{ secrets.EMAIL_TO }}
-          from: RealityCheck Bot <${{ secrets.SMTP_USERNAME }}>
-          secure: true
-          body: |
-            🧭 The FTP sync finished with status: **${{ job.status }}**
-            📅 Date: $(date -u)
-            🔗 View the full log in GitHub Actions.
+          script: |
+            const title = `🔁 FTP Sync Upload – ${{ job.status }}`;
+            const body = `
+            🧭 **FTP sync upload completed**
+            
+            - **Status**: ${{ job.status }}
+            - **Date**: ${{ steps.date.outputs.date }}
+            - **Mode**: Incremental sync (safe)
+            - **Run**: [View full log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            
+            ---
+            *This issue was created automatically by the RealityCheck Bot.*
+            `;
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['automation', 'ftp-upload', 'sync-upload']
+            });

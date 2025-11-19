@@ -73,23 +73,28 @@ jobs:
         id: date
         run: echo "date=$(date -u '+%a, %d %b %Y %H:%M:%S UTC')" >> $GITHUB_OUTPUT
 
-      - name: 📧 Send notification email
+      - name: 📱 Create GitHub Issue for status
         if: always()
-        uses: dawidd6/action-send-mail@v3
+        uses: actions/github-script@v7
         with:
-          server_address: ${{ secrets.SMTP_SERVER }}
-          server_port: ${{ secrets.SMTP_PORT }}
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "RealityCheck Manual Run – ${{ job.status }}"
-          to: ${{ secrets.EMAIL_TO }}
-          from: RealityCheck Bot <${{ secrets.SMTP_USERNAME }}>
-          secure: true
-          body: |
-            🧭 The RealityCheck manual fetch finished with status: **${{ job.status }}**
-
-            📅 Date: ${{ steps.date.outputs.date }}
-            🔗 View the full log in GitHub Actions.
-
-            Repository: https://github.com/${{ github.repository }}
-          attachments: data/fetch_log.txt
+          script: |
+            const title = `🧪 Manual RealityCheck Run – ${{ job.status }}`;
+            const body = `
+            🧭 **Manual RealityCheck fetch completed**
+            
+            - **Status**: ${{ job.status }}
+            - **Date**: ${{ steps.date.outputs.date }}
+            - **Run**: [View full log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            
+            ---
+            *This issue was created automatically by the RealityCheck Bot.*
+            `;
+            
+            // Create issue
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['automation', 'manual-run']
+            });
