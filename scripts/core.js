@@ -125,18 +125,9 @@ function escapeHTML(value) {
 
 function deepMerge(target, ...sources) {
   if (!target) target = {};
-  
-  // Dangerous keys that can cause prototype pollution
-  const dangerousKeys = new Set(['__proto__', 'constructor', 'prototype']);
-  
   for (const source of sources) {
     if (!source) continue;
     for (const key of Object.keys(source)) {
-      // Guard against prototype pollution
-      if (dangerousKeys.has(key)) {
-        continue;
-      }
-      
       const value = source[key];
       if (value && typeof value === "object" && !Array.isArray(value)) {
         target[key] = deepMerge(target[key] || {}, value);
@@ -888,18 +879,9 @@ function calculateGroupValues(group, dataset) {
 // === Deep merge helper (for Chart option overrides) ===
 function deepMerge(target, ...sources) {
   if (!target) target = {};
-  
-  // Dangerous keys that can cause prototype pollution
-  const dangerousKeys = new Set(['__proto__', 'constructor', 'prototype']);
-  
   for (const src of sources) {
     if (!src || typeof src !== "object") continue;
     for (const [key, value] of Object.entries(src)) {
-      // Guard against prototype pollution
-      if (dangerousKeys.has(key)) {
-        continue;
-      }
-      
       if (
         value &&
         typeof value === "object" &&

@@ -144,19 +144,10 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     return build_parser().parse_args(argv)
 
 
-def handle_force_cleanup(preserve_analysis: bool = False) -> None:
-    if preserve_analysis:
-        print("[INFO] Force mode enabled – clearing data except /meta and analysis files …")
-    else:
-        print("[INFO] Force mode enabled – clearing data except /meta …")
+def handle_force_cleanup() -> None:
+    print("[INFO] Force mode enabled – clearing data except /meta …")
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-
-    # Files to preserve when no_analysis=True
-    analysis_files = {
-        "analysis.md", "analysis.json", "analysis_outliers.json",
-        "overall_ranking.json", "fun_ranking.json", "safe_haven_ranking.json"
-    }
 
     def _remove_file(path: Path) -> None:
         try:
@@ -180,10 +171,6 @@ def handle_force_cleanup(preserve_analysis: bool = False) -> None:
         if item.is_dir():
             shutil.rmtree(item, ignore_errors=True)
         else:
-            # Skip analysis files when preserve_analysis=True
-            if preserve_analysis and item.name in analysis_files:
-                print(f"[SKIP] Preserving analysis file: {item.name}")
-                continue
             _remove_file(item)
 
     if (SCRIPT_DIR / "__pycache__").exists():
@@ -1373,7 +1360,7 @@ def merge_fetch_state(updated_kpis: set):
 # ======================================================================
 def main(args: argparse.Namespace) -> None:
     if args.force:
-        handle_force_cleanup(preserve_analysis=args.no_analysis)
+        handle_force_cleanup()
 
     ensure_dirs()
 
