@@ -58,6 +58,7 @@ jobs:
             **/*.py
             **/*.md
             **/*.yml
+            **/*.csv
             **/pending/**
             **/node_modules/**
 

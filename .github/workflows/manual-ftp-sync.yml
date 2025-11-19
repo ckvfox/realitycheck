@@ -32,6 +32,7 @@ jobs:
             **/*.py
             **/*.md
             **/*.yml
+            **/*.csv
 
       - name: 🕐 Get current UTC date
         id: date

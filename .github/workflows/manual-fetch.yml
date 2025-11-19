@@ -56,6 +56,7 @@ jobs:
             **/__pycache__/
             **/*.py
             **/*.yml
+            **/*.csv
             **/pending/**
 
       - name: 🪶 Commit and push updated data to GitHub
