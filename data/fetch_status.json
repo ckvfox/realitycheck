@@ -253,11 +253,11 @@
       "last_fetch": "2025-11-16T11:06:10Z"
     },
     "press_freedom_index": {
-      "source": "https://ourworldindata.org/grapher/press-freedom-index-rsf",
+      "source": "https://data360.worldbank.org/en/dataset/RWB_PFI",
       "url": "",
-      "source_date": "2021-01-01",
-      "data_year": 2021,
-      "last_fetch": "2025-11-16T11:06:12Z"
+      "source_date": "",
+      "data_year": null,
+      "last_fetch": ""
     },
     "human_development_index_hdi": {
       "source": "https://ourworldindata.org/grapher/human-development-index",
