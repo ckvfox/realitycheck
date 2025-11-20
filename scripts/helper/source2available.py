@@ -27,7 +27,7 @@ SOURCE_SENTENCES = {
     "Fertility Rate": "These data are provided by the World Bank’s World Development Indicators database.",
     "Urbanization Rate": "These data are provided by the World Bank’s World Development Indicators database.",
     "Democracy Index": "These data are compiled by Our World in Data based on the Economist Intelligence Unit’s Democracy Index.",
-    "Press Freedom Index": "These data are compiled by Our World in Data based on Reporters Without Borders (RSF).",
+    "Press Freedom Index": "These data are provided by the World Bank’s Data360 platform based on Reporters Without Borders (RSF).",
     "World Happiness Index": "These data are provided by the World Happiness Report published by the UN Sustainable Development Solutions Network.",
     "GDP": "These data are provided by the World Bank’s World Development Indicators database.",
     "GDP per Capita": "These data are provided by the World Bank’s World Development Indicators database.",
