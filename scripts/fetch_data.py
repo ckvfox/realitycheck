@@ -851,8 +851,8 @@ def extract_worldbank_date(zip_bytes: bytes) -> Optional[str]:
 # ----------------------------------------------------------------------
 # 🌐 World Bank Data360 Fetcher
 # ----------------------------------------------------------------------
-def fetch_data360_indicator(indicator_id: str) -> List[Dict[str, Any]]:
-    """Fetch an indicator from the World Bank Data360 API with pagination."""
+def fetch_data360_indicator(indicator_id: str, meta: dict = None) -> List[Dict[str, Any]]:
+    """Fetch an indicator from the World Bank Data360 API with pagination. meta (KPI-Metadaten) wird für Fallback-URL benötigt."""
 
     base_url = "https://data360api.worldbank.org/data360/data"
     indicator_variants = [indicator_id]
@@ -971,6 +971,38 @@ def fetch_data360_indicator(indicator_id: str) -> List[Dict[str, Any]]:
                 log(f"[INFO] Data360 used fallback indicator code variant: {ind_code}")
             break
 
+    # Fallback: Wenn keine Daten, versuche CSV-Download dynamisch aus meta
+    if not records and meta and meta.get("source") and meta.get("source_code"):
+        try:
+            import pandas as pd
+            url = f"{meta['source'].rstrip('/')}/{meta['source_code']}.csv"
+            df = pd.read_csv(url)
+            # Normalize columns
+            df.columns = [c.strip().lower() for c in df.columns]
+            cols = df.columns.tolist()
+            # Try to find country/year/value columns heuristically
+            country_col = next((c for c in cols if "country" in c), None)
+            year_col = next((c for c in cols if "year" in c), None)
+            value_col = next((c for c in cols if "score" in c or "value" in c), None)
+            if country_col and year_col and value_col:
+                out = []
+                for _, r in df.iterrows():
+                    cname = str(r.get(country_col) or "").strip()
+                    y = r.get(year_col)
+                    v = r.get(value_col)
+                    if not cname or y is None or v is None:
+                        continue
+                    try:
+                        y = int(float(y))
+                        v = float(v)
+                        out.append({"iso3": "", "year": y, "value": v, "country": cname})
+                    except Exception:
+                        continue
+                return out
+            else:
+                log(f"[ERR] Data360 CSV fallback: columns not found in {url}")
+        except Exception as e:
+            log(f"[ERR] Data360 CSV fallback failed: {e}")
     return records
 
 
@@ -1560,13 +1592,13 @@ def fetch_imf_bulk(
             keep_or_dummy(kpi_id, "IMF bulk load failed", stats)
         return
 
-    subject_col = _find_column(df, ["weo_subject_code", "subject_code"])
-    country_col = _find_column(df, ["country", "weo_country", "country_name"])
+    subject_col = _find_column(df, ["weo_subject_code", "subject_code", "indicator", "INDICATOR"])
+    country_col = _find_column(df, ["country", "weo_country", "country_name", "COUNTRY"])
     iso_col = _find_column(df, ["iso", "iso_code", "iso3"])
 
     if not subject_col or not country_col:
         header_row_idx = None
-        header_candidates = {"weo subject code", "weo_subject_code", "subject code", "subject_code"}
+        header_candidates = {"weo subject code", "weo_subject_code", "subject code", "subject_code", "indicator", "INDICATOR"}
         for idx in range(min(len(df), 15)):
             row = df.iloc[idx]
             joined = " ".join(str(v) for v in row.values if pd.notna(v)).lower()
@@ -1579,8 +1611,8 @@ def fetch_imf_bulk(
                 df.columns = [str(c).strip() for c in df.iloc[header_row_idx].values]
                 df = df.drop(index=list(range(header_row_idx + 1)))
                 df = df.reset_index(drop=True)
-                subject_col = _find_column(df, ["weo_subject_code", "subject_code"])
-                country_col = _find_column(df, ["country", "weo_country", "country_name"])
+                subject_col = _find_column(df, ["weo_subject_code", "subject_code", "indicator", "INDICATOR"])
+                country_col = _find_column(df, ["country", "weo_country", "country_name", "COUNTRY"])
                 iso_col = _find_column(df, ["iso", "iso_code", "iso3"])
                 log(f"[INFO] IMF bulk header realigned using row {header_row_idx}")
             except Exception as exc:
@@ -2020,9 +2052,6 @@ def main(args: argparse.Namespace) -> None:
                         save_records(kpi_id, final_rows, stats)
                         stats["data360_success"] += 1
                         stats["saved_records"] += len(final_rows)
-                            # Entferne .csv-Endung, falls vorhanden
-                            if indicator_id and indicator_id.lower().endswith('.csv'):
-                                indicator_id = indicator_id[:-4]
                         stats["fetched"] += len(final_rows)
                         if years_seen:
                             meta["_latest_year"] = max(years_seen)

@@ -5,11 +5,19 @@
       "url": "",
       "source_date": "Unknown",
       "data_year": null,
-      "last_fetch": "2025-11-21T15:18:54Z"
+      "last_fetch": "2025-11-21T15:46:22Z"
+    },
+    "general_government_gross_debt_gdp": {
+      "source": "https://www.imf.org/en/Publications/SPROLLs/world-economic-outlook-databases",
+      "source_type": "imf",
+      "source_code": "GGXWDG_NGDP",
+      "source_date": "2025",
+      "data_year": null,
+      "last_fetch": "2025-11-21T15:46:22Z"
     }
   },
   "summary": {
-    "lastRun": "2025-11-21T15:18:54Z",
+    "lastRun": "2025-11-21T15:46:22Z",
     "updated": 0,
     "skipped": 0,
     "errors": 0
