@@ -859,56 +859,45 @@ def fetch_data360_indicator(indicator_id: str) -> List[Dict[str, Any]]:
     skip = 0
 
     while True:
-        params = {
-            "INDICATOR": indicator_id,
-            "FREQ": "A",
-            "format": "json",
-            "top": 1000,
-            "skip": skip,
-        }
+        # Data360 endpoints are picky about parameter names; try robust variants.
+        param_variants = [
+            {"INDICATOR_ID": indicator_id, "FREQ": "A", "$format": "json", "$top": 1000, "$skip": skip},
+            {"INDICATOR": indicator_id, "FREQ": "A", "$format": "json", "$top": 1000, "$skip": skip},
+            {"INDICATOR_ID": indicator_id, "FREQ": "A", "format": "json", "top": 1000, "skip": skip},
+            {"INDICATOR": indicator_id, "FREQ": "A", "format": "json", "top": 1000, "skip": skip},
+        ]
 
-        try:
-            resp = requests.get(base_url, params=params, timeout=40)
-        except Exception as exc:  # pragma: no cover - network/runtime safeguard
-            log(f"[WARN] Data360 {indicator_id} request failed at skip={skip}: {exc}")
-            break
+        resp = None
+        used_params: Dict[str, Any] = {}
 
-        if resp.status_code != 200:
+        for params in param_variants:
+            used_params = params
+            try:
+                resp = requests.get(base_url, params=params, timeout=40)
+            except Exception as exc:  # pragma: no cover - network/runtime safeguard
+                log(f"[WARN] Data360 {indicator_id} request failed at skip={skip} params={params}: {exc}")
+                resp = None
+                continue
+
+            if resp.status_code == 200:
+                break
+
             snippet = (resp.text or "")[:200]
             log(
-                f"[WARN] Data360 {indicator_id} HTTP {resp.status_code} at skip={skip}"
+                f"[WARN] Data360 {indicator_id} HTTP {resp.status_code} at skip={skip} params={params}"
                 + (f" – body: {snippet}" if snippet else "")
             )
+            resp = None
 
-            # Fallback: some endpoints expect INDICATOR_ID instead of INDICATOR
-            if resp.status_code in (400, 404) and "INDICATOR" in params:
-                alt_params = dict(params)
-                alt_params.pop("INDICATOR", None)
-                alt_params["INDICATOR_ID"] = indicator_id
-                try:
-                    alt_resp = requests.get(base_url, params=alt_params, timeout=40)
-                except Exception as exc:  # pragma: no cover - network/runtime safeguard
-                    log(
-                        f"[WARN] Data360 {indicator_id} alt INDICATOR_ID request failed at skip={skip}: {exc}"
-                    )
-                    break
-
-                if alt_resp.status_code != 200:
-                    snippet_alt = (alt_resp.text or "")[:200]
-                    log(
-                        f"[WARN] Data360 {indicator_id} alt HTTP {alt_resp.status_code} at skip={skip}"
-                        + (f" – body: {snippet_alt}" if snippet_alt else "")
-                    )
-                    break
-
-                resp = alt_resp
-            else:
-                break
+        if not resp:
+            break
 
         try:
             payload = resp.json()
         except Exception as exc:
-            log(f"[WARN] Data360 {indicator_id} JSON decode failed at skip={skip}: {exc}")
+            log(
+                f"[WARN] Data360 {indicator_id} JSON decode failed at skip={skip} params={used_params}: {exc}"
+            )
             break
 
         data_block = payload.get("data") or payload.get("value") or []
@@ -1506,18 +1495,27 @@ def fetch_imf_bulk(
 
     log(f"[FETCH] IMF bulk import start for {len(imf_kpis)} KPIs")
 
-    excel_path = SCRIPT_DIR / "source_csv/imf/WEO_latest.xlsx"
-    if not excel_path.exists():
-        log(f"[ERR] IMF bulk file missing: {excel_path}")
+    csv_path = SCRIPT_DIR / "source_csv/IMF_Dataset.csv"
+    legacy_excel_path = SCRIPT_DIR / "source_csv/imf/WEO_latest.xlsx"
+
+    if csv_path.exists():
+        load_path = csv_path
+    elif legacy_excel_path.exists():
+        load_path = legacy_excel_path
+    else:
+        log(f"[ERR] IMF bulk file missing: {csv_path}")
         for meta in imf_kpis:
             kpi_id = resolve_kpi_id(meta)
             keep_or_dummy(kpi_id, "IMF bulk file missing", stats)
         return
 
     try:
-        df = pd.read_excel(excel_path, sheet_name=0)
+        if load_path.suffix.lower() in {".xls", ".xlsx"}:
+            df = pd.read_excel(load_path, sheet_name=0)
+        else:
+            df = pd.read_csv(load_path)
     except Exception as exc:
-        log(f"[ERR] IMF bulk Excel load failed: {exc}")
+        log(f"[ERR] IMF bulk file load failed: {exc}")
         for meta in imf_kpis:
             kpi_id = resolve_kpi_id(meta)
             keep_or_dummy(kpi_id, "IMF bulk load failed", stats)
@@ -1538,7 +1536,7 @@ def fetch_imf_bulk(
     if not year_cols:
         log("[WARN] IMF bulk Excel contains no year columns")
 
-    filename_str = excel_path.name
+    filename_str = load_path.name
     m = re.search(r"(20\d{2})", filename_str)
     detected_source_date = m.group(1) if m else str(datetime.now().year)
 
@@ -2171,24 +2169,31 @@ def main(args: argparse.Namespace) -> None:
 if __name__ == "__main__":
     cli_args = parse_args()
 
-    if cli_args.no_analysis:
+    if cli_args.test and not cli_args.no_analysis:
+        # In test mode we always skip AI-based follow-ups to avoid long-running tasks
+        cli_args.no_analysis = True
+        print("⏸️ Test mode (-t): analyses and GPT-based tasks are skipped.")
+    elif cli_args.no_analysis:
         print("⏸️ Smart analyses and GPT-based tasks are disabled (local test mode).")
 
     main(cli_args)
 
-    try:
-        print("➡️ Running fetch_overall_ranking.py …")
-        subprocess.run(["python", os.path.join(SCRIPT_DIR, "fetch_overall_ranking.py")], check=True)
-        print("✅ Overall Ranking successfully updated.")
-    except Exception as e:
-        print(f"⚠️ Error in overall ranking: {e}")
+    if cli_args.no_analysis:
+        print("⏭️ Analysis and consolidation scripts skipped (--no-analysis or test mode).")
+    else:
+        try:
+            print("➡️ Running fetch_overall_ranking.py …")
+            subprocess.run(["python", os.path.join(SCRIPT_DIR, "fetch_overall_ranking.py")], check=True)
+            print("✅ Overall Ranking successfully updated.")
+        except Exception as e:
+            print(f"⚠️ Error in overall ranking: {e}")
 
-    try:
-        print("➡️ Running fetch_consolidated.py …")
-        subprocess.run(["python", os.path.join(SCRIPT_DIR, "fetch_consolidated.py")], check=True)
-        print("✅ Consolidated data successfully created.")
-    except Exception as e:
-        print(f"⚠️ Error in consolidation: {e}")
+        try:
+            print("➡️ Running fetch_consolidated.py …")
+            subprocess.run(["python", os.path.join(SCRIPT_DIR, "fetch_consolidated.py")], check=True)
+            print("✅ Consolidated data successfully created.")
+        except Exception as e:
+            print(f"⚠️ Error in consolidation: {e}")
 
     # === Fetch-State zusammenführen ===
     try:
