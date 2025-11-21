@@ -855,88 +855,106 @@ def fetch_data360_indicator(indicator_id: str) -> List[Dict[str, Any]]:
     """Fetch an indicator from the World Bank Data360 API with pagination."""
 
     base_url = "https://data360api.worldbank.org/data360/data"
+    indicator_variants = [indicator_id]
+    dotted = indicator_id.replace("_", ".")
+    if dotted not in indicator_variants:
+        indicator_variants.append(dotted)
+
     records: List[Dict[str, Any]] = []
-    skip = 0
 
-    while True:
-        # Data360 endpoints are picky about parameter names; try robust variants.
-        param_variants = [
-            {"INDICATOR_ID": indicator_id, "FREQ": "A", "$format": "json", "$top": 1000, "$skip": skip},
-            {"INDICATOR": indicator_id, "FREQ": "A", "$format": "json", "$top": 1000, "$skip": skip},
-            {"INDICATOR_ID": indicator_id, "FREQ": "A", "format": "json", "top": 1000, "skip": skip},
-            {"INDICATOR": indicator_id, "FREQ": "A", "format": "json", "top": 1000, "skip": skip},
-        ]
+    for ind_code in indicator_variants:
+        skip = 0
+        variant_records: List[Dict[str, Any]] = []
 
-        resp = None
-        used_params: Dict[str, Any] = {}
+        while True:
+            # Data360 endpoints are picky about parameter names; try robust variants.
+            param_variants = [
+                {"INDICATOR_ID": ind_code, "FREQ": "A", "$format": "json", "$top": 1000, "$skip": skip},
+                {"INDICATOR": ind_code, "FREQ": "A", "$format": "json", "$top": 1000, "$skip": skip},
+                {"INDICATOR_ID": ind_code, "FREQ": "A", "format": "json", "top": 1000, "skip": skip},
+                {"INDICATOR": ind_code, "FREQ": "A", "format": "json", "top": 1000, "skip": skip},
+            ]
 
-        for params in param_variants:
-            used_params = params
-            try:
-                resp = requests.get(base_url, params=params, timeout=40)
-            except Exception as exc:  # pragma: no cover - network/runtime safeguard
-                log(f"[WARN] Data360 {indicator_id} request failed at skip={skip} params={params}: {exc}")
+            resp = None
+            used_params: Dict[str, Any] = {}
+
+            for params in param_variants:
+                used_params = params
+                try:
+                    resp = requests.get(base_url, params=params, timeout=40)
+                except Exception as exc:  # pragma: no cover - network/runtime safeguard
+                    log(
+                        f"[WARN] Data360 {indicator_id} request failed at skip={skip} params={params}: {exc}"
+                    )
+                    resp = None
+                    continue
+
+                if resp.status_code == 200:
+                    break
+
+                snippet = (resp.text or "")[:200]
+                log(
+                    f"[WARN] Data360 {indicator_id} HTTP {resp.status_code} at skip={skip} params={params}"
+                    + (f" – body: {snippet}" if snippet else "")
+                )
                 resp = None
-                continue
 
-            if resp.status_code == 200:
+            if not resp:
                 break
 
-            snippet = (resp.text or "")[:200]
-            log(
-                f"[WARN] Data360 {indicator_id} HTTP {resp.status_code} at skip={skip} params={params}"
-                + (f" – body: {snippet}" if snippet else "")
-            )
-            resp = None
-
-        if not resp:
-            break
-
-        try:
-            payload = resp.json()
-        except Exception as exc:
-            log(
-                f"[WARN] Data360 {indicator_id} JSON decode failed at skip={skip} params={used_params}: {exc}"
-            )
-            break
-
-        data_block = payload.get("data") or payload.get("value") or []
-        if isinstance(data_block, dict):
-            data_block = data_block.get("data") or data_block.get("value") or []
-
-        if not data_block:
-            break
-
-        batch_count = 0
-        for row in data_block:
-            if not isinstance(row, dict):
-                continue
-
-            freq = str(row.get("FREQ") or row.get("freq") or "").upper()
-            if freq != "A":
-                continue
-
-            value = safe_float(row.get("OBS_VALUE") or row.get("obs_value"))
-            if value is None:
-                continue
-
-            iso3 = (row.get("REF_AREA") or row.get("ref_area") or "").strip()
-            year = row.get("TIME_PERIOD") or row.get("time_period")
-            if not iso3 or not year:
-                continue
-
             try:
-                year_int = int(float(year))
-            except Exception:
-                continue
+                payload = resp.json()
+            except Exception as exc:
+                log(
+                    f"[WARN] Data360 {indicator_id} JSON decode failed at skip={skip} params={used_params}: {exc}"
+                )
+                break
 
-            records.append({"iso3": iso3, "year": year_int, "value": float(value)})
-            batch_count += 1
+            data_block = payload.get("data") or payload.get("value") or []
+            if isinstance(data_block, dict):
+                data_block = data_block.get("data") or data_block.get("value") or []
 
-        if batch_count < 1000:
+            if not data_block:
+                break
+
+            batch_count = 0
+            for row in data_block:
+                if not isinstance(row, dict):
+                    continue
+
+                freq = str(row.get("FREQ") or row.get("freq") or "").upper()
+                if freq != "A":
+                    continue
+
+                value = safe_float(row.get("OBS_VALUE") or row.get("obs_value"))
+                if value is None:
+                    continue
+
+                iso3 = (row.get("REF_AREA") or row.get("ref_area") or "").strip()
+                year = row.get("TIME_PERIOD") or row.get("time_period")
+                if not iso3 or not year:
+                    continue
+
+                try:
+                    year_int = int(float(year))
+                except Exception:
+                    continue
+
+                variant_records.append(
+                    {"iso3": iso3, "year": year_int, "value": float(value)}
+                )
+                batch_count += 1
+
+            if batch_count < 1000:
+                break
+
+            skip += 1000
+
+        if variant_records:
+            records = variant_records
+            if ind_code != indicator_id:
+                log(f"[INFO] Data360 used fallback indicator code variant: {ind_code}")
             break
-
-        skip += 1000
 
     return records
 
@@ -1495,15 +1513,21 @@ def fetch_imf_bulk(
 
     log(f"[FETCH] IMF bulk import start for {len(imf_kpis)} KPIs")
 
-    csv_path = SCRIPT_DIR / "source_csv/IMF_Dataset.csv"
+    csv_path = SCRIPT_DIR / "source_raw/IMF_Dataset.csv"
+    legacy_csv_path = SCRIPT_DIR / "source_csv/IMF_Dataset.csv"
     legacy_excel_path = SCRIPT_DIR / "source_csv/imf/WEO_latest.xlsx"
 
     if csv_path.exists():
         load_path = csv_path
+    elif legacy_csv_path.exists():
+        load_path = legacy_csv_path
     elif legacy_excel_path.exists():
         load_path = legacy_excel_path
     else:
-        log(f"[ERR] IMF bulk file missing: {csv_path}")
+        log(
+            "[ERR] IMF bulk file missing: "
+            f"{csv_path} (legacy: {legacy_csv_path} / {legacy_excel_path})"
+        )
         for meta in imf_kpis:
             kpi_id = resolve_kpi_id(meta)
             keep_or_dummy(kpi_id, "IMF bulk file missing", stats)
