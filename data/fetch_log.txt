@@ -505,3 +505,101 @@ Updated KPIs:      0
 
 [2025-11-21T16:06:19 UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
 [2025-11-21T16:06:19 UTC] [STATE] Merged 0 updated KPIs → total 0 entries.
+[2025-11-21T16:18:06 UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-21T16:18:06 UTC] === Fetch started ===
+[2025-11-21T16:18:06 UTC] [INFO] Test mode enabled (-t): filtering KPIs 2/65 marked with test='*'
+[2025-11-21T16:18:06 UTC] [CHECK] press_freedom_index: missing or unknown date → fetch now
+[2025-11-21T16:18:06 UTC] [FETCH] Data360 fetch start for press_freedom_index (RWB_PFI_SCORE)
+[2025-11-21T16:18:06 UTC] [WARN] Data360 RWB_PFI_SCORE HTTP 400 at skip=0 params={'INDICATOR_ID': 'RWB_PFI_SCORE', 'FREQ': 'A', '$format': 'json', '$top': 1000, '$skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-c284028f1033747763c9ce466f112219-357b9fd33b98c015-00","errors":
+[2025-11-21T16:18:07 UTC] [WARN] Data360 RWB_PFI_SCORE HTTP 400 at skip=0 params={'INDICATOR': 'RWB_PFI_SCORE', 'FREQ': 'A', '$format': 'json', '$top': 1000, '$skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-9629f4bd44b28ce723bc40156825d077-bf8add766e83c8a5-00","errors":
+[2025-11-21T16:18:08 UTC] [WARN] Data360 RWB_PFI_SCORE HTTP 400 at skip=0 params={'INDICATOR_ID': 'RWB_PFI_SCORE', 'FREQ': 'A', 'format': 'json', 'top': 1000, 'skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-7b532a616e91094ee96f4fa038bd2020-bd094f858422c691-00","errors":
+[2025-11-21T16:18:08 UTC] [WARN] Data360 RWB_PFI_SCORE HTTP 400 at skip=0 params={'INDICATOR': 'RWB_PFI_SCORE', 'FREQ': 'A', 'format': 'json', 'top': 1000, 'skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-2198e1de45a84af44dba18e2328a72ad-59decfdfefcf5527-00","errors":
+[2025-11-21T16:18:09 UTC] [WARN] Data360 RWB_PFI_SCORE HTTP 400 at skip=0 params={'INDICATOR_ID': 'RWB.PFI.SCORE', 'FREQ': 'A', '$format': 'json', '$top': 1000, '$skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-27147224c316a8ae11cdca7fa4009588-04ece1abd645eaf4-00","errors":
+[2025-11-21T16:18:09 UTC] [WARN] Data360 RWB_PFI_SCORE HTTP 400 at skip=0 params={'INDICATOR': 'RWB.PFI.SCORE', 'FREQ': 'A', '$format': 'json', '$top': 1000, '$skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-74dd8dfe50caed41c9e2b21dee6272ea-39412e4516ae96e1-00","errors":
+[2025-11-21T16:18:10 UTC] [WARN] Data360 RWB_PFI_SCORE HTTP 400 at skip=0 params={'INDICATOR_ID': 'RWB.PFI.SCORE', 'FREQ': 'A', 'format': 'json', 'top': 1000, 'skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-25daa9bae43a06526b33b6cbca8e9ab0-5a0c265477bf1365-00","errors":
+[2025-11-21T16:18:10 UTC] [WARN] Data360 RWB_PFI_SCORE HTTP 400 at skip=0 params={'INDICATOR': 'RWB.PFI.SCORE', 'FREQ': 'A', 'format': 'json', 'top': 1000, 'skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-533bc56ce39d5485420b8c9348f2c2c8-4629ef151d386ea8-00","errors":
+[2025-11-21T16:18:10 UTC] [WARN] Keeping old data for press_freedom_index (Data360 empty RWB_PFI_SCORE)
+[2025-11-21T16:18:10 UTC] [STATUS] press_freedom_index: stored source_date=Unknown, data_year=None
+[2025-11-21T16:18:10 UTC] [DEFER] general_government_gross_debt_gdp: queued for IMF bulk import
+[2025-11-21T16:18:10 UTC] [FETCH] IMF bulk import start for 1 KPIs
+[2025-11-21T16:18:10 UTC] [ERR] IMF bulk Excel missing required columns (subject or country)
+[2025-11-21T16:18:10 UTC] [WARN] Keeping old data for general_government_gross_debt_gdp (IMF bulk columns missing)
+[2025-11-21T16:18:10 UTC] [SKIP] Test mode active: skipping special geopolitical_risk_index fetch
+[2025-11-21T16:18:10 UTC] JSON written → data\fetch_status.json (2 entries)
+[2025-11-21T16:18:10 UTC] JSON written → data\meta\country_mappings_pending.json (290 entries)
+[2025-11-21T16:18:10 UTC] [INFO] fetch_status.json updated with 1 KPIs
+[2025-11-21T16:18:10 UTC] JSON written → data\fetch_state.json (3 entries)
+[2025-11-21T16:18:10 UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (0 entries)
+=== RealityCheck Fetch Report ===
+Countries loaded:   198
+KPIs processed:    2
+Saved records:     0
+
+WorldBank KPIs:    0
+CSV KPIs:          0
+OWID KPIs:         0
+UNHCR KPIs:        0
+Others KPIs:       0
+
+Mapping OK:        0
+Mapping dropped:   0
+Mapping pending:   0
+
+Dummies created:   0
+Skipped (up-to-date): 0
+Errors:            0
+Updated KPIs:      0
+=================================
+✅ Fetch completed successfully
+
+[2025-11-21T16:18:10 UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
+[2025-11-21T16:18:10 UTC] [STATE] Merged 0 updated KPIs → total 0 entries.
+[2025-11-21T16:18:50 UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-21T16:18:50 UTC] === Fetch started ===
+[2025-11-21T16:18:50 UTC] [INFO] Test mode enabled (-t): filtering KPIs 2/65 marked with test='*'
+[2025-11-21T16:18:50 UTC] [CHECK] press_freedom_index: missing or unknown date → fetch now
+[2025-11-21T16:18:50 UTC] [FETCH] Data360 fetch start for press_freedom_index (RWB_PFI_SCORE_WIDEF.csv)
+[2025-11-21T16:18:50 UTC] [WARN] Data360 RWB_PFI_SCORE_WIDEF.csv HTTP 400 at skip=0 params={'INDICATOR_ID': 'RWB_PFI_SCORE_WIDEF.csv', 'FREQ': 'A', '$format': 'json', '$top': 1000, '$skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-6cfbe7bea07f3babd932011e674664ca-802cf70e60030f7e-00","errors":
+[2025-11-21T16:18:51 UTC] [WARN] Data360 RWB_PFI_SCORE_WIDEF.csv HTTP 400 at skip=0 params={'INDICATOR': 'RWB_PFI_SCORE_WIDEF.csv', 'FREQ': 'A', '$format': 'json', '$top': 1000, '$skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-73a62390f92334ab6382927797feee14-607c003efc2e48cc-00","errors":
+[2025-11-21T16:18:51 UTC] [WARN] Data360 RWB_PFI_SCORE_WIDEF.csv HTTP 400 at skip=0 params={'INDICATOR_ID': 'RWB_PFI_SCORE_WIDEF.csv', 'FREQ': 'A', 'format': 'json', 'top': 1000, 'skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-606abdc7276bf4ebc7a582b9967f0ed3-07744df7c0270859-00","errors":
+[2025-11-21T16:18:52 UTC] [WARN] Data360 RWB_PFI_SCORE_WIDEF.csv HTTP 400 at skip=0 params={'INDICATOR': 'RWB_PFI_SCORE_WIDEF.csv', 'FREQ': 'A', 'format': 'json', 'top': 1000, 'skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-993d7392b113bd1c183c0c4375b7be52-e213c700cd60c34e-00","errors":
+[2025-11-21T16:18:52 UTC] [WARN] Data360 RWB_PFI_SCORE_WIDEF.csv HTTP 400 at skip=0 params={'INDICATOR_ID': 'RWB.PFI.SCORE.WIDEF.csv', 'FREQ': 'A', '$format': 'json', '$top': 1000, '$skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-8d90eae5a5071a3767b244ca2828cebd-91368e8f9604b827-00","errors":
+[2025-11-21T16:18:53 UTC] [WARN] Data360 RWB_PFI_SCORE_WIDEF.csv HTTP 400 at skip=0 params={'INDICATOR': 'RWB.PFI.SCORE.WIDEF.csv', 'FREQ': 'A', '$format': 'json', '$top': 1000, '$skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-9e18c849769272c379b2ca21af250458-8365aa851e95e44e-00","errors":
+[2025-11-21T16:18:54 UTC] [WARN] Data360 RWB_PFI_SCORE_WIDEF.csv HTTP 400 at skip=0 params={'INDICATOR_ID': 'RWB.PFI.SCORE.WIDEF.csv', 'FREQ': 'A', 'format': 'json', 'top': 1000, 'skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-1f021f0276eb3084bf41497fdb9c6017-686f82c30cd67aef-00","errors":
+[2025-11-21T16:18:54 UTC] [WARN] Data360 RWB_PFI_SCORE_WIDEF.csv HTTP 400 at skip=0 params={'INDICATOR': 'RWB.PFI.SCORE.WIDEF.csv', 'FREQ': 'A', 'format': 'json', 'top': 1000, 'skip': 0} – body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-8ff7ef00a0bb4add8c9928b8fca38886-19c13b757939a8f2-00","errors":
+[2025-11-21T16:18:54 UTC] [WARN] Keeping old data for press_freedom_index (Data360 empty RWB_PFI_SCORE_WIDEF.csv)
+[2025-11-21T16:18:54 UTC] [STATUS] press_freedom_index: stored source_date=Unknown, data_year=None
+[2025-11-21T16:18:54 UTC] [DEFER] general_government_gross_debt_gdp: queued for IMF bulk import
+[2025-11-21T16:18:54 UTC] [FETCH] IMF bulk import start for 1 KPIs
+[2025-11-21T16:18:54 UTC] [ERR] IMF bulk Excel missing required columns (subject or country)
+[2025-11-21T16:18:54 UTC] [WARN] Keeping old data for general_government_gross_debt_gdp (IMF bulk columns missing)
+[2025-11-21T16:18:54 UTC] [SKIP] Test mode active: skipping special geopolitical_risk_index fetch
+[2025-11-21T16:18:54 UTC] JSON written → data\fetch_status.json (2 entries)
+[2025-11-21T16:18:54 UTC] JSON written → data\meta\country_mappings_pending.json (290 entries)
+[2025-11-21T16:18:54 UTC] [INFO] fetch_status.json updated with 1 KPIs
+[2025-11-21T16:18:54 UTC] JSON written → data\fetch_state.json (3 entries)
+[2025-11-21T16:18:54 UTC] [STATE] Updated KPI info written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_state.json (0 entries)
+=== RealityCheck Fetch Report ===
+Countries loaded:   198
+KPIs processed:    2
+Saved records:     0
+
+WorldBank KPIs:    0
+CSV KPIs:          0
+OWID KPIs:         0
+UNHCR KPIs:        0
+Others KPIs:       0
+
+Mapping OK:        0
+Mapping dropped:   0
+Mapping pending:   0
+
+Dummies created:   0
+Skipped (up-to-date): 0
+Errors:            0
+Updated KPIs:      0
+=================================
+✅ Fetch completed successfully
+
+[2025-11-21T16:18:54 UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
+[2025-11-21T16:18:54 UTC] [STATE] Merged 0 updated KPIs → total 0 entries.
