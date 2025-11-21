@@ -1,14 +1,10 @@
-name: 📅 RealityCheck – Monthly Automated Fetch (Safe)
+name: 🧪 RealityCheck – Manual Fetch (Test Mode)
 
 on:
-  schedule:
-    - cron: "0 3 1 * *"     # Jeden 1. des Monats um 03:00 UTC (05:00 MEZ)
-  workflow_dispatch: {}      # Optional: manuell startbar
-
-  # Automatisiert: entspricht manual-fetch.yml, wird monatlich ausgeführt
+  workflow_dispatch: {}
 
 jobs:
-  monthly_run:
+  manual_run:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -29,45 +25,22 @@ jobs:
       - name: 📦 Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # Ensure correct SDMX client available for `import sdmx`
           pip install -U sdmx1
           pip install -r requirements.txt
           echo "✅ Dependencies installed"
 
-      - name: 🚀 Run full RealityCheck pipeline (monthly)
+      - name: 🚀 Run RealityCheck fetch_data.py (test mode)
         run: |
-          echo "===== RealityCheck Monthly Fetch Start $(date -u) ====="
-          python ./scripts/fetch_data.py
-          echo "===== Monthly Fetch End $(date -u) ====="
-          echo "[MONATLICHER FETCH] Automatisiert ausgeführt am $(date -u)" >> data/fetch_log.txt
+          echo "===== RealityCheck Manual Fetch Test Start $(date -u) ====="
+          python ./scripts/fetch_data.py -t
+          echo "===== Manual Fetch Test End $(date -u) ====="
 
       - name: 💾 Upload log artifact
         uses: actions/upload-artifact@v4
         with:
-          name: fetch_log_monthly
+          name: fetch_log_manual_test
           path: data/fetch_log.txt
           retention-days: 7
-
-      - name: 🌍 FTP Deploy /data to InfinityFree (Safe)
-        uses: SamKirkland/ftp-deploy-action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: data/
-          server-dir: ${{ secrets.FTP_DIR }}/data/
-          state-name: .ftp-deploy-sync-state-data.json
-          log-level: verbose
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.github*
-            **/__pycache__/
-            **/*.py
-            **/*.yml
-            **/*.csv
-            **/pending/**
 
       - name: 🪶 Commit and push updated data to GitHub
         env:
@@ -76,7 +49,7 @@ jobs:
           git config --global user.name "RealityCheck Bot"
           git config --global user.email "bot@realitycheck"
           git add data/
-          git commit -m "📆 Monthly data update ($(date -u))" || echo "No changes to commit"
+          git commit -m "📊 Manual data update (test mode, $(date -u))" || echo "No changes to commit"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
 
       - name: 🕐 Get current UTC date
@@ -88,9 +61,9 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const title = `📅 Monthly RealityCheck Run – ${{ job.status }}`;
+            const title = `🧪 Manual RealityCheck Run (Test Mode) – ${{ job.status }}`;
             const body = `
-            🧭 **Monthly RealityCheck fetch (automatisiert, 1x pro Monat) abgeschlossen**
+            🧭 **Manual RealityCheck fetch (test mode) completed**
             
             - **Status**: ${{ job.status }}
             - **Date**: ${{ steps.date.outputs.date }}
@@ -105,5 +78,5 @@ jobs:
               repo: context.repo.repo,
               title: title,
               body: body,
-              labels: ['automation', 'monthly-run']
+              labels: ['automation', 'manual-run', 'test']
             });
