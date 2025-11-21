@@ -868,12 +868,27 @@ def fetch_data360_indicator(indicator_id: str) -> List[Dict[str, Any]]:
 
         while True:
             # Data360 endpoints are picky about parameter names; try robust variants.
-            param_variants = [
-                {"INDICATOR_ID": ind_code, "FREQ": "A", "$format": "json", "$top": 1000, "$skip": skip},
-                {"INDICATOR": ind_code, "FREQ": "A", "$format": "json", "$top": 1000, "$skip": skip},
-                {"INDICATOR_ID": ind_code, "FREQ": "A", "format": "json", "top": 1000, "skip": skip},
-                {"INDICATOR": ind_code, "FREQ": "A", "format": "json", "top": 1000, "skip": skip},
+            base_params = [{"indicator": ind_code}, {"indicator_id": ind_code}, {"INDICATOR": ind_code}, {"INDICATOR_ID": ind_code}, {"IndicatorId": ind_code}, {"INDICATOR_CODE": ind_code}]
+            freq_variants = [
+                {"FREQ": "A"},
+                {},
             ]
+            format_variants = [
+                {"$format": "json", "$top": 1000, "$skip": skip},
+                {"format": "json", "top": 1000, "skip": skip},
+                {"format": "json", "$top": 1000, "$skip": skip},
+                {"$format": "json", "top": 1000, "skip": skip},
+            ]
+
+            param_variants = []
+            for b in base_params:
+                for f in freq_variants:
+                    for fmt in format_variants:
+                        merged = {}
+                        merged.update(b)
+                        merged.update(f)
+                        merged.update(fmt)
+                        param_variants.append(merged)
 
             resp = None
             used_params: Dict[str, Any] = {}
@@ -1537,7 +1552,7 @@ def fetch_imf_bulk(
         if load_path.suffix.lower() in {".xls", ".xlsx"}:
             df = pd.read_excel(load_path, sheet_name=0)
         else:
-            df = pd.read_csv(load_path)
+            df = pd.read_csv(load_path, low_memory=False)
     except Exception as exc:
         log(f"[ERR] IMF bulk file load failed: {exc}")
         for meta in imf_kpis:
@@ -1550,11 +1565,33 @@ def fetch_imf_bulk(
     iso_col = _find_column(df, ["iso", "iso_code", "iso3"])
 
     if not subject_col or not country_col:
-        log("[ERR] IMF bulk Excel missing required columns (subject or country)")
-        for meta in imf_kpis:
-            kpi_id = resolve_kpi_id(meta)
-            keep_or_dummy(kpi_id, "IMF bulk columns missing", stats)
-        return
+        header_row_idx = None
+        header_candidates = {"weo subject code", "weo_subject_code", "subject code", "subject_code"}
+        for idx in range(min(len(df), 15)):
+            row = df.iloc[idx]
+            joined = " ".join(str(v) for v in row.values if pd.notna(v)).lower()
+            if any(h in joined for h in header_candidates):
+                header_row_idx = idx
+                break
+
+        if header_row_idx is not None:
+            try:
+                df.columns = [str(c).strip() for c in df.iloc[header_row_idx].values]
+                df = df.drop(index=list(range(header_row_idx + 1)))
+                df = df.reset_index(drop=True)
+                subject_col = _find_column(df, ["weo_subject_code", "subject_code"])
+                country_col = _find_column(df, ["country", "weo_country", "country_name"])
+                iso_col = _find_column(df, ["iso", "iso_code", "iso3"])
+                log(f"[INFO] IMF bulk header realigned using row {header_row_idx}")
+            except Exception as exc:
+                log(f"[WARN] IMF bulk header realign failed: {exc}")
+
+        if not subject_col or not country_col:
+            log("[ERR] IMF bulk Excel missing required columns (subject or country)")
+            for meta in imf_kpis:
+                kpi_id = resolve_kpi_id(meta)
+                keep_or_dummy(kpi_id, "IMF bulk columns missing", stats)
+            return
 
     year_cols = [col for col in df.columns if re.fullmatch(r"\d{4}", str(col).strip())]
     if not year_cols:
