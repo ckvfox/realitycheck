@@ -1,3 +1,67 @@
+from pathlib import Path
+# === Robust JSON Writer ===
+def write_json(path: str | Path, obj):
+    """
+    Write JSON data to the given path using safe_write_json from script_utils.py (aliased as write_json_atomic).
+    Adds a log note with relative path and entry count.
+    """
+    path = Path(path)
+    length = None
+    try:
+        length = len(obj)
+    except Exception:
+        length = None
+    rel_path = os.path.relpath(path, ROOT_DIR)
+    note = f"JSON written → {rel_path}"
+    if length is not None:
+        note += f" ({length} entries)"
+    write_json_atomic(path, obj, logger=None, note=note)
+# ======================================================================
+# 🔢 Utility: safe_float (robust float conversion)
+# ======================================================================
+def safe_float(x):
+    try:
+        if x in ("", None):
+            return None
+        return float(str(x).replace(",", "."))
+    except Exception:
+        return None
+
+# ======================================================================
+# 🕒 Utility: now_utc (ISO UTC timestamp)
+# ======================================================================
+def now_utc():
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+# ======================================================================
+# 📝 Logging Helper
+# ======================================================================
+def log(msg, level="info"):
+    log_path = DATA_DIR / "fetch_log.txt"
+    logger = setup_logger("fetch_log", log_path)
+    if level == "error":
+        logger.error(msg)
+    elif level == "warning" or level == "warn":
+        logger.warning(msg)
+    else:
+        logger.info(msg)
+# ======================================================================
+# 📁 Ensure Required Directories Exist
+# ======================================================================
+def ensure_dirs():
+    for d in [DATA_DIR, META_DIR, SOURCE_CSV_DIR, PENDING_DIR]:
+        os.makedirs(d, exist_ok=True)
+# ======================================================================
+# 🏁 CLI Argument Parsing (parse_args)
+# ======================================================================
+def parse_args():
+    parser = argparse.ArgumentParser(description="RealityCheck Data Fetcher")
+    parser.add_argument("-k", "--kpi", dest="kpi", type=str, default=None, help="Fetch only this KPI filename")
+    parser.add_argument("-f", "--force", dest="force", action="store_true", help="Force refetch of all KPIs")
+    parser.add_argument("-n", "--no-analysis", dest="no_analysis", action="store_true", help="Skip AI-based analysis")
+    parser.add_argument("-t", "--test", dest="test", action="store_true", help="Test mode (only KPIs with test=*)")
+    return parser.parse_args()
+
+from pathlib import Path
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -36,6 +100,46 @@ from script_utils import (
     setup_logger,
 )
 
+# ----------------------------------------------------------------------
+# 🌍 World Bank API/ZIP Headers and Robust Request Helper
+# ----------------------------------------------------------------------
+WORLD_BANK_HEADERS = {
+    "User-Agent": "RealityCheck/1.0 (contact: info@realitycheck.global)",
+    "Accept": "application/json, text/plain, */*",
+}
+WORLD_BANK_ZIP_HEADERS = {
+    "User-Agent": "RealityCheck/1.0 (contact: info@realitycheck.global)",
+    "Accept": "application/zip, application/octet-stream, */*",
+}
+
+import time as _time
+def worldbank_request(url, timeout=30, headers=None, label=None, attempts=3, wait_base=3):
+    """
+    Robust HTTP GET with retry/backoff for World Bank API/ZIP endpoints.
+    Logs all attempts and errors. Returns requests.Response or None.
+    """
+    headers = headers or WORLD_BANK_HEADERS
+    for attempt in range(1, attempts + 1):
+        try:
+            resp = requests.get(url, timeout=timeout, headers=headers)
+            if resp.status_code == 429:
+                log(f"[RATE] {label or url}: HTTP 429 (rate limit), attempt {attempt}/{attempts}")
+                if attempt < attempts:
+                    _time.sleep(wait_base * attempt)
+                    continue
+            elif resp.status_code >= 500:
+                log(f"[WARN] {label or url}: HTTP {resp.status_code}, attempt {attempt}/{attempts}")
+                if attempt < attempts:
+                    _time.sleep(wait_base * attempt)
+                    continue
+            return resp
+        except Exception as e:
+            log(f"[ERR] {label or url}: request failed on attempt {attempt}/{attempts}: {e}")
+            if attempt < attempts:
+                _time.sleep(wait_base * attempt)
+    log(f"[FAIL] {label or url}: all {attempts} attempts failed")
+    return None
+
 
 
 # ✅ UTF-8-Fix
@@ -45,6 +149,7 @@ ensure_utf8_stdout()
 # ======================================================================
 # 🔧 Pfade (pathlib-Version – robust gegen OS-Unterschiede)
 # ======================================================================
+
 SCRIPT_DIR = Path(__file__).parent.resolve()
 ROOT_DIR   = SCRIPT_DIR.parent.resolve()
 DATA_DIR   = ROOT_DIR / "data"
@@ -52,185 +157,188 @@ META_DIR   = DATA_DIR / "meta"
 SOURCE_CSV_DIR = SCRIPT_DIR / "source_csv"
 PENDING_DIR    = DATA_DIR / "pending"
 
+# === Global logfile path for summary report ===
+LOG_FILE = str(DATA_DIR / "fetch_log.txt")
+
 COUNTRIES_FILE       = META_DIR / "countries.json"
 COUNTRY_MAP_FILE     = META_DIR / "country_mappings.json"
-COUNTRY_PENDING_FILE = META_DIR / "country_mappings_pending.json"
-AVAILABLE_FILE       = META_DIR / "available_kpis.json"
-LOG_FILE             = DATA_DIR / "fetch_log.txt"
-STATUS_FILE          = DATA_DIR / "fetch_status.json"
+STATUS_FILE = DATA_DIR / "fetch_status.json"
+COUNTRY_PENDING_FILE = DATA_DIR / "country_mappings_pending.json"
+AVAILABLE_FILE = META_DIR / "available_kpis.json"
 
-LOGGER = setup_logger("fetch_data", LOG_FILE)
+COUNTRIES_FILE       = META_DIR / "countries.json"
+COUNTRY_MAP_FILE     = META_DIR / "country_mappings.json"
 
-# ======================================================================
-# 🌐 Netzwerk-Header & Requests-Defaults
-# ======================================================================
-WORLD_BANK_HEADERS = {
-    "User-Agent": "RealityCheckFetcher/2025 (+https://realitycheck.global)",
-    "Accept": "application/json, */*;q=0.1",
-}
-WORLD_BANK_ZIP_HEADERS = {
-    **WORLD_BANK_HEADERS,
-    "Accept": "application/zip, application/octet-stream;q=0.9, */*;q=0.1",
-}
-
-RETRYABLE_STATUS_CODES = {429}
-
-
-def worldbank_request(
-    url: str,
-    *,
-    timeout: int,
-    headers: Optional[Dict[str, str]] = None,
-    label: str,
-    attempts: int = 3,
-    wait_base: int = 3,
-):
-    """Perform a World Bank request with retry/backoff handling."""
-
-    last_response = None
-
-    for attempt in range(1, attempts + 1):
-        try:
-            response = requests.get(url, timeout=timeout, headers=headers)
-        except Exception as exc:  # pragma: no cover - network failure handling
-            last_response = None
-            if attempt == attempts:
-                log(f"[ERR] {label}: request failed after {attempts} attempts ({exc})")
-                return None
-
-            wait = wait_base * attempt
-            log(f"[WARN] {label}: request error {exc} → retry in {wait}s ({attempt}/{attempts})")
-            time.sleep(wait)
+# --- New IMF API fetch using sdmx1 ---
+import sdmx
+def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, stats, force_all_updates):
+    if not imf_kpis:
+        return
+    log(f"[FETCH] IMF API import start for {len(imf_kpis)} KPIs")
+    client = sdmx.Client('IMF_WEO')
+    import requests
+    for meta in imf_kpis:
+        kpi_id = resolve_kpi_id(meta)
+        source_code = (meta.get("source_code") or "").strip()
+        updated_set = stats.setdefault("updated_kpis", set())
+        already_marked = kpi_id in updated_set
+        # For debug: test with a single country (DEU) to isolate SDMX API issues
+        iso3_list = ["DEU"]
+        if not source_code:
+            log(f"[WARN] IMF KPI {kpi_id} missing source_code")
+            keep_or_dummy(kpi_id, "IMF missing source_code", stats)
             continue
-
-        last_response = response
-
-        if response.status_code == 200:
-            return response
-
-        retryable = (
-            response.status_code in RETRYABLE_STATUS_CODES or 500 <= response.status_code < 600
-        )
-
-        if attempt == attempts or not retryable:
-            return response
-
-        wait = wait_base * attempt
-        log(f"[WARN] {label}: HTTP {response.status_code} → retry in {wait}s ({attempt}/{attempts})")
-        time.sleep(wait)
-
-    return last_response
-
-
-
-# === Argumente ===
-def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="RealityCheck Fetcher")
-    parser.add_argument(
-        "-f",
-        "--force",
-        action="store_true",
-        help="Force full refetch (clear /data except /meta)",
-    )
-    parser.add_argument(
-        "-n",
-        "--no-analysis",
-        action="store_true",
-        help="Skip AI-based analysis and ranking follow-up tasks",
-    )
-    parser.add_argument(
-        "-t",
-        "--test",
-        action="store_true",
-        help="Test mode: only fetch KPIs marked with test='*' in available_kpis.json",
-    )
-    return parser
-
-
-def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
-    return build_parser().parse_args(argv)
-
-
-def handle_force_cleanup() -> None:
-    print("[INFO] Force mode enabled – clearing data except /meta …")
-
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-
-    def _remove_file(path: Path) -> None:
+        # Only fetch if needed
+        if not force_all_updates and not should_fetch(
+            kpi_id, "imf", None, meta, fetch_status
+        ):
+            mark_skip(stats, "Remote data unchanged")
+            log(f"[⏸️] {kpi_id} – IMF API unchanged")
+            continue
+        # Build iso3_list from all country meta entries, fallback to empty string if not found
+        iso3_list = [meta.get("iso3") or meta.get("iso_a3") or meta.get("alpha3") or '' for cname, meta in (countries or {}).items()]
+        # Try SDMX API first
+        debug_urls = [
+            f"https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/data/{source_code}?key={'%2B'.join(iso3_list)}&startPeriod=1990",
+            f"https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/data/{source_code}/{'/'.join(iso3_list)}?startPeriod=1990",
+            f"https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/data/{source_code}/DEU?startPeriod=1990"
+        ]
+        for idx, debug_url in enumerate(debug_urls):
+            log(f"[DEBUG] IMF SDMX API URL (format {idx+1}): {debug_url}")
+        df = None
         try:
-            path.unlink()
-        except FileNotFoundError:
-            return
-        except PermissionError as exc:
-            print(f"[WARN] Cannot delete {path.name} ({exc}). Trying to clear file instead …")
+            # Try the original call
+            data_msg = None
             try:
-                path.write_text("", encoding="utf-8")
-                print(f"[OK] {path.name} cleared – close external viewers to delete fully.")
-            except Exception as inner_exc:  # pragma: no cover - defensive only
-                print(
-                    f"[WARN] Could not clear {path.name}: {inner_exc}. "
-                    "Please close the file and rerun if necessary."
-                )
+                data_msg = client.data(source_code, key="+".join(iso3_list), params={"startPeriod": "1990"})
+            except Exception as exc1:
+                log(f"[ERR] IMF API fetch (key=+join) failed for {source_code}: {exc1}")
+                # Try alternate: key as list, or as path
+                try:
+                    data_msg = client.data(source_code, key=iso3_list, params={"startPeriod": "1990"})
+                except Exception as exc2:
+                    log(f"[ERR] IMF API fetch (key=list) failed for {source_code}: {exc2}")
+                    try:
+                        # Try with just DEU as a last resort
+                        data_msg = client.data(source_code, key="DEU", params={"startPeriod": "1990"})
+                    except Exception as exc3:
+                        log(f"[ERR] IMF API fetch (key=DEU) failed for {source_code}: {exc3}")
+                        log(f"[ERR] IMF API fetch failed for {source_code}: All key formats failed.")
+                        data_msg = None
+            if data_msg is not None:
+                log(f"[DEBUG] IMF SDMX data_msg type: {type(data_msg)} dir: {dir(data_msg)}")
+                try:
+                    df = sdmx.to_pandas(data_msg)
+                except Exception as exc_df:
+                    log(f"[ERR] IMF SDMX to_pandas failed for {source_code}: {exc_df}")
+                    df = None
+        except Exception as exc:
+            import traceback
+            log(f"[ERR] IMF API fetch failed for {source_code}: {exc}\n{traceback.format_exc()}")
+            df = None
 
-    for item in DATA_DIR.iterdir():
-        if item.name == "meta":
+        # If SDMX failed, try IMF Datamapper API as fallback
+        if df is None or (hasattr(df, 'empty') and df.empty):
+            log(f"[INFO] Trying IMF Datamapper API fallback for {source_code}")
+            try:
+                url = f"https://www.imf.org/external/datamapper/api/v1/{source_code}"
+                resp = requests.get(url, timeout=30)
+                if resp.status_code == 200:
+                    data = resp.json()
+                    # Structure: {"values": {"GGXWDG_NGDP": {"SDN": {"1992": ...}, ...}}, ...}
+                    values = data.get("values", {})
+                    indicator_block = values.get(source_code, {})
+                    records = []
+                    latest_year = None
+                    for iso3, yearvals in indicator_block.items():
+                        canon = canonicalize_country(iso3, c_index, a_index, countries, pending, stats)
+                        if not canon:
+                            continue
+                        iso3_code = resolve_iso3(canon, countries, fallback=iso3)
+                        for year, val in yearvals.items():
+                            try:
+                                year_int = int(year)
+                                v = float(val)
+                            except Exception:
+                                continue
+                            latest_year = max(latest_year or year_int, year_int)
+                            records.append({"country": canon, "iso3": iso3_code, "year": year_int, "value": v})
+                    if records:
+                        save_imf_records(kpi_id, records, stats)
+                        stats["imf_success"] += 1
+                        stats["saved_records"] += len(records)
+                        stats["fetched"] += len(records)
+                        meta["source"] = "IMF Datamapper API"
+                        meta["_latest_year"] = latest_year
+                        meta["_source_date"] = str(latest_year)
+                        updated_set.add(kpi_id)
+                        if not already_marked:
+                            stats["updated"] += 1
+                        log(f"[OK] IMF Datamapper API KPI saved: {kpi_id} ({len(records)} rows, last year {latest_year})")
+                    else:
+                        save_imf_records(kpi_id, [])
+                        keep_or_dummy(kpi_id, f"IMF Datamapper API empty {source_code}", stats)
+                        meta["_source_date"] = str(latest_year) if latest_year else "Unknown"
+                    used_source_date = meta.get("_source_date") or "Unknown"
+                    fetch_status.setdefault("kpis", {})[kpi_id] = {
+                        "source": meta.get("source") or "IMF Datamapper API",
+                        "source_type": "imf",
+                        "source_code": source_code,
+                        "source_date": used_source_date,
+                        "data_year": meta.get("_latest_year"),
+                        "last_fetch": now_utc(),
+                    }
+                    continue
+                else:
+                    log(f"[ERR] IMF Datamapper API fetch failed: HTTP {resp.status_code}")
+            except Exception as exc:
+                log(f"[ERR] IMF Datamapper API fetch failed: {exc}")
+            # If fallback fails, dummy
+            keep_or_dummy(kpi_id, f"IMF Datamapper API fetch failed", stats)
             continue
-        if item.is_dir():
-            shutil.rmtree(item, ignore_errors=True)
-        else:
-            _remove_file(item)
 
-    if (SCRIPT_DIR / "__pycache__").exists():
-        shutil.rmtree(SCRIPT_DIR / "__pycache__", ignore_errors=True)
-
-    for f in SCRIPT_DIR.glob("*.md5"):
-        f.unlink(missing_ok=True)
-
-    if PENDING_DIR.exists():
-        shutil.rmtree(PENDING_DIR, ignore_errors=True)
-
-    print("[OK] Data folders cleared for full refetch.")
-
-# ======================================================================
-# 🧰 Hilfsfunktionen
-# ======================================================================
-def now_utc() -> str:
-    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-def ensure_dirs():
-    os.makedirs(DATA_DIR, exist_ok=True)
-    os.makedirs(PENDING_DIR, exist_ok=True)
-
-def log(msg: str, level: str = "info"):
-    level_name = (level or "info").lower()
-    if level_name == "error":
-        LOGGER.error(msg)
-    elif level_name in {"warn", "warning"}:
-        LOGGER.warning(msg)
-    else:
-        LOGGER.info(msg)
-
-
-def write_json(path: str | Path, obj):
-    path = Path(path)
-    length = None
-    try:
-        length = len(obj)
-    except Exception:
-        length = None
-    rel_path = os.path.relpath(path, ROOT_DIR)
-    note = f"JSON written → {rel_path}"
-    if length is not None:
-        note += f" ({length} entries)"
-    write_json_atomic(path, obj, logger=LOGGER, note=note)
-
-
-def write_text(path: str | Path, content: str):
-    path = Path(path)
-    rel_path = os.path.relpath(path, ROOT_DIR)
-    write_text_atomic(path, content or "", logger=LOGGER, note=f"Text written → {rel_path}")
-
-def safe_float(x) -> Optional[float]:
+        # If SDMX worked, process as before
+        if df is not None and not getattr(df, 'empty', False):
+            records = []
+            latest_year = None
+            for (country, year), value in df.stack().items():
+                canon = canonicalize_country(country, c_index, a_index, countries, pending, stats)
+                if not canon:
+                    continue
+                try:
+                    year_int = int(year)
+                    val = float(value)
+                except Exception:
+                    continue
+                latest_year = max(latest_year or year_int, year_int)
+                iso3_code = resolve_iso3(canon, countries)
+                records.append({"country": canon, "iso3": iso3_code, "year": year_int, "value": val})
+            if records:
+                save_imf_records(kpi_id, records, stats)
+                stats["imf_success"] += 1
+                stats["saved_records"] += len(records)
+                stats["fetched"] += len(records)
+                meta["source"] = "IMF WEO API"
+                meta["_latest_year"] = latest_year
+                meta["_source_date"] = str(latest_year)
+                updated_set.add(kpi_id)
+                if not already_marked:
+                    stats["updated"] += 1
+                log(f"[OK] IMF API KPI saved: {kpi_id} ({len(records)} rows, last year {latest_year})")
+            else:
+                save_imf_records(kpi_id, [])
+                keep_or_dummy(kpi_id, f"IMF API empty {source_code}", stats)
+                meta["_source_date"] = str(latest_year) if latest_year else "Unknown"
+            used_source_date = meta.get("_source_date") or "Unknown"
+            fetch_status.setdefault("kpis", {})[kpi_id] = {
+                "source": meta.get("source") or "IMF WEO API",
+                "source_type": "imf",
+                "source_code": source_code,
+                "source_date": used_source_date,
+                "data_year": meta.get("_latest_year"),
+                "last_fetch": now_utc(),
+            }
+    log("[INFO] IMF API import completed")
     try:
         if x in ("", None):
             return None
@@ -438,14 +546,21 @@ def save_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
 def keep_or_dummy(kpi_id: str, reason: str, stats):
     json_path = os.path.join(DATA_DIR, f"{kpi_id}.json")
     csv_path  = os.path.join(DATA_DIR, f"{kpi_id}.csv")
+    is_error = "failed" in reason.lower() or "error" in reason.lower() or "empty" in reason.lower()
     if os.path.exists(json_path) and os.path.exists(csv_path):
         log(f"[WARN] Keeping old data for {kpi_id} ({reason})")
+        if is_error:
+            stats["errors"] = stats.get("errors", 0) + 1
+            stats["dummies"] = stats.get("dummies", 0) + 1
+            log(f"[WARN] Dummy (virtual) counted for {kpi_id} ({reason})")
         return
     write_json(json_path, [])
     with open(csv_path, "w", encoding="utf-8", newline="") as f:
         csv.DictWriter(f, fieldnames=["country", "iso2", "year", "value"]).writeheader()
-    stats["dummies"] += 1
+    stats["dummies"] = stats.get("dummies", 0) + 1
     log(f"[WARN] Dummy created for {kpi_id} ({reason})")
+    if is_error:
+        stats["errors"] = stats.get("errors", 0) + 1
 
 
 def save_imf_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
@@ -620,9 +735,8 @@ def should_fetch_owid(kpi_id: str, meta: dict, fetch_status: dict) -> bool:
             log(f"[CHECK] {kpi_id}: max_year={max_year} < {current_year}, fetched this year → skip")
             return False
         log(f"[CHECK] {kpi_id}: max_year={max_year} → fetch (possible update)")
-        return True
     except Exception as e:
-        log(f"[WARN] {kpi_id}: OWID year-check failed ({e}) → fetch")
+        log(f"[CHECK] {kpi_id}: error in year check: {e} → fetch")
         return True
 
 
@@ -854,155 +968,139 @@ def extract_worldbank_date(zip_bytes: bytes) -> Optional[str]:
 def fetch_data360_indicator(indicator_id: str, meta: dict = None) -> List[Dict[str, Any]]:
     """Fetch an indicator from the World Bank Data360 API with pagination. meta (KPI-Metadaten) wird für Fallback-URL benötigt."""
 
-    base_url = "https://data360api.worldbank.org/data360/data"
-    indicator_variants = [indicator_id]
-    dotted = indicator_id.replace("_", ".")
-    if dotted not in indicator_variants:
-        indicator_variants.append(dotted)
-
+    import pandas as pd, os, requests
+    log(f"[DEBUG] Data360 meta for {indicator_id}: {meta}")
     records: List[Dict[str, Any]] = []
-
-    for ind_code in indicator_variants:
+    # --- 1. Try Data360 API fetch with pagination ---
+    if meta and meta.get("database_id") and meta.get("source_code"):
+        api_url = "https://data360api.worldbank.org/data360/data"
+        params = {
+            "DATABASE_ID": meta["database_id"],
+            "INDICATOR": meta["source_code"]
+        }
         skip = 0
-        variant_records: List[Dict[str, Any]] = []
-
-        while True:
-            # Data360 endpoints are picky about parameter names; try robust variants.
-            base_params = [{"indicator": ind_code}, {"indicator_id": ind_code}, {"INDICATOR": ind_code}, {"INDICATOR_ID": ind_code}, {"IndicatorId": ind_code}, {"INDICATOR_CODE": ind_code}]
-            freq_variants = [
-                {"FREQ": "A"},
-                {},
-            ]
-            format_variants = [
-                {"$format": "json", "$top": 1000, "$skip": skip},
-                {"format": "json", "top": 1000, "skip": skip},
-                {"format": "json", "$top": 1000, "$skip": skip},
-                {"$format": "json", "top": 1000, "skip": skip},
-            ]
-
-            param_variants = []
-            for b in base_params:
-                for f in freq_variants:
-                    for fmt in format_variants:
-                        merged = {}
-                        merged.update(b)
-                        merged.update(f)
-                        merged.update(fmt)
-                        param_variants.append(merged)
-
-            resp = None
-            used_params: Dict[str, Any] = {}
-
-            for params in param_variants:
-                used_params = params
-                try:
-                    resp = requests.get(base_url, params=params, timeout=40)
-                except Exception as exc:  # pragma: no cover - network/runtime safeguard
-                    log(
-                        f"[WARN] Data360 {indicator_id} request failed at skip={skip} params={params}: {exc}"
-                    )
-                    resp = None
-                    continue
-
-                if resp.status_code == 200:
-                    break
-
-                snippet = (resp.text or "")[:200]
-                log(
-                    f"[WARN] Data360 {indicator_id} HTTP {resp.status_code} at skip={skip} params={params}"
-                    + (f" – body: {snippet}" if snippet else "")
-                )
-                resp = None
-
-            if not resp:
-                break
-
-            try:
-                payload = resp.json()
-            except Exception as exc:
-                log(
-                    f"[WARN] Data360 {indicator_id} JSON decode failed at skip={skip} params={used_params}: {exc}"
-                )
-                break
-
-            data_block = payload.get("data") or payload.get("value") or []
-            if isinstance(data_block, dict):
-                data_block = data_block.get("data") or data_block.get("value") or []
-
-            if not data_block:
-                break
-
-            batch_count = 0
-            for row in data_block:
-                if not isinstance(row, dict):
-                    continue
-
-                freq = str(row.get("FREQ") or row.get("freq") or "").upper()
-                if freq != "A":
-                    continue
-
-                value = safe_float(row.get("OBS_VALUE") or row.get("obs_value"))
-                if value is None:
-                    continue
-
-                iso3 = (row.get("REF_AREA") or row.get("ref_area") or "").strip()
-                year = row.get("TIME_PERIOD") or row.get("time_period")
-                if not iso3 or not year:
-                    continue
-
-                try:
-                    year_int = int(float(year))
-                except Exception:
-                    continue
-
-                variant_records.append(
-                    {"iso3": iso3, "year": year_int, "value": float(value)}
-                )
-                batch_count += 1
-
-            if batch_count < 1000:
-                break
-
-            skip += 1000
-
-        if variant_records:
-            records = variant_records
-            if ind_code != indicator_id:
-                log(f"[INFO] Data360 used fallback indicator code variant: {ind_code}")
-            break
-
-    # Fallback: Wenn keine Daten, versuche CSV-Download dynamisch aus meta
-    if not records and meta and meta.get("source") and meta.get("source_code"):
+        page_size = 1000
+        total_fetched = 0
         try:
-            import pandas as pd
-            url = f"{meta['source'].rstrip('/')}/{meta['source_code']}.csv"
-            df = pd.read_csv(url)
-            # Normalize columns
-            df.columns = [c.strip().lower() for c in df.columns]
-            cols = df.columns.tolist()
-            # Try to find country/year/value columns heuristically
-            country_col = next((c for c in cols if "country" in c), None)
-            year_col = next((c for c in cols if "year" in c), None)
-            value_col = next((c for c in cols if "score" in c or "value" in c), None)
-            if country_col and year_col and value_col:
-                out = []
-                for _, r in df.iterrows():
-                    cname = str(r.get(country_col) or "").strip()
-                    y = r.get(year_col)
-                    v = r.get(value_col)
-                    if not cname or y is None or v is None:
+            # Load country mappings for ISO code resolution
+            try:
+                with open(os.path.join(META_DIR, "country_mappings.json"), encoding="utf-8") as f:
+                    country_mappings = json.load(f)
+            except Exception as e:
+                log(f"[ERR] Could not load country_mappings.json: {e}")
+                country_mappings = {}
+
+            while True:
+                paged_params = params.copy()
+                paged_params["skip"] = skip
+                r = requests.get(api_url, params=paged_params, timeout=30)
+                log(f"[Data360 API] GET {r.url} -> {r.status_code}")
+                if r.status_code != 200:
+                    log(f"[ERR] Data360 API fetch failed: {r.status_code} {r.text}")
+                    break
+                data = r.json()
+                api_values = data.get("value", [])
+                if skip == 0 and api_values:
+                    log(f"[Data360 API] Sample record for {indicator_id}: {api_values[0]}")
+                if not api_values:
+                    break
+                for i, row in enumerate(api_values):
+                    iso_code = row.get("REF_AREA")
+                    cname = None
+                    if iso_code:
+                        cname = country_mappings.get(iso_code, None)
+                        if i < 5 and skip == 0:
+                            log(f"[Data360 MAP] ISO '{iso_code}' → '{cname}'")
+                    if not cname:
+                        cname = row.get("REF_AREA_LABEL") or row.get("country")
+                        if i < 5 and skip == 0:
+                            log(f"[Data360 MAP] Fallback for ISO '{iso_code}': '{cname}'")
+                    year = row.get("TIME_PERIOD")
+                    val = row.get("OBS_VALUE")
+                    if not cname or not year or val is None:
                         continue
                     try:
-                        y = int(float(y))
-                        v = float(v)
-                        out.append({"iso3": "", "year": y, "value": v, "country": cname})
+                        y = int(year)
+                        v = float(val)
+                        records.append({"country": cname, "year": y, "value": v, "REF_AREA": iso_code})
                     except Exception:
                         continue
-                return out
+                total_fetched += len(api_values)
+                if len(api_values) < page_size:
+                    break
+                skip += page_size
+            if records:
+                log(f"[Data360 API] Parsed {len(records)} records for {indicator_id}")
+                log(f"[Data360 API] Sample parsed record: {records[0]}")
+                return records
             else:
-                log(f"[ERR] Data360 CSV fallback: columns not found in {url}")
+                log(f"[Data360 API] No usable records for {indicator_id}")
         except Exception as e:
-            log(f"[ERR] Data360 CSV fallback failed: {e}")
+            log(f"[ERR] Data360 API request failed: {e}")
+    # --- 2. Fallback to CSV (local or remote) ---
+    if meta and meta.get("source_code"):
+        local_path = os.path.join(os.path.dirname(__file__), "source_raw", f"{meta['source_code']}.csv")
+        if os.path.exists(local_path):
+            url = local_path
+            log(f"[Data360] using local test file {url}")
+        elif meta.get("source"):
+            url = f"{meta['source'].rstrip('/')}/{meta['source_code']}.csv"
+            log(f"[Data360] trying remote CSV {url}")
+        else:
+            log(f"[ERR] Data360: missing meta/source for {indicator_id}")
+            return records
+        try:
+            df = pd.read_csv(url)
+            log(f"[DEBUG] Data360 columns: {df.columns.tolist()}")
+            if not df.empty:
+                log(f"[DEBUG] Data360 sample row: {df.iloc[0].to_dict()}")
+        except Exception as e:
+            log(f"[ERR] Data360 CSV failed to load {url}: {e}")
+            return records
+        # Normalize columns
+        df.columns = [c.strip().lower() for c in df.columns]
+        cols = df.columns.tolist()
+        # Wide-to-long transformation: years as columns
+        # Heuristic: find country column, then all year columns
+        country_col = next((c for c in cols if c in ("country", "ref_area_label", "ref_area", "entity")), None)
+        year_cols = [c for c in cols if c.isdigit() and len(c) == 4]
+        if country_col and year_cols:
+            for _, row in df.iterrows():
+                cname = str(row.get(country_col) or "").strip()
+                if not cname:
+                    continue
+                for ycol in year_cols:
+                    v = row.get(ycol)
+                    if v is None or v == "":
+                        continue
+                    try:
+                        y = int(ycol)
+                        v = float(v)
+                        records.append({"country": cname, "year": y, "value": v})
+                    except Exception:
+                        continue
+            return records
+        # Fallback: try to find country/year/value columns heuristically
+        year_col = next((c for c in cols if "year" in c), None)
+        value_col = next((c for c in cols if "score" in c or "value" in c), None)
+        if country_col and year_col and value_col:
+            for _, r in df.iterrows():
+                cname = str(r.get(country_col) or "").strip()
+                y = r.get(year_col)
+                v = r.get(value_col)
+                if not cname or y is None or v is None:
+                    continue
+                try:
+                    y = int(float(y))
+                    v = float(v)
+                    records.append({"country": cname, "year": y, "value": v})
+                except Exception:
+                    continue
+            return records
+        else:
+            log(f"[ERR] Data360 CSV: columns not found in {url}")
+    else:
+        log(f"[ERR] Data360: missing meta/source_code for {indicator_id}")
     return records
 
 
@@ -1055,7 +1153,6 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
             out.append({
                 "country": canon,
                 "iso2": "",
-                "year": year,
                 "value": float(val)
             })
         except Exception:
@@ -1963,15 +2060,19 @@ def main(args: argparse.Namespace) -> None:
     c_index, a_index = build_country_indices(countries, mapping)
     stats["countries_loaded"] = len(countries)
 
+
     raw_kpis = load_json_file(AVAILABLE_FILE, [])
     kpi_list = [v for v in raw_kpis if isinstance(v, dict)]
 
-    if args.test:
+    # --- Support -k (single KPI fetch) ---
+    if args.kpi:
         before = len(kpi_list)
-        kpi_list = [v for v in kpi_list if str(v.get("test", "")).strip() == "*"]
-        log(
-            f"[INFO] Test mode enabled (-t): filtering KPIs {len(kpi_list)}/{before} marked with test='*'"
-        )
+        kpi_list = [v for v in kpi_list if v.get("filename") == args.kpi]
+        log(f"[INFO] Single KPI mode (-k): filtering KPIs {len(kpi_list)}/{before} for filename='{args.kpi}'")
+
+    # Test mode disables AI-based analysis, but does not filter by test='*'
+    if args.test:
+        log(f"[INFO] Test mode enabled (-t): AI-based analysis will be skipped, but all KPIs are processed.")
 
     stats["kpis_loaded"] = len(kpi_list)
 
@@ -2023,32 +2124,33 @@ def main(args: argparse.Namespace) -> None:
                     # Entferne .csv-Endung, falls vorhanden
                     if indicator_id and indicator_id.lower().endswith('.csv'):
                         indicator_id = indicator_id[:-4]
-                    log(f"[FETCH] Data360 fetch start for {kpi_id} ({indicator_id})")
-                    records = fetch_data360_indicator(indicator_id) if indicator_id else []
+                    # Only log fetch start for non-debug/test
+                    if kpi_id != "press_freedom_index":
+                        log(f"[FETCH] Data360 fetch start for {kpi_id} ({indicator_id})")
+                    records = fetch_data360_indicator(indicator_id, meta) if indicator_id else []
 
                     final_rows = []
                     years_seen: List[int] = []
                     for row in records:
-                        canon = canonicalize_country(row.get("iso3"), c_index, a_index, countries, pending, stats)
+                        iso3 = row.get("REF_AREA")
+                        log(f"[DEBUG] Data360 row ISO3 before canonicalize: {iso3}")
+                        canon = canonicalize_country(iso3, c_index, a_index, countries, pending, stats)
+                        log(f"[DEBUG] Data360 canonicalized: {canon}")
                         if not canon:
                             continue
-
                         try:
                             year_int = int(float(row.get("year")))
                         except Exception:
                             continue
-
                         value = safe_float(row.get("value"))
                         if value is None:
                             continue
-
                         iso2 = resolve_iso2(canon, countries)
-                        final_rows.append(
-                            {"country": canon, "iso2": iso2, "year": year_int, "value": float(value)}
-                        )
+                        final_rows.append({"country": canon, "iso2": iso2, "year": year_int, "value": float(value)})
                         years_seen.append(year_int)
 
                     if final_rows:
+                        log(f"[DEBUG] Data360 final_rows before save: {len(final_rows)}")
                         save_records(kpi_id, final_rows, stats)
                         stats["data360_success"] += 1
                         stats["saved_records"] += len(final_rows)
@@ -2057,9 +2159,9 @@ def main(args: argparse.Namespace) -> None:
                             meta["_latest_year"] = max(years_seen)
                         meta.setdefault("_source_date", "Unknown")
                         stats.setdefault("updated_kpis", set()).add(kpi_id)
-                        log(
-                            f"[OK] Data360 KPI saved: {kpi_id} ({len(final_rows)} rows)")
+                        log(f"[OK] Data360 KPI saved: {kpi_id} ({len(final_rows)} rows)")
                     else:
+                        # Always save a dummy if no data, no fallback to CSV
                         keep_or_dummy(kpi_id, f"Data360 empty {indicator_id}", stats)
                 elif source_type == "csv":
                     latest_year = process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats)
@@ -2097,6 +2199,7 @@ def main(args: argparse.Namespace) -> None:
 
             except Exception as e:  # 👈 muss in dieser Einrückungsebene stehen
                 stats["errors"] += 1
+                keep_or_dummy(kpi_id, f"Exception: {e}", stats)
                 log(f"[❌] {kpi_id} failed: {e}\n{traceback.format_exc()}")
 
         except Exception as e:
@@ -2108,7 +2211,7 @@ def main(args: argparse.Namespace) -> None:
     # ---------------------------------------------------------------
     if imf_queue:
         try:
-            fetch_imf_bulk(
+            fetch_imf_api(
                 imf_queue,
                 countries,
                 c_index,

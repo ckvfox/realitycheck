@@ -963,18 +963,19 @@
     "description": "The Press Freedom Index measures how freely journalists can report the news without censorship, intimidation or retaliation. It is compiled by Reporters Without Borders (RSF) and published via the World Bank Data360 platform, providing a global benchmark for media independence and democratic resilience.",
     "unit": "index (0–100)",
     "relation": "",
-    "sort": "lower",
+    "sort": "higher",
     "cluster": "Society & Governance",
-    "source": "https://data360files.worldbank.org/data360-data/data/RWB_PFI",
+    "source": "https://data360files.worldbank.org/data360-data/data",
     "source_type": "data360",
-    "source_code": "RWB_PFI_SCORE_WIDEF",
+    "source_code": "RWB_PFI/RWB_PFI_SCORE",
     "scale": "none",
     "world_kpi": "",
     "filename": "press_freedom_index",
+    "database_id": "RWB_PFI",
     "relevance": "normal",
     "actuality": "critical",
     "invert": "",
-    "test": "*"
+    "test": ""
   },
   {
     "title": "Geopolitical Risk Index",
@@ -1000,7 +1001,7 @@
     "unit": "% of GDP",
     "relation": "*",
     "sort": "lower",
-    "cluster": "Economy",
+    "cluster": "Economy & Labor",
     "source": "https://www.imf.org/en/Publications/SPROLLs/world-economic-outlook-databases",
     "source_type": "imf",
     "source_code": "GGXWDG_NGDP",
@@ -1009,7 +1010,7 @@
     "world_kpi": "",
     "actuality": "normal",
     "invert": "",
-    "test": "*"
+    "test": ""
   },
   {
     "title": "World Happiness Index",
