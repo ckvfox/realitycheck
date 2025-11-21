@@ -1060,6 +1060,27 @@ def fetch_data360_indicator(indicator_id: str, meta: dict = None) -> List[Dict[s
         # Normalize columns
         df.columns = [c.strip().lower() for c in df.columns]
         cols = df.columns.tolist()
+        # Data360 narrow layout (REF_AREA, TIME_PERIOD, OBS_VALUE, REF_AREA_LABEL)
+        iso_col = next((c for c in cols if c in ("ref_area", "refarea")), None)
+        time_col = next((c for c in cols if c in ("time_period", "timeperiod")), None)
+        obs_col = next((c for c in cols if c in ("obs_value", "obsvalue", "value", "score")), None)
+        label_col = next((c for c in cols if c in ("ref_area_label", "country", "entity")), None)
+        if iso_col and time_col and obs_col:
+            for _, row in df.iterrows():
+                iso = str(row.get(iso_col) or "").strip()
+                cname = str(row.get(label_col) or iso or "").strip()
+                year = row.get(time_col)
+                val = row.get(obs_col)
+                if not cname or year in (None, "") or val in (None, ""):
+                    continue
+                try:
+                    y = int(float(year))
+                    v = float(val)
+                    records.append({"country": cname, "year": y, "value": v, "REF_AREA": iso})
+                except Exception:
+                    continue
+            if records:
+                return records
         # Wide-to-long transformation: years as columns
         # Heuristic: find country column, then all year columns
         country_col = next((c for c in cols if c in ("country", "ref_area_label", "ref_area", "entity")), None)
