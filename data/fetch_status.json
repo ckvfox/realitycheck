@@ -1,0 +1,17 @@
+{
+  "kpis": {
+    "press_freedom_index": {
+      "source": "https://data360.worldbank.org/indicators/RWB_PFI_SCORE",
+      "url": "",
+      "source_date": "Unknown",
+      "data_year": null,
+      "last_fetch": "2025-11-21T14:02:30Z"
+    }
+  },
+  "summary": {
+    "lastRun": "2025-11-21T14:02:30Z",
+    "updated": 0,
+    "skipped": 0,
+    "errors": 0
+  }
+}
