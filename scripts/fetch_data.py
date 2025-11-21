@@ -511,24 +511,35 @@ def save_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
     und protokolliert die Kürzungen im Fetch-Report.
     """
     ensure_dirs()
-    before = len(records)
 
-    # 🕐 Trim extreme years (remove pre-1900 and future projections)
+    before = len(records)
     from datetime import datetime
     current_year = datetime.now().year
 
-    trimmed = [
-        r for r in records
-        if isinstance(r.get("year"), (int, float, str))
-        and str(r.get("year")).strip() != ""
-        and 1900 <= int(float(r["year"])) <= current_year
-    ]
+    pre_1900 = [r for r in records if isinstance(r.get("year"), (int, float, str)) and str(r.get("year")).strip() != "" and int(float(r["year"])) < 1900]
+    post_current = [r for r in records if isinstance(r.get("year"), (int, float, str)) and str(r.get("year")).strip() != "" and int(float(r["year"])) > current_year]
+    trimmed = [r for r in records if isinstance(r.get("year"), (int, float, str)) and str(r.get("year")).strip() != "" and 1900 <= int(float(r["year"])) <= current_year]
 
     after = len(trimmed)
+    removed_pre = len(pre_1900)
+    removed_post = len(post_current)
+    if removed_pre > 0:
+        log(f"[TRIM] {kpi_id}: removed {removed_pre} records before 1900")
+        if stats is not None:
+            stats.setdefault("trimmed_pre1900_records", 0)
+            stats["trimmed_pre1900_records"] += removed_pre
+            stats.setdefault("trimmed_pre1900_kpis", set())
+            stats["trimmed_pre1900_kpis"].add(kpi_id)
+    if removed_post > 0:
+        log(f"[TRIM] {kpi_id}: removed {removed_post} records after {current_year}")
+        if stats is not None:
+            stats.setdefault("trimmed_postcurrent_records", 0)
+            stats["trimmed_postcurrent_records"] += removed_post
+            stats.setdefault("trimmed_postcurrent_kpis", set())
+            stats["trimmed_postcurrent_kpis"].add(kpi_id)
+
     if before != after:
         removed = before - after
-        log(f"[TRIM] {kpi_id}: removed {removed} out-of-range records (before 1900 or >{current_year})")
-
         if stats is not None:
             stats.setdefault("trimmed_records", 0)
             stats["trimmed_records"] += removed
@@ -567,23 +578,35 @@ def save_imf_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
     """Save IMF records that use iso3 codes while keeping trimming logic."""
 
     ensure_dirs()
+
     before = len(records)
     from datetime import datetime
-
     current_year = datetime.now().year
-    trimmed = [
-        r
-        for r in records
-        if isinstance(r.get("year"), (int, float, str))
-        and str(r.get("year")).strip() != ""
-        and 1900 <= int(float(r["year"])) <= current_year
-    ]
+
+    pre_1900 = [r for r in records if isinstance(r.get("year"), (int, float, str)) and str(r.get("year")).strip() != "" and int(float(r["year"])) < 1900]
+    post_current = [r for r in records if isinstance(r.get("year"), (int, float, str)) and str(r.get("year")).strip() != "" and int(float(r["year"])) > current_year]
+    trimmed = [r for r in records if isinstance(r.get("year"), (int, float, str)) and str(r.get("year")).strip() != "" and 1900 <= int(float(r["year"])) <= current_year]
 
     after = len(trimmed)
+    removed_pre = len(pre_1900)
+    removed_post = len(post_current)
+    if removed_pre > 0:
+        log(f"[TRIM] {kpi_id}: removed {removed_pre} IMF records before 1900")
+        if stats is not None:
+            stats.setdefault("trimmed_pre1900_records", 0)
+            stats["trimmed_pre1900_records"] += removed_pre
+            stats.setdefault("trimmed_pre1900_kpis", set())
+            stats["trimmed_pre1900_kpis"].add(kpi_id)
+    if removed_post > 0:
+        log(f"[TRIM] {kpi_id}: removed {removed_post} IMF records after {current_year}")
+        if stats is not None:
+            stats.setdefault("trimmed_postcurrent_records", 0)
+            stats["trimmed_postcurrent_records"] += removed_post
+            stats.setdefault("trimmed_postcurrent_kpis", set())
+            stats["trimmed_postcurrent_kpis"].add(kpi_id)
+
     if before != after:
         removed = before - after
-        log(f"[TRIM] {kpi_id}: removed {removed} out-of-range IMF records (before 1900 or >{current_year})")
-
         if stats is not None:
             stats.setdefault("trimmed_records", 0)
             stats["trimmed_records"] += removed
@@ -2327,6 +2350,7 @@ def main(args: argparse.Namespace) -> None:
 
     # --- Zusammenfassung ---
 
+
     summary = [
         "=== RealityCheck Fetch Report ===",
         f"Countries loaded:   {stats['countries_loaded']}",
@@ -2336,6 +2360,8 @@ def main(args: argparse.Namespace) -> None:
         f"WorldBank KPIs:    {stats['wb_success']}",
         f"CSV KPIs:          {stats['csv_success']}",
         f"OWID KPIs:         {stats['owid_success']}",
+        f"IMF KPIs:          {stats['imf_success']}",
+        f"Data360 KPIs:      {stats['data360_success']}",
         f"UNHCR KPIs:        {stats['unhcr_success']}",
         f"Others KPIs:       {stats['others_success']}",
         "",
@@ -2347,14 +2373,18 @@ def main(args: argparse.Namespace) -> None:
         f"Skipped (up-to-date): {stats['skipped']}",
         f"Errors:            {stats['errors']}",
         f"Updated KPIs:      {stats['updated']}",  # ✅ hier normaler Listeneintrag
-        
     ]
 
-    # ✂️ Neue Auswertung der Pre-1900-Kürzungen
-    if stats.get("trimmed_records", 0) > 0:
+    # ✂️ Neue Auswertung der Pre-1900- und Post-Current-Year-Kürzungen
+    if stats.get("trimmed_pre1900_records", 0) > 0:
         summary.append("")
         summary.append(
-            f"Pre-1900 cuts:    {stats['trimmed_records']} rows in {len(stats.get('trimmed_kpis', []))} KPIs"
+            f"Pre-1900 cuts:    {stats['trimmed_pre1900_records']} rows in {len(stats.get('trimmed_pre1900_kpis', []))} KPIs"
+        )
+    if stats.get("trimmed_postcurrent_records", 0) > 0:
+        summary.append("")
+        summary.append(
+            f"Post-{datetime.now().year} cuts: {stats['trimmed_postcurrent_records']} rows in {len(stats.get('trimmed_postcurrent_kpis', []))} KPIs"
         )
 
     updated_names = sorted(stats.get("updated_kpis", set()))
@@ -2375,6 +2405,7 @@ def main(args: argparse.Namespace) -> None:
         "✅ Fetch completed successfully\n"
     ])
 
+
     report = "\n".join(summary)
     print(report)
     with open(LOG_FILE, "a", encoding="utf-8") as f:
@@ -2389,12 +2420,17 @@ def main(args: argparse.Namespace) -> None:
 if __name__ == "__main__":
     cli_args = parse_args()
 
+    # Ensure debug mode is off by default (if any debug flags exist, set to False here)
+    # Example: debug = getattr(cli_args, 'debug', False)
+    # If there is a global debug variable, set it here:
+    # debug = False
+
     if cli_args.test and not cli_args.no_analysis:
         # In test mode we always skip AI-based follow-ups to avoid long-running tasks
         cli_args.no_analysis = True
         print("⏸️ Test mode (-t): analyses and GPT-based tasks are skipped.")
     elif cli_args.no_analysis:
-        print("⏸️ Smart analyses and GPT-based tasks are disabled (local test mode).")
+        print("⏭️ Smart analyses and GPT-based tasks are disabled (local test mode).")
 
     main(cli_args)
 
