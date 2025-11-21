@@ -23,6 +23,7 @@ import zipfile
 import unicodedata
 import traceback
 import subprocess
+import pandas as pd
 from typing import Any, Dict, List, Optional
 from pathlib import Path
 from datetime import datetime, timezone
@@ -136,6 +137,12 @@ def build_parser() -> argparse.ArgumentParser:
         "--no-analysis",
         action="store_true",
         help="Skip AI-based analysis and ranking follow-up tasks",
+    )
+    parser.add_argument(
+        "-t",
+        "--test",
+        action="store_true",
+        help="Test mode: only fetch KPIs marked with test='*' in available_kpis.json",
     )
     return parser
 
@@ -314,6 +321,24 @@ def build_country_indices(countries: Dict[str, Any], mapping: Dict[str, str]):
             a_index[_norm(alias)] = c_index.get(t_norm)
     return c_index, a_index
 
+
+def resolve_iso2(canon: str, countries: Dict[str, Any]) -> str:
+    meta = countries.get(canon, {}) or {}
+    for key in ("iso2", "iso_a2", "alpha2"):
+        val = meta.get(key)
+        if val:
+            return val
+    return ""
+
+
+def resolve_iso3(canon: str, countries: Dict[str, Any], fallback: str = "") -> str:
+    meta = countries.get(canon, {}) or {}
+    for key in ("iso3", "iso_a3", "alpha3"):
+        val = meta.get(key)
+        if val:
+            return val
+    return fallback
+
 def canonicalize_country(name: str, c_index, a_index, countries, pending, stats):
     if not name:
         return None
@@ -421,6 +446,40 @@ def keep_or_dummy(kpi_id: str, reason: str, stats):
         csv.DictWriter(f, fieldnames=["country", "iso2", "year", "value"]).writeheader()
     stats["dummies"] += 1
     log(f"[WARN] Dummy created for {kpi_id} ({reason})")
+
+
+def save_imf_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
+    """Save IMF records that use iso3 codes while keeping trimming logic."""
+
+    ensure_dirs()
+    before = len(records)
+    from datetime import datetime
+
+    current_year = datetime.now().year
+    trimmed = [
+        r
+        for r in records
+        if isinstance(r.get("year"), (int, float, str))
+        and str(r.get("year")).strip() != ""
+        and 1900 <= int(float(r["year"])) <= current_year
+    ]
+
+    after = len(trimmed)
+    if before != after:
+        removed = before - after
+        log(f"[TRIM] {kpi_id}: removed {removed} out-of-range IMF records (before 1900 or >{current_year})")
+
+        if stats is not None:
+            stats.setdefault("trimmed_records", 0)
+            stats["trimmed_records"] += removed
+            stats.setdefault("trimmed_kpis", set())
+            stats["trimmed_kpis"].add(kpi_id)
+
+    write_json(os.path.join(DATA_DIR, f"{kpi_id}.json"), trimmed)
+    with open(os.path.join(DATA_DIR, f"{kpi_id}.csv"), "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=["country", "iso3", "year", "value"])
+        w.writeheader()
+        w.writerows(trimmed)
 
 # ======================================================================
 # 🔍 Source-Date Extraction & Update Logic – finale Version Okt 2025
@@ -787,6 +846,110 @@ def extract_worldbank_date(zip_bytes: bytes) -> Optional[str]:
     except Exception as e:
         log(f"[WARN] extract_worldbank_date failed: {e}")
     return None
+
+
+# ----------------------------------------------------------------------
+# 🌐 World Bank Data360 Fetcher
+# ----------------------------------------------------------------------
+def fetch_data360_indicator(indicator_id: str) -> List[Dict[str, Any]]:
+    """Fetch an indicator from the World Bank Data360 API with pagination."""
+
+    base_url = "https://data360api.worldbank.org/data360/data"
+    records: List[Dict[str, Any]] = []
+    skip = 0
+
+    while True:
+        params = {
+            "INDICATOR": indicator_id,
+            "FREQ": "A",
+            "format": "json",
+            "top": 1000,
+            "skip": skip,
+        }
+
+        try:
+            resp = requests.get(base_url, params=params, timeout=40)
+        except Exception as exc:  # pragma: no cover - network/runtime safeguard
+            log(f"[WARN] Data360 {indicator_id} request failed at skip={skip}: {exc}")
+            break
+
+        if resp.status_code != 200:
+            snippet = (resp.text or "")[:200]
+            log(
+                f"[WARN] Data360 {indicator_id} HTTP {resp.status_code} at skip={skip}"
+                + (f" – body: {snippet}" if snippet else "")
+            )
+
+            # Fallback: some endpoints expect INDICATOR_ID instead of INDICATOR
+            if resp.status_code in (400, 404) and "INDICATOR" in params:
+                alt_params = dict(params)
+                alt_params.pop("INDICATOR", None)
+                alt_params["INDICATOR_ID"] = indicator_id
+                try:
+                    alt_resp = requests.get(base_url, params=alt_params, timeout=40)
+                except Exception as exc:  # pragma: no cover - network/runtime safeguard
+                    log(
+                        f"[WARN] Data360 {indicator_id} alt INDICATOR_ID request failed at skip={skip}: {exc}"
+                    )
+                    break
+
+                if alt_resp.status_code != 200:
+                    snippet_alt = (alt_resp.text or "")[:200]
+                    log(
+                        f"[WARN] Data360 {indicator_id} alt HTTP {alt_resp.status_code} at skip={skip}"
+                        + (f" – body: {snippet_alt}" if snippet_alt else "")
+                    )
+                    break
+
+                resp = alt_resp
+            else:
+                break
+
+        try:
+            payload = resp.json()
+        except Exception as exc:
+            log(f"[WARN] Data360 {indicator_id} JSON decode failed at skip={skip}: {exc}")
+            break
+
+        data_block = payload.get("data") or payload.get("value") or []
+        if isinstance(data_block, dict):
+            data_block = data_block.get("data") or data_block.get("value") or []
+
+        if not data_block:
+            break
+
+        batch_count = 0
+        for row in data_block:
+            if not isinstance(row, dict):
+                continue
+
+            freq = str(row.get("FREQ") or row.get("freq") or "").upper()
+            if freq != "A":
+                continue
+
+            value = safe_float(row.get("OBS_VALUE") or row.get("obs_value"))
+            if value is None:
+                continue
+
+            iso3 = (row.get("REF_AREA") or row.get("ref_area") or "").strip()
+            year = row.get("TIME_PERIOD") or row.get("time_period")
+            if not iso3 or not year:
+                continue
+
+            try:
+                year_int = int(float(year))
+            except Exception:
+                continue
+
+            records.append({"iso3": iso3, "year": year_int, "value": float(value)})
+            batch_count += 1
+
+        if batch_count < 1000:
+            break
+
+        skip += 1000
+
+    return records
 
 
 # ----------------------------------------------------------------------
@@ -1168,6 +1331,308 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
 
 
 # ----------------------------------------------------------------------
+# 💰 IMF WEO Fetch
+# ----------------------------------------------------------------------
+def _extract_imf_source_date(compact: Dict[str, Any], series: Dict[str, Any]) -> Optional[str]:
+    for container in (series, compact):
+        if isinstance(container, dict):
+            candidate = container.get("@TIME_FORMAT") or container.get("TIME_FORMAT")
+            if candidate:
+                return str(candidate)
+
+    header = (compact or {}).get("Header") or {}
+    if isinstance(header, dict):
+        for key in ("ID", "PrepareDate", "Prepared", "EXTRACTED", "EXR_DATE"):
+            candidate = header.get(key) or header.get(key.lower()) if hasattr(header, "get") else None
+            if candidate:
+                m = re.search(r"(19|20)\d{2}", str(candidate))
+                if m:
+                    return f"{m.group(0)}-01-01"
+
+    return None
+
+
+def fetch_imf_gross_debt(countries, c_index, a_index, pending, stats):
+    """Fetch General Government Gross Debt (% of GDP) from IMF WEO."""
+
+    base_url = "https://dataservices.imf.org/REST/SDMX_JSON.svc/CompactData/WEO/{indicator}.{iso3}"
+    records: List[Dict[str, Any]] = []
+    latest_year: Optional[int] = None
+    detected_source_date: Optional[str] = None
+
+    total = 0
+    success = 0
+
+    session = requests.Session()
+
+    for cname, meta in (countries or {}).items():
+        iso3 = meta.get("iso3") or meta.get("iso_a3") or meta.get("alpha3")
+        if not iso3:
+            continue
+
+        total += 1
+        url = base_url.format(indicator="GGXWDG_NGDP", iso3=iso3)
+
+        response = None
+        for attempt in range(1, 4):
+            try:
+                response = session.get(url, params={"startPeriod": "1990"}, timeout=45)
+            except Exception as exc:  # pragma: no cover - network/runtime safeguard
+                if attempt == 3:
+                    log(f"[ERR] IMF request failed for {iso3} after retries: {exc}", "error")
+                    response = None
+                else:
+                    wait = 3 * attempt
+                    log(f"[WARN] IMF request error for {iso3}: {exc} → retry in {wait}s ({attempt}/3)")
+                    time.sleep(wait)
+                continue
+
+            if response.status_code == 200:
+                break
+
+            retryable = response.status_code in RETRYABLE_STATUS_CODES or response.status_code >= 500
+            if not retryable or attempt == 3:
+                snippet = (response.text or "")[:160] if response is not None else ""
+                log(
+                    f"[WARN] IMF HTTP {response.status_code} for {iso3} (attempt {attempt})"
+                    + (f" – body: {snippet}" if snippet else "")
+                )
+                break
+
+            wait = 3 * attempt
+            log(f"[WARN] IMF HTTP {response.status_code} for {iso3} → retry in {wait}s ({attempt}/3)")
+            time.sleep(wait)
+
+        if not response or response.status_code != 200:
+            continue
+
+        try:
+            payload = response.json()
+        except Exception as exc:
+            log(f"[WARN] IMF JSON decode failed for {iso3}: {exc}")
+            continue
+
+        compact = payload.get("CompactData") or payload.get("compactdata") or {}
+        dataset = compact.get("DataSet") or compact.get("dataset") or {}
+        series_block = dataset.get("Series") or dataset.get("series")
+        if not series_block:
+            log(f"[WARN] IMF data missing series for {iso3}")
+            continue
+
+        series_list = series_block if isinstance(series_block, list) else [series_block]
+        for series in series_list:
+            if not isinstance(series, dict):
+                continue
+
+            obs_list = series.get("Obs") or series.get("obs") or []
+            if isinstance(obs_list, dict):
+                obs_list = [obs_list]
+
+            if not obs_list:
+                log(f"[WARN] IMF no observations for {iso3}")
+                continue
+
+            if not detected_source_date:
+                detected_source_date = _extract_imf_source_date(compact, series)
+
+            ref_name = (
+                series.get("@REF_AREA_LABEL")
+                or series.get("@REF_AREA_LB")
+                or series.get("@REF_AREA")
+                or iso3
+            )
+            canon = canonicalize_country(ref_name, c_index, a_index, countries, pending, stats)
+            if not canon:
+                continue
+
+            iso3_code = series.get("@REF_AREA") or iso3
+            for obs in obs_list:
+                value = safe_float(obs.get("@OBS_VALUE") or obs.get("OBS_VALUE"))
+                if value is None:
+                    continue
+
+                year = obs.get("@TIME_PERIOD") or obs.get("TIME_PERIOD")
+                if not year:
+                    continue
+                try:
+                    year_int = int(float(year))
+                except Exception:
+                    continue
+
+                latest_year = max(latest_year or year_int, year_int)
+                records.append(
+                    {"country": canon, "iso3": iso3_code, "year": year_int, "value": float(value)}
+                )
+
+            success += 1
+
+    log(
+        f"[INFO] IMF gross debt fetched for {success}/{total} countries → {len(records)} records"
+    )
+
+    return records, latest_year, detected_source_date
+
+
+def _find_column(df: pd.DataFrame, patterns: List[str]) -> Optional[str]:
+    for col in df.columns:
+        norm = re.sub(r"\s+", "_", str(col).strip().lower())
+        for pat in patterns:
+            if pat in norm:
+                return col
+    return None
+
+
+def _clean_imf_value(value: Any) -> Optional[float]:
+    if value is None:
+        return None
+    text = str(value).strip()
+    if text.lower() in {"n/a", "na", "-", "--", "...", ""}:
+        return None
+    return safe_float(text)
+
+
+def fetch_imf_bulk(
+    imf_kpis: List[Dict[str, Any]],
+    countries: Dict[str, Any],
+    c_index,
+    a_index,
+    pending,
+    fetch_status: Dict[str, Any],
+    stats: Dict[str, Any],
+    force_all_updates: bool,
+):
+    if not imf_kpis:
+        return
+
+    log(f"[FETCH] IMF bulk import start for {len(imf_kpis)} KPIs")
+
+    excel_path = SCRIPT_DIR / "source_csv/imf/WEO_latest.xlsx"
+    if not excel_path.exists():
+        log(f"[ERR] IMF bulk file missing: {excel_path}")
+        for meta in imf_kpis:
+            kpi_id = resolve_kpi_id(meta)
+            keep_or_dummy(kpi_id, "IMF bulk file missing", stats)
+        return
+
+    try:
+        df = pd.read_excel(excel_path, sheet_name=0)
+    except Exception as exc:
+        log(f"[ERR] IMF bulk Excel load failed: {exc}")
+        for meta in imf_kpis:
+            kpi_id = resolve_kpi_id(meta)
+            keep_or_dummy(kpi_id, "IMF bulk load failed", stats)
+        return
+
+    subject_col = _find_column(df, ["weo_subject_code", "subject_code"])
+    country_col = _find_column(df, ["country", "weo_country", "country_name"])
+    iso_col = _find_column(df, ["iso", "iso_code", "iso3"])
+
+    if not subject_col or not country_col:
+        log("[ERR] IMF bulk Excel missing required columns (subject or country)")
+        for meta in imf_kpis:
+            kpi_id = resolve_kpi_id(meta)
+            keep_or_dummy(kpi_id, "IMF bulk columns missing", stats)
+        return
+
+    year_cols = [col for col in df.columns if re.fullmatch(r"\d{4}", str(col).strip())]
+    if not year_cols:
+        log("[WARN] IMF bulk Excel contains no year columns")
+
+    filename_str = excel_path.name
+    m = re.search(r"(20\d{2})", filename_str)
+    detected_source_date = m.group(1) if m else str(datetime.now().year)
+
+    for meta in imf_kpis:
+        kpi_id = resolve_kpi_id(meta)
+        source_code = (meta.get("source_code") or "").strip()
+        updated_set = stats.setdefault("updated_kpis", set())
+        already_marked = kpi_id in updated_set
+
+        if not source_code:
+            log(f"[WARN] IMF KPI {kpi_id} missing source_code")
+            keep_or_dummy(kpi_id, "IMF missing source_code", stats)
+            continue
+
+        if not force_all_updates and not should_fetch(
+            kpi_id, "imf", detected_source_date, meta, fetch_status
+        ):
+            mark_skip(stats, "Remote data unchanged")
+            log(f"[⏸️] {kpi_id} – IMF bulk unchanged ({detected_source_date})")
+            continue
+
+        subset = df[df[subject_col] == source_code]
+        records: List[Dict[str, Any]] = []
+        latest_year = None
+
+        if subset.empty:
+            log(f"[WARN] IMF bulk: no rows for {source_code} ({kpi_id})")
+        else:
+            for _, row in subset.iterrows():
+                cname = str(row.get(country_col) or "").strip()
+                if not cname:
+                    continue
+
+                canon = canonicalize_country(cname, c_index, a_index, countries, pending, stats)
+                if not canon:
+                    log(f"[WARN] IMF country unmapped: {cname}")
+                    continue
+
+                iso3_raw = str(row.get(iso_col) or "").strip() if iso_col else ""
+                iso3_code = resolve_iso3(canon, countries, fallback=iso3_raw)
+
+                for col in year_cols:
+                    value = _clean_imf_value(row.get(col))
+                    if value is None:
+                        continue
+
+                    try:
+                        year_int = int(str(col))
+                    except Exception:
+                        continue
+
+                    latest_year = max(latest_year or year_int, year_int)
+                    records.append(
+                        {
+                            "country": canon,
+                            "iso3": iso3_code,
+                            "year": year_int,
+                            "value": float(value),
+                        }
+                    )
+
+        if records:
+            save_imf_records(kpi_id, records, stats)
+            stats["imf_success"] += 1
+            stats["saved_records"] += len(records)
+            stats["fetched"] += len(records)
+            meta["source"] = "IMF WEO"
+            meta["_latest_year"] = latest_year
+            meta["_source_date"] = detected_source_date
+            updated_set.add(kpi_id)
+            if not already_marked:
+                stats["updated"] += 1
+            log(
+                f"[OK] IMF bulk KPI saved: {kpi_id} ({len(records)} rows, last year {latest_year})"
+            )
+        else:
+            save_imf_records(kpi_id, [])
+            keep_or_dummy(kpi_id, f"IMF bulk empty {source_code}", stats)
+            meta["_source_date"] = detected_source_date
+
+        used_source_date = meta.get("_source_date") or detected_source_date or "Unknown"
+        fetch_status.setdefault("kpis", {})[kpi_id] = {
+            "source": meta.get("source") or "IMF WEO",
+            "source_type": "imf",
+            "source_code": source_code,
+            "source_date": used_source_date,
+            "data_year": meta.get("_latest_year"),
+            "last_fetch": now_utc(),
+        }
+
+    log("[INFO] IMF bulk import completed")
+
+
+# ----------------------------------------------------------------------
 # 🕊️ UNHCR Fetch (ZIP/CSV, Encoding & Header-robust)
 # ----------------------------------------------------------------------
 def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
@@ -1390,12 +1855,13 @@ def main(args: argparse.Namespace) -> None:
         "countries_loaded": 0, "kpis_loaded": 0, "saved_records": 0, "dummies": 0,
         "mapped_ok": 0, "mapped_drop": 0, "mapped_pending": 0, "new_pending": set(),
         "wb_success": 0, "csv_success": 0, "owid_success": 0, "unhcr_success": 0,
-        "others_success": 0,
+        "imf_success": 0, "data360_success": 0, "others_success": 0,
         "errors": 0, "skipped": 0, "skipped_breakdown": {},
         "updated": 0,                     # 🔹 NEU: zählt erfolgreiche Updates
         "updated_kpis": set(),
         "trimmed_records": 0,
         "trimmed_kpis": set(),
+        "fetched": 0,
     }
 
 
@@ -1408,7 +1874,17 @@ def main(args: argparse.Namespace) -> None:
 
     raw_kpis = load_json_file(AVAILABLE_FILE, [])
     kpi_list = [v for v in raw_kpis if isinstance(v, dict)]
+
+    if args.test:
+        before = len(kpi_list)
+        kpi_list = [v for v in kpi_list if str(v.get("test", "")).strip() == "*"]
+        log(
+            f"[INFO] Test mode enabled (-t): filtering KPIs {len(kpi_list)}/{before} marked with test='*'"
+        )
+
     stats["kpis_loaded"] = len(kpi_list)
+
+    imf_queue: List[Dict[str, Any]] = []
 
     # --- KPI-Schleife ---
     for meta in kpi_list:
@@ -1426,12 +1902,17 @@ def main(args: argparse.Namespace) -> None:
             else:
                 source_date = "Unknown"
 
+            if source_type == "imf":
+                imf_queue.append(meta)
+                log(f"[DEFER] {kpi_id}: queued for IMF bulk import")
+                continue
+
             # Prüfen, ob Fetch nötig (außer im Force-All-Modus)
             if not force_all_updates and not should_fetch(kpi_id, source_type, source_date, meta, fetch_status):
                 log(f"[⏸️] {kpi_id} – unchanged ({source_date})")
                 mark_skip(stats, "Remote data unchanged")
                 continue
-                
+
             # Sonderfall: Geopolitical Risk Index wird separat behandelt
             if kpi_id == "geopolitical_risk_index":
                 log(f"[SKIP] {kpi_id}: handled by special fetcher later")
@@ -1444,12 +1925,52 @@ def main(args: argparse.Namespace) -> None:
             try:
                 if source_type == "worldbank":
                     process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
+                elif source_type == "owid":
+                    process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats)
+                elif source_type == "data360":
+                    indicator_id = meta.get("source_code")
+                    log(f"[FETCH] Data360 fetch start for {kpi_id} ({indicator_id})")
+                    records = fetch_data360_indicator(indicator_id) if indicator_id else []
+
+                    final_rows = []
+                    years_seen: List[int] = []
+                    for row in records:
+                        canon = canonicalize_country(row.get("iso3"), c_index, a_index, countries, pending, stats)
+                        if not canon:
+                            continue
+
+                        try:
+                            year_int = int(float(row.get("year")))
+                        except Exception:
+                            continue
+
+                        value = safe_float(row.get("value"))
+                        if value is None:
+                            continue
+
+                        iso2 = resolve_iso2(canon, countries)
+                        final_rows.append(
+                            {"country": canon, "iso2": iso2, "year": year_int, "value": float(value)}
+                        )
+                        years_seen.append(year_int)
+
+                    if final_rows:
+                        save_records(kpi_id, final_rows, stats)
+                        stats["data360_success"] += 1
+                        stats["saved_records"] += len(final_rows)
+                        stats["fetched"] += len(final_rows)
+                        if years_seen:
+                            meta["_latest_year"] = max(years_seen)
+                        meta.setdefault("_source_date", "Unknown")
+                        stats.setdefault("updated_kpis", set()).add(kpi_id)
+                        log(
+                            f"[OK] Data360 KPI saved: {kpi_id} ({len(final_rows)} rows)")
+                    else:
+                        keep_or_dummy(kpi_id, f"Data360 empty {indicator_id}", stats)
                 elif source_type == "csv":
                     latest_year = process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats)
                     if latest_year:
                         meta["_latest_year"] = latest_year
-                elif source_type == "owid":
-                    process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats)
                 elif source_type == "unhcr":
                     process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats)
                 else:
@@ -1489,21 +2010,43 @@ def main(args: argparse.Namespace) -> None:
             log(f"[ERR] {meta.get('title','unknown')} failed: {e}\n{traceback.format_exc()}")
 
     # ---------------------------------------------------------------
+    # 📊 IMF WEO Bulk Import (after OWID/WB/Data360 loops)
+    # ---------------------------------------------------------------
+    if imf_queue:
+        try:
+            fetch_imf_bulk(
+                imf_queue,
+                countries,
+                c_index,
+                a_index,
+                pending,
+                fetch_status,
+                stats,
+                force_all_updates,
+            )
+        except Exception as e:
+            stats["errors"] += 1
+            log(f"[ERR] IMF bulk import failed: {e}\n{traceback.format_exc()}")
+
+    # ---------------------------------------------------------------
     # 🌍 Spezial-Quelle: Geopolitical Risk Index (Matteo Iacoviello)
     # ---------------------------------------------------------------
-    try:
-        updated_set = stats.setdefault("updated_kpis", set())
-        already_marked = "geopolitical_risk_index" in updated_set
+    if not args.test:
+        try:
+            updated_set = stats.setdefault("updated_kpis", set())
+            already_marked = "geopolitical_risk_index" in updated_set
 
-        fetch_geopolitical_risk_index()
-        stats["others_success"] += 1
-        updated_set.add("geopolitical_risk_index")
-        if not already_marked:
-            stats["updated"] += 1
-        log("[OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)")
-    except Exception as e:
-        stats["errors"] += 1
-        log(f"[❌] Special fetch geopolitical_risk_index failed: {e}")
+            fetch_geopolitical_risk_index()
+            stats["others_success"] += 1
+            updated_set.add("geopolitical_risk_index")
+            if not already_marked:
+                stats["updated"] += 1
+            log("[OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)")
+        except Exception as e:
+            stats["errors"] += 1
+            log(f"[❌] Special fetch geopolitical_risk_index failed: {e}")
+    else:
+        log("[SKIP] Test mode active: skipping special geopolitical_risk_index fetch")
 
 
 

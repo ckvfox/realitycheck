@@ -14,7 +14,8 @@
     "world_kpi": "",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Population",
@@ -31,7 +32,8 @@
     "world_kpi": "",
     "relevance": "none",
     "actuality": "stable",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Population Growth",
@@ -49,7 +51,8 @@
     "filename": "population_growth",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Fertility Rate",
@@ -67,7 +70,8 @@
     "filename": "fertility_rate",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Urbanization Rate",
@@ -84,7 +88,8 @@
     "filename": "urbanization_rate",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "GDP",
@@ -101,7 +106,8 @@
     "world_kpi": "",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "GDP per Capita",
@@ -118,7 +124,8 @@
     "filename": "gdp_per_capita_current_us",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "GNI per capita",
@@ -135,7 +142,8 @@
     "filename": "gni_per_capita_current_us",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Gini Index",
@@ -152,9 +160,9 @@
     "filename": "gini_index",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
-
   {
     "title": "Tax Revenue",
     "description": "**Tax Revenue (% of GDP)** measures the total amount of money a government collects in taxes as a portion of the country's total economic output, represented by its Gross Domestic Product (GDP). This indicator is important because it reflects how effectively a government is generating revenue to fund public services, infrastructure, and social programs. Factors influencing tax revenue include the efficiency of the tax system, economic growth, and compliance rates among taxpayers. It is closely related to other economic metrics, such as public spending and budget deficits, as higher tax revenue can help reduce reliance on borrowing and promote financial stability. These data are provided by the World Bank’s World Development Indicators database.",
@@ -171,7 +179,8 @@
     "filename": "tax_revenue_of_gdp",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Unemployment Rate",
@@ -188,7 +197,8 @@
     "filename": "unemployment_rate",
     "relevance": "normal",
     "actuality": "critical",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Health Expenditure per Capita",
@@ -205,7 +215,8 @@
     "filename": "health_expenditure_per_capita",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Infant Mortality Rate",
@@ -222,7 +233,8 @@
     "filename": "infant_mortality_rate",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Maternal Mortality Ratio",
@@ -239,7 +251,8 @@
     "filename": "maternal_mortality_ratio",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Hospital Beds",
@@ -256,7 +269,8 @@
     "filename": "hospital_beds_per_1_000_people",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Life Expectancy at Birth",
@@ -273,7 +287,8 @@
     "filename": "life_expectancy_at_birth",
     "relevance": "none",
     "actuality": "stable",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Adult Literacy Rate",
@@ -290,7 +305,8 @@
     "filename": "adult_literacy_rate",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Overall Immunization Coverage",
@@ -307,7 +323,8 @@
     "filename": "overall_immunization_coverage",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Extreme Poverty",
@@ -324,7 +341,8 @@
     "filename": "extreme_poverty",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Access to Basic Drinking Water",
@@ -341,7 +359,8 @@
     "filename": "access_to_basic_drinking_water",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Air Quality",
@@ -358,7 +377,8 @@
     "filename": "air_quality_pm2_5_exposure",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Renewable Energy Share",
@@ -375,7 +395,8 @@
     "filename": "renewable_energy_share",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Internet Penetration Rate",
@@ -392,7 +413,8 @@
     "filename": "internet_penetration_rate",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Mobile Subscriptions",
@@ -409,7 +431,8 @@
     "filename": "mobile_subscriptions_per_100_inhabitants",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Railway Length",
@@ -426,7 +449,8 @@
     "filename": "railway_length",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Inflation (Consumer Price Index)",
@@ -444,7 +468,8 @@
     "filename": "inflation_consumer_price_index",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Employment-to-population ratio",
@@ -461,7 +486,8 @@
     "filename": "employment_to_population_ratio",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Female Labor Force Participation",
@@ -478,7 +504,8 @@
     "filename": "female_labor_force_participation",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Road Traffic Deaths",
@@ -495,7 +522,8 @@
     "filename": "road_traffic_deaths_per_100k_people",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Fixed Broadband Subscriptions",
@@ -512,7 +540,8 @@
     "filename": "fixed_broadband_subscriptions_per_100_people",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Education Expenditure",
@@ -529,7 +558,8 @@
     "filename": "education_expenditure_of_gdp",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Military Expenditure",
@@ -546,7 +576,8 @@
     "filename": "military_expenditure_of_gdp",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "GDP per capita, PPP (current international $)",
@@ -563,9 +594,10 @@
     "source_code": "NY.GDP.PCAP.PP.CD",
     "filename": "purchasing_power_parity",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
-	  {
+  {
     "title": "Median Age",
     "description": "**Median Age**\n\nThe median age measures the age at which half of the population is younger and half is older. It matters because it provides insight into the demographic structure of a country, indicating whether a population is aging or relatively young, which can affect everything from workforce availability to healthcare needs. Factors influencing median age include birth rates, life expectancy, and migration patterns. This indicator is closely related to other metrics in the Society & Governance cluster, such as population growth rate and dependency ratios, as they all help to paint a picture of societal dynamics and challenges. These data are compiled by Our World in Data based on the United Nations World Population Prospects.",
     "unit": "years",
@@ -581,7 +613,8 @@
     "filename": "median_age",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Democracy Index",
@@ -598,7 +631,8 @@
     "filename": "democracy_index",
     "relevance": "very_high",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Human Rights Index (V-Dem)",
@@ -615,9 +649,9 @@
     "filename": "human_rights_index_vdem",
     "relevance": "very_high",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
-
   {
     "title": "Human Development Index",
     "description": "The Human Development Index (HDI) measures a country's overall social and economic development based on three key dimensions: health, education, and standard of living. It combines life expectancy, educational attainment, and income levels to provide a comprehensive view of how well people are living in that country. HDI matters because it helps identify areas for improvement and highlights inequalities in development. Factors like healthcare access, education quality, and economic opportunities influence HDI. This indicator is closely related to other metrics in the Health & Social cluster, such as life expectancy and literacy rates, as they all contribute to understanding human well-being and quality of life. These data are compiled by Our World in Data based on the United Nations Development Programme’s Human Development Reports.",
@@ -633,7 +667,8 @@
     "filename": "human_development_index_hdi",
     "relevance": "very_high",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Physicians",
@@ -650,7 +685,8 @@
     "filename": "physicians_per_1_000_people",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Homelessness Rate",
@@ -667,7 +703,8 @@
     "filename": "homelessness_rate",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Old-Age Dependency Ratio",
@@ -684,7 +721,8 @@
     "filename": "old_age_dependency_ratio",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Age Dependency Ratio",
@@ -701,7 +739,8 @@
     "filename": "age_dependency_ratio_total",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "CO₂ Emissions",
@@ -718,7 +757,8 @@
     "filename": "co2_emissions",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Political Corruption Index",
@@ -735,7 +775,8 @@
     "filename": "political_corruption_index",
     "relevance": "normal",
     "actuality": "normal",
-    "invert": "*"
+    "invert": "*",
+    "test": ""
   },
   {
     "title": "Military Spending",
@@ -752,7 +793,8 @@
     "filename": "military_spending_sipri",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Number of Armed Conflicts",
@@ -769,7 +811,8 @@
     "filename": "number_of_armed_conflicts",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Mean Years of Schooling",
@@ -786,7 +829,8 @@
     "filename": "mean_years_of_schooling",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Living Planet Index",
@@ -803,7 +847,8 @@
     "filename": "living_planet_index",
     "relevance": "normal",
     "actuality": "critical",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Electric Vehicle Stock",
@@ -820,7 +865,8 @@
     "filename": "electric_vehicle_stock",
     "relevance": "normal",
     "actuality": "critical",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Number of Recorded Natural Disasters",
@@ -837,7 +883,8 @@
     "filename": "number_of_recorded_natural_disasters",
     "relevance": "none",
     "actuality": "critical",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Global CO₂ Emissions",
@@ -854,7 +901,8 @@
     "filename": "global_co2_emissions",
     "relevance": "critical",
     "actuality": "critical",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Global Temperature Anomaly",
@@ -871,7 +919,8 @@
     "filename": "global_temperature_anomaly",
     "relevance": "critical",
     "actuality": "critical",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Rule of Law Index",
@@ -888,43 +937,46 @@
     "filename": "rule_of_law_index",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
-  "title": "State-based Conflict Deaths (Global)",
-  "description": "This indicator counts the number of deaths caused by state-based armed conflicts worldwide. It covers organized violence involving at least one government actor and uses Uppsala Conflict Data Program (UCDP) definitions. The dataset includes annual conflict deaths for all global regions and enables a consistent long-term perspective on war intensity across continents. It provides crucial insight into the severity and geographical spread of modern conflicts.",
-  "unit": "deaths",
-  "relation": "",
-  "sort": "lower",
-  "cluster": "Security & Defense",
-  "source": "https://ourworldindata.org/grapher/deaths-in-state-based-conflicts-by-region",
-  "source_type": "owid",
-  "source_code": "deaths-in-state-based-conflicts-by-region.csv?useColumnShortNames=true",
-  "scale": "auto",
-  "world_kpi": "e",
-  "filename": "state_based_conflict_deaths",
-  "relevance": "normal",
-  "actuality": "normal",
-  "invert": ""
-},
-{
-  "title": "Press Freedom Index",
-  "description": "The Press Freedom Index measures how freely journalists can report the news without censorship, intimidation or retaliation. It is compiled by Reporters Without Borders (RSF) and published via the World Bank Data360 platform, providing a global benchmark for media independence and democratic resilience.",
-  "unit": "index (0–100)",
-  "relation": "",
-  "sort": "lower",
-  "cluster": "Society & Governance",
-  "source": "https://data360.worldbank.org/indicators/RWB_PFI_SCORE",
-  "source_type": "data360",
-  "source_code": "RWB_PFI_SCORE",
-  "scale": "none",
-  "world_kpi": "",
-  "filename": "press_freedom_index",
-  "relevance": "normal",
-  "actuality": "critical",
-  "invert": ""
-},
- {
+    "title": "State-based Conflict Deaths (Global)",
+    "description": "This indicator counts the number of deaths caused by state-based armed conflicts worldwide. It covers organized violence involving at least one government actor and uses Uppsala Conflict Data Program (UCDP) definitions. The dataset includes annual conflict deaths for all global regions and enables a consistent long-term perspective on war intensity across continents. It provides crucial insight into the severity and geographical spread of modern conflicts.",
+    "unit": "deaths",
+    "relation": "",
+    "sort": "lower",
+    "cluster": "Security & Defense",
+    "source": "https://ourworldindata.org/grapher/deaths-in-state-based-conflicts-by-region",
+    "source_type": "owid",
+    "source_code": "deaths-in-state-based-conflicts-by-region.csv?useColumnShortNames=true",
+    "scale": "auto",
+    "world_kpi": "e",
+    "filename": "state_based_conflict_deaths",
+    "relevance": "normal",
+    "actuality": "normal",
+    "invert": "",
+    "test": ""
+  },
+  {
+    "title": "Press Freedom Index",
+    "description": "The Press Freedom Index measures how freely journalists can report the news without censorship, intimidation or retaliation. It is compiled by Reporters Without Borders (RSF) and published via the World Bank Data360 platform, providing a global benchmark for media independence and democratic resilience.",
+    "unit": "index (0–100)",
+    "relation": "",
+    "sort": "lower",
+    "cluster": "Society & Governance",
+    "source": "https://data360.worldbank.org/indicators/RWB_PFI_SCORE",
+    "source_type": "data360",
+    "source_code": "RWB_PFI_SCORE",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "press_freedom_index",
+    "relevance": "normal",
+    "actuality": "critical",
+    "invert": "",
+    "test": "*"
+  },
+  {
     "title": "Geopolitical Risk Index",
     "description": "The Geopolitical Risk Index (GPR) measures the intensity of geopolitical tensions and conflict-related uncertainty based on the frequency of news reports mentioning geopolitical risks such as wars, terrorism, and diplomatic crises. A higher value indicates higher geopolitical risk and uncertainty. These data are published by Matteo Iacoviello – Geopolitical Risk Index (2024 edition).",
     "unit": "index",
@@ -939,24 +991,26 @@
     "filename": "geopolitical_risk_index",
     "relevance": "high",
     "actuality": "critical",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
-		{
-  "title": "General Government Gross Debt (% of GDP)",
-  "description": "Gross debt of the general government as a percentage of GDP, including central, state, and local governments as defined by the IMF World Economic Outlook. This indicator reflects the total obligations of the public sector without deducting financial assets. It is the international standard for measuring a country's overall public debt burden.",
-  "unit": "% of GDP",
-  "relation": "*",
-  "sort": "lower",
-  "cluster": "Economy",
-  "source": "https://data.imf.org/",
-  "source_type": "imf",
-  "source_code": "GGXWDG_NGDP",
-  "filename": "general_government_gross_debt_gdp",
-  "relevance": "high",
-  "world_kpi": "",
-	"actuality": "normal",
-  "invert": ""
-},
+  {
+    "title": "General Government Gross Debt (% of GDP)",
+    "description": "Gross debt of the general government as a percentage of GDP, including central, state, and local governments as defined by the IMF World Economic Outlook. This indicator reflects the total obligations of the public sector without deducting financial assets. It is the international standard for measuring a country's overall public debt burden.",
+    "unit": "% of GDP",
+    "relation": "*",
+    "sort": "lower",
+    "cluster": "Economy",
+    "source": "https://www.imf.org/en/Publications/SPROLLs/world-economic-outlook-databases",
+    "source_type": "imf",
+    "source_code": "GGXWDG_NGDP",
+    "filename": "general_government_gross_debt_gdp",
+    "relevance": "high",
+    "world_kpi": "",
+    "actuality": "normal",
+    "invert": "",
+    "test": "*"
+  },
   {
     "title": "World Happiness Index",
     "description": "The World Happiness Index measures how happy people feel in different countries, based on their life satisfaction and well-being. This index is important because it reflects the overall quality of life and can influence government policies aimed at improving citizens' happiness. Factors that affect this score include income, social support, freedom, and levels of corruption. The World Happiness Index is closely related to other metrics in the Society & Governance cluster, such as social equality and mental health indicators, as they all contribute to the overall well-being of a society. These data are provided by the World Happiness Report published by the UN Sustainable Development Solutions Network.",
@@ -972,7 +1026,8 @@
     "filename": "world_happiness_index",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Olympic Medals (Summer)",
@@ -988,7 +1043,8 @@
     "world_kpi": "",
     "filename": "olympic_medals_summer",
     "relevance": "none",
-    "actuality": "stable"
+    "actuality": "stable",
+    "test": ""
   },
   {
     "title": "Big Mac Index",
@@ -1005,7 +1061,8 @@
     "filename": "big_mac_index",
     "relevance": "irrelevant",
     "actuality": "critical",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Recycling Rate",
@@ -1022,7 +1079,8 @@
     "filename": "recycling_rate",
     "relevance": "none",
     "actuality": "normal",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Environmental Performance Index",
@@ -1039,7 +1097,8 @@
     "filename": "environmental_performance_index",
     "relevance": "very_high",
     "actuality": "annual",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Global Peace Index",
@@ -1056,7 +1115,8 @@
     "filename": "global_peace_index",
     "relevance": "very_high",
     "actuality": "annual",
-    "invert": ""
+    "invert": "",
+    "test": ""
   },
   {
     "title": "Inform Resilience Index",
@@ -1073,8 +1133,9 @@
     "filename": "inform_resilience_index",
     "relevance": "normal",
     "actuality": "stable",
-    "invert": ""
-  }, 
+    "invert": "",
+    "test": ""
+  },
   {
     "title": "Olympic Medals (Winter)",
     "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Winter Olympic Games. Beyond highlighting excellence in winter sports, it also reflects broader factors such as infrastructure, climate, and social investment in physical activity. Countries that perform well often have strong public sports programs, accessible training environments, and policies promoting youth participation. Although not a direct measure of prosperity, success at the Winter Olympics can indicate robust institutions, social cohesion, and an emphasis on national health and education through sport. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
@@ -1089,23 +1150,25 @@
     "world_kpi": "",
     "filename": "olympic_medals_winter",
     "relevance": "none",
-    "actuality": "normal"
+    "actuality": "normal",
+    "test": ""
   },
   {
-  "title": "PISA Overall Score",
-  "description": "The PISA Overall Score reflects a country’s average performance across all PISA assessment domains (Reading, Mathematics, Science, and any additional tested skills such as Creative Thinking) and all available demographic groups (e.g., female, male, overall). As the OECD does not publish an official combined index, this indicator uses a transparent and widely accepted methodology: for each country and year, all available scores across all domains and all genders are averaged without weighting. This avoids biases from differing national gender distributions or OECD focus-weighting schemes and ensures a neutral, reproducible, and academically defensible composite score.",
-  "unit": "PISA points (0–800)",
-  "relation": "",
-  "sort": "higher",
-  "cluster": "Education",
-  "source": "https://www.oecd.org/pisa/data/",
-  "source_type": "csv",
-  "source_code": "pisa_overall_score.csv",
-  "scale": "none",
-  "world_kpi": "",
-  "filename": "pisa_overall_score",
-  "relevance": "normal",
-  "actuality": "normal",
-  "invert": ""
-}
+    "title": "PISA Overall Score",
+    "description": "The PISA Overall Score reflects a country’s average performance across all PISA assessment domains (Reading, Mathematics, Science, and any additional tested skills such as Creative Thinking) and all available demographic groups (e.g., female, male, overall). As the OECD does not publish an official combined index, this indicator uses a transparent and widely accepted methodology: for each country and year, all available scores across all domains and all genders are averaged without weighting. This avoids biases from differing national gender distributions or OECD focus-weighting schemes and ensures a neutral, reproducible, and academically defensible composite score.",
+    "unit": "PISA points (0–800)",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Education",
+    "source": "https://www.oecd.org/pisa/data/",
+    "source_type": "csv",
+    "source_code": "pisa_overall_score.csv",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "pisa_overall_score",
+    "relevance": "normal",
+    "actuality": "normal",
+    "invert": "",
+    "test": ""
+  }
 ]
