@@ -1,8 +1,14 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1763760435251,
+    "generatedTime": 1763761149322,
     "data": [
+        {
+            "type": "file",
+            "name": ".ftp-deploy-sync-state-data.json",
+            "size": 19855,
+            "hash": "a97e21368cb04e1871f1c5e624b0be473501f67468edf7eafe5a1012fd7f9e35"
+        },
         {
             "type": "file",
             "name": "access_to_basic_drinking_water.json",
@@ -31,43 +37,43 @@
             "type": "file",
             "name": "all_kpis_index.json",
             "size": 202,
-            "hash": "a0baed4a0330042f3025c9c47ac2b873fb8b06b2b0061ed8325ab56400eb3d14"
+            "hash": "aa036e3f0eedcc2b9c06474528bfedb06d989ee282e1a7987b0dac2d66e781a8"
         },
         {
             "type": "file",
             "name": "all_kpis_part1.json.gz",
             "size": 995353,
-            "hash": "acdc369c324d40e66cce83b7e9f76f66502b2a25e077692a3e930a38c9735020"
+            "hash": "665ec02d2fca9e4a284d590fdea1bdad2eae1d632951f374b9af2e6198db6df0"
         },
         {
             "type": "file",
             "name": "all_kpis_part2.json.gz",
             "size": 1008244,
-            "hash": "23fb37e66fa2678b965991fbccbc261482ba0401240900441f01f8e1e4b63463"
+            "hash": "7b173f3600179f5729883d4e8227ace5833460654a8f606ec3e1af5c1ee1e3cf"
         },
         {
             "type": "file",
             "name": "all_kpis_part3.json.gz",
             "size": 702856,
-            "hash": "3dca1d29721068cb2c82aa08626ec88f3e72de4de955d5f851f9ca91146665b7"
+            "hash": "0cba3a6cf98129e57ae0b6e16233bc35627fcbe8e14eb6e8a1427f33eea46c9c"
         },
         {
             "type": "file",
             "name": "all_kpis_part4.json.gz",
-            "size": 381308,
-            "hash": "8111cbced4dc588f45e1f23e3add986d836f7b3b7855417154303b61723aa570"
+            "size": 381327,
+            "hash": "6a19e320067ded85438d3584b0591d04596103eccdb5295a5d9a5d98b13cdce7"
         },
         {
             "type": "file",
             "name": "analysis.json",
-            "size": 3991,
-            "hash": "bb8d4672122199fb7fd5c749d565b72664d06e2505df452ef123e48d0f1151f5"
+            "size": 3717,
+            "hash": "ac0ded0d0fc70e7d9922eca5ecc3e0dde3c18fea864c3033427edbd9e67fb537"
         },
         {
             "type": "file",
             "name": "analysis.md",
-            "size": 3888,
-            "hash": "03e76d3337924681e75e49581cbbcf3dec493e5fa249d8d1d715c68b021b5c19"
+            "size": 3601,
+            "hash": "249178553a583508f8a40a8a8aa50cce5412dca1ca70fd2101bd774646d9cc68"
         },
         {
             "type": "file",
@@ -89,15 +95,15 @@
         },
         {
             "type": "file",
-            "name": "country_mappings_pending.json",
-            "size": 3462,
-            "hash": "64dd276bfefbf917124b7cde9fa5c50c054c5a0da56e1252e1004a4f73da3243"
-        },
-        {
-            "type": "file",
             "name": "co2_emissions.json",
             "size": 1783505,
             "hash": "5213e86260490118169055302992f98048d9ff51b91bbabc1cd0bf61ff00eae0"
+        },
+        {
+            "type": "file",
+            "name": "country_mappings_pending.json",
+            "size": 3588,
+            "hash": "13b0c32908038176f8aed66e2f57a85f47c9eea06026e52024bebf4b627a5fe4"
         },
         {
             "type": "file",
@@ -150,20 +156,20 @@
         {
             "type": "file",
             "name": "fetch_log.txt",
-            "size": 2495101,
-            "hash": "1a2b7034d42aaeeed3fc09efde4e7970068ee34a68825bac3d00960256ba72e2"
+            "size": 3115540,
+            "hash": "29759ce1164047477ae10e81885049857283b25a689c76c32baadf8a13642417"
         },
         {
             "type": "file",
             "name": "fetch_state.json",
-            "size": 388,
-            "hash": "fca2af839ff240acfd0fd03672bedba139cba584ea47ca998cce587b63e8572b"
+            "size": 415,
+            "hash": "857202b41116b5bc9ec8cd4f9fffb0bfc20f72fd289c14bb42bcb59bb0840df2"
         },
         {
             "type": "file",
             "name": "fetch_status.json",
             "size": 15372,
-            "hash": "098639de24dda75a6d4bd36595dc104945a58a02548d383b9401b6ac93c1ce95"
+            "hash": "a5c7f888055efe43a97020a1e0aa7ff50e19b2759480e577ef06f190dca99137"
         },
         {
             "type": "file",
@@ -174,8 +180,8 @@
         {
             "type": "file",
             "name": "fun_ranking.json",
-            "size": 2228,
-            "hash": "d5762d13a2e308b34d92506f6fa5a9256df711a75cd503c57a2943f680b9ce01"
+            "size": 2049,
+            "hash": "35536ccd543049c1550a04ff023ab3c3f02b0b0a42116ba6f7ddda74840de5f9"
         },
         {
             "type": "file",
@@ -264,8 +270,8 @@
         {
             "type": "file",
             "name": "immigration_ranking.json",
-            "size": 2057,
-            "hash": "79cf683c35b22dcb038136f1136c935b1d2b1b800a7a4e9c2e5050093036ab3b"
+            "size": 2274,
+            "hash": "bbb1b35364d39a529d9f602e78697246aaf2db337be845e09c9190330fec03b5"
         },
         {
             "type": "file",
@@ -294,8 +300,8 @@
         {
             "type": "file",
             "name": "kpi_analysis.json",
-            "size": 14214,
-            "hash": "fea471fe7176ad3032bcc61c958682e4652ccf586f4c731b0d89dba88b9ea4fa"
+            "size": 14261,
+            "hash": "95e0eb11bf83c18eb303fe869553e323015e58971eb1e8e893191130c1fa69af"
         },
         {
             "type": "file",
@@ -375,15 +381,15 @@
         },
         {
             "type": "file",
-            "name": "olympic_medals_winter.json",
-            "size": 33748,
-            "hash": "5e524f50cd24c4ccfc39387a0e96b06f92279ef09845ff4a2685c34aec8703a6"
-        },
-        {
-            "type": "file",
             "name": "overall_immunization_coverage.json",
             "size": 712335,
             "hash": "42632d36349f04de9b2d4475749bbec12ba8c188868c7b1b5f1c40f6b5103425"
+        },
+        {
+            "type": "file",
+            "name": "olympic_medals_winter.json",
+            "size": 33748,
+            "hash": "5e524f50cd24c4ccfc39387a0e96b06f92279ef09845ff4a2685c34aec8703a6"
         },
         {
             "type": "file",
@@ -424,8 +430,8 @@
         {
             "type": "file",
             "name": "press_freedom_index.json",
-            "size": 354439,
-            "hash": "5938b0d7aa701c07312d4b65b71dd6b0c3d3a3b82f835d39646abda2e808be77"
+            "size": 354539,
+            "hash": "bf41bbf8fa4be9094c8b1ac85953fcaa53abf061dd8b222a8e2ed5958b44c1da"
         },
         {
             "type": "file",
@@ -466,8 +472,8 @@
         {
             "type": "file",
             "name": "safe_haven_ranking.json",
-            "size": 2223,
-            "hash": "b84293c6356e6b8c8fccc29fbf94191b3760a1f7e7975e114e9aeadec8afc2fa"
+            "size": 1783,
+            "hash": "1b9f1de349406898e79714eff058d6a69b120f416535c1cc388510169b6666ff"
         },
         {
             "type": "file",
@@ -531,15 +537,15 @@
         },
         {
             "type": "file",
-            "name": "meta/groups.json",
-            "size": 9038,
-            "hash": "ca4aa00073c1e074c19edd91931d82043f67f7ff24bcca23923f03b1db8490c7"
-        },
-        {
-            "type": "file",
             "name": "meta/meta_scan_report.txt",
             "size": 5983,
             "hash": "58d927719d67b940d686194806106c9ffaf8037503d4eac74d28413ad2a52ac2"
+        },
+        {
+            "type": "file",
+            "name": "meta/groups.json",
+            "size": 9038,
+            "hash": "ca4aa00073c1e074c19edd91931d82043f67f7ff24bcca23923f03b1db8490c7"
         },
         {
             "type": "file",

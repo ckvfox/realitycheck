@@ -5,7 +5,7 @@
       "url": "",
       "source_date": "Unknown",
       "data_year": 2025,
-      "last_fetch": "2025-11-21T21:23:59Z"
+      "last_fetch": "2025-11-21T21:36:13Z"
     },
     "general_government_gross_debt_gdp": {
       "source": "IMF Datamapper API",
@@ -13,7 +13,7 @@
       "source_code": "GGXWDG_NGDP",
       "source_date": "2030",
       "data_year": 2030,
-      "last_fetch": "2025-11-21T21:24:03Z"
+      "last_fetch": "2025-11-21T21:36:19Z"
     },
     "median_age": {
       "source": "https://ourworldindata.org/grapher/median-age",
@@ -160,63 +160,63 @@
       "url": "",
       "source_date": "2024-01-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T21:23:59Z"
+      "last_fetch": "2025-11-21T21:36:13Z"
     },
     "olympic_medals_summer": {
       "source": "https://www.olympics.com/en/olympic-games",
       "url": "",
       "source_date": "2024-01-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T21:23:59Z"
+      "last_fetch": "2025-11-21T21:36:13Z"
     },
     "big_mac_index": {
       "source": "https://www.economist.com/big-mac-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2025-11-21T21:23:59Z"
+      "last_fetch": "2025-11-21T21:36:14Z"
     },
     "recycling_rate": {
       "source": "https://data.oecd.org/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-21T21:23:59Z"
+      "last_fetch": "2025-11-21T21:36:14Z"
     },
     "environmental_performance_index": {
       "source": "https://epi.yale.edu/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-21T21:23:59Z"
+      "last_fetch": "2025-11-21T21:36:14Z"
     },
     "global_peace_index": {
       "source": "https://www.visionofhumanity.org/maps/#/global-peace-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2025-11-21T21:23:59Z"
+      "last_fetch": "2025-11-21T21:36:14Z"
     },
     "inform_resilience_index": {
       "source": "https://drmkc.jrc.ec.europa.eu/inform-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2025-11-21T21:24:00Z"
+      "last_fetch": "2025-11-21T21:36:14Z"
     },
     "olympic_medals_winter": {
       "source": "https://www.olympics.com/en/olympic-games",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-21T21:24:00Z"
+      "last_fetch": "2025-11-21T21:36:14Z"
     },
     "pisa_overall_score": {
       "source": "https://www.oecd.org/pisa/data/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-21T21:24:00Z"
+      "last_fetch": "2025-11-21T21:36:14Z"
     },
     "area": {
       "source": "https://data.worldbank.org/indicator/AG.SRF.TOTL.K2",
@@ -451,9 +451,9 @@
     }
   },
   "summary": {
-    "lastRun": "2025-11-21T21:24:04Z",
-    "updated": 11,
+    "lastRun": "2025-11-21T21:36:22Z",
+    "updated": 12,
     "skipped": 53,
-    "errors": 1
+    "errors": 0
   }
 }
