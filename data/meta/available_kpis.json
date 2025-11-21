@@ -154,23 +154,7 @@
     "actuality": "normal",
     "invert": ""
   },
-  {
-    "title": "General Government Debt (% of GDP)",
-    "description": "Total gross debt of the general government as a percentage of GDP, including central, state, and local governments. Source data from the IMF World Economic Outlook (WEO), provided via Our World in Data.",
-    "unit": "% of GDP",
-    "relation": "*",
-    "sort": "higher",
-    "cluster": "Economy",
-    "source": "https://ourworldindata.org/grapher/general-government-debt.csv",
-    "source_type": "owid",
-    "source_code": "general-government-debt",
-    "scale": "%",
-    "world_kpi": "",
-    "filename": "general_government_debt_gdp",
-    "relevance": "high",
-    "actuality": "normal",
-    "invert": ""
-  },
+
   {
     "title": "Tax Revenue",
     "description": "**Tax Revenue (% of GDP)** measures the total amount of money a government collects in taxes as a portion of the country's total economic output, represented by its Gross Domestic Product (GDP). This indicator is important because it reflects how effectively a government is generating revenue to fund public services, infrastructure, and social programs. Factors influencing tax revenue include the efficiency of the tax system, economic growth, and compliance rates among taxpayers. It is closely related to other economic metrics, such as public spending and budget deficits, as higher tax revenue can help reduce reliance on borrowing and promote financial stability. These data are provided by the World Bank’s World Development Indicators database.",
@@ -581,7 +565,7 @@
     "actuality": "normal",
     "invert": ""
   },
-  {
+	  {
     "title": "Median Age",
     "description": "**Median Age**\n\nThe median age measures the age at which half of the population is younger and half is older. It matters because it provides insight into the demographic structure of a country, indicating whether a population is aging or relatively young, which can affect everything from workforce availability to healthcare needs. Factors influencing median age include birth rates, life expectancy, and migration patterns. This indicator is closely related to other metrics in the Society & Governance cluster, such as population growth rate and dependency ratios, as they all help to paint a picture of societal dynamics and challenges. These data are compiled by Our World in Data based on the United Nations World Population Prospects.",
     "unit": "years",
@@ -633,23 +617,7 @@
     "actuality": "normal",
     "invert": ""
   },
-  {
-    "title": "Press Freedom Index",
-    "description": "The Press Freedom Index measures the level of freedom journalists have to report news without censorship or fear of retaliation. This is important because a free press is essential for democracy, transparency, and accountability in society. Factors that influence this index include government policies, violence against journalists, and the presence of media pluralism. The Press Freedom Index is closely related to other indicators in the Society & Governance cluster, such as civil liberties and political rights, as they all reflect the overall health of democratic practices in a country. These data are provided by the World Bank's Data360 platform based on Reporters Without Borders (RSF).",
-    "unit": "index (0–100)",
-    "relation": "",
-    "sort": "lower",
-    "cluster": "Society & Governance",
-    "source": "https://api.worldbank.org/v2/en/indicator/RWB_PFI",
-    "source_type": "worldbank",
-    "source_code": "RWB_PFI",
-    "scale": "none",
-    "world_kpi": "",
-    "filename": "press_freedom_index",
-    "relevance": "none",
-    "actuality": "critical",
-    "invert": ""
-  },
+
   {
     "title": "Human Development Index",
     "description": "The Human Development Index (HDI) measures a country's overall social and economic development based on three key dimensions: health, education, and standard of living. It combines life expectancy, educational attainment, and income levels to provide a comprehensive view of how well people are living in that country. HDI matters because it helps identify areas for improvement and highlights inequalities in development. Factors like healthcare access, education quality, and economic opportunities influence HDI. This indicator is closely related to other metrics in the Health & Social cluster, such as life expectancy and literacy rates, as they all contribute to understanding human well-being and quality of life. These data are compiled by Our World in Data based on the United Nations Development Programme’s Human Development Reports.",
@@ -939,6 +907,56 @@
   "actuality": "normal",
   "invert": ""
 },
+{
+  "title": "Press Freedom Index",
+  "description": "The Press Freedom Index measures how freely journalists can report the news without censorship, intimidation or retaliation. It is compiled by Reporters Without Borders (RSF) and published via the World Bank Data360 platform, providing a global benchmark for media independence and democratic resilience.",
+  "unit": "index (0–100)",
+  "relation": "",
+  "sort": "lower",
+  "cluster": "Society & Governance",
+  "source": "https://data360.worldbank.org/indicators/RWB_PFI_SCORE",
+  "source_type": "data360",
+  "source_code": "RWB_PFI_SCORE",
+  "scale": "none",
+  "world_kpi": "",
+  "filename": "press_freedom_index",
+  "relevance": "normal",
+  "actuality": "critical",
+  "invert": ""
+},
+ {
+    "title": "Geopolitical Risk Index",
+    "description": "The Geopolitical Risk Index (GPR) measures the intensity of geopolitical tensions and conflict-related uncertainty based on the frequency of news reports mentioning geopolitical risks such as wars, terrorism, and diplomatic crises. A higher value indicates higher geopolitical risk and uncertainty. These data are published by Matteo Iacoviello – Geopolitical Risk Index (2024 edition).",
+    "unit": "index",
+    "relation": "*",
+    "sort": "lower",
+    "cluster": "Security & Defense",
+    "source": "https://www.matteoiacoviello.com/gpr.htm",
+    "source_type": "special",
+    "source_code": "data_gpr_export.xls",
+    "scale": "index",
+    "world_kpi": "e",
+    "filename": "geopolitical_risk_index",
+    "relevance": "high",
+    "actuality": "critical",
+    "invert": ""
+  },
+		{
+  "title": "General Government Gross Debt (% of GDP)",
+  "description": "Gross debt of the general government as a percentage of GDP, including central, state, and local governments as defined by the IMF World Economic Outlook. This indicator reflects the total obligations of the public sector without deducting financial assets. It is the international standard for measuring a country's overall public debt burden.",
+  "unit": "% of GDP",
+  "relation": "*",
+  "sort": "lower",
+  "cluster": "Economy",
+  "source": "https://data.imf.org/",
+  "source_type": "imf",
+  "source_code": "GGXWDG_NGDP",
+  "filename": "general_government_gross_debt_gdp",
+  "relevance": "high",
+  "world_kpi": "",
+	"actuality": "normal",
+  "invert": ""
+},
   {
     "title": "World Happiness Index",
     "description": "The World Happiness Index measures how happy people feel in different countries, based on their life satisfaction and well-being. This index is important because it reflects the overall quality of life and can influence government policies aimed at improving citizens' happiness. Factors that affect this score include income, social support, freedom, and levels of corruption. The World Happiness Index is closely related to other metrics in the Society & Governance cluster, such as social equality and mental health indicators, as they all contribute to the overall well-being of a society. These data are provided by the World Happiness Report published by the UN Sustainable Development Solutions Network.",
@@ -1056,24 +1074,7 @@
     "relevance": "normal",
     "actuality": "stable",
     "invert": ""
-  },
-  {
-    "title": "Geopolitical Risk Index",
-    "description": "The Geopolitical Risk Index (GPR) measures the intensity of geopolitical tensions and conflict-related uncertainty based on the frequency of news reports mentioning geopolitical risks such as wars, terrorism, and diplomatic crises. A higher value indicates higher geopolitical risk and uncertainty. These data are published by Matteo Iacoviello – Geopolitical Risk Index (2024 edition).",
-    "unit": "index",
-    "relation": "*",
-    "sort": "lower",
-    "cluster": "Security & Defense",
-    "source": "https://www.matteoiacoviello.com/gpr.htm",
-    "source_type": "special",
-    "source_code": "data_gpr_export.xls",
-    "scale": "index",
-    "world_kpi": "e",
-    "filename": "geopolitical_risk_index",
-    "relevance": "high",
-    "actuality": "critical",
-    "invert": ""
-  },
+  }, 
   {
     "title": "Olympic Medals (Winter)",
     "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Winter Olympic Games. Beyond highlighting excellence in winter sports, it also reflects broader factors such as infrastructure, climate, and social investment in physical activity. Countries that perform well often have strong public sports programs, accessible training environments, and policies promoting youth participation. Although not a direct measure of prosperity, success at the Winter Olympics can indicate robust institutions, social cohesion, and an emphasis on national health and education through sport. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
@@ -1107,5 +1108,4 @@
   "actuality": "normal",
   "invert": ""
 }
-
 ]

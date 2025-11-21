@@ -375,17 +375,6 @@
     ],
     "low_outliers": []
   },
-  "public_debt_of_gdp": {
-    "high_outliers": [
-      {
-        "country": "Sudan",
-        "year": 1999,
-        "value": 865.873242919908,
-        "z": 9.371
-      }
-    ],
-    "low_outliers": []
-  },
   "tax_revenue_of_gdp": {
     "high_outliers": [
       {
@@ -1685,64 +1674,52 @@
       }
     ]
   },
-  "press_freedom_index": {
-    "high_outliers": [
-      {
-        "country": "Eritrea",
-        "year": 2021,
-        "value": 81.45,
-        "z": 2.911
-      },
+  "human_rights_index_vdem": {
+    "high_outliers": [],
+    "low_outliers": [
       {
         "country": "North Korea",
-        "year": 2021,
-        "value": 81.28,
-        "z": 2.9
+        "year": 2024,
+        "value": 0.019,
+        "z": -2.375
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2024,
+        "value": 0.042,
+        "z": -2.289
+      },
+      {
+        "country": "Eritrea",
+        "year": 2024,
+        "value": 0.048,
+        "z": -2.267
+      },
+      {
+        "country": "Nicaragua",
+        "year": 2024,
+        "value": 0.084,
+        "z": -2.133
+      },
+      {
+        "country": "Myanmar",
+        "year": 2024,
+        "value": 0.105,
+        "z": -2.055
+      },
+      {
+        "country": "Palestine",
+        "year": 2024,
+        "value": 0.107,
+        "z": -2.047
       },
       {
         "country": "Turkmenistan",
-        "year": 2021,
-        "value": 80.03,
-        "z": 2.821
-      },
-      {
-        "country": "China",
-        "year": 2021,
-        "value": 78.72,
-        "z": 2.739
-      },
-      {
-        "country": "Djibouti",
-        "year": 2021,
-        "value": 78.62,
-        "z": 2.733
-      },
-      {
-        "country": "Vietnam",
-        "year": 2021,
-        "value": 78.46,
-        "z": 2.723
-      },
-      {
-        "country": "Iran",
-        "year": 2021,
-        "value": 72.7,
-        "z": 2.36
-      },
-      {
-        "country": "Syria",
-        "year": 2021,
-        "value": 70.63,
-        "z": 2.23
-      },
-      {
-        "country": "Laos",
-        "year": 2021,
-        "value": 70.56,
-        "z": 2.225
+        "year": 2024,
+        "value": 0.109,
+        "z": -2.04
       }
-    ],
-    "low_outliers": []
+    ]
   },
   "human_development_index_hdi": {
     "high_outliers": [],
@@ -2442,13 +2419,13 @@
         "country": "Norway",
         "year": 2022,
         "value": 37.0,
-        "z": 2.815
+        "z": 2.714
       },
       {
         "country": "Russia",
         "year": 2014,
         "value": 30.0,
-        "z": 2.116
+        "z": 2.023
       }
     ],
     "low_outliers": []

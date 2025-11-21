@@ -20,6 +20,7 @@
       "education_expenditure_of_gdp": 74,
       "purchasing_power_parity": 47,
       "democracy_index": 42,
+      "human_rights_index_vdem": 55,
       "human_development_index_hdi": 43,
       "physicians_per_1_000_people": 33,
       "political_corruption_index": 57,
@@ -29,13 +30,12 @@
       "inform_resilience_index": 60,
       "pisa_overall_score": 38
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Belarus",
     "ranks": {
       "gini_index": 2,
-      "public_debt_of_gdp": 31,
       "unemployment_rate": 52,
       "infant_mortality_rate": 7,
       "maternal_mortality_ratio": 1,
@@ -54,6 +54,7 @@
       "education_expenditure_of_gdp": 63,
       "purchasing_power_parity": 64,
       "democracy_index": 152,
+      "human_rights_index_vdem": 161,
       "human_development_index_hdi": 64,
       "physicians_per_1_000_people": 15,
       "political_corruption_index": 77,
@@ -67,7 +68,6 @@
     "country": "Slovenia",
     "ranks": {
       "gini_index": 3,
-      "public_debt_of_gdp": 13,
       "unemployment_rate": 51,
       "infant_mortality_rate": 6,
       "maternal_mortality_ratio": 11,
@@ -86,6 +86,7 @@
       "education_expenditure_of_gdp": 47,
       "purchasing_power_parity": 33,
       "democracy_index": 30,
+      "human_rights_index_vdem": 42,
       "human_development_index_hdi": 20,
       "physicians_per_1_000_people": 46,
       "political_corruption_index": 22,
@@ -101,7 +102,6 @@
     "country": "India",
     "ranks": {
       "gini_index": 4,
-      "public_debt_of_gdp": 47,
       "unemployment_rate": 67,
       "infant_mortality_rate": 138,
       "maternal_mortality_ratio": 120,
@@ -120,6 +120,7 @@
       "education_expenditure_of_gdp": 95,
       "purchasing_power_parity": 125,
       "democracy_index": 41,
+      "human_rights_index_vdem": 114,
       "human_development_index_hdi": 130,
       "physicians_per_1_000_people": 131,
       "political_corruption_index": 112,
@@ -135,7 +136,6 @@
     "country": "Ukraine",
     "ranks": {
       "gini_index": 5,
-      "public_debt_of_gdp": 66,
       "unemployment_rate": 141,
       "infant_mortality_rate": 63,
       "maternal_mortality_ratio": 59,
@@ -154,6 +154,7 @@
       "education_expenditure_of_gdp": 57,
       "purchasing_power_parity": 95,
       "democracy_index": 92,
+      "human_rights_index_vdem": 117,
       "human_development_index_hdi": 85,
       "physicians_per_1_000_people": 56,
       "political_corruption_index": 101,
@@ -169,7 +170,6 @@
     "country": "Czechia",
     "ranks": {
       "gini_index": 6,
-      "public_debt_of_gdp": 9,
       "unemployment_rate": 23,
       "infant_mortality_rate": 12,
       "maternal_mortality_ratio": 7,
@@ -187,6 +187,7 @@
       "education_expenditure_of_gdp": 87,
       "purchasing_power_parity": 32,
       "democracy_index": 23,
+      "human_rights_index_vdem": 7,
       "human_development_index_hdi": 28,
       "physicians_per_1_000_people": 21,
       "homelessness_rate": 16,
@@ -203,7 +204,6 @@
     "country": "Netherlands",
     "ranks": {
       "gini_index": 7,
-      "public_debt_of_gdp": 58,
       "unemployment_rate": 57,
       "infant_mortality_rate": 34,
       "maternal_mortality_ratio": 19,
@@ -221,6 +221,7 @@
       "education_expenditure_of_gdp": 54,
       "purchasing_power_parity": 9,
       "democracy_index": 9,
+      "human_rights_index_vdem": 30,
       "human_development_index_hdi": 8,
       "physicians_per_1_000_people": 27,
       "political_corruption_index": 5,
@@ -237,7 +238,6 @@
     "country": "United Arab Emirates",
     "ranks": {
       "gini_index": 8,
-      "public_debt_of_gdp": 2,
       "unemployment_rate": 16,
       "infant_mortality_rate": 40,
       "maternal_mortality_ratio": 13,
@@ -256,6 +256,7 @@
       "education_expenditure_of_gdp": 106,
       "purchasing_power_parity": 14,
       "democracy_index": 119,
+      "human_rights_index_vdem": 143,
       "human_development_index_hdi": 14,
       "physicians_per_1_000_people": 60,
       "political_corruption_index": 31,
@@ -271,7 +272,6 @@
     "country": "Norway",
     "ranks": {
       "gini_index": 9,
-      "public_debt_of_gdp": 27,
       "unemployment_rate": 61,
       "infant_mortality_rate": 9,
       "maternal_mortality_ratio": 2,
@@ -289,6 +289,7 @@
       "education_expenditure_of_gdp": 39,
       "purchasing_power_parity": 5,
       "democracy_index": 1,
+      "human_rights_index_vdem": 14,
       "human_development_index_hdi": 2,
       "physicians_per_1_000_people": 8,
       "homelessness_rate": 1,
@@ -306,7 +307,6 @@
     "country": "Azerbaijan",
     "ranks": {
       "gini_index": 10,
-      "public_debt_of_gdp": 15,
       "unemployment_rate": 104,
       "infant_mortality_rate": 96,
       "maternal_mortality_ratio": 67,
@@ -325,6 +325,7 @@
       "education_expenditure_of_gdp": 115,
       "purchasing_power_parity": 76,
       "democracy_index": 126,
+      "human_rights_index_vdem": 148,
       "human_development_index_hdi": 79,
       "physicians_per_1_000_people": 53,
       "political_corruption_index": 167,
@@ -357,13 +358,14 @@
       "education_expenditure_of_gdp": 58,
       "purchasing_power_parity": 155,
       "democracy_index": 163,
+      "human_rights_index_vdem": 169,
       "human_development_index_hdi": 161,
       "physicians_per_1_000_people": 111,
       "political_corruption_index": 126,
       "global_peace_index": 157,
       "inform_resilience_index": 182
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Belgium",
@@ -386,6 +388,7 @@
       "education_expenditure_of_gdp": 21,
       "purchasing_power_parity": 18,
       "democracy_index": 34,
+      "human_rights_index_vdem": 6,
       "human_development_index_hdi": 9,
       "physicians_per_1_000_people": 49,
       "political_corruption_index": 15,
@@ -396,13 +399,12 @@
       "inform_resilience_index": 44,
       "pisa_overall_score": 19
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Iceland",
     "ranks": {
       "gini_index": 13,
-      "public_debt_of_gdp": 88,
       "unemployment_rate": 44,
       "infant_mortality_rate": 8,
       "maternal_mortality_ratio": 8,
@@ -419,6 +421,7 @@
       "education_expenditure_of_gdp": 12,
       "purchasing_power_parity": 13,
       "democracy_index": 4,
+      "human_rights_index_vdem": 9,
       "human_development_index_hdi": 1,
       "physicians_per_1_000_people": 12,
       "homelessness_rate": 14,
@@ -435,7 +438,6 @@
     "country": "Moldova",
     "ranks": {
       "gini_index": 14,
-      "public_debt_of_gdp": 32,
       "unemployment_rate": 10,
       "infant_mortality_rate": 99,
       "maternal_mortality_ratio": 71,
@@ -454,6 +456,7 @@
       "education_expenditure_of_gdp": 15,
       "purchasing_power_parity": 93,
       "democracy_index": 71,
+      "human_rights_index_vdem": 54,
       "human_development_index_hdi": 84,
       "physicians_per_1_000_people": 48,
       "political_corruption_index": 65,
@@ -469,7 +472,6 @@
     "country": "Tonga",
     "ranks": {
       "gini_index": 15,
-      "public_debt_of_gdp": 44,
       "unemployment_rate": 19,
       "infant_mortality_rate": 66,
       "maternal_mortality_ratio": 114,
@@ -491,13 +493,12 @@
       "environmental_performance_index": 80,
       "inform_resilience_index": 94
     },
-    "kpi_count": 22
+    "kpi_count": 21
   },
   {
     "country": "Armenia",
     "ranks": {
       "gini_index": 16,
-      "public_debt_of_gdp": 48,
       "unemployment_rate": 159,
       "infant_mortality_rate": 73,
       "maternal_mortality_ratio": 69,
@@ -516,6 +517,7 @@
       "education_expenditure_of_gdp": 162,
       "purchasing_power_parity": 79,
       "democracy_index": 82,
+      "human_rights_index_vdem": 67,
       "human_development_index_hdi": 68,
       "physicians_per_1_000_people": 52,
       "political_corruption_index": 69,
@@ -529,7 +531,6 @@
     "country": "Kyrgyzstan",
     "ranks": {
       "gini_index": 17,
-      "public_debt_of_gdp": 39,
       "unemployment_rate": 49,
       "infant_mortality_rate": 107,
       "maternal_mortality_ratio": 92,
@@ -548,6 +549,7 @@
       "education_expenditure_of_gdp": 13,
       "purchasing_power_parity": 134,
       "democracy_index": 111,
+      "human_rights_index_vdem": 118,
       "human_development_index_hdi": 117,
       "physicians_per_1_000_people": 85,
       "political_corruption_index": 140,
@@ -561,7 +563,6 @@
     "country": "Finland",
     "ranks": {
       "gini_index": 18,
-      "public_debt_of_gdp": 65,
       "unemployment_rate": 130,
       "infant_mortality_rate": 4,
       "maternal_mortality_ratio": 38,
@@ -579,6 +580,7 @@
       "education_expenditure_of_gdp": 19,
       "purchasing_power_parity": 26,
       "democracy_index": 6,
+      "human_rights_index_vdem": 11,
       "human_development_index_hdi": 11,
       "physicians_per_1_000_people": 18,
       "political_corruption_index": 9,
@@ -613,6 +615,7 @@
       "education_expenditure_of_gdp": 35,
       "purchasing_power_parity": 100,
       "democracy_index": 110,
+      "human_rights_index_vdem": 135,
       "human_development_index_hdi": 94,
       "physicians_per_1_000_people": 118,
       "political_corruption_index": 111,
@@ -620,7 +623,7 @@
       "global_peace_index": 92,
       "inform_resilience_index": 96
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Kiribati",
@@ -650,7 +653,6 @@
     "country": "Bhutan",
     "ranks": {
       "gini_index": 21,
-      "public_debt_of_gdp": 99,
       "unemployment_rate": 33,
       "infant_mortality_rate": 121,
       "maternal_mortality_ratio": 96,
@@ -668,6 +670,7 @@
       "education_expenditure_of_gdp": 31,
       "purchasing_power_parity": 105,
       "democracy_index": 79,
+      "human_rights_index_vdem": 97,
       "human_development_index_hdi": 124,
       "physicians_per_1_000_people": 137,
       "political_corruption_index": 34,
@@ -681,7 +684,6 @@
     "country": "Egypt",
     "ranks": {
       "gini_index": 22,
-      "public_debt_of_gdp": 92,
       "unemployment_rate": 118,
       "infant_mortality_rate": 113,
       "maternal_mortality_ratio": 65,
@@ -700,6 +702,7 @@
       "education_expenditure_of_gdp": 110,
       "purchasing_power_parity": 92,
       "democracy_index": 129,
+      "human_rights_index_vdem": 154,
       "human_development_index_hdi": 99,
       "physicians_per_1_000_people": 133,
       "political_corruption_index": 124,
@@ -714,7 +717,6 @@
     "country": "Poland",
     "ranks": {
       "gini_index": 23,
-      "public_debt_of_gdp": 67,
       "unemployment_rate": 22,
       "infant_mortality_rate": 36,
       "maternal_mortality_ratio": 5,
@@ -733,6 +735,7 @@
       "education_expenditure_of_gdp": 86,
       "purchasing_power_parity": 41,
       "democracy_index": 39,
+      "human_rights_index_vdem": 32,
       "human_development_index_hdi": 34,
       "physicians_per_1_000_people": 43,
       "homelessness_rate": 6,
@@ -767,6 +770,7 @@
       "education_expenditure_of_gdp": 51,
       "purchasing_power_parity": 154,
       "democracy_index": 46,
+      "human_rights_index_vdem": 50,
       "human_development_index_hdi": 141,
       "physicians_per_1_000_people": 128,
       "political_corruption_index": 46,
@@ -774,7 +778,7 @@
       "global_peace_index": 44,
       "inform_resilience_index": 106
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Ireland",
@@ -797,6 +801,7 @@
       "education_expenditure_of_gdp": 144,
       "purchasing_power_parity": 3,
       "democracy_index": 8,
+      "human_rights_index_vdem": 4,
       "human_development_index_hdi": 10,
       "physicians_per_1_000_people": 24,
       "political_corruption_index": 16,
@@ -806,13 +811,12 @@
       "inform_resilience_index": 22,
       "pisa_overall_score": 7
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Kazakhstan",
     "ranks": {
       "gini_index": 26,
-      "public_debt_of_gdp": 20,
       "unemployment_rate": 81,
       "infant_mortality_rate": 61,
       "maternal_mortality_ratio": 46,
@@ -831,6 +835,7 @@
       "education_expenditure_of_gdp": 68,
       "purchasing_power_parity": 55,
       "democracy_index": 118,
+      "human_rights_index_vdem": 122,
       "human_development_index_hdi": 60,
       "physicians_per_1_000_people": 25,
       "political_corruption_index": 117,
@@ -845,7 +850,6 @@
     "country": "Maldives",
     "ranks": {
       "gini_index": 27,
-      "public_debt_of_gdp": 61,
       "unemployment_rate": 78,
       "infant_mortality_rate": 49,
       "maternal_mortality_ratio": 79,
@@ -862,6 +866,7 @@
       "fixed_broadband_subscriptions_per_100_people": 78,
       "education_expenditure_of_gdp": 55,
       "purchasing_power_parity": 74,
+      "human_rights_index_vdem": 93,
       "human_development_index_hdi": 91,
       "physicians_per_1_000_people": 83,
       "political_corruption_index": 76,
@@ -891,6 +896,7 @@
       "education_expenditure_of_gdp": 11,
       "purchasing_power_parity": 22,
       "democracy_index": 3,
+      "human_rights_index_vdem": 2,
       "human_development_index_hdi": 6,
       "physicians_per_1_000_people": 19,
       "homelessness_rate": 5,
@@ -902,13 +908,12 @@
       "inform_resilience_index": 26,
       "pisa_overall_score": 17
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Albania",
     "ranks": {
       "gini_index": 29,
-      "public_debt_of_gdp": 89,
       "unemployment_rate": 144,
       "infant_mortality_rate": 69,
       "maternal_mortality_ratio": 34,
@@ -927,6 +932,7 @@
       "education_expenditure_of_gdp": 140,
       "purchasing_power_parity": 78,
       "democracy_index": 66,
+      "human_rights_index_vdem": 48,
       "human_development_index_hdi": 70,
       "physicians_per_1_000_people": 91,
       "political_corruption_index": 104,
@@ -958,6 +964,7 @@
       "education_expenditure_of_gdp": 182,
       "purchasing_power_parity": 156,
       "democracy_index": 149,
+      "human_rights_index_vdem": 151,
       "human_development_index_hdi": 178,
       "physicians_per_1_000_people": 194,
       "political_corruption_index": 162,
@@ -965,13 +972,12 @@
       "global_peace_index": 118,
       "inform_resilience_index": 138
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Pakistan",
     "ranks": {
       "gini_index": 31,
-      "public_debt_of_gdp": 59,
       "unemployment_rate": 97,
       "infant_mortality_rate": 182,
       "maternal_mortality_ratio": 147,
@@ -990,6 +996,7 @@
       "education_expenditure_of_gdp": 176,
       "purchasing_power_parity": 145,
       "democracy_index": 125,
+      "human_rights_index_vdem": 131,
       "human_development_index_hdi": 167,
       "physicians_per_1_000_people": 114,
       "political_corruption_index": 145,
@@ -1004,7 +1011,6 @@
     "country": "Iraq",
     "ranks": {
       "gini_index": 32,
-      "public_debt_of_gdp": 23,
       "unemployment_rate": 164,
       "infant_mortality_rate": 127,
       "maternal_mortality_ratio": 109,
@@ -1023,6 +1029,7 @@
       "education_expenditure_of_gdp": 118,
       "purchasing_power_parity": 111,
       "democracy_index": 127,
+      "human_rights_index_vdem": 124,
       "human_development_index_hdi": 126,
       "physicians_per_1_000_people": 116,
       "political_corruption_index": 157,
@@ -1054,6 +1061,7 @@
       "education_expenditure_of_gdp": 130,
       "purchasing_power_parity": 43,
       "democracy_index": 72,
+      "human_rights_index_vdem": 53,
       "human_development_index_hdi": 55,
       "physicians_per_1_000_people": 40,
       "political_corruption_index": 70,
@@ -1063,13 +1071,12 @@
       "inform_resilience_index": 66,
       "pisa_overall_score": 45
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Denmark",
     "ranks": {
       "gini_index": 34,
-      "public_debt_of_gdp": 83,
       "unemployment_rate": 103,
       "infant_mortality_rate": 27,
       "maternal_mortality_ratio": 15,
@@ -1087,6 +1094,7 @@
       "education_expenditure_of_gdp": 20,
       "purchasing_power_parity": 11,
       "democracy_index": 7,
+      "human_rights_index_vdem": 3,
       "human_development_index_hdi": 4,
       "physicians_per_1_000_people": 17,
       "homelessness_rate": 8,
@@ -1104,7 +1112,6 @@
     "country": "Nepal",
     "ranks": {
       "gini_index": 35,
-      "public_debt_of_gdp": 37,
       "unemployment_rate": 146,
       "infant_mortality_rate": 132,
       "maternal_mortality_ratio": 142,
@@ -1122,6 +1129,7 @@
       "education_expenditure_of_gdp": 114,
       "purchasing_power_parity": 149,
       "democracy_index": 96,
+      "human_rights_index_vdem": 90,
       "human_development_index_hdi": 144,
       "physicians_per_1_000_people": 121,
       "political_corruption_index": 102,
@@ -1153,6 +1161,7 @@
       "education_expenditure_of_gdp": 96,
       "purchasing_power_parity": 44,
       "democracy_index": 56,
+      "human_rights_index_vdem": 37,
       "human_development_index_hdi": 40,
       "physicians_per_1_000_people": 36,
       "political_corruption_index": 52,
@@ -1162,13 +1171,12 @@
       "inform_resilience_index": 39,
       "pisa_overall_score": 33
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Hungary",
     "ranks": {
       "gini_index": 37,
-      "public_debt_of_gdp": 82,
       "unemployment_rate": 71,
       "infant_mortality_rate": 31,
       "maternal_mortality_ratio": 51,
@@ -1187,6 +1195,7 @@
       "education_expenditure_of_gdp": 109,
       "purchasing_power_parity": 45,
       "democracy_index": 55,
+      "human_rights_index_vdem": 68,
       "human_development_index_hdi": 45,
       "physicians_per_1_000_people": 47,
       "political_corruption_index": 85,
@@ -1220,6 +1229,7 @@
       "education_expenditure_of_gdp": 53,
       "purchasing_power_parity": 42,
       "democracy_index": 21,
+      "human_rights_index_vdem": 1,
       "human_development_index_hdi": 35,
       "physicians_per_1_000_people": 41,
       "political_corruption_index": 10,
@@ -1229,13 +1239,12 @@
       "inform_resilience_index": 14,
       "pisa_overall_score": 5
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Fiji",
     "ranks": {
       "gini_index": 39,
-      "public_debt_of_gdp": 35,
       "unemployment_rate": 69,
       "infant_mortality_rate": 134,
       "maternal_mortality_ratio": 77,
@@ -1252,6 +1261,7 @@
       "education_expenditure_of_gdp": 90,
       "purchasing_power_parity": 106,
       "democracy_index": 81,
+      "human_rights_index_vdem": 86,
       "human_development_index_hdi": 111,
       "physicians_per_1_000_people": 124,
       "political_corruption_index": 59,
@@ -1282,6 +1292,7 @@
       "education_expenditure_of_gdp": 175,
       "purchasing_power_parity": 148,
       "democracy_index": 166,
+      "human_rights_index_vdem": 172,
       "human_development_index_hdi": 149,
       "physicians_per_1_000_people": 129,
       "political_corruption_index": 152,
@@ -1289,13 +1300,12 @@
       "global_peace_index": 153,
       "inform_resilience_index": 175
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Bangladesh",
     "ranks": {
       "gini_index": 41,
-      "public_debt_of_gdp": 28,
       "unemployment_rate": 79,
       "infant_mortality_rate": 136,
       "maternal_mortality_ratio": 131,
@@ -1314,6 +1324,7 @@
       "education_expenditure_of_gdp": 172,
       "purchasing_power_parity": 129,
       "democracy_index": 100,
+      "human_rights_index_vdem": 127,
       "human_development_index_hdi": 129,
       "physicians_per_1_000_people": 134,
       "political_corruption_index": 168,
@@ -1327,7 +1338,6 @@
     "country": "Canada",
     "ranks": {
       "gini_index": 42,
-      "public_debt_of_gdp": 73,
       "unemployment_rate": 112,
       "infant_mortality_rate": 42,
       "maternal_mortality_ratio": 50,
@@ -1345,6 +1355,7 @@
       "education_expenditure_of_gdp": 66,
       "purchasing_power_parity": 25,
       "democracy_index": 14,
+      "human_rights_index_vdem": 33,
       "human_development_index_hdi": 15,
       "physicians_per_1_000_people": 74,
       "homelessness_rate": 11,
@@ -1362,7 +1373,6 @@
     "country": "Ethiopia",
     "ranks": {
       "gini_index": 43,
-      "public_debt_of_gdp": 29,
       "unemployment_rate": 53,
       "infant_mortality_rate": 161,
       "maternal_mortality_ratio": 157,
@@ -1381,6 +1391,7 @@
       "education_expenditure_of_gdp": 165,
       "purchasing_power_parity": 170,
       "democracy_index": 116,
+      "human_rights_index_vdem": 149,
       "human_development_index_hdi": 179,
       "physicians_per_1_000_people": 179,
       "political_corruption_index": 92,
@@ -1411,6 +1422,7 @@
       "education_expenditure_of_gdp": 48,
       "purchasing_power_parity": 19,
       "democracy_index": 19,
+      "human_rights_index_vdem": 28,
       "human_development_index_hdi": 21,
       "physicians_per_1_000_people": 7,
       "political_corruption_index": 32,
@@ -1421,13 +1433,12 @@
       "inform_resilience_index": 35,
       "pisa_overall_score": 18
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Mongolia",
     "ranks": {
       "gini_index": 45,
-      "public_debt_of_gdp": 74,
       "unemployment_rate": 94,
       "infant_mortality_rate": 90,
       "maternal_mortality_ratio": 91,
@@ -1446,6 +1457,7 @@
       "education_expenditure_of_gdp": 116,
       "purchasing_power_parity": 91,
       "democracy_index": 53,
+      "human_rights_index_vdem": 83,
       "human_development_index_hdi": 103,
       "physicians_per_1_000_people": 29,
       "political_corruption_index": 120,
@@ -1460,7 +1472,6 @@
     "country": "Cyprus",
     "ranks": {
       "gini_index": 46,
-      "public_debt_of_gdp": 55,
       "unemployment_rate": 105,
       "infant_mortality_rate": 25,
       "maternal_mortality_ratio": 54,
@@ -1478,6 +1489,7 @@
       "education_expenditure_of_gdp": 70,
       "purchasing_power_parity": 28,
       "democracy_index": 40,
+      "human_rights_index_vdem": 40,
       "human_development_index_hdi": 32,
       "physicians_per_1_000_people": 39,
       "political_corruption_index": 36,
@@ -1509,6 +1521,7 @@
       "education_expenditure_of_gdp": 45,
       "purchasing_power_parity": 27,
       "democracy_index": 26,
+      "human_rights_index_vdem": 27,
       "human_development_index_hdi": 25,
       "physicians_per_1_000_people": 45,
       "homelessness_rate": 7,
@@ -1520,7 +1533,7 @@
       "inform_resilience_index": 54,
       "pisa_overall_score": 25
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Mauritania",
@@ -1544,6 +1557,7 @@
       "education_expenditure_of_gdp": 72,
       "purchasing_power_parity": 141,
       "democracy_index": 108,
+      "human_rights_index_vdem": 121,
       "human_development_index_hdi": 162,
       "physicians_per_1_000_people": 155,
       "political_corruption_index": 160,
@@ -1551,13 +1565,12 @@
       "global_peace_index": 110,
       "inform_resilience_index": 149
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Seychelles",
     "ranks": {
       "gini_index": 49,
-      "public_debt_of_gdp": 106,
       "infant_mortality_rate": 95,
       "maternal_mortality_ratio": 94,
       "hospital_beds_per_1_000_people": 63,
@@ -1571,6 +1584,7 @@
       "fixed_broadband_subscriptions_per_100_people": 47,
       "education_expenditure_of_gdp": 80,
       "purchasing_power_parity": 63,
+      "human_rights_index_vdem": 31,
       "human_development_index_hdi": 53,
       "physicians_per_1_000_people": 31,
       "political_corruption_index": 18,
@@ -1600,6 +1614,7 @@
       "education_expenditure_of_gdp": 128,
       "purchasing_power_parity": 38,
       "democracy_index": 16,
+      "human_rights_index_vdem": 19,
       "human_development_index_hdi": 22,
       "physicians_per_1_000_people": 67,
       "homelessness_rate": 2,
@@ -1611,13 +1626,12 @@
       "inform_resilience_index": 23,
       "pisa_overall_score": 2
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Vanuatu",
     "ranks": {
       "gini_index": 51,
-      "public_debt_of_gdp": 78,
       "unemployment_rate": 87,
       "infant_mortality_rate": 102,
       "maternal_mortality_ratio": 128,
@@ -1634,6 +1648,7 @@
       "fixed_broadband_subscriptions_per_100_people": 153,
       "education_expenditure_of_gdp": 10,
       "purchasing_power_parity": 166,
+      "human_rights_index_vdem": 44,
       "human_development_index_hdi": 145,
       "physicians_per_1_000_people": 170,
       "political_corruption_index": 60,
@@ -1646,7 +1661,6 @@
     "country": "Germany",
     "ranks": {
       "gini_index": 52,
-      "public_debt_of_gdp": 19,
       "unemployment_rate": 54,
       "infant_mortality_rate": 29,
       "maternal_mortality_ratio": 16,
@@ -1664,6 +1678,7 @@
       "education_expenditure_of_gdp": 52,
       "purchasing_power_parity": 17,
       "democracy_index": 13,
+      "human_rights_index_vdem": 13,
       "human_development_index_hdi": 5,
       "physicians_per_1_000_people": 13,
       "homelessness_rate": 13,
@@ -1704,7 +1719,6 @@
     "country": "United Kingdom",
     "ranks": {
       "gini_index": 54,
-      "public_debt_of_gdp": 104,
       "unemployment_rate": 66,
       "infant_mortality_rate": 41,
       "maternal_mortality_ratio": 43,
@@ -1722,6 +1736,7 @@
       "education_expenditure_of_gdp": 29,
       "purchasing_power_parity": 30,
       "democracy_index": 17,
+      "human_rights_index_vdem": 46,
       "human_development_index_hdi": 13,
       "physicians_per_1_000_people": 50,
       "homelessness_rate": 10,
@@ -1757,6 +1772,7 @@
       "education_expenditure_of_gdp": 125,
       "purchasing_power_parity": 65,
       "democracy_index": 64,
+      "human_rights_index_vdem": 87,
       "human_development_index_hdi": 62,
       "physicians_per_1_000_people": 62,
       "political_corruption_index": 132,
@@ -1765,13 +1781,12 @@
       "inform_resilience_index": 93,
       "pisa_overall_score": 40
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "South Korea",
     "ranks": {
       "gini_index": 56,
-      "public_debt_of_gdp": 52,
       "unemployment_rate": 27,
       "infant_mortality_rate": 15,
       "maternal_mortality_ratio": 18,
@@ -1790,6 +1805,7 @@
       "education_expenditure_of_gdp": 32,
       "purchasing_power_parity": 37,
       "democracy_index": 32,
+      "human_rights_index_vdem": 66,
       "human_development_index_hdi": 19,
       "physicians_per_1_000_people": 71,
       "political_corruption_index": 35,
@@ -1823,6 +1839,7 @@
       "education_expenditure_of_gdp": 98,
       "purchasing_power_parity": 182,
       "democracy_index": 141,
+      "human_rights_index_vdem": 89,
       "human_development_index_hdi": 188,
       "physicians_per_1_000_people": 191,
       "political_corruption_index": 96,
@@ -1830,13 +1847,12 @@
       "global_peace_index": 143,
       "inform_resilience_index": 184
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Bosnia Herzegovina",
     "ranks": {
       "gini_index": 58,
-      "public_debt_of_gdp": 38,
       "unemployment_rate": 147,
       "infant_mortality_rate": 51,
       "maternal_mortality_ratio": 29,
@@ -1855,6 +1871,7 @@
       "education_expenditure_of_gdp": 131,
       "purchasing_power_parity": 83,
       "democracy_index": 88,
+      "human_rights_index_vdem": 71,
       "human_development_index_hdi": 73,
       "physicians_per_1_000_people": 76,
       "political_corruption_index": 135,
@@ -1868,7 +1885,6 @@
     "country": "Russia",
     "ranks": {
       "gini_index": 59,
-      "public_debt_of_gdp": 16,
       "unemployment_rate": 24,
       "infant_mortality_rate": 37,
       "maternal_mortality_ratio": 44,
@@ -1887,6 +1903,7 @@
       "education_expenditure_of_gdp": 93,
       "purchasing_power_parity": 46,
       "democracy_index": 151,
+      "human_rights_index_vdem": 155,
       "human_development_index_hdi": 63,
       "physicians_per_1_000_people": 30,
       "political_corruption_index": 139,
@@ -1920,6 +1937,7 @@
       "education_expenditure_of_gdp": 126,
       "purchasing_power_parity": 48,
       "democracy_index": 25,
+      "human_rights_index_vdem": 51,
       "human_development_index_hdi": 33,
       "physicians_per_1_000_people": 3,
       "political_corruption_index": 48,
@@ -1930,7 +1948,7 @@
       "inform_resilience_index": 70,
       "pisa_overall_score": 43
     },
-    "kpi_count": 28
+    "kpi_count": 29
   },
   {
     "country": "Guinea-Bissau",
@@ -1953,6 +1971,7 @@
       "education_expenditure_of_gdp": 174,
       "purchasing_power_parity": 175,
       "democracy_index": 150,
+      "human_rights_index_vdem": 92,
       "human_development_index_hdi": 173,
       "physicians_per_1_000_people": 157,
       "political_corruption_index": 144,
@@ -1960,13 +1979,12 @@
       "global_peace_index": 101,
       "inform_resilience_index": 121
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Spain",
     "ranks": {
       "gini_index": 62,
-      "public_debt_of_gdp": 98,
       "unemployment_rate": 149,
       "infant_mortality_rate": 21,
       "maternal_mortality_ratio": 12,
@@ -1985,6 +2003,7 @@
       "education_expenditure_of_gdp": 76,
       "purchasing_power_parity": 31,
       "democracy_index": 22,
+      "human_rights_index_vdem": 10,
       "human_development_index_hdi": 27,
       "physicians_per_1_000_people": 14,
       "homelessness_rate": 9,
@@ -2020,6 +2039,7 @@
       "education_expenditure_of_gdp": 129,
       "purchasing_power_parity": 73,
       "democracy_index": 62,
+      "human_rights_index_vdem": 73,
       "human_development_index_hdi": 67,
       "physicians_per_1_000_people": 59,
       "political_corruption_index": 131,
@@ -2028,13 +2048,12 @@
       "inform_resilience_index": 59,
       "pisa_overall_score": 67
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Thailand",
     "ranks": {
       "gini_index": 64,
-      "public_debt_of_gdp": 69,
       "unemployment_rate": 4,
       "infant_mortality_rate": 65,
       "maternal_mortality_ratio": 81,
@@ -2053,6 +2072,7 @@
       "education_expenditure_of_gdp": 159,
       "purchasing_power_parity": 77,
       "democracy_index": 63,
+      "human_rights_index_vdem": 129,
       "human_development_index_hdi": 75,
       "physicians_per_1_000_people": 120,
       "political_corruption_index": 109,
@@ -2068,7 +2088,6 @@
     "country": "Luxembourg",
     "ranks": {
       "gini_index": 65,
-      "public_debt_of_gdp": 3,
       "unemployment_rate": 107,
       "infant_mortality_rate": 10,
       "maternal_mortality_ratio": 48,
@@ -2086,6 +2105,7 @@
       "education_expenditure_of_gdp": 113,
       "purchasing_power_parity": 1,
       "democracy_index": 10,
+      "human_rights_index_vdem": 12,
       "human_development_index_hdi": 24,
       "physicians_per_1_000_people": 57,
       "political_corruption_index": 13,
@@ -2099,7 +2119,6 @@
     "country": "Jordan",
     "ranks": {
       "gini_index": 66,
-      "public_debt_of_gdp": 94,
       "unemployment_rate": 168,
       "infant_mortality_rate": 91,
       "maternal_mortality_ratio": 78,
@@ -2117,6 +2136,7 @@
       "education_expenditure_of_gdp": 120,
       "purchasing_power_parity": 126,
       "democracy_index": 115,
+      "human_rights_index_vdem": 107,
       "human_development_index_hdi": 100,
       "physicians_per_1_000_people": 72,
       "political_corruption_index": 78,
@@ -2132,7 +2152,6 @@
     "country": "Tunisia",
     "ranks": {
       "gini_index": 67,
-      "public_debt_of_gdp": 42,
       "unemployment_rate": 166,
       "infant_mortality_rate": 82,
       "maternal_mortality_ratio": 87,
@@ -2151,6 +2170,7 @@
       "education_expenditure_of_gdp": 14,
       "purchasing_power_parity": 112,
       "democracy_index": 93,
+      "human_rights_index_vdem": 103,
       "human_development_index_hdi": 104,
       "physicians_per_1_000_people": 104,
       "political_corruption_index": 74,
@@ -2164,7 +2184,6 @@
     "country": "Australia",
     "ranks": {
       "gini_index": 68,
-      "public_debt_of_gdp": 64,
       "unemployment_rate": 62,
       "infant_mortality_rate": 28,
       "maternal_mortality_ratio": 3,
@@ -2181,6 +2200,7 @@
       "education_expenditure_of_gdp": 61,
       "purchasing_power_parity": 21,
       "democracy_index": 11,
+      "human_rights_index_vdem": 22,
       "human_development_index_hdi": 7,
       "physicians_per_1_000_people": 26,
       "homelessness_rate": 12,
@@ -2198,7 +2218,6 @@
     "country": "Switzerland",
     "ranks": {
       "gini_index": 69,
-      "public_debt_of_gdp": 18,
       "unemployment_rate": 65,
       "infant_mortality_rate": 35,
       "maternal_mortality_ratio": 26,
@@ -2216,6 +2235,7 @@
       "education_expenditure_of_gdp": 64,
       "purchasing_power_parity": 6,
       "democracy_index": 5,
+      "human_rights_index_vdem": 8,
       "human_development_index_hdi": 3,
       "physicians_per_1_000_people": 16,
       "political_corruption_index": 8,
@@ -2232,7 +2252,6 @@
     "country": "Georgia",
     "ranks": {
       "gini_index": 70,
-      "public_debt_of_gdp": 40,
       "unemployment_rate": 151,
       "infant_mortality_rate": 64,
       "maternal_mortality_ratio": 72,
@@ -2251,6 +2270,7 @@
       "education_expenditure_of_gdp": 104,
       "purchasing_power_parity": 69,
       "democracy_index": 94,
+      "human_rights_index_vdem": 85,
       "human_development_index_hdi": 56,
       "physicians_per_1_000_people": 6,
       "political_corruption_index": 42,
@@ -2283,6 +2303,7 @@
       "education_expenditure_of_gdp": 190,
       "purchasing_power_parity": 144,
       "democracy_index": 106,
+      "human_rights_index_vdem": 105,
       "human_development_index_hdi": 163,
       "physicians_per_1_000_people": 146,
       "political_corruption_index": 171,
@@ -2290,13 +2311,12 @@
       "global_peace_index": 148,
       "inform_resilience_index": 176
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Portugal",
     "ranks": {
       "gini_index": 72,
-      "public_debt_of_gdp": 6,
       "unemployment_rate": 111,
       "infant_mortality_rate": 20,
       "maternal_mortality_ratio": 57,
@@ -2315,6 +2335,7 @@
       "education_expenditure_of_gdp": 77,
       "purchasing_power_parity": 40,
       "democracy_index": 24,
+      "human_rights_index_vdem": 34,
       "human_development_index_hdi": 39,
       "physicians_per_1_000_people": 5,
       "political_corruption_index": 37,
@@ -2331,7 +2352,6 @@
     "country": "Latvia",
     "ranks": {
       "gini_index": 73,
-      "public_debt_of_gdp": 7,
       "unemployment_rate": 115,
       "infant_mortality_rate": 18,
       "maternal_mortality_ratio": 70,
@@ -2350,6 +2370,7 @@
       "education_expenditure_of_gdp": 85,
       "purchasing_power_parity": 50,
       "democracy_index": 33,
+      "human_rights_index_vdem": 15,
       "human_development_index_hdi": 41,
       "physicians_per_1_000_people": 44,
       "political_corruption_index": 25,
@@ -2365,7 +2386,6 @@
     "country": "Barbados",
     "ranks": {
       "gini_index": 74,
-      "public_debt_of_gdp": 103,
       "unemployment_rate": 123,
       "infant_mortality_rate": 77,
       "maternal_mortality_ratio": 83,
@@ -2382,6 +2402,7 @@
       "fixed_broadband_subscriptions_per_100_people": 27,
       "education_expenditure_of_gdp": 117,
       "purchasing_power_parity": 80,
+      "human_rights_index_vdem": 24,
       "human_development_index_hdi": 69,
       "physicians_per_1_000_people": 58,
       "political_corruption_index": 24,
@@ -2394,7 +2415,6 @@
     "country": "Sudan",
     "ranks": {
       "gini_index": 75,
-      "public_debt_of_gdp": 108,
       "unemployment_rate": 124,
       "infant_mortality_rate": 167,
       "maternal_mortality_ratio": 166,
@@ -2413,6 +2433,7 @@
       "education_expenditure_of_gdp": 173,
       "purchasing_power_parity": 181,
       "democracy_index": 162,
+      "human_rights_index_vdem": 153,
       "human_development_index_hdi": 175,
       "physicians_per_1_000_people": 150,
       "political_corruption_index": 143,
@@ -2426,7 +2447,6 @@
     "country": "Italy",
     "ranks": {
       "gini_index": 76,
-      "public_debt_of_gdp": 85,
       "unemployment_rate": 116,
       "infant_mortality_rate": 14,
       "maternal_mortality_ratio": 31,
@@ -2445,6 +2465,7 @@
       "education_expenditure_of_gdp": 100,
       "purchasing_power_parity": 29,
       "democracy_index": 38,
+      "human_rights_index_vdem": 29,
       "human_development_index_hdi": 29,
       "physicians_per_1_000_people": 22,
       "political_corruption_index": 44,
@@ -2478,6 +2499,7 @@
       "fixed_broadband_subscriptions_per_100_people": 41,
       "purchasing_power_parity": 62,
       "democracy_index": 50,
+      "human_rights_index_vdem": 39,
       "human_development_index_hdi": 47,
       "physicians_per_1_000_people": 64,
       "political_corruption_index": 87,
@@ -2486,7 +2508,7 @@
       "inform_resilience_index": 52,
       "pisa_overall_score": 54
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Benin",
@@ -2510,6 +2532,7 @@
       "education_expenditure_of_gdp": 133,
       "purchasing_power_parity": 157,
       "democracy_index": 101,
+      "human_rights_index_vdem": 65,
       "human_development_index_hdi": 172,
       "physicians_per_1_000_people": 159,
       "political_corruption_index": 41,
@@ -2517,13 +2540,12 @@
       "global_peace_index": 112,
       "inform_resilience_index": 151
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Malta",
     "ranks": {
       "gini_index": 79,
-      "public_debt_of_gdp": 25,
       "unemployment_rate": 29,
       "infant_mortality_rate": 45,
       "maternal_mortality_ratio": 41,
@@ -2541,6 +2563,7 @@
       "education_expenditure_of_gdp": 71,
       "purchasing_power_parity": 23,
       "democracy_index": 27,
+      "human_rights_index_vdem": 25,
       "human_development_index_hdi": 23,
       "physicians_per_1_000_people": 20,
       "political_corruption_index": 43,
@@ -2572,6 +2595,7 @@
       "education_expenditure_of_gdp": 37,
       "purchasing_power_parity": 118,
       "democracy_index": 146,
+      "human_rights_index_vdem": 141,
       "human_development_index_hdi": 106,
       "physicians_per_1_000_people": 63,
       "political_corruption_index": 153,
@@ -2580,13 +2604,12 @@
       "inform_resilience_index": 83,
       "pisa_overall_score": 76
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Indonesia",
     "ranks": {
       "gini_index": 81,
-      "public_debt_of_gdp": 26,
       "unemployment_rate": 50,
       "infant_mortality_rate": 116,
       "maternal_mortality_ratio": 141,
@@ -2605,6 +2628,7 @@
       "education_expenditure_of_gdp": 184,
       "purchasing_power_parity": 103,
       "democracy_index": 59,
+      "human_rights_index_vdem": 104,
       "human_development_index_hdi": 112,
       "physicians_per_1_000_people": 132,
       "political_corruption_index": 133,
@@ -2637,6 +2661,7 @@
       "education_expenditure_of_gdp": 132,
       "purchasing_power_parity": 4,
       "democracy_index": 117,
+      "human_rights_index_vdem": 142,
       "human_development_index_hdi": 42,
       "physicians_per_1_000_people": 73,
       "political_corruption_index": 68,
@@ -2646,13 +2671,12 @@
       "inform_resilience_index": 4,
       "pisa_overall_score": 48
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Ivory Coast",
     "ranks": {
       "gini_index": 83,
-      "public_debt_of_gdp": 105,
       "unemployment_rate": 21,
       "infant_mortality_rate": 180,
       "maternal_mortality_ratio": 177,
@@ -2671,6 +2695,7 @@
       "education_expenditure_of_gdp": 123,
       "purchasing_power_parity": 139,
       "democracy_index": 105,
+      "human_rights_index_vdem": 98,
       "human_development_index_hdi": 156,
       "physicians_per_1_000_people": 167,
       "political_corruption_index": 103,
@@ -2684,7 +2709,6 @@
     "country": "Lebanon",
     "ranks": {
       "gini_index": 84,
-      "public_debt_of_gdp": 102,
       "unemployment_rate": 152,
       "infant_mortality_rate": 112,
       "maternal_mortality_ratio": 56,
@@ -2703,6 +2727,7 @@
       "education_expenditure_of_gdp": 186,
       "purchasing_power_parity": 117,
       "democracy_index": 109,
+      "human_rights_index_vdem": 106,
       "human_development_index_hdi": 101,
       "physicians_per_1_000_people": 66,
       "political_corruption_index": 156,
@@ -2734,6 +2759,7 @@
       "education_expenditure_of_gdp": 166,
       "purchasing_power_parity": 183,
       "democracy_index": 80,
+      "human_rights_index_vdem": 64,
       "human_development_index_hdi": 176,
       "physicians_per_1_000_people": 165,
       "political_corruption_index": 163,
@@ -2741,13 +2767,12 @@
       "global_peace_index": 70,
       "inform_resilience_index": 139
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Marshall Islands",
     "ranks": {
       "gini_index": 86,
-      "public_debt_of_gdp": 41,
       "infant_mortality_rate": 133,
       "maternal_mortality_ratio": 146,
       "hospital_beds_per_1_000_people": 79,
@@ -2765,7 +2790,7 @@
       "environmental_performance_index": 124,
       "inform_resilience_index": 105
     },
-    "kpi_count": 18
+    "kpi_count": 17
   },
   {
     "country": "Mali",
@@ -2789,6 +2814,7 @@
       "education_expenditure_of_gdp": 92,
       "purchasing_power_parity": 169,
       "democracy_index": 139,
+      "human_rights_index_vdem": 109,
       "human_development_index_hdi": 187,
       "physicians_per_1_000_people": 161,
       "political_corruption_index": 130,
@@ -2796,7 +2822,7 @@
       "global_peace_index": 154,
       "inform_resilience_index": 178
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Sierra Leone",
@@ -2819,6 +2845,7 @@
       "education_expenditure_of_gdp": 156,
       "purchasing_power_parity": 167,
       "democracy_index": 102,
+      "human_rights_index_vdem": 70,
       "human_development_index_hdi": 184,
       "physicians_per_1_000_people": 189,
       "political_corruption_index": 86,
@@ -2826,7 +2853,7 @@
       "global_peace_index": 57,
       "inform_resilience_index": 143
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Iran",
@@ -2850,6 +2877,7 @@
       "education_expenditure_of_gdp": 151,
       "purchasing_power_parity": 97,
       "democracy_index": 154,
+      "human_rights_index_vdem": 156,
       "human_development_index_hdi": 74,
       "physicians_per_1_000_people": 100,
       "political_corruption_index": 138,
@@ -2857,7 +2885,7 @@
       "global_peace_index": 142,
       "inform_resilience_index": 168
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "China",
@@ -2881,6 +2909,7 @@
       "education_expenditure_of_gdp": 103,
       "purchasing_power_parity": 72,
       "democracy_index": 145,
+      "human_rights_index_vdem": 165,
       "human_development_index_hdi": 76,
       "physicians_per_1_000_people": 70,
       "political_corruption_index": 93,
@@ -2890,7 +2919,7 @@
       "global_peace_index": 98,
       "inform_resilience_index": 69
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Lithuania",
@@ -2914,6 +2943,7 @@
       "education_expenditure_of_gdp": 89,
       "purchasing_power_parity": 36,
       "democracy_index": 36,
+      "human_rights_index_vdem": 26,
       "human_development_index_hdi": 38,
       "physicians_per_1_000_people": 9,
       "political_corruption_index": 38,
@@ -2923,13 +2953,12 @@
       "inform_resilience_index": 25,
       "pisa_overall_score": 30
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Tajikistan",
     "ranks": {
       "gini_index": 92,
-      "public_debt_of_gdp": 87,
       "unemployment_rate": 153,
       "infant_mortality_rate": 131,
       "maternal_mortality_ratio": 55,
@@ -2948,6 +2977,7 @@
       "education_expenditure_of_gdp": 40,
       "purchasing_power_parity": 151,
       "democracy_index": 159,
+      "human_rights_index_vdem": 163,
       "human_development_index_hdi": 127,
       "physicians_per_1_000_people": 88,
       "political_corruption_index": 158,
@@ -2979,6 +3009,7 @@
       "education_expenditure_of_gdp": 146,
       "purchasing_power_parity": 104,
       "democracy_index": 133,
+      "human_rights_index_vdem": 137,
       "human_development_index_hdi": 92,
       "physicians_per_1_000_people": 123,
       "political_corruption_index": 84,
@@ -2988,7 +3019,7 @@
       "inform_resilience_index": 113,
       "pisa_overall_score": 34
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Senegal",
@@ -3012,6 +3043,7 @@
       "education_expenditure_of_gdp": 23,
       "purchasing_power_parity": 152,
       "democracy_index": 74,
+      "human_rights_index_vdem": 74,
       "human_development_index_hdi": 168,
       "physicians_per_1_000_people": 177,
       "political_corruption_index": 61,
@@ -3019,7 +3051,7 @@
       "global_peace_index": 69,
       "inform_resilience_index": 127
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Palestine",
@@ -3042,13 +3074,14 @@
       "education_expenditure_of_gdp": 41,
       "purchasing_power_parity": 158,
       "democracy_index": 112,
+      "human_rights_index_vdem": 171,
       "human_development_index_hdi": 133,
       "physicians_per_1_000_people": 81,
       "political_corruption_index": 67,
       "global_peace_index": 145,
       "inform_resilience_index": 171
     },
-    "kpi_count": 23
+    "kpi_count": 24
   },
   {
     "country": "Yemen",
@@ -3071,13 +3104,14 @@
       "education_expenditure_of_gdp": 56,
       "purchasing_power_parity": 174,
       "democracy_index": 155,
+      "human_rights_index_vdem": 159,
       "human_development_index_hdi": 183,
       "physicians_per_1_000_people": 149,
       "political_corruption_index": 169,
       "global_peace_index": 159,
       "inform_resilience_index": 189
     },
-    "kpi_count": 23
+    "kpi_count": 24
   },
   {
     "country": "Madagascar",
@@ -3101,6 +3135,7 @@
       "education_expenditure_of_gdp": 141,
       "purchasing_power_parity": 184,
       "democracy_index": 83,
+      "human_rights_index_vdem": 102,
       "human_development_index_hdi": 182,
       "physicians_per_1_000_people": 160,
       "political_corruption_index": 149,
@@ -3108,13 +3143,12 @@
       "global_peace_index": 60,
       "inform_resilience_index": 155
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Mauritius",
     "ranks": {
       "gini_index": 98,
-      "public_debt_of_gdp": 63,
       "unemployment_rate": 100,
       "infant_mortality_rate": 98,
       "maternal_mortality_ratio": 110,
@@ -3132,6 +3166,7 @@
       "education_expenditure_of_gdp": 97,
       "purchasing_power_parity": 66,
       "democracy_index": 20,
+      "human_rights_index_vdem": 100,
       "human_development_index_hdi": 72,
       "physicians_per_1_000_people": 109,
       "political_corruption_index": 81,
@@ -3145,7 +3180,6 @@
     "country": "Solomon Islands",
     "ranks": {
       "gini_index": 99,
-      "public_debt_of_gdp": 10,
       "unemployment_rate": 11,
       "infant_mortality_rate": 114,
       "maternal_mortality_ratio": 135,
@@ -3162,6 +3196,7 @@
       "fixed_broadband_subscriptions_per_100_people": 177,
       "education_expenditure_of_gdp": 7,
       "purchasing_power_parity": 179,
+      "human_rights_index_vdem": 56,
       "human_development_index_hdi": 155,
       "physicians_per_1_000_people": 163,
       "political_corruption_index": 100,
@@ -3174,7 +3209,6 @@
     "country": "Burkina Faso",
     "ranks": {
       "gini_index": 100,
-      "public_debt_of_gdp": 70,
       "unemployment_rate": 89,
       "infant_mortality_rate": 177,
       "maternal_mortality_ratio": 165,
@@ -3193,6 +3227,7 @@
       "education_expenditure_of_gdp": 44,
       "purchasing_power_parity": 178,
       "democracy_index": 137,
+      "human_rights_index_vdem": 123,
       "human_development_index_hdi": 185,
       "physicians_per_1_000_people": 172,
       "political_corruption_index": 72,
@@ -3223,6 +3258,7 @@
       "education_expenditure_of_gdp": 134,
       "purchasing_power_parity": 177,
       "democracy_index": 158,
+      "human_rights_index_vdem": 147,
       "human_development_index_hdi": 189,
       "physicians_per_1_000_people": 182,
       "political_corruption_index": 174,
@@ -3230,7 +3266,7 @@
       "global_peace_index": 134,
       "inform_resilience_index": 186
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Burundi",
@@ -3253,6 +3289,7 @@
       "education_expenditure_of_gdp": 67,
       "purchasing_power_parity": 192,
       "democracy_index": 144,
+      "human_rights_index_vdem": 158,
       "human_development_index_hdi": 186,
       "physicians_per_1_000_people": 186,
       "political_corruption_index": 137,
@@ -3260,7 +3297,7 @@
       "global_peace_index": 133,
       "inform_resilience_index": 166
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Kenya",
@@ -3284,6 +3321,7 @@
       "education_expenditure_of_gdp": 102,
       "purchasing_power_parity": 143,
       "democracy_index": 89,
+      "human_rights_index_vdem": 99,
       "human_development_index_hdi": 143,
       "physicians_per_1_000_people": 181,
       "political_corruption_index": 90,
@@ -3291,13 +3329,12 @@
       "global_peace_index": 127,
       "inform_resilience_index": 169
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Sri Lanka",
     "ranks": {
       "gini_index": 104,
-      "public_debt_of_gdp": 80,
       "unemployment_rate": 85,
       "infant_mortality_rate": 52,
       "maternal_mortality_ratio": 68,
@@ -3316,6 +3353,7 @@
       "education_expenditure_of_gdp": 180,
       "purchasing_power_parity": 108,
       "democracy_index": 67,
+      "human_rights_index_vdem": 77,
       "human_development_index_hdi": 89,
       "physicians_per_1_000_people": 110,
       "political_corruption_index": 82,
@@ -3330,7 +3368,6 @@
     "country": "Israel",
     "ranks": {
       "gini_index": 105,
-      "public_debt_of_gdp": 93,
       "unemployment_rate": 46,
       "infant_mortality_rate": 22,
       "maternal_mortality_ratio": 4,
@@ -3349,6 +3386,7 @@
       "education_expenditure_of_gdp": 28,
       "purchasing_power_parity": 34,
       "democracy_index": 31,
+      "human_rights_index_vdem": 78,
       "human_development_index_hdi": 26,
       "physicians_per_1_000_people": 32,
       "political_corruption_index": 33,
@@ -3382,6 +3420,7 @@
       "education_expenditure_of_gdp": 94,
       "purchasing_power_parity": 172,
       "democracy_index": 121,
+      "human_rights_index_vdem": 115,
       "human_development_index_hdi": 160,
       "physicians_per_1_000_people": 183,
       "political_corruption_index": 134,
@@ -3389,7 +3428,7 @@
       "global_peace_index": 126,
       "inform_resilience_index": 157
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Gabon",
@@ -3413,6 +3452,7 @@
       "education_expenditure_of_gdp": 164,
       "purchasing_power_parity": 84,
       "democracy_index": 143,
+      "human_rights_index_vdem": 80,
       "human_development_index_hdi": 108,
       "physicians_per_1_000_people": 143,
       "political_corruption_index": 121,
@@ -3420,7 +3460,7 @@
       "global_peace_index": 117,
       "inform_resilience_index": 108
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Kosovo",
@@ -3432,10 +3472,11 @@
       "mobile_subscriptions_per_100_inhabitants": 192,
       "inflation_consumer_price_index": 39,
       "purchasing_power_parity": 94,
+      "human_rights_index_vdem": 72,
       "political_corruption_index": 55,
       "global_peace_index": 63
     },
-    "kpi_count": 9
+    "kpi_count": 10
   },
   {
     "country": "Equatorial Guinea",
@@ -3458,6 +3499,7 @@
       "education_expenditure_of_gdp": 169,
       "purchasing_power_parity": 99,
       "democracy_index": 157,
+      "human_rights_index_vdem": 164,
       "human_development_index_hdi": 132,
       "physicians_per_1_000_people": 173,
       "political_corruption_index": 154,
@@ -3465,13 +3507,12 @@
       "global_peace_index": 82,
       "inform_resilience_index": 92
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Malawi",
     "ranks": {
       "gini_index": 110,
-      "public_debt_of_gdp": 60,
       "unemployment_rate": 86,
       "infant_mortality_rate": 145,
       "maternal_mortality_ratio": 158,
@@ -3490,6 +3531,7 @@
       "education_expenditure_of_gdp": 153,
       "purchasing_power_parity": 185,
       "democracy_index": 76,
+      "human_rights_index_vdem": 82,
       "human_development_index_hdi": 171,
       "physicians_per_1_000_people": 188,
       "political_corruption_index": 122,
@@ -3547,6 +3589,7 @@
       "education_expenditure_of_gdp": 152,
       "purchasing_power_parity": 168,
       "democracy_index": 99,
+      "human_rights_index_vdem": 45,
       "human_development_index_hdi": 169,
       "physicians_per_1_000_people": 180,
       "political_corruption_index": 54,
@@ -3554,7 +3597,7 @@
       "global_peace_index": 55,
       "inform_resilience_index": 117
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Laos",
@@ -3577,6 +3620,7 @@
       "education_expenditure_of_gdp": 185,
       "purchasing_power_parity": 128,
       "democracy_index": 160,
+      "human_rights_index_vdem": 168,
       "human_development_index_hdi": 146,
       "physicians_per_1_000_people": 148,
       "political_corruption_index": 128,
@@ -3584,13 +3628,12 @@
       "global_peace_index": 47,
       "inform_resilience_index": 101
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Dominican Republic",
     "ranks": {
       "gini_index": 114,
-      "public_debt_of_gdp": 14,
       "unemployment_rate": 98,
       "infant_mortality_rate": 144,
       "maternal_mortality_ratio": 136,
@@ -3608,6 +3651,7 @@
       "education_expenditure_of_gdp": 111,
       "purchasing_power_parity": 71,
       "democracy_index": 52,
+      "human_rights_index_vdem": 52,
       "human_development_index_hdi": 87,
       "physicians_per_1_000_people": 80,
       "political_corruption_index": 119,
@@ -3662,19 +3706,19 @@
       "education_expenditure_of_gdp": 147,
       "purchasing_power_parity": 82,
       "democracy_index": 48,
+      "human_rights_index_vdem": 36,
       "human_development_index_hdi": 113,
       "physicians_per_1_000_people": 101,
       "political_corruption_index": 39,
       "environmental_performance_index": 70,
       "inform_resilience_index": 78
     },
-    "kpi_count": 23
+    "kpi_count": 24
   },
   {
     "country": "Philippines",
     "ranks": {
       "gini_index": 117,
-      "public_debt_of_gdp": 43,
       "unemployment_rate": 18,
       "infant_mortality_rate": 130,
       "maternal_mortality_ratio": 122,
@@ -3693,6 +3737,7 @@
       "education_expenditure_of_gdp": 105,
       "purchasing_power_parity": 119,
       "democracy_index": 51,
+      "human_rights_index_vdem": 116,
       "human_development_index_hdi": 118,
       "physicians_per_1_000_people": 127,
       "political_corruption_index": 161,
@@ -3708,7 +3753,6 @@
     "country": "Rwanda",
     "ranks": {
       "gini_index": 118,
-      "public_debt_of_gdp": 49,
       "unemployment_rate": 155,
       "infant_mortality_rate": 148,
       "maternal_mortality_ratio": 160,
@@ -3726,6 +3770,7 @@
       "education_expenditure_of_gdp": 73,
       "purchasing_power_parity": 164,
       "democracy_index": 114,
+      "human_rights_index_vdem": 166,
       "human_development_index_hdi": 158,
       "physicians_per_1_000_people": 178,
       "political_corruption_index": 75,
@@ -3757,6 +3802,7 @@
       "education_expenditure_of_gdp": 79,
       "purchasing_power_parity": 54,
       "democracy_index": 61,
+      "human_rights_index_vdem": 63,
       "human_development_index_hdi": 54,
       "physicians_per_1_000_people": 10,
       "political_corruption_index": 98,
@@ -3765,13 +3811,12 @@
       "inform_resilience_index": 45,
       "pisa_overall_score": 49
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Morocco",
     "ranks": {
       "gini_index": 120,
-      "public_debt_of_gdp": 51,
       "unemployment_rate": 136,
       "infant_mortality_rate": 110,
       "maternal_mortality_ratio": 115,
@@ -3790,6 +3835,7 @@
       "education_expenditure_of_gdp": 26,
       "purchasing_power_parity": 127,
       "democracy_index": 91,
+      "human_rights_index_vdem": 112,
       "human_development_index_hdi": 119,
       "physicians_per_1_000_people": 130,
       "political_corruption_index": 105,
@@ -3804,7 +3850,6 @@
     "country": "El Salvador",
     "ranks": {
       "gini_index": 121,
-      "public_debt_of_gdp": 96,
       "unemployment_rate": 32,
       "infant_mortality_rate": 76,
       "maternal_mortality_ratio": 89,
@@ -3823,6 +3868,7 @@
       "education_expenditure_of_gdp": 135,
       "purchasing_power_parity": 116,
       "democracy_index": 95,
+      "human_rights_index_vdem": 125,
       "human_development_index_hdi": 131,
       "physicians_per_1_000_people": 99,
       "political_corruption_index": 116,
@@ -3837,7 +3883,6 @@
     "country": "Belize",
     "ranks": {
       "gini_index": 122,
-      "public_debt_of_gdp": 68,
       "unemployment_rate": 117,
       "infant_mortality_rate": 84,
       "maternal_mortality_ratio": 111,
@@ -3859,13 +3904,12 @@
       "environmental_performance_index": 49,
       "inform_resilience_index": 98
     },
-    "kpi_count": 22
+    "kpi_count": 21
   },
   {
     "country": "Jamaica",
     "ranks": {
       "gini_index": 123,
-      "public_debt_of_gdp": 97,
       "unemployment_rate": 84,
       "infant_mortality_rate": 120,
       "maternal_mortality_ratio": 138,
@@ -3883,6 +3927,7 @@
       "education_expenditure_of_gdp": 36,
       "purchasing_power_parity": 122,
       "democracy_index": 49,
+      "human_rights_index_vdem": 47,
       "human_development_index_hdi": 116,
       "physicians_per_1_000_people": 138,
       "political_corruption_index": 40,
@@ -3897,7 +3942,6 @@
     "country": "Uruguay",
     "ranks": {
       "gini_index": 124,
-      "public_debt_of_gdp": 71,
       "unemployment_rate": 131,
       "infant_mortality_rate": 55,
       "maternal_mortality_ratio": 60,
@@ -3916,6 +3960,7 @@
       "education_expenditure_of_gdp": 69,
       "purchasing_power_parity": 57,
       "democracy_index": 15,
+      "human_rights_index_vdem": 20,
       "human_development_index_hdi": 48,
       "physicians_per_1_000_people": 11,
       "political_corruption_index": 21,
@@ -3931,7 +3976,6 @@
     "country": "Micronesia",
     "ranks": {
       "gini_index": 125,
-      "public_debt_of_gdp": 24,
       "infant_mortality_rate": 128,
       "maternal_mortality_ratio": 137,
       "hospital_beds_per_1_000_people": 61,
@@ -3949,13 +3993,12 @@
       "environmental_performance_index": 113,
       "inform_resilience_index": 90
     },
-    "kpi_count": 18
+    "kpi_count": 17
   },
   {
     "country": "Peru",
     "ranks": {
       "gini_index": 126,
-      "public_debt_of_gdp": 33,
       "unemployment_rate": 82,
       "infant_mortality_rate": 100,
       "maternal_mortality_ratio": 100,
@@ -3974,6 +4017,7 @@
       "education_expenditure_of_gdp": 91,
       "purchasing_power_parity": 98,
       "democracy_index": 78,
+      "human_rights_index_vdem": 84,
       "human_development_index_hdi": 77,
       "physicians_per_1_000_people": 97,
       "political_corruption_index": 110,
@@ -3989,7 +4033,6 @@
     "country": "Trinidad and Tobago",
     "ranks": {
       "gini_index": 127,
-      "public_debt_of_gdp": 11,
       "unemployment_rate": 73,
       "infant_mortality_rate": 118,
       "maternal_mortality_ratio": 101,
@@ -4007,6 +4050,7 @@
       "education_expenditure_of_gdp": 142,
       "purchasing_power_parity": 58,
       "democracy_index": 45,
+      "human_rights_index_vdem": 43,
       "human_development_index_hdi": 71,
       "physicians_per_1_000_people": 42,
       "political_corruption_index": 27,
@@ -4038,6 +4082,7 @@
       "education_expenditure_of_gdp": 136,
       "purchasing_power_parity": 161,
       "democracy_index": 86,
+      "human_rights_index_vdem": 75,
       "human_development_index_hdi": 164,
       "physicians_per_1_000_people": 176,
       "political_corruption_index": 50,
@@ -4045,13 +4090,12 @@
       "global_peace_index": 73,
       "inform_resilience_index": 144
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Malaysia",
     "ranks": {
       "gini_index": 129,
-      "public_debt_of_gdp": 72,
       "unemployment_rate": 58,
       "infant_mortality_rate": 58,
       "maternal_mortality_ratio": 75,
@@ -4070,6 +4114,7 @@
       "education_expenditure_of_gdp": 121,
       "purchasing_power_parity": 56,
       "democracy_index": 44,
+      "human_rights_index_vdem": 95,
       "human_development_index_hdi": 66,
       "physicians_per_1_000_people": 77,
       "political_corruption_index": 63,
@@ -4101,13 +4146,14 @@
       "fixed_broadband_subscriptions_per_100_people": 140,
       "education_expenditure_of_gdp": 62,
       "purchasing_power_parity": 146,
+      "human_rights_index_vdem": 35,
       "human_development_index_hdi": 140,
       "physicians_per_1_000_people": 142,
       "political_corruption_index": 56,
       "environmental_performance_index": 38,
       "inform_resilience_index": 37
     },
-    "kpi_count": 22
+    "kpi_count": 23
   },
   {
     "country": "Turkmenistan",
@@ -4130,6 +4176,7 @@
       "education_expenditure_of_gdp": 155,
       "purchasing_power_parity": 89,
       "democracy_index": 161,
+      "human_rights_index_vdem": 170,
       "human_development_index_hdi": 93,
       "physicians_per_1_000_people": 86,
       "political_corruption_index": 165,
@@ -4137,7 +4184,7 @@
       "global_peace_index": 88,
       "inform_resilience_index": 79
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Haiti",
@@ -4160,6 +4207,7 @@
       "education_expenditure_of_gdp": 187,
       "purchasing_power_parity": 173,
       "democracy_index": 131,
+      "human_rights_index_vdem": 110,
       "human_development_index_hdi": 165,
       "physicians_per_1_000_people": 154,
       "political_corruption_index": 136,
@@ -4167,7 +4215,7 @@
       "global_peace_index": 141,
       "inform_resilience_index": 180
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Djibouti",
@@ -4190,6 +4238,7 @@
       "education_expenditure_of_gdp": 112,
       "purchasing_power_parity": 138,
       "democracy_index": 132,
+      "human_rights_index_vdem": 138,
       "human_development_index_hdi": 174,
       "physicians_per_1_000_people": 158,
       "political_corruption_index": 114,
@@ -4197,13 +4246,12 @@
       "global_peace_index": 122,
       "inform_resilience_index": 146
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "United States",
     "ranks": {
       "gini_index": 134,
-      "public_debt_of_gdp": 101,
       "unemployment_rate": 64,
       "infant_mortality_rate": 54,
       "maternal_mortality_ratio": 66,
@@ -4221,6 +4269,7 @@
       "education_expenditure_of_gdp": 42,
       "purchasing_power_parity": 8,
       "democracy_index": 28,
+      "human_rights_index_vdem": 21,
       "human_development_index_hdi": 18,
       "physicians_per_1_000_people": 37,
       "homelessness_rate": 15,
@@ -4238,7 +4287,6 @@
     "country": "Papua New Guinea",
     "ranks": {
       "gini_index": 135,
-      "public_debt_of_gdp": 53,
       "unemployment_rate": 31,
       "infant_mortality_rate": 153,
       "maternal_mortality_ratio": 155,
@@ -4256,6 +4304,7 @@
       "education_expenditure_of_gdp": 188,
       "purchasing_power_parity": 153,
       "democracy_index": 73,
+      "human_rights_index_vdem": 79,
       "human_development_index_hdi": 159,
       "physicians_per_1_000_people": 187,
       "political_corruption_index": 123,
@@ -4269,7 +4318,6 @@
     "country": "Bolivia",
     "ranks": {
       "gini_index": 136,
-      "public_debt_of_gdp": 75,
       "unemployment_rate": 43,
       "infant_mortality_rate": 125,
       "maternal_mortality_ratio": 143,
@@ -4287,6 +4335,7 @@
       "education_expenditure_of_gdp": 6,
       "purchasing_power_parity": 124,
       "democracy_index": 103,
+      "human_rights_index_vdem": 88,
       "human_development_index_hdi": 107,
       "physicians_per_1_000_people": 106,
       "political_corruption_index": 108,
@@ -4300,7 +4349,6 @@
     "country": "Cameroon",
     "ranks": {
       "gini_index": 137,
-      "public_debt_of_gdp": 86,
       "unemployment_rate": 55,
       "infant_mortality_rate": 171,
       "maternal_mortality_ratio": 167,
@@ -4319,6 +4367,7 @@
       "education_expenditure_of_gdp": 150,
       "purchasing_power_parity": 150,
       "democracy_index": 136,
+      "human_rights_index_vdem": 119,
       "human_development_index_hdi": 154,
       "physicians_per_1_000_people": 175,
       "political_corruption_index": 172,
@@ -4350,6 +4399,7 @@
       "education_expenditure_of_gdp": 30,
       "purchasing_power_parity": 67,
       "democracy_index": 54,
+      "human_rights_index_vdem": 57,
       "human_development_index_hdi": 46,
       "physicians_per_1_000_people": 23,
       "political_corruption_index": 71,
@@ -4359,7 +4409,7 @@
       "inform_resilience_index": 67,
       "pisa_overall_score": 62
     },
-    "kpi_count": 27
+    "kpi_count": 28
   },
   {
     "country": "Cape Verde",
@@ -4382,19 +4432,19 @@
       "education_expenditure_of_gdp": 83,
       "purchasing_power_parity": 123,
       "democracy_index": 37,
+      "human_rights_index_vdem": 23,
       "human_development_index_hdi": 134,
       "physicians_per_1_000_people": 126,
       "political_corruption_index": 53,
       "environmental_performance_index": 91,
       "inform_resilience_index": 27
     },
-    "kpi_count": 23
+    "kpi_count": 24
   },
   {
     "country": "Uganda",
     "ranks": {
       "gini_index": 140,
-      "public_debt_of_gdp": 54,
       "unemployment_rate": 36,
       "infant_mortality_rate": 142,
       "maternal_mortality_ratio": 150,
@@ -4413,6 +4463,7 @@
       "education_expenditure_of_gdp": 157,
       "purchasing_power_parity": 171,
       "democracy_index": 98,
+      "human_rights_index_vdem": 139,
       "human_development_index_hdi": 157,
       "physicians_per_1_000_people": 168,
       "political_corruption_index": 142,
@@ -4443,6 +4494,7 @@
       "education_expenditure_of_gdp": 179,
       "purchasing_power_parity": 190,
       "democracy_index": 164,
+      "human_rights_index_vdem": 133,
       "human_development_index_hdi": 190,
       "physicians_per_1_000_people": 193,
       "political_corruption_index": 159,
@@ -4450,13 +4502,12 @@
       "global_peace_index": 150,
       "inform_resilience_index": 187
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Chile",
     "ranks": {
       "gini_index": 142,
-      "public_debt_of_gdp": 8,
       "unemployment_rate": 137,
       "infant_mortality_rate": 56,
       "maternal_mortality_ratio": 45,
@@ -4475,6 +4526,7 @@
       "education_expenditure_of_gdp": 65,
       "purchasing_power_parity": 60,
       "democracy_index": 29,
+      "human_rights_index_vdem": 16,
       "human_development_index_hdi": 44,
       "physicians_per_1_000_people": 51,
       "political_corruption_index": 26,
@@ -4509,6 +4561,7 @@
       "education_expenditure_of_gdp": 143,
       "purchasing_power_parity": 133,
       "democracy_index": 65,
+      "human_rights_index_vdem": 38,
       "human_development_index_hdi": 142,
       "physicians_per_1_000_people": 174,
       "political_corruption_index": 106,
@@ -4516,13 +4569,12 @@
       "global_peace_index": 61,
       "inform_resilience_index": 109
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Mexico",
     "ranks": {
       "gini_index": 144,
-      "public_debt_of_gdp": 45,
       "unemployment_rate": 30,
       "infant_mortality_rate": 85,
       "maternal_mortality_ratio": 93,
@@ -4540,6 +4592,7 @@
       "education_expenditure_of_gdp": 101,
       "purchasing_power_parity": 75,
       "democracy_index": 84,
+      "human_rights_index_vdem": 113,
       "human_development_index_hdi": 80,
       "physicians_per_1_000_people": 69,
       "homelessness_rate": 4,
@@ -4557,7 +4610,6 @@
     "country": "Saint Lucia",
     "ranks": {
       "gini_index": 145,
-      "public_debt_of_gdp": 46,
       "unemployment_rate": 148,
       "infant_mortality_rate": 104,
       "maternal_mortality_ratio": 95,
@@ -4578,7 +4630,7 @@
       "environmental_performance_index": 53,
       "inform_resilience_index": 50
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Grenada",
@@ -4623,13 +4675,14 @@
       "fixed_broadband_subscriptions_per_100_people": 193,
       "education_expenditure_of_gdp": 183,
       "purchasing_power_parity": 191,
+      "human_rights_index_vdem": 160,
       "human_development_index_hdi": 192,
       "physicians_per_1_000_people": 190,
       "political_corruption_index": 151,
       "global_peace_index": 156,
       "inform_resilience_index": 191
     },
-    "kpi_count": 21
+    "kpi_count": 22
   },
   {
     "country": "Paraguay",
@@ -4653,6 +4706,7 @@
       "education_expenditure_of_gdp": 124,
       "purchasing_power_parity": 96,
       "democracy_index": 75,
+      "human_rights_index_vdem": 76,
       "human_development_index_hdi": 97,
       "physicians_per_1_000_people": 28,
       "political_corruption_index": 141,
@@ -4661,13 +4715,12 @@
       "inform_resilience_index": 72,
       "pisa_overall_score": 72
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Turkey",
     "ranks": {
       "gini_index": 149,
-      "public_debt_of_gdp": 30,
       "unemployment_rate": 132,
       "infant_mortality_rate": 74,
       "maternal_mortality_ratio": 58,
@@ -4686,6 +4739,7 @@
       "education_expenditure_of_gdp": 139,
       "purchasing_power_parity": 49,
       "democracy_index": 104,
+      "human_rights_index_vdem": 136,
       "human_development_index_hdi": 50,
       "physicians_per_1_000_people": 82,
       "political_corruption_index": 148,
@@ -4702,7 +4756,6 @@
     "country": "Democratic Republic of the Congo",
     "ranks": {
       "gini_index": 150,
-      "public_debt_of_gdp": 12,
       "unemployment_rate": 75,
       "infant_mortality_rate": 176,
       "maternal_mortality_ratio": 181,
@@ -4721,6 +4774,7 @@
       "education_expenditure_of_gdp": 149,
       "purchasing_power_parity": 187,
       "democracy_index": 156,
+      "human_rights_index_vdem": 128,
       "human_development_index_hdi": 170,
       "physicians_per_1_000_people": 164,
       "political_corruption_index": 170,
@@ -4752,6 +4806,7 @@
       "education_expenditure_of_gdp": 191,
       "purchasing_power_parity": 102,
       "democracy_index": 142,
+      "human_rights_index_vdem": 145,
       "human_development_index_hdi": 120,
       "physicians_per_1_000_people": 96,
       "political_corruption_index": 175,
@@ -4760,13 +4815,12 @@
       "global_peace_index": 139,
       "inform_resilience_index": 165
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Lesotho",
     "ranks": {
       "gini_index": 152,
-      "public_debt_of_gdp": 4,
       "unemployment_rate": 165,
       "infant_mortality_rate": 185,
       "maternal_mortality_ratio": 183,
@@ -4784,6 +4838,7 @@
       "education_expenditure_of_gdp": 16,
       "purchasing_power_parity": 176,
       "democracy_index": 70,
+      "human_rights_index_vdem": 81,
       "human_development_index_hdi": 166,
       "physicians_per_1_000_people": 171,
       "political_corruption_index": 89,
@@ -4814,6 +4869,7 @@
       "education_expenditure_of_gdp": 81,
       "purchasing_power_parity": 10,
       "democracy_index": 69,
+      "human_rights_index_vdem": 59,
       "human_development_index_hdi": 88,
       "physicians_per_1_000_people": 102,
       "political_corruption_index": 79,
@@ -4821,7 +4877,7 @@
       "global_peace_index": 106,
       "inform_resilience_index": 107
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Ecuador",
@@ -4845,6 +4901,7 @@
       "education_expenditure_of_gdp": 107,
       "purchasing_power_parity": 107,
       "democracy_index": 85,
+      "human_rights_index_vdem": 91,
       "human_development_index_hdi": 86,
       "physicians_per_1_000_people": 78,
       "political_corruption_index": 107,
@@ -4852,13 +4909,12 @@
       "global_peace_index": 129,
       "inform_resilience_index": 154
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Guatemala",
     "ranks": {
       "gini_index": 155,
-      "public_debt_of_gdp": 21,
       "unemployment_rate": 20,
       "infant_mortality_rate": 119,
       "maternal_mortality_ratio": 126,
@@ -4877,6 +4933,7 @@
       "education_expenditure_of_gdp": 137,
       "purchasing_power_parity": 113,
       "democracy_index": 97,
+      "human_rights_index_vdem": 96,
       "human_development_index_hdi": 136,
       "physicians_per_1_000_people": 105,
       "political_corruption_index": 118,
@@ -4909,13 +4966,14 @@
       "education_expenditure_of_gdp": 163,
       "purchasing_power_parity": 162,
       "democracy_index": 124,
+      "human_rights_index_vdem": 130,
       "human_development_index_hdi": 151,
       "physicians_per_1_000_people": 145,
       "political_corruption_index": 155,
       "environmental_performance_index": 86,
       "inform_resilience_index": 84
     },
-    "kpi_count": 23
+    "kpi_count": 24
   },
   {
     "country": "Honduras",
@@ -4938,6 +4996,7 @@
       "education_expenditure_of_gdp": 78,
       "purchasing_power_parity": 140,
       "democracy_index": 90,
+      "human_rights_index_vdem": 69,
       "human_development_index_hdi": 138,
       "physicians_per_1_000_people": 141,
       "political_corruption_index": 129,
@@ -4946,13 +5005,12 @@
       "global_peace_index": 124,
       "inform_resilience_index": 163
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Costa Rica",
     "ranks": {
       "gini_index": 158,
-      "public_debt_of_gdp": 36,
       "unemployment_rate": 128,
       "infant_mortality_rate": 75,
       "maternal_mortality_ratio": 74,
@@ -4971,6 +5029,7 @@
       "education_expenditure_of_gdp": 22,
       "purchasing_power_parity": 68,
       "democracy_index": 18,
+      "human_rights_index_vdem": 17,
       "human_development_index_hdi": 61,
       "physicians_per_1_000_people": 65,
       "political_corruption_index": 45,
@@ -5003,6 +5062,7 @@
       "education_expenditure_of_gdp": 148,
       "purchasing_power_parity": 130,
       "democracy_index": 147,
+      "human_rights_index_vdem": 173,
       "human_development_index_hdi": 122,
       "physicians_per_1_000_people": 135,
       "political_corruption_index": 173,
@@ -5011,13 +5071,12 @@
       "global_peace_index": 111,
       "inform_resilience_index": 142
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Republic of the Congo",
     "ranks": {
       "gini_index": 160,
-      "public_debt_of_gdp": 22,
       "unemployment_rate": 173,
       "infant_mortality_rate": 141,
       "maternal_mortality_ratio": 164,
@@ -5036,6 +5095,7 @@
       "education_expenditure_of_gdp": 127,
       "purchasing_power_parity": 142,
       "democracy_index": 128,
+      "human_rights_index_vdem": 144,
       "human_development_index_hdi": 137,
       "physicians_per_1_000_people": 166,
       "political_corruption_index": 150,
@@ -5049,7 +5109,6 @@
     "country": "Mozambique",
     "ranks": {
       "gini_index": 161,
-      "public_debt_of_gdp": 79,
       "unemployment_rate": 56,
       "infant_mortality_rate": 178,
       "maternal_mortality_ratio": 127,
@@ -5068,6 +5127,7 @@
       "education_expenditure_of_gdp": 27,
       "purchasing_power_parity": 188,
       "democracy_index": 113,
+      "human_rights_index_vdem": 126,
       "human_development_index_hdi": 181,
       "physicians_per_1_000_people": 184,
       "political_corruption_index": 125,
@@ -5099,6 +5159,7 @@
       "education_expenditure_of_gdp": 161,
       "purchasing_power_parity": 52,
       "democracy_index": 47,
+      "human_rights_index_vdem": 41,
       "human_development_index_hdi": 58,
       "physicians_per_1_000_people": 94,
       "political_corruption_index": 83,
@@ -5107,7 +5168,7 @@
       "inform_resilience_index": 115,
       "pisa_overall_score": 66
     },
-    "kpi_count": 26
+    "kpi_count": 27
   },
   {
     "country": "Zimbabwe",
@@ -5131,6 +5192,7 @@
       "education_expenditure_of_gdp": 189,
       "purchasing_power_parity": 163,
       "democracy_index": 122,
+      "human_rights_index_vdem": 140,
       "human_development_index_hdi": 152,
       "physicians_per_1_000_people": 169,
       "political_corruption_index": 146,
@@ -5138,7 +5200,7 @@
       "global_peace_index": 114,
       "inform_resilience_index": 148
     },
-    "kpi_count": 25
+    "kpi_count": 26
   },
   {
     "country": "Angola",
@@ -5161,6 +5223,7 @@
       "education_expenditure_of_gdp": 160,
       "purchasing_power_parity": 131,
       "democracy_index": 107,
+      "human_rights_index_vdem": 111,
       "human_development_index_hdi": 147,
       "physicians_per_1_000_people": 153,
       "political_corruption_index": 91,
@@ -5168,13 +5231,12 @@
       "global_peace_index": 76,
       "inform_resilience_index": 158
     },
-    "kpi_count": 24
+    "kpi_count": 25
   },
   {
     "country": "Zambia",
     "ranks": {
       "gini_index": 165,
-      "public_debt_of_gdp": 77,
       "unemployment_rate": 108,
       "infant_mortality_rate": 149,
       "maternal_mortality_ratio": 124,
@@ -5193,6 +5255,7 @@
       "education_expenditure_of_gdp": 99,
       "purchasing_power_parity": 160,
       "democracy_index": 77,
+      "human_rights_index_vdem": 62,
       "human_development_index_hdi": 153,
       "physicians_per_1_000_people": 151,
       "political_corruption_index": 66,
@@ -5206,7 +5269,6 @@
     "country": "Brazil",
     "ranks": {
       "gini_index": 166,
-      "public_debt_of_gdp": 90,
       "unemployment_rate": 125,
       "infant_mortality_rate": 92,
       "maternal_mortality_ratio": 112,
@@ -5225,6 +5287,7 @@
       "education_expenditure_of_gdp": 34,
       "purchasing_power_parity": 81,
       "democracy_index": 57,
+      "human_rights_index_vdem": 58,
       "human_development_index_hdi": 82,
       "physicians_per_1_000_people": 87,
       "political_corruption_index": 80,
@@ -5241,7 +5304,6 @@
     "country": "Colombia",
     "ranks": {
       "gini_index": 167,
-      "public_debt_of_gdp": 76,
       "unemployment_rate": 140,
       "infant_mortality_rate": 86,
       "maternal_mortality_ratio": 105,
@@ -5259,6 +5321,7 @@
       "education_expenditure_of_gdp": 50,
       "purchasing_power_parity": 85,
       "democracy_index": 60,
+      "human_rights_index_vdem": 94,
       "human_development_index_hdi": 81,
       "physicians_per_1_000_people": 75,
       "political_corruption_index": 73,
@@ -5274,7 +5337,6 @@
     "country": "Eswatini",
     "ranks": {
       "gini_index": 168,
-      "public_debt_of_gdp": 34,
       "unemployment_rate": 179,
       "infant_mortality_rate": 173,
       "maternal_mortality_ratio": 132,
@@ -5293,6 +5355,7 @@
       "education_expenditure_of_gdp": 24,
       "purchasing_power_parity": 120,
       "democracy_index": 134,
+      "human_rights_index_vdem": 162,
       "human_development_index_hdi": 125,
       "physicians_per_1_000_people": 98,
       "political_corruption_index": 97,
@@ -5306,7 +5369,6 @@
     "country": "Botswana",
     "ranks": {
       "gini_index": 169,
-      "public_debt_of_gdp": 17,
       "unemployment_rate": 175,
       "infant_mortality_rate": 164,
       "maternal_mortality_ratio": 145,
@@ -5325,6 +5387,7 @@
       "education_expenditure_of_gdp": 8,
       "purchasing_power_parity": 88,
       "democracy_index": 35,
+      "human_rights_index_vdem": 60,
       "human_development_index_hdi": 110,
       "physicians_per_1_000_people": 147,
       "political_corruption_index": 49,
@@ -5338,7 +5401,6 @@
     "country": "Namibia",
     "ranks": {
       "gini_index": 170,
-      "public_debt_of_gdp": 5,
       "unemployment_rate": 172,
       "infant_mortality_rate": 166,
       "maternal_mortality_ratio": 140,
@@ -5356,6 +5418,7 @@
       "education_expenditure_of_gdp": 4,
       "purchasing_power_parity": 121,
       "democracy_index": 58,
+      "human_rights_index_vdem": 49,
       "human_development_index_hdi": 135,
       "physicians_per_1_000_people": 140,
       "political_corruption_index": 58,
@@ -5369,7 +5432,6 @@
     "country": "South Africa",
     "ranks": {
       "gini_index": 171,
-      "public_debt_of_gdp": 84,
       "unemployment_rate": 178,
       "infant_mortality_rate": 137,
       "maternal_mortality_ratio": 133,
@@ -5388,6 +5450,7 @@
       "education_expenditure_of_gdp": 25,
       "purchasing_power_parity": 109,
       "democracy_index": 43,
+      "human_rights_index_vdem": 61,
       "human_development_index_hdi": 105,
       "physicians_per_1_000_people": 125,
       "political_corruption_index": 94,
@@ -5399,35 +5462,8 @@
     "kpi_count": 27
   },
   {
-    "country": "Somalia",
-    "ranks": {
-      "public_debt_of_gdp": 1,
-      "unemployment_rate": 171,
-      "infant_mortality_rate": 193,
-      "maternal_mortality_ratio": 188,
-      "hospital_beds_per_1_000_people": 161,
-      "adult_literacy_rate": 148,
-      "overall_immunization_coverage": 171,
-      "access_to_basic_drinking_water": 184,
-      "internet_penetration_rate": 173,
-      "mobile_subscriptions_per_100_inhabitants": 182,
-      "employment_to_population_ratio": 176,
-      "female_labor_force_participation": 167,
-      "fixed_broadband_subscriptions_per_100_people": 158,
-      "education_expenditure_of_gdp": 192,
-      "purchasing_power_parity": 189,
-      "human_development_index_hdi": 191,
-      "physicians_per_1_000_people": 192,
-      "political_corruption_index": 164,
-      "global_peace_index": 151,
-      "inform_resilience_index": 190
-    },
-    "kpi_count": 20
-  },
-  {
     "country": "Cambodia",
     "ranks": {
-      "public_debt_of_gdp": 50,
       "unemployment_rate": 2,
       "infant_mortality_rate": 126,
       "maternal_mortality_ratio": 139,
@@ -5445,6 +5481,7 @@
       "education_expenditure_of_gdp": 170,
       "purchasing_power_parity": 135,
       "democracy_index": 123,
+      "human_rights_index_vdem": 157,
       "human_development_index_hdi": 150,
       "physicians_per_1_000_people": 156,
       "political_corruption_index": 166,
@@ -5456,155 +5493,8 @@
     "kpi_count": 25
   },
   {
-    "country": "Saint Vincent-Grenadines",
-    "ranks": {
-      "public_debt_of_gdp": 56,
-      "unemployment_rate": 169,
-      "infant_mortality_rate": 79,
-      "maternal_mortality_ratio": 103,
-      "hospital_beds_per_1_000_people": 46,
-      "adult_literacy_rate": 69,
-      "overall_immunization_coverage": 17,
-      "access_to_basic_drinking_water": 84,
-      "internet_penetration_rate": 110,
-      "mobile_subscriptions_per_100_inhabitants": 127,
-      "inflation_consumer_price_index": 108,
-      "employment_to_population_ratio": 116,
-      "female_labor_force_participation": 72,
-      "fixed_broadband_subscriptions_per_100_people": 48,
-      "education_expenditure_of_gdp": 17,
-      "purchasing_power_parity": 87,
-      "environmental_performance_index": 37,
-      "inform_resilience_index": 74
-    },
-    "kpi_count": 18
-  },
-  {
-    "country": "New Zealand",
-    "ranks": {
-      "public_debt_of_gdp": 57,
-      "unemployment_rate": 83,
-      "infant_mortality_rate": 39,
-      "maternal_mortality_ratio": 36,
-      "hospital_beds_per_1_000_people": 82,
-      "overall_immunization_coverage": 114,
-      "access_to_basic_drinking_water": 16,
-      "internet_penetration_rate": 20,
-      "mobile_subscriptions_per_100_inhabitants": 66,
-      "railway_length": 40,
-      "inflation_consumer_price_index": 84,
-      "employment_to_population_ratio": 24,
-      "female_labor_force_participation": 19,
-      "fixed_broadband_subscriptions_per_100_people": 26,
-      "education_expenditure_of_gdp": 49,
-      "purchasing_power_parity": 35,
-      "democracy_index": 2,
-      "human_development_index_hdi": 17,
-      "physicians_per_1_000_people": 38,
-      "homelessness_rate": 3,
-      "political_corruption_index": 3,
-      "electric_vehicle_stock": 27,
-      "big_mac_index": 49,
-      "environmental_performance_index": 26,
-      "global_peace_index": 3,
-      "inform_resilience_index": 7,
-      "pisa_overall_score": 11
-    },
-    "kpi_count": 27
-  },
-  {
-    "country": "Saint Kitts and Nevis",
-    "ranks": {
-      "public_debt_of_gdp": 62,
-      "infant_mortality_rate": 103,
-      "maternal_mortality_ratio": 116,
-      "hospital_beds_per_1_000_people": 38,
-      "overall_immunization_coverage": 44,
-      "access_to_basic_drinking_water": 72,
-      "internet_penetration_rate": 109,
-      "mobile_subscriptions_per_100_inhabitants": 87,
-      "inflation_consumer_price_index": 25,
-      "fixed_broadband_subscriptions_per_100_people": 6,
-      "education_expenditure_of_gdp": 122,
-      "purchasing_power_parity": 59,
-      "human_development_index_hdi": 57,
-      "physicians_per_1_000_people": 55,
-      "inform_resilience_index": 12
-    },
-    "kpi_count": 15
-  },
-  {
-    "country": "Bahamas",
-    "ranks": {
-      "public_debt_of_gdp": 81,
-      "unemployment_rate": 133,
-      "infant_mortality_rate": 89,
-      "maternal_mortality_ratio": 119,
-      "hospital_beds_per_1_000_people": 81,
-      "overall_immunization_coverage": 104,
-      "access_to_basic_drinking_water": 65,
-      "internet_penetration_rate": 27,
-      "mobile_subscriptions_per_100_inhabitants": 132,
-      "inflation_consumer_price_index": 7,
-      "employment_to_population_ratio": 30,
-      "female_labor_force_participation": 20,
-      "fixed_broadband_subscriptions_per_100_people": 66,
-      "education_expenditure_of_gdp": 154,
-      "purchasing_power_parity": 53,
-      "human_development_index_hdi": 65,
-      "physicians_per_1_000_people": 92,
-      "environmental_performance_index": 28,
-      "inform_resilience_index": 32
-    },
-    "kpi_count": 19
-  },
-  {
-    "country": "Palau",
-    "ranks": {
-      "public_debt_of_gdp": 91,
-      "infant_mortality_rate": 123,
-      "maternal_mortality_ratio": 125,
-      "hospital_beds_per_1_000_people": 39,
-      "adult_literacy_rate": 2,
-      "overall_immunization_coverage": 39,
-      "access_to_basic_drinking_water": 50,
-      "internet_penetration_rate": 175,
-      "mobile_subscriptions_per_100_inhabitants": 43,
-      "inflation_consumer_price_index": 60,
-      "fixed_broadband_subscriptions_per_100_people": 112,
-      "education_expenditure_of_gdp": 119,
-      "purchasing_power_parity": 101,
-      "human_development_index_hdi": 83,
-      "physicians_per_1_000_people": 93,
-      "inform_resilience_index": 31
-    },
-    "kpi_count": 16
-  },
-  {
-    "country": "San Marino",
-    "ranks": {
-      "public_debt_of_gdp": 95,
-      "infant_mortality_rate": 1,
-      "maternal_mortality_ratio": 42,
-      "hospital_beds_per_1_000_people": 58,
-      "adult_literacy_rate": 7,
-      "overall_immunization_coverage": 118,
-      "access_to_basic_drinking_water": 18,
-      "internet_penetration_rate": 72,
-      "mobile_subscriptions_per_100_inhabitants": 84,
-      "inflation_consumer_price_index": 29,
-      "fixed_broadband_subscriptions_per_100_people": 34,
-      "education_expenditure_of_gdp": 145,
-      "purchasing_power_parity": 15,
-      "human_development_index_hdi": 30,
-      "physicians_per_1_000_people": 4
-    },
-    "kpi_count": 15
-  },
-  {
     "country": "Bahrain",
     "ranks": {
-      "public_debt_of_gdp": 100,
       "unemployment_rate": 7,
       "infant_mortality_rate": 59,
       "maternal_mortality_ratio": 64,
@@ -5621,6 +5511,7 @@
       "education_expenditure_of_gdp": 178,
       "purchasing_power_parity": 24,
       "democracy_index": 138,
+      "human_rights_index_vdem": 152,
       "human_development_index_hdi": 37,
       "physicians_per_1_000_people": 122,
       "political_corruption_index": 88,
@@ -5630,37 +5521,6 @@
       "inform_resilience_index": 10
     },
     "kpi_count": 24
-  },
-  {
-    "country": "Singapore",
-    "ranks": {
-      "public_debt_of_gdp": 107,
-      "unemployment_rate": 48,
-      "infant_mortality_rate": 3,
-      "maternal_mortality_ratio": 33,
-      "hospital_beds_per_1_000_people": 84,
-      "adult_literacy_rate": 49,
-      "overall_immunization_coverage": 42,
-      "access_to_basic_drinking_water": 19,
-      "internet_penetration_rate": 29,
-      "mobile_subscriptions_per_100_inhabitants": 10,
-      "inflation_consumer_price_index": 64,
-      "employment_to_population_ratio": 25,
-      "female_labor_force_participation": 32,
-      "fixed_broadband_subscriptions_per_100_people": 58,
-      "education_expenditure_of_gdp": 168,
-      "purchasing_power_parity": 2,
-      "democracy_index": 68,
-      "human_development_index_hdi": 12,
-      "physicians_per_1_000_people": 68,
-      "political_corruption_index": 14,
-      "big_mac_index": 56,
-      "environmental_performance_index": 45,
-      "global_peace_index": 6,
-      "inform_resilience_index": 1,
-      "pisa_overall_score": 1
-    },
-    "kpi_count": 25
   },
   {
     "country": "Cuba",
@@ -5680,6 +5540,7 @@
       "fixed_broadband_subscriptions_per_100_people": 134,
       "education_expenditure_of_gdp": 5,
       "democracy_index": 135,
+      "human_rights_index_vdem": 150,
       "human_development_index_hdi": 95,
       "physicians_per_1_000_people": 1,
       "political_corruption_index": 99,
@@ -5687,7 +5548,7 @@
       "global_peace_index": 102,
       "inform_resilience_index": 86
     },
-    "kpi_count": 21
+    "kpi_count": 22
   },
   {
     "country": "Kuwait",
@@ -5708,6 +5569,7 @@
       "education_expenditure_of_gdp": 18,
       "purchasing_power_parity": 39,
       "democracy_index": 130,
+      "human_rights_index_vdem": 120,
       "human_development_index_hdi": 51,
       "physicians_per_1_000_people": 79,
       "political_corruption_index": 62,
@@ -5716,7 +5578,7 @@
       "global_peace_index": 31,
       "inform_resilience_index": 56
     },
-    "kpi_count": 23
+    "kpi_count": 24
   },
   {
     "country": "North Korea",
@@ -5734,12 +5596,13 @@
       "employment_to_population_ratio": 6,
       "female_labor_force_participation": 7,
       "democracy_index": 165,
+      "human_rights_index_vdem": 176,
       "physicians_per_1_000_people": 34,
       "political_corruption_index": 115,
       "global_peace_index": 149,
       "inform_resilience_index": 135
     },
-    "kpi_count": 17
+    "kpi_count": 18
   },
   {
     "country": "Oman",
@@ -5760,6 +5623,7 @@
       "education_expenditure_of_gdp": 88,
       "purchasing_power_parity": 51,
       "democracy_index": 120,
+      "human_rights_index_vdem": 132,
       "human_development_index_hdi": 49,
       "physicians_per_1_000_people": 89,
       "political_corruption_index": 51,
@@ -5768,7 +5632,38 @@
       "global_peace_index": 42,
       "inform_resilience_index": 41
     },
-    "kpi_count": 23
+    "kpi_count": 24
+  },
+  {
+    "country": "Singapore",
+    "ranks": {
+      "unemployment_rate": 48,
+      "infant_mortality_rate": 3,
+      "maternal_mortality_ratio": 33,
+      "hospital_beds_per_1_000_people": 84,
+      "adult_literacy_rate": 49,
+      "overall_immunization_coverage": 42,
+      "access_to_basic_drinking_water": 19,
+      "internet_penetration_rate": 29,
+      "mobile_subscriptions_per_100_inhabitants": 10,
+      "inflation_consumer_price_index": 64,
+      "employment_to_population_ratio": 25,
+      "female_labor_force_participation": 32,
+      "fixed_broadband_subscriptions_per_100_people": 58,
+      "education_expenditure_of_gdp": 168,
+      "purchasing_power_parity": 2,
+      "democracy_index": 68,
+      "human_rights_index_vdem": 101,
+      "human_development_index_hdi": 12,
+      "physicians_per_1_000_people": 68,
+      "political_corruption_index": 14,
+      "big_mac_index": 56,
+      "environmental_performance_index": 45,
+      "global_peace_index": 6,
+      "inform_resilience_index": 1,
+      "pisa_overall_score": 1
+    },
+    "kpi_count": 25
   },
   {
     "country": "Saudi Arabia",
@@ -5790,6 +5685,7 @@
       "education_expenditure_of_gdp": 60,
       "purchasing_power_parity": 20,
       "democracy_index": 148,
+      "human_rights_index_vdem": 167,
       "human_development_index_hdi": 36,
       "physicians_per_1_000_people": 54,
       "political_corruption_index": 64,
@@ -5799,7 +5695,40 @@
       "inform_resilience_index": 36,
       "pisa_overall_score": 64
     },
-    "kpi_count": 25
+    "kpi_count": 26
+  },
+  {
+    "country": "New Zealand",
+    "ranks": {
+      "unemployment_rate": 83,
+      "infant_mortality_rate": 39,
+      "maternal_mortality_ratio": 36,
+      "hospital_beds_per_1_000_people": 82,
+      "overall_immunization_coverage": 114,
+      "access_to_basic_drinking_water": 16,
+      "internet_penetration_rate": 20,
+      "mobile_subscriptions_per_100_inhabitants": 66,
+      "railway_length": 40,
+      "inflation_consumer_price_index": 84,
+      "employment_to_population_ratio": 24,
+      "female_labor_force_participation": 19,
+      "fixed_broadband_subscriptions_per_100_people": 26,
+      "education_expenditure_of_gdp": 49,
+      "purchasing_power_parity": 35,
+      "democracy_index": 2,
+      "human_rights_index_vdem": 5,
+      "human_development_index_hdi": 17,
+      "physicians_per_1_000_people": 38,
+      "homelessness_rate": 3,
+      "political_corruption_index": 3,
+      "electric_vehicle_stock": 27,
+      "big_mac_index": 49,
+      "environmental_performance_index": 26,
+      "global_peace_index": 3,
+      "inform_resilience_index": 7,
+      "pisa_overall_score": 11
+    },
+    "kpi_count": 27
   },
   {
     "country": "Brunei",
@@ -5845,6 +5774,7 @@
       "education_expenditure_of_gdp": 171,
       "purchasing_power_parity": 186,
       "democracy_index": 153,
+      "human_rights_index_vdem": 174,
       "human_development_index_hdi": 177,
       "physicians_per_1_000_people": 185,
       "political_corruption_index": 127,
@@ -5852,7 +5782,31 @@
       "global_peace_index": 132,
       "inform_resilience_index": 134
     },
-    "kpi_count": 21
+    "kpi_count": 22
+  },
+  {
+    "country": "Bahamas",
+    "ranks": {
+      "unemployment_rate": 133,
+      "infant_mortality_rate": 89,
+      "maternal_mortality_ratio": 119,
+      "hospital_beds_per_1_000_people": 81,
+      "overall_immunization_coverage": 104,
+      "access_to_basic_drinking_water": 65,
+      "internet_penetration_rate": 27,
+      "mobile_subscriptions_per_100_inhabitants": 132,
+      "inflation_consumer_price_index": 7,
+      "employment_to_population_ratio": 30,
+      "female_labor_force_participation": 20,
+      "fixed_broadband_subscriptions_per_100_people": 66,
+      "education_expenditure_of_gdp": 154,
+      "purchasing_power_parity": 53,
+      "human_development_index_hdi": 65,
+      "physicians_per_1_000_people": 92,
+      "environmental_performance_index": 28,
+      "inform_resilience_index": 32
+    },
+    "kpi_count": 18
   },
   {
     "country": "Afghanistan",
@@ -5873,6 +5827,7 @@
       "education_expenditure_of_gdp": 84,
       "purchasing_power_parity": 180,
       "democracy_index": 167,
+      "human_rights_index_vdem": 175,
       "human_development_index_hdi": 180,
       "physicians_per_1_000_people": 152,
       "political_corruption_index": 113,
@@ -5880,7 +5835,30 @@
       "global_peace_index": 158,
       "inform_resilience_index": 183
     },
-    "kpi_count": 22
+    "kpi_count": 23
+  },
+  {
+    "country": "Saint Vincent-Grenadines",
+    "ranks": {
+      "unemployment_rate": 169,
+      "infant_mortality_rate": 79,
+      "maternal_mortality_ratio": 103,
+      "hospital_beds_per_1_000_people": 46,
+      "adult_literacy_rate": 69,
+      "overall_immunization_coverage": 17,
+      "access_to_basic_drinking_water": 84,
+      "internet_penetration_rate": 110,
+      "mobile_subscriptions_per_100_inhabitants": 127,
+      "inflation_consumer_price_index": 108,
+      "employment_to_population_ratio": 116,
+      "female_labor_force_participation": 72,
+      "fixed_broadband_subscriptions_per_100_people": 48,
+      "education_expenditure_of_gdp": 17,
+      "purchasing_power_parity": 87,
+      "environmental_performance_index": 37,
+      "inform_resilience_index": 74
+    },
+    "kpi_count": 17
   },
   {
     "country": "Libya",
@@ -5901,13 +5879,60 @@
       "education_expenditure_of_gdp": 167,
       "purchasing_power_parity": 115,
       "democracy_index": 140,
+      "human_rights_index_vdem": 146,
       "human_development_index_hdi": 115,
       "physicians_per_1_000_people": 84,
       "political_corruption_index": 147,
       "global_peace_index": 131,
       "inform_resilience_index": 147
     },
-    "kpi_count": 21
+    "kpi_count": 22
+  },
+  {
+    "country": "Somalia",
+    "ranks": {
+      "unemployment_rate": 171,
+      "infant_mortality_rate": 193,
+      "maternal_mortality_ratio": 188,
+      "hospital_beds_per_1_000_people": 161,
+      "adult_literacy_rate": 148,
+      "overall_immunization_coverage": 171,
+      "access_to_basic_drinking_water": 184,
+      "internet_penetration_rate": 173,
+      "mobile_subscriptions_per_100_inhabitants": 182,
+      "employment_to_population_ratio": 176,
+      "female_labor_force_participation": 167,
+      "fixed_broadband_subscriptions_per_100_people": 158,
+      "education_expenditure_of_gdp": 192,
+      "purchasing_power_parity": 189,
+      "human_rights_index_vdem": 134,
+      "human_development_index_hdi": 191,
+      "physicians_per_1_000_people": 192,
+      "political_corruption_index": 164,
+      "global_peace_index": 151,
+      "inform_resilience_index": 190
+    },
+    "kpi_count": 20
+  },
+  {
+    "country": "San Marino",
+    "ranks": {
+      "infant_mortality_rate": 1,
+      "maternal_mortality_ratio": 42,
+      "hospital_beds_per_1_000_people": 58,
+      "adult_literacy_rate": 7,
+      "overall_immunization_coverage": 118,
+      "access_to_basic_drinking_water": 18,
+      "internet_penetration_rate": 72,
+      "mobile_subscriptions_per_100_inhabitants": 84,
+      "inflation_consumer_price_index": 29,
+      "fixed_broadband_subscriptions_per_100_people": 34,
+      "education_expenditure_of_gdp": 145,
+      "purchasing_power_parity": 15,
+      "human_development_index_hdi": 30,
+      "physicians_per_1_000_people": 4
+    },
+    "kpi_count": 14
   },
   {
     "country": "Monaco",
@@ -5966,6 +5991,47 @@
     "kpi_count": 16
   },
   {
+    "country": "Saint Kitts and Nevis",
+    "ranks": {
+      "infant_mortality_rate": 103,
+      "maternal_mortality_ratio": 116,
+      "hospital_beds_per_1_000_people": 38,
+      "overall_immunization_coverage": 44,
+      "access_to_basic_drinking_water": 72,
+      "internet_penetration_rate": 109,
+      "mobile_subscriptions_per_100_inhabitants": 87,
+      "inflation_consumer_price_index": 25,
+      "fixed_broadband_subscriptions_per_100_people": 6,
+      "education_expenditure_of_gdp": 122,
+      "purchasing_power_parity": 59,
+      "human_development_index_hdi": 57,
+      "physicians_per_1_000_people": 55,
+      "inform_resilience_index": 12
+    },
+    "kpi_count": 14
+  },
+  {
+    "country": "Palau",
+    "ranks": {
+      "infant_mortality_rate": 123,
+      "maternal_mortality_ratio": 125,
+      "hospital_beds_per_1_000_people": 39,
+      "adult_literacy_rate": 2,
+      "overall_immunization_coverage": 39,
+      "access_to_basic_drinking_water": 50,
+      "internet_penetration_rate": 175,
+      "mobile_subscriptions_per_100_inhabitants": 43,
+      "inflation_consumer_price_index": 60,
+      "fixed_broadband_subscriptions_per_100_people": 112,
+      "education_expenditure_of_gdp": 119,
+      "purchasing_power_parity": 101,
+      "human_development_index_hdi": 83,
+      "physicians_per_1_000_people": 93,
+      "inform_resilience_index": 31
+    },
+    "kpi_count": 15
+  },
+  {
     "country": "Dominica",
     "ranks": {
       "infant_mortality_rate": 154,
@@ -6016,22 +6082,24 @@
     "country": "Taiwan",
     "ranks": {
       "democracy_index": 12,
+      "human_rights_index_vdem": 18,
       "political_corruption_index": 47,
       "big_mac_index": 2,
       "environmental_performance_index": 74,
       "global_peace_index": 40,
       "pisa_overall_score": 3
     },
-    "kpi_count": 6
+    "kpi_count": 7
   },
   {
     "country": "World",
     "ranks": {
       "democracy_index": 87,
+      "human_rights_index_vdem": 108,
       "human_development_index_hdi": 98,
       "physicians_per_1_000_people": 95,
       "electric_vehicle_stock": 1
     },
-    "kpi_count": 4
+    "kpi_count": 5
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "last_run": "2025-11-16T11:07:28Z",
+  "last_run": "2025-11-20T08:33:45Z",
   "updated_kpis": [
     "access_to_basic_drinking_water",
     "adult_literacy_rate",
@@ -29,6 +29,7 @@
     "homelessness_rate",
     "hospital_beds_per_1_000_people",
     "human_development_index_hdi",
+    "human_rights_index_vdem",
     "infant_mortality_rate",
     "inflation_consumer_price_index",
     "inform_resilience_index",
@@ -52,8 +53,6 @@
     "political_corruption_index",
     "population",
     "population_growth",
-    "press_freedom_index",
-    "public_debt_of_gdp",
     "purchasing_power_parity",
     "railway_length",
     "recycling_rate",
