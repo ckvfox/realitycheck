@@ -1988,6 +1988,9 @@ def main(args: argparse.Namespace) -> None:
                     process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats)
                 elif source_type == "data360":
                     indicator_id = meta.get("source_code")
+                    # Entferne .csv-Endung, falls vorhanden
+                    if indicator_id and indicator_id.lower().endswith('.csv'):
+                        indicator_id = indicator_id[:-4]
                     log(f"[FETCH] Data360 fetch start for {kpi_id} ({indicator_id})")
                     records = fetch_data360_indicator(indicator_id) if indicator_id else []
 
@@ -2017,6 +2020,9 @@ def main(args: argparse.Namespace) -> None:
                         save_records(kpi_id, final_rows, stats)
                         stats["data360_success"] += 1
                         stats["saved_records"] += len(final_rows)
+                            # Entferne .csv-Endung, falls vorhanden
+                            if indicator_id and indicator_id.lower().endswith('.csv'):
+                                indicator_id = indicator_id[:-4]
                         stats["fetched"] += len(final_rows)
                         if years_seen:
                             meta["_latest_year"] = max(years_seen)
