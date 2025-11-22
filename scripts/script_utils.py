@@ -61,6 +61,12 @@ def safe_write_text(path: Path, content: str, *, logger: Optional[logging.Logger
 def safe_write_json(path: Path, data: Any, *, logger: Optional[logging.Logger] = None, note: str = "") -> None:
     """Safely write JSON data to ``path``."""
     path.parent.mkdir(parents=True, exist_ok=True)
+    # Debug-Logging: Pfad und Anzahl der Einträge
+    try:
+        count = len(data) if hasattr(data, '__len__') else 'n/a'
+    except Exception:
+        count = 'n/a'
+    print(f"[DEBUG][safe_write_json] Saving to {path} with {count} entries")
     serialized = json.dumps(data, ensure_ascii=False, indent=2)
     _write_atomic(path, serialized)
     if logger:

@@ -1172,4 +1172,15 @@
     "invert": "",
     "test": ""
   }
+  ,
+  {
+    "title": "Labor Productivity per Hour (Penn World Table)",
+    "filename": "labor_productivity_per_hour_pennworldtable",
+    "cluster": "Economy",
+    "relevance": "high",
+    "source_type": "owid",
+    "source_code": "labor-productivity-per-hour-penn-world-table",
+    "unit": "2017 international $ per hour",
+    "relation": "percapita"
+  }
 ]

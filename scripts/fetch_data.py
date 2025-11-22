@@ -1233,7 +1233,14 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
         except Exception as e:
             log(f"[WARN] WorldBank ZIP date extract failed for {code}: {e}")
      
+
     rows, fallback_source_date = fetch_worldbank_series(code)
+    # Debug: Anzahl und Beispiel der rohen Daten
+    log(f"[DEBUG] WorldBank {kpi_id}: fetched {len(rows)} raw rows", level="info")
+    if rows:
+        log(f"[DEBUG] WorldBank {kpi_id}: first raw row: {json.dumps(rows[0], ensure_ascii=False)[:500]}", level="info")
+        if len(rows) > 1:
+            log(f"[DEBUG] WorldBank {kpi_id}: second raw row: {json.dumps(rows[1], ensure_ascii=False)[:500]}", level="info")
     if not rows:
         keep_or_dummy(kpi_id, f"WorldBank fetch failed ({code})", stats)
         return
@@ -1256,10 +1263,18 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
             out.append({
                 "country": canon,
                 "iso2": "",
+                "year": year,
                 "value": float(val)
             })
         except Exception:
             continue
+
+    # Debug: Anzahl und Beispiel der gefilterten Daten
+    log(f"[DEBUG] WorldBank {kpi_id}: {len(out)} rows after mapping/filtering", level="info")
+    if out:
+        log(f"[DEBUG] WorldBank {kpi_id}: first mapped row: {json.dumps(out[0], ensure_ascii=False)[:500]}", level="info")
+        if len(out) > 1:
+            log(f"[DEBUG] WorldBank {kpi_id}: second mapped row: {json.dumps(out[1], ensure_ascii=False)[:500]}", level="info")
 
     # === 3️⃣ Heuristik: falls source_date generisch oder unbekannt, ersetze durch jüngstes Jahr ===
     latest_year = max(all_years) if all_years else None
