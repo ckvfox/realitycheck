@@ -1,3 +1,33 @@
+def handle_force_cleanup():
+    """
+    Löscht alle Dateien und Unterordner in /data außer /data/meta sowie scripts/__pycache__.
+    """
+    import shutil
+    from pathlib import Path
+
+    data_dir = Path("data")
+    meta_dir = data_dir / "meta"
+    # Lösche alles in /data außer /data/meta
+
+    for item in data_dir.iterdir():
+        if item == meta_dir:
+            continue
+        try:
+            if item.is_dir():
+                shutil.rmtree(item)
+            else:
+                item.unlink()
+        except Exception as e:
+            print(f"⚠️ Fehler beim Löschen von {item}: {e}")
+
+
+    # Lösche scripts/__pycache__ falls vorhanden
+    pycache_dir = Path("scripts") / "__pycache__"
+    if pycache_dir.exists() and pycache_dir.is_dir():
+        try:
+            shutil.rmtree(pycache_dir)
+        except Exception as e:
+            print(f"⚠️ Fehler beim Löschen von {pycache_dir}: {e}")
 from pathlib import Path
 # === Robust JSON Writer ===
 def write_json(path: str | Path, obj):
@@ -203,8 +233,7 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
             f"https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/data/{source_code}/{'/'.join(iso3_list)}?startPeriod=1990",
             f"https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/data/{source_code}/DEU?startPeriod=1990"
         ]
-        for idx, debug_url in enumerate(debug_urls):
-            log(f"[DEBUG] IMF SDMX API URL (format {idx+1}): {debug_url}")
+        # Debug-Ausgaben entfernt
         df = None
         try:
             # Try the original call
@@ -212,21 +241,19 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
             try:
                 data_msg = client.data(source_code, key="+".join(iso3_list), params={"startPeriod": "1990"})
             except Exception as exc1:
-                log(f"[ERR] IMF API fetch (key=+join) failed for {source_code}: {exc1}")
-                # Try alternate: key as list, or as path
+                # Suppress intermediate errors, only log at debug level or not at all
+                # log(f"[DEBUG] IMF API fetch (key=+join) failed for {source_code}: {exc1}")
                 try:
                     data_msg = client.data(source_code, key=iso3_list, params={"startPeriod": "1990"})
                 except Exception as exc2:
-                    log(f"[ERR] IMF API fetch (key=list) failed for {source_code}: {exc2}")
+                    # log(f"[DEBUG] IMF API fetch (key=list) failed for {source_code}: {exc2}")
                     try:
-                        # Try with just DEU as a last resort
                         data_msg = client.data(source_code, key="DEU", params={"startPeriod": "1990"})
                     except Exception as exc3:
-                        log(f"[ERR] IMF API fetch (key=DEU) failed for {source_code}: {exc3}")
-                        log(f"[ERR] IMF API fetch failed for {source_code}: All key formats failed.")
+                        # Only log the final failure as error
+                        log(f"[ERR] IMF API fetch failed for {source_code}: All key formats failed. Last error: {exc3}")
                         data_msg = None
             if data_msg is not None:
-                log(f"[DEBUG] IMF SDMX data_msg type: {type(data_msg)} dir: {dir(data_msg)}")
                 try:
                     df = sdmx.to_pandas(data_msg)
                 except Exception as exc_df:
@@ -250,6 +277,7 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
                     indicator_block = values.get(source_code, {})
                     records = []
                     latest_year = None
+                    trimmed_years = []
                     for iso3, yearvals in indicator_block.items():
                         canon = canonicalize_country(iso3, c_index, a_index, countries, pending, stats)
                         if not canon:
@@ -261,6 +289,11 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
                                 v = float(val)
                             except Exception:
                                 continue
+                            # Only keep years <= current year
+                            from datetime import datetime
+                            if year_int > datetime.now().year:
+                                continue
+                            trimmed_years.append(year_int)
                             latest_year = max(latest_year or year_int, year_int)
                             records.append({"country": canon, "iso3": iso3_code, "year": year_int, "value": v})
                     if records:
@@ -269,12 +302,12 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
                         stats["saved_records"] += len(records)
                         stats["fetched"] += len(records)
                         meta["source"] = "IMF Datamapper API"
-                        meta["_latest_year"] = latest_year
-                        meta["_source_date"] = str(latest_year)
+                        meta["_latest_year"] = max(trimmed_years) if trimmed_years else latest_year
+                        meta["_source_date"] = str(meta["_latest_year"])
                         updated_set.add(kpi_id)
                         if not already_marked:
                             stats["updated"] += 1
-                        log(f"[OK] IMF Datamapper API KPI saved: {kpi_id} ({len(records)} rows, last year {latest_year})")
+                        log(f"[OK] IMF Datamapper API KPI saved: {kpi_id} ({len(records)} rows, last year {meta['_latest_year']})")
                     else:
                         save_imf_records(kpi_id, [])
                         keep_or_dummy(kpi_id, f"IMF Datamapper API empty {source_code}", stats)
@@ -450,16 +483,22 @@ def resolve_iso3(canon: str, countries: Dict[str, Any], fallback: str = "") -> s
 def canonicalize_country(name: str, c_index, a_index, countries, pending, stats):
     if not name:
         return None
+    n = _norm(name)
+    # 1. Always prefer canonical entry in countries.json
     if name in countries:
         stats["mapped_ok"] += 1
         return name
-    n = _norm(name)
     if n in c_index:
         stats["mapped_ok"] += 1
         return c_index[n]
+    # 2. Check mapping in a_index (country_mappings.json)
     if n in a_index:
         target = a_index[n]
+        # If the mapping is empty, double-check if the name is a canonical country (should not exclude real countries)
         if target == "":
+            if name in countries or c_index.get(n) in countries:
+                stats["mapped_ok"] += 1
+                return name if name in countries else c_index.get(n)
             stats["mapped_drop"] += 1
             return None
         if not target:
@@ -468,6 +507,27 @@ def canonicalize_country(name: str, c_index, a_index, countries, pending, stats)
             return None
         stats["mapped_ok"] += 1
         return target
+    # 3. Detect group/region (only if not a canonical country)
+    GROUP_REGION_KEYWORDS = ["region", "group", "union", "area", "income", "world", "europe", "asia", "africa", "america", "oceania"]
+    if any(kw in n for kw in GROUP_REGION_KEYWORDS):
+        # Persistently map to "" in country_mappings.json if not already mapped
+        import json, os
+        mapping_path = os.path.join(META_DIR, "country_mappings.json")
+        try:
+            with open(mapping_path, encoding="utf-8") as f:
+                mapping = json.load(f)
+        except Exception:
+            mapping = {}
+        if name not in mapping or mapping[name] != "":
+            mapping[name] = ""
+            with open(mapping_path, "w", encoding="utf-8") as f:
+                json.dump(mapping, f, ensure_ascii=False, indent=2)
+            log(f"[AUTO-MAP] Persisted group/region '{name}' → '' in country_mappings.json")
+        a_index[n] = ""
+        stats["mapped_drop"] += 1
+        log(f"EXCLUDED (Gruppe/Region): '{name}' (auto-mapped to '')")
+        return None
+    # 4. Not found: add to pending
     pending[name] = "Unknown alias; please map in country_mappings.json"
     stats["mapped_pending"] += 1
     stats["new_pending"].add(name)
@@ -517,23 +577,38 @@ def save_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
     from datetime import datetime
     current_year = datetime.now().year
 
-    trimmed = [
-        r for r in records
-        if isinstance(r.get("year"), (int, float, str))
-        and str(r.get("year")).strip() != ""
-        and 1900 <= int(float(r["year"])) <= current_year
-    ]
+    trimmed = []
+    removed_pre1900 = 0
+    removed_future = 0
+    for r in records:
+        y = r.get("year")
+        try:
+            y = int(float(y))
+        except Exception:
+            continue
+        if y < 1900:
+            removed_pre1900 += 1
+            continue
+        if y > current_year:
+            removed_future += 1
+            continue
+        trimmed.append(r)
 
     after = len(trimmed)
-    if before != after:
-        removed = before - after
-        log(f"[TRIM] {kpi_id}: removed {removed} out-of-range records (before 1900 or >{current_year})")
-
-        if stats is not None:
-            stats.setdefault("trimmed_records", 0)
-            stats["trimmed_records"] += removed
-            stats.setdefault("trimmed_kpis", set())
-            stats["trimmed_kpis"].add(kpi_id)
+    removed = before - after
+    # Always log pre-1900 and post-current-year cuts, even if 0
+    log(f"[TRIM] {kpi_id}: removed {removed_pre1900} records before 1900")
+    log(f"[TRIM] {kpi_id}: removed {removed_future} records after {current_year}")
+    if stats is not None:
+        stats.setdefault("trimmed_records", 0)
+        stats["trimmed_records"] += removed
+        stats.setdefault("trimmed_kpis", set())
+        stats["trimmed_kpis"].add(kpi_id)
+        # Track pre-1900 and post-current-year cuts separately
+        stats.setdefault("trimmed_pre1900", 0)
+        stats.setdefault("trimmed_future", 0)
+        stats["trimmed_pre1900"] += removed_pre1900
+        stats["trimmed_future"] += removed_future
 
     # --- Normal speichern ---
     write_json(os.path.join(DATA_DIR, f"{kpi_id}.json"), trimmed)
@@ -571,24 +646,38 @@ def save_imf_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
     from datetime import datetime
 
     current_year = datetime.now().year
-    trimmed = [
-        r
-        for r in records
-        if isinstance(r.get("year"), (int, float, str))
-        and str(r.get("year")).strip() != ""
-        and 1900 <= int(float(r["year"])) <= current_year
-    ]
+    trimmed = []
+    removed_pre1900 = 0
+    removed_future = 0
+    for r in records:
+        y = r.get("year")
+        try:
+            y = int(float(y))
+        except Exception:
+            continue
+        if y < 1900:
+            removed_pre1900 += 1
+            continue
+        if y > current_year:
+            removed_future += 1
+            continue
+        trimmed.append(r)
 
     after = len(trimmed)
-    if before != after:
-        removed = before - after
-        log(f"[TRIM] {kpi_id}: removed {removed} out-of-range IMF records (before 1900 or >{current_year})")
-
-        if stats is not None:
-            stats.setdefault("trimmed_records", 0)
-            stats["trimmed_records"] += removed
-            stats.setdefault("trimmed_kpis", set())
-            stats["trimmed_kpis"].add(kpi_id)
+    removed = before - after
+    # Always log pre-1900 and post-current-year cuts, even if 0
+    log(f"[TRIM] {kpi_id}: removed {removed_pre1900} IMF records before 1900")
+    log(f"[TRIM] {kpi_id}: removed {removed_future} IMF records after {current_year}")
+    if stats is not None:
+        stats.setdefault("trimmed_records", 0)
+        stats["trimmed_records"] += removed
+        stats.setdefault("trimmed_kpis", set())
+        stats["trimmed_kpis"].add(kpi_id)
+        # Track pre-1900 and post-current-year cuts separately
+        stats.setdefault("trimmed_pre1900", 0)
+        stats.setdefault("trimmed_future", 0)
+        stats["trimmed_pre1900"] += removed_pre1900
+        stats["trimmed_future"] += removed_future
 
     write_json(os.path.join(DATA_DIR, f"{kpi_id}.json"), trimmed)
     with open(os.path.join(DATA_DIR, f"{kpi_id}.csv"), "w", encoding="utf-8", newline="") as f:
@@ -969,7 +1058,7 @@ def fetch_data360_indicator(indicator_id: str, meta: dict = None) -> List[Dict[s
     """Fetch an indicator from the World Bank Data360 API with pagination. meta (KPI-Metadaten) wird für Fallback-URL benötigt."""
 
     import pandas as pd, os, requests
-    log(f"[DEBUG] Data360 meta for {indicator_id}: {meta}")
+    # Debug-Ausgabe entfernt
     records: List[Dict[str, Any]] = []
     # --- 1. Try Data360 API fetch with pagination ---
     if meta and meta.get("database_id") and meta.get("source_code"):
@@ -994,14 +1083,13 @@ def fetch_data360_indicator(indicator_id: str, meta: dict = None) -> List[Dict[s
                 paged_params = params.copy()
                 paged_params["skip"] = skip
                 r = requests.get(api_url, params=paged_params, timeout=30)
-                log(f"[Data360 API] GET {r.url} -> {r.status_code}")
+                # Debug-Ausgabe entfernt
                 if r.status_code != 200:
                     log(f"[ERR] Data360 API fetch failed: {r.status_code} {r.text}")
                     break
                 data = r.json()
                 api_values = data.get("value", [])
-                if skip == 0 and api_values:
-                    log(f"[Data360 API] Sample record for {indicator_id}: {api_values[0]}")
+                # Debug-Ausgabe entfernt
                 if not api_values:
                     break
                 for i, row in enumerate(api_values):
@@ -1009,12 +1097,10 @@ def fetch_data360_indicator(indicator_id: str, meta: dict = None) -> List[Dict[s
                     cname = None
                     if iso_code:
                         cname = country_mappings.get(iso_code, None)
-                        if i < 5 and skip == 0:
-                            log(f"[Data360 MAP] ISO '{iso_code}' → '{cname}'")
+                        # Debug-Ausgabe entfernt
                     if not cname:
                         cname = row.get("REF_AREA_LABEL") or row.get("country")
-                        if i < 5 and skip == 0:
-                            log(f"[Data360 MAP] Fallback for ISO '{iso_code}': '{cname}'")
+                        # Debug-Ausgabe entfernt
                     year = row.get("TIME_PERIOD")
                     val = row.get("OBS_VALUE")
                     if not cname or not year or val is None:
@@ -1030,11 +1116,9 @@ def fetch_data360_indicator(indicator_id: str, meta: dict = None) -> List[Dict[s
                     break
                 skip += page_size
             if records:
-                log(f"[Data360 API] Parsed {len(records)} records for {indicator_id}")
-                log(f"[Data360 API] Sample parsed record: {records[0]}")
                 return records
             else:
-                log(f"[Data360 API] No usable records for {indicator_id}")
+                pass
         except Exception as e:
             log(f"[ERR] Data360 API request failed: {e}")
     # --- 2. Fallback to CSV (local or remote) ---
@@ -1051,9 +1135,7 @@ def fetch_data360_indicator(indicator_id: str, meta: dict = None) -> List[Dict[s
             return records
         try:
             df = pd.read_csv(url)
-            log(f"[DEBUG] Data360 columns: {df.columns.tolist()}")
-            if not df.empty:
-                log(f"[DEBUG] Data360 sample row: {df.iloc[0].to_dict()}")
+            # Debug-Ausgabe entfernt
         except Exception as e:
             log(f"[ERR] Data360 CSV failed to load {url}: {e}")
             return records
@@ -1981,20 +2063,19 @@ def fetch_geopolitical_risk_index():
         write_json(file_path, out)
         log(f"✅ Saved {len(out)} GPR entries → {file_path}")
 
-        # === fetch_status aktualisieren ===
-        fetch_status = load_json_file(STATUS_FILE, {"kpis": {}})
-        fetch_status.setdefault("kpis", {})[kpi_name] = {
+        # === fetch_status entry (return instead of writing file) ===
+        status_entry = {
             "source": "https://www.matteoiacoviello.com/gpr.htm",
             "url": url,
             "source_date": datetime.now(UTC).strftime("%Y-%m-%dT00:00:00Z"),
             "data_year": int(df_annual["year"].max()),
             "last_fetch": now_utc(),
         }
-        write_json(STATUS_FILE, fetch_status)
-        log("[OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)")
-
+        log("[OK] Special world KPI status prepared: geopolitical_risk_index (Matteo Iacoviello)")
+        return status_entry
     except Exception as e:
         log(f"❌ GPR fetch failed: {e}")
+        return None
 
 # ======================================================================
 # 🧩 Fetch-State Merge Utility (ergänzend zur Statuslogik)
@@ -2154,9 +2235,8 @@ def main(args: argparse.Namespace) -> None:
                     years_seen: List[int] = []
                     for row in records:
                         iso3 = row.get("REF_AREA")
-                        log(f"[DEBUG] Data360 row ISO3 before canonicalize: {iso3}")
+                        # Removed Data360 debug logs
                         canon = canonicalize_country(iso3, c_index, a_index, countries, pending, stats)
-                        log(f"[DEBUG] Data360 canonicalized: {canon}")
                         if not canon:
                             continue
                         try:
@@ -2171,7 +2251,7 @@ def main(args: argparse.Namespace) -> None:
                         years_seen.append(year_int)
 
                     if final_rows:
-                        log(f"[DEBUG] Data360 final_rows before save: {len(final_rows)}")
+                        # Removed Data360 debug logs
                         save_records(kpi_id, final_rows, stats)
                         stats["data360_success"] += 1
                         stats["saved_records"] += len(final_rows)
@@ -2254,12 +2334,17 @@ def main(args: argparse.Namespace) -> None:
             updated_set = stats.setdefault("updated_kpis", set())
             already_marked = "geopolitical_risk_index" in updated_set
 
-            fetch_geopolitical_risk_index()
-            stats["others_success"] += 1
-            updated_set.add("geopolitical_risk_index")
-            if not already_marked:
-                stats["updated"] += 1
-            log("[OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)")
+            gpr_status = fetch_geopolitical_risk_index()
+            if gpr_status:
+                fetch_status.setdefault("kpis", {})["geopolitical_risk_index"] = gpr_status
+                stats["others_success"] += 1
+                updated_set.add("geopolitical_risk_index")
+                if not already_marked:
+                    stats["updated"] += 1
+                log("[OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)")
+            else:
+                stats["errors"] += 1
+                log(f"[❌] Special fetch geopolitical_risk_index failed: No status entry returned.")
         except Exception as e:
             stats["errors"] += 1
             log(f"[❌] Special fetch geopolitical_risk_index failed: {e}")
@@ -2280,6 +2365,7 @@ def main(args: argparse.Namespace) -> None:
     write_json(COUNTRY_PENDING_FILE, pending)
 
     # 🤖 Automatische Verarbeitung von pending country mappings
+    agent_summary_lines = []
     try:
         if stats.get("mapped_pending", 0) > 0 or stats.get("new_pending"):
             log("🤖 Running auto country mapping resolution...")
@@ -2291,10 +2377,17 @@ def main(args: argparse.Namespace) -> None:
             if result.returncode == 0:
                 log("✅ Auto mapping agent completed successfully")
                 if result.stdout:
-                    # Log nur die wichtigsten Zeilen aus dem Agent
+                    # Only keep lines that are successful mappings or summary, not pending/unresolved
+                    summary_seen = False
                     for line in result.stdout.split('\n'):
-                        if any(keyword in line for keyword in ['AUTO-RESOLVED', 'ZUSAMMENFASSUNG', 'resolved:', 'pending:']):
-                            log(f"[AGENT] {line}")
+                        if line.strip().startswith("ZUSAMMENFASSUNG"):
+                            if not summary_seen:
+                                agent_summary_lines.append(line.replace("ZUSAMMENFASSUNG", "ZUSAMMENFASSUNG AUTO MAPPING:"))
+                                summary_seen = True
+                        elif "AUTO-RESOLVED" in line or "Automatisch resolved" in line:
+                            agent_summary_lines.append(line)
+                    # Remove duplicates
+                    agent_summary_lines = list(dict.fromkeys(agent_summary_lines))
             else:
                 log(f"⚠️ Auto mapping agent failed: {result.stderr}")
     except Exception as e:
@@ -2336,6 +2429,8 @@ def main(args: argparse.Namespace) -> None:
         f"WorldBank KPIs:    {stats['wb_success']}",
         f"CSV KPIs:          {stats['csv_success']}",
         f"OWID KPIs:         {stats['owid_success']}",
+        f"IMF KPIs:          {stats['imf_success']}",
+        f"Data360 KPIs:      {stats['data360_success']}",
         f"UNHCR KPIs:        {stats['unhcr_success']}",
         f"Others KPIs:       {stats['others_success']}",
         "",
@@ -2346,15 +2441,33 @@ def main(args: argparse.Namespace) -> None:
         f"Dummies created:   {stats['dummies']}",
         f"Skipped (up-to-date): {stats['skipped']}",
         f"Errors:            {stats['errors']}",
-        f"Updated KPIs:      {stats['updated']}",  # ✅ hier normaler Listeneintrag
-        
+        f"Updated KPIs:      {stats['updated']}",
     ]
 
-    # ✂️ Neue Auswertung der Pre-1900-Kürzungen
-    if stats.get("trimmed_records", 0) > 0:
+    # Insert auto-mapping summary (in English) at the top of mapping stats
+    mapping_stats = []
+    mapping_stats.append("")
+    mapping_stats.append("AUTO MAPPING SUMMARY:")
+    if agent_summary_lines:
+        for line in agent_summary_lines:
+            mapping_stats.append(line.replace("ZUSAMMENFASSUNG AUTO MAPPING::", "").replace("Automatisch resolved:", "Automatically resolved:").strip())
+    else:
+        mapping_stats.append("Automatically resolved: 0")
+    mapping_stats.append("")
+    mapping_stats.append(f"Mapping OK:        {stats['mapped_ok']}")
+    mapping_stats.append(f"Mapping dropped:   {stats['mapped_drop']}")
+    mapping_stats.append(f"Mapping pending:   {stats['mapped_pending']}")
+    summary.extend(mapping_stats)
+
+    # ✂️ Pre-1900 and future cuts summary
+    if stats.get("trimmed_pre1900", 0) > 0:
         summary.append("")
         summary.append(
-            f"Pre-1900 cuts:    {stats['trimmed_records']} rows in {len(stats.get('trimmed_kpis', []))} KPIs"
+            f"Pre-1900 cuts:    {stats['trimmed_pre1900']} rows in {len(stats.get('trimmed_kpis', []))} KPIs"
+        )
+    if stats.get("trimmed_future", 0) > 0:
+        summary.append(
+            f"Post-{datetime.now().year} cuts: {stats['trimmed_future']} rows in {len(stats.get('trimmed_kpis', []))} KPIs"
         )
 
     updated_names = sorted(stats.get("updated_kpis", set()))
@@ -2374,6 +2487,7 @@ def main(args: argparse.Namespace) -> None:
         "=================================",
         "✅ Fetch completed successfully\n"
     ])
+    # Note: If 'KPIs processed' > 'fetch_status.json updated', the difference is usually due to dummies, errors, or skipped KPIs that do not result in a status update.
 
     report = "\n".join(summary)
     print(report)

@@ -302,7 +302,7 @@
   "FRO": "",
   "FSM": "Micronesia",
   "Faroe Islands": "",
-  "Federal Republic of Central America": "Guatemala",
+  "Federal Republic of Central America": "",
   "Federal Republic of Somalia": "Somalia",
   "Fiji": "Fiji",
   "Finland": "Finland",
@@ -842,7 +842,7 @@
   "Somaliland": "Somalia",
   "South Africa": "South Africa",
   "South Africa (RSA)": "South Africa",
-  "South Africa (RSA)": "South Africa",
+  "South Africa (RSA)": "",
   "South America": "",
   "South America (GCP)": "",
   "South America (SIPRI)": "",
@@ -859,7 +859,7 @@
   "South Ossetia": "Georgia",
   "South Sudan": "South Sudan",
   "Southern hemisphere": "",
-  "Soviet Union": "Russia",
+  "Soviet Union": "",
   "Soviet Union (URS)": "",
   "Spain": "Spain",
   "Spain (ESP)": "Spain",
@@ -1034,5 +1034,8 @@
   "Äthiopien": "Ethiopia",
   "Åland Islands": "",
   "Österreich": "Austria",
-  "Österreich (AUT)": "Austria"
+  "Österreich (AUT)": "Austria",
+  "WEOWORLD": "",
+  "Australasia (ANZ)": "",
+  "Soviet Union (URS)": ""
 }

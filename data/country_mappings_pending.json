@@ -1,10 +1,13 @@
 {
-  "Anguilla": "Unknown alias; please map in country_mappings.json",
   "Cayman Islands": "Mapping target missing or invalid",
+  "Anguilla": "Unknown alias; please map in country_mappings.json",
   "Falkland Islands": "Unknown alias; please map in country_mappings.json",
   "Guadeloupe": "Unknown alias; please map in country_mappings.json",
   "Saint Vincent and the Grenadines": "Unknown alias; please map in country_mappings.json",
   "Hesse Electoral": "Unknown alias; please map in country_mappings.json",
+  "YUG": "Unknown alias; please map in country_mappings.json",
+  "SCG": "Unknown alias; please map in country_mappings.json",
+  "CSS": "Unknown alias; please map in country_mappings.json",
   "CYM": "Mapping target missing or invalid",
   "TCH": "Unknown alias; please map in country_mappings.json",
   "4": "Unknown alias; please map in country_mappings.json",
@@ -12,13 +15,11 @@
   "EUA": "Unknown alias; please map in country_mappings.json",
   "FRG": "Unknown alias; please map in country_mappings.json",
   "GDR": "Unknown alias; please map in country_mappings.json",
-  "YUG": "Unknown alias; please map in country_mappings.json",
   "EUN": "Unknown alias; please map in country_mappings.json",
   "SLO": "Unknown alias; please map in country_mappings.json",
   "LAT": "Unknown alias; please map in country_mappings.json",
   "OAR": "Unknown alias; please map in country_mappings.json",
   "OAVG": "Unknown alias; please map in country_mappings.json",
-  "GGXWDG_NGDP": "Unknown alias; please map in country_mappings.json",
   "UVK": "Unknown alias; please map in country_mappings.json",
   "WBG": "Unknown alias; please map in country_mappings.json",
   "ADVEC": "Unknown alias; please map in country_mappings.json",
@@ -51,8 +52,5 @@
   "SEQ": "Unknown alias; please map in country_mappings.json",
   "SSA": "Unknown alias; please map in country_mappings.json",
   "WEQ": "Unknown alias; please map in country_mappings.json",
-  "WHQ": "Unknown alias; please map in country_mappings.json",
-  "WEOWORLD": "Unknown alias; please map in country_mappings.json",
-  "SCG": "Unknown alias; please map in country_mappings.json",
-  "CSS": "Unknown alias; please map in country_mappings.json"
+  "WHQ": "Unknown alias; please map in country_mappings.json"
 }

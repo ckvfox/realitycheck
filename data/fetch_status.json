@@ -1,459 +1,466 @@
 {
   "kpis": {
-    "press_freedom_index": {
-      "source": "https://data360files.worldbank.org/data360-data/data",
-      "url": "",
-      "source_date": "Unknown",
-      "data_year": 2025,
-      "last_fetch": "2025-11-21T21:36:13Z"
-    },
-    "general_government_gross_debt_gdp": {
-      "source": "IMF Datamapper API",
-      "source_type": "imf",
-      "source_code": "GGXWDG_NGDP",
-      "source_date": "2030",
-      "data_year": 2030,
-      "last_fetch": "2025-11-21T21:36:19Z"
-    },
-    "median_age": {
-      "source": "https://ourworldindata.org/grapher/median-age",
-      "url": "",
-      "source_date": "2023-01-01",
-      "data_year": 2023,
-      "last_fetch": "2025-11-21T16:57:49Z"
-    },
-    "democracy_index": {
-      "source": "https://ourworldindata.org/grapher/democracy-index-eiu",
-      "url": "",
-      "source_date": "2024-01-01",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T16:39:22Z"
-    },
-    "human_rights_index_vdem": {
-      "source": "https://ourworldindata.org/grapher/human-rights-index-vdem",
-      "url": "",
-      "source_date": "2024-01-01",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T16:39:23Z"
-    },
-    "human_development_index_hdi": {
-      "source": "https://ourworldindata.org/grapher/human-development-index",
-      "url": "",
-      "source_date": "2023-01-01",
-      "data_year": 2023,
-      "last_fetch": "2025-11-21T16:39:25Z"
-    },
-    "physicians_per_1_000_people": {
-      "source": "https://ourworldindata.org/grapher/physicians-per-1000-people",
-      "url": "",
-      "source_date": "2022-01-01",
-      "data_year": 2022,
-      "last_fetch": "2025-11-21T16:39:27Z"
-    },
-    "homelessness_rate": {
-      "source": "https://ourworldindata.org/grapher/homelessness-rate-point-in-time-count",
-      "url": "",
-      "source_date": "2023-01-01",
-      "data_year": 2023,
-      "last_fetch": "2025-11-21T16:39:28Z"
-    },
-    "old_age_dependency_ratio": {
-      "source": "https://ourworldindata.org/grapher/age-dependency-ratio-old",
-      "url": "",
-      "source_date": "2023-01-01",
-      "data_year": 2023,
-      "last_fetch": "2025-11-21T16:39:30Z"
-    },
-    "age_dependency_ratio_total": {
-      "source": "https://ourworldindata.org/grapher/age-dependency-ratio-of-working-age-population",
-      "url": "",
-      "source_date": "2023-01-01",
-      "data_year": 2023,
-      "last_fetch": "2025-11-21T16:39:32Z"
-    },
-    "co2_emissions": {
-      "source": "https://ourworldindata.org/grapher/annual-co2-emissions-per-country",
-      "url": "",
-      "source_date": "2024-01-01",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T16:39:33Z"
-    },
-    "political_corruption_index": {
-      "source": "https://ourworldindata.org/grapher/political-corruption-index",
-      "url": "",
-      "source_date": "2024-01-01",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T16:39:35Z"
-    },
-    "military_spending_sipri": {
-      "source": "https://ourworldindata.org/grapher/military-spending-sipri",
-      "url": "",
-      "source_date": "2024-01-01",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T16:39:37Z"
-    },
-    "number_of_armed_conflicts": {
-      "source": "https://ourworldindata.org/grapher/number-of-armed-conflicts",
-      "url": "",
-      "source_date": "2024-01-01",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T16:39:39Z"
-    },
-    "mean_years_of_schooling": {
-      "source": "https://ourworldindata.org/grapher/mean-years-of-schooling",
-      "url": "",
-      "source_date": "2025-01-01",
-      "data_year": 2025,
-      "last_fetch": "2025-11-21T16:58:02Z"
-    },
-    "living_planet_index": {
-      "source": "https://ourworldindata.org/grapher/global-living-planet-index",
-      "url": "",
-      "source_date": "2020-01-01",
-      "data_year": 2020,
-      "last_fetch": "2025-11-21T16:39:42Z"
-    },
-    "electric_vehicle_stock": {
-      "source": "https://ourworldindata.org/grapher/electric-car-stocks",
-      "url": "",
-      "source_date": "2024-01-01",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T16:39:43Z"
-    },
-    "number_of_recorded_natural_disasters": {
-      "source": "https://ourworldindata.org/grapher/number-of-natural-disaster-events",
-      "url": "",
-      "source_date": "2023-01-01",
-      "data_year": 2023,
-      "last_fetch": "2025-11-21T16:39:45Z"
-    },
-    "global_co2_emissions": {
-      "source": "https://ourworldindata.org/grapher/annual-co2-emissions",
-      "url": "",
-      "source_date": "2024-01-01",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T16:39:46Z"
-    },
-    "global_temperature_anomaly": {
-      "source": "https://ourworldindata.org/grapher/temperature-anomaly",
-      "url": "",
-      "source_date": "2025-01-01",
-      "data_year": 2025,
-      "last_fetch": "2025-11-21T16:58:07Z"
-    },
-    "rule_of_law_index": {
-      "source": "https://ourworldindata.org/grapher/rule-of-law-index",
-      "url": "",
-      "source_date": "2024-01-01",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T16:39:49Z"
-    },
-    "state_based_conflict_deaths": {
-      "source": "https://ourworldindata.org/grapher/deaths-in-state-based-conflicts-by-region",
-      "url": "",
-      "source_date": "2024-01-01",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T16:39:51Z"
-    },
-    "world_happiness_index": {
-      "source": "https://worldhappiness.report/",
-      "url": "",
-      "source_date": "2024-01-01T00:00:00Z",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T21:36:13Z"
-    },
-    "olympic_medals_summer": {
-      "source": "https://www.olympics.com/en/olympic-games",
-      "url": "",
-      "source_date": "2024-01-01T00:00:00Z",
-      "data_year": 2024,
-      "last_fetch": "2025-11-21T21:36:13Z"
-    },
-    "big_mac_index": {
-      "source": "https://www.economist.com/big-mac-index",
-      "url": "",
-      "source_date": "2025-01-01T00:00:00Z",
-      "data_year": 2025,
-      "last_fetch": "2025-11-21T21:36:14Z"
-    },
-    "recycling_rate": {
-      "source": "https://data.oecd.org/",
-      "url": "",
-      "source_date": "2022-01-01T00:00:00Z",
-      "data_year": 2022,
-      "last_fetch": "2025-11-21T21:36:14Z"
-    },
-    "environmental_performance_index": {
-      "source": "https://epi.yale.edu/",
-      "url": "",
-      "source_date": "2022-01-01T00:00:00Z",
-      "data_year": 2022,
-      "last_fetch": "2025-11-21T21:36:14Z"
-    },
-    "global_peace_index": {
-      "source": "https://www.visionofhumanity.org/maps/#/global-peace-index",
-      "url": "",
-      "source_date": "2025-01-01T00:00:00Z",
-      "data_year": 2025,
-      "last_fetch": "2025-11-21T21:36:14Z"
-    },
-    "inform_resilience_index": {
-      "source": "https://drmkc.jrc.ec.europa.eu/inform-index",
-      "url": "",
-      "source_date": "2025-01-01T00:00:00Z",
-      "data_year": 2025,
-      "last_fetch": "2025-11-21T21:36:14Z"
-    },
-    "olympic_medals_winter": {
-      "source": "https://www.olympics.com/en/olympic-games",
-      "url": "",
-      "source_date": "2022-01-01T00:00:00Z",
-      "data_year": 2022,
-      "last_fetch": "2025-11-21T21:36:14Z"
-    },
-    "pisa_overall_score": {
-      "source": "https://www.oecd.org/pisa/data/",
-      "url": "",
-      "source_date": "2022-01-01T00:00:00Z",
-      "data_year": 2022,
-      "last_fetch": "2025-11-21T21:36:14Z"
-    },
     "area": {
       "source": "https://data.worldbank.org/indicator/AG.SRF.TOTL.K2",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2025-11-21T16:54:38Z"
+      "last_fetch": "2025-11-22T16:24:14Z"
     },
     "population": {
       "source": "https://data.worldbank.org/indicator/SP.POP.TOTL",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:54:42Z"
+      "last_fetch": "2025-11-22T16:24:19Z"
     },
     "population_growth": {
       "source": "https://data.worldbank.org/indicator/SP.POP.GROW",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:54:46Z"
+      "last_fetch": "2025-11-22T16:24:25Z"
     },
     "fertility_rate": {
       "source": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2025-11-21T16:54:49Z"
+      "last_fetch": "2025-11-22T16:24:30Z"
     },
     "urbanization_rate": {
       "source": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:54:53Z"
+      "last_fetch": "2025-11-22T16:24:35Z"
     },
     "gdp": {
       "source": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:54:57Z"
+      "last_fetch": "2025-11-22T16:24:39Z"
     },
     "gdp_per_capita_current_us": {
       "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:55:00Z"
+      "last_fetch": "2025-11-22T16:24:44Z"
     },
     "gni_per_capita_current_us": {
       "source": "https://data.worldbank.org/indicator/NY.GNP.PCAP.CD",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:55:04Z"
+      "last_fetch": "2025-11-22T16:24:49Z"
     },
     "gini_index": {
       "source": "https://data.worldbank.org/indicator/SI.POV.GINI",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:55:07Z"
+      "last_fetch": "2025-11-22T16:24:53Z"
     },
     "tax_revenue_of_gdp": {
       "source": "https://data.worldbank.org/indicator/GC.TAX.TOTL.GD.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:55:11Z"
+      "last_fetch": "2025-11-22T16:24:57Z"
     },
     "unemployment_rate": {
       "source": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:55:14Z"
+      "last_fetch": "2025-11-22T16:25:01Z"
     },
     "health_expenditure_per_capita": {
       "source": "https://data.worldbank.org/indicator/SH.XPD.CHEX.PC.CD",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2025-11-21T16:55:18Z"
+      "last_fetch": "2025-11-22T16:25:07Z"
     },
     "infant_mortality_rate": {
       "source": "https://data.worldbank.org/indicator/SP.DYN.IMRT.IN",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2025-11-21T16:55:21Z"
+      "last_fetch": "2025-11-22T16:25:11Z"
     },
     "maternal_mortality_ratio": {
       "source": "https://data.worldbank.org/indicator/SH.STA.MMRT",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2025-11-21T16:55:25Z"
+      "last_fetch": "2025-11-22T16:25:15Z"
     },
     "hospital_beds_per_1_000_people": {
       "source": "https://data.worldbank.org/indicator/SH.MED.BEDS.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2021,
-      "last_fetch": "2025-11-21T16:55:30Z"
+      "last_fetch": "2025-11-22T16:25:18Z"
     },
     "life_expectancy_at_birth": {
       "source": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2025-11-21T16:55:34Z"
+      "last_fetch": "2025-11-22T16:25:23Z"
     },
     "adult_literacy_rate": {
       "source": "https://data.worldbank.org/indicator/SE.ADT.LITR.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:55:38Z"
+      "last_fetch": "2025-11-22T16:25:27Z"
     },
     "overall_immunization_coverage": {
       "source": "https://data.worldbank.org/indicator/SH.IMM.IDPT",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:55:41Z"
+      "last_fetch": "2025-11-22T16:25:32Z"
     },
     "extreme_poverty": {
       "source": "https://data.worldbank.org/indicator/SI.POV.DDAY",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:55:44Z"
+      "last_fetch": "2025-11-22T16:25:36Z"
     },
     "access_to_basic_drinking_water": {
       "source": "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-21T16:55:48Z"
+      "last_fetch": "2025-11-22T16:25:40Z"
     },
     "air_quality_pm2_5_exposure": {
       "source": "https://data.worldbank.org/indicator/EN.ATM.PM25.MC.M3",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2020,
-      "last_fetch": "2025-11-21T16:55:51Z"
+      "last_fetch": "2025-11-22T16:25:44Z"
     },
     "renewable_energy_share": {
       "source": "https://data.worldbank.org/indicator/EG.FEC.RNEW.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-21T16:55:54Z"
+      "last_fetch": "2025-11-22T16:25:48Z"
     },
     "internet_penetration_rate": {
       "source": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:55:58Z"
+      "last_fetch": "2025-11-22T16:25:51Z"
     },
     "mobile_subscriptions_per_100_inhabitants": {
       "source": "https://data.worldbank.org/indicator/IT.CEL.SETS.P2",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2025-11-21T16:56:01Z"
+      "last_fetch": "2025-11-22T16:26:00Z"
     },
     "railway_length": {
       "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2021,
-      "last_fetch": "2025-11-21T16:56:04Z"
+      "last_fetch": "2025-11-22T16:26:07Z"
     },
     "inflation_consumer_price_index": {
       "source": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:56:08Z"
+      "last_fetch": "2025-11-22T16:26:11Z"
     },
     "employment_to_population_ratio": {
       "source": "https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:56:11Z"
+      "last_fetch": "2025-11-22T16:26:15Z"
     },
     "female_labor_force_participation": {
       "source": "https://data.worldbank.org/indicator/SL.TLF.CACT.FE.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:56:18Z"
+      "last_fetch": "2025-11-22T16:26:19Z"
     },
     "road_traffic_deaths_per_100k_people": {
       "source": "https://data.worldbank.org/indicator/SH.STA.TRAF.P5",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2019,
-      "last_fetch": "2025-11-21T16:56:39Z"
+      "last_fetch": "2025-11-22T16:26:27Z"
     },
     "fixed_broadband_subscriptions_per_100_people": {
       "source": "https://data.worldbank.org/indicator/IT.NET.BBND.P2",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2025-11-21T16:57:18Z"
+      "last_fetch": "2025-11-22T16:26:32Z"
     },
     "education_expenditure_of_gdp": {
       "source": "https://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:57:34Z"
+      "last_fetch": "2025-11-22T16:26:37Z"
     },
     "military_expenditure_of_gdp": {
       "source": "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2025-11-21T16:57:42Z"
+      "last_fetch": "2025-11-22T16:26:41Z"
     },
     "purchasing_power_parity": {
       "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD",
       "url": "",
       "source_date": "2025-10-07T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-21T16:57:46Z"
+      "last_fetch": "2025-11-22T16:26:45Z"
+    },
+    "median_age": {
+      "source": "https://ourworldindata.org/grapher/median-age",
+      "url": "",
+      "source_date": "2023-01-01",
+      "data_year": 2023,
+      "last_fetch": "2025-11-22T16:26:49Z"
+    },
+    "democracy_index": {
+      "source": "https://ourworldindata.org/grapher/democracy-index-eiu",
+      "url": "",
+      "source_date": "2024-01-01",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:26:50Z"
+    },
+    "human_rights_index_vdem": {
+      "source": "https://ourworldindata.org/grapher/human-rights-index-vdem",
+      "url": "",
+      "source_date": "2024-01-01",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:26:54Z"
+    },
+    "human_development_index_hdi": {
+      "source": "https://ourworldindata.org/grapher/human-development-index",
+      "url": "",
+      "source_date": "2023-01-01",
+      "data_year": 2023,
+      "last_fetch": "2025-11-22T16:26:55Z"
+    },
+    "physicians_per_1_000_people": {
+      "source": "https://ourworldindata.org/grapher/physicians-per-1000-people",
+      "url": "",
+      "source_date": "2022-01-01",
+      "data_year": 2022,
+      "last_fetch": "2025-11-22T16:26:57Z"
+    },
+    "homelessness_rate": {
+      "source": "https://ourworldindata.org/grapher/homelessness-rate-point-in-time-count",
+      "url": "",
+      "source_date": "2023-01-01",
+      "data_year": 2023,
+      "last_fetch": "2025-11-22T16:26:58Z"
+    },
+    "old_age_dependency_ratio": {
+      "source": "https://ourworldindata.org/grapher/age-dependency-ratio-old",
+      "url": "",
+      "source_date": "2023-01-01",
+      "data_year": 2023,
+      "last_fetch": "2025-11-22T16:27:01Z"
+    },
+    "age_dependency_ratio_total": {
+      "source": "https://ourworldindata.org/grapher/age-dependency-ratio-of-working-age-population",
+      "url": "",
+      "source_date": "2023-01-01",
+      "data_year": 2023,
+      "last_fetch": "2025-11-22T16:27:03Z"
+    },
+    "co2_emissions": {
+      "source": "https://ourworldindata.org/grapher/annual-co2-emissions-per-country",
+      "url": "",
+      "source_date": "2024-01-01",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:27:08Z"
+    },
+    "political_corruption_index": {
+      "source": "https://ourworldindata.org/grapher/political-corruption-index",
+      "url": "",
+      "source_date": "2024-01-01",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:27:11Z"
+    },
+    "military_spending_sipri": {
+      "source": "https://ourworldindata.org/grapher/military-spending-sipri",
+      "url": "",
+      "source_date": "2024-01-01",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:27:13Z"
+    },
+    "number_of_armed_conflicts": {
+      "source": "https://ourworldindata.org/grapher/number-of-armed-conflicts",
+      "url": "",
+      "source_date": "2024-01-01",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:27:15Z"
+    },
+    "mean_years_of_schooling": {
+      "source": "https://ourworldindata.org/grapher/mean-years-of-schooling",
+      "url": "",
+      "source_date": "2025-01-01",
+      "data_year": 2025,
+      "last_fetch": "2025-11-22T16:27:17Z"
+    },
+    "living_planet_index": {
+      "source": "https://ourworldindata.org/grapher/global-living-planet-index",
+      "url": "",
+      "source_date": "2020-01-01",
+      "data_year": 2020,
+      "last_fetch": "2025-11-22T16:27:18Z"
+    },
+    "electric_vehicle_stock": {
+      "source": "https://ourworldindata.org/grapher/electric-car-stocks",
+      "url": "",
+      "source_date": "2024-01-01",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:27:20Z"
+    },
+    "number_of_recorded_natural_disasters": {
+      "source": "https://ourworldindata.org/grapher/number-of-natural-disaster-events",
+      "url": "",
+      "source_date": "2023-01-01",
+      "data_year": 2023,
+      "last_fetch": "2025-11-22T16:27:21Z"
+    },
+    "global_co2_emissions": {
+      "source": "https://ourworldindata.org/grapher/annual-co2-emissions",
+      "url": "",
+      "source_date": "2024-01-01",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:27:26Z"
+    },
+    "global_temperature_anomaly": {
+      "source": "https://ourworldindata.org/grapher/temperature-anomaly",
+      "url": "",
+      "source_date": "2025-01-01",
+      "data_year": 2025,
+      "last_fetch": "2025-11-22T16:27:28Z"
+    },
+    "rule_of_law_index": {
+      "source": "https://ourworldindata.org/grapher/rule-of-law-index",
+      "url": "",
+      "source_date": "2024-01-01",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:27:31Z"
+    },
+    "state_based_conflict_deaths": {
+      "source": "https://ourworldindata.org/grapher/deaths-in-state-based-conflicts-by-region",
+      "url": "",
+      "source_date": "2024-01-01",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:27:33Z"
+    },
+    "press_freedom_index": {
+      "source": "https://data360files.worldbank.org/data360-data/data",
+      "url": "",
+      "source_date": "Unknown",
+      "data_year": 2025,
+      "last_fetch": "2025-11-22T16:27:35Z"
+    },
+    "world_happiness_index": {
+      "source": "https://worldhappiness.report/",
+      "url": "",
+      "source_date": "2024-01-01T00:00:00Z",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:27:35Z"
+    },
+    "olympic_medals_summer": {
+      "source": "https://www.olympics.com/en/olympic-games",
+      "url": "",
+      "source_date": "2024-01-01T00:00:00Z",
+      "data_year": 2024,
+      "last_fetch": "2025-11-22T16:27:35Z"
+    },
+    "big_mac_index": {
+      "source": "https://www.economist.com/big-mac-index",
+      "url": "",
+      "source_date": "2025-01-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2025-11-22T16:27:35Z"
+    },
+    "recycling_rate": {
+      "source": "https://data.oecd.org/",
+      "url": "",
+      "source_date": "2022-01-01T00:00:00Z",
+      "data_year": 2022,
+      "last_fetch": "2025-11-22T16:27:36Z"
+    },
+    "environmental_performance_index": {
+      "source": "https://epi.yale.edu/",
+      "url": "",
+      "source_date": "2022-01-01T00:00:00Z",
+      "data_year": 2022,
+      "last_fetch": "2025-11-22T16:27:36Z"
+    },
+    "global_peace_index": {
+      "source": "https://www.visionofhumanity.org/maps/#/global-peace-index",
+      "url": "",
+      "source_date": "2025-01-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2025-11-22T16:27:36Z"
+    },
+    "inform_resilience_index": {
+      "source": "https://drmkc.jrc.ec.europa.eu/inform-index",
+      "url": "",
+      "source_date": "2025-01-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2025-11-22T16:27:36Z"
+    },
+    "olympic_medals_winter": {
+      "source": "https://www.olympics.com/en/olympic-games",
+      "url": "",
+      "source_date": "2022-01-01T00:00:00Z",
+      "data_year": 2022,
+      "last_fetch": "2025-11-22T16:27:36Z"
+    },
+    "pisa_overall_score": {
+      "source": "https://www.oecd.org/pisa/data/",
+      "url": "",
+      "source_date": "2022-01-01T00:00:00Z",
+      "data_year": 2022,
+      "last_fetch": "2025-11-22T16:27:36Z"
+    },
+    "general_government_gross_debt_gdp": {
+      "source": "IMF Datamapper API",
+      "source_type": "imf",
+      "source_code": "GGXWDG_NGDP",
+      "source_date": "2025",
+      "data_year": 2025,
+      "last_fetch": "2025-11-22T16:27:40Z"
+    },
+    "geopolitical_risk_index": {
+      "source": "https://www.matteoiacoviello.com/gpr.htm",
+      "url": "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls",
+      "source_date": "2025-11-22T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2025-11-22T16:27:42Z"
     }
   },
   "summary": {
-    "lastRun": "2025-11-21T21:36:22Z",
-    "updated": 12,
-    "skipped": 53,
+    "lastRun": "2025-11-22T16:27:42Z",
+    "updated": 65,
+    "skipped": 0,
     "errors": 0
   }
 }
