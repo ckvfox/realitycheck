@@ -2,60 +2,66 @@
 
 ## Economy
 
-The **Big Mac Index** indicates a global average of **3.55**, reflecting purchasing power variances across regions. Economies with stronger currencies typically show higher Big Mac prices, hinting at cost-of-living variations. The **General Government Gross Debt to GDP** averages **56.42%**, showcasing varied fiscal health, with affluent countries often managing higher debts due to robust financial systems.
+The global economy shows a mean GDP per capita of **$8,426.21**, indicating significant disparities across regions. Countries with higher GDP tend to have lower **extreme poverty** rates (mean 11.46%). A key observation is the correlation between **GDP and CO₂ emissions**, with higher GDP often leading to increased emissions (mean **192,818,626.14** metric tons). Nations investing more in education (mean investment 4.33% of GDP) generally show better economic performance, evidenced by a mean **purchasing power parity** of **$16,020.66**.
 
-### Key Insights:
-- **High-income countries** maintain stable financial leverage but face challenges in debt management.
-- **Emerging markets** often exhibit lower debt levels yet confront greater growth volatility.
+- **Inflation**: Averaging at 13.19%, underscoring potential economic instability in numerous regions.
+- **Unemployment**: At 8.09%, indicating that employment remains a critical challenge.
 
 ## Environment
 
-The **Environmental Performance Index (EPI)** averages **43.1**, underscoring mixed global commitment to environmental health. Countries with stringent policies, often found in Europe, score higher, while rapid industrial expansion in parts of Asia hinders environmental progress. Recycling rates, low at **18.58%**, highlight inadequate waste management practices, predominantly in developing regions.
+Environmental trends highlight important concerns, notably regarding **air quality**, with PM2.5 exposure at a mean of **27.37 µg/m³**, posing health risks. Global **CO₂ emissions** mirror overall economic activity, necessitating enhanced **renewable energy** interventions, which currently stand at a mean share of **33.47%**.
 
-### Key Insights:
-- Cohesive efforts in Europe bolster **EPI** scores.
-- Industrialization often conflicts with environmental objectives in developing nations.
+- **Recycling Rate**: A low mean of 18.58% suggests underutilization of resources.
+- The mean **environmental performance index** at **43.1** highlights the urgent need for more robust environmental policies.
 
 ## Society & Governance
 
-The **Global Peace Index** at **2.03** reflects moderate stability, with Scandinavia frequently ranking as the most peaceful. The **Press Freedom Index** of **49.29** illuminates moderate constraints on media operations worldwide, particularly in countries with authoritarian regimes. Meanwhile, the **World Happiness Index** stands at **5.54**, indicating variable emotional well-being, often mirroring economic prosperity and social freedoms.
+Social indicators reveal mixed progress. The **adult literacy rate** (mean **80.97%**) and **mean years of schooling** (4.75 years) show educational gaps, affecting overall socio-economic development. Governance indicators like the **democracy index** (mean 5.43) and **human rights index** (mean 0.48) correlate strongly with societal well-being metrics such as the **world happiness index** (mean 5.54).
 
-### Key Insights:
-- **Democracies** generally exhibit higher happiness and peace indices.
-- **Authoritarian regimes** typically show lower scores in freedom and happiness metrics.
+- **Life Expectancy**: A mean of **64.36 years** reflects improvements in healthcare but also highlights discrepancies among nations.
 
 ## Technology
 
-While specific KPIs in technology aren't covered in detail, correlation exists between technological advancement and improved scores on the **PISA Overall Score** of **476.24**. High-scoring education systems often leverage technology to enhance learning outcomes, prominently seen in East Asian countries.
+Technological accessibility is rising, with **internet penetration** at a mean of **30.59%** and **mobile subscriptions** at **37.23 per 100 inhabitants**. **Fixed broadband** remains quite limited at a mean of **10.47 subscriptions per 100 people**, emphasizing digital divide challenges.
 
-### Key Insights:
-- Strong tech infrastructure is a catalyst for educational success.
-- Countries investing in digital literacy see broader socio-economic benefits.
+- **Electric Vehicles**: A mean stock of **867,251.67** units represents accelerating adoption but still requires policy support for broader market penetration.
 
 ## Regional Insights
 
-- **Europe** showcases high environmental and educational standards, with mixed economic indicators driven by diverse economies.
-- **Asia** faces environmental challenges but leads educational outcomes, balancing growth with sustainability efforts.
-- **Africa** struggles with economic stability yet possesses untapped potential in renewable energy.
-- **Americas** offer varied disparities in governance and economic health, with notable peace index improvements in certain parts.
+### Europe
+- High **democracy index** and environmental scores.
+- Faces challenges with aging populations and declining fertility rates.
 
-## Major Anomalies & Outliers
+### Africa
+- Lower **GDP per capita** and higher **extreme poverty** rates.
+- Growing **fertility rates** offer a youthful demographic advantage.
 
-- **Norway and Switzerland** consistently score high across all socio-economic and environmental indices, demonstrating balanced development.
-- **Venezuela and Zimbabwe** encounter significant economic challenges, affecting broader socio-political and environmental metrics.
+### Asia
+- Diverse economic performances, rapid urbanization, and technological growth.
+- Significant regional disparities in literacy and healthcare access.
 
-## Long-term Implications & Opportunities
+### Americas
+- Middle-to-high **GDP per capita**, with disparities in income inequality (high Gini index).
+- Robust urbanization and economic activity correlate with environmental stress.
 
-As climate change pressures mount, countries must prioritize sustainable practices. Investing in education and technology is crucial for long-term economic resilience and social well-being.
+## Outlook
 
-### Key Opportunities:
-- **Innovation in renewable energy** offers pathways to ecological and economic benefits.
-- Enhancing educational reach can drive socio-economic advancement, particularly in developing regions.
+- **Climate Risks**: Rising global temperatures (mean anomaly **0.42°C**) stress urgent climate action.
+- **Stability**: Political and economic instabilities are unpredictable, influenced by geopolitical tensions (mean geopolitical risk index **103.03**).
 
-## Forward-looking Outlook
+## Long-term Implications
 
-The coming decades will test global capacities for collaborative climate action and inclusive growth frameworks. Continued investments in green technology and education systems can forge paths to global stability and prosperity.
+Significant investment in education and renewable energy is essential. Democracies typically outperform autocracies in happiness and development metrics, pointing to governance quality as a pivot for global progress. Addressing inequalities, both within and between countries, should be prioritized.
 
-## Conclusion
+## Risks and Opportunities
 
-This multifaceted analysis underscores a world of contrasts and interconnected challenges, where forward-thinking policies can align economic aspirations with sustainable growth. By recognizing and acting upon these insights, nations can navigate towards a more resilient and prosperous future.
+- **Investment in Technology**: Enhancing internet and mobile access can drive economic growth.
+- **Policy Innovation**: Addressing pollution and healthcare disparities.
+- Significant improvements in **peaceful governance** and human rights can foster broader prosperity.
+
+## Noteworthy Outliers
+
+- **Extreme Poverty and High GDP Countries**: Nations with high GDP exhibit lower poverty, though exceptions exist due to uneven income distribution.
+- **Environmental Leaders and Laggards**: Discrepancies in countries' efforts to manage environmental impacts, signaling varied commitment levels.
+
+This comprehensive analysis identifies vital areas where strategic efforts can lead to transformative global socio-economic benefits. Addressing highlighted challenges through international cooperation and innovative policy-making holds significant promise for future stability and prosperity.
