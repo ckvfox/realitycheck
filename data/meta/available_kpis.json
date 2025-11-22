@@ -15,7 +15,7 @@
     "relevance": "none",
     "actuality": "normal",
     "invert": "",
-    "test": "*"
+    "test": ""
   },
   {
     "title": "Population",
@@ -922,6 +922,24 @@
     "invert": "",
     "test": ""
   },
+	  {
+    "title": "Labor Productivity per Hour (Penn World Table)",
+    "description": "Labor productivity per hour worked, measured in 2017 international dollars, reflects the average output produced per hour of labor. This indicator is important for understanding economic efficiency and international competitiveness. It is influenced by factors such as technology, education, capital investment, and labor market structure. These data are compiled by Our World in Data based on the Penn World Table.",
+    "unit": "2021 international $ per hour",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Economy & Labor",
+    "source": "https://ourworldindata.org/grapher/labor-productivity-per-hour-pennworldtable",
+    "source_type": "owid",
+    "source_code": "labor-productivity-per-hour-pennworldtable.csv?useColumnShortNames=true",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "labor_productivity_per_hour_pennworldtable",
+    "relevance": "none",
+    "actuality": "normal",
+    "invert": "",
+    "test": "*"
+  },
   {
     "title": "Rule of Law Index",
     "description": "The Rule of Law Index measures the extent to which countries adhere to the rule of law in practice — including constraints on government powers, absence of corruption, open government, fundamental rights, order and security, regulatory enforcement, civil justice, and criminal justice. Scores range from 0 (weak rule of law) to 1 (strong rule of law). It provides a comprehensive view of how justice and governance function in practice, complementing indicators such as the Democracy Index and Political Corruption Index. These data are compiled by Our World in Data based on the World Justice Project (WJP).",
@@ -1172,23 +1190,5 @@
     "invert": "",
     "test": ""
   }
-  ,
-  {
-    "title": "Labor Productivity per Hour (Penn World Table)",
-    "description": "Labor productivity per hour worked, measured in 2017 international dollars, reflects the average output produced per hour of labor. This indicator is important for understanding economic efficiency and international competitiveness. It is influenced by factors such as technology, education, capital investment, and labor market structure. These data are compiled by Our World in Data based on the Penn World Table.",
-    "unit": "2021 international $ per hour",
-    "relation": "",
-    "sort": "higher",
-    "cluster": "Economy & Labor",
-    "source": "https://ourworldindata.org/grapher/labor-productivity-per-hour-penn-world-table",
-    "source_type": "owid",
-    "source_code": "labor-productivity-per-hour-penn-world-table.csv?useColumnShortNames=true",
-    "scale": "none",
-    "world_kpi": "",
-    "filename": "labor_productivity_per_hour_pennworldtable",
-    "relevance": "high",
-    "actuality": "normal",
-    "invert": "",
-    "test": ""
-  }
 ]
+

@@ -2178,6 +2178,7 @@ def main(args: argparse.Namespace) -> None:
     stats["countries_loaded"] = len(countries)
 
 
+
     raw_kpis = load_json_file(AVAILABLE_FILE, [])
     kpi_list = [v for v in raw_kpis if isinstance(v, dict)]
 
@@ -2187,9 +2188,12 @@ def main(args: argparse.Namespace) -> None:
         kpi_list = [v for v in kpi_list if v.get("filename") == args.kpi]
         log(f"[INFO] Single KPI mode (-k): filtering KPIs {len(kpi_list)}/{before} for filename='{args.kpi}'")
 
-    # Test mode disables AI-based analysis, but does not filter by test='*'
+    # Test mode: only fetch KPIs with 'test': '*' and always skip analysis
     if args.test:
-        log(f"[INFO] Test mode enabled (-t): AI-based analysis will be skipped, but all KPIs are processed.")
+        before = len(kpi_list)
+        kpi_list = [v for v in kpi_list if str(v.get("test", "")).strip() == "*"]
+        log(f"[INFO] Test mode enabled (-t): filtering KPIs with test='*' only ({len(kpi_list)}/{before}) and skipping all analysis.")
+        args.no_analysis = True
 
     stats["kpis_loaded"] = len(kpi_list)
 
