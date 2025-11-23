@@ -231,7 +231,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "infant_mortality_rate",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -249,7 +249,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "maternal_mortality_ratio",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -267,7 +267,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "hospital_beds_per_1_000_people",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -303,7 +303,7 @@
     "scale": "%",
     "world_kpi": "",
     "filename": "adult_literacy_rate",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -321,7 +321,7 @@
     "scale": "%",
     "world_kpi": "",
     "filename": "overall_immunization_coverage",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -1189,10 +1189,6 @@
     "actuality": "normal",
     "invert": "",
     "test": ""
-  {
-    "title": "PISA Overall Score",
-    ...existing code...
-    "test": ""
   },
   {
     "title": "Network Readiness Index (NRI)",
@@ -1211,5 +1207,26 @@
     "actuality": "annual",
     "invert": "",
     "test": ""
+  },
+  {
+    "title": "Social Progress Index (SPI)",
+    "description": "The Social Progress Index (SPI) measures the extent to which countries provide for the social and environmental needs of their citizens. It is based on three dimensions: Basic Human Needs, Foundations of Wellbeing, and Opportunity. The SPI is designed to complement economic indicators by focusing on social and environmental outcomes directly, rather than economic inputs. A higher SPI score indicates greater social progress. Data are provided by the Social Progress Imperative (https://www.socialprogress.org/).",
+    "unit": "index (0–100)",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Health & Social",
+    "source": "https://www.socialprogress.org/",
+    "source_type": "csv",
+    "source_code": "social_progress_index.csv",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "social_progress_index",
+    "relevance": "high",
+    "actuality": "annual",
+    "invert": "",
+    "test": ""
   }
+]
+
+
 
