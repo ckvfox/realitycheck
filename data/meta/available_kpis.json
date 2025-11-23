@@ -339,7 +339,7 @@
     "scale": "%",
     "world_kpi": "",
     "filename": "extreme_poverty",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -357,7 +357,7 @@
     "scale": "%",
     "world_kpi": "",
     "filename": "access_to_basic_drinking_water",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -683,7 +683,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "physicians_per_1_000_people",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -701,7 +701,7 @@
     "scale": "%",
     "world_kpi": "",
     "filename": "homelessness_rate",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
