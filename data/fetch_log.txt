@@ -2752,3 +2752,757 @@ Skipped breakdown:
 
 [2025-11-23T18:36:30 UTC] [INFO] Full fetch report written to C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\fetch_log.txt
 [2025-11-23T18:36:30 UTC] [STATE] Merged 2 updated KPIs → total 2 entries.
+[2025-11-23T18:42:00 UTC] [INFO] Using OPENAI_API_KEY: found
+[2025-11-23T18:42:00 UTC] === Fetch started ===
+[2025-11-23T18:42:07 UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:07 UTC] [CHECK] area: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:07 UTC] [⏸️] area – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:09 UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:09 UTC] [CHECK] population: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:09 UTC] [⏸️] population – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:10 UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:10 UTC] [CHECK] population_growth: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:10 UTC] [⏸️] population_growth – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:11 UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:11 UTC] [CHECK] fertility_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:11 UTC] [⏸️] fertility_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:12 UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:12 UTC] [CHECK] urbanization_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:12 UTC] [⏸️] urbanization_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:13 UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:13 UTC] [CHECK] gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:13 UTC] [⏸️] gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:13 UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:13 UTC] [CHECK] gdp_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:13 UTC] [⏸️] gdp_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:14 UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:14 UTC] [CHECK] gni_per_capita_current_us: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:14 UTC] [⏸️] gni_per_capita_current_us – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:15 UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:15 UTC] [CHECK] gini_index: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:15 UTC] [⏸️] gini_index – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:15 UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:15 UTC] [CHECK] tax_revenue_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:15 UTC] [⏸️] tax_revenue_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:16 UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:16 UTC] [CHECK] unemployment_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:16 UTC] [⏸️] unemployment_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:16 UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:16 UTC] [CHECK] health_expenditure_per_capita: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:16 UTC] [⏸️] health_expenditure_per_capita – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:17 UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:17 UTC] [CHECK] infant_mortality_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:17 UTC] [⏸️] infant_mortality_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:17 UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:17 UTC] [CHECK] maternal_mortality_ratio: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:17 UTC] [⏸️] maternal_mortality_ratio – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:18 UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:18 UTC] [CHECK] hospital_beds_per_1_000_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:18 UTC] [⏸️] hospital_beds_per_1_000_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:18 UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:18 UTC] [CHECK] life_expectancy_at_birth: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:18 UTC] [⏸️] life_expectancy_at_birth – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:19 UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:19 UTC] [CHECK] adult_literacy_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:19 UTC] [⏸️] adult_literacy_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:20 UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:20 UTC] [CHECK] overall_immunization_coverage: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:20 UTC] [⏸️] overall_immunization_coverage – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:20 UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:20 UTC] [CHECK] extreme_poverty: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:20 UTC] [⏸️] extreme_poverty – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:21 UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:21 UTC] [CHECK] access_to_basic_drinking_water: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:21 UTC] [⏸️] access_to_basic_drinking_water – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:21 UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:21 UTC] [CHECK] air_quality_pm2_5_exposure: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:21 UTC] [⏸️] air_quality_pm2_5_exposure – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:22 UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:22 UTC] [CHECK] renewable_energy_share: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:22 UTC] [⏸️] renewable_energy_share – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:22 UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:22 UTC] [CHECK] internet_penetration_rate: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:22 UTC] [⏸️] internet_penetration_rate – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:23 UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:23 UTC] [CHECK] mobile_subscriptions_per_100_inhabitants: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:23 UTC] [⏸️] mobile_subscriptions_per_100_inhabitants – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:24 UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:24 UTC] [CHECK] railway_length: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:24 UTC] [⏸️] railway_length – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:24 UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:24 UTC] [CHECK] inflation_consumer_price_index: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:24 UTC] [⏸️] inflation_consumer_price_index – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:25 UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:25 UTC] [CHECK] employment_to_population_ratio: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:25 UTC] [⏸️] employment_to_population_ratio – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:25 UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:25 UTC] [CHECK] female_labor_force_participation: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:25 UTC] [⏸️] female_labor_force_participation – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:26 UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:26 UTC] [CHECK] road_traffic_deaths_per_100k_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:26 UTC] [⏸️] road_traffic_deaths_per_100k_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:26 UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:26 UTC] [CHECK] fixed_broadband_subscriptions_per_100_people: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:26 UTC] [⏸️] fixed_broadband_subscriptions_per_100_people – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:27 UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:27 UTC] [CHECK] education_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:27 UTC] [⏸️] education_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:27 UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:27 UTC] [CHECK] military_expenditure_of_gdp: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:27 UTC] [⏸️] military_expenditure_of_gdp – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:28 UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2025-10-07T00:00:00Z
+[2025-11-23T18:42:28 UTC] [CHECK] purchasing_power_parity: remote=2025-10-07 local=2025-10-07 → skip
+[2025-11-23T18:42:28 UTC] [⏸️] purchasing_power_parity – unchanged (2025-10-07T00:00:00Z)
+[2025-11-23T18:42:29 UTC] [CHECK] median_age: max_year=2100 → fetch (possible update)
+[2025-11-23T18:42:29 UTC] [⏸️] median_age – unchanged (None)
+[2025-11-23T18:42:29 UTC] [CHECK] democracy_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-23T18:42:29 UTC] [⏸️] democracy_index – unchanged (None)
+[2025-11-23T18:42:30 UTC] [CHECK] human_rights_index_vdem: max_year=2024 < 2025, fetched this year → skip
+[2025-11-23T18:42:30 UTC] [⏸️] human_rights_index_vdem – unchanged (None)
+[2025-11-23T18:42:30 UTC] [CHECK] human_development_index_hdi: max_year=2023 < 2025, fetched this year → skip
+[2025-11-23T18:42:30 UTC] [⏸️] human_development_index_hdi – unchanged (None)
+[2025-11-23T18:42:31 UTC] [CHECK] physicians_per_1_000_people: max_year=2022 < 2025, fetched this year → skip
+[2025-11-23T18:42:31 UTC] [⏸️] physicians_per_1_000_people – unchanged (None)
+[2025-11-23T18:42:31 UTC] [CHECK] homelessness_rate: max_year=2023 < 2025, fetched this year → skip
+[2025-11-23T18:42:31 UTC] [⏸️] homelessness_rate – unchanged (None)
+[2025-11-23T18:42:32 UTC] [CHECK] old_age_dependency_ratio: max_year=2023 < 2025, fetched this year → skip
+[2025-11-23T18:42:32 UTC] [⏸️] old_age_dependency_ratio – unchanged (None)
+[2025-11-23T18:42:32 UTC] [CHECK] age_dependency_ratio_total: max_year=2023 < 2025, fetched this year → skip
+[2025-11-23T18:42:32 UTC] [⏸️] age_dependency_ratio_total – unchanged (None)
+[2025-11-23T18:42:33 UTC] [CHECK] co2_emissions: max_year=2024 < 2025, fetched this year → skip
+[2025-11-23T18:42:33 UTC] [⏸️] co2_emissions – unchanged (None)
+[2025-11-23T18:42:33 UTC] [CHECK] political_corruption_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-23T18:42:33 UTC] [⏸️] political_corruption_index – unchanged (None)
+[2025-11-23T18:42:34 UTC] [CHECK] military_spending_sipri: max_year=2024 < 2025, fetched this year → skip
+[2025-11-23T18:42:34 UTC] [⏸️] military_spending_sipri – unchanged (None)
+[2025-11-23T18:42:35 UTC] [CHECK] number_of_armed_conflicts: max_year=2024 < 2025, fetched this year → skip
+[2025-11-23T18:42:35 UTC] [⏸️] number_of_armed_conflicts – unchanged (None)
+[2025-11-23T18:42:35 UTC] [CHECK] mean_years_of_schooling: max_year=2040 → fetch (possible update)
+[2025-11-23T18:42:35 UTC] [⏸️] mean_years_of_schooling – unchanged (None)
+[2025-11-23T18:42:36 UTC] [CHECK] living_planet_index: max_year=2020 < 2025, fetched this year → skip
+[2025-11-23T18:42:36 UTC] [⏸️] living_planet_index – unchanged (None)
+[2025-11-23T18:42:36 UTC] [CHECK] electric_vehicle_stock: max_year=2024 < 2025, fetched this year → skip
+[2025-11-23T18:42:36 UTC] [⏸️] electric_vehicle_stock – unchanged (None)
+[2025-11-23T18:42:37 UTC] [CHECK] number_of_recorded_natural_disasters: max_year=2023 < 2025, fetched this year → skip
+[2025-11-23T18:42:37 UTC] [⏸️] number_of_recorded_natural_disasters – unchanged (None)
+[2025-11-23T18:42:38 UTC] [CHECK] global_co2_emissions: max_year=2024 < 2025, fetched this year → skip
+[2025-11-23T18:42:38 UTC] [⏸️] global_co2_emissions – unchanged (None)
+[2025-11-23T18:42:38 UTC] [CHECK] global_temperature_anomaly: max_year=2025 → fetch (possible update)
+[2025-11-23T18:42:38 UTC] [⏸️] global_temperature_anomaly – unchanged (None)
+[2025-11-23T18:42:38 UTC] [CHECK] labor_productivity_per_hour_pennworldtable: max_year=2023 < 2025, fetched this year → skip
+[2025-11-23T18:42:38 UTC] [⏸️] labor_productivity_per_hour_pennworldtable – unchanged (None)
+[2025-11-23T18:42:39 UTC] [CHECK] rule_of_law_index: max_year=2024 < 2025, fetched this year → skip
+[2025-11-23T18:42:39 UTC] [⏸️] rule_of_law_index – unchanged (None)
+[2025-11-23T18:42:39 UTC] [CHECK] state_based_conflict_deaths: max_year=2024 < 2025, fetched this year → skip
+[2025-11-23T18:42:39 UTC] [⏸️] state_based_conflict_deaths – unchanged (None)
+[2025-11-23T18:42:39 UTC] [CHECK] press_freedom_index: missing or unknown date → fetch now
+[2025-11-23T18:42:40 UTC] [Data360] trying remote CSV https://data360files.worldbank.org/data360-data/data/RWB_PFI/RWB_PFI_SCORE.csv
+[2025-11-23T18:42:40 UTC] [TRIM] press_freedom_index: removed 0 records before 1900
+[2025-11-23T18:42:40 UTC] [TRIM] press_freedom_index: removed 0 records after 2025
+[2025-11-23T18:42:40 UTC] [OK] Data360 KPI saved: press_freedom_index (3905 rows)
+[2025-11-23T18:42:40 UTC] [STATUS] press_freedom_index: stored source_date=Unknown, data_year=2025
+[2025-11-23T18:42:40 UTC] [CHECK] geopolitical_risk_index: local files missing → fetch now
+[2025-11-23T18:42:40 UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
+[2025-11-23T18:42:40 UTC] [DEFER] general_government_gross_debt_gdp: queued for IMF bulk import
+[2025-11-23T18:42:40 UTC] [WARN] world_happiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-23T18:42:40 UTC] [TRIM] world_happiness_index: removed 0 records before 1900
+[2025-11-23T18:42:40 UTC] [TRIM] world_happiness_index: removed 0 records after 2025
+[2025-11-23T18:42:40 UTC] [OK] CSV KPI saved: world_happiness_index (1435 rows, last updated 2024-01-01T00:00:00Z)
+[2025-11-23T18:42:40 UTC] [STATUS] world_happiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2025-11-23T18:42:40 UTC] [WARN] olympic_medals_summer: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-23T18:42:40 UTC] [TRIM] olympic_medals_summer: removed 10 records before 1900
+[2025-11-23T18:42:40 UTC] [TRIM] olympic_medals_summer: removed 0 records after 2025
+[2025-11-23T18:42:40 UTC] [OK] CSV KPI saved: olympic_medals_summer (1348 rows, last updated 2024-01-01T00:00:00Z)
+[2025-11-23T18:42:40 UTC] [STATUS] olympic_medals_summer: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2025-11-23T18:42:40 UTC] [WARN] big_mac_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-23T18:42:40 UTC] [TRIM] big_mac_index: removed 0 records before 1900
+[2025-11-23T18:42:40 UTC] [TRIM] big_mac_index: removed 0 records after 2025
+[2025-11-23T18:42:40 UTC] [OK] CSV KPI saved: big_mac_index (1267 rows, last updated 2025-01-01T00:00:00Z)
+[2025-11-23T18:42:40 UTC] [STATUS] big_mac_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-23T18:42:40 UTC] [WARN] recycling_rate: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-23T18:42:41 UTC] [TRIM] recycling_rate: removed 0 records before 1900
+[2025-11-23T18:42:41 UTC] [TRIM] recycling_rate: removed 0 records after 2025
+[2025-11-23T18:42:41 UTC] [OK] CSV KPI saved: recycling_rate (5488 rows, last updated 2022-01-01T00:00:00Z)
+[2025-11-23T18:42:41 UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-23T18:42:41 UTC] [WARN] environmental_performance_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-23T18:42:41 UTC] [TRIM] environmental_performance_index: removed 0 records before 1900
+[2025-11-23T18:42:41 UTC] [TRIM] environmental_performance_index: removed 0 records after 2025
+[2025-11-23T18:42:41 UTC] [OK] CSV KPI saved: environmental_performance_index (180 rows, last updated 2022-01-01T00:00:00Z)
+[2025-11-23T18:42:41 UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-23T18:42:41 UTC] [WARN] global_peace_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-23T18:42:41 UTC] [TRIM] global_peace_index: removed 0 records before 1900
+[2025-11-23T18:42:41 UTC] [TRIM] global_peace_index: removed 0 records after 2025
+[2025-11-23T18:42:41 UTC] [OK] CSV KPI saved: global_peace_index (2922 rows, last updated 2025-01-01T00:00:00Z)
+[2025-11-23T18:42:41 UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-23T18:42:41 UTC] [WARN] inform_resilience_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-23T18:42:41 UTC] [TRIM] inform_resilience_index: removed 0 records before 1900
+[2025-11-23T18:42:41 UTC] [TRIM] inform_resilience_index: removed 0 records after 2025
+[2025-11-23T18:42:41 UTC] [OK] CSV KPI saved: inform_resilience_index (1910 rows, last updated 2025-01-01T00:00:00Z)
+[2025-11-23T18:42:41 UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2025-11-23T18:42:41 UTC] [WARN] olympic_medals_winter: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-23T18:42:41 UTC] [TRIM] olympic_medals_winter: removed 0 records before 1900
+[2025-11-23T18:42:41 UTC] [TRIM] olympic_medals_winter: removed 0 records after 2025
+[2025-11-23T18:42:41 UTC] [OK] CSV KPI saved: olympic_medals_winter (387 rows, last updated 2022-01-01T00:00:00Z)
+[2025-11-23T18:42:41 UTC] [STATUS] olympic_medals_winter: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-23T18:42:41 UTC] [WARN] pisa_overall_score: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-23T18:42:41 UTC] [TRIM] pisa_overall_score: removed 0 records before 1900
+[2025-11-23T18:42:41 UTC] [TRIM] pisa_overall_score: removed 0 records after 2025
+[2025-11-23T18:42:41 UTC] [OK] CSV KPI saved: pisa_overall_score (336 rows, last updated 2022-01-01T00:00:00Z)
+[2025-11-23T18:42:41 UTC] [STATUS] pisa_overall_score: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-23T18:42:41 UTC] [WARN] network_readiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-23T18:42:41 UTC] [TRIM] network_readiness_index: removed 0 records before 1900
+[2025-11-23T18:42:41 UTC] [TRIM] network_readiness_index: removed 0 records after 2025
+[2025-11-23T18:42:41 UTC] [OK] CSV KPI saved: network_readiness_index (128 rows, last updated 2024-01-01T00:00:00Z)
+[2025-11-23T18:42:41 UTC] [STATUS] network_readiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2025-11-23T18:42:41 UTC] [WARN] social_progress_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2025-11-23T18:42:41 UTC] [TRIM] social_progress_index: removed 0 records before 1900
+[2025-11-23T18:42:41 UTC] [TRIM] social_progress_index: removed 0 records after 2025
+[2025-11-23T18:42:41 UTC] [OK] CSV KPI saved: social_progress_index (1951 rows, last updated 2022-01-01T00:00:00Z)
+[2025-11-23T18:42:41 UTC] [STATUS] social_progress_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2025-11-23T18:42:41 UTC] [FETCH] IMF API import start for 1 KPIs
+[2025-11-23T18:42:41 UTC] [CHECK] general_government_gross_debt_gdp: missing or unknown date → fetch now
+[2025-11-23T18:42:42 UTC] [ERR] IMF API fetch failed for GGXWDG_NGDP: All key formats failed. Last error: <Resource.data: 'data'> endpoint at https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/data/GGXWDG_NGDP/DEU?startPeriod=1990
+[2025-11-23T18:42:42 UTC] [INFO] Trying IMF Datamapper API fallback for GGXWDG_NGDP
+[2025-11-23T18:42:46 UTC] [TRIM] general_government_gross_debt_gdp: removed 0 IMF records before 1900
+[2025-11-23T18:42:46 UTC] [TRIM] general_government_gross_debt_gdp: removed 0 IMF records after 2025
+[2025-11-23T18:42:46 UTC] [OK] IMF Datamapper API KPI saved: general_government_gross_debt_gdp (5818 rows, last year 2025)
+[2025-11-23T18:42:46 UTC] [INFO] IMF API import completed
+[2025-11-23T18:42:46 UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2025-11-23T18:42:46 UTC] ✅ Saved 41 GPR entries → /home/runner/work/realitycheck/realitycheck/data/geopolitical_risk_index.json
+[2025-11-23T18:42:46 UTC] [OK] Special world KPI status prepared: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-23T18:42:46 UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2025-11-23T18:42:46 UTC] 🤖 Running auto country mapping resolution...
+[2025-11-23T18:42:46 UTC] Starting Auto Country Mapping Agent...
+[2025-11-23T18:42:46 UTC] FOUND: 290 pending mappings gefunden
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Cayman Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Anguilla' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Falkland Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Guadeloupe' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Saint Vincent and the Grenadines' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'CYM' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'East Asia and Pacific (WB)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Europe and Central Asia (WB)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Latin America and Caribbean (WB)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Middle East, North Africa, Afghanistan and Pakistan (WB)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'North America (WB)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'South Asia (WB)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (WB)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'World'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Hong Kong S.A.R. of China' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Australasia (ANZ)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Bohemia' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Bohemia (BOH)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'British West Indies (BWI)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Czechoslovakia (TCH)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'FR Yugoslavia'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Formosa (ROC)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Germany (GER)[a]' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Great Britain (GBR)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Great Britain (GBR)[a]' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Greece (GRE)[b]' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Independent Olympic Athletes[D]'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Independent Olympic Participants'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Individual Neutral Athletes[A][B]' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Mixed team'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'ROC' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Refugee Olympic Team'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Russian Empire'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Soviet Union (URS)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'United Arab Republic (RAU)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'United Team of Germany[A]' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'United Team of Germany[e]' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'United Team of Germany (EUA)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Virgin Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Yugoslavia (YUG)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Africa Eastern and Southern' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Africa Western and Central' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Arab World'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Caribbean small states'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Central Europe and the Baltics' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Early-demographic dividend' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'East Asia & Pacific' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'East Asia & Pacific (excluding high income)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'East Asia & Pacific (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Euro area'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Europe & Central Asia' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Europe & Central Asia (excluding high income)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Europe & Central Asia (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'European Union'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Fragile and conflict affected situations' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Heavily indebted poor countries (HIPC)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'High income'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'IBRD only' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'IDA & IBRD total' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'IDA blend' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'IDA only' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'IDA total' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Late-demographic dividend' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Latin America & Caribbean' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Latin America & Caribbean (excluding high income)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Latin America & the Caribbean (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Least developed countries: UN classification'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Low & middle income'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Low income'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Lower middle income'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Middle East, North Africa, Afghanistan & Pakistan' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Middle East, North Africa, Afghanistan & Pakistan (excluding high income)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Middle East, North Africa, Afghanistan & Pakistan (IDA & IBRD)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Middle income'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'North America' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'OECD members'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Other small states'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Pacific island small states'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Post-demographic dividend' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Pre-demographic dividend' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Small states'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'South Asia' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'South Asia (IDA & IBRD)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Sub-Saharan Africa' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (excluding high income)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Sub-Saharan Africa (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Upper middle income'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'American Samoa' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Aruba' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Bermuda' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'British Virgin Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Channel Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Curacao' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Faroe Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'French Polynesia' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Gibraltar' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Guam' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Hong Kong SAR, China' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Isle of Man' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Macao SAR, China' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'New Caledonia' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Northern Mariana Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Puerto Rico (US)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Sint Maarten (Dutch part)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'St. Martin (French part)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Turks and Caicos Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Virgin Islands (U.S.)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Africa (UN)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Asia (UN)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Bonaire Sint Eustatius and Saba' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Cook Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Europe (UN)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'French Guiana' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Guernsey' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'High-income countries' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Hong Kong' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Jersey' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Latin America and the Caribbean (UN)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Least developed countries'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Less developed regions' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Less developed regions, excluding China' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Less developed regions, excluding least developed countries'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Low-income countries' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Lower-middle-income countries'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Macao' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Martinique' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Mayotte' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Montserrat' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'More developed regions' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Niue' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Northern America (UN)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Oceania (UN)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Puerto Rico' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Reunion' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Saint Barthelemy' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Saint Helena' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Saint Martin (French part)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Saint Pierre and Miquelon' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Tokelau' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'United States Virgin Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Upper-middle-income countries'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Wallis and Futuna' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Western Sahara' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Africa'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Africa (population-weighted)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Aland Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Asia'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Asia (population-weighted)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Austria-Hungary' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'British Indian Ocean Territory' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Christmas Island' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Cocos Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Czechoslovakia'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'East Germany'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Europe'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Europe (population-weighted)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Great Colombia' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Korea (former)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Netherlands Antilles' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Norfolk Island' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'North America (population-weighted)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Oceania'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Oceania (population-weighted)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Orange Free State' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Pitcairn' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Serbia and Montenegro' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'South America' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'South America (population-weighted)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'South Georgia and the South Sandwich Islands' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'USSR' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'West Germany'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'World (population-weighted)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Yugoslavia'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Eastern Caribbean States' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Arab States (UNDP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'East Asia and the Pacific (UNDP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Europe and Central Asia (UNDP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'European Union (27)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'High human development (UNDP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Latin America and the Caribbean (UNDP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Low human development (UNDP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Medium human development (UNDP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'South Asia (UNDP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (UNDP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Very high human development (UNDP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Americas (UN)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Land-locked developing countries (LLDC)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Small island developing states (SIDS)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Africa (GCP)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Antarctica' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Asia (GCP)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Asia (excl. China and India)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Central America (GCP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Europe (GCP)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Europe (excl. EU-27)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Europe (excl. EU-28)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'European Union (28)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'International aviation' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'International shipping' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Kuwaiti Oil Fires (GCP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Middle East (GCP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Non-OECD (GCP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'North America (GCP)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'North America (excl. USA)' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'OECD (GCP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Oceania (GCP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Ryukyu Islands (GCP)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'South America (GCP)'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Brunswick' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Duchy of Nassau' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Saxony' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Two Sicilies' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Africa (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Americas (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Asia & Oceania (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Central America and the Caribbean (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Central Asia (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Central Europe (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'East Asia (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Eastern Europe (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Europe (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'European Union (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Middle East (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'North Africa (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'North America (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Oceania (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'South America (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'South Asia (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'South East Asia (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Western Europe (SIPRI)'
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Americas'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Asia and Oceania' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Middle East' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Asia and Pacific' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Europe and Central Asia' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Freshwater' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Latin America and the Caribbean' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Rest of World'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Northern Hemisphere' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Southern hemisphere' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Hongkong' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Australasia' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] EXCLUDED (Gruppe/Region): 'Soviet Union'
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Unified Team' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'ABW' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'BMU' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'CUW' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'FRO' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'HKG' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'IMN' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'MAC' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'NCL' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'PYF' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'SXM' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'TCA' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'VGB' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Cote d' Ivoire' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'TCH' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: '4' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'URS' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'EUA' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'FRG' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'GDR' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'WAY' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'ANY' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'INA' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'ICA' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'NDS' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'RIA' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'NCE' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'ADA' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'ALY' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'REA' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'NIA' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'LIA' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'AIN' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'ARY' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'IUM' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'LIC' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'KIA' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'INE' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'VIA' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'YUG' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'EUN' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'SLO' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'LAT' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'OAR' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'OAVG' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] REMAINS PENDING: 'Hesse Electoral' (keine eindeutige Zuordnung)
+[2025-11-23T18:42:46 UTC] PENDING: 290 Einträge verbleiben in pending für manuelle Prüfung
+[2025-11-23T18:42:46 UTC] 
+ZUSAMMENFASSUNG:
+   Automatisch resolved: 0
+   Verbleiben pending:    290
+   Total processed:      290
+   Countries verfügbar:  198
+        
+[2025-11-23T18:42:46 UTC] ✅ Auto mapping agent completed successfully
+[2025-11-23T18:42:46 UTC] [INFO] fetch_status.json updated with 68 KPIs
+[2025-11-23T18:42:46 UTC] [STATE] Updated KPI info written to /home/runner/work/realitycheck/realitycheck/data/fetch_state.json (14 entries)
+=== RealityCheck Fetch Report ===
+Countries loaded:   198
+KPIs processed:    68
+Saved records:     27075
+
+WorldBank KPIs:    0
+CSV KPIs:          11
+OWID KPIs:         0
+IMF KPIs:          1
+Data360 KPIs:      1
+UNHCR KPIs:        0
+Others KPIs:       1
+
+Mapping OK:        21446
+Mapping dropped:   538
+Mapping pending:   338
+
+Dummies created:   0
+Skipped (up-to-date): 54
+Errors:            0
+Updated KPIs:      14
+
+AUTO MAPPING SUMMARY:
+
+Automatically resolved: 0
+
+Mapping OK:        21446
+Mapping dropped:   538
+Mapping pending:   338
+
+Updated KPI files:
+  - big_mac_index
+  - environmental_performance_index
+  - general_government_gross_debt_gdp
+  - geopolitical_risk_index
+  - global_peace_index
+  - inform_resilience_index
+  - network_readiness_index
+  - olympic_medals_summer
+  - olympic_medals_winter
+  - pisa_overall_score
+  - press_freedom_index
+  - recycling_rate
+  - social_progress_index
+  - world_happiness_index
+
+Skipped breakdown:
+  - Remote data unchanged: 54
+=================================
+✅ Fetch completed successfully
+
+[2025-11-23T18:42:46 UTC] [INFO] Full fetch report written to /home/runner/work/realitycheck/realitycheck/data/fetch_log.txt
+[2025-11-23T18:42:46 UTC] === Overall Ranking Generation Started ===
+[2025-11-23T18:42:46 UTC] ✅ 23 KPIs considered for ranking
+[2025-11-23T18:42:46 UTC] 💾 JSON saved successfully → data/overall_ranking.json (198 records)
+[2025-11-23T18:42:46 UTC] ✅ overall_ranking.json written to /home/runner/work/realitycheck/realitycheck/data/overall_ranking.json
+[2025-11-23T18:42:46 UTC] ➡️ Starting fun/safe haven ranking generation ...
+[2025-11-23T18:42:46 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
+[2025-11-23T18:42:46 UTC] ➡️ Generating Fun Mode via GPT-4o-Mini …
+[2025-11-23T18:42:55 UTC] 💾 Saved data/fun_ranking.json (10 entries)
+[2025-11-23T18:42:55 UTC] ➡️ Generating Safe Haven Mode via GPT-4o-Mini …
+[2025-11-23T18:43:02 UTC] 💾 Saved data/safe_haven_ranking.json (10 entries)
+[2025-11-23T18:43:02 UTC] ➡️ Generating Immigration Mode via GPT-4o-Mini …
+[2025-11-23T18:43:11 UTC] 💾 Saved data/immigration_ranking.json (10 entries)
+[2025-11-23T18:43:11 UTC] ✅ All three rankings generated successfully.
+[2025-11-23T18:43:11 UTC] ✅ Fun & Safe Haven rankings successfully generated.
+[2025-11-23T18:43:20 UTC] [STATE] Merged 14 updated KPIs → total 14 entries.
+[2025-11-23T18:43:20 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
+[2025-11-23T18:43:20 UTC] ➡️ Starting global analysis …
+[2025-11-23T18:43:29 UTC] 💾 Saved analysis (3373 chars)
+[2025-11-23T18:43:29 UTC] ⚙️ Limiting KPI analysis to 14 entries.
+[2025-11-23T18:44:30 UTC] ✅ KPI analyses saved (67 total)
+[2025-11-23T18:44:30 UTC] 🔎 Computing outliers …
+[2025-11-23T18:44:31 UTC] 💾 Outliers saved (60 KPIs, compact format)
+[2025-11-23T18:44:31 UTC] ✅ RealityCheck analysis completed successfully.
+[2025-11-23T18:44:31 UTC] ➡️ Starting CSV update check for 11 KPIs…
+[2025-11-23T18:44:31 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2024)
+[2025-11-23T18:44:34 UTC] 🤖 GPT response for 'World Happiness Index': {
+  "dataset": "World Happiness Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official World Happiness Report website does not list any releases beyond the year 2024."
+}
+[2025-11-23T18:44:35 UTC] 🤖 GPT response for 'World Happiness Index': {
+  "dataset": "World Happiness Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official site states the latest report available is for the year 2024 and does not mention any release beyond that."
+}
+[2025-11-23T18:44:38 UTC] ❓ No newer version for 'World Happiness Index' found.
+[2025-11-23T18:44:38 UTC] 🔍 Checking 'Olympic Medals (Summer)' (last known year: 2024)
+[2025-11-23T18:44:39 UTC] 🤖 GPT response for 'Olympic Medals (Summer)': {
+  "dataset": "Olympic Medals (Summer)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official Olympics website does not have a release or publication stating a year greater than 2024 for the dataset."
+}
+[2025-11-23T18:44:41 UTC] 🤖 GPT response for 'Olympic Medals (Summer)': {
+  "dataset": "Olympic Medals (Summer)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official Olympics website does not indicate a release year beyond 2024 for the Olympic Medals dataset."
+}
+[2025-11-23T18:44:44 UTC] ❓ No newer version for 'Olympic Medals (Summer)' found.
+[2025-11-23T18:44:44 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2025)
+[2025-11-23T18:44:45 UTC] 🤖 GPT response for 'Big Mac Index': {
+  "dataset": "Big Mac Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official Big Mac Index page does not indicate a release year beyond 2025."
+}
+[2025-11-23T18:44:46 UTC] 🤖 GPT response for 'Big Mac Index': {
+  "dataset": "Big Mac Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official Big Mac Index page does not mention any publication that indicates a year greater than 2025." 
+}
+[2025-11-23T18:44:49 UTC] ❓ No newer version for 'Big Mac Index' found.
+[2025-11-23T18:44:49 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
+[2025-11-23T18:44:50 UTC] 🤖 GPT response for 'Recycling Rate': {
+  "dataset": "Recycling Rate",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "No newer year mentioned on the OECD data website; last confirmed release remains 2022."
+}
+[2025-11-23T18:44:52 UTC] 🤖 GPT response for 'Recycling Rate': {
+  "dataset": "Recycling Rate",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official OECD data portal does not currently list any publications or updates beyond the year 2022 for the Recycling Rate dataset."
+}
+[2025-11-23T18:44:55 UTC] ❓ No newer version for 'Recycling Rate' found.
+[2025-11-23T18:44:55 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
+[2025-11-23T18:44:56 UTC] 🤖 GPT response for 'Environmental Performance Index': {
+  "dataset": "Environmental Performance Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official website indicates that the latest report available for download is from 2022."
+}
+[2025-11-23T18:44:57 UTC] 🤖 GPT response for 'Environmental Performance Index': {
+  "dataset": "Environmental Performance Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "No newer release year mentioned on the official EPI website; the most recent publication still indicates 2022."
+}
+[2025-11-23T18:45:00 UTC] ❓ No newer version for 'Environmental Performance Index' found.
+[2025-11-23T18:45:00 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
+[2025-11-23T18:45:02 UTC] 🤖 GPT response for 'Global Peace Index': {
+  "dataset": "Global Peace Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official website states that the latest Global Peace Index was released for the year 2023, with no information or mention of releases beyond that year."
+}
+[2025-11-23T18:45:04 UTC] 🤖 GPT response for 'Global Peace Index': {
+  "dataset": "Global Peace Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official site only lists data up to 2025, with no references to a more recent release."
+}
+[2025-11-23T18:45:07 UTC] ❓ No newer version for 'Global Peace Index' found.
+[2025-11-23T18:45:07 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
+[2025-11-23T18:45:08 UTC] 🤖 GPT response for 'Inform Resilience Index': {
+  "dataset": "Inform Resilience Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official publisher link does not indicate any release year beyond 2025."
+}
+[2025-11-23T18:45:09 UTC] 🤖 GPT response for 'Inform Resilience Index': {
+  "dataset": "Inform Resilience Index",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official site confirms the latest version available is from 2025, with no indications of newer releases."
+}
+[2025-11-23T18:45:12 UTC] ❓ No newer version for 'Inform Resilience Index' found.
+[2025-11-23T18:45:12 UTC] 🔍 Checking 'Olympic Medals (Winter)' (last known year: 2022)
+[2025-11-23T18:45:13 UTC] 🤖 GPT response for 'Olympic Medals (Winter)': {
+  "dataset": "Olympic Medals (Winter)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official Olympics website does not indicate any releases beyond 2022 regarding Olympic medals."
+}
+[2025-11-23T18:45:15 UTC] 🤖 GPT response for 'Olympic Medals (Winter)': {
+  "dataset": "Olympic Medals (Winter)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official Olympics website does not list any new data releases for Olympic medals beyond 2022."
+}
+[2025-11-23T18:45:18 UTC] ❓ No newer version for 'Olympic Medals (Winter)' found.
+[2025-11-23T18:45:18 UTC] 🔍 Checking 'PISA Overall Score' (last known year: 2022)
+[2025-11-23T18:45:19 UTC] 🤖 GPT response for 'PISA Overall Score': {
+  "dataset": "PISA Overall Score",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The OECD PISA data page does not mention any new releases beyond 2022; the latest information reflects data from the 2018 assessment."
+}
+[2025-11-23T18:45:21 UTC] 🤖 GPT response for 'PISA Overall Score': {
+  "dataset": "PISA Overall Score",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official OECD PISA data page only lists data releases up to the year 2022, with no announcements or downloads for years beyond that."
+}
+[2025-11-23T18:45:24 UTC] ❓ No newer version for 'PISA Overall Score' found.
+[2025-11-23T18:45:24 UTC] 🔍 Checking 'Network Readiness Index (NRI)' (last known year: 2024)
+[2025-11-23T18:45:25 UTC] 🤖 GPT response for 'Network Readiness Index (NRI)': {
+  "dataset": "Network Readiness Index (NRI)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official website does not indicate any release year greater than 2024."
+}
+[2025-11-23T18:45:26 UTC] 🤖 GPT response for 'Network Readiness Index (NRI)': {
+  "dataset": "Network Readiness Index (NRI)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official website does not indicate any release year newer than 2024."
+}
+[2025-11-23T18:45:29 UTC] ❓ No newer version for 'Network Readiness Index (NRI)' found.
+[2025-11-23T18:45:29 UTC] 🔍 Checking 'Social Progress Index (SPI)' (last known year: 2022)
+[2025-11-23T18:45:31 UTC] 🤖 GPT response for 'Social Progress Index (SPI)': {
+  "dataset": "Social Progress Index (SPI)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "No newer release year found on the official site; the latest available data is still from 2022."
+}
+[2025-11-23T18:45:32 UTC] 🤖 GPT response for 'Social Progress Index (SPI)': {
+  "dataset": "Social Progress Index (SPI)",
+  "latest_year": null,
+  "confidence": "high",
+  "evidence": "The official website does not indicate a newer release year beyond 2022."
+}
+[2025-11-23T18:45:35 UTC] ❓ No newer version for 'Social Progress Index (SPI)' found.
+[2025-11-23T18:45:35 UTC] ✅ Smart CSV update check completed.

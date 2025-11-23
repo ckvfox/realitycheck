@@ -2528,5 +2528,51 @@
       }
     ],
     "low_outliers": []
+  },
+  "network_readiness_index": {
+    "high_outliers": [],
+    "low_outliers": [
+      {
+        "country": "Yemen",
+        "year": 2024,
+        "value": 20.24,
+        "z": -2.062
+      },
+      {
+        "country": "Burundi",
+        "year": 2024,
+        "value": 20.69,
+        "z": -2.03
+      }
+    ]
+  },
+  "social_progress_index": {
+    "high_outliers": [],
+    "low_outliers": [
+      {
+        "country": "South Sudan",
+        "year": 2022,
+        "value": 25.93,
+        "z": -2.534
+      },
+      {
+        "country": "Chad",
+        "year": 2022,
+        "value": 30.2,
+        "z": -2.254
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2022,
+        "value": 32.15,
+        "z": -2.126
+      },
+      {
+        "country": "Somalia",
+        "year": 2022,
+        "value": 33.87,
+        "z": -2.013
+      }
+    ]
   }
 }
