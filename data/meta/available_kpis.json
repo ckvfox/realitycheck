@@ -588,7 +588,7 @@
     "relation": "",
     "sort": "higher",
     "cluster": "Economy & Labor",
-    "relevance": "very_high",
+    "relevance": "none",
     "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD",
     "source_type": "worldbank",
     "source_code": "NY.GDP.PCAP.PP.CD",
@@ -635,7 +635,7 @@
     "test": ""
   },
   {
-    "title": "Human Rights Index (V-Dem)",
+    "title": "Human Rights Index",
     "description": "The Human Rights Index from the Varieties of Democracy (V-Dem) project summarizes the overall protection of fundamental rights—such as freedom from torture, arbitrary arrest, and political repression—on a standardized scale. A higher value signals stronger respect for human rights, which is crucial for civic participation, social stability, and sustainable development. The index is shaped by legal safeguards, enforcement practices, and broader governance quality, and it aligns closely with metrics like the Democracy Index and Rule of Law Index in the Society & Governance cluster. These data are compiled by Our World in Data based on the V-Dem Human Rights Index.",
     "unit": "index (0–1)",
     "relation": "",
@@ -647,7 +647,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "human_rights_index_vdem",
-    "relevance": "very_high",
+    "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -990,7 +990,7 @@
     "world_kpi": "",
     "filename": "press_freedom_index",
     "database_id": "RWB_PFI",
-    "relevance": "normal",
+    "relevance": "none",
     "actuality": "critical",
     "invert": "",
     "test": ""
