@@ -462,11 +462,25 @@
       "source_date": "2025-11-22T00:00:00Z",
       "data_year": 2025,
       "last_fetch": "2025-11-22T20:17:44Z"
+    },
+    "network_readiness_index": {
+      "source": "https://networkreadinessindex.org/",
+      "url": "",
+      "source_date": "2024-01-01T00:00:00Z",
+      "data_year": 2024,
+      "last_fetch": "2025-11-23T17:36:30Z"
+    },
+    "social_progress_index": {
+      "source": "https://www.socialprogress.org/",
+      "url": "",
+      "source_date": "2022-01-01T00:00:00Z",
+      "data_year": 2022,
+      "last_fetch": "2025-11-23T17:36:30Z"
     }
   },
   "summary": {
-    "lastRun": "2025-11-22T21:52:41Z",
-    "updated": 0,
+    "lastRun": "2025-11-23T17:36:30Z",
+    "updated": 2,
     "skipped": 1,
     "errors": 0
   }

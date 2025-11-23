@@ -1206,7 +1206,7 @@
     "relevance": "normal",
     "actuality": "annual",
     "invert": "",
-    "test": ""
+    "test": "*"
   },
   {
     "title": "Social Progress Index (SPI)",
@@ -1224,7 +1224,7 @@
     "relevance": "high",
     "actuality": "annual",
     "invert": "",
-    "test": ""
+    "test": "*"
   }
 ]
 
