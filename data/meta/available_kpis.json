@@ -411,7 +411,7 @@
     "scale": "%",
     "world_kpi": "",
     "filename": "internet_penetration_rate",
-    "relevance": "normal",
+      "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -429,7 +429,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "mobile_subscriptions_per_100_inhabitants",
-    "relevance": "normal",
+      "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -538,7 +538,7 @@
     "scale": "none",
     "world_kpi": "",
     "filename": "fixed_broadband_subscriptions_per_100_people",
-    "relevance": "normal",
+      "relevance": "none",
     "actuality": "normal",
     "invert": "",
     "test": ""
@@ -1189,6 +1189,27 @@
     "actuality": "normal",
     "invert": "",
     "test": ""
+  {
+    "title": "PISA Overall Score",
+    ...existing code...
+    "test": ""
+  },
+  {
+    "title": "Network Readiness Index (NRI)",
+    "description": "The Network Readiness Index (NRI) measures a country's overall readiness to exploit opportunities offered by information and communication technologies (ICT). It covers infrastructure, affordability, skills, usage, and socio-economic impact. A higher NRI score indicates better digital readiness and competitiveness. Data are provided by the Portulans Institute (https://networkreadinessindex.org/).",
+    "unit": "index (0–100)",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Infrastructure & Technology",
+    "source": "https://networkreadinessindex.org/",
+    "source_type": "csv",
+    "source_code": "network_readiness_index.csv",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "network_readiness_index",
+    "relevance": "normal",
+    "actuality": "annual",
+    "invert": "",
+    "test": ""
   }
-]
 
