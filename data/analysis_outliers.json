@@ -2077,6 +2077,29 @@
     ],
     "low_outliers": []
   },
+  "labor_productivity_per_hour_pennworldtable": {
+    "high_outliers": [
+      {
+        "country": "Ireland",
+        "year": 2023,
+        "value": 158.20854,
+        "z": 4.399
+      },
+      {
+        "country": "Norway",
+        "year": 2023,
+        "value": 130.13191,
+        "z": 3.408
+      },
+      {
+        "country": "Switzerland",
+        "year": 2023,
+        "value": 99.93163,
+        "z": 2.342
+      }
+    ],
+    "low_outliers": []
+  },
   "press_freedom_index": {
     "high_outliers": [],
     "low_outliers": [

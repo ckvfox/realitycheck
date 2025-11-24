@@ -444,9 +444,9 @@
     "labor_productivity_per_hour_pennworldtable": {
       "source": "https://ourworldindata.org/grapher/labor-productivity-per-hour-pennworldtable",
       "url": "",
-      "source_date": "Unknown",
-      "data_year": null,
-      "last_fetch": "2025-11-22T21:41:26Z"
+      "source_date": "2023-01-01",
+      "data_year": 2023,
+      "last_fetch": "2025-11-24T20:02:10Z"
     },
     "general_government_gross_debt_gdp": {
       "source": "IMF Datamapper API",
@@ -461,21 +461,21 @@
       "url": "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls",
       "source_date": "2025-11-24T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2025-11-24T18:22:28Z"
+      "last_fetch": "2025-11-24T20:02:11Z"
     },
     "network_readiness_index": {
       "source": "https://networkreadinessindex.org/",
       "url": "",
       "source_date": "2024-01-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-24T18:22:22Z"
+      "last_fetch": "2025-11-24T19:59:02Z"
     },
     "social_progress_index": {
       "source": "https://www.socialprogress.org/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-24T18:22:25Z"
+      "last_fetch": "2025-11-24T19:59:08Z"
     },
     "intentional_homicides": {
       "source": "https://data.worldbank.org/indicator/VC.IHR.PSRC.P5",
@@ -524,13 +524,13 @@
       "url": "",
       "source_date": "2023-01-01T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2025-11-24T18:22:25Z"
+      "last_fetch": "2025-11-24T19:59:08Z"
     }
   },
   "summary": {
-    "lastRun": "2025-11-24T18:22:28Z",
-    "updated": 15,
-    "skipped": 58,
+    "lastRun": "2025-11-24T20:02:11Z",
+    "updated": 2,
+    "skipped": 0,
     "errors": 0
   }
 }

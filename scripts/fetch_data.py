@@ -792,6 +792,22 @@ def should_fetch_owid(kpi_id: str, meta: dict, fetch_status: dict) -> bool:
     - Sonst → fetch
     """
     prev = fetch_status.get("kpis", {}).get(kpi_id)
+    json_path = DATA_DIR / f"{kpi_id}.json"
+    # Always fetch if output JSON is missing or empty
+    if not json_path.exists():
+        log(f"[CHECK] {kpi_id}: output JSON missing → fetch now")
+        return True
+    try:
+        with open(json_path, "r", encoding="utf-8") as f:
+            import json as _json
+            data = _json.load(f)
+            if not data:
+                log(f"[CHECK] {kpi_id}: output JSON empty → fetch now")
+                return True
+    except Exception:
+        log(f"[CHECK] {kpi_id}: error reading output JSON → fetch now")
+        return True
+
     if not prev:
         log(f"[CHECK] {kpi_id}: no previous record → fetch now")
         return True
