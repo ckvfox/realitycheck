@@ -1,13 +1,13 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1764008784774,
+    "generatedTime": 1764015192785,
     "data": [
         {
             "type": "file",
             "name": ".ftp-deploy-sync-state-data.json",
-            "size": 20732,
-            "hash": "509d82f276142c5f099c17f7d1dd851d4b1f5c424ede8e6debf3eb1463285501"
+            "size": 22420,
+            "hash": "021b18d994e8d028304a0a05ad2ae77d961cf9f7db03563a4fa3a0dd161edfbd"
         },
         {
             "type": "file",
@@ -37,49 +37,49 @@
             "type": "file",
             "name": "all_kpis_index.json",
             "size": 202,
-            "hash": "63448bb861ca034bf8b1c9fe6c53720105075130969355e89955570226ece74e"
+            "hash": "8e608c9bfa50d998fc2e20aed96a9083941d0d8331d6d8ec8c222863a0a993a6"
         },
         {
             "type": "file",
             "name": "all_kpis_part1.json.gz",
             "size": 995353,
-            "hash": "0bd017796ad855a7d03a72065d03bcc65bf0f87a1574733cf7cc284784c74773"
+            "hash": "581819b7e3870cfe11c0823f15e3b626e8790b7ce2db5d31ecf08dd0adceecf5"
         },
         {
             "type": "file",
             "name": "all_kpis_part2.json.gz",
             "size": 1008244,
-            "hash": "3063ff2cab78ec25f0e8ee4ebadf8aca0a66f732986611e59a6bcdfc77ea3347"
+            "hash": "8e6cc50da0de93ac11d9eb9db6a165df4b5a184d7807b9d8fa0ceb7e61e0181e"
         },
         {
             "type": "file",
             "name": "all_kpis_part3.json.gz",
             "size": 702856,
-            "hash": "4c0129f92ee97bd6ff66dddda31c437bad4856f885a82c003fb070dd66ba81bc"
+            "hash": "6ddda3301804231498cc2e930474372e780d8a3a82d9e3b0e68f409cf4c84eb8"
         },
         {
             "type": "file",
             "name": "all_kpis_part4.json.gz",
-            "size": 728449,
-            "hash": "334350b5604d6f1701a4c8136f8d361ee5eb996b654f5a5a146368489fe946b0"
+            "size": 771023,
+            "hash": "572895f5b4188dc8ad15fa3c0d52a3a9aed48204db56e79e92ea3feaf7db8577"
         },
         {
             "type": "file",
             "name": "analysis.json",
-            "size": 4180,
-            "hash": "1a9d0f9bca837b4f713b949084112b6f3c7d32e02567fa3cd46d81e4ac3ea27d"
+            "size": 3751,
+            "hash": "b4b8506d14ccaf85348aa701b1148327130ce2d4b0cd095c8e2c778e20d1417e"
         },
         {
             "type": "file",
             "name": "analysis.md",
-            "size": 4047,
-            "hash": "60bd093b1e3fd62902537c864f39e8101ed8cf5f6b1cfb20498d9f5ace17da34"
+            "size": 3628,
+            "hash": "ee8fb12f28ae916328aaa3d3c23342c0e8d0ef86fa438697244db4a3d49120cb"
         },
         {
             "type": "file",
             "name": "analysis_outliers.json",
-            "size": 53257,
-            "hash": "c0719f24bd805f077bf663194ccb0ad1e4361183ead0a8b371b7ab08d122dc44"
+            "size": 53714,
+            "hash": "07c6eddb62fb6b3c66813ae98d10c7b5919cbcf0992e7878c00bb54d0bd0616e"
         },
         {
             "type": "file",
@@ -162,20 +162,20 @@
         {
             "type": "file",
             "name": "fetch_log.txt",
-            "size": 416535,
-            "hash": "c704a1aa5aad6e0389752fa230d9d2e09e7410d6533dc090206b7f598db5defa"
+            "size": 520875,
+            "hash": "bfaafff753a7e01d2dd3a8147144a9e3a63eb8d31f67849cd8dc5d3bc65355c4"
         },
         {
             "type": "file",
             "name": "fetch_state.json",
             "size": 501,
-            "hash": "90a8992cbd214da5e883cc4879f656393dcfca45f4a14bd960b230c8c513b17a"
+            "hash": "bdaca38e7d0f54e226f66fc849064e69632be07d2412e979fe31e9c1d9a20244"
         },
         {
             "type": "file",
             "name": "fetch_status.json",
-            "size": 18001,
-            "hash": "3bc30a516bf7e733a46b50f9c4b6b3b8c2de0caed006e42d15776613617e9158"
+            "size": 18004,
+            "hash": "7426492a2154230543f1236f7ea860b50c723f87f2753dcb356280f9f00d60a6"
         },
         {
             "type": "file",
@@ -186,8 +186,8 @@
         {
             "type": "file",
             "name": "fun_ranking.json",
-            "size": 2206,
-            "hash": "a9b57f692012293c0c692173ec2fb16f95beb30c4d9a4822c8dbdbdf9c183254"
+            "size": 2133,
+            "hash": "cf96fd1543ae237be084693f113510a057a3f0a470a190c532216118c70f2999"
         },
         {
             "type": "file",
@@ -282,8 +282,8 @@
         {
             "type": "file",
             "name": "immigration_ranking.json",
-            "size": 2186,
-            "hash": "4d606352f9a1bac10c04ccc23acfd354927e513857a8cf33eae9b1f742b010ce"
+            "size": 2198,
+            "hash": "4f2d14fdb5512fc3971bb8792eaf6e9b8551d1cf23a2901b339cc0364d2d31c5"
         },
         {
             "type": "file",
@@ -318,14 +318,14 @@
         {
             "type": "file",
             "name": "kpi_analysis.json",
-            "size": 82002,
-            "hash": "4b4044f91e883e85873e1e68e478b6254087fcdbd21dcff2ae0e5ea4d01c77c1"
+            "size": 83207,
+            "hash": "063797388fe785455bd8c713b4faaf4da0d271ed1156adb96e01bf6365c0ff1b"
         },
         {
             "type": "file",
             "name": "labor_productivity_per_hour_pennworldtable.json",
-            "size": 2,
-            "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            "size": 468252,
+            "hash": "b779f02a81200d82cd8044b99862c8e3a510be42c439ff4b11121ebcadb40098"
         },
         {
             "type": "file",
@@ -358,14 +358,14 @@
             "hash": "186f05b2b99fd1f0056c6fae01345c0678e96d32da6e1c9dd9354f0c2a4efe68"
         },
         {
+            "type": "folder",
+            "name": "meta"
+        },
+        {
             "type": "file",
             "name": "median_age.json",
             "size": 1367586,
             "hash": "08c210feadd9c374e72daf224aef356a0eea5207580520453e60ffe4147f9ad0"
-        },
-        {
-            "type": "folder",
-            "name": "meta"
         },
         {
             "type": "file",
@@ -507,15 +507,15 @@
         },
         {
             "type": "file",
-            "name": "rule_of_law_index.json",
-            "size": 1974341,
-            "hash": "4e157b91af5b59f1d9050237ad6b88875d73cbdc7f41ef516a678fa864cb5e07"
+            "name": "safe_haven_ranking.json",
+            "size": 2027,
+            "hash": "dc35e9cd97996b0222bf573ed4c52c8db1269bab04eb9828d006781dc316fa5d"
         },
         {
             "type": "file",
-            "name": "safe_haven_ranking.json",
-            "size": 1895,
-            "hash": "c3faf4a148142862fb0b5699b177fb0a069994355ccf874ec9f9db9dd40722cd"
+            "name": "rule_of_law_index.json",
+            "size": 1974341,
+            "hash": "4e157b91af5b59f1d9050237ad6b88875d73cbdc7f41ef516a678fa864cb5e07"
         },
         {
             "type": "file",
@@ -579,12 +579,6 @@
         },
         {
             "type": "file",
-            "name": "meta/countries.json",
-            "size": 45024,
-            "hash": "d4a898160af4ca94943c45cc2479d54b084e1492007893e45796353b452882be"
-        },
-        {
-            "type": "file",
             "name": "meta/available_kpis.json",
             "size": 79934,
             "hash": "8ef721244324625bf6c26d3cb74f9e73d95ef77f07cce46a165ee1dd59d5a687"
@@ -597,21 +591,27 @@
         },
         {
             "type": "file",
+            "name": "meta/countries.json",
+            "size": 45024,
+            "hash": "d4a898160af4ca94943c45cc2479d54b084e1492007893e45796353b452882be"
+        },
+        {
+            "type": "file",
             "name": "meta/country_mappings_pending.json",
             "size": 22501,
             "hash": "a4ab144f0362c01d814ef9c37ef908e1bc0c05f1d0e3d74196080dbea3756107"
         },
         {
             "type": "file",
-            "name": "meta/meta_scan_report.txt",
-            "size": 5983,
-            "hash": "58d927719d67b940d686194806106c9ffaf8037503d4eac74d28413ad2a52ac2"
-        },
-        {
-            "type": "file",
             "name": "meta/groups.json",
             "size": 9038,
             "hash": "ca4aa00073c1e074c19edd91931d82043f67f7ff24bcca23923f03b1db8490c7"
+        },
+        {
+            "type": "file",
+            "name": "meta/meta_scan_report.txt",
+            "size": 5983,
+            "hash": "58d927719d67b940d686194806106c9ffaf8037503d4eac74d28413ad2a52ac2"
         },
         {
             "type": "file",
