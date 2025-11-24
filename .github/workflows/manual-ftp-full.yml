@@ -16,29 +16,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: 📄 Prepare full upload file list from ftp_data.txt (mit Platzhalter)
-        id: filelist
-        run: |
-          shopt -s globstar nullglob
-          mkdir -p ftp_full_tmp
-          while IFS= read -r pattern; do
-            for file in $pattern; do
-              if [ -f "$file" ]; then
-                mkdir -p "ftp_full_tmp/$(dirname $file)"
-                cp "$file" "ftp_full_tmp/$file"
-              fi
-            done
-          done < ftp_data.txt
-          echo "FTP full upload file list (mit Platzhalter) vorbereitet."
-
-      - name: FTP Upload (Full, only files from ftp_data.txt)
+      - name: FTP Upload (Full Production)
         uses: SamKirkland/ftp-deploy-action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir: ftp_full_tmp/
+          local-dir: ./
           server-dir: ${{ secrets.FTP_DIR }}/
           dangerous-clean-slate: true
           state-name: .ftp-deploy-sync-state-full.json

@@ -16,33 +16,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: 📄 Prepare sync file list from ftp_data.txt (mit Platzhalter)
-        id: filelist
-        run: |
-          shopt -s globstar nullglob
-          mkdir -p ftp_sync_tmp
-          while IFS= read -r pattern; do
-            for file in $pattern; do
-              if [ -f "$file" ]; then
-                mkdir -p "ftp_sync_tmp/$(dirname $file)"
-                cp "$file" "ftp_sync_tmp/$file"
-              fi
-            done
-          done < ftp_data.txt
-          echo "FTP sync file list (mit Platzhalter) vorbereitet."
-
-      - name: FTP Sync (only files from ftp_data.txt)
+      - name: FTP Sync /data
         uses: SamKirkland/ftp-deploy-action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir: ftp_sync_tmp/
-          server-dir: ${{ secrets.FTP_DIR }}/
+          local-dir: data/
+          server-dir: ${{ secrets.FTP_DIR }}/data/
           state-name: .ftp-deploy-sync-state-data.json
           log-level: verbose
-          dangerous-clean-slate: false
           exclude: |
             **/.git*
             **/.github*

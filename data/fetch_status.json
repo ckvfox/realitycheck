@@ -468,20 +468,69 @@
       "url": "",
       "source_date": "2024-01-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2025-11-23T17:42:41Z"
+      "last_fetch": "2025-11-24T18:18:49Z"
     },
     "social_progress_index": {
       "source": "https://www.socialprogress.org/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2025-11-23T17:42:41Z"
+      "last_fetch": "2025-11-24T18:18:56Z"
+    },
+    "intentional_homicides": {
+      "source": "https://data.worldbank.org/indicator/VC.IHR.PSRC.P5",
+      "url": "",
+      "source_date": "2025-10-07T00:00:00Z",
+      "data_year": 2023,
+      "last_fetch": "2025-11-24T18:06:55Z"
+    },
+    "trade_openness": {
+      "source": "https://data.worldbank.org/indicator/NE.TRD.GNFS.ZS",
+      "url": "",
+      "source_date": "2025-10-07T00:00:00Z",
+      "data_year": 2024,
+      "last_fetch": "2025-11-24T18:07:03Z"
+    },
+    "fdi_inflows_of_gdp": {
+      "source": "https://data.worldbank.org/indicator/BX.KLT.DINV.WD.GD.ZS",
+      "url": "",
+      "source_date": "2025-10-07T00:00:00Z",
+      "data_year": 2024,
+      "last_fetch": "2025-11-24T18:07:07Z"
+    },
+    "water_stress_level": {
+      "source": "https://data.worldbank.org/indicator/ER.H2O.FWST.ZS",
+      "url": "",
+      "source_date": "2025-10-07T00:00:00Z",
+      "data_year": 2022,
+      "last_fetch": "2025-11-24T18:07:12Z"
+    },
+    "universal_health_coverage_index": {
+      "source": "https://data.worldbank.org/indicator/SH.UHC.SRVS.CV",
+      "url": "",
+      "source_date": "Unknown",
+      "data_year": null,
+      "last_fetch": "2025-11-24T18:18:06Z"
+    },
+    "ncd_burden_dalys": {
+      "source": "https://ourworldindata.org/grapher/dalys-rate-from-ncds",
+      "url": "",
+      "source_date": "Unknown",
+      "data_year": null,
+      "last_fetch": "2025-11-24T18:18:08Z"
+    },
+    "lpi_infrastructure": {
+      "source": "https://lpi.worldbank.org/",
+      "url": "",
+      "source_date": "2023-01-01T00:00:00Z",
+      "data_year": 2023,
+      "last_fetch": "2025-11-24T18:18:56Z"
     }
   },
   "summary": {
-    "lastRun": "2025-11-23T17:42:46Z",
-    "updated": 14,
-    "skipped": 54,
+    "lastRun": "2025-11-24T18:18:56Z",
+    "updated": 0,
+    "skipped": 8,
     "errors": 0
   }
 }
