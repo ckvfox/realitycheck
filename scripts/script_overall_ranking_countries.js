@@ -282,11 +282,16 @@ async function buildOverallRanking() {
   const list = Object.entries(aggregated)
     .map(([country, obj]) => ({
       country,
-      score: obj.count > 0 ? obj.sum / obj.count : 0,
+      // base score = Ø of weighted KPIs; final score rewards data coverage
+      baseScore: obj.count > 0 ? obj.sum / obj.count : 0,
       used: obj.count,
       coverage: prioritizedCount ? obj.count / prioritizedCount : 0
     }))
     .filter(r => r.coverage >= 0.6); // Mindestabdeckung 60 %
+
+  list.forEach(entry => {
+    entry.score = entry.baseScore * entry.coverage; // penalize gaps in KPI coverage
+  });
 
   list.sort((a, b) => b.score - a.score);
 
@@ -461,11 +466,12 @@ function renderLegend(prioritizedCount, missing = []) {
 norm = (value - min) / (max - min)
 if sort == "lower": norm = 1 - norm
 weighted = norm × relevance_weight
-score(country) = Σ(weighted) / KPIs_used
+base_score(country) = Σ(weighted) / KPIs_used
+score(country) = base_score × coverage_ratio
       </pre>
       <ul>
         <li>🚫 Only indicators that make sense for such comparison are included.</li>
-        <li>⚖️ Only countries with <b>≥ 60 %</b> KPI coverage appear in the ranking.</li>
+        <li>⚖️ Only countries with <b>≥ 60 %</b> KPI coverage appear in the ranking, and coverage reduces the final score.</li>
         <li>🥇 Top 10 rows highlighted green 💔 Bottom 10 red</li>
       </ul>
       <p><b>${prioritizedCount}</b> KPIs with data included in calculation.</p>
