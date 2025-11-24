@@ -2546,6 +2546,152 @@
       }
     ]
   },
+  "intentional_homicides": {
+    "high_outliers": [
+      {
+        "country": "Saint Kitts and Nevis",
+        "year": 2023,
+        "value": 64.1601437187219,
+        "z": 5.166
+      },
+      {
+        "country": "Saint Vincent-Grenadines",
+        "year": 2023,
+        "value": 51.3212761232698,
+        "z": 4.004
+      },
+      {
+        "country": "Jamaica",
+        "year": 2023,
+        "value": 49.4403451527686,
+        "z": 3.834
+      },
+      {
+        "country": "Ecuador",
+        "year": 2023,
+        "value": 45.7228145164847,
+        "z": 3.498
+      },
+      {
+        "country": "South Africa",
+        "year": 2022,
+        "value": 43.7202551331462,
+        "z": 3.316
+      },
+      {
+        "country": "Haiti",
+        "year": 2023,
+        "value": 41.1518089717388,
+        "z": 3.084
+      },
+      {
+        "country": "Trinidad and Tobago",
+        "year": 2022,
+        "value": 40.4432986623964,
+        "z": 3.02
+      },
+      {
+        "country": "Saint Lucia",
+        "year": 2023,
+        "value": 39.0440891432332,
+        "z": 2.893
+      },
+      {
+        "country": "Lesotho",
+        "year": 2008,
+        "value": 38.2397413122181,
+        "z": 2.82
+      },
+      {
+        "country": "Bahamas",
+        "year": 2022,
+        "value": 32.1981392997156,
+        "z": 2.274
+      }
+    ],
+    "low_outliers": []
+  },
+  "trade_openness": {
+    "high_outliers": [
+      {
+        "country": "Luxembourg",
+        "year": 2024,
+        "value": 398.227930959521,
+        "z": 5.306
+      },
+      {
+        "country": "San Marino",
+        "year": 2022,
+        "value": 370.436071813414,
+        "z": 4.824
+      },
+      {
+        "country": "Singapore",
+        "year": 2024,
+        "value": 322.371427934716,
+        "z": 3.991
+      },
+      {
+        "country": "Djibouti",
+        "year": 2024,
+        "value": 309.051384670777,
+        "z": 3.76
+      },
+      {
+        "country": "Ireland",
+        "year": 2024,
+        "value": 252.96292526246,
+        "z": 2.787
+      },
+      {
+        "country": "Malta",
+        "year": 2024,
+        "value": 229.548280014917,
+        "z": 2.381
+      }
+    ],
+    "low_outliers": []
+  },
+  "fdi_inflows_of_gdp": {
+    "high_outliers": [],
+    "low_outliers": [
+      {
+        "country": "Liechtenstein",
+        "year": 2018,
+        "value": -1303.10826691135,
+        "z": -13.623
+      }
+    ]
+  },
+  "water_stress_level": {
+    "high_outliers": [
+      {
+        "country": "Kuwait",
+        "year": 2022,
+        "value": 3850.5,
+        "z": 11.724
+      },
+      {
+        "country": "United Arab Emirates",
+        "year": 2022,
+        "value": 1509.933333,
+        "z": 4.468
+      },
+      {
+        "country": "Saudi Arabia",
+        "year": 2022,
+        "value": 974.1666667,
+        "z": 2.807
+      },
+      {
+        "country": "Libya",
+        "year": 2022,
+        "value": 817.1428571,
+        "z": 2.32
+      }
+    ],
+    "low_outliers": []
+  },
   "social_progress_index": {
     "high_outliers": [],
     "low_outliers": [
@@ -2574,5 +2720,46 @@
         "z": -2.013
       }
     ]
+  },
+  "lpi_infrastructure": {
+    "high_outliers": [
+      {
+        "country": "Singapore",
+        "year": 2023,
+        "value": 4.3,
+        "z": 2.376
+      },
+      {
+        "country": "Finland",
+        "year": 2023,
+        "value": 4.2,
+        "z": 2.198
+      },
+      {
+        "country": "Denmark",
+        "year": 2023,
+        "value": 4.1,
+        "z": 2.02
+      },
+      {
+        "country": "Germany",
+        "year": 2023,
+        "value": 4.1,
+        "z": 2.02
+      },
+      {
+        "country": "Netherlands",
+        "year": 2023,
+        "value": 4.1,
+        "z": 2.02
+      },
+      {
+        "country": "Switzerland",
+        "year": 2023,
+        "value": 4.1,
+        "z": 2.02
+      }
+    ],
+    "low_outliers": []
   }
 }

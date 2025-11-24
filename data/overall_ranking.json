@@ -4,16 +4,12 @@
     "ranks": {
       "gini_index": 1,
       "unemployment_rate": 91,
-      "extreme_poverty": 48,
-      "access_to_basic_drinking_water": 44,
-      "railway_length": 43,
       "inflation_consumer_price_index": 73,
       "employment_to_population_ratio": 93,
       "female_labor_force_participation": 76,
       "education_expenditure_of_gdp": 74,
       "democracy_index": 42,
       "human_development_index_hdi": 43,
-      "physicians_per_1_000_people": 33,
       "political_corruption_index": 57,
       "general_government_gross_debt_gdp": 110,
       "big_mac_index": 27,
@@ -22,49 +18,47 @@
       "inform_resilience_index": 60,
       "pisa_overall_score": 38,
       "network_readiness_index": 44,
-      "social_progress_index": 31
+      "intentional_homicides": 50,
+      "water_stress_level": 35,
+      "social_progress_index": 31,
+      "lpi_infrastructure": 49
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Belarus",
     "ranks": {
       "gini_index": 2,
       "unemployment_rate": 52,
-      "extreme_poverty": 3,
-      "access_to_basic_drinking_water": 57,
-      "railway_length": 28,
       "inflation_consumer_price_index": 136,
       "employment_to_population_ratio": 66,
       "female_labor_force_participation": 64,
       "education_expenditure_of_gdp": 63,
       "democracy_index": 152,
       "human_development_index_hdi": 64,
-      "physicians_per_1_000_people": 15,
       "political_corruption_index": 77,
       "general_government_gross_debt_gdp": 46,
       "environmental_performance_index": 55,
       "global_peace_index": 119,
       "inform_resilience_index": 46,
-      "social_progress_index": 55
+      "intentional_homicides": 86,
+      "water_stress_level": 53,
+      "social_progress_index": 55,
+      "lpi_infrastructure": 99
     },
-    "kpi_count": 18
+    "kpi_count": 17
   },
   {
     "country": "Slovenia",
     "ranks": {
       "gini_index": 3,
       "unemployment_rate": 51,
-      "extreme_poverty": 12,
-      "access_to_basic_drinking_water": 53,
-      "railway_length": 77,
       "inflation_consumer_price_index": 47,
       "employment_to_population_ratio": 101,
       "female_labor_force_participation": 88,
       "education_expenditure_of_gdp": 47,
       "democracy_index": 30,
       "human_development_index_hdi": 20,
-      "physicians_per_1_000_people": 46,
       "political_corruption_index": 22,
       "general_government_gross_debt_gdp": 128,
       "big_mac_index": 14,
@@ -73,52 +67,49 @@
       "inform_resilience_index": 43,
       "pisa_overall_score": 20,
       "network_readiness_index": 32,
-      "social_progress_index": 18
+      "intentional_homicides": 14,
+      "water_stress_level": 59,
+      "social_progress_index": 18,
+      "lpi_infrastructure": 50
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "India",
     "ranks": {
       "gini_index": 4,
       "unemployment_rate": 67,
-      "extreme_poverty": 99,
-      "access_to_basic_drinking_water": 123,
-      "railway_length": 4,
       "inflation_consumer_price_index": 131,
       "employment_to_population_ratio": 121,
       "female_labor_force_participation": 156,
       "education_expenditure_of_gdp": 95,
       "democracy_index": 41,
       "human_development_index_hdi": 130,
-      "physicians_per_1_000_people": 131,
       "political_corruption_index": 112,
-      "electric_vehicle_stock": 21,
       "general_government_gross_debt_gdp": 150,
       "big_mac_index": 4,
       "environmental_performance_index": 180,
       "global_peace_index": 115,
       "inform_resilience_index": 159,
       "network_readiness_index": 47,
-      "social_progress_index": 100
+      "intentional_homicides": 94,
+      "water_stress_level": 151,
+      "social_progress_index": 100,
+      "lpi_infrastructure": 39
     },
-    "kpi_count": 21
+    "kpi_count": 19
   },
   {
     "country": "Ukraine",
     "ranks": {
       "gini_index": 5,
       "unemployment_rate": 141,
-      "extreme_poverty": 14,
-      "access_to_basic_drinking_water": 121,
-      "railway_length": 9,
       "inflation_consumer_price_index": 142,
       "employment_to_population_ratio": 139,
       "female_labor_force_participation": 121,
       "education_expenditure_of_gdp": 57,
       "democracy_index": 92,
       "human_development_index_hdi": 85,
-      "physicians_per_1_000_people": 56,
       "political_corruption_index": 101,
       "general_government_gross_debt_gdp": 174,
       "big_mac_index": 7,
@@ -127,26 +118,24 @@
       "inform_resilience_index": 161,
       "pisa_overall_score": 41,
       "network_readiness_index": 41,
-      "social_progress_index": 53
+      "intentional_homicides": 105,
+      "water_stress_level": 66,
+      "social_progress_index": 53,
+      "lpi_infrastructure": 107
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Czechia",
     "ranks": {
       "gini_index": 6,
       "unemployment_rate": 23,
-      "extreme_poverty": 7,
-      "access_to_basic_drinking_water": 42,
-      "railway_length": 22,
       "inflation_consumer_price_index": 66,
       "employment_to_population_ratio": 85,
       "female_labor_force_participation": 91,
       "education_expenditure_of_gdp": 87,
       "democracy_index": 23,
       "human_development_index_hdi": 28,
-      "physicians_per_1_000_people": 21,
-      "homelessness_rate": 16,
       "political_corruption_index": 29,
       "general_government_gross_debt_gdp": 69,
       "big_mac_index": 42,
@@ -155,52 +144,49 @@
       "inform_resilience_index": 13,
       "pisa_overall_score": 14,
       "network_readiness_index": 26,
-      "social_progress_index": 17
+      "intentional_homicides": 28,
+      "water_stress_level": 112,
+      "social_progress_index": 17,
+      "lpi_infrastructure": 45
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Netherlands",
     "ranks": {
       "gini_index": 7,
       "unemployment_rate": 57,
-      "extreme_poverty": 24,
-      "access_to_basic_drinking_water": 31,
-      "railway_length": 50,
       "inflation_consumer_price_index": 102,
       "employment_to_population_ratio": 36,
       "female_labor_force_participation": 28,
       "education_expenditure_of_gdp": 54,
       "democracy_index": 9,
       "human_development_index_hdi": 8,
-      "physicians_per_1_000_people": 27,
       "political_corruption_index": 5,
-      "electric_vehicle_stock": 7,
       "general_government_gross_debt_gdp": 70,
       "big_mac_index": 44,
       "environmental_performance_index": 11,
       "global_peace_index": 15,
       "inform_resilience_index": 40,
       "pisa_overall_score": 24,
-      "network_readiness_index": 5
+      "network_readiness_index": 5,
+      "intentional_homicides": 22,
+      "water_stress_level": 105,
+      "lpi_infrastructure": 5
     },
-    "kpi_count": 21
+    "kpi_count": 19
   },
   {
     "country": "United Arab Emirates",
     "ranks": {
       "gini_index": 8,
       "unemployment_rate": 16,
-      "extreme_poverty": 15,
-      "access_to_basic_drinking_water": 23,
-      "railway_length": 112,
       "inflation_consumer_price_index": 41,
       "employment_to_population_ratio": 12,
       "female_labor_force_participation": 83,
       "education_expenditure_of_gdp": 106,
       "democracy_index": 119,
       "human_development_index_hdi": 14,
-      "physicians_per_1_000_people": 60,
       "political_corruption_index": 31,
       "general_government_gross_debt_gdp": 41,
       "big_mac_index": 52,
@@ -208,28 +194,25 @@
       "global_peace_index": 53,
       "inform_resilience_index": 19,
       "pisa_overall_score": 46,
-      "network_readiness_index": 27
+      "network_readiness_index": 27,
+      "intentional_homicides": 23,
+      "water_stress_level": 176,
+      "lpi_infrastructure": 12
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Norway",
     "ranks": {
       "gini_index": 9,
       "unemployment_rate": 61,
-      "extreme_poverty": 32,
-      "access_to_basic_drinking_water": 17,
-      "railway_length": 41,
       "inflation_consumer_price_index": 92,
       "employment_to_population_ratio": 51,
       "female_labor_force_participation": 37,
       "education_expenditure_of_gdp": 39,
       "democracy_index": 1,
       "human_development_index_hdi": 2,
-      "physicians_per_1_000_people": 8,
-      "homelessness_rate": 1,
       "political_corruption_index": 4,
-      "electric_vehicle_stock": 8,
       "general_government_gross_debt_gdp": 66,
       "big_mac_index": 68,
       "environmental_performance_index": 20,
@@ -237,25 +220,24 @@
       "inform_resilience_index": 16,
       "pisa_overall_score": 32,
       "network_readiness_index": 13,
-      "social_progress_index": 2
+      "intentional_homicides": 26,
+      "water_stress_level": 29,
+      "social_progress_index": 2,
+      "lpi_infrastructure": 22
     },
-    "kpi_count": 23
+    "kpi_count": 20
   },
   {
     "country": "Azerbaijan",
     "ranks": {
       "gini_index": 10,
       "unemployment_rate": 104,
-      "extreme_poverty": 2,
-      "access_to_basic_drinking_water": 87,
-      "railway_length": 62,
       "inflation_consumer_price_index": 58,
       "employment_to_population_ratio": 77,
       "female_labor_force_participation": 45,
       "education_expenditure_of_gdp": 115,
       "democracy_index": 126,
       "human_development_index_hdi": 79,
-      "physicians_per_1_000_people": 53,
       "political_corruption_index": 167,
       "general_government_gross_debt_gdp": 16,
       "big_mac_index": 21,
@@ -263,49 +245,46 @@
       "global_peace_index": 95,
       "inform_resilience_index": 125,
       "network_readiness_index": 72,
-      "social_progress_index": 89
+      "intentional_homicides": 79,
+      "water_stress_level": 146,
+      "social_progress_index": 89,
+      "lpi_infrastructure": 119
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Syria",
     "ranks": {
       "gini_index": 11,
       "unemployment_rate": 157,
-      "extreme_poverty": 125,
-      "access_to_basic_drinking_water": 119,
-      "railway_length": 61,
       "inflation_consumer_price_index": 164,
       "employment_to_population_ratio": 172,
       "female_labor_force_participation": 176,
       "education_expenditure_of_gdp": 58,
       "democracy_index": 163,
       "human_development_index_hdi": 161,
-      "physicians_per_1_000_people": 111,
       "political_corruption_index": 126,
       "general_government_gross_debt_gdp": 30,
       "global_peace_index": 157,
-      "inform_resilience_index": 182
+      "inform_resilience_index": 182,
+      "intentional_homicides": 77,
+      "water_stress_level": 166,
+      "lpi_infrastructure": 157
     },
-    "kpi_count": 16
+    "kpi_count": 15
   },
   {
     "country": "Belgium",
     "ranks": {
       "gini_index": 12,
       "unemployment_rate": 101,
-      "extreme_poverty": 16,
-      "access_to_basic_drinking_water": 2,
-      "railway_length": 44,
       "inflation_consumer_price_index": 91,
       "employment_to_population_ratio": 129,
       "female_labor_force_participation": 114,
       "education_expenditure_of_gdp": 21,
       "democracy_index": 34,
       "human_development_index_hdi": 9,
-      "physicians_per_1_000_people": 49,
       "political_corruption_index": 15,
-      "electric_vehicle_stock": 10,
       "general_government_gross_debt_gdp": 173,
       "big_mac_index": 48,
       "environmental_performance_index": 21,
@@ -313,148 +292,139 @@
       "inform_resilience_index": 44,
       "pisa_overall_score": 19,
       "network_readiness_index": 20,
-      "social_progress_index": 12
+      "intentional_homicides": 45,
+      "water_stress_level": 144,
+      "social_progress_index": 12,
+      "lpi_infrastructure": 9
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Iceland",
     "ranks": {
       "gini_index": 13,
       "unemployment_rate": 44,
-      "extreme_poverty": 18,
-      "access_to_basic_drinking_water": 9,
       "inflation_consumer_price_index": 137,
       "employment_to_population_ratio": 18,
       "female_labor_force_participation": 16,
       "education_expenditure_of_gdp": 12,
       "democracy_index": 4,
       "human_development_index_hdi": 1,
-      "physicians_per_1_000_people": 12,
-      "homelessness_rate": 14,
       "political_corruption_index": 7,
-      "electric_vehicle_stock": 29,
       "general_government_gross_debt_gdp": 77,
       "environmental_performance_index": 10,
       "global_peace_index": 1,
       "inform_resilience_index": 8,
       "pisa_overall_score": 39,
       "network_readiness_index": 24,
-      "social_progress_index": 4
+      "intentional_homicides": 56,
+      "water_stress_level": 10,
+      "social_progress_index": 4,
+      "lpi_infrastructure": 27
     },
-    "kpi_count": 21
+    "kpi_count": 19
   },
   {
     "country": "Moldova",
     "ranks": {
       "gini_index": 14,
       "unemployment_rate": 10,
-      "extreme_poverty": 23,
-      "access_to_basic_drinking_water": 127,
-      "railway_length": 78,
       "inflation_consumer_price_index": 128,
       "employment_to_population_ratio": 21,
       "female_labor_force_participation": 17,
       "education_expenditure_of_gdp": 15,
       "democracy_index": 71,
       "human_development_index_hdi": 84,
-      "physicians_per_1_000_people": 48,
       "political_corruption_index": 65,
       "general_government_gross_debt_gdp": 51,
       "big_mac_index": 18,
       "environmental_performance_index": 84,
       "global_peace_index": 66,
       "inform_resilience_index": 103,
-      "pisa_overall_score": 50
+      "pisa_overall_score": 50,
+      "intentional_homicides": 89,
+      "water_stress_level": 96,
+      "lpi_infrastructure": 132
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Tonga",
     "ranks": {
       "gini_index": 15,
       "unemployment_rate": 19,
-      "extreme_poverty": 43,
-      "access_to_basic_drinking_water": 68,
       "inflation_consumer_price_index": 94,
       "employment_to_population_ratio": 133,
       "female_labor_force_participation": 135,
       "education_expenditure_of_gdp": 46,
       "human_development_index_hdi": 90,
-      "physicians_per_1_000_people": 117,
       "general_government_gross_debt_gdp": 36,
       "environmental_performance_index": 80,
-      "inform_resilience_index": 94
+      "inform_resilience_index": 94,
+      "intentional_homicides": 40
     },
-    "kpi_count": 13
+    "kpi_count": 11
   },
   {
     "country": "Armenia",
     "ranks": {
       "gini_index": 16,
       "unemployment_rate": 159,
-      "extreme_poverty": 74,
-      "access_to_basic_drinking_water": 34,
-      "railway_length": 95,
       "inflation_consumer_price_index": 4,
       "employment_to_population_ratio": 119,
       "female_labor_force_participation": 69,
       "education_expenditure_of_gdp": 162,
       "democracy_index": 82,
       "human_development_index_hdi": 68,
-      "physicians_per_1_000_people": 52,
       "political_corruption_index": 69,
       "general_government_gross_debt_gdp": 92,
       "environmental_performance_index": 56,
       "global_peace_index": 58,
       "inform_resilience_index": 76,
       "network_readiness_index": 64,
-      "social_progress_index": 45
+      "intentional_homicides": 80,
+      "water_stress_level": 150,
+      "social_progress_index": 45,
+      "lpi_infrastructure": 123
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Kyrgyzstan",
     "ranks": {
       "gini_index": 17,
       "unemployment_rate": 49,
-      "extreme_poverty": 84,
-      "access_to_basic_drinking_water": 131,
-      "railway_length": 108,
       "inflation_consumer_price_index": 159,
       "employment_to_population_ratio": 45,
       "female_labor_force_participation": 94,
       "education_expenditure_of_gdp": 13,
       "democracy_index": 111,
       "human_development_index_hdi": 117,
-      "physicians_per_1_000_people": 85,
       "political_corruption_index": 140,
       "general_government_gross_debt_gdp": 50,
       "environmental_performance_index": 126,
       "global_peace_index": 78,
       "inform_resilience_index": 99,
       "network_readiness_index": 82,
-      "social_progress_index": 78
+      "intentional_homicides": 69,
+      "water_stress_level": 140,
+      "social_progress_index": 78,
+      "lpi_infrastructure": 154
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Finland",
     "ranks": {
       "gini_index": 18,
       "unemployment_rate": 130,
-      "extreme_poverty": 29,
-      "access_to_basic_drinking_water": 5,
-      "railway_length": 26,
       "inflation_consumer_price_index": 38,
       "employment_to_population_ratio": 109,
       "female_labor_force_participation": 59,
       "education_expenditure_of_gdp": 19,
       "democracy_index": 6,
       "human_development_index_hdi": 11,
-      "physicians_per_1_000_people": 18,
       "political_corruption_index": 9,
-      "electric_vehicle_stock": 20,
       "general_government_gross_debt_gdp": 152,
       "big_mac_index": 61,
       "environmental_performance_index": 3,
@@ -462,71 +432,71 @@
       "inform_resilience_index": 15,
       "pisa_overall_score": 10,
       "network_readiness_index": 2,
-      "social_progress_index": 3
+      "intentional_homicides": 41,
+      "water_stress_level": 72,
+      "social_progress_index": 3,
+      "lpi_infrastructure": 2
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Algeria",
     "ranks": {
       "gini_index": 19,
       "unemployment_rate": 150,
-      "extreme_poverty": 1,
-      "access_to_basic_drinking_water": 112,
-      "railway_length": 39,
       "inflation_consumer_price_index": 113,
       "employment_to_population_ratio": 167,
       "female_labor_force_participation": 173,
       "education_expenditure_of_gdp": 35,
       "democracy_index": 110,
       "human_development_index_hdi": 94,
-      "physicians_per_1_000_people": 118,
       "political_corruption_index": 111,
       "general_government_gross_debt_gdp": 95,
       "environmental_performance_index": 156,
       "global_peace_index": 92,
       "inform_resilience_index": 96,
       "network_readiness_index": 96,
-      "social_progress_index": 87
+      "intentional_homicides": 53,
+      "water_stress_level": 171,
+      "social_progress_index": 87,
+      "lpi_infrastructure": 122
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Kiribati",
     "ranks": {
       "gini_index": 20,
-      "extreme_poverty": 104,
-      "access_to_basic_drinking_water": 158,
       "inflation_consumer_price_index": 155,
       "education_expenditure_of_gdp": 1,
       "human_development_index_hdi": 139,
-      "physicians_per_1_000_people": 162,
       "general_government_gross_debt_gdp": 6,
       "environmental_performance_index": 54,
-      "inform_resilience_index": 100
+      "inform_resilience_index": 100,
+      "intentional_homicides": 135
     },
-    "kpi_count": 10
+    "kpi_count": 8
   },
   {
     "country": "Bhutan",
     "ranks": {
       "gini_index": 21,
       "unemployment_rate": 33,
-      "extreme_poverty": 4,
-      "access_to_basic_drinking_water": 59,
       "inflation_consumer_price_index": 74,
       "employment_to_population_ratio": 48,
       "female_labor_force_participation": 67,
       "education_expenditure_of_gdp": 31,
       "democracy_index": 79,
       "human_development_index_hdi": 124,
-      "physicians_per_1_000_people": 137,
       "political_corruption_index": 34,
       "general_government_gross_debt_gdp": 171,
       "environmental_performance_index": 85,
       "global_peace_index": 21,
       "inform_resilience_index": 63,
-      "social_progress_index": 83
+      "intentional_homicides": 87,
+      "water_stress_level": 20,
+      "social_progress_index": 83,
+      "lpi_infrastructure": 124
     },
     "kpi_count": 17
   },
@@ -535,16 +505,12 @@
     "ranks": {
       "gini_index": 22,
       "unemployment_rate": 118,
-      "extreme_poverty": 70,
-      "access_to_basic_drinking_water": 69,
-      "railway_length": 30,
       "inflation_consumer_price_index": 174,
       "employment_to_population_ratio": 160,
       "female_labor_force_participation": 171,
       "education_expenditure_of_gdp": 110,
       "democracy_index": 129,
       "human_development_index_hdi": 99,
-      "physicians_per_1_000_people": 133,
       "political_corruption_index": 124,
       "general_government_gross_debt_gdp": 153,
       "big_mac_index": 5,
@@ -552,28 +518,25 @@
       "global_peace_index": 107,
       "inform_resilience_index": 120,
       "network_readiness_index": 81,
-      "social_progress_index": 97
+      "intentional_homicides": 57,
+      "water_stress_level": 170,
+      "social_progress_index": 97,
+      "lpi_infrastructure": 66
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Poland",
     "ranks": {
       "gini_index": 23,
       "unemployment_rate": 22,
-      "extreme_poverty": 33,
-      "access_to_basic_drinking_water": 133,
-      "railway_length": 12,
       "inflation_consumer_price_index": 111,
       "employment_to_population_ratio": 98,
       "female_labor_force_participation": 106,
       "education_expenditure_of_gdp": 86,
       "democracy_index": 39,
       "human_development_index_hdi": 34,
-      "physicians_per_1_000_people": 43,
-      "homelessness_rate": 6,
       "political_corruption_index": 28,
-      "electric_vehicle_stock": 26,
       "general_government_gross_debt_gdp": 113,
       "big_mac_index": 57,
       "environmental_performance_index": 46,
@@ -581,30 +544,33 @@
       "inform_resilience_index": 42,
       "pisa_overall_score": 13,
       "network_readiness_index": 30,
-      "social_progress_index": 32
+      "intentional_homicides": 30,
+      "water_stress_level": 126,
+      "social_progress_index": 32,
+      "lpi_infrastructure": 33
     },
-    "kpi_count": 23
+    "kpi_count": 20
   },
   {
     "country": "Timor-Leste",
     "ranks": {
       "gini_index": 24,
       "unemployment_rate": 13,
-      "extreme_poverty": 156,
-      "access_to_basic_drinking_water": 139,
       "inflation_consumer_price_index": 51,
       "employment_to_population_ratio": 34,
       "female_labor_force_participation": 43,
       "education_expenditure_of_gdp": 51,
       "democracy_index": 46,
       "human_development_index_hdi": 141,
-      "physicians_per_1_000_people": 128,
       "political_corruption_index": 46,
       "general_government_gross_debt_gdp": 11,
       "environmental_performance_index": 129,
       "global_peace_index": 44,
       "inform_resilience_index": 106,
-      "social_progress_index": 101
+      "intentional_homicides": 107,
+      "water_stress_level": 121,
+      "social_progress_index": 101,
+      "lpi_infrastructure": 159
     },
     "kpi_count": 17
   },
@@ -613,16 +579,12 @@
     "ranks": {
       "gini_index": 25,
       "unemployment_rate": 70,
-      "extreme_poverty": 19,
-      "access_to_basic_drinking_water": 99,
-      "railway_length": 71,
       "inflation_consumer_price_index": 53,
       "employment_to_population_ratio": 56,
       "female_labor_force_participation": 47,
       "education_expenditure_of_gdp": 144,
       "democracy_index": 8,
       "human_development_index_hdi": 10,
-      "physicians_per_1_000_people": 24,
       "political_corruption_index": 16,
       "general_government_gross_debt_gdp": 40,
       "big_mac_index": 54,
@@ -631,25 +593,24 @@
       "inform_resilience_index": 22,
       "pisa_overall_score": 7,
       "network_readiness_index": 18,
-      "social_progress_index": 11
+      "intentional_homicides": 19,
+      "water_stress_level": 79,
+      "social_progress_index": 11,
+      "lpi_infrastructure": 28
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Kazakhstan",
     "ranks": {
       "gini_index": 26,
       "unemployment_rate": 81,
-      "extreme_poverty": 8,
-      "access_to_basic_drinking_water": 106,
-      "railway_length": 16,
       "inflation_consumer_price_index": 152,
       "employment_to_population_ratio": 26,
       "female_labor_force_participation": 22,
       "education_expenditure_of_gdp": 68,
       "democracy_index": 118,
       "human_development_index_hdi": 60,
-      "physicians_per_1_000_people": 25,
       "political_corruption_index": 117,
       "general_government_gross_debt_gdp": 22,
       "environmental_performance_index": 93,
@@ -657,28 +618,31 @@
       "inform_resilience_index": 55,
       "pisa_overall_score": 51,
       "network_readiness_index": 59,
-      "social_progress_index": 57
+      "intentional_homicides": 90,
+      "water_stress_level": 129,
+      "social_progress_index": 57,
+      "lpi_infrastructure": 103
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Maldives",
     "ranks": {
       "gini_index": 27,
       "unemployment_rate": 78,
-      "extreme_poverty": 10,
-      "access_to_basic_drinking_water": 51,
       "inflation_consumer_price_index": 34,
       "employment_to_population_ratio": 68,
       "female_labor_force_participation": 142,
       "education_expenditure_of_gdp": 55,
       "human_development_index_hdi": 91,
-      "physicians_per_1_000_people": 83,
       "political_corruption_index": 76,
       "general_government_gross_debt_gdp": 180,
       "environmental_performance_index": 114,
       "inform_resilience_index": 28,
-      "social_progress_index": 68
+      "intentional_homicides": 17,
+      "water_stress_level": 103,
+      "social_progress_index": 68,
+      "lpi_infrastructure": 43
     },
     "kpi_count": 15
   },
@@ -687,19 +651,13 @@
     "ranks": {
       "gini_index": 28,
       "unemployment_rate": 134,
-      "extreme_poverty": 59,
-      "access_to_basic_drinking_water": 46,
-      "railway_length": 20,
       "inflation_consumer_price_index": 77,
       "employment_to_population_ratio": 76,
       "female_labor_force_participation": 38,
       "education_expenditure_of_gdp": 11,
       "democracy_index": 3,
       "human_development_index_hdi": 6,
-      "physicians_per_1_000_people": 19,
-      "homelessness_rate": 5,
       "political_corruption_index": 2,
-      "electric_vehicle_stock": 11,
       "general_government_gross_debt_gdp": 43,
       "big_mac_index": 64,
       "environmental_performance_index": 5,
@@ -707,25 +665,24 @@
       "inform_resilience_index": 26,
       "pisa_overall_score": 17,
       "network_readiness_index": 3,
-      "social_progress_index": 5
+      "intentional_homicides": 52,
+      "water_stress_level": 43,
+      "social_progress_index": 5,
+      "lpi_infrastructure": 11
     },
-    "kpi_count": 23
+    "kpi_count": 20
   },
   {
     "country": "Albania",
     "ranks": {
       "gini_index": 29,
       "unemployment_rate": 144,
-      "extreme_poverty": 36,
-      "access_to_basic_drinking_water": 108,
-      "railway_length": 107,
       "inflation_consumer_price_index": 59,
       "employment_to_population_ratio": 114,
       "female_labor_force_participation": 87,
       "education_expenditure_of_gdp": 140,
       "democracy_index": 66,
       "human_development_index_hdi": 70,
-      "physicians_per_1_000_people": 91,
       "political_corruption_index": 104,
       "general_government_gross_debt_gdp": 96,
       "environmental_performance_index": 62,
@@ -733,48 +690,46 @@
       "inform_resilience_index": 62,
       "pisa_overall_score": 69,
       "network_readiness_index": 80,
-      "social_progress_index": 51
+      "intentional_homicides": 60,
+      "water_stress_level": 55,
+      "social_progress_index": 51,
+      "lpi_infrastructure": 121
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Guinea",
     "ranks": {
       "gini_index": 30,
       "unemployment_rate": 90,
-      "extreme_poverty": 118,
-      "access_to_basic_drinking_water": 165,
       "inflation_consumer_price_index": 149,
       "employment_to_population_ratio": 138,
       "female_labor_force_participation": 137,
       "education_expenditure_of_gdp": 182,
       "democracy_index": 149,
       "human_development_index_hdi": 178,
-      "physicians_per_1_000_people": 194,
       "political_corruption_index": 162,
       "general_government_gross_debt_gdp": 63,
       "environmental_performance_index": 146,
       "global_peace_index": 118,
       "inform_resilience_index": 138,
-      "social_progress_index": 143
+      "water_stress_level": 19,
+      "social_progress_index": 143,
+      "lpi_infrastructure": 129
     },
-    "kpi_count": 17
+    "kpi_count": 16
   },
   {
     "country": "Pakistan",
     "ranks": {
       "gini_index": 31,
       "unemployment_rate": 97,
-      "extreme_poverty": 124,
-      "access_to_basic_drinking_water": 132,
-      "railway_length": 24,
       "inflation_consumer_price_index": 163,
       "employment_to_population_ratio": 136,
       "female_labor_force_participation": 165,
       "education_expenditure_of_gdp": 176,
       "democracy_index": 125,
       "human_development_index_hdi": 167,
-      "physicians_per_1_000_people": 114,
       "political_corruption_index": 145,
       "general_government_gross_debt_gdp": 136,
       "big_mac_index": 24,
@@ -782,49 +737,47 @@
       "global_peace_index": 144,
       "inform_resilience_index": 170,
       "network_readiness_index": 93,
-      "social_progress_index": 121
+      "intentional_homicides": 110,
+      "water_stress_level": 162,
+      "social_progress_index": 121,
+      "lpi_infrastructure": 108
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Iraq",
     "ranks": {
       "gini_index": 32,
       "unemployment_rate": 164,
-      "extreme_poverty": 46,
-      "access_to_basic_drinking_water": 77,
-      "railway_length": 58,
       "inflation_consumer_price_index": 162,
       "employment_to_population_ratio": 169,
       "female_labor_force_participation": 177,
       "education_expenditure_of_gdp": 118,
       "democracy_index": 127,
       "human_development_index_hdi": 126,
-      "physicians_per_1_000_people": 116,
       "political_corruption_index": 157,
       "general_government_gross_debt_gdp": 89,
       "environmental_performance_index": 169,
       "global_peace_index": 147,
       "inform_resilience_index": 164,
-      "social_progress_index": 102
+      "intentional_homicides": 143,
+      "water_stress_level": 148,
+      "social_progress_index": 102,
+      "lpi_infrastructure": 143
     },
-    "kpi_count": 18
+    "kpi_count": 17
   },
   {
     "country": "Romania",
     "ranks": {
       "gini_index": 33,
       "unemployment_rate": 93,
-      "extreme_poverty": 53,
-      "access_to_basic_drinking_water": 29,
-      "railway_length": 18,
       "inflation_consumer_price_index": 135,
       "employment_to_population_ratio": 143,
       "female_labor_force_participation": 133,
       "education_expenditure_of_gdp": 130,
       "democracy_index": 72,
       "human_development_index_hdi": 55,
-      "physicians_per_1_000_people": 40,
       "political_corruption_index": 70,
       "general_government_gross_debt_gdp": 115,
       "big_mac_index": 15,
@@ -833,28 +786,25 @@
       "inform_resilience_index": 66,
       "pisa_overall_score": 45,
       "network_readiness_index": 55,
-      "social_progress_index": 40
+      "intentional_homicides": 47,
+      "water_stress_level": 74,
+      "social_progress_index": 40,
+      "lpi_infrastructure": 59
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Denmark",
     "ranks": {
       "gini_index": 34,
       "unemployment_rate": 103,
-      "extreme_poverty": 39,
-      "access_to_basic_drinking_water": 3,
-      "railway_length": 63,
       "inflation_consumer_price_index": 33,
       "employment_to_population_ratio": 71,
       "female_labor_force_participation": 49,
       "education_expenditure_of_gdp": 20,
       "democracy_index": 7,
       "human_development_index_hdi": 4,
-      "physicians_per_1_000_people": 17,
-      "homelessness_rate": 8,
       "political_corruption_index": 1,
-      "electric_vehicle_stock": 15,
       "general_government_gross_debt_gdp": 29,
       "big_mac_index": 63,
       "environmental_performance_index": 1,
@@ -862,31 +812,34 @@
       "inform_resilience_index": 6,
       "pisa_overall_score": 15,
       "network_readiness_index": 9,
-      "social_progress_index": 1
+      "intentional_homicides": 33,
+      "water_stress_level": 117,
+      "social_progress_index": 1,
+      "lpi_infrastructure": 3
     },
-    "kpi_count": 23
+    "kpi_count": 20
   },
   {
     "country": "Nepal",
     "ranks": {
       "gini_index": 35,
       "unemployment_rate": 146,
-      "extreme_poverty": 81,
-      "access_to_basic_drinking_water": 129,
       "inflation_consumer_price_index": 146,
       "employment_to_population_ratio": 168,
       "female_labor_force_participation": 161,
       "education_expenditure_of_gdp": 114,
       "democracy_index": 96,
       "human_development_index_hdi": 144,
-      "physicians_per_1_000_people": 121,
       "political_corruption_index": 102,
       "general_government_gross_debt_gdp": 80,
       "environmental_performance_index": 163,
       "global_peace_index": 77,
       "inform_resilience_index": 131,
       "network_readiness_index": 104,
-      "social_progress_index": 99
+      "intentional_homicides": 78,
+      "water_stress_level": 81,
+      "social_progress_index": 99,
+      "lpi_infrastructure": 68
     },
     "kpi_count": 18
   },
@@ -895,16 +848,12 @@
     "ranks": {
       "gini_index": 36,
       "unemployment_rate": 92,
-      "extreme_poverty": 37,
-      "access_to_basic_drinking_water": 70,
-      "railway_length": 55,
       "inflation_consumer_price_index": 87,
       "employment_to_population_ratio": 137,
       "female_labor_force_participation": 123,
       "education_expenditure_of_gdp": 96,
       "democracy_index": 56,
       "human_development_index_hdi": 40,
-      "physicians_per_1_000_people": 36,
       "political_corruption_index": 52,
       "general_government_gross_debt_gdp": 100,
       "big_mac_index": 22,
@@ -913,25 +862,24 @@
       "inform_resilience_index": 39,
       "pisa_overall_score": 33,
       "network_readiness_index": 57,
-      "social_progress_index": 29
+      "intentional_homicides": 20,
+      "water_stress_level": 23,
+      "social_progress_index": 29,
+      "lpi_infrastructure": 44
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Hungary",
     "ranks": {
       "gini_index": 37,
       "unemployment_rate": 71,
-      "extreme_poverty": 60,
-      "access_to_basic_drinking_water": 8,
-      "railway_length": 23,
       "inflation_consumer_price_index": 109,
       "employment_to_population_ratio": 90,
       "female_labor_force_participation": 84,
       "education_expenditure_of_gdp": 109,
       "democracy_index": 55,
       "human_development_index_hdi": 45,
-      "physicians_per_1_000_people": 47,
       "political_corruption_index": 85,
       "general_government_gross_debt_gdp": 141,
       "big_mac_index": 20,
@@ -940,25 +888,24 @@
       "inform_resilience_index": 34,
       "pisa_overall_score": 28,
       "network_readiness_index": 40,
-      "social_progress_index": 36
+      "intentional_homicides": 25,
+      "water_stress_level": 80,
+      "social_progress_index": 36,
+      "lpi_infrastructure": 57
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Estonia",
     "ranks": {
       "gini_index": 38,
       "unemployment_rate": 127,
-      "extreme_poverty": 38,
-      "access_to_basic_drinking_water": 4,
-      "railway_length": 79,
       "inflation_consumer_price_index": 105,
       "employment_to_population_ratio": 70,
       "female_labor_force_participation": 44,
       "education_expenditure_of_gdp": 53,
       "democracy_index": 21,
       "human_development_index_hdi": 35,
-      "physicians_per_1_000_people": 41,
       "political_corruption_index": 10,
       "general_government_gross_debt_gdp": 21,
       "big_mac_index": 16,
@@ -967,29 +914,32 @@
       "inform_resilience_index": 14,
       "pisa_overall_score": 5,
       "network_readiness_index": 17,
-      "social_progress_index": 16
+      "intentional_homicides": 66,
+      "water_stress_level": 98,
+      "social_progress_index": 16,
+      "lpi_infrastructure": 26
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Fiji",
     "ranks": {
       "gini_index": 39,
       "unemployment_rate": 69,
-      "extreme_poverty": 97,
-      "access_to_basic_drinking_water": 105,
       "inflation_consumer_price_index": 123,
       "employment_to_population_ratio": 112,
       "female_labor_force_participation": 150,
       "education_expenditure_of_gdp": 90,
       "democracy_index": 81,
       "human_development_index_hdi": 111,
-      "physicians_per_1_000_people": 124,
       "political_corruption_index": 59,
       "general_government_gross_debt_gdp": 144,
       "environmental_performance_index": 147,
       "inform_resilience_index": 87,
-      "social_progress_index": 84
+      "intentional_homicides": 76,
+      "water_stress_level": 7,
+      "social_progress_index": 84,
+      "lpi_infrastructure": 151
     },
     "kpi_count": 16
   },
@@ -998,68 +948,60 @@
     "ranks": {
       "gini_index": 40,
       "unemployment_rate": 41,
-      "extreme_poverty": 117,
-      "access_to_basic_drinking_water": 148,
-      "railway_length": 33,
       "inflation_consumer_price_index": 151,
       "employment_to_population_ratio": 118,
       "female_labor_force_participation": 143,
       "education_expenditure_of_gdp": 175,
       "democracy_index": 166,
       "human_development_index_hdi": 149,
-      "physicians_per_1_000_people": 129,
       "political_corruption_index": 152,
       "general_government_gross_debt_gdp": 120,
       "environmental_performance_index": 179,
       "global_peace_index": 153,
       "inform_resilience_index": 175,
-      "social_progress_index": 114
+      "intentional_homicides": 91,
+      "water_stress_level": 63,
+      "social_progress_index": 114,
+      "lpi_infrastructure": 79
     },
-    "kpi_count": 18
+    "kpi_count": 17
   },
   {
     "country": "Bangladesh",
     "ranks": {
       "gini_index": 41,
       "unemployment_rate": 79,
-      "extreme_poverty": 102,
-      "access_to_basic_drinking_water": 79,
-      "railway_length": 52,
       "inflation_consumer_price_index": 158,
       "employment_to_population_ratio": 81,
       "female_labor_force_participation": 129,
       "education_expenditure_of_gdp": 172,
       "democracy_index": 100,
       "human_development_index_hdi": 129,
-      "physicians_per_1_000_people": 134,
       "political_corruption_index": 168,
       "general_government_gross_debt_gdp": 55,
       "environmental_performance_index": 177,
       "global_peace_index": 123,
       "inform_resilience_index": 167,
       "network_readiness_index": 85,
-      "social_progress_index": 110
+      "intentional_homicides": 84,
+      "water_stress_level": 60,
+      "social_progress_index": 110,
+      "lpi_infrastructure": 110
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Canada",
     "ranks": {
       "gini_index": 42,
       "unemployment_rate": 112,
-      "extreme_poverty": 28,
-      "access_to_basic_drinking_water": 56,
-      "railway_length": 5,
       "inflation_consumer_price_index": 63,
       "employment_to_population_ratio": 64,
       "female_labor_force_participation": 42,
       "education_expenditure_of_gdp": 66,
       "democracy_index": 14,
       "human_development_index_hdi": 15,
-      "physicians_per_1_000_people": 74,
-      "homelessness_rate": 11,
       "political_corruption_index": 12,
-      "electric_vehicle_stock": 9,
       "general_government_gross_debt_gdp": 175,
       "big_mac_index": 62,
       "environmental_performance_index": 50,
@@ -1067,52 +1009,49 @@
       "inform_resilience_index": 53,
       "pisa_overall_score": 6,
       "network_readiness_index": 10,
-      "social_progress_index": 14
+      "intentional_homicides": 74,
+      "water_stress_level": 45,
+      "social_progress_index": 14,
+      "lpi_infrastructure": 10
     },
-    "kpi_count": 23
+    "kpi_count": 20
   },
   {
     "country": "Ethiopia",
     "ranks": {
       "gini_index": 43,
       "unemployment_rate": 53,
-      "extreme_poverty": 143,
-      "access_to_basic_drinking_water": 189,
-      "railway_length": 92,
       "inflation_consumer_price_index": 169,
       "employment_to_population_ratio": 32,
       "female_labor_force_participation": 62,
       "education_expenditure_of_gdp": 165,
       "democracy_index": 116,
       "human_development_index_hdi": 179,
-      "physicians_per_1_000_people": 179,
       "political_corruption_index": 92,
       "general_government_gross_debt_gdp": 74,
       "environmental_performance_index": 143,
       "global_peace_index": 138,
       "inform_resilience_index": 177,
       "network_readiness_index": 117,
-      "social_progress_index": 141
+      "intentional_homicides": 139,
+      "water_stress_level": 125,
+      "social_progress_index": 141,
+      "lpi_infrastructure": 147
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Austria",
     "ranks": {
       "gini_index": 44,
       "unemployment_rate": 96,
-      "extreme_poverty": 44,
-      "access_to_basic_drinking_water": 26,
-      "railway_length": 32,
       "inflation_consumer_price_index": 85,
       "employment_to_population_ratio": 97,
       "female_labor_force_participation": 74,
       "education_expenditure_of_gdp": 48,
       "democracy_index": 19,
       "human_development_index_hdi": 21,
-      "physicians_per_1_000_people": 7,
       "political_corruption_index": 32,
-      "electric_vehicle_stock": 19,
       "general_government_gross_debt_gdp": 151,
       "big_mac_index": 36,
       "environmental_performance_index": 8,
@@ -1120,25 +1059,24 @@
       "inform_resilience_index": 35,
       "pisa_overall_score": 18,
       "network_readiness_index": 19,
-      "social_progress_index": 10
+      "intentional_homicides": 35,
+      "water_stress_level": 83,
+      "social_progress_index": 10,
+      "lpi_infrastructure": 8
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Mongolia",
     "ranks": {
       "gini_index": 45,
       "unemployment_rate": 94,
-      "extreme_poverty": 41,
-      "access_to_basic_drinking_water": 147,
-      "railway_length": 67,
       "inflation_consumer_price_index": 141,
       "employment_to_population_ratio": 95,
       "female_labor_force_participation": 90,
       "education_expenditure_of_gdp": 116,
       "democracy_index": 53,
       "human_development_index_hdi": 103,
-      "physicians_per_1_000_people": 29,
       "political_corruption_index": 120,
       "general_government_gross_debt_gdp": 73,
       "environmental_performance_index": 157,
@@ -1146,24 +1084,24 @@
       "inform_resilience_index": 65,
       "pisa_overall_score": 53,
       "network_readiness_index": 84,
-      "social_progress_index": 79
+      "intentional_homicides": 126,
+      "water_stress_level": 40,
+      "social_progress_index": 79,
+      "lpi_infrastructure": 133
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Cyprus",
     "ranks": {
       "gini_index": 46,
       "unemployment_rate": 105,
-      "extreme_poverty": 6,
-      "access_to_basic_drinking_water": 45,
       "inflation_consumer_price_index": 45,
       "employment_to_population_ratio": 43,
       "female_labor_force_participation": 30,
       "education_expenditure_of_gdp": 70,
       "democracy_index": 40,
       "human_development_index_hdi": 32,
-      "physicians_per_1_000_people": 39,
       "political_corruption_index": 36,
       "general_government_gross_debt_gdp": 103,
       "environmental_performance_index": 22,
@@ -1171,7 +1109,10 @@
       "inform_resilience_index": 64,
       "pisa_overall_score": 57,
       "network_readiness_index": 37,
-      "social_progress_index": 25
+      "intentional_homicides": 31,
+      "water_stress_level": 124,
+      "social_progress_index": 25,
+      "lpi_infrastructure": 56
     },
     "kpi_count": 19
   },
@@ -1180,19 +1121,13 @@
     "ranks": {
       "gini_index": 47,
       "unemployment_rate": 120,
-      "extreme_poverty": 17,
-      "access_to_basic_drinking_water": 6,
-      "railway_length": 8,
       "inflation_consumer_price_index": 48,
       "employment_to_population_ratio": 128,
       "female_labor_force_participation": 104,
       "education_expenditure_of_gdp": 45,
       "democracy_index": 26,
       "human_development_index_hdi": 25,
-      "physicians_per_1_000_people": 45,
-      "homelessness_rate": 7,
       "political_corruption_index": 20,
-      "electric_vehicle_stock": 6,
       "general_government_gross_debt_gdp": 177,
       "big_mac_index": 50,
       "environmental_performance_index": 12,
@@ -1200,71 +1135,65 @@
       "inform_resilience_index": 54,
       "pisa_overall_score": 25,
       "network_readiness_index": 15,
-      "social_progress_index": 21
+      "intentional_homicides": 59,
+      "water_stress_level": 111,
+      "social_progress_index": 21,
+      "lpi_infrastructure": 13
     },
-    "kpi_count": 23
+    "kpi_count": 20
   },
   {
     "country": "Mauritania",
     "ranks": {
       "gini_index": 48,
       "unemployment_rate": 145,
-      "extreme_poverty": 116,
-      "access_to_basic_drinking_water": 155,
-      "railway_length": 94,
       "inflation_consumer_price_index": 68,
       "employment_to_population_ratio": 164,
       "female_labor_force_participation": 164,
       "education_expenditure_of_gdp": 72,
       "democracy_index": 108,
       "human_development_index_hdi": 162,
-      "physicians_per_1_000_people": 155,
       "political_corruption_index": 160,
       "general_government_gross_debt_gdp": 59,
       "environmental_performance_index": 165,
       "global_peace_index": 110,
       "inform_resilience_index": 149,
       "network_readiness_index": 119,
-      "social_progress_index": 132
+      "intentional_homicides": 43,
+      "water_stress_level": 99,
+      "social_progress_index": 132,
+      "lpi_infrastructure": 156
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Seychelles",
     "ranks": {
       "gini_index": 49,
-      "extreme_poverty": 54,
-      "access_to_basic_drinking_water": 97,
       "inflation_consumer_price_index": 5,
       "education_expenditure_of_gdp": 80,
       "human_development_index_hdi": 53,
-      "physicians_per_1_000_people": 31,
       "political_corruption_index": 18,
       "general_government_gross_debt_gdp": 99,
       "environmental_performance_index": 32,
       "inform_resilience_index": 5,
-      "network_readiness_index": 68
+      "network_readiness_index": 68,
+      "intentional_homicides": 138
     },
-    "kpi_count": 12
+    "kpi_count": 10
   },
   {
     "country": "Japan",
     "ranks": {
       "gini_index": 50,
       "unemployment_rate": 25,
-      "extreme_poverty": 67,
-      "access_to_basic_drinking_water": 58,
-      "railway_length": 11,
       "inflation_consumer_price_index": 71,
       "employment_to_population_ratio": 58,
       "female_labor_force_participation": 77,
       "education_expenditure_of_gdp": 128,
       "democracy_index": 16,
       "human_development_index_hdi": 22,
-      "physicians_per_1_000_people": 67,
-      "homelessness_rate": 2,
       "political_corruption_index": 23,
-      "electric_vehicle_stock": 12,
       "general_government_gross_debt_gdp": 188,
       "big_mac_index": 12,
       "environmental_performance_index": 25,
@@ -1272,48 +1201,43 @@
       "inform_resilience_index": 23,
       "pisa_overall_score": 2,
       "network_readiness_index": 11,
-      "social_progress_index": 15
+      "intentional_homicides": 5,
+      "water_stress_level": 131,
+      "social_progress_index": 15,
+      "lpi_infrastructure": 14
     },
-    "kpi_count": 23
+    "kpi_count": 20
   },
   {
     "country": "Vanuatu",
     "ranks": {
       "gini_index": 51,
       "unemployment_rate": 87,
-      "extreme_poverty": 127,
-      "access_to_basic_drinking_water": 128,
       "inflation_consumer_price_index": 160,
       "employment_to_population_ratio": 107,
       "female_labor_force_participation": 86,
       "education_expenditure_of_gdp": 10,
       "human_development_index_hdi": 145,
-      "physicians_per_1_000_people": 170,
       "political_corruption_index": 60,
       "general_government_gross_debt_gdp": 78,
       "environmental_performance_index": 120,
-      "inform_resilience_index": 118
+      "inform_resilience_index": 118,
+      "intentional_homicides": 9
     },
-    "kpi_count": 14
+    "kpi_count": 12
   },
   {
     "country": "Germany",
     "ranks": {
       "gini_index": 52,
       "unemployment_rate": 54,
-      "extreme_poverty": 30,
-      "access_to_basic_drinking_water": 27,
-      "railway_length": 6,
       "inflation_consumer_price_index": 61,
       "employment_to_population_ratio": 84,
       "female_labor_force_participation": 73,
       "education_expenditure_of_gdp": 52,
       "democracy_index": 13,
       "human_development_index_hdi": 5,
-      "physicians_per_1_000_people": 13,
-      "homelessness_rate": 13,
       "political_corruption_index": 6,
-      "electric_vehicle_stock": 4,
       "general_government_gross_debt_gdp": 122,
       "big_mac_index": 45,
       "environmental_performance_index": 13,
@@ -1321,68 +1245,61 @@
       "inform_resilience_index": 47,
       "pisa_overall_score": 22,
       "network_readiness_index": 8,
-      "social_progress_index": 9
+      "intentional_homicides": 38,
+      "water_stress_level": 130,
+      "social_progress_index": 9,
+      "lpi_infrastructure": 4
     },
-    "kpi_count": 23
+    "kpi_count": 20
   },
   {
     "country": "Nauru",
     "ranks": {
       "gini_index": 53,
-      "extreme_poverty": 112,
-      "access_to_basic_drinking_water": 93,
       "inflation_consumer_price_index": 2,
       "education_expenditure_of_gdp": 33,
       "human_development_index_hdi": 123,
-      "physicians_per_1_000_people": 108,
       "general_government_gross_debt_gdp": 12,
       "inform_resilience_index": 30
     },
-    "kpi_count": 9
+    "kpi_count": 6
   },
   {
     "country": "United Kingdom",
     "ranks": {
       "gini_index": 54,
       "unemployment_rate": 66,
-      "extreme_poverty": 50,
-      "access_to_basic_drinking_water": 30,
-      "railway_length": 15,
       "inflation_consumer_price_index": 97,
       "employment_to_population_ratio": 80,
       "female_labor_force_participation": 61,
       "education_expenditure_of_gdp": 29,
       "democracy_index": 17,
       "human_development_index_hdi": 13,
-      "physicians_per_1_000_people": 50,
-      "homelessness_rate": 10,
       "political_corruption_index": 17,
-      "electric_vehicle_stock": 5,
       "general_government_gross_debt_gdp": 170,
       "big_mac_index": 65,
       "environmental_performance_index": 2,
       "global_peace_index": 30,
       "inform_resilience_index": 21,
       "pisa_overall_score": 12,
-      "network_readiness_index": 7
+      "network_readiness_index": 7,
+      "intentional_homicides": 48,
+      "water_stress_level": 102,
+      "lpi_infrastructure": 24
     },
-    "kpi_count": 22
+    "kpi_count": 19
   },
   {
     "country": "Serbia",
     "ranks": {
       "gini_index": 55,
       "unemployment_rate": 121,
-      "extreme_poverty": 75,
-      "access_to_basic_drinking_water": 103,
-      "railway_length": 46,
       "inflation_consumer_price_index": 127,
       "employment_to_population_ratio": 122,
       "female_labor_force_participation": 113,
       "education_expenditure_of_gdp": 125,
       "democracy_index": 64,
       "human_development_index_hdi": 62,
-      "physicians_per_1_000_people": 62,
       "political_corruption_index": 132,
       "general_government_gross_debt_gdp": 68,
       "environmental_performance_index": 79,
@@ -1390,56 +1307,57 @@
       "inform_resilience_index": 93,
       "pisa_overall_score": 40,
       "network_readiness_index": 45,
-      "social_progress_index": 42
+      "intentional_homicides": 58,
+      "water_stress_level": 61,
+      "social_progress_index": 42,
+      "lpi_infrastructure": 93
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "South Korea",
     "ranks": {
       "gini_index": 56,
       "unemployment_rate": 27,
-      "extreme_poverty": 31,
-      "access_to_basic_drinking_water": 11,
-      "railway_length": 35,
       "inflation_consumer_price_index": 62,
       "employment_to_population_ratio": 52,
       "female_labor_force_participation": 71,
       "education_expenditure_of_gdp": 32,
       "democracy_index": 32,
       "human_development_index_hdi": 19,
-      "physicians_per_1_000_people": 71,
       "political_corruption_index": 35,
-      "electric_vehicle_stock": 13,
       "general_government_gross_debt_gdp": 93,
       "big_mac_index": 25,
       "environmental_performance_index": 63,
       "global_peace_index": 41,
       "inform_resilience_index": 24,
       "pisa_overall_score": 4,
-      "network_readiness_index": 4
+      "network_readiness_index": 4,
+      "intentional_homicides": 10,
+      "water_stress_level": 157,
+      "lpi_infrastructure": 16
     },
-    "kpi_count": 21
+    "kpi_count": 19
   },
   {
     "country": "Niger",
     "ranks": {
       "gini_index": 57,
       "unemployment_rate": 3,
-      "extreme_poverty": 163,
-      "access_to_basic_drinking_water": 192,
       "inflation_consumer_price_index": 154,
       "employment_to_population_ratio": 17,
       "female_labor_force_participation": 46,
       "education_expenditure_of_gdp": 98,
       "democracy_index": 141,
       "human_development_index_hdi": 188,
-      "physicians_per_1_000_people": 191,
       "political_corruption_index": 96,
       "general_government_gross_debt_gdp": 64,
       "environmental_performance_index": 110,
       "global_peace_index": 143,
-      "inform_resilience_index": 184
+      "inform_resilience_index": 184,
+      "intentional_homicides": 112,
+      "water_stress_level": 89,
+      "lpi_infrastructure": 149
     },
     "kpi_count": 16
   },
@@ -1448,41 +1366,36 @@
     "ranks": {
       "gini_index": 58,
       "unemployment_rate": 147,
-      "extreme_poverty": 27,
-      "access_to_basic_drinking_water": 98,
-      "railway_length": 80,
       "inflation_consumer_price_index": 43,
       "employment_to_population_ratio": 154,
       "female_labor_force_participation": 148,
       "education_expenditure_of_gdp": 131,
       "democracy_index": 88,
       "human_development_index_hdi": 73,
-      "physicians_per_1_000_people": 76,
       "political_corruption_index": 135,
       "general_government_gross_debt_gdp": 33,
       "environmental_performance_index": 102,
       "global_peace_index": 59,
       "inform_resilience_index": 95,
       "network_readiness_index": 86,
-      "social_progress_index": 56
+      "intentional_homicides": 54,
+      "water_stress_level": 30,
+      "social_progress_index": 56,
+      "lpi_infrastructure": 73
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Russia",
     "ranks": {
       "gini_index": 59,
       "unemployment_rate": 24,
-      "extreme_poverty": 25,
-      "access_to_basic_drinking_water": 91,
-      "railway_length": 3,
       "inflation_consumer_price_index": 145,
       "employment_to_population_ratio": 75,
       "female_labor_force_participation": 82,
       "education_expenditure_of_gdp": 93,
       "democracy_index": 151,
       "human_development_index_hdi": 63,
-      "physicians_per_1_000_people": 30,
       "political_corruption_index": 139,
       "general_government_gross_debt_gdp": 17,
       "big_mac_index": 1,
@@ -1490,27 +1403,25 @@
       "global_peace_index": 163,
       "inform_resilience_index": 126,
       "pisa_overall_score": 23,
-      "network_readiness_index": 39
+      "network_readiness_index": 39,
+      "intentional_homicides": 132,
+      "water_stress_level": 48,
+      "lpi_infrastructure": 117
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Greece",
     "ranks": {
       "gini_index": 60,
       "unemployment_rate": 142,
-      "extreme_poverty": 51,
-      "access_to_basic_drinking_water": 25,
-      "railway_length": 59,
       "inflation_consumer_price_index": 72,
       "employment_to_population_ratio": 147,
       "female_labor_force_participation": 128,
       "education_expenditure_of_gdp": 126,
       "democracy_index": 25,
       "human_development_index_hdi": 33,
-      "physicians_per_1_000_people": 3,
       "political_corruption_index": 48,
-      "electric_vehicle_stock": 30,
       "general_government_gross_debt_gdp": 183,
       "big_mac_index": 31,
       "environmental_performance_index": 29,
@@ -1518,30 +1429,33 @@
       "inform_resilience_index": 70,
       "pisa_overall_score": 43,
       "network_readiness_index": 54,
-      "social_progress_index": 30
+      "intentional_homicides": 32,
+      "water_stress_level": 109,
+      "social_progress_index": 30,
+      "lpi_infrastructure": 20
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Guinea-Bissau",
     "ranks": {
       "gini_index": 61,
       "unemployment_rate": 28,
-      "extreme_poverty": 149,
-      "access_to_basic_drinking_water": 180,
       "inflation_consumer_price_index": 110,
       "employment_to_population_ratio": 63,
       "female_labor_force_participation": 68,
       "education_expenditure_of_gdp": 174,
       "democracy_index": 150,
       "human_development_index_hdi": 173,
-      "physicians_per_1_000_people": 157,
       "political_corruption_index": 144,
       "general_government_gross_debt_gdp": 143,
       "environmental_performance_index": 98,
       "global_peace_index": 101,
       "inform_resilience_index": 121,
-      "social_progress_index": 139
+      "intentional_homicides": 49,
+      "water_stress_level": 21,
+      "social_progress_index": 139,
+      "lpi_infrastructure": 114
     },
     "kpi_count": 17
   },
@@ -1550,19 +1464,13 @@
     "ranks": {
       "gini_index": 62,
       "unemployment_rate": 149,
-      "extreme_poverty": 58,
-      "access_to_basic_drinking_water": 36,
-      "railway_length": 17,
       "inflation_consumer_price_index": 75,
       "employment_to_population_ratio": 130,
       "female_labor_force_participation": 99,
       "education_expenditure_of_gdp": 76,
       "democracy_index": 22,
       "human_development_index_hdi": 27,
-      "physicians_per_1_000_people": 14,
-      "homelessness_rate": 9,
       "political_corruption_index": 30,
-      "electric_vehicle_stock": 16,
       "general_government_gross_debt_gdp": 168,
       "big_mac_index": 46,
       "environmental_performance_index": 27,
@@ -1570,25 +1478,24 @@
       "inform_resilience_index": 48,
       "pisa_overall_score": 27,
       "network_readiness_index": 23,
-      "social_progress_index": 22
+      "intentional_homicides": 21,
+      "water_stress_level": 135,
+      "social_progress_index": 22,
+      "lpi_infrastructure": 15
     },
-    "kpi_count": 23
+    "kpi_count": 20
   },
   {
     "country": "North Macedonia",
     "ranks": {
       "gini_index": 63,
       "unemployment_rate": 160,
-      "extreme_poverty": 93,
-      "access_to_basic_drinking_water": 83,
-      "railway_length": 96,
       "inflation_consumer_price_index": 104,
       "employment_to_population_ratio": 150,
       "female_labor_force_participation": 136,
       "education_expenditure_of_gdp": 129,
       "democracy_index": 62,
       "human_development_index_hdi": 67,
-      "physicians_per_1_000_people": 59,
       "political_corruption_index": 131,
       "general_government_gross_debt_gdp": 88,
       "environmental_performance_index": 34,
@@ -1596,25 +1503,24 @@
       "inform_resilience_index": 59,
       "pisa_overall_score": 67,
       "network_readiness_index": 74,
-      "social_progress_index": 54
+      "intentional_homicides": 63,
+      "water_stress_level": 143,
+      "social_progress_index": 54,
+      "lpi_infrastructure": 67
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Thailand",
     "ranks": {
       "gini_index": 64,
       "unemployment_rate": 4,
-      "extreme_poverty": 13,
-      "access_to_basic_drinking_water": 21,
-      "railway_length": 37,
       "inflation_consumer_price_index": 32,
       "employment_to_population_ratio": 29,
       "female_labor_force_participation": 54,
       "education_expenditure_of_gdp": 159,
       "democracy_index": 63,
       "human_development_index_hdi": 75,
-      "physicians_per_1_000_people": 120,
       "political_corruption_index": 109,
       "general_government_gross_debt_gdp": 124,
       "big_mac_index": 29,
@@ -1623,49 +1529,48 @@
       "inform_resilience_index": 124,
       "pisa_overall_score": 63,
       "network_readiness_index": 38,
-      "social_progress_index": 52
+      "intentional_homicides": 117,
+      "water_stress_level": 114,
+      "social_progress_index": 52,
+      "lpi_infrastructure": 37
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Luxembourg",
     "ranks": {
       "gini_index": 65,
       "unemployment_rate": 107,
-      "extreme_poverty": 21,
-      "access_to_basic_drinking_water": 41,
-      "railway_length": 113,
       "inflation_consumer_price_index": 50,
       "employment_to_population_ratio": 92,
       "female_labor_force_participation": 63,
       "education_expenditure_of_gdp": 113,
       "democracy_index": 10,
       "human_development_index_hdi": 24,
-      "physicians_per_1_000_people": 57,
       "political_corruption_index": 13,
       "general_government_gross_debt_gdp": 24,
       "environmental_performance_index": 6,
       "inform_resilience_index": 3,
       "pisa_overall_score": 31,
       "network_readiness_index": 22,
-      "social_progress_index": 7
+      "intentional_homicides": 64,
+      "water_stress_level": 47,
+      "social_progress_index": 7,
+      "lpi_infrastructure": 30
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Jordan",
     "ranks": {
       "gini_index": 66,
       "unemployment_rate": 168,
-      "extreme_poverty": 20,
-      "access_to_basic_drinking_water": 63,
       "inflation_consumer_price_index": 37,
       "employment_to_population_ratio": 174,
       "female_labor_force_participation": 174,
       "education_expenditure_of_gdp": 120,
       "democracy_index": 115,
       "human_development_index_hdi": 100,
-      "physicians_per_1_000_people": 72,
       "political_corruption_index": 78,
       "general_government_gross_debt_gdp": 157,
       "big_mac_index": 19,
@@ -1674,7 +1579,10 @@
       "inform_resilience_index": 110,
       "pisa_overall_score": 73,
       "network_readiness_index": 71,
-      "social_progress_index": 76
+      "intentional_homicides": 42,
+      "water_stress_level": 161,
+      "social_progress_index": 76,
+      "lpi_infrastructure": 61
     },
     "kpi_count": 20
   },
@@ -1683,43 +1591,37 @@
     "ranks": {
       "gini_index": 67,
       "unemployment_rate": 166,
-      "extreme_poverty": 55,
-      "access_to_basic_drinking_water": 89,
-      "railway_length": 68,
       "inflation_consumer_price_index": 147,
       "employment_to_population_ratio": 163,
       "female_labor_force_participation": 163,
       "education_expenditure_of_gdp": 14,
       "democracy_index": 93,
       "human_development_index_hdi": 104,
-      "physicians_per_1_000_people": 104,
       "political_corruption_index": 74,
       "general_government_gross_debt_gdp": 149,
       "environmental_performance_index": 96,
       "global_peace_index": 81,
       "inform_resilience_index": 89,
       "network_readiness_index": 92,
-      "social_progress_index": 82
+      "intentional_homicides": 116,
+      "water_stress_level": 160,
+      "social_progress_index": 82,
+      "lpi_infrastructure": 52
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Australia",
     "ranks": {
       "gini_index": 68,
       "unemployment_rate": 62,
-      "extreme_poverty": 63,
-      "access_to_basic_drinking_water": 33,
       "inflation_consumer_price_index": 93,
       "employment_to_population_ratio": 42,
       "female_labor_force_participation": 31,
       "education_expenditure_of_gdp": 61,
       "democracy_index": 11,
       "human_development_index_hdi": 7,
-      "physicians_per_1_000_people": 26,
-      "homelessness_rate": 12,
       "political_corruption_index": 11,
-      "electric_vehicle_stock": 18,
       "general_government_gross_debt_gdp": 85,
       "big_mac_index": 51,
       "environmental_performance_index": 17,
@@ -1727,27 +1629,25 @@
       "inform_resilience_index": 38,
       "pisa_overall_score": 9,
       "network_readiness_index": 14,
-      "social_progress_index": 8
+      "intentional_homicides": 34,
+      "water_stress_level": 54,
+      "social_progress_index": 8,
+      "lpi_infrastructure": 18
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Switzerland",
     "ranks": {
       "gini_index": 69,
       "unemployment_rate": 65,
-      "extreme_poverty": 34,
-      "access_to_basic_drinking_water": 20,
-      "railway_length": 36,
       "inflation_consumer_price_index": 23,
       "employment_to_population_ratio": 41,
       "female_labor_force_participation": 36,
       "education_expenditure_of_gdp": 64,
       "democracy_index": 5,
       "human_development_index_hdi": 3,
-      "physicians_per_1_000_people": 16,
       "political_corruption_index": 8,
-      "electric_vehicle_stock": 17,
       "general_government_gross_debt_gdp": 49,
       "big_mac_index": 71,
       "environmental_performance_index": 9,
@@ -1755,25 +1655,24 @@
       "inform_resilience_index": 11,
       "pisa_overall_score": 8,
       "network_readiness_index": 6,
-      "social_progress_index": 6
+      "intentional_homicides": 16,
+      "water_stress_level": 69,
+      "social_progress_index": 6,
+      "lpi_infrastructure": 6
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Georgia",
     "ranks": {
       "gini_index": 70,
       "unemployment_rate": 151,
-      "extreme_poverty": 94,
-      "access_to_basic_drinking_water": 109,
-      "railway_length": 75,
       "inflation_consumer_price_index": 26,
       "employment_to_population_ratio": 105,
       "female_labor_force_participation": 80,
       "education_expenditure_of_gdp": 104,
       "democracy_index": 94,
       "human_development_index_hdi": 56,
-      "physicians_per_1_000_people": 6,
       "political_corruption_index": 42,
       "general_government_gross_debt_gdp": 42,
       "environmental_performance_index": 103,
@@ -1781,52 +1680,49 @@
       "inform_resilience_index": 91,
       "pisa_overall_score": 65,
       "network_readiness_index": 66,
-      "social_progress_index": 46
+      "intentional_homicides": 75,
+      "water_stress_level": 49,
+      "social_progress_index": 46,
+      "lpi_infrastructure": 102
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Nigeria",
     "ranks": {
       "gini_index": 71,
       "unemployment_rate": 37,
-      "extreme_poverty": 153,
-      "access_to_basic_drinking_water": 153,
-      "railway_length": 45,
       "inflation_consumer_price_index": 178,
       "employment_to_population_ratio": 5,
       "female_labor_force_participation": 3,
       "education_expenditure_of_gdp": 190,
       "democracy_index": 106,
       "human_development_index_hdi": 163,
-      "physicians_per_1_000_people": 146,
       "political_corruption_index": 171,
       "general_government_gross_debt_gdp": 47,
       "environmental_performance_index": 162,
       "global_peace_index": 148,
       "inform_resilience_index": 176,
       "network_readiness_index": 107,
-      "social_progress_index": 127
+      "intentional_homicides": 157,
+      "water_stress_level": 85,
+      "social_progress_index": 127,
+      "lpi_infrastructure": 116
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Portugal",
     "ranks": {
       "gini_index": 72,
       "unemployment_rate": 111,
-      "extreme_poverty": 42,
-      "access_to_basic_drinking_water": 54,
-      "railway_length": 56,
       "inflation_consumer_price_index": 65,
       "employment_to_population_ratio": 111,
       "female_labor_force_participation": 81,
       "education_expenditure_of_gdp": 77,
       "democracy_index": 24,
       "human_development_index_hdi": 39,
-      "physicians_per_1_000_people": 5,
       "political_corruption_index": 37,
-      "electric_vehicle_stock": 22,
       "general_government_gross_debt_gdp": 159,
       "big_mac_index": 32,
       "environmental_performance_index": 48,
@@ -1834,25 +1730,24 @@
       "inform_resilience_index": 17,
       "pisa_overall_score": 26,
       "network_readiness_index": 28,
-      "social_progress_index": 20
+      "intentional_homicides": 24,
+      "water_stress_level": 94,
+      "social_progress_index": 20,
+      "lpi_infrastructure": 41
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Latvia",
     "ranks": {
       "gini_index": 73,
       "unemployment_rate": 115,
-      "extreme_poverty": 40,
-      "access_to_basic_drinking_water": 64,
-      "railway_length": 66,
       "inflation_consumer_price_index": 30,
       "employment_to_population_ratio": 100,
       "female_labor_force_participation": 79,
       "education_expenditure_of_gdp": 85,
       "democracy_index": 33,
       "human_development_index_hdi": 41,
-      "physicians_per_1_000_people": 44,
       "political_corruption_index": 25,
       "general_government_gross_debt_gdp": 76,
       "big_mac_index": 11,
@@ -1861,72 +1756,68 @@
       "inform_resilience_index": 51,
       "pisa_overall_score": 21,
       "network_readiness_index": 35,
-      "social_progress_index": 28
+      "intentional_homicides": 88,
+      "water_stress_level": 16,
+      "social_progress_index": 28,
+      "lpi_infrastructure": 35
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Barbados",
     "ranks": {
       "gini_index": 74,
       "unemployment_rate": 123,
-      "extreme_poverty": 73,
-      "access_to_basic_drinking_water": 74,
       "inflation_consumer_price_index": 10,
       "employment_to_population_ratio": 87,
       "female_labor_force_participation": 50,
       "education_expenditure_of_gdp": 117,
       "human_development_index_hdi": 69,
-      "physicians_per_1_000_people": 58,
       "political_corruption_index": 24,
       "general_government_gross_debt_gdp": 167,
       "environmental_performance_index": 36,
       "inform_resilience_index": 20,
+      "intentional_homicides": 136,
+      "water_stress_level": 158,
       "social_progress_index": 38
     },
-    "kpi_count": 15
+    "kpi_count": 14
   },
   {
     "country": "Sudan",
     "ranks": {
       "gini_index": 75,
       "unemployment_rate": 124,
-      "extreme_poverty": 115,
-      "access_to_basic_drinking_water": 174,
-      "railway_length": 53,
       "inflation_consumer_price_index": 184,
       "employment_to_population_ratio": 170,
       "female_labor_force_participation": 172,
       "education_expenditure_of_gdp": 173,
       "democracy_index": 162,
       "human_development_index_hdi": 175,
-      "physicians_per_1_000_people": 150,
       "political_corruption_index": 143,
       "general_government_gross_debt_gdp": 187,
       "environmental_performance_index": 171,
       "global_peace_index": 161,
       "inform_resilience_index": 185,
-      "social_progress_index": 146
+      "intentional_homicides": 120,
+      "water_stress_level": 164,
+      "social_progress_index": 146,
+      "lpi_infrastructure": 146
     },
-    "kpi_count": 18
+    "kpi_count": 17
   },
   {
     "country": "Italy",
     "ranks": {
       "gini_index": 76,
       "unemployment_rate": 116,
-      "extreme_poverty": 61,
-      "access_to_basic_drinking_water": 38,
-      "railway_length": 14,
       "inflation_consumer_price_index": 20,
       "employment_to_population_ratio": 148,
       "female_labor_force_participation": 140,
       "education_expenditure_of_gdp": 100,
       "democracy_index": 38,
       "human_development_index_hdi": 29,
-      "physicians_per_1_000_people": 22,
       "political_corruption_index": 44,
-      "electric_vehicle_stock": 14,
       "general_government_gross_debt_gdp": 181,
       "big_mac_index": 58,
       "environmental_performance_index": 23,
@@ -1934,24 +1825,23 @@
       "inform_resilience_index": 71,
       "pisa_overall_score": 29,
       "network_readiness_index": 25,
-      "social_progress_index": 23
+      "intentional_homicides": 15,
+      "water_stress_level": 123,
+      "social_progress_index": 23,
+      "lpi_infrastructure": 21
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Montenegro",
     "ranks": {
       "gini_index": 77,
       "unemployment_rate": 161,
-      "extreme_poverty": 83,
-      "access_to_basic_drinking_water": 67,
-      "railway_length": 115,
       "inflation_consumer_price_index": 101,
       "employment_to_population_ratio": 155,
       "female_labor_force_participation": 139,
       "democracy_index": 50,
       "human_development_index_hdi": 47,
-      "physicians_per_1_000_people": 64,
       "political_corruption_index": 87,
       "general_government_gross_debt_gdp": 114,
       "environmental_performance_index": 64,
@@ -1959,56 +1849,57 @@
       "inform_resilience_index": 52,
       "pisa_overall_score": 54,
       "network_readiness_index": 63,
-      "social_progress_index": 41
+      "intentional_homicides": 29,
+      "social_progress_index": 41,
+      "lpi_infrastructure": 91
     },
-    "kpi_count": 19
+    "kpi_count": 17
   },
   {
     "country": "Benin",
     "ranks": {
       "gini_index": 78,
       "unemployment_rate": 14,
-      "extreme_poverty": 135,
-      "access_to_basic_drinking_water": 171,
-      "railway_length": 91,
       "inflation_consumer_price_index": 27,
       "employment_to_population_ratio": 14,
       "female_labor_force_participation": 9,
       "education_expenditure_of_gdp": 133,
       "democracy_index": 101,
       "human_development_index_hdi": 172,
-      "physicians_per_1_000_people": 159,
       "political_corruption_index": 41,
       "general_government_gross_debt_gdp": 84,
       "environmental_performance_index": 155,
       "global_peace_index": 112,
       "inform_resilience_index": 151,
       "network_readiness_index": 106,
-      "social_progress_index": 119
+      "intentional_homicides": 51,
+      "water_stress_level": 15,
+      "social_progress_index": 119,
+      "lpi_infrastructure": 81
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Malta",
     "ranks": {
       "gini_index": 79,
       "unemployment_rate": 29,
-      "extreme_poverty": 22,
-      "access_to_basic_drinking_water": 14,
       "inflation_consumer_price_index": 40,
       "employment_to_population_ratio": 57,
       "female_labor_force_participation": 78,
       "education_expenditure_of_gdp": 71,
       "democracy_index": 27,
       "human_development_index_hdi": 23,
-      "physicians_per_1_000_people": 20,
       "political_corruption_index": 43,
       "general_government_gross_debt_gdp": 75,
       "environmental_performance_index": 4,
       "inform_resilience_index": 9,
       "pisa_overall_score": 37,
       "network_readiness_index": 31,
-      "social_progress_index": 24
+      "intentional_homicides": 13,
+      "water_stress_level": 154,
+      "social_progress_index": 24,
+      "lpi_infrastructure": 46
     },
     "kpi_count": 18
   },
@@ -2017,16 +1908,12 @@
     "ranks": {
       "gini_index": 80,
       "unemployment_rate": 72,
-      "extreme_poverty": 86,
-      "access_to_basic_drinking_water": 96,
-      "railway_length": 34,
       "inflation_consumer_price_index": 156,
       "employment_to_population_ratio": 120,
       "female_labor_force_participation": 149,
       "education_expenditure_of_gdp": 37,
       "democracy_index": 146,
       "human_development_index_hdi": 106,
-      "physicians_per_1_000_people": 63,
       "political_corruption_index": 153,
       "general_government_gross_debt_gdp": 34,
       "environmental_performance_index": 107,
@@ -2034,25 +1921,24 @@
       "inform_resilience_index": 83,
       "pisa_overall_score": 76,
       "network_readiness_index": 77,
-      "social_progress_index": 73
+      "intentional_homicides": 61,
+      "water_stress_level": 165,
+      "social_progress_index": 73,
+      "lpi_infrastructure": 118
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Indonesia",
     "ranks": {
       "gini_index": 81,
       "unemployment_rate": 50,
-      "extreme_poverty": 101,
-      "access_to_basic_drinking_water": 118,
-      "railway_length": 27,
       "inflation_consumer_price_index": 57,
       "employment_to_population_ratio": 37,
       "female_labor_force_participation": 100,
       "education_expenditure_of_gdp": 184,
       "democracy_index": 59,
       "human_development_index_hdi": 112,
-      "physicians_per_1_000_people": 132,
       "political_corruption_index": 133,
       "general_government_gross_debt_gdp": 58,
       "big_mac_index": 3,
@@ -2061,24 +1947,24 @@
       "inform_resilience_index": 129,
       "pisa_overall_score": 68,
       "network_readiness_index": 46,
-      "social_progress_index": 72
+      "intentional_homicides": 8,
+      "water_stress_level": 122,
+      "social_progress_index": 72,
+      "lpi_infrastructure": 75
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Qatar",
     "ranks": {
       "gini_index": 82,
       "unemployment_rate": 1,
-      "extreme_poverty": 11,
-      "access_to_basic_drinking_water": 32,
       "inflation_consumer_price_index": 31,
       "employment_to_population_ratio": 1,
       "female_labor_force_participation": 26,
       "education_expenditure_of_gdp": 132,
       "democracy_index": 117,
       "human_development_index_hdi": 42,
-      "physicians_per_1_000_people": 73,
       "political_corruption_index": 68,
       "general_government_gross_debt_gdp": 57,
       "big_mac_index": 34,
@@ -2087,7 +1973,10 @@
       "inform_resilience_index": 4,
       "pisa_overall_score": 48,
       "network_readiness_index": 36,
-      "social_progress_index": 59
+      "intentional_homicides": 2,
+      "water_stress_level": 173,
+      "social_progress_index": 59,
+      "lpi_infrastructure": 36
     },
     "kpi_count": 20
   },
@@ -2096,71 +1985,68 @@
     "ranks": {
       "gini_index": 83,
       "unemployment_rate": 21,
-      "extreme_poverty": 128,
-      "access_to_basic_drinking_water": 163,
-      "railway_length": 100,
       "inflation_consumer_price_index": 103,
       "employment_to_population_ratio": 35,
       "female_labor_force_participation": 55,
       "education_expenditure_of_gdp": 123,
       "democracy_index": 105,
       "human_development_index_hdi": 156,
-      "physicians_per_1_000_people": 167,
       "political_corruption_index": 103,
       "general_government_gross_debt_gdp": 97,
       "environmental_performance_index": 138,
       "global_peace_index": 94,
       "inform_resilience_index": 137,
       "network_readiness_index": 88,
-      "social_progress_index": 118
+      "water_stress_level": 58,
+      "social_progress_index": 118,
+      "lpi_infrastructure": 53
     },
-    "kpi_count": 19
+    "kpi_count": 17
   },
   {
     "country": "Lebanon",
     "ranks": {
       "gini_index": 84,
       "unemployment_rate": 152,
-      "extreme_poverty": 103,
-      "access_to_basic_drinking_water": 124,
-      "railway_length": 109,
       "inflation_consumer_price_index": 179,
       "employment_to_population_ratio": 158,
       "female_labor_force_participation": 162,
       "education_expenditure_of_gdp": 186,
       "democracy_index": 109,
       "human_development_index_hdi": 101,
-      "physicians_per_1_000_people": 66,
       "political_corruption_index": 156,
       "general_government_gross_debt_gdp": 184,
       "big_mac_index": 60,
       "environmental_performance_index": 142,
       "global_peace_index": 136,
       "inform_resilience_index": 173,
-      "social_progress_index": 86
+      "intentional_homicides": 82,
+      "water_stress_level": 147,
+      "social_progress_index": 86,
+      "lpi_infrastructure": 63
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Liberia",
     "ranks": {
       "gini_index": 85,
       "unemployment_rate": 35,
-      "extreme_poverty": 139,
-      "access_to_basic_drinking_water": 159,
       "inflation_consumer_price_index": 150,
       "employment_to_population_ratio": 13,
       "female_labor_force_participation": 14,
       "education_expenditure_of_gdp": 166,
       "democracy_index": 80,
       "human_development_index_hdi": 176,
-      "physicians_per_1_000_people": 165,
       "political_corruption_index": 163,
       "general_government_gross_debt_gdp": 98,
       "environmental_performance_index": 174,
       "global_peace_index": 70,
       "inform_resilience_index": 139,
-      "social_progress_index": 138
+      "intentional_homicides": 96,
+      "water_stress_level": 6,
+      "social_progress_index": 138,
+      "lpi_infrastructure": 145
     },
     "kpi_count": 17
   },
@@ -2168,63 +2054,59 @@
     "country": "Marshall Islands",
     "ranks": {
       "gini_index": 86,
-      "extreme_poverty": 76,
-      "access_to_basic_drinking_water": 145,
       "education_expenditure_of_gdp": 9,
       "human_development_index_hdi": 109,
-      "physicians_per_1_000_people": 144,
       "general_government_gross_debt_gdp": 9,
       "environmental_performance_index": 124,
-      "inform_resilience_index": 105
+      "inform_resilience_index": 105,
+      "intentional_homicides": 109
     },
-    "kpi_count": 9
+    "kpi_count": 7
   },
   {
     "country": "Mali",
     "ranks": {
       "gini_index": 87,
       "unemployment_rate": 42,
-      "extreme_poverty": 142,
-      "access_to_basic_drinking_water": 146,
-      "railway_length": 93,
       "inflation_consumer_price_index": 95,
       "employment_to_population_ratio": 27,
       "female_labor_force_participation": 56,
       "education_expenditure_of_gdp": 92,
       "democracy_index": 139,
       "human_development_index_hdi": 187,
-      "physicians_per_1_000_people": 161,
       "political_corruption_index": 130,
       "general_government_gross_debt_gdp": 79,
       "environmental_performance_index": 159,
       "global_peace_index": 154,
       "inform_resilience_index": 178,
       "network_readiness_index": 115,
-      "social_progress_index": 140
+      "water_stress_level": 77,
+      "social_progress_index": 140,
+      "lpi_infrastructure": 115
     },
-    "kpi_count": 19
+    "kpi_count": 17
   },
   {
     "country": "Sierra Leone",
     "ranks": {
       "gini_index": 88,
       "unemployment_rate": 45,
-      "extreme_poverty": 152,
-      "access_to_basic_drinking_water": 172,
       "inflation_consumer_price_index": 175,
       "employment_to_population_ratio": 126,
       "female_labor_force_participation": 107,
       "education_expenditure_of_gdp": 156,
       "democracy_index": 102,
       "human_development_index_hdi": 184,
-      "physicians_per_1_000_people": 189,
       "political_corruption_index": 86,
       "general_government_gross_debt_gdp": 60,
       "environmental_performance_index": 140,
       "global_peace_index": 57,
       "inform_resilience_index": 143,
       "network_readiness_index": 124,
-      "social_progress_index": 133
+      "intentional_homicides": 81,
+      "water_stress_level": 11,
+      "social_progress_index": 133,
+      "lpi_infrastructure": 148
     },
     "kpi_count": 18
   },
@@ -2233,66 +2115,59 @@
     "ranks": {
       "gini_index": 89,
       "unemployment_rate": 139,
-      "extreme_poverty": 82,
-      "access_to_basic_drinking_water": 85,
-      "railway_length": 21,
       "inflation_consumer_price_index": 177,
       "employment_to_population_ratio": 165,
       "female_labor_force_participation": 175,
       "education_expenditure_of_gdp": 151,
       "democracy_index": 154,
       "human_development_index_hdi": 74,
-      "physicians_per_1_000_people": 100,
       "political_corruption_index": 138,
       "general_government_gross_debt_gdp": 45,
       "environmental_performance_index": 133,
       "global_peace_index": 142,
-      "inform_resilience_index": 168
+      "inform_resilience_index": 168,
+      "intentional_homicides": 85,
+      "water_stress_level": 156,
+      "lpi_infrastructure": 153
     },
-    "kpi_count": 17
+    "kpi_count": 16
   },
   {
     "country": "China",
     "ranks": {
       "gini_index": 90,
       "unemployment_rate": 76,
-      "extreme_poverty": 5,
-      "access_to_basic_drinking_water": 86,
-      "railway_length": 2,
       "inflation_consumer_price_index": 3,
       "employment_to_population_ratio": 54,
       "female_labor_force_participation": 52,
       "education_expenditure_of_gdp": 103,
       "democracy_index": 145,
       "human_development_index_hdi": 76,
-      "physicians_per_1_000_people": 70,
       "political_corruption_index": 93,
-      "electric_vehicle_stock": 2,
       "general_government_gross_debt_gdp": 165,
       "big_mac_index": 17,
       "environmental_performance_index": 160,
       "global_peace_index": 98,
       "inform_resilience_index": 69,
       "network_readiness_index": 16,
-      "social_progress_index": 69
+      "intentional_homicides": 12,
+      "water_stress_level": 134,
+      "social_progress_index": 69,
+      "lpi_infrastructure": 19
     },
-    "kpi_count": 21
+    "kpi_count": 19
   },
   {
     "country": "Lithuania",
     "ranks": {
       "gini_index": 91,
       "unemployment_rate": 122,
-      "extreme_poverty": 66,
-      "access_to_basic_drinking_water": 80,
-      "railway_length": 64,
       "inflation_consumer_price_index": 16,
       "employment_to_population_ratio": 88,
       "female_labor_force_participation": 57,
       "education_expenditure_of_gdp": 89,
       "democracy_index": 36,
       "human_development_index_hdi": 38,
-      "physicians_per_1_000_people": 9,
       "political_corruption_index": 38,
       "general_government_gross_debt_gdp": 62,
       "big_mac_index": 13,
@@ -2301,49 +2176,47 @@
       "inform_resilience_index": 25,
       "pisa_overall_score": 30,
       "network_readiness_index": 29,
-      "social_progress_index": 27
+      "intentional_homicides": 93,
+      "water_stress_level": 31,
+      "social_progress_index": 27,
+      "lpi_infrastructure": 40
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Tajikistan",
     "ranks": {
       "gini_index": 92,
       "unemployment_rate": 153,
-      "extreme_poverty": 105,
-      "access_to_basic_drinking_water": 150,
-      "railway_length": 101,
       "inflation_consumer_price_index": 138,
       "employment_to_population_ratio": 166,
       "female_labor_force_participation": 157,
       "education_expenditure_of_gdp": 40,
       "democracy_index": 159,
       "human_development_index_hdi": 127,
-      "physicians_per_1_000_people": 88,
       "political_corruption_index": 158,
       "general_government_gross_debt_gdp": 15,
       "environmental_performance_index": 117,
       "global_peace_index": 80,
       "inform_resilience_index": 112,
-      "social_progress_index": 105
+      "intentional_homicides": 36,
+      "water_stress_level": 153,
+      "social_progress_index": 105,
+      "lpi_infrastructure": 135
     },
-    "kpi_count": 18
+    "kpi_count": 17
   },
   {
     "country": "Vietnam",
     "ranks": {
       "gini_index": 93,
       "unemployment_rate": 9,
-      "extreme_poverty": 72,
-      "access_to_basic_drinking_water": 82,
-      "railway_length": 47,
       "inflation_consumer_price_index": 107,
       "employment_to_population_ratio": 16,
       "female_labor_force_participation": 18,
       "education_expenditure_of_gdp": 146,
       "democracy_index": 133,
       "human_development_index_hdi": 92,
-      "physicians_per_1_000_people": 123,
       "political_corruption_index": 84,
       "general_government_gross_debt_gdp": 38,
       "big_mac_index": 10,
@@ -2352,75 +2225,76 @@
       "inform_resilience_index": 113,
       "pisa_overall_score": 34,
       "network_readiness_index": 43,
-      "social_progress_index": 60
+      "intentional_homicides": 65,
+      "water_stress_level": 107,
+      "social_progress_index": 60,
+      "lpi_infrastructure": 51
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Senegal",
     "ranks": {
       "gini_index": 94,
       "unemployment_rate": 38,
-      "extreme_poverty": 126,
-      "access_to_basic_drinking_water": 141,
-      "railway_length": 83,
       "inflation_consumer_price_index": 17,
       "employment_to_population_ratio": 141,
       "female_labor_force_participation": 152,
       "education_expenditure_of_gdp": 23,
       "democracy_index": 74,
       "human_development_index_hdi": 168,
-      "physicians_per_1_000_people": 177,
       "political_corruption_index": 61,
       "general_government_gross_debt_gdp": 178,
       "environmental_performance_index": 136,
       "global_peace_index": 69,
       "inform_resilience_index": 127,
       "network_readiness_index": 97,
-      "social_progress_index": 111
+      "intentional_homicides": 7,
+      "water_stress_level": 104,
+      "social_progress_index": 111,
+      "lpi_infrastructure": 120
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Palestine",
     "ranks": {
       "gini_index": 95,
       "unemployment_rate": 176,
-      "extreme_poverty": 78,
-      "access_to_basic_drinking_water": 75,
       "inflation_consumer_price_index": 180,
       "employment_to_population_ratio": 171,
       "female_labor_force_participation": 169,
       "education_expenditure_of_gdp": 41,
       "democracy_index": 112,
       "human_development_index_hdi": 133,
-      "physicians_per_1_000_people": 81,
       "political_corruption_index": 67,
       "global_peace_index": 145,
-      "inform_resilience_index": 171
+      "inform_resilience_index": 171,
+      "intentional_homicides": 18,
+      "water_stress_level": 138
     },
-    "kpi_count": 14
+    "kpi_count": 13
   },
   {
     "country": "Yemen",
     "ranks": {
       "gini_index": 96,
       "unemployment_rate": 167,
-      "extreme_poverty": 138,
-      "access_to_basic_drinking_water": 181,
       "inflation_consumer_price_index": 148,
       "employment_to_population_ratio": 177,
       "female_labor_force_participation": 179,
       "education_expenditure_of_gdp": 56,
       "democracy_index": 155,
       "human_development_index_hdi": 183,
-      "physicians_per_1_000_people": 149,
       "political_corruption_index": 169,
       "general_government_gross_debt_gdp": 135,
       "global_peace_index": 159,
       "inform_resilience_index": 189,
       "network_readiness_index": 128,
-      "social_progress_index": 145
+      "intentional_homicides": 125,
+      "water_stress_level": 172,
+      "social_progress_index": 145,
+      "lpi_infrastructure": 161
     },
     "kpi_count": 17
   },
@@ -2429,47 +2303,45 @@
     "ranks": {
       "gini_index": 97,
       "unemployment_rate": 40,
-      "extreme_poverty": 164,
-      "access_to_basic_drinking_water": 186,
-      "railway_length": 97,
       "inflation_consumer_price_index": 157,
       "employment_to_population_ratio": 3,
       "female_labor_force_participation": 1,
       "education_expenditure_of_gdp": 141,
       "democracy_index": 83,
       "human_development_index_hdi": 182,
-      "physicians_per_1_000_people": 160,
       "political_corruption_index": 149,
       "general_government_gross_debt_gdp": 82,
       "environmental_performance_index": 168,
       "global_peace_index": 60,
       "inform_resilience_index": 155,
       "network_readiness_index": 120,
-      "social_progress_index": 136
+      "water_stress_level": 91,
+      "social_progress_index": 136,
+      "lpi_infrastructure": 155
     },
-    "kpi_count": 19
+    "kpi_count": 17
   },
   {
     "country": "Mauritius",
     "ranks": {
       "gini_index": 98,
       "unemployment_rate": 100,
-      "extreme_poverty": 47,
-      "access_to_basic_drinking_water": 24,
       "inflation_consumer_price_index": 106,
       "employment_to_population_ratio": 124,
       "female_labor_force_participation": 132,
       "education_expenditure_of_gdp": 97,
       "democracy_index": 20,
       "human_development_index_hdi": 72,
-      "physicians_per_1_000_people": 109,
       "political_corruption_index": 81,
       "general_government_gross_debt_gdp": 155,
       "environmental_performance_index": 78,
       "global_peace_index": 26,
       "inform_resilience_index": 29,
       "network_readiness_index": 58,
-      "social_progress_index": 47
+      "intentional_homicides": 83,
+      "water_stress_level": 113,
+      "social_progress_index": 47,
+      "lpi_infrastructure": 131
     },
     "kpi_count": 18
   },
@@ -2478,92 +2350,89 @@
     "ranks": {
       "gini_index": 99,
       "unemployment_rate": 11,
-      "extreme_poverty": 150,
-      "access_to_basic_drinking_water": 169,
       "inflation_consumer_price_index": 119,
       "employment_to_population_ratio": 2,
       "female_labor_force_participation": 2,
       "education_expenditure_of_gdp": 7,
       "human_development_index_hdi": 155,
-      "physicians_per_1_000_people": 163,
       "political_corruption_index": 100,
       "general_government_gross_debt_gdp": 19,
       "environmental_performance_index": 131,
       "inform_resilience_index": 128,
-      "social_progress_index": 113
+      "intentional_homicides": 103,
+      "social_progress_index": 113,
+      "lpi_infrastructure": 94
     },
-    "kpi_count": 15
+    "kpi_count": 14
   },
   {
     "country": "Burkina Faso",
     "ranks": {
       "gini_index": 100,
       "unemployment_rate": 89,
-      "extreme_poverty": 155,
-      "access_to_basic_drinking_water": 191,
-      "railway_length": 103,
       "inflation_consumer_price_index": 115,
       "employment_to_population_ratio": 151,
       "female_labor_force_participation": 141,
       "education_expenditure_of_gdp": 44,
       "democracy_index": 137,
       "human_development_index_hdi": 185,
-      "physicians_per_1_000_people": 172,
       "political_corruption_index": 72,
       "general_government_gross_debt_gdp": 90,
       "environmental_performance_index": 127,
       "global_peace_index": 152,
       "inform_resilience_index": 181,
       "network_readiness_index": 122,
-      "social_progress_index": 131
+      "intentional_homicides": 55,
+      "water_stress_level": 75,
+      "social_progress_index": 131,
+      "lpi_infrastructure": 150
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Chad",
     "ranks": {
       "gini_index": 101,
       "unemployment_rate": 6,
-      "extreme_poverty": 148,
-      "access_to_basic_drinking_water": 187,
       "inflation_consumer_price_index": 153,
       "employment_to_population_ratio": 74,
       "female_labor_force_participation": 120,
       "education_expenditure_of_gdp": 134,
       "democracy_index": 158,
       "human_development_index_hdi": 189,
-      "physicians_per_1_000_people": 182,
       "political_corruption_index": 174,
       "general_government_gross_debt_gdp": 35,
       "environmental_performance_index": 166,
       "global_peace_index": 134,
       "inform_resilience_index": 186,
       "network_readiness_index": 125,
-      "social_progress_index": 150
+      "water_stress_level": 51,
+      "social_progress_index": 150,
+      "lpi_infrastructure": 109
     },
-    "kpi_count": 18
+    "kpi_count": 17
   },
   {
     "country": "Burundi",
     "ranks": {
       "gini_index": 102,
       "unemployment_rate": 5,
-      "extreme_poverty": 167,
-      "access_to_basic_drinking_water": 178,
       "inflation_consumer_price_index": 168,
       "employment_to_population_ratio": 9,
       "female_labor_force_participation": 5,
       "education_expenditure_of_gdp": 67,
       "democracy_index": 144,
       "human_development_index_hdi": 186,
-      "physicians_per_1_000_people": 186,
       "political_corruption_index": 137,
       "general_government_gross_debt_gdp": 56,
       "environmental_performance_index": 152,
       "global_peace_index": 133,
       "inform_resilience_index": 166,
       "network_readiness_index": 127,
-      "social_progress_index": 144
+      "intentional_homicides": 123,
+      "water_stress_level": 87,
+      "social_progress_index": 144,
+      "lpi_infrastructure": 162
     },
     "kpi_count": 18
   },
@@ -2572,41 +2441,36 @@
     "ranks": {
       "gini_index": 103,
       "unemployment_rate": 95,
-      "extreme_poverty": 158,
-      "access_to_basic_drinking_water": 177,
-      "railway_length": 65,
       "inflation_consumer_price_index": 122,
       "employment_to_population_ratio": 47,
       "female_labor_force_participation": 34,
       "education_expenditure_of_gdp": 102,
       "democracy_index": 89,
       "human_development_index_hdi": 143,
-      "physicians_per_1_000_people": 181,
       "political_corruption_index": 90,
       "general_government_gross_debt_gdp": 132,
       "environmental_performance_index": 148,
       "global_peace_index": 127,
       "inform_resilience_index": 169,
       "network_readiness_index": 70,
-      "social_progress_index": 112
+      "intentional_homicides": 118,
+      "water_stress_level": 127,
+      "social_progress_index": 112,
+      "lpi_infrastructure": 62
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Sri Lanka",
     "ranks": {
       "gini_index": 104,
       "unemployment_rate": 85,
-      "extreme_poverty": 85,
-      "access_to_basic_drinking_water": 136,
-      "railway_length": 73,
       "inflation_consumer_price_index": 9,
       "employment_to_population_ratio": 146,
       "female_labor_force_participation": 158,
       "education_expenditure_of_gdp": 180,
       "democracy_index": 67,
       "human_development_index_hdi": 89,
-      "physicians_per_1_000_people": 110,
       "political_corruption_index": 82,
       "general_government_gross_debt_gdp": 169,
       "big_mac_index": 23,
@@ -2614,27 +2478,25 @@
       "global_peace_index": 97,
       "inform_resilience_index": 102,
       "network_readiness_index": 91,
-      "social_progress_index": 75
+      "intentional_homicides": 99,
+      "water_stress_level": 159,
+      "social_progress_index": 75,
+      "lpi_infrastructure": 95
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Israel",
     "ranks": {
       "gini_index": 105,
       "unemployment_rate": 46,
-      "extreme_poverty": 52,
-      "access_to_basic_drinking_water": 10,
-      "railway_length": 69,
       "inflation_consumer_price_index": 89,
       "employment_to_population_ratio": 49,
       "female_labor_force_participation": 35,
       "education_expenditure_of_gdp": 28,
       "democracy_index": 31,
       "human_development_index_hdi": 26,
-      "physicians_per_1_000_people": 32,
       "political_corruption_index": 33,
-      "electric_vehicle_stock": 23,
       "general_government_gross_debt_gdp": 133,
       "big_mac_index": 47,
       "environmental_performance_index": 57,
@@ -2642,65 +2504,65 @@
       "inform_resilience_index": 81,
       "pisa_overall_score": 35,
       "network_readiness_index": 12,
-      "social_progress_index": 26
+      "intentional_homicides": 67,
+      "water_stress_level": 167,
+      "social_progress_index": 26,
+      "lpi_infrastructure": 29
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Togo",
     "ranks": {
       "gini_index": 106,
       "unemployment_rate": 15,
-      "extreme_poverty": 140,
-      "access_to_basic_drinking_water": 166,
       "inflation_consumer_price_index": 78,
       "employment_to_population_ratio": 99,
       "female_labor_force_participation": 70,
       "education_expenditure_of_gdp": 94,
       "democracy_index": 121,
       "human_development_index_hdi": 160,
-      "physicians_per_1_000_people": 183,
       "political_corruption_index": 134,
       "general_government_gross_debt_gdp": 137,
       "environmental_performance_index": 135,
       "global_peace_index": 126,
       "inform_resilience_index": 157,
-      "social_progress_index": 125
+      "water_stress_level": 39,
+      "social_progress_index": 125,
+      "lpi_infrastructure": 136
     },
-    "kpi_count": 17
+    "kpi_count": 16
   },
   {
     "country": "Gabon",
     "ranks": {
       "gini_index": 107,
       "unemployment_rate": 174,
-      "extreme_poverty": 92,
-      "access_to_basic_drinking_water": 140,
-      "railway_length": 99,
       "inflation_consumer_price_index": 28,
       "employment_to_population_ratio": 156,
       "female_labor_force_participation": 134,
       "education_expenditure_of_gdp": 164,
       "democracy_index": 143,
       "human_development_index_hdi": 108,
-      "physicians_per_1_000_people": 143,
       "political_corruption_index": 121,
       "general_government_gross_debt_gdp": 142,
       "environmental_performance_index": 51,
       "global_peace_index": 117,
       "inform_resilience_index": 108,
-      "social_progress_index": 107
+      "water_stress_level": 12,
+      "social_progress_index": 107,
+      "lpi_infrastructure": 141
     },
-    "kpi_count": 18
+    "kpi_count": 16
   },
   {
     "country": "Kosovo",
     "ranks": {
       "gini_index": 108,
-      "extreme_poverty": 114,
       "inflation_consumer_price_index": 39,
       "political_corruption_index": 55,
-      "global_peace_index": 63
+      "global_peace_index": 63,
+      "intentional_homicides": 73
     },
     "kpi_count": 5
   },
@@ -2709,135 +2571,129 @@
     "ranks": {
       "gini_index": 109,
       "unemployment_rate": 126,
-      "extreme_poverty": 109,
-      "access_to_basic_drinking_water": 175,
       "inflation_consumer_price_index": 83,
       "employment_to_population_ratio": 106,
       "female_labor_force_participation": 97,
       "education_expenditure_of_gdp": 169,
       "democracy_index": 157,
       "human_development_index_hdi": 132,
-      "physicians_per_1_000_people": 173,
       "political_corruption_index": 154,
       "general_government_gross_debt_gdp": 48,
       "environmental_performance_index": 77,
       "global_peace_index": 82,
       "inform_resilience_index": 92,
-      "social_progress_index": 134
+      "water_stress_level": 3,
+      "social_progress_index": 134,
+      "lpi_infrastructure": 96
     },
-    "kpi_count": 17
+    "kpi_count": 16
   },
   {
     "country": "Malawi",
     "ranks": {
       "gini_index": 110,
       "unemployment_rate": 86,
-      "extreme_poverty": 168,
-      "access_to_basic_drinking_water": 164,
-      "railway_length": 89,
       "inflation_consumer_price_index": 176,
       "employment_to_population_ratio": 44,
       "female_labor_force_participation": 27,
       "education_expenditure_of_gdp": 153,
       "democracy_index": 76,
       "human_development_index_hdi": 171,
-      "physicians_per_1_000_people": 188,
       "political_corruption_index": 122,
       "general_government_gross_debt_gdp": 148,
       "environmental_performance_index": 97,
       "global_peace_index": 71,
       "inform_resilience_index": 141,
       "network_readiness_index": 114,
-      "social_progress_index": 117
+      "intentional_homicides": 70,
+      "water_stress_level": 106,
+      "social_progress_index": 117,
+      "lpi_infrastructure": 78
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Samoa",
     "ranks": {
       "gini_index": 111,
       "unemployment_rate": 74,
-      "extreme_poverty": 95,
-      "access_to_basic_drinking_water": 62,
       "inflation_consumer_price_index": 56,
       "employment_to_population_ratio": 157,
       "female_labor_force_participation": 160,
       "education_expenditure_of_gdp": 38,
       "human_development_index_hdi": 121,
-      "physicians_per_1_000_people": 139,
       "general_government_gross_debt_gdp": 14,
       "environmental_performance_index": 123,
-      "inform_resilience_index": 75
+      "inform_resilience_index": 75,
+      "intentional_homicides": 127
     },
-    "kpi_count": 13
+    "kpi_count": 11
   },
   {
     "country": "Gambia",
     "ranks": {
       "gini_index": 112,
       "unemployment_rate": 113,
-      "extreme_poverty": 130,
-      "access_to_basic_drinking_water": 143,
       "inflation_consumer_price_index": 161,
       "employment_to_population_ratio": 153,
       "female_labor_force_participation": 125,
       "education_expenditure_of_gdp": 152,
       "democracy_index": 99,
       "human_development_index_hdi": 169,
-      "physicians_per_1_000_people": 180,
       "political_corruption_index": 54,
       "general_government_gross_debt_gdp": 140,
       "environmental_performance_index": 122,
       "global_peace_index": 55,
       "inform_resilience_index": 117,
-      "social_progress_index": 116
+      "water_stress_level": 32,
+      "social_progress_index": 116,
+      "lpi_infrastructure": 152
     },
-    "kpi_count": 17
+    "kpi_count": 16
   },
   {
     "country": "Laos",
     "ranks": {
       "gini_index": 113,
       "unemployment_rate": 8,
-      "extreme_poverty": 123,
-      "access_to_basic_drinking_water": 144,
       "inflation_consumer_price_index": 171,
       "employment_to_population_ratio": 33,
       "female_labor_force_participation": 40,
       "education_expenditure_of_gdp": 185,
       "democracy_index": 160,
       "human_development_index_hdi": 146,
-      "physicians_per_1_000_people": 148,
       "political_corruption_index": 128,
       "general_government_gross_debt_gdp": 158,
       "environmental_performance_index": 149,
       "global_peace_index": 47,
       "inform_resilience_index": 101,
-      "network_readiness_index": 103
+      "network_readiness_index": 103,
+      "water_stress_level": 56,
+      "lpi_infrastructure": 144
     },
-    "kpi_count": 17
+    "kpi_count": 16
   },
   {
     "country": "Dominican Republic",
     "ranks": {
       "gini_index": 114,
       "unemployment_rate": 98,
-      "extreme_poverty": 56,
-      "access_to_basic_drinking_water": 95,
       "inflation_consumer_price_index": 99,
       "employment_to_population_ratio": 65,
       "female_labor_force_participation": 96,
       "education_expenditure_of_gdp": 111,
       "democracy_index": 52,
       "human_development_index_hdi": 87,
-      "physicians_per_1_000_people": 80,
       "political_corruption_index": 119,
       "general_government_gross_debt_gdp": 112,
       "environmental_performance_index": 89,
       "global_peace_index": 79,
       "inform_resilience_index": 119,
       "pisa_overall_score": 77,
-      "network_readiness_index": 76
+      "network_readiness_index": 76,
+      "intentional_homicides": 145,
+      "water_stress_level": 132,
+      "lpi_infrastructure": 112
     },
     "kpi_count": 18
   },
@@ -2845,54 +2701,47 @@
     "country": "Tuvalu",
     "ranks": {
       "gini_index": 115,
-      "extreme_poverty": 110,
-      "access_to_basic_drinking_water": 55,
       "inflation_consumer_price_index": 11,
       "education_expenditure_of_gdp": 2,
       "human_development_index_hdi": 128,
-      "physicians_per_1_000_people": 107,
       "general_government_gross_debt_gdp": 3,
-      "inform_resilience_index": 61
+      "inform_resilience_index": 61,
+      "intentional_homicides": 159
     },
-    "kpi_count": 9
+    "kpi_count": 7
   },
   {
     "country": "Suriname",
     "ranks": {
       "gini_index": 116,
       "unemployment_rate": 119,
-      "extreme_poverty": 79,
-      "access_to_basic_drinking_water": 81,
       "inflation_consumer_price_index": 167,
       "employment_to_population_ratio": 134,
       "female_labor_force_participation": 127,
       "education_expenditure_of_gdp": 147,
       "democracy_index": 48,
       "human_development_index_hdi": 113,
-      "physicians_per_1_000_people": 101,
       "political_corruption_index": 39,
       "general_government_gross_debt_gdp": 156,
       "environmental_performance_index": 70,
       "inform_resilience_index": 78,
+      "intentional_homicides": 129,
+      "water_stress_level": 46,
       "social_progress_index": 65
     },
-    "kpi_count": 16
+    "kpi_count": 15
   },
   {
     "country": "Philippines",
     "ranks": {
       "gini_index": 117,
       "unemployment_rate": 18,
-      "extreme_poverty": 100,
-      "access_to_basic_drinking_water": 110,
-      "railway_length": 104,
       "inflation_consumer_price_index": 96,
       "employment_to_population_ratio": 73,
       "female_labor_force_participation": 112,
       "education_expenditure_of_gdp": 105,
       "democracy_index": 51,
       "human_development_index_hdi": 118,
-      "physicians_per_1_000_people": 127,
       "political_corruption_index": 161,
       "general_government_gross_debt_gdp": 104,
       "big_mac_index": 8,
@@ -2900,31 +2749,34 @@
       "global_peace_index": 105,
       "inform_resilience_index": 156,
       "pisa_overall_score": 75,
-      "network_readiness_index": 61
+      "network_readiness_index": 61,
+      "intentional_homicides": 111,
+      "water_stress_level": 119,
+      "lpi_infrastructure": 48
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Rwanda",
     "ranks": {
       "gini_index": 118,
       "unemployment_rate": 155,
-      "extreme_poverty": 144,
-      "access_to_basic_drinking_water": 173,
       "inflation_consumer_price_index": 44,
       "employment_to_population_ratio": 103,
       "female_labor_force_participation": 58,
       "education_expenditure_of_gdp": 73,
       "democracy_index": 114,
       "human_development_index_hdi": 158,
-      "physicians_per_1_000_people": 178,
       "political_corruption_index": 75,
       "general_government_gross_debt_gdp": 138,
       "environmental_performance_index": 139,
       "global_peace_index": 91,
       "inform_resilience_index": 123,
       "network_readiness_index": 87,
-      "social_progress_index": 122
+      "intentional_homicides": 101,
+      "water_stress_level": 108,
+      "social_progress_index": 122,
+      "lpi_infrastructure": 92
     },
     "kpi_count": 18
   },
@@ -2933,16 +2785,12 @@
     "ranks": {
       "gini_index": 119,
       "unemployment_rate": 63,
-      "extreme_poverty": 65,
-      "access_to_basic_drinking_water": 60,
-      "railway_length": 38,
       "inflation_consumer_price_index": 67,
       "employment_to_population_ratio": 115,
       "female_labor_force_participation": 108,
       "education_expenditure_of_gdp": 79,
       "democracy_index": 61,
       "human_development_index_hdi": 54,
-      "physicians_per_1_000_people": 10,
       "political_corruption_index": 98,
       "general_government_gross_debt_gdp": 26,
       "environmental_performance_index": 41,
@@ -2950,25 +2798,24 @@
       "inform_resilience_index": 45,
       "pisa_overall_score": 49,
       "network_readiness_index": 53,
-      "social_progress_index": 39
+      "intentional_homicides": 46,
+      "water_stress_level": 133,
+      "social_progress_index": 39,
+      "lpi_infrastructure": 55
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Morocco",
     "ranks": {
       "gini_index": 120,
       "unemployment_rate": 136,
-      "extreme_poverty": 90,
-      "access_to_basic_drinking_water": 138,
-      "railway_length": 60,
       "inflation_consumer_price_index": 21,
       "employment_to_population_ratio": 159,
       "female_labor_force_participation": 168,
       "education_expenditure_of_gdp": 26,
       "democracy_index": 91,
       "human_development_index_hdi": 119,
-      "physicians_per_1_000_people": 130,
       "political_corruption_index": 105,
       "general_government_gross_debt_gdp": 130,
       "environmental_performance_index": 161,
@@ -2976,25 +2823,24 @@
       "inform_resilience_index": 104,
       "pisa_overall_score": 74,
       "network_readiness_index": 73,
-      "social_progress_index": 91
+      "intentional_homicides": 68,
+      "water_stress_level": 141,
+      "social_progress_index": 91,
+      "lpi_infrastructure": 88
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "El Salvador",
     "ranks": {
       "gini_index": 121,
       "unemployment_rate": 32,
-      "extreme_poverty": 96,
-      "access_to_basic_drinking_water": 73,
-      "railway_length": 102,
       "inflation_consumer_price_index": 18,
       "employment_to_population_ratio": 82,
       "female_labor_force_participation": 124,
       "education_expenditure_of_gdp": 135,
       "democracy_index": 95,
       "human_development_index_hdi": 131,
-      "physicians_per_1_000_people": 99,
       "political_corruption_index": 116,
       "general_government_gross_debt_gdp": 154,
       "environmental_performance_index": 95,
@@ -3002,43 +2848,42 @@
       "inform_resilience_index": 111,
       "pisa_overall_score": 71,
       "network_readiness_index": 95,
-      "social_progress_index": 90
+      "intentional_homicides": 137,
+      "water_stress_level": 93,
+      "social_progress_index": 90,
+      "lpi_infrastructure": 101
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Belize",
     "ranks": {
       "gini_index": 122,
       "unemployment_rate": 117,
-      "extreme_poverty": 64,
-      "access_to_basic_drinking_water": 76,
       "inflation_consumer_price_index": 98,
       "employment_to_population_ratio": 91,
       "female_labor_force_participation": 116,
       "education_expenditure_of_gdp": 75,
       "human_development_index_hdi": 114,
-      "physicians_per_1_000_people": 115,
       "general_government_gross_debt_gdp": 123,
       "environmental_performance_index": 49,
-      "inform_resilience_index": 98
+      "inform_resilience_index": 98,
+      "intentional_homicides": 167,
+      "water_stress_level": 18
     },
-    "kpi_count": 13
+    "kpi_count": 12
   },
   {
     "country": "Jamaica",
     "ranks": {
       "gini_index": 123,
       "unemployment_rate": 84,
-      "extreme_poverty": 71,
-      "access_to_basic_drinking_water": 130,
       "inflation_consumer_price_index": 134,
       "employment_to_population_ratio": 39,
       "female_labor_force_participation": 41,
       "education_expenditure_of_gdp": 36,
       "democracy_index": 49,
       "human_development_index_hdi": 116,
-      "physicians_per_1_000_people": 138,
       "political_corruption_index": 40,
       "general_government_gross_debt_gdp": 108,
       "environmental_performance_index": 72,
@@ -3046,7 +2891,10 @@
       "inform_resilience_index": 77,
       "pisa_overall_score": 61,
       "network_readiness_index": 89,
-      "social_progress_index": 48
+      "intentional_homicides": 176,
+      "water_stress_level": 95,
+      "social_progress_index": 48,
+      "lpi_infrastructure": 130
     },
     "kpi_count": 19
   },
@@ -3055,16 +2903,12 @@
     "ranks": {
       "gini_index": 124,
       "unemployment_rate": 131,
-      "extreme_poverty": 35,
-      "access_to_basic_drinking_water": 52,
-      "railway_length": 74,
       "inflation_consumer_price_index": 130,
       "employment_to_population_ratio": 86,
       "female_labor_force_participation": 60,
       "education_expenditure_of_gdp": 69,
       "democracy_index": 15,
       "human_development_index_hdi": 48,
-      "physicians_per_1_000_people": 11,
       "political_corruption_index": 21,
       "general_government_gross_debt_gdp": 129,
       "big_mac_index": 69,
@@ -3073,41 +2917,38 @@
       "inform_resilience_index": 57,
       "pisa_overall_score": 47,
       "network_readiness_index": 51,
-      "social_progress_index": 34
+      "intentional_homicides": 148,
+      "water_stress_level": 92,
+      "social_progress_index": 34,
+      "lpi_infrastructure": 77
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Micronesia",
     "ranks": {
       "gini_index": 125,
-      "extreme_poverty": 133,
-      "access_to_basic_drinking_water": 134,
       "inflation_consumer_price_index": 133,
       "education_expenditure_of_gdp": 3,
       "human_development_index_hdi": 148,
-      "physicians_per_1_000_people": 119,
       "general_government_gross_debt_gdp": 8,
       "environmental_performance_index": 113,
-      "inform_resilience_index": 90
+      "inform_resilience_index": 90,
+      "intentional_homicides": 37
     },
-    "kpi_count": 10
+    "kpi_count": 8
   },
   {
     "country": "Peru",
     "ranks": {
       "gini_index": 126,
       "unemployment_rate": 82,
-      "extreme_poverty": 98,
-      "access_to_basic_drinking_water": 111,
-      "railway_length": 72,
       "inflation_consumer_price_index": 49,
       "employment_to_population_ratio": 23,
       "female_labor_force_participation": 24,
       "education_expenditure_of_gdp": 91,
       "democracy_index": 78,
       "human_development_index_hdi": 77,
-      "physicians_per_1_000_people": 97,
       "political_corruption_index": 110,
       "general_government_gross_debt_gdp": 39,
       "big_mac_index": 39,
@@ -3116,31 +2957,34 @@
       "inform_resilience_index": 132,
       "pisa_overall_score": 58,
       "network_readiness_index": 79,
-      "social_progress_index": 66
+      "intentional_homicides": 140,
+      "water_stress_level": 57,
+      "social_progress_index": 66,
+      "lpi_infrastructure": 76
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Trinidad and Tobago",
     "ranks": {
       "gini_index": 127,
       "unemployment_rate": 73,
-      "extreme_poverty": 89,
-      "access_to_basic_drinking_water": 66,
       "inflation_consumer_price_index": 12,
       "employment_to_population_ratio": 110,
       "female_labor_force_participation": 115,
       "education_expenditure_of_gdp": 142,
       "democracy_index": 45,
       "human_development_index_hdi": 71,
-      "physicians_per_1_000_people": 42,
       "political_corruption_index": 27,
       "general_government_gross_debt_gdp": 125,
       "environmental_performance_index": 59,
       "global_peace_index": 89,
       "inform_resilience_index": 73,
       "network_readiness_index": 101,
-      "social_progress_index": 50
+      "intentional_homicides": 172,
+      "water_stress_level": 110,
+      "social_progress_index": 50,
+      "lpi_infrastructure": 137
     },
     "kpi_count": 18
   },
@@ -3149,39 +2993,34 @@
     "ranks": {
       "gini_index": 128,
       "unemployment_rate": 26,
-      "extreme_poverty": 160,
-      "access_to_basic_drinking_water": 182,
-      "railway_length": 54,
       "inflation_consumer_price_index": 88,
       "employment_to_population_ratio": 4,
       "female_labor_force_participation": 4,
       "education_expenditure_of_gdp": 136,
       "democracy_index": 86,
       "human_development_index_hdi": 164,
-      "physicians_per_1_000_people": 176,
       "political_corruption_index": 50,
       "general_government_gross_debt_gdp": 81,
       "environmental_performance_index": 134,
       "global_peace_index": 73,
-      "inform_resilience_index": 144
+      "inform_resilience_index": 144,
+      "intentional_homicides": 104,
+      "water_stress_level": 97,
+      "lpi_infrastructure": 38
     },
-    "kpi_count": 17
+    "kpi_count": 16
   },
   {
     "country": "Malaysia",
     "ranks": {
       "gini_index": 129,
       "unemployment_rate": 58,
-      "extreme_poverty": 9,
-      "access_to_basic_drinking_water": 90,
-      "railway_length": 70,
       "inflation_consumer_price_index": 46,
       "employment_to_population_ratio": 46,
       "female_labor_force_participation": 105,
       "education_expenditure_of_gdp": 121,
       "democracy_index": 44,
       "human_development_index_hdi": 66,
-      "physicians_per_1_000_people": 77,
       "political_corruption_index": 63,
       "general_government_gross_debt_gdp": 134,
       "big_mac_index": 9,
@@ -3190,28 +3029,31 @@
       "inform_resilience_index": 88,
       "pisa_overall_score": 56,
       "network_readiness_index": 34,
-      "social_progress_index": 43
+      "intentional_homicides": 27,
+      "water_stress_level": 41,
+      "social_progress_index": 43,
+      "lpi_infrastructure": 31
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "São Tomé and Príncipe",
     "ranks": {
       "gini_index": 130,
       "unemployment_rate": 138,
-      "extreme_poverty": 120,
-      "access_to_basic_drinking_water": 156,
       "inflation_consumer_price_index": 165,
       "employment_to_population_ratio": 179,
       "female_labor_force_participation": 166,
       "education_expenditure_of_gdp": 62,
       "human_development_index_hdi": 140,
-      "physicians_per_1_000_people": 142,
       "political_corruption_index": 56,
       "general_government_gross_debt_gdp": 86,
       "environmental_performance_index": 38,
       "inform_resilience_index": 37,
-      "social_progress_index": 95
+      "intentional_homicides": 98,
+      "water_stress_level": 28,
+      "social_progress_index": 95,
+      "lpi_infrastructure": 72
     },
     "kpi_count": 15
   },
@@ -3220,44 +3062,43 @@
     "ranks": {
       "gini_index": 131,
       "unemployment_rate": 68,
-      "extreme_poverty": 141,
-      "access_to_basic_drinking_water": 22,
-      "railway_length": 25,
       "employment_to_population_ratio": 149,
       "female_labor_force_participation": 118,
       "education_expenditure_of_gdp": 155,
       "democracy_index": 161,
       "human_development_index_hdi": 93,
-      "physicians_per_1_000_people": 86,
       "political_corruption_index": 165,
       "general_government_gross_debt_gdp": 4,
       "environmental_performance_index": 118,
       "global_peace_index": 88,
       "inform_resilience_index": 79,
-      "social_progress_index": 94
+      "intentional_homicides": 44,
+      "water_stress_level": 169,
+      "social_progress_index": 94,
+      "lpi_infrastructure": 97
     },
-    "kpi_count": 17
+    "kpi_count": 16
   },
   {
     "country": "Haiti",
     "ranks": {
       "gini_index": 132,
       "unemployment_rate": 163,
-      "extreme_poverty": 151,
-      "access_to_basic_drinking_water": 170,
       "inflation_consumer_price_index": 172,
       "employment_to_population_ratio": 108,
       "female_labor_force_participation": 48,
       "education_expenditure_of_gdp": 187,
       "democracy_index": 131,
       "human_development_index_hdi": 165,
-      "physicians_per_1_000_people": 154,
       "political_corruption_index": 136,
       "general_government_gross_debt_gdp": 10,
       "environmental_performance_index": 173,
       "global_peace_index": 141,
       "inform_resilience_index": 180,
-      "social_progress_index": 142
+      "intentional_homicides": 173,
+      "water_stress_level": 100,
+      "social_progress_index": 142,
+      "lpi_infrastructure": 165
     },
     "kpi_count": 17
   },
@@ -3266,72 +3107,67 @@
     "ranks": {
       "gini_index": 133,
       "unemployment_rate": 177,
-      "extreme_poverty": 132,
-      "access_to_basic_drinking_water": 157,
-      "railway_length": 90,
       "inflation_consumer_price_index": 52,
       "employment_to_population_ratio": 178,
       "female_labor_force_participation": 170,
       "education_expenditure_of_gdp": 112,
       "democracy_index": 132,
       "human_development_index_hdi": 174,
-      "physicians_per_1_000_people": 158,
       "political_corruption_index": 114,
       "general_government_gross_debt_gdp": 32,
       "environmental_performance_index": 61,
       "global_peace_index": 122,
       "inform_resilience_index": 146,
-      "social_progress_index": 126
+      "water_stress_level": 68,
+      "social_progress_index": 126,
+      "lpi_infrastructure": 100
     },
-    "kpi_count": 18
+    "kpi_count": 16
   },
   {
     "country": "United States",
     "ranks": {
       "gini_index": 134,
       "unemployment_rate": 64,
-      "extreme_poverty": 68,
-      "access_to_basic_drinking_water": 35,
-      "railway_length": 1,
       "inflation_consumer_price_index": 86,
       "employment_to_population_ratio": 78,
       "female_labor_force_participation": 66,
       "education_expenditure_of_gdp": 42,
       "democracy_index": 28,
       "human_development_index_hdi": 18,
-      "physicians_per_1_000_people": 37,
-      "homelessness_rate": 15,
       "political_corruption_index": 19,
-      "electric_vehicle_stock": 3,
       "general_government_gross_debt_gdp": 179,
       "big_mac_index": 66,
       "environmental_performance_index": 43,
       "global_peace_index": 128,
       "inform_resilience_index": 82,
-      "pisa_overall_score": 16
+      "pisa_overall_score": 16,
+      "intentional_homicides": 124,
+      "water_stress_level": 120,
+      "lpi_infrastructure": 17
     },
-    "kpi_count": 21
+    "kpi_count": 18
   },
   {
     "country": "Papua New Guinea",
     "ranks": {
       "gini_index": 135,
       "unemployment_rate": 31,
-      "extreme_poverty": 161,
-      "access_to_basic_drinking_water": 190,
       "inflation_consumer_price_index": 14,
       "employment_to_population_ratio": 132,
       "female_labor_force_participation": 109,
       "education_expenditure_of_gdp": 188,
       "democracy_index": 73,
       "human_development_index_hdi": 159,
-      "physicians_per_1_000_people": 187,
       "political_corruption_index": 123,
       "general_government_gross_debt_gdp": 83,
       "environmental_performance_index": 175,
       "global_peace_index": 116,
       "inform_resilience_index": 172,
-      "social_progress_index": 135
+      "intentional_homicides": 142,
+      "water_stress_level": 2,
+      "social_progress_index": 135,
+      "lpi_infrastructure": 105
     },
     "kpi_count": 17
   },
@@ -3340,22 +3176,22 @@
     "ranks": {
       "gini_index": 136,
       "unemployment_rate": 43,
-      "extreme_poverty": 87,
-      "access_to_basic_drinking_water": 117,
       "inflation_consumer_price_index": 132,
       "employment_to_population_ratio": 10,
       "female_labor_force_participation": 12,
       "education_expenditure_of_gdp": 6,
       "democracy_index": 103,
       "human_development_index_hdi": 107,
-      "physicians_per_1_000_people": 106,
       "political_corruption_index": 108,
       "general_government_gross_debt_gdp": 162,
       "environmental_performance_index": 99,
       "global_peace_index": 83,
       "inform_resilience_index": 116,
       "network_readiness_index": 98,
-      "social_progress_index": 88
+      "intentional_homicides": 113,
+      "water_stress_level": 4,
+      "social_progress_index": 88,
+      "lpi_infrastructure": 139
     },
     "kpi_count": 18
   },
@@ -3364,41 +3200,36 @@
     "ranks": {
       "gini_index": 137,
       "unemployment_rate": 55,
-      "extreme_poverty": 134,
-      "access_to_basic_drinking_water": 167,
-      "railway_length": 87,
       "inflation_consumer_price_index": 124,
       "employment_to_population_ratio": 50,
       "female_labor_force_participation": 65,
       "education_expenditure_of_gdp": 150,
       "democracy_index": 136,
       "human_development_index_hdi": 154,
-      "physicians_per_1_000_people": 175,
       "political_corruption_index": 172,
       "general_government_gross_debt_gdp": 52,
       "environmental_performance_index": 153,
       "global_peace_index": 137,
       "inform_resilience_index": 174,
       "network_readiness_index": 108,
-      "social_progress_index": 128
+      "intentional_homicides": 131,
+      "water_stress_level": 24,
+      "social_progress_index": 128,
+      "lpi_infrastructure": 164
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Argentina",
     "ranks": {
       "gini_index": 138,
       "unemployment_rate": 129,
-      "extreme_poverty": 62,
-      "access_to_basic_drinking_water": 61,
-      "railway_length": 13,
       "inflation_consumer_price_index": 185,
       "employment_to_population_ratio": 96,
       "female_labor_force_participation": 95,
       "education_expenditure_of_gdp": 30,
       "democracy_index": 54,
       "human_development_index_hdi": 46,
-      "physicians_per_1_000_people": 23,
       "political_corruption_index": 71,
       "general_government_gross_debt_gdp": 147,
       "big_mac_index": 70,
@@ -3407,77 +3238,78 @@
       "inform_resilience_index": 67,
       "pisa_overall_score": 62,
       "network_readiness_index": 67,
-      "social_progress_index": 37
+      "intentional_homicides": 115,
+      "water_stress_level": 88,
+      "social_progress_index": 37,
+      "lpi_infrastructure": 89
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Cape Verde",
     "ranks": {
       "gini_index": 139,
       "unemployment_rate": 154,
-      "extreme_poverty": 121,
-      "access_to_basic_drinking_water": 135,
       "inflation_consumer_price_index": 22,
       "employment_to_population_ratio": 131,
       "female_labor_force_participation": 110,
       "education_expenditure_of_gdp": 83,
       "democracy_index": 37,
       "human_development_index_hdi": 134,
-      "physicians_per_1_000_people": 126,
       "political_corruption_index": 53,
       "general_government_gross_debt_gdp": 172,
       "environmental_performance_index": 91,
       "inform_resilience_index": 27,
       "network_readiness_index": 94,
+      "intentional_homicides": 134,
+      "water_stress_level": 149,
       "social_progress_index": 70
     },
-    "kpi_count": 17
+    "kpi_count": 16
   },
   {
     "country": "Uganda",
     "ranks": {
       "gini_index": 140,
       "unemployment_rate": 36,
-      "extreme_poverty": 162,
-      "access_to_basic_drinking_water": 183,
-      "railway_length": 114,
       "inflation_consumer_price_index": 100,
       "employment_to_population_ratio": 8,
       "female_labor_force_participation": 8,
       "education_expenditure_of_gdp": 157,
       "democracy_index": 98,
       "human_development_index_hdi": 157,
-      "physicians_per_1_000_people": 168,
       "political_corruption_index": 142,
       "general_government_gross_debt_gdp": 87,
       "environmental_performance_index": 125,
       "global_peace_index": 113,
       "inform_resilience_index": 162,
       "network_readiness_index": 113,
-      "social_progress_index": 129
+      "intentional_homicides": 141,
+      "water_stress_level": 64,
+      "social_progress_index": 129,
+      "lpi_infrastructure": 87
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Central African Republic",
     "ranks": {
       "gini_index": 141,
       "unemployment_rate": 106,
-      "extreme_poverty": 165,
-      "access_to_basic_drinking_water": 194,
       "inflation_consumer_price_index": 35,
       "employment_to_population_ratio": 22,
       "female_labor_force_participation": 23,
       "education_expenditure_of_gdp": 179,
       "democracy_index": 164,
       "human_development_index_hdi": 190,
-      "physicians_per_1_000_people": 193,
       "political_corruption_index": 159,
       "general_government_gross_debt_gdp": 101,
       "environmental_performance_index": 75,
       "global_peace_index": 150,
-      "inform_resilience_index": 187
+      "inform_resilience_index": 187,
+      "intentional_homicides": 162,
+      "water_stress_level": 9,
+      "lpi_infrastructure": 125
     },
     "kpi_count": 16
   },
@@ -3486,18 +3318,13 @@
     "ranks": {
       "gini_index": 142,
       "unemployment_rate": 137,
-      "extreme_poverty": 45,
-      "access_to_basic_drinking_water": 28,
-      "railway_length": 57,
       "inflation_consumer_price_index": 118,
       "employment_to_population_ratio": 102,
       "female_labor_force_participation": 102,
       "education_expenditure_of_gdp": 65,
       "democracy_index": 29,
       "human_development_index_hdi": 44,
-      "physicians_per_1_000_people": 51,
       "political_corruption_index": 26,
-      "electric_vehicle_stock": 31,
       "general_government_gross_debt_gdp": 65,
       "big_mac_index": 41,
       "environmental_performance_index": 65,
@@ -3505,52 +3332,49 @@
       "inform_resilience_index": 80,
       "pisa_overall_score": 44,
       "network_readiness_index": 52,
-      "social_progress_index": 33
+      "intentional_homicides": 128,
+      "water_stress_level": 84,
+      "social_progress_index": 33,
+      "lpi_infrastructure": 74
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Ghana",
     "ranks": {
       "gini_index": 143,
       "unemployment_rate": 39,
-      "extreme_poverty": 145,
-      "access_to_basic_drinking_water": 137,
-      "railway_length": 82,
       "inflation_consumer_price_index": 170,
       "employment_to_population_ratio": 62,
       "female_labor_force_participation": 39,
       "education_expenditure_of_gdp": 143,
       "democracy_index": 65,
       "human_development_index_hdi": 142,
-      "physicians_per_1_000_people": 174,
       "political_corruption_index": 106,
       "general_government_gross_debt_gdp": 107,
       "environmental_performance_index": 170,
       "global_peace_index": 61,
       "inform_resilience_index": 109,
       "network_readiness_index": 83,
-      "social_progress_index": 93
+      "intentional_homicides": 72,
+      "water_stress_level": 67,
+      "social_progress_index": 93,
+      "lpi_infrastructure": 127
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Mexico",
     "ranks": {
       "gini_index": 144,
       "unemployment_rate": 30,
-      "extreme_poverty": 80,
-      "access_to_basic_drinking_water": 47,
       "inflation_consumer_price_index": 129,
       "employment_to_population_ratio": 72,
       "female_labor_force_participation": 122,
       "education_expenditure_of_gdp": 101,
       "democracy_index": 84,
       "human_development_index_hdi": 80,
-      "physicians_per_1_000_people": 69,
-      "homelessness_rate": 4,
       "political_corruption_index": 95,
-      "electric_vehicle_stock": 28,
       "general_government_gross_debt_gdp": 106,
       "big_mac_index": 43,
       "environmental_performance_index": 73,
@@ -3558,42 +3382,44 @@
       "inform_resilience_index": 140,
       "pisa_overall_score": 52,
       "network_readiness_index": 60,
-      "social_progress_index": 63
+      "intentional_homicides": 164,
+      "water_stress_level": 136,
+      "social_progress_index": 63,
+      "lpi_infrastructure": 85
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Saint Lucia",
     "ranks": {
       "gini_index": 145,
       "unemployment_rate": 148,
-      "extreme_poverty": 26,
-      "access_to_basic_drinking_water": 94,
       "inflation_consumer_price_index": 1,
       "employment_to_population_ratio": 59,
       "female_labor_force_participation": 29,
       "education_expenditure_of_gdp": 108,
       "human_development_index_hdi": 102,
-      "physicians_per_1_000_people": 136,
       "general_government_gross_debt_gdp": 145,
       "environmental_performance_index": 53,
-      "inform_resilience_index": 50
+      "inform_resilience_index": 50,
+      "intentional_homicides": 171,
+      "water_stress_level": 101
     },
-    "kpi_count": 13
+    "kpi_count": 12
   },
   {
     "country": "Grenada",
     "ranks": {
       "gini_index": 146,
-      "extreme_poverty": 57,
-      "access_to_basic_drinking_water": 104,
       "inflation_consumer_price_index": 24,
       "education_expenditure_of_gdp": 59,
       "human_development_index_hdi": 78,
-      "physicians_per_1_000_people": 103,
       "general_government_gross_debt_gdp": 131,
       "environmental_performance_index": 58,
-      "inform_resilience_index": 49
+      "inform_resilience_index": 49,
+      "intentional_homicides": 154,
+      "water_stress_level": 71,
+      "lpi_infrastructure": 128
     },
     "kpi_count": 10
   },
@@ -3602,37 +3428,32 @@
     "ranks": {
       "gini_index": 147,
       "unemployment_rate": 156,
-      "extreme_poverty": 169,
-      "access_to_basic_drinking_water": 193,
       "inflation_consumer_price_index": 182,
       "employment_to_population_ratio": 40,
       "female_labor_force_participation": 15,
       "education_expenditure_of_gdp": 183,
       "human_development_index_hdi": 192,
-      "physicians_per_1_000_people": 190,
       "political_corruption_index": 151,
       "general_government_gross_debt_gdp": 127,
       "global_peace_index": 156,
       "inform_resilience_index": 191,
+      "intentional_homicides": 155,
+      "water_stress_level": 50,
       "social_progress_index": 151
     },
-    "kpi_count": 15
+    "kpi_count": 14
   },
   {
     "country": "Paraguay",
     "ranks": {
       "gini_index": 148,
       "unemployment_rate": 110,
-      "extreme_poverty": 77,
-      "access_to_basic_drinking_water": 48,
-      "railway_length": 106,
       "inflation_consumer_price_index": 112,
       "employment_to_population_ratio": 28,
       "female_labor_force_participation": 53,
       "education_expenditure_of_gdp": 124,
       "democracy_index": 75,
       "human_development_index_hdi": 97,
-      "physicians_per_1_000_people": 28,
       "political_corruption_index": 141,
       "general_government_gross_debt_gdp": 61,
       "environmental_performance_index": 94,
@@ -3640,27 +3461,25 @@
       "inform_resilience_index": 72,
       "pisa_overall_score": 72,
       "network_readiness_index": 90,
-      "social_progress_index": 71
+      "intentional_homicides": 133,
+      "water_stress_level": 26,
+      "social_progress_index": 71,
+      "lpi_infrastructure": 106
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Turkey",
     "ranks": {
       "gini_index": 149,
       "unemployment_rate": 132,
-      "extreme_poverty": 49,
-      "access_to_basic_drinking_water": 92,
-      "railway_length": 19,
       "inflation_consumer_price_index": 181,
       "employment_to_population_ratio": 140,
       "female_labor_force_participation": 153,
       "education_expenditure_of_gdp": 139,
       "democracy_index": 104,
       "human_development_index_hdi": 50,
-      "physicians_per_1_000_people": 82,
       "political_corruption_index": 148,
-      "electric_vehicle_stock": 25,
       "general_government_gross_debt_gdp": 20,
       "big_mac_index": 59,
       "environmental_performance_index": 172,
@@ -3668,49 +3487,46 @@
       "inform_resilience_index": 160,
       "pisa_overall_score": 36,
       "network_readiness_index": 56,
-      "social_progress_index": 77
+      "intentional_homicides": 97,
+      "water_stress_level": 139,
+      "social_progress_index": 77,
+      "lpi_infrastructure": 25
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Democratic Republic of the Congo",
     "ranks": {
       "gini_index": 150,
       "unemployment_rate": 75,
-      "extreme_poverty": 171,
-      "access_to_basic_drinking_water": 195,
-      "railway_length": 42,
       "inflation_consumer_price_index": 80,
       "employment_to_population_ratio": 55,
       "female_labor_force_participation": 33,
       "education_expenditure_of_gdp": 149,
       "democracy_index": 156,
       "human_development_index_hdi": 170,
-      "physicians_per_1_000_people": 164,
       "political_corruption_index": 170,
       "general_government_gross_debt_gdp": 13,
       "environmental_performance_index": 119,
       "global_peace_index": 160,
       "inform_resilience_index": 188,
-      "network_readiness_index": 126
+      "network_readiness_index": 126,
+      "water_stress_level": 5,
+      "lpi_infrastructure": 126
     },
-    "kpi_count": 18
+    "kpi_count": 16
   },
   {
     "country": "Venezuela",
     "ranks": {
       "gini_index": 151,
       "unemployment_rate": 99,
-      "extreme_poverty": 113,
-      "access_to_basic_drinking_water": 122,
-      "railway_length": 110,
       "inflation_consumer_price_index": 186,
       "employment_to_population_ratio": 135,
       "female_labor_force_participation": 151,
       "education_expenditure_of_gdp": 191,
       "democracy_index": 142,
       "human_development_index_hdi": 120,
-      "physicians_per_1_000_people": 96,
       "political_corruption_index": 175,
       "general_government_gross_debt_gdp": 185,
       "big_mac_index": 35,
@@ -3718,31 +3534,34 @@
       "global_peace_index": 139,
       "inform_resilience_index": 165,
       "network_readiness_index": 99,
-      "social_progress_index": 106
+      "intentional_homicides": 153,
+      "water_stress_level": 73,
+      "social_progress_index": 106,
+      "lpi_infrastructure": 158
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Lesotho",
     "ranks": {
       "gini_index": 152,
       "unemployment_rate": 165,
-      "extreme_poverty": 154,
-      "access_to_basic_drinking_water": 161,
       "inflation_consumer_price_index": 139,
       "employment_to_population_ratio": 144,
       "female_labor_force_participation": 117,
       "education_expenditure_of_gdp": 16,
       "democracy_index": 70,
       "human_development_index_hdi": 166,
-      "physicians_per_1_000_people": 171,
       "political_corruption_index": 89,
       "general_government_gross_debt_gdp": 102,
       "environmental_performance_index": 141,
       "global_peace_index": 120,
       "inform_resilience_index": 122,
       "network_readiness_index": 118,
-      "social_progress_index": 120
+      "intentional_homicides": 170,
+      "water_stress_level": 36,
+      "social_progress_index": 120,
+      "lpi_infrastructure": 104
     },
     "kpi_count": 18
   },
@@ -3751,21 +3570,21 @@
     "ranks": {
       "gini_index": 153,
       "unemployment_rate": 143,
-      "extreme_poverty": 119,
-      "access_to_basic_drinking_water": 100,
       "inflation_consumer_price_index": 82,
       "employment_to_population_ratio": 152,
       "female_labor_force_participation": 145,
       "education_expenditure_of_gdp": 81,
       "democracy_index": 69,
       "human_development_index_hdi": 88,
-      "physicians_per_1_000_people": 102,
       "political_corruption_index": 79,
       "general_government_gross_debt_gdp": 27,
       "environmental_performance_index": 105,
       "global_peace_index": 106,
       "inform_resilience_index": 107,
-      "social_progress_index": 85
+      "intentional_homicides": 160,
+      "water_stress_level": 38,
+      "social_progress_index": 85,
+      "lpi_infrastructure": 142
     },
     "kpi_count": 17
   },
@@ -3774,41 +3593,36 @@
     "ranks": {
       "gini_index": 154,
       "unemployment_rate": 80,
-      "extreme_poverty": 107,
-      "access_to_basic_drinking_water": 102,
-      "railway_length": 81,
       "inflation_consumer_price_index": 36,
       "employment_to_population_ratio": 61,
       "female_labor_force_participation": 101,
       "education_expenditure_of_gdp": 107,
       "democracy_index": 85,
       "human_development_index_hdi": 86,
-      "physicians_per_1_000_people": 78,
       "political_corruption_index": 107,
       "general_government_gross_debt_gdp": 94,
       "environmental_performance_index": 66,
       "global_peace_index": 129,
       "inform_resilience_index": 154,
       "network_readiness_index": 78,
-      "social_progress_index": 58
+      "intentional_homicides": 175,
+      "water_stress_level": 70,
+      "social_progress_index": 58,
+      "lpi_infrastructure": 60
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Guatemala",
     "ranks": {
       "gini_index": 155,
       "unemployment_rate": 20,
-      "extreme_poverty": 111,
-      "access_to_basic_drinking_water": 115,
-      "railway_length": 86,
       "inflation_consumer_price_index": 79,
       "employment_to_population_ratio": 83,
       "female_labor_force_participation": 144,
       "education_expenditure_of_gdp": 137,
       "democracy_index": 97,
       "human_development_index_hdi": 136,
-      "physicians_per_1_000_people": 105,
       "political_corruption_index": 118,
       "general_government_gross_debt_gdp": 23,
       "big_mac_index": 28,
@@ -3817,45 +3631,44 @@
       "inform_resilience_index": 153,
       "pisa_overall_score": 70,
       "network_readiness_index": 100,
-      "social_progress_index": 103
+      "intentional_homicides": 163,
+      "water_stress_level": 62,
+      "social_progress_index": 103,
+      "lpi_infrastructure": 113
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Comoros",
     "ranks": {
       "gini_index": 156,
       "unemployment_rate": 59,
-      "extreme_poverty": 137,
-      "access_to_basic_drinking_water": 152,
       "inflation_consumer_price_index": 117,
       "employment_to_population_ratio": 142,
       "female_labor_force_participation": 138,
       "education_expenditure_of_gdp": 163,
       "democracy_index": 124,
       "human_development_index_hdi": 151,
-      "physicians_per_1_000_people": 145,
       "political_corruption_index": 155,
       "general_government_gross_debt_gdp": 31,
       "environmental_performance_index": 86,
-      "inform_resilience_index": 84
+      "inform_resilience_index": 84,
+      "water_stress_level": 13,
+      "lpi_infrastructure": 90
     },
-    "kpi_count": 15
+    "kpi_count": 14
   },
   {
     "country": "Honduras",
     "ranks": {
       "gini_index": 157,
       "unemployment_rate": 109,
-      "extreme_poverty": 122,
-      "access_to_basic_drinking_water": 101,
       "inflation_consumer_price_index": 125,
       "employment_to_population_ratio": 117,
       "female_labor_force_participation": 147,
       "education_expenditure_of_gdp": 78,
       "democracy_index": 90,
       "human_development_index_hdi": 138,
-      "physicians_per_1_000_people": 141,
       "political_corruption_index": 129,
       "general_government_gross_debt_gdp": 72,
       "big_mac_index": 33,
@@ -3863,7 +3676,10 @@
       "global_peace_index": 124,
       "inform_resilience_index": 163,
       "network_readiness_index": 102,
-      "social_progress_index": 96
+      "intentional_homicides": 168,
+      "water_stress_level": 52,
+      "social_progress_index": 96,
+      "lpi_infrastructure": 84
     },
     "kpi_count": 19
   },
@@ -3872,16 +3688,12 @@
     "ranks": {
       "gini_index": 158,
       "unemployment_rate": 128,
-      "extreme_poverty": 69,
-      "access_to_basic_drinking_water": 43,
-      "railway_length": 88,
       "inflation_consumer_price_index": 8,
       "employment_to_population_ratio": 125,
       "female_labor_force_participation": 130,
       "education_expenditure_of_gdp": 22,
       "democracy_index": 18,
       "human_development_index_hdi": 61,
-      "physicians_per_1_000_people": 65,
       "political_corruption_index": 45,
       "general_government_gross_debt_gdp": 111,
       "big_mac_index": 67,
@@ -3890,24 +3702,24 @@
       "inform_resilience_index": 85,
       "pisa_overall_score": 55,
       "network_readiness_index": 50,
-      "social_progress_index": 35
+      "intentional_homicides": 158,
+      "water_stress_level": 65,
+      "social_progress_index": 35,
+      "lpi_infrastructure": 83
     },
-    "kpi_count": 21
+    "kpi_count": 20
   },
   {
     "country": "Nicaragua",
     "ranks": {
       "gini_index": 159,
       "unemployment_rate": 77,
-      "extreme_poverty": 106,
-      "access_to_basic_drinking_water": 151,
       "inflation_consumer_price_index": 126,
       "employment_to_population_ratio": 53,
       "female_labor_force_participation": 111,
       "education_expenditure_of_gdp": 148,
       "democracy_index": 147,
       "human_development_index_hdi": 122,
-      "physicians_per_1_000_people": 135,
       "political_corruption_index": 173,
       "general_government_gross_debt_gdp": 54,
       "big_mac_index": 37,
@@ -3915,7 +3727,10 @@
       "global_peace_index": 111,
       "inform_resilience_index": 142,
       "network_readiness_index": 111,
-      "social_progress_index": 104
+      "intentional_homicides": 149,
+      "water_stress_level": 33,
+      "social_progress_index": 104,
+      "lpi_infrastructure": 134
     },
     "kpi_count": 19
   },
@@ -3924,64 +3739,57 @@
     "ranks": {
       "gini_index": 160,
       "unemployment_rate": 173,
-      "extreme_poverty": 146,
-      "access_to_basic_drinking_water": 160,
-      "railway_length": 84,
       "inflation_consumer_price_index": 90,
       "employment_to_population_ratio": 113,
       "female_labor_force_participation": 21,
       "education_expenditure_of_gdp": 127,
       "democracy_index": 128,
       "human_development_index_hdi": 137,
-      "physicians_per_1_000_people": 166,
       "political_corruption_index": 150,
       "general_government_gross_debt_gdp": 161,
       "environmental_performance_index": 100,
       "global_peace_index": 103,
-      "inform_resilience_index": 145
+      "inform_resilience_index": 145,
+      "water_stress_level": 1,
+      "lpi_infrastructure": 111
     },
-    "kpi_count": 17
+    "kpi_count": 15
   },
   {
     "country": "Mozambique",
     "ranks": {
       "gini_index": 161,
       "unemployment_rate": 56,
-      "extreme_poverty": 170,
-      "access_to_basic_drinking_water": 176,
-      "railway_length": 49,
       "inflation_consumer_price_index": 114,
       "employment_to_population_ratio": 11,
       "female_labor_force_participation": 6,
       "education_expenditure_of_gdp": 27,
       "democracy_index": 113,
       "human_development_index_hdi": 181,
-      "physicians_per_1_000_people": 184,
       "political_corruption_index": 125,
       "general_government_gross_debt_gdp": 166,
       "environmental_performance_index": 145,
       "global_peace_index": 121,
       "inform_resilience_index": 179,
       "network_readiness_index": 121,
-      "social_progress_index": 130
+      "intentional_homicides": 100,
+      "water_stress_level": 25,
+      "social_progress_index": 130,
+      "lpi_infrastructure": 71
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Panama",
     "ranks": {
       "gini_index": 162,
       "unemployment_rate": 114,
-      "extreme_poverty": 88,
-      "access_to_basic_drinking_water": 114,
-      "railway_length": 105,
       "inflation_consumer_price_index": 15,
       "employment_to_population_ratio": 67,
       "female_labor_force_participation": 98,
       "education_expenditure_of_gdp": 161,
       "democracy_index": 47,
       "human_development_index_hdi": 58,
-      "physicians_per_1_000_people": 94,
       "political_corruption_index": 83,
       "general_government_gross_debt_gdp": 109,
       "environmental_performance_index": 47,
@@ -3989,56 +3797,58 @@
       "inform_resilience_index": 115,
       "pisa_overall_score": 66,
       "network_readiness_index": 75,
-      "social_progress_index": 49
+      "intentional_homicides": 151,
+      "water_stress_level": 14,
+      "social_progress_index": 49,
+      "lpi_infrastructure": 69
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Zimbabwe",
     "ranks": {
       "gini_index": 163,
       "unemployment_rate": 135,
-      "extreme_poverty": 159,
-      "access_to_basic_drinking_water": 179,
-      "railway_length": 48,
       "inflation_consumer_price_index": 183,
       "employment_to_population_ratio": 79,
       "female_labor_force_participation": 51,
       "education_expenditure_of_gdp": 189,
       "democracy_index": 122,
       "human_development_index_hdi": 152,
-      "physicians_per_1_000_people": 169,
       "political_corruption_index": 146,
       "general_government_gross_debt_gdp": 71,
       "environmental_performance_index": 69,
       "global_peace_index": 114,
       "inform_resilience_index": 148,
       "network_readiness_index": 116,
-      "social_progress_index": 123
+      "intentional_homicides": 130,
+      "water_stress_level": 137,
+      "social_progress_index": 123,
+      "lpi_infrastructure": 138
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Angola",
     "ranks": {
       "gini_index": 164,
       "unemployment_rate": 162,
-      "extreme_poverty": 147,
-      "access_to_basic_drinking_water": 185,
       "inflation_consumer_price_index": 173,
       "employment_to_population_ratio": 38,
       "female_labor_force_participation": 11,
       "education_expenditure_of_gdp": 160,
       "democracy_index": 107,
       "human_development_index_hdi": 147,
-      "physicians_per_1_000_people": 153,
       "political_corruption_index": 91,
       "general_government_gross_debt_gdp": 117,
       "environmental_performance_index": 151,
       "global_peace_index": 76,
       "inform_resilience_index": 158,
       "network_readiness_index": 123,
-      "social_progress_index": 137
+      "intentional_homicides": 108,
+      "water_stress_level": 27,
+      "social_progress_index": 137,
+      "lpi_infrastructure": 163
     },
     "kpi_count": 18
   },
@@ -4047,43 +3857,37 @@
     "ranks": {
       "gini_index": 165,
       "unemployment_rate": 108,
-      "extreme_poverty": 166,
-      "access_to_basic_drinking_water": 168,
-      "railway_length": 76,
       "inflation_consumer_price_index": 166,
       "employment_to_population_ratio": 104,
       "female_labor_force_participation": 85,
       "education_expenditure_of_gdp": 99,
       "democracy_index": 77,
       "human_development_index_hdi": 153,
-      "physicians_per_1_000_people": 151,
       "political_corruption_index": 66,
       "general_government_gross_debt_gdp": 176,
       "environmental_performance_index": 106,
       "global_peace_index": 65,
       "inform_resilience_index": 133,
       "network_readiness_index": 110,
-      "social_progress_index": 115
+      "intentional_homicides": 121,
+      "water_stress_level": 37,
+      "social_progress_index": 115,
+      "lpi_infrastructure": 70
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Brazil",
     "ranks": {
       "gini_index": 166,
       "unemployment_rate": 125,
-      "extreme_poverty": 91,
-      "access_to_basic_drinking_water": 49,
-      "railway_length": 7,
       "inflation_consumer_price_index": 121,
       "employment_to_population_ratio": 89,
       "female_labor_force_participation": 92,
       "education_expenditure_of_gdp": 34,
       "democracy_index": 57,
       "human_development_index_hdi": 82,
-      "physicians_per_1_000_people": 87,
       "political_corruption_index": 80,
-      "electric_vehicle_stock": 24,
       "general_government_gross_debt_gdp": 160,
       "big_mac_index": 30,
       "environmental_performance_index": 82,
@@ -4091,24 +3895,24 @@
       "inform_resilience_index": 150,
       "pisa_overall_score": 60,
       "network_readiness_index": 42,
-      "social_progress_index": 61
+      "intentional_homicides": 161,
+      "water_stress_level": 22,
+      "social_progress_index": 61,
+      "lpi_infrastructure": 54
     },
-    "kpi_count": 22
+    "kpi_count": 20
   },
   {
     "country": "Colombia",
     "ranks": {
       "gini_index": 167,
       "unemployment_rate": 140,
-      "extreme_poverty": 108,
-      "access_to_basic_drinking_water": 88,
       "inflation_consumer_price_index": 144,
       "employment_to_population_ratio": 94,
       "female_labor_force_participation": 103,
       "education_expenditure_of_gdp": 50,
       "democracy_index": 60,
       "human_development_index_hdi": 81,
-      "physicians_per_1_000_people": 75,
       "political_corruption_index": 73,
       "general_government_gross_debt_gdp": 105,
       "big_mac_index": 55,
@@ -4117,7 +3921,10 @@
       "inform_resilience_index": 152,
       "pisa_overall_score": 59,
       "network_readiness_index": 62,
-      "social_progress_index": 64
+      "intentional_homicides": 165,
+      "water_stress_level": 44,
+      "social_progress_index": 64,
+      "lpi_infrastructure": 82
     },
     "kpi_count": 20
   },
@@ -4126,71 +3933,68 @@
     "ranks": {
       "gini_index": 168,
       "unemployment_rate": 179,
-      "extreme_poverty": 157,
-      "access_to_basic_drinking_water": 162,
-      "railway_length": 111,
       "inflation_consumer_price_index": 70,
       "employment_to_population_ratio": 175,
       "female_labor_force_participation": 126,
       "education_expenditure_of_gdp": 24,
       "democracy_index": 134,
       "human_development_index_hdi": 125,
-      "physicians_per_1_000_people": 98,
       "political_corruption_index": 97,
       "general_government_gross_debt_gdp": 67,
       "environmental_performance_index": 76,
       "global_peace_index": 99,
       "inform_resilience_index": 97,
+      "intentional_homicides": 152,
+      "water_stress_level": 155,
       "social_progress_index": 124
     },
-    "kpi_count": 18
+    "kpi_count": 16
   },
   {
     "country": "Botswana",
     "ranks": {
       "gini_index": 169,
       "unemployment_rate": 175,
-      "extreme_poverty": 129,
-      "access_to_basic_drinking_water": 125,
-      "railway_length": 85,
       "inflation_consumer_price_index": 76,
       "employment_to_population_ratio": 123,
       "female_labor_force_participation": 25,
       "education_expenditure_of_gdp": 8,
       "democracy_index": 35,
       "human_development_index_hdi": 110,
-      "physicians_per_1_000_people": 147,
       "political_corruption_index": 49,
       "general_government_gross_debt_gdp": 53,
       "environmental_performance_index": 35,
       "global_peace_index": 43,
       "inform_resilience_index": 68,
       "network_readiness_index": 109,
-      "social_progress_index": 92
+      "intentional_homicides": 150,
+      "water_stress_level": 34,
+      "social_progress_index": 92,
+      "lpi_infrastructure": 65
     },
-    "kpi_count": 19
+    "kpi_count": 18
   },
   {
     "country": "Namibia",
     "ranks": {
       "gini_index": 170,
       "unemployment_rate": 172,
-      "extreme_poverty": 131,
-      "access_to_basic_drinking_water": 142,
       "inflation_consumer_price_index": 116,
       "employment_to_population_ratio": 145,
       "female_labor_force_participation": 75,
       "education_expenditure_of_gdp": 4,
       "democracy_index": 58,
       "human_development_index_hdi": 135,
-      "physicians_per_1_000_people": 140,
       "political_corruption_index": 58,
       "general_government_gross_debt_gdp": 121,
       "environmental_performance_index": 44,
       "global_peace_index": 50,
       "inform_resilience_index": 114,
       "network_readiness_index": 112,
-      "social_progress_index": 98
+      "intentional_homicides": 146,
+      "water_stress_level": 8,
+      "social_progress_index": 98,
+      "lpi_infrastructure": 86
     },
     "kpi_count": 18
   },
@@ -4199,16 +4003,12 @@
     "ranks": {
       "gini_index": 171,
       "unemployment_rate": 178,
-      "extreme_poverty": 136,
-      "access_to_basic_drinking_water": 116,
-      "railway_length": 10,
       "inflation_consumer_price_index": 120,
       "employment_to_population_ratio": 162,
       "female_labor_force_participation": 93,
       "education_expenditure_of_gdp": 25,
       "democracy_index": 43,
       "human_development_index_hdi": 105,
-      "physicians_per_1_000_people": 125,
       "political_corruption_index": 94,
       "general_government_gross_debt_gdp": 146,
       "big_mac_index": 6,
@@ -4216,23 +4016,23 @@
       "global_peace_index": 125,
       "inform_resilience_index": 136,
       "network_readiness_index": 69,
-      "social_progress_index": 74
+      "intentional_homicides": 174,
+      "water_stress_level": 152,
+      "social_progress_index": 74,
+      "lpi_infrastructure": 23
     },
-    "kpi_count": 20
+    "kpi_count": 19
   },
   {
     "country": "Cambodia",
     "ranks": {
       "unemployment_rate": 2,
-      "access_to_basic_drinking_water": 154,
-      "railway_length": 98,
       "inflation_consumer_price_index": 55,
       "employment_to_population_ratio": 7,
       "female_labor_force_participation": 10,
       "education_expenditure_of_gdp": 170,
       "democracy_index": 123,
       "human_development_index_hdi": 150,
-      "physicians_per_1_000_people": 156,
       "political_corruption_index": 166,
       "general_government_gross_debt_gdp": 25,
       "environmental_performance_index": 154,
@@ -4240,7 +4040,10 @@
       "inform_resilience_index": 130,
       "pisa_overall_score": 78,
       "network_readiness_index": 105,
-      "social_progress_index": 109
+      "intentional_homicides": 71,
+      "water_stress_level": 17,
+      "social_progress_index": 109,
+      "lpi_infrastructure": 140
     },
     "kpi_count": 18
   },
@@ -4248,14 +4051,12 @@
     "country": "Bahrain",
     "ranks": {
       "unemployment_rate": 7,
-      "access_to_basic_drinking_water": 37,
       "inflation_consumer_price_index": 19,
       "employment_to_population_ratio": 20,
       "female_labor_force_participation": 131,
       "education_expenditure_of_gdp": 178,
       "democracy_index": 138,
       "human_development_index_hdi": 37,
-      "physicians_per_1_000_people": 122,
       "political_corruption_index": 88,
       "general_government_gross_debt_gdp": 182,
       "big_mac_index": 38,
@@ -4263,27 +4064,30 @@
       "global_peace_index": 100,
       "inform_resilience_index": 10,
       "network_readiness_index": 49,
-      "social_progress_index": 80
+      "intentional_homicides": 4,
+      "water_stress_level": 168,
+      "social_progress_index": 80,
+      "lpi_infrastructure": 34
     },
-    "kpi_count": 17
+    "kpi_count": 18
   },
   {
     "country": "Cuba",
     "ranks": {
       "unemployment_rate": 12,
-      "access_to_basic_drinking_water": 113,
-      "railway_length": 31,
       "employment_to_population_ratio": 127,
       "female_labor_force_participation": 146,
       "education_expenditure_of_gdp": 5,
       "democracy_index": 135,
       "human_development_index_hdi": 95,
-      "physicians_per_1_000_people": 1,
       "political_corruption_index": 99,
       "environmental_performance_index": 60,
       "global_peace_index": 102,
       "inform_resilience_index": 86,
-      "social_progress_index": 67
+      "intentional_homicides": 114,
+      "water_stress_level": 115,
+      "social_progress_index": 67,
+      "lpi_infrastructure": 160
     },
     "kpi_count": 14
   },
@@ -4291,14 +4095,12 @@
     "country": "Kuwait",
     "ranks": {
       "unemployment_rate": 17,
-      "access_to_basic_drinking_water": 12,
       "inflation_consumer_price_index": 81,
       "employment_to_population_ratio": 19,
       "female_labor_force_participation": 119,
       "education_expenditure_of_gdp": 18,
       "democracy_index": 130,
       "human_development_index_hdi": 51,
-      "physicians_per_1_000_people": 79,
       "political_corruption_index": 62,
       "general_government_gross_debt_gdp": 5,
       "big_mac_index": 40,
@@ -4306,38 +4108,37 @@
       "global_peace_index": 31,
       "inform_resilience_index": 56,
       "network_readiness_index": 65,
-      "social_progress_index": 44
+      "intentional_homicides": 6,
+      "water_stress_level": 177,
+      "social_progress_index": 44,
+      "lpi_infrastructure": 58
     },
-    "kpi_count": 17
+    "kpi_count": 18
   },
   {
     "country": "North Korea",
     "ranks": {
       "unemployment_rate": 34,
-      "access_to_basic_drinking_water": 120,
-      "railway_length": 29,
       "employment_to_population_ratio": 6,
       "female_labor_force_participation": 7,
       "democracy_index": 165,
-      "physicians_per_1_000_people": 34,
       "political_corruption_index": 115,
       "global_peace_index": 149,
-      "inform_resilience_index": 135
+      "inform_resilience_index": 135,
+      "water_stress_level": 118
     },
-    "kpi_count": 10
+    "kpi_count": 8
   },
   {
     "country": "Oman",
     "ranks": {
       "unemployment_rate": 47,
-      "access_to_basic_drinking_water": 126,
       "inflation_consumer_price_index": 13,
       "employment_to_population_ratio": 31,
       "female_labor_force_participation": 159,
       "education_expenditure_of_gdp": 88,
       "democracy_index": 120,
       "human_development_index_hdi": 49,
-      "physicians_per_1_000_people": 89,
       "political_corruption_index": 51,
       "general_government_gross_debt_gdp": 44,
       "big_mac_index": 26,
@@ -4345,22 +4146,23 @@
       "global_peace_index": 42,
       "inform_resilience_index": 41,
       "network_readiness_index": 48,
-      "social_progress_index": 62
+      "intentional_homicides": 3,
+      "water_stress_level": 163,
+      "social_progress_index": 62,
+      "lpi_infrastructure": 47
     },
-    "kpi_count": 17
+    "kpi_count": 18
   },
   {
     "country": "Singapore",
     "ranks": {
       "unemployment_rate": 48,
-      "access_to_basic_drinking_water": 19,
       "inflation_consumer_price_index": 64,
       "employment_to_population_ratio": 25,
       "female_labor_force_participation": 32,
       "education_expenditure_of_gdp": 168,
       "democracy_index": 68,
       "human_development_index_hdi": 12,
-      "physicians_per_1_000_people": 68,
       "political_corruption_index": 14,
       "general_government_gross_debt_gdp": 186,
       "big_mac_index": 56,
@@ -4369,23 +4171,23 @@
       "inform_resilience_index": 1,
       "pisa_overall_score": 1,
       "network_readiness_index": 1,
-      "social_progress_index": 19
+      "intentional_homicides": 1,
+      "water_stress_level": 128,
+      "social_progress_index": 19,
+      "lpi_infrastructure": 1
     },
-    "kpi_count": 18
+    "kpi_count": 19
   },
   {
     "country": "Saudi Arabia",
     "ranks": {
       "unemployment_rate": 60,
-      "access_to_basic_drinking_water": 71,
-      "railway_length": 51,
       "inflation_consumer_price_index": 42,
       "employment_to_population_ratio": 60,
       "female_labor_force_participation": 154,
       "education_expenditure_of_gdp": 60,
       "democracy_index": 148,
       "human_development_index_hdi": 36,
-      "physicians_per_1_000_people": 54,
       "political_corruption_index": 64,
       "general_government_gross_debt_gdp": 28,
       "big_mac_index": 53,
@@ -4394,7 +4196,10 @@
       "inform_resilience_index": 36,
       "pisa_overall_score": 64,
       "network_readiness_index": 33,
-      "social_progress_index": 81
+      "intentional_homicides": 39,
+      "water_stress_level": 175,
+      "social_progress_index": 81,
+      "lpi_infrastructure": 42
     },
     "kpi_count": 19
   },
@@ -4402,18 +4207,13 @@
     "country": "New Zealand",
     "ranks": {
       "unemployment_rate": 83,
-      "access_to_basic_drinking_water": 16,
-      "railway_length": 40,
       "inflation_consumer_price_index": 84,
       "employment_to_population_ratio": 24,
       "female_labor_force_participation": 19,
       "education_expenditure_of_gdp": 49,
       "democracy_index": 2,
       "human_development_index_hdi": 17,
-      "physicians_per_1_000_people": 38,
-      "homelessness_rate": 3,
       "political_corruption_index": 3,
-      "electric_vehicle_stock": 27,
       "general_government_gross_debt_gdp": 91,
       "big_mac_index": 49,
       "environmental_performance_index": 26,
@@ -4421,62 +4221,67 @@
       "inform_resilience_index": 7,
       "pisa_overall_score": 11,
       "network_readiness_index": 21,
-      "social_progress_index": 13
+      "intentional_homicides": 62,
+      "water_stress_level": 78,
+      "social_progress_index": 13,
+      "lpi_infrastructure": 32
     },
-    "kpi_count": 21
+    "kpi_count": 19
   },
   {
     "country": "Brunei",
     "ranks": {
       "unemployment_rate": 88,
-      "access_to_basic_drinking_water": 39,
       "inflation_consumer_price_index": 6,
       "employment_to_population_ratio": 69,
       "female_labor_force_participation": 89,
       "education_expenditure_of_gdp": 82,
       "human_development_index_hdi": 59,
-      "physicians_per_1_000_people": 90,
       "general_government_gross_debt_gdp": 2,
       "environmental_performance_index": 71,
       "inform_resilience_index": 33,
-      "pisa_overall_score": 42
+      "pisa_overall_score": 42,
+      "intentional_homicides": 11,
+      "water_stress_level": 42,
+      "lpi_infrastructure": 64
     },
-    "kpi_count": 12
+    "kpi_count": 13
   },
   {
     "country": "Eritrea",
     "ranks": {
       "unemployment_rate": 102,
-      "access_to_basic_drinking_water": 188,
       "employment_to_population_ratio": 15,
       "female_labor_force_participation": 13,
       "education_expenditure_of_gdp": 171,
       "democracy_index": 153,
       "human_development_index_hdi": 177,
-      "physicians_per_1_000_people": 185,
       "political_corruption_index": 127,
       "general_government_gross_debt_gdp": 189,
       "environmental_performance_index": 144,
       "global_peace_index": 132,
       "inform_resilience_index": 134,
-      "social_progress_index": 147
+      "intentional_homicides": 156,
+      "water_stress_level": 90,
+      "social_progress_index": 147,
+      "lpi_infrastructure": 166
     },
-    "kpi_count": 14
+    "kpi_count": 15
   },
   {
     "country": "Bahamas",
     "ranks": {
       "unemployment_rate": 133,
-      "access_to_basic_drinking_water": 65,
       "inflation_consumer_price_index": 7,
       "employment_to_population_ratio": 30,
       "female_labor_force_participation": 20,
       "education_expenditure_of_gdp": 154,
       "human_development_index_hdi": 65,
-      "physicians_per_1_000_people": 92,
       "general_government_gross_debt_gdp": 139,
       "environmental_performance_index": 28,
-      "inform_resilience_index": 32
+      "inform_resilience_index": 32,
+      "intentional_homicides": 169,
+      "lpi_infrastructure": 98
     },
     "kpi_count": 11
   },
@@ -4484,54 +4289,56 @@
     "country": "Afghanistan",
     "ranks": {
       "unemployment_rate": 158,
-      "access_to_basic_drinking_water": 149,
       "inflation_consumer_price_index": 143,
       "employment_to_population_ratio": 173,
       "female_labor_force_participation": 178,
       "education_expenditure_of_gdp": 84,
       "democracy_index": 167,
       "human_development_index_hdi": 180,
-      "physicians_per_1_000_people": 152,
       "political_corruption_index": 113,
       "general_government_gross_debt_gdp": 7,
       "environmental_performance_index": 81,
       "global_peace_index": 158,
       "inform_resilience_index": 183,
-      "social_progress_index": 149
+      "intentional_homicides": 106,
+      "water_stress_level": 145,
+      "social_progress_index": 149,
+      "lpi_infrastructure": 168
     },
-    "kpi_count": 15
+    "kpi_count": 16
   },
   {
     "country": "Saint Vincent-Grenadines",
     "ranks": {
       "unemployment_rate": 169,
-      "access_to_basic_drinking_water": 84,
       "inflation_consumer_price_index": 108,
       "employment_to_population_ratio": 116,
       "female_labor_force_participation": 72,
       "education_expenditure_of_gdp": 17,
       "general_government_gross_debt_gdp": 163,
       "environmental_performance_index": 37,
-      "inform_resilience_index": 74
+      "inform_resilience_index": 74,
+      "intentional_homicides": 177,
+      "water_stress_level": 76
     },
-    "kpi_count": 9
+    "kpi_count": 10
   },
   {
     "country": "Libya",
     "ranks": {
       "unemployment_rate": 170,
-      "access_to_basic_drinking_water": 40,
       "inflation_consumer_price_index": 54,
       "employment_to_population_ratio": 161,
       "female_labor_force_participation": 155,
       "education_expenditure_of_gdp": 167,
       "democracy_index": 140,
       "human_development_index_hdi": 115,
-      "physicians_per_1_000_people": 84,
       "political_corruption_index": 147,
       "global_peace_index": 131,
       "inform_resilience_index": 147,
-      "social_progress_index": 108
+      "water_stress_level": 174,
+      "social_progress_index": 108,
+      "lpi_infrastructure": 169
     },
     "kpi_count": 13
   },
@@ -4539,123 +4346,112 @@
     "country": "Somalia",
     "ranks": {
       "unemployment_rate": 171,
-      "access_to_basic_drinking_water": 184,
       "employment_to_population_ratio": 176,
       "female_labor_force_participation": 167,
       "education_expenditure_of_gdp": 192,
       "human_development_index_hdi": 191,
-      "physicians_per_1_000_people": 192,
       "political_corruption_index": 164,
       "global_peace_index": 151,
       "inform_resilience_index": 190,
-      "social_progress_index": 148
+      "water_stress_level": 116,
+      "social_progress_index": 148,
+      "lpi_infrastructure": 167
     },
     "kpi_count": 11
   },
   {
-    "country": "Andorra",
+    "country": "Saint Kitts and Nevis",
     "ranks": {
-      "access_to_basic_drinking_water": 1,
-      "education_expenditure_of_gdp": 177,
-      "human_development_index_hdi": 31,
-      "physicians_per_1_000_people": 35,
-      "general_government_gross_debt_gdp": 37
+      "inflation_consumer_price_index": 25,
+      "education_expenditure_of_gdp": 122,
+      "human_development_index_hdi": 57,
+      "general_government_gross_debt_gdp": 116,
+      "inform_resilience_index": 12,
+      "intentional_homicides": 178,
+      "water_stress_level": 142
     },
-    "kpi_count": 5
-  },
-  {
-    "country": "Greenland",
-    "ranks": {
-      "access_to_basic_drinking_water": 7,
-      "physicians_per_1_000_people": 112
-    },
-    "kpi_count": 2
-  },
-  {
-    "country": "Liechtenstein",
-    "ranks": {
-      "access_to_basic_drinking_water": 13,
-      "education_expenditure_of_gdp": 158,
-      "human_development_index_hdi": 16,
-      "general_government_gross_debt_gdp": 1,
-      "inform_resilience_index": 2
-    },
-    "kpi_count": 5
-  },
-  {
-    "country": "Monaco",
-    "ranks": {
-      "access_to_basic_drinking_water": 15,
-      "education_expenditure_of_gdp": 181,
-      "physicians_per_1_000_people": 2
-    },
-    "kpi_count": 3
+    "kpi_count": 7
   },
   {
     "country": "San Marino",
     "ranks": {
-      "access_to_basic_drinking_water": 18,
       "inflation_consumer_price_index": 29,
       "education_expenditure_of_gdp": 145,
       "human_development_index_hdi": 30,
-      "physicians_per_1_000_people": 4,
-      "general_government_gross_debt_gdp": 118
+      "general_government_gross_debt_gdp": 118,
+      "intentional_homicides": 102
     },
-    "kpi_count": 6
+    "kpi_count": 5
   },
   {
     "country": "Palau",
     "ranks": {
-      "access_to_basic_drinking_water": 50,
       "inflation_consumer_price_index": 60,
       "education_expenditure_of_gdp": 119,
       "human_development_index_hdi": 83,
-      "physicians_per_1_000_people": 93,
       "general_government_gross_debt_gdp": 119,
-      "inform_resilience_index": 31
+      "inform_resilience_index": 31,
+      "intentional_homicides": 147
     },
-    "kpi_count": 7
-  },
-  {
-    "country": "Saint Kitts and Nevis",
-    "ranks": {
-      "access_to_basic_drinking_water": 72,
-      "inflation_consumer_price_index": 25,
-      "education_expenditure_of_gdp": 122,
-      "human_development_index_hdi": 57,
-      "physicians_per_1_000_people": 55,
-      "general_government_gross_debt_gdp": 116,
-      "inform_resilience_index": 12
-    },
-    "kpi_count": 7
-  },
-  {
-    "country": "Antigua and Barbuda",
-    "ranks": {
-      "access_to_basic_drinking_water": 78,
-      "inflation_consumer_price_index": 140,
-      "education_expenditure_of_gdp": 138,
-      "human_development_index_hdi": 52,
-      "physicians_per_1_000_people": 61,
-      "general_government_gross_debt_gdp": 126,
-      "environmental_performance_index": 40,
-      "inform_resilience_index": 18
-    },
-    "kpi_count": 8
+    "kpi_count": 6
   },
   {
     "country": "Dominica",
     "ranks": {
-      "access_to_basic_drinking_water": 107,
       "inflation_consumer_price_index": 69,
       "education_expenditure_of_gdp": 43,
       "human_development_index_hdi": 96,
-      "physicians_per_1_000_people": 113,
       "general_government_gross_debt_gdp": 164,
       "environmental_performance_index": 42,
-      "inform_resilience_index": 58
+      "inform_resilience_index": 58,
+      "intentional_homicides": 166,
+      "water_stress_level": 86
     },
     "kpi_count": 8
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "ranks": {
+      "inflation_consumer_price_index": 140,
+      "education_expenditure_of_gdp": 138,
+      "human_development_index_hdi": 52,
+      "general_government_gross_debt_gdp": 126,
+      "environmental_performance_index": 40,
+      "inform_resilience_index": 18,
+      "intentional_homicides": 144,
+      "water_stress_level": 82,
+      "lpi_infrastructure": 80
+    },
+    "kpi_count": 9
+  },
+  {
+    "country": "Liechtenstein",
+    "ranks": {
+      "education_expenditure_of_gdp": 158,
+      "human_development_index_hdi": 16,
+      "general_government_gross_debt_gdp": 1,
+      "inform_resilience_index": 2,
+      "intentional_homicides": 119
+    },
+    "kpi_count": 5
+  },
+  {
+    "country": "Andorra",
+    "ranks": {
+      "education_expenditure_of_gdp": 177,
+      "human_development_index_hdi": 31,
+      "general_government_gross_debt_gdp": 37,
+      "intentional_homicides": 92
+    },
+    "kpi_count": 4
+  },
+  {
+    "country": "Monaco",
+    "ranks": {
+      "education_expenditure_of_gdp": 181,
+      "intentional_homicides": 95
+    },
+    "kpi_count": 2
   },
   {
     "country": "Taiwan",
@@ -4666,18 +4462,24 @@
       "big_mac_index": 2,
       "environmental_performance_index": 74,
       "global_peace_index": 40,
-      "pisa_overall_score": 3
+      "pisa_overall_score": 3,
+      "lpi_infrastructure": 7
     },
-    "kpi_count": 7
+    "kpi_count": 8
   },
   {
     "country": "World",
     "ranks": {
       "democracy_index": 87,
-      "human_development_index_hdi": 98,
-      "physicians_per_1_000_people": 95,
-      "electric_vehicle_stock": 1
+      "human_development_index_hdi": 98
     },
-    "kpi_count": 4
+    "kpi_count": 2
+  },
+  {
+    "country": "Greenland",
+    "ranks": {
+      "intentional_homicides": 122
+    },
+    "kpi_count": 1
   }
 ]
