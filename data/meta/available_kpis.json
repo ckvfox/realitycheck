@@ -1017,7 +1017,7 @@
     "title": "General Government Gross Debt (% of GDP)",
     "description": "Gross debt of the general government as a percentage of GDP, including central, state, and local governments as defined by the IMF World Economic Outlook. This indicator reflects the total obligations of the public sector without deducting financial assets. It is the international standard for measuring a country's overall public debt burden.",
     "unit": "% of GDP",
-    "relation": "*",
+    "relation": "",
     "sort": "lower",
     "cluster": "Economy & Labor",
     "source": "https://www.imf.org/en/Publications/SPROLLs/world-economic-outlook-databases",
