@@ -2408,13 +2408,16 @@ def main(args: argparse.Namespace) -> None:
         "skipped": stats["skipped"],
         "errors": stats["errors"]
     }
-    # Patch: in test mode, write status and pending to /data/test
+    # Patch: before writing pending, filter out aliases mapped to "" in country_mappings.json
+    mapping_for_filter = load_json_file(COUNTRY_MAP_FILE, {})
+    filtered_pending = {k: v for k, v in pending.items() if not (k in mapping_for_filter and mapping_for_filter[k] == "")}
+    # Patch: in test mode, write status and filtered_pending to /data/test
     if args.test:
         write_json(TEST_DATA_DIR / "fetch_status.json", fetch_status)
-        write_json(TEST_DATA_DIR / "country_mappings_pending.json", pending)
+        write_json(TEST_DATA_DIR / "country_mappings_pending.json", filtered_pending)
     else:
         write_json(STATUS_FILE, fetch_status)
-        write_json(COUNTRY_PENDING_FILE, pending)
+        write_json(COUNTRY_PENDING_FILE, filtered_pending)
 
     # 🤖 Automatische Verarbeitung von pending country mappings
     agent_summary_lines = []

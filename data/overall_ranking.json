@@ -3309,9 +3309,10 @@
       "inform_resilience_index": 187,
       "intentional_homicides": 162,
       "water_stress_level": 9,
+      "social_progress_index": 151,
       "lpi_infrastructure": 125
     },
-    "kpi_count": 16
+    "kpi_count": 17
   },
   {
     "country": "Chile",
@@ -3439,7 +3440,7 @@
       "inform_resilience_index": 191,
       "intentional_homicides": 155,
       "water_stress_level": 50,
-      "social_progress_index": 151
+      "social_progress_index": 152
     },
     "kpi_count": 14
   },
