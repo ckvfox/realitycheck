@@ -48,5 +48,36 @@
     "title": "<a href=\"https://en.wikipedia.org/wiki/OECD\" target=\"_blank\" rel=\"noopener\">OECD</a>",
     "description": "The OECD promotes economic growth, good governance, and social well-being. It provides research, policy recommendations, and data to help countries improve their economies. Members cooperate on taxation, education, trade, and environmental issues. The organization encourages transparent and evidence-based policymaking. It also monitors global trends and supports fair and sustainable development. The OECD’s mission is to build better policies for better lives.",
     "members": [ "Australia", "Austria", "Belgium", "Canada", "Chile", "Colombia", "Costa Rica", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Ireland", "Israel", "Italy", "Japan", "South Korea", "Latvia", "Lithuania", "Luxembourg", "Mexico", "Netherlands", "New Zealand", "Norway", "Poland", "Portugal", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", "Turkey", "United Kingdom", "United States" ]
+  },
+  "GCC": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/Gulf_Cooperation_Council\" target=\"_blank\" rel=\"noopener\">Gulf Cooperation Council (GCC)</a>",
+    "description": "The Gulf Cooperation Council is a regional intergovernmental union of six Middle Eastern countries, established to promote economic integration, security cooperation, cultural ties, and coordinated development. The GCC aims to strengthen regional stability, create a common market, and facilitate the free movement of people, capital, and goods among its members.",
+    "members": [
+      "Bahrain",
+      "Kuwait",
+      "Oman",
+      "Qatar",
+      "Saudi Arabia",
+      "United Arab Emirates"
+    ]
+  },
+  "OPEC": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/OPEC\" target=\"_blank\" rel=\"noopener\">Organization of the Petroleum Exporting Countries (OPEC)</a>",
+    "description": "OPEC is an intergovernmental organization of major oil-exporting nations that coordinates petroleum policies and stabilizes oil markets. The organization aims to ensure fair and stable prices, secure energy supplies, and support economic development among its member states.",
+    "members": [
+      "Algeria",
+      "Angola",
+      "Republic of the Congo",
+      "Equatorial Guinea",
+      "Gabon",
+      "Iran",
+      "Iraq",
+      "Kuwait",
+      "Libya",
+      "Nigeria",
+      "Saudi Arabia",
+      "United Arab Emirates",
+      "Venezuela"
+    ]
   }
 }

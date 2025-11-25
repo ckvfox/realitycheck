@@ -1317,5 +1317,63 @@
     "actuality": "normal",
     "invert": "",
     "test": "*"
+  },
+  
+	  {
+    "title": "NCD Burden (DALYs per 100,000)",
+    "description": "The burden of non-communicable diseases (NCDs)—expressed as disability-adjusted life years (DALYs) per 100,000 people—captures the combined impact of conditions such as cardiovascular diseases, cancers, diabetes, and chronic respiratory diseases. It reflects long-term health risks and healthcare performance. Data are provided by Our World in Data based on the IHME Global Burden of Disease.",
+    "unit": "DALYs per 100,000 people",
+    "relation": "",
+    "sort": "lower",
+    "cluster": "Health & Social",
+    "source": "https://ourworldindata.org/grapher/dalys-rate-from-ncds",
+    "source_type": "owid",
+    "source_code": "dalys-rate-from-ncds.csv?useColumnShortNames=true",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "ncd_burden_dalys",
+    "relevance": "normal",
+    "actuality": "normal",
+    "invert": "",
+    "test": "o"
+  },
+
+  {
+    "title": "Universal Health Coverage Index",
+    "description": "The Universal Health Coverage (UHC) Service Coverage Index measures the extent to which people receive essential health services—including reproductive, maternal, newborn and child health, infectious diseases, non-communicable diseases, and service capacity. Higher values indicate broader and more effective health coverage. These data are provided by the World Bank and WHO.",
+    "unit": "index (0–100)",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Health & Social",
+    "source": "https://data.worldbank.org/indicator/SH.UHC.SRVS.CV",
+    "source_type": "worldbank",
+    "source_code": "SH.UHC.SRVS.CV",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "universal_health_coverage_index",
+    "relevance": "normal",
+    "actuality": "normal",
+    "invert": "",
+    "test": "o"
+  },
+
+  {
+    "title": "Government Effectiveness",
+    "description": "Government Effectiveness measures the quality of public services, the capacity of the civil service, the degree of its independence from political pressures, the quality of policy formulation and implementation, and the credibility of the government’s commitment to such policies. It is part of the World Bank’s Worldwide Governance Indicators (WGI). Higher scores indicate more effective governance.",
+    "unit": "index (approx. -2.5 to 2.5)",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Society & Governance",
+    "source": "https://api.worldbank.org/v2/en/indicator/",
+    "source_type": "worldbank",
+    "source_code": "GE.EST?downloadformat=csv",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "government_effectiveness",
+    "relevance": "normal",
+    "actuality": "annual",
+    "invert": "",
+    "test": "o"
   }
+
 ]

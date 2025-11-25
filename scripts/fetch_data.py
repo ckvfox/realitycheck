@@ -184,8 +184,12 @@ SCRIPT_DIR = Path(__file__).parent.resolve()
 ROOT_DIR   = SCRIPT_DIR.parent.resolve()
 DATA_DIR   = ROOT_DIR / "data"
 META_DIR   = DATA_DIR / "meta"
+
 SOURCE_CSV_DIR = SCRIPT_DIR / "source_csv"
 PENDING_DIR    = DATA_DIR / "pending"
+
+# === Test data directory for test mode output ===
+TEST_DATA_DIR = DATA_DIR / "test"
 
 # === Global logfile path for summary report ===
 LOG_FILE = str(DATA_DIR / "fetch_log.txt")
@@ -565,12 +569,14 @@ def maybe_invert_records(kpi_id: str, meta: Dict[str, Any] | None, records: List
     return inverted
 
 
-def save_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
+def save_records(kpi_id: str, records: List[Dict[str, Any]], stats=None, output_dir=None):
     """
     Speichert Daten im Standardformat, entfernt automatisch alle Jahre < 1900
     und protokolliert die Kürzungen im Fetch-Report.
     """
-    ensure_dirs()
+    if output_dir is None:
+        output_dir = DATA_DIR
+    os.makedirs(output_dir, exist_ok=True)
     before = len(records)
 
     # 🕐 Trim extreme years (remove pre-1900 and future projections)
@@ -611,16 +617,19 @@ def save_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
         stats["trimmed_future"] += removed_future
 
     # --- Normal speichern ---
-    write_json(os.path.join(DATA_DIR, f"{kpi_id}.json"), trimmed)
-    with open(os.path.join(DATA_DIR, f"{kpi_id}.csv"), "w", encoding="utf-8", newline="") as f:
+    write_json(os.path.join(output_dir, f"{kpi_id}.json"), trimmed)
+    with open(os.path.join(output_dir, f"{kpi_id}.csv"), "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["country", "iso2", "year", "value"])
         w.writeheader()
         w.writerows(trimmed)
 
 
-def keep_or_dummy(kpi_id: str, reason: str, stats):
-    json_path = os.path.join(DATA_DIR, f"{kpi_id}.json")
-    csv_path  = os.path.join(DATA_DIR, f"{kpi_id}.csv")
+def keep_or_dummy(kpi_id: str, reason: str, stats, output_dir=None):
+    if output_dir is None:
+        output_dir = DATA_DIR
+    os.makedirs(output_dir, exist_ok=True)
+    json_path = os.path.join(output_dir, f"{kpi_id}.json")
+    csv_path  = os.path.join(output_dir, f"{kpi_id}.csv")
     is_error = "failed" in reason.lower() or "error" in reason.lower() or "empty" in reason.lower()
     if os.path.exists(json_path) and os.path.exists(csv_path):
         log(f"[WARN] Keeping old data for {kpi_id} ({reason})")
@@ -638,10 +647,12 @@ def keep_or_dummy(kpi_id: str, reason: str, stats):
         stats["errors"] = stats.get("errors", 0) + 1
 
 
-def save_imf_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
+def save_imf_records(kpi_id: str, records: List[Dict[str, Any]], stats=None, output_dir=None):
     """Save IMF records that use iso3 codes while keeping trimming logic."""
 
-    ensure_dirs()
+    if output_dir is None:
+        output_dir = DATA_DIR
+    os.makedirs(output_dir, exist_ok=True)
     before = len(records)
     from datetime import datetime
 
@@ -679,8 +690,8 @@ def save_imf_records(kpi_id: str, records: List[Dict[str, Any]], stats=None):
         stats["trimmed_pre1900"] += removed_pre1900
         stats["trimmed_future"] += removed_future
 
-    write_json(os.path.join(DATA_DIR, f"{kpi_id}.json"), trimmed)
-    with open(os.path.join(DATA_DIR, f"{kpi_id}.csv"), "w", encoding="utf-8", newline="") as f:
+    write_json(os.path.join(output_dir, f"{kpi_id}.json"), trimmed)
+    with open(os.path.join(output_dir, f"{kpi_id}.csv"), "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["country", "iso3", "year", "value"])
         w.writeheader()
         w.writerows(trimmed)
@@ -792,22 +803,6 @@ def should_fetch_owid(kpi_id: str, meta: dict, fetch_status: dict) -> bool:
     - Sonst → fetch
     """
     prev = fetch_status.get("kpis", {}).get(kpi_id)
-    json_path = DATA_DIR / f"{kpi_id}.json"
-    # Always fetch if output JSON is missing or empty
-    if not json_path.exists():
-        log(f"[CHECK] {kpi_id}: output JSON missing → fetch now")
-        return True
-    try:
-        with open(json_path, "r", encoding="utf-8") as f:
-            import json as _json
-            data = _json.load(f)
-            if not data:
-                log(f"[CHECK] {kpi_id}: output JSON empty → fetch now")
-                return True
-    except Exception:
-        log(f"[CHECK] {kpi_id}: error reading output JSON → fetch now")
-        return True
-
     if not prev:
         log(f"[CHECK] {kpi_id}: no previous record → fetch now")
         return True
@@ -1230,7 +1225,7 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
     """Verarbeitet einen einzelnen WorldBank-Indikator (inkl. Heuristik für source_date & data_year)."""
     code = meta.get("source_code") or meta.get("code")
     if not code:
-        keep_or_dummy(kpi_id, "missing source_code", stats)
+        keep_or_dummy(kpi_id, "missing source_code", stats, output_dir=meta.get('output_dir', DATA_DIR))
         return
 
     # === 1️⃣ Quelle abfragen ===
@@ -1258,7 +1253,7 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
         if len(rows) > 1:
             log(f"[DEBUG] WorldBank {kpi_id}: second raw row: {json.dumps(rows[1], ensure_ascii=False)[:500]}", level="info")
     if not rows:
-        keep_or_dummy(kpi_id, f"WorldBank fetch failed ({code})", stats)
+        keep_or_dummy(kpi_id, f"WorldBank fetch failed ({code})", stats, output_dir=meta.get('output_dir', DATA_DIR))
         return
 
     out = []
@@ -1306,7 +1301,7 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
     # === 4️⃣ Speichern ===
     if out:
         out = maybe_invert_records(kpi_id, meta, out)
-        save_records(kpi_id, out)
+        save_records(kpi_id, out, stats, output_dir=meta.get('output_dir', DATA_DIR))
         stats["wb_success"] += 1
         stats["saved_records"] += len(out)
         log(f"[OK] WorldBank KPI saved: {kpi_id} ({len(out)} rows, last updated {source_date})")
@@ -1323,17 +1318,23 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
 # ----------------------------------------------------------------------
 # 📊 CSV Fetch (smart) – inkl. Änderungsprüfung & Natural Disasters Sonderfall
 # ----------------------------------------------------------------------
-def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
+def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats, output_dir=None):
     import hashlib, pandas as pd, re
 
     csv_name = meta.get("source_code") or meta.get("code") or f"{kpi_id}.csv"
     path = os.path.join(SOURCE_CSV_DIR, csv_name)
     if not os.path.exists(path):
-        keep_or_dummy(kpi_id, f"CSV missing {csv_name}", stats)
+        keep_or_dummy(kpi_id, f"CSV missing {csv_name}", stats, output_dir=output_dir)
         return
 
-    json_path = os.path.join(DATA_DIR, f"{kpi_id}.json")
+
+    if output_dir is None:
+        output_dir = DATA_DIR
+    json_path = os.path.join(output_dir, f"{kpi_id}.json")
     hash_path = os.path.join(PENDING_DIR, f"{kpi_id}.md5")
+
+    # In test mode, always overwrite (skip version/hash check)
+    is_test_mode = (str(output_dir).endswith(os.sep + "test") or str(output_dir).endswith("/test") or str(output_dir).endswith("\\test"))
 
     def file_md5(p):
         h = hashlib.md5()
@@ -1344,24 +1345,25 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
 
     csv_mtime, csv_hash = os.path.getmtime(path), file_md5(path)
 
-    # 🔹 Änderungsprüfung
-    if os.path.exists(json_path) and os.path.exists(hash_path):
-        try:
-            old_hash = open(hash_path).read().strip()
-            json_mtime = os.path.getmtime(json_path)
-            if csv_mtime <= json_mtime and csv_hash == old_hash:
-                log(f"[⏸️] {kpi_id} – CSV unchanged (hash & mtime match)")
-                mark_skip(stats, "CSV unchanged (hash & mtime)")
-                return
-        except Exception as e:
-            log(f"[WARN] Hash check failed for {kpi_id}: {e}")
+    # 🔹 Änderungsprüfung (skip in test mode)
+    if not is_test_mode:
+        if os.path.exists(json_path) and os.path.exists(hash_path):
+            try:
+                old_hash = open(hash_path).read().strip()
+                json_mtime = os.path.getmtime(json_path)
+                if csv_mtime <= json_mtime and csv_hash == old_hash:
+                    log(f"[⏸️] {kpi_id} – CSV unchanged (hash & mtime match)")
+                    mark_skip(stats, "CSV unchanged (hash & mtime)")
+                    return
+            except Exception as e:
+                log(f"[WARN] Hash check failed for {kpi_id}: {e}")
 
     # 🔹 CSV laden und normalisieren
     try:
         df = pd.read_csv(path)
     except Exception as e:
         log(f"[ERR] Failed to read CSV for {kpi_id}: {e}")
-        keep_or_dummy(kpi_id, f"CSV read error {csv_name}", stats)
+        keep_or_dummy(kpi_id, f"CSV read error {csv_name}", stats, output_dir=output_dir)
         return
 
     if len(df.columns) == 1 and "," in df.columns[0]:
@@ -1389,11 +1391,11 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
                 log(f"🔄 Auto-normalized Natural Disasters CSV ({len(df)} rows)")
             except Exception as e:
                 log(f"[WARN] Natural Disasters CSV normalization failed: {e}")
-                keep_or_dummy(kpi_id, "Natural Disasters normalization failed", stats)
+                keep_or_dummy(kpi_id, "Natural Disasters normalization failed", stats, output_dir=output_dir)
                 return
         else:
             log(f"[WARN] CSV format unknown for {kpi_id} → {csv_name}")
-            keep_or_dummy(kpi_id, f"Unknown CSV format {csv_name}", stats)
+            keep_or_dummy(kpi_id, f"Unknown CSV format {csv_name}", stats, output_dir=output_dir)
             return
 
     df["year"] = pd.to_numeric(df["year"], errors="coerce")
@@ -1444,7 +1446,7 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
 
     if out:
         out = maybe_invert_records(kpi_id, meta, out)
-        save_records(kpi_id, out)
+        save_records(kpi_id, out, stats, output_dir=output_dir)
         stats["csv_success"] += 1
         stats["saved_records"] += len(out)
         meta["_source_date"], meta["_latest_year"] = source_date, latest_year
@@ -1456,7 +1458,7 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats):
         except Exception as e:
             log(f"[WARN] Could not write hash for {kpi_id}: {e}")
     else:
-        keep_or_dummy(kpi_id, f"CSV empty {csv_name}", stats)
+        keep_or_dummy(kpi_id, f"CSV empty {csv_name}", stats, output_dir=output_dir)
 
     return latest_year
 
@@ -2204,19 +2206,34 @@ def main(args: argparse.Namespace) -> None:
         kpi_list = [v for v in kpi_list if v.get("filename") == args.kpi]
         log(f"[INFO] Single KPI mode (-k): filtering KPIs {len(kpi_list)}/{before} for filename='{args.kpi}'")
 
-    # Test mode: only fetch KPIs with 'test': '*' and always skip analysis
-    if args.test:
-        before = len(kpi_list)
-        kpi_list = [v for v in kpi_list if str(v.get("test", "")).strip() == "*"]
-        log(f"[INFO] Test mode enabled (-t): filtering KPIs with test='*' only ({len(kpi_list)}/{before}) and skipping all analysis.")
-        args.no_analysis = True
 
+    # Always ignore KPIs with test: 'o' in all modes
+    ignored_kpis = []
+    before = len(kpi_list)
+    filtered = []
+    for v in kpi_list:
+        test_flag = str(v.get("test", "")).strip()
+        if test_flag == "o":
+            ignored_kpis.append(v.get("filename") or v.get("title") or "?")
+            continue
+        filtered.append(v)
+    kpi_list = filtered
+    if args.test:
+        # In test mode, only fetch KPIs with test='*'
+        before_test = len(kpi_list)
+        kpi_list = [v for v in kpi_list if str(v.get("test", "")).strip() == "*"]
+        log(f"[INFO] Test mode enabled (-t): filtering KPIs with test='*' only ({len(kpi_list)}/{before_test}), ignored {len(ignored_kpis)} with test='o', skipping all analysis.")
+        args.no_analysis = True
     stats["kpis_loaded"] = len(kpi_list)
 
     imf_queue: List[Dict[str, Any]] = []
 
     # --- KPI-Schleife ---
+
+    output_dir = TEST_DATA_DIR if args.test else DATA_DIR
     for meta in kpi_list:
+        meta = dict(meta)  # copy to avoid mutating global
+        meta['output_dir'] = output_dir
         try:
             kpi_id = resolve_kpi_id(meta)
             source_type = (meta.get("source_type") or meta.get("type") or "").lower().strip()
@@ -2236,11 +2253,12 @@ def main(args: argparse.Namespace) -> None:
                 log(f"[DEFER] {kpi_id}: queued for IMF bulk import")
                 continue
 
-            # Prüfen, ob Fetch nötig (außer im Force-All-Modus)
-            if not force_all_updates and not should_fetch(kpi_id, source_type, source_date, meta, fetch_status):
-                log(f"[⏸️] {kpi_id} – unchanged ({source_date})")
-                mark_skip(stats, "Remote data unchanged")
-                continue
+            # In test mode, always fetch (skip version check)
+            if not args.test:
+                if not force_all_updates and not should_fetch(kpi_id, source_type, source_date, meta, fetch_status):
+                    log(f"[⏸️] {kpi_id} – unchanged ({source_date})")
+                    mark_skip(stats, "Remote data unchanged")
+                    continue
 
             # Sonderfall: Geopolitical Risk Index wird separat behandelt
             if kpi_id == "geopolitical_risk_index":
@@ -2252,16 +2270,15 @@ def main(args: argparse.Namespace) -> None:
             already_marked = kpi_id in updated_set
 
             try:
+                # Patch: pass test_mode to save_records for output dir
                 if source_type == "worldbank":
                     process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
                 elif source_type == "owid":
                     process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats)
                 elif source_type == "data360":
                     indicator_id = meta.get("source_code")
-                    # Entferne .csv-Endung, falls vorhanden
                     if indicator_id and indicator_id.lower().endswith('.csv'):
                         indicator_id = indicator_id[:-4]
-                    # Only log fetch start for non-debug/test
                     if kpi_id != "press_freedom_index":
                         log(f"[FETCH] Data360 fetch start for {kpi_id} ({indicator_id})")
                     records = fetch_data360_indicator(indicator_id, meta) if indicator_id else []
@@ -2270,7 +2287,6 @@ def main(args: argparse.Namespace) -> None:
                     years_seen: List[int] = []
                     for row in records:
                         iso3 = row.get("REF_AREA")
-                        # Removed Data360 debug logs
                         canon = canonicalize_country(iso3, c_index, a_index, countries, pending, stats)
                         if not canon:
                             continue
@@ -2286,8 +2302,7 @@ def main(args: argparse.Namespace) -> None:
                         years_seen.append(year_int)
 
                     if final_rows:
-                        # Removed Data360 debug logs
-                        save_records(kpi_id, final_rows, stats)
+                        save_records(kpi_id, final_rows, stats, output_dir=output_dir)
                         stats["data360_success"] += 1
                         stats["saved_records"] += len(final_rows)
                         stats["fetched"] += len(final_rows)
@@ -2297,29 +2312,25 @@ def main(args: argparse.Namespace) -> None:
                         stats.setdefault("updated_kpis", set()).add(kpi_id)
                         log(f"[OK] Data360 KPI saved: {kpi_id} ({len(final_rows)} rows)")
                     else:
-                        # Always save a dummy if no data, no fallback to CSV
-                        keep_or_dummy(kpi_id, f"Data360 empty {indicator_id}", stats)
+                        keep_or_dummy(kpi_id, f"Data360 empty {indicator_id}", stats, output_dir=output_dir)
                 elif source_type == "csv":
-                    latest_year = process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats)
+                    latest_year = process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats, output_dir=output_dir)
                     if latest_year:
                         meta["_latest_year"] = latest_year
                 elif source_type == "unhcr":
-                    process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats)
+                    process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats, output_dir=output_dir)
                 else:
-                    keep_or_dummy(kpi_id, f"unknown source_type {source_type}", stats)
+                    keep_or_dummy(kpi_id, f"unknown source_type {source_type}", stats, output_dir=output_dir)
 
-                # Erfolgreiches Update protokollieren
                 if kpi_id in updated_set and not already_marked:
                     stats["updated"] += 1
 
-                # ✅ Preserve old data_year and source_date if not newly detected
                 old_meta = fetch_status.get("kpis", {}).get(kpi_id, {})
                 if not meta.get("_latest_year") and old_meta.get("data_year"):
                     meta["_latest_year"] = old_meta["data_year"]
                 if (not meta.get("_source_date") or meta.get("_source_date") in ("Unknown", None)) and old_meta.get("source_date"):
                     meta["_source_date"] = old_meta["source_date"]
 
-                # ✅ Verwende ggf. angepasste Werte aus meta
                 used_source_date = meta.get("_source_date") or source_date or "Unknown"
                 used_data_year   = meta.get("_latest_year") or None
 
@@ -2333,9 +2344,9 @@ def main(args: argparse.Namespace) -> None:
 
                 log(f"[STATUS] {kpi_id}: stored source_date={used_source_date}, data_year={used_data_year}")
 
-            except Exception as e:  # 👈 muss in dieser Einrückungsebene stehen
+            except Exception as e:
                 stats["errors"] += 1
-                keep_or_dummy(kpi_id, f"Exception: {e}", stats)
+                keep_or_dummy(kpi_id, f"Exception: {e}", stats, output_dir=output_dir)
                 log(f"[❌] {kpi_id} failed: {e}\n{traceback.format_exc()}")
 
         except Exception as e:
@@ -2345,6 +2356,7 @@ def main(args: argparse.Namespace) -> None:
     # ---------------------------------------------------------------
     # 📊 IMF WEO Bulk Import (after OWID/WB/Data360 loops)
     # ---------------------------------------------------------------
+
     if imf_queue:
         try:
             fetch_imf_api(
@@ -2396,8 +2408,13 @@ def main(args: argparse.Namespace) -> None:
         "skipped": stats["skipped"],
         "errors": stats["errors"]
     }
-    write_json(STATUS_FILE, fetch_status)
-    write_json(COUNTRY_PENDING_FILE, pending)
+    # Patch: in test mode, write status and pending to /data/test
+    if args.test:
+        write_json(TEST_DATA_DIR / "fetch_status.json", fetch_status)
+        write_json(TEST_DATA_DIR / "country_mappings_pending.json", pending)
+    else:
+        write_json(STATUS_FILE, fetch_status)
+        write_json(COUNTRY_PENDING_FILE, pending)
 
     # 🤖 Automatische Verarbeitung von pending country mappings
     agent_summary_lines = []
@@ -2453,8 +2470,8 @@ def main(args: argparse.Namespace) -> None:
         log(f"[WARN] Failed to write fetch_state.json: {e}")
         
 
-    # --- Zusammenfassung ---
 
+    # --- Zusammenfassung ---
     summary = [
         "=== RealityCheck Fetch Report ===",
         f"Countries loaded:   {stats['countries_loaded']}",
@@ -2478,6 +2495,10 @@ def main(args: argparse.Namespace) -> None:
         f"Errors:            {stats['errors']}",
         f"Updated KPIs:      {stats['updated']}",
     ]
+    summary.append("")
+    summary.append(f"Ignored KPIs with test='o': {len(ignored_kpis)}")
+    if ignored_kpis:
+        summary.append(f"IDs: {', '.join(ignored_kpis)}")
 
     # Insert auto-mapping summary (in English) at the top of mapping stats
     mapping_stats = []
@@ -2539,13 +2560,18 @@ if __name__ == "__main__":
     cli_args = parse_args()
 
     if cli_args.test and not cli_args.no_analysis:
-        # In test mode we always skip AI-based follow-ups to avoid long-running tasks
         cli_args.no_analysis = True
         print("⏸️ Test mode (-t): analyses and GPT-based tasks are skipped.")
     elif cli_args.no_analysis:
         print("⏸️ Smart analyses and GPT-based tasks are disabled (local test mode).")
 
     main(cli_args)
+
+    # In test mode, never run analysis, consolidation, or post-fetch scripts
+    if cli_args.test:
+        print("⏭️ Test mode: Skipping all analysis, consolidation, and post-fetch scripts.")
+        import sys
+        sys.exit(0)
 
     if cli_args.no_analysis:
         print("⏭️ Analysis and consolidation scripts skipped (--no-analysis or test mode).")
