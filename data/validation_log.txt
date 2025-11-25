@@ -1,0 +1,39 @@
+[2025-11-25T15:36:43.540589] ==== RealityCheck Data Validation Started ====
+[2025-11-25T15:36:43.568338] ❌ MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.csv
+[2025-11-25T15:36:43.576333] ❌ MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\ncd_burden_dalys.json
+[2025-11-25T15:36:43.576896] ❌ MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\ncd_burden_dalys.csv
+[2025-11-25T15:36:43.577595] ❌ MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\universal_health_coverage_index.json
+[2025-11-25T15:36:43.578392] ❌ MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\universal_health_coverage_index.csv
+[2025-11-25T15:36:43.578967] ❌ MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\government_effectiveness.json
+[2025-11-25T15:36:43.579526] ❌ MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\government_effectiveness.csv
+[2025-11-25T15:36:43.597725] ❌ ERROR comparing C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\area.json and C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\master\area.json: Expecting ',' delimiter: line 7 column 3 (char 299)
+[2025-11-25T15:36:43.603393] ⚠️ SAMPLE MISMATCH in area.csv at row 1: ['Afghanistan', '2023', '652870.0'] != ['Afghanistan', '', '2023', '652870.0']
+[2025-11-25T15:36:43.623427] ❌ ERROR comparing C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\human_rights_index_vdem.json and C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\master\human_rights_index_vdem.json: Expecting ',' delimiter: line 7 column 3 (char 285)
+[2025-11-25T15:36:43.633299] ⚠️ SAMPLE MISMATCH in human_rights_index_vdem.csv at row 1: ['Afghanistan', '2023', '0.038'] != ['Afghanistan', 'AFG', '1900', '0.094']
+[2025-11-25T15:36:43.634630] ==== Validation Complete ====
+[2025-11-25T15:36:43.635124] ❌ 7 files missing or empty. See above.
+[2025-11-25T15:36:43.635651] Suggestions: Check for plausible value ranges, outliers, and year coverage in future.
+[2025-11-25T15:37:36.761173] ==== RealityCheck Data Validation Started ====
+[2025-11-25T15:37:36.807963] ❌ ERROR comparing C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\area.json and C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\master\area.json: Expecting ',' delimiter: line 7 column 3 (char 299)
+[2025-11-25T15:37:36.813859] ⚠️ SAMPLE MISMATCH in area.csv at row 1: ['Afghanistan', '2023', '652870.0'] != ['Afghanistan', '', '2023', '652870.0']
+[2025-11-25T15:37:36.835126] ❌ ERROR comparing C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\human_rights_index_vdem.json and C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\master\human_rights_index_vdem.json: Expecting ',' delimiter: line 7 column 3 (char 285)
+[2025-11-25T15:37:36.845157] ⚠️ SAMPLE MISMATCH in human_rights_index_vdem.csv at row 1: ['Afghanistan', '2023', '0.038'] != ['Afghanistan', 'AFG', '1900', '0.094']
+[2025-11-25T15:37:36.846453] ==== Validation Complete ====
+[2025-11-25T15:37:36.846995] ✅ All expected files present and non-empty.
+[2025-11-25T15:37:36.847558] Suggestions: Check for plausible value ranges, outliers, and year coverage in future.
+[2025-11-25T16:07:42.719302] ==== RealityCheck Data Validation Started ====
+[2025-11-25T16:07:42.767186] ❌ ERROR comparing C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\area.json and C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\master\area.json: Expecting ',' delimiter: line 7 column 3 (char 299)
+[2025-11-25T16:07:42.774656] ⚠️ SAMPLE MISMATCH in area.csv at row 1: ['Afghanistan', '2023', '652870.0'] != ['Afghanistan', '', '2023', '652870.0']
+[2025-11-25T16:07:42.793974] ❌ ERROR comparing C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\human_rights_index_vdem.json and C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\master\human_rights_index_vdem.json: Expecting ',' delimiter: line 7 column 3 (char 285)
+[2025-11-25T16:07:42.803146] ⚠️ SAMPLE MISMATCH in human_rights_index_vdem.csv at row 1: ['Afghanistan', '2023', '0.038'] != ['Afghanistan', 'AFG', '1900', '0.094']
+[2025-11-25T16:07:42.804493] ==== Validation Complete ====
+[2025-11-25T16:07:42.805064] ✅ All expected files present and non-empty.
+[2025-11-25T16:07:42.805625] Suggestions: Check for plausible value ranges, outliers, and year coverage in future.
+[2025-11-25T16:10:00.654983] ==== RealityCheck Data Validation Started ====
+[2025-11-25T16:10:00.782540] ==== Validation Complete ====
+[2025-11-25T16:10:00.783362] ✅ All expected files present and non-empty.
+[2025-11-25T16:10:00.784134] Suggestions: Check for plausible value ranges, outliers, and year coverage in future.
+[2025-11-25T16:13:19.795219] ==== RealityCheck Data Validation Started ====
+[2025-11-25T16:13:19.917334] ==== Validation Complete ====
+[2025-11-25T16:13:19.918138] ✅ All expected files present and non-empty.
+[2025-11-25T16:13:19.918871] Suggestions: Check for plausible value ranges, outliers, and year coverage in future.

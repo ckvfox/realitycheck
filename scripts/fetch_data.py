@@ -2575,6 +2575,7 @@ if __name__ == "__main__":
 
     if cli_args.no_analysis:
         print("⏭️ Analysis and consolidation scripts skipped (--no-analysis or test mode).")
+
     else:
         try:
             print("➡️ Running fetch_overall_ranking.py …")
@@ -2641,4 +2642,12 @@ if __name__ == "__main__":
             print(f"⚠️ CSV source check failed: {e}")
     else:
         print("⏭️ AI-based analyses skipped (--no-analysis enabled).")
+
+    # === Run validation as last step ===
+    try:
+        print("➡️ Running validation.py as final step …")
+        subprocess.run(["python", os.path.join(SCRIPT_DIR, "validation.py")], check=True)
+        print("✅ Data validation completed.")
+    except Exception as e:
+        print(f"⚠️ Data validation failed: {e}")
 
