@@ -314,16 +314,55 @@ setTimeout(syncHomeToChart, 0);
 function applyRelation(v, c, y) {
   const rel = document.getElementById("relationSelect");
   const m = getMetaForCurrent();
-  if (v == null) return v;
-  if (!m || m.relation !== "*") return v;
+  if (v == null) return { value: v, relationLabel: "" };
+  if (!m || m.relation !== "*") return { value: v, relationLabel: "" };
   const relation = rel?.value;
-  if (!relation || relation === "absolute") return v;
+  if (!relation || relation === "absolute") return { value: v, relationLabel: "" };
   const lookup = relationLookups[relation];
-  if (!lookup || !lookup.size) return v;
+  if (!lookup || !lookup.size) return { value: v, relationLabel: "" };
   const key = relationKey(c, normalizeYear(y));
   const divisor = lookup.get(key);
-  if (!Number.isFinite(divisor) || divisor === 0) return null;
-  return v / divisor;
+  if (!Number.isFinite(divisor) || divisor === 0) return { value: null, relationLabel: "" };
+  let raw = v / divisor;
+  let scale = 1;
+  let scaleLabel = "";
+  if (relation === "percapita") {
+    if (typeof raw === "number" && Math.abs(raw) > 0) {
+      if (Math.abs(raw) * 1e6 >= 0.01) {
+        scale = 1e6;
+        scaleLabel = "per 1 million inhabitants";
+      } else if (Math.abs(raw) * 1e5 >= 0.01) {
+        scale = 1e5;
+        scaleLabel = "per 100,000 inhabitants";
+      } else if (Math.abs(raw) * 1e3 >= 0.01) {
+        scale = 1e3;
+        scaleLabel = "per 1,000 inhabitants";
+      } else {
+        scale = 1;
+        scaleLabel = "per capita";
+      }
+    } else {
+      scale = 1;
+      scaleLabel = "per capita";
+    }
+    raw = raw * scale;
+    return { value: raw, relationLabel: scaleLabel };
+  } else if (relation === "pergdp") {
+    if (Math.abs(raw) < 0.1) {
+      scale = 1000;
+      scaleLabel = "per mille of GDP (‰)";
+    } else {
+      scale = 100;
+      scaleLabel = "% of GDP";
+    }
+    raw = raw * scale;
+    return { value: raw, relationLabel: scaleLabel };
+  } else if (relation === "perkm2") {
+    scaleLabel = "per km²";
+    return { value: raw, relationLabel: scaleLabel };
+  }
+  // For absolute (non-relation) values, do not apply dynamic scaling
+  return { value: raw, relationLabel: "" };
 }
 
 /* ========= View ========= */
@@ -445,9 +484,14 @@ function updateTable() {
         ? bucket.byYear.get(compYear)
         : null;
 
-    const lv = applyRelation(latest.value, country, latest.year);
-    const pv = prev ? applyRelation(prev.value, country, prev.year) : null;
-    const cv = comp ? applyRelation(comp.value, country, comp.year) : null;
+    const lvObj = applyRelation(latest.value, country, latest.year);
+    const lv = lvObj.value;
+    const pvObj = prev ? applyRelation(prev.value, country, prev.year) : null;
+    const pv = pvObj ? pvObj.value : null;
+    const pvRelationLabel = pvObj ? pvObj.relationLabel : "";
+    const cvObj = comp ? applyRelation(comp.value, country, comp.year) : null;
+    const cv = cvObj ? cvObj.value : null;
+    const cvRelationLabel = cvObj ? cvObj.relationLabel : "";
 
     const arrow = pv != null && lv != null ? calcTrend(lv, pv) : "→";
     const dAbs = pv != null && lv != null ? lv - pv : null;
@@ -458,6 +502,7 @@ function updateTable() {
     rows.push({
       country,
       value: lv,
+      relationLabel: lvObj.relationLabel,
       deltaPrevArrow: arrow,
       deltaPrevAbs: dAbs,
       deltaPrevPct: dPct,
@@ -497,6 +542,7 @@ function updateTable() {
     rows.push({
       country: "World",
       value: val,
+      relationLabel: "",
       deltaPrevArrow: "-",
       deltaPrevAbs: null,
       deltaPrevPct: null,
@@ -564,6 +610,7 @@ function updateTable() {
     groupRows.push({
       country: title,
       value: agg,
+      relationLabel: "",
       deltaPrevArrow: "-",
       deltaPrevAbs: null,
       deltaPrevPct: null,
@@ -682,13 +729,15 @@ function updateTable() {
     tr.innerHTML = `
       <td>${r.rank ?? ""}</td>
       <td>${r.country}</td>
-      <td>${
-        meta.scale === "auto"
+      <td title="${r.relationLabel ? r.relationLabel : ''}">
+        ${meta.scale === "auto"
           ? (r.value / scaleInfo.divisor).toFixed(2) +
             " " +
-            scaleInfo.suffix
-          : formatValueAuto(r.value, meta.scale)
-      }${unit ? " " + unit : ""}</td>
+            scaleInfo.suffix +
+            (r.relationLabel ? ` ${r.relationLabel}` : (unit ? ` ${unit}` : ""))
+          : formatValueAuto(r.value, meta.scale) + (r.relationLabel ? ` ${r.relationLabel}` : (unit ? ` ${unit}` : ""))
+        }
+      </td>
       <td class="trend" ${deltaTitle}>${r.deltaPrevArrow}</td>
       <td>${r.deltaComp ?? "-"}</td>
       <td>${r.update ?? "-"}</td>
