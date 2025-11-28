@@ -438,6 +438,12 @@
     "value": 3.0
   },
   {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1956,
+    "value": 2.0
+  },
+  {
     "country": "Canada",
     "iso2": "",
     "year": 1956,
@@ -460,6 +466,12 @@
     "iso2": "",
     "year": 1956,
     "value": 1.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1960,
+    "value": 8.0
   },
   {
     "country": "United States",
@@ -550,6 +562,12 @@
     "iso2": "",
     "year": 1964,
     "value": 7.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1964,
+    "value": 9.0
   },
   {
     "country": "Sweden",
@@ -630,10 +648,22 @@
     "value": 8.0
   },
   {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1968,
+    "value": 7.0
+  },
+  {
     "country": "United States",
     "iso2": "",
     "year": 1968,
     "value": 7.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1968,
+    "value": 5.0
   },
   {
     "country": "Finland",
@@ -660,6 +690,12 @@
     "value": 1.0
   },
   {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1972,
+    "value": 14.0
+  },
+  {
     "country": "Switzerland",
     "iso2": "",
     "year": 1972,
@@ -676,6 +712,12 @@
     "iso2": "",
     "year": 1972,
     "value": 8.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1972,
+    "value": 5.0
   },
   {
     "country": "Norway",
@@ -738,6 +780,12 @@
     "value": 1.0
   },
   {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1976,
+    "value": 19.0
+  },
+  {
     "country": "United States",
     "iso2": "",
     "year": 1976,
@@ -748,6 +796,12 @@
     "iso2": "",
     "year": 1976,
     "value": 7.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1976,
+    "value": 10.0
   },
   {
     "country": "Finland",
@@ -808,6 +862,12 @@
     "iso2": "",
     "year": 1976,
     "value": 1.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1980,
+    "value": 23.0
   },
   {
     "country": "United States",
@@ -864,6 +924,12 @@
     "value": 1.0
   },
   {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1980,
+    "value": 5.0
+  },
+  {
     "country": "Italy",
     "iso2": "",
     "year": 1980,
@@ -900,6 +966,12 @@
     "value": 1.0
   },
   {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1984,
+    "value": 24.0
+  },
+  {
     "country": "United States",
     "iso2": "",
     "year": 1984,
@@ -931,6 +1003,12 @@
   },
   {
     "country": "Canada",
+    "iso2": "",
+    "year": 1984,
+    "value": 4.0
+  },
+  {
+    "country": "Germany",
     "iso2": "",
     "year": 1984,
     "value": 4.0
@@ -972,6 +1050,12 @@
     "value": 1.0
   },
   {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1988,
+    "value": 25.0
+  },
+  {
     "country": "Switzerland",
     "iso2": "",
     "year": 1988,
@@ -1000,6 +1084,12 @@
     "iso2": "",
     "year": 1988,
     "value": 7.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "",
+    "year": 1988,
+    "value": 8.0
   },
   {
     "country": "United States",
@@ -2206,6 +2296,12 @@
     "iso2": "",
     "year": 2022,
     "value": 15.0
+  },
+  {
+    "country": "Taiwan",
+    "iso2": "",
+    "year": 2022,
+    "value": 32.0
   },
   {
     "country": "France",

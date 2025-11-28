@@ -141,3 +141,22 @@ alternative zu owid
     "invert": "",
     "test": "*"
   },
+  
+	  {
+    "title": "NCD Burden (DALYs per 100,000)",
+    "description": "The burden of non-communicable diseases (NCDs)—expressed as disability-adjusted life years (DALYs) per 100,000 people—captures the combined impact of conditions such as cardiovascular diseases, cancers, diabetes, and chronic respiratory diseases. It reflects long-term health risks and healthcare performance. Data are provided by Our World in Data based on the IHME Global Burden of Disease.",
+    "unit": "DALYs per 100,000 people",
+    "relation": "",
+    "sort": "lower",
+    "cluster": "Health & Social",
+    "source": "https://ourworldindata.org/grapher/dalys-rate-from-ncds",
+    "source_type": "owid",
+    "source_code": "dalys-rate-from-ncds.csv?useColumnShortNames=true",
+    "scale": "none",
+    "world_kpi": "",
+    "filename": "ncd_burden_dalys",
+    "relevance": "normal",
+    "actuality": "normal",
+    "invert": "",
+    "test": "*"
+  },

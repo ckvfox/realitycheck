@@ -7,10 +7,11 @@ def handle_force_cleanup():
 
     data_dir = Path("data")
     meta_dir = data_dir / "meta"
-    # Lösche alles in /data außer /data/meta
+    test_dir = data_dir / "test"
+    # Lösche alles in /data außer /data/meta und /data/test
 
     for item in data_dir.iterdir():
-        if item == meta_dir:
+        if item == meta_dir or item == test_dir:
             continue
         try:
             if item.is_dir():
@@ -883,7 +884,11 @@ def should_fetch(kpi_id: str, source_type: str, source_date: Optional[str], meta
 def download_worldbank_zip(indicator_code: str, purpose: str) -> Optional[bytes]:
     """Download the ZIP package for a World Bank indicator with retries."""
 
-    url = f"https://api.worldbank.org/v2/en/indicator/{indicator_code}?downloadformat=csv"
+
+    # Entferne Query-Parameter wie '?downloadformat=csv' aus dem Indikatorcode, falls vorhanden
+    base_code = indicator_code.split('?')[0]
+    url = f"https://api.worldbank.org/v2/en/indicator/{base_code}?downloadformat=csv"
+
     response = worldbank_request(
         url,
         timeout=60,
@@ -1008,8 +1013,8 @@ def fetch_worldbank_series(indicator_code: str) -> tuple[List[Dict[str, Any]], O
     Liefert zusätzlich ein mögliches Änderungsdatum aus ZIP-Fallbacks.
     Integriert automatischen Retry mit Backoff bei HTTP 429 (Rate Limit).
     """
-    base_url = f"https://api.worldbank.org/v2/country/all/indicator/{indicator_code}?format=json&per_page=20000"
 
+    base_url = f"https://api.worldbank.org/v2/country/all/indicator/{indicator_code}?format=json&per_page=20000"
     json_response = worldbank_request(
         base_url,
         timeout=60,
@@ -1019,28 +1024,31 @@ def fetch_worldbank_series(indicator_code: str) -> tuple[List[Dict[str, Any]], O
         wait_base=5,
     )
 
+    # Prüfe, ob die JSON-API gültige Daten liefert
     if json_response and json_response.status_code == 200:
-        data = json_response.json()
-        if not isinstance(data, list) or len(data) < 2:
-            log(f"[WARN] WorldBank {indicator_code}: unexpected JSON format")
-        else:
+        try:
+            data = json_response.json()
+        except Exception as e:
+            data = None
+            log(f"[WARN] WorldBank {indicator_code}: JSON parse error {e}")
+        if isinstance(data, list) and len(data) >= 2:
             series = data[1]
-            if isinstance(series, list):
+            if isinstance(series, list) and len(series) > 0:
                 return series, None
-            log(f"[WARN] WorldBank {indicator_code}: series not list")
-
+            else:
+                log(f"[WARN] WorldBank {indicator_code}: series not list or empty")
+        else:
+            log(f"[WARN] WorldBank {indicator_code}: unexpected JSON format or empty")
     else:
         if json_response is None:
             log(f"[WARN] WorldBank {indicator_code}: JSON endpoint unreachable after retries")
         else:
             log(f"[WARN] WorldBank {indicator_code}: JSON endpoint returned HTTP {json_response.status_code}")
 
-    # --- ZIP-Fallback ---
+    # Wenn keine oder leere Daten: Versuche ZIP direkt (auch für Indikatoren wie GE.EST)
     fallback_rows, fallback_date = fetch_worldbank_series_via_zip(indicator_code)
     if fallback_rows:
-        log(
-            f"[FALLBACK] WorldBank {indicator_code}: using ZIP data ({len(fallback_rows)} rows)"
-        )
+        log(f"[FALLBACK] WorldBank {indicator_code}: using ZIP data ({len(fallback_rows)} rows)")
         return fallback_rows, fallback_date
 
     log(f"[FAIL] WorldBank {indicator_code}: all fetch attempts failed")

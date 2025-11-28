@@ -938,7 +938,7 @@
     "relevance": "none",
     "actuality": "normal",
     "invert": "",
-    "test": "*"
+    "test": ""
   },
   {
     "title": "Rule of Law Index",
@@ -1206,7 +1206,7 @@
     "relevance": "normal",
     "actuality": "annual",
     "invert": "",
-    "test": "*"
+    "test": ""
   },
   {
     "title": "Intentional Homicides",
@@ -1224,7 +1224,7 @@
     "relevance": "normal",
     "actuality": "normal",
     "invert": "",
-    "test": "*"
+    "test": ""
   },
 
   {
@@ -1243,7 +1243,7 @@
     "relevance": "none",
     "actuality": "normal",
     "invert": "",
-    "test": "*"
+    "test": ""
   },
   {
     "title": "Foreign Direct Investment Inflows",
@@ -1261,7 +1261,7 @@
     "relevance": "none",
     "actuality": "normal",
     "invert": "",
-    "test": "*"
+    "test": ""
   },
   {
     "title": "Water Stress Level",
@@ -1279,7 +1279,7 @@
     "relevance": "normal",
     "actuality": "normal",
     "invert": "",
-    "test": "*"
+    "test": ""
   },
 
   {
@@ -1298,7 +1298,7 @@
     "relevance": "normal",
     "actuality": "annual",
     "invert": "",
-    "test": "*"
+    "test": ""
   },
   {
     "title": "Logistics Performance Index – Infrastructure",
@@ -1316,26 +1316,7 @@
     "relevance": "normal",
     "actuality": "normal",
     "invert": "",
-    "test": "*"
-  },
-  
-	  {
-    "title": "NCD Burden (DALYs per 100,000)",
-    "description": "The burden of non-communicable diseases (NCDs)—expressed as disability-adjusted life years (DALYs) per 100,000 people—captures the combined impact of conditions such as cardiovascular diseases, cancers, diabetes, and chronic respiratory diseases. It reflects long-term health risks and healthcare performance. Data are provided by Our World in Data based on the IHME Global Burden of Disease.",
-    "unit": "DALYs per 100,000 people",
-    "relation": "",
-    "sort": "lower",
-    "cluster": "Health & Social",
-    "source": "https://ourworldindata.org/grapher/dalys-rate-from-ncds",
-    "source_type": "owid",
-    "source_code": "dalys-rate-from-ncds.csv?useColumnShortNames=true",
-    "scale": "none",
-    "world_kpi": "",
-    "filename": "ncd_burden_dalys",
-    "relevance": "normal",
-    "actuality": "normal",
-    "invert": "",
-    "test": "o"
+    "test": ""
   },
 
   {
@@ -1345,16 +1326,16 @@
     "relation": "",
     "sort": "higher",
     "cluster": "Health & Social",
-    "source": "https://data.worldbank.org/indicator/SH.UHC.SRVS.CV",
-    "source_type": "worldbank",
-    "source_code": "SH.UHC.SRVS.CV",
+    "source": "https://ourworldindata.org/grapher/universal-health-coverage-index",
+    "source_type": "owid",
+    "source_code": "universal-health-coverage-index.csv?v=1&csvType=full&useColumnShortNames=true",
     "scale": "none",
     "world_kpi": "",
     "filename": "universal_health_coverage_index",
     "relevance": "normal",
     "actuality": "normal",
     "invert": "",
-    "test": "o"
+    "test": "*"
   },
 
   {
@@ -1373,7 +1354,7 @@
     "relevance": "normal",
     "actuality": "annual",
     "invert": "",
-    "test": "o"
+    "test": "*"
   }
 
 ]

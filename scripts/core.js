@@ -726,7 +726,7 @@ window.googleTranslateElementInit = function googleTranslateElementInit() {
     // 🌍 Top 5 world languages + German: English, Mandarin Chinese, Hindi, Spanish, French, German, Arabic, Portuguese
     new google.translate.TranslateElement({
       pageLanguage,
-      includedLanguages: "en,zh,hi,es,fr,de,it,ar,pt,ru,ja",
+      includedLanguages: "en,zh,hi,es,fr,de,ar,pt,ru,ja",
       layout: layout ?? undefined,
       autoDisplay: false
     }, "google_translate_element");

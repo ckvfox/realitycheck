@@ -21,9 +21,11 @@
       "intentional_homicides": 50,
       "water_stress_level": 35,
       "social_progress_index": 31,
-      "lpi_infrastructure": 49
+      "lpi_infrastructure": 49,
+      "universal_health_coverage_index": 33,
+      "government_effectiveness": 73
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Belarus",
@@ -44,9 +46,11 @@
       "intentional_homicides": 86,
       "water_stress_level": 53,
       "social_progress_index": 55,
-      "lpi_infrastructure": 99
+      "lpi_infrastructure": 99,
+      "universal_health_coverage_index": 49,
+      "government_effectiveness": 164
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Slovenia",
@@ -70,9 +74,11 @@
       "intentional_homicides": 14,
       "water_stress_level": 59,
       "social_progress_index": 18,
-      "lpi_infrastructure": 50
+      "lpi_infrastructure": 50,
+      "universal_health_coverage_index": 34,
+      "government_effectiveness": 32
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "India",
@@ -84,7 +90,7 @@
       "female_labor_force_participation": 156,
       "education_expenditure_of_gdp": 95,
       "democracy_index": 41,
-      "human_development_index_hdi": 130,
+      "human_development_index_hdi": 131,
       "political_corruption_index": 112,
       "general_government_gross_debt_gdp": 150,
       "big_mac_index": 4,
@@ -95,9 +101,11 @@
       "intentional_homicides": 94,
       "water_stress_level": 151,
       "social_progress_index": 100,
-      "lpi_infrastructure": 39
+      "lpi_infrastructure": 39,
+      "universal_health_coverage_index": 118,
+      "government_effectiveness": 54
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Ukraine",
@@ -109,7 +117,7 @@
       "female_labor_force_participation": 121,
       "education_expenditure_of_gdp": 57,
       "democracy_index": 92,
-      "human_development_index_hdi": 85,
+      "human_development_index_hdi": 86,
       "political_corruption_index": 101,
       "general_government_gross_debt_gdp": 174,
       "big_mac_index": 7,
@@ -121,9 +129,11 @@
       "intentional_homicides": 105,
       "water_stress_level": 66,
       "social_progress_index": 53,
-      "lpi_infrastructure": 107
+      "lpi_infrastructure": 107,
+      "universal_health_coverage_index": 69,
+      "government_effectiveness": 117
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Czechia",
@@ -147,9 +157,11 @@
       "intentional_homicides": 28,
       "water_stress_level": 112,
       "social_progress_index": 17,
-      "lpi_infrastructure": 45
+      "lpi_infrastructure": 45,
+      "universal_health_coverage_index": 13,
+      "government_effectiveness": 30
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Netherlands",
@@ -172,9 +184,11 @@
       "network_readiness_index": 5,
       "intentional_homicides": 22,
       "water_stress_level": 105,
-      "lpi_infrastructure": 5
+      "lpi_infrastructure": 5,
+      "universal_health_coverage_index": 27,
+      "government_effectiveness": 10
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "United Arab Emirates",
@@ -197,9 +211,11 @@
       "network_readiness_index": 27,
       "intentional_homicides": 23,
       "water_stress_level": 176,
-      "lpi_infrastructure": 12
+      "lpi_infrastructure": 12,
+      "universal_health_coverage_index": 40,
+      "government_effectiveness": 11
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Norway",
@@ -223,9 +239,11 @@
       "intentional_homicides": 26,
       "water_stress_level": 29,
       "social_progress_index": 2,
-      "lpi_infrastructure": 22
+      "lpi_infrastructure": 22,
+      "universal_health_coverage_index": 29,
+      "government_effectiveness": 6
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Azerbaijan",
@@ -237,7 +255,7 @@
       "female_labor_force_participation": 45,
       "education_expenditure_of_gdp": 115,
       "democracy_index": 126,
-      "human_development_index_hdi": 79,
+      "human_development_index_hdi": 80,
       "political_corruption_index": 167,
       "general_government_gross_debt_gdp": 16,
       "big_mac_index": 21,
@@ -248,9 +266,11 @@
       "intentional_homicides": 79,
       "water_stress_level": 146,
       "social_progress_index": 89,
-      "lpi_infrastructure": 119
+      "lpi_infrastructure": 119,
+      "universal_health_coverage_index": 109,
+      "government_effectiveness": 91
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Syria",
@@ -262,16 +282,18 @@
       "female_labor_force_participation": 176,
       "education_expenditure_of_gdp": 58,
       "democracy_index": 163,
-      "human_development_index_hdi": 161,
+      "human_development_index_hdi": 162,
       "political_corruption_index": 126,
       "general_government_gross_debt_gdp": 30,
       "global_peace_index": 157,
       "inform_resilience_index": 182,
       "intentional_homicides": 77,
       "water_stress_level": 166,
-      "lpi_infrastructure": 157
+      "lpi_infrastructure": 157,
+      "universal_health_coverage_index": 116,
+      "government_effectiveness": 189
     },
-    "kpi_count": 15
+    "kpi_count": 17
   },
   {
     "country": "Belgium",
@@ -295,9 +317,11 @@
       "intentional_homicides": 45,
       "water_stress_level": 144,
       "social_progress_index": 12,
-      "lpi_infrastructure": 9
+      "lpi_infrastructure": 9,
+      "universal_health_coverage_index": 3,
+      "government_effectiveness": 33
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Iceland",
@@ -320,9 +344,11 @@
       "intentional_homicides": 56,
       "water_stress_level": 10,
       "social_progress_index": 4,
-      "lpi_infrastructure": 27
+      "lpi_infrastructure": 27,
+      "universal_health_coverage_index": 18,
+      "government_effectiveness": 15
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Moldova",
@@ -334,7 +360,7 @@
       "female_labor_force_participation": 17,
       "education_expenditure_of_gdp": 15,
       "democracy_index": 71,
-      "human_development_index_hdi": 84,
+      "human_development_index_hdi": 85,
       "political_corruption_index": 65,
       "general_government_gross_debt_gdp": 51,
       "big_mac_index": 18,
@@ -344,9 +370,11 @@
       "pisa_overall_score": 50,
       "intentional_homicides": 89,
       "water_stress_level": 96,
-      "lpi_infrastructure": 132
+      "lpi_infrastructure": 132,
+      "universal_health_coverage_index": 91,
+      "government_effectiveness": 103
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Tonga",
@@ -357,13 +385,15 @@
       "employment_to_population_ratio": 133,
       "female_labor_force_participation": 135,
       "education_expenditure_of_gdp": 46,
-      "human_development_index_hdi": 90,
+      "human_development_index_hdi": 91,
       "general_government_gross_debt_gdp": 36,
       "environmental_performance_index": 80,
       "inform_resilience_index": 94,
-      "intentional_homicides": 40
+      "intentional_homicides": 40,
+      "universal_health_coverage_index": 132,
+      "government_effectiveness": 101
     },
-    "kpi_count": 11
+    "kpi_count": 13
   },
   {
     "country": "Armenia",
@@ -385,9 +415,11 @@
       "intentional_homicides": 80,
       "water_stress_level": 150,
       "social_progress_index": 45,
-      "lpi_infrastructure": 123
+      "lpi_infrastructure": 123,
+      "universal_health_coverage_index": 100,
+      "government_effectiveness": 104
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Kyrgyzstan",
@@ -399,7 +431,7 @@
       "female_labor_force_participation": 94,
       "education_expenditure_of_gdp": 13,
       "democracy_index": 111,
-      "human_development_index_hdi": 117,
+      "human_development_index_hdi": 118,
       "political_corruption_index": 140,
       "general_government_gross_debt_gdp": 50,
       "environmental_performance_index": 126,
@@ -409,9 +441,11 @@
       "intentional_homicides": 69,
       "water_stress_level": 140,
       "social_progress_index": 78,
-      "lpi_infrastructure": 154
+      "lpi_infrastructure": 154,
+      "universal_health_coverage_index": 98,
+      "government_effectiveness": 156
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Finland",
@@ -435,9 +469,11 @@
       "intentional_homicides": 41,
       "water_stress_level": 72,
       "social_progress_index": 3,
-      "lpi_infrastructure": 2
+      "lpi_infrastructure": 2,
+      "universal_health_coverage_index": 15,
+      "government_effectiveness": 7
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Algeria",
@@ -449,7 +485,7 @@
       "female_labor_force_participation": 173,
       "education_expenditure_of_gdp": 35,
       "democracy_index": 110,
-      "human_development_index_hdi": 94,
+      "human_development_index_hdi": 95,
       "political_corruption_index": 111,
       "general_government_gross_debt_gdp": 95,
       "environmental_performance_index": 156,
@@ -459,9 +495,11 @@
       "intentional_homicides": 53,
       "water_stress_level": 171,
       "social_progress_index": 87,
-      "lpi_infrastructure": 122
+      "lpi_infrastructure": 122,
+      "universal_health_coverage_index": 81,
+      "government_effectiveness": 138
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Kiribati",
@@ -469,13 +507,15 @@
       "gini_index": 20,
       "inflation_consumer_price_index": 155,
       "education_expenditure_of_gdp": 1,
-      "human_development_index_hdi": 139,
+      "human_development_index_hdi": 140,
       "general_government_gross_debt_gdp": 6,
       "environmental_performance_index": 54,
       "inform_resilience_index": 100,
-      "intentional_homicides": 135
+      "intentional_homicides": 135,
+      "universal_health_coverage_index": 156,
+      "government_effectiveness": 100
     },
-    "kpi_count": 8
+    "kpi_count": 10
   },
   {
     "country": "Bhutan",
@@ -487,7 +527,7 @@
       "female_labor_force_participation": 67,
       "education_expenditure_of_gdp": 31,
       "democracy_index": 79,
-      "human_development_index_hdi": 124,
+      "human_development_index_hdi": 125,
       "political_corruption_index": 34,
       "general_government_gross_debt_gdp": 171,
       "environmental_performance_index": 85,
@@ -496,9 +536,11 @@
       "intentional_homicides": 87,
       "water_stress_level": 20,
       "social_progress_index": 83,
-      "lpi_infrastructure": 124
+      "lpi_infrastructure": 124,
+      "universal_health_coverage_index": 123,
+      "government_effectiveness": 51
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Egypt",
@@ -510,7 +552,7 @@
       "female_labor_force_participation": 171,
       "education_expenditure_of_gdp": 110,
       "democracy_index": 129,
-      "human_development_index_hdi": 99,
+      "human_development_index_hdi": 100,
       "political_corruption_index": 124,
       "general_government_gross_debt_gdp": 153,
       "big_mac_index": 5,
@@ -521,9 +563,11 @@
       "intentional_homicides": 57,
       "water_stress_level": 170,
       "social_progress_index": 97,
-      "lpi_infrastructure": 66
+      "lpi_infrastructure": 66,
+      "universal_health_coverage_index": 94,
+      "government_effectiveness": 108
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Poland",
@@ -547,9 +591,11 @@
       "intentional_homicides": 30,
       "water_stress_level": 126,
       "social_progress_index": 32,
-      "lpi_infrastructure": 33
+      "lpi_infrastructure": 33,
+      "universal_health_coverage_index": 30,
+      "government_effectiveness": 57
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Timor-Leste",
@@ -561,7 +607,7 @@
       "female_labor_force_participation": 43,
       "education_expenditure_of_gdp": 51,
       "democracy_index": 46,
-      "human_development_index_hdi": 141,
+      "human_development_index_hdi": 142,
       "political_corruption_index": 46,
       "general_government_gross_debt_gdp": 11,
       "environmental_performance_index": 129,
@@ -570,9 +616,11 @@
       "intentional_homicides": 107,
       "water_stress_level": 121,
       "social_progress_index": 101,
-      "lpi_infrastructure": 159
+      "lpi_infrastructure": 159,
+      "universal_health_coverage_index": 145,
+      "government_effectiveness": 152
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Ireland",
@@ -596,9 +644,11 @@
       "intentional_homicides": 19,
       "water_stress_level": 79,
       "social_progress_index": 11,
-      "lpi_infrastructure": 28
+      "lpi_infrastructure": 28,
+      "universal_health_coverage_index": 19,
+      "government_effectiveness": 13
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Kazakhstan",
@@ -621,9 +671,11 @@
       "intentional_homicides": 90,
       "water_stress_level": 129,
       "social_progress_index": 57,
-      "lpi_infrastructure": 103
+      "lpi_infrastructure": 103,
+      "universal_health_coverage_index": 23,
+      "government_effectiveness": 77
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Maldives",
@@ -634,7 +686,7 @@
       "employment_to_population_ratio": 68,
       "female_labor_force_participation": 142,
       "education_expenditure_of_gdp": 55,
-      "human_development_index_hdi": 91,
+      "human_development_index_hdi": 92,
       "political_corruption_index": 76,
       "general_government_gross_debt_gdp": 180,
       "environmental_performance_index": 114,
@@ -642,9 +694,11 @@
       "intentional_homicides": 17,
       "water_stress_level": 103,
       "social_progress_index": 68,
-      "lpi_infrastructure": 43
+      "lpi_infrastructure": 43,
+      "universal_health_coverage_index": 122,
+      "government_effectiveness": 102
     },
-    "kpi_count": 15
+    "kpi_count": 17
   },
   {
     "country": "Sweden",
@@ -668,9 +722,11 @@
       "intentional_homicides": 52,
       "water_stress_level": 43,
       "social_progress_index": 5,
-      "lpi_infrastructure": 11
+      "lpi_infrastructure": 11,
+      "universal_health_coverage_index": 37,
+      "government_effectiveness": 12
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Albania",
@@ -693,9 +749,11 @@
       "intentional_homicides": 60,
       "water_stress_level": 55,
       "social_progress_index": 51,
-      "lpi_infrastructure": 121
+      "lpi_infrastructure": 121,
+      "universal_health_coverage_index": 117,
+      "government_effectiveness": 70
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Guinea",
@@ -707,7 +765,7 @@
       "female_labor_force_participation": 137,
       "education_expenditure_of_gdp": 182,
       "democracy_index": 149,
-      "human_development_index_hdi": 178,
+      "human_development_index_hdi": 179,
       "political_corruption_index": 162,
       "general_government_gross_debt_gdp": 63,
       "environmental_performance_index": 146,
@@ -715,9 +773,11 @@
       "inform_resilience_index": 138,
       "water_stress_level": 19,
       "social_progress_index": 143,
-      "lpi_infrastructure": 129
+      "lpi_infrastructure": 129,
+      "universal_health_coverage_index": 180,
+      "government_effectiveness": 160
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Pakistan",
@@ -729,7 +789,7 @@
       "female_labor_force_participation": 165,
       "education_expenditure_of_gdp": 176,
       "democracy_index": 125,
-      "human_development_index_hdi": 167,
+      "human_development_index_hdi": 168,
       "political_corruption_index": 145,
       "general_government_gross_debt_gdp": 136,
       "big_mac_index": 24,
@@ -740,9 +800,11 @@
       "intentional_homicides": 110,
       "water_stress_level": 162,
       "social_progress_index": 121,
-      "lpi_infrastructure": 108
+      "lpi_infrastructure": 108,
+      "universal_health_coverage_index": 162,
+      "government_effectiveness": 131
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Iraq",
@@ -754,7 +816,7 @@
       "female_labor_force_participation": 177,
       "education_expenditure_of_gdp": 118,
       "democracy_index": 127,
-      "human_development_index_hdi": 126,
+      "human_development_index_hdi": 127,
       "political_corruption_index": 157,
       "general_government_gross_debt_gdp": 89,
       "environmental_performance_index": 169,
@@ -763,9 +825,11 @@
       "intentional_homicides": 143,
       "water_stress_level": 148,
       "social_progress_index": 102,
-      "lpi_infrastructure": 143
+      "lpi_infrastructure": 143,
+      "universal_health_coverage_index": 128,
+      "government_effectiveness": 178
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Romania",
@@ -789,9 +853,11 @@
       "intentional_homicides": 47,
       "water_stress_level": 74,
       "social_progress_index": 40,
-      "lpi_infrastructure": 59
+      "lpi_infrastructure": 59,
+      "universal_health_coverage_index": 51,
+      "government_effectiveness": 99
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Denmark",
@@ -815,9 +881,11 @@
       "intentional_homicides": 33,
       "water_stress_level": 117,
       "social_progress_index": 1,
-      "lpi_infrastructure": 3
+      "lpi_infrastructure": 3,
+      "universal_health_coverage_index": 14,
+      "government_effectiveness": 4
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Nepal",
@@ -829,7 +897,7 @@
       "female_labor_force_participation": 161,
       "education_expenditure_of_gdp": 114,
       "democracy_index": 96,
-      "human_development_index_hdi": 144,
+      "human_development_index_hdi": 145,
       "political_corruption_index": 102,
       "general_government_gross_debt_gdp": 80,
       "environmental_performance_index": 163,
@@ -839,9 +907,11 @@
       "intentional_homicides": 78,
       "water_stress_level": 81,
       "social_progress_index": 99,
-      "lpi_infrastructure": 68
+      "lpi_infrastructure": 68,
+      "universal_health_coverage_index": 140,
+      "government_effectiveness": 150
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Croatia",
@@ -865,9 +935,11 @@
       "intentional_homicides": 20,
       "water_stress_level": 23,
       "social_progress_index": 29,
-      "lpi_infrastructure": 44
+      "lpi_infrastructure": 44,
+      "universal_health_coverage_index": 10,
+      "government_effectiveness": 43
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Hungary",
@@ -891,9 +963,11 @@
       "intentional_homicides": 25,
       "water_stress_level": 80,
       "social_progress_index": 36,
-      "lpi_infrastructure": 57
+      "lpi_infrastructure": 57,
+      "universal_health_coverage_index": 44,
+      "government_effectiveness": 65
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Estonia",
@@ -917,9 +991,11 @@
       "intentional_homicides": 66,
       "water_stress_level": 98,
       "social_progress_index": 16,
-      "lpi_infrastructure": 26
+      "lpi_infrastructure": 26,
+      "universal_health_coverage_index": 45,
+      "government_effectiveness": 22
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Fiji",
@@ -931,7 +1007,7 @@
       "female_labor_force_participation": 150,
       "education_expenditure_of_gdp": 90,
       "democracy_index": 81,
-      "human_development_index_hdi": 111,
+      "human_development_index_hdi": 112,
       "political_corruption_index": 59,
       "general_government_gross_debt_gdp": 144,
       "environmental_performance_index": 147,
@@ -939,9 +1015,11 @@
       "intentional_homicides": 76,
       "water_stress_level": 7,
       "social_progress_index": 84,
-      "lpi_infrastructure": 151
+      "lpi_infrastructure": 151,
+      "universal_health_coverage_index": 129,
+      "government_effectiveness": 53
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Myanmar",
@@ -953,7 +1031,7 @@
       "female_labor_force_participation": 143,
       "education_expenditure_of_gdp": 175,
       "democracy_index": 166,
-      "human_development_index_hdi": 149,
+      "human_development_index_hdi": 150,
       "political_corruption_index": 152,
       "general_government_gross_debt_gdp": 120,
       "environmental_performance_index": 179,
@@ -962,9 +1040,11 @@
       "intentional_homicides": 91,
       "water_stress_level": 63,
       "social_progress_index": 114,
-      "lpi_infrastructure": 79
+      "lpi_infrastructure": 79,
+      "universal_health_coverage_index": 143,
+      "government_effectiveness": 188
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Bangladesh",
@@ -976,7 +1056,7 @@
       "female_labor_force_participation": 129,
       "education_expenditure_of_gdp": 172,
       "democracy_index": 100,
-      "human_development_index_hdi": 129,
+      "human_development_index_hdi": 130,
       "political_corruption_index": 168,
       "general_government_gross_debt_gdp": 55,
       "environmental_performance_index": 177,
@@ -986,9 +1066,11 @@
       "intentional_homicides": 84,
       "water_stress_level": 60,
       "social_progress_index": 110,
-      "lpi_infrastructure": 110
+      "lpi_infrastructure": 110,
+      "universal_health_coverage_index": 147,
+      "government_effectiveness": 139
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Canada",
@@ -1012,9 +1094,11 @@
       "intentional_homicides": 74,
       "water_stress_level": 45,
       "social_progress_index": 14,
-      "lpi_infrastructure": 10
+      "lpi_infrastructure": 10,
+      "universal_health_coverage_index": 5,
+      "government_effectiveness": 17
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Ethiopia",
@@ -1026,7 +1110,7 @@
       "female_labor_force_participation": 62,
       "education_expenditure_of_gdp": 165,
       "democracy_index": 116,
-      "human_development_index_hdi": 179,
+      "human_development_index_hdi": 180,
       "political_corruption_index": 92,
       "general_government_gross_debt_gdp": 74,
       "environmental_performance_index": 143,
@@ -1036,9 +1120,11 @@
       "intentional_homicides": 139,
       "water_stress_level": 125,
       "social_progress_index": 141,
-      "lpi_infrastructure": 147
+      "lpi_infrastructure": 147,
+      "universal_health_coverage_index": 186,
+      "government_effectiveness": 145
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Austria",
@@ -1062,9 +1148,11 @@
       "intentional_homicides": 35,
       "water_stress_level": 83,
       "social_progress_index": 10,
-      "lpi_infrastructure": 8
+      "lpi_infrastructure": 8,
+      "universal_health_coverage_index": 2,
+      "government_effectiveness": 21
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Mongolia",
@@ -1076,7 +1164,7 @@
       "female_labor_force_participation": 90,
       "education_expenditure_of_gdp": 116,
       "democracy_index": 53,
-      "human_development_index_hdi": 103,
+      "human_development_index_hdi": 104,
       "political_corruption_index": 120,
       "general_government_gross_debt_gdp": 73,
       "environmental_performance_index": 157,
@@ -1087,9 +1175,11 @@
       "intentional_homicides": 126,
       "water_stress_level": 40,
       "social_progress_index": 79,
-      "lpi_infrastructure": 133
+      "lpi_infrastructure": 133,
+      "universal_health_coverage_index": 112,
+      "government_effectiveness": 124
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Cyprus",
@@ -1112,9 +1202,11 @@
       "intentional_homicides": 31,
       "water_stress_level": 124,
       "social_progress_index": 25,
-      "lpi_infrastructure": 56
+      "lpi_infrastructure": 56,
+      "universal_health_coverage_index": 12,
+      "government_effectiveness": 41
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "France",
@@ -1138,9 +1230,11 @@
       "intentional_homicides": 59,
       "water_stress_level": 111,
       "social_progress_index": 21,
-      "lpi_infrastructure": 13
+      "lpi_infrastructure": 13,
+      "universal_health_coverage_index": 16,
+      "government_effectiveness": 29
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Mauritania",
@@ -1152,7 +1246,7 @@
       "female_labor_force_participation": 164,
       "education_expenditure_of_gdp": 72,
       "democracy_index": 108,
-      "human_development_index_hdi": 162,
+      "human_development_index_hdi": 163,
       "political_corruption_index": 160,
       "general_government_gross_debt_gdp": 59,
       "environmental_performance_index": 165,
@@ -1162,9 +1256,11 @@
       "intentional_homicides": 43,
       "water_stress_level": 99,
       "social_progress_index": 132,
-      "lpi_infrastructure": 156
+      "lpi_infrastructure": 156,
+      "universal_health_coverage_index": 179,
+      "government_effectiveness": 144
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Seychelles",
@@ -1178,9 +1274,11 @@
       "environmental_performance_index": 32,
       "inform_resilience_index": 5,
       "network_readiness_index": 68,
-      "intentional_homicides": 138
+      "intentional_homicides": 138,
+      "universal_health_coverage_index": 76,
+      "government_effectiveness": 48
     },
-    "kpi_count": 10
+    "kpi_count": 12
   },
   {
     "country": "Japan",
@@ -1204,9 +1302,11 @@
       "intentional_homicides": 5,
       "water_stress_level": 131,
       "social_progress_index": 15,
-      "lpi_infrastructure": 14
+      "lpi_infrastructure": 14,
+      "universal_health_coverage_index": 22,
+      "government_effectiveness": 8
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Vanuatu",
@@ -1217,14 +1317,16 @@
       "employment_to_population_ratio": 107,
       "female_labor_force_participation": 86,
       "education_expenditure_of_gdp": 10,
-      "human_development_index_hdi": 145,
+      "human_development_index_hdi": 146,
       "political_corruption_index": 60,
       "general_government_gross_debt_gdp": 78,
       "environmental_performance_index": 120,
       "inform_resilience_index": 118,
-      "intentional_homicides": 9
+      "intentional_homicides": 9,
+      "universal_health_coverage_index": 159,
+      "government_effectiveness": 130
     },
-    "kpi_count": 12
+    "kpi_count": 14
   },
   {
     "country": "Germany",
@@ -1248,9 +1350,11 @@
       "intentional_homicides": 38,
       "water_stress_level": 130,
       "social_progress_index": 9,
-      "lpi_infrastructure": 4
+      "lpi_infrastructure": 4,
+      "universal_health_coverage_index": 17,
+      "government_effectiveness": 26
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Nauru",
@@ -1258,11 +1362,13 @@
       "gini_index": 53,
       "inflation_consumer_price_index": 2,
       "education_expenditure_of_gdp": 33,
-      "human_development_index_hdi": 123,
+      "human_development_index_hdi": 124,
       "general_government_gross_debt_gdp": 12,
-      "inform_resilience_index": 30
+      "inform_resilience_index": 30,
+      "universal_health_coverage_index": 124,
+      "government_effectiveness": 95
     },
-    "kpi_count": 6
+    "kpi_count": 8
   },
   {
     "country": "United Kingdom",
@@ -1285,9 +1391,11 @@
       "network_readiness_index": 7,
       "intentional_homicides": 48,
       "water_stress_level": 102,
-      "lpi_infrastructure": 24
+      "lpi_infrastructure": 24,
+      "universal_health_coverage_index": 41,
+      "government_effectiveness": 27
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Serbia",
@@ -1310,9 +1418,11 @@
       "intentional_homicides": 58,
       "water_stress_level": 61,
       "social_progress_index": 42,
-      "lpi_infrastructure": 93
+      "lpi_infrastructure": 93,
+      "universal_health_coverage_index": 87,
+      "government_effectiveness": 88
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "South Korea",
@@ -1335,9 +1445,11 @@
       "network_readiness_index": 4,
       "intentional_homicides": 10,
       "water_stress_level": 157,
-      "lpi_infrastructure": 16
+      "lpi_infrastructure": 16,
+      "universal_health_coverage_index": 35,
+      "government_effectiveness": 19
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Niger",
@@ -1349,7 +1461,7 @@
       "female_labor_force_participation": 46,
       "education_expenditure_of_gdp": 98,
       "democracy_index": 141,
-      "human_development_index_hdi": 188,
+      "human_development_index_hdi": 189,
       "political_corruption_index": 96,
       "general_government_gross_debt_gdp": 64,
       "environmental_performance_index": 110,
@@ -1357,9 +1469,11 @@
       "inform_resilience_index": 184,
       "intentional_homicides": 112,
       "water_stress_level": 89,
-      "lpi_infrastructure": 149
+      "lpi_infrastructure": 149,
+      "universal_health_coverage_index": 187,
+      "government_effectiveness": 135
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Bosnia Herzegovina",
@@ -1381,9 +1495,11 @@
       "intentional_homicides": 54,
       "water_stress_level": 30,
       "social_progress_index": 56,
-      "lpi_infrastructure": 73
+      "lpi_infrastructure": 73,
+      "universal_health_coverage_index": 108,
+      "government_effectiveness": 163
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Russia",
@@ -1406,9 +1522,11 @@
       "network_readiness_index": 39,
       "intentional_homicides": 132,
       "water_stress_level": 48,
-      "lpi_infrastructure": 117
+      "lpi_infrastructure": 117,
+      "universal_health_coverage_index": 46,
+      "government_effectiveness": 140
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Greece",
@@ -1432,9 +1550,11 @@
       "intentional_homicides": 32,
       "water_stress_level": 109,
       "social_progress_index": 30,
-      "lpi_infrastructure": 20
+      "lpi_infrastructure": 20,
+      "universal_health_coverage_index": 57,
+      "government_effectiveness": 76
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Guinea-Bissau",
@@ -1446,7 +1566,7 @@
       "female_labor_force_participation": 68,
       "education_expenditure_of_gdp": 174,
       "democracy_index": 150,
-      "human_development_index_hdi": 173,
+      "human_development_index_hdi": 174,
       "political_corruption_index": 144,
       "general_government_gross_debt_gdp": 143,
       "environmental_performance_index": 98,
@@ -1455,9 +1575,11 @@
       "intentional_homicides": 49,
       "water_stress_level": 21,
       "social_progress_index": 139,
-      "lpi_infrastructure": 114
+      "lpi_infrastructure": 114,
+      "universal_health_coverage_index": 184,
+      "government_effectiveness": 179
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Spain",
@@ -1481,9 +1603,11 @@
       "intentional_homicides": 21,
       "water_stress_level": 135,
       "social_progress_index": 22,
-      "lpi_infrastructure": 15
+      "lpi_infrastructure": 15,
+      "universal_health_coverage_index": 36,
+      "government_effectiveness": 40
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "North Macedonia",
@@ -1506,9 +1630,11 @@
       "intentional_homicides": 63,
       "water_stress_level": 143,
       "social_progress_index": 54,
-      "lpi_infrastructure": 67
+      "lpi_infrastructure": 67,
+      "universal_health_coverage_index": 82,
+      "government_effectiveness": 94
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Thailand",
@@ -1520,7 +1646,7 @@
       "female_labor_force_participation": 54,
       "education_expenditure_of_gdp": 159,
       "democracy_index": 63,
-      "human_development_index_hdi": 75,
+      "human_development_index_hdi": 76,
       "political_corruption_index": 109,
       "general_government_gross_debt_gdp": 124,
       "big_mac_index": 29,
@@ -1532,9 +1658,11 @@
       "intentional_homicides": 117,
       "water_stress_level": 114,
       "social_progress_index": 52,
-      "lpi_infrastructure": 37
+      "lpi_infrastructure": 37,
+      "universal_health_coverage_index": 39,
+      "government_effectiveness": 74
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Luxembourg",
@@ -1556,9 +1684,11 @@
       "intentional_homicides": 64,
       "water_stress_level": 47,
       "social_progress_index": 7,
-      "lpi_infrastructure": 30
+      "lpi_infrastructure": 30,
+      "universal_health_coverage_index": 24,
+      "government_effectiveness": 5
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Jordan",
@@ -1570,7 +1700,7 @@
       "female_labor_force_participation": 174,
       "education_expenditure_of_gdp": 120,
       "democracy_index": 115,
-      "human_development_index_hdi": 100,
+      "human_development_index_hdi": 101,
       "political_corruption_index": 78,
       "general_government_gross_debt_gdp": 157,
       "big_mac_index": 19,
@@ -1582,9 +1712,11 @@
       "intentional_homicides": 42,
       "water_stress_level": 161,
       "social_progress_index": 76,
-      "lpi_infrastructure": 61
+      "lpi_infrastructure": 61,
+      "universal_health_coverage_index": 113,
+      "government_effectiveness": 61
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Tunisia",
@@ -1596,7 +1728,7 @@
       "female_labor_force_participation": 163,
       "education_expenditure_of_gdp": 14,
       "democracy_index": 93,
-      "human_development_index_hdi": 104,
+      "human_development_index_hdi": 105,
       "political_corruption_index": 74,
       "general_government_gross_debt_gdp": 149,
       "environmental_performance_index": 96,
@@ -1606,9 +1738,11 @@
       "intentional_homicides": 116,
       "water_stress_level": 160,
       "social_progress_index": 82,
-      "lpi_infrastructure": 52
+      "lpi_infrastructure": 52,
+      "universal_health_coverage_index": 106,
+      "government_effectiveness": 114
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Australia",
@@ -1632,9 +1766,11 @@
       "intentional_homicides": 34,
       "water_stress_level": 54,
       "social_progress_index": 8,
-      "lpi_infrastructure": 18
+      "lpi_infrastructure": 18,
+      "universal_health_coverage_index": 1,
+      "government_effectiveness": 14
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Switzerland",
@@ -1658,9 +1794,11 @@
       "intentional_homicides": 16,
       "water_stress_level": 69,
       "social_progress_index": 6,
-      "lpi_infrastructure": 6
+      "lpi_infrastructure": 6,
+      "universal_health_coverage_index": 38,
+      "government_effectiveness": 2
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Georgia",
@@ -1683,9 +1821,11 @@
       "intentional_homicides": 75,
       "water_stress_level": 49,
       "social_progress_index": 46,
-      "lpi_infrastructure": 102
+      "lpi_infrastructure": 102,
+      "universal_health_coverage_index": 99,
+      "government_effectiveness": 38
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Nigeria",
@@ -1697,7 +1837,7 @@
       "female_labor_force_participation": 3,
       "education_expenditure_of_gdp": 190,
       "democracy_index": 106,
-      "human_development_index_hdi": 163,
+      "human_development_index_hdi": 164,
       "political_corruption_index": 171,
       "general_government_gross_debt_gdp": 47,
       "environmental_performance_index": 162,
@@ -1707,9 +1847,11 @@
       "intentional_homicides": 157,
       "water_stress_level": 85,
       "social_progress_index": 127,
-      "lpi_infrastructure": 116
+      "lpi_infrastructure": 116,
+      "universal_health_coverage_index": 182,
+      "government_effectiveness": 153
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Portugal",
@@ -1733,9 +1875,11 @@
       "intentional_homicides": 24,
       "water_stress_level": 94,
       "social_progress_index": 20,
-      "lpi_infrastructure": 41
+      "lpi_infrastructure": 41,
+      "universal_health_coverage_index": 31,
+      "government_effectiveness": 34
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Latvia",
@@ -1759,9 +1903,11 @@
       "intentional_homicides": 88,
       "water_stress_level": 16,
       "social_progress_index": 28,
-      "lpi_infrastructure": 35
+      "lpi_infrastructure": 35,
+      "universal_health_coverage_index": 75,
+      "government_effectiveness": 46
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Barbados",
@@ -1779,9 +1925,11 @@
       "inform_resilience_index": 20,
       "intentional_homicides": 136,
       "water_stress_level": 158,
-      "social_progress_index": 38
+      "social_progress_index": 38,
+      "universal_health_coverage_index": 60,
+      "government_effectiveness": 62
     },
-    "kpi_count": 14
+    "kpi_count": 16
   },
   {
     "country": "Sudan",
@@ -1793,7 +1941,7 @@
       "female_labor_force_participation": 172,
       "education_expenditure_of_gdp": 173,
       "democracy_index": 162,
-      "human_development_index_hdi": 175,
+      "human_development_index_hdi": 176,
       "political_corruption_index": 143,
       "general_government_gross_debt_gdp": 187,
       "environmental_performance_index": 171,
@@ -1802,9 +1950,11 @@
       "intentional_homicides": 120,
       "water_stress_level": 164,
       "social_progress_index": 146,
-      "lpi_infrastructure": 146
+      "lpi_infrastructure": 146,
+      "universal_health_coverage_index": 169,
+      "government_effectiveness": 191
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Italy",
@@ -1828,9 +1978,11 @@
       "intentional_homicides": 15,
       "water_stress_level": 123,
       "social_progress_index": 23,
-      "lpi_infrastructure": 21
+      "lpi_infrastructure": 21,
+      "universal_health_coverage_index": 21,
+      "government_effectiveness": 49
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Montenegro",
@@ -1851,9 +2003,11 @@
       "network_readiness_index": 63,
       "intentional_homicides": 29,
       "social_progress_index": 41,
-      "lpi_infrastructure": 91
+      "lpi_infrastructure": 91,
+      "universal_health_coverage_index": 86,
+      "government_effectiveness": 71
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Benin",
@@ -1865,7 +2019,7 @@
       "female_labor_force_participation": 9,
       "education_expenditure_of_gdp": 133,
       "democracy_index": 101,
-      "human_development_index_hdi": 172,
+      "human_development_index_hdi": 173,
       "political_corruption_index": 41,
       "general_government_gross_debt_gdp": 84,
       "environmental_performance_index": 155,
@@ -1875,9 +2029,11 @@
       "intentional_homicides": 51,
       "water_stress_level": 15,
       "social_progress_index": 119,
-      "lpi_infrastructure": 81
+      "lpi_infrastructure": 81,
+      "universal_health_coverage_index": 183,
+      "government_effectiveness": 107
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Malta",
@@ -1899,9 +2055,11 @@
       "intentional_homicides": 13,
       "water_stress_level": 154,
       "social_progress_index": 24,
-      "lpi_infrastructure": 46
+      "lpi_infrastructure": 46,
+      "universal_health_coverage_index": 25,
+      "government_effectiveness": 59
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Uzbekistan",
@@ -1913,7 +2071,7 @@
       "female_labor_force_participation": 149,
       "education_expenditure_of_gdp": 37,
       "democracy_index": 146,
-      "human_development_index_hdi": 106,
+      "human_development_index_hdi": 107,
       "political_corruption_index": 153,
       "general_government_gross_debt_gdp": 34,
       "environmental_performance_index": 107,
@@ -1924,9 +2082,11 @@
       "intentional_homicides": 61,
       "water_stress_level": 165,
       "social_progress_index": 73,
-      "lpi_infrastructure": 118
+      "lpi_infrastructure": 118,
+      "universal_health_coverage_index": 73,
+      "government_effectiveness": 112
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Indonesia",
@@ -1938,7 +2098,7 @@
       "female_labor_force_participation": 100,
       "education_expenditure_of_gdp": 184,
       "democracy_index": 59,
-      "human_development_index_hdi": 112,
+      "human_development_index_hdi": 113,
       "political_corruption_index": 133,
       "general_government_gross_debt_gdp": 58,
       "big_mac_index": 3,
@@ -1950,9 +2110,11 @@
       "intentional_homicides": 8,
       "water_stress_level": 122,
       "social_progress_index": 72,
-      "lpi_infrastructure": 75
+      "lpi_infrastructure": 75,
+      "universal_health_coverage_index": 138,
+      "government_effectiveness": 50
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Qatar",
@@ -1976,9 +2138,11 @@
       "intentional_homicides": 2,
       "water_stress_level": 173,
       "social_progress_index": 59,
-      "lpi_infrastructure": 36
+      "lpi_infrastructure": 36,
+      "universal_health_coverage_index": 63,
+      "government_effectiveness": 25
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Ivory Coast",
@@ -1990,7 +2154,7 @@
       "female_labor_force_participation": 55,
       "education_expenditure_of_gdp": 123,
       "democracy_index": 105,
-      "human_development_index_hdi": 156,
+      "human_development_index_hdi": 157,
       "political_corruption_index": 103,
       "general_government_gross_debt_gdp": 97,
       "environmental_performance_index": 138,
@@ -1999,9 +2163,11 @@
       "network_readiness_index": 88,
       "water_stress_level": 58,
       "social_progress_index": 118,
-      "lpi_infrastructure": 53
+      "lpi_infrastructure": 53,
+      "universal_health_coverage_index": 170,
+      "government_effectiveness": 118
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Lebanon",
@@ -2013,7 +2179,7 @@
       "female_labor_force_participation": 162,
       "education_expenditure_of_gdp": 186,
       "democracy_index": 109,
-      "human_development_index_hdi": 101,
+      "human_development_index_hdi": 102,
       "political_corruption_index": 156,
       "general_government_gross_debt_gdp": 184,
       "big_mac_index": 60,
@@ -2023,9 +2189,11 @@
       "intentional_homicides": 82,
       "water_stress_level": 147,
       "social_progress_index": 86,
-      "lpi_infrastructure": 63
+      "lpi_infrastructure": 63,
+      "universal_health_coverage_index": 84,
+      "government_effectiveness": 183
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Liberia",
@@ -2037,7 +2205,7 @@
       "female_labor_force_participation": 14,
       "education_expenditure_of_gdp": 166,
       "democracy_index": 80,
-      "human_development_index_hdi": 176,
+      "human_development_index_hdi": 177,
       "political_corruption_index": 163,
       "general_government_gross_debt_gdp": 98,
       "environmental_performance_index": 174,
@@ -2046,22 +2214,26 @@
       "intentional_homicides": 96,
       "water_stress_level": 6,
       "social_progress_index": 138,
-      "lpi_infrastructure": 145
+      "lpi_infrastructure": 145,
+      "universal_health_coverage_index": 164,
+      "government_effectiveness": 177
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Marshall Islands",
     "ranks": {
       "gini_index": 86,
       "education_expenditure_of_gdp": 9,
-      "human_development_index_hdi": 109,
+      "human_development_index_hdi": 110,
       "general_government_gross_debt_gdp": 9,
       "environmental_performance_index": 124,
       "inform_resilience_index": 105,
-      "intentional_homicides": 109
+      "intentional_homicides": 109,
+      "universal_health_coverage_index": 125,
+      "government_effectiveness": 82
     },
-    "kpi_count": 7
+    "kpi_count": 9
   },
   {
     "country": "Mali",
@@ -2073,7 +2245,7 @@
       "female_labor_force_participation": 56,
       "education_expenditure_of_gdp": 92,
       "democracy_index": 139,
-      "human_development_index_hdi": 187,
+      "human_development_index_hdi": 188,
       "political_corruption_index": 130,
       "general_government_gross_debt_gdp": 79,
       "environmental_performance_index": 159,
@@ -2082,9 +2254,11 @@
       "network_readiness_index": 115,
       "water_stress_level": 77,
       "social_progress_index": 140,
-      "lpi_infrastructure": 115
+      "lpi_infrastructure": 115,
+      "universal_health_coverage_index": 175,
+      "government_effectiveness": 169
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Sierra Leone",
@@ -2096,7 +2270,7 @@
       "female_labor_force_participation": 107,
       "education_expenditure_of_gdp": 156,
       "democracy_index": 102,
-      "human_development_index_hdi": 184,
+      "human_development_index_hdi": 185,
       "political_corruption_index": 86,
       "general_government_gross_debt_gdp": 60,
       "environmental_performance_index": 140,
@@ -2106,9 +2280,11 @@
       "intentional_homicides": 81,
       "water_stress_level": 11,
       "social_progress_index": 133,
-      "lpi_infrastructure": 148
+      "lpi_infrastructure": 148,
+      "universal_health_coverage_index": 176,
+      "government_effectiveness": 170
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Iran",
@@ -2128,9 +2304,11 @@
       "inform_resilience_index": 168,
       "intentional_homicides": 85,
       "water_stress_level": 156,
-      "lpi_infrastructure": 153
+      "lpi_infrastructure": 153,
+      "universal_health_coverage_index": 79,
+      "government_effectiveness": 166
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "China",
@@ -2142,7 +2320,7 @@
       "female_labor_force_participation": 52,
       "education_expenditure_of_gdp": 103,
       "democracy_index": 145,
-      "human_development_index_hdi": 76,
+      "human_development_index_hdi": 77,
       "political_corruption_index": 93,
       "general_government_gross_debt_gdp": 165,
       "big_mac_index": 17,
@@ -2153,9 +2331,11 @@
       "intentional_homicides": 12,
       "water_stress_level": 134,
       "social_progress_index": 69,
-      "lpi_infrastructure": 19
+      "lpi_infrastructure": 19,
+      "universal_health_coverage_index": 7,
+      "government_effectiveness": 47
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Lithuania",
@@ -2179,9 +2359,11 @@
       "intentional_homicides": 93,
       "water_stress_level": 31,
       "social_progress_index": 27,
-      "lpi_infrastructure": 40
+      "lpi_infrastructure": 40,
+      "universal_health_coverage_index": 70,
+      "government_effectiveness": 31
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Tajikistan",
@@ -2193,7 +2375,7 @@
       "female_labor_force_participation": 157,
       "education_expenditure_of_gdp": 40,
       "democracy_index": 159,
-      "human_development_index_hdi": 127,
+      "human_development_index_hdi": 128,
       "political_corruption_index": 158,
       "general_government_gross_debt_gdp": 15,
       "environmental_performance_index": 117,
@@ -2202,9 +2384,11 @@
       "intentional_homicides": 36,
       "water_stress_level": 153,
       "social_progress_index": 105,
-      "lpi_infrastructure": 135
+      "lpi_infrastructure": 135,
+      "universal_health_coverage_index": 105,
+      "government_effectiveness": 146
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Vietnam",
@@ -2216,7 +2400,7 @@
       "female_labor_force_participation": 18,
       "education_expenditure_of_gdp": 146,
       "democracy_index": 133,
-      "human_development_index_hdi": 92,
+      "human_development_index_hdi": 93,
       "political_corruption_index": 84,
       "general_government_gross_debt_gdp": 38,
       "big_mac_index": 10,
@@ -2228,9 +2412,11 @@
       "intentional_homicides": 65,
       "water_stress_level": 107,
       "social_progress_index": 60,
-      "lpi_infrastructure": 51
+      "lpi_infrastructure": 51,
+      "universal_health_coverage_index": 101,
+      "government_effectiveness": 79
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Senegal",
@@ -2242,7 +2428,7 @@
       "female_labor_force_participation": 152,
       "education_expenditure_of_gdp": 23,
       "democracy_index": 74,
-      "human_development_index_hdi": 168,
+      "human_development_index_hdi": 169,
       "political_corruption_index": 61,
       "general_government_gross_debt_gdp": 178,
       "environmental_performance_index": 136,
@@ -2252,9 +2438,11 @@
       "intentional_homicides": 7,
       "water_stress_level": 104,
       "social_progress_index": 111,
-      "lpi_infrastructure": 120
+      "lpi_infrastructure": 120,
+      "universal_health_coverage_index": 148,
+      "government_effectiveness": 83
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Palestine",
@@ -2266,14 +2454,15 @@
       "female_labor_force_participation": 169,
       "education_expenditure_of_gdp": 41,
       "democracy_index": 112,
-      "human_development_index_hdi": 133,
+      "human_development_index_hdi": 134,
       "political_corruption_index": 67,
       "global_peace_index": 145,
       "inform_resilience_index": 171,
       "intentional_homicides": 18,
-      "water_stress_level": 138
+      "water_stress_level": 138,
+      "government_effectiveness": 174
     },
-    "kpi_count": 13
+    "kpi_count": 14
   },
   {
     "country": "Yemen",
@@ -2285,7 +2474,7 @@
       "female_labor_force_participation": 179,
       "education_expenditure_of_gdp": 56,
       "democracy_index": 155,
-      "human_development_index_hdi": 183,
+      "human_development_index_hdi": 184,
       "political_corruption_index": 169,
       "general_government_gross_debt_gdp": 135,
       "global_peace_index": 159,
@@ -2294,9 +2483,11 @@
       "intentional_homicides": 125,
       "water_stress_level": 172,
       "social_progress_index": 145,
-      "lpi_infrastructure": 161
+      "lpi_infrastructure": 161,
+      "universal_health_coverage_index": 172,
+      "government_effectiveness": 195
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Madagascar",
@@ -2308,7 +2499,7 @@
       "female_labor_force_participation": 1,
       "education_expenditure_of_gdp": 141,
       "democracy_index": 83,
-      "human_development_index_hdi": 182,
+      "human_development_index_hdi": 183,
       "political_corruption_index": 149,
       "general_government_gross_debt_gdp": 82,
       "environmental_performance_index": 168,
@@ -2317,9 +2508,11 @@
       "network_readiness_index": 120,
       "water_stress_level": 91,
       "social_progress_index": 136,
-      "lpi_infrastructure": 155
+      "lpi_infrastructure": 155,
+      "universal_health_coverage_index": 188,
+      "government_effectiveness": 167
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Mauritius",
@@ -2341,9 +2534,11 @@
       "intentional_homicides": 83,
       "water_stress_level": 113,
       "social_progress_index": 47,
-      "lpi_infrastructure": 131
+      "lpi_infrastructure": 131,
+      "universal_health_coverage_index": 110,
+      "government_effectiveness": 44
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Solomon Islands",
@@ -2354,16 +2549,18 @@
       "employment_to_population_ratio": 2,
       "female_labor_force_participation": 2,
       "education_expenditure_of_gdp": 7,
-      "human_development_index_hdi": 155,
+      "human_development_index_hdi": 156,
       "political_corruption_index": 100,
       "general_government_gross_debt_gdp": 19,
       "environmental_performance_index": 131,
       "inform_resilience_index": 128,
       "intentional_homicides": 103,
       "social_progress_index": 113,
-      "lpi_infrastructure": 94
+      "lpi_infrastructure": 94,
+      "universal_health_coverage_index": 158,
+      "government_effectiveness": 143
     },
-    "kpi_count": 14
+    "kpi_count": 16
   },
   {
     "country": "Burkina Faso",
@@ -2375,7 +2572,7 @@
       "female_labor_force_participation": 141,
       "education_expenditure_of_gdp": 44,
       "democracy_index": 137,
-      "human_development_index_hdi": 185,
+      "human_development_index_hdi": 186,
       "political_corruption_index": 72,
       "general_government_gross_debt_gdp": 90,
       "environmental_performance_index": 127,
@@ -2385,9 +2582,11 @@
       "intentional_homicides": 55,
       "water_stress_level": 75,
       "social_progress_index": 131,
-      "lpi_infrastructure": 150
+      "lpi_infrastructure": 150,
+      "universal_health_coverage_index": 181,
+      "government_effectiveness": 151
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Chad",
@@ -2399,7 +2598,7 @@
       "female_labor_force_participation": 120,
       "education_expenditure_of_gdp": 134,
       "democracy_index": 158,
-      "human_development_index_hdi": 189,
+      "human_development_index_hdi": 190,
       "political_corruption_index": 174,
       "general_government_gross_debt_gdp": 35,
       "environmental_performance_index": 166,
@@ -2408,9 +2607,11 @@
       "network_readiness_index": 125,
       "water_stress_level": 51,
       "social_progress_index": 150,
-      "lpi_infrastructure": 109
+      "lpi_infrastructure": 109,
+      "universal_health_coverage_index": 192,
+      "government_effectiveness": 180
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Burundi",
@@ -2422,7 +2623,7 @@
       "female_labor_force_participation": 5,
       "education_expenditure_of_gdp": 67,
       "democracy_index": 144,
-      "human_development_index_hdi": 186,
+      "human_development_index_hdi": 187,
       "political_corruption_index": 137,
       "general_government_gross_debt_gdp": 56,
       "environmental_performance_index": 152,
@@ -2432,9 +2633,11 @@
       "intentional_homicides": 123,
       "water_stress_level": 87,
       "social_progress_index": 144,
-      "lpi_infrastructure": 162
+      "lpi_infrastructure": 162,
+      "universal_health_coverage_index": 174,
+      "government_effectiveness": 172
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Kenya",
@@ -2446,7 +2649,7 @@
       "female_labor_force_participation": 34,
       "education_expenditure_of_gdp": 102,
       "democracy_index": 89,
-      "human_development_index_hdi": 143,
+      "human_development_index_hdi": 144,
       "political_corruption_index": 90,
       "general_government_gross_debt_gdp": 132,
       "environmental_performance_index": 148,
@@ -2456,9 +2659,11 @@
       "intentional_homicides": 118,
       "water_stress_level": 127,
       "social_progress_index": 112,
-      "lpi_infrastructure": 62
+      "lpi_infrastructure": 62,
+      "universal_health_coverage_index": 141,
+      "government_effectiveness": 115
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Sri Lanka",
@@ -2470,7 +2675,7 @@
       "female_labor_force_participation": 158,
       "education_expenditure_of_gdp": 180,
       "democracy_index": 67,
-      "human_development_index_hdi": 89,
+      "human_development_index_hdi": 90,
       "political_corruption_index": 82,
       "general_government_gross_debt_gdp": 169,
       "big_mac_index": 23,
@@ -2481,9 +2686,11 @@
       "intentional_homicides": 99,
       "water_stress_level": 159,
       "social_progress_index": 75,
-      "lpi_infrastructure": 95
+      "lpi_infrastructure": 95,
+      "universal_health_coverage_index": 107,
+      "government_effectiveness": 110
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Israel",
@@ -2507,9 +2714,11 @@
       "intentional_homicides": 67,
       "water_stress_level": 167,
       "social_progress_index": 26,
-      "lpi_infrastructure": 29
+      "lpi_infrastructure": 29,
+      "universal_health_coverage_index": 20,
+      "government_effectiveness": 28
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Togo",
@@ -2521,7 +2730,7 @@
       "female_labor_force_participation": 70,
       "education_expenditure_of_gdp": 94,
       "democracy_index": 121,
-      "human_development_index_hdi": 160,
+      "human_development_index_hdi": 161,
       "political_corruption_index": 134,
       "general_government_gross_debt_gdp": 137,
       "environmental_performance_index": 135,
@@ -2529,9 +2738,11 @@
       "inform_resilience_index": 157,
       "water_stress_level": 39,
       "social_progress_index": 125,
-      "lpi_infrastructure": 136
+      "lpi_infrastructure": 136,
+      "universal_health_coverage_index": 165,
+      "government_effectiveness": 132
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Gabon",
@@ -2543,7 +2754,7 @@
       "female_labor_force_participation": 134,
       "education_expenditure_of_gdp": 164,
       "democracy_index": 143,
-      "human_development_index_hdi": 108,
+      "human_development_index_hdi": 109,
       "political_corruption_index": 121,
       "general_government_gross_debt_gdp": 142,
       "environmental_performance_index": 51,
@@ -2551,9 +2762,11 @@
       "inform_resilience_index": 108,
       "water_stress_level": 12,
       "social_progress_index": 107,
-      "lpi_infrastructure": 141
+      "lpi_infrastructure": 141,
+      "universal_health_coverage_index": 150,
+      "government_effectiveness": 147
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Kosovo",
@@ -2562,9 +2775,10 @@
       "inflation_consumer_price_index": 39,
       "political_corruption_index": 55,
       "global_peace_index": 63,
-      "intentional_homicides": 73
+      "intentional_homicides": 73,
+      "government_effectiveness": 97
     },
-    "kpi_count": 5
+    "kpi_count": 6
   },
   {
     "country": "Equatorial Guinea",
@@ -2576,7 +2790,7 @@
       "female_labor_force_participation": 97,
       "education_expenditure_of_gdp": 169,
       "democracy_index": 157,
-      "human_development_index_hdi": 132,
+      "human_development_index_hdi": 133,
       "political_corruption_index": 154,
       "general_government_gross_debt_gdp": 48,
       "environmental_performance_index": 77,
@@ -2584,9 +2798,11 @@
       "inform_resilience_index": 92,
       "water_stress_level": 3,
       "social_progress_index": 134,
-      "lpi_infrastructure": 96
+      "lpi_infrastructure": 96,
+      "universal_health_coverage_index": 161,
+      "government_effectiveness": 175
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Malawi",
@@ -2598,7 +2814,7 @@
       "female_labor_force_participation": 27,
       "education_expenditure_of_gdp": 153,
       "democracy_index": 76,
-      "human_development_index_hdi": 171,
+      "human_development_index_hdi": 172,
       "political_corruption_index": 122,
       "general_government_gross_debt_gdp": 148,
       "environmental_performance_index": 97,
@@ -2608,9 +2824,11 @@
       "intentional_homicides": 70,
       "water_stress_level": 106,
       "social_progress_index": 117,
-      "lpi_infrastructure": 78
+      "lpi_infrastructure": 78,
+      "universal_health_coverage_index": 153,
+      "government_effectiveness": 154
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Samoa",
@@ -2621,13 +2839,15 @@
       "employment_to_population_ratio": 157,
       "female_labor_force_participation": 160,
       "education_expenditure_of_gdp": 38,
-      "human_development_index_hdi": 121,
+      "human_development_index_hdi": 122,
       "general_government_gross_debt_gdp": 14,
       "environmental_performance_index": 123,
       "inform_resilience_index": 75,
-      "intentional_homicides": 127
+      "intentional_homicides": 127,
+      "universal_health_coverage_index": 136,
+      "government_effectiveness": 52
     },
-    "kpi_count": 11
+    "kpi_count": 13
   },
   {
     "country": "Gambia",
@@ -2639,7 +2859,7 @@
       "female_labor_force_participation": 125,
       "education_expenditure_of_gdp": 152,
       "democracy_index": 99,
-      "human_development_index_hdi": 169,
+      "human_development_index_hdi": 170,
       "political_corruption_index": 54,
       "general_government_gross_debt_gdp": 140,
       "environmental_performance_index": 122,
@@ -2647,9 +2867,11 @@
       "inform_resilience_index": 117,
       "water_stress_level": 32,
       "social_progress_index": 116,
-      "lpi_infrastructure": 152
+      "lpi_infrastructure": 152,
+      "universal_health_coverage_index": 160,
+      "government_effectiveness": 133
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Laos",
@@ -2661,7 +2883,7 @@
       "female_labor_force_participation": 40,
       "education_expenditure_of_gdp": 185,
       "democracy_index": 160,
-      "human_development_index_hdi": 146,
+      "human_development_index_hdi": 147,
       "political_corruption_index": 128,
       "general_government_gross_debt_gdp": 158,
       "environmental_performance_index": 149,
@@ -2669,9 +2891,11 @@
       "inform_resilience_index": 101,
       "network_readiness_index": 103,
       "water_stress_level": 56,
-      "lpi_infrastructure": 144
+      "lpi_infrastructure": 144,
+      "universal_health_coverage_index": 146,
+      "government_effectiveness": 136
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Dominican Republic",
@@ -2683,7 +2907,7 @@
       "female_labor_force_participation": 96,
       "education_expenditure_of_gdp": 111,
       "democracy_index": 52,
-      "human_development_index_hdi": 87,
+      "human_development_index_hdi": 88,
       "political_corruption_index": 119,
       "general_government_gross_debt_gdp": 112,
       "environmental_performance_index": 89,
@@ -2693,9 +2917,11 @@
       "network_readiness_index": 76,
       "intentional_homicides": 145,
       "water_stress_level": 132,
-      "lpi_infrastructure": 112
+      "lpi_infrastructure": 112,
+      "universal_health_coverage_index": 59,
+      "government_effectiveness": 78
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Tuvalu",
@@ -2703,12 +2929,14 @@
       "gini_index": 115,
       "inflation_consumer_price_index": 11,
       "education_expenditure_of_gdp": 2,
-      "human_development_index_hdi": 128,
+      "human_development_index_hdi": 129,
       "general_government_gross_debt_gdp": 3,
       "inform_resilience_index": 61,
-      "intentional_homicides": 159
+      "intentional_homicides": 159,
+      "universal_health_coverage_index": 144,
+      "government_effectiveness": 121
     },
-    "kpi_count": 7
+    "kpi_count": 9
   },
   {
     "country": "Suriname",
@@ -2720,16 +2948,18 @@
       "female_labor_force_participation": 127,
       "education_expenditure_of_gdp": 147,
       "democracy_index": 48,
-      "human_development_index_hdi": 113,
+      "human_development_index_hdi": 114,
       "political_corruption_index": 39,
       "general_government_gross_debt_gdp": 156,
       "environmental_performance_index": 70,
       "inform_resilience_index": 78,
       "intentional_homicides": 129,
       "water_stress_level": 46,
-      "social_progress_index": 65
+      "social_progress_index": 65,
+      "universal_health_coverage_index": 119,
+      "government_effectiveness": 162
     },
-    "kpi_count": 15
+    "kpi_count": 17
   },
   {
     "country": "Philippines",
@@ -2741,7 +2971,7 @@
       "female_labor_force_participation": 112,
       "education_expenditure_of_gdp": 105,
       "democracy_index": 51,
-      "human_development_index_hdi": 118,
+      "human_development_index_hdi": 119,
       "political_corruption_index": 161,
       "general_government_gross_debt_gdp": 104,
       "big_mac_index": 8,
@@ -2752,9 +2982,11 @@
       "network_readiness_index": 61,
       "intentional_homicides": 111,
       "water_stress_level": 119,
-      "lpi_infrastructure": 48
+      "lpi_infrastructure": 48,
+      "universal_health_coverage_index": 130,
+      "government_effectiveness": 75
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Rwanda",
@@ -2766,7 +2998,7 @@
       "female_labor_force_participation": 58,
       "education_expenditure_of_gdp": 73,
       "democracy_index": 114,
-      "human_development_index_hdi": 158,
+      "human_development_index_hdi": 159,
       "political_corruption_index": 75,
       "general_government_gross_debt_gdp": 138,
       "environmental_performance_index": 139,
@@ -2776,9 +3008,11 @@
       "intentional_homicides": 101,
       "water_stress_level": 108,
       "social_progress_index": 122,
-      "lpi_infrastructure": 92
+      "lpi_infrastructure": 92,
+      "universal_health_coverage_index": 152,
+      "government_effectiveness": 60
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Bulgaria",
@@ -2801,9 +3035,11 @@
       "intentional_homicides": 46,
       "water_stress_level": 133,
       "social_progress_index": 39,
-      "lpi_infrastructure": 55
+      "lpi_infrastructure": 55,
+      "universal_health_coverage_index": 83,
+      "government_effectiveness": 85
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Morocco",
@@ -2815,7 +3051,7 @@
       "female_labor_force_participation": 168,
       "education_expenditure_of_gdp": 26,
       "democracy_index": 91,
-      "human_development_index_hdi": 119,
+      "human_development_index_hdi": 120,
       "political_corruption_index": 105,
       "general_government_gross_debt_gdp": 130,
       "environmental_performance_index": 161,
@@ -2826,9 +3062,11 @@
       "intentional_homicides": 68,
       "water_stress_level": 141,
       "social_progress_index": 91,
-      "lpi_infrastructure": 88
+      "lpi_infrastructure": 88,
+      "universal_health_coverage_index": 96,
+      "government_effectiveness": 92
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "El Salvador",
@@ -2840,7 +3078,7 @@
       "female_labor_force_participation": 124,
       "education_expenditure_of_gdp": 135,
       "democracy_index": 95,
-      "human_development_index_hdi": 131,
+      "human_development_index_hdi": 132,
       "political_corruption_index": 116,
       "general_government_gross_debt_gdp": 154,
       "environmental_performance_index": 95,
@@ -2851,9 +3089,11 @@
       "intentional_homicides": 137,
       "water_stress_level": 93,
       "social_progress_index": 90,
-      "lpi_infrastructure": 101
+      "lpi_infrastructure": 101,
+      "universal_health_coverage_index": 54,
+      "government_effectiveness": 84
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Belize",
@@ -2864,14 +3104,16 @@
       "employment_to_population_ratio": 91,
       "female_labor_force_participation": 116,
       "education_expenditure_of_gdp": 75,
-      "human_development_index_hdi": 114,
+      "human_development_index_hdi": 115,
       "general_government_gross_debt_gdp": 123,
       "environmental_performance_index": 49,
       "inform_resilience_index": 98,
       "intentional_homicides": 167,
-      "water_stress_level": 18
+      "water_stress_level": 18,
+      "universal_health_coverage_index": 103,
+      "government_effectiveness": 119
     },
-    "kpi_count": 12
+    "kpi_count": 14
   },
   {
     "country": "Jamaica",
@@ -2883,7 +3125,7 @@
       "female_labor_force_participation": 41,
       "education_expenditure_of_gdp": 36,
       "democracy_index": 49,
-      "human_development_index_hdi": 116,
+      "human_development_index_hdi": 117,
       "political_corruption_index": 40,
       "general_government_gross_debt_gdp": 108,
       "environmental_performance_index": 72,
@@ -2894,9 +3136,11 @@
       "intentional_homicides": 176,
       "water_stress_level": 95,
       "social_progress_index": 48,
-      "lpi_infrastructure": 130
+      "lpi_infrastructure": 130,
+      "universal_health_coverage_index": 80,
+      "government_effectiveness": 58
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Uruguay",
@@ -2920,9 +3164,11 @@
       "intentional_homicides": 148,
       "water_stress_level": 92,
       "social_progress_index": 34,
-      "lpi_infrastructure": 77
+      "lpi_infrastructure": 77,
+      "universal_health_coverage_index": 43,
+      "government_effectiveness": 36
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Micronesia",
@@ -2930,13 +3176,15 @@
       "gini_index": 125,
       "inflation_consumer_price_index": 133,
       "education_expenditure_of_gdp": 3,
-      "human_development_index_hdi": 148,
+      "human_development_index_hdi": 149,
       "general_government_gross_debt_gdp": 8,
       "environmental_performance_index": 113,
       "inform_resilience_index": 90,
-      "intentional_homicides": 37
+      "intentional_homicides": 37,
+      "universal_health_coverage_index": 157,
+      "government_effectiveness": 72
     },
-    "kpi_count": 8
+    "kpi_count": 10
   },
   {
     "country": "Peru",
@@ -2948,7 +3196,7 @@
       "female_labor_force_participation": 24,
       "education_expenditure_of_gdp": 91,
       "democracy_index": 78,
-      "human_development_index_hdi": 77,
+      "human_development_index_hdi": 78,
       "political_corruption_index": 110,
       "general_government_gross_debt_gdp": 39,
       "big_mac_index": 39,
@@ -2960,9 +3208,11 @@
       "intentional_homicides": 140,
       "water_stress_level": 57,
       "social_progress_index": 66,
-      "lpi_infrastructure": 76
+      "lpi_infrastructure": 76,
+      "universal_health_coverage_index": 89,
+      "government_effectiveness": 126
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Trinidad and Tobago",
@@ -2984,9 +3234,11 @@
       "intentional_homicides": 172,
       "water_stress_level": 110,
       "social_progress_index": 50,
-      "lpi_infrastructure": 137
+      "lpi_infrastructure": 137,
+      "universal_health_coverage_index": 72,
+      "government_effectiveness": 93
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Tanzania",
@@ -2998,7 +3250,7 @@
       "female_labor_force_participation": 4,
       "education_expenditure_of_gdp": 136,
       "democracy_index": 86,
-      "human_development_index_hdi": 164,
+      "human_development_index_hdi": 165,
       "political_corruption_index": 50,
       "general_government_gross_debt_gdp": 81,
       "environmental_performance_index": 134,
@@ -3006,9 +3258,11 @@
       "inform_resilience_index": 144,
       "intentional_homicides": 104,
       "water_stress_level": 97,
-      "lpi_infrastructure": 38
+      "lpi_infrastructure": 38,
+      "universal_health_coverage_index": 171,
+      "government_effectiveness": 122
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Malaysia",
@@ -3032,9 +3286,11 @@
       "intentional_homicides": 27,
       "water_stress_level": 41,
       "social_progress_index": 43,
-      "lpi_infrastructure": 31
+      "lpi_infrastructure": 31,
+      "universal_health_coverage_index": 65,
+      "government_effectiveness": 35
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "São Tomé and Príncipe",
@@ -3045,7 +3301,7 @@
       "employment_to_population_ratio": 179,
       "female_labor_force_participation": 166,
       "education_expenditure_of_gdp": 62,
-      "human_development_index_hdi": 140,
+      "human_development_index_hdi": 141,
       "political_corruption_index": 56,
       "general_government_gross_debt_gdp": 86,
       "environmental_performance_index": 38,
@@ -3053,9 +3309,11 @@
       "intentional_homicides": 98,
       "water_stress_level": 28,
       "social_progress_index": 95,
-      "lpi_infrastructure": 72
+      "lpi_infrastructure": 72,
+      "universal_health_coverage_index": 126,
+      "government_effectiveness": 158
     },
-    "kpi_count": 15
+    "kpi_count": 17
   },
   {
     "country": "Turkmenistan",
@@ -3066,7 +3324,7 @@
       "female_labor_force_participation": 118,
       "education_expenditure_of_gdp": 155,
       "democracy_index": 161,
-      "human_development_index_hdi": 93,
+      "human_development_index_hdi": 94,
       "political_corruption_index": 165,
       "general_government_gross_debt_gdp": 4,
       "environmental_performance_index": 118,
@@ -3075,9 +3333,11 @@
       "intentional_homicides": 44,
       "water_stress_level": 169,
       "social_progress_index": 94,
-      "lpi_infrastructure": 97
+      "lpi_infrastructure": 97,
+      "universal_health_coverage_index": 74,
+      "government_effectiveness": 173
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Haiti",
@@ -3089,7 +3349,7 @@
       "female_labor_force_participation": 48,
       "education_expenditure_of_gdp": 187,
       "democracy_index": 131,
-      "human_development_index_hdi": 165,
+      "human_development_index_hdi": 166,
       "political_corruption_index": 136,
       "general_government_gross_debt_gdp": 10,
       "environmental_performance_index": 173,
@@ -3098,9 +3358,11 @@
       "intentional_homicides": 173,
       "water_stress_level": 100,
       "social_progress_index": 142,
-      "lpi_infrastructure": 165
+      "lpi_infrastructure": 165,
+      "universal_health_coverage_index": 139,
+      "government_effectiveness": 194
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Djibouti",
@@ -3112,7 +3374,7 @@
       "female_labor_force_participation": 170,
       "education_expenditure_of_gdp": 112,
       "democracy_index": 132,
-      "human_development_index_hdi": 174,
+      "human_development_index_hdi": 175,
       "political_corruption_index": 114,
       "general_government_gross_debt_gdp": 32,
       "environmental_performance_index": 61,
@@ -3120,9 +3382,11 @@
       "inform_resilience_index": 146,
       "water_stress_level": 68,
       "social_progress_index": 126,
-      "lpi_infrastructure": 100
+      "lpi_infrastructure": 100,
+      "universal_health_coverage_index": 167,
+      "government_effectiveness": 142
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "United States",
@@ -3144,9 +3408,11 @@
       "pisa_overall_score": 16,
       "intentional_homicides": 124,
       "water_stress_level": 120,
-      "lpi_infrastructure": 17
+      "lpi_infrastructure": 17,
+      "universal_health_coverage_index": 42,
+      "government_effectiveness": 23
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Papua New Guinea",
@@ -3158,7 +3424,7 @@
       "female_labor_force_participation": 109,
       "education_expenditure_of_gdp": 188,
       "democracy_index": 73,
-      "human_development_index_hdi": 159,
+      "human_development_index_hdi": 160,
       "political_corruption_index": 123,
       "general_government_gross_debt_gdp": 83,
       "environmental_performance_index": 175,
@@ -3167,9 +3433,11 @@
       "intentional_homicides": 142,
       "water_stress_level": 2,
       "social_progress_index": 135,
-      "lpi_infrastructure": 105
+      "lpi_infrastructure": 105,
+      "universal_health_coverage_index": 191,
+      "government_effectiveness": 149
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Bolivia",
@@ -3181,7 +3449,7 @@
       "female_labor_force_participation": 12,
       "education_expenditure_of_gdp": 6,
       "democracy_index": 103,
-      "human_development_index_hdi": 107,
+      "human_development_index_hdi": 108,
       "political_corruption_index": 108,
       "general_government_gross_debt_gdp": 162,
       "environmental_performance_index": 99,
@@ -3191,9 +3459,11 @@
       "intentional_homicides": 113,
       "water_stress_level": 4,
       "social_progress_index": 88,
-      "lpi_infrastructure": 139
+      "lpi_infrastructure": 139,
+      "universal_health_coverage_index": 111,
+      "government_effectiveness": 134
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Cameroon",
@@ -3205,7 +3475,7 @@
       "female_labor_force_participation": 65,
       "education_expenditure_of_gdp": 150,
       "democracy_index": 136,
-      "human_development_index_hdi": 154,
+      "human_development_index_hdi": 155,
       "political_corruption_index": 172,
       "general_government_gross_debt_gdp": 52,
       "environmental_performance_index": 153,
@@ -3215,9 +3485,11 @@
       "intentional_homicides": 131,
       "water_stress_level": 24,
       "social_progress_index": 128,
-      "lpi_infrastructure": 164
+      "lpi_infrastructure": 164,
+      "universal_health_coverage_index": 168,
+      "government_effectiveness": 159
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Argentina",
@@ -3241,9 +3513,11 @@
       "intentional_homicides": 115,
       "water_stress_level": 88,
       "social_progress_index": 37,
-      "lpi_infrastructure": 89
+      "lpi_infrastructure": 89,
+      "universal_health_coverage_index": 50,
+      "government_effectiveness": 120
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Cape Verde",
@@ -3255,7 +3529,7 @@
       "female_labor_force_participation": 110,
       "education_expenditure_of_gdp": 83,
       "democracy_index": 37,
-      "human_development_index_hdi": 134,
+      "human_development_index_hdi": 135,
       "political_corruption_index": 53,
       "general_government_gross_debt_gdp": 172,
       "environmental_performance_index": 91,
@@ -3263,9 +3537,11 @@
       "network_readiness_index": 94,
       "intentional_homicides": 134,
       "water_stress_level": 149,
-      "social_progress_index": 70
+      "social_progress_index": 70,
+      "universal_health_coverage_index": 88,
+      "government_effectiveness": 87
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Uganda",
@@ -3277,7 +3553,7 @@
       "female_labor_force_participation": 8,
       "education_expenditure_of_gdp": 157,
       "democracy_index": 98,
-      "human_development_index_hdi": 157,
+      "human_development_index_hdi": 158,
       "political_corruption_index": 142,
       "general_government_gross_debt_gdp": 87,
       "environmental_performance_index": 125,
@@ -3287,9 +3563,11 @@
       "intentional_homicides": 141,
       "water_stress_level": 64,
       "social_progress_index": 129,
-      "lpi_infrastructure": 87
+      "lpi_infrastructure": 87,
+      "universal_health_coverage_index": 151,
+      "government_effectiveness": 129
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Central African Republic",
@@ -3301,7 +3579,7 @@
       "female_labor_force_participation": 23,
       "education_expenditure_of_gdp": 179,
       "democracy_index": 164,
-      "human_development_index_hdi": 190,
+      "human_development_index_hdi": 191,
       "political_corruption_index": 159,
       "general_government_gross_debt_gdp": 101,
       "environmental_performance_index": 75,
@@ -3310,9 +3588,11 @@
       "intentional_homicides": 162,
       "water_stress_level": 9,
       "social_progress_index": 151,
-      "lpi_infrastructure": 125
+      "lpi_infrastructure": 125,
+      "universal_health_coverage_index": 190,
+      "government_effectiveness": 187
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Chile",
@@ -3336,9 +3616,11 @@
       "intentional_homicides": 128,
       "water_stress_level": 84,
       "social_progress_index": 33,
-      "lpi_infrastructure": 74
+      "lpi_infrastructure": 74,
+      "universal_health_coverage_index": 6,
+      "government_effectiveness": 42
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Ghana",
@@ -3350,7 +3632,7 @@
       "female_labor_force_participation": 39,
       "education_expenditure_of_gdp": 143,
       "democracy_index": 65,
-      "human_development_index_hdi": 142,
+      "human_development_index_hdi": 143,
       "political_corruption_index": 106,
       "general_government_gross_debt_gdp": 107,
       "environmental_performance_index": 170,
@@ -3360,9 +3642,11 @@
       "intentional_homicides": 72,
       "water_stress_level": 67,
       "social_progress_index": 93,
-      "lpi_infrastructure": 127
+      "lpi_infrastructure": 127,
+      "universal_health_coverage_index": 155,
+      "government_effectiveness": 98
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Mexico",
@@ -3374,7 +3658,7 @@
       "female_labor_force_participation": 122,
       "education_expenditure_of_gdp": 101,
       "democracy_index": 84,
-      "human_development_index_hdi": 80,
+      "human_development_index_hdi": 81,
       "political_corruption_index": 95,
       "general_government_gross_debt_gdp": 106,
       "big_mac_index": 43,
@@ -3386,9 +3670,11 @@
       "intentional_homicides": 164,
       "water_stress_level": 136,
       "social_progress_index": 63,
-      "lpi_infrastructure": 85
+      "lpi_infrastructure": 85,
+      "universal_health_coverage_index": 77,
+      "government_effectiveness": 105
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Saint Lucia",
@@ -3399,14 +3685,16 @@
       "employment_to_population_ratio": 59,
       "female_labor_force_participation": 29,
       "education_expenditure_of_gdp": 108,
-      "human_development_index_hdi": 102,
+      "human_development_index_hdi": 103,
       "general_government_gross_debt_gdp": 145,
       "environmental_performance_index": 53,
       "inform_resilience_index": 50,
       "intentional_homicides": 171,
-      "water_stress_level": 101
+      "water_stress_level": 101,
+      "universal_health_coverage_index": 61,
+      "government_effectiveness": 80
     },
-    "kpi_count": 12
+    "kpi_count": 14
   },
   {
     "country": "Grenada",
@@ -3414,15 +3702,17 @@
       "gini_index": 146,
       "inflation_consumer_price_index": 24,
       "education_expenditure_of_gdp": 59,
-      "human_development_index_hdi": 78,
+      "human_development_index_hdi": 79,
       "general_government_gross_debt_gdp": 131,
       "environmental_performance_index": 58,
       "inform_resilience_index": 49,
       "intentional_homicides": 154,
       "water_stress_level": 71,
-      "lpi_infrastructure": 128
+      "lpi_infrastructure": 128,
+      "universal_health_coverage_index": 92,
+      "government_effectiveness": 90
     },
-    "kpi_count": 10
+    "kpi_count": 12
   },
   {
     "country": "South Sudan",
@@ -3433,16 +3723,18 @@
       "employment_to_population_ratio": 40,
       "female_labor_force_participation": 15,
       "education_expenditure_of_gdp": 183,
-      "human_development_index_hdi": 192,
+      "human_development_index_hdi": 193,
       "political_corruption_index": 151,
       "general_government_gross_debt_gdp": 127,
       "global_peace_index": 156,
       "inform_resilience_index": 191,
       "intentional_homicides": 155,
       "water_stress_level": 50,
-      "social_progress_index": 152
+      "social_progress_index": 152,
+      "universal_health_coverage_index": 189,
+      "government_effectiveness": 196
     },
-    "kpi_count": 14
+    "kpi_count": 16
   },
   {
     "country": "Paraguay",
@@ -3454,7 +3746,7 @@
       "female_labor_force_participation": 53,
       "education_expenditure_of_gdp": 124,
       "democracy_index": 75,
-      "human_development_index_hdi": 97,
+      "human_development_index_hdi": 98,
       "political_corruption_index": 141,
       "general_government_gross_debt_gdp": 61,
       "environmental_performance_index": 94,
@@ -3465,9 +3757,11 @@
       "intentional_homicides": 133,
       "water_stress_level": 26,
       "social_progress_index": 71,
-      "lpi_infrastructure": 106
+      "lpi_infrastructure": 106,
+      "universal_health_coverage_index": 85,
+      "government_effectiveness": 123
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Turkey",
@@ -3491,9 +3785,11 @@
       "intentional_homicides": 97,
       "water_stress_level": 139,
       "social_progress_index": 77,
-      "lpi_infrastructure": 25
+      "lpi_infrastructure": 25,
+      "universal_health_coverage_index": 68,
+      "government_effectiveness": 109
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Democratic Republic of the Congo",
@@ -3505,7 +3801,7 @@
       "female_labor_force_participation": 33,
       "education_expenditure_of_gdp": 149,
       "democracy_index": 156,
-      "human_development_index_hdi": 170,
+      "human_development_index_hdi": 171,
       "political_corruption_index": 170,
       "general_government_gross_debt_gdp": 13,
       "environmental_performance_index": 119,
@@ -3513,9 +3809,11 @@
       "inform_resilience_index": 188,
       "network_readiness_index": 126,
       "water_stress_level": 5,
-      "lpi_infrastructure": 126
+      "lpi_infrastructure": 126,
+      "universal_health_coverage_index": 173,
+      "government_effectiveness": 186
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Venezuela",
@@ -3527,7 +3825,7 @@
       "female_labor_force_participation": 151,
       "education_expenditure_of_gdp": 191,
       "democracy_index": 142,
-      "human_development_index_hdi": 120,
+      "human_development_index_hdi": 121,
       "political_corruption_index": 175,
       "general_government_gross_debt_gdp": 185,
       "big_mac_index": 35,
@@ -3538,9 +3836,11 @@
       "intentional_homicides": 153,
       "water_stress_level": 73,
       "social_progress_index": 106,
-      "lpi_infrastructure": 158
+      "lpi_infrastructure": 158,
+      "universal_health_coverage_index": 71,
+      "government_effectiveness": 184
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Lesotho",
@@ -3552,7 +3852,7 @@
       "female_labor_force_participation": 117,
       "education_expenditure_of_gdp": 16,
       "democracy_index": 70,
-      "human_development_index_hdi": 166,
+      "human_development_index_hdi": 167,
       "political_corruption_index": 89,
       "general_government_gross_debt_gdp": 102,
       "environmental_performance_index": 141,
@@ -3562,9 +3862,11 @@
       "intentional_homicides": 170,
       "water_stress_level": 36,
       "social_progress_index": 120,
-      "lpi_infrastructure": 104
+      "lpi_infrastructure": 104,
+      "universal_health_coverage_index": 142,
+      "government_effectiveness": 161
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Guyana",
@@ -3576,7 +3878,7 @@
       "female_labor_force_participation": 145,
       "education_expenditure_of_gdp": 81,
       "democracy_index": 69,
-      "human_development_index_hdi": 88,
+      "human_development_index_hdi": 89,
       "political_corruption_index": 79,
       "general_government_gross_debt_gdp": 27,
       "environmental_performance_index": 105,
@@ -3585,9 +3887,11 @@
       "intentional_homicides": 160,
       "water_stress_level": 38,
       "social_progress_index": 85,
-      "lpi_infrastructure": 142
+      "lpi_infrastructure": 142,
+      "universal_health_coverage_index": 66,
+      "government_effectiveness": 113
     },
-    "kpi_count": 17
+    "kpi_count": 19
   },
   {
     "country": "Ecuador",
@@ -3599,7 +3903,7 @@
       "female_labor_force_participation": 101,
       "education_expenditure_of_gdp": 107,
       "democracy_index": 85,
-      "human_development_index_hdi": 86,
+      "human_development_index_hdi": 87,
       "political_corruption_index": 107,
       "general_government_gross_debt_gdp": 94,
       "environmental_performance_index": 66,
@@ -3609,9 +3913,11 @@
       "intentional_homicides": 175,
       "water_stress_level": 70,
       "social_progress_index": 58,
-      "lpi_infrastructure": 60
+      "lpi_infrastructure": 60,
+      "universal_health_coverage_index": 62,
+      "government_effectiveness": 127
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Guatemala",
@@ -3623,7 +3929,7 @@
       "female_labor_force_participation": 144,
       "education_expenditure_of_gdp": 137,
       "democracy_index": 97,
-      "human_development_index_hdi": 136,
+      "human_development_index_hdi": 137,
       "political_corruption_index": 118,
       "general_government_gross_debt_gdp": 23,
       "big_mac_index": 28,
@@ -3635,9 +3941,11 @@
       "intentional_homicides": 163,
       "water_stress_level": 62,
       "social_progress_index": 103,
-      "lpi_infrastructure": 113
+      "lpi_infrastructure": 113,
+      "universal_health_coverage_index": 127,
+      "government_effectiveness": 157
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Comoros",
@@ -3649,15 +3957,17 @@
       "female_labor_force_participation": 138,
       "education_expenditure_of_gdp": 163,
       "democracy_index": 124,
-      "human_development_index_hdi": 151,
+      "human_development_index_hdi": 152,
       "political_corruption_index": 155,
       "general_government_gross_debt_gdp": 31,
       "environmental_performance_index": 86,
       "inform_resilience_index": 84,
       "water_stress_level": 13,
-      "lpi_infrastructure": 90
+      "lpi_infrastructure": 90,
+      "universal_health_coverage_index": 154,
+      "government_effectiveness": 182
     },
-    "kpi_count": 14
+    "kpi_count": 16
   },
   {
     "country": "Honduras",
@@ -3669,7 +3979,7 @@
       "female_labor_force_participation": 147,
       "education_expenditure_of_gdp": 78,
       "democracy_index": 90,
-      "human_development_index_hdi": 138,
+      "human_development_index_hdi": 139,
       "political_corruption_index": 129,
       "general_government_gross_debt_gdp": 72,
       "big_mac_index": 33,
@@ -3680,9 +3990,11 @@
       "intentional_homicides": 168,
       "water_stress_level": 52,
       "social_progress_index": 96,
-      "lpi_infrastructure": 84
+      "lpi_infrastructure": 84,
+      "universal_health_coverage_index": 115,
+      "government_effectiveness": 148
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Costa Rica",
@@ -3706,9 +4018,11 @@
       "intentional_homicides": 158,
       "water_stress_level": 65,
       "social_progress_index": 35,
-      "lpi_infrastructure": 83
+      "lpi_infrastructure": 83,
+      "universal_health_coverage_index": 9,
+      "government_effectiveness": 69
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Nicaragua",
@@ -3720,7 +4034,7 @@
       "female_labor_force_participation": 111,
       "education_expenditure_of_gdp": 148,
       "democracy_index": 147,
-      "human_development_index_hdi": 122,
+      "human_development_index_hdi": 123,
       "political_corruption_index": 173,
       "general_government_gross_debt_gdp": 54,
       "big_mac_index": 37,
@@ -3731,9 +4045,11 @@
       "intentional_homicides": 149,
       "water_stress_level": 33,
       "social_progress_index": 104,
-      "lpi_infrastructure": 134
+      "lpi_infrastructure": 134,
+      "universal_health_coverage_index": 93,
+      "government_effectiveness": 168
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Republic of the Congo",
@@ -3745,16 +4061,18 @@
       "female_labor_force_participation": 21,
       "education_expenditure_of_gdp": 127,
       "democracy_index": 128,
-      "human_development_index_hdi": 137,
+      "human_development_index_hdi": 138,
       "political_corruption_index": 150,
       "general_government_gross_debt_gdp": 161,
       "environmental_performance_index": 100,
       "global_peace_index": 103,
       "inform_resilience_index": 145,
       "water_stress_level": 1,
-      "lpi_infrastructure": 111
+      "lpi_infrastructure": 111,
+      "universal_health_coverage_index": 177,
+      "government_effectiveness": 176
     },
-    "kpi_count": 15
+    "kpi_count": 17
   },
   {
     "country": "Mozambique",
@@ -3766,7 +4084,7 @@
       "female_labor_force_participation": 6,
       "education_expenditure_of_gdp": 27,
       "democracy_index": 113,
-      "human_development_index_hdi": 181,
+      "human_development_index_hdi": 182,
       "political_corruption_index": 125,
       "general_government_gross_debt_gdp": 166,
       "environmental_performance_index": 145,
@@ -3776,9 +4094,11 @@
       "intentional_homicides": 100,
       "water_stress_level": 25,
       "social_progress_index": 130,
-      "lpi_infrastructure": 71
+      "lpi_infrastructure": 71,
+      "universal_health_coverage_index": 166,
+      "government_effectiveness": 141
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Panama",
@@ -3801,9 +4121,11 @@
       "intentional_homicides": 151,
       "water_stress_level": 14,
       "social_progress_index": 49,
-      "lpi_infrastructure": 69
+      "lpi_infrastructure": 69,
+      "universal_health_coverage_index": 53,
+      "government_effectiveness": 106
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Zimbabwe",
@@ -3815,7 +4137,7 @@
       "female_labor_force_participation": 51,
       "education_expenditure_of_gdp": 189,
       "democracy_index": 122,
-      "human_development_index_hdi": 152,
+      "human_development_index_hdi": 153,
       "political_corruption_index": 146,
       "general_government_gross_debt_gdp": 71,
       "environmental_performance_index": 69,
@@ -3825,9 +4147,11 @@
       "intentional_homicides": 130,
       "water_stress_level": 137,
       "social_progress_index": 123,
-      "lpi_infrastructure": 138
+      "lpi_infrastructure": 138,
+      "universal_health_coverage_index": 137,
+      "government_effectiveness": 171
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Angola",
@@ -3839,7 +4163,7 @@
       "female_labor_force_participation": 11,
       "education_expenditure_of_gdp": 160,
       "democracy_index": 107,
-      "human_development_index_hdi": 147,
+      "human_development_index_hdi": 148,
       "political_corruption_index": 91,
       "general_government_gross_debt_gdp": 117,
       "environmental_performance_index": 151,
@@ -3849,9 +4173,11 @@
       "intentional_homicides": 108,
       "water_stress_level": 27,
       "social_progress_index": 137,
-      "lpi_infrastructure": 163
+      "lpi_infrastructure": 163,
+      "universal_health_coverage_index": 185,
+      "government_effectiveness": 165
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Zambia",
@@ -3863,7 +4189,7 @@
       "female_labor_force_participation": 85,
       "education_expenditure_of_gdp": 99,
       "democracy_index": 77,
-      "human_development_index_hdi": 153,
+      "human_development_index_hdi": 154,
       "political_corruption_index": 66,
       "general_government_gross_debt_gdp": 176,
       "environmental_performance_index": 106,
@@ -3873,9 +4199,11 @@
       "intentional_homicides": 121,
       "water_stress_level": 37,
       "social_progress_index": 115,
-      "lpi_infrastructure": 70
+      "lpi_infrastructure": 70,
+      "universal_health_coverage_index": 134,
+      "government_effectiveness": 137
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Brazil",
@@ -3887,7 +4215,7 @@
       "female_labor_force_participation": 92,
       "education_expenditure_of_gdp": 34,
       "democracy_index": 57,
-      "human_development_index_hdi": 82,
+      "human_development_index_hdi": 83,
       "political_corruption_index": 80,
       "general_government_gross_debt_gdp": 160,
       "big_mac_index": 30,
@@ -3899,9 +4227,11 @@
       "intentional_homicides": 161,
       "water_stress_level": 22,
       "social_progress_index": 61,
-      "lpi_infrastructure": 54
+      "lpi_infrastructure": 54,
+      "universal_health_coverage_index": 4,
+      "government_effectiveness": 128
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Colombia",
@@ -3913,7 +4243,7 @@
       "female_labor_force_participation": 103,
       "education_expenditure_of_gdp": 50,
       "democracy_index": 60,
-      "human_development_index_hdi": 81,
+      "human_development_index_hdi": 82,
       "political_corruption_index": 73,
       "general_government_gross_debt_gdp": 105,
       "big_mac_index": 55,
@@ -3925,9 +4255,11 @@
       "intentional_homicides": 165,
       "water_stress_level": 44,
       "social_progress_index": 64,
-      "lpi_infrastructure": 82
+      "lpi_infrastructure": 82,
+      "universal_health_coverage_index": 8,
+      "government_effectiveness": 96
     },
-    "kpi_count": 20
+    "kpi_count": 22
   },
   {
     "country": "Eswatini",
@@ -3939,7 +4271,7 @@
       "female_labor_force_participation": 126,
       "education_expenditure_of_gdp": 24,
       "democracy_index": 134,
-      "human_development_index_hdi": 125,
+      "human_development_index_hdi": 126,
       "political_corruption_index": 97,
       "general_government_gross_debt_gdp": 67,
       "environmental_performance_index": 76,
@@ -3947,9 +4279,11 @@
       "inform_resilience_index": 97,
       "intentional_homicides": 152,
       "water_stress_level": 155,
-      "social_progress_index": 124
+      "social_progress_index": 124,
+      "universal_health_coverage_index": 133,
+      "government_effectiveness": 155
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Botswana",
@@ -3961,7 +4295,7 @@
       "female_labor_force_participation": 25,
       "education_expenditure_of_gdp": 8,
       "democracy_index": 35,
-      "human_development_index_hdi": 110,
+      "human_development_index_hdi": 111,
       "political_corruption_index": 49,
       "general_government_gross_debt_gdp": 53,
       "environmental_performance_index": 35,
@@ -3971,9 +4305,11 @@
       "intentional_homicides": 150,
       "water_stress_level": 34,
       "social_progress_index": 92,
-      "lpi_infrastructure": 65
+      "lpi_infrastructure": 65,
+      "universal_health_coverage_index": 135,
+      "government_effectiveness": 56
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Namibia",
@@ -3985,7 +4321,7 @@
       "female_labor_force_participation": 75,
       "education_expenditure_of_gdp": 4,
       "democracy_index": 58,
-      "human_development_index_hdi": 135,
+      "human_development_index_hdi": 136,
       "political_corruption_index": 58,
       "general_government_gross_debt_gdp": 121,
       "environmental_performance_index": 44,
@@ -3995,9 +4331,11 @@
       "intentional_homicides": 146,
       "water_stress_level": 8,
       "social_progress_index": 98,
-      "lpi_infrastructure": 86
+      "lpi_infrastructure": 86,
+      "universal_health_coverage_index": 120,
+      "government_effectiveness": 86
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "South Africa",
@@ -4009,7 +4347,7 @@
       "female_labor_force_participation": 93,
       "education_expenditure_of_gdp": 25,
       "democracy_index": 43,
-      "human_development_index_hdi": 105,
+      "human_development_index_hdi": 106,
       "political_corruption_index": 94,
       "general_government_gross_debt_gdp": 146,
       "big_mac_index": 6,
@@ -4020,9 +4358,11 @@
       "intentional_homicides": 174,
       "water_stress_level": 152,
       "social_progress_index": 74,
-      "lpi_infrastructure": 23
+      "lpi_infrastructure": 23,
+      "universal_health_coverage_index": 90,
+      "government_effectiveness": 111
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Cambodia",
@@ -4033,7 +4373,7 @@
       "female_labor_force_participation": 10,
       "education_expenditure_of_gdp": 170,
       "democracy_index": 123,
-      "human_development_index_hdi": 150,
+      "human_development_index_hdi": 151,
       "political_corruption_index": 166,
       "general_government_gross_debt_gdp": 25,
       "environmental_performance_index": 154,
@@ -4044,9 +4384,11 @@
       "intentional_homicides": 71,
       "water_stress_level": 17,
       "social_progress_index": 109,
-      "lpi_infrastructure": 140
+      "lpi_infrastructure": 140,
+      "universal_health_coverage_index": 131,
+      "government_effectiveness": 116
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Bahrain",
@@ -4068,9 +4410,11 @@
       "intentional_homicides": 4,
       "water_stress_level": 168,
       "social_progress_index": 80,
-      "lpi_infrastructure": 34
+      "lpi_infrastructure": 34,
+      "universal_health_coverage_index": 64,
+      "government_effectiveness": 45
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Cuba",
@@ -4080,7 +4424,7 @@
       "female_labor_force_participation": 146,
       "education_expenditure_of_gdp": 5,
       "democracy_index": 135,
-      "human_development_index_hdi": 95,
+      "human_development_index_hdi": 96,
       "political_corruption_index": 99,
       "environmental_performance_index": 60,
       "global_peace_index": 102,
@@ -4088,9 +4432,11 @@
       "intentional_homicides": 114,
       "water_stress_level": 115,
       "social_progress_index": 67,
-      "lpi_infrastructure": 160
+      "lpi_infrastructure": 160,
+      "universal_health_coverage_index": 11,
+      "government_effectiveness": 125
     },
-    "kpi_count": 14
+    "kpi_count": 16
   },
   {
     "country": "Kuwait",
@@ -4112,9 +4458,11 @@
       "intentional_homicides": 6,
       "water_stress_level": 177,
       "social_progress_index": 44,
-      "lpi_infrastructure": 58
+      "lpi_infrastructure": 58,
+      "universal_health_coverage_index": 55,
+      "government_effectiveness": 89
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "North Korea",
@@ -4126,9 +4474,11 @@
       "political_corruption_index": 115,
       "global_peace_index": 149,
       "inform_resilience_index": 135,
-      "water_stress_level": 118
+      "water_stress_level": 118,
+      "universal_health_coverage_index": 102,
+      "government_effectiveness": 181
     },
-    "kpi_count": 8
+    "kpi_count": 10
   },
   {
     "country": "Oman",
@@ -4150,9 +4500,11 @@
       "intentional_homicides": 3,
       "water_stress_level": 163,
       "social_progress_index": 62,
-      "lpi_infrastructure": 47
+      "lpi_infrastructure": 47,
+      "universal_health_coverage_index": 95,
+      "government_effectiveness": 66
     },
-    "kpi_count": 18
+    "kpi_count": 20
   },
   {
     "country": "Singapore",
@@ -4175,9 +4527,11 @@
       "intentional_homicides": 1,
       "water_stress_level": 128,
       "social_progress_index": 19,
-      "lpi_infrastructure": 1
+      "lpi_infrastructure": 1,
+      "universal_health_coverage_index": 32,
+      "government_effectiveness": 1
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Saudi Arabia",
@@ -4200,9 +4554,11 @@
       "intentional_homicides": 39,
       "water_stress_level": 175,
       "social_progress_index": 81,
-      "lpi_infrastructure": 42
+      "lpi_infrastructure": 42,
+      "universal_health_coverage_index": 78,
+      "government_effectiveness": 37
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "New Zealand",
@@ -4225,9 +4581,11 @@
       "intentional_homicides": 62,
       "water_stress_level": 78,
       "social_progress_index": 13,
-      "lpi_infrastructure": 32
+      "lpi_infrastructure": 32,
+      "universal_health_coverage_index": 28,
+      "government_effectiveness": 16
     },
-    "kpi_count": 19
+    "kpi_count": 21
   },
   {
     "country": "Brunei",
@@ -4244,9 +4602,11 @@
       "pisa_overall_score": 42,
       "intentional_homicides": 11,
       "water_stress_level": 42,
-      "lpi_infrastructure": 64
+      "lpi_infrastructure": 64,
+      "universal_health_coverage_index": 52,
+      "government_effectiveness": 20
     },
-    "kpi_count": 13
+    "kpi_count": 15
   },
   {
     "country": "Eritrea",
@@ -4256,7 +4616,7 @@
       "female_labor_force_participation": 13,
       "education_expenditure_of_gdp": 171,
       "democracy_index": 153,
-      "human_development_index_hdi": 177,
+      "human_development_index_hdi": 178,
       "political_corruption_index": 127,
       "general_government_gross_debt_gdp": 189,
       "environmental_performance_index": 144,
@@ -4265,9 +4625,11 @@
       "intentional_homicides": 156,
       "water_stress_level": 90,
       "social_progress_index": 147,
-      "lpi_infrastructure": 166
+      "lpi_infrastructure": 166,
+      "universal_health_coverage_index": 163,
+      "government_effectiveness": 190
     },
-    "kpi_count": 15
+    "kpi_count": 17
   },
   {
     "country": "Bahamas",
@@ -4282,9 +4644,11 @@
       "environmental_performance_index": 28,
       "inform_resilience_index": 32,
       "intentional_homicides": 169,
-      "lpi_infrastructure": 98
+      "lpi_infrastructure": 98,
+      "universal_health_coverage_index": 56,
+      "government_effectiveness": 67
     },
-    "kpi_count": 11
+    "kpi_count": 13
   },
   {
     "country": "Afghanistan",
@@ -4295,7 +4659,7 @@
       "female_labor_force_participation": 178,
       "education_expenditure_of_gdp": 84,
       "democracy_index": 167,
-      "human_development_index_hdi": 180,
+      "human_development_index_hdi": 181,
       "political_corruption_index": 113,
       "general_government_gross_debt_gdp": 7,
       "environmental_performance_index": 81,
@@ -4304,9 +4668,11 @@
       "intentional_homicides": 106,
       "water_stress_level": 145,
       "social_progress_index": 149,
-      "lpi_infrastructure": 168
+      "lpi_infrastructure": 168,
+      "universal_health_coverage_index": 178,
+      "government_effectiveness": 193
     },
-    "kpi_count": 16
+    "kpi_count": 18
   },
   {
     "country": "Saint Vincent-Grenadines",
@@ -4316,13 +4682,16 @@
       "employment_to_population_ratio": 116,
       "female_labor_force_participation": 72,
       "education_expenditure_of_gdp": 17,
+      "human_development_index_hdi": 75,
       "general_government_gross_debt_gdp": 163,
       "environmental_performance_index": 37,
       "inform_resilience_index": 74,
       "intentional_homicides": 177,
-      "water_stress_level": 76
+      "water_stress_level": 76,
+      "universal_health_coverage_index": 97,
+      "government_effectiveness": 81
     },
-    "kpi_count": 10
+    "kpi_count": 13
   },
   {
     "country": "Libya",
@@ -4333,15 +4702,17 @@
       "female_labor_force_participation": 155,
       "education_expenditure_of_gdp": 167,
       "democracy_index": 140,
-      "human_development_index_hdi": 115,
+      "human_development_index_hdi": 116,
       "political_corruption_index": 147,
       "global_peace_index": 131,
       "inform_resilience_index": 147,
       "water_stress_level": 174,
       "social_progress_index": 108,
-      "lpi_infrastructure": 169
+      "lpi_infrastructure": 169,
+      "universal_health_coverage_index": 121,
+      "government_effectiveness": 185
     },
-    "kpi_count": 13
+    "kpi_count": 15
   },
   {
     "country": "Somalia",
@@ -4350,15 +4721,17 @@
       "employment_to_population_ratio": 176,
       "female_labor_force_participation": 167,
       "education_expenditure_of_gdp": 192,
-      "human_development_index_hdi": 191,
+      "human_development_index_hdi": 192,
       "political_corruption_index": 164,
       "global_peace_index": 151,
       "inform_resilience_index": 190,
       "water_stress_level": 116,
       "social_progress_index": 148,
-      "lpi_infrastructure": 167
+      "lpi_infrastructure": 167,
+      "universal_health_coverage_index": 193,
+      "government_effectiveness": 192
     },
-    "kpi_count": 11
+    "kpi_count": 13
   },
   {
     "country": "Saint Kitts and Nevis",
@@ -4369,9 +4742,11 @@
       "general_government_gross_debt_gdp": 116,
       "inform_resilience_index": 12,
       "intentional_homicides": 178,
-      "water_stress_level": 142
+      "water_stress_level": 142,
+      "universal_health_coverage_index": 47,
+      "government_effectiveness": 64
     },
-    "kpi_count": 7
+    "kpi_count": 9
   },
   {
     "country": "San Marino",
@@ -4380,35 +4755,41 @@
       "education_expenditure_of_gdp": 145,
       "human_development_index_hdi": 30,
       "general_government_gross_debt_gdp": 118,
-      "intentional_homicides": 102
+      "intentional_homicides": 102,
+      "universal_health_coverage_index": 58,
+      "government_effectiveness": 24
     },
-    "kpi_count": 5
+    "kpi_count": 7
   },
   {
     "country": "Palau",
     "ranks": {
       "inflation_consumer_price_index": 60,
       "education_expenditure_of_gdp": 119,
-      "human_development_index_hdi": 83,
+      "human_development_index_hdi": 84,
       "general_government_gross_debt_gdp": 119,
       "inform_resilience_index": 31,
-      "intentional_homicides": 147
+      "intentional_homicides": 147,
+      "universal_health_coverage_index": 114,
+      "government_effectiveness": 55
     },
-    "kpi_count": 6
+    "kpi_count": 8
   },
   {
     "country": "Dominica",
     "ranks": {
       "inflation_consumer_price_index": 69,
       "education_expenditure_of_gdp": 43,
-      "human_development_index_hdi": 96,
+      "human_development_index_hdi": 97,
       "general_government_gross_debt_gdp": 164,
       "environmental_performance_index": 42,
       "inform_resilience_index": 58,
       "intentional_homicides": 166,
-      "water_stress_level": 86
+      "water_stress_level": 86,
+      "universal_health_coverage_index": 149,
+      "government_effectiveness": 68
     },
-    "kpi_count": 8
+    "kpi_count": 10
   },
   {
     "country": "Antigua and Barbuda",
@@ -4421,9 +4802,11 @@
       "inform_resilience_index": 18,
       "intentional_homicides": 144,
       "water_stress_level": 82,
-      "lpi_infrastructure": 80
+      "lpi_infrastructure": 80,
+      "universal_health_coverage_index": 67,
+      "government_effectiveness": 63
     },
-    "kpi_count": 9
+    "kpi_count": 11
   },
   {
     "country": "Liechtenstein",
@@ -4432,9 +4815,10 @@
       "human_development_index_hdi": 16,
       "general_government_gross_debt_gdp": 1,
       "inform_resilience_index": 2,
-      "intentional_homicides": 119
+      "intentional_homicides": 119,
+      "government_effectiveness": 9
     },
-    "kpi_count": 5
+    "kpi_count": 6
   },
   {
     "country": "Andorra",
@@ -4442,17 +4826,21 @@
       "education_expenditure_of_gdp": 177,
       "human_development_index_hdi": 31,
       "general_government_gross_debt_gdp": 37,
-      "intentional_homicides": 92
+      "intentional_homicides": 92,
+      "universal_health_coverage_index": 48,
+      "government_effectiveness": 18
     },
-    "kpi_count": 4
+    "kpi_count": 6
   },
   {
     "country": "Monaco",
     "ranks": {
       "education_expenditure_of_gdp": 181,
-      "intentional_homicides": 95
+      "intentional_homicides": 95,
+      "universal_health_coverage_index": 26,
+      "government_effectiveness": 3
     },
-    "kpi_count": 2
+    "kpi_count": 4
   },
   {
     "country": "Taiwan",
@@ -4472,15 +4860,17 @@
     "country": "World",
     "ranks": {
       "democracy_index": 87,
-      "human_development_index_hdi": 98
+      "human_development_index_hdi": 99,
+      "universal_health_coverage_index": 104
     },
-    "kpi_count": 2
+    "kpi_count": 3
   },
   {
     "country": "Greenland",
     "ranks": {
-      "intentional_homicides": 122
+      "intentional_homicides": 122,
+      "government_effectiveness": 39
     },
-    "kpi_count": 1
+    "kpi_count": 2
   }
 ]

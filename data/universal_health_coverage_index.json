@@ -1,1 +1,8108 @@
-[]
+[
+  {
+    "country": "Afghanistan",
+    "iso2": "AFG",
+    "year": 2000,
+    "value": 22.60528
+  },
+  {
+    "country": "Afghanistan",
+    "iso2": "AFG",
+    "year": 2005,
+    "value": 27.51268
+  },
+  {
+    "country": "Afghanistan",
+    "iso2": "AFG",
+    "year": 2010,
+    "value": 29.43584
+  },
+  {
+    "country": "Afghanistan",
+    "iso2": "AFG",
+    "year": 2015,
+    "value": 35.57227
+  },
+  {
+    "country": "Afghanistan",
+    "iso2": "AFG",
+    "year": 2017,
+    "value": 40.55108
+  },
+  {
+    "country": "Afghanistan",
+    "iso2": "AFG",
+    "year": 2019,
+    "value": 41.72071
+  },
+  {
+    "country": "Afghanistan",
+    "iso2": "AFG",
+    "year": 2021,
+    "value": 40.88461
+  },
+  {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2000,
+    "value": 42.62449
+  },
+  {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2005,
+    "value": 51.897
+  },
+  {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2010,
+    "value": 57.38092
+  },
+  {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2015,
+    "value": 60.99557
+  },
+  {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2017,
+    "value": 61.48473
+  },
+  {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2019,
+    "value": 63.57093
+  },
+  {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2021,
+    "value": 63.76895
+  },
+  {
+    "country": "Algeria",
+    "iso2": "DZA",
+    "year": 2000,
+    "value": 56.41185
+  },
+  {
+    "country": "Algeria",
+    "iso2": "DZA",
+    "year": 2005,
+    "value": 61.09153
+  },
+  {
+    "country": "Algeria",
+    "iso2": "DZA",
+    "year": 2010,
+    "value": 67.18185
+  },
+  {
+    "country": "Algeria",
+    "iso2": "DZA",
+    "year": 2015,
+    "value": 73.80888
+  },
+  {
+    "country": "Algeria",
+    "iso2": "DZA",
+    "year": 2017,
+    "value": 74.04772
+  },
+  {
+    "country": "Algeria",
+    "iso2": "DZA",
+    "year": 2019,
+    "value": 74.34503
+  },
+  {
+    "country": "Algeria",
+    "iso2": "DZA",
+    "year": 2021,
+    "value": 74.11164
+  },
+  {
+    "country": "Andorra",
+    "iso2": "AND",
+    "year": 2000,
+    "value": 67.36547
+  },
+  {
+    "country": "Andorra",
+    "iso2": "AND",
+    "year": 2005,
+    "value": 71.49519
+  },
+  {
+    "country": "Andorra",
+    "iso2": "AND",
+    "year": 2010,
+    "value": 74.17595
+  },
+  {
+    "country": "Andorra",
+    "iso2": "AND",
+    "year": 2015,
+    "value": 74.73157
+  },
+  {
+    "country": "Andorra",
+    "iso2": "AND",
+    "year": 2017,
+    "value": 75.51331
+  },
+  {
+    "country": "Andorra",
+    "iso2": "AND",
+    "year": 2019,
+    "value": 78.05398
+  },
+  {
+    "country": "Andorra",
+    "iso2": "AND",
+    "year": 2021,
+    "value": 78.86248
+  },
+  {
+    "country": "Angola",
+    "iso2": "AGO",
+    "year": 2000,
+    "value": 20.51539
+  },
+  {
+    "country": "Angola",
+    "iso2": "AGO",
+    "year": 2005,
+    "value": 23.65722
+  },
+  {
+    "country": "Angola",
+    "iso2": "AGO",
+    "year": 2010,
+    "value": 31.21417
+  },
+  {
+    "country": "Angola",
+    "iso2": "AGO",
+    "year": 2015,
+    "value": 35.5978
+  },
+  {
+    "country": "Angola",
+    "iso2": "AGO",
+    "year": 2017,
+    "value": 39.84338
+  },
+  {
+    "country": "Angola",
+    "iso2": "AGO",
+    "year": 2019,
+    "value": 39.35772
+  },
+  {
+    "country": "Angola",
+    "iso2": "AGO",
+    "year": 2021,
+    "value": 36.72917
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "iso2": "ATG",
+    "year": 2000,
+    "value": 54.0169
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "iso2": "ATG",
+    "year": 2005,
+    "value": 66.66954
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "iso2": "ATG",
+    "year": 2010,
+    "value": 72.94039
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "iso2": "ATG",
+    "year": 2015,
+    "value": 77.60541
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "iso2": "ATG",
+    "year": 2017,
+    "value": 76.52543
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "iso2": "ATG",
+    "year": 2019,
+    "value": 74.56584
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "iso2": "ATG",
+    "year": 2021,
+    "value": 75.79523
+  },
+  {
+    "country": "Argentina",
+    "iso2": "ARG",
+    "year": 2000,
+    "value": 68.04714
+  },
+  {
+    "country": "Argentina",
+    "iso2": "ARG",
+    "year": 2005,
+    "value": 73.82919
+  },
+  {
+    "country": "Argentina",
+    "iso2": "ARG",
+    "year": 2010,
+    "value": 76.45497
+  },
+  {
+    "country": "Argentina",
+    "iso2": "ARG",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Argentina",
+    "iso2": "ARG",
+    "year": 2017,
+    "value": 78.63055
+  },
+  {
+    "country": "Argentina",
+    "iso2": "ARG",
+    "year": 2019,
+    "value": 77.99396
+  },
+  {
+    "country": "Argentina",
+    "iso2": "ARG",
+    "year": 2021,
+    "value": 78.52537
+  },
+  {
+    "country": "Armenia",
+    "iso2": "ARM",
+    "year": 2000,
+    "value": 44.32031
+  },
+  {
+    "country": "Armenia",
+    "iso2": "ARM",
+    "year": 2005,
+    "value": 51.33242
+  },
+  {
+    "country": "Armenia",
+    "iso2": "ARM",
+    "year": 2010,
+    "value": 60.0615
+  },
+  {
+    "country": "Armenia",
+    "iso2": "ARM",
+    "year": 2015,
+    "value": 67.16526
+  },
+  {
+    "country": "Armenia",
+    "iso2": "ARM",
+    "year": 2017,
+    "value": 69.47808
+  },
+  {
+    "country": "Armenia",
+    "iso2": "ARM",
+    "year": 2019,
+    "value": 70.22999
+  },
+  {
+    "country": "Armenia",
+    "iso2": "ARM",
+    "year": 2021,
+    "value": 68.19311
+  },
+  {
+    "country": "Australia",
+    "iso2": "AUS",
+    "year": 2000,
+    "value": 80.0
+  },
+  {
+    "country": "Australia",
+    "iso2": "AUS",
+    "year": 2005,
+    "value": 80.0
+  },
+  {
+    "country": "Australia",
+    "iso2": "AUS",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Australia",
+    "iso2": "AUS",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Australia",
+    "iso2": "AUS",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Australia",
+    "iso2": "AUS",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Australia",
+    "iso2": "AUS",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Austria",
+    "iso2": "AUT",
+    "year": 2000,
+    "value": 69.85424
+  },
+  {
+    "country": "Austria",
+    "iso2": "AUT",
+    "year": 2005,
+    "value": 77.39629
+  },
+  {
+    "country": "Austria",
+    "iso2": "AUT",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Austria",
+    "iso2": "AUT",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Austria",
+    "iso2": "AUT",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Austria",
+    "iso2": "AUT",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Austria",
+    "iso2": "AUT",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Azerbaijan",
+    "iso2": "AZE",
+    "year": 2000,
+    "value": 42.03552
+  },
+  {
+    "country": "Azerbaijan",
+    "iso2": "AZE",
+    "year": 2005,
+    "value": 37.80304
+  },
+  {
+    "country": "Azerbaijan",
+    "iso2": "AZE",
+    "year": 2010,
+    "value": 50.51886
+  },
+  {
+    "country": "Azerbaijan",
+    "iso2": "AZE",
+    "year": 2015,
+    "value": 61.51084
+  },
+  {
+    "country": "Azerbaijan",
+    "iso2": "AZE",
+    "year": 2017,
+    "value": 64.13299
+  },
+  {
+    "country": "Azerbaijan",
+    "iso2": "AZE",
+    "year": 2019,
+    "value": 66.51683
+  },
+  {
+    "country": "Azerbaijan",
+    "iso2": "AZE",
+    "year": 2021,
+    "value": 65.65727
+  },
+  {
+    "country": "Bahamas",
+    "iso2": "BHS",
+    "year": 2000,
+    "value": 53.83782
+  },
+  {
+    "country": "Bahamas",
+    "iso2": "BHS",
+    "year": 2005,
+    "value": 71.09119
+  },
+  {
+    "country": "Bahamas",
+    "iso2": "BHS",
+    "year": 2010,
+    "value": 73.1485
+  },
+  {
+    "country": "Bahamas",
+    "iso2": "BHS",
+    "year": 2015,
+    "value": 76.77241
+  },
+  {
+    "country": "Bahamas",
+    "iso2": "BHS",
+    "year": 2017,
+    "value": 78.73966
+  },
+  {
+    "country": "Bahamas",
+    "iso2": "BHS",
+    "year": 2019,
+    "value": 78.75336
+  },
+  {
+    "country": "Bahamas",
+    "iso2": "BHS",
+    "year": 2021,
+    "value": 77.19485
+  },
+  {
+    "country": "Bahrain",
+    "iso2": "BHR",
+    "year": 2000,
+    "value": 59.81269
+  },
+  {
+    "country": "Bahrain",
+    "iso2": "BHR",
+    "year": 2005,
+    "value": 63.71456
+  },
+  {
+    "country": "Bahrain",
+    "iso2": "BHR",
+    "year": 2010,
+    "value": 67.50298
+  },
+  {
+    "country": "Bahrain",
+    "iso2": "BHR",
+    "year": 2015,
+    "value": 72.94302
+  },
+  {
+    "country": "Bahrain",
+    "iso2": "BHR",
+    "year": 2017,
+    "value": 73.57151
+  },
+  {
+    "country": "Bahrain",
+    "iso2": "BHR",
+    "year": 2019,
+    "value": 76.2429
+  },
+  {
+    "country": "Bahrain",
+    "iso2": "BHR",
+    "year": 2021,
+    "value": 76.03581
+  },
+  {
+    "country": "Bangladesh",
+    "iso2": "BGD",
+    "year": 2000,
+    "value": 23.38344
+  },
+  {
+    "country": "Bangladesh",
+    "iso2": "BGD",
+    "year": 2005,
+    "value": 27.39814
+  },
+  {
+    "country": "Bangladesh",
+    "iso2": "BGD",
+    "year": 2010,
+    "value": 36.57942
+  },
+  {
+    "country": "Bangladesh",
+    "iso2": "BGD",
+    "year": 2015,
+    "value": 45.1692
+  },
+  {
+    "country": "Bangladesh",
+    "iso2": "BGD",
+    "year": 2017,
+    "value": 48.07839
+  },
+  {
+    "country": "Bangladesh",
+    "iso2": "BGD",
+    "year": 2019,
+    "value": 49.9642
+  },
+  {
+    "country": "Bangladesh",
+    "iso2": "BGD",
+    "year": 2021,
+    "value": 51.61948
+  },
+  {
+    "country": "Barbados",
+    "iso2": "BRB",
+    "year": 2000,
+    "value": 54.19871
+  },
+  {
+    "country": "Barbados",
+    "iso2": "BRB",
+    "year": 2005,
+    "value": 72.15047
+  },
+  {
+    "country": "Barbados",
+    "iso2": "BRB",
+    "year": 2010,
+    "value": 74.77112
+  },
+  {
+    "country": "Barbados",
+    "iso2": "BRB",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Barbados",
+    "iso2": "BRB",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Barbados",
+    "iso2": "BRB",
+    "year": 2019,
+    "value": 78.70071
+  },
+  {
+    "country": "Barbados",
+    "iso2": "BRB",
+    "year": 2021,
+    "value": 76.92128
+  },
+  {
+    "country": "Belarus",
+    "iso2": "BLR",
+    "year": 2000,
+    "value": 52.83664
+  },
+  {
+    "country": "Belarus",
+    "iso2": "BLR",
+    "year": 2005,
+    "value": 59.20566
+  },
+  {
+    "country": "Belarus",
+    "iso2": "BLR",
+    "year": 2010,
+    "value": 70.07163
+  },
+  {
+    "country": "Belarus",
+    "iso2": "BLR",
+    "year": 2015,
+    "value": 75.65266
+  },
+  {
+    "country": "Belarus",
+    "iso2": "BLR",
+    "year": 2017,
+    "value": 78.11448
+  },
+  {
+    "country": "Belarus",
+    "iso2": "BLR",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Belarus",
+    "iso2": "BLR",
+    "year": 2021,
+    "value": 78.56763
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BEL",
+    "year": 2000,
+    "value": 76.61296
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BEL",
+    "year": 2005,
+    "value": 80.0
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BEL",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BEL",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BEL",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BEL",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BEL",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Belize",
+    "iso2": "BLZ",
+    "year": 2000,
+    "value": 47.28611
+  },
+  {
+    "country": "Belize",
+    "iso2": "BLZ",
+    "year": 2005,
+    "value": 57.6748
+  },
+  {
+    "country": "Belize",
+    "iso2": "BLZ",
+    "year": 2010,
+    "value": 64.03525
+  },
+  {
+    "country": "Belize",
+    "iso2": "BLZ",
+    "year": 2015,
+    "value": 69.38981
+  },
+  {
+    "country": "Belize",
+    "iso2": "BLZ",
+    "year": 2017,
+    "value": 68.14495
+  },
+  {
+    "country": "Belize",
+    "iso2": "BLZ",
+    "year": 2019,
+    "value": 69.22544
+  },
+  {
+    "country": "Belize",
+    "iso2": "BLZ",
+    "year": 2021,
+    "value": 67.60394
+  },
+  {
+    "country": "Benin",
+    "iso2": "BEN",
+    "year": 2000,
+    "value": 20.65965
+  },
+  {
+    "country": "Benin",
+    "iso2": "BEN",
+    "year": 2005,
+    "value": 22.10853
+  },
+  {
+    "country": "Benin",
+    "iso2": "BEN",
+    "year": 2010,
+    "value": 33.211
+  },
+  {
+    "country": "Benin",
+    "iso2": "BEN",
+    "year": 2015,
+    "value": 34.68574
+  },
+  {
+    "country": "Benin",
+    "iso2": "BEN",
+    "year": 2017,
+    "value": 33.93094
+  },
+  {
+    "country": "Benin",
+    "iso2": "BEN",
+    "year": 2019,
+    "value": 35.25361
+  },
+  {
+    "country": "Benin",
+    "iso2": "BEN",
+    "year": 2021,
+    "value": 37.89256
+  },
+  {
+    "country": "Bhutan",
+    "iso2": "BTN",
+    "year": 2000,
+    "value": 35.1624
+  },
+  {
+    "country": "Bhutan",
+    "iso2": "BTN",
+    "year": 2005,
+    "value": 36.52815
+  },
+  {
+    "country": "Bhutan",
+    "iso2": "BTN",
+    "year": 2010,
+    "value": 44.34076
+  },
+  {
+    "country": "Bhutan",
+    "iso2": "BTN",
+    "year": 2015,
+    "value": 53.19759
+  },
+  {
+    "country": "Bhutan",
+    "iso2": "BTN",
+    "year": 2017,
+    "value": 55.75522
+  },
+  {
+    "country": "Bhutan",
+    "iso2": "BTN",
+    "year": 2019,
+    "value": 60.17197
+  },
+  {
+    "country": "Bhutan",
+    "iso2": "BTN",
+    "year": 2021,
+    "value": 60.42171
+  },
+  {
+    "country": "Bolivia",
+    "iso2": "BOL",
+    "year": 2000,
+    "value": 36.87305
+  },
+  {
+    "country": "Bolivia",
+    "iso2": "BOL",
+    "year": 2005,
+    "value": 38.9781
+  },
+  {
+    "country": "Bolivia",
+    "iso2": "BOL",
+    "year": 2010,
+    "value": 47.45756
+  },
+  {
+    "country": "Bolivia",
+    "iso2": "BOL",
+    "year": 2015,
+    "value": 60.25314
+  },
+  {
+    "country": "Bolivia",
+    "iso2": "BOL",
+    "year": 2017,
+    "value": 64.00739
+  },
+  {
+    "country": "Bolivia",
+    "iso2": "BOL",
+    "year": 2019,
+    "value": 65.09212
+  },
+  {
+    "country": "Bolivia",
+    "iso2": "BOL",
+    "year": 2021,
+    "value": 65.06229
+  },
+  {
+    "country": "Bosnia Herzegovina",
+    "iso2": "BIH",
+    "year": 2000,
+    "value": 44.36213
+  },
+  {
+    "country": "Bosnia Herzegovina",
+    "iso2": "BIH",
+    "year": 2005,
+    "value": 61.05249
+  },
+  {
+    "country": "Bosnia Herzegovina",
+    "iso2": "BIH",
+    "year": 2010,
+    "value": 62.398
+  },
+  {
+    "country": "Bosnia Herzegovina",
+    "iso2": "BIH",
+    "year": 2015,
+    "value": 68.02817
+  },
+  {
+    "country": "Bosnia Herzegovina",
+    "iso2": "BIH",
+    "year": 2017,
+    "value": 70.38882
+  },
+  {
+    "country": "Bosnia Herzegovina",
+    "iso2": "BIH",
+    "year": 2019,
+    "value": 67.23395
+  },
+  {
+    "country": "Bosnia Herzegovina",
+    "iso2": "BIH",
+    "year": 2021,
+    "value": 66.47112
+  },
+  {
+    "country": "Botswana",
+    "iso2": "BWA",
+    "year": 2000,
+    "value": 35.46302
+  },
+  {
+    "country": "Botswana",
+    "iso2": "BWA",
+    "year": 2005,
+    "value": 47.94382
+  },
+  {
+    "country": "Botswana",
+    "iso2": "BWA",
+    "year": 2010,
+    "value": 53.79683
+  },
+  {
+    "country": "Botswana",
+    "iso2": "BWA",
+    "year": 2015,
+    "value": 57.5769
+  },
+  {
+    "country": "Botswana",
+    "iso2": "BWA",
+    "year": 2017,
+    "value": 57.97421
+  },
+  {
+    "country": "Botswana",
+    "iso2": "BWA",
+    "year": 2019,
+    "value": 55.31324
+  },
+  {
+    "country": "Botswana",
+    "iso2": "BWA",
+    "year": 2021,
+    "value": 55.17985
+  },
+  {
+    "country": "Brazil",
+    "iso2": "BRA",
+    "year": 2000,
+    "value": 68.04693
+  },
+  {
+    "country": "Brazil",
+    "iso2": "BRA",
+    "year": 2005,
+    "value": 73.40996
+  },
+  {
+    "country": "Brazil",
+    "iso2": "BRA",
+    "year": 2010,
+    "value": 76.01514
+  },
+  {
+    "country": "Brazil",
+    "iso2": "BRA",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Brazil",
+    "iso2": "BRA",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Brazil",
+    "iso2": "BRA",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Brazil",
+    "iso2": "BRA",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Brunei",
+    "iso2": "BRN",
+    "year": 2000,
+    "value": 49.39087
+  },
+  {
+    "country": "Brunei",
+    "iso2": "BRN",
+    "year": 2005,
+    "value": 63.84196
+  },
+  {
+    "country": "Brunei",
+    "iso2": "BRN",
+    "year": 2010,
+    "value": 69.67525
+  },
+  {
+    "country": "Brunei",
+    "iso2": "BRN",
+    "year": 2015,
+    "value": 75.1149
+  },
+  {
+    "country": "Brunei",
+    "iso2": "BRN",
+    "year": 2017,
+    "value": 77.67146
+  },
+  {
+    "country": "Brunei",
+    "iso2": "BRN",
+    "year": 2019,
+    "value": 77.14001
+  },
+  {
+    "country": "Brunei",
+    "iso2": "BRN",
+    "year": 2021,
+    "value": 78.34303
+  },
+  {
+    "country": "Bulgaria",
+    "iso2": "BGR",
+    "year": 2000,
+    "value": 56.23362
+  },
+  {
+    "country": "Bulgaria",
+    "iso2": "BGR",
+    "year": 2005,
+    "value": 60.81434
+  },
+  {
+    "country": "Bulgaria",
+    "iso2": "BGR",
+    "year": 2010,
+    "value": 65.17148
+  },
+  {
+    "country": "Bulgaria",
+    "iso2": "BGR",
+    "year": 2015,
+    "value": 70.32406
+  },
+  {
+    "country": "Bulgaria",
+    "iso2": "BGR",
+    "year": 2017,
+    "value": 72.439
+  },
+  {
+    "country": "Bulgaria",
+    "iso2": "BGR",
+    "year": 2019,
+    "value": 75.77181
+  },
+  {
+    "country": "Bulgaria",
+    "iso2": "BGR",
+    "year": 2021,
+    "value": 73.4856
+  },
+  {
+    "country": "Burkina Faso",
+    "iso2": "BFA",
+    "year": 2000,
+    "value": 15.4195
+  },
+  {
+    "country": "Burkina Faso",
+    "iso2": "BFA",
+    "year": 2005,
+    "value": 21.31436
+  },
+  {
+    "country": "Burkina Faso",
+    "iso2": "BFA",
+    "year": 2010,
+    "value": 29.88395
+  },
+  {
+    "country": "Burkina Faso",
+    "iso2": "BFA",
+    "year": 2015,
+    "value": 35.48542
+  },
+  {
+    "country": "Burkina Faso",
+    "iso2": "BFA",
+    "year": 2017,
+    "value": 37.68524
+  },
+  {
+    "country": "Burkina Faso",
+    "iso2": "BFA",
+    "year": 2019,
+    "value": 38.0715
+  },
+  {
+    "country": "Burkina Faso",
+    "iso2": "BFA",
+    "year": 2021,
+    "value": 39.60456
+  },
+  {
+    "country": "Burundi",
+    "iso2": "BDI",
+    "year": 2000,
+    "value": 19.364
+  },
+  {
+    "country": "Burundi",
+    "iso2": "BDI",
+    "year": 2005,
+    "value": 23.64375
+  },
+  {
+    "country": "Burundi",
+    "iso2": "BDI",
+    "year": 2010,
+    "value": 33.46381
+  },
+  {
+    "country": "Burundi",
+    "iso2": "BDI",
+    "year": 2015,
+    "value": 40.24527
+  },
+  {
+    "country": "Burundi",
+    "iso2": "BDI",
+    "year": 2017,
+    "value": 39.70335
+  },
+  {
+    "country": "Burundi",
+    "iso2": "BDI",
+    "year": 2019,
+    "value": 41.68614
+  },
+  {
+    "country": "Burundi",
+    "iso2": "BDI",
+    "year": 2021,
+    "value": 41.46003
+  },
+  {
+    "country": "Cambodia",
+    "iso2": "KHM",
+    "year": 2000,
+    "value": 23.90044
+  },
+  {
+    "country": "Cambodia",
+    "iso2": "KHM",
+    "year": 2005,
+    "value": 37.24602
+  },
+  {
+    "country": "Cambodia",
+    "iso2": "KHM",
+    "year": 2010,
+    "value": 50.46432
+  },
+  {
+    "country": "Cambodia",
+    "iso2": "KHM",
+    "year": 2015,
+    "value": 55.90014
+  },
+  {
+    "country": "Cambodia",
+    "iso2": "KHM",
+    "year": 2017,
+    "value": 59.67848
+  },
+  {
+    "country": "Cambodia",
+    "iso2": "KHM",
+    "year": 2019,
+    "value": 58.29306
+  },
+  {
+    "country": "Cambodia",
+    "iso2": "KHM",
+    "year": 2021,
+    "value": 57.98489
+  },
+  {
+    "country": "Cameroon",
+    "iso2": "CMR",
+    "year": 2000,
+    "value": 22.3873
+  },
+  {
+    "country": "Cameroon",
+    "iso2": "CMR",
+    "year": 2005,
+    "value": 28.42808
+  },
+  {
+    "country": "Cameroon",
+    "iso2": "CMR",
+    "year": 2010,
+    "value": 32.96333
+  },
+  {
+    "country": "Cameroon",
+    "iso2": "CMR",
+    "year": 2015,
+    "value": 41.93261
+  },
+  {
+    "country": "Cameroon",
+    "iso2": "CMR",
+    "year": 2017,
+    "value": 43.17722
+  },
+  {
+    "country": "Cameroon",
+    "iso2": "CMR",
+    "year": 2019,
+    "value": 42.63574
+  },
+  {
+    "country": "Cameroon",
+    "iso2": "CMR",
+    "year": 2021,
+    "value": 43.87635
+  },
+  {
+    "country": "Canada",
+    "iso2": "CAN",
+    "year": 2000,
+    "value": 73.74116
+  },
+  {
+    "country": "Canada",
+    "iso2": "CAN",
+    "year": 2005,
+    "value": 79.43651
+  },
+  {
+    "country": "Canada",
+    "iso2": "CAN",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Canada",
+    "iso2": "CAN",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Canada",
+    "iso2": "CAN",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Canada",
+    "iso2": "CAN",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Canada",
+    "iso2": "CAN",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Cape Verde",
+    "iso2": "CPV",
+    "year": 2000,
+    "value": 43.10192
+  },
+  {
+    "country": "Cape Verde",
+    "iso2": "CPV",
+    "year": 2005,
+    "value": 53.51265
+  },
+  {
+    "country": "Cape Verde",
+    "iso2": "CPV",
+    "year": 2010,
+    "value": 62.6954
+  },
+  {
+    "country": "Cape Verde",
+    "iso2": "CPV",
+    "year": 2015,
+    "value": 67.98614
+  },
+  {
+    "country": "Cape Verde",
+    "iso2": "CPV",
+    "year": 2017,
+    "value": 69.55247
+  },
+  {
+    "country": "Cape Verde",
+    "iso2": "CPV",
+    "year": 2019,
+    "value": 68.83315
+  },
+  {
+    "country": "Cape Verde",
+    "iso2": "CPV",
+    "year": 2021,
+    "value": 71.17687
+  },
+  {
+    "country": "Central African Republic",
+    "iso2": "CAF",
+    "year": 2000,
+    "value": 17.73278
+  },
+  {
+    "country": "Central African Republic",
+    "iso2": "CAF",
+    "year": 2005,
+    "value": 18.914
+  },
+  {
+    "country": "Central African Republic",
+    "iso2": "CAF",
+    "year": 2010,
+    "value": 26.01012
+  },
+  {
+    "country": "Central African Republic",
+    "iso2": "CAF",
+    "year": 2015,
+    "value": 29.50684
+  },
+  {
+    "country": "Central African Republic",
+    "iso2": "CAF",
+    "year": 2017,
+    "value": 30.2378
+  },
+  {
+    "country": "Central African Republic",
+    "iso2": "CAF",
+    "year": 2019,
+    "value": 30.57638
+  },
+  {
+    "country": "Central African Republic",
+    "iso2": "CAF",
+    "year": 2021,
+    "value": 32.26192
+  },
+  {
+    "country": "Chad",
+    "iso2": "TCD",
+    "year": 2000,
+    "value": 14.5817
+  },
+  {
+    "country": "Chad",
+    "iso2": "TCD",
+    "year": 2005,
+    "value": 15.59872
+  },
+  {
+    "country": "Chad",
+    "iso2": "TCD",
+    "year": 2010,
+    "value": 22.26037
+  },
+  {
+    "country": "Chad",
+    "iso2": "TCD",
+    "year": 2015,
+    "value": 26.83309
+  },
+  {
+    "country": "Chad",
+    "iso2": "TCD",
+    "year": 2017,
+    "value": 28.16784
+  },
+  {
+    "country": "Chad",
+    "iso2": "TCD",
+    "year": 2019,
+    "value": 26.63073
+  },
+  {
+    "country": "Chad",
+    "iso2": "TCD",
+    "year": 2021,
+    "value": 29.40162
+  },
+  {
+    "country": "Chile",
+    "iso2": "CHL",
+    "year": 2000,
+    "value": 65.02777
+  },
+  {
+    "country": "Chile",
+    "iso2": "CHL",
+    "year": 2005,
+    "value": 73.63523
+  },
+  {
+    "country": "Chile",
+    "iso2": "CHL",
+    "year": 2010,
+    "value": 76.76622
+  },
+  {
+    "country": "Chile",
+    "iso2": "CHL",
+    "year": 2015,
+    "value": 79.48533
+  },
+  {
+    "country": "Chile",
+    "iso2": "CHL",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Chile",
+    "iso2": "CHL",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Chile",
+    "iso2": "CHL",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "China",
+    "iso2": "CHN",
+    "year": 2000,
+    "value": 46.70368
+  },
+  {
+    "country": "China",
+    "iso2": "CHN",
+    "year": 2005,
+    "value": 56.73541
+  },
+  {
+    "country": "China",
+    "iso2": "CHN",
+    "year": 2010,
+    "value": 66.18852
+  },
+  {
+    "country": "China",
+    "iso2": "CHN",
+    "year": 2015,
+    "value": 75.70291
+  },
+  {
+    "country": "China",
+    "iso2": "CHN",
+    "year": 2017,
+    "value": 78.85642
+  },
+  {
+    "country": "China",
+    "iso2": "CHN",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "China",
+    "iso2": "CHN",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Colombia",
+    "iso2": "COL",
+    "year": 2000,
+    "value": 51.5003
+  },
+  {
+    "country": "Colombia",
+    "iso2": "COL",
+    "year": 2005,
+    "value": 62.69008
+  },
+  {
+    "country": "Colombia",
+    "iso2": "COL",
+    "year": 2010,
+    "value": 68.33423
+  },
+  {
+    "country": "Colombia",
+    "iso2": "COL",
+    "year": 2015,
+    "value": 77.82593
+  },
+  {
+    "country": "Colombia",
+    "iso2": "COL",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Colombia",
+    "iso2": "COL",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Colombia",
+    "iso2": "COL",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Comoros",
+    "iso2": "COM",
+    "year": 2000,
+    "value": 25.8583
+  },
+  {
+    "country": "Comoros",
+    "iso2": "COM",
+    "year": 2005,
+    "value": 32.12627
+  },
+  {
+    "country": "Comoros",
+    "iso2": "COM",
+    "year": 2010,
+    "value": 38.92088
+  },
+  {
+    "country": "Comoros",
+    "iso2": "COM",
+    "year": 2015,
+    "value": 43.77384
+  },
+  {
+    "country": "Comoros",
+    "iso2": "COM",
+    "year": 2017,
+    "value": 45.60096
+  },
+  {
+    "country": "Comoros",
+    "iso2": "COM",
+    "year": 2019,
+    "value": 45.63213
+  },
+  {
+    "country": "Comoros",
+    "iso2": "COM",
+    "year": 2021,
+    "value": 48.11962
+  },
+  {
+    "country": "Republic of the Congo",
+    "iso2": "COG",
+    "year": 2000,
+    "value": 20.97332
+  },
+  {
+    "country": "Republic of the Congo",
+    "iso2": "COG",
+    "year": 2005,
+    "value": 24.63898
+  },
+  {
+    "country": "Republic of the Congo",
+    "iso2": "COG",
+    "year": 2010,
+    "value": 29.74213
+  },
+  {
+    "country": "Republic of the Congo",
+    "iso2": "COG",
+    "year": 2015,
+    "value": 37.89627
+  },
+  {
+    "country": "Republic of the Congo",
+    "iso2": "COG",
+    "year": 2017,
+    "value": 36.0234
+  },
+  {
+    "country": "Republic of the Congo",
+    "iso2": "COG",
+    "year": 2019,
+    "value": 39.38063
+  },
+  {
+    "country": "Republic of the Congo",
+    "iso2": "COG",
+    "year": 2021,
+    "value": 41.00078
+  },
+  {
+    "country": "Costa Rica",
+    "iso2": "CRI",
+    "year": 2000,
+    "value": 65.50869
+  },
+  {
+    "country": "Costa Rica",
+    "iso2": "CRI",
+    "year": 2005,
+    "value": 70.32895
+  },
+  {
+    "country": "Costa Rica",
+    "iso2": "CRI",
+    "year": 2010,
+    "value": 74.93482
+  },
+  {
+    "country": "Costa Rica",
+    "iso2": "CRI",
+    "year": 2015,
+    "value": 77.44404
+  },
+  {
+    "country": "Costa Rica",
+    "iso2": "CRI",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Costa Rica",
+    "iso2": "CRI",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Costa Rica",
+    "iso2": "CRI",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Ivory Coast",
+    "iso2": "CIV",
+    "year": 2000,
+    "value": 21.66734
+  },
+  {
+    "country": "Ivory Coast",
+    "iso2": "CIV",
+    "year": 2005,
+    "value": 24.78389
+  },
+  {
+    "country": "Ivory Coast",
+    "iso2": "CIV",
+    "year": 2010,
+    "value": 33.35059
+  },
+  {
+    "country": "Ivory Coast",
+    "iso2": "CIV",
+    "year": 2015,
+    "value": 42.94068
+  },
+  {
+    "country": "Ivory Coast",
+    "iso2": "CIV",
+    "year": 2017,
+    "value": 44.4266
+  },
+  {
+    "country": "Ivory Coast",
+    "iso2": "CIV",
+    "year": 2019,
+    "value": 40.88472
+  },
+  {
+    "country": "Ivory Coast",
+    "iso2": "CIV",
+    "year": 2021,
+    "value": 42.77569
+  },
+  {
+    "country": "Croatia",
+    "iso2": "HRV",
+    "year": 2000,
+    "value": 70.72003
+  },
+  {
+    "country": "Croatia",
+    "iso2": "HRV",
+    "year": 2005,
+    "value": 73.81461
+  },
+  {
+    "country": "Croatia",
+    "iso2": "HRV",
+    "year": 2010,
+    "value": 76.82191
+  },
+  {
+    "country": "Croatia",
+    "iso2": "HRV",
+    "year": 2015,
+    "value": 77.54351
+  },
+  {
+    "country": "Croatia",
+    "iso2": "HRV",
+    "year": 2017,
+    "value": 78.57928
+  },
+  {
+    "country": "Croatia",
+    "iso2": "HRV",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Croatia",
+    "iso2": "HRV",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Cuba",
+    "iso2": "CUB",
+    "year": 2000,
+    "value": 56.22157
+  },
+  {
+    "country": "Cuba",
+    "iso2": "CUB",
+    "year": 2005,
+    "value": 70.8773
+  },
+  {
+    "country": "Cuba",
+    "iso2": "CUB",
+    "year": 2010,
+    "value": 78.30153
+  },
+  {
+    "country": "Cuba",
+    "iso2": "CUB",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Cuba",
+    "iso2": "CUB",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Cuba",
+    "iso2": "CUB",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Cuba",
+    "iso2": "CUB",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Cyprus",
+    "iso2": "CYP",
+    "year": 2000,
+    "value": 50.63619
+  },
+  {
+    "country": "Cyprus",
+    "iso2": "CYP",
+    "year": 2005,
+    "value": 66.68087
+  },
+  {
+    "country": "Cyprus",
+    "iso2": "CYP",
+    "year": 2010,
+    "value": 70.17817
+  },
+  {
+    "country": "Cyprus",
+    "iso2": "CYP",
+    "year": 2015,
+    "value": 78.24181
+  },
+  {
+    "country": "Cyprus",
+    "iso2": "CYP",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Cyprus",
+    "iso2": "CYP",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Cyprus",
+    "iso2": "CYP",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Czechia",
+    "iso2": "CZE",
+    "year": 2000,
+    "value": 76.89719
+  },
+  {
+    "country": "Czechia",
+    "iso2": "CZE",
+    "year": 2005,
+    "value": 77.30387
+  },
+  {
+    "country": "Czechia",
+    "iso2": "CZE",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Czechia",
+    "iso2": "CZE",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Czechia",
+    "iso2": "CZE",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Czechia",
+    "iso2": "CZE",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Czechia",
+    "iso2": "CZE",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "iso2": "COD",
+    "year": 2000,
+    "value": 20.62725
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "iso2": "COD",
+    "year": 2005,
+    "value": 22.68262
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "iso2": "COD",
+    "year": 2010,
+    "value": 29.64598
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "iso2": "COD",
+    "year": 2015,
+    "value": 36.895
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "iso2": "COD",
+    "year": 2017,
+    "value": 39.59255
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "iso2": "COD",
+    "year": 2019,
+    "value": 39.78853
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "iso2": "COD",
+    "year": 2021,
+    "value": 41.73901
+  },
+  {
+    "country": "Denmark",
+    "iso2": "DNK",
+    "year": 2000,
+    "value": 71.78837
+  },
+  {
+    "country": "Denmark",
+    "iso2": "DNK",
+    "year": 2005,
+    "value": 74.38334
+  },
+  {
+    "country": "Denmark",
+    "iso2": "DNK",
+    "year": 2010,
+    "value": 76.93965
+  },
+  {
+    "country": "Denmark",
+    "iso2": "DNK",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Denmark",
+    "iso2": "DNK",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Denmark",
+    "iso2": "DNK",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Denmark",
+    "iso2": "DNK",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Djibouti",
+    "iso2": "DJI",
+    "year": 2000,
+    "value": 23.38025
+  },
+  {
+    "country": "Djibouti",
+    "iso2": "DJI",
+    "year": 2005,
+    "value": 28.2272
+  },
+  {
+    "country": "Djibouti",
+    "iso2": "DJI",
+    "year": 2010,
+    "value": 36.68119
+  },
+  {
+    "country": "Djibouti",
+    "iso2": "DJI",
+    "year": 2015,
+    "value": 41.24912
+  },
+  {
+    "country": "Djibouti",
+    "iso2": "DJI",
+    "year": 2017,
+    "value": 45.08687
+  },
+  {
+    "country": "Djibouti",
+    "iso2": "DJI",
+    "year": 2019,
+    "value": 45.32812
+  },
+  {
+    "country": "Djibouti",
+    "iso2": "DJI",
+    "year": 2021,
+    "value": 43.91182
+  },
+  {
+    "country": "Dominica",
+    "iso2": "DMA",
+    "year": 2000,
+    "value": 48.80398
+  },
+  {
+    "country": "Dominica",
+    "iso2": "DMA",
+    "year": 2005,
+    "value": 59.99614
+  },
+  {
+    "country": "Dominica",
+    "iso2": "DMA",
+    "year": 2010,
+    "value": 65.53093
+  },
+  {
+    "country": "Dominica",
+    "iso2": "DMA",
+    "year": 2015,
+    "value": 70.06059
+  },
+  {
+    "country": "Dominica",
+    "iso2": "DMA",
+    "year": 2017,
+    "value": 70.11464
+  },
+  {
+    "country": "Dominica",
+    "iso2": "DMA",
+    "year": 2019,
+    "value": 71.93415
+  },
+  {
+    "country": "Dominica",
+    "iso2": "DMA",
+    "year": 2021,
+    "value": 49.14794
+  },
+  {
+    "country": "Dominican Republic",
+    "iso2": "DOM",
+    "year": 2000,
+    "value": 50.87753
+  },
+  {
+    "country": "Dominican Republic",
+    "iso2": "DOM",
+    "year": 2005,
+    "value": 57.40839
+  },
+  {
+    "country": "Dominican Republic",
+    "iso2": "DOM",
+    "year": 2010,
+    "value": 70.03009
+  },
+  {
+    "country": "Dominican Republic",
+    "iso2": "DOM",
+    "year": 2015,
+    "value": 75.2307
+  },
+  {
+    "country": "Dominican Republic",
+    "iso2": "DOM",
+    "year": 2017,
+    "value": 74.6357
+  },
+  {
+    "country": "Dominican Republic",
+    "iso2": "DOM",
+    "year": 2019,
+    "value": 75.0493
+  },
+  {
+    "country": "Dominican Republic",
+    "iso2": "DOM",
+    "year": 2021,
+    "value": 76.98295
+  },
+  {
+    "country": "Timor-Leste",
+    "iso2": "TLS",
+    "year": 2000,
+    "value": 28.12505
+  },
+  {
+    "country": "Timor-Leste",
+    "iso2": "TLS",
+    "year": 2005,
+    "value": 30.76128
+  },
+  {
+    "country": "Timor-Leste",
+    "iso2": "TLS",
+    "year": 2010,
+    "value": 41.47976
+  },
+  {
+    "country": "Timor-Leste",
+    "iso2": "TLS",
+    "year": 2015,
+    "value": 47.33599
+  },
+  {
+    "country": "Timor-Leste",
+    "iso2": "TLS",
+    "year": 2017,
+    "value": 49.61962
+  },
+  {
+    "country": "Timor-Leste",
+    "iso2": "TLS",
+    "year": 2019,
+    "value": 50.22096
+  },
+  {
+    "country": "Timor-Leste",
+    "iso2": "TLS",
+    "year": 2021,
+    "value": 52.30378
+  },
+  {
+    "country": "Ecuador",
+    "iso2": "ECU",
+    "year": 2000,
+    "value": 51.2664
+  },
+  {
+    "country": "Ecuador",
+    "iso2": "ECU",
+    "year": 2005,
+    "value": 57.80808
+  },
+  {
+    "country": "Ecuador",
+    "iso2": "ECU",
+    "year": 2010,
+    "value": 68.16116
+  },
+  {
+    "country": "Ecuador",
+    "iso2": "ECU",
+    "year": 2015,
+    "value": 76.62326
+  },
+  {
+    "country": "Ecuador",
+    "iso2": "ECU",
+    "year": 2017,
+    "value": 77.78508
+  },
+  {
+    "country": "Ecuador",
+    "iso2": "ECU",
+    "year": 2019,
+    "value": 79.49633
+  },
+  {
+    "country": "Ecuador",
+    "iso2": "ECU",
+    "year": 2021,
+    "value": 76.6337
+  },
+  {
+    "country": "Egypt",
+    "iso2": "EGY",
+    "year": 2000,
+    "value": 50.39901
+  },
+  {
+    "country": "Egypt",
+    "iso2": "EGY",
+    "year": 2005,
+    "value": 52.27327
+  },
+  {
+    "country": "Egypt",
+    "iso2": "EGY",
+    "year": 2010,
+    "value": 62.35203
+  },
+  {
+    "country": "Egypt",
+    "iso2": "EGY",
+    "year": 2015,
+    "value": 65.20842
+  },
+  {
+    "country": "Egypt",
+    "iso2": "EGY",
+    "year": 2017,
+    "value": 68.95744
+  },
+  {
+    "country": "Egypt",
+    "iso2": "EGY",
+    "year": 2019,
+    "value": 70.14868
+  },
+  {
+    "country": "Egypt",
+    "iso2": "EGY",
+    "year": 2021,
+    "value": 70.2333
+  },
+  {
+    "country": "El Salvador",
+    "iso2": "SLV",
+    "year": 2000,
+    "value": 51.54281
+  },
+  {
+    "country": "El Salvador",
+    "iso2": "SLV",
+    "year": 2005,
+    "value": 64.98482
+  },
+  {
+    "country": "El Salvador",
+    "iso2": "SLV",
+    "year": 2010,
+    "value": 73.32805
+  },
+  {
+    "country": "El Salvador",
+    "iso2": "SLV",
+    "year": 2015,
+    "value": 76.82203
+  },
+  {
+    "country": "El Salvador",
+    "iso2": "SLV",
+    "year": 2017,
+    "value": 77.96375
+  },
+  {
+    "country": "El Salvador",
+    "iso2": "SLV",
+    "year": 2019,
+    "value": 77.81264
+  },
+  {
+    "country": "El Salvador",
+    "iso2": "SLV",
+    "year": 2021,
+    "value": 78.04086
+  },
+  {
+    "country": "Equatorial Guinea",
+    "iso2": "GNQ",
+    "year": 2000,
+    "value": 19.70556
+  },
+  {
+    "country": "Equatorial Guinea",
+    "iso2": "GNQ",
+    "year": 2005,
+    "value": 22.57277
+  },
+  {
+    "country": "Equatorial Guinea",
+    "iso2": "GNQ",
+    "year": 2010,
+    "value": 28.79866
+  },
+  {
+    "country": "Equatorial Guinea",
+    "iso2": "GNQ",
+    "year": 2015,
+    "value": 40.56823
+  },
+  {
+    "country": "Equatorial Guinea",
+    "iso2": "GNQ",
+    "year": 2017,
+    "value": 43.93791
+  },
+  {
+    "country": "Equatorial Guinea",
+    "iso2": "GNQ",
+    "year": 2019,
+    "value": 43.74691
+  },
+  {
+    "country": "Equatorial Guinea",
+    "iso2": "GNQ",
+    "year": 2021,
+    "value": 45.74751
+  },
+  {
+    "country": "Eritrea",
+    "iso2": "ERI",
+    "year": 2000,
+    "value": 25.83123
+  },
+  {
+    "country": "Eritrea",
+    "iso2": "ERI",
+    "year": 2005,
+    "value": 31.82051
+  },
+  {
+    "country": "Eritrea",
+    "iso2": "ERI",
+    "year": 2010,
+    "value": 40.1129
+  },
+  {
+    "country": "Eritrea",
+    "iso2": "ERI",
+    "year": 2015,
+    "value": 44.71825
+  },
+  {
+    "country": "Eritrea",
+    "iso2": "ERI",
+    "year": 2017,
+    "value": 45.92554
+  },
+  {
+    "country": "Eritrea",
+    "iso2": "ERI",
+    "year": 2019,
+    "value": 46.09582
+  },
+  {
+    "country": "Eritrea",
+    "iso2": "ERI",
+    "year": 2021,
+    "value": 44.88894
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EST",
+    "year": 2000,
+    "value": 59.60306
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EST",
+    "year": 2005,
+    "value": 61.63895
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EST",
+    "year": 2010,
+    "value": 72.09915
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EST",
+    "year": 2015,
+    "value": 76.83005
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EST",
+    "year": 2017,
+    "value": 77.81068
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EST",
+    "year": 2019,
+    "value": 78.77091
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EST",
+    "year": 2021,
+    "value": 79.31091
+  },
+  {
+    "country": "Eswatini",
+    "iso2": "SWZ",
+    "year": 2000,
+    "value": 35.70971
+  },
+  {
+    "country": "Eswatini",
+    "iso2": "SWZ",
+    "year": 2005,
+    "value": 44.00773
+  },
+  {
+    "country": "Eswatini",
+    "iso2": "SWZ",
+    "year": 2010,
+    "value": 51.10865
+  },
+  {
+    "country": "Eswatini",
+    "iso2": "SWZ",
+    "year": 2015,
+    "value": 55.48753
+  },
+  {
+    "country": "Eswatini",
+    "iso2": "SWZ",
+    "year": 2017,
+    "value": 59.78487
+  },
+  {
+    "country": "Eswatini",
+    "iso2": "SWZ",
+    "year": 2019,
+    "value": 58.40017
+  },
+  {
+    "country": "Eswatini",
+    "iso2": "SWZ",
+    "year": 2021,
+    "value": 55.86385
+  },
+  {
+    "country": "Ethiopia",
+    "iso2": "ETH",
+    "year": 2000,
+    "value": 13.30969
+  },
+  {
+    "country": "Ethiopia",
+    "iso2": "ETH",
+    "year": 2005,
+    "value": 16.66036
+  },
+  {
+    "country": "Ethiopia",
+    "iso2": "ETH",
+    "year": 2010,
+    "value": 26.55138
+  },
+  {
+    "country": "Ethiopia",
+    "iso2": "ETH",
+    "year": 2015,
+    "value": 34.22756
+  },
+  {
+    "country": "Ethiopia",
+    "iso2": "ETH",
+    "year": 2017,
+    "value": 34.90632
+  },
+  {
+    "country": "Ethiopia",
+    "iso2": "ETH",
+    "year": 2019,
+    "value": 35.52914
+  },
+  {
+    "country": "Ethiopia",
+    "iso2": "ETH",
+    "year": 2021,
+    "value": 35.14274
+  },
+  {
+    "country": "Fiji",
+    "iso2": "FJI",
+    "year": 2000,
+    "value": 41.9571
+  },
+  {
+    "country": "Fiji",
+    "iso2": "FJI",
+    "year": 2005,
+    "value": 50.17557
+  },
+  {
+    "country": "Fiji",
+    "iso2": "FJI",
+    "year": 2010,
+    "value": 52.49566
+  },
+  {
+    "country": "Fiji",
+    "iso2": "FJI",
+    "year": 2015,
+    "value": 59.67894
+  },
+  {
+    "country": "Fiji",
+    "iso2": "FJI",
+    "year": 2017,
+    "value": 58.91916
+  },
+  {
+    "country": "Fiji",
+    "iso2": "FJI",
+    "year": 2019,
+    "value": 59.43298
+  },
+  {
+    "country": "Fiji",
+    "iso2": "FJI",
+    "year": 2021,
+    "value": 58.24706
+  },
+  {
+    "country": "Finland",
+    "iso2": "FIN",
+    "year": 2000,
+    "value": 74.75711
+  },
+  {
+    "country": "Finland",
+    "iso2": "FIN",
+    "year": 2005,
+    "value": 80.0
+  },
+  {
+    "country": "Finland",
+    "iso2": "FIN",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Finland",
+    "iso2": "FIN",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Finland",
+    "iso2": "FIN",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Finland",
+    "iso2": "FIN",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Finland",
+    "iso2": "FIN",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "France",
+    "iso2": "FRA",
+    "year": 2000,
+    "value": 79.14757
+  },
+  {
+    "country": "France",
+    "iso2": "FRA",
+    "year": 2005,
+    "value": 80.0
+  },
+  {
+    "country": "France",
+    "iso2": "FRA",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "France",
+    "iso2": "FRA",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "France",
+    "iso2": "FRA",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "France",
+    "iso2": "FRA",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "France",
+    "iso2": "FRA",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Gabon",
+    "iso2": "GAB",
+    "year": 2000,
+    "value": 28.17883
+  },
+  {
+    "country": "Gabon",
+    "iso2": "GAB",
+    "year": 2005,
+    "value": 36.9588
+  },
+  {
+    "country": "Gabon",
+    "iso2": "GAB",
+    "year": 2010,
+    "value": 45.2353
+  },
+  {
+    "country": "Gabon",
+    "iso2": "GAB",
+    "year": 2015,
+    "value": 49.96951
+  },
+  {
+    "country": "Gabon",
+    "iso2": "GAB",
+    "year": 2017,
+    "value": 50.71123
+  },
+  {
+    "country": "Gabon",
+    "iso2": "GAB",
+    "year": 2019,
+    "value": 48.64603
+  },
+  {
+    "country": "Gabon",
+    "iso2": "GAB",
+    "year": 2021,
+    "value": 48.97425
+  },
+  {
+    "country": "Gambia",
+    "iso2": "GMB",
+    "year": 2000,
+    "value": 28.94088
+  },
+  {
+    "country": "Gambia",
+    "iso2": "GMB",
+    "year": 2005,
+    "value": 36.07573
+  },
+  {
+    "country": "Gambia",
+    "iso2": "GMB",
+    "year": 2010,
+    "value": 40.6432
+  },
+  {
+    "country": "Gambia",
+    "iso2": "GMB",
+    "year": 2015,
+    "value": 43.38438
+  },
+  {
+    "country": "Gambia",
+    "iso2": "GMB",
+    "year": 2017,
+    "value": 43.7427
+  },
+  {
+    "country": "Gambia",
+    "iso2": "GMB",
+    "year": 2019,
+    "value": 45.71187
+  },
+  {
+    "country": "Gambia",
+    "iso2": "GMB",
+    "year": 2021,
+    "value": 46.1508
+  },
+  {
+    "country": "Georgia",
+    "iso2": "GEO",
+    "year": 2000,
+    "value": 47.09488
+  },
+  {
+    "country": "Georgia",
+    "iso2": "GEO",
+    "year": 2005,
+    "value": 61.36617
+  },
+  {
+    "country": "Georgia",
+    "iso2": "GEO",
+    "year": 2010,
+    "value": 68.51891
+  },
+  {
+    "country": "Georgia",
+    "iso2": "GEO",
+    "year": 2015,
+    "value": 70.7278
+  },
+  {
+    "country": "Georgia",
+    "iso2": "GEO",
+    "year": 2017,
+    "value": 70.09057
+  },
+  {
+    "country": "Georgia",
+    "iso2": "GEO",
+    "year": 2019,
+    "value": 69.42982
+  },
+  {
+    "country": "Georgia",
+    "iso2": "GEO",
+    "year": 2021,
+    "value": 68.22667
+  },
+  {
+    "country": "Germany",
+    "iso2": "DEU",
+    "year": 2000,
+    "value": 78.7087
+  },
+  {
+    "country": "Germany",
+    "iso2": "DEU",
+    "year": 2005,
+    "value": 80.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "DEU",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "DEU",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "DEU",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "DEU",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "DEU",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Ghana",
+    "iso2": "GHA",
+    "year": 2000,
+    "value": 23.65041
+  },
+  {
+    "country": "Ghana",
+    "iso2": "GHA",
+    "year": 2005,
+    "value": 25.60964
+  },
+  {
+    "country": "Ghana",
+    "iso2": "GHA",
+    "year": 2010,
+    "value": 35.24769
+  },
+  {
+    "country": "Ghana",
+    "iso2": "GHA",
+    "year": 2015,
+    "value": 43.90984
+  },
+  {
+    "country": "Ghana",
+    "iso2": "GHA",
+    "year": 2017,
+    "value": 45.46957
+  },
+  {
+    "country": "Ghana",
+    "iso2": "GHA",
+    "year": 2019,
+    "value": 46.49993
+  },
+  {
+    "country": "Ghana",
+    "iso2": "GHA",
+    "year": 2021,
+    "value": 47.78764
+  },
+  {
+    "country": "Greece",
+    "iso2": "GRC",
+    "year": 2000,
+    "value": 68.94923
+  },
+  {
+    "country": "Greece",
+    "iso2": "GRC",
+    "year": 2005,
+    "value": 72.82025
+  },
+  {
+    "country": "Greece",
+    "iso2": "GRC",
+    "year": 2010,
+    "value": 75.39027
+  },
+  {
+    "country": "Greece",
+    "iso2": "GRC",
+    "year": 2015,
+    "value": 77.90915
+  },
+  {
+    "country": "Greece",
+    "iso2": "GRC",
+    "year": 2017,
+    "value": 78.92592
+  },
+  {
+    "country": "Greece",
+    "iso2": "GRC",
+    "year": 2019,
+    "value": 79.45765
+  },
+  {
+    "country": "Greece",
+    "iso2": "GRC",
+    "year": 2021,
+    "value": 77.18728
+  },
+  {
+    "country": "Grenada",
+    "iso2": "GRD",
+    "year": 2000,
+    "value": 49.84954
+  },
+  {
+    "country": "Grenada",
+    "iso2": "GRD",
+    "year": 2005,
+    "value": 61.57412
+  },
+  {
+    "country": "Grenada",
+    "iso2": "GRD",
+    "year": 2010,
+    "value": 67.91986
+  },
+  {
+    "country": "Grenada",
+    "iso2": "GRD",
+    "year": 2015,
+    "value": 71.28389
+  },
+  {
+    "country": "Grenada",
+    "iso2": "GRD",
+    "year": 2017,
+    "value": 72.89505
+  },
+  {
+    "country": "Grenada",
+    "iso2": "GRD",
+    "year": 2019,
+    "value": 73.83379
+  },
+  {
+    "country": "Grenada",
+    "iso2": "GRD",
+    "year": 2021,
+    "value": 70.44362
+  },
+  {
+    "country": "Guatemala",
+    "iso2": "GTM",
+    "year": 2000,
+    "value": 40.4051
+  },
+  {
+    "country": "Guatemala",
+    "iso2": "GTM",
+    "year": 2005,
+    "value": 50.05145
+  },
+  {
+    "country": "Guatemala",
+    "iso2": "GTM",
+    "year": 2010,
+    "value": 57.51889
+  },
+  {
+    "country": "Guatemala",
+    "iso2": "GTM",
+    "year": 2015,
+    "value": 59.86306
+  },
+  {
+    "country": "Guatemala",
+    "iso2": "GTM",
+    "year": 2017,
+    "value": 57.9804
+  },
+  {
+    "country": "Guatemala",
+    "iso2": "GTM",
+    "year": 2019,
+    "value": 60.61773
+  },
+  {
+    "country": "Guatemala",
+    "iso2": "GTM",
+    "year": 2021,
+    "value": 58.68237
+  },
+  {
+    "country": "Guinea",
+    "iso2": "GIN",
+    "year": 2000,
+    "value": 16.07397
+  },
+  {
+    "country": "Guinea",
+    "iso2": "GIN",
+    "year": 2005,
+    "value": 18.86237
+  },
+  {
+    "country": "Guinea",
+    "iso2": "GIN",
+    "year": 2010,
+    "value": 25.80411
+  },
+  {
+    "country": "Guinea",
+    "iso2": "GIN",
+    "year": 2015,
+    "value": 32.70554
+  },
+  {
+    "country": "Guinea",
+    "iso2": "GIN",
+    "year": 2017,
+    "value": 36.09503
+  },
+  {
+    "country": "Guinea",
+    "iso2": "GIN",
+    "year": 2019,
+    "value": 39.42244
+  },
+  {
+    "country": "Guinea",
+    "iso2": "GIN",
+    "year": 2021,
+    "value": 39.92434
+  },
+  {
+    "country": "Guinea-Bissau",
+    "iso2": "GNB",
+    "year": 2000,
+    "value": 19.06267
+  },
+  {
+    "country": "Guinea-Bissau",
+    "iso2": "GNB",
+    "year": 2005,
+    "value": 22.73221
+  },
+  {
+    "country": "Guinea-Bissau",
+    "iso2": "GNB",
+    "year": 2010,
+    "value": 28.78932
+  },
+  {
+    "country": "Guinea-Bissau",
+    "iso2": "GNB",
+    "year": 2015,
+    "value": 36.72791
+  },
+  {
+    "country": "Guinea-Bissau",
+    "iso2": "GNB",
+    "year": 2017,
+    "value": 37.81649
+  },
+  {
+    "country": "Guinea-Bissau",
+    "iso2": "GNB",
+    "year": 2019,
+    "value": 36.25281
+  },
+  {
+    "country": "Guinea-Bissau",
+    "iso2": "GNB",
+    "year": 2021,
+    "value": 37.24882
+  },
+  {
+    "country": "Guyana",
+    "iso2": "GUY",
+    "year": 2000,
+    "value": 44.87869
+  },
+  {
+    "country": "Guyana",
+    "iso2": "GUY",
+    "year": 2005,
+    "value": 58.66557
+  },
+  {
+    "country": "Guyana",
+    "iso2": "GUY",
+    "year": 2010,
+    "value": 64.95517
+  },
+  {
+    "country": "Guyana",
+    "iso2": "GUY",
+    "year": 2015,
+    "value": 75.08281
+  },
+  {
+    "country": "Guyana",
+    "iso2": "GUY",
+    "year": 2017,
+    "value": 76.63873
+  },
+  {
+    "country": "Guyana",
+    "iso2": "GUY",
+    "year": 2019,
+    "value": 77.40801
+  },
+  {
+    "country": "Guyana",
+    "iso2": "GUY",
+    "year": 2021,
+    "value": 75.93155
+  },
+  {
+    "country": "Haiti",
+    "iso2": "HTI",
+    "year": 2000,
+    "value": 27.3593
+  },
+  {
+    "country": "Haiti",
+    "iso2": "HTI",
+    "year": 2005,
+    "value": 33.1177
+  },
+  {
+    "country": "Haiti",
+    "iso2": "HTI",
+    "year": 2010,
+    "value": 41.99582
+  },
+  {
+    "country": "Haiti",
+    "iso2": "HTI",
+    "year": 2015,
+    "value": 50.7705
+  },
+  {
+    "country": "Haiti",
+    "iso2": "HTI",
+    "year": 2017,
+    "value": 53.3222
+  },
+  {
+    "country": "Haiti",
+    "iso2": "HTI",
+    "year": 2019,
+    "value": 52.79086
+  },
+  {
+    "country": "Haiti",
+    "iso2": "HTI",
+    "year": 2021,
+    "value": 54.13732
+  },
+  {
+    "country": "Honduras",
+    "iso2": "HND",
+    "year": 2000,
+    "value": 42.03738
+  },
+  {
+    "country": "Honduras",
+    "iso2": "HND",
+    "year": 2005,
+    "value": 52.427
+  },
+  {
+    "country": "Honduras",
+    "iso2": "HND",
+    "year": 2010,
+    "value": 58.20331
+  },
+  {
+    "country": "Honduras",
+    "iso2": "HND",
+    "year": 2015,
+    "value": 65.30439
+  },
+  {
+    "country": "Honduras",
+    "iso2": "HND",
+    "year": 2017,
+    "value": 65.1033
+  },
+  {
+    "country": "Honduras",
+    "iso2": "HND",
+    "year": 2019,
+    "value": 65.50581
+  },
+  {
+    "country": "Honduras",
+    "iso2": "HND",
+    "year": 2021,
+    "value": 64.30881
+  },
+  {
+    "country": "Hungary",
+    "iso2": "HUN",
+    "year": 2000,
+    "value": 70.13693
+  },
+  {
+    "country": "Hungary",
+    "iso2": "HUN",
+    "year": 2005,
+    "value": 71.93488
+  },
+  {
+    "country": "Hungary",
+    "iso2": "HUN",
+    "year": 2010,
+    "value": 73.16734
+  },
+  {
+    "country": "Hungary",
+    "iso2": "HUN",
+    "year": 2015,
+    "value": 78.17759
+  },
+  {
+    "country": "Hungary",
+    "iso2": "HUN",
+    "year": 2017,
+    "value": 78.82822
+  },
+  {
+    "country": "Hungary",
+    "iso2": "HUN",
+    "year": 2019,
+    "value": 78.55894
+  },
+  {
+    "country": "Hungary",
+    "iso2": "HUN",
+    "year": 2021,
+    "value": 79.45746
+  },
+  {
+    "country": "Iceland",
+    "iso2": "ISL",
+    "year": 2000,
+    "value": 77.75259
+  },
+  {
+    "country": "Iceland",
+    "iso2": "ISL",
+    "year": 2005,
+    "value": 80.0
+  },
+  {
+    "country": "Iceland",
+    "iso2": "ISL",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Iceland",
+    "iso2": "ISL",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Iceland",
+    "iso2": "ISL",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Iceland",
+    "iso2": "ISL",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Iceland",
+    "iso2": "ISL",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "India",
+    "iso2": "IND",
+    "year": 2000,
+    "value": 29.66446
+  },
+  {
+    "country": "India",
+    "iso2": "IND",
+    "year": 2005,
+    "value": 33.83773
+  },
+  {
+    "country": "India",
+    "iso2": "IND",
+    "year": 2010,
+    "value": 48.56442
+  },
+  {
+    "country": "India",
+    "iso2": "IND",
+    "year": 2015,
+    "value": 57.34273
+  },
+  {
+    "country": "India",
+    "iso2": "IND",
+    "year": 2017,
+    "value": 60.39243
+  },
+  {
+    "country": "India",
+    "iso2": "IND",
+    "year": 2019,
+    "value": 63.54493
+  },
+  {
+    "country": "India",
+    "iso2": "IND",
+    "year": 2021,
+    "value": 63.33427
+  },
+  {
+    "country": "Indonesia",
+    "iso2": "IDN",
+    "year": 2000,
+    "value": 29.037
+  },
+  {
+    "country": "Indonesia",
+    "iso2": "IDN",
+    "year": 2005,
+    "value": 33.55102
+  },
+  {
+    "country": "Indonesia",
+    "iso2": "IDN",
+    "year": 2010,
+    "value": 41.67841
+  },
+  {
+    "country": "Indonesia",
+    "iso2": "IDN",
+    "year": 2015,
+    "value": 50.18527
+  },
+  {
+    "country": "Indonesia",
+    "iso2": "IDN",
+    "year": 2017,
+    "value": 54.21259
+  },
+  {
+    "country": "Indonesia",
+    "iso2": "IDN",
+    "year": 2019,
+    "value": 55.88193
+  },
+  {
+    "country": "Indonesia",
+    "iso2": "IDN",
+    "year": 2021,
+    "value": 54.77663
+  },
+  {
+    "country": "Iran",
+    "iso2": "IRN",
+    "year": 2000,
+    "value": 49.79386
+  },
+  {
+    "country": "Iran",
+    "iso2": "IRN",
+    "year": 2005,
+    "value": 50.41957
+  },
+  {
+    "country": "Iran",
+    "iso2": "IRN",
+    "year": 2010,
+    "value": 54.26576
+  },
+  {
+    "country": "Iran",
+    "iso2": "IRN",
+    "year": 2015,
+    "value": 67.64463
+  },
+  {
+    "country": "Iran",
+    "iso2": "IRN",
+    "year": 2017,
+    "value": 71.94331
+  },
+  {
+    "country": "Iran",
+    "iso2": "IRN",
+    "year": 2019,
+    "value": 75.20693
+  },
+  {
+    "country": "Iran",
+    "iso2": "IRN",
+    "year": 2021,
+    "value": 74.30833
+  },
+  {
+    "country": "Iraq",
+    "iso2": "IRQ",
+    "year": 2000,
+    "value": 52.49385
+  },
+  {
+    "country": "Iraq",
+    "iso2": "IRQ",
+    "year": 2005,
+    "value": 52.58086
+  },
+  {
+    "country": "Iraq",
+    "iso2": "IRQ",
+    "year": 2010,
+    "value": 52.87528
+  },
+  {
+    "country": "Iraq",
+    "iso2": "IRQ",
+    "year": 2015,
+    "value": 55.80007
+  },
+  {
+    "country": "Iraq",
+    "iso2": "IRQ",
+    "year": 2017,
+    "value": 57.43553
+  },
+  {
+    "country": "Iraq",
+    "iso2": "IRQ",
+    "year": 2019,
+    "value": 57.71881
+  },
+  {
+    "country": "Iraq",
+    "iso2": "IRQ",
+    "year": 2021,
+    "value": 58.50789
+  },
+  {
+    "country": "Ireland",
+    "iso2": "IRL",
+    "year": 2000,
+    "value": 72.17076
+  },
+  {
+    "country": "Ireland",
+    "iso2": "IRL",
+    "year": 2005,
+    "value": 75.56446
+  },
+  {
+    "country": "Ireland",
+    "iso2": "IRL",
+    "year": 2010,
+    "value": 77.2882
+  },
+  {
+    "country": "Ireland",
+    "iso2": "IRL",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Ireland",
+    "iso2": "IRL",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Ireland",
+    "iso2": "IRL",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Ireland",
+    "iso2": "IRL",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Israel",
+    "iso2": "ISR",
+    "year": 2000,
+    "value": 72.28749
+  },
+  {
+    "country": "Israel",
+    "iso2": "ISR",
+    "year": 2005,
+    "value": 76.40475
+  },
+  {
+    "country": "Israel",
+    "iso2": "ISR",
+    "year": 2010,
+    "value": 79.23442
+  },
+  {
+    "country": "Israel",
+    "iso2": "ISR",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Israel",
+    "iso2": "ISR",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Israel",
+    "iso2": "ISR",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Israel",
+    "iso2": "ISR",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Italy",
+    "iso2": "ITA",
+    "year": 2000,
+    "value": 69.75138
+  },
+  {
+    "country": "Italy",
+    "iso2": "ITA",
+    "year": 2005,
+    "value": 76.41152
+  },
+  {
+    "country": "Italy",
+    "iso2": "ITA",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Italy",
+    "iso2": "ITA",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Italy",
+    "iso2": "ITA",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Italy",
+    "iso2": "ITA",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Italy",
+    "iso2": "ITA",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Jamaica",
+    "iso2": "JAM",
+    "year": 2000,
+    "value": 48.01584
+  },
+  {
+    "country": "Jamaica",
+    "iso2": "JAM",
+    "year": 2005,
+    "value": 58.72494
+  },
+  {
+    "country": "Jamaica",
+    "iso2": "JAM",
+    "year": 2010,
+    "value": 65.5728
+  },
+  {
+    "country": "Jamaica",
+    "iso2": "JAM",
+    "year": 2015,
+    "value": 73.72293
+  },
+  {
+    "country": "Jamaica",
+    "iso2": "JAM",
+    "year": 2017,
+    "value": 75.02715
+  },
+  {
+    "country": "Jamaica",
+    "iso2": "JAM",
+    "year": 2019,
+    "value": 76.5773
+  },
+  {
+    "country": "Jamaica",
+    "iso2": "JAM",
+    "year": 2021,
+    "value": 74.14455
+  },
+  {
+    "country": "Japan",
+    "iso2": "JPN",
+    "year": 2000,
+    "value": 69.89166
+  },
+  {
+    "country": "Japan",
+    "iso2": "JPN",
+    "year": 2005,
+    "value": 75.68333
+  },
+  {
+    "country": "Japan",
+    "iso2": "JPN",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Japan",
+    "iso2": "JPN",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Japan",
+    "iso2": "JPN",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Japan",
+    "iso2": "JPN",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Japan",
+    "iso2": "JPN",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Jordan",
+    "iso2": "JOR",
+    "year": 2000,
+    "value": 64.66788
+  },
+  {
+    "country": "Jordan",
+    "iso2": "JOR",
+    "year": 2005,
+    "value": 68.37472
+  },
+  {
+    "country": "Jordan",
+    "iso2": "JOR",
+    "year": 2010,
+    "value": 71.55121
+  },
+  {
+    "country": "Jordan",
+    "iso2": "JOR",
+    "year": 2015,
+    "value": 69.99065
+  },
+  {
+    "country": "Jordan",
+    "iso2": "JOR",
+    "year": 2017,
+    "value": 69.75475
+  },
+  {
+    "country": "Jordan",
+    "iso2": "JOR",
+    "year": 2019,
+    "value": 66.67044
+  },
+  {
+    "country": "Jordan",
+    "iso2": "JOR",
+    "year": 2021,
+    "value": 64.90748
+  },
+  {
+    "country": "Kazakhstan",
+    "iso2": "KAZ",
+    "year": 2000,
+    "value": 55.60408
+  },
+  {
+    "country": "Kazakhstan",
+    "iso2": "KAZ",
+    "year": 2005,
+    "value": 64.39897
+  },
+  {
+    "country": "Kazakhstan",
+    "iso2": "KAZ",
+    "year": 2010,
+    "value": 70.3424
+  },
+  {
+    "country": "Kazakhstan",
+    "iso2": "KAZ",
+    "year": 2015,
+    "value": 76.91549
+  },
+  {
+    "country": "Kazakhstan",
+    "iso2": "KAZ",
+    "year": 2017,
+    "value": 79.35015
+  },
+  {
+    "country": "Kazakhstan",
+    "iso2": "KAZ",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Kazakhstan",
+    "iso2": "KAZ",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Kenya",
+    "iso2": "KEN",
+    "year": 2000,
+    "value": 27.63106
+  },
+  {
+    "country": "Kenya",
+    "iso2": "KEN",
+    "year": 2005,
+    "value": 34.21377
+  },
+  {
+    "country": "Kenya",
+    "iso2": "KEN",
+    "year": 2010,
+    "value": 44.18829
+  },
+  {
+    "country": "Kenya",
+    "iso2": "KEN",
+    "year": 2015,
+    "value": 50.31533
+  },
+  {
+    "country": "Kenya",
+    "iso2": "KEN",
+    "year": 2017,
+    "value": 52.00928
+  },
+  {
+    "country": "Kenya",
+    "iso2": "KEN",
+    "year": 2019,
+    "value": 51.4786
+  },
+  {
+    "country": "Kenya",
+    "iso2": "KEN",
+    "year": 2021,
+    "value": 53.33536
+  },
+  {
+    "country": "Kiribati",
+    "iso2": "KIR",
+    "year": 2000,
+    "value": 27.53077
+  },
+  {
+    "country": "Kiribati",
+    "iso2": "KIR",
+    "year": 2005,
+    "value": 32.12599
+  },
+  {
+    "country": "Kiribati",
+    "iso2": "KIR",
+    "year": 2010,
+    "value": 41.04535
+  },
+  {
+    "country": "Kiribati",
+    "iso2": "KIR",
+    "year": 2015,
+    "value": 44.73986
+  },
+  {
+    "country": "Kiribati",
+    "iso2": "KIR",
+    "year": 2017,
+    "value": 46.60987
+  },
+  {
+    "country": "Kiribati",
+    "iso2": "KIR",
+    "year": 2019,
+    "value": 48.09853
+  },
+  {
+    "country": "Kiribati",
+    "iso2": "KIR",
+    "year": 2021,
+    "value": 47.71428
+  },
+  {
+    "country": "Kuwait",
+    "iso2": "KWT",
+    "year": 2000,
+    "value": 74.3456
+  },
+  {
+    "country": "Kuwait",
+    "iso2": "KWT",
+    "year": 2005,
+    "value": 76.26211
+  },
+  {
+    "country": "Kuwait",
+    "iso2": "KWT",
+    "year": 2010,
+    "value": 74.29644
+  },
+  {
+    "country": "Kuwait",
+    "iso2": "KWT",
+    "year": 2015,
+    "value": 77.1966
+  },
+  {
+    "country": "Kuwait",
+    "iso2": "KWT",
+    "year": 2017,
+    "value": 77.82291
+  },
+  {
+    "country": "Kuwait",
+    "iso2": "KWT",
+    "year": 2019,
+    "value": 77.34271
+  },
+  {
+    "country": "Kuwait",
+    "iso2": "KWT",
+    "year": 2021,
+    "value": 77.81492
+  },
+  {
+    "country": "Kyrgyzstan",
+    "iso2": "KGZ",
+    "year": 2000,
+    "value": 51.05572
+  },
+  {
+    "country": "Kyrgyzstan",
+    "iso2": "KGZ",
+    "year": 2005,
+    "value": 54.5138
+  },
+  {
+    "country": "Kyrgyzstan",
+    "iso2": "KGZ",
+    "year": 2010,
+    "value": 59.2849
+  },
+  {
+    "country": "Kyrgyzstan",
+    "iso2": "KGZ",
+    "year": 2015,
+    "value": 68.99574
+  },
+  {
+    "country": "Kyrgyzstan",
+    "iso2": "KGZ",
+    "year": 2017,
+    "value": 71.12467
+  },
+  {
+    "country": "Kyrgyzstan",
+    "iso2": "KGZ",
+    "year": 2019,
+    "value": 71.22364
+  },
+  {
+    "country": "Kyrgyzstan",
+    "iso2": "KGZ",
+    "year": 2021,
+    "value": 68.54345
+  },
+  {
+    "country": "Laos",
+    "iso2": "LAO",
+    "year": 2000,
+    "value": 24.75208
+  },
+  {
+    "country": "Laos",
+    "iso2": "LAO",
+    "year": 2005,
+    "value": 32.86279
+  },
+  {
+    "country": "Laos",
+    "iso2": "LAO",
+    "year": 2010,
+    "value": 40.28413
+  },
+  {
+    "country": "Laos",
+    "iso2": "LAO",
+    "year": 2015,
+    "value": 47.4452
+  },
+  {
+    "country": "Laos",
+    "iso2": "LAO",
+    "year": 2017,
+    "value": 51.21174
+  },
+  {
+    "country": "Laos",
+    "iso2": "LAO",
+    "year": 2019,
+    "value": 51.4462
+  },
+  {
+    "country": "Laos",
+    "iso2": "LAO",
+    "year": 2021,
+    "value": 51.83316
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LVA",
+    "year": 2000,
+    "value": 51.52606
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LVA",
+    "year": 2005,
+    "value": 57.78969
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LVA",
+    "year": 2010,
+    "value": 65.14338
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LVA",
+    "year": 2015,
+    "value": 70.49352
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LVA",
+    "year": 2017,
+    "value": 75.48441
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LVA",
+    "year": 2019,
+    "value": 75.91148
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LVA",
+    "year": 2021,
+    "value": 74.62745
+  },
+  {
+    "country": "Lebanon",
+    "iso2": "LBN",
+    "year": 2000,
+    "value": 53.67805
+  },
+  {
+    "country": "Lebanon",
+    "iso2": "LBN",
+    "year": 2005,
+    "value": 63.13624
+  },
+  {
+    "country": "Lebanon",
+    "iso2": "LBN",
+    "year": 2010,
+    "value": 67.21127
+  },
+  {
+    "country": "Lebanon",
+    "iso2": "LBN",
+    "year": 2015,
+    "value": 71.15322
+  },
+  {
+    "country": "Lebanon",
+    "iso2": "LBN",
+    "year": 2017,
+    "value": 72.97242
+  },
+  {
+    "country": "Lebanon",
+    "iso2": "LBN",
+    "year": 2019,
+    "value": 73.64192
+  },
+  {
+    "country": "Lebanon",
+    "iso2": "LBN",
+    "year": 2021,
+    "value": 72.61969
+  },
+  {
+    "country": "Lesotho",
+    "iso2": "LSO",
+    "year": 2000,
+    "value": 27.30762
+  },
+  {
+    "country": "Lesotho",
+    "iso2": "LSO",
+    "year": 2005,
+    "value": 33.35786
+  },
+  {
+    "country": "Lesotho",
+    "iso2": "LSO",
+    "year": 2010,
+    "value": 45.0275
+  },
+  {
+    "country": "Lesotho",
+    "iso2": "LSO",
+    "year": 2015,
+    "value": 53.51121
+  },
+  {
+    "country": "Lesotho",
+    "iso2": "LSO",
+    "year": 2017,
+    "value": 55.59614
+  },
+  {
+    "country": "Lesotho",
+    "iso2": "LSO",
+    "year": 2019,
+    "value": 52.83996
+  },
+  {
+    "country": "Lesotho",
+    "iso2": "LSO",
+    "year": 2021,
+    "value": 53.24809
+  },
+  {
+    "country": "Liberia",
+    "iso2": "LBR",
+    "year": 2000,
+    "value": 20.39242
+  },
+  {
+    "country": "Liberia",
+    "iso2": "LBR",
+    "year": 2005,
+    "value": 22.69758
+  },
+  {
+    "country": "Liberia",
+    "iso2": "LBR",
+    "year": 2010,
+    "value": 33.27107
+  },
+  {
+    "country": "Liberia",
+    "iso2": "LBR",
+    "year": 2015,
+    "value": 36.86204
+  },
+  {
+    "country": "Liberia",
+    "iso2": "LBR",
+    "year": 2017,
+    "value": 40.29439
+  },
+  {
+    "country": "Liberia",
+    "iso2": "LBR",
+    "year": 2019,
+    "value": 43.46581
+  },
+  {
+    "country": "Liberia",
+    "iso2": "LBR",
+    "year": 2021,
+    "value": 44.70966
+  },
+  {
+    "country": "Libya",
+    "iso2": "LBY",
+    "year": 2000,
+    "value": 55.1002
+  },
+  {
+    "country": "Libya",
+    "iso2": "LBY",
+    "year": 2005,
+    "value": 59.22919
+  },
+  {
+    "country": "Libya",
+    "iso2": "LBY",
+    "year": 2010,
+    "value": 61.90065
+  },
+  {
+    "country": "Libya",
+    "iso2": "LBY",
+    "year": 2015,
+    "value": 61.16706
+  },
+  {
+    "country": "Libya",
+    "iso2": "LBY",
+    "year": 2017,
+    "value": 65.93816
+  },
+  {
+    "country": "Libya",
+    "iso2": "LBY",
+    "year": 2019,
+    "value": 63.97498
+  },
+  {
+    "country": "Libya",
+    "iso2": "LBY",
+    "year": 2021,
+    "value": 62.11962
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LTU",
+    "year": 2000,
+    "value": 50.68051
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LTU",
+    "year": 2005,
+    "value": 57.0852
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LTU",
+    "year": 2010,
+    "value": 62.62812
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LTU",
+    "year": 2015,
+    "value": 70.22359
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LTU",
+    "year": 2017,
+    "value": 71.81193
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LTU",
+    "year": 2019,
+    "value": 74.69107
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LTU",
+    "year": 2021,
+    "value": 75.31574
+  },
+  {
+    "country": "Luxembourg",
+    "iso2": "LUX",
+    "year": 2000,
+    "value": 73.54443
+  },
+  {
+    "country": "Luxembourg",
+    "iso2": "LUX",
+    "year": 2005,
+    "value": 75.48934
+  },
+  {
+    "country": "Luxembourg",
+    "iso2": "LUX",
+    "year": 2010,
+    "value": 77.37735
+  },
+  {
+    "country": "Luxembourg",
+    "iso2": "LUX",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Luxembourg",
+    "iso2": "LUX",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Luxembourg",
+    "iso2": "LUX",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Luxembourg",
+    "iso2": "LUX",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Madagascar",
+    "iso2": "MDG",
+    "year": 2000,
+    "value": 16.61189
+  },
+  {
+    "country": "Madagascar",
+    "iso2": "MDG",
+    "year": 2005,
+    "value": 20.54533
+  },
+  {
+    "country": "Madagascar",
+    "iso2": "MDG",
+    "year": 2010,
+    "value": 25.45398
+  },
+  {
+    "country": "Madagascar",
+    "iso2": "MDG",
+    "year": 2015,
+    "value": 28.97821
+  },
+  {
+    "country": "Madagascar",
+    "iso2": "MDG",
+    "year": 2017,
+    "value": 30.12792
+  },
+  {
+    "country": "Madagascar",
+    "iso2": "MDG",
+    "year": 2019,
+    "value": 32.78153
+  },
+  {
+    "country": "Madagascar",
+    "iso2": "MDG",
+    "year": 2021,
+    "value": 34.94375
+  },
+  {
+    "country": "Malawi",
+    "iso2": "MWI",
+    "year": 2000,
+    "value": 21.73665
+  },
+  {
+    "country": "Malawi",
+    "iso2": "MWI",
+    "year": 2005,
+    "value": 27.72908
+  },
+  {
+    "country": "Malawi",
+    "iso2": "MWI",
+    "year": 2010,
+    "value": 37.92305
+  },
+  {
+    "country": "Malawi",
+    "iso2": "MWI",
+    "year": 2015,
+    "value": 41.62474
+  },
+  {
+    "country": "Malawi",
+    "iso2": "MWI",
+    "year": 2017,
+    "value": 48.16093
+  },
+  {
+    "country": "Malawi",
+    "iso2": "MWI",
+    "year": 2019,
+    "value": 48.39656
+  },
+  {
+    "country": "Malawi",
+    "iso2": "MWI",
+    "year": 2021,
+    "value": 48.27469
+  },
+  {
+    "country": "Malaysia",
+    "iso2": "MYS",
+    "year": 2000,
+    "value": 51.9628
+  },
+  {
+    "country": "Malaysia",
+    "iso2": "MYS",
+    "year": 2005,
+    "value": 64.03548
+  },
+  {
+    "country": "Malaysia",
+    "iso2": "MYS",
+    "year": 2010,
+    "value": 68.774
+  },
+  {
+    "country": "Malaysia",
+    "iso2": "MYS",
+    "year": 2015,
+    "value": 74.82103
+  },
+  {
+    "country": "Malaysia",
+    "iso2": "MYS",
+    "year": 2017,
+    "value": 77.41269
+  },
+  {
+    "country": "Malaysia",
+    "iso2": "MYS",
+    "year": 2019,
+    "value": 77.73126
+  },
+  {
+    "country": "Malaysia",
+    "iso2": "MYS",
+    "year": 2021,
+    "value": 75.99274
+  },
+  {
+    "country": "Maldives",
+    "iso2": "MDV",
+    "year": 2000,
+    "value": 40.55208
+  },
+  {
+    "country": "Maldives",
+    "iso2": "MDV",
+    "year": 2005,
+    "value": 44.68186
+  },
+  {
+    "country": "Maldives",
+    "iso2": "MDV",
+    "year": 2010,
+    "value": 58.08285
+  },
+  {
+    "country": "Maldives",
+    "iso2": "MDV",
+    "year": 2015,
+    "value": 64.37015
+  },
+  {
+    "country": "Maldives",
+    "iso2": "MDV",
+    "year": 2017,
+    "value": 71.4214
+  },
+  {
+    "country": "Maldives",
+    "iso2": "MDV",
+    "year": 2019,
+    "value": 67.51245
+  },
+  {
+    "country": "Maldives",
+    "iso2": "MDV",
+    "year": 2021,
+    "value": 61.41676
+  },
+  {
+    "country": "Mali",
+    "iso2": "MLI",
+    "year": 2000,
+    "value": 19.54101
+  },
+  {
+    "country": "Mali",
+    "iso2": "MLI",
+    "year": 2005,
+    "value": 24.37535
+  },
+  {
+    "country": "Mali",
+    "iso2": "MLI",
+    "year": 2010,
+    "value": 35.24286
+  },
+  {
+    "country": "Mali",
+    "iso2": "MLI",
+    "year": 2015,
+    "value": 36.28376
+  },
+  {
+    "country": "Mali",
+    "iso2": "MLI",
+    "year": 2017,
+    "value": 37.7683
+  },
+  {
+    "country": "Mali",
+    "iso2": "MLI",
+    "year": 2019,
+    "value": 40.29723
+  },
+  {
+    "country": "Mali",
+    "iso2": "MLI",
+    "year": 2021,
+    "value": 41.28001
+  },
+  {
+    "country": "Malta",
+    "iso2": "MLT",
+    "year": 2000,
+    "value": 74.83934
+  },
+  {
+    "country": "Malta",
+    "iso2": "MLT",
+    "year": 2005,
+    "value": 76.60404
+  },
+  {
+    "country": "Malta",
+    "iso2": "MLT",
+    "year": 2010,
+    "value": 79.12861
+  },
+  {
+    "country": "Malta",
+    "iso2": "MLT",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Malta",
+    "iso2": "MLT",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Malta",
+    "iso2": "MLT",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Malta",
+    "iso2": "MLT",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Marshall Islands",
+    "iso2": "MHL",
+    "year": 2000,
+    "value": 42.01462
+  },
+  {
+    "country": "Marshall Islands",
+    "iso2": "MHL",
+    "year": 2005,
+    "value": 45.60303
+  },
+  {
+    "country": "Marshall Islands",
+    "iso2": "MHL",
+    "year": 2010,
+    "value": 56.87781
+  },
+  {
+    "country": "Marshall Islands",
+    "iso2": "MHL",
+    "year": 2015,
+    "value": 59.51815
+  },
+  {
+    "country": "Marshall Islands",
+    "iso2": "MHL",
+    "year": 2017,
+    "value": 61.17616
+  },
+  {
+    "country": "Marshall Islands",
+    "iso2": "MHL",
+    "year": 2019,
+    "value": 60.98923
+  },
+  {
+    "country": "Marshall Islands",
+    "iso2": "MHL",
+    "year": 2021,
+    "value": 58.94324
+  },
+  {
+    "country": "Mauritania",
+    "iso2": "MRT",
+    "year": 2000,
+    "value": 20.68332
+  },
+  {
+    "country": "Mauritania",
+    "iso2": "MRT",
+    "year": 2005,
+    "value": 24.63069
+  },
+  {
+    "country": "Mauritania",
+    "iso2": "MRT",
+    "year": 2010,
+    "value": 32.02874
+  },
+  {
+    "country": "Mauritania",
+    "iso2": "MRT",
+    "year": 2015,
+    "value": 32.63081
+  },
+  {
+    "country": "Mauritania",
+    "iso2": "MRT",
+    "year": 2017,
+    "value": 38.997
+  },
+  {
+    "country": "Mauritania",
+    "iso2": "MRT",
+    "year": 2019,
+    "value": 36.47025
+  },
+  {
+    "country": "Mauritania",
+    "iso2": "MRT",
+    "year": 2021,
+    "value": 40.12226
+  },
+  {
+    "country": "Mauritius",
+    "iso2": "MUS",
+    "year": 2000,
+    "value": 49.12861
+  },
+  {
+    "country": "Mauritius",
+    "iso2": "MUS",
+    "year": 2005,
+    "value": 53.06477
+  },
+  {
+    "country": "Mauritius",
+    "iso2": "MUS",
+    "year": 2010,
+    "value": 58.75645
+  },
+  {
+    "country": "Mauritius",
+    "iso2": "MUS",
+    "year": 2015,
+    "value": 66.54743
+  },
+  {
+    "country": "Mauritius",
+    "iso2": "MUS",
+    "year": 2017,
+    "value": 67.7713
+  },
+  {
+    "country": "Mauritius",
+    "iso2": "MUS",
+    "year": 2019,
+    "value": 67.90111
+  },
+  {
+    "country": "Mauritius",
+    "iso2": "MUS",
+    "year": 2021,
+    "value": 65.65095
+  },
+  {
+    "country": "Mexico",
+    "iso2": "MEX",
+    "year": 2000,
+    "value": 56.00663
+  },
+  {
+    "country": "Mexico",
+    "iso2": "MEX",
+    "year": 2005,
+    "value": 60.71852
+  },
+  {
+    "country": "Mexico",
+    "iso2": "MEX",
+    "year": 2010,
+    "value": 65.82896
+  },
+  {
+    "country": "Mexico",
+    "iso2": "MEX",
+    "year": 2015,
+    "value": 73.53358
+  },
+  {
+    "country": "Mexico",
+    "iso2": "MEX",
+    "year": 2017,
+    "value": 74.15421
+  },
+  {
+    "country": "Mexico",
+    "iso2": "MEX",
+    "year": 2019,
+    "value": 74.40357
+  },
+  {
+    "country": "Mexico",
+    "iso2": "MEX",
+    "year": 2021,
+    "value": 74.54783
+  },
+  {
+    "country": "Micronesia",
+    "iso2": "FSM",
+    "year": 2000,
+    "value": 36.45238
+  },
+  {
+    "country": "Micronesia",
+    "iso2": "FSM",
+    "year": 2005,
+    "value": 39.26851
+  },
+  {
+    "country": "Micronesia",
+    "iso2": "FSM",
+    "year": 2010,
+    "value": 46.50378
+  },
+  {
+    "country": "Micronesia",
+    "iso2": "FSM",
+    "year": 2015,
+    "value": 46.212
+  },
+  {
+    "country": "Micronesia",
+    "iso2": "FSM",
+    "year": 2017,
+    "value": 49.32232
+  },
+  {
+    "country": "Micronesia",
+    "iso2": "FSM",
+    "year": 2019,
+    "value": 46.44151
+  },
+  {
+    "country": "Micronesia",
+    "iso2": "FSM",
+    "year": 2021,
+    "value": 47.65958
+  },
+  {
+    "country": "Moldova",
+    "iso2": "MDA",
+    "year": 2000,
+    "value": 51.27183
+  },
+  {
+    "country": "Moldova",
+    "iso2": "MDA",
+    "year": 2005,
+    "value": 54.44264
+  },
+  {
+    "country": "Moldova",
+    "iso2": "MDA",
+    "year": 2010,
+    "value": 63.26561
+  },
+  {
+    "country": "Moldova",
+    "iso2": "MDA",
+    "year": 2015,
+    "value": 69.84919
+  },
+  {
+    "country": "Moldova",
+    "iso2": "MDA",
+    "year": 2017,
+    "value": 70.94097
+  },
+  {
+    "country": "Moldova",
+    "iso2": "MDA",
+    "year": 2019,
+    "value": 71.65233
+  },
+  {
+    "country": "Moldova",
+    "iso2": "MDA",
+    "year": 2021,
+    "value": 70.75371
+  },
+  {
+    "country": "Monaco",
+    "iso2": "MCO",
+    "year": 2000,
+    "value": 73.16138
+  },
+  {
+    "country": "Monaco",
+    "iso2": "MCO",
+    "year": 2005,
+    "value": 77.71615
+  },
+  {
+    "country": "Monaco",
+    "iso2": "MCO",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Monaco",
+    "iso2": "MCO",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Monaco",
+    "iso2": "MCO",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Monaco",
+    "iso2": "MCO",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Monaco",
+    "iso2": "MCO",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Mongolia",
+    "iso2": "MNG",
+    "year": 2000,
+    "value": 46.42946
+  },
+  {
+    "country": "Mongolia",
+    "iso2": "MNG",
+    "year": 2005,
+    "value": 48.5035
+  },
+  {
+    "country": "Mongolia",
+    "iso2": "MNG",
+    "year": 2010,
+    "value": 58.8462
+  },
+  {
+    "country": "Mongolia",
+    "iso2": "MNG",
+    "year": 2015,
+    "value": 66.38216
+  },
+  {
+    "country": "Mongolia",
+    "iso2": "MNG",
+    "year": 2017,
+    "value": 66.90777
+  },
+  {
+    "country": "Mongolia",
+    "iso2": "MNG",
+    "year": 2019,
+    "value": 67.2755
+  },
+  {
+    "country": "Mongolia",
+    "iso2": "MNG",
+    "year": 2021,
+    "value": 64.95104
+  },
+  {
+    "country": "Montenegro",
+    "iso2": "MNE",
+    "year": 2000,
+    "value": 59.60315
+  },
+  {
+    "country": "Montenegro",
+    "iso2": "MNE",
+    "year": 2005,
+    "value": 64.16195
+  },
+  {
+    "country": "Montenegro",
+    "iso2": "MNE",
+    "year": 2010,
+    "value": 67.11888
+  },
+  {
+    "country": "Montenegro",
+    "iso2": "MNE",
+    "year": 2015,
+    "value": 69.36111
+  },
+  {
+    "country": "Montenegro",
+    "iso2": "MNE",
+    "year": 2017,
+    "value": 71.1473
+  },
+  {
+    "country": "Montenegro",
+    "iso2": "MNE",
+    "year": 2019,
+    "value": 72.34895
+  },
+  {
+    "country": "Montenegro",
+    "iso2": "MNE",
+    "year": 2021,
+    "value": 71.94123
+  },
+  {
+    "country": "Morocco",
+    "iso2": "MAR",
+    "year": 2000,
+    "value": 40.65284
+  },
+  {
+    "country": "Morocco",
+    "iso2": "MAR",
+    "year": 2005,
+    "value": 51.0325
+  },
+  {
+    "country": "Morocco",
+    "iso2": "MAR",
+    "year": 2010,
+    "value": 58.01295
+  },
+  {
+    "country": "Morocco",
+    "iso2": "MAR",
+    "year": 2015,
+    "value": 64.70197
+  },
+  {
+    "country": "Morocco",
+    "iso2": "MAR",
+    "year": 2017,
+    "value": 68.74636
+  },
+  {
+    "country": "Morocco",
+    "iso2": "MAR",
+    "year": 2019,
+    "value": 68.43913
+  },
+  {
+    "country": "Morocco",
+    "iso2": "MAR",
+    "year": 2021,
+    "value": 69.45202
+  },
+  {
+    "country": "Mozambique",
+    "iso2": "MOZ",
+    "year": 2000,
+    "value": 19.62433
+  },
+  {
+    "country": "Mozambique",
+    "iso2": "MOZ",
+    "year": 2005,
+    "value": 23.30048
+  },
+  {
+    "country": "Mozambique",
+    "iso2": "MOZ",
+    "year": 2010,
+    "value": 30.67427
+  },
+  {
+    "country": "Mozambique",
+    "iso2": "MOZ",
+    "year": 2015,
+    "value": 40.27244
+  },
+  {
+    "country": "Mozambique",
+    "iso2": "MOZ",
+    "year": 2017,
+    "value": 43.39595
+  },
+  {
+    "country": "Mozambique",
+    "iso2": "MOZ",
+    "year": 2019,
+    "value": 43.08124
+  },
+  {
+    "country": "Mozambique",
+    "iso2": "MOZ",
+    "year": 2021,
+    "value": 43.9927
+  },
+  {
+    "country": "Myanmar",
+    "iso2": "MMR",
+    "year": 2000,
+    "value": 25.22501
+  },
+  {
+    "country": "Myanmar",
+    "iso2": "MMR",
+    "year": 2005,
+    "value": 32.21199
+  },
+  {
+    "country": "Myanmar",
+    "iso2": "MMR",
+    "year": 2010,
+    "value": 44.60143
+  },
+  {
+    "country": "Myanmar",
+    "iso2": "MMR",
+    "year": 2015,
+    "value": 53.395
+  },
+  {
+    "country": "Myanmar",
+    "iso2": "MMR",
+    "year": 2017,
+    "value": 54.06368
+  },
+  {
+    "country": "Myanmar",
+    "iso2": "MMR",
+    "year": 2019,
+    "value": 59.73309
+  },
+  {
+    "country": "Myanmar",
+    "iso2": "MMR",
+    "year": 2021,
+    "value": 52.44712
+  },
+  {
+    "country": "Namibia",
+    "iso2": "NAM",
+    "year": 2000,
+    "value": 38.58296
+  },
+  {
+    "country": "Namibia",
+    "iso2": "NAM",
+    "year": 2005,
+    "value": 48.50308
+  },
+  {
+    "country": "Namibia",
+    "iso2": "NAM",
+    "year": 2010,
+    "value": 57.40187
+  },
+  {
+    "country": "Namibia",
+    "iso2": "NAM",
+    "year": 2015,
+    "value": 62.6862
+  },
+  {
+    "country": "Namibia",
+    "iso2": "NAM",
+    "year": 2017,
+    "value": 63.30084
+  },
+  {
+    "country": "Namibia",
+    "iso2": "NAM",
+    "year": 2019,
+    "value": 62.22477
+  },
+  {
+    "country": "Namibia",
+    "iso2": "NAM",
+    "year": 2021,
+    "value": 62.63717
+  },
+  {
+    "country": "Nauru",
+    "iso2": "NRU",
+    "year": 2000,
+    "value": 35.09056
+  },
+  {
+    "country": "Nauru",
+    "iso2": "NRU",
+    "year": 2005,
+    "value": 40.20208
+  },
+  {
+    "country": "Nauru",
+    "iso2": "NRU",
+    "year": 2010,
+    "value": 51.97902
+  },
+  {
+    "country": "Nauru",
+    "iso2": "NRU",
+    "year": 2015,
+    "value": 57.20006
+  },
+  {
+    "country": "Nauru",
+    "iso2": "NRU",
+    "year": 2017,
+    "value": 58.65583
+  },
+  {
+    "country": "Nauru",
+    "iso2": "NRU",
+    "year": 2019,
+    "value": 59.52347
+  },
+  {
+    "country": "Nauru",
+    "iso2": "NRU",
+    "year": 2021,
+    "value": 60.35399
+  },
+  {
+    "country": "Nepal",
+    "iso2": "NPL",
+    "year": 2000,
+    "value": 19.64187
+  },
+  {
+    "country": "Nepal",
+    "iso2": "NPL",
+    "year": 2005,
+    "value": 25.13433
+  },
+  {
+    "country": "Nepal",
+    "iso2": "NPL",
+    "year": 2010,
+    "value": 37.36217
+  },
+  {
+    "country": "Nepal",
+    "iso2": "NPL",
+    "year": 2015,
+    "value": 47.1465
+  },
+  {
+    "country": "Nepal",
+    "iso2": "NPL",
+    "year": 2017,
+    "value": 44.6829
+  },
+  {
+    "country": "Nepal",
+    "iso2": "NPL",
+    "year": 2019,
+    "value": 50.0143
+  },
+  {
+    "country": "Nepal",
+    "iso2": "NPL",
+    "year": 2021,
+    "value": 53.66346
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NLD",
+    "year": 2000,
+    "value": 75.1118
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NLD",
+    "year": 2005,
+    "value": 77.57281
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NLD",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NLD",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NLD",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NLD",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NLD",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "New Zealand",
+    "iso2": "NZL",
+    "year": 2000,
+    "value": 75.44692
+  },
+  {
+    "country": "New Zealand",
+    "iso2": "NZL",
+    "year": 2005,
+    "value": 80.0
+  },
+  {
+    "country": "New Zealand",
+    "iso2": "NZL",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "New Zealand",
+    "iso2": "NZL",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "New Zealand",
+    "iso2": "NZL",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "New Zealand",
+    "iso2": "NZL",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "New Zealand",
+    "iso2": "NZL",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Nicaragua",
+    "iso2": "NIC",
+    "year": 2000,
+    "value": 46.70932
+  },
+  {
+    "country": "Nicaragua",
+    "iso2": "NIC",
+    "year": 2005,
+    "value": 53.45306
+  },
+  {
+    "country": "Nicaragua",
+    "iso2": "NIC",
+    "year": 2010,
+    "value": 65.59571
+  },
+  {
+    "country": "Nicaragua",
+    "iso2": "NIC",
+    "year": 2015,
+    "value": 70.83757
+  },
+  {
+    "country": "Nicaragua",
+    "iso2": "NIC",
+    "year": 2017,
+    "value": 72.58722
+  },
+  {
+    "country": "Nicaragua",
+    "iso2": "NIC",
+    "year": 2019,
+    "value": 72.8346
+  },
+  {
+    "country": "Nicaragua",
+    "iso2": "NIC",
+    "year": 2021,
+    "value": 70.31471
+  },
+  {
+    "country": "Niger",
+    "iso2": "NER",
+    "year": 2000,
+    "value": 15.03218
+  },
+  {
+    "country": "Niger",
+    "iso2": "NER",
+    "year": 2005,
+    "value": 19.16178
+  },
+  {
+    "country": "Niger",
+    "iso2": "NER",
+    "year": 2010,
+    "value": 29.97222
+  },
+  {
+    "country": "Niger",
+    "iso2": "NER",
+    "year": 2015,
+    "value": 32.23807
+  },
+  {
+    "country": "Niger",
+    "iso2": "NER",
+    "year": 2017,
+    "value": 32.77244
+  },
+  {
+    "country": "Niger",
+    "iso2": "NER",
+    "year": 2019,
+    "value": 33.79233
+  },
+  {
+    "country": "Niger",
+    "iso2": "NER",
+    "year": 2021,
+    "value": 34.98468
+  },
+  {
+    "country": "Nigeria",
+    "iso2": "NGA",
+    "year": 2000,
+    "value": 19.98557
+  },
+  {
+    "country": "Nigeria",
+    "iso2": "NGA",
+    "year": 2005,
+    "value": 24.40609
+  },
+  {
+    "country": "Nigeria",
+    "iso2": "NGA",
+    "year": 2010,
+    "value": 34.00522
+  },
+  {
+    "country": "Nigeria",
+    "iso2": "NGA",
+    "year": 2015,
+    "value": 38.75619
+  },
+  {
+    "country": "Nigeria",
+    "iso2": "NGA",
+    "year": 2017,
+    "value": 39.34686
+  },
+  {
+    "country": "Nigeria",
+    "iso2": "NGA",
+    "year": 2019,
+    "value": 42.80322
+  },
+  {
+    "country": "Nigeria",
+    "iso2": "NGA",
+    "year": 2021,
+    "value": 38.42341
+  },
+  {
+    "country": "North Korea",
+    "iso2": "PRK",
+    "year": 2000,
+    "value": 46.04457
+  },
+  {
+    "country": "North Korea",
+    "iso2": "PRK",
+    "year": 2005,
+    "value": 49.07719
+  },
+  {
+    "country": "North Korea",
+    "iso2": "PRK",
+    "year": 2010,
+    "value": 53.3358
+  },
+  {
+    "country": "North Korea",
+    "iso2": "PRK",
+    "year": 2015,
+    "value": 42.94707
+  },
+  {
+    "country": "North Korea",
+    "iso2": "PRK",
+    "year": 2017,
+    "value": 72.96504
+  },
+  {
+    "country": "North Korea",
+    "iso2": "PRK",
+    "year": 2019,
+    "value": 72.15644
+  },
+  {
+    "country": "North Korea",
+    "iso2": "PRK",
+    "year": 2021,
+    "value": 67.97488
+  },
+  {
+    "country": "North Macedonia",
+    "iso2": "MKD",
+    "year": 2000,
+    "value": 57.59447
+  },
+  {
+    "country": "North Macedonia",
+    "iso2": "MKD",
+    "year": 2005,
+    "value": 58.14938
+  },
+  {
+    "country": "North Macedonia",
+    "iso2": "MKD",
+    "year": 2010,
+    "value": 64.25138
+  },
+  {
+    "country": "North Macedonia",
+    "iso2": "MKD",
+    "year": 2015,
+    "value": 72.75167
+  },
+  {
+    "country": "North Macedonia",
+    "iso2": "MKD",
+    "year": 2017,
+    "value": 74.3683
+  },
+  {
+    "country": "North Macedonia",
+    "iso2": "MKD",
+    "year": 2019,
+    "value": 73.6663
+  },
+  {
+    "country": "North Macedonia",
+    "iso2": "MKD",
+    "year": 2021,
+    "value": 73.52955
+  },
+  {
+    "country": "Norway",
+    "iso2": "NOR",
+    "year": 2000,
+    "value": 72.26675
+  },
+  {
+    "country": "Norway",
+    "iso2": "NOR",
+    "year": 2005,
+    "value": 80.0
+  },
+  {
+    "country": "Norway",
+    "iso2": "NOR",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Norway",
+    "iso2": "NOR",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Norway",
+    "iso2": "NOR",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Norway",
+    "iso2": "NOR",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Norway",
+    "iso2": "NOR",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Oman",
+    "iso2": "OMN",
+    "year": 2000,
+    "value": 60.68038
+  },
+  {
+    "country": "Oman",
+    "iso2": "OMN",
+    "year": 2005,
+    "value": 62.46003
+  },
+  {
+    "country": "Oman",
+    "iso2": "OMN",
+    "year": 2010,
+    "value": 66.87055
+  },
+  {
+    "country": "Oman",
+    "iso2": "OMN",
+    "year": 2015,
+    "value": 68.74741
+  },
+  {
+    "country": "Oman",
+    "iso2": "OMN",
+    "year": 2017,
+    "value": 69.48683
+  },
+  {
+    "country": "Oman",
+    "iso2": "OMN",
+    "year": 2019,
+    "value": 70.18557
+  },
+  {
+    "country": "Oman",
+    "iso2": "OMN",
+    "year": 2021,
+    "value": 69.89807
+  },
+  {
+    "country": "Pakistan",
+    "iso2": "PAK",
+    "year": 2000,
+    "value": 21.7702
+  },
+  {
+    "country": "Pakistan",
+    "iso2": "PAK",
+    "year": 2005,
+    "value": 28.20218
+  },
+  {
+    "country": "Pakistan",
+    "iso2": "PAK",
+    "year": 2010,
+    "value": 32.97353
+  },
+  {
+    "country": "Pakistan",
+    "iso2": "PAK",
+    "year": 2015,
+    "value": 39.57821
+  },
+  {
+    "country": "Pakistan",
+    "iso2": "PAK",
+    "year": 2017,
+    "value": 42.63682
+  },
+  {
+    "country": "Pakistan",
+    "iso2": "PAK",
+    "year": 2019,
+    "value": 44.49096
+  },
+  {
+    "country": "Pakistan",
+    "iso2": "PAK",
+    "year": 2021,
+    "value": 45.20959
+  },
+  {
+    "country": "Palau",
+    "iso2": "PLW",
+    "year": 2000,
+    "value": 47.37368
+  },
+  {
+    "country": "Palau",
+    "iso2": "PLW",
+    "year": 2005,
+    "value": 49.13772
+  },
+  {
+    "country": "Palau",
+    "iso2": "PLW",
+    "year": 2010,
+    "value": 57.84193
+  },
+  {
+    "country": "Palau",
+    "iso2": "PLW",
+    "year": 2015,
+    "value": 64.63821
+  },
+  {
+    "country": "Palau",
+    "iso2": "PLW",
+    "year": 2017,
+    "value": 67.04
+  },
+  {
+    "country": "Palau",
+    "iso2": "PLW",
+    "year": 2019,
+    "value": 65.98124
+  },
+  {
+    "country": "Palau",
+    "iso2": "PLW",
+    "year": 2021,
+    "value": 64.77206
+  },
+  {
+    "country": "Panama",
+    "iso2": "PAN",
+    "year": 2000,
+    "value": 61.6098
+  },
+  {
+    "country": "Panama",
+    "iso2": "PAN",
+    "year": 2005,
+    "value": 67.40448
+  },
+  {
+    "country": "Panama",
+    "iso2": "PAN",
+    "year": 2010,
+    "value": 71.88011
+  },
+  {
+    "country": "Panama",
+    "iso2": "PAN",
+    "year": 2015,
+    "value": 74.58967
+  },
+  {
+    "country": "Panama",
+    "iso2": "PAN",
+    "year": 2017,
+    "value": 77.35477
+  },
+  {
+    "country": "Panama",
+    "iso2": "PAN",
+    "year": 2019,
+    "value": 78.79041
+  },
+  {
+    "country": "Panama",
+    "iso2": "PAN",
+    "year": 2021,
+    "value": 78.21974
+  },
+  {
+    "country": "Papua New Guinea",
+    "iso2": "PNG",
+    "year": 2000,
+    "value": 24.8393
+  },
+  {
+    "country": "Papua New Guinea",
+    "iso2": "PNG",
+    "year": 2005,
+    "value": 25.98899
+  },
+  {
+    "country": "Papua New Guinea",
+    "iso2": "PNG",
+    "year": 2010,
+    "value": 33.07228
+  },
+  {
+    "country": "Papua New Guinea",
+    "iso2": "PNG",
+    "year": 2015,
+    "value": 35.60206
+  },
+  {
+    "country": "Papua New Guinea",
+    "iso2": "PNG",
+    "year": 2017,
+    "value": 33.35481
+  },
+  {
+    "country": "Papua New Guinea",
+    "iso2": "PNG",
+    "year": 2019,
+    "value": 30.01612
+  },
+  {
+    "country": "Papua New Guinea",
+    "iso2": "PNG",
+    "year": 2021,
+    "value": 30.39468
+  },
+  {
+    "country": "Paraguay",
+    "iso2": "PRY",
+    "year": 2000,
+    "value": 47.50436
+  },
+  {
+    "country": "Paraguay",
+    "iso2": "PRY",
+    "year": 2005,
+    "value": 58.50354
+  },
+  {
+    "country": "Paraguay",
+    "iso2": "PRY",
+    "year": 2010,
+    "value": 68.03709
+  },
+  {
+    "country": "Paraguay",
+    "iso2": "PRY",
+    "year": 2015,
+    "value": 71.91619
+  },
+  {
+    "country": "Paraguay",
+    "iso2": "PRY",
+    "year": 2017,
+    "value": 73.45425
+  },
+  {
+    "country": "Paraguay",
+    "iso2": "PRY",
+    "year": 2019,
+    "value": 73.72123
+  },
+  {
+    "country": "Paraguay",
+    "iso2": "PRY",
+    "year": 2021,
+    "value": 72.27225
+  },
+  {
+    "country": "Peru",
+    "iso2": "PER",
+    "year": 2000,
+    "value": 47.89023
+  },
+  {
+    "country": "Peru",
+    "iso2": "PER",
+    "year": 2005,
+    "value": 58.55022
+  },
+  {
+    "country": "Peru",
+    "iso2": "PER",
+    "year": 2010,
+    "value": 70.04292
+  },
+  {
+    "country": "Peru",
+    "iso2": "PER",
+    "year": 2015,
+    "value": 76.0701
+  },
+  {
+    "country": "Peru",
+    "iso2": "PER",
+    "year": 2017,
+    "value": 75.35568
+  },
+  {
+    "country": "Peru",
+    "iso2": "PER",
+    "year": 2019,
+    "value": 74.96297
+  },
+  {
+    "country": "Peru",
+    "iso2": "PER",
+    "year": 2021,
+    "value": 71.10895
+  },
+  {
+    "country": "Philippines",
+    "iso2": "PHL",
+    "year": 2000,
+    "value": 36.31266
+  },
+  {
+    "country": "Philippines",
+    "iso2": "PHL",
+    "year": 2005,
+    "value": 38.40657
+  },
+  {
+    "country": "Philippines",
+    "iso2": "PHL",
+    "year": 2010,
+    "value": 47.95707
+  },
+  {
+    "country": "Philippines",
+    "iso2": "PHL",
+    "year": 2015,
+    "value": 57.40672
+  },
+  {
+    "country": "Philippines",
+    "iso2": "PHL",
+    "year": 2017,
+    "value": 60.10928
+  },
+  {
+    "country": "Philippines",
+    "iso2": "PHL",
+    "year": 2019,
+    "value": 59.87902
+  },
+  {
+    "country": "Philippines",
+    "iso2": "PHL",
+    "year": 2021,
+    "value": 58.21226
+  },
+  {
+    "country": "Poland",
+    "iso2": "POL",
+    "year": 2000,
+    "value": 65.79383
+  },
+  {
+    "country": "Poland",
+    "iso2": "POL",
+    "year": 2005,
+    "value": 71.48678
+  },
+  {
+    "country": "Poland",
+    "iso2": "POL",
+    "year": 2010,
+    "value": 75.49274
+  },
+  {
+    "country": "Poland",
+    "iso2": "POL",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Poland",
+    "iso2": "POL",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Poland",
+    "iso2": "POL",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Poland",
+    "iso2": "POL",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Portugal",
+    "iso2": "PRT",
+    "year": 2000,
+    "value": 73.56623
+  },
+  {
+    "country": "Portugal",
+    "iso2": "PRT",
+    "year": 2005,
+    "value": 80.0
+  },
+  {
+    "country": "Portugal",
+    "iso2": "PRT",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Portugal",
+    "iso2": "PRT",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Portugal",
+    "iso2": "PRT",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Portugal",
+    "iso2": "PRT",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Portugal",
+    "iso2": "PRT",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Qatar",
+    "iso2": "QAT",
+    "year": 2000,
+    "value": 52.24769
+  },
+  {
+    "country": "Qatar",
+    "iso2": "QAT",
+    "year": 2005,
+    "value": 53.7298
+  },
+  {
+    "country": "Qatar",
+    "iso2": "QAT",
+    "year": 2010,
+    "value": 66.79881
+  },
+  {
+    "country": "Qatar",
+    "iso2": "QAT",
+    "year": 2015,
+    "value": 72.93346
+  },
+  {
+    "country": "Qatar",
+    "iso2": "QAT",
+    "year": 2017,
+    "value": 72.17193
+  },
+  {
+    "country": "Qatar",
+    "iso2": "QAT",
+    "year": 2019,
+    "value": 75.35207
+  },
+  {
+    "country": "Qatar",
+    "iso2": "QAT",
+    "year": 2021,
+    "value": 76.42062
+  },
+  {
+    "country": "Romania",
+    "iso2": "ROU",
+    "year": 2000,
+    "value": 68.63213
+  },
+  {
+    "country": "Romania",
+    "iso2": "ROU",
+    "year": 2005,
+    "value": 71.76083
+  },
+  {
+    "country": "Romania",
+    "iso2": "ROU",
+    "year": 2010,
+    "value": 73.72845
+  },
+  {
+    "country": "Romania",
+    "iso2": "ROU",
+    "year": 2015,
+    "value": 77.64096
+  },
+  {
+    "country": "Romania",
+    "iso2": "ROU",
+    "year": 2017,
+    "value": 78.08285
+  },
+  {
+    "country": "Romania",
+    "iso2": "ROU",
+    "year": 2019,
+    "value": 78.57488
+  },
+  {
+    "country": "Romania",
+    "iso2": "ROU",
+    "year": 2021,
+    "value": 78.39335
+  },
+  {
+    "country": "Russia",
+    "iso2": "RUS",
+    "year": 2000,
+    "value": 54.26154
+  },
+  {
+    "country": "Russia",
+    "iso2": "RUS",
+    "year": 2005,
+    "value": 49.88257
+  },
+  {
+    "country": "Russia",
+    "iso2": "RUS",
+    "year": 2010,
+    "value": 70.12196
+  },
+  {
+    "country": "Russia",
+    "iso2": "RUS",
+    "year": 2015,
+    "value": 73.75881
+  },
+  {
+    "country": "Russia",
+    "iso2": "RUS",
+    "year": 2017,
+    "value": 77.49385
+  },
+  {
+    "country": "Russia",
+    "iso2": "RUS",
+    "year": 2019,
+    "value": 79.06899
+  },
+  {
+    "country": "Russia",
+    "iso2": "RUS",
+    "year": 2021,
+    "value": 79.15902
+  },
+  {
+    "country": "Rwanda",
+    "iso2": "RWA",
+    "year": 2000,
+    "value": 18.7014
+  },
+  {
+    "country": "Rwanda",
+    "iso2": "RWA",
+    "year": 2005,
+    "value": 26.07757
+  },
+  {
+    "country": "Rwanda",
+    "iso2": "RWA",
+    "year": 2010,
+    "value": 38.95656
+  },
+  {
+    "country": "Rwanda",
+    "iso2": "RWA",
+    "year": 2015,
+    "value": 43.89061
+  },
+  {
+    "country": "Rwanda",
+    "iso2": "RWA",
+    "year": 2017,
+    "value": 48.07314
+  },
+  {
+    "country": "Rwanda",
+    "iso2": "RWA",
+    "year": 2019,
+    "value": 47.45173
+  },
+  {
+    "country": "Rwanda",
+    "iso2": "RWA",
+    "year": 2021,
+    "value": 48.55309
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "iso2": "KNA",
+    "year": 2000,
+    "value": 53.13859
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "iso2": "KNA",
+    "year": 2005,
+    "value": 66.0196
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "iso2": "KNA",
+    "year": 2010,
+    "value": 72.38799
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "iso2": "KNA",
+    "year": 2015,
+    "value": 75.88739
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "iso2": "KNA",
+    "year": 2017,
+    "value": 76.09689
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "iso2": "KNA",
+    "year": 2019,
+    "value": 76.77564
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "iso2": "KNA",
+    "year": 2021,
+    "value": 78.95278
+  },
+  {
+    "country": "Saint Lucia",
+    "iso2": "LCA",
+    "year": 2000,
+    "value": 49.39138
+  },
+  {
+    "country": "Saint Lucia",
+    "iso2": "LCA",
+    "year": 2005,
+    "value": 61.98908
+  },
+  {
+    "country": "Saint Lucia",
+    "iso2": "LCA",
+    "year": 2010,
+    "value": 67.65661
+  },
+  {
+    "country": "Saint Lucia",
+    "iso2": "LCA",
+    "year": 2015,
+    "value": 73.88802
+  },
+  {
+    "country": "Saint Lucia",
+    "iso2": "LCA",
+    "year": 2017,
+    "value": 73.79628
+  },
+  {
+    "country": "Saint Lucia",
+    "iso2": "LCA",
+    "year": 2019,
+    "value": 76.52474
+  },
+  {
+    "country": "Saint Lucia",
+    "iso2": "LCA",
+    "year": 2021,
+    "value": 76.81477
+  },
+  {
+    "country": "Saint Vincent-Grenadines",
+    "iso2": "VCT",
+    "year": 2000,
+    "value": 48.76612
+  },
+  {
+    "country": "Saint Vincent-Grenadines",
+    "iso2": "VCT",
+    "year": 2005,
+    "value": 60.98172
+  },
+  {
+    "country": "Saint Vincent-Grenadines",
+    "iso2": "VCT",
+    "year": 2010,
+    "value": 67.72204
+  },
+  {
+    "country": "Saint Vincent-Grenadines",
+    "iso2": "VCT",
+    "year": 2015,
+    "value": 72.2798
+  },
+  {
+    "country": "Saint Vincent-Grenadines",
+    "iso2": "VCT",
+    "year": 2017,
+    "value": 76.11737
+  },
+  {
+    "country": "Saint Vincent-Grenadines",
+    "iso2": "VCT",
+    "year": 2019,
+    "value": 76.30333
+  },
+  {
+    "country": "Saint Vincent-Grenadines",
+    "iso2": "VCT",
+    "year": 2021,
+    "value": 68.83349
+  },
+  {
+    "country": "Samoa",
+    "iso2": "WSM",
+    "year": 2000,
+    "value": 40.53957
+  },
+  {
+    "country": "Samoa",
+    "iso2": "WSM",
+    "year": 2005,
+    "value": 38.58097
+  },
+  {
+    "country": "Samoa",
+    "iso2": "WSM",
+    "year": 2010,
+    "value": 47.86596
+  },
+  {
+    "country": "Samoa",
+    "iso2": "WSM",
+    "year": 2015,
+    "value": 52.68977
+  },
+  {
+    "country": "Samoa",
+    "iso2": "WSM",
+    "year": 2017,
+    "value": 54.11195
+  },
+  {
+    "country": "Samoa",
+    "iso2": "WSM",
+    "year": 2019,
+    "value": 55.02263
+  },
+  {
+    "country": "Samoa",
+    "iso2": "WSM",
+    "year": 2021,
+    "value": 55.12797
+  },
+  {
+    "country": "San Marino",
+    "iso2": "SMR",
+    "year": 2000,
+    "value": 68.98303
+  },
+  {
+    "country": "San Marino",
+    "iso2": "SMR",
+    "year": 2005,
+    "value": 72.95224
+  },
+  {
+    "country": "San Marino",
+    "iso2": "SMR",
+    "year": 2010,
+    "value": 75.25352
+  },
+  {
+    "country": "San Marino",
+    "iso2": "SMR",
+    "year": 2015,
+    "value": 79.36187
+  },
+  {
+    "country": "San Marino",
+    "iso2": "SMR",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "San Marino",
+    "iso2": "SMR",
+    "year": 2019,
+    "value": 77.21336
+  },
+  {
+    "country": "San Marino",
+    "iso2": "SMR",
+    "year": 2021,
+    "value": 77.1058
+  },
+  {
+    "country": "São Tomé and Príncipe",
+    "iso2": "STP",
+    "year": 2000,
+    "value": 32.70851
+  },
+  {
+    "country": "São Tomé and Príncipe",
+    "iso2": "STP",
+    "year": 2005,
+    "value": 37.24185
+  },
+  {
+    "country": "São Tomé and Príncipe",
+    "iso2": "STP",
+    "year": 2010,
+    "value": 46.8507
+  },
+  {
+    "country": "São Tomé and Príncipe",
+    "iso2": "STP",
+    "year": 2015,
+    "value": 51.65538
+  },
+  {
+    "country": "São Tomé and Príncipe",
+    "iso2": "STP",
+    "year": 2017,
+    "value": 54.69579
+  },
+  {
+    "country": "São Tomé and Príncipe",
+    "iso2": "STP",
+    "year": 2019,
+    "value": 60.22453
+  },
+  {
+    "country": "São Tomé and Príncipe",
+    "iso2": "STP",
+    "year": 2021,
+    "value": 58.78933
+  },
+  {
+    "country": "Saudi Arabia",
+    "iso2": "SAU",
+    "year": 2000,
+    "value": 64.68455
+  },
+  {
+    "country": "Saudi Arabia",
+    "iso2": "SAU",
+    "year": 2005,
+    "value": 67.25365
+  },
+  {
+    "country": "Saudi Arabia",
+    "iso2": "SAU",
+    "year": 2010,
+    "value": 68.96962
+  },
+  {
+    "country": "Saudi Arabia",
+    "iso2": "SAU",
+    "year": 2015,
+    "value": 70.73363
+  },
+  {
+    "country": "Saudi Arabia",
+    "iso2": "SAU",
+    "year": 2017,
+    "value": 72.599
+  },
+  {
+    "country": "Saudi Arabia",
+    "iso2": "SAU",
+    "year": 2019,
+    "value": 72.39696
+  },
+  {
+    "country": "Saudi Arabia",
+    "iso2": "SAU",
+    "year": 2021,
+    "value": 74.3674
+  },
+  {
+    "country": "Senegal",
+    "iso2": "SEN",
+    "year": 2000,
+    "value": 21.14888
+  },
+  {
+    "country": "Senegal",
+    "iso2": "SEN",
+    "year": 2005,
+    "value": 25.37049
+  },
+  {
+    "country": "Senegal",
+    "iso2": "SEN",
+    "year": 2010,
+    "value": 36.98137
+  },
+  {
+    "country": "Senegal",
+    "iso2": "SEN",
+    "year": 2015,
+    "value": 45.02056
+  },
+  {
+    "country": "Senegal",
+    "iso2": "SEN",
+    "year": 2017,
+    "value": 48.54812
+  },
+  {
+    "country": "Senegal",
+    "iso2": "SEN",
+    "year": 2019,
+    "value": 50.53169
+  },
+  {
+    "country": "Senegal",
+    "iso2": "SEN",
+    "year": 2021,
+    "value": 50.08955
+  },
+  {
+    "country": "Serbia",
+    "iso2": "SRB",
+    "year": 2000,
+    "value": 44.35506
+  },
+  {
+    "country": "Serbia",
+    "iso2": "SRB",
+    "year": 2005,
+    "value": 62.85669
+  },
+  {
+    "country": "Serbia",
+    "iso2": "SRB",
+    "year": 2010,
+    "value": 63.36807
+  },
+  {
+    "country": "Serbia",
+    "iso2": "SRB",
+    "year": 2015,
+    "value": 71.87019
+  },
+  {
+    "country": "Serbia",
+    "iso2": "SRB",
+    "year": 2017,
+    "value": 73.30007
+  },
+  {
+    "country": "Serbia",
+    "iso2": "SRB",
+    "year": 2019,
+    "value": 77.03038
+  },
+  {
+    "country": "Serbia",
+    "iso2": "SRB",
+    "year": 2021,
+    "value": 71.67236
+  },
+  {
+    "country": "Seychelles",
+    "iso2": "SYC",
+    "year": 2000,
+    "value": 44.24134
+  },
+  {
+    "country": "Seychelles",
+    "iso2": "SYC",
+    "year": 2005,
+    "value": 47.97737
+  },
+  {
+    "country": "Seychelles",
+    "iso2": "SYC",
+    "year": 2010,
+    "value": 59.41133
+  },
+  {
+    "country": "Seychelles",
+    "iso2": "SYC",
+    "year": 2015,
+    "value": 72.83885
+  },
+  {
+    "country": "Seychelles",
+    "iso2": "SYC",
+    "year": 2017,
+    "value": 75.37238
+  },
+  {
+    "country": "Seychelles",
+    "iso2": "SYC",
+    "year": 2019,
+    "value": 73.70173
+  },
+  {
+    "country": "Seychelles",
+    "iso2": "SYC",
+    "year": 2021,
+    "value": 74.57317
+  },
+  {
+    "country": "Sierra Leone",
+    "iso2": "SLE",
+    "year": 2000,
+    "value": 14.3157
+  },
+  {
+    "country": "Sierra Leone",
+    "iso2": "SLE",
+    "year": 2005,
+    "value": 16.4179
+  },
+  {
+    "country": "Sierra Leone",
+    "iso2": "SLE",
+    "year": 2010,
+    "value": 26.73673
+  },
+  {
+    "country": "Sierra Leone",
+    "iso2": "SLE",
+    "year": 2015,
+    "value": 34.8883
+  },
+  {
+    "country": "Sierra Leone",
+    "iso2": "SLE",
+    "year": 2017,
+    "value": 38.69389
+  },
+  {
+    "country": "Sierra Leone",
+    "iso2": "SLE",
+    "year": 2019,
+    "value": 38.31223
+  },
+  {
+    "country": "Sierra Leone",
+    "iso2": "SLE",
+    "year": 2021,
+    "value": 41.00435
+  },
+  {
+    "country": "Singapore",
+    "iso2": "SGP",
+    "year": 2000,
+    "value": 63.87043
+  },
+  {
+    "country": "Singapore",
+    "iso2": "SGP",
+    "year": 2005,
+    "value": 70.14104
+  },
+  {
+    "country": "Singapore",
+    "iso2": "SGP",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Singapore",
+    "iso2": "SGP",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Singapore",
+    "iso2": "SGP",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Singapore",
+    "iso2": "SGP",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Singapore",
+    "iso2": "SGP",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SVK",
+    "year": 2000,
+    "value": 64.85145
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SVK",
+    "year": 2005,
+    "value": 73.00352
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SVK",
+    "year": 2010,
+    "value": 75.63513
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SVK",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SVK",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SVK",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SVK",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SVN",
+    "year": 2000,
+    "value": 72.78382
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SVN",
+    "year": 2005,
+    "value": 73.62452
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SVN",
+    "year": 2010,
+    "value": 77.43741
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SVN",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SVN",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SVN",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SVN",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Solomon Islands",
+    "iso2": "SLB",
+    "year": 2000,
+    "value": 30.9107
+  },
+  {
+    "country": "Solomon Islands",
+    "iso2": "SLB",
+    "year": 2005,
+    "value": 32.23912
+  },
+  {
+    "country": "Solomon Islands",
+    "iso2": "SLB",
+    "year": 2010,
+    "value": 40.09755
+  },
+  {
+    "country": "Solomon Islands",
+    "iso2": "SLB",
+    "year": 2015,
+    "value": 45.26013
+  },
+  {
+    "country": "Solomon Islands",
+    "iso2": "SLB",
+    "year": 2017,
+    "value": 46.62469
+  },
+  {
+    "country": "Solomon Islands",
+    "iso2": "SLB",
+    "year": 2019,
+    "value": 46.3896
+  },
+  {
+    "country": "Solomon Islands",
+    "iso2": "SLB",
+    "year": 2021,
+    "value": 47.2799
+  },
+  {
+    "country": "Somalia",
+    "iso2": "SOM",
+    "year": 2000,
+    "value": 10.69952
+  },
+  {
+    "country": "Somalia",
+    "iso2": "SOM",
+    "year": 2005,
+    "value": 12.36933
+  },
+  {
+    "country": "Somalia",
+    "iso2": "SOM",
+    "year": 2010,
+    "value": 17.37231
+  },
+  {
+    "country": "Somalia",
+    "iso2": "SOM",
+    "year": 2015,
+    "value": 21.16915
+  },
+  {
+    "country": "Somalia",
+    "iso2": "SOM",
+    "year": 2017,
+    "value": 24.64832
+  },
+  {
+    "country": "Somalia",
+    "iso2": "SOM",
+    "year": 2019,
+    "value": 25.60999
+  },
+  {
+    "country": "Somalia",
+    "iso2": "SOM",
+    "year": 2021,
+    "value": 26.79095
+  },
+  {
+    "country": "South Africa",
+    "iso2": "ZAF",
+    "year": 2000,
+    "value": 43.06644
+  },
+  {
+    "country": "South Africa",
+    "iso2": "ZAF",
+    "year": 2005,
+    "value": 51.49383
+  },
+  {
+    "country": "South Africa",
+    "iso2": "ZAF",
+    "year": 2010,
+    "value": 62.6583
+  },
+  {
+    "country": "South Africa",
+    "iso2": "ZAF",
+    "year": 2015,
+    "value": 69.84427
+  },
+  {
+    "country": "South Africa",
+    "iso2": "ZAF",
+    "year": 2017,
+    "value": 71.45163
+  },
+  {
+    "country": "South Africa",
+    "iso2": "ZAF",
+    "year": 2019,
+    "value": 71.00739
+  },
+  {
+    "country": "South Africa",
+    "iso2": "ZAF",
+    "year": 2021,
+    "value": 70.9511
+  },
+  {
+    "country": "South Korea",
+    "iso2": "KOR",
+    "year": 2000,
+    "value": 73.20142
+  },
+  {
+    "country": "South Korea",
+    "iso2": "KOR",
+    "year": 2005,
+    "value": 77.24309
+  },
+  {
+    "country": "South Korea",
+    "iso2": "KOR",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "South Korea",
+    "iso2": "KOR",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "South Korea",
+    "iso2": "KOR",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "South Korea",
+    "iso2": "KOR",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "South Korea",
+    "iso2": "KOR",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "South Sudan",
+    "iso2": "SSD",
+    "year": 2000,
+    "value": 17.96568
+  },
+  {
+    "country": "South Sudan",
+    "iso2": "SSD",
+    "year": 2005,
+    "value": 19.12855
+  },
+  {
+    "country": "South Sudan",
+    "iso2": "SSD",
+    "year": 2010,
+    "value": 22.70779
+  },
+  {
+    "country": "South Sudan",
+    "iso2": "SSD",
+    "year": 2015,
+    "value": 27.30866
+  },
+  {
+    "country": "South Sudan",
+    "iso2": "SSD",
+    "year": 2017,
+    "value": 29.77759
+  },
+  {
+    "country": "South Sudan",
+    "iso2": "SSD",
+    "year": 2019,
+    "value": 31.18415
+  },
+  {
+    "country": "South Sudan",
+    "iso2": "SSD",
+    "year": 2021,
+    "value": 34.17734
+  },
+  {
+    "country": "Spain",
+    "iso2": "ESP",
+    "year": 2000,
+    "value": 68.74818
+  },
+  {
+    "country": "Spain",
+    "iso2": "ESP",
+    "year": 2005,
+    "value": 73.6699
+  },
+  {
+    "country": "Spain",
+    "iso2": "ESP",
+    "year": 2010,
+    "value": 77.63302
+  },
+  {
+    "country": "Spain",
+    "iso2": "ESP",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Spain",
+    "iso2": "ESP",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Spain",
+    "iso2": "ESP",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Spain",
+    "iso2": "ESP",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Sri Lanka",
+    "iso2": "LKA",
+    "year": 2000,
+    "value": 43.76064
+  },
+  {
+    "country": "Sri Lanka",
+    "iso2": "LKA",
+    "year": 2005,
+    "value": 48.07618
+  },
+  {
+    "country": "Sri Lanka",
+    "iso2": "LKA",
+    "year": 2010,
+    "value": 54.61721
+  },
+  {
+    "country": "Sri Lanka",
+    "iso2": "LKA",
+    "year": 2015,
+    "value": 61.13587
+  },
+  {
+    "country": "Sri Lanka",
+    "iso2": "LKA",
+    "year": 2017,
+    "value": 65.21196
+  },
+  {
+    "country": "Sri Lanka",
+    "iso2": "LKA",
+    "year": 2019,
+    "value": 65.78252
+  },
+  {
+    "country": "Sri Lanka",
+    "iso2": "LKA",
+    "year": 2021,
+    "value": 66.73998
+  },
+  {
+    "country": "Sudan",
+    "iso2": "SDN",
+    "year": 2000,
+    "value": 24.80419
+  },
+  {
+    "country": "Sudan",
+    "iso2": "SDN",
+    "year": 2005,
+    "value": 27.02324
+  },
+  {
+    "country": "Sudan",
+    "iso2": "SDN",
+    "year": 2010,
+    "value": 35.65147
+  },
+  {
+    "country": "Sudan",
+    "iso2": "SDN",
+    "year": 2015,
+    "value": 42.66123
+  },
+  {
+    "country": "Sudan",
+    "iso2": "SDN",
+    "year": 2017,
+    "value": 44.94618
+  },
+  {
+    "country": "Sudan",
+    "iso2": "SDN",
+    "year": 2019,
+    "value": 44.5537
+  },
+  {
+    "country": "Sudan",
+    "iso2": "SDN",
+    "year": 2021,
+    "value": 43.53126
+  },
+  {
+    "country": "Suriname",
+    "iso2": "SUR",
+    "year": 2000,
+    "value": 45.25257
+  },
+  {
+    "country": "Suriname",
+    "iso2": "SUR",
+    "year": 2005,
+    "value": 58.09045
+  },
+  {
+    "country": "Suriname",
+    "iso2": "SUR",
+    "year": 2010,
+    "value": 64.7199
+  },
+  {
+    "country": "Suriname",
+    "iso2": "SUR",
+    "year": 2015,
+    "value": 71.33347
+  },
+  {
+    "country": "Suriname",
+    "iso2": "SUR",
+    "year": 2017,
+    "value": 72.27364
+  },
+  {
+    "country": "Suriname",
+    "iso2": "SUR",
+    "year": 2019,
+    "value": 72.29755
+  },
+  {
+    "country": "Suriname",
+    "iso2": "SUR",
+    "year": 2021,
+    "value": 62.66269
+  },
+  {
+    "country": "Sweden",
+    "iso2": "SWE",
+    "year": 2000,
+    "value": 72.33821
+  },
+  {
+    "country": "Sweden",
+    "iso2": "SWE",
+    "year": 2005,
+    "value": 75.9309
+  },
+  {
+    "country": "Sweden",
+    "iso2": "SWE",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Sweden",
+    "iso2": "SWE",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Sweden",
+    "iso2": "SWE",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Sweden",
+    "iso2": "SWE",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Sweden",
+    "iso2": "SWE",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Switzerland",
+    "iso2": "CHE",
+    "year": 2000,
+    "value": 74.98363
+  },
+  {
+    "country": "Switzerland",
+    "iso2": "CHE",
+    "year": 2005,
+    "value": 79.48193
+  },
+  {
+    "country": "Switzerland",
+    "iso2": "CHE",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "Switzerland",
+    "iso2": "CHE",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Switzerland",
+    "iso2": "CHE",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Switzerland",
+    "iso2": "CHE",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Switzerland",
+    "iso2": "CHE",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Syria",
+    "iso2": "SYR",
+    "year": 2000,
+    "value": 46.07927
+  },
+  {
+    "country": "Syria",
+    "iso2": "SYR",
+    "year": 2005,
+    "value": 52.43646
+  },
+  {
+    "country": "Syria",
+    "iso2": "SYR",
+    "year": 2010,
+    "value": 58.25027
+  },
+  {
+    "country": "Syria",
+    "iso2": "SYR",
+    "year": 2015,
+    "value": 59.83709
+  },
+  {
+    "country": "Syria",
+    "iso2": "SYR",
+    "year": 2017,
+    "value": 61.5679
+  },
+  {
+    "country": "Syria",
+    "iso2": "SYR",
+    "year": 2019,
+    "value": 61.59771
+  },
+  {
+    "country": "Syria",
+    "iso2": "SYR",
+    "year": 2021,
+    "value": 64.12852
+  },
+  {
+    "country": "Tajikistan",
+    "iso2": "TJK",
+    "year": 2000,
+    "value": 42.48084
+  },
+  {
+    "country": "Tajikistan",
+    "iso2": "TJK",
+    "year": 2005,
+    "value": 46.26333
+  },
+  {
+    "country": "Tajikistan",
+    "iso2": "TJK",
+    "year": 2010,
+    "value": 58.42437
+  },
+  {
+    "country": "Tajikistan",
+    "iso2": "TJK",
+    "year": 2015,
+    "value": 68.16235
+  },
+  {
+    "country": "Tajikistan",
+    "iso2": "TJK",
+    "year": 2017,
+    "value": 68.81573
+  },
+  {
+    "country": "Tajikistan",
+    "iso2": "TJK",
+    "year": 2019,
+    "value": 69.53428
+  },
+  {
+    "country": "Tajikistan",
+    "iso2": "TJK",
+    "year": 2021,
+    "value": 67.24715
+  },
+  {
+    "country": "Tanzania",
+    "iso2": "TZA",
+    "year": 2000,
+    "value": 19.56862
+  },
+  {
+    "country": "Tanzania",
+    "iso2": "TZA",
+    "year": 2005,
+    "value": 23.36851
+  },
+  {
+    "country": "Tanzania",
+    "iso2": "TZA",
+    "year": 2010,
+    "value": 33.19517
+  },
+  {
+    "country": "Tanzania",
+    "iso2": "TZA",
+    "year": 2015,
+    "value": 37.88104
+  },
+  {
+    "country": "Tanzania",
+    "iso2": "TZA",
+    "year": 2017,
+    "value": 39.90318
+  },
+  {
+    "country": "Tanzania",
+    "iso2": "TZA",
+    "year": 2019,
+    "value": 41.58988
+  },
+  {
+    "country": "Tanzania",
+    "iso2": "TZA",
+    "year": 2021,
+    "value": 42.62791
+  },
+  {
+    "country": "Thailand",
+    "iso2": "THA",
+    "year": 2000,
+    "value": 43.18711
+  },
+  {
+    "country": "Thailand",
+    "iso2": "THA",
+    "year": 2005,
+    "value": 59.16866
+  },
+  {
+    "country": "Thailand",
+    "iso2": "THA",
+    "year": 2010,
+    "value": 67.68145
+  },
+  {
+    "country": "Thailand",
+    "iso2": "THA",
+    "year": 2015,
+    "value": 75.68045
+  },
+  {
+    "country": "Thailand",
+    "iso2": "THA",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Thailand",
+    "iso2": "THA",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Thailand",
+    "iso2": "THA",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Togo",
+    "iso2": "TGO",
+    "year": 2000,
+    "value": 18.67918
+  },
+  {
+    "country": "Togo",
+    "iso2": "TGO",
+    "year": 2005,
+    "value": 24.5421
+  },
+  {
+    "country": "Togo",
+    "iso2": "TGO",
+    "year": 2010,
+    "value": 29.62984
+  },
+  {
+    "country": "Togo",
+    "iso2": "TGO",
+    "year": 2015,
+    "value": 39.61168
+  },
+  {
+    "country": "Togo",
+    "iso2": "TGO",
+    "year": 2017,
+    "value": 42.7466
+  },
+  {
+    "country": "Togo",
+    "iso2": "TGO",
+    "year": 2019,
+    "value": 41.39977
+  },
+  {
+    "country": "Togo",
+    "iso2": "TGO",
+    "year": 2021,
+    "value": 44.00792
+  },
+  {
+    "country": "Tonga",
+    "iso2": "TON",
+    "year": 2000,
+    "value": 43.2936
+  },
+  {
+    "country": "Tonga",
+    "iso2": "TON",
+    "year": 2005,
+    "value": 44.61647
+  },
+  {
+    "country": "Tonga",
+    "iso2": "TON",
+    "year": 2010,
+    "value": 52.79188
+  },
+  {
+    "country": "Tonga",
+    "iso2": "TON",
+    "year": 2015,
+    "value": 54.12032
+  },
+  {
+    "country": "Tonga",
+    "iso2": "TON",
+    "year": 2017,
+    "value": 55.8647
+  },
+  {
+    "country": "Tonga",
+    "iso2": "TON",
+    "year": 2019,
+    "value": 56.80285
+  },
+  {
+    "country": "Tonga",
+    "iso2": "TON",
+    "year": 2021,
+    "value": 56.68787
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "iso2": "TTO",
+    "year": 2000,
+    "value": 52.74739
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "iso2": "TTO",
+    "year": 2005,
+    "value": 66.0619
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "iso2": "TTO",
+    "year": 2010,
+    "value": 72.03561
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "iso2": "TTO",
+    "year": 2015,
+    "value": 77.20811
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "iso2": "TTO",
+    "year": 2017,
+    "value": 76.93326
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "iso2": "TTO",
+    "year": 2019,
+    "value": 76.01939
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "iso2": "TTO",
+    "year": 2021,
+    "value": 75.0049
+  },
+  {
+    "country": "Tunisia",
+    "iso2": "TUN",
+    "year": 2000,
+    "value": 44.01251
+  },
+  {
+    "country": "Tunisia",
+    "iso2": "TUN",
+    "year": 2005,
+    "value": 57.5374
+  },
+  {
+    "country": "Tunisia",
+    "iso2": "TUN",
+    "year": 2010,
+    "value": 60.61248
+  },
+  {
+    "country": "Tunisia",
+    "iso2": "TUN",
+    "year": 2015,
+    "value": 63.27863
+  },
+  {
+    "country": "Tunisia",
+    "iso2": "TUN",
+    "year": 2017,
+    "value": 64.88946
+  },
+  {
+    "country": "Tunisia",
+    "iso2": "TUN",
+    "year": 2019,
+    "value": 68.29424
+  },
+  {
+    "country": "Tunisia",
+    "iso2": "TUN",
+    "year": 2021,
+    "value": 67.13705
+  },
+  {
+    "country": "Turkey",
+    "iso2": "TUR",
+    "year": 2000,
+    "value": 57.10386
+  },
+  {
+    "country": "Turkey",
+    "iso2": "TUR",
+    "year": 2005,
+    "value": 63.95932
+  },
+  {
+    "country": "Turkey",
+    "iso2": "TUR",
+    "year": 2010,
+    "value": 65.80634
+  },
+  {
+    "country": "Turkey",
+    "iso2": "TUR",
+    "year": 2015,
+    "value": 76.33004
+  },
+  {
+    "country": "Turkey",
+    "iso2": "TUR",
+    "year": 2017,
+    "value": 76.64689
+  },
+  {
+    "country": "Turkey",
+    "iso2": "TUR",
+    "year": 2019,
+    "value": 76.65077
+  },
+  {
+    "country": "Turkey",
+    "iso2": "TUR",
+    "year": 2021,
+    "value": 75.58542
+  },
+  {
+    "country": "Turkmenistan",
+    "iso2": "TKM",
+    "year": 2000,
+    "value": 54.28495
+  },
+  {
+    "country": "Turkmenistan",
+    "iso2": "TKM",
+    "year": 2005,
+    "value": 62.43292
+  },
+  {
+    "country": "Turkmenistan",
+    "iso2": "TKM",
+    "year": 2010,
+    "value": 67.9454
+  },
+  {
+    "country": "Turkmenistan",
+    "iso2": "TKM",
+    "year": 2015,
+    "value": 71.75587
+  },
+  {
+    "country": "Turkmenistan",
+    "iso2": "TKM",
+    "year": 2017,
+    "value": 73.25834
+  },
+  {
+    "country": "Turkmenistan",
+    "iso2": "TKM",
+    "year": 2019,
+    "value": 74.41952
+  },
+  {
+    "country": "Turkmenistan",
+    "iso2": "TKM",
+    "year": 2021,
+    "value": 74.70721
+  },
+  {
+    "country": "Tuvalu",
+    "iso2": "TUV",
+    "year": 2000,
+    "value": 37.39676
+  },
+  {
+    "country": "Tuvalu",
+    "iso2": "TUV",
+    "year": 2005,
+    "value": 40.02587
+  },
+  {
+    "country": "Tuvalu",
+    "iso2": "TUV",
+    "year": 2010,
+    "value": 48.6541
+  },
+  {
+    "country": "Tuvalu",
+    "iso2": "TUV",
+    "year": 2015,
+    "value": 52.42924
+  },
+  {
+    "country": "Tuvalu",
+    "iso2": "TUV",
+    "year": 2017,
+    "value": 51.94547
+  },
+  {
+    "country": "Tuvalu",
+    "iso2": "TUV",
+    "year": 2019,
+    "value": 52.30556
+  },
+  {
+    "country": "Tuvalu",
+    "iso2": "TUV",
+    "year": 2021,
+    "value": 52.40868
+  },
+  {
+    "country": "Uganda",
+    "iso2": "UGA",
+    "year": 2000,
+    "value": 21.75011
+  },
+  {
+    "country": "Uganda",
+    "iso2": "UGA",
+    "year": 2005,
+    "value": 27.80427
+  },
+  {
+    "country": "Uganda",
+    "iso2": "UGA",
+    "year": 2010,
+    "value": 36.46073
+  },
+  {
+    "country": "Uganda",
+    "iso2": "UGA",
+    "year": 2015,
+    "value": 43.0267
+  },
+  {
+    "country": "Uganda",
+    "iso2": "UGA",
+    "year": 2017,
+    "value": 45.84126
+  },
+  {
+    "country": "Uganda",
+    "iso2": "UGA",
+    "year": 2019,
+    "value": 48.10522
+  },
+  {
+    "country": "Uganda",
+    "iso2": "UGA",
+    "year": 2021,
+    "value": 48.5671
+  },
+  {
+    "country": "Ukraine",
+    "iso2": "UKR",
+    "year": 2000,
+    "value": 52.67456
+  },
+  {
+    "country": "Ukraine",
+    "iso2": "UKR",
+    "year": 2005,
+    "value": 54.25643
+  },
+  {
+    "country": "Ukraine",
+    "iso2": "UKR",
+    "year": 2010,
+    "value": 64.65137
+  },
+  {
+    "country": "Ukraine",
+    "iso2": "UKR",
+    "year": 2015,
+    "value": 68.50453
+  },
+  {
+    "country": "Ukraine",
+    "iso2": "UKR",
+    "year": 2017,
+    "value": 70.85789
+  },
+  {
+    "country": "Ukraine",
+    "iso2": "UKR",
+    "year": 2019,
+    "value": 76.57785
+  },
+  {
+    "country": "Ukraine",
+    "iso2": "UKR",
+    "year": 2021,
+    "value": 75.50772
+  },
+  {
+    "country": "United Arab Emirates",
+    "iso2": "ARE",
+    "year": 2000,
+    "value": 48.48775
+  },
+  {
+    "country": "United Arab Emirates",
+    "iso2": "ARE",
+    "year": 2005,
+    "value": 59.04102
+  },
+  {
+    "country": "United Arab Emirates",
+    "iso2": "ARE",
+    "year": 2010,
+    "value": 61.98754
+  },
+  {
+    "country": "United Arab Emirates",
+    "iso2": "ARE",
+    "year": 2015,
+    "value": 71.58994
+  },
+  {
+    "country": "United Arab Emirates",
+    "iso2": "ARE",
+    "year": 2017,
+    "value": 72.97377
+  },
+  {
+    "country": "United Arab Emirates",
+    "iso2": "ARE",
+    "year": 2019,
+    "value": 75.03922
+  },
+  {
+    "country": "United Arab Emirates",
+    "iso2": "ARE",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "United Kingdom",
+    "iso2": "GBR",
+    "year": 2000,
+    "value": 72.03758
+  },
+  {
+    "country": "United Kingdom",
+    "iso2": "GBR",
+    "year": 2005,
+    "value": 78.71256
+  },
+  {
+    "country": "United Kingdom",
+    "iso2": "GBR",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "United Kingdom",
+    "iso2": "GBR",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "United Kingdom",
+    "iso2": "GBR",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "United Kingdom",
+    "iso2": "GBR",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "United Kingdom",
+    "iso2": "GBR",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "United States",
+    "iso2": "USA",
+    "year": 2000,
+    "value": 77.96876
+  },
+  {
+    "country": "United States",
+    "iso2": "USA",
+    "year": 2005,
+    "value": 80.0
+  },
+  {
+    "country": "United States",
+    "iso2": "USA",
+    "year": 2010,
+    "value": 80.0
+  },
+  {
+    "country": "United States",
+    "iso2": "USA",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "United States",
+    "iso2": "USA",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "United States",
+    "iso2": "USA",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "United States",
+    "iso2": "USA",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Uruguay",
+    "iso2": "URY",
+    "year": 2000,
+    "value": 65.22858
+  },
+  {
+    "country": "Uruguay",
+    "iso2": "URY",
+    "year": 2005,
+    "value": 70.28025
+  },
+  {
+    "country": "Uruguay",
+    "iso2": "URY",
+    "year": 2010,
+    "value": 77.57634
+  },
+  {
+    "country": "Uruguay",
+    "iso2": "URY",
+    "year": 2015,
+    "value": 80.0
+  },
+  {
+    "country": "Uruguay",
+    "iso2": "URY",
+    "year": 2017,
+    "value": 80.0
+  },
+  {
+    "country": "Uruguay",
+    "iso2": "URY",
+    "year": 2019,
+    "value": 80.0
+  },
+  {
+    "country": "Uruguay",
+    "iso2": "URY",
+    "year": 2021,
+    "value": 80.0
+  },
+  {
+    "country": "Uzbekistan",
+    "iso2": "UZB",
+    "year": 2000,
+    "value": 54.79426
+  },
+  {
+    "country": "Uzbekistan",
+    "iso2": "UZB",
+    "year": 2005,
+    "value": 55.6623
+  },
+  {
+    "country": "Uzbekistan",
+    "iso2": "UZB",
+    "year": 2010,
+    "value": 67.9312
+  },
+  {
+    "country": "Uzbekistan",
+    "iso2": "UZB",
+    "year": 2015,
+    "value": 73.06261
+  },
+  {
+    "country": "Uzbekistan",
+    "iso2": "UZB",
+    "year": 2017,
+    "value": 73.87034
+  },
+  {
+    "country": "Uzbekistan",
+    "iso2": "UZB",
+    "year": 2019,
+    "value": 74.70088
+  },
+  {
+    "country": "Uzbekistan",
+    "iso2": "UZB",
+    "year": 2021,
+    "value": 74.84127
+  },
+  {
+    "country": "Vanuatu",
+    "iso2": "VUT",
+    "year": 2000,
+    "value": 31.38485
+  },
+  {
+    "country": "Vanuatu",
+    "iso2": "VUT",
+    "year": 2005,
+    "value": 30.86052
+  },
+  {
+    "country": "Vanuatu",
+    "iso2": "VUT",
+    "year": 2010,
+    "value": 37.76617
+  },
+  {
+    "country": "Vanuatu",
+    "iso2": "VUT",
+    "year": 2015,
+    "value": 44.92993
+  },
+  {
+    "country": "Vanuatu",
+    "iso2": "VUT",
+    "year": 2017,
+    "value": 44.23804
+  },
+  {
+    "country": "Vanuatu",
+    "iso2": "VUT",
+    "year": 2019,
+    "value": 46.36674
+  },
+  {
+    "country": "Vanuatu",
+    "iso2": "VUT",
+    "year": 2021,
+    "value": 46.99287
+  },
+  {
+    "country": "Venezuela",
+    "iso2": "VEN",
+    "year": 2000,
+    "value": 49.0037
+  },
+  {
+    "country": "Venezuela",
+    "iso2": "VEN",
+    "year": 2005,
+    "value": 59.51868
+  },
+  {
+    "country": "Venezuela",
+    "iso2": "VEN",
+    "year": 2010,
+    "value": 66.94756
+  },
+  {
+    "country": "Venezuela",
+    "iso2": "VEN",
+    "year": 2015,
+    "value": 76.64705
+  },
+  {
+    "country": "Venezuela",
+    "iso2": "VEN",
+    "year": 2017,
+    "value": 74.97142
+  },
+  {
+    "country": "Venezuela",
+    "iso2": "VEN",
+    "year": 2019,
+    "value": 74.40042
+  },
+  {
+    "country": "Venezuela",
+    "iso2": "VEN",
+    "year": 2021,
+    "value": 75.1346
+  },
+  {
+    "country": "Vietnam",
+    "iso2": "VNM",
+    "year": 2000,
+    "value": 36.98556
+  },
+  {
+    "country": "Vietnam",
+    "iso2": "VNM",
+    "year": 2005,
+    "value": 44.04025
+  },
+  {
+    "country": "Vietnam",
+    "iso2": "VNM",
+    "year": 2010,
+    "value": 58.99083
+  },
+  {
+    "country": "Vietnam",
+    "iso2": "VNM",
+    "year": 2015,
+    "value": 68.22915
+  },
+  {
+    "country": "Vietnam",
+    "iso2": "VNM",
+    "year": 2017,
+    "value": 70.21927
+  },
+  {
+    "country": "Vietnam",
+    "iso2": "VNM",
+    "year": 2019,
+    "value": 69.46246
+  },
+  {
+    "country": "Vietnam",
+    "iso2": "VNM",
+    "year": 2021,
+    "value": 68.08401
+  },
+  {
+    "country": "World",
+    "iso2": "OWID_WRL",
+    "year": 2000,
+    "value": 44.62809
+  },
+  {
+    "country": "World",
+    "iso2": "OWID_WRL",
+    "year": 2005,
+    "value": 49.78249
+  },
+  {
+    "country": "World",
+    "iso2": "OWID_WRL",
+    "year": 2010,
+    "value": 58.02955
+  },
+  {
+    "country": "World",
+    "iso2": "OWID_WRL",
+    "year": 2015,
+    "value": 64.53692
+  },
+  {
+    "country": "World",
+    "iso2": "OWID_WRL",
+    "year": 2017,
+    "value": 66.71644
+  },
+  {
+    "country": "World",
+    "iso2": "OWID_WRL",
+    "year": 2019,
+    "value": 67.89145
+  },
+  {
+    "country": "World",
+    "iso2": "OWID_WRL",
+    "year": 2021,
+    "value": 67.51741
+  },
+  {
+    "country": "Yemen",
+    "iso2": "YEM",
+    "year": 2000,
+    "value": 28.35013
+  },
+  {
+    "country": "Yemen",
+    "iso2": "YEM",
+    "year": 2005,
+    "value": 29.89151
+  },
+  {
+    "country": "Yemen",
+    "iso2": "YEM",
+    "year": 2010,
+    "value": 38.74886
+  },
+  {
+    "country": "Yemen",
+    "iso2": "YEM",
+    "year": 2015,
+    "value": 39.47222
+  },
+  {
+    "country": "Yemen",
+    "iso2": "YEM",
+    "year": 2017,
+    "value": 41.15677
+  },
+  {
+    "country": "Yemen",
+    "iso2": "YEM",
+    "year": 2019,
+    "value": 42.40922
+  },
+  {
+    "country": "Yemen",
+    "iso2": "YEM",
+    "year": 2021,
+    "value": 42.4872
+  },
+  {
+    "country": "Zambia",
+    "iso2": "ZMB",
+    "year": 2000,
+    "value": 28.17749
+  },
+  {
+    "country": "Zambia",
+    "iso2": "ZMB",
+    "year": 2005,
+    "value": 34.16745
+  },
+  {
+    "country": "Zambia",
+    "iso2": "ZMB",
+    "year": 2010,
+    "value": 44.77538
+  },
+  {
+    "country": "Zambia",
+    "iso2": "ZMB",
+    "year": 2015,
+    "value": 51.59778
+  },
+  {
+    "country": "Zambia",
+    "iso2": "ZMB",
+    "year": 2017,
+    "value": 53.23087
+  },
+  {
+    "country": "Zambia",
+    "iso2": "ZMB",
+    "year": 2019,
+    "value": 53.5129
+  },
+  {
+    "country": "Zambia",
+    "iso2": "ZMB",
+    "year": 2021,
+    "value": 55.83556
+  },
+  {
+    "country": "Zimbabwe",
+    "iso2": "ZWE",
+    "year": 2000,
+    "value": 30.00444
+  },
+  {
+    "country": "Zimbabwe",
+    "iso2": "ZWE",
+    "year": 2005,
+    "value": 31.41146
+  },
+  {
+    "country": "Zimbabwe",
+    "iso2": "ZWE",
+    "year": 2010,
+    "value": 46.01314
+  },
+  {
+    "country": "Zimbabwe",
+    "iso2": "ZWE",
+    "year": 2015,
+    "value": 56.01437
+  },
+  {
+    "country": "Zimbabwe",
+    "iso2": "ZWE",
+    "year": 2017,
+    "value": 57.00583
+  },
+  {
+    "country": "Zimbabwe",
+    "iso2": "ZWE",
+    "year": 2019,
+    "value": 55.38052
+  },
+  {
+    "country": "Zimbabwe",
+    "iso2": "ZWE",
+    "year": 2021,
+    "value": 55.04284
+  }
+]

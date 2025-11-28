@@ -69,6 +69,9 @@ def main():
             continue
         fname = kpi['filename']
         for ext in ['json', 'csv']:
+            # geopolitcal_risk_index.csv wird nicht mehr erwartet
+            if fname == 'geopolitical_risk_index' and ext == 'csv':
+                continue
             fpath = DATA_DIR / f"{fname}.{ext}"
             if not check_file_exists_and_nonempty(fpath):
                 missing_files.append(str(fpath))
