@@ -7,3 +7,12 @@
 [2025-11-28T14:04:42.737967] ==== Validation Complete ====
 [2025-11-28T14:04:42.738553] ❌ 1 files missing or empty. See above.
 [2025-11-28T14:04:42.739269] Suggestions: Check for plausible value ranges, outliers, and year coverage in future.
+[2025-11-30T10:58:25.449858] ==== RealityCheck Data Validation Started ====
+[2025-11-30T10:58:25.572902] ==== Validation Complete ====
+[2025-11-30T10:58:25.573495] ✅ All expected files present and non-empty.
+[2025-11-30T10:58:25.574021] Suggestions: Check for plausible value ranges, outliers, and year coverage in future.
+[2025-11-30T11:12:11.615319] ==== RealityCheck Data Validation Started ====
+[2025-11-30T11:12:11.640057] ❌ MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\geopolitical_risk_index.csv
+[2025-11-30T11:12:11.737348] ==== Validation Complete ====
+[2025-11-30T11:12:11.737948] ❌ 1 files missing or empty. See above.
+[2025-11-30T11:12:11.738512] Suggestions: Check for plausible value ranges, outliers, and year coverage in future.

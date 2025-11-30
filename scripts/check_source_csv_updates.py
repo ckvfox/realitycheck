@@ -86,6 +86,7 @@ def gpt_lookup_latest_year(meta: dict, last_year: int | None) -> int | None:
         {"role": "user", "content": prompt},
     ]
 
+
     for attempt in range(2):
         try:
             rsp = client.chat.completions.create(
@@ -99,7 +100,18 @@ def gpt_lookup_latest_year(meta: dict, last_year: int | None) -> int | None:
             continue
 
         text = (rsp.choices[0].message.content or "").strip()
-        logger.info(f"🤖 GPT response for '{title}': {text}")
+
+        # GPT-Response als Klartext, nur relevante Felder, kein JSON, kein 'dataset'-Feld
+        try:
+            data = json.loads(text)
+            latest_year = data.get("latest_year")
+            confidence = data.get("confidence")
+            evidence = data.get("evidence")
+            print(f"GPT: {title}: latest_year={latest_year} | confidence={confidence} | evidence={evidence}")
+        except Exception:
+            # Fallback: Originaltext einzeilig loggen
+            print(f"GPT: {title}: {text.replace(chr(10), ' ').replace(chr(13), ' ')}")
+
         parsed_year = _parse_latest_year_payload(text, current_year=current_year)
         if parsed_year is not None:
             return parsed_year
