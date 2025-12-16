@@ -174,6 +174,20 @@ async function init() {
       el(id)?.addEventListener("change", updateChart)
     );
 
+    // === Initial KPI selection & chart setup ===
+    if (sortedCountryNames.length > 0) {
+      const country1Select = el("country1Select");
+      if (country1Select && !country1Select.value) {
+        country1Select.value = sortedCountryNames[0];
+      }
+    }
+
+    // === Trigger initial view update ===
+    if (el("kpiSelect") && el("kpiSelect").options.length > 1) {
+      el("kpiSelect").selectedIndex = 1;
+      updateView();
+    }
+
   } catch (e) {
     console.error("RealityCheck init() failed:", e);
   } finally {
