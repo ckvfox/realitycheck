@@ -1,0 +1,106 @@
+name: ⚡ RealityCheck – Manual Fetch Force Fast (No Analysis)
+
+on:
+  workflow_dispatch: {}    # Nur manuell startbar
+
+jobs:
+  manual_force_fast_run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    env:
+      TZ: Europe/Berlin
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+    steps:
+      - name: 🧭 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -U sdmx1
+          pip install -r requirements.txt
+          echo "✅ Dependencies installed"
+
+      - name: ⚡ Run RealityCheck pipeline with FORCE overwrite & NO Analysis
+        run: |
+          echo "===== RealityCheck Manual Fetch Force Fast Start $(date -u) ====="
+          echo "⚠️ FORCE MODE: All data will be overwritten!"
+          echo "⚡ FAST MODE: Skipping GPT analysis for speed"
+          python ./scripts/fetch_data.py -f -n
+          echo "===== Manual Fetch Force Fast End $(date -u) ====="
+
+      - name: 💾 Upload log artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: fetch_log_force_fast
+          path: data/fetch_log.txt
+          retention-days: 7
+
+      - name: 🌍 FTP Deploy /data to InfinityFree (Safe)
+        uses: SamKirkland/ftp-deploy-action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: data/
+          server-dir: ${{ secrets.FTP_DIR }}/data/
+          state-name: .ftp-deploy-sync-state-data.json
+          log-level: verbose
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.github*
+            **/__pycache__/
+            **/*.py
+            **/*.yml
+            **/*.csv
+            **/pending/**
+
+      - name: 🪶 Commit and push updated data to GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "RealityCheck Bot"
+          git config --global user.email "bot@realitycheck"
+          git add data/
+          git commit -m "⚡ Manual force-fast data update ($(date -u))" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+
+      - name: 🕐 Get current UTC date
+        id: date
+        run: echo "date=$(date -u '+%a, %d %b %Y %H:%M:%S UTC')" >> $GITHUB_OUTPUT
+
+      - name: 📱 Create GitHub Issue for status
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `⚡ Manual Force-Fast RealityCheck Run – ${{ job.status }}`;
+            const body = `
+            🧭 **Manual Force-Fast RealityCheck fetch completed**
+            
+            - **Status**: ${{ job.status }}
+            - **Mode**: FORCE (-f) + NO ANALYSIS (-n) – All data overwritten, GPT analysis skipped
+            - **Date**: ${{ steps.date.outputs.date }}
+            - **Run**: [View full log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            
+            ---
+            *This issue was created automatically by the RealityCheck Bot.*
+            `;
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['automation', 'manual-force-fast']
+            });

@@ -1,0 +1,81 @@
+name: 🧪 RealityCheck – Manual Fetch Test
+
+on:
+  workflow_dispatch: {}    # Nur manuell startbar
+
+jobs:
+  manual_test_run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    env:
+      TZ: Europe/Berlin
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+    steps:
+      - name: 🧭 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -U sdmx1
+          pip install -r requirements.txt
+          echo "✅ Dependencies installed"
+
+      - name: 🧪 Run RealityCheck pipeline in TEST mode
+        run: |
+          echo "===== RealityCheck Manual Fetch Test Start $(date -u) ====="
+          echo "🧪 TEST MODE: Fetching data to test configuration"
+          python ./scripts/fetch_data.py
+          echo "===== Manual Fetch Test End $(date -u) ====="
+
+      - name: 💾 Upload log artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: fetch_log_test
+          path: data/fetch_log.txt
+          retention-days: 7
+
+      - name: 📋 Verify fetch_status.json
+        run: |
+          echo "=== Fetch Status ==="
+          cat data/fetch_status.json | head -50
+
+      - name: 🕐 Get current UTC date
+        id: date
+        run: echo "date=$(date -u '+%a, %d %b %Y %H:%M:%S UTC')" >> $GITHUB_OUTPUT
+
+      - name: 📱 Create GitHub Issue for status
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `🧪 Manual Test RealityCheck Run – ${{ job.status }}`;
+            const body = `
+            🧭 **Manual Test RealityCheck fetch completed**
+            
+            - **Status**: ${{ job.status }}
+            - **Mode**: TEST – Data fetched to verify configuration
+            - **Date**: ${{ steps.date.outputs.date }}
+            - **Run**: [View full log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            
+            **Note**: This is a test run. Results are not deployed to production.
+            
+            ---
+            *This issue was created automatically by the RealityCheck Bot.*
+            `;
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['automation', 'test']
+            });
