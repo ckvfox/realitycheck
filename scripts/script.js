@@ -1214,6 +1214,18 @@ async function updateMap() {
 }
 
 /* === Hilfsfunktion: HTML-Farbskala für Heatmap (inkl. Log-Hinweis, 2025-11-13 FIXED) === */
+// Simple HTML escaping to prevent XSS when interpolating dynamic values into innerHTML
+function escapeHtml(value) {
+  if (value === null || value === undefined) return "";
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+    .replace(/\//g, "&#x2F;");
+}
+
 function buildHeatLegendHTML({
   title, unit, min, max,
   sortMode = "higher",
@@ -1243,21 +1255,27 @@ function buildHeatLegendHTML({
       modeText = "Quantitative scale (higher = greener)";
   }
 
-  const minLabel = typeof min === "number" ? formatValueAuto(min) : String(min ?? "");
-  const maxLabel = typeof max === "number" ? formatValueAuto(max) : String(max ?? "");
+  const minLabelRaw = typeof min === "number" ? formatValueAuto(min) : String(min ?? "");
+  const maxLabelRaw = typeof max === "number" ? formatValueAuto(max) : String(max ?? "");
+  const safeTitle = escapeHtml(title);
+  const safeUnit = escapeHtml(unit);
+  const safeMinLabel = escapeHtml(minLabelRaw);
+  const safeMaxLabel = escapeHtml(maxLabelRaw);
+  const safeModeText = escapeHtml(modeText);
+
   const logInfo = useLog
     ? `<div class="legend-note">⚙️ log-scaled (extreme values damped)</div>`
     : "";
 
   return `
   <div class="legend-box">
-    <div class="legend-title"><strong>${title}</strong></div>
+    <div class="legend-title"><strong>${safeTitle}</strong></div>
     <div class="legend-bar legend-bar--${variant}"></div>
     <div class="legend-scale">
-      <span>${minLabel} ${unit}</span>
-      <span>${maxLabel} ${unit}</span>
+      <span>${safeMinLabel} ${safeUnit}</span>
+      <span>${safeMaxLabel} ${safeUnit}</span>
     </div>
-    <div class="legend-mode legend-mode--${variant}">${modeText}</div>
+    <div class="legend-mode legend-mode--${variant}">${safeModeText}</div>
     ${logInfo}
   </div>`;
 }
