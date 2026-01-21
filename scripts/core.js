@@ -128,6 +128,10 @@ function deepMerge(target, ...sources) {
   for (const source of sources) {
     if (!source) continue;
     for (const key of Object.keys(source)) {
+      // ✅ Security fix: Skip dangerous prototype keys to prevent prototype pollution
+      if (key === "__proto__" || key === "constructor" || key === "prototype") {
+        continue;
+      }
       const value = source[key];
       if (value && typeof value === "object" && !Array.isArray(value)) {
         target[key] = deepMerge(target[key] || {}, value);
@@ -891,7 +895,10 @@ function deepMerge(target, ...sources) {
       ) {
         deepMerge(target[key], value);
       } else {
-        target[key] = value;
+        // ✅ Security fix: Skip dangerous prototype keys to prevent prototype pollution
+        if (key !== "__proto__" && key !== "constructor" && key !== "prototype") {
+          target[key] = value;
+        }
       }
     }
   }

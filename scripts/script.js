@@ -1201,7 +1201,14 @@ async function updateMap() {
     useLog
   });
   const mapLegend = document.getElementById("map-legend");
-  if (mapLegend) mapLegend.innerHTML = legendHTML;
+  if (mapLegend) {
+    // ✅ Security fix: use DOMParser instead of innerHTML to prevent XSS
+    mapLegend.innerHTML = "";
+    const fragment = new DOMParser().parseFromString(legendHTML, "text/html").body;
+    while (fragment.firstChild) {
+      mapLegend.appendChild(fragment.firstChild);
+    }
+  }
 
   console.log(`🎨 Map rendered (balanced scale, log=${useLog})`);
 }
