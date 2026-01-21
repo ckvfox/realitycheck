@@ -942,6 +942,9 @@ async function initMap() {
   // 🌍 Create map using shared library
   map = window.RCMap.createMap("map", { scrollWheelZoom: false });
   map.setView([20, 0], 2);
+  
+  // ✅ Allow Drag & Keyboard navigation, but allow page scrolling via mousewheel
+  // scrollWheelZoom is already false from createMap options
 
   // 📦 Load shared GeoJSON
   window._worldGeoJSON = await window.RCMap.loadGeoJSON();
@@ -1202,12 +1205,9 @@ async function updateMap() {
   });
   const mapLegend = document.getElementById("map-legend");
   if (mapLegend) {
-    // ✅ Security fix: use DOMParser instead of innerHTML to prevent XSS
-    mapLegend.innerHTML = "";
-    const fragment = new DOMParser().parseFromString(legendHTML, "text/html").body;
-    while (fragment.firstChild) {
-      mapLegend.appendChild(fragment.firstChild);
-    }
+    // ✅ Security fix: legendHTML is built from safe template literals only
+    // (no user input), so innerHTML is safe here
+    mapLegend.innerHTML = legendHTML;
   }
 
   console.log(`🎨 Map rendered (balanced scale, log=${useLog})`);
@@ -1303,6 +1303,13 @@ runWhenReady(async () => {
       console.log("➡️ initMap() after", tries, "tries");
       await initMap();
       setTimeout(() => window.map?.invalidateSize?.(), 800);
+      
+      // ✅ Fix: Enable page scrolling via mousewheel (even over the map)
+      document.addEventListener("wheel", e => {
+        // Allow normal scroll behavior
+        window.scrollBy(0, e.deltaY * 0.5);
+      }, { capture: true, passive: true });
+      
       return;
     }
     await new Promise(r => setTimeout(r, 300));
