@@ -924,8 +924,8 @@
   },
   {
     "title": "Labor Productivity per Hour (Penn World Table)",
-    "description": "Labor productivity per hour worked, measured in 2017 international dollars, reflects the average output produced per hour of labor. This indicator is important for understanding economic efficiency and international competitiveness. It is influenced by factors such as technology, education, capital investment, and labor market structure. These data are compiled by Our World in Data based on the Penn World Table.",
-    "unit": "2021 international $ per hour",
+    "description": "Labor productivity per hour worked, measured in 2021 international dollars, reflects the average output produced per hour of labor. This indicator is important for understanding economic efficiency and international competitiveness. It is influenced by factors such as technology, education, capital investment, and labor market structure. These data are compiled by Our World in Data based on the Penn World Table.",
+    "unit": "$ per hour",
     "relation": "",
     "sort": "higher",
     "cluster": "Economy & Labor",
