@@ -378,99 +378,124 @@
   "tax_revenue_of_gdp": {
     "high_outliers": [
       {
-        "country": "Samoa",
+        "country": "Nauru",
+        "year": 2020,
+        "value": 44.3468321505376,
+        "z": 3.98
+      },
+      {
+        "country": "Lesotho",
+        "year": 2024,
+        "value": 37.2829803739764,
+        "z": 2.975
+      },
+      {
+        "country": "Namibia",
         "year": 2023,
-        "value": 0.0239562772523711,
-        "z": 7.634
+        "value": 32.9629020947691,
+        "z": 2.36
       },
       {
-        "country": "Palau",
-        "year": 2020,
-        "value": 0.0178945573584821,
-        "z": 5.658
-      },
-      {
-        "country": "Kiribati",
+        "country": "Denmark",
         "year": 2023,
-        "value": 0.0177169834832785,
-        "z": 5.6
+        "value": 31.5935489663634,
+        "z": 2.166
       },
       {
-        "country": "Marshall Islands",
-        "year": 2020,
-        "value": 0.0171555004135649,
-        "z": 5.417
-      },
-      {
-        "country": "Micronesia",
-        "year": 2020,
-        "value": 0.00703115450759675,
-        "z": 2.118
+        "country": "New Zealand",
+        "year": 2023,
+        "value": 30.6677718688638,
+        "z": 2.034
       }
     ],
-    "low_outliers": []
+    "low_outliers": [
+      {
+        "country": "Somalia",
+        "year": 2024,
+        "value": 7.96182509481436e-05,
+        "z": -2.328
+      },
+      {
+        "country": "United Arab Emirates",
+        "year": 2024,
+        "value": 0.64751617298844,
+        "z": -2.236
+      },
+      {
+        "country": "Iraq",
+        "year": 2019,
+        "value": 1.34459361823375,
+        "z": -2.136
+      },
+      {
+        "country": "Kuwait",
+        "year": 1998,
+        "value": 1.49244292670587,
+        "z": -2.115
+      }
+    ]
   },
   "unemployment_rate": {
     "high_outliers": [
       {
         "country": "Eswatini",
-        "year": 2024,
-        "value": 34.643,
-        "z": 4.893
+        "year": 2025,
+        "value": 34.202,
+        "z": 4.813
       },
       {
         "country": "South Africa",
-        "year": 2024,
-        "value": 32.279,
-        "z": 4.477
+        "year": 2025,
+        "value": 32.391,
+        "z": 4.494
       },
       {
         "country": "Djibouti",
-        "year": 2024,
-        "value": 26.007,
-        "z": 3.371
+        "year": 2025,
+        "value": 26.015,
+        "z": 3.37
+      },
+      {
+        "country": "Botswana",
+        "year": 2025,
+        "value": 24.477,
+        "z": 3.099
       },
       {
         "country": "Palestine",
         "year": 2022,
         "value": 24.42,
-        "z": 3.091
-      },
-      {
-        "country": "Botswana",
-        "year": 2024,
-        "value": 23.81,
-        "z": 2.984
+        "z": 3.089
       },
       {
         "country": "Gabon",
-        "year": 2024,
-        "value": 20.091,
-        "z": 2.328
+        "year": 2025,
+        "value": 20.154,
+        "z": 2.338
       },
       {
         "country": "Republic of the Congo",
-        "year": 2024,
-        "value": 19.895,
-        "z": 2.294
+        "year": 2025,
+        "value": 19.876,
+        "z": 2.289
       },
       {
         "country": "Namibia",
-        "year": 2024,
-        "value": 19.157,
-        "z": 2.163
-      },
-      {
-        "country": "Libya",
-        "year": 2024,
-        "value": 19.085,
-        "z": 2.151
+        "year": 2025,
+        "value": 19.291,
+        "z": 2.186
       },
       {
         "country": "Somalia",
-        "year": 2024,
-        "value": 18.949,
-        "z": 2.127
+        "year": 2025,
+        "value": 18.948,
+        "z": 2.125
+      },
+      {
+        "country": "Libya",
+        "year": 2025,
+        "value": 18.758,
+        "z": 2.092
       }
     ],
     "low_outliers": []
@@ -1143,43 +1168,43 @@
         "country": "North Korea",
         "year": 2012,
         "value": 0.0,
-        "z": -2.589
+        "z": -2.594
       },
       {
         "country": "Central African Republic",
         "year": 2019,
         "value": 7.50916,
-        "z": -2.309
+        "z": -2.313
       },
       {
         "country": "Uganda",
         "year": 2024,
         "value": 8.94983,
-        "z": -2.255
+        "z": -2.259
       },
       {
         "country": "South Sudan",
         "year": 2020,
         "value": 9.27123,
-        "z": -2.243
+        "z": -2.247
       },
       {
         "country": "Burundi",
         "year": 2023,
         "value": 11.0784,
-        "z": -2.175
+        "z": -2.179
       },
       {
         "country": "Chad",
         "year": 2023,
         "value": 13.1832,
-        "z": -2.097
+        "z": -2.101
       },
       {
         "country": "Yemen",
         "year": 2020,
         "value": 13.8152,
-        "z": -2.073
+        "z": -2.077
       }
     ]
   },
@@ -1311,71 +1336,65 @@
     "high_outliers": [
       {
         "country": "Qatar",
-        "year": 2024,
-        "value": 87.106,
-        "z": 2.484
+        "year": 2025,
+        "value": 86.9,
+        "z": 2.475
       },
       {
         "country": "Solomon Islands",
-        "year": 2024,
-        "value": 83.059,
-        "z": 2.151
+        "year": 2025,
+        "value": 83.089,
+        "z": 2.162
       },
       {
         "country": "Madagascar",
-        "year": 2024,
-        "value": 82.866,
-        "z": 2.136
+        "year": 2025,
+        "value": 82.895,
+        "z": 2.146
       },
       {
         "country": "Tanzania",
-        "year": 2024,
-        "value": 82.445,
-        "z": 2.101
+        "year": 2025,
+        "value": 82.4,
+        "z": 2.105
       },
       {
         "country": "Cambodia",
-        "year": 2024,
-        "value": 82.165,
-        "z": 2.078
+        "year": 2025,
+        "value": 82.175,
+        "z": 2.087
       }
     ],
     "low_outliers": [
       {
         "country": "São Tomé and Príncipe",
-        "year": 2024,
-        "value": 21.272,
-        "z": -2.929
+        "year": 2025,
+        "value": 21.21,
+        "z": -2.922
       },
       {
         "country": "Djibouti",
-        "year": 2024,
-        "value": 23.509,
-        "z": -2.745
-      },
-      {
-        "country": "Somalia",
-        "year": 2024,
-        "value": 27.477,
-        "z": -2.418
+        "year": 2025,
+        "value": 23.486,
+        "z": -2.735
       },
       {
         "country": "Yemen",
-        "year": 2024,
-        "value": 27.554,
-        "z": -2.412
+        "year": 2025,
+        "value": 27.369,
+        "z": -2.416
+      },
+      {
+        "country": "Somalia",
+        "year": 2025,
+        "value": 27.433,
+        "z": -2.411
       },
       {
         "country": "Syria",
-        "year": 2024,
-        "value": 32.048,
-        "z": -2.043
-      },
-      {
-        "country": "Afghanistan",
-        "year": 2024,
-        "value": 32.408,
-        "z": -2.013
+        "year": 2025,
+        "value": 31.891,
+        "z": -2.045
       }
     ]
   },
@@ -1383,71 +1402,71 @@
     "high_outliers": [
       {
         "country": "Madagascar",
-        "year": 2024,
-        "value": 82.915,
-        "z": 2.011
+        "year": 2025,
+        "value": 82.913,
+        "z": 2.018
       }
     ],
     "low_outliers": [
       {
         "country": "Yemen",
-        "year": 2024,
-        "value": 4.705,
-        "z": -2.922
+        "year": 2025,
+        "value": 4.663,
+        "z": -2.923
       },
       {
         "country": "Afghanistan",
-        "year": 2024,
-        "value": 5.123,
-        "z": -2.895
+        "year": 2025,
+        "value": 5.086,
+        "z": -2.896
       },
       {
         "country": "Iraq",
-        "year": 2024,
-        "value": 11.003,
-        "z": -2.524
+        "year": 2025,
+        "value": 10.937,
+        "z": -2.527
       },
       {
         "country": "Syria",
-        "year": 2024,
-        "value": 12.772,
-        "z": -2.413
+        "year": 2025,
+        "value": 12.727,
+        "z": -2.414
       },
       {
         "country": "Iran",
-        "year": 2024,
-        "value": 14.144,
-        "z": -2.326
+        "year": 2025,
+        "value": 14.013,
+        "z": -2.333
       },
       {
         "country": "Algeria",
-        "year": 2024,
-        "value": 14.306,
-        "z": -2.316
+        "year": 2025,
+        "value": 14.142,
+        "z": -2.324
       },
       {
         "country": "Sudan",
         "year": 2022,
         "value": 14.452,
-        "z": -2.307
+        "z": -2.305
       },
       {
         "country": "Jordan",
-        "year": 2024,
-        "value": 16.008,
-        "z": -2.209
+        "year": 2025,
+        "value": 16.029,
+        "z": -2.205
       },
       {
         "country": "Egypt",
-        "year": 2024,
-        "value": 18.468,
-        "z": -2.054
+        "year": 2025,
+        "value": 18.455,
+        "z": -2.052
       },
       {
         "country": "Palestine",
         "year": 2022,
         "value": 18.934,
-        "z": -2.024
+        "z": -2.022
       }
     ]
   },
@@ -1533,7 +1552,7 @@
         "country": "Namibia",
         "year": 2024,
         "value": 9.08440819434816,
-        "z": 2.339
+        "z": 2.338
       },
       {
         "country": "Cuba",
@@ -1580,37 +1599,37 @@
         "country": "Luxembourg",
         "year": 2024,
         "value": 155941.288210791,
-        "z": 4.261
+        "z": 4.262
       },
       {
         "country": "Singapore",
         "year": 2024,
         "value": 150689.301625826,
-        "z": 4.084
+        "z": 4.085
       },
       {
         "country": "Ireland",
         "year": 2024,
         "value": 133437.470117019,
-        "z": 3.503
+        "z": 3.505
       },
       {
         "country": "Qatar",
         "year": 2024,
         "value": 126046.354855612,
-        "z": 3.255
+        "z": 3.256
       },
       {
         "country": "Norway",
         "year": 2024,
         "value": 102037.526800237,
-        "z": 2.447
+        "z": 2.448
       },
       {
         "country": "Switzerland",
         "year": 2024,
         "value": 96497.6947971323,
-        "z": 2.26
+        "z": 2.261
       },
       {
         "country": "Brunei",

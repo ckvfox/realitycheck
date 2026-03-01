@@ -1,4 +1,5 @@
 country,iso2,year,value
+Afghanistan,,2025,13.351
 Afghanistan,,2024,13.687
 Afghanistan,,2023,14.008
 Afghanistan,,2022,14.1
@@ -33,6 +34,7 @@ Afghanistan,,1994,7.883
 Afghanistan,,1993,7.908
 Afghanistan,,1992,7.958
 Afghanistan,,1991,7.972
+Albania,,2025,10.926
 Albania,,2024,10.689
 Albania,,2023,10.669
 Albania,,2022,10.785
@@ -67,6 +69,7 @@ Albania,,1994,20.835
 Albania,,1993,25.251
 Albania,,1992,30.007
 Albania,,1991,10.304
+Algeria,,2025,11.633
 Algeria,,2024,11.655
 Algeria,,2023,11.645
 Algeria,,2022,12.382
@@ -101,6 +104,7 @@ Algeria,,1994,27.74
 Algeria,,1993,26.23
 Algeria,,1992,24.38
 Algeria,,1991,20.6
+Angola,,2025,14.108
 Angola,,2024,14.02
 Angola,,2023,14.051
 Angola,,2022,14.124
@@ -135,6 +139,7 @@ Angola,,1994,17.444
 Angola,,1993,17.44
 Angola,,1992,16.959
 Angola,,1991,16.816
+Argentina,,2025,7.145
 Argentina,,2024,7.15
 Argentina,,2023,6.139
 Argentina,,2022,6.805
@@ -169,6 +174,7 @@ Argentina,,1994,11.76
 Argentina,,1993,10.1
 Argentina,,1992,6.36
 Argentina,,1991,5.44
+Armenia,,2025,12.871
 Armenia,,2024,12.405
 Armenia,,2023,12.405
 Armenia,,2022,13.451
@@ -203,6 +209,7 @@ Armenia,,1994,6.6
 Armenia,,1993,5.3
 Armenia,,1992,1.8
 Armenia,,1991,1.774
+Australia,,2025,4.09
 Australia,,2024,3.942
 Australia,,2023,3.668
 Australia,,2022,3.728
@@ -237,6 +244,7 @@ Australia,,1994,9.724
 Australia,,1993,10.879
 Australia,,1992,10.733
 Australia,,1991,9.586
+Austria,,2025,5.582
 Austria,,2024,5.2
 Austria,,2023,5.264
 Austria,,2022,4.992
@@ -271,6 +279,7 @@ Austria,,1994,3.535
 Austria,,1993,4.25
 Austria,,1992,3.59
 Austria,,1991,3.42
+Azerbaijan,,2025,5.457
 Azerbaijan,,2024,5.648
 Azerbaijan,,2023,5.64
 Azerbaijan,,2022,5.65
@@ -305,6 +314,7 @@ Azerbaijan,,1994,6.3
 Azerbaijan,,1993,4.5
 Azerbaijan,,1992,1.8
 Azerbaijan,,1991,0.9
+Bahamas,,2025,9.207
 Bahamas,,2024,9.049
 Bahamas,,2023,8.645
 Bahamas,,2022,9.25
@@ -339,6 +349,7 @@ Bahamas,,1994,13.83
 Bahamas,,1993,12.72
 Bahamas,,1992,14.81
 Bahamas,,1991,12.17
+Bahrain,,2025,1.102
 Bahrain,,2024,1.084
 Bahrain,,2023,1.049
 Bahrain,,2022,1.265
@@ -373,6 +384,7 @@ Bahrain,,1994,1.007
 Bahrain,,1993,0.882
 Bahrain,,1992,0.968
 Bahrain,,1991,1.047
+Bangladesh,,2025,3.778
 Bangladesh,,2024,3.635
 Bangladesh,,2023,3.352
 Bangladesh,,2022,4.593
@@ -407,6 +419,7 @@ Bangladesh,,1994,2.37
 Bangladesh,,1993,2.31
 Bangladesh,,1992,2.233
 Bangladesh,,1991,2.2
+Barbados,,2025,6.524
 Barbados,,2024,6.448
 Barbados,,2023,6.54
 Barbados,,2022,7.261
@@ -441,6 +454,7 @@ Barbados,,1994,22.98
 Barbados,,1993,24.54
 Barbados,,1992,22.94
 Barbados,,1991,22.41
+Belarus,,2025,3.38
 Belarus,,2024,3.458
 Belarus,,2023,3.461
 Belarus,,2022,3.574
@@ -475,6 +489,7 @@ Belarus,,1994,12.8
 Belarus,,1993,8.5
 Belarus,,1992,3.1
 Belarus,,1991,0.6
+Belgium,,2025,5.906
 Belgium,,2024,5.7
 Belgium,,2023,5.547
 Belgium,,2022,5.57
@@ -509,6 +524,7 @@ Belgium,,1994,9.645
 Belgium,,1993,8.078
 Belgium,,1992,6.702
 Belgium,,1991,6.984
+Belize,,2025,8.856
 Belize,,2024,8.698
 Belize,,2023,8.278
 Belize,,2022,8.682
@@ -543,6 +559,7 @@ Belize,,1994,11.1
 Belize,,1993,9.78
 Belize,,1992,9.654
 Belize,,1991,9.647
+Benin,,2025,1.589
 Benin,,2024,1.637
 Benin,,2023,1.641
 Benin,,2022,1.685
@@ -577,6 +594,7 @@ Benin,,1994,1.453
 Benin,,1993,1.494
 Benin,,1992,1.51
 Benin,,1991,1.637
+Bhutan,,2025,3.227
 Bhutan,,2024,3.282
 Bhutan,,2023,3.126
 Bhutan,,2022,5.947
@@ -611,6 +629,7 @@ Bhutan,,1994,1.405
 Bhutan,,1993,1.418
 Bhutan,,1992,1.391
 Bhutan,,1991,1.381
+Bolivia,,2025,2.967
 Bolivia,,2024,3.274
 Bolivia,,2023,3.024
 Bolivia,,2022,3.552
@@ -645,6 +664,7 @@ Bolivia,,1994,3.08
 Bolivia,,1993,3.05
 Bolivia,,1992,3.03
 Bolivia,,1991,2.935
+Bosnia Herzegovina,,2025,11.037
 Bosnia Herzegovina,,2024,10.69
 Bosnia Herzegovina,,2023,10.668
 Bosnia Herzegovina,,2022,12.657
@@ -679,6 +699,7 @@ Bosnia Herzegovina,,1994,20.17
 Bosnia Herzegovina,,1993,19.408
 Bosnia Herzegovina,,1992,18.477
 Bosnia Herzegovina,,1991,17.55
+Botswana,,2025,24.477
 Botswana,,2024,23.81
 Botswana,,2023,23.381
 Botswana,,2022,23.615
@@ -713,6 +734,7 @@ Botswana,,1994,21.2
 Botswana,,1993,18.761
 Botswana,,1992,16.33
 Botswana,,1991,13.82
+Brazil,,2025,5.97
 Brazil,,2024,6.801
 Brazil,,2023,7.947
 Brazil,,2022,9.231
@@ -747,6 +769,7 @@ Brazil,,1994,6.579
 Brazil,,1993,6.03
 Brazil,,1992,7.086
 Brazil,,1991,6.887
+Brunei,,2025,5.277
 Brunei,,2024,5.18
 Brunei,,2023,5.296
 Brunei,,2022,5.191
@@ -781,6 +804,7 @@ Brunei,,1994,5.007
 Brunei,,1993,4.903
 Brunei,,1992,4.791
 Brunei,,1991,4.7
+Bulgaria,,2025,3.536
 Bulgaria,,2024,4.2
 Bulgaria,,2023,4.319
 Bulgaria,,2022,4.148
@@ -815,6 +839,7 @@ Bulgaria,,1994,12.8
 Bulgaria,,1993,16.4
 Bulgaria,,1992,15.3
 Bulgaria,,1991,11.1
+Burkina Faso,,2025,3.477
 Burkina Faso,,2024,3.441
 Burkina Faso,,2023,3.601
 Burkina Faso,,2022,3.828
@@ -849,6 +874,7 @@ Burkina Faso,,1994,2.58
 Burkina Faso,,1993,2.426
 Burkina Faso,,1992,2.505
 Burkina Faso,,1991,2.467
+Burundi,,2025,0.922
 Burundi,,2024,0.915
 Burundi,,2023,0.911
 Burundi,,2022,0.909
@@ -883,6 +909,7 @@ Burundi,,1994,3.106
 Burundi,,1993,3.094
 Burundi,,1992,3.131
 Burundi,,1991,3.147
+Cape Verde,,2025,11.939
 Cape Verde,,2024,11.883
 Cape Verde,,2023,11.882
 Cape Verde,,2022,12.239
@@ -917,6 +944,7 @@ Cape Verde,,1994,12.936
 Cape Verde,,1993,13.276
 Cape Verde,,1992,13.428
 Cape Verde,,1991,13.527
+Cambodia,,2025,0.263
 Cambodia,,2024,0.254
 Cambodia,,2023,0.256
 Cambodia,,2022,0.245
@@ -951,6 +979,7 @@ Cambodia,,1994,0.996
 Cambodia,,1993,0.733
 Cambodia,,1992,0.748
 Cambodia,,1991,0.768
+Cameroon,,2025,3.602
 Cameroon,,2024,3.603
 Cameroon,,2023,3.607
 Cameroon,,2022,3.646
@@ -985,6 +1014,7 @@ Cameroon,,1994,8.878
 Cameroon,,1993,9.154
 Cameroon,,1992,9.055
 Cameroon,,1991,8.986
+Canada,,2025,6.907
 Canada,,2024,6.351
 Canada,,2023,5.415
 Canada,,2022,5.279
@@ -1019,6 +1049,7 @@ Canada,,1994,10.395
 Canada,,1993,11.377
 Canada,,1992,11.197
 Canada,,1991,10.316
+Central African Republic,,2025,6.251
 Central African Republic,,2024,6.253
 Central African Republic,,2023,6.181
 Central African Republic,,2022,6.287
@@ -1053,6 +1084,7 @@ Central African Republic,,1994,5.924
 Central African Republic,,1993,5.897
 Central African Republic,,1992,5.825
 Central African Republic,,1991,5.697
+Chad,,2025,1.057
 Chad,,2024,1.053
 Chad,,2023,1.059
 Chad,,2022,1.081
@@ -1087,6 +1119,7 @@ Chad,,1994,0.709
 Chad,,1993,0.7
 Chad,,1992,0.658
 Chad,,1991,0.668
+Chile,,2025,8.974
 Chile,,2024,8.718
 Chile,,2023,9.013
 Chile,,2022,8.249
@@ -1121,6 +1154,7 @@ Chile,,1994,5.87
 Chile,,1993,4.49
 Chile,,1992,4.35
 Chile,,1991,5.23
+China,,2025,4.615
 China,,2024,4.59
 China,,2023,4.67
 China,,2022,4.98
@@ -1155,6 +1189,7 @@ China,,1994,2.9
 China,,1993,2.69
 China,,1992,2.37
 China,,1991,2.37
+Colombia,,2025,8.29
 Colombia,,2024,9.619
 Colombia,,2023,9.591
 Colombia,,2022,10.541
@@ -1189,6 +1224,7 @@ Colombia,,1994,8.25
 Colombia,,1993,7.8
 Colombia,,1992,9.44
 Colombia,,1991,10.12
+Comoros,,2025,3.819
 Comoros,,2024,3.815
 Comoros,,2023,3.833
 Comoros,,2022,3.879
@@ -1223,6 +1259,7 @@ Comoros,,1994,4.566
 Comoros,,1993,4.571
 Comoros,,1992,4.528
 Comoros,,1991,4.795
+Democratic Republic of the Congo,,2025,4.434
 Democratic Republic of the Congo,,2024,4.421
 Democratic Republic of the Congo,,2023,4.469
 Democratic Republic of the Congo,,2022,4.54
@@ -1257,6 +1294,7 @@ Democratic Republic of the Congo,,1994,3.403
 Democratic Republic of the Congo,,1993,3.45
 Democratic Republic of the Congo,,1992,3.372
 Democratic Republic of the Congo,,1991,3.272
+Republic of the Congo,,2025,19.876
 Republic of the Congo,,2024,19.895
 Republic of the Congo,,2023,19.919
 Republic of the Congo,,2022,20.131
@@ -1291,6 +1329,7 @@ Republic of the Congo,,1994,20.269
 Republic of the Congo,,1993,19.99
 Republic of the Congo,,1992,19.916
 Republic of the Congo,,1991,19.911
+Costa Rica,,2025,6.843
 Costa Rica,,2024,6.936
 Costa Rica,,2023,8.325
 Costa Rica,,2022,11.325
@@ -1325,6 +1364,7 @@ Costa Rica,,1994,4.05
 Costa Rica,,1993,3.95
 Costa Rica,,1992,3.93
 Costa Rica,,1991,5.37
+Ivory Coast,,2025,2.323
 Ivory Coast,,2024,2.273
 Ivory Coast,,2023,2.263
 Ivory Coast,,2022,2.31
@@ -1359,6 +1399,7 @@ Ivory Coast,,1994,5.046
 Ivory Coast,,1993,5.869
 Ivory Coast,,1992,6.7
 Ivory Coast,,1991,6.595
+Croatia,,2025,5.002
 Croatia,,2024,5.0
 Croatia,,2023,6.121
 Croatia,,2022,6.811
@@ -1393,6 +1434,7 @@ Croatia,,1994,10.364
 Croatia,,1993,10.779
 Croatia,,1992,10.974
 Croatia,,1991,11.14
+Cuba,,2025,1.746
 Cuba,,2024,1.755
 Cuba,,2023,1.73
 Cuba,,2022,1.829
@@ -1427,6 +1469,7 @@ Cuba,,1994,8.806
 Cuba,,1993,9.27
 Cuba,,1992,8.779
 Cuba,,1991,8.306
+Cyprus,,2025,4.924
 Cyprus,,2024,4.9
 Cyprus,,2023,5.835
 Cyprus,,2022,6.806
@@ -1461,6 +1504,7 @@ Cyprus,,1994,2.7
 Cyprus,,1993,2.7
 Cyprus,,1992,2.09
 Cyprus,,1991,3.0
+Czechia,,2025,2.825
 Czechia,,2024,2.6
 Czechia,,2023,2.579
 Czechia,,2022,2.224
@@ -1495,6 +1539,7 @@ Czechia,,1994,4.284
 Czechia,,1993,4.349
 Czechia,,1992,2.6
 Czechia,,1991,2.27
+Denmark,,2025,5.529
 Denmark,,2024,5.358
 Denmark,,2023,5.094
 Denmark,,2022,4.434
@@ -1529,6 +1574,7 @@ Denmark,,1994,8.036
 Denmark,,1993,10.719
 Denmark,,1992,9.027
 Denmark,,1991,9.099
+Djibouti,,2025,26.015
 Djibouti,,2024,26.007
 Djibouti,,2023,26.074
 Djibouti,,2022,26.272
@@ -1563,6 +1609,7 @@ Djibouti,,1994,27.118
 Djibouti,,1993,27.253
 Djibouti,,1992,26.457
 Djibouti,,1991,26.118
+Dominican Republic,,2025,5.092
 Dominican Republic,,2024,5.312
 Dominican Republic,,2023,5.555
 Dominican Republic,,2022,5.504
@@ -1597,6 +1644,7 @@ Dominican Republic,,1994,6.285
 Dominican Republic,,1993,6.322
 Dominican Republic,,1992,6.669
 Dominican Republic,,1991,6.863
+Ecuador,,2025,3.308
 Ecuador,,2024,3.453
 Ecuador,,2023,3.51
 Ecuador,,2022,3.713
@@ -1631,6 +1679,7 @@ Ecuador,,1994,4.409
 Ecuador,,1993,4.403
 Ecuador,,1992,4.333
 Ecuador,,1991,4.371
+Egypt,,2025,6.781
 Egypt,,2024,6.817
 Egypt,,2023,6.753
 Egypt,,2022,6.546
@@ -1665,6 +1714,7 @@ Egypt,,1994,10.93
 Egypt,,1993,10.92
 Egypt,,1992,8.92
 Egypt,,1991,9.38
+El Salvador,,2025,3.303
 El Salvador,,2024,3.261
 El Salvador,,2023,2.992
 El Salvador,,2022,2.999
@@ -1699,6 +1749,7 @@ El Salvador,,1994,7.68
 El Salvador,,1993,9.94
 El Salvador,,1992,7.88
 El Salvador,,1991,7.53
+Equatorial Guinea,,2025,8.337
 Equatorial Guinea,,2024,8.293
 Equatorial Guinea,,2023,8.218
 Equatorial Guinea,,2022,8.334
@@ -1733,6 +1784,7 @@ Equatorial Guinea,,1994,7.123
 Equatorial Guinea,,1993,7.024
 Equatorial Guinea,,1992,6.878
 Equatorial Guinea,,1991,6.677
+Eritrea,,2025,5.978
 Eritrea,,2024,5.947
 Eritrea,,2023,5.909
 Eritrea,,2022,6.033
@@ -1767,6 +1819,7 @@ Eritrea,,1994,5.446
 Eritrea,,1993,5.387
 Eritrea,,1992,5.297
 Eritrea,,1991,5.129
+Estonia,,2025,8.313
 Estonia,,2024,7.6
 Estonia,,2023,6.378
 Estonia,,2022,5.571
@@ -1801,6 +1854,7 @@ Estonia,,1994,7.561
 Estonia,,1993,6.544
 Estonia,,1992,3.681
 Estonia,,1991,1.468
+Eswatini,,2025,34.202
 Eswatini,,2024,34.643
 Eswatini,,2023,34.61
 Eswatini,,2022,36.472
@@ -1835,6 +1889,7 @@ Eswatini,,1994,21.726
 Eswatini,,1993,21.76
 Eswatini,,1992,20.947
 Eswatini,,1991,20.521
+Ethiopia,,2025,3.323
 Ethiopia,,2024,3.357
 Ethiopia,,2023,3.375
 Ethiopia,,2022,3.386
@@ -1869,6 +1924,7 @@ Ethiopia,,1994,3.1
 Ethiopia,,1993,3.252
 Ethiopia,,1992,3.416
 Ethiopia,,1991,3.284
+Fiji,,2025,5.347
 Fiji,,2024,5.361
 Fiji,,2023,5.316
 Fiji,,2022,5.403
@@ -1903,6 +1959,7 @@ Fiji,,1994,4.598
 Fiji,,1993,4.694
 Fiji,,1992,4.64
 Fiji,,1991,4.618
+Finland,,2025,9.461
 Finland,,2024,8.4
 Finland,,2023,7.149
 Finland,,2022,6.719
@@ -1937,6 +1994,7 @@ Finland,,1994,16.426
 Finland,,1993,16.201
 Finland,,1992,11.595
 Finland,,1991,6.503
+France,,2025,7.542
 France,,2024,7.4
 France,,2023,7.335
 France,,2022,7.303
@@ -1971,6 +2029,7 @@ France,,1994,12.593
 France,,1993,11.32
 France,,1992,10.203
 France,,1991,9.134
+Gabon,,2025,20.154
 Gabon,,2024,20.091
 Gabon,,2023,20.161
 Gabon,,2022,20.319
@@ -2005,6 +2064,7 @@ Gabon,,1994,17.804
 Gabon,,1993,17.78
 Gabon,,1992,17.716
 Gabon,,1991,17.224
+Gambia,,2025,6.521
 Gambia,,2024,6.48
 Gambia,,2023,6.479
 Gambia,,2022,6.067
@@ -2039,6 +2099,7 @@ Gambia,,1994,10.044
 Gambia,,1993,9.917
 Gambia,,1992,9.888
 Gambia,,1991,9.778
+Georgia,,2025,12.097
 Georgia,,2024,11.557
 Georgia,,2023,11.549
 Georgia,,2022,11.621
@@ -2073,6 +2134,7 @@ Georgia,,1994,8.4
 Georgia,,1993,5.4
 Georgia,,1992,5.4
 Georgia,,1991,2.7
+Germany,,2025,3.711
 Germany,,2024,3.4
 Germany,,2023,3.071
 Germany,,2022,3.137
@@ -2107,6 +2169,7 @@ Germany,,1994,8.727
 Germany,,1993,7.675
 Germany,,1992,6.323
 Germany,,1991,5.316
+Ghana,,2025,2.979
 Ghana,,2024,2.82
 Ghana,,2023,2.829
 Ghana,,2022,2.87
@@ -2141,6 +2204,7 @@ Ghana,,1994,5.9
 Ghana,,1993,5.231
 Ghana,,1992,4.7
 Ghana,,1991,3.489
+Greece,,2025,8.54
 Greece,,2024,10.02
 Greece,,2023,11.023
 Greece,,2022,12.426
@@ -2175,6 +2239,7 @@ Greece,,1994,9.808
 Greece,,1993,10.177
 Greece,,1992,8.927
 Greece,,1991,7.572
+Guatemala,,2025,2.604
 Guatemala,,2024,2.613
 Guatemala,,2023,2.344
 Guatemala,,2022,3.051
@@ -2209,6 +2274,7 @@ Guatemala,,1994,2.12
 Guatemala,,1993,2.133
 Guatemala,,1992,2.163
 Guatemala,,1991,2.197
+Guinea,,2025,5.163
 Guinea,,2024,5.132
 Guinea,,2023,5.141
 Guinea,,2022,5.174
@@ -2243,6 +2309,7 @@ Guinea,,1994,4.527
 Guinea,,1993,4.561
 Guinea,,1992,4.58
 Guinea,,1991,4.56
+Guinea-Bissau,,2025,2.673
 Guinea-Bissau,,2024,2.647
 Guinea-Bissau,,2023,2.632
 Guinea-Bissau,,2022,2.666
@@ -2277,6 +2344,7 @@ Guinea-Bissau,,1994,3.173
 Guinea-Bissau,,1993,3.143
 Guinea-Bissau,,1992,3.083
 Guinea-Bissau,,1991,3.009
+Guyana,,2025,11.962
 Guyana,,2024,11.874
 Guyana,,2023,11.917
 Guyana,,2022,11.907
@@ -2311,6 +2379,7 @@ Guyana,,1994,11.534
 Guyana,,1993,11.617
 Guyana,,1992,11.9
 Guyana,,1991,12.092
+Haiti,,2025,14.944
 Haiti,,2024,14.609
 Haiti,,2023,14.459
 Haiti,,2022,14.54
@@ -2345,6 +2414,7 @@ Haiti,,1994,7.858
 Haiti,,1993,7.534
 Haiti,,1992,7.387
 Haiti,,1991,7.329
+Honduras,,2025,4.92
 Honduras,,2024,4.91
 Honduras,,2023,6.07
 Honduras,,2022,8.774
@@ -2379,6 +2449,7 @@ Honduras,,1994,3.138
 Honduras,,1993,3.098
 Honduras,,1992,3.06
 Honduras,,1991,4.58
+Hungary,,2025,4.521
 Hungary,,2024,4.5
 Hungary,,2023,4.096
 Hungary,,2022,3.583
@@ -2413,6 +2484,7 @@ Hungary,,1994,10.847
 Hungary,,1993,12.098
 Hungary,,1992,9.942
 Hungary,,1991,8.5
+Iceland,,2025,3.625
 Iceland,,2024,3.6
 Iceland,,2023,3.518
 Iceland,,2022,3.789
@@ -2447,6 +2519,7 @@ Iceland,,1994,5.326
 Iceland,,1993,5.257
 Iceland,,1992,4.305
 Iceland,,1991,2.548
+India,,2025,4.219
 India,,2024,4.173
 India,,2023,4.172
 India,,2022,4.822
@@ -2481,6 +2554,7 @@ India,,1994,7.593
 India,,1993,7.662
 India,,1992,7.649
 India,,1991,7.641
+Indonesia,,2025,3.237
 Indonesia,,2024,3.301
 Indonesia,,2023,3.308
 Indonesia,,2022,3.462
@@ -2515,6 +2589,7 @@ Indonesia,,1994,4.366
 Indonesia,,1993,2.782
 Indonesia,,1992,2.734
 Indonesia,,1991,2.617
+Iran,,2025,8.301
 Iran,,2024,8.146
 Iran,,2023,8.129
 Iran,,2022,9.085
@@ -2549,6 +2624,7 @@ Iran,,1994,10.458
 Iran,,1993,10.573
 Iran,,1992,10.653
 Iran,,1991,11.1
+Iraq,,2025,15.485
 Iraq,,2024,15.293
 Iraq,,2023,15.239
 Iraq,,2022,15.41
@@ -2583,6 +2659,7 @@ Iraq,,1994,8.221
 Iraq,,1993,8.36
 Iraq,,1992,8.346
 Iraq,,1991,8.639
+Ireland,,2025,4.632
 Ireland,,2024,4.3
 Ireland,,2023,4.243
 Ireland,,2022,4.465
@@ -2617,6 +2694,7 @@ Ireland,,1994,14.544
 Ireland,,1993,15.571
 Ireland,,1992,15.021
 Ireland,,1991,15.771
+Israel,,2025,3.489
 Israel,,2024,3.595
 Israel,,2023,3.371
 Israel,,2022,3.695
@@ -2651,6 +2729,7 @@ Israel,,1994,9.934
 Israel,,1993,12.741
 Israel,,1992,14.08
 Israel,,1991,13.387
+Italy,,2025,6.391
 Italy,,2024,6.5
 Italy,,2023,7.627
 Italy,,2022,8.069
@@ -2685,6 +2764,7 @@ Italy,,1994,11.086
 Italy,,1993,10.212
 Italy,,1992,9.321
 Italy,,1991,10.097
+Jamaica,,2025,3.286
 Jamaica,,2024,3.151
 Jamaica,,2023,3.022
 Jamaica,,2022,4.083
@@ -2719,6 +2799,7 @@ Jamaica,,1994,6.335
 Jamaica,,1993,6.235
 Jamaica,,1992,6.383
 Jamaica,,1991,6.233
+Japan,,2025,2.451
 Japan,,2024,2.5
 Japan,,2023,2.6
 Japan,,2022,2.614
@@ -2753,6 +2834,7 @@ Japan,,1994,2.89
 Japan,,1993,2.539
 Japan,,1992,2.158
 Japan,,1991,2.059
+Jordan,,2025,16.535
 Jordan,,2024,16.693
 Jordan,,2023,16.62
 Jordan,,2022,18.2
@@ -2787,6 +2869,7 @@ Jordan,,1994,16.894
 Jordan,,1993,19.7
 Jordan,,1992,19.947
 Jordan,,1991,21.439
+Kazakhstan,,2025,4.771
 Kazakhstan,,2024,4.833
 Kazakhstan,,2023,4.835
 Kazakhstan,,2022,4.86
@@ -2821,6 +2904,7 @@ Kazakhstan,,1994,7.54
 Kazakhstan,,1993,1.11
 Kazakhstan,,1992,1.0
 Kazakhstan,,1991,0.9
+Kenya,,2025,5.449
 Kenya,,2024,5.487
 Kenya,,2023,5.409
 Kenya,,2022,5.565
@@ -2855,6 +2939,7 @@ Kenya,,1994,2.955
 Kenya,,1993,2.979
 Kenya,,1992,2.894
 Kenya,,1991,2.78
+North Korea,,2025,3.545
 North Korea,,2024,3.539
 North Korea,,2023,3.463
 North Korea,,2022,3.457
@@ -2889,6 +2974,7 @@ North Korea,,1994,3.092
 North Korea,,1993,2.98
 North Korea,,1992,2.875
 North Korea,,1991,2.845
+South Korea,,2025,2.683
 South Korea,,2024,2.784
 South Korea,,2023,2.675
 South Korea,,2022,2.857
@@ -2923,6 +3009,7 @@ South Korea,,1994,2.476
 South Korea,,1993,2.878
 South Korea,,1992,2.513
 South Korea,,1991,2.407
+Kuwait,,2025,2.181
 Kuwait,,2024,2.151
 Kuwait,,2023,2.08
 Kuwait,,2022,2.133
@@ -2957,6 +3044,7 @@ Kuwait,,1994,0.7
 Kuwait,,1993,0.8
 Kuwait,,1992,0.878
 Kuwait,,1991,0.884
+Kyrgyzstan,,2025,3.526
 Kyrgyzstan,,2024,3.491
 Kyrgyzstan,,2023,3.498
 Kyrgyzstan,,2022,4.767
@@ -2991,6 +3079,7 @@ Kyrgyzstan,,1994,1.41
 Kyrgyzstan,,1993,1.258
 Kyrgyzstan,,1992,1.1
 Kyrgyzstan,,1991,1.0
+Laos,,2025,1.187
 Laos,,2024,1.174
 Laos,,2023,1.186
 Laos,,2022,1.209
@@ -3025,6 +3114,7 @@ Laos,,1994,2.634
 Laos,,1993,2.732
 Laos,,1992,2.71
 Laos,,1991,2.497
+Latvia,,2025,6.568
 Latvia,,2024,6.9
 Latvia,,2023,6.465
 Latvia,,2022,6.815
@@ -3092,6 +3182,7 @@ Lebanon,,1994,8.321
 Lebanon,,1993,8.226
 Lebanon,,1992,8.225
 Lebanon,,1991,8.594
+Lesotho,,2025,16.315
 Lesotho,,2024,16.34
 Lesotho,,2023,16.348
 Lesotho,,2022,16.623
@@ -3126,6 +3217,7 @@ Lesotho,,1994,15.62
 Lesotho,,1993,15.568
 Lesotho,,1992,15.448
 Lesotho,,1991,15.495
+Liberia,,2025,2.884
 Liberia,,2024,2.914
 Liberia,,2023,2.905
 Liberia,,2022,2.956
@@ -3160,6 +3252,7 @@ Liberia,,1994,2.652
 Liberia,,1993,2.706
 Liberia,,1992,2.724
 Liberia,,1991,2.735
+Libya,,2025,18.758
 Libya,,2024,19.085
 Libya,,2023,18.713
 Libya,,2022,19.238
@@ -3194,6 +3287,7 @@ Libya,,1994,19.328
 Libya,,1993,19.006
 Libya,,1992,18.828
 Libya,,1991,18.601
+Lithuania,,2025,6.731
 Lithuania,,2024,6.851
 Lithuania,,2023,6.841
 Lithuania,,2022,5.955
@@ -3228,6 +3322,7 @@ Lithuania,,1994,13.8
 Lithuania,,1993,13.8
 Lithuania,,1992,1.2
 Lithuania,,1991,1.1
+Luxembourg,,2025,6.343
 Luxembourg,,2024,6.4
 Luxembourg,,2023,5.184
 Luxembourg,,2022,4.588
@@ -3262,6 +3357,7 @@ Luxembourg,,1994,3.479
 Luxembourg,,1993,2.33
 Luxembourg,,1992,2.029
 Luxembourg,,1991,1.482
+Madagascar,,2025,3.041
 Madagascar,,2024,3.051
 Madagascar,,2023,3.044
 Madagascar,,2022,3.186
@@ -3296,6 +3392,7 @@ Madagascar,,1994,6.106
 Madagascar,,1993,6.317
 Madagascar,,1992,6.275
 Madagascar,,1991,6.169
+Malawi,,2025,5.072
 Malawi,,2024,5.051
 Malawi,,2023,5.009
 Malawi,,2022,5.02
@@ -3330,6 +3427,7 @@ Malawi,,1994,5.368
 Malawi,,1993,4.988
 Malawi,,1992,5.064
 Malawi,,1991,4.9
+Malaysia,,2025,3.764
 Malaysia,,2024,3.846
 Malaysia,,2023,3.858
 Malaysia,,2022,3.93
@@ -3364,6 +3462,7 @@ Malaysia,,1994,3.64
 Malaysia,,1993,4.11
 Malaysia,,1992,3.71
 Malaysia,,1991,3.7
+Maldives,,2025,4.514
 Maldives,,2024,4.278
 Maldives,,2023,4.019
 Maldives,,2022,4.303
@@ -3398,6 +3497,7 @@ Maldives,,1994,0.793
 Maldives,,1993,0.796
 Maldives,,1992,0.789
 Maldives,,1991,0.788
+Mali,,2025,2.831
 Mali,,2024,2.924
 Mali,,2023,2.947
 Mali,,2022,2.387
@@ -3432,6 +3532,7 @@ Mali,,1994,1.512
 Mali,,1993,1.419
 Mali,,1992,1.483
 Mali,,1991,1.399
+Malta,,2025,2.896
 Malta,,2024,3.1
 Malta,,2023,3.479
 Malta,,2022,3.471
@@ -3466,6 +3567,7 @@ Malta,,1994,6.331
 Malta,,1993,6.332
 Malta,,1992,6.333
 Malta,,1991,6.335
+Mauritania,,2025,10.319
 Mauritania,,2024,10.257
 Mauritania,,2023,10.37
 Mauritania,,2022,10.52
@@ -3500,6 +3602,7 @@ Mauritania,,1994,9.979
 Mauritania,,1993,9.85
 Mauritania,,1992,10.052
 Mauritania,,1991,9.971
+Mauritius,,2025,5.635
 Mauritius,,2024,5.548
 Mauritius,,2023,5.571
 Mauritius,,2022,6.322
@@ -3534,6 +3637,7 @@ Mauritius,,1994,9.513
 Mauritius,,1993,9.5
 Mauritius,,1992,9.428
 Mauritius,,1991,9.493
+Mexico,,2025,2.673
 Mexico,,2024,2.678
 Mexico,,2023,2.765
 Mexico,,2022,3.256
@@ -3568,6 +3672,7 @@ Mexico,,1994,4.436
 Mexico,,1993,3.365
 Mexico,,1992,3.235
 Mexico,,1991,3.145
+Moldova,,2025,1.505
 Moldova,,2024,1.427
 Moldova,,2023,1.57
 Moldova,,2022,0.909
@@ -3602,6 +3707,7 @@ Moldova,,1994,5.8
 Moldova,,1993,3.7
 Moldova,,1992,3.7
 Moldova,,1991,1.9
+Mongolia,,2025,5.233
 Mongolia,,2024,5.158
 Mongolia,,2023,5.178
 Mongolia,,2022,5.954
@@ -3636,6 +3742,7 @@ Mongolia,,1994,5.709
 Mongolia,,1993,5.859
 Mongolia,,1992,5.857
 Mongolia,,1991,5.665
+Montenegro,,2025,13.572
 Montenegro,,2024,13.206
 Montenegro,,2023,13.146
 Montenegro,,2022,14.851
@@ -3670,6 +3777,7 @@ Montenegro,,1994,30.226
 Montenegro,,1993,30.238
 Montenegro,,1992,30.181
 Montenegro,,1991,30.118
+Morocco,,2025,9.0
 Morocco,,2024,9.103
 Morocco,,2023,8.896
 Morocco,,2022,9.413
@@ -3704,6 +3812,7 @@ Morocco,,1994,13.858
 Morocco,,1993,14.026
 Morocco,,1992,13.781
 Morocco,,1991,13.502
+Mozambique,,2025,6.628
 Mozambique,,2024,6.668
 Mozambique,,2023,6.661
 Mozambique,,2022,6.789
@@ -3738,6 +3847,7 @@ Mozambique,,1994,2.879
 Mozambique,,1993,2.896
 Mozambique,,1992,3.028
 Mozambique,,1991,2.838
+Myanmar,,2025,3.047
 Myanmar,,2024,2.887
 Myanmar,,2023,2.977
 Myanmar,,2022,3.063
@@ -3772,6 +3882,7 @@ Myanmar,,1994,0.739
 Myanmar,,1993,0.779
 Myanmar,,1992,0.796
 Myanmar,,1991,0.828
+Namibia,,2025,19.291
 Namibia,,2024,19.157
 Namibia,,2023,19.154
 Namibia,,2022,19.615
@@ -3806,6 +3917,7 @@ Namibia,,1994,19.4
 Namibia,,1993,19.078
 Namibia,,1992,18.896
 Namibia,,1991,19.14
+Nepal,,2025,10.465
 Nepal,,2024,10.5
 Nepal,,2023,10.437
 Nepal,,2022,10.661
@@ -3840,6 +3952,7 @@ Nepal,,1994,10.458
 Nepal,,1993,10.492
 Nepal,,1992,10.473
 Nepal,,1991,10.465
+Netherlands,,2025,3.874
 Netherlands,,2024,3.7
 Netherlands,,2023,3.535
 Netherlands,,2022,3.526
@@ -3874,6 +3987,7 @@ Netherlands,,1994,7.159
 Netherlands,,1993,6.287
 Netherlands,,1992,5.555
 Netherlands,,1991,7.285
+New Zealand,,2025,5.076
 New Zealand,,2024,4.724
 New Zealand,,2023,3.734
 New Zealand,,2022,3.299
@@ -3908,6 +4022,7 @@ New Zealand,,1994,8.354
 New Zealand,,1993,9.804
 New Zealand,,1992,10.667
 New Zealand,,1991,10.614
+Nicaragua,,2025,5.04
 Nicaragua,,2024,4.98
 Nicaragua,,2023,4.698
 Nicaragua,,2022,4.969
@@ -3942,6 +4057,7 @@ Nicaragua,,1994,7.668
 Nicaragua,,1993,7.833
 Nicaragua,,1992,7.809
 Nicaragua,,1991,7.909
+Niger,,2025,0.394
 Niger,,2024,0.376
 Niger,,2023,0.407
 Niger,,2022,0.403
@@ -3976,6 +4092,7 @@ Niger,,1994,1.502
 Niger,,1993,1.541
 Niger,,1992,1.569
 Niger,,1991,1.588
+Nigeria,,2025,3.064
 Nigeria,,2024,3.045
 Nigeria,,2023,3.074
 Nigeria,,2022,3.827
@@ -4010,6 +4127,7 @@ Nigeria,,1994,4.064
 Nigeria,,1993,4.023
 Nigeria,,1992,3.79
 Nigeria,,1991,3.831
+North Macedonia,,2025,12.256
 North Macedonia,,2024,12.265
 North Macedonia,,2023,13.174
 North Macedonia,,2022,14.476
@@ -4044,6 +4162,7 @@ North Macedonia,,1994,30.0
 North Macedonia,,1993,27.7
 North Macedonia,,1992,26.3
 North Macedonia,,1991,24.5
+Norway,,2025,4.637
 Norway,,2024,4.0
 Norway,,2023,3.574
 Norway,,2022,3.231
@@ -4078,6 +4197,7 @@ Norway,,1994,5.349
 Norway,,1993,5.965
 Norway,,1992,5.91
 Norway,,1991,5.407
+Oman,,2025,3.251
 Oman,,2024,3.203
 Oman,,2023,3.176
 Oman,,2022,3.3
@@ -4112,6 +4232,7 @@ Oman,,1994,4.073
 Oman,,1993,4.009
 Oman,,1992,4.16
 Oman,,1991,4.056
+Pakistan,,2025,5.42
 Pakistan,,2024,5.492
 Pakistan,,2023,5.237
 Pakistan,,2022,5.291
@@ -4146,6 +4267,7 @@ Pakistan,,1994,0.601
 Pakistan,,1993,0.596
 Pakistan,,1992,0.587
 Pakistan,,1991,0.596
+Panama,,2025,8.36
 Panama,,2024,8.451
 Panama,,2023,6.544
 Panama,,2022,8.086
@@ -4180,6 +4302,7 @@ Panama,,1994,6.428
 Panama,,1993,6.374
 Panama,,1992,6.317
 Panama,,1991,6.443
+Papua New Guinea,,2025,2.571
 Papua New Guinea,,2024,2.625
 Papua New Guinea,,2023,2.649
 Papua New Guinea,,2022,2.689
@@ -4214,6 +4337,7 @@ Papua New Guinea,,1994,2.418
 Papua New Guinea,,1993,2.382
 Papua New Guinea,,1992,2.608
 Papua New Guinea,,1991,2.793
+Paraguay,,2025,4.803
 Paraguay,,2024,5.686
 Paraguay,,2023,5.794
 Paraguay,,2022,6.755
@@ -4248,6 +4372,7 @@ Paraguay,,1994,4.41
 Paraguay,,1993,5.06
 Paraguay,,1992,4.98
 Paraguay,,1991,5.1
+Peru,,2025,5.117
 Peru,,2024,5.199
 Peru,,2023,4.899
 Peru,,2022,4.291
@@ -4282,6 +4407,7 @@ Peru,,1994,4.491
 Peru,,1993,4.795
 Peru,,1992,5.068
 Peru,,1991,4.926
+Philippines,,2025,2.235
 Philippines,,2024,2.202
 Philippines,,2023,2.2
 Philippines,,2022,2.598
@@ -4316,6 +4442,7 @@ Philippines,,1994,3.767
 Philippines,,1993,3.869
 Philippines,,1992,3.849
 Philippines,,1991,3.727
+Poland,,2025,2.976
 Poland,,2024,2.807
 Poland,,2023,2.743
 Poland,,2022,2.811
@@ -4350,6 +4477,7 @@ Poland,,1994,14.825
 Poland,,1993,14.393
 Poland,,1992,13.645
 Poland,,1991,13.621
+Portugal,,2025,6.164
 Portugal,,2024,6.5
 Portugal,,2023,6.498
 Portugal,,2022,6.138
@@ -4384,6 +4512,7 @@ Portugal,,1994,6.709
 Portugal,,1993,5.301
 Portugal,,1992,3.985
 Portugal,,1991,3.919
+Qatar,,2025,0.13
 Qatar,,2024,0.13
 Qatar,,2023,0.13
 Qatar,,2022,0.13
@@ -4418,6 +4547,7 @@ Qatar,,1994,0.87
 Qatar,,1993,0.87
 Qatar,,1992,0.87
 Qatar,,1991,0.87
+Romania,,2025,5.992
 Romania,,2024,5.4
 Romania,,2023,5.589
 Romania,,2022,5.614
@@ -4452,6 +4582,7 @@ Romania,,1994,8.17
 Romania,,1993,8.251
 Romania,,1992,8.26
 Romania,,1991,8.23
+Russia,,2025,2.133
 Russia,,2024,2.43
 Russia,,2023,3.076
 Russia,,2022,3.867
@@ -4486,6 +4617,7 @@ Russia,,1994,8.131
 Russia,,1993,5.883
 Russia,,1992,5.181
 Russia,,1991,5.11
+Rwanda,,2025,11.363
 Rwanda,,2024,11.331
 Rwanda,,2023,12.352
 Rwanda,,2022,15.084
@@ -4520,6 +4652,7 @@ Rwanda,,1994,12.236
 Rwanda,,1993,12.155
 Rwanda,,1992,12.114
 Rwanda,,1991,12.335
+Samoa,,2025,4.996
 Samoa,,2024,4.855
 Samoa,,2023,4.92
 Samoa,,2022,5.048
@@ -4554,6 +4687,7 @@ Samoa,,1994,2.999
 Samoa,,1993,2.689
 Samoa,,1992,2.439
 Samoa,,1991,2.1
+São Tomé and Príncipe,,2025,9.132
 São Tomé and Príncipe,,2024,9.057
 São Tomé and Príncipe,,2023,9.032
 São Tomé and Príncipe,,2022,8.964
@@ -4588,6 +4722,7 @@ São Tomé and Príncipe,,1994,14.41
 São Tomé and Príncipe,,1993,14.46
 São Tomé and Príncipe,,1992,14.65
 São Tomé and Príncipe,,1991,14.493
+Saudi Arabia,,2025,3.038
 Saudi Arabia,,2024,3.518
 Saudi Arabia,,2023,4.008
 Saudi Arabia,,2022,5.589
@@ -4622,6 +4757,7 @@ Saudi Arabia,,1994,6.733
 Saudi Arabia,,1993,7.002
 Saudi Arabia,,1992,7.2
 Saudi Arabia,,1991,7.316
+Senegal,,2025,2.735
 Senegal,,2024,2.788
 Senegal,,2023,2.784
 Senegal,,2022,2.837
@@ -4656,6 +4792,7 @@ Senegal,,1994,2.947
 Senegal,,1993,2.878
 Senegal,,1992,2.928
 Senegal,,1991,2.861
+Serbia,,2025,7.123
 Serbia,,2024,7.24
 Serbia,,2023,8.268
 Serbia,,2022,8.439
@@ -4690,6 +4827,7 @@ Serbia,,1994,13.405
 Serbia,,1993,13.416
 Serbia,,1992,13.397
 Serbia,,1991,13.371
+Sierra Leone,,2025,3.15
 Sierra Leone,,2024,3.103
 Sierra Leone,,2023,3.092
 Sierra Leone,,2022,3.137
@@ -4724,6 +4862,7 @@ Sierra Leone,,1994,4.457
 Sierra Leone,,1993,4.401
 Sierra Leone,,1992,4.376
 Sierra Leone,,1991,4.135
+Singapore,,2025,2.818
 Singapore,,2024,2.737
 Singapore,,2023,3.444
 Singapore,,2022,3.591
@@ -4758,6 +4897,7 @@ Singapore,,1994,3.03
 Singapore,,1993,3.07
 Singapore,,1992,3.09
 Singapore,,1991,2.18
+Slovakia,,2025,5.359
 Slovakia,,2024,5.3
 Slovakia,,2023,5.843
 Slovakia,,2022,6.143
@@ -4792,6 +4932,7 @@ Slovakia,,1994,13.654
 Slovakia,,1993,12.2
 Slovakia,,1992,12.185
 Slovakia,,1991,12.1
+Slovenia,,2025,3.175
 Slovenia,,2024,3.7
 Slovenia,,2023,3.652
 Slovenia,,2022,4.011
@@ -4826,6 +4967,7 @@ Slovenia,,1994,8.24
 Slovenia,,1993,8.51
 Slovenia,,1992,7.83
 Slovenia,,1991,7.08
+Solomon Islands,,2025,1.431
 Solomon Islands,,2024,1.444
 Solomon Islands,,2023,1.443
 Solomon Islands,,2022,1.475
@@ -4860,6 +5002,7 @@ Solomon Islands,,1994,1.804
 Solomon Islands,,1993,1.829
 Solomon Islands,,1992,1.851
 Solomon Islands,,1991,1.967
+Somalia,,2025,18.948
 Somalia,,2024,18.949
 Somalia,,2023,18.96
 Somalia,,2022,19.112
@@ -4894,6 +5037,7 @@ Somalia,,1994,19.971
 Somalia,,1993,19.331
 Somalia,,1992,19.377
 Somalia,,1991,19.003
+South Africa,,2025,32.391
 South Africa,,2024,32.279
 South Africa,,2023,32.098
 South Africa,,2022,33.268
@@ -4961,6 +5105,7 @@ South Sudan,,1994,12.326
 South Sudan,,1993,12.233
 South Sudan,,1992,12.374
 South Sudan,,1991,12.334
+Spain,,2025,10.376
 Spain,,2024,11.4
 Spain,,2023,12.179
 Spain,,2022,13.033
@@ -4995,6 +5140,7 @@ Spain,,1994,24.209
 Spain,,1993,22.156
 Spain,,1992,17.697
 Spain,,1991,15.929
+Sri Lanka,,2025,4.005
 Sri Lanka,,2024,4.239
 Sri Lanka,,2023,4.528
 Sri Lanka,,2022,4.528
@@ -5029,6 +5175,7 @@ Sri Lanka,,1994,13.03
 Sri Lanka,,1993,13.82
 Sri Lanka,,1992,14.22
 Sri Lanka,,1991,14.661
+Saint Lucia,,2025,9.452
 Saint Lucia,,2024,10.199
 Saint Lucia,,2023,12.094
 Saint Lucia,,2022,15.934
@@ -5063,6 +5210,7 @@ Saint Lucia,,1994,17.0
 Saint Lucia,,1993,16.8
 Saint Lucia,,1992,16.549
 Saint Lucia,,1991,16.521
+Saint Vincent-Grenadines,,2025,18.003
 Saint Vincent-Grenadines,,2024,18.093
 Saint Vincent-Grenadines,,2023,18.348
 Saint Vincent-Grenadines,,2022,19.277
@@ -5129,6 +5277,7 @@ Sudan,,1994,15.617
 Sudan,,1993,15.51
 Sudan,,1992,15.668
 Sudan,,1991,15.619
+Suriname,,2025,7.834
 Suriname,,2024,7.621
 Suriname,,2023,7.699
 Suriname,,2022,7.973
@@ -5163,6 +5312,7 @@ Suriname,,1994,12.7
 Suriname,,1993,15.64
 Suriname,,1992,17.28
 Suriname,,1991,17.189
+Sweden,,2025,8.694
 Sweden,,2024,8.4
 Sweden,,2023,7.611
 Sweden,,2022,7.417
@@ -5197,6 +5347,7 @@ Sweden,,1994,9.58
 Sweden,,1993,9.33
 Sweden,,1992,5.722
 Sweden,,1991,3.243
+Switzerland,,2025,4.873
 Switzerland,,2024,4.343
 Switzerland,,2023,4.043
 Switzerland,,2022,4.122
@@ -5231,6 +5382,7 @@ Switzerland,,1994,3.58
 Switzerland,,1993,3.551
 Switzerland,,1992,2.344
 Switzerland,,1991,1.818
+Syria,,2025,13.569
 Syria,,2024,13.359
 Syria,,2023,13.27
 Syria,,2022,13.245
@@ -5265,6 +5417,7 @@ Syria,,1994,7.5
 Syria,,1993,7.4
 Syria,,1992,6.949
 Syria,,1991,6.75
+Tajikistan,,2025,6.931
 Tajikistan,,2024,7.041
 Tajikistan,,2023,7.037
 Tajikistan,,2022,7.051
@@ -5299,6 +5452,7 @@ Tajikistan,,1994,3.15
 Tajikistan,,1993,2.65
 Tajikistan,,1992,1.85
 Tajikistan,,1991,1.823
+Tanzania,,2025,1.572
 Tanzania,,2024,1.557
 Tanzania,,2023,1.565
 Tanzania,,2022,1.573
@@ -5333,6 +5487,7 @@ Tanzania,,1994,3.861
 Tanzania,,1993,3.892
 Tanzania,,1992,3.683
 Tanzania,,1991,3.6
+Thailand,,2025,0.781
 Thailand,,2024,0.781
 Thailand,,2023,0.733
 Thailand,,2022,0.94
@@ -5367,6 +5522,7 @@ Thailand,,1994,1.347
 Thailand,,1993,1.49
 Thailand,,1992,1.35
 Thailand,,1991,2.63
+Timor-Leste,,2025,1.592
 Timor-Leste,,2024,1.523
 Timor-Leste,,2023,1.525
 Timor-Leste,,2022,1.537
@@ -5401,6 +5557,7 @@ Timor-Leste,,1994,3.309
 Timor-Leste,,1993,3.273
 Timor-Leste,,1992,3.36
 Timor-Leste,,1991,3.453
+Togo,,2025,1.995
 Togo,,2024,1.948
 Togo,,2023,1.942
 Togo,,2022,1.965
@@ -5435,6 +5592,7 @@ Togo,,1994,4.201
 Togo,,1993,4.507
 Togo,,1992,4.209
 Togo,,1991,4.057
+Tonga,,2025,2.008
 Tonga,,2024,1.965
 Tonga,,2023,1.652
 Tonga,,2022,2.002
@@ -5469,6 +5627,7 @@ Tonga,,1994,1.688
 Tonga,,1993,1.3
 Tonga,,1992,1.349
 Tonga,,1991,1.348
+Trinidad and Tobago,,2025,3.329
 Trinidad and Tobago,,2024,3.318
 Trinidad and Tobago,,2023,3.361
 Trinidad and Tobago,,2022,4.383
@@ -5503,6 +5662,7 @@ Trinidad and Tobago,,1994,18.44
 Trinidad and Tobago,,1993,19.81
 Trinidad and Tobago,,1992,19.66
 Trinidad and Tobago,,1991,18.52
+Tunisia,,2025,15.108
 Tunisia,,2024,15.341
 Tunisia,,2023,15.106
 Tunisia,,2022,15.3
@@ -5537,6 +5697,7 @@ Tunisia,,1994,16.006
 Tunisia,,1993,15.948
 Tunisia,,1992,15.598
 Tunisia,,1991,15.935
+Turkey,,2025,8.52
 Turkey,,2024,8.8
 Turkey,,2023,9.388
 Turkey,,2022,10.465
@@ -5571,6 +5732,7 @@ Turkey,,1994,8.577
 Turkey,,1993,8.962
 Turkey,,1992,8.509
 Turkey,,1991,8.21
+Turkmenistan,,2025,4.267
 Turkmenistan,,2024,4.02
 Turkmenistan,,2023,4.007
 Turkmenistan,,2022,4.017
@@ -5605,6 +5767,7 @@ Turkmenistan,,1994,4.7
 Turkmenistan,,1993,1.5
 Turkmenistan,,1992,1.5
 Turkmenistan,,1991,1.4
+Uganda,,2025,2.746
 Uganda,,2024,2.74
 Uganda,,2023,2.754
 Uganda,,2022,2.885
@@ -5670,6 +5833,7 @@ Ukraine,,1994,2.0
 Ukraine,,1993,2.0
 Ukraine,,1992,1.9
 Ukraine,,1991,1.9
+United Arab Emirates,,2025,2.174
 United Arab Emirates,,2024,2.16
 United Arab Emirates,,2023,2.151
 United Arab Emirates,,2022,2.872
@@ -5704,6 +5868,7 @@ United Arab Emirates,,1994,1.834
 United Arab Emirates,,1993,1.901
 United Arab Emirates,,1992,1.715
 United Arab Emirates,,1991,1.629
+United Kingdom,,2025,4.746
 United Kingdom,,2024,4.361
 United Kingdom,,2023,4.025
 United Kingdom,,2022,3.768
@@ -5738,6 +5903,7 @@ United Kingdom,,1994,9.648
 United Kingdom,,1993,10.346
 United Kingdom,,1992,9.772
 United Kingdom,,1991,8.55
+United States,,2025,4.198
 United States,,2024,4.022
 United States,,2023,3.638
 United States,,2022,3.65
@@ -5772,6 +5938,7 @@ United States,,1994,6.119
 United States,,1993,6.9
 United States,,1992,7.5
 United States,,1991,6.8
+Uruguay,,2025,7.516
 Uruguay,,2024,8.209
 Uruguay,,2023,8.355
 Uruguay,,2022,7.877
@@ -5806,6 +5973,7 @@ Uruguay,,1994,9.04
 Uruguay,,1993,8.35
 Uruguay,,1992,8.96
 Uruguay,,1991,8.95
+Uzbekistan,,2025,4.622
 Uzbekistan,,2024,4.439
 Uzbekistan,,2023,4.434
 Uzbekistan,,2022,4.456
@@ -5840,6 +6008,7 @@ Uzbekistan,,1994,7.3
 Uzbekistan,,1993,4.9
 Uzbekistan,,1992,2.9
 Uzbekistan,,1991,1.9
+Vanuatu,,2025,5.073
 Vanuatu,,2024,4.988
 Vanuatu,,2023,5.011
 Vanuatu,,2022,5.077
@@ -5874,6 +6043,7 @@ Vanuatu,,1994,8.083
 Vanuatu,,1993,8.262
 Vanuatu,,1992,7.945
 Vanuatu,,1991,7.976
+Venezuela,,2025,5.307
 Venezuela,,2024,5.321
 Venezuela,,2023,5.407
 Venezuela,,2022,5.646
@@ -5908,6 +6078,7 @@ Venezuela,,1994,8.56
 Venezuela,,1993,6.6
 Venezuela,,1992,7.69
 Venezuela,,1991,9.45
+Vietnam,,2025,1.523
 Vietnam,,2024,1.602
 Vietnam,,2023,1.645
 Vietnam,,2022,1.57
@@ -5974,6 +6145,7 @@ Palestine,,1994,10.778
 Palestine,,1993,10.705
 Palestine,,1992,10.692
 Palestine,,1991,10.666
+Yemen,,2025,17.322
 Yemen,,2024,16.97
 Yemen,,2023,16.944
 Yemen,,2022,17.224
@@ -6008,6 +6180,7 @@ Yemen,,1994,8.34
 Yemen,,1993,8.343
 Yemen,,1992,8.351
 Yemen,,1991,8.428
+Zambia,,2025,5.918
 Zambia,,2024,5.898
 Zambia,,2023,5.861
 Zambia,,2022,5.993
@@ -6042,6 +6215,7 @@ Zambia,,1994,18.689
 Zambia,,1993,19.7
 Zambia,,1992,19.568
 Zambia,,1991,18.9
+Zimbabwe,,2025,9.293
 Zimbabwe,,2024,9.435
 Zimbabwe,,2023,9.348
 Zimbabwe,,2022,10.087
