@@ -341,7 +341,7 @@
       "url": "",
       "source_date": "2023-01-01",
       "data_year": 2023,
-      "last_fetch": "2026-03-01T04:49:05Z"
+      "last_fetch": "2026-04-01T04:02:03Z"
     },
     "global_co2_emissions": {
       "source": "https://ourworldindata.org/grapher/annual-co2-emissions",
@@ -383,77 +383,77 @@
       "url": "",
       "source_date": "Unknown",
       "data_year": 2025,
-      "last_fetch": "2026-03-01T04:49:09Z"
+      "last_fetch": "2026-04-01T04:02:07Z"
     },
     "world_happiness_index": {
       "source": "https://worldhappiness.report/",
       "url": "",
       "source_date": "2024-01-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-03-01T04:49:09Z"
+      "last_fetch": "2026-04-01T04:02:07Z"
     },
     "olympic_medals_summer": {
       "source": "https://www.olympics.com/en/olympic-games",
       "url": "",
       "source_date": "2024-01-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-03-01T04:49:10Z"
+      "last_fetch": "2026-04-01T04:02:07Z"
     },
     "big_mac_index": {
       "source": "https://www.economist.com/big-mac-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-03-01T04:49:10Z"
+      "last_fetch": "2026-04-01T04:02:07Z"
     },
     "recycling_rate": {
       "source": "https://data.oecd.org/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-03-01T04:49:10Z"
+      "last_fetch": "2026-04-01T04:02:07Z"
     },
     "environmental_performance_index": {
       "source": "https://epi.yale.edu/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-03-01T04:49:10Z"
+      "last_fetch": "2026-04-01T04:02:07Z"
     },
     "global_peace_index": {
       "source": "https://www.visionofhumanity.org/maps/#/global-peace-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-03-01T04:49:10Z"
+      "last_fetch": "2026-04-01T04:02:07Z"
     },
     "inform_resilience_index": {
       "source": "https://drmkc.jrc.ec.europa.eu/inform-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-03-01T04:49:10Z"
+      "last_fetch": "2026-04-01T04:02:07Z"
     },
     "olympic_medals_winter": {
       "source": "https://www.olympics.com/en/olympic-games",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-03-01T04:49:10Z"
+      "last_fetch": "2026-04-01T04:02:07Z"
     },
     "pisa_overall_score": {
       "source": "https://www.oecd.org/pisa/data/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-03-01T04:49:10Z"
+      "last_fetch": "2026-04-01T04:02:07Z"
     },
     "network_readiness_index": {
       "source": "https://networkreadinessindex.org/",
       "url": "",
       "source_date": "2024-01-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-03-01T04:49:10Z"
+      "last_fetch": "2026-04-01T04:02:08Z"
     },
     "intentional_homicides": {
       "source": "https://data.worldbank.org/indicator/VC.IHR.PSRC.P5",
@@ -488,14 +488,14 @@
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-03-01T04:49:18Z"
+      "last_fetch": "2026-04-01T04:02:10Z"
     },
     "lpi_infrastructure": {
       "source": "https://lpi.worldbank.org/",
       "url": "",
       "source_date": "2023-01-01T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2026-03-01T04:49:18Z"
+      "last_fetch": "2026-04-01T04:02:10Z"
     },
     "universal_health_coverage_index": {
       "source": "https://ourworldindata.org/grapher/universal-health-coverage-index",
@@ -522,15 +522,15 @@
     "geopolitical_risk_index": {
       "source": "https://www.matteoiacoviello.com/gpr.htm",
       "url": "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls",
-      "source_date": "2026-03-01T00:00:00Z",
+      "source_date": "2026-04-01T00:00:00Z",
       "data_year": 2026,
-      "last_fetch": "2026-03-01T04:49:19Z"
+      "last_fetch": "2026-04-01T04:02:11Z"
     }
   },
   "summary": {
-    "lastRun": "2026-03-01T04:49:19Z",
-    "updated": 51,
-    "skipped": 21,
+    "lastRun": "2026-04-01T04:02:11Z",
+    "updated": 14,
+    "skipped": 58,
     "errors": 2
   }
 }
