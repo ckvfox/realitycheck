@@ -326,6 +326,12 @@
   {
     "country": "Armenia",
     "iso2": "",
+    "year": 2024,
+    "value": 0.8
+  },
+  {
+    "country": "Armenia",
+    "iso2": "",
     "year": 2023,
     "value": 1.9
   },
@@ -477,13 +483,13 @@
     "country": "Australia",
     "iso2": "",
     "year": 2020,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "Australia",
     "iso2": "",
     "year": 2018,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "Australia",
@@ -495,19 +501,19 @@
     "country": "Australia",
     "iso2": "",
     "year": 2014,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "Australia",
     "iso2": "",
     "year": 2010,
-    "value": 0.3
+    "value": 0.5
   },
   {
     "country": "Australia",
     "iso2": "",
     "year": 2008,
-    "value": 0.7
+    "value": 0.5
   },
   {
     "country": "Australia",
@@ -519,13 +525,13 @@
     "country": "Australia",
     "iso2": "",
     "year": 2003,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "Australia",
     "iso2": "",
     "year": 2001,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "Australia",
@@ -537,19 +543,19 @@
     "country": "Australia",
     "iso2": "",
     "year": 1989,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "Australia",
     "iso2": "",
     "year": 1985,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "Australia",
     "iso2": "",
     "year": 1981,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "Austria",
@@ -681,7 +687,7 @@
     "country": "Austria",
     "iso2": "",
     "year": 2000,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "Austria",
@@ -705,13 +711,13 @@
     "country": "Austria",
     "iso2": "",
     "year": 1996,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Austria",
     "iso2": "",
     "year": 1995,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Austria",
@@ -1107,19 +1113,19 @@
     "country": "Belgium",
     "iso2": "",
     "year": 1997,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Belgium",
     "iso2": "",
     "year": 1995,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "Belgium",
     "iso2": "",
     "year": 1992,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "Belgium",
@@ -1131,7 +1137,7 @@
     "country": "Belgium",
     "iso2": "",
     "year": 1985,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Belize",
@@ -1240,6 +1246,12 @@
     "iso2": "",
     "year": 2003,
     "value": 23.1
+  },
+  {
+    "country": "Bolivia",
+    "iso2": "",
+    "year": 2024,
+    "value": 2.1
   },
   {
     "country": "Bolivia",
@@ -1400,14 +1412,26 @@
   {
     "country": "Bosnia Herzegovina",
     "iso2": "",
+    "year": 2021,
+    "value": 0.3
+  },
+  {
+    "country": "Bosnia Herzegovina",
+    "iso2": "",
+    "year": 2015,
+    "value": 1.2
+  },
+  {
+    "country": "Bosnia Herzegovina",
+    "iso2": "",
     "year": 2011,
-    "value": 0.2
+    "value": 0.9
   },
   {
     "country": "Bosnia Herzegovina",
     "iso2": "",
     "year": 2007,
-    "value": 0.2
+    "value": 0.7
   },
   {
     "country": "Bosnia Herzegovina",
@@ -1454,6 +1478,12 @@
   {
     "country": "Brazil",
     "iso2": "",
+    "year": 2024,
+    "value": 3.0
+  },
+  {
+    "country": "Brazil",
+    "iso2": "",
     "year": 2023,
     "value": 3.8
   },
@@ -1491,7 +1521,7 @@
     "country": "Brazil",
     "iso2": "",
     "year": 2017,
-    "value": 6.9
+    "value": 7.0
   },
   {
     "country": "Brazil",
@@ -1509,7 +1539,7 @@
     "country": "Brazil",
     "iso2": "",
     "year": 2014,
-    "value": 4.7
+    "value": 4.8
   },
   {
     "country": "Brazil",
@@ -1958,6 +1988,12 @@
   {
     "country": "Canada",
     "iso2": "",
+    "year": 2022,
+    "value": 0.3
+  },
+  {
+    "country": "Canada",
+    "iso2": "",
     "year": 2021,
     "value": 0.2
   },
@@ -1965,43 +2001,43 @@
     "country": "Canada",
     "iso2": "",
     "year": 2020,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2019,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2018,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2017,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2016,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2015,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2014,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
@@ -2013,31 +2049,31 @@
     "country": "Canada",
     "iso2": "",
     "year": 2012,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2011,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2010,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2009,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2008,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
@@ -2049,49 +2085,49 @@
     "country": "Canada",
     "iso2": "",
     "year": 2006,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2005,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2004,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2003,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2002,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2001,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 2000,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 1999,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Canada",
@@ -2103,25 +2139,25 @@
     "country": "Canada",
     "iso2": "",
     "year": 1997,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 1996,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 1995,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 1994,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "Canada",
@@ -2133,25 +2169,25 @@
     "country": "Canada",
     "iso2": "",
     "year": 1992,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 1991,
-    "value": 1.2
+    "value": 1.3
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 1990,
-    "value": 1.2
+    "value": 1.1
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 1989,
-    "value": 1.2
+    "value": 1.3
   },
   {
     "country": "Canada",
@@ -2163,7 +2199,7 @@
     "country": "Canada",
     "iso2": "",
     "year": 1987,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "Canada",
@@ -2181,25 +2217,25 @@
     "country": "Canada",
     "iso2": "",
     "year": 1984,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 1982,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 1981,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "Canada",
     "iso2": "",
     "year": 1979,
-    "value": 1.2
+    "value": 1.3
   },
   {
     "country": "Canada",
@@ -2217,7 +2253,7 @@
     "country": "Canada",
     "iso2": "",
     "year": 1973,
-    "value": 1.7
+    "value": 1.8
   },
   {
     "country": "Canada",
@@ -2270,8 +2306,14 @@
   {
     "country": "Chile",
     "iso2": "",
+    "year": 2024,
+    "value": 0.4
+  },
+  {
+    "country": "Chile",
+    "iso2": "",
     "year": 2022,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "Chile",
@@ -2391,49 +2433,49 @@
     "country": "China",
     "iso2": "",
     "year": 2018,
-    "value": 0.8
+    "value": 0.7
   },
   {
     "country": "China",
     "iso2": "",
     "year": 2017,
-    "value": 1.7
+    "value": 1.6
   },
   {
     "country": "China",
     "iso2": "",
     "year": 2016,
-    "value": 2.2
+    "value": 2.1
   },
   {
     "country": "China",
     "iso2": "",
     "year": 2015,
-    "value": 3.0
+    "value": 2.9
   },
   {
     "country": "China",
     "iso2": "",
     "year": 2014,
-    "value": 4.7
+    "value": 4.6
   },
   {
     "country": "China",
     "iso2": "",
     "year": 2013,
-    "value": 6.2
+    "value": 6.0
   },
   {
     "country": "China",
     "iso2": "",
     "year": 2012,
-    "value": 13.2
+    "value": 12.9
   },
   {
     "country": "China",
     "iso2": "",
     "year": 2011,
-    "value": 15.7
+    "value": 15.3
   },
   {
     "country": "China",
@@ -2445,55 +2487,55 @@
     "country": "China",
     "iso2": "",
     "year": 2008,
-    "value": 26.2
+    "value": 26.1
   },
   {
     "country": "China",
     "iso2": "",
     "year": 2005,
-    "value": 33.1
+    "value": 32.9
   },
   {
     "country": "China",
     "iso2": "",
     "year": 2002,
-    "value": 48.1
+    "value": 47.8
   },
   {
     "country": "China",
     "iso2": "",
     "year": 1999,
-    "value": 58.4
+    "value": 58.5
   },
   {
     "country": "China",
     "iso2": "",
     "year": 1996,
-    "value": 62.0
+    "value": 62.6
   },
   {
     "country": "China",
     "iso2": "",
     "year": 1993,
-    "value": 76.8
+    "value": 77.3
   },
   {
     "country": "China",
     "iso2": "",
     "year": 1990,
-    "value": 83.0
+    "value": 83.1
   },
   {
     "country": "China",
     "iso2": "",
     "year": 1987,
-    "value": 81.4
+    "value": 81.1
   },
   {
     "country": "China",
     "iso2": "",
     "year": 1984,
-    "value": 91.4
+    "value": 91.3
   },
   {
     "country": "China",
@@ -2504,8 +2546,14 @@
   {
     "country": "Colombia",
     "iso2": "",
+    "year": 2024,
+    "value": 8.5
+  },
+  {
+    "country": "Colombia",
+    "iso2": "",
     "year": 2023,
-    "value": 7.7
+    "value": 8.6
   },
   {
     "country": "Colombia",
@@ -2523,79 +2571,79 @@
     "country": "Colombia",
     "iso2": "",
     "year": 2020,
-    "value": 13.5
+    "value": 15.8
   },
   {
     "country": "Colombia",
     "iso2": "",
     "year": 2019,
-    "value": 8.8
+    "value": 11.3
   },
   {
     "country": "Colombia",
     "iso2": "",
     "year": 2018,
-    "value": 7.4
+    "value": 9.8
   },
   {
     "country": "Colombia",
     "iso2": "",
     "year": 2017,
-    "value": 7.3
+    "value": 9.5
   },
   {
     "country": "Colombia",
     "iso2": "",
     "year": 2016,
-    "value": 8.0
+    "value": 10.1
   },
   {
     "country": "Colombia",
     "iso2": "",
     "year": 2015,
-    "value": 8.1
+    "value": 10.2
   },
   {
     "country": "Colombia",
     "iso2": "",
     "year": 2014,
-    "value": 9.0
-  },
-  {
-    "country": "Colombia",
-    "iso2": "",
-    "year": 2013,
-    "value": 9.9
-  },
-  {
-    "country": "Colombia",
-    "iso2": "",
-    "year": 2012,
     "value": 10.9
   },
   {
     "country": "Colombia",
     "iso2": "",
+    "year": 2013,
+    "value": 11.8
+  },
+  {
+    "country": "Colombia",
+    "iso2": "",
+    "year": 2012,
+    "value": 12.7
+  },
+  {
+    "country": "Colombia",
+    "iso2": "",
     "year": 2011,
-    "value": 11.2
+    "value": 11.3
   },
   {
     "country": "Colombia",
     "iso2": "",
     "year": 2010,
-    "value": 13.1
+    "value": 13.3
   },
   {
     "country": "Colombia",
     "iso2": "",
     "year": 2009,
-    "value": 15.0
+    "value": 15.1
   },
   {
     "country": "Colombia",
     "iso2": "",
     "year": 2008,
-    "value": 16.6
+    "value": 16.3
   },
   {
     "country": "Colombia",
@@ -2678,6 +2726,18 @@
   {
     "country": "Comoros",
     "iso2": "",
+    "year": 2024,
+    "value": 5.1
+  },
+  {
+    "country": "Comoros",
+    "iso2": "",
+    "year": 2020,
+    "value": 8.9
+  },
+  {
+    "country": "Comoros",
+    "iso2": "",
     "year": 2014,
     "value": 31.4
   },
@@ -2685,7 +2745,7 @@
     "country": "Comoros",
     "iso2": "",
     "year": 2004,
-    "value": 27.9
+    "value": 24.3
   },
   {
     "country": "Democratic Republic of the Congo",
@@ -2716,6 +2776,12 @@
     "iso2": "",
     "year": 2005,
     "value": 54.5
+  },
+  {
+    "country": "Costa Rica",
+    "iso2": "",
+    "year": 2025,
+    "value": 0.8
   },
   {
     "country": "Costa Rica",
@@ -2949,73 +3015,73 @@
     "country": "Ivory Coast",
     "iso2": "",
     "year": 2021,
-    "value": 20.9
+    "value": 20.8
   },
   {
     "country": "Ivory Coast",
     "iso2": "",
     "year": 2018,
-    "value": 22.7
+    "value": 21.7
   },
   {
     "country": "Ivory Coast",
     "iso2": "",
     "year": 2015,
-    "value": 47.5
+    "value": 46.6
   },
   {
     "country": "Ivory Coast",
     "iso2": "",
     "year": 2008,
-    "value": 47.9
+    "value": 47.0
   },
   {
     "country": "Ivory Coast",
     "iso2": "",
     "year": 2002,
-    "value": 44.7
+    "value": 43.9
   },
   {
     "country": "Ivory Coast",
     "iso2": "",
     "year": 1998,
-    "value": 44.1
+    "value": 42.9
   },
   {
     "country": "Ivory Coast",
     "iso2": "",
     "year": 1995,
-    "value": 40.9
+    "value": 39.8
   },
   {
     "country": "Ivory Coast",
     "iso2": "",
     "year": 1992,
-    "value": 39.6
+    "value": 38.4
   },
   {
     "country": "Ivory Coast",
     "iso2": "",
     "year": 1988,
-    "value": 23.8
+    "value": 22.5
   },
   {
     "country": "Ivory Coast",
     "iso2": "",
     "year": 1987,
-    "value": 16.2
+    "value": 16.0
   },
   {
     "country": "Ivory Coast",
     "iso2": "",
     "year": 1986,
-    "value": 10.4
+    "value": 10.2
   },
   {
     "country": "Ivory Coast",
     "iso2": "",
     "year": 1985,
-    "value": 14.0
+    "value": 13.6
   },
   {
     "country": "Croatia",
@@ -3399,7 +3465,7 @@
     "country": "Czechia",
     "iso2": "",
     "year": 1996,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Czechia",
@@ -3543,25 +3609,25 @@
     "country": "Denmark",
     "iso2": "",
     "year": 2000,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Denmark",
     "iso2": "",
     "year": 1995,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Denmark",
     "iso2": "",
     "year": 1992,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "Denmark",
     "iso2": "",
     "year": 1987,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "Djibouti",
@@ -3766,6 +3832,12 @@
     "iso2": "",
     "year": 1986,
     "value": 8.7
+  },
+  {
+    "country": "Ecuador",
+    "iso2": "",
+    "year": 2025,
+    "value": 3.4
   },
   {
     "country": "Ecuador",
@@ -4035,7 +4107,7 @@
     "country": "El Salvador",
     "iso2": "",
     "year": 2017,
-    "value": 4.5
+    "value": 4.6
   },
   {
     "country": "El Salvador",
@@ -4557,7 +4629,7 @@
     "country": "Finland",
     "iso2": "",
     "year": 2000,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Finland",
@@ -4575,7 +4647,7 @@
     "country": "Finland",
     "iso2": "",
     "year": 1987,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "France",
@@ -4707,37 +4779,37 @@
     "country": "France",
     "iso2": "",
     "year": 2002,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "France",
     "iso2": "",
     "year": 2001,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "France",
     "iso2": "",
     "year": 2000,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "France",
     "iso2": "",
     "year": 1999,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "France",
     "iso2": "",
     "year": 1998,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "France",
     "iso2": "",
     "year": 1997,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "France",
@@ -4755,25 +4827,25 @@
     "country": "France",
     "iso2": "",
     "year": 1984,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "France",
     "iso2": "",
     "year": 1979,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "France",
     "iso2": "",
     "year": 1975,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "France",
     "iso2": "",
     "year": 1970,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Gabon",
@@ -4994,8 +5066,20 @@
   {
     "country": "Germany",
     "iso2": "",
+    "year": 2022,
+    "value": 0.7
+  },
+  {
+    "country": "Germany",
+    "iso2": "",
+    "year": 2021,
+    "value": 0.6
+  },
+  {
+    "country": "Germany",
+    "iso2": "",
     "year": 2020,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Germany",
@@ -5007,7 +5091,7 @@
     "country": "Germany",
     "iso2": "",
     "year": 2018,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
@@ -5019,61 +5103,61 @@
     "country": "Germany",
     "iso2": "",
     "year": 2016,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2015,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2014,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2013,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2012,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2011,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2010,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2009,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2008,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2007,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
@@ -5085,61 +5169,61 @@
     "country": "Germany",
     "iso2": "",
     "year": 2005,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2004,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2003,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2002,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2001,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 2000,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 1999,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 1998,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 1997,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 1996,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
@@ -5157,19 +5241,19 @@
     "country": "Germany",
     "iso2": "",
     "year": 1993,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 1992,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "Germany",
     "iso2": "",
     "year": 1991,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Ghana",
@@ -5343,19 +5427,19 @@
     "country": "Greece",
     "iso2": "",
     "year": 2002,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "Greece",
     "iso2": "",
     "year": 2000,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Greece",
     "iso2": "",
     "year": 1995,
-    "value": 2.0
+    "value": 1.2
   },
   {
     "country": "Grenada",
@@ -5805,7 +5889,7 @@
     "country": "Hungary",
     "iso2": "",
     "year": 1999,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "Hungary",
@@ -5829,7 +5913,7 @@
     "country": "Hungary",
     "iso2": "",
     "year": 1991,
-    "value": 2.2
+    "value": 2.1
   },
   {
     "country": "Hungary",
@@ -5996,6 +6080,12 @@
   {
     "country": "Indonesia",
     "iso2": "",
+    "year": 2025,
+    "value": 4.0
+  },
+  {
+    "country": "Indonesia",
+    "iso2": "",
     "year": 2024,
     "value": 5.4
   },
@@ -6027,7 +6117,7 @@
     "country": "Indonesia",
     "iso2": "",
     "year": 2019,
-    "value": 10.8
+    "value": 10.9
   },
   {
     "country": "Indonesia",
@@ -6453,7 +6543,7 @@
     "country": "Ireland",
     "iso2": "",
     "year": 2002,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Ireland",
@@ -6471,25 +6561,31 @@
     "country": "Ireland",
     "iso2": "",
     "year": 1995,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Ireland",
     "iso2": "",
     "year": 1994,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Ireland",
     "iso2": "",
     "year": 1987,
-    "value": 1.2
+    "value": 1.3
+  },
+  {
+    "country": "Israel",
+    "iso2": "",
+    "year": 2022,
+    "value": 0.4
   },
   {
     "country": "Israel",
     "iso2": "",
     "year": 2021,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "Israel",
@@ -6501,7 +6597,7 @@
     "country": "Israel",
     "iso2": "",
     "year": 2019,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "Israel",
@@ -6531,19 +6627,19 @@
     "country": "Israel",
     "iso2": "",
     "year": 2014,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "Israel",
     "iso2": "",
     "year": 2013,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "Israel",
     "iso2": "",
     "year": 2012,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "Israel",
@@ -6555,13 +6651,13 @@
     "country": "Israel",
     "iso2": "",
     "year": 2010,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "Israel",
     "iso2": "",
     "year": 2009,
-    "value": 0.7
+    "value": 0.9
   },
   {
     "country": "Israel",
@@ -6573,7 +6669,7 @@
     "country": "Israel",
     "iso2": "",
     "year": 2007,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "Israel",
@@ -6585,7 +6681,7 @@
     "country": "Israel",
     "iso2": "",
     "year": 2005,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "Israel",
@@ -6603,19 +6699,19 @@
     "country": "Israel",
     "iso2": "",
     "year": 2002,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "Israel",
     "iso2": "",
     "year": 2001,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "Israel",
     "iso2": "",
     "year": 1997,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "Israel",
@@ -6633,7 +6729,7 @@
     "country": "Israel",
     "iso2": "",
     "year": 1979,
-    "value": 0.4
+    "value": 0.3
   },
   {
     "country": "Italy",
@@ -6771,7 +6867,7 @@
     "country": "Italy",
     "iso2": "",
     "year": 2000,
-    "value": 1.2
+    "value": 1.3
   },
   {
     "country": "Italy",
@@ -6789,31 +6885,31 @@
     "country": "Italy",
     "iso2": "",
     "year": 1993,
-    "value": 1.4
+    "value": 1.5
   },
   {
     "country": "Italy",
     "iso2": "",
     "year": 1991,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Italy",
     "iso2": "",
     "year": 1989,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Italy",
     "iso2": "",
     "year": 1987,
-    "value": 1.2
+    "value": 1.1
   },
   {
     "country": "Italy",
     "iso2": "",
     "year": 1986,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "Italy",
@@ -6831,13 +6927,13 @@
     "country": "Italy",
     "iso2": "",
     "year": 1982,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "Italy",
     "iso2": "",
     "year": 1981,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "Italy",
@@ -6861,7 +6957,7 @@
     "country": "Italy",
     "iso2": "",
     "year": 1977,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Jamaica",
@@ -6927,7 +7023,7 @@
     "country": "Japan",
     "iso2": "",
     "year": 2019,
-    "value": 1.2
+    "value": 1.3
   },
   {
     "country": "Japan",
@@ -6963,13 +7059,13 @@
     "country": "Japan",
     "iso2": "",
     "year": 2013,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "Japan",
     "iso2": "",
     "year": 2012,
-    "value": 1.5
+    "value": 1.4
   },
   {
     "country": "Japan",
@@ -6981,19 +7077,19 @@
     "country": "Japan",
     "iso2": "",
     "year": 2010,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "Japan",
     "iso2": "",
     "year": 2009,
-    "value": 0.9
+    "value": 0.8
   },
   {
     "country": "Japan",
     "iso2": "",
     "year": 2008,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "Jordan",
@@ -7179,7 +7275,7 @@
     "country": "Kenya",
     "iso2": "",
     "year": 2022,
-    "value": 46.9
+    "value": 45.5
   },
   {
     "country": "Kenya",
@@ -7226,6 +7322,12 @@
   {
     "country": "Kiribati",
     "iso2": "",
+    "year": 2023,
+    "value": 0.9
+  },
+  {
+    "country": "Kiribati",
+    "iso2": "",
     "year": 2019,
     "value": 6.1
   },
@@ -7239,13 +7341,13 @@
     "country": "South Korea",
     "iso2": "",
     "year": 2021,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "South Korea",
     "iso2": "",
     "year": 2020,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "South Korea",
@@ -7275,7 +7377,7 @@
     "country": "South Korea",
     "iso2": "",
     "year": 2014,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "South Korea",
@@ -7402,6 +7504,12 @@
     "iso2": "",
     "year": 2003,
     "value": 11.7
+  },
+  {
+    "country": "Kyrgyzstan",
+    "iso2": "",
+    "year": 2024,
+    "value": 2.2
   },
   {
     "country": "Kyrgyzstan",
@@ -7552,6 +7660,12 @@
     "iso2": "",
     "year": 1998,
     "value": 43.7
+  },
+  {
+    "country": "Laos",
+    "iso2": "",
+    "year": 2024,
+    "value": 7.1
   },
   {
     "country": "Laos",
@@ -7755,7 +7869,7 @@
     "country": "Lebanon",
     "iso2": "",
     "year": 2022,
-    "value": 5.9
+    "value": 5.8
   },
   {
     "country": "Lebanon",
@@ -7779,13 +7893,13 @@
     "country": "Lesotho",
     "iso2": "",
     "year": 1994,
-    "value": 59.6
+    "value": 59.7
   },
   {
     "country": "Lesotho",
     "iso2": "",
     "year": 1986,
-    "value": 62.8
+    "value": 63.2
   },
   {
     "country": "Liberia",
@@ -8139,7 +8253,7 @@
     "country": "Luxembourg",
     "iso2": "",
     "year": 1996,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Luxembourg",
@@ -8205,7 +8319,7 @@
     "country": "Luxembourg",
     "iso2": "",
     "year": 1985,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Madagascar",
@@ -8438,6 +8552,12 @@
   {
     "country": "Malta",
     "iso2": "",
+    "year": 2023,
+    "value": 0.4
+  },
+  {
+    "country": "Malta",
+    "iso2": "",
     "year": 2022,
     "value": 0.1
   },
@@ -8608,6 +8728,12 @@
     "iso2": "",
     "year": 2006,
     "value": 1.1
+  },
+  {
+    "country": "Mexico",
+    "iso2": "",
+    "year": 2024,
+    "value": 1.6
   },
   {
     "country": "Mexico",
@@ -9189,25 +9315,25 @@
     "country": "Nepal",
     "iso2": "",
     "year": 2010,
-    "value": 21.5
+    "value": 22.1
   },
   {
     "country": "Nepal",
     "iso2": "",
     "year": 2003,
-    "value": 55.7
+    "value": 55.9
   },
   {
     "country": "Nepal",
     "iso2": "",
     "year": 1995,
-    "value": 70.7
+    "value": 71.1
   },
   {
     "country": "Nepal",
     "iso2": "",
     "year": 1984,
-    "value": 82.7
+    "value": 83.0
   },
   {
     "country": "Netherlands",
@@ -9321,25 +9447,25 @@
     "country": "Netherlands",
     "iso2": "",
     "year": 1999,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Netherlands",
     "iso2": "",
     "year": 1993,
-    "value": 1.5
+    "value": 1.4
   },
   {
     "country": "Netherlands",
     "iso2": "",
     "year": 1990,
-    "value": 1.2
+    "value": 1.1
   },
   {
     "country": "Netherlands",
     "iso2": "",
     "year": 1987,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Netherlands",
@@ -9729,19 +9855,19 @@
     "country": "Norway",
     "iso2": "",
     "year": 2000,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "Norway",
     "iso2": "",
     "year": 1995,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Norway",
     "iso2": "",
     "year": 1991,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Norway",
@@ -9753,7 +9879,13 @@
     "country": "Norway",
     "iso2": "",
     "year": 1979,
-    "value": 0.2
+    "value": 0.3
+  },
+  {
+    "country": "Pakistan",
+    "iso2": "",
+    "year": 2024,
+    "value": 23.0
   },
   {
     "country": "Pakistan",
@@ -10605,7 +10737,7 @@
     "country": "Poland",
     "iso2": "",
     "year": 1999,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "Poland",
@@ -10623,7 +10755,7 @@
     "country": "Poland",
     "iso2": "",
     "year": 1995,
-    "value": 2.5
+    "value": 2.6
   },
   {
     "country": "Poland",
@@ -10653,7 +10785,7 @@
     "country": "Poland",
     "iso2": "",
     "year": 1986,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "Poland",
@@ -11270,6 +11402,12 @@
   {
     "country": "Serbia",
     "iso2": "",
+    "year": 2023,
+    "value": 1.1
+  },
+  {
+    "country": "Serbia",
+    "iso2": "",
     "year": 2022,
     "value": 2.0
   },
@@ -11553,13 +11691,13 @@
     "country": "Slovakia",
     "iso2": "",
     "year": 1996,
-    "value": 1.7
+    "value": 1.8
   },
   {
     "country": "Slovakia",
     "iso2": "",
     "year": 1992,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Slovenia",
@@ -11709,7 +11847,7 @@
     "country": "Slovenia",
     "iso2": "",
     "year": 1997,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "Slovenia",
@@ -11738,26 +11876,32 @@
   {
     "country": "South Africa",
     "iso2": "",
+    "year": 2022,
+    "value": 17.4
+  },
+  {
+    "country": "South Africa",
+    "iso2": "",
     "year": 2014,
-    "value": 31.2
+    "value": 27.9
   },
   {
     "country": "South Africa",
     "iso2": "",
     "year": 2010,
-    "value": 29.5
+    "value": 27.8
   },
   {
     "country": "South Africa",
     "iso2": "",
     "year": 2008,
-    "value": 30.3
+    "value": 37.0
   },
   {
     "country": "South Africa",
     "iso2": "",
     "year": 2005,
-    "value": 42.1
+    "value": 40.7
   },
   {
     "country": "South Africa",
@@ -11925,7 +12069,7 @@
     "country": "Spain",
     "iso2": "",
     "year": 1998,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "Spain",
@@ -11937,31 +12081,31 @@
     "country": "Spain",
     "iso2": "",
     "year": 1996,
-    "value": 1.5
+    "value": 1.6
   },
   {
     "country": "Spain",
     "iso2": "",
     "year": 1995,
-    "value": 1.5
+    "value": 1.6
   },
   {
     "country": "Spain",
     "iso2": "",
     "year": 1994,
-    "value": 1.2
+    "value": 1.3
   },
   {
     "country": "Spain",
     "iso2": "",
     "year": 1993,
-    "value": 1.5
+    "value": 1.4
   },
   {
     "country": "Spain",
     "iso2": "",
     "year": 1990,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "Spain",
@@ -11973,7 +12117,7 @@
     "country": "Spain",
     "iso2": "",
     "year": 1980,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "Sri Lanka",
@@ -12195,7 +12339,7 @@
     "country": "Sweden",
     "iso2": "",
     "year": 2002,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "Sweden",
@@ -12207,7 +12351,7 @@
     "country": "Sweden",
     "iso2": "",
     "year": 2000,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "Sweden",
@@ -12231,7 +12375,7 @@
     "country": "Sweden",
     "iso2": "",
     "year": 1981,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "Sweden",
@@ -12345,7 +12489,7 @@
     "country": "Switzerland",
     "iso2": "",
     "year": 2004,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "Switzerland",
@@ -12357,13 +12501,13 @@
     "country": "Switzerland",
     "iso2": "",
     "year": 2000,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "Switzerland",
     "iso2": "",
     "year": 1992,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "Switzerland",
@@ -12375,7 +12519,7 @@
     "country": "Syria",
     "iso2": "",
     "year": 2022,
-    "value": 16.5
+    "value": 18.0
   },
   {
     "country": "Syria",
@@ -12490,6 +12634,12 @@
     "iso2": "",
     "year": 1991,
     "value": 73.5
+  },
+  {
+    "country": "Thailand",
+    "iso2": "",
+    "year": 2024,
+    "value": 0.0
   },
   {
     "country": "Thailand",
@@ -12669,7 +12819,7 @@
     "country": "Timor-Leste",
     "iso2": "",
     "year": 2014,
-    "value": 43.9
+    "value": 44.0
   },
   {
     "country": "Timor-Leste",
@@ -12687,31 +12837,31 @@
     "country": "Togo",
     "iso2": "",
     "year": 2021,
-    "value": 34.4
+    "value": 34.7
   },
   {
     "country": "Togo",
     "iso2": "",
     "year": 2018,
-    "value": 35.1
+    "value": 35.3
   },
   {
     "country": "Togo",
     "iso2": "",
     "year": 2015,
-    "value": 61.5
+    "value": 61.7
   },
   {
     "country": "Togo",
     "iso2": "",
     "year": 2011,
-    "value": 65.2
+    "value": 65.5
   },
   {
     "country": "Togo",
     "iso2": "",
     "year": 2006,
-    "value": 67.2
+    "value": 67.6
   },
   {
     "country": "Tonga",
@@ -12796,6 +12946,12 @@
     "iso2": "",
     "year": 1985,
     "value": 21.6
+  },
+  {
+    "country": "Turkey",
+    "iso2": "",
+    "year": 2023,
+    "value": 0.2
   },
   {
     "country": "Turkey",
@@ -13167,7 +13323,7 @@
     "country": "United Kingdom",
     "iso2": "",
     "year": 2021,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "United Kingdom",
@@ -13179,37 +13335,37 @@
     "country": "United Kingdom",
     "iso2": "",
     "year": 2019,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2018,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2017,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2016,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2015,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2014,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "United Kingdom",
@@ -13221,91 +13377,91 @@
     "country": "United Kingdom",
     "iso2": "",
     "year": 2012,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2011,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2010,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2009,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2008,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2007,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2006,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2005,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2004,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2003,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2002,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2001,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 2000,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1999,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1998,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
@@ -13323,13 +13479,13 @@
     "country": "United Kingdom",
     "iso2": "",
     "year": 1995,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1994,
-    "value": 0.2
+    "value": 0.4
   },
   {
     "country": "United Kingdom",
@@ -13341,19 +13497,19 @@
     "country": "United Kingdom",
     "iso2": "",
     "year": 1992,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1991,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1990,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
@@ -13365,67 +13521,67 @@
     "country": "United Kingdom",
     "iso2": "",
     "year": 1988,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1987,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1986,
-    "value": 0.2
+    "value": 0.3
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1985,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1984,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1983,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1982,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1981,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1980,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1979,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1978,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
@@ -13437,7 +13593,7 @@
     "country": "United Kingdom",
     "iso2": "",
     "year": 1976,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
@@ -13467,13 +13623,13 @@
     "country": "United Kingdom",
     "iso2": "",
     "year": 1971,
-    "value": 0.0
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
     "iso2": "",
     "year": 1970,
-    "value": 0.2
+    "value": 0.1
   },
   {
     "country": "United Kingdom",
@@ -13486,6 +13642,12 @@
     "iso2": "",
     "year": 1968,
     "value": 0.2
+  },
+  {
+    "country": "United States",
+    "iso2": "",
+    "year": 2024,
+    "value": 1.1
   },
   {
     "country": "United States",
@@ -13497,19 +13659,19 @@
     "country": "United States",
     "iso2": "",
     "year": 2022,
-    "value": 1.2
+    "value": 1.4
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 2021,
-    "value": 0.5
+    "value": 0.3
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 2020,
-    "value": 0.5
+    "value": 0.4
   },
   {
     "country": "United States",
@@ -13521,13 +13683,13 @@
     "country": "United States",
     "iso2": "",
     "year": 2018,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 2017,
-    "value": 1.2
+    "value": 1.3
   },
   {
     "country": "United States",
@@ -13545,31 +13707,31 @@
     "country": "United States",
     "iso2": "",
     "year": 2014,
-    "value": 1.2
+    "value": 1.3
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 2013,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 2012,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 2011,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 2010,
-    "value": 1.2
+    "value": 1.1
   },
   {
     "country": "United States",
@@ -13581,7 +13743,7 @@
     "country": "United States",
     "iso2": "",
     "year": 2008,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "United States",
@@ -13593,7 +13755,7 @@
     "country": "United States",
     "iso2": "",
     "year": 2006,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "United States",
@@ -13605,7 +13767,7 @@
     "country": "United States",
     "iso2": "",
     "year": 2004,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "United States",
@@ -13617,19 +13779,19 @@
     "country": "United States",
     "iso2": "",
     "year": 2002,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 2001,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 2000,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "United States",
@@ -13641,13 +13803,13 @@
     "country": "United States",
     "iso2": "",
     "year": 1998,
-    "value": 0.7
+    "value": 0.9
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1997,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "United States",
@@ -13671,19 +13833,19 @@
     "country": "United States",
     "iso2": "",
     "year": 1993,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1992,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1991,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "United States",
@@ -13707,25 +13869,25 @@
     "country": "United States",
     "iso2": "",
     "year": 1987,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1986,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1985,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1984,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "United States",
@@ -13737,19 +13899,19 @@
     "country": "United States",
     "iso2": "",
     "year": 1982,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1981,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1980,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "United States",
@@ -13761,13 +13923,13 @@
     "country": "United States",
     "iso2": "",
     "year": 1978,
-    "value": 0.7
+    "value": 0.6
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1977,
-    "value": 0.5
+    "value": 0.6
   },
   {
     "country": "United States",
@@ -13785,31 +13947,31 @@
     "country": "United States",
     "iso2": "",
     "year": 1974,
-    "value": 0.7
+    "value": 0.9
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1973,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1972,
-    "value": 0.7
+    "value": 0.8
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1971,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1970,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "United States",
@@ -13821,13 +13983,13 @@
     "country": "United States",
     "iso2": "",
     "year": 1968,
-    "value": 1.0
+    "value": 0.9
   },
   {
     "country": "United States",
     "iso2": "",
     "year": 1967,
-    "value": 1.0
+    "value": 1.1
   },
   {
     "country": "United States",
@@ -13839,7 +14001,7 @@
     "country": "United States",
     "iso2": "",
     "year": 1965,
-    "value": 1.2
+    "value": 1.3
   },
   {
     "country": "United States",
@@ -13851,7 +14013,7 @@
     "country": "United States",
     "iso2": "",
     "year": 1963,
-    "value": 1.5
+    "value": 1.6
   },
   {
     "country": "Uruguay",
@@ -14044,6 +14206,12 @@
     "iso2": "",
     "year": 1981,
     "value": 0.0
+  },
+  {
+    "country": "Uzbekistan",
+    "iso2": "",
+    "year": 2025,
+    "value": 2.3
   },
   {
     "country": "Uzbekistan",
@@ -14325,13 +14493,13 @@
     "country": "Yemen",
     "iso2": "",
     "year": 2005,
-    "value": 21.4
+    "value": 22.5
   },
   {
     "country": "Yemen",
     "iso2": "",
     "year": 1998,
-    "value": 15.4
+    "value": 14.1
   },
   {
     "country": "Zambia",

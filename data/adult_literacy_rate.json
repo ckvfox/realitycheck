@@ -9,7 +9,7 @@
     "country": "Afghanistan",
     "iso2": "",
     "year": 2020,
-    "value": 35.9865546430738
+    "value": 36.0149650316607
   },
   {
     "country": "Afghanistan",
@@ -39,7 +39,7 @@
     "country": "Albania",
     "iso2": "",
     "year": 2017,
-    "value": 98.8199996948242
+    "value": 98.8099975585938
   },
   {
     "country": "Albania",
@@ -88,6 +88,12 @@
     "iso2": "",
     "year": 1987,
     "value": 49.6300010681152
+  },
+  {
+    "country": "Angola",
+    "iso2": "",
+    "year": 2023,
+    "value": 68.1800003051758
   },
   {
     "country": "Angola",
@@ -154,6 +160,18 @@
     "iso2": "",
     "year": 2020,
     "value": 99.7900009155273
+  },
+  {
+    "country": "Armenia",
+    "iso2": "",
+    "year": 2019,
+    "value": 100.0
+  },
+  {
+    "country": "Armenia",
+    "iso2": "",
+    "year": 2018,
+    "value": 100.0
   },
   {
     "country": "Armenia",
@@ -477,7 +495,7 @@
     "country": "Benin",
     "iso2": "",
     "year": 2011,
-    "value": 44.6748575499254
+    "value": 44.6881229256471
   },
   {
     "country": "Benin",
@@ -520,6 +538,12 @@
     "iso2": "",
     "year": 2005,
     "value": 52.810001373291
+  },
+  {
+    "country": "Bolivia",
+    "iso2": "",
+    "year": 2024,
+    "value": 96.7300033569336
   },
   {
     "country": "Bolivia",
@@ -621,37 +645,37 @@
     "country": "Brazil",
     "iso2": "",
     "year": 2024,
-    "value": 94.8005123042056
+    "value": 94.7399978637695
   },
   {
     "country": "Brazil",
     "iso2": "",
     "year": 2023,
-    "value": 94.5839624750993
+    "value": 94.5725490635077
   },
   {
     "country": "Brazil",
     "iso2": "",
     "year": 2022,
-    "value": 94.3853874531348
+    "value": 94.376866160108
   },
   {
     "country": "Brazil",
     "iso2": "",
     "year": 2021,
-    "value": 94.7848837154757
+    "value": 94.7726170886975
   },
   {
     "country": "Brazil",
     "iso2": "",
     "year": 2020,
-    "value": 94.7576490611664
+    "value": 94.7444114331042
   },
   {
     "country": "Brazil",
     "iso2": "",
     "year": 2019,
-    "value": 93.9019248012051
+    "value": 93.8926266999537
   },
   {
     "country": "Brazil",
@@ -789,7 +813,7 @@
     "country": "Burkina Faso",
     "iso2": "",
     "year": 2023,
-    "value": 41.442033530681
+    "value": 41.5670909952631
   },
   {
     "country": "Burkina Faso",
@@ -867,7 +891,7 @@
     "country": "Burundi",
     "iso2": "",
     "year": 2020,
-    "value": 71.4078166079164
+    "value": 71.3374789737041
   },
   {
     "country": "Burundi",
@@ -933,7 +957,7 @@
     "country": "Cape Verde",
     "iso2": "",
     "year": 2009,
-    "value": 82.2123790224733
+    "value": 82.2189574366152
   },
   {
     "country": "Cape Verde",
@@ -951,7 +975,7 @@
     "country": "Cambodia",
     "iso2": "",
     "year": 2020,
-    "value": 82.5991675957413
+    "value": 82.5510430822563
   },
   {
     "country": "Cambodia",
@@ -1167,19 +1191,19 @@
     "country": "Colombia",
     "iso2": "",
     "year": 2023,
-    "value": 95.4625553716428
+    "value": 95.4566254983696
   },
   {
     "country": "Colombia",
     "iso2": "",
     "year": 2022,
-    "value": 95.3138834471897
+    "value": 95.31030793119
   },
   {
     "country": "Colombia",
     "iso2": "",
     "year": 2021,
-    "value": 95.666552016916
+    "value": 95.6606500324449
   },
   {
     "country": "Colombia",
@@ -1203,7 +1227,7 @@
     "country": "Colombia",
     "iso2": "",
     "year": 2017,
-    "value": 94.8927138785262
+    "value": 94.8873885601748
   },
   {
     "country": "Colombia",
@@ -1287,13 +1311,13 @@
     "country": "Comoros",
     "iso2": "",
     "year": 2021,
-    "value": 75.8250571350015
+    "value": 75.6201980162165
   },
   {
     "country": "Comoros",
     "iso2": "",
     "year": 2014,
-    "value": 73.7981579213275
+    "value": 73.6494960644007
   },
   {
     "country": "Comoros",
@@ -1310,8 +1334,14 @@
   {
     "country": "Democratic Republic of the Congo",
     "iso2": "",
+    "year": 2023,
+    "value": 68.5
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "iso2": "",
     "year": 2020,
-    "value": 65.6914486099044
+    "value": 65.6828744335957
   },
   {
     "country": "Democratic Republic of the Congo",
@@ -1377,7 +1407,7 @@
     "country": "Ivory Coast",
     "iso2": "",
     "year": 2019,
-    "value": 56.9804529419494
+    "value": 56.9592400560829
   },
   {
     "country": "Ivory Coast",
@@ -1485,31 +1515,31 @@
     "country": "Dominican Republic",
     "iso2": "",
     "year": 2021,
-    "value": 93.7368933438107
+    "value": 93.7309714425844
   },
   {
     "country": "Dominican Republic",
     "iso2": "",
     "year": 2020,
-    "value": 93.7009782823312
+    "value": 93.6926372060753
   },
   {
     "country": "Dominican Republic",
     "iso2": "",
     "year": 2019,
-    "value": 93.6758208343989
+    "value": 93.6726916249429
   },
   {
     "country": "Dominican Republic",
     "iso2": "",
     "year": 2018,
-    "value": 93.4355831240379
+    "value": 93.4360584896058
   },
   {
     "country": "Dominican Republic",
     "iso2": "",
     "year": 2017,
-    "value": 93.232235984521
+    "value": 93.2332153385684
   },
   {
     "country": "Dominican Republic",
@@ -1570,6 +1600,12 @@
     "iso2": "",
     "year": 1981,
     "value": 73.0599975585938
+  },
+  {
+    "country": "Ecuador",
+    "iso2": "",
+    "year": 2024,
+    "value": 93.4899978637695
   },
   {
     "country": "Ecuador",
@@ -1677,13 +1713,13 @@
     "country": "Egypt",
     "iso2": "",
     "year": 2022,
-    "value": 79.4565788949049
+    "value": 79.4531619498685
   },
   {
     "country": "Egypt",
     "iso2": "",
     "year": 2021,
-    "value": 82.083331279425
+    "value": 82.0803858167894
   },
   {
     "country": "Egypt",
@@ -1755,7 +1791,7 @@
     "country": "El Salvador",
     "iso2": "",
     "year": 2022,
-    "value": 89.3518526572018
+    "value": 89.3537151570456
   },
   {
     "country": "El Salvador",
@@ -1815,7 +1851,7 @@
     "country": "El Salvador",
     "iso2": "",
     "year": 2012,
-    "value": 85.468783873428
+    "value": 85.4624559924635
   },
   {
     "country": "El Salvador",
@@ -1929,7 +1965,7 @@
     "country": "Ethiopia",
     "iso2": "",
     "year": 2021,
-    "value": 54.8861260079206
+    "value": 54.8853699463392
   },
   {
     "country": "Ethiopia",
@@ -1947,7 +1983,7 @@
     "country": "Ethiopia",
     "iso2": "",
     "year": 2013,
-    "value": 48.3512310895047
+    "value": 48.3549726348554
   },
   {
     "country": "Ethiopia",
@@ -2025,19 +2061,19 @@
     "country": "Georgia",
     "iso2": "",
     "year": 2021,
-    "value": 99.9656063568431
+    "value": 99.9180842054209
   },
   {
     "country": "Georgia",
     "iso2": "",
     "year": 2020,
-    "value": 99.9403171161963
+    "value": 99.8930662080586
   },
   {
     "country": "Georgia",
     "iso2": "",
     "year": 2019,
-    "value": 99.9020818812072
+    "value": 99.8757151699707
   },
   {
     "country": "Georgia",
@@ -2079,7 +2115,7 @@
     "country": "Ghana",
     "iso2": "",
     "year": 2015,
-    "value": 60.2198906165104
+    "value": 60.1981035367761
   },
   {
     "country": "Ghana",
@@ -2133,7 +2169,7 @@
     "country": "Guatemala",
     "iso2": "",
     "year": 2023,
-    "value": 83.0440590538501
+    "value": 83.0195796057608
   },
   {
     "country": "Guatemala",
@@ -2253,7 +2289,7 @@
     "country": "Haiti",
     "iso2": "",
     "year": 2012,
-    "value": 74.0273206930105
+    "value": 73.953334886651
   },
   {
     "country": "Haiti",
@@ -2283,7 +2319,7 @@
     "country": "Honduras",
     "iso2": "",
     "year": 2022,
-    "value": 88.2764147235016
+    "value": 88.2192789618317
   },
   {
     "country": "Honduras",
@@ -2360,6 +2396,12 @@
   {
     "country": "India",
     "iso2": "",
+    "year": 2024,
+    "value": 78.1625330351403
+  },
+  {
+    "country": "India",
+    "iso2": "",
     "year": 2023,
     "value": 81.6999969482422
   },
@@ -2373,31 +2415,31 @@
     "country": "India",
     "iso2": "",
     "year": 2021,
-    "value": 76.0715766188242
+    "value": 76.0596617430205
   },
   {
     "country": "India",
     "iso2": "",
     "year": 2020,
-    "value": 75.5437727049002
+    "value": 75.5270629470344
   },
   {
     "country": "India",
     "iso2": "",
     "year": 2019,
-    "value": 74.9084268267486
+    "value": 74.8938629973395
   },
   {
     "country": "India",
     "iso2": "",
     "year": 2018,
-    "value": 73.6975430256976
+    "value": 73.6883524760717
   },
   {
     "country": "India",
     "iso2": "",
     "year": 2012,
-    "value": 69.8350587234791
+    "value": 69.8279300354369
   },
   {
     "country": "India",
@@ -2409,7 +2451,7 @@
     "country": "India",
     "iso2": "",
     "year": 2010,
-    "value": 68.3354718669705
+    "value": 68.325817300837
   },
   {
     "country": "India",
@@ -2517,43 +2559,43 @@
     "country": "Iran",
     "iso2": "",
     "year": 2023,
-    "value": 88.9233339833467
+    "value": 88.9168161136597
   },
   {
     "country": "Iran",
     "iso2": "",
     "year": 2022,
-    "value": 88.5939994931719
+    "value": 88.5942297159365
   },
   {
     "country": "Iran",
     "iso2": "",
     "year": 2021,
-    "value": 88.4554880174224
+    "value": 88.4555944977134
   },
   {
     "country": "Iran",
     "iso2": "",
     "year": 2020,
-    "value": 87.9027874156509
+    "value": 87.9028264049083
   },
   {
     "country": "Iran",
     "iso2": "",
     "year": 2019,
-    "value": 87.3787031852537
+    "value": 87.3788306734933
   },
   {
     "country": "Iran",
     "iso2": "",
     "year": 2018,
-    "value": 86.8687468655024
+    "value": 86.8688350894209
   },
   {
     "country": "Iran",
     "iso2": "",
     "year": 2017,
-    "value": 85.9467259623201
+    "value": 85.9467906933665
   },
   {
     "country": "Iran",
@@ -2565,7 +2607,7 @@
     "country": "Iran",
     "iso2": "",
     "year": 2015,
-    "value": 85.2832494703047
+    "value": 85.283432659187
   },
   {
     "country": "Iran",
@@ -2595,13 +2637,13 @@
     "country": "Iran",
     "iso2": "",
     "year": 2010,
-    "value": 83.6643491892657
+    "value": 83.6646682357838
   },
   {
     "country": "Iran",
     "iso2": "",
     "year": 2009,
-    "value": 83.2214822879675
+    "value": 83.222239914938
   },
   {
     "country": "Iran",
@@ -2655,7 +2697,7 @@
     "country": "Iraq",
     "iso2": "",
     "year": 2021,
-    "value": 84.0588635813164
+    "value": 84.0648941705243
   },
   {
     "country": "Iraq",
@@ -2722,6 +2764,12 @@
     "iso2": "",
     "year": 1999,
     "value": 79.9199981689453
+  },
+  {
+    "country": "Jordan",
+    "iso2": "",
+    "year": 2024,
+    "value": 94.4400024414062
   },
   {
     "country": "Jordan",
@@ -2805,7 +2853,7 @@
     "country": "Kiribati",
     "iso2": "",
     "year": 2020,
-    "value": 98.6322966077083
+    "value": 98.6079816424987
   },
   {
     "country": "Kiribati",
@@ -2991,7 +3039,7 @@
     "country": "Lebanon",
     "iso2": "",
     "year": 2019,
-    "value": 92.0144800114203
+    "value": 92.0099744752418
   },
   {
     "country": "Lebanon",
@@ -3021,7 +3069,7 @@
     "country": "Lesotho",
     "iso2": "",
     "year": 2019,
-    "value": 92.4974361965842
+    "value": 92.3961659464955
   },
   {
     "country": "Lesotho",
@@ -3051,7 +3099,7 @@
     "country": "Liberia",
     "iso2": "",
     "year": 2010,
-    "value": 59.4035765513495
+    "value": 59.4030316392756
   },
   {
     "country": "Liberia",
@@ -3123,7 +3171,7 @@
     "country": "Malawi",
     "iso2": "",
     "year": 2017,
-    "value": 72.848752416256
+    "value": 72.8266778164735
   },
   {
     "country": "Malawi",
@@ -3254,6 +3302,12 @@
   {
     "country": "Mali",
     "iso2": "",
+    "year": 2024,
+    "value": 35.6300010681152
+  },
+  {
+    "country": "Mali",
+    "iso2": "",
     "year": 2018,
     "value": 35.4700012207031
   },
@@ -3327,7 +3381,7 @@
     "country": "Marshall Islands",
     "iso2": "",
     "year": 2021,
-    "value": 95.8342549583425
+    "value": 95.7629302411191
   },
   {
     "country": "Marshall Islands",
@@ -3369,13 +3423,13 @@
     "country": "Mauritius",
     "iso2": "",
     "year": 2023,
-    "value": 94.3265215627
+    "value": 94.2877776512134
   },
   {
     "country": "Mauritius",
     "iso2": "",
     "year": 2021,
-    "value": 93.0304719147886
+    "value": 92.9800213334339
   },
   {
     "country": "Mauritius",
@@ -3428,14 +3482,8 @@
   {
     "country": "Mexico",
     "iso2": "",
-    "year": 2025,
-    "value": 95.9040914864886
-  },
-  {
-    "country": "Mexico",
-    "iso2": "",
     "year": 2024,
-    "value": 95.7654716766416
+    "value": 95.5500030517578
   },
   {
     "country": "Mexico",
@@ -3447,7 +3495,7 @@
     "country": "Mexico",
     "iso2": "",
     "year": 2022,
-    "value": 95.8486603965766
+    "value": 95.120002746582
   },
   {
     "country": "Mexico",
@@ -3602,6 +3650,12 @@
   {
     "country": "Mongolia",
     "iso2": "",
+    "year": 2024,
+    "value": 98.6399993896484
+  },
+  {
+    "country": "Mongolia",
+    "iso2": "",
     "year": 2023,
     "value": 98.6399993896484
   },
@@ -3615,7 +3669,7 @@
     "country": "Mongolia",
     "iso2": "",
     "year": 2021,
-    "value": 99.272758866107
+    "value": 99.2143568969301
   },
   {
     "country": "Mongolia",
@@ -3729,7 +3783,7 @@
     "country": "Mozambique",
     "iso2": "",
     "year": 2022,
-    "value": 61.6778205151772
+    "value": 61.6653441678133
   },
   {
     "country": "Mozambique",
@@ -3777,7 +3831,7 @@
     "country": "Myanmar",
     "iso2": "",
     "year": 2020,
-    "value": 93.5471293315427
+    "value": 93.527395549521
   },
   {
     "country": "Myanmar",
@@ -3789,7 +3843,7 @@
     "country": "Myanmar",
     "iso2": "",
     "year": 2018,
-    "value": 95.823239379743
+    "value": 95.8142859113662
   },
   {
     "country": "Myanmar",
@@ -3825,13 +3879,13 @@
     "country": "Namibia",
     "iso2": "",
     "year": 2018,
-    "value": 88.3295050309237
+    "value": 88.2832376600657
   },
   {
     "country": "Namibia",
     "iso2": "",
     "year": 2016,
-    "value": 88.2018591728156
+    "value": 88.1304979203867
   },
   {
     "country": "Namibia",
@@ -3861,7 +3915,7 @@
     "country": "Nauru",
     "iso2": "",
     "year": 2021,
-    "value": 94.6079860099096
+    "value": 94.6337926033357
   },
   {
     "country": "Nepal",
@@ -3873,7 +3927,7 @@
     "country": "Nepal",
     "iso2": "",
     "year": 2017,
-    "value": 66.8755351165163
+    "value": 66.8653947551556
   },
   {
     "country": "Nepal",
@@ -3891,7 +3945,7 @@
     "country": "Nepal",
     "iso2": "",
     "year": 2008,
-    "value": 55.5625898340797
+    "value": 55.5600725155626
   },
   {
     "country": "Nepal",
@@ -3915,13 +3969,13 @@
     "country": "Nicaragua",
     "iso2": "",
     "year": 2014,
-    "value": 87.3450882346125
+    "value": 87.327180649097
   },
   {
     "country": "Nicaragua",
     "iso2": "",
     "year": 2012,
-    "value": 85.6094338931668
+    "value": 85.6105708963441
   },
   {
     "country": "Nicaragua",
@@ -3951,7 +4005,7 @@
     "country": "Niger",
     "iso2": "",
     "year": 2014,
-    "value": 28.9700293064531
+    "value": 29.0437067944143
   },
   {
     "country": "Niger",
@@ -4167,7 +4221,7 @@
     "country": "Palau",
     "iso2": "",
     "year": 2020,
-    "value": 100.0
+    "value": 99.8448081264108
   },
   {
     "country": "Palau",
@@ -4191,19 +4245,19 @@
     "country": "Panama",
     "iso2": "",
     "year": 2024,
-    "value": 96.256135181795
+    "value": 96.2276533152296
   },
   {
     "country": "Panama",
     "iso2": "",
     "year": 2023,
-    "value": 96.1092282909577
+    "value": 96.0893871402691
   },
   {
     "country": "Panama",
     "iso2": "",
     "year": 2021,
-    "value": 96.2400288895206
+    "value": 96.2119100135584
   },
   {
     "country": "Panama",
@@ -4245,7 +4299,7 @@
     "country": "Papua New Guinea",
     "iso2": "",
     "year": 2022,
-    "value": 87.144148905762
+    "value": 87.0046890533686
   },
   {
     "country": "Papua New Guinea",
@@ -4257,7 +4311,7 @@
     "country": "Papua New Guinea",
     "iso2": "",
     "year": 2010,
-    "value": 69.0988851105313
+    "value": 68.9689096424639
   },
   {
     "country": "Papua New Guinea",
@@ -4701,7 +4755,7 @@
     "country": "Samoa",
     "iso2": "",
     "year": 2017,
-    "value": 100.0
+    "value": 99.7071903264793
   },
   {
     "country": "Samoa",
@@ -4935,7 +4989,7 @@
     "country": "Sierra Leone",
     "iso2": "",
     "year": 2018,
-    "value": 48.8216576787275
+    "value": 48.8143667728528
   },
   {
     "country": "Sierra Leone",
@@ -4953,7 +5007,7 @@
     "country": "Sierra Leone",
     "iso2": "",
     "year": 2014,
-    "value": 44.3441779768036
+    "value": 44.3698913332904
   },
   {
     "country": "Sierra Leone",
@@ -5073,7 +5127,7 @@
     "country": "Somalia",
     "iso2": "",
     "year": 2019,
-    "value": 63.6841427350076
+    "value": 63.6579378279423
   },
   {
     "country": "South Africa",
@@ -5270,6 +5324,12 @@
   {
     "country": "Sri Lanka",
     "iso2": "",
+    "year": 2024,
+    "value": 92.7399978637695
+  },
+  {
+    "country": "Sri Lanka",
+    "iso2": "",
     "year": 2023,
     "value": 92.6600036621094
   },
@@ -5319,13 +5379,13 @@
     "country": "Sri Lanka",
     "iso2": "",
     "year": 2015,
-    "value": 92.5661321359863
+    "value": 92.5537849020454
   },
   {
     "country": "Sri Lanka",
     "iso2": "",
     "year": 2014,
-    "value": 92.5463947764283
+    "value": 92.5346618196112
   },
   {
     "country": "Sri Lanka",
@@ -5427,19 +5487,19 @@
     "country": "Tajikistan",
     "iso2": "",
     "year": 2009,
-    "value": 100.0
+    "value": 99.7298704511844
   },
   {
     "country": "Tajikistan",
     "iso2": "",
     "year": 2007,
-    "value": 98.2315903673866
+    "value": 98.0293057466938
   },
   {
     "country": "Tajikistan",
     "iso2": "",
     "year": 2003,
-    "value": 97.5253222351089
+    "value": 97.3502368564513
   },
   {
     "country": "Tajikistan",
@@ -5463,7 +5523,7 @@
     "country": "Tanzania",
     "iso2": "",
     "year": 2020,
-    "value": 82.232634463345
+    "value": 82.2361019196766
   },
   {
     "country": "Tanzania",
@@ -5475,7 +5535,7 @@
     "country": "Tanzania",
     "iso2": "",
     "year": 2014,
-    "value": 79.895395421312
+    "value": 79.8949432291161
   },
   {
     "country": "Tanzania",
@@ -5559,7 +5619,7 @@
     "country": "Timor-Leste",
     "iso2": "",
     "year": 2022,
-    "value": 72.4700012207031
+    "value": 69.4000015258789
   },
   {
     "country": "Timor-Leste",
@@ -5607,7 +5667,7 @@
     "country": "Togo",
     "iso2": "",
     "year": 2017,
-    "value": 60.9182911842179
+    "value": 60.9537021917226
   },
   {
     "country": "Togo",
@@ -5644,6 +5704,12 @@
     "iso2": "",
     "year": 2000,
     "value": 53.1800003051758
+  },
+  {
+    "country": "Tonga",
+    "iso2": "",
+    "year": 2023,
+    "value": 99.4800033569336
   },
   {
     "country": "Tonga",
@@ -5900,8 +5966,20 @@
   {
     "country": "Uganda",
     "iso2": "",
+    "year": 2024,
+    "value": 77.0400009155273
+  },
+  {
+    "country": "Uganda",
+    "iso2": "",
+    "year": 2023,
+    "value": 80.5100021362305
+  },
+  {
+    "country": "Uganda",
+    "iso2": "",
     "year": 2021,
-    "value": 79.0582329588683
+    "value": 79.0476540680567
   },
   {
     "country": "Uganda",
@@ -6009,7 +6087,7 @@
     "country": "Uruguay",
     "iso2": "",
     "year": 2023,
-    "value": 98.8671517186373
+    "value": 98.8254937778285
   },
   {
     "country": "Uruguay",
@@ -6021,7 +6099,7 @@
     "country": "Uruguay",
     "iso2": "",
     "year": 2020,
-    "value": 98.9665883559203
+    "value": 98.9596198051761
   },
   {
     "country": "Uruguay",
@@ -6189,13 +6267,13 @@
     "country": "Vanuatu",
     "iso2": "",
     "year": 2020,
-    "value": 89.8307065699515
+    "value": 89.7930993872856
   },
   {
     "country": "Vanuatu",
     "iso2": "",
     "year": 2019,
-    "value": 92.7475057391313
+    "value": 92.4744486976738
   },
   {
     "country": "Vanuatu",
@@ -6213,7 +6291,7 @@
     "country": "Venezuela",
     "iso2": "",
     "year": 2017,
-    "value": 97.1867494381301
+    "value": 97.1837183128414
   },
   {
     "country": "Venezuela",
@@ -6339,7 +6417,7 @@
     "country": "Palestine",
     "iso2": "",
     "year": 2024,
-    "value": 97.9449803653341
+    "value": 97.9389541214558
   },
   {
     "country": "Palestine",
@@ -6351,7 +6429,7 @@
     "country": "Palestine",
     "iso2": "",
     "year": 2021,
-    "value": 97.6857135394122
+    "value": 97.6840000894857
   },
   {
     "country": "Palestine",
@@ -6464,26 +6542,26 @@
   {
     "country": "Zambia",
     "iso2": "",
-    "year": 2023,
-    "value": 82.0418064991238
+    "year": 2024,
+    "value": 71.7699966430664
   },
   {
     "country": "Zambia",
     "iso2": "",
     "year": 2022,
-    "value": 79.9751431296375
+    "value": 79.9841479741156
   },
   {
     "country": "Zambia",
     "iso2": "",
     "year": 2021,
-    "value": 79.9450094407671
+    "value": 79.9494621864846
   },
   {
     "country": "Zambia",
     "iso2": "",
     "year": 2020,
-    "value": 81.7591544152556
+    "value": 81.7530087399265
   },
   {
     "country": "Zambia",

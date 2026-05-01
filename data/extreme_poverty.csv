@@ -53,6 +53,7 @@ Argentina,,1991,1.3
 Argentina,,1987,1.5
 Argentina,,1986,1.3
 Argentina,,1980,0.0
+Armenia,,2024,0.8
 Armenia,,2023,1.9
 Armenia,,2022,1.9
 Armenia,,2021,2.1
@@ -78,19 +79,19 @@ Armenia,,2002,19.8
 Armenia,,2001,24.1
 Armenia,,1999,21.2
 Armenia,,1996,21.6
-Australia,,2020,1.0
-Australia,,2018,0.5
+Australia,,2020,0.9
+Australia,,2018,0.6
 Australia,,2016,0.5
-Australia,,2014,0.5
-Australia,,2010,0.3
-Australia,,2008,0.7
+Australia,,2014,0.6
+Australia,,2010,0.5
+Australia,,2008,0.5
 Australia,,2004,0.7
-Australia,,2003,1.0
-Australia,,2001,1.0
+Australia,,2003,1.1
+Australia,,2001,0.9
 Australia,,1995,1.0
-Australia,,1989,0.7
-Australia,,1985,1.0
-Australia,,1981,1.0
+Australia,,1989,0.8
+Australia,,1985,1.1
+Australia,,1981,1.1
 Austria,,2023,0.5
 Austria,,2022,0.6
 Austria,,2021,0.5
@@ -112,12 +113,12 @@ Austria,,2006,0.1
 Austria,,2005,0.2
 Austria,,2004,0.1
 Austria,,2003,0.4
-Austria,,2000,0.2
+Austria,,2000,0.1
 Austria,,1999,0.2
 Austria,,1998,0.2
 Austria,,1997,0.2
-Austria,,1996,0.0
-Austria,,1995,0.0
+Austria,,1996,0.1
+Austria,,1995,0.1
 Austria,,1994,0.2
 Azerbaijan,,2005,0.0
 Azerbaijan,,2004,0.0
@@ -183,11 +184,11 @@ Belgium,,2005,0.3
 Belgium,,2004,0.1
 Belgium,,2003,0.4
 Belgium,,2000,0.3
-Belgium,,1997,0.5
-Belgium,,1995,0.7
-Belgium,,1992,1.0
+Belgium,,1997,0.4
+Belgium,,1995,0.6
+Belgium,,1992,0.9
 Belgium,,1988,0.7
-Belgium,,1985,0.2
+Belgium,,1985,0.3
 Belize,,2018,1.0
 Belize,,1999,22.5
 Belize,,1998,26.1
@@ -206,6 +207,7 @@ Bhutan,,2017,2.6
 Bhutan,,2012,3.6
 Bhutan,,2007,12.0
 Bhutan,,2003,23.1
+Bolivia,,2024,2.1
 Bolivia,,2023,2.8
 Bolivia,,2022,3.3
 Bolivia,,2021,3.1
@@ -232,8 +234,10 @@ Bolivia,,1999,24.6
 Bolivia,,1997,18.6
 Bolivia,,1992,13.8
 Bolivia,,1990,5.8
-Bosnia Herzegovina,,2011,0.2
-Bosnia Herzegovina,,2007,0.2
+Bosnia Herzegovina,,2021,0.3
+Bosnia Herzegovina,,2015,1.2
+Bosnia Herzegovina,,2011,0.9
+Bosnia Herzegovina,,2007,0.7
 Bosnia Herzegovina,,2004,0.4
 Bosnia Herzegovina,,2001,0.6
 Botswana,,2015,21.4
@@ -241,16 +245,17 @@ Botswana,,2009,21.1
 Botswana,,2002,34.8
 Botswana,,1993,42.1
 Botswana,,1985,50.1
+Brazil,,2024,3.0
 Brazil,,2023,3.8
 Brazil,,2022,4.9
 Brazil,,2021,7.5
 Brazil,,2020,2.8
 Brazil,,2019,7.0
 Brazil,,2018,6.9
-Brazil,,2017,6.9
+Brazil,,2017,7.0
 Brazil,,2016,6.5
 Brazil,,2015,5.4
-Brazil,,2014,4.7
+Brazil,,2014,4.8
 Brazil,,2013,5.4
 Brazil,,2012,6.4
 Brazil,,2011,7.1
@@ -325,50 +330,51 @@ Cameroon,,2014,29.0
 Cameroon,,2007,36.0
 Cameroon,,2001,30.8
 Cameroon,,1996,56.5
+Canada,,2022,0.3
 Canada,,2021,0.2
-Canada,,2020,0.2
-Canada,,2019,0.2
-Canada,,2018,0.2
-Canada,,2017,0.5
-Canada,,2016,0.5
-Canada,,2015,0.5
-Canada,,2014,0.2
+Canada,,2020,0.1
+Canada,,2019,0.4
+Canada,,2018,0.4
+Canada,,2017,0.4
+Canada,,2016,0.4
+Canada,,2015,0.4
+Canada,,2014,0.3
 Canada,,2013,0.5
-Canada,,2012,0.2
-Canada,,2011,0.2
-Canada,,2010,0.2
-Canada,,2009,0.2
-Canada,,2008,0.2
+Canada,,2012,0.3
+Canada,,2011,0.3
+Canada,,2010,0.3
+Canada,,2009,0.3
+Canada,,2008,0.3
 Canada,,2007,0.2
-Canada,,2006,0.2
-Canada,,2005,0.2
-Canada,,2004,0.2
-Canada,,2003,0.2
-Canada,,2002,0.2
-Canada,,2001,0.2
-Canada,,2000,0.2
-Canada,,1999,0.5
+Canada,,2006,0.3
+Canada,,2005,0.3
+Canada,,2004,0.3
+Canada,,2003,0.3
+Canada,,2002,0.3
+Canada,,2001,0.3
+Canada,,2000,0.4
+Canada,,1999,0.4
 Canada,,1998,0.5
-Canada,,1997,0.5
-Canada,,1996,0.5
-Canada,,1995,0.7
-Canada,,1994,1.0
+Canada,,1997,0.4
+Canada,,1996,0.4
+Canada,,1995,0.8
+Canada,,1994,0.9
 Canada,,1993,1.2
-Canada,,1992,0.7
-Canada,,1991,1.2
-Canada,,1990,1.2
-Canada,,1989,1.2
+Canada,,1992,0.8
+Canada,,1991,1.3
+Canada,,1990,1.1
+Canada,,1989,1.3
 Canada,,1988,0.7
-Canada,,1987,0.5
+Canada,,1987,0.6
 Canada,,1986,1.0
 Canada,,1985,0.7
-Canada,,1984,1.0
-Canada,,1982,0.7
-Canada,,1981,1.0
-Canada,,1979,1.2
+Canada,,1984,0.9
+Canada,,1982,0.8
+Canada,,1981,0.9
+Canada,,1979,1.3
 Canada,,1977,1.5
 Canada,,1975,1.7
-Canada,,1973,1.7
+Canada,,1973,1.8
 Canada,,1971,2.5
 Central African Republic,,2021,71.6
 Central African Republic,,2008,67.3
@@ -377,7 +383,8 @@ Chad,,2022,39.5
 Chad,,2018,41.9
 Chad,,2011,45.2
 Chad,,2003,66.7
-Chile,,2022,0.5
+Chile,,2024,0.4
+Chile,,2022,0.6
 Chile,,2020,1.7
 Chile,,2017,0.5
 Chile,,2015,0.7
@@ -397,41 +404,42 @@ China,,2022,0.0
 China,,2021,0.0
 China,,2020,0.0
 China,,2019,0.0
-China,,2018,0.8
-China,,2017,1.7
-China,,2016,2.2
-China,,2015,3.0
-China,,2014,4.7
-China,,2013,6.2
-China,,2012,13.2
-China,,2011,15.7
+China,,2018,0.7
+China,,2017,1.6
+China,,2016,2.1
+China,,2015,2.9
+China,,2014,4.6
+China,,2013,6.0
+China,,2012,12.9
+China,,2011,15.3
 China,,2010,20.6
-China,,2008,26.2
-China,,2005,33.1
-China,,2002,48.1
-China,,1999,58.4
-China,,1996,62.0
-China,,1993,76.8
-China,,1990,83.0
-China,,1987,81.4
-China,,1984,91.4
+China,,2008,26.1
+China,,2005,32.9
+China,,2002,47.8
+China,,1999,58.5
+China,,1996,62.6
+China,,1993,77.3
+China,,1990,83.1
+China,,1987,81.1
+China,,1984,91.3
 China,,1981,97.0
-Colombia,,2023,7.7
+Colombia,,2024,8.5
+Colombia,,2023,8.6
 Colombia,,2022,9.3
 Colombia,,2021,11.2
-Colombia,,2020,13.5
-Colombia,,2019,8.8
-Colombia,,2018,7.4
-Colombia,,2017,7.3
-Colombia,,2016,8.0
-Colombia,,2015,8.1
-Colombia,,2014,9.0
-Colombia,,2013,9.9
-Colombia,,2012,10.9
-Colombia,,2011,11.2
-Colombia,,2010,13.1
-Colombia,,2009,15.0
-Colombia,,2008,16.6
+Colombia,,2020,15.8
+Colombia,,2019,11.3
+Colombia,,2018,9.8
+Colombia,,2017,9.5
+Colombia,,2016,10.1
+Colombia,,2015,10.2
+Colombia,,2014,10.9
+Colombia,,2013,11.8
+Colombia,,2012,12.7
+Colombia,,2011,11.3
+Colombia,,2010,13.3
+Colombia,,2009,15.1
+Colombia,,2008,16.3
 Colombia,,2005,16.8
 Colombia,,2004,19.2
 Colombia,,2003,19.8
@@ -445,13 +453,16 @@ Colombia,,1991,19.3
 Colombia,,1989,21.3
 Colombia,,1988,21.4
 Colombia,,1980,28.5
+Comoros,,2024,5.1
+Comoros,,2020,8.9
 Comoros,,2014,31.4
-Comoros,,2004,27.9
+Comoros,,2004,24.3
 Democratic Republic of the Congo,,2020,85.3
 Democratic Republic of the Congo,,2012,78.9
 Democratic Republic of the Congo,,2004,94.9
 Republic of the Congo,,2011,39.2
 Republic of the Congo,,2005,54.5
+Costa Rica,,2025,0.8
 Costa Rica,,2024,1.3
 Costa Rica,,2023,1.5
 Costa Rica,,2022,1.6
@@ -490,18 +501,18 @@ Costa Rica,,1990,13.9
 Costa Rica,,1989,14.4
 Costa Rica,,1986,19.3
 Costa Rica,,1981,33.5
-Ivory Coast,,2021,20.9
-Ivory Coast,,2018,22.7
-Ivory Coast,,2015,47.5
-Ivory Coast,,2008,47.9
-Ivory Coast,,2002,44.7
-Ivory Coast,,1998,44.1
-Ivory Coast,,1995,40.9
-Ivory Coast,,1992,39.6
-Ivory Coast,,1988,23.8
-Ivory Coast,,1987,16.2
-Ivory Coast,,1986,10.4
-Ivory Coast,,1985,14.0
+Ivory Coast,,2021,20.8
+Ivory Coast,,2018,21.7
+Ivory Coast,,2015,46.6
+Ivory Coast,,2008,47.0
+Ivory Coast,,2002,43.9
+Ivory Coast,,1998,42.9
+Ivory Coast,,1995,39.8
+Ivory Coast,,1992,38.4
+Ivory Coast,,1988,22.5
+Ivory Coast,,1987,16.0
+Ivory Coast,,1986,10.2
+Ivory Coast,,1985,13.6
 Croatia,,2023,0.3
 Croatia,,2022,0.4
 Croatia,,2021,0.3
@@ -565,7 +576,7 @@ Czechia,,2006,0.1
 Czechia,,2005,0.0
 Czechia,,2004,0.0
 Czechia,,2002,0.0
-Czechia,,1996,0.0
+Czechia,,1996,0.1
 Czechia,,1993,0.0
 Czechia,,1992,0.0
 Denmark,,2023,0.4
@@ -589,10 +600,10 @@ Denmark,,2006,0.2
 Denmark,,2005,0.3
 Denmark,,2004,0.3
 Denmark,,2003,0.4
-Denmark,,2000,0.0
-Denmark,,1995,0.0
-Denmark,,1992,0.5
-Denmark,,1987,0.7
+Denmark,,2000,0.1
+Denmark,,1995,0.1
+Denmark,,1992,0.6
+Denmark,,1987,0.6
 Djibouti,,2017,25.4
 Djibouti,,2013,31.2
 Djibouti,,2012,26.4
@@ -627,6 +638,7 @@ Dominican Republic,,1996,8.0
 Dominican Republic,,1992,10.0
 Dominican Republic,,1989,21.0
 Dominican Republic,,1986,8.7
+Ecuador,,2025,3.4
 Ecuador,,2024,7.3
 Ecuador,,2023,4.7
 Ecuador,,2022,4.4
@@ -671,7 +683,7 @@ El Salvador,,2022,5.2
 El Salvador,,2021,5.1
 El Salvador,,2019,3.0
 El Salvador,,2018,4.1
-El Salvador,,2017,4.5
+El Salvador,,2017,4.6
 El Salvador,,2016,5.8
 El Salvador,,2015,5.3
 El Salvador,,2014,7.0
@@ -758,10 +770,10 @@ Finland,,2006,0.1
 Finland,,2005,0.1
 Finland,,2004,0.0
 Finland,,2003,0.0
-Finland,,2000,0.0
+Finland,,2000,0.1
 Finland,,1995,0.0
 Finland,,1991,0.0
-Finland,,1987,0.0
+Finland,,1987,0.1
 France,,2023,0.1
 France,,2022,0.1
 France,,2021,0.1
@@ -783,18 +795,18 @@ France,,2006,0.0
 France,,2005,0.1
 France,,2004,0.1
 France,,2003,0.2
-France,,2002,0.0
-France,,2001,0.0
-France,,2000,0.0
-France,,1999,0.0
-France,,1998,0.0
-France,,1997,0.2
+France,,2002,0.1
+France,,2001,0.1
+France,,2000,0.1
+France,,1999,0.1
+France,,1998,0.1
+France,,1997,0.1
 France,,1996,0.2
 France,,1990,0.2
-France,,1984,0.5
-France,,1979,0.2
-France,,1975,0.5
-France,,1970,0.0
+France,,1984,0.4
+France,,1979,0.3
+France,,1975,0.4
+France,,1970,0.1
 Gabon,,2017,3.8
 Gabon,,2005,9.2
 Gambia,,2020,22.0
@@ -831,36 +843,38 @@ Georgia,,1999,32.7
 Georgia,,1998,26.8
 Georgia,,1997,28.2
 Georgia,,1996,12.2
-Germany,,2020,0.2
+Germany,,2022,0.7
+Germany,,2021,0.6
+Germany,,2020,0.3
 Germany,,2019,0.2
-Germany,,2018,0.0
+Germany,,2018,0.1
 Germany,,2017,0.2
-Germany,,2016,0.0
-Germany,,2015,0.0
-Germany,,2014,0.0
-Germany,,2013,0.0
-Germany,,2012,0.0
-Germany,,2011,0.0
-Germany,,2010,0.0
-Germany,,2009,0.0
-Germany,,2008,0.0
-Germany,,2007,0.0
+Germany,,2016,0.1
+Germany,,2015,0.1
+Germany,,2014,0.1
+Germany,,2013,0.1
+Germany,,2012,0.1
+Germany,,2011,0.1
+Germany,,2010,0.1
+Germany,,2009,0.1
+Germany,,2008,0.1
+Germany,,2007,0.1
 Germany,,2006,0.0
-Germany,,2005,0.0
-Germany,,2004,0.0
-Germany,,2003,0.2
-Germany,,2002,0.0
-Germany,,2001,0.0
-Germany,,2000,0.0
-Germany,,1999,0.0
-Germany,,1998,0.0
-Germany,,1997,0.0
-Germany,,1996,0.0
+Germany,,2005,0.1
+Germany,,2004,0.1
+Germany,,2003,0.1
+Germany,,2002,0.1
+Germany,,2001,0.1
+Germany,,2000,0.1
+Germany,,1999,0.1
+Germany,,1998,0.1
+Germany,,1997,0.1
+Germany,,1996,0.1
 Germany,,1995,0.2
 Germany,,1994,0.2
-Germany,,1993,0.0
-Germany,,1992,0.2
-Germany,,1991,0.0
+Germany,,1993,0.1
+Germany,,1992,0.1
+Germany,,1991,0.1
 Ghana,,2016,39.0
 Ghana,,2012,41.8
 Ghana,,2005,60.9
@@ -889,9 +903,9 @@ Greece,,2006,0.7
 Greece,,2005,0.4
 Greece,,2004,0.9
 Greece,,2003,0.6
-Greece,,2002,0.2
-Greece,,2000,0.2
-Greece,,1995,2.0
+Greece,,2002,0.4
+Greece,,2000,0.3
+Greece,,1995,1.2
 Grenada,,2018,0.8
 Guatemala,,2023,9.7
 Guatemala,,2014,8.0
@@ -966,11 +980,11 @@ Hungary,,2003,0.2
 Hungary,,2002,0.1
 Hungary,,2001,0.0
 Hungary,,2000,0.1
-Hungary,,1999,0.7
+Hungary,,1999,0.6
 Hungary,,1998,0.4
 Hungary,,1994,1.9
 Hungary,,1993,0.0
-Hungary,,1991,2.2
+Hungary,,1991,2.1
 Hungary,,1989,0.0
 Hungary,,1987,0.0
 Iceland,,2019,0.1
@@ -998,12 +1012,13 @@ India,,1993,47.5
 India,,1987,51.8
 India,,1983,50.9
 India,,1977,59.7
+Indonesia,,2025,4.0
 Indonesia,,2024,5.4
 Indonesia,,2023,6.7
 Indonesia,,2022,7.9
 Indonesia,,2021,8.6
 Indonesia,,2020,9.8
-Indonesia,,2019,10.8
+Indonesia,,2019,10.9
 Indonesia,,2018,12.5
 Indonesia,,2017,14.8
 Indonesia,,2016,18.0
@@ -1074,37 +1089,38 @@ Ireland,,2006,0.5
 Ireland,,2005,0.1
 Ireland,,2004,0.1
 Ireland,,2003,0.2
-Ireland,,2002,0.2
+Ireland,,2002,0.3
 Ireland,,2000,0.2
 Ireland,,1996,0.2
-Ireland,,1995,0.5
-Ireland,,1994,0.5
-Ireland,,1987,1.2
-Israel,,2021,0.7
+Ireland,,1995,0.4
+Ireland,,1994,0.4
+Ireland,,1987,1.3
+Israel,,2022,0.4
+Israel,,2021,0.6
 Israel,,2020,0.7
-Israel,,2019,1.0
+Israel,,2019,0.9
 Israel,,2018,0.7
 Israel,,2017,0.7
 Israel,,2016,0.5
 Israel,,2015,0.5
-Israel,,2014,0.7
-Israel,,2013,0.5
-Israel,,2012,0.7
+Israel,,2014,0.6
+Israel,,2013,0.6
+Israel,,2012,0.8
 Israel,,2011,0.3
-Israel,,2010,0.5
-Israel,,2009,0.7
+Israel,,2010,0.6
+Israel,,2009,0.9
 Israel,,2008,0.7
-Israel,,2007,0.5
+Israel,,2007,0.6
 Israel,,2006,0.5
-Israel,,2005,1.0
+Israel,,2005,0.9
 Israel,,2004,1.0
 Israel,,2003,0.9
-Israel,,2002,0.7
-Israel,,2001,0.2
-Israel,,1997,0.5
+Israel,,2002,0.8
+Israel,,2001,0.4
+Israel,,1997,0.6
 Israel,,1992,0.2
 Israel,,1986,0.5
-Israel,,1979,0.4
+Israel,,1979,0.3
 Italy,,2023,0.9
 Italy,,2022,0.7
 Italy,,2021,0.9
@@ -1127,22 +1143,22 @@ Italy,,2005,0.8
 Italy,,2004,0.8
 Italy,,2003,0.9
 Italy,,2002,1.7
-Italy,,2000,1.2
+Italy,,2000,1.3
 Italy,,1998,1.7
 Italy,,1995,0.7
-Italy,,1993,1.4
-Italy,,1991,0.2
-Italy,,1989,0.0
-Italy,,1987,1.2
-Italy,,1986,0.2
+Italy,,1993,1.5
+Italy,,1991,0.3
+Italy,,1989,0.1
+Italy,,1987,1.1
+Italy,,1986,0.4
 Italy,,1984,0.2
 Italy,,1983,0.2
-Italy,,1982,0.2
-Italy,,1981,0.2
+Italy,,1982,0.1
+Italy,,1981,0.1
 Italy,,1980,0.2
 Italy,,1979,0.5
 Italy,,1978,0.5
-Italy,,1977,0.2
+Italy,,1977,0.3
 Jamaica,,2021,1.4
 Jamaica,,2018,0.4
 Jamaica,,2004,4.5
@@ -1153,18 +1169,18 @@ Jamaica,,1993,20.5
 Jamaica,,1990,11.6
 Jamaica,,1988,13.8
 Japan,,2020,1.2
-Japan,,2019,1.2
+Japan,,2019,1.3
 Japan,,2018,1.0
 Japan,,2017,0.6
 Japan,,2016,0.7
 Japan,,2015,0.4
 Japan,,2014,0.7
-Japan,,2013,1.0
-Japan,,2012,1.5
+Japan,,2013,0.9
+Japan,,2012,1.4
 Japan,,2011,0.5
-Japan,,2010,0.7
-Japan,,2009,0.9
-Japan,,2008,1.0
+Japan,,2010,0.6
+Japan,,2009,0.8
+Japan,,2008,1.1
 Jordan,,2010,0.1
 Jordan,,2008,0.1
 Jordan,,2006,0.3
@@ -1195,7 +1211,7 @@ Kazakhstan,,2002,16.2
 Kazakhstan,,2001,20.7
 Kazakhstan,,1996,14.6
 Kazakhstan,,1993,14.6
-Kenya,,2022,46.9
+Kenya,,2022,45.5
 Kenya,,2021,46.4
 Kenya,,2020,44.4
 Kenya,,2015,37.7
@@ -1203,15 +1219,16 @@ Kenya,,2005,44.6
 Kenya,,1997,32.6
 Kenya,,1994,32.0
 Kenya,,1992,32.0
+Kiribati,,2023,0.9
 Kiribati,,2019,6.1
 Kiribati,,2006,21.3
-South Korea,,2021,0.2
-South Korea,,2020,0.0
+South Korea,,2021,0.1
+South Korea,,2020,0.1
 South Korea,,2019,0.2
 South Korea,,2018,0.2
 South Korea,,2017,0.2
 South Korea,,2016,0.2
-South Korea,,2014,0.2
+South Korea,,2014,0.3
 South Korea,,2012,0.5
 South Korea,,2010,0.5
 South Korea,,2008,0.5
@@ -1233,6 +1250,7 @@ Kosovo,,2009,10.5
 Kosovo,,2006,13.5
 Kosovo,,2005,14.3
 Kosovo,,2003,11.7
+Kyrgyzstan,,2024,2.2
 Kyrgyzstan,,2023,2.7
 Kyrgyzstan,,2022,4.5
 Kyrgyzstan,,2021,5.6
@@ -1258,6 +1276,7 @@ Kyrgyzstan,,2002,58.1
 Kyrgyzstan,,2001,61.5
 Kyrgyzstan,,2000,66.2
 Kyrgyzstan,,1998,43.7
+Laos,,2024,7.1
 Laos,,2018,15.7
 Laos,,2012,21.7
 Laos,,2007,36.0
@@ -1291,12 +1310,12 @@ Latvia,,1997,3.5
 Latvia,,1996,3.8
 Latvia,,1995,2.2
 Latvia,,1993,0.0
-Lebanon,,2022,5.9
+Lebanon,,2022,5.8
 Lebanon,,2011,0.1
 Lesotho,,2017,41.9
 Lesotho,,2002,74.9
-Lesotho,,1994,59.6
-Lesotho,,1986,62.8
+Lesotho,,1994,59.7
+Lesotho,,1986,63.2
 Liberia,,2016,33.6
 Liberia,,2014,31.7
 Liberia,,2007,61.1
@@ -1355,7 +1374,7 @@ Luxembourg,,2000,0.0
 Luxembourg,,1999,0.0
 Luxembourg,,1998,0.0
 Luxembourg,,1997,0.0
-Luxembourg,,1996,0.0
+Luxembourg,,1996,0.1
 Luxembourg,,1995,0.0
 Luxembourg,,1994,0.0
 Luxembourg,,1993,0.0
@@ -1366,7 +1385,7 @@ Luxembourg,,1989,0.0
 Luxembourg,,1988,0.0
 Luxembourg,,1987,0.0
 Luxembourg,,1986,0.0
-Luxembourg,,1985,0.0
+Luxembourg,,1985,0.1
 Madagascar,,2021,69.2
 Madagascar,,2012,67.3
 Madagascar,,2010,65.3
@@ -1405,6 +1424,7 @@ Mali,,2009,63.3
 Mali,,2006,64.0
 Mali,,2001,68.6
 Mali,,1994,89.4
+Malta,,2023,0.4
 Malta,,2022,0.1
 Malta,,2021,0.1
 Malta,,2020,0.4
@@ -1434,6 +1454,7 @@ Mauritania,,1987,50.8
 Mauritius,,2017,0.5
 Mauritius,,2012,1.1
 Mauritius,,2006,1.1
+Mexico,,2024,1.6
 Mexico,,2022,2.3
 Mexico,,2020,4.3
 Mexico,,2018,3.9
@@ -1530,10 +1551,10 @@ Namibia,,2003,47.6
 Namibia,,1993,60.3
 Nauru,,2012,9.7
 Nepal,,2022,2.4
-Nepal,,2010,21.5
-Nepal,,2003,55.7
-Nepal,,1995,70.7
-Nepal,,1984,82.7
+Nepal,,2010,22.1
+Nepal,,2003,55.9
+Nepal,,1995,71.1
+Nepal,,1984,83.0
 Netherlands,,2021,0.1
 Netherlands,,2020,0.0
 Netherlands,,2019,0.1
@@ -1552,10 +1573,10 @@ Netherlands,,2007,0.0
 Netherlands,,2006,0.0
 Netherlands,,2005,0.1
 Netherlands,,2004,0.3
-Netherlands,,1999,0.2
-Netherlands,,1993,1.5
-Netherlands,,1990,1.2
-Netherlands,,1987,0.5
+Netherlands,,1999,0.3
+Netherlands,,1993,1.4
+Netherlands,,1990,1.1
+Netherlands,,1987,0.4
 Netherlands,,1983,0.7
 Nicaragua,,2014,6.6
 Nicaragua,,2009,13.9
@@ -1620,11 +1641,12 @@ Norway,,2006,0.2
 Norway,,2005,0.2
 Norway,,2004,0.3
 Norway,,2003,0.2
-Norway,,2000,0.2
-Norway,,1995,0.5
-Norway,,1991,0.5
+Norway,,2000,0.3
+Norway,,1995,0.4
+Norway,,1991,0.4
 Norway,,1986,0.2
-Norway,,1979,0.2
+Norway,,1979,0.3
+Pakistan,,2024,23.0
 Pakistan,,2018,16.5
 Pakistan,,2015,16.9
 Pakistan,,2013,21.2
@@ -1766,15 +1788,15 @@ Poland,,2003,0.2
 Poland,,2002,0.3
 Poland,,2001,0.4
 Poland,,2000,0.3
-Poland,,1999,1.0
+Poland,,1999,0.9
 Poland,,1998,0.2
 Poland,,1996,9.0
-Poland,,1995,2.5
+Poland,,1995,2.6
 Poland,,1993,0.0
 Poland,,1992,0.2
 Poland,,1989,0.0
 Poland,,1987,0.0
-Poland,,1986,0.5
+Poland,,1986,0.6
 Poland,,1985,0.0
 Portugal,,2023,0.4
 Portugal,,2022,0.2
@@ -1877,6 +1899,7 @@ Senegal,,2005,53.6
 Senegal,,2001,63.9
 Senegal,,1994,72.2
 Senegal,,1991,77.3
+Serbia,,2023,1.1
 Serbia,,2022,2.0
 Serbia,,2021,1.7
 Serbia,,2020,2.0
@@ -1924,8 +1947,8 @@ Slovakia,,2007,0.6
 Slovakia,,2006,0.3
 Slovakia,,2005,0.3
 Slovakia,,2004,0.2
-Slovakia,,1996,1.7
-Slovakia,,1992,0.0
+Slovakia,,1996,1.8
+Slovakia,,1992,0.1
 Slovenia,,2023,0.0
 Slovenia,,2022,0.0
 Slovenia,,2021,0.0
@@ -1950,15 +1973,16 @@ Slovenia,,2003,0.0
 Slovenia,,2002,0.1
 Slovenia,,1999,0.2
 Slovenia,,1998,0.0
-Slovenia,,1997,0.2
+Slovenia,,1997,0.1
 Slovenia,,1993,0.0
 Slovenia,,1987,0.0
 Solomon Islands,,2012,40.3
 Solomon Islands,,2005,62.2
-South Africa,,2014,31.2
-South Africa,,2010,29.5
-South Africa,,2008,30.3
-South Africa,,2005,42.1
+South Africa,,2022,17.4
+South Africa,,2014,27.9
+South Africa,,2010,27.8
+South Africa,,2008,37.0
+South Africa,,2005,40.7
 South Africa,,2000,47.9
 South Africa,,1993,44.6
 South Sudan,,2016,76.5
@@ -1986,15 +2010,15 @@ Spain,,2004,1.0
 Spain,,2003,0.9
 Spain,,2000,0.9
 Spain,,1999,0.7
-Spain,,1998,1.0
+Spain,,1998,1.1
 Spain,,1997,1.0
-Spain,,1996,1.5
-Spain,,1995,1.5
-Spain,,1994,1.2
-Spain,,1993,1.5
-Spain,,1990,0.5
+Spain,,1996,1.6
+Spain,,1995,1.6
+Spain,,1994,1.3
+Spain,,1993,1.4
+Spain,,1990,0.6
 Spain,,1985,0.5
-Spain,,1980,0.7
+Spain,,1980,0.8
 Sri Lanka,,2019,2.7
 Sri Lanka,,2016,3.8
 Sri Lanka,,2012,6.4
@@ -2031,13 +2055,13 @@ Sweden,,2006,0.4
 Sweden,,2005,1.1
 Sweden,,2004,0.5
 Sweden,,2003,0.4
-Sweden,,2002,0.0
+Sweden,,2002,0.1
 Sweden,,2001,0.2
-Sweden,,2000,0.2
+Sweden,,2000,0.1
 Sweden,,1995,0.5
 Sweden,,1992,0.2
 Sweden,,1987,0.2
-Sweden,,1981,0.5
+Sweden,,1981,0.4
 Sweden,,1975,0.5
 Switzerland,,2022,0.2
 Switzerland,,2021,0.0
@@ -2056,12 +2080,12 @@ Switzerland,,2009,0.0
 Switzerland,,2008,0.1
 Switzerland,,2007,0.1
 Switzerland,,2006,0.1
-Switzerland,,2004,0.2
+Switzerland,,2004,0.1
 Switzerland,,2002,0.0
-Switzerland,,2000,0.2
-Switzerland,,1992,0.7
+Switzerland,,2000,0.1
+Switzerland,,1992,0.6
 Switzerland,,1982,0.7
-Syria,,2022,16.5
+Syria,,2022,18.0
 Syria,,2009,0.0
 Syria,,2006,0.0
 Syria,,2003,0.5
@@ -2081,6 +2105,7 @@ Tanzania,,2011,51.5
 Tanzania,,2007,61.9
 Tanzania,,2000,86.9
 Tanzania,,1991,73.5
+Thailand,,2024,0.0
 Thailand,,2023,0.0
 Thailand,,2022,0.0
 Thailand,,2021,0.0
@@ -2110,14 +2135,14 @@ Thailand,,1992,16.2
 Thailand,,1990,21.1
 Thailand,,1988,26.7
 Thailand,,1981,31.0
-Timor-Leste,,2014,43.9
+Timor-Leste,,2014,44.0
 Timor-Leste,,2007,60.1
 Timor-Leste,,2001,55.7
-Togo,,2021,34.4
-Togo,,2018,35.1
-Togo,,2015,61.5
-Togo,,2011,65.2
-Togo,,2006,67.2
+Togo,,2021,34.7
+Togo,,2018,35.3
+Togo,,2015,61.7
+Togo,,2011,65.5
+Togo,,2006,67.6
 Tonga,,2021,0.4
 Tonga,,2015,4.0
 Tonga,,2009,3.6
@@ -2132,6 +2157,7 @@ Tunisia,,2000,10.5
 Tunisia,,1995,17.4
 Tunisia,,1990,16.3
 Tunisia,,1985,21.6
+Turkey,,2023,0.2
 Turkey,,2022,0.5
 Turkey,,2021,0.9
 Turkey,,2020,1.1
@@ -2193,121 +2219,122 @@ Ukraine,,1993,5.1
 Ukraine,,1992,8.1
 United Arab Emirates,,2018,0.0
 United Arab Emirates,,2013,0.0
-United Kingdom,,2021,0.5
+United Kingdom,,2021,0.4
 United Kingdom,,2020,0.5
-United Kingdom,,2019,0.5
-United Kingdom,,2018,0.5
-United Kingdom,,2017,0.2
-United Kingdom,,2016,0.2
-United Kingdom,,2015,0.2
-United Kingdom,,2014,0.2
+United Kingdom,,2019,0.4
+United Kingdom,,2018,0.4
+United Kingdom,,2017,0.4
+United Kingdom,,2016,0.4
+United Kingdom,,2015,0.3
+United Kingdom,,2014,0.4
 United Kingdom,,2013,0.2
-United Kingdom,,2012,0.5
-United Kingdom,,2011,0.2
-United Kingdom,,2010,0.2
-United Kingdom,,2009,0.2
-United Kingdom,,2008,0.2
-United Kingdom,,2007,0.2
-United Kingdom,,2006,0.2
-United Kingdom,,2005,0.2
-United Kingdom,,2004,0.2
-United Kingdom,,2003,0.2
-United Kingdom,,2002,0.2
-United Kingdom,,2001,0.2
-United Kingdom,,2000,0.2
-United Kingdom,,1999,0.2
-United Kingdom,,1998,0.2
+United Kingdom,,2012,0.4
+United Kingdom,,2011,0.3
+United Kingdom,,2010,0.3
+United Kingdom,,2009,0.4
+United Kingdom,,2008,0.4
+United Kingdom,,2007,0.3
+United Kingdom,,2006,0.3
+United Kingdom,,2005,0.3
+United Kingdom,,2004,0.3
+United Kingdom,,2003,0.3
+United Kingdom,,2002,0.3
+United Kingdom,,2001,0.3
+United Kingdom,,2000,0.3
+United Kingdom,,1999,0.3
+United Kingdom,,1998,0.3
 United Kingdom,,1997,0.2
 United Kingdom,,1996,0.2
-United Kingdom,,1995,0.2
-United Kingdom,,1994,0.2
+United Kingdom,,1995,0.3
+United Kingdom,,1994,0.4
 United Kingdom,,1993,0.2
-United Kingdom,,1992,0.2
-United Kingdom,,1991,0.2
-United Kingdom,,1990,0.2
+United Kingdom,,1992,0.1
+United Kingdom,,1991,0.1
+United Kingdom,,1990,0.1
 United Kingdom,,1989,0.2
-United Kingdom,,1988,0.2
-United Kingdom,,1987,0.0
-United Kingdom,,1986,0.2
-United Kingdom,,1985,0.2
-United Kingdom,,1984,0.2
-United Kingdom,,1983,0.0
-United Kingdom,,1982,0.2
-United Kingdom,,1981,0.0
-United Kingdom,,1980,0.0
-United Kingdom,,1979,0.0
-United Kingdom,,1978,0.0
+United Kingdom,,1988,0.1
+United Kingdom,,1987,0.1
+United Kingdom,,1986,0.3
+United Kingdom,,1985,0.1
+United Kingdom,,1984,0.1
+United Kingdom,,1983,0.1
+United Kingdom,,1982,0.1
+United Kingdom,,1981,0.1
+United Kingdom,,1980,0.1
+United Kingdom,,1979,0.1
+United Kingdom,,1978,0.1
 United Kingdom,,1977,0.2
-United Kingdom,,1976,0.0
+United Kingdom,,1976,0.1
 United Kingdom,,1975,0.2
 United Kingdom,,1974,0.2
 United Kingdom,,1973,0.0
 United Kingdom,,1972,0.2
-United Kingdom,,1971,0.0
-United Kingdom,,1970,0.2
+United Kingdom,,1971,0.1
+United Kingdom,,1970,0.1
 United Kingdom,,1969,0.2
 United Kingdom,,1968,0.2
+United States,,2024,1.1
 United States,,2023,1.2
-United States,,2022,1.2
-United States,,2021,0.5
-United States,,2020,0.5
+United States,,2022,1.4
+United States,,2021,0.3
+United States,,2020,0.4
 United States,,2019,1.0
-United States,,2018,1.0
-United States,,2017,1.2
+United States,,2018,1.1
+United States,,2017,1.3
 United States,,2016,1.2
 United States,,2015,1.2
-United States,,2014,1.2
-United States,,2013,1.0
-United States,,2012,1.0
-United States,,2011,1.0
-United States,,2010,1.2
+United States,,2014,1.3
+United States,,2013,1.1
+United States,,2012,1.1
+United States,,2011,1.1
+United States,,2010,1.1
 United States,,2009,1.0
-United States,,2008,1.0
+United States,,2008,1.1
 United States,,2007,1.0
-United States,,2006,1.0
+United States,,2006,1.1
 United States,,2005,1.0
-United States,,2004,1.0
+United States,,2004,1.1
 United States,,2003,1.0
-United States,,2002,1.0
-United States,,2001,1.0
-United States,,2000,0.7
+United States,,2002,0.9
+United States,,2001,0.9
+United States,,2000,0.8
 United States,,1999,0.7
-United States,,1998,0.7
-United States,,1997,0.7
+United States,,1998,0.9
+United States,,1997,0.8
 United States,,1996,0.7
 United States,,1995,0.7
 United States,,1994,0.7
-United States,,1993,0.7
-United States,,1992,0.5
-United States,,1991,0.5
+United States,,1993,0.6
+United States,,1992,0.6
+United States,,1991,0.6
 United States,,1990,0.5
 United States,,1989,0.5
 United States,,1988,0.5
-United States,,1987,0.5
-United States,,1986,0.7
-United States,,1985,0.7
-United States,,1984,0.7
+United States,,1987,0.6
+United States,,1986,0.6
+United States,,1985,0.6
+United States,,1984,0.6
 United States,,1983,0.7
-United States,,1982,0.7
-United States,,1981,0.5
-United States,,1980,0.5
+United States,,1982,0.8
+United States,,1981,0.6
+United States,,1980,0.6
 United States,,1979,0.7
-United States,,1978,0.7
-United States,,1977,0.5
+United States,,1978,0.6
+United States,,1977,0.6
 United States,,1976,0.7
 United States,,1975,0.7
-United States,,1974,0.7
-United States,,1973,0.7
-United States,,1972,0.7
-United States,,1971,1.0
-United States,,1970,1.0
+United States,,1974,0.9
+United States,,1973,0.8
+United States,,1972,0.8
+United States,,1971,0.9
+United States,,1970,1.1
 United States,,1969,0.7
-United States,,1968,1.0
-United States,,1967,1.0
+United States,,1968,0.9
+United States,,1967,1.1
 United States,,1966,1.2
-United States,,1965,1.2
+United States,,1965,1.3
 United States,,1964,1.5
-United States,,1963,1.5
+United States,,1963,1.6
 Uruguay,,2024,0.2
 Uruguay,,2023,0.2
 Uruguay,,2022,0.2
@@ -2340,6 +2367,7 @@ Uruguay,,1995,0.8
 Uruguay,,1992,0.9
 Uruguay,,1989,1.0
 Uruguay,,1981,0.0
+Uzbekistan,,2025,2.3
 Uzbekistan,,2024,2.7
 Uzbekistan,,2023,4.1
 Uzbekistan,,2022,4.4
@@ -2386,8 +2414,8 @@ Palestine,,2006,0.5
 Palestine,,2005,1.3
 Palestine,,2004,1.8
 Yemen,,2014,33.3
-Yemen,,2005,21.4
-Yemen,,1998,15.4
+Yemen,,2005,22.5
+Yemen,,1998,14.1
 Zambia,,2022,71.7
 Zambia,,2015,67.9
 Zambia,,2010,71.4

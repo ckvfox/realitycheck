@@ -5522,3 +5522,1088 @@ Skipped breakdown:
 [2026-04-01T06:05:24 UTC] 🔍 Checking 'Logistics Performance Index – Infrastructure' (last known year: 2023)
 [2026-04-01T06:05:30 UTC] ❓ No newer version for 'Logistics Performance Index – Infrastructure' found.
 [2026-04-01T06:05:30 UTC] ✅ Smart CSV update check completed.
+[2026-05-01T06:21:51 UTC] [INFO] Using OPENAI_API_KEY: found
+[2026-05-01T06:21:51 UTC] === Fetch started ===
+[2026-05-01T06:21:52 UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:52 UTC] [CHECK] area: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:21:52 UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank area: fetched 17556 raw rows
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank area: first raw row: {"indicator": {"id": "AG.SRF.TOTL.K2", "value": "Surface area (sq. km)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank area: second raw row: {"indicator": {"id": "AG.SRF.TOTL.K2", "value": "Surface area (sq. km)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank area: 12163 rows after mapping/filtering
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank area: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 652870.0}
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank area: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 652860.0}
+[2026-05-01T06:21:54 UTC] [TRIM] area: removed 0 records before 1900
+[2026-05-01T06:21:54 UTC] [TRIM] area: removed 0 records after 2026
+[2026-05-01T06:21:54 UTC] [OK] WorldBank KPI saved: area (12163 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:21:54 UTC] [STATUS] area: stored source_date=2026-04-08T00:00:00Z, data_year=2023
+[2026-05-01T06:21:54 UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:54 UTC] [CHECK] population: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:21:54 UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank population: fetched 17556 raw rows
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank population: first raw row: {"indicator": {"id": "SP.POP.TOTL", "value": "Population, total"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank population: second raw row: {"indicator": {"id": "SP.POP.TOTL", "value": "Population, total"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 769280888, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank population: 12710 rows after mapping/filtering
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank population: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 42647492.0}
+[2026-05-01T06:21:54 UTC] [DEBUG] WorldBank population: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 41454761.0}
+[2026-05-01T06:21:54 UTC] [TRIM] population: removed 0 records before 1900
+[2026-05-01T06:21:54 UTC] [TRIM] population: removed 0 records after 2026
+[2026-05-01T06:21:55 UTC] [OK] WorldBank KPI saved: population (12710 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:21:55 UTC] [STATUS] population: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:21:55 UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:55 UTC] [CHECK] population_growth: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:21:55 UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:56 UTC] [DEBUG] WorldBank population_growth: fetched 17556 raw rows
+[2026-05-01T06:21:56 UTC] [DEBUG] WorldBank population_growth: first raw row: {"indicator": {"id": "SP.POP.GROW", "value": "Population growth (annual %)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:21:56 UTC] [DEBUG] WorldBank population_growth: second raw row: {"indicator": {"id": "SP.POP.GROW", "value": "Population growth (annual %)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 2.47280147854539, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:21:56 UTC] [DEBUG] WorldBank population_growth: 12512 rows after mapping/filtering
+[2026-05-01T06:21:56 UTC] [DEBUG] WorldBank population_growth: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 2.83657317243522}
+[2026-05-01T06:21:56 UTC] [DEBUG] WorldBank population_growth: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 2.13559384981397}
+[2026-05-01T06:21:56 UTC] [TRIM] population_growth: removed 0 records before 1900
+[2026-05-01T06:21:56 UTC] [TRIM] population_growth: removed 0 records after 2026
+[2026-05-01T06:21:56 UTC] [OK] WorldBank KPI saved: population_growth (12512 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:21:57 UTC] [STATUS] population_growth: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:21:57 UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:57 UTC] [CHECK] fertility_rate: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:21:57 UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:57 UTC] [DEBUG] WorldBank fertility_rate: fetched 17556 raw rows
+[2026-05-01T06:21:57 UTC] [DEBUG] WorldBank fertility_rate: first raw row: {"indicator": {"id": "SP.DYN.TFRT.IN", "value": "Fertility rate, total (births per woman)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:21:57 UTC] [DEBUG] WorldBank fertility_rate: second raw row: {"indicator": {"id": "SP.DYN.TFRT.IN", "value": "Fertility rate, total (births per woman)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 4.16404379125111, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:21:57 UTC] [DEBUG] WorldBank fertility_rate: 12708 rows after mapping/filtering
+[2026-05-01T06:21:57 UTC] [DEBUG] WorldBank fertility_rate: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 4.761}
+[2026-05-01T06:21:57 UTC] [DEBUG] WorldBank fertility_rate: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 4.84}
+[2026-05-01T06:21:57 UTC] [TRIM] fertility_rate: removed 0 records before 1900
+[2026-05-01T06:21:57 UTC] [TRIM] fertility_rate: removed 0 records after 2026
+[2026-05-01T06:21:57 UTC] [OK] WorldBank KPI saved: fertility_rate (12708 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:21:57 UTC] [STATUS] fertility_rate: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:21:58 UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:58 UTC] [CHECK] urbanization_rate: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:21:58 UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:58 UTC] [DEBUG] WorldBank urbanization_rate: fetched 17556 raw rows
+[2026-05-01T06:21:58 UTC] [DEBUG] WorldBank urbanization_rate: first raw row: {"indicator": {"id": "SP.URB.TOTL.IN.ZS", "value": "Urban population (% of total population)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:21:58 UTC] [DEBUG] WorldBank urbanization_rate: second raw row: {"indicator": {"id": "SP.URB.TOTL.IN.ZS", "value": "Urban population (% of total population)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 38.2414414289603, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:21:58 UTC] [DEBUG] WorldBank urbanization_rate: 12740 rows after mapping/filtering
+[2026-05-01T06:21:58 UTC] [DEBUG] WorldBank urbanization_rate: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 25.7007352636188}
+[2026-05-01T06:21:58 UTC] [DEBUG] WorldBank urbanization_rate: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 25.4730529631167}
+[2026-05-01T06:21:58 UTC] [TRIM] urbanization_rate: removed 0 records before 1900
+[2026-05-01T06:21:58 UTC] [TRIM] urbanization_rate: removed 0 records after 2026
+[2026-05-01T06:21:58 UTC] [OK] WorldBank KPI saved: urbanization_rate (12740 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:21:58 UTC] [STATUS] urbanization_rate: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:21:58 UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:58 UTC] [CHECK] gdp: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:21:59 UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:59 UTC] [DEBUG] WorldBank gdp: fetched 17556 raw rows
+[2026-05-01T06:21:59 UTC] [DEBUG] WorldBank gdp: first raw row: {"indicator": {"id": "NY.GDP.MKTP.CD", "value": "GDP (current US$)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:21:59 UTC] [DEBUG] WorldBank gdp: second raw row: {"indicator": {"id": "NY.GDP.MKTP.CD", "value": "GDP (current US$)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 1242693542929.85, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:21:59 UTC] [DEBUG] WorldBank gdp: 10877 rows after mapping/filtering
+[2026-05-01T06:21:59 UTC] [DEBUG] WorldBank gdp: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 17152234636.8715}
+[2026-05-01T06:21:59 UTC] [DEBUG] WorldBank gdp: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 14497243872.1337}
+[2026-05-01T06:21:59 UTC] [TRIM] gdp: removed 0 records before 1900
+[2026-05-01T06:21:59 UTC] [TRIM] gdp: removed 0 records after 2026
+[2026-05-01T06:21:59 UTC] [OK] WorldBank KPI saved: gdp (10877 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:21:59 UTC] [STATUS] gdp: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:21:59 UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:21:59 UTC] [CHECK] gdp_per_capita_current_us: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:21:59 UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gdp_per_capita_current_us: fetched 17556 raw rows
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gdp_per_capita_current_us: first raw row: {"indicator": {"id": "NY.GDP.PCAP.CD", "value": "GDP per capita (current US$)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gdp_per_capita_current_us: second raw row: {"indicator": {"id": "NY.GDP.PCAP.CD", "value": "GDP per capita (current US$)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 1615.39635562849, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gdp_per_capita_current_us: 10877 rows after mapping/filtering
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gdp_per_capita_current_us: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 413.757894705303}
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gdp_per_capita_current_us: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 357.261152798144}
+[2026-05-01T06:22:00 UTC] [TRIM] gdp_per_capita_current_us: removed 0 records before 1900
+[2026-05-01T06:22:00 UTC] [TRIM] gdp_per_capita_current_us: removed 0 records after 2026
+[2026-05-01T06:22:00 UTC] [OK] WorldBank KPI saved: gdp_per_capita_current_us (10877 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:00 UTC] [STATUS] gdp_per_capita_current_us: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:00 UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:00 UTC] [CHECK] gni_per_capita_current_us: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:00 UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gni_per_capita_current_us: fetched 17556 raw rows
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gni_per_capita_current_us: first raw row: {"indicator": {"id": "NY.GNP.PCAP.CD", "value": "GNI per capita, Atlas method (current US$)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gni_per_capita_current_us: second raw row: {"indicator": {"id": "NY.GNP.PCAP.CD", "value": "GNI per capita, Atlas method (current US$)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 1579.10356988926, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gni_per_capita_current_us: 10006 rows after mapping/filtering
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gni_per_capita_current_us: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 370.0}
+[2026-05-01T06:22:00 UTC] [DEBUG] WorldBank gni_per_capita_current_us: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 370.0}
+[2026-05-01T06:22:00 UTC] [TRIM] gni_per_capita_current_us: removed 0 records before 1900
+[2026-05-01T06:22:00 UTC] [TRIM] gni_per_capita_current_us: removed 0 records after 2026
+[2026-05-01T06:22:00 UTC] [OK] WorldBank KPI saved: gni_per_capita_current_us (10006 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:00 UTC] [STATUS] gni_per_capita_current_us: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:01 UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:01 UTC] [CHECK] gini_index: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:01 UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:01 UTC] [DEBUG] WorldBank gini_index: fetched 17556 raw rows
+[2026-05-01T06:22:01 UTC] [DEBUG] WorldBank gini_index: first raw row: {"indicator": {"id": "SI.POV.GINI", "value": "Gini index"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:01 UTC] [DEBUG] WorldBank gini_index: second raw row: {"indicator": {"id": "SI.POV.GINI", "value": "Gini index"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:01 UTC] [DEBUG] WorldBank gini_index: 2430 rows after mapping/filtering
+[2026-05-01T06:22:01 UTC] [DEBUG] WorldBank gini_index: first mapped row: {"country": "Albania", "iso2": "", "year": 2020, "value": 29.4}
+[2026-05-01T06:22:01 UTC] [DEBUG] WorldBank gini_index: second mapped row: {"country": "Albania", "iso2": "", "year": 2019, "value": 30.1}
+[2026-05-01T06:22:01 UTC] [TRIM] gini_index: removed 0 records before 1900
+[2026-05-01T06:22:01 UTC] [TRIM] gini_index: removed 0 records after 2026
+[2026-05-01T06:22:01 UTC] [OK] WorldBank KPI saved: gini_index (2430 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:01 UTC] [STATUS] gini_index: stored source_date=2026-04-08T00:00:00Z, data_year=2025
+[2026-05-01T06:22:01 UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:01 UTC] [CHECK] tax_revenue_of_gdp: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:01 UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:02 UTC] [DEBUG] WorldBank tax_revenue_of_gdp: fetched 17556 raw rows
+[2026-05-01T06:22:02 UTC] [DEBUG] WorldBank tax_revenue_of_gdp: first raw row: {"indicator": {"id": "GC.TAX.TOTL.GD.ZS", "value": "Tax revenue (% of GDP)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:02 UTC] [DEBUG] WorldBank tax_revenue_of_gdp: second raw row: {"indicator": {"id": "GC.TAX.TOTL.GD.ZS", "value": "Tax revenue (% of GDP)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:02 UTC] [DEBUG] WorldBank tax_revenue_of_gdp: 4658 rows after mapping/filtering
+[2026-05-01T06:22:02 UTC] [DEBUG] WorldBank tax_revenue_of_gdp: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2017, "value": 9.89845089688421}
+[2026-05-01T06:22:02 UTC] [DEBUG] WorldBank tax_revenue_of_gdp: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2016, "value": 9.50265278288094}
+[2026-05-01T06:22:02 UTC] [TRIM] tax_revenue_of_gdp: removed 0 records before 1900
+[2026-05-01T06:22:02 UTC] [TRIM] tax_revenue_of_gdp: removed 0 records after 2026
+[2026-05-01T06:22:02 UTC] [OK] WorldBank KPI saved: tax_revenue_of_gdp (4658 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:02 UTC] [STATUS] tax_revenue_of_gdp: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:03 UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:03 UTC] [CHECK] unemployment_rate: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:03 UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:03 UTC] [DEBUG] WorldBank unemployment_rate: fetched 17556 raw rows
+[2026-05-01T06:22:03 UTC] [DEBUG] WorldBank unemployment_rate: first raw row: {"indicator": {"id": "SL.UEM.TOTL.ZS", "value": "Unemployment, total (% of total labor force) (modeled ILO estimate)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": 7.53923442390472, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:03 UTC] [DEBUG] WorldBank unemployment_rate: second raw row: {"indicator": {"id": "SL.UEM.TOTL.ZS", "value": "Unemployment, total (% of total labor force) (modeled ILO estimate)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 7.57169749274654, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:03 UTC] [DEBUG] WorldBank unemployment_rate: 6251 rows after mapping/filtering
+[2026-05-01T06:22:03 UTC] [DEBUG] WorldBank unemployment_rate: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2025, "value": 13.351}
+[2026-05-01T06:22:03 UTC] [DEBUG] WorldBank unemployment_rate: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 13.687}
+[2026-05-01T06:22:03 UTC] [TRIM] unemployment_rate: removed 0 records before 1900
+[2026-05-01T06:22:03 UTC] [TRIM] unemployment_rate: removed 0 records after 2026
+[2026-05-01T06:22:03 UTC] [OK] WorldBank KPI saved: unemployment_rate (6251 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:03 UTC] [STATUS] unemployment_rate: stored source_date=2026-04-08T00:00:00Z, data_year=2025
+[2026-05-01T06:22:03 UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:03 UTC] [CHECK] health_expenditure_per_capita: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:04 UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:05 UTC] [DEBUG] WorldBank health_expenditure_per_capita: fetched 17556 raw rows
+[2026-05-01T06:22:05 UTC] [DEBUG] WorldBank health_expenditure_per_capita: first raw row: {"indicator": {"id": "SH.XPD.CHEX.PC.CD", "value": "Current health expenditure per capita (current US$)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 2}
+[2026-05-01T06:22:05 UTC] [DEBUG] WorldBank health_expenditure_per_capita: second raw row: {"indicator": {"id": "SH.XPD.CHEX.PC.CD", "value": "Current health expenditure per capita (current US$)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 2}
+[2026-05-01T06:22:05 UTC] [DEBUG] WorldBank health_expenditure_per_capita: 4559 rows after mapping/filtering
+[2026-05-01T06:22:05 UTC] [DEBUG] WorldBank health_expenditure_per_capita: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 59.06770706}
+[2026-05-01T06:22:05 UTC] [DEBUG] WorldBank health_expenditure_per_capita: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 80.6516037}
+[2026-05-01T06:22:05 UTC] [TRIM] health_expenditure_per_capita: removed 0 records before 1900
+[2026-05-01T06:22:05 UTC] [TRIM] health_expenditure_per_capita: removed 0 records after 2026
+[2026-05-01T06:22:05 UTC] [OK] WorldBank KPI saved: health_expenditure_per_capita (4559 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:05 UTC] [STATUS] health_expenditure_per_capita: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:05 UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:05 UTC] [CHECK] infant_mortality_rate: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:06 UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:07 UTC] [DEBUG] WorldBank infant_mortality_rate: fetched 17556 raw rows
+[2026-05-01T06:22:07 UTC] [DEBUG] WorldBank infant_mortality_rate: first raw row: {"indicator": {"id": "SP.DYN.IMRT.IN", "value": "Mortality rate, infant (per 1,000 live births)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:07 UTC] [DEBUG] WorldBank infant_mortality_rate: second raw row: {"indicator": {"id": "SP.DYN.IMRT.IN", "value": "Mortality rate, infant (per 1,000 live births)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 40.6888559393643, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:07 UTC] [DEBUG] WorldBank infant_mortality_rate: 11706 rows after mapping/filtering
+[2026-05-01T06:22:07 UTC] [DEBUG] WorldBank infant_mortality_rate: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 48.3}
+[2026-05-01T06:22:07 UTC] [DEBUG] WorldBank infant_mortality_rate: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 49.9}
+[2026-05-01T06:22:07 UTC] [TRIM] infant_mortality_rate: removed 0 records before 1900
+[2026-05-01T06:22:07 UTC] [TRIM] infant_mortality_rate: removed 0 records after 2026
+[2026-05-01T06:22:07 UTC] [OK] WorldBank KPI saved: infant_mortality_rate (11706 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:07 UTC] [STATUS] infant_mortality_rate: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:08 UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:08 UTC] [CHECK] maternal_mortality_ratio: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:08 UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:10 UTC] [DEBUG] WorldBank maternal_mortality_ratio: fetched 17556 raw rows
+[2026-05-01T06:22:10 UTC] [DEBUG] WorldBank maternal_mortality_ratio: first raw row: {"indicator": {"id": "SH.STA.MMRT", "value": "Maternal mortality ratio (modeled estimate, per 100,000 live births)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:10 UTC] [DEBUG] WorldBank maternal_mortality_ratio: second raw row: {"indicator": {"id": "SH.STA.MMRT", "value": "Maternal mortality ratio (modeled estimate, per 100,000 live births)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:10 UTC] [DEBUG] WorldBank maternal_mortality_ratio: 7527 rows after mapping/filtering
+[2026-05-01T06:22:10 UTC] [DEBUG] WorldBank maternal_mortality_ratio: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 521.0}
+[2026-05-01T06:22:10 UTC] [DEBUG] WorldBank maternal_mortality_ratio: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 551.0}
+[2026-05-01T06:22:10 UTC] [TRIM] maternal_mortality_ratio: removed 0 records before 1900
+[2026-05-01T06:22:10 UTC] [TRIM] maternal_mortality_ratio: removed 0 records after 2026
+[2026-05-01T06:22:10 UTC] [OK] WorldBank KPI saved: maternal_mortality_ratio (7527 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:10 UTC] [STATUS] maternal_mortality_ratio: stored source_date=2026-04-08T00:00:00Z, data_year=2023
+[2026-05-01T06:22:10 UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:10 UTC] [CHECK] hospital_beds_per_1_000_people: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:10 UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:12 UTC] [DEBUG] WorldBank hospital_beds_per_1_000_people: fetched 17556 raw rows
+[2026-05-01T06:22:12 UTC] [DEBUG] WorldBank hospital_beds_per_1_000_people: first raw row: {"indicator": {"id": "SH.MED.BEDS.ZS", "value": "Hospital beds (per 1,000 people)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:12 UTC] [DEBUG] WorldBank hospital_beds_per_1_000_people: second raw row: {"indicator": {"id": "SH.MED.BEDS.ZS", "value": "Hospital beds (per 1,000 people)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:12 UTC] [DEBUG] WorldBank hospital_beds_per_1_000_people: 4695 rows after mapping/filtering
+[2026-05-01T06:22:12 UTC] [DEBUG] WorldBank hospital_beds_per_1_000_people: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 0.35}
+[2026-05-01T06:22:12 UTC] [DEBUG] WorldBank hospital_beds_per_1_000_people: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 0.36}
+[2026-05-01T06:22:12 UTC] [TRIM] hospital_beds_per_1_000_people: removed 0 records before 1900
+[2026-05-01T06:22:12 UTC] [TRIM] hospital_beds_per_1_000_people: removed 0 records after 2026
+[2026-05-01T06:22:12 UTC] [OK] WorldBank KPI saved: hospital_beds_per_1_000_people (4695 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:12 UTC] [STATUS] hospital_beds_per_1_000_people: stored source_date=2026-04-08T00:00:00Z, data_year=2023
+[2026-05-01T06:22:13 UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:13 UTC] [CHECK] life_expectancy_at_birth: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:13 UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:13 UTC] [DEBUG] WorldBank life_expectancy_at_birth: fetched 17556 raw rows
+[2026-05-01T06:22:13 UTC] [DEBUG] WorldBank life_expectancy_at_birth: first raw row: {"indicator": {"id": "SP.DYN.LE00.IN", "value": "Life expectancy at birth, total (years)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:13 UTC] [DEBUG] WorldBank life_expectancy_at_birth: second raw row: {"indicator": {"id": "SP.DYN.LE00.IN", "value": "Life expectancy at birth, total (years)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 65.3499304660954, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:13 UTC] [DEBUG] WorldBank life_expectancy_at_birth: 12706 rows after mapping/filtering
+[2026-05-01T06:22:13 UTC] [DEBUG] WorldBank life_expectancy_at_birth: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 66.289}
+[2026-05-01T06:22:13 UTC] [DEBUG] WorldBank life_expectancy_at_birth: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 66.035}
+[2026-05-01T06:22:13 UTC] [TRIM] life_expectancy_at_birth: removed 0 records before 1900
+[2026-05-01T06:22:13 UTC] [TRIM] life_expectancy_at_birth: removed 0 records after 2026
+[2026-05-01T06:22:13 UTC] [OK] WorldBank KPI saved: life_expectancy_at_birth (12706 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:13 UTC] [STATUS] life_expectancy_at_birth: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:13 UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:13 UTC] [CHECK] adult_literacy_rate: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:14 UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:14 UTC] [DEBUG] WorldBank adult_literacy_rate: fetched 17556 raw rows
+[2026-05-01T06:22:14 UTC] [DEBUG] WorldBank adult_literacy_rate: first raw row: {"indicator": {"id": "SE.ADT.LITR.ZS", "value": "Literacy rate, adult total (% of people ages 15 and above)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:14 UTC] [DEBUG] WorldBank adult_literacy_rate: second raw row: {"indicator": {"id": "SE.ADT.LITR.ZS", "value": "Literacy rate, adult total (% of people ages 15 and above)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 73.6999969482422, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:14 UTC] [DEBUG] WorldBank adult_literacy_rate: 1102 rows after mapping/filtering
+[2026-05-01T06:22:14 UTC] [DEBUG] WorldBank adult_literacy_rate: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2021, "value": 37.2700004577637}
+[2026-05-01T06:22:14 UTC] [DEBUG] WorldBank adult_literacy_rate: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2020, "value": 36.0149650316607}
+[2026-05-01T06:22:14 UTC] [TRIM] adult_literacy_rate: removed 0 records before 1900
+[2026-05-01T06:22:14 UTC] [TRIM] adult_literacy_rate: removed 0 records after 2026
+[2026-05-01T06:22:14 UTC] [OK] WorldBank KPI saved: adult_literacy_rate (1102 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:14 UTC] [STATUS] adult_literacy_rate: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:14 UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:14 UTC] [CHECK] overall_immunization_coverage: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:15 UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:16 UTC] [DEBUG] WorldBank overall_immunization_coverage: fetched 17556 raw rows
+[2026-05-01T06:22:16 UTC] [DEBUG] WorldBank overall_immunization_coverage: first raw row: {"indicator": {"id": "SH.IMM.IDPT", "value": "Immunization, DPT (% of children ages 12-23 months)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:16 UTC] [DEBUG] WorldBank overall_immunization_coverage: second raw row: {"indicator": {"id": "SH.IMM.IDPT", "value": "Immunization, DPT (% of children ages 12-23 months)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 73.7351151103017, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:16 UTC] [DEBUG] WorldBank overall_immunization_coverage: 8054 rows after mapping/filtering
+[2026-05-01T06:22:16 UTC] [DEBUG] WorldBank overall_immunization_coverage: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 59.0}
+[2026-05-01T06:22:16 UTC] [DEBUG] WorldBank overall_immunization_coverage: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 60.0}
+[2026-05-01T06:22:16 UTC] [TRIM] overall_immunization_coverage: removed 0 records before 1900
+[2026-05-01T06:22:16 UTC] [TRIM] overall_immunization_coverage: removed 0 records after 2026
+[2026-05-01T06:22:16 UTC] [OK] WorldBank KPI saved: overall_immunization_coverage (8054 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:16 UTC] [STATUS] overall_immunization_coverage: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:16 UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:16 UTC] [CHECK] extreme_poverty: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:17 UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:17 UTC] [DEBUG] WorldBank extreme_poverty: fetched 17556 raw rows
+[2026-05-01T06:22:17 UTC] [DEBUG] WorldBank extreme_poverty: first raw row: {"indicator": {"id": "SI.POV.DDAY", "value": "Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:17 UTC] [DEBUG] WorldBank extreme_poverty: second raw row: {"indicator": {"id": "SI.POV.DDAY", "value": "Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:17 UTC] [DEBUG] WorldBank extreme_poverty: 2430 rows after mapping/filtering
+[2026-05-01T06:22:17 UTC] [DEBUG] WorldBank extreme_poverty: first mapped row: {"country": "Albania", "iso2": "", "year": 2020, "value": 0.3}
+[2026-05-01T06:22:17 UTC] [DEBUG] WorldBank extreme_poverty: second mapped row: {"country": "Albania", "iso2": "", "year": 2019, "value": 0.3}
+[2026-05-01T06:22:17 UTC] [TRIM] extreme_poverty: removed 0 records before 1900
+[2026-05-01T06:22:17 UTC] [TRIM] extreme_poverty: removed 0 records after 2026
+[2026-05-01T06:22:17 UTC] [OK] WorldBank KPI saved: extreme_poverty (2430 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:17 UTC] [STATUS] extreme_poverty: stored source_date=2026-04-08T00:00:00Z, data_year=2025
+[2026-05-01T06:22:17 UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:17 UTC] [CHECK] access_to_basic_drinking_water: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:18 UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:18 UTC] [DEBUG] WorldBank access_to_basic_drinking_water: fetched 17556 raw rows
+[2026-05-01T06:22:18 UTC] [DEBUG] WorldBank access_to_basic_drinking_water: first raw row: {"indicator": {"id": "SH.H2O.BASW.ZS", "value": "People using at least basic drinking water services (% of population)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:18 UTC] [DEBUG] WorldBank access_to_basic_drinking_water: second raw row: {"indicator": {"id": "SH.H2O.BASW.ZS", "value": "People using at least basic drinking water services (% of population)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 61.6361712028566, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:18 UTC] [DEBUG] WorldBank access_to_basic_drinking_water: 4750 rows after mapping/filtering
+[2026-05-01T06:22:18 UTC] [DEBUG] WorldBank access_to_basic_drinking_water: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 80.8324374493852}
+[2026-05-01T06:22:18 UTC] [DEBUG] WorldBank access_to_basic_drinking_water: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 78.926564391722}
+[2026-05-01T06:22:18 UTC] [TRIM] access_to_basic_drinking_water: removed 0 records before 1900
+[2026-05-01T06:22:18 UTC] [TRIM] access_to_basic_drinking_water: removed 0 records after 2026
+[2026-05-01T06:22:18 UTC] [OK] WorldBank KPI saved: access_to_basic_drinking_water (4750 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:18 UTC] [STATUS] access_to_basic_drinking_water: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:18 UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:18 UTC] [CHECK] air_quality_pm2_5_exposure: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:18 UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank air_quality_pm2_5_exposure: fetched 17556 raw rows
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank air_quality_pm2_5_exposure: first raw row: {"indicator": {"id": "EN.ATM.PM25.MC.M3", "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank air_quality_pm2_5_exposure: second raw row: {"indicator": {"id": "EN.ATM.PM25.MC.M3", "value": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank air_quality_pm2_5_exposure: 6014 rows after mapping/filtering
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank air_quality_pm2_5_exposure: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2020, "value": 46.0870936659706}
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank air_quality_pm2_5_exposure: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2019, "value": 58.3308722306744}
+[2026-05-01T06:22:19 UTC] [TRIM] air_quality_pm2_5_exposure: removed 0 records before 1900
+[2026-05-01T06:22:19 UTC] [TRIM] air_quality_pm2_5_exposure: removed 0 records after 2026
+[2026-05-01T06:22:19 UTC] [OK] WorldBank KPI saved: air_quality_pm2_5_exposure (6014 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:19 UTC] [STATUS] air_quality_pm2_5_exposure: stored source_date=2026-04-08T00:00:00Z, data_year=2020
+[2026-05-01T06:22:19 UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:19 UTC] [CHECK] renewable_energy_share: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:19 UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank renewable_energy_share: fetched 17556 raw rows
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank renewable_energy_share: first raw row: {"indicator": {"id": "EG.FEC.RNEW.ZS", "value": "Renewable energy consumption (% of total final energy consumption)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 2}
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank renewable_energy_share: second raw row: {"indicator": {"id": "EG.FEC.RNEW.ZS", "value": "Renewable energy consumption (% of total final energy consumption)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 2}
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank renewable_energy_share: 6158 rows after mapping/filtering
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank renewable_energy_share: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 20.0}
+[2026-05-01T06:22:19 UTC] [DEBUG] WorldBank renewable_energy_share: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2021, "value": 20.0}
+[2026-05-01T06:22:19 UTC] [TRIM] renewable_energy_share: removed 0 records before 1900
+[2026-05-01T06:22:19 UTC] [TRIM] renewable_energy_share: removed 0 records after 2026
+[2026-05-01T06:22:19 UTC] [OK] WorldBank KPI saved: renewable_energy_share (6158 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:19 UTC] [STATUS] renewable_energy_share: stored source_date=2026-04-08T00:00:00Z, data_year=2022
+[2026-05-01T06:22:19 UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:19 UTC] [CHECK] internet_penetration_rate: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:20 UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:20 UTC] [DEBUG] WorldBank internet_penetration_rate: fetched 17556 raw rows
+[2026-05-01T06:22:20 UTC] [DEBUG] WorldBank internet_penetration_rate: first raw row: {"indicator": {"id": "IT.NET.USER.ZS", "value": "Individuals using the Internet (% of population)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": 30.4, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:20 UTC] [DEBUG] WorldBank internet_penetration_rate: second raw row: {"indicator": {"id": "IT.NET.USER.ZS", "value": "Individuals using the Internet (% of population)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 28.8, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:20 UTC] [DEBUG] WorldBank internet_penetration_rate: 5915 rows after mapping/filtering
+[2026-05-01T06:22:20 UTC] [DEBUG] WorldBank internet_penetration_rate: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 16.09499931}
+[2026-05-01T06:22:20 UTC] [DEBUG] WorldBank internet_penetration_rate: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 15.92840004}
+[2026-05-01T06:22:20 UTC] [TRIM] internet_penetration_rate: removed 0 records before 1900
+[2026-05-01T06:22:20 UTC] [TRIM] internet_penetration_rate: removed 0 records after 2026
+[2026-05-01T06:22:20 UTC] [OK] WorldBank KPI saved: internet_penetration_rate (5915 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:20 UTC] [STATUS] internet_penetration_rate: stored source_date=2026-04-08T00:00:00Z, data_year=2025
+[2026-05-01T06:22:20 UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:20 UTC] [CHECK] mobile_subscriptions_per_100_inhabitants: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:20 UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:23 UTC] [DEBUG] WorldBank mobile_subscriptions_per_100_inhabitants: fetched 17556 raw rows
+[2026-05-01T06:22:23 UTC] [DEBUG] WorldBank mobile_subscriptions_per_100_inhabitants: first raw row: {"indicator": {"id": "IT.CEL.SETS.P2", "value": "Mobile cellular subscriptions (per 100 people)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": 93.1, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:23 UTC] [DEBUG] WorldBank mobile_subscriptions_per_100_inhabitants: second raw row: {"indicator": {"id": "IT.CEL.SETS.P2", "value": "Mobile cellular subscriptions (per 100 people)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 87.3, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:23 UTC] [DEBUG] WorldBank mobile_subscriptions_per_100_inhabitants: 9894 rows after mapping/filtering
+[2026-05-01T06:22:23 UTC] [DEBUG] WorldBank mobile_subscriptions_per_100_inhabitants: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 60.0990815591219}
+[2026-05-01T06:22:23 UTC] [DEBUG] WorldBank mobile_subscriptions_per_100_inhabitants: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 55.5474967036959}
+[2026-05-01T06:22:23 UTC] [TRIM] mobile_subscriptions_per_100_inhabitants: removed 0 records before 1900
+[2026-05-01T06:22:23 UTC] [TRIM] mobile_subscriptions_per_100_inhabitants: removed 0 records after 2026
+[2026-05-01T06:22:23 UTC] [OK] WorldBank KPI saved: mobile_subscriptions_per_100_inhabitants (9894 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:23 UTC] [STATUS] mobile_subscriptions_per_100_inhabitants: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:23 UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:23 UTC] [CHECK] railway_length: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:24 UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank railway_length: fetched 17556 raw rows
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank railway_length: first raw row: {"indicator": {"id": "IS.RRS.TOTL.KM", "value": "Rail lines (total route-km)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank railway_length: second raw row: {"indicator": {"id": "IS.RRS.TOTL.KM", "value": "Rail lines (total route-km)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank railway_length: 2136 rows after mapping/filtering
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank railway_length: first mapped row: {"country": "Albania", "iso2": "", "year": 2009, "value": 423.0}
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank railway_length: second mapped row: {"country": "Albania", "iso2": "", "year": 2008, "value": 423.0}
+[2026-05-01T06:22:26 UTC] [TRIM] railway_length: removed 0 records before 1900
+[2026-05-01T06:22:26 UTC] [TRIM] railway_length: removed 0 records after 2026
+[2026-05-01T06:22:26 UTC] [OK] WorldBank KPI saved: railway_length (2136 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:26 UTC] [STATUS] railway_length: stored source_date=2026-04-08T00:00:00Z, data_year=2021
+[2026-05-01T06:22:26 UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:26 UTC] [CHECK] inflation_consumer_price_index: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:26 UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank inflation_consumer_price_index: fetched 17556 raw rows
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank inflation_consumer_price_index: first raw row: {"indicator": {"id": "FP.CPI.TOTL.ZG", "value": "Inflation, consumer prices (annual %)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank inflation_consumer_price_index: second raw row: {"indicator": {"id": "FP.CPI.TOTL.ZG", "value": "Inflation, consumer prices (annual %)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 4.77085731915833, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank inflation_consumer_price_index: 8813 rows after mapping/filtering
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank inflation_consumer_price_index: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": -6.60118564073725}
+[2026-05-01T06:22:26 UTC] [DEBUG] WorldBank inflation_consumer_price_index: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": -4.64470870797774}
+[2026-05-01T06:22:26 UTC] [TRIM] inflation_consumer_price_index: removed 0 records before 1900
+[2026-05-01T06:22:26 UTC] [TRIM] inflation_consumer_price_index: removed 0 records after 2026
+[2026-05-01T06:22:26 UTC] [OK] WorldBank KPI saved: inflation_consumer_price_index (8813 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:26 UTC] [STATUS] inflation_consumer_price_index: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:29 UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:29 UTC] [CHECK] employment_to_population_ratio: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:29 UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:32 UTC] [DEBUG] WorldBank employment_to_population_ratio: fetched 17556 raw rows
+[2026-05-01T06:22:32 UTC] [DEBUG] WorldBank employment_to_population_ratio: first raw row: {"indicator": {"id": "SL.EMP.TOTL.SP.ZS", "value": "Employment to population ratio, 15+, total (%) (modeled ILO estimate)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": 63.6773009501006, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:32 UTC] [DEBUG] WorldBank employment_to_population_ratio: second raw row: {"indicator": {"id": "SL.EMP.TOTL.SP.ZS", "value": "Employment to population ratio, 15+, total (%) (modeled ILO estimate)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 63.6615130879332, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:32 UTC] [DEBUG] WorldBank employment_to_population_ratio: 6251 rows after mapping/filtering
+[2026-05-01T06:22:32 UTC] [DEBUG] WorldBank employment_to_population_ratio: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2025, "value": 32.457}
+[2026-05-01T06:22:32 UTC] [DEBUG] WorldBank employment_to_population_ratio: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 32.408}
+[2026-05-01T06:22:32 UTC] [TRIM] employment_to_population_ratio: removed 0 records before 1900
+[2026-05-01T06:22:32 UTC] [TRIM] employment_to_population_ratio: removed 0 records after 2026
+[2026-05-01T06:22:32 UTC] [OK] WorldBank KPI saved: employment_to_population_ratio (6251 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:32 UTC] [STATUS] employment_to_population_ratio: stored source_date=2026-04-08T00:00:00Z, data_year=2025
+[2026-05-01T06:22:32 UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:32 UTC] [CHECK] female_labor_force_participation: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:32 UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:34 UTC] [DEBUG] WorldBank female_labor_force_participation: fetched 17556 raw rows
+[2026-05-01T06:22:34 UTC] [DEBUG] WorldBank female_labor_force_participation: first raw row: {"indicator": {"id": "SL.TLF.CACT.FE.ZS", "value": "Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": 63.6741916798307, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:34 UTC] [DEBUG] WorldBank female_labor_force_participation: second raw row: {"indicator": {"id": "SL.TLF.CACT.FE.ZS", "value": "Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 63.6432923969461, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:34 UTC] [DEBUG] WorldBank female_labor_force_participation: 6430 rows after mapping/filtering
+[2026-05-01T06:22:34 UTC] [DEBUG] WorldBank female_labor_force_participation: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2025, "value": 5.086}
+[2026-05-01T06:22:34 UTC] [DEBUG] WorldBank female_labor_force_participation: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2024, "value": 5.123}
+[2026-05-01T06:22:34 UTC] [TRIM] female_labor_force_participation: removed 0 records before 1900
+[2026-05-01T06:22:34 UTC] [TRIM] female_labor_force_participation: removed 0 records after 2026
+[2026-05-01T06:22:34 UTC] [OK] WorldBank KPI saved: female_labor_force_participation (6430 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:34 UTC] [STATUS] female_labor_force_participation: stored source_date=2026-04-08T00:00:00Z, data_year=2025
+[2026-05-01T06:22:34 UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:34 UTC] [CHECK] road_traffic_deaths_per_100k_people: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:34 UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:35 UTC] [DEBUG] WorldBank road_traffic_deaths_per_100k_people: fetched 17556 raw rows
+[2026-05-01T06:22:35 UTC] [DEBUG] WorldBank road_traffic_deaths_per_100k_people: first raw row: {"indicator": {"id": "SH.STA.TRAF.P5", "value": "Mortality caused by road traffic injury (per 100,000 population)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:35 UTC] [DEBUG] WorldBank road_traffic_deaths_per_100k_people: second raw row: {"indicator": {"id": "SH.STA.TRAF.P5", "value": "Mortality caused by road traffic injury (per 100,000 population)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:22:35 UTC] [DEBUG] WorldBank road_traffic_deaths_per_100k_people: 3669 rows after mapping/filtering
+[2026-05-01T06:22:35 UTC] [DEBUG] WorldBank road_traffic_deaths_per_100k_people: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2019, "value": 15.9}
+[2026-05-01T06:22:35 UTC] [DEBUG] WorldBank road_traffic_deaths_per_100k_people: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2018, "value": 14.2}
+[2026-05-01T06:22:35 UTC] [TRIM] road_traffic_deaths_per_100k_people: removed 0 records before 1900
+[2026-05-01T06:22:35 UTC] [TRIM] road_traffic_deaths_per_100k_people: removed 0 records after 2026
+[2026-05-01T06:22:35 UTC] [OK] WorldBank KPI saved: road_traffic_deaths_per_100k_people (3669 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:35 UTC] [STATUS] road_traffic_deaths_per_100k_people: stored source_date=2026-04-08T00:00:00Z, data_year=2019
+[2026-05-01T06:22:38 UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:38 UTC] [CHECK] fixed_broadband_subscriptions_per_100_people: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:38 UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:41 UTC] [DEBUG] WorldBank fixed_broadband_subscriptions_per_100_people: fetched 17556 raw rows
+[2026-05-01T06:22:41 UTC] [DEBUG] WorldBank fixed_broadband_subscriptions_per_100_people: first raw row: {"indicator": {"id": "IT.NET.BBND.P2", "value": "Fixed broadband subscriptions (per 100 people)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": 1.41, "unit": "", "obs_status": "", "decimal": 2}
+[2026-05-01T06:22:41 UTC] [DEBUG] WorldBank fixed_broadband_subscriptions_per_100_people: second raw row: {"indicator": {"id": "IT.NET.BBND.P2", "value": "Fixed broadband subscriptions (per 100 people)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 1.03, "unit": "", "obs_status": "", "decimal": 2}
+[2026-05-01T06:22:41 UTC] [DEBUG] WorldBank fixed_broadband_subscriptions_per_100_people: 4082 rows after mapping/filtering
+[2026-05-01T06:22:41 UTC] [DEBUG] WorldBank fixed_broadband_subscriptions_per_100_people: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 0.0800873028793967}
+[2026-05-01T06:22:41 UTC] [DEBUG] WorldBank fixed_broadband_subscriptions_per_100_people: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 0.0796301678593983}
+[2026-05-01T06:22:41 UTC] [TRIM] fixed_broadband_subscriptions_per_100_people: removed 0 records before 1900
+[2026-05-01T06:22:41 UTC] [TRIM] fixed_broadband_subscriptions_per_100_people: removed 0 records after 2026
+[2026-05-01T06:22:41 UTC] [OK] WorldBank KPI saved: fixed_broadband_subscriptions_per_100_people (4082 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:41 UTC] [STATUS] fixed_broadband_subscriptions_per_100_people: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:41 UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:41 UTC] [CHECK] education_expenditure_of_gdp: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:42 UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:43 UTC] [DEBUG] WorldBank education_expenditure_of_gdp: fetched 17556 raw rows
+[2026-05-01T06:22:43 UTC] [DEBUG] WorldBank education_expenditure_of_gdp: first raw row: {"indicator": {"id": "SE.XPD.TOTL.GD.ZS", "value": "Government expenditure on education, total (% of GDP)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:43 UTC] [DEBUG] WorldBank education_expenditure_of_gdp: second raw row: {"indicator": {"id": "SE.XPD.TOTL.GD.ZS", "value": "Government expenditure on education, total (% of GDP)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:43 UTC] [DEBUG] WorldBank education_expenditure_of_gdp: 4935 rows after mapping/filtering
+[2026-05-01T06:22:43 UTC] [DEBUG] WorldBank education_expenditure_of_gdp: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2017, "value": 4.34319019317627}
+[2026-05-01T06:22:43 UTC] [DEBUG] WorldBank education_expenditure_of_gdp: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2016, "value": 4.5439600944519}
+[2026-05-01T06:22:43 UTC] [TRIM] education_expenditure_of_gdp: removed 0 records before 1900
+[2026-05-01T06:22:43 UTC] [TRIM] education_expenditure_of_gdp: removed 0 records after 2026
+[2026-05-01T06:22:43 UTC] [OK] WorldBank KPI saved: education_expenditure_of_gdp (4935 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:43 UTC] [STATUS] education_expenditure_of_gdp: stored source_date=2026-04-08T00:00:00Z, data_year=2025
+[2026-05-01T06:22:44 UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:44 UTC] [CHECK] military_expenditure_of_gdp: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:44 UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:44 UTC] [DEBUG] WorldBank military_expenditure_of_gdp: fetched 17556 raw rows
+[2026-05-01T06:22:44 UTC] [DEBUG] WorldBank military_expenditure_of_gdp: first raw row: {"indicator": {"id": "MS.MIL.XPND.GD.ZS", "value": "Military expenditure (% of GDP)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:44 UTC] [DEBUG] WorldBank military_expenditure_of_gdp: second raw row: {"indicator": {"id": "MS.MIL.XPND.GD.ZS", "value": "Military expenditure (% of GDP)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 0.976005194817781, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:44 UTC] [DEBUG] WorldBank military_expenditure_of_gdp: 7909 rows after mapping/filtering
+[2026-05-01T06:22:44 UTC] [DEBUG] WorldBank military_expenditure_of_gdp: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2021, "value": 1.827933856217}
+[2026-05-01T06:22:44 UTC] [DEBUG] WorldBank military_expenditure_of_gdp: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2020, "value": 1.35885692738929}
+[2026-05-01T06:22:44 UTC] [TRIM] military_expenditure_of_gdp: removed 0 records before 1900
+[2026-05-01T06:22:44 UTC] [TRIM] military_expenditure_of_gdp: removed 0 records after 2026
+[2026-05-01T06:22:44 UTC] [OK] WorldBank KPI saved: military_expenditure_of_gdp (7909 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:44 UTC] [STATUS] military_expenditure_of_gdp: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:44 UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:44 UTC] [CHECK] purchasing_power_parity: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:22:44 UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:22:45 UTC] [DEBUG] WorldBank purchasing_power_parity: fetched 17556 raw rows
+[2026-05-01T06:22:45 UTC] [DEBUG] WorldBank purchasing_power_parity: first raw row: {"indicator": {"id": "NY.GDP.PCAP.PP.CD", "value": "GDP per capita, PPP (current international $)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:45 UTC] [DEBUG] WorldBank purchasing_power_parity: second raw row: {"indicator": {"id": "NY.GDP.PCAP.PP.CD", "value": "GDP per capita, PPP (current international $)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 4635.7882240455, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:22:45 UTC] [DEBUG] WorldBank purchasing_power_parity: 6541 rows after mapping/filtering
+[2026-05-01T06:22:45 UTC] [DEBUG] WorldBank purchasing_power_parity: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 2201.72290691677}
+[2026-05-01T06:22:45 UTC] [DEBUG] WorldBank purchasing_power_parity: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 2122.99581512663}
+[2026-05-01T06:22:45 UTC] [TRIM] purchasing_power_parity: removed 0 records before 1900
+[2026-05-01T06:22:45 UTC] [TRIM] purchasing_power_parity: removed 0 records after 2026
+[2026-05-01T06:22:45 UTC] [OK] WorldBank KPI saved: purchasing_power_parity (6541 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:22:45 UTC] [STATUS] purchasing_power_parity: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:22:46 UTC] [CHECK] median_age: max_year=2100 → fetch (possible update)
+[2026-05-01T06:22:46 UTC] [⏸️] median_age – unchanged (None)
+[2026-05-01T06:22:46 UTC] [CHECK] democracy_index: max_year=2024 → fetch (possible update)
+[2026-05-01T06:22:46 UTC] [⏸️] democracy_index – unchanged (None)
+[2026-05-01T06:22:47 UTC] [CHECK] human_rights_index_vdem: max_year=2025 → fetch (possible update)
+[2026-05-01T06:22:47 UTC] [⏸️] human_rights_index_vdem – unchanged (None)
+[2026-05-01T06:22:48 UTC] [CHECK] human_development_index_hdi: max_year=2023 → fetch (possible update)
+[2026-05-01T06:22:48 UTC] [⏸️] human_development_index_hdi – unchanged (None)
+[2026-05-01T06:22:48 UTC] [CHECK] physicians_per_1_000_people: max_year=2023 → fetch (possible update)
+[2026-05-01T06:22:48 UTC] [⏸️] physicians_per_1_000_people – unchanged (None)
+[2026-05-01T06:22:48 UTC] [CHECK] homelessness_rate: max_year=2023 → fetch (possible update)
+[2026-05-01T06:22:48 UTC] [⏸️] homelessness_rate – unchanged (None)
+[2026-05-01T06:22:49 UTC] [CHECK] old_age_dependency_ratio: max_year=2023 → fetch (possible update)
+[2026-05-01T06:22:49 UTC] [⏸️] old_age_dependency_ratio – unchanged (None)
+[2026-05-01T06:22:50 UTC] [CHECK] age_dependency_ratio_total: max_year=2023 → fetch (possible update)
+[2026-05-01T06:22:50 UTC] [⏸️] age_dependency_ratio_total – unchanged (None)
+[2026-05-01T06:22:50 UTC] [CHECK] co2_emissions: max_year=2024 → fetch (possible update)
+[2026-05-01T06:22:50 UTC] [⏸️] co2_emissions – unchanged (None)
+[2026-05-01T06:22:51 UTC] [CHECK] political_corruption_index: max_year=2025 → fetch (possible update)
+[2026-05-01T06:22:51 UTC] [⏸️] political_corruption_index – unchanged (None)
+[2026-05-01T06:22:52 UTC] [CHECK] military_spending_sipri: max_year=2025 → fetch (possible update)
+[2026-05-01T06:22:52 UTC] [⏸️] military_spending_sipri – unchanged (None)
+[2026-05-01T06:22:53 UTC] [CHECK] number_of_armed_conflicts: max_year=2024 → fetch (possible update)
+[2026-05-01T06:22:53 UTC] [⏸️] number_of_armed_conflicts – unchanged (None)
+[2026-05-01T06:22:54 UTC] [CHECK] mean_years_of_schooling: max_year=2020 → fetch (possible update)
+[2026-05-01T06:22:54 UTC] [⏸️] mean_years_of_schooling – unchanged (None)
+[2026-05-01T06:22:54 UTC] [CHECK] living_planet_index: max_year=2020 → fetch (possible update)
+[2026-05-01T06:22:54 UTC] [⏸️] living_planet_index – unchanged (None)
+[2026-05-01T06:22:55 UTC] [CHECK] electric_vehicle_stock: max_year=2024 → fetch (possible update)
+[2026-05-01T06:22:55 UTC] [⏸️] electric_vehicle_stock – unchanged (None)
+[2026-05-01T06:22:55 UTC] [CHECK] number_of_recorded_natural_disasters: no year data → fetch
+[2026-05-01T06:22:55 UTC] [WARN] OWID format unknown → number-of-natural-disaster-events.csv?v=1&csvType=filtered&useColumnShortNames=true&overlay=download-data
+[2026-05-01T06:22:55 UTC] [WARN] Keeping old data for number_of_recorded_natural_disasters (OWID format unknown number-of-natural-disaster-events.csv?v=1&csvType=filtered&useColumnShortNames=true&overlay=download-data)
+[2026-05-01T06:22:55 UTC] [STATUS] number_of_recorded_natural_disasters: stored source_date=2023-01-01, data_year=2023
+[2026-05-01T06:22:56 UTC] [CHECK] global_co2_emissions: max_year=2024 → fetch (possible update)
+[2026-05-01T06:22:56 UTC] [⏸️] global_co2_emissions – unchanged (None)
+[2026-05-01T06:22:57 UTC] [CHECK] global_temperature_anomaly: max_year=2025 → fetch (possible update)
+[2026-05-01T06:22:57 UTC] [⏸️] global_temperature_anomaly – unchanged (None)
+[2026-05-01T06:22:57 UTC] [CHECK] labor_productivity_per_hour_pennworldtable: max_year=2023 → fetch (possible update)
+[2026-05-01T06:22:57 UTC] [⏸️] labor_productivity_per_hour_pennworldtable – unchanged (None)
+[2026-05-01T06:22:58 UTC] [CHECK] rule_of_law_index: max_year=2025 → fetch (possible update)
+[2026-05-01T06:22:58 UTC] [⏸️] rule_of_law_index – unchanged (None)
+[2026-05-01T06:22:59 UTC] [CHECK] state_based_conflict_deaths: max_year=2024 → fetch (possible update)
+[2026-05-01T06:22:59 UTC] [⏸️] state_based_conflict_deaths – unchanged (None)
+[2026-05-01T06:22:59 UTC] [CHECK] press_freedom_index: missing or unknown date → fetch now
+[2026-05-01T06:22:59 UTC] [Data360] trying remote CSV https://data360files.worldbank.org/data360-data/data/RWB_PFI/RWB_PFI_SCORE.csv
+[2026-05-01T06:22:59 UTC] [TRIM] press_freedom_index: removed 0 records before 1900
+[2026-05-01T06:22:59 UTC] [TRIM] press_freedom_index: removed 0 records after 2026
+[2026-05-01T06:22:59 UTC] [OK] Data360 KPI saved: press_freedom_index (3905 rows)
+[2026-05-01T06:22:59 UTC] [STATUS] press_freedom_index: stored source_date=Unknown, data_year=2025
+[2026-05-01T06:22:59 UTC] [CHECK] geopolitical_risk_index: local files missing → fetch now
+[2026-05-01T06:22:59 UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
+[2026-05-01T06:22:59 UTC] [DEFER] general_government_gross_debt_gdp: queued for IMF bulk import
+[2026-05-01T06:22:59 UTC] [WARN] world_happiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:22:59 UTC] [TRIM] world_happiness_index: removed 0 records before 1900
+[2026-05-01T06:22:59 UTC] [TRIM] world_happiness_index: removed 0 records after 2026
+[2026-05-01T06:22:59 UTC] [OK] CSV KPI saved: world_happiness_index (1435 rows, last updated 2024-01-01T00:00:00Z)
+[2026-05-01T06:22:59 UTC] [STATUS] world_happiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2026-05-01T06:22:59 UTC] [WARN] olympic_medals_summer: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:22:59 UTC] [TRIM] olympic_medals_summer: removed 10 records before 1900
+[2026-05-01T06:22:59 UTC] [TRIM] olympic_medals_summer: removed 0 records after 2026
+[2026-05-01T06:22:59 UTC] [OK] CSV KPI saved: olympic_medals_summer (1354 rows, last updated 2024-01-01T00:00:00Z)
+[2026-05-01T06:22:59 UTC] [STATUS] olympic_medals_summer: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2026-05-01T06:22:59 UTC] [WARN] big_mac_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:22:59 UTC] [TRIM] big_mac_index: removed 0 records before 1900
+[2026-05-01T06:22:59 UTC] [TRIM] big_mac_index: removed 0 records after 2026
+[2026-05-01T06:22:59 UTC] [OK] CSV KPI saved: big_mac_index (1267 rows, last updated 2025-01-01T00:00:00Z)
+[2026-05-01T06:22:59 UTC] [STATUS] big_mac_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2026-05-01T06:22:59 UTC] [WARN] recycling_rate: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:23:00 UTC] [TRIM] recycling_rate: removed 0 records before 1900
+[2026-05-01T06:23:00 UTC] [TRIM] recycling_rate: removed 0 records after 2026
+[2026-05-01T06:23:00 UTC] [OK] CSV KPI saved: recycling_rate (5488 rows, last updated 2022-01-01T00:00:00Z)
+[2026-05-01T06:23:00 UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2026-05-01T06:23:00 UTC] [WARN] environmental_performance_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:23:00 UTC] [TRIM] environmental_performance_index: removed 0 records before 1900
+[2026-05-01T06:23:00 UTC] [TRIM] environmental_performance_index: removed 0 records after 2026
+[2026-05-01T06:23:00 UTC] [OK] CSV KPI saved: environmental_performance_index (180 rows, last updated 2022-01-01T00:00:00Z)
+[2026-05-01T06:23:00 UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2026-05-01T06:23:00 UTC] [WARN] global_peace_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:23:00 UTC] [TRIM] global_peace_index: removed 0 records before 1900
+[2026-05-01T06:23:00 UTC] [TRIM] global_peace_index: removed 0 records after 2026
+[2026-05-01T06:23:00 UTC] [OK] CSV KPI saved: global_peace_index (2922 rows, last updated 2025-01-01T00:00:00Z)
+[2026-05-01T06:23:00 UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2026-05-01T06:23:00 UTC] [WARN] inform_resilience_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:23:00 UTC] [TRIM] inform_resilience_index: removed 0 records before 1900
+[2026-05-01T06:23:00 UTC] [TRIM] inform_resilience_index: removed 0 records after 2026
+[2026-05-01T06:23:00 UTC] [OK] CSV KPI saved: inform_resilience_index (1910 rows, last updated 2025-01-01T00:00:00Z)
+[2026-05-01T06:23:00 UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2026-05-01T06:23:00 UTC] [WARN] olympic_medals_winter: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:23:00 UTC] [TRIM] olympic_medals_winter: removed 0 records before 1900
+[2026-05-01T06:23:00 UTC] [TRIM] olympic_medals_winter: removed 0 records after 2026
+[2026-05-01T06:23:00 UTC] [OK] CSV KPI saved: olympic_medals_winter (403 rows, last updated 2022-01-01T00:00:00Z)
+[2026-05-01T06:23:00 UTC] [STATUS] olympic_medals_winter: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2026-05-01T06:23:00 UTC] [WARN] pisa_overall_score: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:23:00 UTC] [TRIM] pisa_overall_score: removed 0 records before 1900
+[2026-05-01T06:23:00 UTC] [TRIM] pisa_overall_score: removed 0 records after 2026
+[2026-05-01T06:23:00 UTC] [OK] CSV KPI saved: pisa_overall_score (336 rows, last updated 2022-01-01T00:00:00Z)
+[2026-05-01T06:23:00 UTC] [STATUS] pisa_overall_score: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2026-05-01T06:23:00 UTC] [WARN] network_readiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:23:00 UTC] [TRIM] network_readiness_index: removed 0 records before 1900
+[2026-05-01T06:23:00 UTC] [TRIM] network_readiness_index: removed 0 records after 2026
+[2026-05-01T06:23:00 UTC] [OK] CSV KPI saved: network_readiness_index (128 rows, last updated 2024-01-01T00:00:00Z)
+[2026-05-01T06:23:00 UTC] [STATUS] network_readiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2026-05-01T06:23:01 UTC] [META] WorldBank VC.IHR.PSRC.P5 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:23:01 UTC] [CHECK] intentional_homicides: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:23:01 UTC] [META] WorldBank VC.IHR.PSRC.P5 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:23:01 UTC] [DEBUG] WorldBank intentional_homicides: fetched 17556 raw rows
+[2026-05-01T06:23:01 UTC] [DEBUG] WorldBank intentional_homicides: first raw row: {"indicator": {"id": "VC.IHR.PSRC.P5", "value": "Intentional homicides (per 100,000 people)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:23:01 UTC] [DEBUG] WorldBank intentional_homicides: second raw row: {"indicator": {"id": "VC.IHR.PSRC.P5", "value": "Intentional homicides (per 100,000 people)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:23:01 UTC] [DEBUG] WorldBank intentional_homicides: 3791 rows after mapping/filtering
+[2026-05-01T06:23:01 UTC] [DEBUG] WorldBank intentional_homicides: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2021, "value": 4.0324584656778}
+[2026-05-01T06:23:01 UTC] [DEBUG] WorldBank intentional_homicides: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2020, "value": 6.57810893906391}
+[2026-05-01T06:23:01 UTC] [TRIM] intentional_homicides: removed 0 records before 1900
+[2026-05-01T06:23:01 UTC] [TRIM] intentional_homicides: removed 0 records after 2026
+[2026-05-01T06:23:01 UTC] [OK] WorldBank KPI saved: intentional_homicides (3791 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:23:01 UTC] [STATUS] intentional_homicides: stored source_date=2026-04-08T00:00:00Z, data_year=2023
+[2026-05-01T06:23:01 UTC] [META] WorldBank NE.TRD.GNFS.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:23:01 UTC] [CHECK] trade_openness: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:23:02 UTC] [META] WorldBank NE.TRD.GNFS.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:23:02 UTC] [DEBUG] WorldBank trade_openness: fetched 17556 raw rows
+[2026-05-01T06:23:02 UTC] [DEBUG] WorldBank trade_openness: first raw row: {"indicator": {"id": "NE.TRD.GNFS.ZS", "value": "Trade (% of GDP)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:23:02 UTC] [DEBUG] WorldBank trade_openness: second raw row: {"indicator": {"id": "NE.TRD.GNFS.ZS", "value": "Trade (% of GDP)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 54.422178323254, "unit": "", "obs_status": "", "decimal": 0}
+[2026-05-01T06:23:02 UTC] [DEBUG] WorldBank trade_openness: 8383 rows after mapping/filtering
+[2026-05-01T06:23:02 UTC] [DEBUG] WorldBank trade_openness: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2023, "value": 67.5846651516385}
+[2026-05-01T06:23:02 UTC] [DEBUG] WorldBank trade_openness: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 72.8854696086536}
+[2026-05-01T06:23:02 UTC] [TRIM] trade_openness: removed 0 records before 1900
+[2026-05-01T06:23:02 UTC] [TRIM] trade_openness: removed 0 records after 2026
+[2026-05-01T06:23:02 UTC] [OK] WorldBank KPI saved: trade_openness (8383 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:23:02 UTC] [STATUS] trade_openness: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:23:03 UTC] [META] WorldBank BX.KLT.DINV.WD.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:23:03 UTC] [CHECK] fdi_inflows_of_gdp: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:23:03 UTC] [META] WorldBank BX.KLT.DINV.WD.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:23:03 UTC] [DEBUG] WorldBank fdi_inflows_of_gdp: fetched 17556 raw rows
+[2026-05-01T06:23:03 UTC] [DEBUG] WorldBank fdi_inflows_of_gdp: first raw row: {"indicator": {"id": "BX.KLT.DINV.WD.GD.ZS", "value": "Foreign direct investment, net inflows (% of GDP)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:23:03 UTC] [DEBUG] WorldBank fdi_inflows_of_gdp: second raw row: {"indicator": {"id": "BX.KLT.DINV.WD.GD.ZS", "value": "Foreign direct investment, net inflows (% of GDP)"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": 2.15814407842415, "unit": "", "obs_status": "", "decimal": 1}
+[2026-05-01T06:23:03 UTC] [DEBUG] WorldBank fdi_inflows_of_gdp: 8920 rows after mapping/filtering
+[2026-05-01T06:23:03 UTC] [DEBUG] WorldBank fdi_inflows_of_gdp: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2021, "value": 0.144466946606861}
+[2026-05-01T06:23:03 UTC] [DEBUG] WorldBank fdi_inflows_of_gdp: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2020, "value": 0.0649939571808755}
+[2026-05-01T06:23:03 UTC] [TRIM] fdi_inflows_of_gdp: removed 0 records before 1900
+[2026-05-01T06:23:03 UTC] [TRIM] fdi_inflows_of_gdp: removed 0 records after 2026
+[2026-05-01T06:23:03 UTC] [OK] WorldBank KPI saved: fdi_inflows_of_gdp (8920 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:23:03 UTC] [STATUS] fdi_inflows_of_gdp: stored source_date=2026-04-08T00:00:00Z, data_year=2024
+[2026-05-01T06:23:04 UTC] [META] WorldBank ER.H2O.FWST.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:23:04 UTC] [CHECK] water_stress_level: remote=2026-04-08 local=2026-02-24 → fetch
+[2026-05-01T06:23:04 UTC] [META] WorldBank ER.H2O.FWST.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-05-01T06:23:04 UTC] [DEBUG] WorldBank water_stress_level: fetched 17556 raw rows
+[2026-05-01T06:23:04 UTC] [DEBUG] WorldBank water_stress_level: first raw row: {"indicator": {"id": "ER.H2O.FWST.ZS", "value": "Level of water stress: freshwater withdrawal as a proportion of available freshwater resources"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2025", "value": null, "unit": "", "obs_status": "", "decimal": 2}
+[2026-05-01T06:23:04 UTC] [DEBUG] WorldBank water_stress_level: second raw row: {"indicator": {"id": "ER.H2O.FWST.ZS", "value": "Level of water stress: freshwater withdrawal as a proportion of available freshwater resources"}, "country": {"id": "ZH", "value": "Africa Eastern and Southern"}, "countryiso3code": "AFE", "date": "2024", "value": null, "unit": "", "obs_status": "", "decimal": 2}
+[2026-05-01T06:23:04 UTC] [DEBUG] WorldBank water_stress_level: 6167 rows after mapping/filtering
+[2026-05-01T06:23:04 UTC] [DEBUG] WorldBank water_stress_level: first mapped row: {"country": "Afghanistan", "iso2": "", "year": 2022, "value": 54.75701944}
+[2026-05-01T06:23:04 UTC] [DEBUG] WorldBank water_stress_level: second mapped row: {"country": "Afghanistan", "iso2": "", "year": 2021, "value": 54.75701944}
+[2026-05-01T06:23:04 UTC] [TRIM] water_stress_level: removed 0 records before 1900
+[2026-05-01T06:23:04 UTC] [TRIM] water_stress_level: removed 0 records after 2026
+[2026-05-01T06:23:04 UTC] [OK] WorldBank KPI saved: water_stress_level (6167 rows, last updated 2026-04-08T00:00:00Z)
+[2026-05-01T06:23:04 UTC] [STATUS] water_stress_level: stored source_date=2026-04-08T00:00:00Z, data_year=2022
+[2026-05-01T06:23:04 UTC] [WARN] social_progress_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:23:05 UTC] [TRIM] social_progress_index: removed 0 records before 1900
+[2026-05-01T06:23:05 UTC] [TRIM] social_progress_index: removed 0 records after 2026
+[2026-05-01T06:23:05 UTC] [OK] CSV KPI saved: social_progress_index (1964 rows, last updated 2022-01-01T00:00:00Z)
+[2026-05-01T06:23:05 UTC] [STATUS] social_progress_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2026-05-01T06:23:05 UTC] [WARN] lpi_infrastructure: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-05-01T06:23:05 UTC] [TRIM] lpi_infrastructure: removed 0 records before 1900
+[2026-05-01T06:23:05 UTC] [TRIM] lpi_infrastructure: removed 0 records after 2026
+[2026-05-01T06:23:05 UTC] [OK] CSV KPI saved: lpi_infrastructure (1056 rows, last updated 2023-01-01T00:00:00Z)
+[2026-05-01T06:23:05 UTC] [STATUS] lpi_infrastructure: stored source_date=2023-01-01T00:00:00Z, data_year=2023
+[2026-05-01T06:23:05 UTC] [CHECK] universal_health_coverage_index: max_year=2021 → fetch (possible update)
+[2026-05-01T06:23:05 UTC] [⏸️] universal_health_coverage_index – unchanged (None)
+[2026-05-01T06:23:05 UTC] [WARN] get_source_date_from_worldbank(GE.EST?downloadformat=csv) failed: Expecting value: line 1 column 1 (char 0)
+[2026-05-01T06:23:05 UTC] [CHECK] government_effectiveness: missing or unknown date → fetch now
+[2026-05-01T06:23:05 UTC] [WARN] get_source_date_from_worldbank(GE.EST?downloadformat=csv) failed: Expecting value: line 1 column 1 (char 0)
+[2026-05-01T06:23:06 UTC] [WARN] extract_worldbank_date failed: File is not a zip file
+[2026-05-01T06:23:06 UTC] [WARN] Keeping old data for government_effectiveness (Exception: Expecting value: line 1 column 1 (char 0))
+[2026-05-01T06:23:06 UTC] [❌] government_effectiveness failed: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/models.py", line 978, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/realitycheck/realitycheck/./scripts/fetch_data.py", line 2275, in main
+    process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
+  File "/home/runner/work/realitycheck/realitycheck/./scripts/fetch_data.py", line 1248, in process_worldbank
+    rows, fallback_source_date = fetch_worldbank_series(code)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/realitycheck/realitycheck/./scripts/fetch_data.py", line 1023, in fetch_worldbank_series
+    data = json_response.json()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/models.py", line 982, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+[2026-05-01T06:23:06 UTC] [FETCH] IMF API import start for 1 KPIs
+[2026-05-01T06:23:06 UTC] [ERR] IMF bulk import failed: module 'sdmx' has no attribute 'Client'
+Traceback (most recent call last):
+  File "/home/runner/work/realitycheck/realitycheck/./scripts/fetch_data.py", line 2362, in main
+    fetch_imf_api(
+  File "/home/runner/work/realitycheck/realitycheck/./scripts/fetch_data.py", line 212, in fetch_imf_api
+    client = sdmx.Client('IMF_WEO')
+             ^^^^^^^^^^^
+AttributeError: module 'sdmx' has no attribute 'Client'
+
+[2026-05-01T06:23:06 UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2026-05-01T06:23:06 UTC] ✅ Saved 42 GPR entries → /home/runner/work/realitycheck/realitycheck/data/geopolitical_risk_index.json
+[2026-05-01T06:23:06 UTC] [OK] Special world KPI status prepared: geopolitical_risk_index (Matteo Iacoviello)
+[2026-05-01T06:23:06 UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2026-05-01T06:23:06 UTC] 🤖 Running auto country mapping resolution...
+[2026-05-01T06:23:06 UTC] Starting Auto Country Mapping Agent...
+[2026-05-01T06:23:06 UTC] FOUND: 282 pending mappings gefunden
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Cayman Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Anguilla' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Falkland Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Guadeloupe' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'CYM' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'East Asia and Pacific (WB)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Europe and Central Asia (WB)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Latin America and Caribbean (WB)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Middle East, North Africa, Afghanistan and Pakistan (WB)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'North America (WB)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'South Asia (WB)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (WB)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'World'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Hong Kong S.A.R. of China' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Australasia (ANZ)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Bohemia' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Bohemia (BOH)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'British West Indies (BWI)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Czechoslovakia (TCH)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'FR Yugoslavia'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Formosa (ROC)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Germany (GER)[a]' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Great Britain (GBR)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Great Britain (GBR)[a]' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Greece (GRE)[b]' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Independent Olympic Athletes[D]'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Independent Olympic Participants'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Individual Neutral Athletes[A][B]' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Mixed team'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Refugee Olympic Team'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Russian Empire'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Soviet Union (URS)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'United Arab Republic (RAU)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'United Team of Germany (EUA)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Virgin Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Yugoslavia (YUG)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Africa Eastern and Southern' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Africa Western and Central' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Arab World'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Caribbean small states'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Central Europe and the Baltics' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Early-demographic dividend' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'East Asia & Pacific' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'East Asia & Pacific (excluding high income)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'East Asia & Pacific (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Euro area'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Europe & Central Asia' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Europe & Central Asia (excluding high income)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Europe & Central Asia (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'European Union'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Fragile and conflict affected situations' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Heavily indebted poor countries (HIPC)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'High income'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'IBRD only' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'IDA & IBRD total' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'IDA blend' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'IDA only' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'IDA total' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Late-demographic dividend' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Latin America & Caribbean' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Latin America & Caribbean (excluding high income)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Latin America & the Caribbean (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Least developed countries: UN classification'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Low & middle income'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Low income'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Lower middle income'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Middle East, North Africa, Afghanistan & Pakistan' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Middle East, North Africa, Afghanistan & Pakistan (excluding high income)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Middle East, North Africa, Afghanistan & Pakistan (IDA & IBRD)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Middle income'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'North America' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'OECD members'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Other small states'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Pacific island small states'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Post-demographic dividend' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Pre-demographic dividend' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Small states'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'South Asia' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'South Asia (IDA & IBRD)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Sub-Saharan Africa' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (excluding high income)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Sub-Saharan Africa (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Upper middle income'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'American Samoa' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Aruba' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Bermuda' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'British Virgin Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Channel Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Curacao' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Faroe Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'French Polynesia' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Gibraltar' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Guam' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Hong Kong SAR, China' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Isle of Man' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Macao SAR, China' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'New Caledonia' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Northern Mariana Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Puerto Rico (US)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Sint Maarten (Dutch part)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'St. Martin (French part)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Turks and Caicos Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Virgin Islands (U.S.)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Africa (UN)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Asia (UN)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Bonaire Sint Eustatius and Saba' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Cook Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Europe (UN)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'French Guiana' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Guernsey' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'High-income countries' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Hong Kong' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Jersey' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Latin America and the Caribbean (UN)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Least developed countries'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Less developed regions' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Less developed regions, excluding China' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Less developed regions, excluding least developed countries'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Low-income countries' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Lower-middle-income countries'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Macao' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Martinique' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Mayotte' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Montserrat' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'More developed regions' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Niue' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Northern America (UN)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Oceania (UN)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Puerto Rico' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Reunion' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Saint Barthelemy' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Saint Helena' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Saint Martin (French part)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Saint Pierre and Miquelon' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Tokelau' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'United States Virgin Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Upper-middle-income countries'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Wallis and Futuna' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Western Sahara' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Africa'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Africa (population-weighted)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Aland Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Asia'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Asia (population-weighted)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Austria-Hungary' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'British Indian Ocean Territory' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Christmas Island' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Cocos Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Czechoslovakia'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'East Germany'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Europe'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Europe (population-weighted)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Great Colombia' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Korea (former)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Netherlands Antilles' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Norfolk Island' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'North America (population-weighted)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Oceania'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Oceania (population-weighted)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Orange Free State' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Pitcairn' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Serbia and Montenegro' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'South America' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'South America (population-weighted)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'South Georgia and the South Sandwich Islands' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'USSR' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'West Germany'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'World (population-weighted)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Yugoslavia'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Eastern Caribbean States' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Arab States (UNDP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'East Asia and the Pacific (UNDP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Europe and Central Asia (UNDP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'European Union (27)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'High human development (UNDP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Latin America and the Caribbean (UNDP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Low human development (UNDP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Medium human development (UNDP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'South Asia (UNDP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (UNDP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Very high human development (UNDP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Americas (UN)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Land-locked developing countries (LLDC)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Small island developing states (SIDS)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Africa (GCP)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Antarctica' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Asia (GCP)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Asia (excl. China and India)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Central America (GCP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Europe (GCP)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Europe (excl. EU-27)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Europe (excl. EU-28)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'European Union (28)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'International aviation' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'International shipping' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Kuwaiti Oil Fires (GCP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Middle East (GCP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Non-OECD (GCP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'North America (GCP)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'North America (excl. USA)' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'OECD (GCP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Oceania (GCP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Ryukyu Islands (GCP)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'South America (GCP)'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Brunswick' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Duchy of Nassau' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Saxony' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Two Sicilies' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Africa (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Americas (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Asia & Oceania (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Central America and the Caribbean (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Central Asia (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Central Europe (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'East Asia (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Eastern Europe (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Europe (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'European Union (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Middle East (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'North Africa (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'North America (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Oceania (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'South America (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'South Asia (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'South East Asia (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Western Europe (SIPRI)'
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Americas'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Asia and Oceania' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Middle East' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Asia and Pacific' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Europe and Central Asia' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Freshwater' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Latin America and the Caribbean' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Rest of World'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Northern Hemisphere' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Southern hemisphere' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Hongkong' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Australasia' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] EXCLUDED (Gruppe/Region): 'Soviet Union'
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Unified Team' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'ABW' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'BMU' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'CUW' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'FRO' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'HKG' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'IMN' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'MAC' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'NCL' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'PYF' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'SXM' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'TCA' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'VGB' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'TCH' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: '4' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'URS' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'WAY' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'ANY' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'INA' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'ICA' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'NDS' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'RIA' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'NCE' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'ADA' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'ALY' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'REA' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'NIA' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'LIA' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'AIN' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'ARY' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'IUM' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'LIC' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'KIA' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'INE' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'VIA' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'YUG' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'EUN' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'SLO' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'LAT' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'OAR' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'OAVG' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] REMAINS PENDING: 'Hesse Electoral' (keine eindeutige Zuordnung)
+[2026-05-01T06:23:07 UTC] PENDING: 282 Einträge verbleiben in pending für manuelle Prüfung
+[2026-05-01T06:23:07 UTC] 
+ZUSAMMENFASSUNG:
+   Automatisch resolved: 0
+   Verbleiben pending:    282
+   Total processed:      282
+   Countries verfügbar:  198
+        
+[2026-05-01T06:23:07 UTC] ✅ Auto mapping agent completed successfully
+[2026-05-01T06:23:07 UTC] [INFO] fetch_status.json updated with 75 KPIs
+[2026-05-01T06:23:07 UTC] [STATE] Updated KPI info written to /home/runner/work/realitycheck/realitycheck/data/fetch_state.json (51 entries)
+=== RealityCheck Fetch Report ===
+Countries loaded:   198
+KPIs processed:    75
+Saved records:     293817
+
+WorldBank KPIs:    37
+CSV KPIs:          12
+OWID KPIs:         0
+IMF KPIs:          0
+Data360 KPIs:      1
+UNHCR KPIs:        0
+Others KPIs:       1
+
+Mapping OK:        293817
+Mapping dropped:   79102
+Mapping pending:   283
+
+Dummies created:   0
+Skipped (up-to-date): 21
+Errors:            2
+Updated KPIs:      51
+
+Ignored KPIs with test='o': 0
+
+AUTO MAPPING SUMMARY:
+
+Automatically resolved: 0
+
+Mapping OK:        293817
+Mapping dropped:   79102
+Mapping pending:   283
+
+Pre-1900 cuts:    10 rows in 50 KPIs
+
+Updated KPI files:
+  - access_to_basic_drinking_water
+  - adult_literacy_rate
+  - air_quality_pm2_5_exposure
+  - area
+  - big_mac_index
+  - education_expenditure_of_gdp
+  - employment_to_population_ratio
+  - environmental_performance_index
+  - extreme_poverty
+  - fdi_inflows_of_gdp
+  - female_labor_force_participation
+  - fertility_rate
+  - fixed_broadband_subscriptions_per_100_people
+  - gdp
+  - gdp_per_capita_current_us
+  - geopolitical_risk_index
+  - gini_index
+  - global_peace_index
+  - gni_per_capita_current_us
+  - health_expenditure_per_capita
+  - hospital_beds_per_1_000_people
+  - infant_mortality_rate
+  - inflation_consumer_price_index
+  - inform_resilience_index
+  - intentional_homicides
+  - internet_penetration_rate
+  - life_expectancy_at_birth
+  - lpi_infrastructure
+  - maternal_mortality_ratio
+  - military_expenditure_of_gdp
+  - mobile_subscriptions_per_100_inhabitants
+  - network_readiness_index
+  - olympic_medals_summer
+  - olympic_medals_winter
+  - overall_immunization_coverage
+  - pisa_overall_score
+  - population
+  - population_growth
+  - press_freedom_index
+  - purchasing_power_parity
+  - railway_length
+  - recycling_rate
+  - renewable_energy_share
+  - road_traffic_deaths_per_100k_people
+  - social_progress_index
+  - tax_revenue_of_gdp
+  - trade_openness
+  - unemployment_rate
+  - urbanization_rate
+  - water_stress_level
+  - world_happiness_index
+
+Skipped breakdown:
+  - Remote data unchanged: 21
+=================================
+✅ Fetch completed successfully
+
+[2026-05-01T06:23:07 UTC] [INFO] Full fetch report written to /home/runner/work/realitycheck/realitycheck/data/fetch_log.txt
+[2026-05-01T06:23:07 UTC] === Overall Ranking Generation Started ===
+[2026-05-01T06:23:07 UTC] ✅ 22 KPIs considered for ranking
+[2026-05-01T06:23:07 UTC] 💾 JSON saved successfully → data/overall_ranking.json (198 records)
+[2026-05-01T06:23:07 UTC] ✅ overall_ranking.json written to /home/runner/work/realitycheck/realitycheck/data/overall_ranking.json
+[2026-05-01T06:23:07 UTC] ➡️ Starting fun/safe haven ranking generation ...
+[2026-05-01T06:23:07 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
+[2026-05-01T06:23:07 UTC] ➡️ Generating Fun Mode via GPT-4o-Mini …
+[2026-05-01T06:23:18 UTC] 💾 Saved data/fun_ranking.json (10 entries)
+[2026-05-01T06:23:18 UTC] ➡️ Generating Safe Haven Mode via GPT-4o-Mini …
+[2026-05-01T06:23:29 UTC] 💾 Saved data/safe_haven_ranking.json (10 entries)
+[2026-05-01T06:23:29 UTC] ➡️ Generating Immigration Mode via GPT-4o-Mini …
+[2026-05-01T06:23:47 UTC] 💾 Saved data/immigration_ranking.json (10 entries)
+[2026-05-01T06:23:47 UTC] ✅ All three rankings generated successfully.
+[2026-05-01T06:23:47 UTC] ✅ Fun & Safe Haven rankings successfully generated.
+[2026-05-01T06:23:57 UTC] [STATE] Merged 51 updated KPIs → total 51 entries.
+[2026-05-01T06:23:57 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
+[2026-05-01T06:23:57 UTC] ➡️ Starting global analysis …
+[2026-05-01T06:24:06 UTC] 💾 Saved analysis (4477 chars)
+[2026-05-01T06:24:06 UTC] ⚙️ Limiting KPI analysis to 51 entries.
+[2026-05-01T06:27:04 UTC] ✅ KPI analyses saved (75 total)
+[2026-05-01T06:27:04 UTC] 🔎 Computing outliers …
+[2026-05-01T06:27:05 UTC] 💾 Outliers saved (68 KPIs, compact format)
+[2026-05-01T06:27:05 UTC] ✅ RealityCheck analysis completed successfully.
+[2026-05-01T06:27:05 UTC] ➡️ Starting CSV update check for 12 KPIs…
+[2026-05-01T06:27:05 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2024)
+[2026-05-01T06:27:11 UTC] ❓ No newer version for 'World Happiness Index' found.
+[2026-05-01T06:27:11 UTC] 🔍 Checking 'Olympic Medals (Summer)' (last known year: 2024)
+[2026-05-01T06:27:17 UTC] ❓ No newer version for 'Olympic Medals (Summer)' found.
+[2026-05-01T06:27:17 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2025)
+[2026-05-01T06:27:22 UTC] ❓ No newer version for 'Big Mac Index' found.
+[2026-05-01T06:27:22 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
+[2026-05-01T06:27:27 UTC] ❓ No newer version for 'Recycling Rate' found.
+[2026-05-01T06:27:27 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
+[2026-05-01T06:27:34 UTC] ❓ No newer version for 'Environmental Performance Index' found.
+[2026-05-01T06:27:34 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
+[2026-05-01T06:27:40 UTC] ❓ No newer version for 'Global Peace Index' found.
+[2026-05-01T06:27:40 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
+[2026-05-01T06:27:45 UTC] ❓ No newer version for 'Inform Resilience Index' found.
+[2026-05-01T06:27:45 UTC] 🔍 Checking 'Olympic Medals (Winter)' (last known year: 2022)
+[2026-05-01T06:27:51 UTC] ❓ No newer version for 'Olympic Medals (Winter)' found.
+[2026-05-01T06:27:51 UTC] 🔍 Checking 'PISA Overall Score' (last known year: 2022)
+[2026-05-01T06:27:57 UTC] ❓ No newer version for 'PISA Overall Score' found.
+[2026-05-01T06:27:57 UTC] 🔍 Checking 'Network Readiness Index (NRI)' (last known year: 2024)
+[2026-05-01T06:28:03 UTC] ❓ No newer version for 'Network Readiness Index (NRI)' found.
+[2026-05-01T06:28:03 UTC] 🔍 Checking 'Social Progress Index (SPI)' (last known year: 2022)
+[2026-05-01T06:28:09 UTC] ❓ No newer version for 'Social Progress Index (SPI)' found.
+[2026-05-01T06:28:09 UTC] 🔍 Checking 'Logistics Performance Index – Infrastructure' (last known year: 2023)
+[2026-05-01T06:28:15 UTC] ❓ No newer version for 'Logistics Performance Index – Infrastructure' found.
+[2026-05-01T06:28:15 UTC] ✅ Smart CSV update check completed.
