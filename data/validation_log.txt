@@ -36,3 +36,8 @@
 [2026-05-01T06:28:15.536969] ==== Validation Complete ====
 [2026-05-01T06:28:15.537024] ❌ 1 files missing or empty. See above.
 [2026-05-01T06:28:15.537050] Suggestions: Check for plausible value ranges, outliers, and year coverage in future.
+[2026-06-01T06:33:50.333312] ==== RealityCheck Data Validation Started ====
+[2026-06-01T06:33:50.335103] ❌ MISSING: /home/runner/work/realitycheck/realitycheck/data/geopolitical_risk_index.csv
+[2026-06-01T06:33:50.437075] ==== Validation Complete ====
+[2026-06-01T06:33:50.437124] ❌ 1 files missing or empty. See above.
+[2026-06-01T06:33:50.437150] Suggestions: Check for plausible value ranges, outliers, and year coverage in future.

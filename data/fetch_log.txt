@@ -6607,3 +6607,680 @@ Skipped breakdown:
 [2026-05-01T06:28:09 UTC] 🔍 Checking 'Logistics Performance Index – Infrastructure' (last known year: 2023)
 [2026-05-01T06:28:15 UTC] ❓ No newer version for 'Logistics Performance Index – Infrastructure' found.
 [2026-05-01T06:28:15 UTC] ✅ Smart CSV update check completed.
+[2026-06-01T06:29:57 UTC] [INFO] Using OPENAI_API_KEY: found
+[2026-06-01T06:29:57 UTC] === Fetch started ===
+[2026-06-01T06:30:15 UTC] [META] WorldBank AG.SRF.TOTL.K2 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:15 UTC] [CHECK] area: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:15 UTC] [⏸️] area – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:16 UTC] [META] WorldBank SP.POP.TOTL → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:16 UTC] [CHECK] population: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:16 UTC] [⏸️] population – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:17 UTC] [META] WorldBank SP.POP.GROW → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:17 UTC] [CHECK] population_growth: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:17 UTC] [⏸️] population_growth – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:17 UTC] [META] WorldBank SP.DYN.TFRT.IN → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:17 UTC] [CHECK] fertility_rate: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:17 UTC] [⏸️] fertility_rate – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:19 UTC] [META] WorldBank SP.URB.TOTL.IN.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:19 UTC] [CHECK] urbanization_rate: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:19 UTC] [⏸️] urbanization_rate – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:19 UTC] [META] WorldBank NY.GDP.MKTP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:19 UTC] [CHECK] gdp: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:19 UTC] [⏸️] gdp – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:20 UTC] [META] WorldBank NY.GDP.PCAP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:20 UTC] [CHECK] gdp_per_capita_current_us: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:20 UTC] [⏸️] gdp_per_capita_current_us – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:21 UTC] [META] WorldBank NY.GNP.PCAP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:21 UTC] [CHECK] gni_per_capita_current_us: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:21 UTC] [⏸️] gni_per_capita_current_us – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:21 UTC] [META] WorldBank SI.POV.GINI → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:21 UTC] [CHECK] gini_index: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:21 UTC] [⏸️] gini_index – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:22 UTC] [META] WorldBank GC.TAX.TOTL.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:22 UTC] [CHECK] tax_revenue_of_gdp: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:22 UTC] [⏸️] tax_revenue_of_gdp – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:22 UTC] [META] WorldBank SL.UEM.TOTL.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:22 UTC] [CHECK] unemployment_rate: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:22 UTC] [⏸️] unemployment_rate – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:22 UTC] [META] WorldBank SH.XPD.CHEX.PC.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:22 UTC] [CHECK] health_expenditure_per_capita: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:22 UTC] [⏸️] health_expenditure_per_capita – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:22 UTC] [META] WorldBank SP.DYN.IMRT.IN → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:22 UTC] [CHECK] infant_mortality_rate: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:22 UTC] [⏸️] infant_mortality_rate – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:23 UTC] [META] WorldBank SH.STA.MMRT → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:23 UTC] [CHECK] maternal_mortality_ratio: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:23 UTC] [⏸️] maternal_mortality_ratio – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:23 UTC] [META] WorldBank SH.MED.BEDS.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:23 UTC] [CHECK] hospital_beds_per_1_000_people: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:23 UTC] [⏸️] hospital_beds_per_1_000_people – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:23 UTC] [META] WorldBank SP.DYN.LE00.IN → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:23 UTC] [CHECK] life_expectancy_at_birth: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:23 UTC] [⏸️] life_expectancy_at_birth – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:23 UTC] [META] WorldBank SE.ADT.LITR.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:23 UTC] [CHECK] adult_literacy_rate: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:23 UTC] [⏸️] adult_literacy_rate – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:24 UTC] [META] WorldBank SH.IMM.IDPT → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:24 UTC] [CHECK] overall_immunization_coverage: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:24 UTC] [⏸️] overall_immunization_coverage – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:25 UTC] [META] WorldBank SI.POV.DDAY → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:25 UTC] [CHECK] extreme_poverty: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:25 UTC] [⏸️] extreme_poverty – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:25 UTC] [META] WorldBank SH.H2O.BASW.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:25 UTC] [CHECK] access_to_basic_drinking_water: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:25 UTC] [⏸️] access_to_basic_drinking_water – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:26 UTC] [META] WorldBank EN.ATM.PM25.MC.M3 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:26 UTC] [CHECK] air_quality_pm2_5_exposure: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:26 UTC] [⏸️] air_quality_pm2_5_exposure – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:26 UTC] [META] WorldBank EG.FEC.RNEW.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:26 UTC] [CHECK] renewable_energy_share: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:26 UTC] [⏸️] renewable_energy_share – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:27 UTC] [META] WorldBank IT.NET.USER.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:27 UTC] [CHECK] internet_penetration_rate: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:27 UTC] [⏸️] internet_penetration_rate – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:27 UTC] [META] WorldBank IT.CEL.SETS.P2 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:27 UTC] [CHECK] mobile_subscriptions_per_100_inhabitants: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:27 UTC] [⏸️] mobile_subscriptions_per_100_inhabitants – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:27 UTC] [META] WorldBank IS.RRS.TOTL.KM → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:27 UTC] [CHECK] railway_length: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:27 UTC] [⏸️] railway_length – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:27 UTC] [META] WorldBank FP.CPI.TOTL.ZG → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:27 UTC] [CHECK] inflation_consumer_price_index: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:27 UTC] [⏸️] inflation_consumer_price_index – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:27 UTC] [META] WorldBank SL.EMP.TOTL.SP.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:27 UTC] [CHECK] employment_to_population_ratio: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:27 UTC] [⏸️] employment_to_population_ratio – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:28 UTC] [META] WorldBank SL.TLF.CACT.FE.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:28 UTC] [CHECK] female_labor_force_participation: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:28 UTC] [⏸️] female_labor_force_participation – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:28 UTC] [META] WorldBank SH.STA.TRAF.P5 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:28 UTC] [CHECK] road_traffic_deaths_per_100k_people: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:28 UTC] [⏸️] road_traffic_deaths_per_100k_people – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:29 UTC] [META] WorldBank IT.NET.BBND.P2 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:29 UTC] [CHECK] fixed_broadband_subscriptions_per_100_people: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:29 UTC] [⏸️] fixed_broadband_subscriptions_per_100_people – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:29 UTC] [META] WorldBank SE.XPD.TOTL.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:29 UTC] [CHECK] education_expenditure_of_gdp: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:29 UTC] [⏸️] education_expenditure_of_gdp – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:29 UTC] [META] WorldBank MS.MIL.XPND.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:29 UTC] [CHECK] military_expenditure_of_gdp: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:29 UTC] [⏸️] military_expenditure_of_gdp – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:29 UTC] [META] WorldBank NY.GDP.PCAP.PP.CD → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:29 UTC] [CHECK] purchasing_power_parity: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:29 UTC] [⏸️] purchasing_power_parity – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:30 UTC] [CHECK] median_age: max_year=2100 → fetch (possible update)
+[2026-06-01T06:30:30 UTC] [⏸️] median_age – unchanged (None)
+[2026-06-01T06:30:31 UTC] [CHECK] democracy_index: max_year=2024 → fetch (possible update)
+[2026-06-01T06:30:31 UTC] [⏸️] democracy_index – unchanged (None)
+[2026-06-01T06:30:32 UTC] [CHECK] human_rights_index_vdem: max_year=2025 → fetch (possible update)
+[2026-06-01T06:30:32 UTC] [⏸️] human_rights_index_vdem – unchanged (None)
+[2026-06-01T06:30:32 UTC] [CHECK] human_development_index_hdi: max_year=2023 → fetch (possible update)
+[2026-06-01T06:30:32 UTC] [⏸️] human_development_index_hdi – unchanged (None)
+[2026-06-01T06:30:32 UTC] [CHECK] physicians_per_1_000_people: max_year=2023 → fetch (possible update)
+[2026-06-01T06:30:32 UTC] [⏸️] physicians_per_1_000_people – unchanged (None)
+[2026-06-01T06:30:33 UTC] [CHECK] homelessness_rate: max_year=2023 → fetch (possible update)
+[2026-06-01T06:30:33 UTC] [⏸️] homelessness_rate – unchanged (None)
+[2026-06-01T06:30:33 UTC] [CHECK] old_age_dependency_ratio: max_year=2023 → fetch (possible update)
+[2026-06-01T06:30:33 UTC] [⏸️] old_age_dependency_ratio – unchanged (None)
+[2026-06-01T06:30:34 UTC] [CHECK] age_dependency_ratio_total: max_year=2023 → fetch (possible update)
+[2026-06-01T06:30:34 UTC] [⏸️] age_dependency_ratio_total – unchanged (None)
+[2026-06-01T06:30:35 UTC] [CHECK] co2_emissions: max_year=2024 → fetch (possible update)
+[2026-06-01T06:30:35 UTC] [⏸️] co2_emissions – unchanged (None)
+[2026-06-01T06:30:36 UTC] [CHECK] political_corruption_index: max_year=2025 → fetch (possible update)
+[2026-06-01T06:30:36 UTC] [⏸️] political_corruption_index – unchanged (None)
+[2026-06-01T06:30:37 UTC] [CHECK] military_spending_sipri: max_year=2025 → fetch (possible update)
+[2026-06-01T06:30:37 UTC] [⏸️] military_spending_sipri – unchanged (None)
+[2026-06-01T06:30:37 UTC] [CHECK] number_of_armed_conflicts: max_year=2024 → fetch (possible update)
+[2026-06-01T06:30:37 UTC] [⏸️] number_of_armed_conflicts – unchanged (None)
+[2026-06-01T06:30:38 UTC] [CHECK] mean_years_of_schooling: max_year=2020 → fetch (possible update)
+[2026-06-01T06:30:38 UTC] [⏸️] mean_years_of_schooling – unchanged (None)
+[2026-06-01T06:30:38 UTC] [CHECK] living_planet_index: max_year=2020 → fetch (possible update)
+[2026-06-01T06:30:38 UTC] [⏸️] living_planet_index – unchanged (None)
+[2026-06-01T06:30:39 UTC] [CHECK] electric_vehicle_stock: max_year=2025 → fetch (possible update)
+[2026-06-01T06:30:39 UTC] [⏸️] electric_vehicle_stock – unchanged (None)
+[2026-06-01T06:30:39 UTC] [CHECK] number_of_recorded_natural_disasters: no year data → fetch
+[2026-06-01T06:30:40 UTC] [WARN] OWID format unknown → number-of-natural-disaster-events.csv?v=1&csvType=filtered&useColumnShortNames=true&overlay=download-data
+[2026-06-01T06:30:40 UTC] [WARN] Keeping old data for number_of_recorded_natural_disasters (OWID format unknown number-of-natural-disaster-events.csv?v=1&csvType=filtered&useColumnShortNames=true&overlay=download-data)
+[2026-06-01T06:30:40 UTC] [STATUS] number_of_recorded_natural_disasters: stored source_date=2023-01-01, data_year=2023
+[2026-06-01T06:30:40 UTC] [CHECK] global_co2_emissions: max_year=2024 → fetch (possible update)
+[2026-06-01T06:30:40 UTC] [⏸️] global_co2_emissions – unchanged (None)
+[2026-06-01T06:30:41 UTC] [CHECK] global_temperature_anomaly: max_year=2026 → fetch (possible update)
+[2026-06-01T06:30:41 UTC] [⏸️] global_temperature_anomaly – unchanged (None)
+[2026-06-01T06:30:41 UTC] [CHECK] labor_productivity_per_hour_pennworldtable: max_year=2023 → fetch (possible update)
+[2026-06-01T06:30:41 UTC] [⏸️] labor_productivity_per_hour_pennworldtable – unchanged (None)
+[2026-06-01T06:30:42 UTC] [CHECK] rule_of_law_index: max_year=2025 → fetch (possible update)
+[2026-06-01T06:30:42 UTC] [⏸️] rule_of_law_index – unchanged (None)
+[2026-06-01T06:30:42 UTC] [CHECK] state_based_conflict_deaths: max_year=2024 → fetch (possible update)
+[2026-06-01T06:30:42 UTC] [⏸️] state_based_conflict_deaths – unchanged (None)
+[2026-06-01T06:30:42 UTC] [CHECK] press_freedom_index: missing or unknown date → fetch now
+[2026-06-01T06:30:43 UTC] [Data360] trying remote CSV https://data360files.worldbank.org/data360-data/data/RWB_PFI/RWB_PFI_SCORE.csv
+[2026-06-01T06:30:43 UTC] [ERR] Data360 CSV failed to load https://data360files.worldbank.org/data360-data/data/RWB_PFI/RWB_PFI_SCORE.csv: HTTP Error 404: The specified blob does not exist.
+[2026-06-01T06:30:43 UTC] [WARN] Keeping old data for press_freedom_index (Data360 empty RWB_PFI/RWB_PFI_SCORE)
+[2026-06-01T06:30:43 UTC] [WARN] Dummy (virtual) counted for press_freedom_index (Data360 empty RWB_PFI/RWB_PFI_SCORE)
+[2026-06-01T06:30:43 UTC] [STATUS] press_freedom_index: stored source_date=Unknown, data_year=2025
+[2026-06-01T06:30:43 UTC] [CHECK] geopolitical_risk_index: local files missing → fetch now
+[2026-06-01T06:30:43 UTC] [SKIP] geopolitical_risk_index: handled by special fetcher later
+[2026-06-01T06:30:43 UTC] [DEFER] general_government_gross_debt_gdp: queued for IMF bulk import
+[2026-06-01T06:30:43 UTC] [WARN] world_happiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:43 UTC] [TRIM] world_happiness_index: removed 0 records before 1900
+[2026-06-01T06:30:43 UTC] [TRIM] world_happiness_index: removed 0 records after 2026
+[2026-06-01T06:30:43 UTC] [OK] CSV KPI saved: world_happiness_index (1435 rows, last updated 2024-01-01T00:00:00Z)
+[2026-06-01T06:30:43 UTC] [STATUS] world_happiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2026-06-01T06:30:43 UTC] [WARN] olympic_medals_summer: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:43 UTC] [TRIM] olympic_medals_summer: removed 10 records before 1900
+[2026-06-01T06:30:43 UTC] [TRIM] olympic_medals_summer: removed 0 records after 2026
+[2026-06-01T06:30:43 UTC] [OK] CSV KPI saved: olympic_medals_summer (1354 rows, last updated 2024-01-01T00:00:00Z)
+[2026-06-01T06:30:43 UTC] [STATUS] olympic_medals_summer: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2026-06-01T06:30:43 UTC] [WARN] big_mac_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:43 UTC] [TRIM] big_mac_index: removed 0 records before 1900
+[2026-06-01T06:30:43 UTC] [TRIM] big_mac_index: removed 0 records after 2026
+[2026-06-01T06:30:43 UTC] [OK] CSV KPI saved: big_mac_index (1267 rows, last updated 2025-01-01T00:00:00Z)
+[2026-06-01T06:30:43 UTC] [STATUS] big_mac_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2026-06-01T06:30:43 UTC] [WARN] recycling_rate: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:43 UTC] [TRIM] recycling_rate: removed 0 records before 1900
+[2026-06-01T06:30:43 UTC] [TRIM] recycling_rate: removed 0 records after 2026
+[2026-06-01T06:30:43 UTC] [OK] CSV KPI saved: recycling_rate (5488 rows, last updated 2022-01-01T00:00:00Z)
+[2026-06-01T06:30:43 UTC] [STATUS] recycling_rate: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2026-06-01T06:30:43 UTC] [WARN] environmental_performance_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:43 UTC] [TRIM] environmental_performance_index: removed 0 records before 1900
+[2026-06-01T06:30:43 UTC] [TRIM] environmental_performance_index: removed 0 records after 2026
+[2026-06-01T06:30:43 UTC] [OK] CSV KPI saved: environmental_performance_index (180 rows, last updated 2022-01-01T00:00:00Z)
+[2026-06-01T06:30:43 UTC] [STATUS] environmental_performance_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2026-06-01T06:30:43 UTC] [WARN] global_peace_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:43 UTC] [TRIM] global_peace_index: removed 0 records before 1900
+[2026-06-01T06:30:43 UTC] [TRIM] global_peace_index: removed 0 records after 2026
+[2026-06-01T06:30:43 UTC] [OK] CSV KPI saved: global_peace_index (2922 rows, last updated 2025-01-01T00:00:00Z)
+[2026-06-01T06:30:43 UTC] [STATUS] global_peace_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2026-06-01T06:30:43 UTC] [WARN] inform_resilience_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:44 UTC] [TRIM] inform_resilience_index: removed 0 records before 1900
+[2026-06-01T06:30:44 UTC] [TRIM] inform_resilience_index: removed 0 records after 2026
+[2026-06-01T06:30:44 UTC] [OK] CSV KPI saved: inform_resilience_index (1910 rows, last updated 2025-01-01T00:00:00Z)
+[2026-06-01T06:30:44 UTC] [STATUS] inform_resilience_index: stored source_date=2025-01-01T00:00:00Z, data_year=2025
+[2026-06-01T06:30:44 UTC] [WARN] olympic_medals_winter: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:44 UTC] [TRIM] olympic_medals_winter: removed 0 records before 1900
+[2026-06-01T06:30:44 UTC] [TRIM] olympic_medals_winter: removed 0 records after 2026
+[2026-06-01T06:30:44 UTC] [OK] CSV KPI saved: olympic_medals_winter (403 rows, last updated 2022-01-01T00:00:00Z)
+[2026-06-01T06:30:44 UTC] [STATUS] olympic_medals_winter: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2026-06-01T06:30:44 UTC] [WARN] pisa_overall_score: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:44 UTC] [TRIM] pisa_overall_score: removed 0 records before 1900
+[2026-06-01T06:30:44 UTC] [TRIM] pisa_overall_score: removed 0 records after 2026
+[2026-06-01T06:30:44 UTC] [OK] CSV KPI saved: pisa_overall_score (336 rows, last updated 2022-01-01T00:00:00Z)
+[2026-06-01T06:30:44 UTC] [STATUS] pisa_overall_score: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2026-06-01T06:30:44 UTC] [WARN] network_readiness_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:44 UTC] [TRIM] network_readiness_index: removed 0 records before 1900
+[2026-06-01T06:30:44 UTC] [TRIM] network_readiness_index: removed 0 records after 2026
+[2026-06-01T06:30:44 UTC] [OK] CSV KPI saved: network_readiness_index (128 rows, last updated 2024-01-01T00:00:00Z)
+[2026-06-01T06:30:44 UTC] [STATUS] network_readiness_index: stored source_date=2024-01-01T00:00:00Z, data_year=2024
+[2026-06-01T06:30:44 UTC] [META] WorldBank VC.IHR.PSRC.P5 → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:44 UTC] [CHECK] intentional_homicides: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:44 UTC] [⏸️] intentional_homicides – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:44 UTC] [META] WorldBank NE.TRD.GNFS.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:44 UTC] [CHECK] trade_openness: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:44 UTC] [⏸️] trade_openness – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:45 UTC] [META] WorldBank BX.KLT.DINV.WD.GD.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:45 UTC] [CHECK] fdi_inflows_of_gdp: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:45 UTC] [⏸️] fdi_inflows_of_gdp – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:45 UTC] [META] WorldBank ER.H2O.FWST.ZS → CSV Header Last Updated Date 2026-04-08T00:00:00Z
+[2026-06-01T06:30:45 UTC] [CHECK] water_stress_level: remote=2026-04-08 local=2026-04-08 → skip
+[2026-06-01T06:30:45 UTC] [⏸️] water_stress_level – unchanged (2026-04-08T00:00:00Z)
+[2026-06-01T06:30:45 UTC] [WARN] social_progress_index: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:45 UTC] [TRIM] social_progress_index: removed 0 records before 1900
+[2026-06-01T06:30:45 UTC] [TRIM] social_progress_index: removed 0 records after 2026
+[2026-06-01T06:30:45 UTC] [OK] CSV KPI saved: social_progress_index (1964 rows, last updated 2022-01-01T00:00:00Z)
+[2026-06-01T06:30:45 UTC] [STATUS] social_progress_index: stored source_date=2022-01-01T00:00:00Z, data_year=2022
+[2026-06-01T06:30:45 UTC] [WARN] lpi_infrastructure: date comparison failed (Invalid isoformat string: 'Unknown') → fetch
+[2026-06-01T06:30:45 UTC] [TRIM] lpi_infrastructure: removed 0 records before 1900
+[2026-06-01T06:30:45 UTC] [TRIM] lpi_infrastructure: removed 0 records after 2026
+[2026-06-01T06:30:45 UTC] [OK] CSV KPI saved: lpi_infrastructure (1056 rows, last updated 2023-01-01T00:00:00Z)
+[2026-06-01T06:30:45 UTC] [STATUS] lpi_infrastructure: stored source_date=2023-01-01T00:00:00Z, data_year=2023
+[2026-06-01T06:30:46 UTC] [CHECK] universal_health_coverage_index: max_year=2021 → fetch (possible update)
+[2026-06-01T06:30:46 UTC] [⏸️] universal_health_coverage_index – unchanged (None)
+[2026-06-01T06:30:46 UTC] [WARN] get_source_date_from_worldbank(GE.EST?downloadformat=csv) failed: Expecting value: line 1 column 1 (char 0)
+[2026-06-01T06:30:46 UTC] [CHECK] government_effectiveness: missing or unknown date → fetch now
+[2026-06-01T06:30:46 UTC] [WARN] get_source_date_from_worldbank(GE.EST?downloadformat=csv) failed: Expecting value: line 1 column 1 (char 0)
+[2026-06-01T06:30:46 UTC] [WARN] extract_worldbank_date failed: File is not a zip file
+[2026-06-01T06:30:46 UTC] [WARN] Keeping old data for government_effectiveness (Exception: Expecting value: line 1 column 1 (char 0))
+[2026-06-01T06:30:46 UTC] [❌] government_effectiveness failed: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/models.py", line 1116, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/realitycheck/realitycheck/./scripts/fetch_data.py", line 2275, in main
+    process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
+  File "/home/runner/work/realitycheck/realitycheck/./scripts/fetch_data.py", line 1248, in process_worldbank
+    rows, fallback_source_date = fetch_worldbank_series(code)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/realitycheck/realitycheck/./scripts/fetch_data.py", line 1023, in fetch_worldbank_series
+    data = json_response.json()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/models.py", line 1120, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+[2026-06-01T06:30:46 UTC] [FETCH] IMF API import start for 1 KPIs
+[2026-06-01T06:30:46 UTC] [ERR] IMF bulk import failed: module 'sdmx' has no attribute 'Client'
+Traceback (most recent call last):
+  File "/home/runner/work/realitycheck/realitycheck/./scripts/fetch_data.py", line 2362, in main
+    fetch_imf_api(
+  File "/home/runner/work/realitycheck/realitycheck/./scripts/fetch_data.py", line 212, in fetch_imf_api
+    client = sdmx.Client('IMF_WEO')
+             ^^^^^^^^^^^
+AttributeError: module 'sdmx' has no attribute 'Client'
+
+[2026-06-01T06:30:46 UTC] [FETCH] Geopolitical Risk Index → https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2026-06-01T06:30:47 UTC] ✅ Saved 42 GPR entries → /home/runner/work/realitycheck/realitycheck/data/geopolitical_risk_index.json
+[2026-06-01T06:30:47 UTC] [OK] Special world KPI status prepared: geopolitical_risk_index (Matteo Iacoviello)
+[2026-06-01T06:30:47 UTC] [OK] Special world KPI saved: geopolitical_risk_index (Matteo Iacoviello)
+[2026-06-01T06:30:47 UTC] 🤖 Running auto country mapping resolution...
+[2026-06-01T06:30:47 UTC] Starting Auto Country Mapping Agent...
+[2026-06-01T06:30:47 UTC] FOUND: 282 pending mappings gefunden
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Cayman Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Anguilla' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Falkland Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Guadeloupe' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'CYM' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'East Asia and Pacific (WB)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Europe and Central Asia (WB)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Latin America and Caribbean (WB)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Middle East, North Africa, Afghanistan and Pakistan (WB)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'North America (WB)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'South Asia (WB)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (WB)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'World'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Hong Kong S.A.R. of China' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Australasia (ANZ)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Bohemia' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Bohemia (BOH)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'British West Indies (BWI)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Czechoslovakia (TCH)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'FR Yugoslavia'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Formosa (ROC)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Germany (GER)[a]' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Great Britain (GBR)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Great Britain (GBR)[a]' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Greece (GRE)[b]' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Independent Olympic Athletes[D]'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Independent Olympic Participants'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Individual Neutral Athletes[A][B]' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Mixed team'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Refugee Olympic Team'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Russian Empire'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Soviet Union (URS)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'United Arab Republic (RAU)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'United Team of Germany (EUA)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Virgin Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Yugoslavia (YUG)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Africa Eastern and Southern' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Africa Western and Central' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Arab World'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Caribbean small states'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Central Europe and the Baltics' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Early-demographic dividend' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'East Asia & Pacific' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'East Asia & Pacific (excluding high income)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'East Asia & Pacific (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Euro area'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Europe & Central Asia' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Europe & Central Asia (excluding high income)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Europe & Central Asia (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'European Union'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Fragile and conflict affected situations' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Heavily indebted poor countries (HIPC)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'High income'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'IBRD only' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'IDA & IBRD total' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'IDA blend' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'IDA only' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'IDA total' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Late-demographic dividend' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Latin America & Caribbean' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Latin America & Caribbean (excluding high income)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Latin America & the Caribbean (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Least developed countries: UN classification'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Low & middle income'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Low income'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Lower middle income'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Middle East, North Africa, Afghanistan & Pakistan' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Middle East, North Africa, Afghanistan & Pakistan (excluding high income)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Middle East, North Africa, Afghanistan & Pakistan (IDA & IBRD)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Middle income'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'North America' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'OECD members'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Other small states'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Pacific island small states'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Post-demographic dividend' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Pre-demographic dividend' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Small states'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'South Asia' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'South Asia (IDA & IBRD)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Sub-Saharan Africa' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (excluding high income)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Sub-Saharan Africa (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Upper middle income'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'American Samoa' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Aruba' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Bermuda' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'British Virgin Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Channel Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Curacao' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Faroe Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'French Polynesia' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Gibraltar' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Guam' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Hong Kong SAR, China' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Isle of Man' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Macao SAR, China' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'New Caledonia' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Northern Mariana Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Puerto Rico (US)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Sint Maarten (Dutch part)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'St. Martin (French part)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Turks and Caicos Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Virgin Islands (U.S.)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Africa (UN)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Asia (UN)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Bonaire Sint Eustatius and Saba' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Cook Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Europe (UN)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'French Guiana' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Guernsey' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'High-income countries' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Hong Kong' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Jersey' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Latin America and the Caribbean (UN)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Least developed countries'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Less developed regions' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Less developed regions, excluding China' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Less developed regions, excluding least developed countries'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Low-income countries' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Lower-middle-income countries'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Macao' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Martinique' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Mayotte' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Montserrat' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'More developed regions' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Niue' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Northern America (UN)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Oceania (UN)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Puerto Rico' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Reunion' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Saint Barthelemy' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Saint Helena' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Saint Martin (French part)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Saint Pierre and Miquelon' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Tokelau' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'United States Virgin Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Upper-middle-income countries'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Wallis and Futuna' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Western Sahara' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Africa'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Africa (population-weighted)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Aland Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Asia'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Asia (population-weighted)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Austria-Hungary' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'British Indian Ocean Territory' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Christmas Island' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Cocos Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Czechoslovakia'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'East Germany'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Europe'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Europe (population-weighted)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Great Colombia' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Korea (former)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Netherlands Antilles' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Norfolk Island' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'North America (population-weighted)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Oceania'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Oceania (population-weighted)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Orange Free State' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Pitcairn' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Serbia and Montenegro' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'South America' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'South America (population-weighted)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'South Georgia and the South Sandwich Islands' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'USSR' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'West Germany'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'World (population-weighted)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Yugoslavia'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Eastern Caribbean States' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Arab States (UNDP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'East Asia and the Pacific (UNDP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Europe and Central Asia (UNDP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'European Union (27)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'High human development (UNDP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Latin America and the Caribbean (UNDP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Low human development (UNDP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Medium human development (UNDP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'South Asia (UNDP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (UNDP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Very high human development (UNDP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Americas (UN)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Land-locked developing countries (LLDC)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Small island developing states (SIDS)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Africa (GCP)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Antarctica' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Asia (GCP)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Asia (excl. China and India)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Central America (GCP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Europe (GCP)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Europe (excl. EU-27)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Europe (excl. EU-28)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'European Union (28)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'International aviation' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'International shipping' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Kuwaiti Oil Fires (GCP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Middle East (GCP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Non-OECD (GCP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'North America (GCP)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'North America (excl. USA)' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'OECD (GCP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Oceania (GCP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Ryukyu Islands (GCP)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'South America (GCP)'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Brunswick' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Duchy of Nassau' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Saxony' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Two Sicilies' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Africa (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Americas (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Asia & Oceania (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Central America and the Caribbean (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Central Asia (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Central Europe (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'East Asia (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Eastern Europe (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Europe (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'European Union (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Middle East (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'North Africa (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'North America (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Oceania (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'South America (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'South Asia (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'South East Asia (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Western Europe (SIPRI)'
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Americas'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Asia and Oceania' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Middle East' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Asia and Pacific' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Europe and Central Asia' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Freshwater' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Latin America and the Caribbean' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Rest of World'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Northern Hemisphere' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Southern hemisphere' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Hongkong' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Australasia' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] EXCLUDED (Gruppe/Region): 'Soviet Union'
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Unified Team' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'ABW' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'BMU' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'CUW' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'FRO' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'HKG' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'IMN' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'MAC' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'NCL' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'PYF' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'SXM' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'TCA' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'VGB' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'TCH' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: '4' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'URS' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'WAY' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'ANY' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'INA' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'ICA' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'NDS' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'RIA' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'NCE' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'ADA' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'ALY' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'REA' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'NIA' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'LIA' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'AIN' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'ARY' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'IUM' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'LIC' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'KIA' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'INE' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'VIA' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'YUG' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'EUN' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'SLO' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'LAT' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'OAR' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'OAVG' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] REMAINS PENDING: 'Hesse Electoral' (keine eindeutige Zuordnung)
+[2026-06-01T06:30:47 UTC] PENDING: 282 Einträge verbleiben in pending für manuelle Prüfung
+[2026-06-01T06:30:47 UTC] 
+ZUSAMMENFASSUNG:
+   Automatisch resolved: 0
+   Verbleiben pending:    282
+   Total processed:      282
+   Countries verfügbar:  198
+        
+[2026-06-01T06:30:47 UTC] ✅ Auto mapping agent completed successfully
+[2026-06-01T06:30:47 UTC] [INFO] fetch_status.json updated with 75 KPIs
+[2026-06-01T06:30:47 UTC] [STATE] Updated KPI info written to /home/runner/work/realitycheck/realitycheck/data/fetch_state.json (13 entries)
+=== RealityCheck Fetch Report ===
+Countries loaded:   198
+KPIs processed:    75
+Saved records:     18443
+
+WorldBank KPIs:    0
+CSV KPIs:          12
+OWID KPIs:         0
+IMF KPIs:          0
+Data360 KPIs:      0
+UNHCR KPIs:        0
+Others KPIs:       1
+
+Mapping OK:        18443
+Mapping dropped:   520
+Mapping pending:   275
+
+Dummies created:   1
+Skipped (up-to-date): 58
+Errors:            3
+Updated KPIs:      13
+
+Ignored KPIs with test='o': 0
+
+AUTO MAPPING SUMMARY:
+
+Automatically resolved: 0
+
+Mapping OK:        18443
+Mapping dropped:   520
+Mapping pending:   275
+
+Pre-1900 cuts:    10 rows in 12 KPIs
+
+Updated KPI files:
+  - big_mac_index
+  - environmental_performance_index
+  - geopolitical_risk_index
+  - global_peace_index
+  - inform_resilience_index
+  - lpi_infrastructure
+  - network_readiness_index
+  - olympic_medals_summer
+  - olympic_medals_winter
+  - pisa_overall_score
+  - recycling_rate
+  - social_progress_index
+  - world_happiness_index
+
+Skipped breakdown:
+  - Remote data unchanged: 58
+=================================
+✅ Fetch completed successfully
+
+[2026-06-01T06:30:47 UTC] [INFO] Full fetch report written to /home/runner/work/realitycheck/realitycheck/data/fetch_log.txt
+[2026-06-01T06:30:47 UTC] === Overall Ranking Generation Started ===
+[2026-06-01T06:30:47 UTC] ✅ 22 KPIs considered for ranking
+[2026-06-01T06:30:47 UTC] 💾 JSON saved successfully → data/overall_ranking.json (198 records)
+[2026-06-01T06:30:47 UTC] ✅ overall_ranking.json written to /home/runner/work/realitycheck/realitycheck/data/overall_ranking.json
+[2026-06-01T06:30:47 UTC] ➡️ Starting fun/safe haven ranking generation ...
+[2026-06-01T06:30:47 UTC] 🎬 Starting Fun, Safe & Immigration ranking generation…
+[2026-06-01T06:30:47 UTC] ➡️ Generating Fun Mode via GPT-4o-Mini …
+[2026-06-01T06:30:54 UTC] 💾 Saved data/fun_ranking.json (10 entries)
+[2026-06-01T06:30:54 UTC] ➡️ Generating Safe Haven Mode via GPT-4o-Mini …
+[2026-06-01T06:31:06 UTC] 💾 Saved data/safe_haven_ranking.json (10 entries)
+[2026-06-01T06:31:06 UTC] ➡️ Generating Immigration Mode via GPT-4o-Mini …
+[2026-06-01T06:31:14 UTC] 💾 Saved data/immigration_ranking.json (10 entries)
+[2026-06-01T06:31:14 UTC] ✅ All three rankings generated successfully.
+[2026-06-01T06:31:15 UTC] ✅ Fun & Safe Haven rankings successfully generated.
+[2026-06-01T06:31:25 UTC] [STATE] Merged 13 updated KPIs → total 13 entries.
+[2026-06-01T06:31:25 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
+[2026-06-01T06:31:25 UTC] ➡️ Starting global analysis …
+[2026-06-01T06:31:32 UTC] 💾 Saved analysis (3840 chars)
+[2026-06-01T06:31:32 UTC] ⚙️ Limiting KPI analysis to 13 entries.
+[2026-06-01T06:32:11 UTC] ✅ KPI analyses saved (75 total)
+[2026-06-01T06:32:11 UTC] 🔎 Computing outliers …
+[2026-06-01T06:32:12 UTC] 💾 Outliers saved (68 KPIs, compact format)
+[2026-06-01T06:32:12 UTC] ✅ RealityCheck analysis completed successfully.
+[2026-06-01T06:32:12 UTC] ➡️ Starting CSV update check for 12 KPIs…
+[2026-06-01T06:32:12 UTC] 🔍 Checking 'World Happiness Index' (last known year: 2024)
+[2026-06-01T06:32:18 UTC] ❓ No newer version for 'World Happiness Index' found.
+[2026-06-01T06:32:18 UTC] 🔍 Checking 'Olympic Medals (Summer)' (last known year: 2024)
+[2026-06-01T06:32:40 UTC] ❓ No newer version for 'Olympic Medals (Summer)' found.
+[2026-06-01T06:32:40 UTC] 🔍 Checking 'Big Mac Index' (last known year: 2025)
+[2026-06-01T06:32:47 UTC] ❓ No newer version for 'Big Mac Index' found.
+[2026-06-01T06:32:47 UTC] 🔍 Checking 'Recycling Rate' (last known year: 2022)
+[2026-06-01T06:32:52 UTC] ❓ No newer version for 'Recycling Rate' found.
+[2026-06-01T06:32:52 UTC] 🔍 Checking 'Environmental Performance Index' (last known year: 2022)
+[2026-06-01T06:32:58 UTC] ❓ No newer version for 'Environmental Performance Index' found.
+[2026-06-01T06:32:58 UTC] 🔍 Checking 'Global Peace Index' (last known year: 2025)
+[2026-06-01T06:33:03 UTC] ❓ No newer version for 'Global Peace Index' found.
+[2026-06-01T06:33:03 UTC] 🔍 Checking 'Inform Resilience Index' (last known year: 2025)
+[2026-06-01T06:33:23 UTC] ❓ No newer version for 'Inform Resilience Index' found.
+[2026-06-01T06:33:23 UTC] 🔍 Checking 'Olympic Medals (Winter)' (last known year: 2022)
+[2026-06-01T06:33:29 UTC] ❓ No newer version for 'Olympic Medals (Winter)' found.
+[2026-06-01T06:33:29 UTC] 🔍 Checking 'PISA Overall Score' (last known year: 2022)
+[2026-06-01T06:33:34 UTC] ❓ No newer version for 'PISA Overall Score' found.
+[2026-06-01T06:33:34 UTC] 🔍 Checking 'Network Readiness Index (NRI)' (last known year: 2024)
+[2026-06-01T06:33:39 UTC] ❓ No newer version for 'Network Readiness Index (NRI)' found.
+[2026-06-01T06:33:39 UTC] 🔍 Checking 'Social Progress Index (SPI)' (last known year: 2022)
+[2026-06-01T06:33:45 UTC] ❓ No newer version for 'Social Progress Index (SPI)' found.
+[2026-06-01T06:33:45 UTC] 🔍 Checking 'Logistics Performance Index – Infrastructure' (last known year: 2023)
+[2026-06-01T06:33:50 UTC] ❓ No newer version for 'Logistics Performance Index – Infrastructure' found.
+[2026-06-01T06:33:50 UTC] ✅ Smart CSV update check completed.

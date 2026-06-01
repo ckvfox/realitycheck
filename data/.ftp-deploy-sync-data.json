@@ -1,13 +1,13 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1777609696365,
+    "generatedTime": 1780288431319,
     "data": [
         {
             "type": "file",
             "name": ".ftp-deploy-sync-data.json",
-            "size": 22732,
-            "hash": "c7ad44a655c65dae5c9ecff1f3244145e9010b5d55349bb6b3ba8b355f0bf779"
+            "size": 22734,
+            "hash": "634f000ad9b3e498df4bac838343e78c94f8d1f348f3fb6b15ea6bb984b0ff18"
         },
         {
             "type": "file",
@@ -37,43 +37,43 @@
             "type": "file",
             "name": "all_kpis_index.json",
             "size": 232,
-            "hash": "89b6aa762d74fd72c99c6ef90b7b2ab588c98b8181ad09c071173ae91631049d"
+            "hash": "2d07124d43bb2a44b602baeaf3fe034a9fe0050254abc2bd9f35d12a9651afea"
         },
         {
             "type": "file",
             "name": "all_kpis_part1.json.gz",
             "size": 1081265,
-            "hash": "76a6e13254d37151d5e715f0701d0a36ac77d7c51c669133a611f1c9915af7f4"
+            "hash": "4996d0f49045389bd03b0c8489ce13407145b02592611533baae8a38b79b0565"
         },
         {
             "type": "file",
             "name": "all_kpis_part2.json.gz",
             "size": 1043663,
-            "hash": "7b0d3f78e6951b1a6db1a29ed3934f2c8d70f25db8cb94aa8f2a76927796b142"
+            "hash": "6671cd29e2af59515823e1fda421c99092375a9d75d0af0d99437a29e8761d56"
         },
         {
             "type": "file",
             "name": "all_kpis_part3.json.gz",
             "size": 703689,
-            "hash": "6868fafb1ccae2c0f11140d9f8125302b0196efdb30028403755d260e28081e4"
+            "hash": "5945147aab1ef441ca63465f894310aad8dac2312de749a1b971daf6bb6eea67"
         },
         {
             "type": "file",
             "name": "all_kpis_part4.json.gz",
-            "size": 847515,
-            "hash": "947c367881e0e384480240d40456991261663a81381129f6c3f699bc12623ab6"
+            "size": 847513,
+            "hash": "079279af42bd21715fd94b4171b34b6fb76517f9047f400e5925d83996235d60"
         },
         {
             "type": "file",
             "name": "all_kpis_part5.json.gz",
             "size": 92610,
-            "hash": "d0f9d6e69be567d9f59fec0514da467e465bebfbca429a37bb5b56c206369d47"
+            "hash": "2071a2e39d0c2caf9b4cee9660f89f5a0fe307f2146c7de7f1a378ba286c73f0"
         },
         {
             "type": "file",
             "name": "analysis.json",
-            "size": 4600,
-            "hash": "605482d838a3d454c40f7cd08e021304637ad0bb47810fb79952c2cfe12ef6e1"
+            "size": 3952,
+            "hash": "eef5805b620cf4ccbf18faf8d7f6930077d129942299a6d4d6d3be2d0332f89d"
         },
         {
             "type": "file",
@@ -162,20 +162,20 @@
         {
             "type": "file",
             "name": "fetch_log.txt",
-            "size": 657793,
-            "hash": "81cf7edb6eee6068c12abaece30af1cc3df9f646e29ebfe6715cd48dc4902eaf"
+            "size": 714537,
+            "hash": "a3394bedb1421843656f760231b7c3288eae4514b6c983bdb839c116de0f6a60"
         },
         {
             "type": "file",
             "name": "fetch_state.json",
-            "size": 1584,
-            "hash": "5c81a4d8040329ccc6fcf07488842a9817faa6560f7f8b8849841a157a44ea9b"
+            "size": 433,
+            "hash": "4df3f1cba96e69f9020a47d66feab1516ae4984eb1efbc05a8b0191390dbb7d2"
         },
         {
             "type": "file",
             "name": "fetch_status.json",
             "size": 18030,
-            "hash": "ba2d0af8c94f6270cba2a97c13d5c602cb955ac4841d5b346943da91e77ff442"
+            "hash": "21dd588e453d3b4c2325f2133e351f8ab1dd08a35b6fe8ae64f773cb1bd0f4d9"
         },
         {
             "type": "file",
@@ -186,8 +186,8 @@
         {
             "type": "file",
             "name": "fun_ranking.json",
-            "size": 2039,
-            "hash": "4545e7dbe1eb3aa839222308da797c52694e3efac34ff5dc53511b363c369888"
+            "size": 1938,
+            "hash": "d95b06270c829a4ece0013257dd89bce38701114158e8ad410f04db9599c0796"
         },
         {
             "type": "file",
@@ -211,7 +211,7 @@
             "type": "file",
             "name": "geopolitical_risk_index.json",
             "size": 2957,
-            "hash": "9231ca14942aec0fededc57f7619b2d1027869000a471e966a73da923324b382"
+            "hash": "64119535a39fb0e0c35449159b8f2c147e8c0508853207cd0b962c6ec36f2af7"
         },
         {
             "type": "file",
@@ -282,8 +282,8 @@
         {
             "type": "file",
             "name": "immigration_ranking.json",
-            "size": 1925,
-            "hash": "d0c3bf4a932efccfbd508d03fb1492d21a114e128277aab10f611d3c78cca667"
+            "size": 2134,
+            "hash": "a48b6948677f0dbd77bdd3b06f7b2d2371c6710128267915fa5f1388a5c91a39"
         },
         {
             "type": "file",
@@ -318,8 +318,8 @@
         {
             "type": "file",
             "name": "kpi_analysis.json",
-            "size": 88753,
-            "hash": "c2cbb3d41bc045a383c7a184843a1865e84e371c0de698f24103be0e26650ae8"
+            "size": 88727,
+            "hash": "ef5ea67c3e34e3c9a6e839cea6832ae6b402a9e327ad2976a0fb24b84a64fb14"
         },
         {
             "type": "file",
@@ -512,8 +512,8 @@
         {
             "type": "file",
             "name": "safe_haven_ranking.json",
-            "size": 2065,
-            "hash": "a04c44020e24bf67cf5dc693c63f32a121d6de69b9e3557eddcd5a0809679a17"
+            "size": 2060,
+            "hash": "6329b5d0f1ed3163dc5a78bf70ce64bba9d7dc3bb5c04e0657ed733620df9805"
         },
         {
             "type": "file",
@@ -560,8 +560,8 @@
         {
             "type": "file",
             "name": "validation_log.txt",
-            "size": 3487,
-            "hash": "1ce1fbf1ba5f64c0c6eb27730c9a4068bf92330f0e5b54265a10a278f5bac3b4"
+            "size": 3926,
+            "hash": "7c8c628cb36b4009436607a1273d5bab16c8022b471bcdaa68f333656d8b368f"
         },
         {
             "type": "file",
@@ -574,6 +574,12 @@
             "name": "world_happiness_index.json",
             "size": 127562,
             "hash": "6d2b16530f35cf0148735a92030de2e520cdcb1957f337b6e721dc6dccb7d3f8"
+        },
+        {
+            "type": "file",
+            "name": "master/human_rights_index_vdem.json",
+            "size": 1984932,
+            "hash": "66aa344a6bdfed6b47da9d4bd3a3b88f628f19ed9a53e8590cf5751d5b3c19df"
         },
         {
             "type": "file",
@@ -601,18 +607,6 @@
         },
         {
             "type": "file",
-            "name": "meta/country_mappings_pending.json",
-            "size": 21913,
-            "hash": "ac3c410a591ca9e9551ebc2d43efff14aeb5d77ef54d876c7c847e8aff349f9b"
-        },
-        {
-            "type": "file",
-            "name": "master/human_rights_index_vdem.json",
-            "size": 1984932,
-            "hash": "66aa344a6bdfed6b47da9d4bd3a3b88f628f19ed9a53e8590cf5751d5b3c19df"
-        },
-        {
-            "type": "file",
             "name": "meta/groups.json",
             "size": 10429,
             "hash": "0b1e655e7b1a5d6614802a9c9f175dee7565a3916412ae303abad45f1b5bb205"
@@ -622,6 +616,12 @@
             "name": "meta/meta_scan_report.txt",
             "size": 5983,
             "hash": "58d927719d67b940d686194806106c9ffaf8037503d4eac74d28413ad2a52ac2"
+        },
+        {
+            "type": "file",
+            "name": "meta/country_mappings_pending.json",
+            "size": 21913,
+            "hash": "ac3c410a591ca9e9551ebc2d43efff14aeb5d77ef54d876c7c847e8aff349f9b"
         },
         {
             "type": "file",
