@@ -1,6 +1,19 @@
 # RealityCheck Security & Performance Headers
 # Created: 2025-11-17 - CSS Optimization & CSP Implementation
 
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Force HTTPS for the canonical site URL.
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Ensure UTF-8 is declared for HTML and static text assets.
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .htm .css .js .json .xml .svg
+
 # Content Security Policy - Complete Google Translate support
 Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net translate.google.com translate.googleapis.com translate-pa.googleapis.com *.gstatic.com; style-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net translate.googleapis.com *.gstatic.com www.gstatic.com; img-src 'self' data: *.tile.openstreetmap.org *.infinityfree.net translate.google.com translate.googleapis.com *.gstatic.com www.google.com fonts.gstatic.com; connect-src 'self' api.worldbank.org raw.githubusercontent.com unpkg.com cdn.jsdelivr.net translate.googleapis.com translate-pa.googleapis.com; font-src 'self' translate.googleapis.com fonts.gstatic.com *.gstatic.com; object-src 'none';"
 
@@ -52,6 +65,24 @@ Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
 # Security: Prevent access to Python scripts
 <FilesMatch "\.py$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Security: Prevent access to environment files
+<FilesMatch "^\.env(\..*)?$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Security: Prevent access to VCS metadata and dependency manifests
+<FilesMatch "^(\.git|\.gitignore|\.gitattributes|composer\.(json|lock)|package(-lock)?\.json|yarn\.lock|pnpm-lock\.yaml)$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Security: Prevent direct download of database dumps and local database files
+<FilesMatch "\.(sql|sqlite|sqlite3)$">
     Order deny,allow
     Deny from all
 </FilesMatch>
