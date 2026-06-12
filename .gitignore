@@ -11,3 +11,8 @@ __pycache__/
 .DS_Store
 Thumbs.db
 serve.py
+
+# --- Local FTP deployment bundles (never commit) ---
+deployment/
+deployment/full_deployment/
+deployment/delta_deployment/

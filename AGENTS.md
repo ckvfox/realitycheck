@@ -29,3 +29,14 @@ Allowed work:
 - testing
 - documentation
 - workflow creation
+
+Deployment packaging rules:
+- Create and maintain a local deployment folder structure with:
+	- deployment/full_deployment/
+	- deployment/delta_deployment/
+- Only include files that are actually hosted productively on the web server.
+- Exclude non-productive repository artifacts such as README files, notes, plans, and local helper docs.
+- full_deployment must contain the complete current production upload set.
+- delta_deployment must contain only the files changed in the latest change set to upload as delta.
+- Before preparing a new deployment package, clear both deployment folders and repopulate them from scratch.
+- These deployment folders are local FTP handover folders and must never be committed to GitHub.
