@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://realitycheck.local/standards/compliance-output-schema.json",
+  "title": "FPF Compliance Output",
+  "type": "object",
+  "required": [
+    "project",
+    "frameworkTarget",
+    "date",
+    "status",
+    "score",
+    "findings",
+    "recommendations",
+    "migrationSteps"
+  ],
+  "properties": {
+    "project": { "type": "string" },
+    "frameworkTarget": { "type": "string" },
+    "date": { "type": "string", "format": "date" },
+    "status": {
+      "type": "string",
+      "enum": ["green", "yellow", "red", "framework-unverifizierbar"]
+    },
+    "score": {
+      "anyOf": [
+        { "type": "number", "minimum": 0, "maximum": 100 },
+        { "type": "null" }
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "title", "impact", "nextStep"],
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": ["critical", "warning", "info"]
+          },
+          "title": { "type": "string" },
+          "impact": { "type": "string" },
+          "nextStep": { "type": "string" }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "migrationSteps": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "potentialFrameworkImprovements": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

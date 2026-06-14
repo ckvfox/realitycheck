@@ -1,0 +1,43 @@
+version: "2.0.0"
+project_type: "web_data"
+
+required_files:
+  - README.md
+  - AGENTS.md
+  - CHANGELOG.md
+  - TODO.md
+  - SECURITY.md
+  - .env.example
+  - .gitignore
+  - LICENSE
+  - robots.txt
+  - sitemap.xml
+  - .htaccess
+
+required_directories:
+  - docs/
+  - src/
+  - tests/
+  - build/deployment/full/
+  - build/deployment/delta/
+
+sections:
+  governance:
+    - PROJECT_MASTER.md exists
+    - standards/ exists
+    - changelog maintained
+    - todo maintained
+  security:
+    - no repo secrets
+    - security policy sections available
+    - env variables documented via .env.example
+  deployment:
+    - deployment rules documented
+    - full and delta packaging available
+    - documentation excluded from deployment bundles
+  seo:
+    - robots.txt available
+    - sitemap.xml available
+  ci_github:
+    - at least one workflow available
+    - templates for PR and issues available

@@ -10,6 +10,22 @@
 **Backend:** Python (data fetchers, GPT-based analysis & rankings)  
 **Architecture:** ✨ **OPTIMIZED** Enhanced UX, dynamic legends, CSS optimization
 
+## Framework Governance (FPF 2.0)
+
+This repository now includes Fox Project Framework v2.0.0 baseline anchors for auditable compliance:
+
+- PROJECT_MASTER.md
+- standards/compliance-checklist.yml
+- standards/compliance-scoring.md
+- standards/compliance-output-schema.json
+- profiles/apache-shared-hosting.yml
+
+Migration notes:
+
+- Framework target structure build/deployment/full/ and build/deployment/delta/ is active.
+- Deployment bundles are generated with: python scripts/prepare_deployment.py --mode both
+- Legacy handover folders deployment/full_deployment/ and deployment/delta_deployment/ can be used during transition if required.
+
 ---
 
 

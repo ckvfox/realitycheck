@@ -1,0 +1,48 @@
+{
+  "project": "RealityCheck",
+  "frameworkTarget": "Fox Project Framework v2.0.0",
+  "date": "2026-06-13",
+  "status": "green",
+  "score": 86.3,
+  "findings": [
+    {
+      "severity": "info",
+      "title": "Primary deployment handover moved to framework target paths",
+      "impact": "Packaging now runs primarily on build/deployment paths with documented fallback mode.",
+      "nextStep": "Complete one probation production cycle and then decide whether legacy mirror should be retained or retired."
+    },
+    {
+      "severity": "info",
+      "title": "Deployment packaging now validated in framework target paths",
+      "impact": "Two mirrored parity cycles completed with zero path or hash differences.",
+      "nextStep": "Continue periodic parity checks after major deployment-script changes."
+    },
+    {
+      "severity": "info",
+      "title": "Framework anchors and machine-readable compliance artifacts are now present",
+      "impact": "Fail-fast condition is resolved and scoring-based audits are now possible.",
+      "nextStep": "Keep standards and PROJECT_MASTER synchronized with future governance changes."
+    },
+    {
+      "severity": "info",
+      "title": "Security baseline expanded to lifecycle sections",
+      "impact": "Repository now documents core security workflow and disclosure expectations.",
+      "nextStep": "Add periodic review cadence and verify security contact endpoint in production."
+    }
+  ],
+  "recommendations": [
+    "Keep fallback mirror mode available until one additional probation production cycle is completed.",
+    "Automate compliance report generation and schema validation in CI.",
+    "Add smoke tests for key pages and data integrity checks in tests/."
+  ],
+  "migrationSteps": [
+    "Execute primary packaging with: python scripts/prepare_deployment.py --mode both.",
+    "Use fallback mirror mode when parity verification or rollback preparation is required.",
+    "Track one probation production cycle with build/deployment as primary handover.",
+    "Update AGENTS.md and TODO.md after cutover completion and run a new compliance audit."
+  ],
+  "potentialFrameworkImprovements": [
+    "Introduce a standard phased cutover checklist for projects migrating legacy deployment folders to build/deployment target paths.",
+    "Add a reusable CI template for compliance-output-schema validation and report publication."
+  ]
+}

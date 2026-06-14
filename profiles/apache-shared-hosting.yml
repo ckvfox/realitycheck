@@ -1,0 +1,17 @@
+id: apache-shared-hosting
+version: "2.0.0"
+description: "Profile for Apache-compatible shared hosting deployments (including InfinityFree)."
+
+applies_to:
+  - static web deployments
+  - php-capable shared hosting
+
+required:
+  - .htaccess
+  - robots.txt
+  - sitemap.xml
+
+notes:
+  - verify relative paths and rewrite rules before upload
+  - use conservative delta deployments to avoid partial state drift
+  - exclude documentation and local helper files from deployment bundles

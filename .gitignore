@@ -16,3 +16,9 @@ serve.py
 deployment/
 deployment/full_deployment/
 deployment/delta_deployment/
+
+# --- Framework deployment build outputs (never commit payloads) ---
+build/deployment/full/*
+build/deployment/delta/*
+!build/deployment/full/.gitkeep
+!build/deployment/delta/.gitkeep
