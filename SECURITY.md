@@ -20,6 +20,7 @@ If you discover a vulnerability, report it privately.
 ## Production Hardening
 
 - Production deployment is HTTPS-only.
+- HTTP response headers enforce HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and a restrictive Permissions-Policy.
 - Debug outputs and verbose internal diagnostics must be disabled in production.
 - Public-facing uploads exclude non-productive artifacts and secret-bearing files.
 

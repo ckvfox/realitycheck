@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Updated AGENTS.md with controlled deployment bundle generation command.
 - Extended SECURITY.md to include FPF 2.0 minimum lifecycle sections.
+- Hardened HTTP delivery with HSTS, a restrictive CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy headers.
 - Documented controlled migration path from deployment/full_deployment and deployment/delta_deployment to build/deployment/full and build/deployment/delta.
 - Hardened deployment packaging selector to allowlist-only productive artifacts and robust Windows cleanup behavior.
 - Updated compliance report findings and score after validated packaging run.
