@@ -17,6 +17,7 @@ Deployment packaging rules are defined only in this file.
 - *.png
 - *.jpg
 - *.webp
+- productive frontend scripts in scripts/
 - robots.txt
 - sitemap.xml
 - .htaccess
@@ -31,7 +32,7 @@ Deployment packaging rules are defined only in this file.
 - SECURITY*
 - docs/
 - tests/
-- scripts/
+- non-productive scripts, fetchers, helpers and raw sources
 - .github/
 - .git*
 - .env*

@@ -47,8 +47,6 @@ EXCLUDE_PATTERNS = [
     "docs/**",
     "tests/*",
     "tests/**",
-    "scripts/*",
-    "scripts/**",
     "standards/*",
     "standards/**",
     "profiles/*",
@@ -86,6 +84,17 @@ ALLOWED_FILENAMES = {
     "LICENSE",
 }
 
+PRODUCTIVE_SCRIPT_FILES = {
+    "scripts/core.js",
+    "scripts/page_about.js",
+    "scripts/page_analysis.js",
+    "scripts/page_data_glossary.js",
+    "scripts/script.js",
+    "scripts/script_overall_ranking_countries.js",
+    "scripts/script_world.js",
+    "scripts/utils_ui.js",
+}
+
 
 def sha256_of(path: Path) -> str:
     h = hashlib.sha256()
@@ -114,6 +123,8 @@ def should_exclude(rel_posix: str) -> bool:
 
 
 def is_allowed_productive(rel_posix: str) -> bool:
+    if rel_posix.startswith("scripts/"):
+        return rel_posix in PRODUCTIVE_SCRIPT_FILES
     if rel_posix in ALLOWED_FILENAMES:
         return True
     if rel_posix.startswith(".well-known/"):

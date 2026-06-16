@@ -33,11 +33,11 @@
     (function () {
       // Only allow same-site path redirects to prevent open redirect abuse.
       var params = new URLSearchParams(window.location.search);
-      var requestedPath = params.get("return") || "/countries.html";
+      var requestedPath = params.get("return") || "/";
       var safePath = requestedPath;
 
       if (!safePath.startsWith("/") || safePath.startsWith("//")) {
-        safePath = "/countries.html";
+        safePath = "/";
       }
 
       // JS proof cookie: Apache checks this cookie before serving HTML directly.

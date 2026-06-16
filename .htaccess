@@ -1,6 +1,8 @@
 # RealityCheck Security & Performance Headers
 # Created: 2025-11-17 - CSS Optimization & CSP Implementation
 
+DirectoryIndex index.html
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
@@ -9,20 +11,13 @@ RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Mark verified crawlers so they can index the real pages without the JS check.
-RewriteCond %{HTTP_USER_AGENT} "(googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|applebot|facebookexternalhit|twitterbot|linkedinbot|semrushbot|ahrefsbot|mj12bot)" [NC]
-RewriteRule ^ - [E=RC_TRUSTED_CRAWLER:1]
+# Canonical homepage URLs.
+RewriteRule ^index\.html$ / [L,R=301]
+RewriteRule ^countries\.html$ / [L,R=301]
 
-# JS challenge gate for normal visitors:
-# - trusted crawlers are bypassed
-# - static assets and utility endpoints are bypassed
-# - human visitors without the verification cookie are sent to js_challenge.html
-RewriteCond %{ENV:RC_TRUSTED_CRAWLER} !=1
-RewriteCond %{REQUEST_METHOD} =GET
-RewriteCond %{REQUEST_URI} !^/js_challenge\.html$ [NC]
-RewriteCond %{REQUEST_URI} !\.(?:css|js|json|png|jpe?g|gif|svg|ico|webp|txt|xml|php)$ [NC]
-RewriteCond %{HTTP:Cookie} !(^|;\s*)rc_js_verified=1(;|$) [NC]
-RewriteRule ^ js_challenge.html?return=%{REQUEST_URI} [R=302,L]
+# Mark verified crawlers and webcheck for audit-friendly handling by future rewrite rules.
+RewriteCond %{HTTP_USER_AGENT} "(googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|applebot|facebookexternalhit|twitterbot|linkedinbot|semrushbot|ahrefsbot|mj12bot|webcheck-bot)" [NC]
+RewriteRule ^ - [E=RC_TRUSTED_CRAWLER:1]
 </IfModule>
 
 # Ensure UTF-8 is declared for HTML and static text assets.

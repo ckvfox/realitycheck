@@ -98,7 +98,6 @@ It’s both analytical and exploratory — you can:
 
 ### 📁 **JavaScript Modules:**
 - `page_about.js` - Earth Overshoot Timer & animations
-- `page_index.js` - Redirect logic  
 - `page_data_glossary.js` - Table generation & sorting (200+ lines)
 - `page_analysis.js` - Markdown analysis loader
 
@@ -109,13 +108,13 @@ It’s both analytical and exploratory — you can:
 
 ```
 /
-├── index.html                      # Main shell with navigation & iframe loader
+├── index.html                      # Main countries dashboard homepage
 ├── about.html                      # About page & data source explanation
 ├── style.css                       # Global unified styling
 ├── tracking.php                    # Anonymous visitor logging (server side)
 ├── favicon.ico / favicon.png       # Browser icons
 │
-├── countries.html                  # Country dashboard (table, chart, map, chatbot)
+├── countries.html                  # Backward-compatible redirect to the homepage
 ├── world.html                      # Global OWID trend dashboards
 ├── overall_ranking_countries.html  # Combined KPI-based ranking page
 ├── analysis.html                   # AI-generated analysis rendered via marked.js
@@ -133,7 +132,6 @@ It’s both analytical and exploratory — you can:
 │   ├── script_world.js                   # World trends dashboard
 │   ├── script_overall_ranking_countries.js # Interactive ranking system
 │   ├── page_about.js                     # About page (Earth Overshoot Timer)
-│   ├── page_index.js                     # Index page redirect logic
 │   ├── page_data_glossary.js            # Data glossary table generation & sorting
 │   ├── page_analysis.js                 # Analysis page Markdown loader
 │   ├── floating_chat.js                 # Chatbot integration (in development)
@@ -264,12 +262,12 @@ root before executing the fetcher.
 
 | File | Description |
 |------|--------------|
-| `countries.html` | Interactive KPI explorer with table, chart, map & chatbot |
+| `index.html` | Interactive KPI explorer with table, chart, map & chatbot |
+| `countries.html` | Backward-compatible redirect to `/` |
 | `world.html` | Global trend dashboard via OWID embeds |
 | `overall_ranking_countries.html` | Interactive ranking with KPI weighting |
 | `analysis.html` | Renders Markdown report (`analysis.md`) |
 | `data_glossary.html` | Data freshness, outliers & sources |
-| `index.html` | Shell frame with navigation, loader & iframe system |
 
 ---
 
@@ -287,7 +285,6 @@ root before executing the fetcher.
 ```
 scripts/
 ├── page_about.js         # Earth Overshoot Timer & animations
-├── page_index.js         # Redirect logic 
 ├── page_data_glossary.js # Table generation & sorting (200+ lines)
 ├── page_analysis.js      # Markdown analysis loader
 ├── core.js              # Global utilities & Chart.js config

@@ -26,7 +26,13 @@ All notable changes to this project will be documented in this file.
 - Updated compliance report findings and score after validated packaging run.
 - Activated build/deployment as primary handover command, keeping legacy mirror as fallback mode.
 - Set `index.html` language metadata to `en-US` to match the page's primary language.
-- Added an Apache JS challenge gate with trusted crawler bypass so search bots can crawl real HTML pages while normal visitors still pass a JavaScript anti-abuse check.
+- Removed the Apache JS challenge gate so search bots, audits, and assistive technology can reach real HTML pages without JavaScript verification.
+- Kept trusted crawler and `webcheck-bot` detection markers in `.htaccess` for audit-friendly future rewrite handling.
+- Promoted the countries dashboard to the canonical homepage at `/` and kept `countries.html` as a backward-compatible redirect.
+- Updated sitemap, canonical URLs, OpenGraph/Twitter URLs, manifest start URL, and navigation to use the canonical production domain and homepage.
+- Confirmed security headers remain active without blocking crawlers, audits, or non-JavaScript accessibility checks.
+- Updated deployment packaging to include only productive frontend JavaScript files from `scripts/`.
 
 ### Fixed
 - Fixed prepare_deployment.py syntax and cleanup robustness issues that blocked packaging runs.
+- Added accessible labels for homepage comparison selectors.

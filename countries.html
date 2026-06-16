@@ -1,182 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RealityCheck – Countries Dashboard | Compare 190+ Countries Across 60+ Global Indicators</title>
-  <meta name="description" content="Interactive data-driven platform comparing 190+ countries across economy, society, environment & governance. Explore KPIs, create custom rankings, and discover global insights with Hans Rosling-inspired visualizations.">
-  <meta name="keywords" content="countries comparison, global indicators, KPI dashboard, Hans Rosling, data visualization, world statistics, country rankings, global data analysis">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://realitycheck.ckvfox.net/countries.html">
-  <meta property="og:title" content="RealityCheck – Countries Dashboard">
-  <meta property="og:description" content="Compare 190+ countries across 60+ global indicators. Data-driven insights into economy, society, environment & governance.">
-  <meta property="og:site_name" content="RealityCheck">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://realitycheck.ckvfox.net/countries.html">
-  <meta property="twitter:title" content="RealityCheck – Countries Dashboard">
-  <meta property="twitter:description" content="Compare 190+ countries across 60+ global indicators. Data-driven insights into economy, society, environment & governance.">
-        <meta name="theme-color" content="#1a355e">
-        <meta name="rc-build-version" content="2025-10-24">
-        <link rel="manifest" href="manifest.json">
-
-	<link rel="icon" type="image/png" href="favicon.png">
-	<link rel="apple-touch-icon" href="favicon.png">
-
-  <link rel="stylesheet" href="style.css" />
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.min.js" integrity="sha512-TrzZNOcdTjzp6FQnXUlYrt08pfmmNWYCqfjkVK9sJmLrVo/NBuRnTL2FCg4JMjgm2xbn1MVhDbtedqFIppA6cQ==" crossorigin="anonymous" defer></script>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous" defer></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RealityCheck - Countries Dashboard moved</title>
+  <meta name="description" content="The RealityCheck countries dashboard is now available on the main homepage.">
+  <link rel="canonical" href="https://realitycheck.great-site.net/">
+  <meta http-equiv="refresh" content="0; url=/">
+  <script>
+    window.location.replace("/");
+  </script>
 </head>
-
-<body class="countries-page">
-	<!-- Header wird automatisch über core.js geladen -->
-  <!-- 🔝 Sprungmarke für Scroll-to-Top -->
-  <a id="page-top"></a>
-
-  <div id="overlay-spinner" class="hidden"></div>
-        <button id="scroll-top-btn" title="Scroll to top" aria-label="Scroll to top">⬆️</button>
-	 
-  <section class="page-intro">
-    <h1>🗺️ Countries Dashboard</h1>
-    <p>
-      The world is in turmoil. Radicalization, polarization, and populism often dominate the headlines — 
-      and many say that everything used to be better and that today everything is going downhill. 
-      But is that really true?
-    </p>
-    <p>
-      <strong>No!</strong> At least not in many areas. The facts paint a different picture. 
-      Prejudices and gut feelings can be refuted with data from reliable sources. 
-      When you compare key figures, put them into context (per capita, per km², per GDP) 
-      and also look at historical developments, you realize that many things are constantly improving — worldwide.
-    </p>
-    <p>
-      This project is inspired by <strong><em>Hans Rosling</em></strong>’s book 
-      <a href="https://en.wikipedia.org/wiki/Factfulness" target="_blank" rel="noopener"><em>Factfulness</em></a> 
-      and invites you to discover and classify the data yourself. 
-      In the spirit of <strong><em>W. Edwards Deming</em></strong> – “In God we trust. All others must bring data” – 
-      we aim to foster a more nuanced understanding of global trends.
-    </p>
-    <p class="note">
-      Each chart and map below visualizes a key national indicator from the RealityCheck dataset — 
-      offering perspective on where each country stands and how it evolves over time.
-    </p>
-  </section>
-
-  <!-- Controls -->
-  <section id="controls" class="map-controls">
-    <div class="select-wrapper">
-      <label for="kpiSelect">KPI:</label>
-      <select id="kpiSelect"></select>
-    </div>
-    <div class="select-wrapper">
-      <label for="yearSelect">Comparison Year:</label>
-      <select id="yearSelect"></select>
-    </div>
-    <div class="select-wrapper">
-      <label for="relationSelect">Relation:</label>
-      <select id="relationSelect">
-        <option value="absolute">Absolute</option>
-        <option value="percapita">Per Capita</option>
-        <option value="pergdp">Per GDP</option>
-        <option value="perkm2">Per km²</option>
-      </select>
-    </div>
-    <div class="select-wrapper">
-      <label for="countrySelect">Home Country:</label>
-      <select id="countrySelect"></select>
-    </div>
-  </section>
-
-  <!-- Warnbox & KPI-Beschreibung -->
-  <div id="warning-box" class="hidden page-intro">
-    ⚠️ <strong>Attention:</strong> No current data is available for some countries. Older values were used.
-  </div>
-
-  <div id="kpi-description" class="page-intro"></div>
-
-  <!-- 🧠 Smart KPI Analysis -->
-  <div id="kpi-analysis" class="page-intro">
-    <em>AI-based insights for this indicator will appear here…</em>
-  </div>
-
-	<!-- Tabelle -->
-	<section id="data-table" class="table-section">
-		<div class="table-wrapper">
-			<table id="country-table" aria-label="Country data table">
-				<thead>
-					<tr>
-                                                <th scope="col" data-col="rank">Rank</th>
-                                                <th scope="col" data-col="country">Country</th>
-                                                <th scope="col" data-col="value">Value</th>
-                                                <th scope="col" title="Change vs previous year">Δ vs Prev</th>
-                                                <th scope="col" title="Change vs comparison year">Δ vs Year</th>
-                                                <th scope="col">Update</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
-		</div>
-	</section>
-
-  <!-- Quelle & Datum -->
-  <div id="data-meta">
-    Source: <a id="data-source" href="#" target="_blank" rel="noopener">---</a><br>
-    Last update: <span id="data-date">---</span>
-  </div>
-
-  <!-- Chart -->
-  <section id="chart-container">
-    <canvas id="kpi-chart"></canvas>
-
-    <div class="chart-selects">
-      <label>Compare:</label>
-      <select id="country1Select"></select>
-      <select id="country2Select"></select>
-      <select id="country3Select"></select>
-    </div>
-  </section>
-
-  <!-- Map -->
-  <section id="map-section">
-    <div id="map"></div>
-		<div id="map-legend"></div>
-  </section>
-
-  <!-- Legende -->
-  <section id="legend">
-    <h3>Legend:</h3>
-    <ul>
-      <li>↑ Increase, ↓ Decrease, → No change (Δ vs previous year; hover for details)</li>
-      <li>Δ vs Comparison Year in %</li>
-      <li id="rounding-info">Values shown consistently per KPI</li>
-      <li>Data correctness lies with the original source</li>
-      <li>Groups have no ranking, Δ vs PrevYear, and no comparison year values</li>
-      <li>Countries without available data for the selected KPI are not shown in the table</li>
-      <li>KPIs in <em>grey italic</em> have no data available yet</li>
-      <li>Groups (e.g. NATO, EU) are shown after countries, calculated as the sum of their members</li>
-    </ul>
-  </section>
-
-  <!-- ⚠️ AI Disclaimer -->
-  <p class="page-disclaimer">
-    ⚠️ Interpretations and insights on this page may include AI-generated analyses based on public datasets.
-    Data accuracy and copyright remain with the original publishers (World Bank, UN, OWID, etc.).
-  </p>
-
-  <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js" integrity="sha512-g2TeAWw5GPnX7z0Kn8nFbYfeHcvAu/tx6d6mrLe/90mkCxO+RcptyYpksUz35EO337F83bZwcmUyHiHamspkfg==" crossorigin="anonymous" defer></script>
-  
-  <!-- Footer wird automatisch über core.js geladen -->
-  <!-- 🧠 Shared RealityCheck Core -->
-  <script src="scripts/utils_ui.js" defer></script>
-  <script src="scripts/core.js?v=20251119-1" defer></script>
-  <script src="scripts/script.js?v=20251119-1" defer></script>
-
+<body>
+  <main class="page-intro">
+    <h1>RealityCheck Countries Dashboard</h1>
+    <p>The countries dashboard moved to the RealityCheck homepage. Continue to <a href="/">RealityCheck</a>.</p>
+  </main>
 </body>
 </html>
-

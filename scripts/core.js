@@ -231,8 +231,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.body.prepend(header);
 
     const current = location.pathname.split("/").pop();
+    const activePage = current === "" || current === "index.html" || current === "countries.html"
+      ? "/"
+      : current;
     header.querySelectorAll("nav a").forEach(a => {
-      if (a.getAttribute("href") === current) a.classList.add("active");
+      if (a.getAttribute("href") === activePage) a.classList.add("active");
     });
 
     const footer = document.createElement("div");
