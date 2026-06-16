@@ -27,8 +27,8 @@ AddCharset UTF-8 .html .htm .css .js .json .xml .svg
 # Enforce HTTPS for a long-lived secure browsing context.
 Header always set Strict-Transport-Security "max-age=15552000"
 
-# Content Security Policy - Complete Google Translate support
-Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; script-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net translate.google.com translate.googleapis.com translate-pa.googleapis.com *.gstatic.com; style-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net translate.googleapis.com *.gstatic.com www.gstatic.com; img-src 'self' data: *.tile.openstreetmap.org *.infinityfree.net translate.google.com translate.googleapis.com *.gstatic.com www.google.com fonts.gstatic.com; connect-src 'self' api.worldbank.org raw.githubusercontent.com unpkg.com cdn.jsdelivr.net translate.googleapis.com translate-pa.googleapis.com; font-src 'self' translate.googleapis.com fonts.gstatic.com *.gstatic.com; object-src 'none';"
+# Content Security Policy - external scripts only, with Google Translate support.
+Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; script-src 'self' unpkg.com cdn.jsdelivr.net translate.google.com translate.googleapis.com translate-pa.googleapis.com *.gstatic.com; style-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net translate.googleapis.com *.gstatic.com www.gstatic.com; img-src 'self' data: *.tile.openstreetmap.org *.infinityfree.net translate.google.com translate.googleapis.com *.gstatic.com www.google.com fonts.gstatic.com; connect-src 'self' api.worldbank.org raw.githubusercontent.com unpkg.com cdn.jsdelivr.net translate.googleapis.com translate-pa.googleapis.com; font-src 'self' translate.googleapis.com fonts.gstatic.com *.gstatic.com; object-src 'none';"
 
 # X-Frame-Options to prevent clickjacking
 Header always set X-Frame-Options "SAMEORIGIN"
@@ -42,8 +42,8 @@ Header always set Permissions-Policy "accelerometer=(), autoplay=(), camera=(), 
 # X-XSS-Protection (legacy but still useful)
 Header always set X-XSS-Protection "1; mode=block"
 
-# Referrer Policy - moderate privacy protection
-Header always set Referrer-Policy "no-referrer-when-downgrade"
+# Referrer Policy - privacy-preserving cross-origin behavior.
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
 # Performance: Enable compression for text files
 <IfModule mod_deflate.c>

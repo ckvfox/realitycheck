@@ -1173,7 +1173,7 @@ async function updateMap() {
                         const tooltip = `
                                 <div class="map-tooltip">
                                         <div class="map-tooltip__header">
-                                                <img class="map-tooltip__flag" src="${flagSrc}" alt="Flag of ${cname}" loading="lazy" onerror="this.onerror=null;this.src='images/flag/question.svg';" />
+                                                <img class="map-tooltip__flag" src="${flagSrc}" alt="Flag of ${cname}" loading="lazy" />
                                                 <div class="map-tooltip__title">${cname}</div>
                                         </div>
                                         <div class="map-tooltip__value">${displayValue}</div>
@@ -1185,6 +1185,17 @@ async function updateMap() {
                                 </div>
                         `;
 			layer.bindTooltip(tooltip, { sticky: true });
+			layer.on("tooltipopen", e => {
+				const flag = e.tooltip.getElement()?.querySelector(".map-tooltip__flag");
+				if (!flag) return;
+				const useFallbackFlag = () => {
+					flag.src = "images/flag/question.svg";
+				};
+				flag.addEventListener("error", useFallbackFlag, { once: true });
+				if (flag.complete && flag.naturalWidth === 0) {
+					useFallbackFlag();
+				}
+			});
 
 			layer.on({
 				mouseover: e => e.target.setStyle({ weight: 1.2, color: "#000", fillOpacity: 0.9 }),
