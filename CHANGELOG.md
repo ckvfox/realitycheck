@@ -25,6 +25,8 @@ All notable changes to this project will be documented in this file.
 - Hardened deployment packaging selector to allowlist-only productive artifacts and robust Windows cleanup behavior.
 - Updated compliance report findings and score after validated packaging run.
 - Activated build/deployment as primary handover command, keeping legacy mirror as fallback mode.
+- Set `index.html` language metadata to `en-US` to match the page's primary language.
+- Added an Apache JS challenge gate with trusted crawler bypass so search bots can crawl real HTML pages while normal visitors still pass a JavaScript anti-abuse check.
 
 ### Fixed
 - Fixed prepare_deployment.py syntax and cleanup robustness issues that blocked packaging runs.
