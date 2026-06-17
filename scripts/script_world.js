@@ -264,6 +264,14 @@ let worldMapGroups = {};
 let worldMapPopulation = []; // Changed from {} to [] for array operations
 let worldMapCountryMappings = {};
 
+function getWorldMapGroupTitle(groupName) {
+  const group = worldMapGroups[groupName];
+  const title = group?.title || groupName;
+  const parser = document.createElement('template');
+  parser.innerHTML = title;
+  return (parser.content.textContent || groupName).trim();
+}
+
 async function initWorldMap() {
   try {
     // Lade Daten
@@ -340,7 +348,7 @@ function updateCategoryOptions() {
       option.value = groupName;
       const members = worldMapGroups[groupName].members || worldMapGroups[groupName];
       const memberCount = Array.isArray(members) ? members.length : 0;
-      option.textContent = `${groupName} (${memberCount} countries)`;
+      option.textContent = `${getWorldMapGroupTitle(groupName)} (${memberCount} countries)`;
       categorySelect.appendChild(option);
     });
   } else if (grouping === 'government' || grouping === 'language') {
@@ -663,14 +671,18 @@ function updateMapLegend(grouping, category, countryCount) {
       'BRICS': 'BRICS brings together major emerging economies to promote cooperation outside traditional Western-led institutions. The group focuses on economic development, trade, and financial coordination. It aims to increase the global influence of member states. BRICS created its own development bank to support infrastructure and growth projects. Members also discuss geopolitical issues and alternative governance models. The goal is a more balanced and multipolar world order.',
       'OECD': 'The OECD promotes economic growth, good governance, and social well-being. It provides research, policy recommendations, and data to help countries improve their economies. Members cooperate on taxation, education, trade, and environmental issues. The organization encourages transparent and evidence-based policymaking. It also monitors global trends and supports fair and sustainable development. The OECD\'s mission is to build better policies for better lives.',
       'NATO': 'NATO is a collective defense alliance committed to protecting the security of its members. An attack on one is considered an attack on all. The alliance promotes military cooperation, joint exercises, and crisis management. It also engages in peacekeeping and stabilizing missions worldwide. NATO supports democratic values and helps partners modernize their armed forces. Its core purpose is to ensure peace and security across the North Atlantic region.',
+      'UNSecurityCouncilPermanent': 'The permanent members of the United Nations Security Council are China, France, Russia, the United Kingdom, and the United States. They hold permanent seats and veto power in decisions on international peace and security. This status gives them a central role in authorizing peacekeeping missions, sanctions, and the use of force under the UN Charter. The group reflects the post-World War II order and remains one of the most influential structures in global governance.',
       'ASEAN': 'ASEAN seeks to strengthen political and economic cooperation in Southeast Asia. It supports regional stability, conflict prevention, and peaceful dialogue. The group works to integrate economies through trade agreements and shared development goals. ASEAN also cooperates on education, health, and environmental issues. It promotes cultural exchange and regional identity. Its long-term aim is a more unified and resilient Southeast Asia.',
       'Mercosur': 'Mercosur promotes economic integration among South American countries. It aims to create a free-trade area with reduced tariffs and common external policies. Members cooperate on infrastructure, industry, and agricultural development. The bloc also works to coordinate foreign policy positions. Mercosur supports regional mobility and cultural exchange. Its mission is a more unified and competitive South American market.',
       'APEC': 'APEC works to promote free and open trade across the Asia-Pacific region. It aims to reduce barriers to commerce and support sustainable economic growth. The group emphasizes cooperation rather than binding treaties. APEC also supports innovation, digital transformation, and economic integration. Its projects help improve productivity and strengthen supply chains. The core mission is to create a stable, prosperous Asia-Pacific community.',
       'AfricanUnion': 'The African Union promotes unity and cooperation among African states. It aims to support economic development, peace, and political stability across the continent. The AU works to coordinate policies on trade, infrastructure, and security. It also plays a major role in conflict resolution and peacekeeping. The organization advocates for Africa\'s interests on the global stage. Its long-term mission is to build a more integrated and prosperous Africa.'
     };
     
-    title = `${category} (${countryCount} countries)`;
-    content = groupDescriptions[category] || `${category} is an international grouping of ${countryCount} countries.`;
+    const groupTitle = getWorldMapGroupTitle(category);
+    title = `${groupTitle} (${countryCount} countries)`;
+    content = worldMapGroups[category]?.description ||
+      groupDescriptions[category] ||
+      `${groupTitle} is an international grouping of ${countryCount} countries.`;
     
   } else if (grouping === 'language') {
     // Calculate total speakers from actual population data

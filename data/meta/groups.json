@@ -42,7 +42,12 @@
   "NATO": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/NATO\" target=\"_blank\" rel=\"noopener\">NATO</a>",
     "description": "NATO is a collective defense alliance committed to protecting the security of its members. An attack on one is considered an attack on all. The alliance promotes military cooperation, joint exercises, and crisis management. It also engages in peacekeeping and stabilizing missions worldwide. NATO supports democratic values and helps partners modernize their armed forces. Its core purpose is to ensure peace and security across the North Atlantic region.",
-    "members": [ "Albania", "Belgium", "Bulgaria", "Canada", "Croatia", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Montenegro", "Netherlands", "North Macedonia", "Norway", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Turkey", "United Kingdom", "United States" ]
+    "members": [ "Albania", "Belgium", "Bulgaria", "Canada", "Croatia", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Montenegro", "Netherlands", "North Macedonia", "Norway", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden", "Turkey", "United Kingdom", "United States" ]
+  },
+  "UNSecurityCouncilPermanent": {
+    "title": "<a href=\"https://en.wikipedia.org/wiki/Permanent_members_of_the_United_Nations_Security_Council\" target=\"_blank\" rel=\"noopener\">UN Security Council Permanent Members</a>",
+    "description": "The permanent members of the United Nations Security Council are China, France, Russia, the United Kingdom, and the United States. They hold permanent seats and veto power in decisions on international peace and security. This status gives them a central role in authorizing peacekeeping missions, sanctions, and the use of force under the UN Charter. The group reflects the post-World War II order and remains one of the most influential structures in global governance.",
+    "members": [ "China", "France", "Russia", "United Kingdom", "United States" ]
   },
   "OECD": {
     "title": "<a href=\"https://en.wikipedia.org/wiki/OECD\" target=\"_blank\" rel=\"noopener\">OECD</a>",

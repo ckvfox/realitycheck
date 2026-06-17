@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 - Added probation-cycle execution checklist for primary deployment switch: docs/deployment_probation_cycle_checklist.md.
 - Added local probation evidence report for primary deployment cycle: docs/deployment_probation_cycle_2026-06-14.md.
 - Added compliance audit artifact: docs/compliance_report_2026-06-13.json.
+- Added UN Security Council permanent members as a World map country grouping.
 
 ### Changed
 - Updated AGENTS.md with controlled deployment bundle generation command.
@@ -33,6 +34,7 @@ All notable changes to this project will be documented in this file.
 - Updated sitemap, canonical URLs, OpenGraph/Twitter URLs, manifest start URL, and navigation to use the canonical production domain and homepage.
 - Confirmed security headers remain active without blocking crawlers, audits, or non-JavaScript accessibility checks.
 - Updated deployment packaging to include only productive frontend JavaScript files from `scripts/`.
+- Updated the NATO country grouping to include Sweden.
 
 ### Fixed
 - Fixed prepare_deployment.py syntax and cleanup robustness issues that blocked packaging runs.
