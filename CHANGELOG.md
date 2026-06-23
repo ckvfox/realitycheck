@@ -17,6 +17,8 @@ All notable changes to this project will be documented in this file.
 - Added local probation evidence report for primary deployment cycle: docs/deployment_probation_cycle_2026-06-14.md.
 - Added compliance audit artifact: docs/compliance_report_2026-06-13.json.
 - Added UN Security Council permanent members as a World map country grouping.
+- Added structure harmonization notes that distinguish FPF target deployment paths from existing legacy fallback folders.
+- Documented existing-project protection for productive root HTML, `scripts/`, `data/` and `images/` paths.
 
 ### Changed
 - Updated AGENTS.md with controlled deployment bundle generation command.
@@ -39,3 +41,5 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Fixed prepare_deployment.py syntax and cleanup robustness issues that blocked packaging runs.
 - Added accessible labels for homepage comparison selectors.
+
+

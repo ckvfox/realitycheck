@@ -19,3 +19,10 @@
 
 - Keep deployment/full_deployment and deployment/delta_deployment as permanent mirror or retire after stabilization?
 - Should deployment state file be retained between release cycles or reset per tagged release?
+
+## Structure Harmonization
+
+- [ ] Decide after stabilization whether legacy `deployment/full_deployment/` and `deployment/delta_deployment/` can be retired.
+- [ ] Keep README structure inventory aligned when data, scripts or deployment folders change.
+- [ ] Ensure WebCheck/FPF audits classify productive `scripts/` browser code as a documented exception.
+

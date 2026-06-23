@@ -331,3 +331,17 @@ for everyone who believes that numbers tell a truer story than opinions.
 ---
 
 © 2025 RealityCheck Project – Created by Carsten Winterling
+
+## Structure Harmonization and Existing-Project Protection
+
+RealityCheck is an existing web and data project. Current productive paths remain protected: root HTML entry files, `scripts/`, `data/`, `images/`, `build/deployment/` and the legacy fallback handover folders under `deployment/`.
+
+FPF target standard for new projects:
+
+- `build/deployment/full/` and `build/deployment/delta/` are the preferred deployment package paths
+- legacy `deployment/full_deployment/` and `deployment/delta_deployment/` remain fallback-only until a controlled cutover retires them
+- frontend JavaScript may stay in `scripts/` because this project has documented that path as productive browser code
+- data artifacts stay in `data/`; generated reports or audits should be documented separately
+
+Do not rename productive paths during routine harmonization. Document deviations and handle migrations only through a reversible deployment plan.
+

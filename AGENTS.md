@@ -105,3 +105,13 @@ Allowed work categories:
 - Before changes, read README.md, AGENTS.md, CHANGELOG.md and TODO.md.
 - After changes, verify whether README.md, AGENTS.md, CHANGELOG.md, TODO.md, SECURITY.md, robots.txt, sitemap.xml and deployment packaging need updates.
 - If configuration is needed, use .env.example and never request or reveal real secret values unless explicitly required for secret debugging.
+
+## Structure Harmonization
+
+This repository is an existing project. Low-risk harmonization means documentation and inventory updates, not functional path migration.
+
+- Keep root HTML pages, `scripts/`, `data/`, `images/`, `build/deployment/` and legacy `deployment/` handover paths stable.
+- Treat `build/deployment/` as framework target and `deployment/` as controlled fallback unless a separate cutover retires it.
+- Productive browser JavaScript in `scripts/` is an explicit project convention.
+- Document deviations from new-project FPF target structure in README, AGENTS or TODO instead of renaming files.
+
