@@ -4,7 +4,7 @@
     "ranks": {
       "gini_index": 1,
       "unemployment_rate": 97,
-      "inflation_consumer_price_index": 73,
+      "inflation_consumer_price_index": 120,
       "employment_to_population_ratio": 94,
       "female_labor_force_participation": 79,
       "education_expenditure_of_gdp": 73,
@@ -32,7 +32,7 @@
     "ranks": {
       "gini_index": 2,
       "unemployment_rate": 53,
-      "inflation_consumer_price_index": 139,
+      "inflation_consumer_price_index": 147,
       "employment_to_population_ratio": 68,
       "female_labor_force_participation": 66,
       "education_expenditure_of_gdp": 63,
@@ -56,7 +56,7 @@
     "country": "Kiribati",
     "ranks": {
       "gini_index": 3,
-      "inflation_consumer_price_index": 67,
+      "inflation_consumer_price_index": 73,
       "education_expenditure_of_gdp": 1,
       "human_development_index_hdi": 140,
       "general_government_gross_debt_gdp": 6,
@@ -73,7 +73,7 @@
     "ranks": {
       "gini_index": 4,
       "unemployment_rate": 44,
-      "inflation_consumer_price_index": 47,
+      "inflation_consumer_price_index": 70,
       "employment_to_population_ratio": 106,
       "female_labor_force_participation": 100,
       "education_expenditure_of_gdp": 48,
@@ -101,7 +101,7 @@
     "ranks": {
       "gini_index": 5,
       "unemployment_rate": 69,
-      "inflation_consumer_price_index": 132,
+      "inflation_consumer_price_index": 71,
       "employment_to_population_ratio": 125,
       "female_labor_force_participation": 156,
       "education_expenditure_of_gdp": 99,
@@ -128,7 +128,7 @@
     "ranks": {
       "gini_index": 6,
       "unemployment_rate": 144,
-      "inflation_consumer_price_index": 145,
+      "inflation_consumer_price_index": 167,
       "employment_to_population_ratio": 142,
       "female_labor_force_participation": 120,
       "education_expenditure_of_gdp": 59,
@@ -156,7 +156,7 @@
     "ranks": {
       "gini_index": 7,
       "unemployment_rate": 32,
-      "inflation_consumer_price_index": 65,
+      "inflation_consumer_price_index": 74,
       "employment_to_population_ratio": 84,
       "female_labor_force_participation": 89,
       "education_expenditure_of_gdp": 91,
@@ -184,7 +184,7 @@
     "ranks": {
       "gini_index": 8,
       "unemployment_rate": 65,
-      "inflation_consumer_price_index": 102,
+      "inflation_consumer_price_index": 92,
       "employment_to_population_ratio": 38,
       "female_labor_force_participation": 30,
       "education_expenditure_of_gdp": 56,
@@ -211,7 +211,7 @@
     "ranks": {
       "gini_index": 9,
       "unemployment_rate": 160,
-      "inflation_consumer_price_index": 164,
+      "inflation_consumer_price_index": 169,
       "employment_to_population_ratio": 175,
       "female_labor_force_participation": 176,
       "education_expenditure_of_gdp": 60,
@@ -234,7 +234,7 @@
     "ranks": {
       "gini_index": 10,
       "unemployment_rate": 19,
-      "inflation_consumer_price_index": 41,
+      "inflation_consumer_price_index": 37,
       "employment_to_population_ratio": 11,
       "female_labor_force_participation": 92,
       "education_expenditure_of_gdp": 109,
@@ -261,7 +261,7 @@
     "ranks": {
       "gini_index": 11,
       "unemployment_rate": 77,
-      "inflation_consumer_price_index": 92,
+      "inflation_consumer_price_index": 88,
       "employment_to_population_ratio": 54,
       "female_labor_force_participation": 36,
       "education_expenditure_of_gdp": 40,
@@ -289,7 +289,7 @@
     "ranks": {
       "gini_index": 12,
       "unemployment_rate": 100,
-      "inflation_consumer_price_index": 57,
+      "inflation_consumer_price_index": 143,
       "employment_to_population_ratio": 75,
       "female_labor_force_participation": 47,
       "education_expenditure_of_gdp": 118,
@@ -316,7 +316,7 @@
     "ranks": {
       "gini_index": 13,
       "unemployment_rate": 104,
-      "inflation_consumer_price_index": 91,
+      "inflation_consumer_price_index": 75,
       "employment_to_population_ratio": 132,
       "female_labor_force_participation": 115,
       "education_expenditure_of_gdp": 24,
@@ -344,7 +344,7 @@
     "ranks": {
       "gini_index": 14,
       "unemployment_rate": 60,
-      "inflation_consumer_price_index": 140,
+      "inflation_consumer_price_index": 126,
       "employment_to_population_ratio": 17,
       "female_labor_force_participation": 19,
       "education_expenditure_of_gdp": 14,
@@ -371,7 +371,7 @@
     "ranks": {
       "gini_index": 15,
       "unemployment_rate": 10,
-      "inflation_consumer_price_index": 128,
+      "inflation_consumer_price_index": 152,
       "employment_to_population_ratio": 20,
       "female_labor_force_participation": 14,
       "education_expenditure_of_gdp": 19,
@@ -397,7 +397,7 @@
     "ranks": {
       "gini_index": 16,
       "unemployment_rate": 17,
-      "inflation_consumer_price_index": 96,
+      "inflation_consumer_price_index": 142,
       "employment_to_population_ratio": 144,
       "female_labor_force_participation": 136,
       "education_expenditure_of_gdp": 47,
@@ -416,7 +416,7 @@
     "ranks": {
       "gini_index": 17,
       "unemployment_rate": 158,
-      "inflation_consumer_price_index": 4,
+      "inflation_consumer_price_index": 94,
       "employment_to_population_ratio": 127,
       "female_labor_force_participation": 109,
       "education_expenditure_of_gdp": 163,
@@ -442,7 +442,7 @@
     "ranks": {
       "gini_index": 18,
       "unemployment_rate": 143,
-      "inflation_consumer_price_index": 38,
+      "inflation_consumer_price_index": 15,
       "employment_to_population_ratio": 119,
       "female_labor_force_participation": 71,
       "education_expenditure_of_gdp": 22,
@@ -470,7 +470,7 @@
     "ranks": {
       "gini_index": 19,
       "unemployment_rate": 56,
-      "inflation_consumer_price_index": 133,
+      "inflation_consumer_price_index": 155,
       "employment_to_population_ratio": 109,
       "female_labor_force_participation": 133,
       "education_expenditure_of_gdp": 16,
@@ -496,7 +496,7 @@
     "ranks": {
       "gini_index": 20,
       "unemployment_rate": 152,
-      "inflation_consumer_price_index": 115,
+      "inflation_consumer_price_index": 42,
       "employment_to_population_ratio": 166,
       "female_labor_force_participation": 174,
       "education_expenditure_of_gdp": 5,
@@ -522,7 +522,7 @@
     "ranks": {
       "gini_index": 21,
       "unemployment_rate": 45,
-      "inflation_consumer_price_index": 74,
+      "inflation_consumer_price_index": 104,
       "employment_to_population_ratio": 52,
       "female_labor_force_participation": 67,
       "education_expenditure_of_gdp": 32,
@@ -547,7 +547,7 @@
     "ranks": {
       "gini_index": 22,
       "unemployment_rate": 118,
-      "inflation_consumer_price_index": 174,
+      "inflation_consumer_price_index": 171,
       "employment_to_population_ratio": 155,
       "female_labor_force_participation": 171,
       "education_expenditure_of_gdp": 112,
@@ -602,7 +602,7 @@
     "ranks": {
       "gini_index": 24,
       "unemployment_rate": 14,
-      "inflation_consumer_price_index": 51,
+      "inflation_consumer_price_index": 18,
       "employment_to_population_ratio": 33,
       "female_labor_force_participation": 40,
       "education_expenditure_of_gdp": 51,
@@ -627,7 +627,7 @@
     "ranks": {
       "gini_index": 25,
       "unemployment_rate": 76,
-      "inflation_consumer_price_index": 53,
+      "inflation_consumer_price_index": 61,
       "employment_to_population_ratio": 58,
       "female_labor_force_participation": 50,
       "education_expenditure_of_gdp": 146,
@@ -655,7 +655,7 @@
     "ranks": {
       "gini_index": 26,
       "unemployment_rate": 79,
-      "inflation_consumer_price_index": 154,
+      "inflation_consumer_price_index": 165,
       "employment_to_population_ratio": 39,
       "female_labor_force_participation": 31,
       "education_expenditure_of_gdp": 67,
@@ -682,7 +682,7 @@
     "ranks": {
       "gini_index": 27,
       "unemployment_rate": 72,
-      "inflation_consumer_price_index": 33,
+      "inflation_consumer_price_index": 122,
       "employment_to_population_ratio": 67,
       "female_labor_force_participation": 143,
       "education_expenditure_of_gdp": 57,
@@ -705,7 +705,7 @@
     "ranks": {
       "gini_index": 28,
       "unemployment_rate": 135,
-      "inflation_consumer_price_index": 77,
+      "inflation_consumer_price_index": 24,
       "employment_to_population_ratio": 81,
       "female_labor_force_participation": 42,
       "education_expenditure_of_gdp": 13,
@@ -733,7 +733,7 @@
     "ranks": {
       "gini_index": 29,
       "unemployment_rate": 148,
-      "inflation_consumer_price_index": 58,
+      "inflation_consumer_price_index": 59,
       "employment_to_population_ratio": 93,
       "female_labor_force_participation": 56,
       "education_expenditure_of_gdp": 142,
@@ -760,7 +760,7 @@
     "ranks": {
       "gini_index": 30,
       "unemployment_rate": 92,
-      "inflation_consumer_price_index": 151,
+      "inflation_consumer_price_index": 103,
       "employment_to_population_ratio": 137,
       "female_labor_force_participation": 135,
       "education_expenditure_of_gdp": 183,
@@ -784,7 +784,7 @@
     "ranks": {
       "gini_index": 31,
       "unemployment_rate": 165,
-      "inflation_consumer_price_index": 162,
+      "inflation_consumer_price_index": 13,
       "employment_to_population_ratio": 169,
       "female_labor_force_participation": 177,
       "education_expenditure_of_gdp": 121,
@@ -809,7 +809,7 @@
     "ranks": {
       "gini_index": 32,
       "unemployment_rate": 108,
-      "inflation_consumer_price_index": 138,
+      "inflation_consumer_price_index": 149,
       "employment_to_population_ratio": 146,
       "female_labor_force_participation": 138,
       "education_expenditure_of_gdp": 132,
@@ -837,7 +837,7 @@
     "ranks": {
       "gini_index": 33,
       "unemployment_rate": 101,
-      "inflation_consumer_price_index": 32,
+      "inflation_consumer_price_index": 52,
       "employment_to_population_ratio": 64,
       "female_labor_force_participation": 46,
       "education_expenditure_of_gdp": 23,
@@ -865,7 +865,7 @@
     "ranks": {
       "gini_index": 34,
       "unemployment_rate": 147,
-      "inflation_consumer_price_index": 129,
+      "inflation_consumer_price_index": 79,
       "employment_to_population_ratio": 168,
       "female_labor_force_participation": 160,
       "education_expenditure_of_gdp": 117,
@@ -891,7 +891,7 @@
     "ranks": {
       "gini_index": 35,
       "unemployment_rate": 85,
-      "inflation_consumer_price_index": 87,
+      "inflation_consumer_price_index": 108,
       "employment_to_population_ratio": 140,
       "female_labor_force_participation": 124,
       "education_expenditure_of_gdp": 100,
@@ -919,7 +919,7 @@
     "ranks": {
       "gini_index": 36,
       "unemployment_rate": 150,
-      "inflation_consumer_price_index": 43,
+      "inflation_consumer_price_index": 146,
       "employment_to_population_ratio": 154,
       "female_labor_force_participation": 146,
       "education_expenditure_of_gdp": 133,
@@ -945,7 +945,7 @@
     "ranks": {
       "gini_index": 37,
       "unemployment_rate": 64,
-      "inflation_consumer_price_index": 134,
+      "inflation_consumer_price_index": 91,
       "employment_to_population_ratio": 123,
       "female_labor_force_participation": 121,
       "education_expenditure_of_gdp": 164,
@@ -967,7 +967,7 @@
     "ranks": {
       "gini_index": 38,
       "unemployment_rate": 73,
-      "inflation_consumer_price_index": 110,
+      "inflation_consumer_price_index": 130,
       "employment_to_population_ratio": 90,
       "female_labor_force_participation": 86,
       "education_expenditure_of_gdp": 111,
@@ -995,7 +995,7 @@
     "ranks": {
       "gini_index": 39,
       "unemployment_rate": 130,
-      "inflation_consumer_price_index": 105,
+      "inflation_consumer_price_index": 137,
       "employment_to_population_ratio": 77,
       "female_labor_force_participation": 45,
       "education_expenditure_of_gdp": 55,
@@ -1023,7 +1023,7 @@
     "ranks": {
       "gini_index": 40,
       "unemployment_rate": 96,
-      "inflation_consumer_price_index": 114,
+      "inflation_consumer_price_index": 41,
       "employment_to_population_ratio": 118,
       "female_labor_force_participation": 148,
       "education_expenditure_of_gdp": 95,
@@ -1047,7 +1047,7 @@
     "ranks": {
       "gini_index": 41,
       "unemployment_rate": 41,
-      "inflation_consumer_price_index": 155,
+      "inflation_consumer_price_index": 161,
       "employment_to_population_ratio": 124,
       "female_labor_force_participation": 141,
       "education_expenditure_of_gdp": 176,
@@ -1098,7 +1098,7 @@
     "ranks": {
       "gini_index": 43,
       "unemployment_rate": 51,
-      "inflation_consumer_price_index": 169,
+      "inflation_consumer_price_index": 168,
       "employment_to_population_ratio": 30,
       "female_labor_force_participation": 57,
       "education_expenditure_of_gdp": 166,
@@ -1124,7 +1124,7 @@
     "ranks": {
       "gini_index": 44,
       "unemployment_rate": 102,
-      "inflation_consumer_price_index": 85,
+      "inflation_consumer_price_index": 101,
       "employment_to_population_ratio": 96,
       "female_labor_force_participation": 80,
       "education_expenditure_of_gdp": 49,
@@ -1152,7 +1152,7 @@
     "ranks": {
       "gini_index": 45,
       "unemployment_rate": 93,
-      "inflation_consumer_price_index": 143,
+      "inflation_consumer_price_index": 157,
       "employment_to_population_ratio": 101,
       "female_labor_force_participation": 106,
       "education_expenditure_of_gdp": 54,
@@ -1179,7 +1179,7 @@
     "ranks": {
       "gini_index": 46,
       "unemployment_rate": 120,
-      "inflation_consumer_price_index": 62,
+      "inflation_consumer_price_index": 55,
       "employment_to_population_ratio": 71,
       "female_labor_force_participation": 49,
       "education_expenditure_of_gdp": 69,
@@ -1207,7 +1207,7 @@
     "ranks": {
       "gini_index": 47,
       "unemployment_rate": 83,
-      "inflation_consumer_price_index": 45,
+      "inflation_consumer_price_index": 5,
       "employment_to_population_ratio": 44,
       "female_labor_force_participation": 43,
       "education_expenditure_of_gdp": 71,
@@ -1234,7 +1234,7 @@
     "ranks": {
       "gini_index": 48,
       "unemployment_rate": 126,
-      "inflation_consumer_price_index": 48,
+      "inflation_consumer_price_index": 31,
       "employment_to_population_ratio": 131,
       "female_labor_force_participation": 105,
       "education_expenditure_of_gdp": 45,
@@ -1262,7 +1262,7 @@
     "ranks": {
       "gini_index": 49,
       "unemployment_rate": 35,
-      "inflation_consumer_price_index": 40,
+      "inflation_consumer_price_index": 69,
       "employment_to_population_ratio": 56,
       "female_labor_force_participation": 75,
       "education_expenditure_of_gdp": 72,
@@ -1288,7 +1288,7 @@
     "ranks": {
       "gini_index": 50,
       "unemployment_rate": 145,
-      "inflation_consumer_price_index": 68,
+      "inflation_consumer_price_index": 47,
       "employment_to_population_ratio": 165,
       "female_labor_force_participation": 162,
       "education_expenditure_of_gdp": 11,
@@ -1313,7 +1313,7 @@
     "country": "Seychelles",
     "ranks": {
       "gini_index": 51,
-      "inflation_consumer_price_index": 5,
+      "inflation_consumer_price_index": 11,
       "education_expenditure_of_gdp": 82,
       "human_development_index_hdi": 53,
       "political_corruption_index": 18,
@@ -1332,7 +1332,7 @@
     "ranks": {
       "gini_index": 52,
       "unemployment_rate": 23,
-      "inflation_consumer_price_index": 71,
+      "inflation_consumer_price_index": 89,
       "employment_to_population_ratio": 57,
       "female_labor_force_participation": 74,
       "education_expenditure_of_gdp": 129,
@@ -1360,7 +1360,7 @@
     "ranks": {
       "gini_index": 53,
       "unemployment_rate": 88,
-      "inflation_consumer_price_index": 160,
+      "inflation_consumer_price_index": 23,
       "employment_to_population_ratio": 111,
       "female_labor_force_participation": 91,
       "education_expenditure_of_gdp": 10,
@@ -1379,7 +1379,7 @@
     "country": "Nauru",
     "ranks": {
       "gini_index": 54,
-      "inflation_consumer_price_index": 2,
+      "inflation_consumer_price_index": 3,
       "education_expenditure_of_gdp": 33,
       "human_development_index_hdi": 124,
       "general_government_gross_debt_gdp": 12,
@@ -1394,7 +1394,7 @@
     "ranks": {
       "gini_index": 55,
       "unemployment_rate": 78,
-      "inflation_consumer_price_index": 97,
+      "inflation_consumer_price_index": 116,
       "employment_to_population_ratio": 85,
       "female_labor_force_participation": 62,
       "education_expenditure_of_gdp": 31,
@@ -1421,7 +1421,7 @@
     "ranks": {
       "gini_index": 56,
       "unemployment_rate": 75,
-      "inflation_consumer_price_index": 158,
+      "inflation_consumer_price_index": 160,
       "employment_to_population_ratio": 113,
       "female_labor_force_participation": 140,
       "education_expenditure_of_gdp": 36,
@@ -1448,7 +1448,7 @@
     "ranks": {
       "gini_index": 57,
       "unemployment_rate": 122,
-      "inflation_consumer_price_index": 127,
+      "inflation_consumer_price_index": 117,
       "employment_to_population_ratio": 112,
       "female_labor_force_participation": 96,
       "education_expenditure_of_gdp": 126,
@@ -1475,7 +1475,7 @@
     "ranks": {
       "gini_index": 58,
       "unemployment_rate": 28,
-      "inflation_consumer_price_index": 61,
+      "inflation_consumer_price_index": 58,
       "employment_to_population_ratio": 53,
       "female_labor_force_participation": 65,
       "education_expenditure_of_gdp": 42,
@@ -1502,7 +1502,7 @@
     "ranks": {
       "gini_index": 59,
       "unemployment_rate": 3,
-      "inflation_consumer_price_index": 157,
+      "inflation_consumer_price_index": 132,
       "employment_to_population_ratio": 7,
       "female_labor_force_participation": 13,
       "education_expenditure_of_gdp": 101,
@@ -1526,7 +1526,7 @@
     "ranks": {
       "gini_index": 60,
       "unemployment_rate": 18,
-      "inflation_consumer_price_index": 153,
+      "inflation_consumer_price_index": 158,
       "employment_to_population_ratio": 76,
       "female_labor_force_participation": 84,
       "education_expenditure_of_gdp": 97,
@@ -1553,7 +1553,7 @@
     "ranks": {
       "gini_index": 61,
       "unemployment_rate": 4,
-      "inflation_consumer_price_index": 31,
+      "inflation_consumer_price_index": 6,
       "employment_to_population_ratio": 31,
       "female_labor_force_participation": 55,
       "education_expenditure_of_gdp": 160,
@@ -1581,7 +1581,7 @@
     "ranks": {
       "gini_index": 62,
       "unemployment_rate": 134,
-      "inflation_consumer_price_index": 72,
+      "inflation_consumer_price_index": 76,
       "employment_to_population_ratio": 148,
       "female_labor_force_participation": 132,
       "education_expenditure_of_gdp": 127,
@@ -1609,7 +1609,7 @@
     "ranks": {
       "gini_index": 63,
       "unemployment_rate": 26,
-      "inflation_consumer_price_index": 111,
+      "inflation_consumer_price_index": 29,
       "employment_to_population_ratio": 49,
       "female_labor_force_participation": 48,
       "education_expenditure_of_gdp": 175,
@@ -1634,7 +1634,7 @@
     "ranks": {
       "gini_index": 64,
       "unemployment_rate": 146,
-      "inflation_consumer_price_index": 75,
+      "inflation_consumer_price_index": 81,
       "employment_to_population_ratio": 129,
       "female_labor_force_participation": 95,
       "education_expenditure_of_gdp": 76,
@@ -1662,7 +1662,7 @@
     "ranks": {
       "gini_index": 65,
       "unemployment_rate": 156,
-      "inflation_consumer_price_index": 104,
+      "inflation_consumer_price_index": 125,
       "employment_to_population_ratio": 152,
       "female_labor_force_participation": 134,
       "education_expenditure_of_gdp": 131,
@@ -1689,7 +1689,7 @@
     "ranks": {
       "gini_index": 66,
       "unemployment_rate": 98,
-      "inflation_consumer_price_index": 163,
+      "inflation_consumer_price_index": 102,
       "employment_to_population_ratio": 141,
       "female_labor_force_participation": 163,
       "education_expenditure_of_gdp": 177,
@@ -1716,7 +1716,7 @@
     "ranks": {
       "gini_index": 67,
       "unemployment_rate": 111,
-      "inflation_consumer_price_index": 50,
+      "inflation_consumer_price_index": 63,
       "employment_to_population_ratio": 91,
       "female_labor_force_participation": 61,
       "education_expenditure_of_gdp": 115,
@@ -1770,7 +1770,7 @@
     "ranks": {
       "gini_index": 69,
       "unemployment_rate": 167,
-      "inflation_consumer_price_index": 37,
+      "inflation_consumer_price_index": 49,
       "employment_to_population_ratio": 173,
       "female_labor_force_participation": 172,
       "education_expenditure_of_gdp": 136,
@@ -1798,7 +1798,7 @@
     "ranks": {
       "gini_index": 70,
       "unemployment_rate": 164,
-      "inflation_consumer_price_index": 148,
+      "inflation_consumer_price_index": 140,
       "employment_to_population_ratio": 162,
       "female_labor_force_participation": 161,
       "education_expenditure_of_gdp": 17,
@@ -1824,7 +1824,7 @@
     "ranks": {
       "gini_index": 71,
       "unemployment_rate": 67,
-      "inflation_consumer_price_index": 93,
+      "inflation_consumer_price_index": 83,
       "employment_to_population_ratio": 42,
       "female_labor_force_participation": 32,
       "education_expenditure_of_gdp": 62,
@@ -1852,7 +1852,7 @@
     "ranks": {
       "gini_index": 72,
       "unemployment_rate": 81,
-      "inflation_consumer_price_index": 23,
+      "inflation_consumer_price_index": 8,
       "employment_to_population_ratio": 46,
       "female_labor_force_participation": 34,
       "education_expenditure_of_gdp": 68,
@@ -1880,7 +1880,7 @@
     "ranks": {
       "gini_index": 73,
       "unemployment_rate": 155,
-      "inflation_consumer_price_index": 25,
+      "inflation_consumer_price_index": 114,
       "employment_to_population_ratio": 103,
       "female_labor_force_participation": 68,
       "education_expenditure_of_gdp": 106,
@@ -1907,7 +1907,7 @@
     "ranks": {
       "gini_index": 74,
       "unemployment_rate": 42,
-      "inflation_consumer_price_index": 178,
+      "inflation_consumer_price_index": 176,
       "employment_to_population_ratio": 6,
       "female_labor_force_participation": 3,
       "education_expenditure_of_gdp": 191,
@@ -1933,7 +1933,7 @@
     "ranks": {
       "gini_index": 75,
       "unemployment_rate": 109,
-      "inflation_consumer_price_index": 64,
+      "inflation_consumer_price_index": 65,
       "employment_to_population_ratio": 114,
       "female_labor_force_participation": 83,
       "education_expenditure_of_gdp": 77,
@@ -1961,7 +1961,7 @@
     "ranks": {
       "gini_index": 76,
       "unemployment_rate": 115,
-      "inflation_consumer_price_index": 29,
+      "inflation_consumer_price_index": 109,
       "employment_to_population_ratio": 102,
       "female_labor_force_participation": 78,
       "education_expenditure_of_gdp": 89,
@@ -1989,7 +1989,7 @@
     "ranks": {
       "gini_index": 77,
       "unemployment_rate": 114,
-      "inflation_consumer_price_index": 34,
+      "inflation_consumer_price_index": 28,
       "employment_to_population_ratio": 69,
       "female_labor_force_participation": 44,
       "education_expenditure_of_gdp": 120,
@@ -2036,7 +2036,7 @@
     "ranks": {
       "gini_index": 79,
       "unemployment_rate": 112,
-      "inflation_consumer_price_index": 20,
+      "inflation_consumer_price_index": 46,
       "employment_to_population_ratio": 151,
       "female_labor_force_participation": 142,
       "education_expenditure_of_gdp": 103,
@@ -2064,7 +2064,7 @@
     "ranks": {
       "gini_index": 80,
       "unemployment_rate": 161,
-      "inflation_consumer_price_index": 101,
+      "inflation_consumer_price_index": 118,
       "employment_to_population_ratio": 136,
       "female_labor_force_participation": 108,
       "democracy_index": 50,
@@ -2089,7 +2089,7 @@
     "ranks": {
       "gini_index": 81,
       "unemployment_rate": 13,
-      "inflation_consumer_price_index": 26,
+      "inflation_consumer_price_index": 36,
       "employment_to_population_ratio": 13,
       "female_labor_force_participation": 10,
       "education_expenditure_of_gdp": 137,
@@ -2115,7 +2115,7 @@
     "ranks": {
       "gini_index": 82,
       "unemployment_rate": 46,
-      "inflation_consumer_price_index": 56,
+      "inflation_consumer_price_index": 53,
       "employment_to_population_ratio": 34,
       "female_labor_force_participation": 87,
       "education_expenditure_of_gdp": 185,
@@ -2143,7 +2143,7 @@
     "ranks": {
       "gini_index": 83,
       "unemployment_rate": 8,
-      "inflation_consumer_price_index": 171,
+      "inflation_consumer_price_index": 151,
       "employment_to_population_ratio": 36,
       "female_labor_force_participation": 41,
       "education_expenditure_of_gdp": 186,
@@ -2167,7 +2167,7 @@
     "ranks": {
       "gini_index": 84,
       "unemployment_rate": 1,
-      "inflation_consumer_price_index": 30,
+      "inflation_consumer_price_index": 38,
       "employment_to_population_ratio": 1,
       "female_labor_force_participation": 38,
       "education_expenditure_of_gdp": 134,
@@ -2195,7 +2195,7 @@
     "ranks": {
       "gini_index": 85,
       "unemployment_rate": 22,
-      "inflation_consumer_price_index": 103,
+      "inflation_consumer_price_index": 4,
       "employment_to_population_ratio": 35,
       "female_labor_force_participation": 51,
       "education_expenditure_of_gdp": 119,
@@ -2220,7 +2220,7 @@
     "ranks": {
       "gini_index": 86,
       "unemployment_rate": 34,
-      "inflation_consumer_price_index": 152,
+      "inflation_consumer_price_index": 156,
       "employment_to_population_ratio": 14,
       "female_labor_force_participation": 16,
       "education_expenditure_of_gdp": 167,
@@ -2245,7 +2245,7 @@
     "ranks": {
       "gini_index": 87,
       "unemployment_rate": 149,
-      "inflation_consumer_price_index": 179,
+      "inflation_consumer_price_index": 173,
       "employment_to_population_ratio": 161,
       "female_labor_force_participation": 165,
       "education_expenditure_of_gdp": 187,
@@ -2286,7 +2286,7 @@
     "ranks": {
       "gini_index": 89,
       "unemployment_rate": 33,
-      "inflation_consumer_price_index": 94,
+      "inflation_consumer_price_index": 93,
       "employment_to_population_ratio": 37,
       "female_labor_force_participation": 94,
       "education_expenditure_of_gdp": 96,
@@ -2311,7 +2311,7 @@
     "ranks": {
       "gini_index": 90,
       "unemployment_rate": 43,
-      "inflation_consumer_price_index": 175,
+      "inflation_consumer_price_index": 150,
       "employment_to_population_ratio": 128,
       "female_labor_force_participation": 104,
       "education_expenditure_of_gdp": 157,
@@ -2337,7 +2337,7 @@
     "ranks": {
       "gini_index": 91,
       "unemployment_rate": 129,
-      "inflation_consumer_price_index": 177,
+      "inflation_consumer_price_index": 181,
       "employment_to_population_ratio": 164,
       "female_labor_force_participation": 175,
       "education_expenditure_of_gdp": 153,
@@ -2361,7 +2361,7 @@
     "ranks": {
       "gini_index": 92,
       "unemployment_rate": 74,
-      "inflation_consumer_price_index": 3,
+      "inflation_consumer_price_index": 1,
       "employment_to_population_ratio": 60,
       "female_labor_force_participation": 53,
       "education_expenditure_of_gdp": 108,
@@ -2388,7 +2388,7 @@
     "ranks": {
       "gini_index": 93,
       "unemployment_rate": 117,
-      "inflation_consumer_price_index": 15,
+      "inflation_consumer_price_index": 110,
       "employment_to_population_ratio": 83,
       "female_labor_force_participation": 60,
       "education_expenditure_of_gdp": 93,
@@ -2416,7 +2416,7 @@
     "ranks": {
       "gini_index": 94,
       "unemployment_rate": 121,
-      "inflation_consumer_price_index": 141,
+      "inflation_consumer_price_index": 145,
       "employment_to_population_ratio": 167,
       "female_labor_force_participation": 166,
       "education_expenditure_of_gdp": 38,
@@ -2441,7 +2441,7 @@
     "ranks": {
       "gini_index": 95,
       "unemployment_rate": 11,
-      "inflation_consumer_price_index": 108,
+      "inflation_consumer_price_index": 95,
       "employment_to_population_ratio": 19,
       "female_labor_force_participation": 20,
       "education_expenditure_of_gdp": 148,
@@ -2469,7 +2469,7 @@
     "ranks": {
       "gini_index": 96,
       "unemployment_rate": 29,
-      "inflation_consumer_price_index": 16,
+      "inflation_consumer_price_index": 43,
       "employment_to_population_ratio": 134,
       "female_labor_force_participation": 151,
       "education_expenditure_of_gdp": 25,
@@ -2495,7 +2495,7 @@
     "ranks": {
       "gini_index": 97,
       "unemployment_rate": 175,
-      "inflation_consumer_price_index": 180,
+      "inflation_consumer_price_index": 163,
       "employment_to_population_ratio": 171,
       "female_labor_force_participation": 170,
       "education_expenditure_of_gdp": 39,
@@ -2515,7 +2515,7 @@
     "ranks": {
       "gini_index": 98,
       "unemployment_rate": 168,
-      "inflation_consumer_price_index": 150,
+      "inflation_consumer_price_index": 154,
       "employment_to_population_ratio": 177,
       "female_labor_force_participation": 179,
       "education_expenditure_of_gdp": 58,
@@ -2540,7 +2540,7 @@
     "ranks": {
       "gini_index": 99,
       "unemployment_rate": 40,
-      "inflation_consumer_price_index": 149,
+      "inflation_consumer_price_index": 153,
       "employment_to_population_ratio": 3,
       "female_labor_force_participation": 1,
       "education_expenditure_of_gdp": 144,
@@ -2591,7 +2591,7 @@
     "ranks": {
       "gini_index": 101,
       "unemployment_rate": 9,
-      "inflation_consumer_price_index": 120,
+      "inflation_consumer_price_index": 98,
       "employment_to_population_ratio": 2,
       "female_labor_force_participation": 2,
       "education_expenditure_of_gdp": 7,
@@ -2613,7 +2613,7 @@
     "ranks": {
       "gini_index": 102,
       "unemployment_rate": 54,
-      "inflation_consumer_price_index": 117,
+      "inflation_consumer_price_index": 21,
       "employment_to_population_ratio": 25,
       "female_labor_force_participation": 25,
       "education_expenditure_of_gdp": 44,
@@ -2639,7 +2639,7 @@
     "ranks": {
       "gini_index": 103,
       "unemployment_rate": 6,
-      "inflation_consumer_price_index": 156,
+      "inflation_consumer_price_index": 119,
       "employment_to_population_ratio": 82,
       "female_labor_force_participation": 126,
       "education_expenditure_of_gdp": 138,
@@ -2664,7 +2664,7 @@
     "ranks": {
       "gini_index": 104,
       "unemployment_rate": 5,
-      "inflation_consumer_price_index": 168,
+      "inflation_consumer_price_index": 179,
       "employment_to_population_ratio": 10,
       "female_labor_force_participation": 5,
       "education_expenditure_of_gdp": 79,
@@ -2690,7 +2690,7 @@
     "ranks": {
       "gini_index": 105,
       "unemployment_rate": 66,
-      "inflation_consumer_price_index": 9,
+      "inflation_consumer_price_index": 136,
       "employment_to_population_ratio": 150,
       "female_labor_force_participation": 157,
       "education_expenditure_of_gdp": 181,
@@ -2717,7 +2717,7 @@
     "ranks": {
       "gini_index": 106,
       "unemployment_rate": 16,
-      "inflation_consumer_price_index": 78,
+      "inflation_consumer_price_index": 19,
       "employment_to_population_ratio": 98,
       "female_labor_force_participation": 69,
       "education_expenditure_of_gdp": 98,
@@ -2741,7 +2741,7 @@
     "ranks": {
       "gini_index": 107,
       "unemployment_rate": 174,
-      "inflation_consumer_price_index": 27,
+      "inflation_consumer_price_index": 50,
       "employment_to_population_ratio": 156,
       "female_labor_force_participation": 139,
       "education_expenditure_of_gdp": 165,
@@ -2765,7 +2765,7 @@
     "ranks": {
       "gini_index": 108,
       "unemployment_rate": 55,
-      "inflation_consumer_price_index": 89,
+      "inflation_consumer_price_index": 87,
       "employment_to_population_ratio": 47,
       "female_labor_force_participation": 33,
       "education_expenditure_of_gdp": 30,
@@ -2792,7 +2792,7 @@
     "country": "Kosovo",
     "ranks": {
       "gini_index": 109,
-      "inflation_consumer_price_index": 39,
+      "inflation_consumer_price_index": 113,
       "political_corruption_index": 55,
       "global_peace_index": 63,
       "intentional_homicides": 73,
@@ -2805,7 +2805,7 @@
     "ranks": {
       "gini_index": 110,
       "unemployment_rate": 131,
-      "inflation_consumer_price_index": 83,
+      "inflation_consumer_price_index": 85,
       "employment_to_population_ratio": 108,
       "female_labor_force_participation": 97,
       "education_expenditure_of_gdp": 170,
@@ -2829,7 +2829,7 @@
     "ranks": {
       "gini_index": 111,
       "unemployment_rate": 99,
-      "inflation_consumer_price_index": 123,
+      "inflation_consumer_price_index": 124,
       "employment_to_population_ratio": 43,
       "female_labor_force_participation": 28,
       "education_expenditure_of_gdp": 105,
@@ -2855,7 +2855,7 @@
     "ranks": {
       "gini_index": 112,
       "unemployment_rate": 87,
-      "inflation_consumer_price_index": 176,
+      "inflation_consumer_price_index": 177,
       "employment_to_population_ratio": 78,
       "female_labor_force_participation": 59,
       "education_expenditure_of_gdp": 155,
@@ -2881,7 +2881,7 @@
     "ranks": {
       "gini_index": 113,
       "unemployment_rate": 84,
-      "inflation_consumer_price_index": 55,
+      "inflation_consumer_price_index": 62,
       "employment_to_population_ratio": 157,
       "female_labor_force_participation": 158,
       "education_expenditure_of_gdp": 37,
@@ -2900,7 +2900,7 @@
     "ranks": {
       "gini_index": 114,
       "unemployment_rate": 113,
-      "inflation_consumer_price_index": 161,
+      "inflation_consumer_price_index": 166,
       "employment_to_population_ratio": 153,
       "female_labor_force_participation": 130,
       "education_expenditure_of_gdp": 154,
@@ -2924,7 +2924,7 @@
     "ranks": {
       "gini_index": 115,
       "unemployment_rate": 90,
-      "inflation_consumer_price_index": 99,
+      "inflation_consumer_price_index": 115,
       "employment_to_population_ratio": 61,
       "female_labor_force_participation": 88,
       "education_expenditure_of_gdp": 113,
@@ -2949,7 +2949,7 @@
     "country": "Tuvalu",
     "ranks": {
       "gini_index": 116,
-      "inflation_consumer_price_index": 10,
+      "inflation_consumer_price_index": 20,
       "education_expenditure_of_gdp": 2,
       "human_development_index_hdi": 129,
       "general_government_gross_debt_gdp": 3,
@@ -2965,7 +2965,7 @@
     "ranks": {
       "gini_index": 117,
       "unemployment_rate": 127,
-      "inflation_consumer_price_index": 167,
+      "inflation_consumer_price_index": 162,
       "employment_to_population_ratio": 139,
       "female_labor_force_participation": 131,
       "education_expenditure_of_gdp": 150,
@@ -2988,7 +2988,7 @@
     "ranks": {
       "gini_index": 118,
       "unemployment_rate": 21,
-      "inflation_consumer_price_index": 95,
+      "inflation_consumer_price_index": 48,
       "employment_to_population_ratio": 73,
       "female_labor_force_participation": 111,
       "education_expenditure_of_gdp": 107,
@@ -3015,7 +3015,7 @@
     "ranks": {
       "gini_index": 119,
       "unemployment_rate": 151,
-      "inflation_consumer_price_index": 44,
+      "inflation_consumer_price_index": 144,
       "employment_to_population_ratio": 104,
       "female_labor_force_participation": 63,
       "education_expenditure_of_gdp": 75,
@@ -3041,7 +3041,7 @@
     "ranks": {
       "gini_index": 120,
       "unemployment_rate": 57,
-      "inflation_consumer_price_index": 66,
+      "inflation_consumer_price_index": 133,
       "employment_to_population_ratio": 117,
       "female_labor_force_participation": 113,
       "education_expenditure_of_gdp": 80,
@@ -3068,7 +3068,7 @@
     "ranks": {
       "gini_index": 121,
       "unemployment_rate": 138,
-      "inflation_consumer_price_index": 21,
+      "inflation_consumer_price_index": 25,
       "employment_to_population_ratio": 159,
       "female_labor_force_participation": 168,
       "education_expenditure_of_gdp": 28,
@@ -3095,7 +3095,7 @@
     "ranks": {
       "gini_index": 122,
       "unemployment_rate": 49,
-      "inflation_consumer_price_index": 18,
+      "inflation_consumer_price_index": 10,
       "employment_to_population_ratio": 72,
       "female_labor_force_participation": 116,
       "education_expenditure_of_gdp": 130,
@@ -3122,7 +3122,7 @@
     "ranks": {
       "gini_index": 123,
       "unemployment_rate": 136,
-      "inflation_consumer_price_index": 98,
+      "inflation_consumer_price_index": 35,
       "employment_to_population_ratio": 120,
       "female_labor_force_participation": 128,
       "education_expenditure_of_gdp": 74,
@@ -3142,7 +3142,7 @@
     "ranks": {
       "gini_index": 124,
       "unemployment_rate": 48,
-      "inflation_consumer_price_index": 137,
+      "inflation_consumer_price_index": 121,
       "employment_to_population_ratio": 26,
       "female_labor_force_participation": 29,
       "education_expenditure_of_gdp": 35,
@@ -3169,7 +3169,7 @@
     "ranks": {
       "gini_index": 125,
       "unemployment_rate": 124,
-      "inflation_consumer_price_index": 131,
+      "inflation_consumer_price_index": 135,
       "employment_to_population_ratio": 70,
       "female_labor_force_participation": 64,
       "education_expenditure_of_gdp": 70,
@@ -3196,7 +3196,7 @@
     "country": "Micronesia",
     "ranks": {
       "gini_index": 126,
-      "inflation_consumer_price_index": 136,
+      "inflation_consumer_price_index": 141,
       "education_expenditure_of_gdp": 3,
       "human_development_index_hdi": 149,
       "general_government_gross_debt_gdp": 8,
@@ -3213,7 +3213,7 @@
     "ranks": {
       "gini_index": 127,
       "unemployment_rate": 91,
-      "inflation_consumer_price_index": 49,
+      "inflation_consumer_price_index": 45,
       "employment_to_population_ratio": 22,
       "female_labor_force_participation": 24,
       "education_expenditure_of_gdp": 86,
@@ -3241,7 +3241,7 @@
     "ranks": {
       "gini_index": 128,
       "unemployment_rate": 52,
-      "inflation_consumer_price_index": 11,
+      "inflation_consumer_price_index": 33,
       "employment_to_population_ratio": 105,
       "female_labor_force_participation": 119,
       "education_expenditure_of_gdp": 135,
@@ -3267,7 +3267,7 @@
     "ranks": {
       "gini_index": 129,
       "unemployment_rate": 12,
-      "inflation_consumer_price_index": 88,
+      "inflation_consumer_price_index": 96,
       "employment_to_population_ratio": 4,
       "female_labor_force_participation": 4,
       "education_expenditure_of_gdp": 139,
@@ -3291,7 +3291,7 @@
     "ranks": {
       "gini_index": 130,
       "unemployment_rate": 62,
-      "inflation_consumer_price_index": 46,
+      "inflation_consumer_price_index": 40,
       "employment_to_population_ratio": 45,
       "female_labor_force_participation": 101,
       "education_expenditure_of_gdp": 123,
@@ -3319,7 +3319,7 @@
     "ranks": {
       "gini_index": 131,
       "unemployment_rate": 139,
-      "inflation_consumer_price_index": 165,
+      "inflation_consumer_price_index": 164,
       "employment_to_population_ratio": 179,
       "female_labor_force_participation": 164,
       "education_expenditure_of_gdp": 64,
@@ -3366,7 +3366,7 @@
     "ranks": {
       "gini_index": 133,
       "unemployment_rate": 36,
-      "inflation_consumer_price_index": 135,
+      "inflation_consumer_price_index": 174,
       "employment_to_population_ratio": 12,
       "female_labor_force_participation": 11,
       "education_expenditure_of_gdp": 12,
@@ -3392,7 +3392,7 @@
     "ranks": {
       "gini_index": 134,
       "unemployment_rate": 163,
-      "inflation_consumer_price_index": 172,
+      "inflation_consumer_price_index": 178,
       "employment_to_population_ratio": 115,
       "female_labor_force_participation": 58,
       "education_expenditure_of_gdp": 188,
@@ -3417,7 +3417,7 @@
     "ranks": {
       "gini_index": 135,
       "unemployment_rate": 177,
-      "inflation_consumer_price_index": 52,
+      "inflation_consumer_price_index": 14,
       "employment_to_population_ratio": 178,
       "female_labor_force_participation": 169,
       "education_expenditure_of_gdp": 114,
@@ -3467,7 +3467,7 @@
     "ranks": {
       "gini_index": 137,
       "unemployment_rate": 24,
-      "inflation_consumer_price_index": 13,
+      "inflation_consumer_price_index": 131,
       "employment_to_population_ratio": 133,
       "female_labor_force_participation": 110,
       "education_expenditure_of_gdp": 189,
@@ -3492,7 +3492,7 @@
     "ranks": {
       "gini_index": 138,
       "unemployment_rate": 59,
-      "inflation_consumer_price_index": 124,
+      "inflation_consumer_price_index": 99,
       "employment_to_population_ratio": 50,
       "female_labor_force_participation": 70,
       "education_expenditure_of_gdp": 152,
@@ -3546,7 +3546,7 @@
     "ranks": {
       "gini_index": 140,
       "unemployment_rate": 153,
-      "inflation_consumer_price_index": 22,
+      "inflation_consumer_price_index": 66,
       "employment_to_population_ratio": 135,
       "female_labor_force_participation": 112,
       "education_expenditure_of_gdp": 87,
@@ -3570,7 +3570,7 @@
     "ranks": {
       "gini_index": 141,
       "unemployment_rate": 27,
-      "inflation_consumer_price_index": 130,
+      "inflation_consumer_price_index": 111,
       "employment_to_population_ratio": 74,
       "female_labor_force_participation": 123,
       "education_expenditure_of_gdp": 104,
@@ -3598,7 +3598,7 @@
     "ranks": {
       "gini_index": 142,
       "unemployment_rate": 30,
-      "inflation_consumer_price_index": 100,
+      "inflation_consumer_price_index": 106,
       "employment_to_population_ratio": 9,
       "female_labor_force_participation": 9,
       "education_expenditure_of_gdp": 158,
@@ -3624,7 +3624,7 @@
     "ranks": {
       "gini_index": 143,
       "unemployment_rate": 110,
-      "inflation_consumer_price_index": 35,
+      "inflation_consumer_price_index": 34,
       "employment_to_population_ratio": 23,
       "female_labor_force_participation": 23,
       "education_expenditure_of_gdp": 180,
@@ -3649,7 +3649,7 @@
     "ranks": {
       "gini_index": 144,
       "unemployment_rate": 137,
-      "inflation_consumer_price_index": 119,
+      "inflation_consumer_price_index": 127,
       "employment_to_population_ratio": 97,
       "female_labor_force_participation": 93,
       "education_expenditure_of_gdp": 66,
@@ -3677,7 +3677,7 @@
     "ranks": {
       "gini_index": 145,
       "unemployment_rate": 38,
-      "inflation_consumer_price_index": 170,
+      "inflation_consumer_price_index": 172,
       "employment_to_population_ratio": 95,
       "female_labor_force_participation": 77,
       "education_expenditure_of_gdp": 145,
@@ -3703,7 +3703,7 @@
     "ranks": {
       "gini_index": 146,
       "unemployment_rate": 142,
-      "inflation_consumer_price_index": 1,
+      "inflation_consumer_price_index": 54,
       "employment_to_population_ratio": 59,
       "female_labor_force_participation": 37,
       "education_expenditure_of_gdp": 110,
@@ -3723,7 +3723,7 @@
     "ranks": {
       "gini_index": 147,
       "unemployment_rate": 133,
-      "inflation_consumer_price_index": 181,
+      "inflation_consumer_price_index": 180,
       "employment_to_population_ratio": 138,
       "female_labor_force_participation": 152,
       "education_expenditure_of_gdp": 141,
@@ -3750,7 +3750,7 @@
     "country": "Grenada",
     "ranks": {
       "gini_index": 148,
-      "inflation_consumer_price_index": 24,
+      "inflation_consumer_price_index": 22,
       "education_expenditure_of_gdp": 61,
       "human_development_index_hdi": 79,
       "general_government_gross_debt_gdp": 131,
@@ -3791,7 +3791,7 @@
     "ranks": {
       "gini_index": 150,
       "unemployment_rate": 80,
-      "inflation_consumer_price_index": 113,
+      "inflation_consumer_price_index": 123,
       "employment_to_population_ratio": 28,
       "female_labor_force_participation": 54,
       "education_expenditure_of_gdp": 122,
@@ -3818,7 +3818,7 @@
     "ranks": {
       "gini_index": 151,
       "unemployment_rate": 71,
-      "inflation_consumer_price_index": 80,
+      "inflation_consumer_price_index": 84,
       "employment_to_population_ratio": 62,
       "female_labor_force_participation": 39,
       "education_expenditure_of_gdp": 151,
@@ -3869,7 +3869,7 @@
     "ranks": {
       "gini_index": 153,
       "unemployment_rate": 166,
-      "inflation_consumer_price_index": 142,
+      "inflation_consumer_price_index": 128,
       "employment_to_population_ratio": 147,
       "female_labor_force_participation": 118,
       "education_expenditure_of_gdp": 18,
@@ -3895,7 +3895,7 @@
     "ranks": {
       "gini_index": 154,
       "unemployment_rate": 154,
-      "inflation_consumer_price_index": 82,
+      "inflation_consumer_price_index": 97,
       "employment_to_population_ratio": 145,
       "female_labor_force_participation": 125,
       "education_expenditure_of_gdp": 83,
@@ -3920,7 +3920,7 @@
     "ranks": {
       "gini_index": 155,
       "unemployment_rate": 25,
-      "inflation_consumer_price_index": 79,
+      "inflation_consumer_price_index": 44,
       "employment_to_population_ratio": 89,
       "female_labor_force_participation": 149,
       "education_expenditure_of_gdp": 143,
@@ -3948,7 +3948,7 @@
     "ranks": {
       "gini_index": 156,
       "unemployment_rate": 119,
-      "inflation_consumer_price_index": 8,
+      "inflation_consumer_price_index": 2,
       "employment_to_population_ratio": 122,
       "female_labor_force_participation": 129,
       "education_expenditure_of_gdp": 46,
@@ -3976,7 +3976,7 @@
     "ranks": {
       "gini_index": 157,
       "unemployment_rate": 82,
-      "inflation_consumer_price_index": 125,
+      "inflation_consumer_price_index": 134,
       "employment_to_population_ratio": 121,
       "female_labor_force_participation": 145,
       "education_expenditure_of_gdp": 78,
@@ -4003,7 +4003,7 @@
     "ranks": {
       "gini_index": 158,
       "unemployment_rate": 50,
-      "inflation_consumer_price_index": 36,
+      "inflation_consumer_price_index": 26,
       "employment_to_population_ratio": 55,
       "female_labor_force_participation": 99,
       "education_expenditure_of_gdp": 116,
@@ -4029,7 +4029,7 @@
     "ranks": {
       "gini_index": 159,
       "unemployment_rate": 86,
-      "inflation_consumer_price_index": 126,
+      "inflation_consumer_price_index": 56,
       "employment_to_population_ratio": 51,
       "female_labor_force_participation": 107,
       "education_expenditure_of_gdp": 149,
@@ -4056,7 +4056,7 @@
     "ranks": {
       "gini_index": 160,
       "unemployment_rate": 173,
-      "inflation_consumer_price_index": 90,
+      "inflation_consumer_price_index": 72,
       "employment_to_population_ratio": 116,
       "female_labor_force_participation": 22,
       "education_expenditure_of_gdp": 128,
@@ -4079,7 +4079,7 @@
     "ranks": {
       "gini_index": 161,
       "unemployment_rate": 116,
-      "inflation_consumer_price_index": 116,
+      "inflation_consumer_price_index": 129,
       "employment_to_population_ratio": 16,
       "female_labor_force_participation": 8,
       "education_expenditure_of_gdp": 29,
@@ -4105,7 +4105,7 @@
     "ranks": {
       "gini_index": 162,
       "unemployment_rate": 132,
-      "inflation_consumer_price_index": 14,
+      "inflation_consumer_price_index": 9,
       "employment_to_population_ratio": 66,
       "female_labor_force_participation": 81,
       "education_expenditure_of_gdp": 162,
@@ -4132,7 +4132,7 @@
     "ranks": {
       "gini_index": 163,
       "unemployment_rate": 106,
-      "inflation_consumer_price_index": 122,
+      "inflation_consumer_price_index": 138,
       "employment_to_population_ratio": 79,
       "female_labor_force_participation": 90,
       "education_expenditure_of_gdp": 34,
@@ -4186,7 +4186,7 @@
     "ranks": {
       "gini_index": 165,
       "unemployment_rate": 162,
-      "inflation_consumer_price_index": 173,
+      "inflation_consumer_price_index": 175,
       "employment_to_population_ratio": 41,
       "female_labor_force_participation": 15,
       "education_expenditure_of_gdp": 161,
@@ -4212,7 +4212,7 @@
     "ranks": {
       "gini_index": 166,
       "unemployment_rate": 105,
-      "inflation_consumer_price_index": 166,
+      "inflation_consumer_price_index": 170,
       "employment_to_population_ratio": 87,
       "female_labor_force_participation": 72,
       "education_expenditure_of_gdp": 102,
@@ -4238,7 +4238,7 @@
     "ranks": {
       "gini_index": 167,
       "unemployment_rate": 178,
-      "inflation_consumer_price_index": 121,
+      "inflation_consumer_price_index": 90,
       "employment_to_population_ratio": 163,
       "female_labor_force_participation": 114,
       "education_expenditure_of_gdp": 27,
@@ -4265,7 +4265,7 @@
     "ranks": {
       "gini_index": 168,
       "unemployment_rate": 128,
-      "inflation_consumer_price_index": 147,
+      "inflation_consumer_price_index": 139,
       "employment_to_population_ratio": 88,
       "female_labor_force_participation": 102,
       "education_expenditure_of_gdp": 50,
@@ -4293,7 +4293,7 @@
     "ranks": {
       "gini_index": 169,
       "unemployment_rate": 179,
-      "inflation_consumer_price_index": 70,
+      "inflation_consumer_price_index": 78,
       "employment_to_population_ratio": 172,
       "female_labor_force_participation": 117,
       "education_expenditure_of_gdp": 26,
@@ -4317,7 +4317,7 @@
     "ranks": {
       "gini_index": 170,
       "unemployment_rate": 176,
-      "inflation_consumer_price_index": 76,
+      "inflation_consumer_price_index": 80,
       "employment_to_population_ratio": 126,
       "female_labor_force_participation": 26,
       "education_expenditure_of_gdp": 8,
@@ -4343,7 +4343,7 @@
     "ranks": {
       "gini_index": 171,
       "unemployment_rate": 172,
-      "inflation_consumer_price_index": 118,
+      "inflation_consumer_price_index": 100,
       "employment_to_population_ratio": 149,
       "female_labor_force_participation": 82,
       "education_expenditure_of_gdp": 4,
@@ -4368,7 +4368,7 @@
     "country": "Cambodia",
     "ranks": {
       "unemployment_rate": 2,
-      "inflation_consumer_price_index": 17,
+      "inflation_consumer_price_index": 67,
       "employment_to_population_ratio": 5,
       "female_labor_force_participation": 7,
       "education_expenditure_of_gdp": 171,
@@ -4394,7 +4394,7 @@
     "country": "Bahrain",
     "ranks": {
       "unemployment_rate": 7,
-      "inflation_consumer_price_index": 19,
+      "inflation_consumer_price_index": 7,
       "employment_to_population_ratio": 21,
       "female_labor_force_participation": 137,
       "education_expenditure_of_gdp": 179,
@@ -4442,7 +4442,7 @@
     "country": "Kuwait",
     "ranks": {
       "unemployment_rate": 20,
-      "inflation_consumer_price_index": 81,
+      "inflation_consumer_price_index": 68,
       "employment_to_population_ratio": 18,
       "female_labor_force_participation": 127,
       "education_expenditure_of_gdp": 21,
@@ -4468,7 +4468,7 @@
     "country": "Singapore",
     "ranks": {
       "unemployment_rate": 31,
-      "inflation_consumer_price_index": 63,
+      "inflation_consumer_price_index": 30,
       "employment_to_population_ratio": 24,
       "female_labor_force_participation": 27,
       "education_expenditure_of_gdp": 169,
@@ -4495,7 +4495,7 @@
     "country": "Saudi Arabia",
     "ranks": {
       "unemployment_rate": 39,
-      "inflation_consumer_price_index": 42,
+      "inflation_consumer_price_index": 57,
       "employment_to_population_ratio": 48,
       "female_labor_force_participation": 154,
       "education_expenditure_of_gdp": 81,
@@ -4522,7 +4522,7 @@
     "country": "Oman",
     "ranks": {
       "unemployment_rate": 47,
-      "inflation_consumer_price_index": 12,
+      "inflation_consumer_price_index": 32,
       "employment_to_population_ratio": 32,
       "female_labor_force_participation": 159,
       "education_expenditure_of_gdp": 85,
@@ -4564,7 +4564,7 @@
     "country": "New Zealand",
     "ranks": {
       "unemployment_rate": 89,
-      "inflation_consumer_price_index": 84,
+      "inflation_consumer_price_index": 82,
       "employment_to_population_ratio": 29,
       "female_labor_force_participation": 21,
       "education_expenditure_of_gdp": 53,
@@ -4591,7 +4591,7 @@
     "country": "Brunei",
     "ranks": {
       "unemployment_rate": 94,
-      "inflation_consumer_price_index": 6,
+      "inflation_consumer_price_index": 12,
       "employment_to_population_ratio": 65,
       "female_labor_force_participation": 85,
       "education_expenditure_of_gdp": 84,
@@ -4635,7 +4635,7 @@
     "country": "Bahamas",
     "ranks": {
       "unemployment_rate": 140,
-      "inflation_consumer_price_index": 7,
+      "inflation_consumer_price_index": 16,
       "employment_to_population_ratio": 27,
       "female_labor_force_participation": 17,
       "education_expenditure_of_gdp": 156,
@@ -4654,7 +4654,7 @@
     "country": "Afghanistan",
     "ranks": {
       "unemployment_rate": 159,
-      "inflation_consumer_price_index": 146,
+      "inflation_consumer_price_index": 148,
       "employment_to_population_ratio": 174,
       "female_labor_force_participation": 178,
       "education_expenditure_of_gdp": 88,
@@ -4678,7 +4678,7 @@
     "country": "Saint Vincent-Grenadines",
     "ranks": {
       "unemployment_rate": 169,
-      "inflation_consumer_price_index": 109,
+      "inflation_consumer_price_index": 27,
       "employment_to_population_ratio": 107,
       "female_labor_force_participation": 52,
       "education_expenditure_of_gdp": 20,
@@ -4697,7 +4697,7 @@
     "country": "Libya",
     "ranks": {
       "unemployment_rate": 170,
-      "inflation_consumer_price_index": 54,
+      "inflation_consumer_price_index": 51,
       "employment_to_population_ratio": 160,
       "female_labor_force_participation": 155,
       "education_expenditure_of_gdp": 168,
@@ -4734,22 +4734,9 @@
     "kpi_count": 13
   },
   {
-    "country": "San Marino",
-    "ranks": {
-      "inflation_consumer_price_index": 28,
-      "education_expenditure_of_gdp": 147,
-      "human_development_index_hdi": 30,
-      "general_government_gross_debt_gdp": 118,
-      "intentional_homicides": 102,
-      "universal_health_coverage_index": 58,
-      "government_effectiveness": 24
-    },
-    "kpi_count": 7
-  },
-  {
     "country": "Palau",
     "ranks": {
-      "inflation_consumer_price_index": 59,
+      "inflation_consumer_price_index": 17,
       "education_expenditure_of_gdp": 125,
       "human_development_index_hdi": 84,
       "general_government_gross_debt_gdp": 119,
@@ -4761,9 +4748,39 @@
     "kpi_count": 8
   },
   {
+    "country": "Antigua and Barbuda",
+    "ranks": {
+      "inflation_consumer_price_index": 39,
+      "education_expenditure_of_gdp": 140,
+      "human_development_index_hdi": 52,
+      "general_government_gross_debt_gdp": 126,
+      "environmental_performance_index": 40,
+      "inform_resilience_index": 18,
+      "intentional_homicides": 144,
+      "water_stress_level": 82,
+      "lpi_infrastructure": 80,
+      "universal_health_coverage_index": 67,
+      "government_effectiveness": 63
+    },
+    "kpi_count": 11
+  },
+  {
+    "country": "San Marino",
+    "ranks": {
+      "inflation_consumer_price_index": 64,
+      "education_expenditure_of_gdp": 147,
+      "human_development_index_hdi": 30,
+      "general_government_gross_debt_gdp": 118,
+      "intentional_homicides": 102,
+      "universal_health_coverage_index": 58,
+      "government_effectiveness": 24
+    },
+    "kpi_count": 7
+  },
+  {
     "country": "Dominica",
     "ranks": {
-      "inflation_consumer_price_index": 69,
+      "inflation_consumer_price_index": 77,
       "education_expenditure_of_gdp": 43,
       "human_development_index_hdi": 97,
       "general_government_gross_debt_gdp": 164,
@@ -4779,7 +4796,7 @@
   {
     "country": "Saint Kitts and Nevis",
     "ranks": {
-      "inflation_consumer_price_index": 106,
+      "inflation_consumer_price_index": 105,
       "education_expenditure_of_gdp": 124,
       "human_development_index_hdi": 57,
       "general_government_gross_debt_gdp": 116,
@@ -4790,23 +4807,6 @@
       "government_effectiveness": 64
     },
     "kpi_count": 9
-  },
-  {
-    "country": "Antigua and Barbuda",
-    "ranks": {
-      "inflation_consumer_price_index": 144,
-      "education_expenditure_of_gdp": 140,
-      "human_development_index_hdi": 52,
-      "general_government_gross_debt_gdp": 126,
-      "environmental_performance_index": 40,
-      "inform_resilience_index": 18,
-      "intentional_homicides": 144,
-      "water_stress_level": 82,
-      "lpi_infrastructure": 80,
-      "universal_health_coverage_index": 67,
-      "government_effectiveness": 63
-    },
-    "kpi_count": 11
   },
   {
     "country": "Liechtenstein",

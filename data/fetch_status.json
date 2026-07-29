@@ -3,233 +3,233 @@
     "area": {
       "source": "https://data.worldbank.org/indicator/AG.SRF.TOTL.K2",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2026-05-01T04:21:54Z"
+      "last_fetch": "2026-07-01T04:29:28Z"
     },
     "population": {
       "source": "https://data.worldbank.org/indicator/SP.POP.TOTL",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
-      "data_year": 2024,
-      "last_fetch": "2026-05-01T04:21:55Z"
+      "source_date": "2026-07-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2026-07-01T04:29:29Z"
     },
     "population_growth": {
       "source": "https://data.worldbank.org/indicator/SP.POP.GROW",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
-      "data_year": 2024,
-      "last_fetch": "2026-05-01T04:21:57Z"
+      "source_date": "2026-07-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2026-07-01T04:29:33Z"
     },
     "fertility_rate": {
       "source": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:21:57Z"
+      "last_fetch": "2026-07-01T04:29:34Z"
     },
     "urbanization_rate": {
       "source": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
-      "data_year": 2024,
-      "last_fetch": "2026-05-01T04:21:58Z"
+      "source_date": "2026-07-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2026-07-01T04:29:36Z"
     },
     "gdp": {
       "source": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
-      "data_year": 2024,
-      "last_fetch": "2026-05-01T04:21:59Z"
+      "source_date": "2026-07-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2026-07-01T04:29:37Z"
     },
     "gdp_per_capita_current_us": {
       "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
-      "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:00Z"
+      "source_date": "2026-07-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2026-07-01T04:29:38Z"
     },
     "gni_per_capita_current_us": {
       "source": "https://data.worldbank.org/indicator/NY.GNP.PCAP.CD",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
-      "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:00Z"
+      "source_date": "2026-07-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2026-07-01T04:29:41Z"
     },
     "gini_index": {
       "source": "https://data.worldbank.org/indicator/SI.POV.GINI",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-05-01T04:22:01Z"
+      "last_fetch": "2026-07-01T04:29:50Z"
     },
     "tax_revenue_of_gdp": {
       "source": "https://data.worldbank.org/indicator/GC.TAX.TOTL.GD.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:02Z"
+      "last_fetch": "2026-07-01T04:29:57Z"
     },
     "unemployment_rate": {
       "source": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-05-01T04:22:03Z"
+      "last_fetch": "2026-07-01T04:30:00Z"
     },
     "health_expenditure_per_capita": {
       "source": "https://data.worldbank.org/indicator/SH.XPD.CHEX.PC.CD",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:05Z"
+      "last_fetch": "2026-07-01T04:30:10Z"
     },
     "infant_mortality_rate": {
       "source": "https://data.worldbank.org/indicator/SP.DYN.IMRT.IN",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:07Z"
+      "last_fetch": "2026-07-01T04:30:17Z"
     },
     "maternal_mortality_ratio": {
       "source": "https://data.worldbank.org/indicator/SH.STA.MMRT",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2026-05-01T04:22:10Z"
+      "last_fetch": "2026-07-01T04:30:18Z"
     },
     "hospital_beds_per_1_000_people": {
       "source": "https://data.worldbank.org/indicator/SH.MED.BEDS.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2026-05-01T04:22:12Z"
+      "last_fetch": "2026-07-01T04:30:26Z"
     },
     "life_expectancy_at_birth": {
       "source": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:13Z"
+      "last_fetch": "2026-07-01T04:30:28Z"
     },
     "adult_literacy_rate": {
       "source": "https://data.worldbank.org/indicator/SE.ADT.LITR.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:14Z"
+      "last_fetch": "2026-07-01T04:30:29Z"
     },
     "overall_immunization_coverage": {
       "source": "https://data.worldbank.org/indicator/SH.IMM.IDPT",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:16Z"
+      "last_fetch": "2026-07-01T04:30:39Z"
     },
     "extreme_poverty": {
       "source": "https://data.worldbank.org/indicator/SI.POV.DDAY",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-05-01T04:22:17Z"
+      "last_fetch": "2026-07-01T04:32:01Z"
     },
     "access_to_basic_drinking_water": {
       "source": "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:18Z"
+      "last_fetch": "2026-07-01T04:32:07Z"
     },
     "air_quality_pm2_5_exposure": {
       "source": "https://data.worldbank.org/indicator/EN.ATM.PM25.MC.M3",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
-      "data_year": 2020,
-      "last_fetch": "2026-05-01T04:22:19Z"
+      "source_date": "2026-07-01T00:00:00Z",
+      "data_year": 2023,
+      "last_fetch": "2026-07-01T04:32:15Z"
     },
     "renewable_energy_share": {
       "source": "https://data.worldbank.org/indicator/EG.FEC.RNEW.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-05-01T04:22:19Z"
+      "last_fetch": "2026-07-01T04:32:27Z"
     },
     "internet_penetration_rate": {
       "source": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-05-01T04:22:20Z"
+      "last_fetch": "2026-07-01T04:32:28Z"
     },
     "mobile_subscriptions_per_100_inhabitants": {
       "source": "https://data.worldbank.org/indicator/IT.CEL.SETS.P2",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:23Z"
+      "last_fetch": "2026-07-01T04:32:33Z"
     },
     "railway_length": {
       "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2021,
-      "last_fetch": "2026-05-01T04:22:26Z"
+      "last_fetch": "2026-07-01T04:32:38Z"
     },
     "inflation_consumer_price_index": {
       "source": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
-      "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:26Z"
+      "source_date": "2026-07-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2026-07-01T04:32:43Z"
     },
     "employment_to_population_ratio": {
       "source": "https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-05-01T04:22:32Z"
+      "last_fetch": "2026-07-01T04:32:50Z"
     },
     "female_labor_force_participation": {
       "source": "https://data.worldbank.org/indicator/SL.TLF.CACT.FE.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-05-01T04:22:34Z"
+      "last_fetch": "2026-07-01T04:32:56Z"
     },
     "road_traffic_deaths_per_100k_people": {
       "source": "https://data.worldbank.org/indicator/SH.STA.TRAF.P5",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2019,
-      "last_fetch": "2026-05-01T04:22:35Z"
+      "last_fetch": "2026-07-01T04:33:01Z"
     },
     "fixed_broadband_subscriptions_per_100_people": {
       "source": "https://data.worldbank.org/indicator/IT.NET.BBND.P2",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:41Z"
+      "last_fetch": "2026-07-01T04:33:05Z"
     },
     "education_expenditure_of_gdp": {
       "source": "https://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-05-01T04:22:43Z"
+      "last_fetch": "2026-07-01T04:33:11Z"
     },
     "military_expenditure_of_gdp": {
       "source": "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:44Z"
+      "last_fetch": "2026-07-01T04:33:20Z"
     },
     "purchasing_power_parity": {
       "source": "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:22:45Z"
+      "last_fetch": "2026-07-01T04:33:21Z"
     },
     "median_age": {
       "source": "https://ourworldindata.org/grapher/median-age",
@@ -243,7 +243,7 @@
       "url": "",
       "source_date": "2024-01-01",
       "data_year": 2024,
-      "last_fetch": "2025-11-28T12:54:41Z"
+      "last_fetch": "2026-07-01T04:33:24Z"
     },
     "human_rights_index_vdem": {
       "source": "https://ourworldindata.org/grapher/human-rights-index-vdem",
@@ -341,7 +341,7 @@
       "url": "",
       "source_date": "2023-01-01",
       "data_year": 2023,
-      "last_fetch": "2026-06-01T04:30:40Z"
+      "last_fetch": "2026-07-01T04:33:34Z"
     },
     "global_co2_emissions": {
       "source": "https://ourworldindata.org/grapher/annual-co2-emissions",
@@ -383,119 +383,119 @@
       "url": "",
       "source_date": "Unknown",
       "data_year": 2025,
-      "last_fetch": "2026-06-01T04:30:43Z"
+      "last_fetch": "2026-07-01T04:33:38Z"
     },
     "world_happiness_index": {
       "source": "https://worldhappiness.report/",
       "url": "",
       "source_date": "2024-01-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-06-01T04:30:43Z"
+      "last_fetch": "2026-07-01T04:33:38Z"
     },
     "olympic_medals_summer": {
       "source": "https://www.olympics.com/en/olympic-games",
       "url": "",
       "source_date": "2024-01-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-06-01T04:30:43Z"
+      "last_fetch": "2026-07-01T04:33:38Z"
     },
     "big_mac_index": {
       "source": "https://www.economist.com/big-mac-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-06-01T04:30:43Z"
+      "last_fetch": "2026-07-01T04:33:38Z"
     },
     "recycling_rate": {
       "source": "https://data.oecd.org/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-06-01T04:30:43Z"
+      "last_fetch": "2026-07-01T04:33:38Z"
     },
     "environmental_performance_index": {
       "source": "https://epi.yale.edu/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-06-01T04:30:43Z"
+      "last_fetch": "2026-07-01T04:33:38Z"
     },
     "global_peace_index": {
       "source": "https://www.visionofhumanity.org/maps/#/global-peace-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-06-01T04:30:43Z"
+      "last_fetch": "2026-07-01T04:33:38Z"
     },
     "inform_resilience_index": {
       "source": "https://drmkc.jrc.ec.europa.eu/inform-index",
       "url": "",
       "source_date": "2025-01-01T00:00:00Z",
       "data_year": 2025,
-      "last_fetch": "2026-06-01T04:30:44Z"
+      "last_fetch": "2026-07-01T04:33:39Z"
     },
     "olympic_medals_winter": {
       "source": "https://www.olympics.com/en/olympic-games",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-06-01T04:30:44Z"
+      "last_fetch": "2026-07-01T04:33:39Z"
     },
     "pisa_overall_score": {
       "source": "https://www.oecd.org/pisa/data/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-06-01T04:30:44Z"
+      "last_fetch": "2026-07-01T04:33:39Z"
     },
     "network_readiness_index": {
       "source": "https://networkreadinessindex.org/",
       "url": "",
       "source_date": "2024-01-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-06-01T04:30:44Z"
+      "last_fetch": "2026-07-01T04:33:39Z"
     },
     "intentional_homicides": {
       "source": "https://data.worldbank.org/indicator/VC.IHR.PSRC.P5",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2026-05-01T04:23:01Z"
+      "last_fetch": "2026-07-01T04:33:40Z"
     },
     "trade_openness": {
       "source": "https://data.worldbank.org/indicator/NE.TRD.GNFS.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
-      "data_year": 2024,
-      "last_fetch": "2026-05-01T04:23:02Z"
+      "source_date": "2026-07-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2026-07-01T04:33:43Z"
     },
     "fdi_inflows_of_gdp": {
       "source": "https://data.worldbank.org/indicator/BX.KLT.DINV.WD.GD.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2024,
-      "last_fetch": "2026-05-01T04:23:03Z"
+      "last_fetch": "2026-07-01T04:33:45Z"
     },
     "water_stress_level": {
       "source": "https://data.worldbank.org/indicator/ER.H2O.FWST.ZS",
       "url": "",
-      "source_date": "2026-04-08T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-05-01T04:23:04Z"
+      "last_fetch": "2026-07-01T04:33:50Z"
     },
     "social_progress_index": {
       "source": "https://www.socialprogress.org/",
       "url": "",
       "source_date": "2022-01-01T00:00:00Z",
       "data_year": 2022,
-      "last_fetch": "2026-06-01T04:30:45Z"
+      "last_fetch": "2026-07-01T04:33:50Z"
     },
     "lpi_infrastructure": {
       "source": "https://lpi.worldbank.org/",
       "url": "",
       "source_date": "2023-01-01T00:00:00Z",
       "data_year": 2023,
-      "last_fetch": "2026-06-01T04:30:45Z"
+      "last_fetch": "2026-07-01T04:33:50Z"
     },
     "universal_health_coverage_index": {
       "source": "https://ourworldindata.org/grapher/universal-health-coverage-index",
@@ -522,15 +522,15 @@
     "geopolitical_risk_index": {
       "source": "https://www.matteoiacoviello.com/gpr.htm",
       "url": "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls",
-      "source_date": "2026-06-01T00:00:00Z",
+      "source_date": "2026-07-01T00:00:00Z",
       "data_year": 2026,
-      "last_fetch": "2026-06-01T04:30:47Z"
+      "last_fetch": "2026-07-01T04:33:52Z"
     }
   },
   "summary": {
-    "lastRun": "2026-06-01T04:30:47Z",
-    "updated": 13,
-    "skipped": 58,
-    "errors": 3
+    "lastRun": "2026-07-01T04:33:52Z",
+    "updated": 50,
+    "skipped": 20,
+    "errors": 4
   }
 }
