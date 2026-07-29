@@ -206,7 +206,8 @@ let translatorInitResolve;
 let translatorInitReject;
 
 document.addEventListener("DOMContentLoaded", async () => {
-  let launcher = ensureTranslatorLauncherMounted();
+  const googleTranslatorDisabled = document.documentElement.hasAttribute("data-disable-google-translate");
+  let launcher = googleTranslatorDisabled ? null : ensureTranslatorLauncherMounted();
   try {
     const assetVersion =
       document.querySelector('meta[name="rc-build-version"]')?.content ||
@@ -251,30 +252,34 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         const el = document.getElementById("total-visitors");
+        const dossierGerman = document.documentElement.dataset.dossierLanguage === "de";
         if (el) {
           const resp = await fetch(`tracking.json?v=${assetVersion}`);
           if (resp.ok) {
             const data = await resp.json();
-            el.textContent = "Visitors total: " + (data.total ?? "–");
+            el.textContent = (dossierGerman ? "Besucher insgesamt: " : "Visitors total: ") + (data.total ?? "–");
           } else {
-            el.textContent = "Visitors total: unavailable";
+            el.textContent = dossierGerman ? "Besucher insgesamt: nicht verfügbar" : "Visitors total: unavailable";
           }
         }
       } catch (err) {
         console.warn("⚠️ Visitor tracking failed:", err);
         const el = document.getElementById("total-visitors");
-        if (el) el.textContent = "Visitors total: unavailable";
+        if (el) el.textContent = document.documentElement.dataset.dossierLanguage === "de"
+          ? "Besucher insgesamt: nicht verfügbar"
+          : "Visitors total: unavailable";
       }
     }, 400);
   } catch (err) {
     console.warn("⚠️ Header/Footer load failed:", err);
   }
 
-  launcher = ensureTranslatorLauncherMounted();
+  launcher = googleTranslatorDisabled ? null : ensureTranslatorLauncherMounted();
   if (launcher) setupTranslatorControls();
 });
 
 function ensureTranslatorLauncherMounted() {
+  if (document.documentElement.hasAttribute("data-disable-google-translate")) return null;
   const launchers = document.querySelectorAll(".translator-launcher");
   if (launchers.length > 1) {
     launchers.forEach((node, idx) => {

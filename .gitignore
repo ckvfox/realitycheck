@@ -2,6 +2,7 @@
 .env
 *.env
 env.txt
+analysis-private/real-wages-auth.php
 
 # --- Python cache ---
 __pycache__/

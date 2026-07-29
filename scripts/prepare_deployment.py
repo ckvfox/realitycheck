@@ -60,6 +60,8 @@ EXCLUDE_PATTERNS = [
     "*.md",
     "*.py",
     ".env*",
+    "analysis-private/*example.php",
+    "analysis-private/real-wages-auth.php",
 ]
 
 ALLOWED_EXTENSIONS = {
@@ -89,6 +91,12 @@ PRODUCTIVE_SCRIPT_FILES = {
     "scripts/page_about.js",
     "scripts/page_analysis.js",
     "scripts/page_data_glossary.js",
+    "scripts/page_germany_dossier.js",
+    "scripts/page_germany_dossier_i18n.js",
+    "scripts/page_real_wages_analysis.js",
+    "scripts/page_germany_2036_scenarios.js",
+    "scripts/page_germany_war_stress_test.js",
+    "scripts/page_income_pyramid.js",
     "scripts/script.js",
     "scripts/script_overall_ranking_countries.js",
     "scripts/script_world.js",
@@ -125,6 +133,8 @@ def should_exclude(rel_posix: str) -> bool:
 def is_allowed_productive(rel_posix: str) -> bool:
     if rel_posix.startswith("scripts/"):
         return rel_posix in PRODUCTIVE_SCRIPT_FILES
+    if rel_posix == "analysis-private/.htaccess":
+        return True
     if rel_posix in ALLOWED_FILENAMES:
         return True
     if rel_posix.startswith(".well-known/"):

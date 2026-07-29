@@ -9,8 +9,12 @@
  */
 function updateOvershootTimer() {
   const today = new Date();
+  const announcedDates = { 2026: "2026-07-30" };
   const year = today.getFullYear();
-  const overshootDate = new Date(`${year}-07-25T00:00:00`);
+  const latestYear = Math.max(...Object.keys(announcedDates).map(Number));
+  const dateString = announcedDates[year] || announcedDates[latestYear];
+  const displayYear = announcedDates[year] ? year : latestYear;
+  const overshootDate = new Date(`${dateString}T00:00:00`);
   const diff = today - overshootDate;
   const daysAfter = Math.floor(diff / (1000 * 60 * 60 * 24));
   const element = document.getElementById("overshoot-timer");
@@ -21,14 +25,17 @@ function updateOvershootTimer() {
   }
 
   if (daysAfter < 0) {
-    element.innerHTML = `🌱 Humanity is still living <b>within</b> Earth's yearly means – for now.<br>
-      <small>Overshoot Day in ${Math.abs(daysAfter)} days (${overshootDate.toDateString()}).</small>`;
+    element.dataset.state = "before";
+    element.innerHTML = `<strong>${Math.abs(daysAfter)} days until Earth Overshoot Day</strong>
+      <small>${overshootDate.toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" })} · Humanity is still within Earth's yearly regenerative budget — for now.</small>`;
   } else if (daysAfter === 0) {
-    element.innerHTML = `⚖️ Today is <b>Earth Overshoot Day ${year}</b>.<br>
+    element.dataset.state = "today";
+    element.innerHTML = `<strong>Earth Overshoot Day is today</strong>
       <small>From now on, humanity consumes more than Earth can regenerate this year.</small>`;
   } else {
-    element.innerHTML = `🔴 Earth Overshoot Day was <b>${daysAfter} days ago</b> (${overshootDate.toDateString()}).<br>
-      <small>Humanity is living ${daysAfter} days beyond Earth's yearly capacity.</small>`;
+    element.dataset.state = "after";
+    element.innerHTML = `<strong>${daysAfter} days beyond Earth Overshoot Day</strong>
+      <small>${overshootDate.toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" })} · Humanity is now using more than Earth can regenerate this year.</small>`;
   }
 }
 

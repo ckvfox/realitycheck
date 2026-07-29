@@ -112,6 +112,7 @@ It’s both analytical and exploratory — you can:
 ├── about.html                      # About page & data source explanation
 ├── style.css                       # Global unified styling
 ├── tracking.php                    # Anonymous visitor logging (server side)
+├── germany-dossier.php             # Public bilingual four-file Germany dossier
 ├── favicon.ico / favicon.png       # Browser icons
 │
 ├── countries.html                  # Backward-compatible redirect to the homepage
@@ -134,6 +135,11 @@ It’s both analytical and exploratory — you can:
 │   ├── page_about.js                     # About page (Earth Overshoot Timer)
 │   ├── page_data_glossary.js            # Data glossary table generation & sorting
 │   ├── page_analysis.js                 # Analysis page Markdown loader
+│   ├── page_real_wages_analysis.js      # Dossier wage chart and map
+│   ├── page_germany_2036_scenarios.js   # Dossier 2036 scenario simulator
+│   ├── page_germany_war_stress_test.js  # Separate security stress test
+│   ├── page_income_pyramid.js            # Household-income position calculator
+│   ├── page_germany_dossier_i18n.js      # Editorial EN/DE switch and interface translation
 │   ├── floating_chat.js                 # Chatbot integration (in development)
 │   │
 │   ├── # 🐍 Backend Python Scripts
@@ -144,6 +150,7 @@ It’s both analytical and exploratory — you can:
 │   ├── fetch_consolidated.py             # Data normalization & gzip compression
 │   ├── check_source_csv_updates.py       # Manual CSV update scanner
 │   ├── env_utils.py                      # OpenAI API utilities
+│   ├── fetch_real_wages_analysis.py      # Combine Destatis trend and OECD wage levels
 │   └── auto_resolve_pending_mappings.py  # Automatic country name mapping
 
 │
@@ -166,9 +173,33 @@ It’s both analytical and exploratory — you can:
 │   ├── safe_haven_ranking.json
 │   ├── [kpi].json
 │
+├── /analysis-private/              # HTTP-denied server-side includes
+│   ├── real-wages-data.php         # Generated server-side data
+│   ├── real-wages-data-de.php      # Editorial German copy of wage metadata
+│   ├── germany-2036-scenarios.php  # Protected sources, assumptions and model
+│   ├── germany-2036-scenarios-de.php # German B2 scenario copy
+│   ├── germany-war-stress-test.php  # Protected seven-phase security stress test
+│   ├── germany-war-stress-test-b2.php # Clearer English B2 security copy
+│   ├── germany-war-stress-test-de.php # German B2 security copy
+│   ├── germany-reform-agenda.php    # Protected bilingual reform base data
+│   ├── germany-reform-agenda-depth.php # Expanded bilingual analysis for all reforms
+│   ├── income-pyramid-data.php      # Protected current income thresholds
+│   ├── income-pyramid-data-de.php   # German B2 income copy
+│   └── real-wages-auth.example.php # Non-secret setup template
+│
 └── /images/
     ├── logo.svg
 ```
+
+⚠️ RealityCheck structure changed — README update required. This inventory is
+updated in the same change. The public analysis is linked from the main menu
+but remains `noindex` and absent from the sitemap. The previous authentication
+workflow is retained behind a disabled feature flag for possible later reuse. Methodology and upload instructions
+are in `docs/real_wages_analysis.md`; the 2036 model is documented in
+`docs/germany_2036_scenario_method.md`, and the income calculator in
+`docs/income_pyramid_method.md`. The separately activated war stress test is
+documented in `docs/germany_war_stress_test_method.md`; the bilingual reform
+file is documented in `docs/germany_reform_agenda_method.md`.
 
 ---
 

@@ -2,6 +2,14 @@
 
 ## Next Improvements
 
+- Review both editorial language versions of the Germany 2036 Reform Agenda at least annually and after major German legislation or new OECD/EU comparative evidence; keep country mechanisms distinct from transferability claims, compass scores distinct from source metrics and both B2 versions equivalent in meaning.
+- Revisit the military-duty versus universal-civic-year comparison after relevant German legislation, constitutional case law or new controlled evaluations; do not infer compulsory-service effects directly from voluntary-service participants.
+- Review the conscription map at least annually and after service-law or V-Dem regime changes; keep selective, suspended, registration-only and actively enforced systems methodologically distinct.
+- Review the war stress-test evidence matrix after material NATO, BBK, BfV, EU, OSCE or arms-control updates; keep fictional escalation assumptions visibly separate from official assessments.
+- Refresh the household gross-income benchmark after each EU-SILC household-type release; keep the DINKs asterisk until the source explicitly identifies two earners, and do not label household-type bands as percentiles without a matching official distribution.
+- Review the Germany 2036 source/assumption matrix at least annually and after material Destatis, UBA, IEA, OECD, EU or NATO updates; keep model assumptions separate from projections.
+- Refresh the income-pyramid thresholds after each annual Destatis full-time earnings and EU-SILC release; never infer a current net top-10 threshold without a published source.
+- Refresh and review the protected Destatis real-wage snapshot and OECD wage dataset when either source revises its annual series or price base.
 - Add automated validation for deployment bundle exclusions.
 - Add CI check that validates standards/compliance-output-schema.json format for audit outputs.
 - Add smoke checks for core pages to tests/.
