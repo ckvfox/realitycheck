@@ -36,7 +36,7 @@ def now_utc():
 # 📝 Logging Helper
 # ======================================================================
 def log(msg, level="info"):
-    log_path = DATA_DIR / "fetch_log.txt"
+    log_path = ACTIVE_DATA_DIR / "fetch_log.txt"
     logger = setup_logger("fetch_log", log_path)
     if level == "error":
         logger.error(msg)
@@ -92,6 +92,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 from env_utils import get_openai_key  # ✅ wichtig: hier fehlte der Import
 from pipeline_guard import PipelineGuardError, ensure_fetch_succeeded
+from source_contracts import SourceContractError, ensure_source_registry, select_kpis
 from script_utils import (
     ensure_utf8_stdout,
     read_json as load_json_file,
@@ -161,8 +162,13 @@ PENDING_DIR    = DATA_DIR / "pending"
 # === Test data directory for test mode output ===
 TEST_DATA_DIR = DATA_DIR / "test"
 
+# Runtime paths switch to data/test in test mode. Keeping this explicit makes
+# accidental writes to the productive snapshot detectable in unit tests.
+ACTIVE_DATA_DIR = DATA_DIR
+ALLOW_MAPPING_WRITES = True
+
 # === Global logfile path for summary report ===
-LOG_FILE = str(DATA_DIR / "fetch_log.txt")
+LOG_FILE = str(ACTIVE_DATA_DIR / "fetch_log.txt")
 
 COUNTRIES_FILE       = META_DIR / "countries.json"
 COUNTRY_MAP_FILE     = META_DIR / "country_mappings.json"
@@ -184,13 +190,14 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
     for meta in imf_kpis:
         kpi_id = resolve_kpi_id(meta)
         source_code = (meta.get("source_code") or "").strip()
+        output_dir = meta.get("output_dir", DATA_DIR)
         updated_set = stats.setdefault("updated_kpis", set())
         already_marked = kpi_id in updated_set
         # For debug: test with a single country (DEU) to isolate SDMX API issues
         iso3_list = ["DEU"]
         if not source_code:
             log(f"[WARN] IMF KPI {kpi_id} missing source_code")
-            keep_or_dummy(kpi_id, "IMF missing source_code", stats)
+            keep_or_dummy(kpi_id, "IMF missing source_code", stats, output_dir=output_dir)
             continue
         # Only fetch if needed
         if not force_all_updates and not should_fetch(
@@ -271,7 +278,7 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
                             latest_year = max(latest_year or year_int, year_int)
                             records.append({"country": canon, "iso3": iso3_code, "year": year_int, "value": v})
                     if records:
-                        save_imf_records(kpi_id, records, stats)
+                        save_imf_records(kpi_id, records, stats, output_dir=output_dir)
                         stats["imf_success"] += 1
                         stats["saved_records"] += len(records)
                         stats["fetched"] += len(records)
@@ -283,8 +290,8 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
                             stats["updated"] += 1
                         log(f"[OK] IMF Datamapper API KPI saved: {kpi_id} ({len(records)} rows, last year {meta['_latest_year']})")
                     else:
-                        save_imf_records(kpi_id, [])
-                        keep_or_dummy(kpi_id, f"IMF Datamapper API empty {source_code}", stats)
+                        save_imf_records(kpi_id, [], output_dir=output_dir)
+                        keep_or_dummy(kpi_id, f"IMF Datamapper API empty {source_code}", stats, output_dir=output_dir)
                         meta["_source_date"] = str(latest_year) if latest_year else "Unknown"
                     used_source_date = meta.get("_source_date") or "Unknown"
                     fetch_status.setdefault("kpis", {})[kpi_id] = {
@@ -301,7 +308,7 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
             except Exception as exc:
                 log(f"[ERR] IMF Datamapper API fetch failed: {exc}")
             # If fallback fails, dummy
-            keep_or_dummy(kpi_id, f"IMF Datamapper API fetch failed", stats)
+            keep_or_dummy(kpi_id, f"IMF Datamapper API fetch failed", stats, output_dir=output_dir)
             continue
 
         # If SDMX worked, process as before
@@ -321,7 +328,7 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
                 iso3_code = resolve_iso3(canon, countries)
                 records.append({"country": canon, "iso3": iso3_code, "year": year_int, "value": val})
             if records:
-                save_imf_records(kpi_id, records, stats)
+                save_imf_records(kpi_id, records, stats, output_dir=output_dir)
                 stats["imf_success"] += 1
                 stats["saved_records"] += len(records)
                 stats["fetched"] += len(records)
@@ -333,8 +340,8 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
                     stats["updated"] += 1
                 log(f"[OK] IMF API KPI saved: {kpi_id} ({len(records)} rows, last year {latest_year})")
             else:
-                save_imf_records(kpi_id, [])
-                keep_or_dummy(kpi_id, f"IMF API empty {source_code}", stats)
+                save_imf_records(kpi_id, [], output_dir=output_dir)
+                keep_or_dummy(kpi_id, f"IMF API empty {source_code}", stats, output_dir=output_dir)
                 meta["_source_date"] = str(latest_year) if latest_year else "Unknown"
             used_source_date = meta.get("_source_date") or "Unknown"
             fetch_status.setdefault("kpis", {})[kpi_id] = {
@@ -484,19 +491,21 @@ def canonicalize_country(name: str, c_index, a_index, countries, pending, stats)
     # 3. Detect group/region (only if not a canonical country)
     GROUP_REGION_KEYWORDS = ["region", "group", "union", "area", "income", "world", "europe", "asia", "africa", "america", "oceania"]
     if any(kw in n for kw in GROUP_REGION_KEYWORDS):
-        # Persistently map to "" in country_mappings.json if not already mapped
-        import json, os
-        mapping_path = os.path.join(META_DIR, "country_mappings.json")
-        try:
-            with open(mapping_path, encoding="utf-8") as f:
-                mapping = json.load(f)
-        except Exception:
-            mapping = {}
-        if name not in mapping or mapping[name] != "":
-            mapping[name] = ""
-            with open(mapping_path, "w", encoding="utf-8") as f:
-                json.dump(mapping, f, ensure_ascii=False, indent=2)
-            log(f"[AUTO-MAP] Persisted group/region '{name}' → '' in country_mappings.json")
+        # Production runs persist known aggregate labels. Isolated tests must
+        # never mutate the productive country mapping registry.
+        if ALLOW_MAPPING_WRITES:
+            import json, os
+            mapping_path = os.path.join(META_DIR, "country_mappings.json")
+            try:
+                with open(mapping_path, encoding="utf-8") as f:
+                    mapping = json.load(f)
+            except Exception:
+                mapping = {}
+            if name not in mapping or mapping[name] != "":
+                mapping[name] = ""
+                with open(mapping_path, "w", encoding="utf-8") as f:
+                    json.dump(mapping, f, ensure_ascii=False, indent=2)
+                log(f"[AUTO-MAP] Persisted group/region '{name}' → '' in country_mappings.json")
         a_index[n] = ""
         stats["mapped_drop"] += 1
         log(f"EXCLUDED (Gruppe/Region): '{name}' (auto-mapped to '')")
@@ -1284,7 +1293,7 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
         stats.setdefault("updated_kpis", set()).add(kpi_id)
 
     else:
-        keep_or_dummy(kpi_id, f"WorldBank empty {code}", stats)
+        keep_or_dummy(kpi_id, f"WorldBank empty {code}", stats, output_dir=meta.get('output_dir', DATA_DIR))
 # ----------------------------------------------------------------------
 # 📊 CSV Fetch (smart) – inkl. Änderungsprüfung & Natural Disasters Sonderfall
 # ----------------------------------------------------------------------
@@ -1301,7 +1310,9 @@ def process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats, outpu
     if output_dir is None:
         output_dir = DATA_DIR
     json_path = os.path.join(output_dir, f"{kpi_id}.json")
-    hash_path = os.path.join(PENDING_DIR, f"{kpi_id}.md5")
+    hash_root = PENDING_DIR if Path(output_dir).resolve() == DATA_DIR.resolve() else Path(output_dir) / "pending"
+    hash_root.mkdir(parents=True, exist_ok=True)
+    hash_path = os.path.join(hash_root, f"{kpi_id}.md5")
 
     # In test mode, always overwrite (skip version/hash check)
     is_test_mode = (str(output_dir).endswith(os.sep + "test") or str(output_dir).endswith("/test") or str(output_dir).endswith("\\test"))
@@ -1476,11 +1487,12 @@ def get_source_date_from_owid(url: str) -> Optional[str]:
     return None
 
 
-def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
+def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats, output_dir=None):
     """Verarbeitet OWID-CSV-ähnliche Daten und speichert sie lokal."""
+    output_dir = output_dir or DATA_DIR
     source_code = meta.get("source_code")
     if not source_code:
-        keep_or_dummy(kpi_id, "missing source_code", stats)
+        keep_or_dummy(kpi_id, "missing source_code", stats, output_dir=output_dir)
         return
 
     url = f"https://ourworldindata.org/grapher/{source_code}"
@@ -1493,19 +1505,19 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
         text = resp.text
     except Exception as e:
         log(f"[ERR] OWID fetch failed for {source_code}: {e}")
-        keep_or_dummy(kpi_id, f"OWID fetch failed {source_code}", stats)
+        keep_or_dummy(kpi_id, f"OWID fetch failed {source_code}", stats, output_dir=output_dir)
         return
 
     reader = csv.DictReader(io.StringIO(text))
     cols = reader.fieldnames or []
     if not {"Entity", "Code", "Year"}.issubset(set(cols)):
         log(f"[WARN] OWID format unknown → {source_code}")
-        keep_or_dummy(kpi_id, f"OWID format unknown {source_code}", stats)
+        keep_or_dummy(kpi_id, f"OWID format unknown {source_code}", stats, output_dir=output_dir)
         return
 
     var_cols = [c for c in cols if c not in ("Entity", "Code", "Year")]
     if not var_cols:
-        keep_or_dummy(kpi_id, f"OWID no data column {source_code}", stats)
+        keep_or_dummy(kpi_id, f"OWID no data column {source_code}", stats, output_dir=output_dir)
         return
 
     var = var_cols[0]
@@ -1560,7 +1572,7 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
     # --- Speichern ---
     if out:
         out = maybe_invert_records(kpi_id, meta, out)
-        save_records(kpi_id, out)
+        save_records(kpi_id, out, stats, output_dir=output_dir)
         stats["owid_success"] += 1
         stats["saved_records"] += len(out)
 
@@ -1584,7 +1596,7 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats):
         log(f"[OK] OWID KPI saved: {kpi_id} ({len(out)} rows, last updated {meta['_source_date']})")
 
     else:
-        keep_or_dummy(kpi_id, f"OWID empty {source_code}", stats)
+        keep_or_dummy(kpi_id, f"OWID empty {source_code}", stats, output_dir=output_dir)
 
 
 # ----------------------------------------------------------------------
@@ -1780,7 +1792,7 @@ def fetch_imf_bulk(
         )
         for meta in imf_kpis:
             kpi_id = resolve_kpi_id(meta)
-            keep_or_dummy(kpi_id, "IMF bulk file missing", stats)
+            keep_or_dummy(kpi_id, "IMF bulk file missing", stats, output_dir=meta.get("output_dir", DATA_DIR))
         return
 
     try:
@@ -1792,7 +1804,7 @@ def fetch_imf_bulk(
         log(f"[ERR] IMF bulk file load failed: {exc}")
         for meta in imf_kpis:
             kpi_id = resolve_kpi_id(meta)
-            keep_or_dummy(kpi_id, "IMF bulk load failed", stats)
+            keep_or_dummy(kpi_id, "IMF bulk load failed", stats, output_dir=meta.get("output_dir", DATA_DIR))
         return
 
     subject_col = _find_column(df, ["weo_subject_code", "subject_code", "indicator", "INDICATOR"])
@@ -1825,7 +1837,7 @@ def fetch_imf_bulk(
             log("[ERR] IMF bulk Excel missing required columns (subject or country)")
             for meta in imf_kpis:
                 kpi_id = resolve_kpi_id(meta)
-                keep_or_dummy(kpi_id, "IMF bulk columns missing", stats)
+                keep_or_dummy(kpi_id, "IMF bulk columns missing", stats, output_dir=meta.get("output_dir", DATA_DIR))
             return
 
     year_cols = [col for col in df.columns if re.fullmatch(r"\d{4}", str(col).strip())]
@@ -1839,12 +1851,13 @@ def fetch_imf_bulk(
     for meta in imf_kpis:
         kpi_id = resolve_kpi_id(meta)
         source_code = (meta.get("source_code") or "").strip()
+        output_dir = meta.get("output_dir", DATA_DIR)
         updated_set = stats.setdefault("updated_kpis", set())
         already_marked = kpi_id in updated_set
 
         if not source_code:
             log(f"[WARN] IMF KPI {kpi_id} missing source_code")
-            keep_or_dummy(kpi_id, "IMF missing source_code", stats)
+            keep_or_dummy(kpi_id, "IMF missing source_code", stats, output_dir=output_dir)
             continue
 
         if not force_all_updates and not should_fetch(
@@ -1895,7 +1908,7 @@ def fetch_imf_bulk(
                     )
 
         if records:
-            save_imf_records(kpi_id, records, stats)
+            save_imf_records(kpi_id, records, stats, output_dir=output_dir)
             stats["imf_success"] += 1
             stats["saved_records"] += len(records)
             stats["fetched"] += len(records)
@@ -1909,8 +1922,8 @@ def fetch_imf_bulk(
                 f"[OK] IMF bulk KPI saved: {kpi_id} ({len(records)} rows, last year {latest_year})"
             )
         else:
-            save_imf_records(kpi_id, [])
-            keep_or_dummy(kpi_id, f"IMF bulk empty {source_code}", stats)
+            save_imf_records(kpi_id, [], output_dir=output_dir)
+            keep_or_dummy(kpi_id, f"IMF bulk empty {source_code}", stats, output_dir=output_dir)
             meta["_source_date"] = detected_source_date
 
         used_source_date = meta.get("_source_date") or detected_source_date or "Unknown"
@@ -1929,7 +1942,8 @@ def fetch_imf_bulk(
 # ----------------------------------------------------------------------
 # 🕊️ UNHCR Fetch (ZIP/CSV, Encoding & Header-robust)
 # ----------------------------------------------------------------------
-def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
+def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats, output_dir=None):
+    output_dir = output_dir or DATA_DIR
     def _norm_local(s): return "".join(c for c in unicodedata.normalize("NFKD", str(s).lower()) if not unicodedata.combining(c))
     def _find_col(cols, *pats):
         norms = {c:_norm_local(c) for c in cols}
@@ -1949,7 +1963,7 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
             raise Exception(f"HTTP {resp.status_code}")
     except Exception as e:
         log(f"[ERR] UNHCR fetch failed for {source_code}: {e}")
-        keep_or_dummy(kpi_id, f"UNHCR fetch failed {source_code}", stats)
+        keep_or_dummy(kpi_id, f"UNHCR fetch failed {source_code}", stats, output_dir=output_dir)
         return
 
     text = None
@@ -1963,20 +1977,20 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
             text = resp.text
     except Exception as e:
         log(f"[ERR] UNHCR decode failed {source_code}: {e}")
-        keep_or_dummy(kpi_id, f"UNHCR decode error {source_code}", stats)
+        keep_or_dummy(kpi_id, f"UNHCR decode error {source_code}", stats, output_dir=output_dir)
         return
 
     reader = csv.DictReader(io.StringIO(text))
     cols = reader.fieldnames or []
     if not cols:
-        keep_or_dummy(kpi_id, f"UNHCR no header {source_code}", stats)
+        keep_or_dummy(kpi_id, f"UNHCR no header {source_code}", stats, output_dir=output_dir)
         return
 
     country_key = _find_col(cols, "country of asylum","territory of asylum","asylum")
     year_key = _find_col(cols, "year")
     value_key = _find_col(cols, meta.get("unhcr_field","refugees"))
     if not all([country_key, year_key, value_key]):
-        keep_or_dummy(kpi_id, f"UNHCR unknown format {source_code}", stats)
+        keep_or_dummy(kpi_id, f"UNHCR unknown format {source_code}", stats, output_dir=output_dir)
         return
 
     out = []
@@ -1993,13 +2007,13 @@ def process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats):
 
     if out:
         out = maybe_invert_records(kpi_id, meta, out)
-        save_records(kpi_id, out)
+        save_records(kpi_id, out, stats, output_dir=output_dir)
         stats["unhcr_success"] = stats.get("unhcr_success", 0) + 1
         stats["saved_records"] += len(out)
         stats.setdefault("updated_kpis", set()).add(kpi_id)
         log(f"[OK] UNHCR KPI saved: {kpi_id} ({len(out)} rows)")
     else:
-        keep_or_dummy(kpi_id, f"UNHCR empty {source_code}", stats)
+        keep_or_dummy(kpi_id, f"UNHCR empty {source_code}", stats, output_dir=output_dir)
 # ----------------------------------------------------------------------
 # 🌍 Special Fetch: Geopolitical Risk Index (Matteo Iacoviello)
 # ----------------------------------------------------------------------
@@ -2117,6 +2131,11 @@ def merge_fetch_state(updated_kpis: set):
 # 🚀 Main
 # ======================================================================
 def main(args: argparse.Namespace) -> Dict[str, Any]:
+    global ACTIVE_DATA_DIR, ALLOW_MAPPING_WRITES, LOG_FILE
+    ACTIVE_DATA_DIR = TEST_DATA_DIR if args.test else DATA_DIR
+    ALLOW_MAPPING_WRITES = not args.test
+    LOG_FILE = str(ACTIVE_DATA_DIR / "fetch_log.txt")
+
     if args.force:
         # Force means "refetch regardless of freshness". It must never delete
         # the last known-good production snapshot before replacements pass.
@@ -2170,31 +2189,20 @@ def main(args: argparse.Namespace) -> Dict[str, Any]:
 
 
     raw_kpis = load_json_file(AVAILABLE_FILE, [])
+    if not isinstance(raw_kpis, list):
+        raise SourceContractError("KPI registry must contain an array")
+    ensure_source_registry(raw_kpis)
     kpi_list = [v for v in raw_kpis if isinstance(v, dict)]
-
-    # --- Support -k (single KPI fetch) ---
+    selection = select_kpis(kpi_list, kpi=args.kpi, test_mode=args.test)
+    kpi_list = list(selection.selected)
+    ignored_kpis = list(selection.ignored)
+    if not kpi_list:
+        mode = "test mode" if args.test else "the requested selection"
+        raise SourceContractError(f"No enabled KPIs matched {mode}")
     if args.kpi:
-        before = len(kpi_list)
-        kpi_list = [v for v in kpi_list if v.get("filename") == args.kpi]
-        log(f"[INFO] Single KPI mode (-k): filtering KPIs {len(kpi_list)}/{before} for filename='{args.kpi}'")
-
-
-    # Always ignore KPIs with test: 'o' in all modes
-    ignored_kpis = []
-    before = len(kpi_list)
-    filtered = []
-    for v in kpi_list:
-        test_flag = str(v.get("test", "")).strip()
-        if test_flag == "o":
-            ignored_kpis.append(v.get("filename") or v.get("title") or "?")
-            continue
-        filtered.append(v)
-    kpi_list = filtered
+        log(f"[INFO] Single KPI mode (-k): selected {len(kpi_list)} KPI for filename='{args.kpi}'")
     if args.test:
-        # In test mode, only fetch KPIs with test='*'
-        before_test = len(kpi_list)
-        kpi_list = [v for v in kpi_list if str(v.get("test", "")).strip() == "*"]
-        log(f"[INFO] Test mode enabled (-t): filtering KPIs with test='*' only ({len(kpi_list)}/{before_test}), ignored {len(ignored_kpis)} with test='o', skipping all analysis.")
+        log(f"[INFO] Test mode enabled (-t): selected {len(kpi_list)} KPI(s) with test='*', ignored {len(ignored_kpis)} with test='o', skipping all analysis.")
         args.no_analysis = True
     stats["kpis_loaded"] = len(kpi_list)
 
@@ -2246,7 +2254,7 @@ def main(args: argparse.Namespace) -> Dict[str, Any]:
                 if source_type == "worldbank":
                     process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
                 elif source_type == "owid":
-                    process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats)
+                    process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats, output_dir=output_dir)
                 elif source_type == "data360":
                     indicator_id = meta.get("source_code")
                     if indicator_id and indicator_id.lower().endswith('.csv'):
@@ -2394,7 +2402,9 @@ def main(args: argparse.Namespace) -> Dict[str, Any]:
     # 🤖 Automatische Verarbeitung von pending country mappings
     agent_summary_lines = []
     try:
-        if stats.get("mapped_pending", 0) > 0 or stats.get("new_pending"):
+        if args.test:
+            log("[SKIP] Test mode active: automatic production mapping updates are disabled")
+        elif stats.get("mapped_pending", 0) > 0 or stats.get("new_pending"):
             log("🤖 Running auto country mapping resolution...")
             import subprocess
             result = subprocess.run(
@@ -2436,7 +2446,7 @@ def main(args: argparse.Namespace) -> Dict[str, Any]:
             }
         }
 
-        state_path = os.path.join(DATA_DIR, "fetch_state.json")
+        state_path = os.path.join(output_dir, "fetch_state.json")
         write_json(state_path, fetch_state)
 
         log(f"[STATE] Updated KPI info written to {state_path} "

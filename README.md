@@ -294,12 +294,15 @@ new KPI filter shorthand. Typical invocations:
 - **Module form (works from `scripts/` as well)**: `python -m fetch_data -political_corruption_index`
 - **Isolated adapter smoke test**: `python scripts/fetch_data.py --test`
 - **Validate the current production snapshot**: `python scripts/validation.py`
+- **Run the complete offline regression baseline**: `python scripts/run_tests.py`
 
 Safety behavior:
 
 - Fetch errors, dummy outputs and empty selections stop the pipeline before analyses or deployment.
 - `--force` bypasses freshness checks but preserves the last known-good files until replacements are written.
 - Test mode selects only KPIs marked with `test: "*"`, writes to `data/test/` and never invokes analysis or FTP.
+- KPI definitions are checked against `scripts/source_contracts.py` before fetching; unsupported types, invalid identifiers, duplicates and missing source codes block the run.
+- The local and CI test matrix is documented in `docs/testing.md`.
 - Rollback baseline before the fail-closed safety phase: `baseline-pre-safety-refactor-2026-07-31`.
 
 > ℹ️ Python resolves relative paths against the *current* working

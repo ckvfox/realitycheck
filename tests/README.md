@@ -1,18 +1,15 @@
 # Tests Baseline
 
-This folder is reserved for automated and manual validation assets.
-
-Planned additions:
-
-- smoke checks for key pages
-- data integrity checks for generated JSON datasets
-- deployment validation checklists
+This folder contains the network-free regression baseline. Run the complete
+suite from the repository root with `python scripts/run_tests.py`; CI invokes
+the same command.
 
 Implemented targeted checks:
 
-- `python -m unittest discover -s tests -p "test_*.py" -v` validates fail-closed fetch guards, required output formats, JSON-only special sources and isolated test-KPI selection.
-- `python scripts/validation.py` validates that every active KPI has non-empty, parseable required output files and exits non-zero on any blocking error.
-- `.github/workflows/ci.yml` runs Python, data, JavaScript and PHP checks automatically on pull requests and pushes to `main` without network fetches or deployment.
+- `python -m unittest discover -s tests -p "test_*.py" -v` validates fail-closed fetch guards, source contracts, test-output isolation, transformations, deployment packaging and key-page asset references.
+- `python scripts/validation.py --no-log` validates every active KPI without modifying the committed validation log.
+- Fixtures under `tests/fixtures/` describe small representative inputs and never contain production snapshots.
+- `.github/workflows/ci.yml` installs pinned dependencies and runs the same complete offline test command on pull requests and pushes to `main`.
 
 - `node tests/germany_dossier_tabs.test.js` validates dossier selection from
   direct and nested hashes plus keyboard tab-index navigation.

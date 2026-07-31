@@ -8,15 +8,18 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from source_contracts import select_kpis, validate_source_registry
+
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_DATA_DIR = ROOT / "data"
 DEFAULT_META_FILE = DEFAULT_DATA_DIR / "meta" / "available_kpis.json"
 
 
-def log(message: str, log_file: Path) -> None:
-    log_file.parent.mkdir(parents=True, exist_ok=True)
-    with log_file.open("a", encoding="utf-8") as handle:
-        handle.write(f"[{datetime.now().isoformat()}] {message}\n")
+def log(message: str, log_file: Path | None) -> None:
+    if log_file is not None:
+        log_file.parent.mkdir(parents=True, exist_ok=True)
+        with log_file.open("a", encoding="utf-8") as handle:
+            handle.write(f"[{datetime.now().isoformat()}] {message}\n")
     print(message)
 
 
@@ -70,27 +73,13 @@ def validate_datasets(
     if not isinstance(kpis, list) or not kpis:
         return [f"INVALID KPI REGISTRY: {meta_file} must contain a non-empty array"]
 
-    selected: list[dict[str, Any]] = []
+    contract_errors = validate_source_registry(kpis)
+    if contract_errors:
+        return [f"INVALID KPI REGISTRY: {error}" for error in contract_errors]
+
+    selection = select_kpis(kpis, test_mode=test_kpis_only)
+    selected = list(selection.selected)
     errors: list[str] = []
-    seen_filenames: set[str] = set()
-    for item in kpis:
-        if not isinstance(item, dict):
-            errors.append("INVALID KPI REGISTRY: every entry must be an object")
-            continue
-        test_flag = str(item.get("test", "")).strip()
-        if test_flag == "o":
-            continue
-        if test_kpis_only and test_flag != "*":
-            continue
-        filename = str(item.get("filename", "")).strip()
-        if not filename:
-            errors.append("INVALID KPI REGISTRY: entry without filename")
-            continue
-        if filename in seen_filenames:
-            errors.append(f"DUPLICATE KPI FILENAME: {filename}")
-            continue
-        seen_filenames.add(filename)
-        selected.append(item)
 
     if not selected:
         errors.append("NO KPI DATASETS SELECTED")
@@ -117,13 +106,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA_DIR)
     parser.add_argument("--meta-file", type=Path, default=DEFAULT_META_FILE)
     parser.add_argument("--test-kpis-only", action="store_true")
+    parser.add_argument("--no-log", action="store_true", help="Print results without changing validation_log.txt")
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
     data_dir = args.data_dir.resolve()
-    log_file = data_dir / "validation_log.txt"
+    log_file = None if args.no_log else data_dir / "validation_log.txt"
     log("==== RealityCheck Data Validation Started ====", log_file)
     errors = validate_datasets(data_dir, args.meta_file.resolve(), test_kpis_only=args.test_kpis_only)
     if errors:

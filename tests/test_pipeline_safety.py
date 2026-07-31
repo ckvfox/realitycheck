@@ -38,7 +38,10 @@ class DatasetValidationTests(unittest.TestCase):
     def test_regular_source_requires_json_and_csv(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            registry = self.write_registry(root, [{"filename": "population", "source_type": "worldbank"}])
+            registry = self.write_registry(
+                root,
+                [{"filename": "population", "source_type": "worldbank", "source_code": "SP.POP.TOTL"}],
+            )
             (root / "population.json").write_text('[{"country":"Germany","year":2024,"value":1}]', encoding="utf-8")
             errors = validate_datasets(root, registry)
             self.assertTrue(any("population.csv" in error for error in errors))
@@ -46,7 +49,10 @@ class DatasetValidationTests(unittest.TestCase):
     def test_special_source_intentionally_requires_json_only(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            registry = self.write_registry(root, [{"filename": "geopolitical_risk_index", "source_type": "special"}])
+            registry = self.write_registry(
+                root,
+                [{"filename": "geopolitical_risk_index", "source_type": "special", "source_code": "gpr.xls"}],
+            )
             (root / "geopolitical_risk_index.json").write_text(
                 '[{"country":"World","year":2024,"value":1}]', encoding="utf-8"
             )
@@ -58,8 +64,13 @@ class DatasetValidationTests(unittest.TestCase):
             registry = self.write_registry(
                 root,
                 [
-                    {"filename": "test_kpi", "source_type": "worldbank", "test": "*"},
-                    {"filename": "production_only", "source_type": "worldbank", "test": ""},
+                    {"filename": "test_kpi", "source_type": "worldbank", "source_code": "TEST", "test": "*"},
+                    {
+                        "filename": "production_only",
+                        "source_type": "worldbank",
+                        "source_code": "PROD",
+                        "test": "",
+                    },
                 ],
             )
             (root / "test_kpi.json").write_text('[{"country":"Germany","year":2024,"value":1}]', encoding="utf-8")

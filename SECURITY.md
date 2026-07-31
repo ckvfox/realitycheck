@@ -38,6 +38,8 @@ If you discover a vulnerability, report it privately.
 - Force mode never removes the last known-good data snapshot before replacement data succeeds.
 - Full and partial FTP uploads are built from the productive deployment allowlist; partial paths are validated against that package.
 - Production fetches and FTP-only deployments use separate concurrency groups to prevent overlapping writes.
+- Test-mode datasets, status, logs, hashes and pending mappings are isolated below `data/test/`; automatic production mapping updates are disabled in test mode.
+- Pull requests run the complete network-free source-contract, adapter-isolation, snapshot and deployment regression baseline before merge.
 
 ## Backup Strategy
 

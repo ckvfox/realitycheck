@@ -11,8 +11,8 @@
 - Refresh the income-pyramid thresholds after each annual Destatis full-time earnings and EU-SILC release; never infer a current net top-10 threshold without a published source.
 - Refresh and review the server-side Destatis real-wage snapshot and OECD wage dataset when either source revises its annual series or price base.
 - Completed: fail-closed data validation, deployment allowlist enforcement and pipeline safety regression tests.
+- Completed: Testbasis phase with source metadata contracts, isolated adapter tests, key-page smoke checks and one shared local/CI runner.
 - Add CI check that validates standards/compliance-output-schema.json format for audit outputs.
-- Add smoke checks for core pages to tests/.
 
 ## Migration Tasks
 

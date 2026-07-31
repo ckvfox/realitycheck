@@ -18,12 +18,16 @@ The workflows cover offline CI, source refreshes, validated deployment packaging
 
 Runs for pull requests and pushes to `main`:
 
-- Python compilation and pipeline safety unit tests
+- pinned Python dependency installation
+- Python compilation, source-contract, fetch-isolation and deployment unit tests
 - committed data-snapshot validation
+- key-page local asset smoke tests
 - JavaScript tests
 - PHP lint and PHP data/auth tests
 
-CI never calls external data sources, OpenAI or FTP.
+CI calls `python scripts/run_tests.py`, the same entry point used locally. It
+never calls external data sources, OpenAI or FTP and does not update the
+committed validation log.
 
 ### Fetch workflows
 

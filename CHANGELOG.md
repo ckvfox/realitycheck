@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file.
 - Added fail-closed pipeline guards and unit tests for fetch errors, dummy results, empty selections, output-format requirements and isolated test KPIs.
 - Added automatic pull-request and `main` CI for Python compilation, data validation, JavaScript tests and PHP checks.
 - Added the pushed rollback tag `baseline-pre-safety-refactor-2026-07-31` for the complete pre-Sofortschutz state.
+- Added a network-free test baseline with 22 Python regression tests for source contracts, KPI selection, adapter output isolation, transformations, key-page assets, deployment allowlisting and delta detection.
+- Added `scripts/run_tests.py` as the shared local and CI entry point plus `docs/testing.md` for extending KPI and source coverage.
 
 ### Changed
 - Changed force refreshes to preserve the last known-good data snapshot instead of deleting productive data before fetching replacements.
@@ -15,11 +17,13 @@ All notable changes to this project will be documented in this file.
 - Pinned direct Python dependencies and all GitHub Actions, serialized overlapping data/deployment workflows and removed token-bearing Git push URLs.
 - Pinned browser CDN libraries and added Subresource Integrity checks to previously unverified Marked, Chart.js and Pako loads.
 - Changed the manual fetch test to use the isolated `--test` mode and validate only its two marked KPI outputs.
+- Changed CI to install pinned dependencies and execute the same complete offline test runner used locally.
 
 ### Fixed
 - Made data validation return a failing exit code for missing, empty or malformed required outputs while recognizing the geopolitical-risk source as intentionally JSON-only.
 - Sanitized generated Markdown and rendered AI summaries as text to prevent untrusted generated content from becoming executable DOM markup.
 - Serialized visitor-counter writes and restricted the counter endpoint to POST requests.
+- Isolated OWID, World Bank, IMF, UNHCR, CSV status, log, hash and mapping side effects below `data/test/` during test runs instead of allowing writes into the productive data snapshot.
 
 ## [3.3.0] - 2026-07-31
 

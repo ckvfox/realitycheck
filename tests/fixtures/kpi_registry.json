@@ -1,0 +1,20 @@
+[
+  {
+    "filename": "population",
+    "source_type": "worldbank",
+    "source_code": "SP.POP.TOTL",
+    "test": "*"
+  },
+  {
+    "filename": "life_expectancy",
+    "source_type": "owid",
+    "source_code": "life-expectancy.csv",
+    "test": ""
+  },
+  {
+    "filename": "manual_index",
+    "source_type": "csv",
+    "source_code": "manual_index.csv",
+    "test": "o"
+  }
+]
