@@ -3,6 +3,10 @@ name: 🔄 RealityCheck – Manual Fetch Force (Overwrite)
 on:
   workflow_dispatch: {}    # Nur manuell startbar
 
+concurrency:
+  group: realitycheck-data-pipeline
+  cancel-in-progress: false
+
 jobs:
   manual_force_run:
     runs-on: ubuntu-latest
@@ -15,17 +19,16 @@ jobs:
 
     steps:
       - name: 🧭 Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - name: 🐍 Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.11'
 
       - name: 📦 Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -U sdmx1
           pip install -r requirements.txt
           echo "✅ Dependencies installed"
 
@@ -37,14 +40,14 @@ jobs:
           echo "===== Manual Fetch Force End $(date -u) ====="
 
       - name: 💾 Upload log artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: fetch_log_force
           path: data/fetch_log.txt
           retention-days: 7
 
       - name: 🌍 FTP Deploy /data to InfinityFree (Safe)
-        uses: SamKirkland/ftp-deploy-action@v4.3.5
+        uses: SamKirkland/ftp-deploy-action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -72,7 +75,7 @@ jobs:
           git config --global user.email "bot@realitycheck"
           git add data/
           git commit -m "🔄 Manual force data update ($(date -u))" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+          git push origin HEAD:main
 
       - name: 🕐 Get current UTC date
         id: date
@@ -80,7 +83,7 @@ jobs:
 
       - name: 📱 Create GitHub Issue for status
         if: always()
-        uses: actions/github-script@v7
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         with:
           script: |
             const title = `🔄 Manual Force RealityCheck Run – ${{ job.status }}`;

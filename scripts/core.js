@@ -1221,7 +1221,9 @@ async function renderKpiAnalysis(metaOrId, targetId = "kpi-analysis") {
 
   // --- Ergebnis einfügen + Fade-in aktivieren ---
   if (summary) {
-    box.innerHTML = `<strong>🧠 KPI Insights:</strong> ${summary}`;
+    const heading = document.createElement("strong");
+    heading.textContent = "🧠 KPI Insights: ";
+    box.replaceChildren(heading, document.createTextNode(summary));
   } else {
     box.innerHTML = "<em>No AI analysis available for this indicator.</em>";
   }

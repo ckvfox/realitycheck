@@ -5,6 +5,10 @@ on:
     - cron: "0 3 1 * *"     # Jeden 1. des Monats um 03:00 UTC (05:00 MEZ)
   workflow_dispatch: {}      # Optional: manuell startbar
 
+concurrency:
+  group: realitycheck-data-pipeline
+  cancel-in-progress: false
+
 jobs:
   monthly_run:
     runs-on: ubuntu-latest
@@ -17,10 +21,10 @@ jobs:
 
     steps:
       - name: 🧭 Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - name: 🐍 Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.11'
 
@@ -37,14 +41,14 @@ jobs:
           echo "===== Monthly Fetch End $(date -u) ====="
 
       - name: 💾 Upload log artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: fetch_log_monthly
           path: data/fetch_log.txt
           retention-days: 7
 
       - name: 🌍 FTP Deploy /data to InfinityFree (Safe)
-        uses: SamKirkland/ftp-deploy-action@v4.3.5
+        uses: SamKirkland/ftp-deploy-action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -74,7 +78,7 @@ jobs:
           git add data/
           # Nur committen, wenn es Änderungen gibt
           git diff-index --quiet HEAD || git commit -m "📆 Monthly data update ($(date -u))"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+          git push origin HEAD:main
 
       # ✅ Neuer, stabiler Schritt: Datum in Variable schreiben
       - name: 🕐 Get current UTC date
@@ -83,7 +87,7 @@ jobs:
 
       - name: 📱 Create GitHub Issue for status
         if: always()
-        uses: actions/github-script@v7
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         with:
           script: |
             const title = `📅 Monthly RealityCheck Run – ${{ job.status }}`;

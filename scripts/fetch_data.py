@@ -1,33 +1,3 @@
-def handle_force_cleanup():
-    """
-    Löscht alle Dateien und Unterordner in /data außer /data/meta sowie scripts/__pycache__.
-    """
-    import shutil
-    from pathlib import Path
-
-    data_dir = Path("data")
-    meta_dir = data_dir / "meta"
-    # Lösche alles in /data außer /data/meta
-
-    for item in data_dir.iterdir():
-        if item == meta_dir:
-            continue
-        try:
-            if item.is_dir():
-                shutil.rmtree(item)
-            else:
-                item.unlink()
-        except Exception as e:
-            print(f"⚠️ Fehler beim Löschen von {item}: {e}")
-
-
-    # Lösche scripts/__pycache__ falls vorhanden
-    pycache_dir = Path("scripts") / "__pycache__"
-    if pycache_dir.exists() and pycache_dir.is_dir():
-        try:
-            shutil.rmtree(pycache_dir)
-        except Exception as e:
-            print(f"⚠️ Fehler beim Löschen von {pycache_dir}: {e}")
 from pathlib import Path
 # === Robust JSON Writer ===
 def write_json(path: str | Path, obj):
@@ -108,7 +78,6 @@ import os
 import sys
 import json
 import time
-import shutil
 import logging
 import argparse
 import requests
@@ -122,6 +91,7 @@ from typing import Any, Dict, List, Optional
 from pathlib import Path
 from datetime import datetime, timezone
 from env_utils import get_openai_key  # ✅ wichtig: hier fehlte der Import
+from pipeline_guard import PipelineGuardError, ensure_fetch_succeeded
 from script_utils import (
     ensure_utf8_stdout,
     read_json as load_json_file,
@@ -2146,9 +2116,11 @@ def merge_fetch_state(updated_kpis: set):
 # ======================================================================
 # 🚀 Main
 # ======================================================================
-def main(args: argparse.Namespace) -> None:
+def main(args: argparse.Namespace) -> Dict[str, Any]:
     if args.force:
-        handle_force_cleanup()
+        # Force means "refetch regardless of freshness". It must never delete
+        # the last known-good production snapshot before replacements pass.
+        log("[SAFE] Force mode preserves existing data until each replacement is written successfully.")
 
     ensure_dirs()
 
@@ -2542,9 +2514,10 @@ def main(args: argparse.Namespace) -> None:
         for reason, count in sorted(skipped_breakdown.items()):
             summary.append(f"  - {reason}: {count}")
 
+    safe_result = stats.get("errors", 0) == 0 and stats.get("dummies", 0) == 0
     summary.extend([
         "=================================",
-        "✅ Fetch completed successfully\n"
+        ("Fetch completed successfully" if safe_result else "Fetch completed with blocking safety errors") + "\n"
     ])
     # Note: If 'KPIs processed' > 'fetch_status.json updated', the difference is usually due to dummies, errors, or skipped KPIs that do not result in a status update.
 
@@ -2554,6 +2527,7 @@ def main(args: argparse.Namespace) -> None:
         f.write(report + "\n")
     print(f"🪵 Logfile saved → {LOG_FILE}")
     log(f"[INFO] Full fetch report written to {LOG_FILE}")
+    return stats
 
 
 # ======================================================================
@@ -2568,13 +2542,23 @@ if __name__ == "__main__":
     elif cli_args.no_analysis:
         print("⏸️ Smart analyses and GPT-based tasks are disabled (local test mode).")
 
-    main(cli_args)
+    run_stats = main(cli_args)
+
+    try:
+        ensure_fetch_succeeded(run_stats)
+    except PipelineGuardError as exc:
+        print(f"ERROR: Pipeline safety gate blocked post-processing and deployment: {exc}")
+        raise SystemExit(2) from exc
 
     # In test mode, never run analysis, consolidation, or post-fetch scripts
     if cli_args.test:
-        print("⏭️ Test mode: Skipping all analysis, consolidation, and post-fetch scripts.")
-        import sys
-        sys.exit(0)
+        print("➡️ Validating isolated test output …")
+        subprocess.run(
+            [sys.executable, os.path.join(SCRIPT_DIR, "validation.py"), "--data-dir", str(TEST_DATA_DIR), "--test-kpis-only"],
+            check=True,
+        )
+        print("✅ Test-mode fetch and validation completed without touching production data.")
+        raise SystemExit(0)
 
     if cli_args.no_analysis:
         print("⏭️ Analysis and consolidation scripts skipped (--no-analysis or test mode).")
@@ -2582,17 +2566,17 @@ if __name__ == "__main__":
     else:
         try:
             print("➡️ Running fetch_overall_ranking.py …")
-            subprocess.run(["python", os.path.join(SCRIPT_DIR, "fetch_overall_ranking.py")], check=True)
+            subprocess.run([sys.executable, os.path.join(SCRIPT_DIR, "fetch_overall_ranking.py")], check=True)
             print("✅ Overall Ranking successfully updated.")
         except Exception as e:
-            print(f"⚠️ Error in overall ranking: {e}")
+            raise RuntimeError(f"Overall ranking failed: {e}") from e
 
         try:
             print("➡️ Running fetch_consolidated.py …")
-            subprocess.run(["python", os.path.join(SCRIPT_DIR, "fetch_consolidated.py")], check=True)
+            subprocess.run([sys.executable, os.path.join(SCRIPT_DIR, "fetch_consolidated.py")], check=True)
             print("✅ Consolidated data successfully created.")
         except Exception as e:
-            print(f"⚠️ Error in consolidation: {e}")
+            raise RuntimeError(f"Consolidation failed: {e}") from e
 
     # === Fetch-State zusammenführen ===
     try:
@@ -2604,18 +2588,18 @@ if __name__ == "__main__":
                 updated_kpis = set(state_data.get("updated_kpis", []))
         merge_fetch_state(updated_kpis)
     except Exception as e:
-        print(f"⚠️ State merge failed: {e}")
+        raise RuntimeError(f"State merge failed: {e}") from e
 
     # === Nur Analysen ausführen, wenn neue Daten da sind ===
     if not cli_args.no_analysis:
         try:
             if cli_args.force or len(updated_kpis) > 0:
                 print(f"➡️ Starting global KPI analysis ({len(updated_kpis)} updates or forced run) …")
-                subprocess.run(["python", os.path.join(SCRIPT_DIR, "analysis.py")], check=True)
+                subprocess.run([sys.executable, os.path.join(SCRIPT_DIR, "analysis.py")], check=True)
             else:
                 print("⏸️ No updated KPIs — skipping AI analysis.")
         except Exception as e:
-            print(f"⚠️ Global analysis failed: {e}")
+            raise RuntimeError(f"Global analysis failed: {e}") from e
 
         # === Fun/Safe Rankings ===
         try:
@@ -2629,28 +2613,28 @@ if __name__ == "__main__":
 
             if file_age_days(fun_path) > 30 or file_age_days(safe_path) > 30:
                 print("➡️ Generating Fun/Safe rankings …")
-                subprocess.run(["python", os.path.join(SCRIPT_DIR, "generate_fun_safe_rankings.py")], check=True)
+                subprocess.run([sys.executable, os.path.join(SCRIPT_DIR, "generate_fun_safe_rankings.py")], check=True)
                 print("✅ Fun/Safe rankings generated.")
             else:
                 print("⏸️ Fun/Safe rankings are current — no update needed.")
         except Exception as e:
-            print(f"⚠️ Fun/Safe ranking generation failed: {e}")
+            raise RuntimeError(f"Fun/Safe ranking generation failed: {e}") from e
 
         # === CSV Update Check (läuft immer) ===
         try:
             print("➡️ Running check_source_csv_updates.py …")
-            subprocess.run(["python", os.path.join(SCRIPT_DIR, "check_source_csv_updates.py")], check=True)
+            subprocess.run([sys.executable, os.path.join(SCRIPT_DIR, "check_source_csv_updates.py")], check=True)
             print("✅ CSV source check completed.")
         except Exception as e:
-            print(f"⚠️ CSV source check failed: {e}")
+            raise RuntimeError(f"CSV source check failed: {e}") from e
     else:
         print("⏭️ AI-based analyses skipped (--no-analysis enabled).")
 
     # === Run validation as last step ===
     try:
         print("➡️ Running validation.py as final step …")
-        subprocess.run(["python", os.path.join(SCRIPT_DIR, "validation.py")], check=True)
+        subprocess.run([sys.executable, os.path.join(SCRIPT_DIR, "validation.py")], check=True)
         print("✅ Data validation completed.")
     except Exception as e:
-        print(f"⚠️ Data validation failed: {e}")
+        raise RuntimeError(f"Data validation failed: {e}") from e
 

@@ -28,6 +28,16 @@ If you discover a vulnerability, report it privately.
 - The separate war stress test is public through the dossier but its source include remains HTTP-denied. It deliberately excludes target-level infrastructure details, coordinates and tactical guidance. Its conscription map is a non-operational policy comparison using public country boundaries only.
 - Analysis includes are denied direct HTTP access, while the runtime password-hash file is excluded from version control.
 - When enabled, the retained gate uses idle expiry, CSRF tokens, session ID regeneration, per-session attempt locking and delayed failures. The current public page keeps no-store caching and robots exclusion headers without starting a login session.
+- Generated Markdown and AI summaries are sanitized or inserted as text before entering the DOM.
+- Visitor-count updates accept POST only and serialize concurrent file writes with an exclusive lock.
+
+## Pipeline and Deployment Security
+
+- Direct dependencies are version-pinned and GitHub Actions are pinned to immutable commit SHAs.
+- Fetch errors, dummy datasets and validation failures stop the workflow before analysis or FTP deployment.
+- Force mode never removes the last known-good data snapshot before replacement data succeeds.
+- Full and partial FTP uploads are built from the productive deployment allowlist; partial paths are validated against that package.
+- Production fetches and FTP-only deployments use separate concurrency groups to prevent overlapping writes.
 
 ## Backup Strategy
 

@@ -10,6 +10,10 @@ Planned additions:
 
 Implemented targeted checks:
 
+- `python -m unittest discover -s tests -p "test_*.py" -v` validates fail-closed fetch guards, required output formats, JSON-only special sources and isolated test-KPI selection.
+- `python scripts/validation.py` validates that every active KPI has non-empty, parseable required output files and exits non-zero on any blocking error.
+- `.github/workflows/ci.yml` runs Python, data, JavaScript and PHP checks automatically on pull requests and pushes to `main` without network fetches or deployment.
+
 - `node tests/germany_dossier_tabs.test.js` validates dossier selection from
   direct and nested hashes plus keyboard tab-index navigation.
 - `php -d zend.assertions=1 -d assert.exception=1 tests/germany_reform_agenda_data_test.php`

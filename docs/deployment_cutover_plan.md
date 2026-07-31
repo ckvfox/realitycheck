@@ -67,6 +67,7 @@ Current evidence:
 
 If cutover cycle fails:
 
+- Use Git tag `baseline-pre-safety-refactor-2026-07-31` to restore the complete pre-Sofortschutz code baseline when a code rollback is required.
 - Re-enable upload from deployment/full_deployment and deployment/delta_deployment.
 - Keep packaging command unchanged with --mirror-legacy.
 - Document failure mode and corrective action before next attempt.

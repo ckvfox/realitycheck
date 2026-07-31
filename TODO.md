@@ -10,7 +10,7 @@
 - Review the Germany 2036 source/assumption matrix at least annually and after material Destatis, UBA, IEA, OECD, EU or NATO updates; keep model assumptions separate from projections.
 - Refresh the income-pyramid thresholds after each annual Destatis full-time earnings and EU-SILC release; never infer a current net top-10 threshold without a published source.
 - Refresh and review the server-side Destatis real-wage snapshot and OECD wage dataset when either source revises its annual series or price base.
-- Add automated validation for deployment bundle exclusions.
+- Completed: fail-closed data validation, deployment allowlist enforcement and pipeline safety regression tests.
 - Add CI check that validates standards/compliance-output-schema.json format for audit outputs.
 - Add smoke checks for core pages to tests/.
 

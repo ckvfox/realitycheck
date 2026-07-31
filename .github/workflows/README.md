@@ -1,132 +1,65 @@
-# ⚙️ RealityCheck – GitHub Actions Workflows
+# RealityCheck GitHub Actions
 
-Dieses Verzeichnis enthält alle automatisierten Abläufe (CI/CD-Pipelines) für das RealityCheck-Projekt.  
-Sie decken **Fetch**, **Analyse**, **FTP-Upload** und **Benachrichtigungen per E-Mail** ab.
+The workflows cover offline CI, source refreshes, validated deployment packaging and FTP handover.
 
-Alle Workflows verwenden:
-- 🧩 **Python 3.11**
-- 🧠 `OPENAI_API_KEY` aus GitHub Secrets
-- 🚀 **FTP-Deploy-Action** (`SamKirkland/ftp-deploy-action@v4.3.5`)
-- 📧 **E-Mail-Benachrichtigung** (immer aktiv – bei Erfolg oder Fehler)
+## Safety model
 
----
+- External actions are pinned to immutable commit SHAs.
+- Fetch workflows share the `realitycheck-data-pipeline` concurrency group, so two refreshes cannot write or deploy data simultaneously.
+- FTP-only workflows share the `realitycheck-production-deploy` concurrency group.
+- Fetch errors, dummy datasets, empty test selections and validation errors return non-zero exit codes and stop all later steps.
+- Force mode refetches data but never deletes the last known-good snapshot first.
+- Full and partial uploads are sourced from the allowlisted `build/deployment/full/` package.
+- Full upload is non-destructive; obsolete remote files require an explicit, separately reviewed cleanup.
 
-## 🧪 `manual-fetch.yml`
-**Manueller Voll-Fetch + Analyse + FTP + E-Mail**
+## Workflows
 
-➡️ Start:  
-GitHub → *Actions* → *RealityCheck – Manual Fetch (Test)* → **Run workflow**
+### `ci.yml`
 
-Führt automatisch aus:
-1. Lädt alle KPIs (WorldBank, OWID, CSV, UNHCR)
-2. Generiert Rankings und Konsolidierungen
-3. Führt die KI-Analyse aus
-4. Lädt `/data/` per FTP hoch
-5. Sendet dir das Log per E-Mail 📧
+Runs for pull requests and pushes to `main`:
 
-**Empfohlen:** vor Monatsende oder nach Änderungen an den Quellen.
+- Python compilation and pipeline safety unit tests
+- committed data-snapshot validation
+- JavaScript tests
+- PHP lint and PHP data/auth tests
 
----
+CI never calls external data sources, OpenAI or FTP.
 
-## 📅 `monthly-fetch.yml`
-**Automatischer Monatslauf**  
-läuft am **1. Tag jedes Monats um 03:00 UTC (05:00 MEZ)**
+### Fetch workflows
 
-Führt die gleichen Schritte wie der manuelle Fetch aus.  
-Perfekt, um RealityCheck aktuell zu halten – ganz ohne manuelles Eingreifen.
+- `monthly-fetch.yml`: scheduled full refresh on the first day of each month
+- `manual-fetch.yml`: manual full refresh with analyses
+- `manual-fetch-fast.yml`: manual refresh without AI analysis
+- `manual-fetch-force.yml`: forced source refresh while preserving existing files until replacements succeed
+- `manual-fetch-force-fast.yml`: forced refresh without AI analysis
+- `manual-fetch-test.yml`: isolated two-KPI adapter test using `--test`; writes only to `data/test/` and never deploys
 
-Wenn du möchtest, kannst du ihn auch **manuell starten**, z. B. zum Testen.
+Every production fetch must pass the pipeline guard and final data validation before FTP and Git push can run.
 
----
+### FTP workflows
 
-## 🚀 `manual-ftp-full.yml`
-**Vollständiger FTP-Upload (Clean Slate)**
+- `manual-ftp-full.yml`: validates data, builds the productive allowlist and uploads the complete package without remote clean-slate deletion
+- `manual-ftp-sync.yml`: validates the committed data snapshot and synchronizes productive `/data/` files
+- `manual-partial-upload.yml`: accepts comma-separated productive paths, rejects traversal/absolute paths and uploads only files present in the generated deployment allowlist
 
-Löscht zuerst alle Dateien im Zielverzeichnis (`/data/`)  
-und lädt **alle lokalen Dateien neu** hoch.
+Example partial input:
 
-➡️ Start:  
-GitHub → *Actions* → *RealityCheck – Full FTP Upload* → **Run workflow**
+```text
+germany-dossier.php,data/overall_ranking.json
+```
 
-⚠️ Verwende dies nur, wenn:
-- das Serververzeichnis beschädigt ist
-- viele Dateien manuell gelöscht oder geändert wurden
+Logs, Markdown, Python, CSV sources and other non-productive files cannot be selected for partial deployment.
 
----
+## Required secrets
 
-## 🔁 `manual-ftp-sync.yml`
-**Schneller FTP-Sync – nur geänderte Dateien**
+| Secret | Used for |
+|---|---|
+| `OPENAI_API_KEY` | Optional analysis/ranking stages in fetch workflows |
+| `FTP_SERVER` | FTPS server |
+| `FTP_USERNAME` | FTPS account |
+| `FTP_PASSWORD` | FTPS password |
+| `FTP_DIR` | Productive server root |
 
-Überträgt **nur Unterschiede** zwischen lokalem `/data/`  
-und dem Serververzeichnis – ideal für kleine Aktualisierungen.
+Status details and logs remain available in the GitHub Actions run and uploaded artifacts.
 
-➡️ Start:  
-GitHub → *Actions* → *RealityCheck – FTP Sync Upload* → **Run workflow**
-
-Empfohlen nach manuellen Anpassungen einzelner JSONs oder CSVs.
-
----
-
-## 🎯 `manual-partial-upload.yml`
-**Upload einzelner Dateien per Eingabe**
-
-➡️ Start:  
-GitHub → *Actions* → *RealityCheck – Partial FTP Upload* →  
-→ **Run workflow** → im Eingabefeld `files` z. B.:
-
-data/fetch_log.txt,data/overall_ranking.json,data/fun_ranking.json
-
-markdown
-Code kopieren
-
-Nur diese Dateien werden hochgeladen.
-
-**Beispiel-Einsatz:**
-- Du hast nachträglich `fun_ranking.json` geändert.
-- Oder willst nur das neue Log hochladen.
-
----
-
-## 🔒 Benötigte GitHub Secrets
-
-| Secret | Beschreibung |
-|---------|---------------|
-| `OPENAI_API_KEY` | Dein gültiger OpenAI API-Schlüssel |
-| `FTP_SERVER` | FTP-Serveradresse (z. B. `ftpupload.net`) |
-| `FTP_USERNAME` | FTP-Benutzername |
-| `FTP_PASSWORD` | FTP-Passwort |
-| `FTP_DIR` | Basisverzeichnis (z. B. `/realitycheck.great-site.net/htdocs`) |
-| `SMTP_SERVER` | SMTP-Server für Mail (z. B. `smtp.gmail.com`) |
-| `SMTP_PORT` | Port (z. B. `465`) |
-| `SMTP_USERNAME` | Absenderadresse (z. B. `yourname@gmail.com`) |
-| `SMTP_PASSWORD` | App-spezifisches Passwort (nicht dein echtes Gmail-PW!) |
-| `EMAIL_TO` | Empfängeradresse für Benachrichtigungen |
-
----
-
-## 📬 Benachrichtigungen
-
-Nach jedem Workflow (egal ob erfolgreich oder fehlerhaft)  
-erhältst du eine E-Mail mit:
-- dem Status (`success` / `failure`)
-- dem Datum
-- und angehängtem Log (`fetch_log.txt`)
-
-Beispiel-Betreff:  
-RealityCheck Run – success
-
-yaml
-Code kopieren
-
----
-
-## 🧠 Tipps
-
-- Du kannst die Logs auch in GitHub unter **Actions → Artifacts** herunterladen.  
-- Wenn sich dein FTP-Server ändert, musst du nur die **Secrets** anpassen –  
-  die Workflows bleiben unverändert.
-- Alle Workflows sind modular – du kannst sie unabhängig voneinander ausführen.
-
----
-
-✍️ *Stand: Oktober 2025 – RealityCheck Automated Pipeline by ChatGPT-5*
+Last reviewed: 2026-07-31.

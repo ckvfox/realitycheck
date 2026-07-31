@@ -1,97 +1,139 @@
-import os
-import json
+"""Fail-closed validation for generated RealityCheck datasets."""
+from __future__ import annotations
+
+import argparse
 import csv
-from pathlib import Path
+import json
 from datetime import datetime
+from pathlib import Path
+from typing import Any
 
-DATA_DIR = Path(__file__).parent.parent / 'data'
-META_DIR = DATA_DIR / 'meta'
-PENDING_DIR = DATA_DIR / 'pending'
-MASTER_DIR = DATA_DIR / 'master'
-LOG_FILE = DATA_DIR / 'validation_log.txt'
-KPI_META_FILE = META_DIR / 'available_kpis.json'
+ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_DATA_DIR = ROOT / "data"
+DEFAULT_META_FILE = DEFAULT_DATA_DIR / "meta" / "available_kpis.json"
 
-# Utility functions
-def log(msg):
-    with open(LOG_FILE, 'a', encoding='utf-8') as f:
-        f.write(f"[{datetime.now().isoformat()}] {msg}\n")
-    print(msg)
 
-def check_file_exists_and_nonempty(path):
-    if not path.exists():
-        log(f"❌ MISSING: {path}")
-        return False
-    if path.stat().st_size == 0:
-        log(f"❌ EMPTY: {path}")
-        return False
-    return True
+def log(message: str, log_file: Path) -> None:
+    log_file.parent.mkdir(parents=True, exist_ok=True)
+    with log_file.open("a", encoding="utf-8") as handle:
+        handle.write(f"[{datetime.now().isoformat()}] {message}\n")
+    print(message)
 
-def sample_compare_json(new_file, master_file, sample_size=5):
+
+def expected_extensions(kpi: dict[str, Any]) -> tuple[str, ...]:
+    """Return required generated formats for a KPI.
+
+    The special geopolitical-risk source intentionally publishes JSON only.
+    All regular adapters currently promise both JSON and CSV output.
+    """
+    if str(kpi.get("source_type", "")).strip().lower() == "special":
+        return ("json",)
+    return ("json", "csv")
+
+
+def validate_json_file(path: Path) -> str | None:
     try:
-        with open(new_file, encoding='utf-8') as f:
-            new_data = json.load(f)
-        with open(master_file, encoding='utf-8') as f:
-            master_data = json.load(f)
-        # Sample comparison: check first N records
-        for i in range(min(sample_size, len(master_data))):
-            if master_data[i] != new_data[i]:
-                log(f"⚠️ SAMPLE MISMATCH in {new_file.name} at record {i}: {master_data[i]} != {new_data[i]}")
-                return False
-        return True
-    except Exception as e:
-        log(f"❌ ERROR comparing {new_file} and {master_file}: {e}")
-        return False
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return f"INVALID JSON: {path} ({exc})"
+    if not isinstance(payload, list):
+        return f"INVALID DATASET: {path} must contain a JSON array"
+    if not payload:
+        return f"EMPTY DATASET: {path}"
+    return None
 
-def sample_compare_csv(new_file, master_file, sample_size=5):
+
+def validate_csv_file(path: Path) -> str | None:
     try:
-        with open(new_file, encoding='utf-8') as f:
-            new_rows = list(csv.reader(f))
-        with open(master_file, encoding='utf-8') as f:
-            master_rows = list(csv.reader(f))
-        for i in range(1, min(sample_size+1, len(master_rows))):
-            if master_rows[i] != new_rows[i]:
-                log(f"⚠️ SAMPLE MISMATCH in {new_file.name} at row {i}: {master_rows[i]} != {new_rows[i]}")
-                return False
-        return True
-    except Exception as e:
-        log(f"❌ ERROR comparing {new_file} and {master_file}: {e}")
-        return False
+        with path.open(encoding="utf-8", newline="") as handle:
+            reader = csv.reader(handle)
+            header = next(reader, None)
+            first_row = next(reader, None)
+    except OSError as exc:
+        return f"INVALID CSV: {path} ({exc})"
+    if not header or not first_row:
+        return f"EMPTY DATASET: {path}"
+    return None
 
-def main():
-    log("==== RealityCheck Data Validation Started ====")
-    # 1. Inventory all expected KPI files
-    with open(KPI_META_FILE, encoding='utf-8') as f:
-        kpis = json.load(f)
-    missing_files = []
-    for kpi in kpis:
-        # Skip KPIs with test = 'o'
-        if str(kpi.get('test', '')).strip().lower() == 'o':
+
+def validate_datasets(
+    data_dir: Path,
+    meta_file: Path = DEFAULT_META_FILE,
+    *,
+    test_kpis_only: bool = False,
+) -> list[str]:
+    """Return blocking validation errors for the requested dataset snapshot."""
+    try:
+        kpis = json.loads(meta_file.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return [f"INVALID KPI REGISTRY: {meta_file} ({exc})"]
+    if not isinstance(kpis, list) or not kpis:
+        return [f"INVALID KPI REGISTRY: {meta_file} must contain a non-empty array"]
+
+    selected: list[dict[str, Any]] = []
+    errors: list[str] = []
+    seen_filenames: set[str] = set()
+    for item in kpis:
+        if not isinstance(item, dict):
+            errors.append("INVALID KPI REGISTRY: every entry must be an object")
             continue
-        fname = kpi['filename']
-        for ext in ['json', 'csv']:
-            fpath = DATA_DIR / f"{fname}.{ext}"
-            if not check_file_exists_and_nonempty(fpath):
-                missing_files.append(str(fpath))
-    # 2. Check meta and pending dirs
-    for meta_file in META_DIR.glob('*.json'):
-        check_file_exists_and_nonempty(meta_file)
-    for pending_file in PENDING_DIR.glob('*.json'):
-        check_file_exists_and_nonempty(pending_file)
-    # 3. Master file comparison for Land Area and Human Rights Index
-    for base, ext in [("area", "json"), ("area", "csv"), ("human_rights_index_vdem", "json"), ("human_rights_index_vdem", "csv")]:
-        new_file = DATA_DIR / f"{base}.{ext}"
-        master_file = MASTER_DIR / f"{base}.{ext}"
-        if check_file_exists_and_nonempty(master_file) and check_file_exists_and_nonempty(new_file):
-            if ext == 'json':
-                sample_compare_json(new_file, master_file)
-            else:
-                sample_compare_csv(new_file, master_file)
-    log("==== Validation Complete ====")
-    if missing_files:
-        log(f"❌ {len(missing_files)} files missing or empty. See above.")
-    else:
-        log("✅ All expected files present and non-empty.")
-    log("Suggestions: Check for plausible value ranges, outliers, and year coverage in future.")
+        test_flag = str(item.get("test", "")).strip()
+        if test_flag == "o":
+            continue
+        if test_kpis_only and test_flag != "*":
+            continue
+        filename = str(item.get("filename", "")).strip()
+        if not filename:
+            errors.append("INVALID KPI REGISTRY: entry without filename")
+            continue
+        if filename in seen_filenames:
+            errors.append(f"DUPLICATE KPI FILENAME: {filename}")
+            continue
+        seen_filenames.add(filename)
+        selected.append(item)
 
-if __name__ == '__main__':
-    main()
+    if not selected:
+        errors.append("NO KPI DATASETS SELECTED")
+        return errors
+
+    for kpi in selected:
+        filename = str(kpi["filename"])
+        for extension in expected_extensions(kpi):
+            path = data_dir / f"{filename}.{extension}"
+            if not path.is_file():
+                errors.append(f"MISSING: {path}")
+                continue
+            if path.stat().st_size == 0:
+                errors.append(f"EMPTY FILE: {path}")
+                continue
+            error = validate_json_file(path) if extension == "json" else validate_csv_file(path)
+            if error:
+                errors.append(error)
+    return errors
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Validate a RealityCheck data snapshot")
+    parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA_DIR)
+    parser.add_argument("--meta-file", type=Path, default=DEFAULT_META_FILE)
+    parser.add_argument("--test-kpis-only", action="store_true")
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    data_dir = args.data_dir.resolve()
+    log_file = data_dir / "validation_log.txt"
+    log("==== RealityCheck Data Validation Started ====", log_file)
+    errors = validate_datasets(data_dir, args.meta_file.resolve(), test_kpis_only=args.test_kpis_only)
+    if errors:
+        for error in errors:
+            log(f"ERROR: {error}", log_file)
+        log(f"ERROR: Validation blocked publication: {len(errors)} error(s).", log_file)
+        return 1
+    log("OK: Validation passed: all required datasets are present, non-empty and parseable.", log_file)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

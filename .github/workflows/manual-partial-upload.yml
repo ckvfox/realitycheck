@@ -4,42 +4,71 @@ on:
   workflow_dispatch:
     inputs:
       files:
-        description: "Comma-separated list of files to upload (e.g. 'data/fetch_log.txt,data/overall_ranking.json')"
+        description: "Comma-separated productive files (e.g. 'germany-dossier.php,data/overall_ranking.json')"
         required: true
-        default: "data/fetch_log.txt"
+        default: "data/overall_ranking.json"
+
+concurrency:
+  group: realitycheck-production-deploy
+  cancel-in-progress: false
 
 jobs:
   ftp_partial:
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       issues: write
     env:
       TZ: Europe/Berlin
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
       - name: 🧭 Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate and build productive allowlist
+        run: |
+          python scripts/validation.py
+          python scripts/prepare_deployment.py --mode full
 
       - name: 📦 Prepare partial upload folder
+        env:
+          FILES_INPUT: ${{ inputs.files }}
         run: |
+          set -euo pipefail
           echo "📦 Preparing partial upload..."
           mkdir -p partial_upload
-          IFS=',' read -ra FILES <<< "${{ github.event.inputs.files }}"
-          for f in "${FILES[@]}"; do
-            if [ -f "$f" ]; then
-              echo "✅ Adding $f"
-              mkdir -p "partial_upload/$(dirname $f)"
-              cp "$f" "partial_upload/$f"
-            else
-              echo "⚠️ File not found: $f"
+          IFS=',' read -ra FILES <<< "$FILES_INPUT"
+          count=0
+          for raw_file in "${FILES[@]}"; do
+            f="${raw_file#"${raw_file%%[![:space:]]*}"}"
+            f="${f%"${f##*[![:space:]]}"}"
+            case "$f" in
+              ""|/*|*..*|*\\*)
+                echo "ERROR: Invalid relative deployment path: $f"
+                exit 1
+                ;;
+            esac
+            source_file="build/deployment/full/$f"
+            if [ ! -f "$source_file" ]; then
+              echo "ERROR: File is not in the productive deployment allowlist: $f"
+              exit 1
             fi
+            echo "Adding $f"
+            mkdir -p "partial_upload/$(dirname "$f")"
+            cp -- "$source_file" "partial_upload/$f"
+            count=$((count + 1))
           done
+          test "$count" -gt 0
           echo "✅ Partial upload folder ready:"
           find partial_upload -type f
 
       - name: 🚀 Safe FTP Upload (incremental, no delete)
-        uses: SamKirkland/ftp-deploy-action@v4.3.5
+        uses: SamKirkland/ftp-deploy-action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -70,16 +99,19 @@ jobs:
 
       - name: 📱 Create GitHub Issue for status
         if: always()
-        uses: actions/github-script@v7
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          FILES_INPUT: ${{ inputs.files }}
         with:
           script: |
+            const requestedFiles = process.env.FILES_INPUT || '(none)';
             const title = `🎯 Partial FTP Upload – ${{ job.status }}`;
             const body = `
             🧭 **Partial FTP upload completed**
             
             - **Status**: ${{ job.status }}
             - **Date**: ${{ steps.date.outputs.date }}
-            - **Files**: \`${{ github.event.inputs.files }}\`
+            - **Files**: \`${requestedFiles}\`
             - **Mode**: Safe incremental (no deletions)
             - **Run**: [View full log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
             

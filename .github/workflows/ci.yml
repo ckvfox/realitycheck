@@ -1,0 +1,52 @@
+name: RealityCheck CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: realitycheck-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.11"
+
+      - name: Compile Python sources
+        run: python -m compileall -q scripts tests
+
+      - name: Run pipeline safety tests
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Validate committed data snapshot
+        run: python scripts/validation.py
+
+      - name: Run JavaScript tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          for test_file in tests/*.test.js; do
+            node --test "$test_file"
+          done
+
+      - name: Lint and run PHP tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -path './build' -prune -o -path './deployment' -prune -o -name '*.php' -print0 \
+            | xargs -0 -n1 php -l
+          for test_file in tests/*_test.php; do
+            php -d zend.assertions=1 -d assert.exception=1 "$test_file"
+          done
