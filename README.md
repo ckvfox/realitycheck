@@ -2,7 +2,8 @@
 
 # 🌍 RealityCheck – Interactive Country Comparison
 
-**Version:** 3.1.1 (as of November 18, 2025)  
+**Version:** 3.3.0 (as of July 31, 2026)
+
 **Project Lead:** Carsten Winterling  
 **AI Collaboration:** Claude Sonnet 4 + GPT-4o  
 **Hosting:** InfinityFree  
@@ -58,7 +59,19 @@ It’s both analytical and exploratory — you can:
 
 ---------------------------------------------------------------------
 
-## 🚀 **LATEST UPDATES (Version 3.1.1 - November 2025)**
+## 🚀 **LATEST UPDATES (Version 3.3.0 - July 2026)**
+
+### 🇩🇪 **Public Germany Dossier:**
+- Public bilingual dossier covering prosperity, household income, Germany 2036 scenarios, security stress testing and a reform agenda
+- Accessible four-tab navigation with dedicated English and German editorial copy
+- Server-side PHP data modules protected from direct HTTP access without requiring a visitor login
+- Consistent floating scroll-to-top control and the existing RealityCheck header/footer behavior
+
+### 📊 **Monthly Data Refresh:**
+- Refreshed productive KPI JSON datasets, rankings and analysis artifacts
+- Added the urbanization-rate dataset to the productive data inventory
+
+### ✨ **Previous Updates (Version 3.1.1):**
 
 ### 🎨 **UI Consistency & Responsive Design:**
 - **Unified Select Controls**: Countries and World pages now use identical select box styling with dark theme
@@ -66,7 +79,7 @@ It’s both analytical and exploratory — you can:
 - **CSS Optimization**: Improved specificity handling for consistent styling across all pages
 - **Mobile-First**: Enhanced responsive breakpoints for better mobile experience
 
-### ✨ **Previous Updates (Version 3.1.0):**
+### ✨ **Version 3.1.0:**
 - **Context-Sensitive Legends**: Dynamic descriptions for country groups (EU, G7, BRICS, NATO, etc.), languages (with real population data), and government types
 - **Real Language Statistics**: Language speaker counts calculated from actual population data instead of estimates
 - **Improved Tooltips**: Consistent tooltip style across all maps, showing population, capital, government, and languages
@@ -176,14 +189,14 @@ It’s both analytical and exploratory — you can:
 ├── /analysis-private/              # HTTP-denied server-side includes
 │   ├── real-wages-data.php         # Generated server-side data
 │   ├── real-wages-data-de.php      # Editorial German copy of wage metadata
-│   ├── germany-2036-scenarios.php  # Protected sources, assumptions and model
+│   ├── germany-2036-scenarios.php  # HTTP-denied sources, assumptions and model
 │   ├── germany-2036-scenarios-de.php # German B2 scenario copy
-│   ├── germany-war-stress-test.php  # Protected seven-phase security stress test
+│   ├── germany-war-stress-test.php  # HTTP-denied seven-phase security data
 │   ├── germany-war-stress-test-b2.php # Clearer English B2 security copy
 │   ├── germany-war-stress-test-de.php # German B2 security copy
-│   ├── germany-reform-agenda.php    # Protected bilingual reform base data
+│   ├── germany-reform-agenda.php    # HTTP-denied bilingual reform base data
 │   ├── germany-reform-agenda-depth.php # Expanded bilingual analysis for all reforms
-│   ├── income-pyramid-data.php      # Protected current income thresholds
+│   ├── income-pyramid-data.php      # HTTP-denied current income thresholds
 │   ├── income-pyramid-data-de.php   # German B2 income copy
 │   └── real-wages-auth.example.php # Non-secret setup template
 │

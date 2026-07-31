@@ -4,22 +4,24 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+## [3.3.0] - 2026-07-31
+
 ### Added
 - Added a bilingual fourth Germany Dossier file, “Germany 2036 — Reform Agenda”, with eleven consistently structured reform fields, international democratic-country mechanisms, options, opportunities, risks, a six-dimension 2036 compass and direct institutional sources.
-- Added an editorial EN/DE language switch for the protected Germany Dossier, English by default, with a visible explanation of why precise German copy replaces Google Translate on this complex specialist page.
+- Added an editorial EN/DE language switch for the public Germany Dossier, English by default, with a visible explanation of why precise German copy replaces Google Translate on this complex specialist page.
 - Added bilingual reform-agenda schema validation and methodology documentation.
 - Added a sourced “If war starts, I will just leave” reality check covering exit restrictions, disrupted routes, admission and status uncertainty, refugee living conditions, NATO burden-sharing and the limits of the 2026 US–Ukraine deportation example without stigmatising flight.
 - Added a sourced “Why Germany?” introduction explaining the country's global economic weight, EU leverage, stated conventional-defence ambition, potential democratic counterweight, historical responsibility and the author's personal German perspective.
 - Added a sourced two-model service debate to the war stress test: classic German military duty with conscientious-objector service versus an all-gender civic year, including potential social-learning effects, legal feasibility, implementation, enforcement, labour-market and fairness risks.
 - Added a protected worldwide conscription map to the war stress test, distinguishing active conscription in V-Dem democracies and autocracies from no active service and unresolved data, with explicit definitions, review dates and democratic safeguards.
-- Added a separately activated, non-probabilistic “Germany at War” security stress test below the three regular scenarios, with seven evidence-labelled phases, a BBK-based 72-hour view, five household perspectives, balanced deterrence and conscription debates, historical comparison limits and a protected source matrix.
-- Added `docs/germany_war_stress_test_method.md`, protected schema tests, browser-logic tests, responsive/print styling and deployment allowlisting for the new module.
+- Added a separately activated, non-probabilistic “Germany at War” security stress test below the three regular scenarios, with seven evidence-labelled phases, a BBK-based 72-hour view, five household perspectives, balanced deterrence and conscription debates, historical comparison limits and an HTTP-denied source matrix.
+- Added `docs/germany_war_stress_test_method.md`, server-side schema tests, browser-logic tests, responsive/print styling and deployment allowlisting for the new module.
 - Added an English, three-file Germany Dossier with a values-based editorial disclosure and card-index navigation for prosperity, 2036 scenarios and the war stress test.
 - Restored the Earth Overshoot Day status on About using the announced 30 July 2026 date and added a matching, explicitly non-countdown Doomsday Clock card (85 seconds to midnight, 27 January 2026).
-- Added a protected household gross-income benchmark for singles, couples and families with one to three children using one combined annual household figure.
-- Extended the protected real-wage page with the interactive “Deutschland 2036” three-scenario simulation, six macro index bands, eight sensitivity controls and four household perspectives.
-- Added a visible source/assumption matrix, robust cross-scenario measures, a protected model data include, pure-function model tests and `docs/germany_2036_scenario_method.md`.
-- Added a PHP-session-protected analysis of German real average wages and an OECD PPP wage-level comparison, now discoverable through the main menu without weakening authentication.
+- Added a server-side household gross-income benchmark for singles, couples and families with one to three children using one combined annual household figure.
+- Extended the Germany Dossier with the interactive “Deutschland 2036” three-scenario simulation, six macro index bands, eight sensitivity controls and four household perspectives.
+- Added a visible source/assumption matrix, robust cross-scenario measures, an HTTP-denied model data include, pure-function model tests and `docs/germany_2036_scenario_method.md`.
+- Added an analysis of German real average wages and an OECD PPP wage-level comparison, initially behind a PHP session gate and subsequently released through the public Germany Dossier.
 - Added a reproducible OECD wage fetcher, HTTP-denied server-side data includes, a password configuration template, and targeted boundary/auth tests.
 - Added methodology, access setup, limitations, and upload instructions in `docs/real_wages_analysis.md`.
 - Added Fox Project Framework v2.0.0 anchors: PROJECT_MASTER.md and standards/ baseline.
@@ -49,13 +51,13 @@ All notable changes to this project will be documented in this file.
 - Reworked the Reform Agenda energy chapter after source review: replaced France/Sweden nuclear power as the apparent best-practice case with Denmark and Portugal's renewable-system experience, made reduced exposure to authoritarian fossil suppliers explicit, documented nuclear cost/time/waste/acceptance concerns and treated fusion as post-2040 research rather than 2036 supply.
 - Kept all Reform Agenda navigation number markers perfectly circular by preventing flex compression beside longer chapter titles.
 - Added British and German flag symbols to both Germany Dossier language controls for faster visual recognition.
-- Expanded the entire protected Germany Dossier into an editorial English/German edition: all four files now use dedicated German data, localized interactive results and B2-level interface copy; the security file also receives a clearer English B2 copy.
+- Expanded the entire Germany Dossier into an editorial English/German edition: all four files now use dedicated German data, localized interactive results and B2-level interface copy; the security file also receives a clearer English B2 copy.
 - Expanded all eleven Reform Agenda chapters with fuller problem analysis, a 2036 outlook, detailed country-case implementation and results, Germany transfer notes and practical prerequisites; repaired the reform header styling that inherited the global site-header layout and made text unreadable.
 - Marked `germany-dossier.php` as an intentional Google Translate exception and added the productive bilingual language module to deployment packaging.
 - Converted the three Germany Dossier index cards into an accessible tabbed frame: one dossier file is visible at a time, card changes do not scroll the page, and direct links to nested sections still activate the correct file.
-- Renamed the protected main route from `analysis-real-wages.php` to `germany-dossier.php` so the filename reflects its broader prosperity, scenarios and security scope.
+- Renamed the main route from `analysis-real-wages.php` to `germany-dossier.php` so the filename reflects its broader prosperity, scenarios and security scope.
 - Added “soldiers are murderers” to the war stress test's serious objections, distinguishing Tucholsky's anti-war warning and protected expression from legal murder, while confronting soldiers' exposure to killing, death, conscience and individual responsibility without romanticising armed forces.
-- Replaced the protected page's flat Germany/Europe/module link row with three dossier-style index cards; grouped the Income Ladder into the prosperity analysis and removed the insufficiently modelled Europe 2036 excursion.
+- Replaced the dossier page's flat Germany/Europe/module link row with three dossier-style index cards; grouped the Income Ladder into the prosperity analysis and removed the insufficiently modelled Europe 2036 excursion.
 - Expanded the “better red than dead” objection with the asymmetry between rights protected by a democracy and potential coercive service under authoritarian control, using current EUAA and UN evidence while marking the Germany extrapolation as a risk rather than a forecast.
 - Made the scenario analysis's normative security position explicit: lawful democratic self-defence may require credible military capability; trade remains useful but “change through trade” is insufficient as a security doctrine; renewable energy, grids, storage and efficiency are presented jointly as security, affordability and environmental policy.
 - Clarified that the PPP ranking compares equally weighted countries rather than people or households; replaced the ambiguous “position in distribution” label, made “Adaptation under pressure” the visibly first baseline scenario, added an opening narrative to every Germany 2036 scenario and extended the page jump navigation to all major analysis modules.
@@ -63,13 +65,13 @@ All notable changes to this project will be documented in this file.
 - Promoted the Earth Overshoot Day day count to the same large, bold visual hierarchy as the Doomsday Clock status.
 - Replaced separate earner and optional household-net fields with one total annual household-gross input; the ladder now shows transparent distance from the official EVS household-size average and no longer claims unsupported family-type percentiles.
 - Reframed the downside scenario so democratic backsliding and populist-authoritarian government reinforce economic, European, security and social risks rather than forming an unrelated fourth scenario.
-- Converted the protected page's primary interface and core scenario narratives to English.
-- Reframed the protected page around prosperity, purchasing power and 2036 scenarios; added a global World Bank GDP-per-capita PPP distribution context using the existing project KPI.
+- Converted the dossier page's primary interface and core scenario narratives to English.
+- Reframed the dossier page around prosperity, purchasing power and 2036 scenarios; added a global World Bank GDP-per-capita PPP distribution context using the existing project KPI.
 - Added annual-change bars to the real-wage chart, an explicit explanation of the 34-country OECD coverage and citizen action cards for resilience, skills, energy and democratic implementation.
 - Added “Germany Dossier” to the main menu while retaining `noindex` and sitemap exclusion and keeping the existing general “Analysis” destination distinct.
-- Extended protected deployment packaging for the Germany 2036 scenario browser module and server-side data include.
-- Split the protected wage analysis sources: Destatis real-wage index for Germany's time series, OECD constant-PPP average wages for the international level map.
-- Extended deployment packaging for the protected analysis and documented its structure and security behavior.
+- Extended deployment packaging for the Germany 2036 scenario browser module and server-side data include.
+- Split the wage analysis sources: Destatis real-wage index for Germany's time series, OECD constant-PPP average wages for the international level map.
+- Extended deployment packaging for the dossier and documented its structure and security behavior.
 - Updated AGENTS.md with controlled deployment bundle generation command.
 - Extended SECURITY.md to include FPF 2.0 minimum lifecycle sections.
 - Hardened HTTP delivery with HSTS, a restrictive CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy headers.
@@ -88,6 +90,7 @@ All notable changes to this project will be documented in this file.
 - Updated the NATO country grouping to include Sweden.
 
 ### Fixed
+- Restored the standard floating scroll-to-top button on the public Germany Dossier page.
 - Replaced the dossier language toggle's Unicode flag emoji, which some Windows fonts rendered as separate country-code letters, with reliable British and German SVG flags.
 - Fixed the Germany-at-War closing explanation inheriting white global-footer text on its pale-green background; all closing copy now uses explicit high-contrast dark colours.
 - Corrected the Germany-at-War source link for Carlo Masala's *Wenn Russland gewinnt* to the verified C.H.Beck book page and added its ISBN for unambiguous identification.

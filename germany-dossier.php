@@ -282,6 +282,7 @@ ob_start();
   <?php endif; ?>
 </head>
 <body class="real-wages-page notranslate" translate="no">
+  <button id="scroll-top-btn" title="Scroll to top" aria-label="Scroll to top">⬆️</button>
 <?php if ($accessProtectionEnabled && !$authenticated): ?>
   <main class="real-wages-login-shell">
     <section class="real-wages-login-card" aria-labelledby="login-title">

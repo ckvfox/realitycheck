@@ -25,7 +25,7 @@ Every phase and central source record uses one of seven labels:
 - extreme stress assumption;
 - not seriously quantifiable.
 
-The protected source matrix is stored in
+The HTTP-denied server-side source matrix is stored in
 `analysis-private/germany-war-stress-test.php`. Sources establish legal rules,
 observed hybrid activity, institutional planning, civil-protection guidance
 and causal mechanisms. They do not establish the fictional escalation chain.

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The fourth protected Germany Dossier file complements the descriptive 2036
+The fourth public Germany Dossier file complements the descriptive 2036
 scenarios with a non-partisan comparative-policy question: which mechanisms
 used in democratic industrialised countries could improve Germany's prospects
 by 2036?
