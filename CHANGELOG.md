@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+### Fixed
+- Fixed horizontal overflow on the World dashboard at iPhone widths by allowing KPI clusters and Chart.js cards to shrink below their desktop intrinsic width and wrapping descriptive text inside the viewport.
+
 ## 3.4.0 - 2026-08-01
 
 ### Added

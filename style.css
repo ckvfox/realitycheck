@@ -599,9 +599,12 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
 }
 
 .world-cluster {
+  width: 100%;
+  min-width: 0;
   max-width: 1100px;
   margin: 0 auto 2rem;
   padding: 0 1.5rem 1rem;
+  box-sizing: border-box;
 }
 
 .world-cluster-title {
@@ -683,6 +686,7 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
 #world-kpis .graph-block {
   margin: 1rem auto;
   width: 100%;
+  min-width: 0;
   max-width: 100%;
   padding: 1rem 1.25rem 1.5rem;
   background: #fff;
@@ -1962,21 +1966,47 @@ body.world-page .graph-block canvas {
 body.world-page .graph-block canvas[role="img"] {
   height: var(--chart-height-medium);
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* Mobile optimization for world page - aggressive space utilization */
 @media (max-width: 768px) {
+  body.world-page,
+  body.world-page main,
+  body.world-page #world-kpis,
+  body.world-page .world-cluster,
+  body.world-page #world-kpis .graph-block {
+    min-width: 0;
+    max-width: 100%;
+  }
+
   body.world-page #world-kpis {
     padding: 0 0.4rem;
+  }
+
+  body.world-page .world-cluster {
+    padding: 0 0 0.8rem;
   }
   
   body.world-page #world-kpis .graph-block {
     margin: 0.6rem auto;
     padding: 0.7rem 0.8rem 0.9rem;
+    overflow: hidden;
+  }
+
+  body.world-page #world-kpis .kpi-desc,
+  body.world-page #world-kpis .kpi-analysis,
+  body.world-page #world-kpis .chart-source {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    text-align: left;
   }
   
   body.world-page .graph-block canvas {
     height: var(--chart-height-small);
+    min-height: var(--chart-height-small);
+    max-height: var(--chart-height-small);
   }
   
   body.world-page .page-intro {
@@ -1997,6 +2027,8 @@ body.world-page .graph-block canvas[role="img"] {
   
   body.world-page .graph-block canvas {
     height: var(--chart-height-xsmall);
+    min-height: var(--chart-height-xsmall);
+    max-height: var(--chart-height-xsmall);
   }
   
   body.world-page .page-intro {
