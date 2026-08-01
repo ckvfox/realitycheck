@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import fetch_data
+from source_contracts import SUPPORTED_SOURCE_TYPES
 
 
 def make_stats() -> dict:
@@ -60,6 +61,10 @@ class FetchCoreTests(unittest.TestCase):
             fetch_data.canonicalize_country("Aggregate", self.c_index, self.a_index, self.countries, pending, stats)
         )
         self.assertEqual((stats["mapped_ok"], stats["mapped_drop"]), (1, 1))
+
+    def test_production_adapter_registry_covers_every_contract_type(self) -> None:
+        registry = fetch_data.build_adapter_registry()
+        self.assertEqual(registry.source_types, SUPPORTED_SOURCE_TYPES)
 
     def test_inversion_does_not_mutate_input(self) -> None:
         rows = [{"country": "Germany", "year": 2024, "value": 0.2}]
@@ -123,11 +128,17 @@ class FetchCoreTests(unittest.TestCase):
         rows = [{"country": {"value": "Germany"}, "countryiso3code": "DEU", "date": "2024", "value": 5}]
         with tempfile.TemporaryDirectory() as tmp, patch.object(
             fetch_data, "get_source_date_from_worldbank", return_value="2024-01-01"
-        ), patch.object(fetch_data, "fetch_worldbank_series", return_value=(rows, None)), patch.object(fetch_data, "log"):
+        ) as source_date_lookup, patch.object(
+            fetch_data, "fetch_worldbank_series", return_value=(rows, None)
+        ), patch.object(fetch_data, "log"):
             output = Path(tmp)
             fetch_data.process_worldbank(
                 "population",
-                {"source_code": "SP.POP.TOTL", "output_dir": output},
+                {
+                    "source_code": "SP.POP.TOTL",
+                    "output_dir": output,
+                    "_discovered_source_date": "2024-01-01",
+                },
                 self.countries,
                 self.c_index,
                 self.a_index,
@@ -136,6 +147,7 @@ class FetchCoreTests(unittest.TestCase):
             )
             self.assertTrue((output / "population.json").is_file())
             self.assertTrue((output / "population.csv").is_file())
+            source_date_lookup.assert_not_called()
 
 
 if __name__ == "__main__":

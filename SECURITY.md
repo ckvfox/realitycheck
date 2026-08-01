@@ -40,6 +40,7 @@ If you discover a vulnerability, report it privately.
 - Production fetches and FTP-only deployments use separate concurrency groups to prevent overlapping writes.
 - Test-mode datasets, status, logs, hashes and pending mappings are isolated below `data/test/`; automatic production mapping updates are disabled in test mode.
 - Pull requests run the complete network-free source-contract, adapter-isolation, snapshot and deployment regression baseline before merge.
+- Fetch startup fails closed when source metadata and the explicit adapter registry differ; unknown types cannot enter a fallback dispatch branch.
 
 ## Backup Strategy
 

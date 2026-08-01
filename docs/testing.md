@@ -40,8 +40,10 @@ returns a non-zero exit code.
 ## Adding a new source type
 
 First register the type and its metadata requirements in
-`scripts/source_contracts.py`. Then add a network-free adapter test that mocks
-the remote response and proves normalized output plus requested-directory
-isolation. Only after that contract is green should the dispatcher in
-`scripts/fetch_data.py` be extended. Live API availability is a separate smoke
-test and must not be required by pull-request CI.
+`scripts/source_contracts.py`. Then implement and register an `AdapterRequest`
+to `AdapterResult` handler in `scripts/builtin_adapters.py` (or a dedicated
+adapter module). Add a network-free test that mocks the remote response and
+proves normalized output plus requested-directory isolation. Registry
+completeness blocks the run until contract and adapter agree. Live API
+availability is a separate smoke test and must not be required by pull-request
+CI. See `docs/fetch_architecture.md` for the complete boundary.

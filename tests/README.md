@@ -6,7 +6,7 @@ the same command.
 
 Implemented targeted checks:
 
-- `python -m unittest discover -s tests -p "test_*.py" -v` validates fail-closed fetch guards, source contracts, test-output isolation, transformations, deployment packaging and key-page asset references.
+- `python -m unittest discover -s tests -p "test_*.py" -v` validates fail-closed fetch guards, typed adapter dispatch, built-in adapter registration, source contracts, test-output isolation, transformations, deployment packaging and key-page asset references.
 - `python scripts/validation.py --no-log` validates every active KPI without modifying the committed validation log.
 - Fixtures under `tests/fixtures/` describe small representative inputs and never contain production snapshots.
 - `.github/workflows/ci.yml` installs pinned dependencies and runs the same complete offline test command on pull requests and pushes to `main`.

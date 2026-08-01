@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 - Added the pushed rollback tag `baseline-pre-safety-refactor-2026-07-31` for the complete pre-Sofortschutz state.
 - Added a network-free test baseline with 22 Python regression tests for source contracts, KPI selection, adapter output isolation, transformations, key-page assets, deployment allowlisting and delta detection.
 - Added `scripts/run_tests.py` as the shared local and CI entry point plus `docs/testing.md` for extending KPI and source coverage.
+- Added a typed fetch core, explicit built-in adapter registry and architecture documentation for immediate, batch and special source execution.
 
 ### Changed
 - Changed force refreshes to preserve the last known-good data snapshot instead of deleting productive data before fetching replacements.
@@ -18,12 +19,15 @@ All notable changes to this project will be documented in this file.
 - Pinned browser CDN libraries and added Subresource Integrity checks to previously unverified Marked, Chart.js and Pako loads.
 - Changed the manual fetch test to use the isolated `--test` mode and validate only its two marked KPI outputs.
 - Changed CI to install pinned dependencies and execute the same complete offline test runner used locally.
+- Replaced the source-type `if/elif` dispatcher with `AdapterRequest`/`AdapterResult` contracts, registry completeness checks and centralized status resolution.
+- Changed source-date resolution to run once per KPI and limited special-source work to fetch runs that actually selected that source.
 
 ### Fixed
 - Made data validation return a failing exit code for missing, empty or malformed required outputs while recognizing the geopolitical-risk source as intentionally JSON-only.
 - Sanitized generated Markdown and rendered AI summaries as text to prevent untrusted generated content from becoming executable DOM markup.
 - Serialized visitor-counter writes and restricted the counter endpoint to POST requests.
 - Isolated OWID, World Bank, IMF, UNHCR, CSV status, log, hash and mapping side effects below `data/test/` during test runs instead of allowing writes into the productive data snapshot.
+- Fixed `--force` being reset when a populated fetch status existed, so forced workflows now reliably bypass freshness checks.
 
 ## [3.3.0] - 2026-07-31
 

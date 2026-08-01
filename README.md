@@ -158,6 +158,9 @@ It’s both analytical and exploratory — you can:
 │   ├── # 🐍 Backend Python Scripts
 │   ├── analysis.py                       # AI-powered global analysis generator
 │   ├── fetch_data.py                     # Main KPI data fetcher (World Bank, OWID, CSV)
+│   ├── fetch_core.py                     # Typed source dispatch and status contracts
+│   ├── builtin_adapters.py                # Built-in adapter registry and normalization
+│   ├── source_contracts.py                # KPI metadata validation and selection
 │   ├── fetch_overall_ranking.py          # Fun & Safe Haven ranking generator
 │   ├── generate_fun_safe_rankings.py     # GPT-based ranking algorithms
 │   ├── fetch_consolidated.py             # Data normalization & gzip compression
@@ -278,6 +281,9 @@ Maps aliases (ISO, German, historic, OWID, WB names) to canonical form:
 | Script | Purpose |
 |--------|----------|
 | `fetch_data.py` | Fetches all KPI datasets (World Bank, OWID, UNHCR, CSV) |
+| `fetch_core.py` | Provides typed adapter dispatch, execution modes and status policy |
+| `builtin_adapters.py` | Registers built-in sources and normalizes adapter results |
+| `source_contracts.py` | Validates source metadata and selects production/test KPIs |
 | `fetch_consolidated.py` | Normalizes data structure and schema, zip to gzip |
 | `fetch_overall_ranking.py` | Generates GPT-based Fun & Safe Haven rankings |
 | `analysis.py` | Produces the AI-generated global analysis (analysis.md) |
@@ -303,6 +309,7 @@ Safety behavior:
 - Test mode selects only KPIs marked with `test: "*"`, writes to `data/test/` and never invokes analysis or FTP.
 - KPI definitions are checked against `scripts/source_contracts.py` before fetching; unsupported types, invalid identifiers, duplicates and missing source codes block the run.
 - The local and CI test matrix is documented in `docs/testing.md`.
+- Fetch-core layers and the new-source extension path are documented in `docs/fetch_architecture.md`.
 - Rollback baseline before the fail-closed safety phase: `baseline-pre-safety-refactor-2026-07-31`.
 
 > ℹ️ Python resolves relative paths against the *current* working

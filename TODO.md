@@ -12,6 +12,8 @@
 - Refresh and review the server-side Destatis real-wage snapshot and OECD wage dataset when either source revises its annual series or price base.
 - Completed: fail-closed data validation, deployment allowlist enforcement and pipeline safety regression tests.
 - Completed: Testbasis phase with source metadata contracts, isolated adapter tests, key-page smoke checks and one shared local/CI runner.
+- Completed: core fetch refactoring with typed adapter requests/results, explicit execution modes, complete source registry and centralized status policy.
+- Gradually move the remaining legacy HTTP client implementations from `fetch_data.py` into dedicated adapter modules behind the stable `AdapterServices` boundary.
 - Add CI check that validates standards/compliance-output-schema.json format for audit outputs.
 
 ## Migration Tasks

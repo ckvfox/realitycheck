@@ -90,7 +90,14 @@ import pandas as pd
 from typing import Any, Dict, List, Optional
 from pathlib import Path
 from datetime import datetime, timezone
+from builtin_adapters import AdapterServices, build_builtin_adapter_registry
 from env_utils import get_openai_key  # ✅ wichtig: hier fehlte der Import
+from fetch_core import (
+    AdapterMode,
+    AdapterRequest,
+    build_status_entry,
+    force_refresh_required,
+)
 from pipeline_guard import PipelineGuardError, ensure_fetch_succeeded
 from source_contracts import SourceContractError, ensure_source_registry, select_kpis
 from script_utils import (
@@ -176,9 +183,6 @@ STATUS_FILE = DATA_DIR / "fetch_status.json"
 COUNTRY_PENDING_FILE = DATA_DIR / "country_mappings_pending.json"
 AVAILABLE_FILE = META_DIR / "available_kpis.json"
 
-COUNTRIES_FILE       = META_DIR / "countries.json"
-COUNTRY_MAP_FILE     = META_DIR / "country_mappings.json"
-
 # --- New IMF API fetch using sdmx1 ---
 import sdmx
 def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, stats, force_all_updates):
@@ -209,11 +213,6 @@ def fetch_imf_api(imf_kpis, countries, c_index, a_index, pending, fetch_status, 
         # Build iso3_list from all country meta entries, fallback to empty string if not found
         iso3_list = [meta.get("iso3") or meta.get("iso_a3") or meta.get("alpha3") or '' for cname, meta in (countries or {}).items()]
         # Try SDMX API first
-        debug_urls = [
-            f"https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/data/{source_code}?key={'%2B'.join(iso3_list)}&startPeriod=1990",
-            f"https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/data/{source_code}/{'/'.join(iso3_list)}?startPeriod=1990",
-            f"https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/data/{source_code}/DEU?startPeriod=1990"
-        ]
         # Debug-Ausgaben entfernt
         df = None
         try:
@@ -747,34 +746,6 @@ def get_source_date_from_worldbank(code: str) -> Optional[str]:
         log(f"[WARN] get_source_date_from_worldbank({code}) failed: {e}")
         return None
 
-def get_source_date_from_owid(source_code: str) -> Optional[str]:
-    """Liest das Aktualisierungsdatum aus der OWID-Metadatei (.metadata.json)"""
-    try:
-        meta_url = f"https://ourworldindata.org/grapher/{source_code}.metadata.json"
-        r = requests.get(meta_url, timeout=20)
-        if r.status_code == 200 and "application/json" in r.headers.get("Content-Type", ""):
-            data = r.json()
-            if "dateDownloaded" in data:
-                d = str(data["dateDownloaded"]).strip()
-                log(f"[META] OWID {source_code} → dateDownloaded {d}")
-                return d
-            if "chart" in data and "citation" in data["chart"]:
-                citation = str(data["chart"]["citation"])
-                year_match = re.search(r"\b(19|20)\d{2}\b", citation)
-                if year_match:
-                    d = f"{year_match.group(0)}-12-31T00:00:00Z"
-                    log(f"[META] OWID {source_code} → citation year {d}")
-                    return d
-        elif "Last-Modified" in r.headers:
-            d = r.headers["Last-Modified"]
-            log(f"[META] OWID {source_code} → header Last-Modified {d}")
-            return d
-        log(f"[META] OWID {source_code}: no date info found")
-    except Exception as e:
-        log(f"[WARN] OWID meta fetch failed for {source_code}: {e}")
-    return None
-
-
 def should_fetch_owid(kpi_id: str, meta: dict, fetch_status: dict) -> bool:
     """
     Smarte OWID-Heuristik:
@@ -1208,7 +1179,7 @@ def process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
         return
 
     # === 1️⃣ Quelle abfragen ===
-    source_date = get_source_date_from_worldbank(code)
+    source_date = meta.get("_discovered_source_date") or get_source_date_from_worldbank(code)
     
     # === 🧩 Erweiterung: Falls kein valides Datum aus API → ZIP prüfen ===
     if not source_date or source_date in ("Unknown", ""):
@@ -1496,7 +1467,7 @@ def process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats, outp
         return
 
     url = f"https://ourworldindata.org/grapher/{source_code}"
-    source_date = get_source_date_from_owid(url)
+    source_date = meta.get("_discovered_source_date") or get_source_date_from_owid(url)
 
     try:
         resp = requests.get(url, timeout=30)
@@ -2127,6 +2098,29 @@ def merge_fetch_state(updated_kpis: set):
     except Exception as e:
         log(f"[WARN] Could not update fetch_state.json: {e}")
 
+
+# ======================================================================
+# 🔌 Source adapter registry
+# ======================================================================
+def build_adapter_registry():
+    """Return the complete source registry used by the production dispatcher."""
+    services = AdapterServices(
+        log=log,
+        get_worldbank_source_date=get_source_date_from_worldbank,
+        get_owid_source_date=get_source_date_from_owid,
+        process_worldbank=process_worldbank,
+        process_owid=process_owid,
+        process_csv=process_csv,
+        process_unhcr=process_unhcr,
+        fetch_data360=fetch_data360_indicator,
+        canonicalize_country=canonicalize_country,
+        safe_float=safe_float,
+        resolve_iso2=resolve_iso2,
+        save_records=save_records,
+        keep_or_dummy=keep_or_dummy,
+    )
+    return build_builtin_adapter_registry(services)
+
 # ======================================================================
 # 🚀 Main
 # ======================================================================
@@ -2160,9 +2154,7 @@ def main(args: argparse.Namespace) -> Dict[str, Any]:
     if not os.path.exists(STATUS_FILE) or not fetch_status.get("kpis"):
         log("⚠️ Kein fetch_status.json vorhanden oder leer – setze ALLE KPIs auf 'neu'.")
         fetch_status = {"kpis": {}}
-        force_all_updates = True
-    else:
-        force_all_updates = False
+    force_all_updates = force_refresh_required(args.force, fetch_status)
 
 
     stats = {
@@ -2207,122 +2199,70 @@ def main(args: argparse.Namespace) -> Dict[str, Any]:
     stats["kpis_loaded"] = len(kpi_list)
 
     imf_queue: List[Dict[str, Any]] = []
+    special_queue: List[Dict[str, Any]] = []
+    adapter_registry = build_adapter_registry()
 
-    # --- KPI-Schleife ---
-
+    # --- KPI loop: resolve plan, dispatch through the explicit registry ---
     output_dir = TEST_DATA_DIR if args.test else DATA_DIR
     for meta in kpi_list:
         meta = dict(meta)  # copy to avoid mutating global
-        meta['output_dir'] = output_dir
+        meta["output_dir"] = output_dir
         try:
             kpi_id = resolve_kpi_id(meta)
             source_type = (meta.get("source_type") or meta.get("type") or "").lower().strip()
-            source_code = meta.get("source_code") or meta.get("code") or ""
-            source_date = None
+            adapter = adapter_registry.get(source_type)
 
-            # Quelle-spezifisches Datum
-            if source_type == "worldbank" and source_code:
-                source_date = get_source_date_from_worldbank(source_code)
-            elif source_type == "owid" and source_code:
-                source_date = get_source_date_from_owid(f"https://ourworldindata.org/grapher/{source_code}")
-            else:
-                source_date = "Unknown"
-
-            if source_type == "imf":
+            if adapter.mode is AdapterMode.BATCH:
                 imf_queue.append(meta)
-                log(f"[DEFER] {kpi_id}: queued for IMF bulk import")
+                log(f"[DEFER] {kpi_id}: queued for {source_type} batch import")
                 continue
+            if adapter.mode is AdapterMode.SPECIAL:
+                special_queue.append(meta)
+                log(f"[DEFER] {kpi_id}: handled by the special-source stage")
+                continue
+
+            source_date = adapter.resolve_source_date(meta) or "Unknown"
+            meta["_discovered_source_date"] = source_date
 
             # In test mode, always fetch (skip version check)
-            if not args.test:
-                if not force_all_updates and not should_fetch(kpi_id, source_type, source_date, meta, fetch_status):
-                    log(f"[⏸️] {kpi_id} – unchanged ({source_date})")
-                    mark_skip(stats, "Remote data unchanged")
-                    continue
-
-            # Sonderfall: Geopolitical Risk Index wird separat behandelt
-            if kpi_id == "geopolitical_risk_index":
-                log(f"[SKIP] {kpi_id}: handled by special fetcher later")
+            if not args.test and not force_all_updates and not should_fetch(
+                kpi_id, source_type, source_date, meta, fetch_status
+            ):
+                log(f"[⏸️] {kpi_id} – unchanged ({source_date})")
+                mark_skip(stats, "Remote data unchanged")
                 continue
 
-            # === Quelle verarbeiten ===
             updated_set = stats.setdefault("updated_kpis", set())
             already_marked = kpi_id in updated_set
-
             try:
-                # Patch: pass test_mode to save_records for output dir
-                if source_type == "worldbank":
-                    process_worldbank(kpi_id, meta, countries, c_index, a_index, pending, stats)
-                elif source_type == "owid":
-                    process_owid(kpi_id, meta, countries, c_index, a_index, pending, stats, output_dir=output_dir)
-                elif source_type == "data360":
-                    indicator_id = meta.get("source_code")
-                    if indicator_id and indicator_id.lower().endswith('.csv'):
-                        indicator_id = indicator_id[:-4]
-                    if kpi_id != "press_freedom_index":
-                        log(f"[FETCH] Data360 fetch start for {kpi_id} ({indicator_id})")
-                    records = fetch_data360_indicator(indicator_id, meta) if indicator_id else []
-
-                    final_rows = []
-                    years_seen: List[int] = []
-                    for row in records:
-                        iso3 = row.get("REF_AREA")
-                        canon = canonicalize_country(iso3, c_index, a_index, countries, pending, stats)
-                        if not canon:
-                            continue
-                        try:
-                            year_int = int(float(row.get("year")))
-                        except Exception:
-                            continue
-                        value = safe_float(row.get("value"))
-                        if value is None:
-                            continue
-                        iso2 = resolve_iso2(canon, countries)
-                        final_rows.append({"country": canon, "iso2": iso2, "year": year_int, "value": float(value)})
-                        years_seen.append(year_int)
-
-                    if final_rows:
-                        save_records(kpi_id, final_rows, stats, output_dir=output_dir)
-                        stats["data360_success"] += 1
-                        stats["saved_records"] += len(final_rows)
-                        stats["fetched"] += len(final_rows)
-                        if years_seen:
-                            meta["_latest_year"] = max(years_seen)
-                        meta.setdefault("_source_date", "Unknown")
-                        stats.setdefault("updated_kpis", set()).add(kpi_id)
-                        log(f"[OK] Data360 KPI saved: {kpi_id} ({len(final_rows)} rows)")
-                    else:
-                        keep_or_dummy(kpi_id, f"Data360 empty {indicator_id}", stats, output_dir=output_dir)
-                elif source_type == "csv":
-                    latest_year = process_csv(kpi_id, meta, countries, c_index, a_index, pending, stats, output_dir=output_dir)
-                    if latest_year:
-                        meta["_latest_year"] = latest_year
-                elif source_type == "unhcr":
-                    process_unhcr(kpi_id, meta, countries, c_index, a_index, pending, stats, output_dir=output_dir)
-                else:
-                    keep_or_dummy(kpi_id, f"unknown source_type {source_type}", stats, output_dir=output_dir)
+                request = AdapterRequest(
+                    kpi_id=kpi_id,
+                    meta=meta,
+                    countries=countries,
+                    country_index=c_index,
+                    alias_index=a_index,
+                    pending=pending,
+                    stats=stats,
+                    output_dir=output_dir,
+                )
+                result = adapter_registry.dispatch(source_type, request)
+                result.apply_to(meta)
 
                 if kpi_id in updated_set and not already_marked:
                     stats["updated"] += 1
 
                 old_meta = fetch_status.get("kpis", {}).get(kpi_id, {})
-                if not meta.get("_latest_year") and old_meta.get("data_year"):
-                    meta["_latest_year"] = old_meta["data_year"]
-                if (not meta.get("_source_date") or meta.get("_source_date") in ("Unknown", None)) and old_meta.get("source_date"):
-                    meta["_source_date"] = old_meta["source_date"]
-
-                used_source_date = meta.get("_source_date") or source_date or "Unknown"
-                used_data_year   = meta.get("_latest_year") or None
-
-                fetch_status.setdefault("kpis", {})[kpi_id] = {
-                    "source": meta.get("source") or meta.get("source_type") or "unknown",
-                    "url": meta.get("source_url") or meta.get("url") or "",
-                    "source_date": used_source_date,
-                    "data_year": used_data_year,
-                    "last_fetch": now_utc()
-                }
-
-                log(f"[STATUS] {kpi_id}: stored source_date={used_source_date}, data_year={used_data_year}")
+                status = build_status_entry(
+                    meta,
+                    discovered_source_date=source_date,
+                    previous=old_meta,
+                    fetched_at=now_utc(),
+                )
+                fetch_status.setdefault("kpis", {})[kpi_id] = status.entry
+                log(
+                    f"[STATUS] {kpi_id}: stored source_date={status.source_date}, "
+                    f"data_year={status.data_year}"
+                )
 
             except Exception as e:
                 stats["errors"] += 1
@@ -2356,7 +2296,7 @@ def main(args: argparse.Namespace) -> Dict[str, Any]:
     # ---------------------------------------------------------------
     # 🌍 Spezial-Quelle: Geopolitical Risk Index (Matteo Iacoviello)
     # ---------------------------------------------------------------
-    if not args.test:
+    if special_queue and not args.test:
         try:
             updated_set = stats.setdefault("updated_kpis", set())
             already_marked = "geopolitical_risk_index" in updated_set
@@ -2375,8 +2315,10 @@ def main(args: argparse.Namespace) -> Dict[str, Any]:
         except Exception as e:
             stats["errors"] += 1
             log(f"[❌] Special fetch geopolitical_risk_index failed: {e}")
-    else:
+    elif args.test:
         log("[SKIP] Test mode active: skipping special geopolitical_risk_index fetch")
+    else:
+        log("[SKIP] No special source selected for this fetch run")
 
 
 
