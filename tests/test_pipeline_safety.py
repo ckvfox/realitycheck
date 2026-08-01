@@ -58,6 +58,23 @@ class DatasetValidationTests(unittest.TestCase):
             )
             self.assertEqual(validate_datasets(root, registry), [])
 
+    def test_pending_first_fetch_is_optional_until_any_artifact_exists(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                [{
+                    "filename": "new_kpi",
+                    "source_type": "worldbank",
+                    "source_code": "NEW",
+                    "publication_status": "pending_first_fetch",
+                }],
+            )
+            self.assertEqual(validate_datasets(root, registry), [])
+            (root / "new_kpi.json").write_text('[{"country":"A","year":2024,"value":1}]', encoding="utf-8")
+            errors = validate_datasets(root, registry)
+            self.assertTrue(any("new_kpi.csv" in error for error in errors))
+
     def test_test_mode_selects_only_starred_kpis(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

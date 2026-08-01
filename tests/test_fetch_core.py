@@ -14,6 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import fetch_data
+from adapters import owid, worldbank
+from fetch_core import AdapterRequest
 from source_contracts import SUPPORTED_SOURCE_TYPES
 
 
@@ -28,6 +30,8 @@ def make_stats() -> dict:
         "owid_success": 0,
         "errors": 0,
         "dummies": 0,
+        "skipped": 0,
+        "skipped_breakdown": {},
         "trimmed_records": 0,
         "trimmed_kpis": set(),
         "updated_kpis": set(),
@@ -36,7 +40,14 @@ def make_stats() -> dict:
 
 class FakeResponse:
     status_code = 200
-    text = "Entity,Code,Year,Value\nGermany,DEU,2024,81.2\n"
+    text = "entity,code,year,value\nGermany,DEU,2024,81.2\n"
+
+
+class FakeWorldBankResponse:
+    status_code = 200
+
+    def json(self):
+        return [{"page": 1}, [{"country": {"value": "Germany"}, "date": "2024", "value": 5}]]
 
 
 class FetchCoreTests(unittest.TestCase):
@@ -49,6 +60,8 @@ class FetchCoreTests(unittest.TestCase):
     def test_numeric_and_country_normalization(self) -> None:
         self.assertEqual(fetch_data.safe_float("1,25"), 1.25)
         self.assertIsNone(fetch_data.safe_float("n/a"))
+        self.assertIsNone(fetch_data.safe_float(float("nan")))
+        self.assertIsNone(fetch_data.safe_float(float("inf")))
         stats = make_stats()
         pending: dict[str, str] = {}
         self.assertEqual(
@@ -102,52 +115,99 @@ class FetchCoreTests(unittest.TestCase):
             self.assertEqual(json.loads((output / "sample.json").read_text(encoding="utf-8"))[0]["value"], 7)
         self.assertEqual((stats["errors"], stats["dummies"]), (1, 1))
 
-    def test_owid_adapter_writes_only_to_requested_test_directory(self) -> None:
+    def test_older_source_snapshot_cannot_replace_newer_data(self) -> None:
+        current_year = datetime.now().year
         stats = make_stats()
-        pending: dict[str, str] = {}
-        with tempfile.TemporaryDirectory() as tmp, patch.object(fetch_data.requests, "get", return_value=FakeResponse()), patch.object(
-            fetch_data, "get_source_date_from_owid", return_value="2024-01-01"
-        ), patch.object(fetch_data, "log"):
+        with tempfile.TemporaryDirectory() as tmp, patch.object(fetch_data, "log"):
             output = Path(tmp)
-            fetch_data.process_owid(
-                "life_expectancy",
-                {"source_code": "life.csv"},
-                self.countries,
-                self.c_index,
-                self.a_index,
-                pending,
+            existing = [{"country": "Germany", "iso2": "DE", "year": current_year, "value": 7}]
+            (output / "sample.json").write_text(json.dumps(existing), encoding="utf-8")
+            (output / "sample.csv").write_text(
+                f"country,iso2,year,value\nGermany,DE,{current_year},7\n", encoding="utf-8"
+            )
+            accepted = fetch_data.save_records(
+                "sample",
+                [{"country": "Germany", "iso2": "DE", "year": current_year - 1, "value": 5}],
                 stats,
                 output_dir=output,
             )
+            payload = json.loads((output / "sample.json").read_text(encoding="utf-8"))
+        self.assertFalse(accepted)
+        self.assertEqual(payload, existing)
+        self.assertEqual(stats["skipped_breakdown"]["Incoming data older than stored snapshot"], 1)
+
+    def test_refresh_interval_skips_recent_unknown_date_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp, patch.object(fetch_data, "DATA_DIR", Path(tmp)), patch.object(fetch_data, "log"):
+            root = Path(tmp)
+            (root / "sample.json").write_text("[]", encoding="utf-8")
+            (root / "sample.csv").write_text("country,year,value\n", encoding="utf-8")
+            status = {"kpis": {"sample": {"source_date": "Unknown", "last_fetch": fetch_data.now_utc()}}}
+            self.assertFalse(
+                fetch_data.should_fetch(
+                    "sample", "imf", None, {"refresh_hours": 24}, status
+                )
+            )
+            (root / "special.json").write_text("[]", encoding="utf-8")
+            special_status = {
+                "kpis": {"special": {"source_date": "Unknown", "last_fetch": fetch_data.now_utc()}}
+            }
+            self.assertFalse(
+                fetch_data.should_fetch(
+                    "special", "special", None, {"refresh_hours": 24}, special_status
+                )
+            )
+
+    def test_owid_adapter_writes_only_to_requested_test_directory(self) -> None:
+        stats = make_stats()
+        pending: dict[str, str] = {}
+        with tempfile.TemporaryDirectory() as tmp, patch.object(fetch_data, "log"):
+            output = Path(tmp)
+            request = AdapterRequest(
+                kpi_id="life_expectancy",
+                meta={"source_code": "life.csv", "_discovered_source_date": "2024-01-01"},
+                countries=self.countries,
+                country_index=self.c_index,
+                alias_index=self.a_index,
+                pending=pending,
+                stats=stats,
+                output_dir=output,
+            )
+            owid.run(request, runtime=fetch_data.build_source_runtime(), http_get=lambda *args, **kwargs: FakeResponse())
             self.assertTrue((output / "life_expectancy.json").is_file())
             self.assertTrue((output / "life_expectancy.csv").is_file())
 
     def test_worldbank_adapter_honors_metadata_output_directory(self) -> None:
         stats = make_stats()
         pending: dict[str, str] = {}
-        rows = [{"country": {"value": "Germany"}, "countryiso3code": "DEU", "date": "2024", "value": 5}]
-        with tempfile.TemporaryDirectory() as tmp, patch.object(
-            fetch_data, "get_source_date_from_worldbank", return_value="2024-01-01"
-        ) as source_date_lookup, patch.object(
-            fetch_data, "fetch_worldbank_series", return_value=(rows, None)
-        ), patch.object(fetch_data, "log"):
+        requested_urls: list[str] = []
+
+        def get_worldbank(url, *args, **kwargs):
+            requested_urls.append(url)
+            return FakeWorldBankResponse()
+
+        with tempfile.TemporaryDirectory() as tmp, patch.object(fetch_data, "log"):
             output = Path(tmp)
-            fetch_data.process_worldbank(
-                "population",
-                {
-                    "source_code": "SP.POP.TOTL",
-                    "output_dir": output,
+            request = AdapterRequest(
+                kpi_id="population",
+                meta={
+                    "source_code": "SP.POP.TOTL?downloadformat=csv",
                     "_discovered_source_date": "2024-01-01",
                 },
-                self.countries,
-                self.c_index,
-                self.a_index,
-                pending,
-                stats,
+                countries=self.countries,
+                country_index=self.c_index,
+                alias_index=self.a_index,
+                pending=pending,
+                stats=stats,
+                output_dir=output,
+            )
+            worldbank.run(
+                request,
+                runtime=fetch_data.build_source_runtime(),
+                http_get=get_worldbank,
             )
             self.assertTrue((output / "population.json").is_file())
             self.assertTrue((output / "population.csv").is_file())
-            source_date_lookup.assert_not_called()
+            self.assertTrue(all("SP.POP.TOTL?downloadformat" not in url for url in requested_urls))
 
 
 if __name__ == "__main__":

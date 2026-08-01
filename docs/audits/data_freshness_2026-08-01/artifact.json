@@ -1,0 +1,323 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "RealityCheck Datenaktualitäts-Audit – 1. August 2026",
+    "description": "Getrennte Prüfung manueller CSV-Importe, veralteter automatisierter Reihen und fehlender Weltzustands-KPIs.",
+    "generatedAt": "2026-08-01T12:00:00+02:00",
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# RealityCheck Datenaktualitäts- und KPI-Lücken-Audit – 1. August 2026\n\nRealityCheck enthält 75 KPIs: 12 bewusst manuell gepflegte CSV-Reihen und 63 automatisierte Reihen. 33 automatisierte Reihen enden lokal vor 2025; davon besitzen 3 einen klaren neueren Pfad, 6 benötigen eine kontrollierte Migration oder Verifikation und 24 sind trotz älteren Höchstjahrs nicht einfach veraltet."
+      },
+      {
+        "id": "technical_summary",
+        "type": "markdown",
+        "body": "## Technische Kurzfassung\n\n**Manuelle CSVs bleiben manuell:** Dazu gehören ausdrücklich Sommer- und Winter-Olympiamedaillen. Der neue Checker validiert lokal Schema, Jahr und Prüfsumme und kann vier geprüfte offizielle Release-Seiten abfragen; er lädt nichts herunter und überschreibt nichts. Hinweise ergaben sich für EPI 2026, World Happiness 2026, INFORM 2026 und NRI 2025.\n\n**Automatisierte Quellen sofort priorisieren:** Government Effectiveness/WGI bis 2024, WHO Road Safety bis 2021 und Military Expenditure % GDP bis 2025.\n\n**Kontrolliert migrieren:** UNECE-Bahnkilometer 2024, drei UN-Bevölkerungskennzahlen und ILO-Arbeitsproduktivität. UNODC-Homicide benötigt zunächst einen verifizierten Extract.\n\n**Nicht als Fetch-Fehler werten:** Living Planet endet auch in der neuesten Ausgabe 2020; viele WHO-, UN- und World-Bank-Reihen haben legitimen Melde- oder Modellierungs-Lag. LPI Infrastructure ist eine manuelle CSV und die alte Reihe endet 2023; LPI 2.0 ist methodisch nicht derselbe KPI."
+      },
+      {
+        "id": "freshness_chart_block",
+        "type": "chart",
+        "chartId": "freshness_chart"
+      },
+      {
+        "id": "portfolio_chart_block",
+        "type": "chart",
+        "chartId": "portfolio_chart"
+      },
+      {
+        "id": "manual_intro",
+        "type": "markdown",
+        "body": "## Die 12 manuellen CSV-Quellen\n\nDiese Daten werden nicht in automatische Downloader umgewandelt. `olympic_medals_summer` ist eine manuelle Zusammenstellung und mit Paris 2024 aktuell. Der Checker erzeugt nur reproduzierbare Status- und Aktualisierungshinweise; Zugangsbeschränkungen und manuelle Zusammenstellungen bleiben sichtbar."
+      },
+      {
+        "id": "manual_table_block",
+        "type": "table",
+        "tableId": "manual_table"
+      },
+      {
+        "id": "action_intro",
+        "type": "markdown",
+        "body": "## Automatisierte Reihen mit neuerem oder migrationsrelevantem Pfad\n\nDie folgende Tabelle enthält ausschließlich Nicht-CSV-Quellen. Sie trennt echte Jahresupdates von Definitionenwechseln; bei Projektionen oder neuen Methoden wird bewusst kein scheinbar nahtloser Zeitreihenanschluss empfohlen."
+      },
+      {
+        "id": "candidate_table_block",
+        "type": "table",
+        "tableId": "candidate_table"
+      },
+      {
+        "id": "remaining_intro",
+        "type": "markdown",
+        "body": "## 24 ältere automatisierte Reihen ohne empfohlenen normalen Jahresimport\n\nHier entspricht der lokale Stand der neuesten vergleichbaren internationalen Ausgabe, die Veröffentlichungsverzögerung liegt beim Datenanbieter oder eine Alternative würde eine andere Kennzahl erzeugen. Ein Quellenwechsel allein schafft keine belastbar aktuellere Zeitreihe."
+      },
+      {
+        "id": "remaining_table_block",
+        "type": "table",
+        "tableId": "remaining_table"
+      },
+      {
+        "id": "gap_intro",
+        "type": "markdown",
+        "body": "## Was für ein vollständigeres Weltbild fehlt\n\nDie größte inhaltliche Lücke liegt nicht bei einem weiteren zusammengesetzten Ranking, sondern bei Grundversorgung, Bildungsabschluss, Hunger, Vertreibung, politischer Repräsentation, Wohlstandsdynamik, Naturschutz und Datenvertrauen. Neun Vorschläge sind über den bereits vorhandenen World-Bank-Adapter erreichbar; die direkte UNHCR-Anbindung ist ebenfalls bereits implementiert. Der Statistical Performance Indicator sollte als Vertrauens- und Abdeckungs-Guardrail dienen, nicht als positiver Weltzustands-Score."
+      },
+      {
+        "id": "gap_table_block",
+        "type": "table",
+        "tableId": "gap_table"
+      },
+      {
+        "id": "scope_method",
+        "type": "markdown",
+        "body": "## Umfang, Definitionen und Methode\n\nDas Audit wertet das höchste tatsächlich vorhandene Jahr in den lokalen KPI-Dateien aus, nicht das Abrufdatum. `data/fetch_status.json` zeigt, dass die Quellen am 1. August 2026 abgerufen wurden; ein altes Höchstjahr ist daher häufig Quellen-Lag und kein fehlgeschlagener Fetch.\n\nOffizielle Anbieter wurden auf API, CSV, JSON, XLSX, SDMX oder strukturierte Downloadpfade geprüft. Eine Quelle wurde nur als kurzfristig umsetzbar eingestuft, wenn das neuere Jahr und ein maschinenlesbarer Zugang belegbar sind. Gleich benannte, aber methodisch andere Reihen wurden nicht als normales Update akzeptiert."
+      },
+      {
+        "id": "limitations",
+        "type": "markdown",
+        "body": "## Unsicherheit und Robustheit\n\n- Download-URLs können sich ändern; der Adapter sollte deshalb die kanonische Landingpage, Content-Type, Schema und einen Mindest-Datenstand validieren.\n- Revidierte Quellen wie WGI und UHC dürfen nicht nur um ein Jahr ergänzt werden: Die komplette Historie muss atomar ersetzt und validiert werden.\n- UN-Bevölkerungswerte für 2024/2025 können Schätzungen oder Projektionen sein. Diese Statusinformation muss pro Beobachtung erhalten bleiben.\n- UNECE verbessert die Aktualität für Europa, ersetzt aber keine globale Bahnreihe. Ein Merge benötigt Provenienz auf Zeilenebene und eine klare Prioritätsregel.\n- OECD-Recycling und ILO-Arbeitsproduktivität sind fachlich nahe, aber nicht automatisch identisch mit den bisherigen Reihen. Ohne Definitionstest ist ein neuer KPI sicherer als ein stilles Anhängen."
+      },
+      {
+        "id": "next_steps",
+        "type": "markdown",
+        "body": "## Empfohlene Umsetzung\n\n1. Die 12 manuellen CSVs unverändert lassen; den neuen lokalen Checker regelmäßig und `--online` nur als Benachrichtigung ausführen.\n2. WGI auf den aktuellen offiziellen Pfad migrieren und wegen der Revision die gesamte Historie neu laden.\n3. Road Traffic Deaths aus der offiziellen WHO-Ländertabelle und Military Expenditure % GDP über den vorhandenen OWID/SIPRI-Pfad aktualisieren.\n4. Danach UN-WPP-Demografie nur mit Beobachtungsstatus und UNECE-Bahnkilometer nur mit zeilenweiser Provenienz ergänzen.\n5. Als erste neue KPIs Grundsanitärversorgung, Elektrizitätszugang, Sekundarstufenabschluss, Unterernährung und Vertreibung anbinden.\n6. In CI pro Quelle mindestens prüfen: HTTP-Status, Content-Type, Spaltenvertrag, Mindestjahr, Mindestländerzahl, Duplikate, Einheiten, Revisionssprünge und ungewöhnliche Wertedifferenzen."
+      },
+      {
+        "id": "further_questions",
+        "type": "markdown",
+        "body": "## Offene fachliche Entscheidungen\n\n- Sollen RealityCheck-Zeitreihen Projektionen enthalten oder ausschließlich beobachtete/geschätzte Ist-Werte?\n- Darf eine regionale Quelle wie UNECE globale Daten ergänzen, wenn die Provenienz je Land/Jahr sichtbar bleibt?\n- Soll bei methodischen Brüchen ein neuer KPI entstehen oder die bestehende Reihe versioniert ersetzt werden?\n- Ist das Projekt lizenzrechtlich als nichtkommerziell einzustufen, und sind Attribution/Share-Alike-Anforderungen im Deployment abgedeckt?"
+      }
+    ],
+    "charts": [
+      {
+        "id": "freshness_chart",
+        "title": "Lokales Höchstjahr der 42 prüfbedürftigen KPI-Reihen",
+        "description": "Anzahl der KPI-Datensätze nach ihrem jeweils neuesten lokal vorhandenen Datenjahr.",
+        "type": "bar",
+        "dataset": "freshness_distribution",
+        "sourceId": "local_catalog",
+        "encodings": {
+          "x": { "field": "latest_year", "type": "ordinal", "title": "Neuestes lokales Jahr" },
+          "y": { "field": "kpi_count", "type": "quantitative", "title": "KPI-Anzahl" }
+        }
+      },
+      {
+        "id": "portfolio_chart",
+        "title": "Quellenportfolio der 75 RealityCheck-KPIs",
+        "description": "Exklusive Trennung von manuellen CSVs, automatisierten Reihen vor 2025 und automatisierten Reihen ab 2025.",
+        "type": "bar",
+        "dataset": "source_portfolio",
+        "sourceId": "local_catalog",
+        "encodings": {
+          "x": { "field": "group", "type": "nominal", "title": "Quellengruppe" },
+          "y": { "field": "kpi_count", "type": "quantitative", "title": "KPI-Anzahl" }
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "manual_table",
+        "title": "Manuell gepflegte CSV-KPIs",
+        "description": "Lokaler Stand und Ergebnis der begrenzten offiziellen Release-Seiten-Prüfung.",
+        "dataset": "manual_sources",
+        "sourceId": "audit_synthesis",
+        "columns": [
+          { "field": "kpi", "label": "KPI" },
+          { "field": "local_year", "label": "Lokal" },
+          { "field": "acquisition", "label": "Pflege" },
+          { "field": "official_hint", "label": "Offizieller Hinweis" },
+          { "field": "status", "label": "Status" }
+        ]
+      },
+      {
+        "id": "candidate_table",
+        "title": "Neuere bzw. migrationsrelevante offizielle Quellen",
+        "description": "Priorisierte Kandidaten mit technischem Zugang und methodischem Hinweis.",
+        "dataset": "candidates",
+        "sourceId": "audit_synthesis",
+        "columns": [
+          { "field": "kpi", "label": "KPI" },
+          { "field": "local_year", "label": "Lokal" },
+          { "field": "candidate_year", "label": "Quelle" },
+          { "field": "access", "label": "Zugang" },
+          { "field": "decision", "label": "Bewertung" },
+          { "field": "priority", "label": "Prio" },
+          { "field": "note", "label": "Hinweis" }
+        ]
+      },
+      {
+        "id": "remaining_table",
+        "title": "Reihen ohne derzeit empfohlenen normalen Jahresimport",
+        "description": "Quellen-Lag, aktueller Veröffentlichungsstand oder Definitionskonflikt.",
+        "dataset": "remaining",
+        "sourceId": "audit_synthesis",
+        "columns": [
+          { "field": "kpi", "label": "KPI" },
+          { "field": "local_year", "label": "Lokal" },
+          { "field": "status", "label": "Status" },
+          { "field": "reason", "label": "Begründung" }
+        ]
+      },
+      {
+        "id": "gap_table",
+        "title": "Priorisierte Ergänzungen für den Weltzustand",
+        "description": "Hoher analytischer Zusatznutzen bei offenem, konto-freiem und automatisierbarem Zugang.",
+        "dataset": "kpi_gaps",
+        "sourceId": "audit_synthesis",
+        "columns": [
+          { "field": "kpi", "label": "Vorschlag" },
+          { "field": "dimension", "label": "Lücke" },
+          { "field": "source_code", "label": "Quelle/Code" },
+          { "field": "latest", "label": "Stand" },
+          { "field": "integration", "label": "Anbindung" },
+          { "field": "priority", "label": "Prio" },
+          { "field": "rationale", "label": "Analytischer Nutzen" }
+        ]
+      }
+    ],
+    "sources": [
+      { "id": "local_catalog", "label": "SQL-Ausgabe der lokalen Höchstjahr-Verteilung", "path": "docs/audits/data_freshness_2026-08-01/freshness_distribution.sql", "description": "Reproduziert die geprüfte Verteilung der 42 KPI-Höchstjahre; Ausgangsdaten: data/meta/available_kpis.json und produktive KPI-Dateien." },
+      { "id": "audit_synthesis", "label": "SQL-Zugriff auf die geprüften Audit-Tabellen", "path": "docs/audits/data_freshness_2026-08-01/audit_tables.sql", "description": "Liest die begrenzten, geprüften Kandidaten- und Restlisten aus dem kanonischen Audit-Snapshot; Methodik in methodology.md." },
+      { "id": "epi", "label": "Yale Environmental Performance Index Downloads", "url": "https://epi.yale.edu/epi-downloads" },
+      { "id": "whr", "label": "World Happiness Report Data Sharing", "url": "https://www.worldhappiness.report/data-sharing/" },
+      { "id": "nri", "label": "Network Readiness Index", "url": "https://networkreadinessindex.org/" },
+      { "id": "wgi", "label": "World Bank Worldwide Governance Indicators", "url": "https://datacatalog.worldbank.org/search/dataset/0038026/worldwide-governance-indicators" },
+      { "id": "who_road", "label": "WHO Global Status Report on Road Safety 2023", "url": "https://www.who.int/teams/social-determinants-of-health/safety-and-mobility/global-status-report-on-road-safety-2023" },
+      { "id": "unece_rail", "label": "UNECE rail data portal", "url": "https://w3.unece.org/PXWeb/en/DataMap?IndicatorCode=42" },
+      { "id": "oecd_waste", "label": "OECD municipal waste SDMX dataset", "url": "https://sdmx.oecd.org/public/rest/data/OECD.ENV.EPI,DSD_MUNW@DF_MUNW,1.0/..." },
+      { "id": "un_wpp", "label": "UN World Population Prospects 2024", "url": "https://population.un.org/wpp/" },
+      { "id": "ilo_productivity", "label": "ILOSTAT labour productivity", "url": "https://ilostat.ilo.org/topics/labour-productivity/" },
+      { "id": "sipri", "label": "SIPRI Military Expenditure Database", "url": "https://www.sipri.org/databases/milex" },
+      { "id": "social_progress", "label": "Social Progress Index 2026", "url": "https://www.socialprogress.org/social-progress-index-2025-2" },
+      { "id": "unodc", "label": "UNODC homicide data portal", "url": "https://data.unodc.org/datareport/hom-victim" },
+      { "id": "lpi", "label": "World Bank LPI 2.0 methodology", "url": "https://lpi.worldbank.org/en/about" },
+      { "id": "undp_hdi", "label": "UNDP Human Development data downloads", "url": "https://hdr.undp.org/data-center/documentation-and-downloads" },
+      { "id": "living_planet", "label": "Living Planet Index", "url": "https://www.livingplanetindex.org/lpi" },
+      { "id": "who_uhc", "label": "WHO UHC monitoring", "url": "https://www.who.int/data/monitoring-universal-health-coverage" },
+      { "id": "wb_sanitation", "label": "World Bank basic sanitation access", "url": "https://data.worldbank.org/indicator/SH.STA.BASS.ZS" },
+      { "id": "wb_electricity", "label": "World Bank electricity access", "url": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS" },
+      { "id": "wb_completion", "label": "World Bank lower-secondary completion", "url": "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS" },
+      { "id": "wb_undernourishment", "label": "World Bank prevalence of undernourishment", "url": "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS" },
+      { "id": "wb_refugees", "label": "World Bank/UNHCR refugees by country of asylum", "url": "https://data.worldbank.org/indicator/SM.POP.RHCR.EA" },
+      { "id": "wb_growth", "label": "World Bank real GDP per-capita growth", "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG" },
+      { "id": "wb_women", "label": "World Bank women in parliament", "url": "https://data.worldbank.org/indicator/SG.GEN.PARL.ZS" },
+      { "id": "wb_protected", "label": "World Bank terrestrial protected areas", "url": "https://data.worldbank.org/indicator/ER.LND.PTLD.ZS" },
+      { "id": "wb_migration", "label": "World Bank net migration", "url": "https://data.worldbank.org/indicator/SM.POP.NETM" },
+      { "id": "wb_spi", "label": "World Bank Statistical Performance Indicator", "url": "https://data.worldbank.org/indicator/IQ.SPI.OVRL" }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-01T12:00:00+02:00",
+    "status": "ready",
+    "datasets": {
+      "freshness_distribution": [
+        { "latest_year": "2019", "kpi_count": 1 },
+        { "latest_year": "2020", "kpi_count": 1 },
+        { "latest_year": "2021", "kpi_count": 1 },
+        { "latest_year": "2022", "kpi_count": 7 },
+        { "latest_year": "2023", "kpi_count": 15 },
+        { "latest_year": "2024", "kpi_count": 17 }
+      ],
+      "source_portfolio": [
+        { "group": "Manuelle CSV", "kpi_count": 12 },
+        { "group": "Automatisch <2025", "kpi_count": 33 },
+        { "group": "Automatisch >=2025", "kpi_count": 30 }
+      ],
+      "manual_sources": [
+        { "kpi": "big_mac_index", "local_year": 2025, "acquisition": "Manueller Import", "official_hint": "–", "status": "Beibehalten; Zugangspfad dokumentieren" },
+        { "kpi": "environmental_performance_index", "local_year": 2022, "acquisition": "Manueller Import", "official_hint": "EPI 2026", "status": "Neuere Edition manuell prüfen" },
+        { "kpi": "global_peace_index", "local_year": 2025, "acquisition": "Manueller Import", "official_hint": "–", "status": "Beibehalten" },
+        { "kpi": "inform_resilience_index", "local_year": 2025, "acquisition": "Manueller Import", "official_hint": "INFORM 2026", "status": "Neuere Edition manuell prüfen" },
+        { "kpi": "lpi_infrastructure", "local_year": 2023, "acquisition": "Manueller Import", "official_hint": "LPI 2.0 ist andere Methode", "status": "Alte Reihe beendet; nicht anhängen" },
+        { "kpi": "network_readiness_index", "local_year": 2024, "acquisition": "Manueller Import", "official_hint": "NRI 2025", "status": "Neuere Edition manuell prüfen" },
+        { "kpi": "olympic_medals_summer", "local_year": 2024, "acquisition": "Manuelle Zusammenstellung", "official_hint": "Paris 2024", "status": "Aktuell" },
+        { "kpi": "olympic_medals_winter", "local_year": 2022, "acquisition": "Manuelle Zusammenstellung", "official_hint": "Milano Cortina 2026", "status": "Manuell aktualisierbar" },
+        { "kpi": "pisa_overall_score", "local_year": 2022, "acquisition": "Manueller Import", "official_hint": "–", "status": "Nächste Ergebnisse abwarten" },
+        { "kpi": "recycling_rate", "local_year": 2022, "acquisition": "Manueller Import", "official_hint": "OECD-Metrik prüfen", "status": "Definition vor Import abgleichen" },
+        { "kpi": "social_progress_index", "local_year": 2022, "acquisition": "Manueller Import", "official_hint": "Registrierung erforderlich", "status": "Nicht automatisieren" },
+        { "kpi": "world_happiness_index", "local_year": 2024, "acquisition": "Manueller Import", "official_hint": "WHR 2026", "status": "Neuere Edition manuell prüfen" }
+      ],
+      "candidates": [
+        { "kpi": "government_effectiveness", "local_year": 2023, "candidate_year": 2024, "access": "API/CSV/XLSX", "decision": "Sofort migrieren", "priority": "P1", "note": "WGI-Revision 2025; gesamte Historie neu laden statt nur 2024 anzuhängen." },
+        { "kpi": "road_traffic_deaths_per_100k_people", "local_year": 2019, "candidate_year": 2021, "access": "XLSX", "decision": "Sofort anbinden", "priority": "P1", "note": "WHO-Ländertabelle enthält ISO3 und Sterberate je 100.000." },
+        { "kpi": "military_expenditure_of_gdp", "local_year": 2024, "candidate_year": 2025, "access": "CSV/XLSX", "decision": "Sofort anbinden", "priority": "P1", "note": "SIPRI 2025; über vorhandenen OWID-Grapher-Adapter oder SIPRI-Workbook möglich." },
+        { "kpi": "railway_length", "local_year": 2021, "candidate_year": 2024, "access": "JSON/CSV/TSV", "decision": "Regional ergänzen", "priority": "P2", "note": "UNECE ist aktueller, aber regional; nur als zeilenweise belegte Ergänzung zur globalen Reihe." },
+        { "kpi": "age_dependency_ratio_total", "local_year": 2023, "candidate_year": 2025, "access": "API/CSV", "decision": "Mit Status anbinden", "priority": "P2", "note": "UN WPP 2024 bietet neuere Schätzungen/Projektionen; observation_status pro Zeile erhalten." },
+        { "kpi": "median_age", "local_year": 2023, "candidate_year": 2025, "access": "API/CSV", "decision": "Mit Status anbinden", "priority": "P2", "note": "UN WPP 2024; 2024/2025 können Schätzung oder Projektion sein." },
+        { "kpi": "old_age_dependency_ratio", "local_year": 2023, "candidate_year": 2025, "access": "API/CSV", "decision": "Mit Status anbinden", "priority": "P2", "note": "UN WPP 2024; gleiche Versions- und Statusregeln wie bei den anderen Demografie-KPIs." },
+        { "kpi": "labor_productivity_per_hour_pennworldtable", "local_year": 2023, "candidate_year": 2025, "access": "Bulk CSV/Webservice", "decision": "Neuer KPI/Migration", "priority": "P3", "note": "ILOSTAT ist aktueller, aber nicht identisch mit Penn World Table; nicht an bestehende Reihe anhängen." },
+        { "kpi": "intentional_homicides", "local_year": 2023, "candidate_year": "zu prüfen", "access": "UNODC Download", "decision": "Extract verifizieren", "priority": "P3", "note": "Offizielles Downloadportal und passende SDG-Definition vorhanden; Maximaljahr des aktuellen Extracts noch verifizieren." }
+      ],
+      "remaining": [
+        { "kpi": "living_planet_index", "local_year": 2020, "status": "Aktuellste Indexausgabe", "reason": "Der Living Planet Report 2024 endet selbst 2020." },
+        { "kpi": "renewable_energy_share", "local_year": 2022, "status": "Quellen-Lag", "reason": "Keine neuere gleich definierte globale Reihe bestätigt; Strommix-Anteile wären eine andere Kennzahl." },
+        { "kpi": "water_stress_level", "local_year": 2022, "status": "Quellen-Lag", "reason": "Keine neuere, gleich definierte globale SDG-Reihe bestätigt." },
+        { "kpi": "homelessness_rate", "local_year": 2023, "status": "Abdeckung statt Aktualität", "reason": "OECD kann Länderabdeckung verbessern, aber nationale Definitionen und Bezugsjahre unterscheiden sich stark." },
+        { "kpi": "human_development_index_hdi", "local_year": 2023, "status": "Aktuellste UNDP-Reihe", "reason": "HDR 2025 veröffentlicht die HDI-Zeitreihe bis 2023." },
+        { "kpi": "physicians_per_1_000_people", "local_year": 2023, "status": "Keine neuere Alternative", "reason": "Die geprüfte WHO-Reihe ist trotz neuer Seitenaktualisierung datenzeitlich nicht neuer als 2023." },
+        { "kpi": "universal_health_coverage_index", "local_year": 2023, "status": "Jahr aktuell, Methode revidiert", "reason": "WHO 2025 reicht bis 2023, nutzt aber revidierte Indikatoren; Historienvergleich und möglicher Vollrefresh prüfen." },
+        { "kpi": "air_quality_pm2_5_exposure", "local_year": 2023, "status": "Quellen-Lag", "reason": "Keine neuere globale, gleich definierte Vergleichsreihe bestätigt." },
+        { "kpi": "area", "local_year": 2023, "status": "Niedrige Aktualitätsrelevanz", "reason": "Flächenwerte ändern sich selten; kein fachlicher Nutzen eines Quellenwechsels belegt." },
+        { "kpi": "hospital_beds_per_1_000_people", "local_year": 2023, "status": "Melde-Lag", "reason": "Neuere Einzelstaatwerte existieren teils, aber keine sauber neuere globale Vergleichsreihe bestätigt." },
+        { "kpi": "maternal_mortality_ratio", "local_year": 2023, "status": "Aktuelle globale Schätzung", "reason": "Keine neuere gleich definierte globale MMEIG-Reihe bestätigt." },
+        { "kpi": "co2_emissions", "local_year": 2024, "status": "Aktueller vollständiger Stand", "reason": "2025 ist für vollständige länderübergreifende Inventare noch nicht belastbar bestätigt." },
+        { "kpi": "democracy_index", "local_year": 2024, "status": "Zugang/Publikationsformat", "reason": "Neuere EIU-Ausgaben sind nicht als frei stabiler maschinenlesbarer Datensatz bestätigt." },
+        { "kpi": "global_co2_emissions", "local_year": 2024, "status": "Aktueller vollständiger Stand", "reason": "Kein belastbar vollständiger 2025-Länderdatensatz als direkter Ersatz bestätigt." },
+        { "kpi": "access_to_basic_drinking_water", "local_year": 2024, "status": "Quellen-Lag", "reason": "World-Bank/JMP-Abruf ist aktuell; Höchstjahr hängt von Länderberichten ab." },
+        { "kpi": "adult_literacy_rate", "local_year": 2024, "status": "Länder-Lag", "reason": "Nur wenige Länder melden jährlich; ein Quellenwechsel behebt die ungleichmäßige Abdeckung nicht." },
+        { "kpi": "fertility_rate", "local_year": 2024, "status": "Aktuell", "reason": "World-Bank-Reihe enthält bereits 2024; WPP-Projektionen wären eine andere Datenart." },
+        { "kpi": "fixed_broadband_subscriptions_per_100_people", "local_year": 2024, "status": "Aktuell", "reason": "Aktueller ITU/World-Bank-Meldestand; 2025 nicht global vollständig bestätigt." },
+        { "kpi": "health_expenditure_per_capita", "local_year": 2024, "status": "Länder-Lag", "reason": "Das Maximaljahr stammt nur von wenigen Ländern; keine global vollständigere, gleich definierte Alternative bestätigt." },
+        { "kpi": "infant_mortality_rate", "local_year": 2024, "status": "Aktuell", "reason": "Globale modellierte Reihe bereits bis 2024 vorhanden." },
+        { "kpi": "life_expectancy_at_birth", "local_year": 2024, "status": "Aktuell", "reason": "Globale Reihe bereits bis 2024 vorhanden; neuere Werte wären meist Projektionen." },
+        { "kpi": "mobile_subscriptions_per_100_inhabitants", "local_year": 2024, "status": "Aktuell", "reason": "Aktueller ITU/World-Bank-Meldestand; 2025 nicht global vollständig bestätigt." },
+        { "kpi": "overall_immunization_coverage", "local_year": 2024, "status": "Aktuell", "reason": "Globale WHO/UNICEF-Reihe bereits bis 2024 vorhanden." },
+        { "kpi": "tax_revenue_of_gdp", "local_year": 2024, "status": "Länder-Lag", "reason": "Steuerdaten erscheinen mit national unterschiedlichem Lag; keine global vollständigere Ersatzquelle bestätigt." }
+      ],
+      "kpi_gaps": [
+        { "kpi": "Basic sanitation access", "dimension": "Grundversorgung", "source_code": "WB SH.STA.BASS.ZS", "latest": "2024", "integration": "Vorhandener World-Bank-Adapter", "priority": "P1", "rationale": "Ergänzt Trinkwasser um die zweite zentrale WASH-Dimension." },
+        { "kpi": "Access to electricity", "dimension": "Grundversorgung", "source_code": "WB EG.ELC.ACCS.ZS", "latest": "2024", "integration": "Vorhandener World-Bank-Adapter", "priority": "P1", "rationale": "Misst elementare Teilhabe und Infrastrukturzugang." },
+        { "kpi": "Lower-secondary completion", "dimension": "Bildung", "source_code": "WB SE.SEC.CMPT.LO.ZS", "latest": "2025", "integration": "Vorhandener World-Bank-Adapter", "priority": "P1", "rationale": "Schließt die Lücke zwischen Bildungsausgaben, Schuljahren und PISA." },
+        { "kpi": "Prevalence of undernourishment", "dimension": "Ernährung", "source_code": "WB SN.ITK.DEFC.ZS", "latest": "2023", "integration": "Vorhandener World-Bank-Adapter", "priority": "P1", "rationale": "Direkter materieller Notstandsindikator, den Einkommen allein nicht abbildet." },
+        { "kpi": "Refugees hosted", "dimension": "Vertreibung", "source_code": "WB SM.POP.RHCR.EA / UNHCR", "latest": "2025", "integration": "World Bank oder vorhandener UNHCR-Adapter", "priority": "P1", "rationale": "Macht erzwungene Migration und Belastung von Aufnahmeländern sichtbar; pro Bevölkerung normierbar." },
+        { "kpi": "Real GDP per-capita growth", "dimension": "Wohlstandsdynamik", "source_code": "WB NY.GDP.PCAP.KD.ZG", "latest": "2025", "integration": "Vorhandener World-Bank-Adapter", "priority": "P2", "rationale": "Trennt Wohlstandsniveau von aktueller Entwicklung pro Kopf." },
+        { "kpi": "Women in parliament", "dimension": "Repräsentation", "source_code": "WB SG.GEN.PARL.ZS", "latest": "2025", "integration": "Vorhandener World-Bank-Adapter", "priority": "P2", "rationale": "Ergänzt Demokratie- und Rechtsstaatsindizes um politische Teilhabe." },
+        { "kpi": "Terrestrial protected areas", "dimension": "Biodiversität", "source_code": "WB ER.LND.PTLD.ZS", "latest": "2025", "integration": "Vorhandener World-Bank-Adapter", "priority": "P2", "rationale": "Ergänzt den globalen Living Planet Index um eine aktuelle Länderkennzahl." },
+        { "kpi": "Net migration", "dimension": "Demografie", "source_code": "WB SM.POP.NETM", "latest": "2025", "integration": "Vorhandener World-Bank-Adapter", "priority": "P2", "rationale": "Erklärt Bevölkerungsentwicklung jenseits von Fertilität und Altersstruktur." },
+        { "kpi": "Statistical Performance Indicator", "dimension": "Datenvertrauen", "source_code": "WB IQ.SPI.OVRL", "latest": "2024", "integration": "Vorhandener World-Bank-Adapter", "priority": "Guardrail", "rationale": "Kennzeichnet, wie belastbar und leistungsfähig das nationale Statistiksystem ist; nicht in den Wohlstandsscore mischen." }
+      ]
+    },
+    "accessIssues": []
+  },
+  "sources": [
+    { "id": "local_catalog", "label": "SQL-Ausgabe der lokalen Höchstjahr-Verteilung", "path": "docs/audits/data_freshness_2026-08-01/freshness_distribution.sql", "description": "Reproduziert die geprüfte Verteilung der 42 KPI-Höchstjahre; Ausgangsdaten: data/meta/available_kpis.json und produktive KPI-Dateien." },
+    { "id": "audit_synthesis", "label": "SQL-Zugriff auf die geprüften Audit-Tabellen", "path": "docs/audits/data_freshness_2026-08-01/audit_tables.sql", "description": "Liest die begrenzten, geprüften Kandidaten- und Restlisten aus dem kanonischen Audit-Snapshot; Methodik in methodology.md." },
+    { "id": "epi", "label": "Yale Environmental Performance Index Downloads", "url": "https://epi.yale.edu/epi-downloads" },
+    { "id": "whr", "label": "World Happiness Report Data Sharing", "url": "https://www.worldhappiness.report/data-sharing/" },
+    { "id": "nri", "label": "Network Readiness Index", "url": "https://networkreadinessindex.org/" },
+    { "id": "wgi", "label": "World Bank Worldwide Governance Indicators", "url": "https://datacatalog.worldbank.org/search/dataset/0038026/worldwide-governance-indicators" },
+    { "id": "who_road", "label": "WHO Global Status Report on Road Safety 2023", "url": "https://www.who.int/teams/social-determinants-of-health/safety-and-mobility/global-status-report-on-road-safety-2023" },
+    { "id": "unece_rail", "label": "UNECE rail data portal", "url": "https://w3.unece.org/PXWeb/en/DataMap?IndicatorCode=42" },
+    { "id": "oecd_waste", "label": "OECD municipal waste SDMX dataset", "url": "https://sdmx.oecd.org/public/rest/data/OECD.ENV.EPI,DSD_MUNW@DF_MUNW,1.0/..." },
+    { "id": "un_wpp", "label": "UN World Population Prospects 2024", "url": "https://population.un.org/wpp/" },
+    { "id": "ilo_productivity", "label": "ILOSTAT labour productivity", "url": "https://ilostat.ilo.org/topics/labour-productivity/" },
+    { "id": "sipri", "label": "SIPRI Military Expenditure Database", "url": "https://www.sipri.org/databases/milex" },
+    { "id": "social_progress", "label": "Social Progress Index 2026", "url": "https://www.socialprogress.org/social-progress-index-2025-2" },
+    { "id": "unodc", "label": "UNODC homicide data portal", "url": "https://data.unodc.org/datareport/hom-victim" },
+    { "id": "lpi", "label": "World Bank LPI 2.0 methodology", "url": "https://lpi.worldbank.org/en/about" },
+    { "id": "undp_hdi", "label": "UNDP Human Development data downloads", "url": "https://hdr.undp.org/data-center/documentation-and-downloads" },
+    { "id": "living_planet", "label": "Living Planet Index", "url": "https://www.livingplanetindex.org/lpi" },
+    { "id": "who_uhc", "label": "WHO UHC monitoring", "url": "https://www.who.int/data/monitoring-universal-health-coverage" },
+    { "id": "wb_sanitation", "label": "World Bank basic sanitation access", "url": "https://data.worldbank.org/indicator/SH.STA.BASS.ZS" },
+    { "id": "wb_electricity", "label": "World Bank electricity access", "url": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS" },
+    { "id": "wb_completion", "label": "World Bank lower-secondary completion", "url": "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS" },
+    { "id": "wb_undernourishment", "label": "World Bank prevalence of undernourishment", "url": "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS" },
+    { "id": "wb_refugees", "label": "World Bank/UNHCR refugees by country of asylum", "url": "https://data.worldbank.org/indicator/SM.POP.RHCR.EA" },
+    { "id": "wb_growth", "label": "World Bank real GDP per-capita growth", "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG" },
+    { "id": "wb_women", "label": "World Bank women in parliament", "url": "https://data.worldbank.org/indicator/SG.GEN.PARL.ZS" },
+    { "id": "wb_protected", "label": "World Bank terrestrial protected areas", "url": "https://data.worldbank.org/indicator/ER.LND.PTLD.ZS" },
+    { "id": "wb_migration", "label": "World Bank net migration", "url": "https://data.worldbank.org/indicator/SM.POP.NETM" },
+    { "id": "wb_spi", "label": "World Bank Statistical Performance Indicator", "url": "https://data.worldbank.org/indicator/IQ.SPI.OVRL" }
+  ]
+}

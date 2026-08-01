@@ -27,13 +27,6 @@ Deployment packaging rules are defined in standards/deployment.md.
 Bundle generation command:
 
 - Primary: python scripts/prepare_deployment.py --mode both
-- Fallback mirror mode: python scripts/prepare_deployment.py --mode both --mirror-legacy
-
-Project-specific operational fallback handover uses:
-
-- deployment/full_deployment/
-- deployment/delta_deployment/
-
 Framework target primary handover path:
 
 - build/deployment/full/
@@ -85,9 +78,7 @@ Allowed work categories:
 
 ## Deployment Packaging Rules
 
-- Create and maintain a local deployment folder structure with:
-  - deployment/full_deployment/
-  - deployment/delta_deployment/
+- Create and maintain the local deployment folder structure below `build/deployment/`.
 - Only include files that are actually hosted productively on the web server.
 - Exclude non-productive repository artifacts such as README files, notes, plans, and local helper docs.
 - full_deployment must contain the complete current production upload set.
@@ -97,8 +88,7 @@ Allowed work categories:
 
 ## Known Constraints
 
-- Existing productive deployments depend on current FTP folder conventions.
-- Migration to framework target deployment paths must be controlled and reversible.
+- Productive FTP handovers depend on the framework target folders below `build/deployment/`.
 
 ## Agent-Regeln
 
@@ -110,8 +100,8 @@ Allowed work categories:
 
 This repository is an existing project. Low-risk harmonization means documentation and inventory updates, not functional path migration.
 
-- Keep root HTML pages, `scripts/`, `data/`, `images/`, `build/deployment/` and legacy `deployment/` handover paths stable.
-- Treat `build/deployment/` as framework target and `deployment/` as controlled fallback unless a separate cutover retires it.
+- Keep root HTML pages, `scripts/`, `data/`, `images/` and `build/deployment/` stable.
+- Treat `build/deployment/` as the only FTP handover target; the legacy root-level `deployment/` tree is retired.
 - Productive browser JavaScript in `scripts/` is an explicit project convention.
 - Document deviations from new-project FPF target structure in README, AGENTS or TODO instead of renaming files.
 

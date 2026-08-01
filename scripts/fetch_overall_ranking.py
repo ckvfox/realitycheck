@@ -10,6 +10,7 @@
 """
 
 import subprocess
+import sys
 from pathlib import Path
 
 from script_utils import ensure_utf8_stdout, read_json, safe_write_json, setup_logger
@@ -63,6 +64,8 @@ def main():
 
     # === KPI-Auswahl (Filterung) ===
     for k in available:
+        if k.get("publication_status") == "pending_first_fetch":
+            continue
         sort = k.get("sort")
         world_kpi = k.get("world_kpi")
         relevance = k.get("relevance", "normal")
@@ -154,7 +157,7 @@ def main():
     # ============================================================
     try:
         log("➡️ Starting fun/safe haven ranking generation ...")
-        subprocess.run(["python", str(SCRIPT_DIR / "generate_fun_safe_rankings.py")], check=True)
+        subprocess.run([sys.executable, str(SCRIPT_DIR / "generate_fun_safe_rankings.py")], check=True)
         log("✅ Fun & Safe Haven rankings successfully generated.")
     except Exception as e:
         log(f"⚠️ Fun/Safe Haven ranking generation failed: {e}")

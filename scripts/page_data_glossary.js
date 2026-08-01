@@ -50,7 +50,7 @@ async function loadGlossary() {
 
     const fetchData = await fetchRes.json();
     const outliers = await outlierRes.json();
-    const meta = await metaRes.json();
+    const meta = (await metaRes.json()).filter(kpi => kpi.publication_status !== "pending_first_fetch");
     const countries = await countryRes.json();
     const ALL_DATA = await loadAllKPIData();
 

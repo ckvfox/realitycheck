@@ -2,51 +2,101 @@
   {
     "rank": 1,
     "country": "Norway",
-    "reason": "Norway boasts a strong human rights record, a stable democracy, and low conflict risk, making it one of the safest countries to live in."
+    "reason": "Domestic: Low homicide rates and strong rule of law; Climate/resilience: High resilience with zero climate disaster damage; Conflict/alliance: NATO membership enhances security."
   },
   {
     "rank": 2,
-    "country": "Switzerland",
-    "reason": "Switzerland is known for its robust democracy and neutrality, complemented by a strong focus on human rights and low climate risk."
+    "country": "Iceland",
+    "reason": "Domestic: Exceptional peace and very low homicide rates; Climate/resilience: Zero climate disaster damage reported; Conflict/alliance: NATO member with no armed conflicts."
   },
   {
     "rank": 3,
-    "country": "Finland",
-    "reason": "Finland has high resilience against conflicts and climate threats, strong human rights protections, and ranks highly in democratic governance."
+    "country": "New Zealand",
+    "reason": "Domestic: Very low homicide rate and high democracy score; Climate/resilience: Moderate resilience with minimal climate disaster damage; Conflict/alliance: OECD member, strategically positioned."
   },
   {
     "rank": 4,
     "country": "Denmark",
-    "reason": "Denmark combines a stable democracy, excellent human rights, and low levels of conflict, making it a top choice for safety and resilience."
+    "reason": "Domestic: Very low homicide rate with strong rule of law; Climate/resilience: Zero reported climate disaster damage; Conflict/alliance: EU and NATO member contributing to regional stability."
   },
   {
     "rank": 5,
-    "country": "Canada",
-    "reason": "Canada is recognized for its inclusive society, low conflict risk, and high ratings in democracy, human rights, and climate resilience."
+    "country": "Switzerland",
+    "reason": "Domestic: Low homicide rates with high rule of law index; Climate/resilience: Minimal climate disaster impact; Conflict/alliance: Neutrality and strong economic resilience."
   },
   {
     "rank": 6,
-    "country": "New Zealand",
-    "reason": "New Zealand features a strong democratic framework, excellent human rights practices, and a low risk of conflict, ensuring safety for its residents."
+    "country": "Finland",
+    "reason": "Domestic: Low crime rate and strong democracy; Climate/resilience: Well-prepared for climate risks; Conflict/alliance: NATO membership enhances deterrence."
   },
   {
     "rank": 7,
-    "country": "Sweden",
-    "reason": "Sweden upholds strong human rights standards, features a resilient democratic system, and is low in both conflict and climate risks."
+    "country": "Australia",
+    "reason": "Domestic: Low homicide rates reflect safety; Climate/resilience: Moderate resilience to climate impacts; Conflict/alliance: Strong alliance with OECD and strategic partnerships."
   },
   {
     "rank": 8,
-    "country": "Iceland",
-    "reason": "Iceland's sociopolitical stability, commitment to human rights, and absence of conflict highlight its position as a safe haven."
+    "country": "Canada",
+    "reason": "Domestic: Low homicide rates and rule of law; Climate/resilience: Moderate readiness for climate risks; Conflict/alliance: Close ties with NATO enhancing security."
   },
   {
     "rank": 9,
-    "country": "Australia",
-    "reason": "Australia maintains a stable democracy, has strong human rights protections, and scores low on conflict risk, making it a safe place to live."
+    "country": "Sweden",
+    "reason": "Domestic: Strong rule of law and low homicide rates; Climate/resilience: Effective climate resilience measures in place; Conflict/alliance: NATO partnership contributes to stability."
   },
   {
     "rank": 10,
-    "country": "Netherlands",
-    "reason": "The Netherlands combines a robust democracy, strong human rights, and resilience to both climate and conflict risks, ensuring safety for all."
+    "country": "Luxembourg",
+    "reason": "Domestic: Low killings and solid legal rights; Climate/resilience: No recorded climate disaster damage; Conflict/alliance: EU and NATO memberships provide security layers."
+  },
+  {
+    "rank": 11,
+    "country": "Ireland",
+    "reason": "Domestic: Low homicide rates with implemented human rights; Climate/resilience: Adequate climate adaptation strategies; Conflict/alliance: EU membership adds a layer of stability."
+  },
+  {
+    "rank": 12,
+    "country": "Japan",
+    "reason": "Domestic: Extremely low homicide rates and strong governance; Climate/resilience: Faces climate risks but with high adaptive capacity; Conflict/alliance: OECD member with regional security arrangements."
+  },
+  {
+    "rank": 13,
+    "country": "Portugal",
+    "reason": "Domestic: Low crime rates with strong civic rights; Climate/resilience: Moderate disaster impacts from climate; Conflict/alliance: EU and NATO memberships enhance security reputation."
+  },
+  {
+    "rank": 14,
+    "country": "Malta",
+    "reason": "Domestic: Low homicide rate and good human rights track record; Climate/resilience: Vulnerable to climate impacts but has resilience strategies; Conflict/alliance: EU member adds diplomatic support."
+  },
+  {
+    "rank": 15,
+    "country": "Czechia",
+    "reason": "Domestic: Low homicide rate and positive democracy score; Climate/resilience: Preparedness for climate events; Conflict/alliance: EU and NATO memberships provide necessary security."
+  },
+  {
+    "rank": 16,
+    "country": "Estonia",
+    "reason": "Domestic: A low crime environment with efficient governance; Climate/resilience: Some resilience measures for climate issues; Conflict/alliance: Strategic EU and NATO memberships."
+  },
+  {
+    "rank": 17,
+    "country": "Belgium",
+    "reason": "Domestic: Low violence and strong civil rights; Climate/resilience: Experiences climate risks but is adapting well; Conflict/alliance: NATO membership maintains security assurance."
+  },
+  {
+    "rank": 18,
+    "country": "South Korea",
+    "reason": "Domestic: Very low homicide rate and solid governance; Climate/resilience: Faces climate hazards while maintaining high resilience; Conflict/alliance: Strong alliance with the US enhances deterrence."
+  },
+  {
+    "rank": 19,
+    "country": "Ghana",
+    "reason": "Domestic: Relatively low homicide rate and improving governance; Climate/resilience: Strong local resilience to climate stress; Conflict/alliance: Active member of the African Union for peace."
+  },
+  {
+    "rank": 20,
+    "country": "Mauritius",
+    "reason": "Domestic: Very low homicide rates & good human rights record; Climate/resilience: Some vulnerability to disasters but adaptive; Conflict/alliance: Active in the African Union for regional stability."
   }
 ]

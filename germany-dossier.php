@@ -274,7 +274,9 @@ ob_start();
   <meta name="rc-build-version" content="20260725-germany-dossier-21">
   <title>Germany Dossier: Prosperity, 2036 Scenarios and Security | RealityCheck</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="style.css?v=20260725-germany-dossier-21">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="stylesheet" href="style.css?v=20260801-frontend-8">
   <?php if ($authenticated): ?>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.min.js" integrity="sha512-TrzZNOcdTjzp6FQnXUlYrt08pfmmNWYCqfjkVK9sJmLrVo/NBuRnTL2FCg4JMjgm2xbn1MVhDbtedqFIppA6cQ==" crossorigin="anonymous" defer></script>
@@ -286,7 +288,7 @@ ob_start();
 <?php if ($accessProtectionEnabled && !$authenticated): ?>
   <main class="real-wages-login-shell">
     <section class="real-wages-login-card" aria-labelledby="login-title">
-      <img src="images/logo.png" alt="RealityCheck" class="real-wages-login-logo">
+      <img src="images/logo.png" alt="RealityCheck" class="real-wages-login-logo" decoding="async">
       <div class="dossier-login-language">
         <span><span lang="en">Language</span><span lang="de">Sprache</span></span>
         <div class="dossier-language-toggle" role="group" aria-label="Language / Sprache">
@@ -802,7 +804,7 @@ ob_start();
 
   <?php if ($analysisData !== null): ?>
     <script id="real-wages-data" type="application/json"><?= json_encode($analysisData, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR) ?></script>
-    <script src="scripts/core.js?v=20260725-dossier-public-bilingual-2" defer></script>
+<script src="scripts/core.js?v=20260801-frontend-8" defer></script>
     <script src="scripts/page_real_wages_analysis.js?v=20260725-wage-analysis-3" defer></script>
   <?php endif; ?>
   <?php if ($scenarioData !== null): ?>

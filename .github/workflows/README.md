@@ -31,7 +31,7 @@ committed validation log.
 
 ### Fetch workflows
 
-- `monthly-fetch.yml`: scheduled full refresh on the first day of each month
+- `monthly-fetch.yml`: scheduled full refresh on the first day of each month at 03:00 UTC, followed by validation, safe `/data` FTPS synchronization and a data commit
 - `manual-fetch.yml`: manual full refresh with analyses
 - `manual-fetch-fast.yml`: manual refresh without AI analysis
 - `manual-fetch-force.yml`: forced source refresh while preserving existing files until replacements succeed
@@ -39,6 +39,24 @@ committed validation log.
 - `manual-fetch-test.yml`: isolated two-KPI adapter test using `--test`; writes only to `data/test/` and never deploys
 
 Every production fetch must pass the pipeline guard and final data validation before FTP and Git push can run.
+
+The monthly workflow also checks the configured official release pages for
+maintained CSV sources. This is notification-only and never replaces a local
+CSV. Its shell pipeline uses `pipefail`, so writing the console output through
+`tee` cannot hide a failing fetcher exit code.
+
+### Monthly result and diagnostics
+
+The monthly run provides three levels of feedback on both success and failure:
+
+1. The Actions job summary shows workflow status, fetch time, updated/skipped/error counts, manual CSV hints and every updated KPI with its latest data year.
+2. A 30-day `realitycheck-fetch-diagnostics-<run-id>` artifact contains the complete fetch console output, `fetch_log.txt`, `fetch_status.json`, `fetch_state.json`, `validation_log.txt` and the manual-source audit when available. Its upload uses `if: always()`, so a failed fetch does not suppress the evidence.
+3. The workflow creates a GitHub issue with the final job status, run link and artifact name. The Actions run itself retains the verbose FTP client log.
+
+A fetch, analysis or validation error stops FTP and Git push. An FTP error
+leaves the generated diagnostics and issue available but prevents the later
+data commit. The scheduled workflow deploys productive data only; frontend or
+backend code changes require a reviewed full or partial FTP workflow.
 
 ### FTP workflows
 

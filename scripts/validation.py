@@ -87,6 +87,10 @@ def validate_datasets(
 
     for kpi in selected:
         filename = str(kpi["filename"])
+        if kpi.get("publication_status") == "pending_first_fetch":
+            expected = [data_dir / f"{filename}.{extension}" for extension in expected_extensions(kpi)]
+            if not any(path.exists() for path in expected):
+                continue
         for extension in expected_extensions(kpi):
             path = data_dir / f"{filename}.{extension}"
             if not path.is_file():

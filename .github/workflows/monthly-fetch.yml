@@ -2,7 +2,7 @@ name: 📅 RealityCheck – Monthly Automated Fetch (Safe)
 
 on:
   schedule:
-    - cron: "0 3 1 * *"     # Jeden 1. des Monats um 03:00 UTC (05:00 MEZ)
+    - cron: "0 3 1 * *"     # Jeden 1. des Monats um 03:00 UTC
   workflow_dispatch: {}      # Optional: manuell startbar
 
 concurrency:
@@ -36,16 +36,15 @@ jobs:
 
       - name: 🚀 Run full RealityCheck pipeline
         run: |
+          set -o pipefail
           echo "===== RealityCheck Monthly Fetch Start $(date -u) ====="
-          python ./scripts/fetch_data.py
+          python ./scripts/fetch_data.py 2>&1 | tee data/workflow_fetch_console.log
           echo "===== Monthly Fetch End $(date -u) ====="
 
-      - name: 💾 Upload log artifact
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: fetch_log_monthly
-          path: data/fetch_log.txt
-          retention-days: 7
+      - name: 🔎 Check maintained CSV release pages
+        run: |
+          set -o pipefail
+          python ./scripts/check_source_csv_updates.py --online 2>&1 | tee -a data/workflow_fetch_console.log
 
       - name: 🌍 FTP Deploy /data to InfinityFree (Safe)
         uses: SamKirkland/ftp-deploy-action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
@@ -68,6 +67,11 @@ jobs:
             **/*.yml
             **/*.csv
             **/pending/**
+            fetch_state.json
+            manual_source_status.json
+            meta/manual_csv_sources.json
+            workflow_fetch_console.log
+            workflow_fetch_summary.md
 
       - name: 🪶 Commit and push updated data to GitHub
         env:
@@ -82,8 +86,37 @@ jobs:
 
       # ✅ Neuer, stabiler Schritt: Datum in Variable schreiben
       - name: 🕐 Get current UTC date
+        if: always()
         id: date
         run: echo "date=$(date -u '+%a, %d %b %Y %H:%M:%S UTC')" >> $GITHUB_OUTPUT
+
+      - name: 📋 Write actionable fetch summary
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python scripts/write_fetch_summary.py \
+            --job-status "$JOB_STATUS" \
+            --run-url "$RUN_URL" \
+            --output data/workflow_fetch_summary.md
+          cat data/workflow_fetch_summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 💾 Upload fetch diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: realitycheck-fetch-diagnostics-${{ github.run_id }}
+          retention-days: 30
+          if-no-files-found: warn
+          path: |
+            data/workflow_fetch_summary.md
+            data/workflow_fetch_console.log
+            data/fetch_log.txt
+            data/fetch_status.json
+            data/fetch_state.json
+            data/validation_log.txt
+            data/manual_source_status.json
 
       - name: 📱 Create GitHub Issue for status
         if: always()
@@ -97,6 +130,7 @@ jobs:
             - **Status**: ${{ job.status }}
             - **Date**: ${{ steps.date.outputs.date }}
             - **Run**: [View full log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            - **Diagnostics**: Download artifact `realitycheck-fetch-diagnostics-${{ github.run_id }}` from the run page
             
             ---
             *This issue was created automatically by the RealityCheck Bot.*

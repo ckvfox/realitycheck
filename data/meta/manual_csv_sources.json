@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "description": "Acquisition and update-check contracts for locally maintained CSV KPI sources. The checker never downloads or replaces these files.",
+  "sources": {
+    "big_mac_index": {
+      "ingestion_mode": "manual_import",
+      "access_mode": "unknown_manual",
+      "check_mode": "manual_review",
+      "update_url": "https://www.economist.com/big-mac-index",
+      "notes": "Keep the existing import manual until the acquisition path and reuse terms are documented."
+    },
+    "environmental_performance_index": {
+      "ingestion_mode": "manual_import",
+      "access_mode": "public_download",
+      "check_mode": "official_page_pattern",
+      "update_url": "https://epi.yale.edu/epi-downloads",
+      "release_year_patterns": [
+        "(?:Environmental Performance Index|EPI)[^0-9]{0,30}(20\\d{2})"
+      ],
+      "notes": "A newer release is only a notification; the existing normalization and methodology review remain manual."
+    },
+    "global_peace_index": {
+      "ingestion_mode": "manual_import",
+      "access_mode": "unknown_manual",
+      "check_mode": "manual_review",
+      "update_url": "https://www.visionofhumanity.org/maps/#/",
+      "notes": "The public report and the reusable country dataset may have different access conditions."
+    },
+    "inform_resilience_index": {
+      "ingestion_mode": "manual_import",
+      "access_mode": "public_page",
+      "check_mode": "official_page_pattern",
+      "update_url": "https://drmkc.jrc.ec.europa.eu/inform-index",
+      "release_year_patterns": [
+        "INFORM[^0-9]{0,30}(20\\d{2})"
+      ],
+      "notes": "Notification only; retain the reviewed local canonical CSV."
+    },
+    "lpi_infrastructure": {
+      "ingestion_mode": "manual_import",
+      "access_mode": "public_download",
+      "check_mode": "manual_review",
+      "update_url": "https://lpi.worldbank.org/en/about",
+      "notes": "The survey-based infrastructure score ends in 2023. LPI 2.0 is methodologically different and must not be appended."
+    },
+    "network_readiness_index": {
+      "ingestion_mode": "manual_import",
+      "access_mode": "public_page",
+      "check_mode": "official_page_pattern",
+      "update_url": "https://networkreadinessindex.org/",
+      "release_year_patterns": [
+        "(?:Network Readiness Index|NRI)[^0-9]{0,30}(20\\d{2})"
+      ],
+      "notes": "A stable official complete-dataset URL has to be verified manually before changing acquisition."
+    },
+    "olympic_medals_summer": {
+      "ingestion_mode": "manual_compilation",
+      "access_mode": "manual_compilation",
+      "check_mode": "manual_review",
+      "update_url": "https://www.olympics.com/en/olympic-games",
+      "notes": "Summer and winter medal tables remain manually compiled and reviewed."
+    },
+    "olympic_medals_winter": {
+      "ingestion_mode": "manual_compilation",
+      "access_mode": "manual_compilation",
+      "check_mode": "manual_review",
+      "update_url": "https://www.olympics.com/en/olympic-games",
+      "notes": "Summer and winter medal tables remain manually compiled and reviewed."
+    },
+    "pisa_overall_score": {
+      "ingestion_mode": "manual_import",
+      "access_mode": "public_download",
+      "check_mode": "manual_review",
+      "update_url": "https://www.oecd.org/en/about/programmes/pisa.html",
+      "notes": "Participation-year mentions are not evidence that results are already downloadable."
+    },
+    "recycling_rate": {
+      "ingestion_mode": "manual_import",
+      "access_mode": "public_api",
+      "check_mode": "manual_review",
+      "update_url": "https://data-explorer.oecd.org/",
+      "notes": "Keep manual until the exact OECD waste measure is contractually matched to the existing KPI definition."
+    },
+    "social_progress_index": {
+      "ingestion_mode": "manual_import",
+      "access_mode": "registration_required",
+      "check_mode": "manual_review",
+      "update_url": "https://www.socialprogress.org/social-progress-index-2025-2",
+      "notes": "Do not automate login, scrape gated downloads or bypass dataset terms."
+    },
+    "world_happiness_index": {
+      "ingestion_mode": "manual_import",
+      "access_mode": "public_download",
+      "check_mode": "official_page_pattern",
+      "update_url": "https://www.worldhappiness.report/data-sharing/",
+      "release_year_patterns": [
+        "(?:World Happiness Report|WHR)[^0-9]{0,30}(20\\d{2})"
+      ],
+      "notes": "Notification only; preserve the report-edition and three-year-average semantics during manual import."
+    }
+  }
+}

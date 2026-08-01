@@ -1,52 +1,102 @@
 [
   {
     "rank": 1,
-    "country": "Canada",
-    "reason": "Welcoming immigration policies, strong job market for skilled workers, high quality of life, and strong social acceptance of migrants make Canada the top choice."
+    "country": "Norway",
+    "reason": "Access: Low visa/work restriction; Destination: High prosperity and life satisfaction."
   },
   {
     "rank": 2,
-    "country": "Australia",
-    "reason": "Flexible visa options, demand for skilled labor, English-speaking environment, and an overall high quality of life enhance Australia's attractiveness for immigrants."
+    "country": "Luxembourg",
+    "reason": "Access: Visa access is straightforward for skilled workers; Destination: Strong economy and integration support."
   },
   {
     "rank": 3,
-    "country": "Germany",
-    "reason": "Strong economy with high job demand in engineering and IT, inclusive policies for skilled migrants, and a commitment to social integration."
+    "country": "Denmark",
+    "reason": "Access: Strong residency paths for professionals; Destination: High quality of life and social acceptance."
   },
   {
     "rank": 4,
-    "country": "New Zealand",
-    "reason": "Streamlined immigration processes, high quality of life, and a positive attitude towards migrants make New Zealand a favorable destination."
+    "country": "Iceland",
+    "reason": "Access: Limited visa barriers for skilled migrants; Destination: Excellent work-life balance and happiness."
   },
   {
     "rank": 5,
-    "country": "Netherlands",
-    "reason": "Open immigration policies for skilled workers, excellent quality of life, and a high proficiency in English contribute to its attractiveness."
+    "country": "Switzerland",
+    "reason": "Access: Attractive work permits for EU citizens; Destination: High purchasing power and life satisfaction."
   },
   {
     "rank": 6,
-    "country": "Sweden",
-    "reason": "Generous welfare policies, inclusive society, and strong job market make Sweden an attractive option for immigrants seeking stability and quality of life."
+    "country": "Finland",
+    "reason": "Access: Open routes for skilled migration and residence; Destination: High social progress and education system."
   },
   {
     "rank": 7,
-    "country": "Singapore",
-    "reason": "Pro-business immigration policies, robust economy with high demand for talent, and English as a primary working language enhance its appeal."
+    "country": "Ireland",
+    "reason": "Access: Transparent immigration routes for workers; Destination: Prosperous economy and friendly integration policies."
   },
   {
     "rank": 8,
-    "country": "United Kingdom",
-    "reason": "Post-Brexit adjustments to immigration policy still attract skilled labor, along with a strong job market and a rich cultural diversity."
+    "country": "Netherlands",
+    "reason": "Access: Accessible visas for highly educated professionals; Destination: High living standards and social inclusivity."
   },
   {
     "rank": 9,
-    "country": "Norway",
-    "reason": "High wages, quality of life, and commitment to social equity create a favorable environment for skilled migrants, despite language barriers."
+    "country": "Canada",
+    "reason": "Access: Open immigration programs for skilled workers; Destination: Multicultural society with high life satisfaction."
   },
   {
     "rank": 10,
-    "country": "Ireland",
-    "reason": "Strong economic growth, a friendly immigration system, and English being the primary language make Ireland an appealing destination for migrants."
+    "country": "Australia",
+    "reason": "Access: Clear pathways for work permits and residency; Destination: High quality of life and economic opportunities."
+  },
+  {
+    "rank": 11,
+    "country": "Germany",
+    "reason": "Access: Various visa options for skilled labor; Destination: Strong economy and diverse culture."
+  },
+  {
+    "rank": 12,
+    "country": "New Zealand",
+    "reason": "Access: Easy immigration paths for skilled workers; Destination: Friendly society and beautiful environment."
+  },
+  {
+    "rank": 13,
+    "country": "Belgium",
+    "reason": "Access: Reasonable work permit processes; Destination: Diverse cultural integration and high quality of life."
+  },
+  {
+    "rank": 14,
+    "country": "Sweden",
+    "reason": "Access: Good immigration avenues for skilled individuals; Destination: High living standards and social acceptance."
+  },
+  {
+    "rank": 15,
+    "country": "Czechia",
+    "reason": "Access: Accessible work permits for EU and skilled migrants; Destination: Growing economy and expatriate support."
+  },
+  {
+    "rank": 16,
+    "country": "Austria",
+    "reason": "Access: Work visa pathways in demand sectors; Destination: High living standards but slightly competitive job market."
+  },
+  {
+    "rank": 17,
+    "country": "Singapore",
+    "reason": "Access: Competitive visa options for skilled workers; Destination: Strong economy but high living costs."
+  },
+  {
+    "rank": 18,
+    "country": "Japan",
+    "reason": "Access: Work permits available for skilled professionals; Destination: Good safety but cultural integration challenges."
+  },
+  {
+    "rank": 19,
+    "country": "United Kingdom",
+    "reason": "Access: Immigration routes have become clearer post-Brexit; Destination: Diverse culture but facing economic uncertainties."
+  },
+  {
+    "rank": 20,
+    "country": "United States",
+    "reason": "Access: Complicated visa system with significant barriers; Destination: High opportunities but potential for social challenges."
   }
 ]

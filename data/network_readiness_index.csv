@@ -1,129 +1,129 @@
 country,iso2,year,value
-Singapore,,2024,76.94
-Finland,,2024,75.76
-Sweden,,2024,74.99
-South Korea,,2024,74.85
-Netherlands,,2024,73.94
-Switzerland,,2024,73.71
-United Kingdom,,2024,73.57
-Germany,,2024,73.54
-Denmark,,2024,72.7
-Canada,,2024,71.76
-Japan,,2024,70.96
-Israel,,2024,70.46
-Norway,,2024,69.7
-Australia,,2024,69.43
-France,,2024,68.71
-China,,2024,68.7
-Estonia,,2024,67.85
-Ireland,,2024,66.2
-Austria,,2024,66.05
-Belgium,,2024,65.88
-New Zealand,,2024,65.83
-Luxembourg,,2024,65.45
-Spain,,2024,65.15
-Iceland,,2024,64.86
-Italy,,2024,63.6
-Czechia,,2024,63.47
-United Arab Emirates,,2024,62.79
-Portugal,,2024,61.73
-Lithuania,,2024,59.95
-Poland,,2024,59.94
-Malta,,2024,59.75
-Slovenia,,2024,59.38
-Saudi Arabia,,2024,58.75
-Malaysia,,2024,57.88
-Latvia,,2024,57.68
-Qatar,,2024,57.31
-Cyprus,,2024,56.68
-Thailand,,2024,56.07
-Russia,,2024,55.74
-Hungary,,2024,55.33
-Ukraine,,2024,55.32
-Brazil,,2024,55.2
-Vietnam,,2024,54.96
-Slovakia,,2024,54.88
-Serbia,,2024,53.91
-Indonesia,,2024,53.84
-India,,2024,53.63
-Oman,,2024,53.52
-Bahrain,,2024,53.5
-Costa Rica,,2024,53.44
-Uruguay,,2024,53.4
-Chile,,2024,53.4
-Bulgaria,,2024,53.15
-Greece,,2024,52.9
-Romania,,2024,52.77
-Turkey,,2024,52.65
-Croatia,,2024,51.96
-Mauritius,,2024,51.17
-Kazakhstan,,2024,50.52
-Mexico,,2024,50.32
-Philippines,,2024,49.93
-Colombia,,2024,49.64
-Montenegro,,2024,49.58
-Armenia,,2024,49.54
-Kuwait,,2024,49.3
-Georgia,,2024,49.3
-Argentina,,2024,48.99
-Seychelles,,2024,47.99
-South Africa,,2024,47.8
-Kenya,,2024,47.06
-Jordan,,2024,47.04
-Azerbaijan,,2024,46.08
-Morocco,,2024,45.93
-North Macedonia,,2024,45.92
-Panama,,2024,45.61
-Dominican Republic,,2024,45.27
-Uzbekistan,,2024,44.87
-Ecuador,,2024,44.76
-Peru,,2024,44.76
-Albania,,2024,44.67
-Egypt,,2024,44.42
-Kyrgyzstan,,2024,44.16
-Ghana,,2024,43.95
-Mongolia,,2024,43.88
-Bangladesh,,2024,43.56
-Bosnia Herzegovina,,2024,43.2
-Rwanda,,2024,43.16
-Ivory Coast,,2024,42.53
-Jamaica,,2024,42.5
-Paraguay,,2024,42.26
-Sri Lanka,,2024,42.12
-Tunisia,,2024,41.57
-Pakistan,,2024,41.43
-Cape Verde,,2024,39.75
-El Salvador,,2024,39.36
-Algeria,,2024,39.24
-Senegal,,2024,39.1
-Bolivia,,2024,38.25
-Venezuela,,2024,36.84
-Guatemala,,2024,36.52
-Trinidad and Tobago,,2024,36.48
-Honduras,,2024,36.39
-Laos,,2024,36.36
-Nepal,,2024,35.96
-Cambodia,,2024,35.65
-Benin,,2024,35.62
-Nigeria,,2024,34.87
-Cameroon,,2024,34.59
-Botswana,,2024,34.54
-Zambia,,2024,33.97
-Nicaragua,,2024,33.51
-Namibia,,2024,33.5
-Uganda,,2024,32.9
-Malawi,,2024,31.75
-Mali,,2024,30.82
-Zimbabwe,,2024,30.33
-Ethiopia,,2024,29.6
-Lesotho,,2024,27.65
-Mauritania,,2024,27.16
-Madagascar,,2024,27.0
-Mozambique,,2024,26.63
-Burkina Faso,,2024,25.91
-Angola,,2024,25.25
-Sierra Leone,,2024,23.43
-Chad,,2024,22.22
-Democratic Republic of the Congo,,2024,21.49
-Burundi,,2024,20.69
-Yemen,,2024,20.24
+Singapore,SG,2024,76.94
+Finland,FI,2024,75.76
+Sweden,SE,2024,74.99
+South Korea,KR,2024,74.85
+Netherlands,NL,2024,73.94
+Switzerland,CH,2024,73.71
+United Kingdom,GB,2024,73.57
+Germany,DE,2024,73.54
+Denmark,DK,2024,72.7
+Canada,CA,2024,71.76
+Japan,JP,2024,70.96
+Israel,IL,2024,70.46
+Norway,NO,2024,69.7
+Australia,AU,2024,69.43
+France,FR,2024,68.71
+China,CN,2024,68.7
+Estonia,EE,2024,67.85
+Ireland,IE,2024,66.2
+Austria,AT,2024,66.05
+Belgium,BE,2024,65.88
+New Zealand,NZ,2024,65.83
+Luxembourg,LU,2024,65.45
+Spain,ES,2024,65.15
+Iceland,IS,2024,64.86
+Italy,IT,2024,63.6
+Czechia,CZ,2024,63.47
+United Arab Emirates,AE,2024,62.79
+Portugal,PT,2024,61.73
+Lithuania,LT,2024,59.95
+Poland,PL,2024,59.94
+Malta,MT,2024,59.75
+Slovenia,SI,2024,59.38
+Saudi Arabia,SA,2024,58.75
+Malaysia,MY,2024,57.88
+Latvia,LV,2024,57.68
+Qatar,QA,2024,57.31
+Cyprus,CY,2024,56.68
+Thailand,TH,2024,56.07
+Russia,RU,2024,55.74
+Hungary,HU,2024,55.33
+Ukraine,UA,2024,55.32
+Brazil,BR,2024,55.2
+Vietnam,VN,2024,54.96
+Slovakia,SK,2024,54.88
+Serbia,RS,2024,53.91
+Indonesia,ID,2024,53.84
+India,IN,2024,53.63
+Oman,OM,2024,53.52
+Bahrain,BH,2024,53.5
+Costa Rica,CR,2024,53.44
+Uruguay,UY,2024,53.4
+Chile,CL,2024,53.4
+Bulgaria,BG,2024,53.15
+Greece,GR,2024,52.9
+Romania,RO,2024,52.77
+Turkey,TR,2024,52.65
+Croatia,HR,2024,51.96
+Mauritius,MU,2024,51.17
+Kazakhstan,KZ,2024,50.52
+Mexico,MX,2024,50.32
+Philippines,PH,2024,49.93
+Colombia,CO,2024,49.64
+Montenegro,ME,2024,49.58
+Armenia,AM,2024,49.54
+Kuwait,KW,2024,49.3
+Georgia,GE,2024,49.3
+Argentina,AR,2024,48.99
+Seychelles,SC,2024,47.99
+South Africa,ZA,2024,47.8
+Kenya,KE,2024,47.06
+Jordan,JO,2024,47.04
+Azerbaijan,AZ,2024,46.08
+Morocco,MA,2024,45.93
+North Macedonia,MK,2024,45.92
+Panama,PA,2024,45.61
+Dominican Republic,DO,2024,45.27
+Uzbekistan,UZ,2024,44.87
+Ecuador,EC,2024,44.76
+Peru,PE,2024,44.76
+Albania,AL,2024,44.67
+Egypt,EG,2024,44.42
+Kyrgyzstan,KG,2024,44.16
+Ghana,GH,2024,43.95
+Mongolia,MN,2024,43.88
+Bangladesh,BD,2024,43.56
+Bosnia Herzegovina,BA,2024,43.2
+Rwanda,RW,2024,43.16
+Ivory Coast,CI,2024,42.53
+Jamaica,JM,2024,42.5
+Paraguay,PY,2024,42.26
+Sri Lanka,LK,2024,42.12
+Tunisia,TN,2024,41.57
+Pakistan,PK,2024,41.43
+Cape Verde,CV,2024,39.75
+El Salvador,SV,2024,39.36
+Algeria,DZ,2024,39.24
+Senegal,SN,2024,39.1
+Bolivia,BO,2024,38.25
+Venezuela,VE,2024,36.84
+Guatemala,GT,2024,36.52
+Trinidad and Tobago,TT,2024,36.48
+Honduras,HN,2024,36.39
+Laos,LA,2024,36.36
+Nepal,NP,2024,35.96
+Cambodia,KH,2024,35.65
+Benin,BJ,2024,35.62
+Nigeria,NG,2024,34.87
+Cameroon,CM,2024,34.59
+Botswana,BW,2024,34.54
+Zambia,ZM,2024,33.97
+Nicaragua,NI,2024,33.51
+Namibia,NA,2024,33.5
+Uganda,UG,2024,32.9
+Malawi,MW,2024,31.75
+Mali,ML,2024,30.82
+Zimbabwe,ZW,2024,30.33
+Ethiopia,ET,2024,29.6
+Lesotho,LS,2024,27.65
+Mauritania,MR,2024,27.16
+Madagascar,MG,2024,27.0
+Mozambique,MZ,2024,26.63
+Burkina Faso,BF,2024,25.91
+Angola,AO,2024,25.25
+Sierra Leone,SL,2024,23.43
+Chad,TD,2024,22.22
+Democratic Republic of the Congo,CD,2024,21.49
+Burundi,BI,2024,20.69
+Yemen,YE,2024,20.24

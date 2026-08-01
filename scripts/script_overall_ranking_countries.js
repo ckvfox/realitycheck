@@ -6,6 +6,22 @@ let kpis = [];
 let countries = [];
 let missingKPIs = [];
 let ALL_DATA = {}; // consolidated dataset from all_kpis_data.json
+let FUN_SET = new Set();
+let SAFE_SET = new Set();
+let IMMIG_SET = new Set();
+let FUN_BOTTOM_SET = new Set();
+let SAFE_BOTTOM_SET = new Set();
+let IMMIG_BOTTOM_SET = new Set();
+let FUN_RANKING = [];
+let SAFE_RANKING = [];
+let IMMIG_RANKING = [];
+let FUN_BOTTOM_RANKING = [];
+let SAFE_BOTTOM_RANKING = [];
+let IMMIG_BOTTOM_RANKING = [];
+let CURRENT_OVERALL_RESULTS = [];
+let funOn = false;
+let safeOn = false;
+let immigrOn = false;
 
 const RELEVANCE_WEIGHTS = {
   very_high: 1.0,
@@ -16,23 +32,38 @@ const RELEVANCE_WEIGHTS = {
 };
 
 const EXCLUDE_COUNTRIES = new Set(["World"]);
+const OVERALL_WEIGHTS_STORAGE_KEY = "overallKPIWeightsV3";
 
 
 /* ---------- Init ---------- */
 async function initOverall() {
   showSpinner(true, "Building Overall Ranking…");
+  try {
+    if (typeof window.loadAllKPIData !== "function") {
+      throw new Error("Consolidated KPI loader is unavailable");
+    }
+    [kpis, countries, ALL_DATA] = await Promise.all([
+      loadJSON("data/meta/available_kpis.json"),
+      loadJSON("data/meta/countries.json"),
+      window.loadAllKPIData()
+    ]);
+    kpis = (Array.isArray(kpis) ? kpis : []).filter(kpi => kpi.publication_status !== "pending_first_fetch");
 
-  kpis = await loadJSON("data/meta/available_kpis.json");
-  countries = await loadJSON("data/meta/countries.json");
-  ALL_DATA = await loadAllKPIData(); // ✅ consolidated dataset
-
-  buildRelevanceControls();
-	await buildOverallRanking();   // 🧩 Ranking berechnen und Tabelle rendern
-  await loadFunSafeImmigrationSets();
-
-  showSpinner(false);
-  fetchLastUpdated();
-  
+    buildRelevanceControls();
+	  await buildOverallRanking();
+    await loadFunSafeImmigrationSets();
+    updateModeIcons();
+    fetchLastUpdated();
+  } catch (error) {
+    console.error("Overall ranking initialization failed:", error);
+    const status = document.getElementById("last-updated");
+    if (status) {
+      status.textContent = "The ranking could not be loaded. Please try again.";
+      status.classList.add("table-status--error");
+    }
+  } finally {
+    showSpinner(false);
+  }
 }
 // ============================================================
 // 🌈 Mode Switch (Normal / Fun / Safe Haven / Immigration)
@@ -54,10 +85,11 @@ function initModeSwitch() {
     return;
   }
 
-  // === Global-State benutzen (nicht lokale let!) ===
-  window.funOn = false;
-  window.safeOn = false;
-  window.immigrOn = false;
+  // Reset shared mode state before wiring the controls.
+  funOn = false;
+  safeOn = false;
+  immigrOn = false;
+  updateModeIcons();
 
   // === Helper ===
   const updateLabel = (btn, text) => {
@@ -65,41 +97,36 @@ function initModeSwitch() {
     if (spans[1]) spans[1].textContent = text;
   };
 
-  // === Reset ===
-  normalBtn.addEventListener("click", () => {
-    document.querySelectorAll("#mode-switch button").forEach(b => b.classList.remove("active"));
-    normalBtn.classList.add("active");
-
-    funOn = safeOn = immigrOn = false;
+  const activateMode = mode => {
+    funOn = mode === "fun";
+    safeOn = mode === "safe";
+    immigrOn = mode === "immigration";
     updateLabel(funBtn, "Fun");
     updateLabel(safeBtn, "Safe");
     updateLabel(immigrBtn, "Immigration");
-
+    if (funOn) updateLabel(funBtn, "Fun Mode activated");
+    if (safeOn) updateLabel(safeBtn, "Safe Haven activated");
+    if (immigrOn) updateLabel(immigrBtn, "Immigration activated");
     updateModeIcons();
-  });
+  };
+
+  // The modes are alternative analytical lenses. The underlying Overall score
+  // always remains the KPI selection calculated from the list boxes.
+  normalBtn.addEventListener("click", () => activateMode("normal"));
 
   // === Fun toggle ===
   funBtn.addEventListener("click", () => {
-    funOn = !funOn;
-    funBtn.classList.toggle("active", funOn);
-    updateLabel(funBtn, funOn ? "Fun Mode activated" : "Fun");
-    updateModeIcons();
+    activateMode("fun");
   });
 
   // === Safe toggle ===
   safeBtn.addEventListener("click", () => {
-    safeOn = !safeOn;
-    safeBtn.classList.toggle("active", safeOn);
-    updateLabel(safeBtn, safeOn ? "Safe Haven activated" : "Safe");
-    updateModeIcons();
+    activateMode("safe");
   });
 
   // === Immigration toggle ===
   immigrBtn.addEventListener("click", () => {
-    immigrOn = !immigrOn;
-    immigrBtn.classList.toggle("active", immigrOn);
-    updateLabel(immigrBtn, immigrOn ? "Immigration activated" : "Immigration");
-    updateModeIcons();
+    activateMode("immigration");
   });
 }
 
@@ -163,32 +190,24 @@ function buildRelevanceControls() {
   `;
 
   // Restore saved weights
-  const saved = localStorage.getItem("overallKPIWeights");
+  let saved = null;
+  try { saved = localStorage.getItem(OVERALL_WEIGHTS_STORAGE_KEY); } catch { /* storage unavailable */ }
   if (saved) {
-    const map = JSON.parse(saved);
-    for (const meta of kpis) {
-      if (map[meta.filename]) meta.relevance = map[meta.filename];
-      const sel = container.querySelector(`select[data-kpi="${meta.filename}"]`);
-      if (sel && map[meta.filename]) sel.value = map[meta.filename];
+    try {
+      const map = JSON.parse(saved);
+      for (const meta of kpis) {
+        if (map[meta.filename]) meta.relevance = map[meta.filename];
+        const sel = container.querySelector(`select[data-kpi="${meta.filename}"]`);
+        if (sel && map[meta.filename]) sel.value = map[meta.filename];
+      }
+    } catch {
+      localStorage.removeItem(OVERALL_WEIGHTS_STORAGE_KEY);
     }
   }
 
   // Events
-  document.getElementById("calc-btn").addEventListener("click", async () => {
-    for (const meta of kpis) {
-      const sel = container.querySelector(`select[data-kpi="${meta.filename}"]`);
-      if (sel) meta.relevance = sel.value;
-    }
-    localStorage.setItem(
-      "overallKPIWeights",
-      JSON.stringify(Object.fromEntries(kpis.map(m => [m.filename, m.relevance || "normal"])))
-    );
-    showToast("KPI selection saved");
-    await buildOverallRanking();
-  });
-
   document.getElementById("reset-btn").addEventListener("click", () => {
-    localStorage.removeItem("overallKPIWeights");
+    localStorage.removeItem(OVERALL_WEIGHTS_STORAGE_KEY);
     location.reload();
   });
 
@@ -201,25 +220,30 @@ function buildRelevanceControls() {
 
 	// === Calculate-Button: Ranking + GDPR-Popup nur bei echten Änderungen ===
 	document.getElementById("calc-btn").addEventListener("click", async () => {
-		for (const meta of kpis) {
-			const sel = container.querySelector(`select[data-kpi="${meta.filename}"]`);
-			if (sel) meta.relevance = sel.value;
+		const button = document.getElementById("calc-btn");
+		button.disabled = true;
+		button.setAttribute("aria-busy", "true");
+		try {
+			for (const meta of kpis) {
+				const sel = container.querySelector(`select[data-kpi="${meta.filename}"]`);
+				if (sel) meta.relevance = sel.value;
+			}
+
+				localStorage.setItem(
+					OVERALL_WEIGHTS_STORAGE_KEY,
+				JSON.stringify(Object.fromEntries(kpis.map(m => [m.filename, m.relevance || "normal"])))
+			);
+			showToast("KPI selection saved");
+
+			if (hasChangedSinceLastCalc) {
+				createInfoBox();
+				hasChangedSinceLastCalc = false;
+			}
+			await buildOverallRanking();
+		} finally {
+			button.disabled = false;
+			button.setAttribute("aria-busy", "false");
 		}
-
-		localStorage.setItem(
-			"overallKPIWeights",
-			JSON.stringify(Object.fromEntries(kpis.map(m => [m.filename, m.relevance || "normal"])))
-		);
-
-		showToast("KPI selection saved");
-
-		// Nur zeigen, wenn etwas verändert wurde
-		if (hasChangedSinceLastCalc) {
-			createInfoBox();
-			hasChangedSinceLastCalc = false;
-		}
-
-		await buildOverallRanking();
 	});
 
 }
@@ -235,6 +259,8 @@ async function buildOverallRanking() {
 
   const aggregated = {};
   missingKPIs = [];
+  const countryNames = new Set(Array.isArray(countries) ? countries : Object.keys(countries || {}));
+  const totalWeight = valid.reduce((sum, meta) => sum + getRelevanceWeight(meta.relevance), 0);
 
   for (const meta of valid) {
     const id = meta.filename;
@@ -243,7 +269,7 @@ async function buildOverallRanking() {
       const data = ALL_DATA[id] || [];
       if (!Array.isArray(data) || data.length === 0) continue;
 
-      const numeric = data.filter(d => !isNaN(parseFloat(d.value)));
+      const numeric = data.filter(d => countryNames.has(d.country) && !isNaN(parseFloat(d.value)));
       if (numeric.length < 2) continue;
 
       // pro Land neuestes Jahr
@@ -257,19 +283,31 @@ async function buildOverallRanking() {
       const latest = Array.from(latestByCountry.values());
       if (latest.length < 2) continue;
 
-      const min = Math.min(...latest.map(d => parseFloat(d.value)));
-      const max = Math.max(...latest.map(d => parseFloat(d.value)));
-      const range = max - min || 1;
+      const target = Number(meta.target_value);
+      const scoredValues = latest.map(d => {
+        const value = parseFloat(d.value);
+        return meta.sort === "target" && Number.isFinite(target) ? Math.abs(value - target) : value;
+      });
+      const sorted = [...scoredValues].sort((a, b) => a - b);
+      const percentileByValue = new Map();
+      for (let i = 0; i < sorted.length;) {
+        let end = i;
+        while (end + 1 < sorted.length && sorted[end + 1] === sorted[i]) end++;
+        percentileByValue.set(sorted[i], sorted.length === 1 ? 0.5 : ((i + end) / 2) / (sorted.length - 1));
+        i = end + 1;
+      }
 
-      for (const d of latest) {
+      for (let index = 0; index < latest.length; index++) {
+        const d = latest[index];
         const c = d.country;
-        let norm = (parseFloat(d.value) - min) / range;
-        if (meta.sort === "lower") norm = 1 - norm;
+        let norm = percentileByValue.get(scoredValues[index]) ?? 0.5;
+        if (meta.sort === "lower" || meta.sort === "target") norm = 1 - norm;
         const val = norm * weight;
 
-        if (!aggregated[c]) aggregated[c] = { sum: 0, count: 0 };
+        if (!aggregated[c]) aggregated[c] = { sum: 0, count: 0, weightSum: 0 };
         aggregated[c].sum += val;
         aggregated[c].count++;
+        aggregated[c].weightSum += weight;
       }
     } catch (e) {
       console.warn(`⚠️ KPI ${id} failed:`, e);
@@ -283,9 +321,9 @@ async function buildOverallRanking() {
     .map(([country, obj]) => ({
       country,
       // base score = Ø of weighted KPIs; final score rewards data coverage
-      baseScore: obj.count > 0 ? obj.sum / obj.count : 0,
+      baseScore: obj.weightSum > 0 ? obj.sum / obj.weightSum : 0,
       used: obj.count,
-      coverage: prioritizedCount ? obj.count / prioritizedCount : 0
+      coverage: totalWeight ? obj.weightSum / totalWeight : 0
     }))
     .filter(r => r.coverage >= 0.6); // Mindestabdeckung 60 %
 
@@ -294,6 +332,7 @@ async function buildOverallRanking() {
   });
 
   list.sort((a, b) => b.score - a.score);
+  CURRENT_OVERALL_RESULTS = list;
 
   renderOverallTable(list);
   renderLegend(prioritizedCount, missingKPIs);
@@ -302,22 +341,16 @@ async function buildOverallRanking() {
 
 
 }
-// === Global state ===
-let FUN_SET = new Set();
-let SAFE_SET = new Set();
-let IMMIG_SET = new Set();  // 🧳 neu
-let funOn = false;
-let safeOn = false;
-let immigrOn = false;       // 🧳 neu
-
-
-// === Lädt Top-10 Sets EINMAL (robust gegen GPT-JSON-Formate) ===
+// === Lädt Top-/Bottom-20-Sets einmal (robust gegen ältere JSON-Formate) ===
 async function loadFunSafeImmigrationSets() {
   try {
-    const [funRaw, safeRaw, immigrRaw] = await Promise.all([
-      fetch("data/fun_ranking.json").then(r => r.ok ? r.json() : []),
-      fetch("data/safe_haven_ranking.json").then(r => r.ok ? r.json() : []),
-      fetch("data/immigration_ranking.json").then(r => r.ok ? r.json() : []) // 🧳 neu
+    const [funRaw, funBottomRaw, safeRaw, safeBottomRaw, immigrRaw, immigrBottomRaw] = await Promise.all([
+      fetch("data/fun_ranking.json?v=20260801-ranking-2").then(r => r.ok ? r.json() : []),
+      fetch("data/fun_ranking_bottom.json?v=20260801-ranking-2").then(r => r.ok ? r.json() : []),
+      fetch("data/safe_haven_ranking.json?v=20260801-ranking-2").then(r => r.ok ? r.json() : []),
+      fetch("data/safe_haven_ranking_bottom.json?v=20260801-ranking-2").then(r => r.ok ? r.json() : []),
+      fetch("data/immigration_ranking.json?v=20260801-ranking-2").then(r => r.ok ? r.json() : []),
+      fetch("data/immigration_ranking_bottom.json?v=20260801-ranking-2").then(r => r.ok ? r.json() : [])
     ]);
 
     const funList = Array.isArray(funRaw)
@@ -332,9 +365,24 @@ async function loadFunSafeImmigrationSets() {
       ? immigrRaw
       : immigrRaw["Immigration Mode"] || immigrRaw.countries || Object.values(immigrRaw);
 
-    FUN_SET = new Set((funList || []).slice(0, 10).map(e => e.country || e));
-    SAFE_SET = new Set((safeList || []).slice(0, 10).map(e => e.country || e));
-    IMMIG_SET = new Set((immigrList || []).slice(0, 10).map(e => e.country || e)); // 🧳 neu
+    const funBottomList = Array.isArray(funBottomRaw) ? funBottomRaw : Object.values(funBottomRaw);
+    const safeBottomList = Array.isArray(safeBottomRaw) ? safeBottomRaw : Object.values(safeBottomRaw);
+    const immigrBottomList = Array.isArray(immigrBottomRaw) ? immigrBottomRaw : Object.values(immigrBottomRaw);
+
+    FUN_RANKING = (funList || []).slice(0, 20);
+    SAFE_RANKING = (safeList || []).slice(0, 20);
+    IMMIG_RANKING = (immigrList || []).slice(0, 20);
+    FUN_SET = new Set(FUN_RANKING.map(e => e.country || e));
+    SAFE_SET = new Set(SAFE_RANKING.map(e => e.country || e));
+    IMMIG_SET = new Set(IMMIG_RANKING.map(e => e.country || e));
+    // Fail safely for older generated artifacts: never label one country as both
+    // a strongest and weakest match while a clean regeneration is pending.
+    FUN_BOTTOM_RANKING = (funBottomList || []).filter(e => !FUN_SET.has(e.country || e)).slice(0, 20);
+    SAFE_BOTTOM_RANKING = (safeBottomList || []).filter(e => !SAFE_SET.has(e.country || e)).slice(0, 20);
+    IMMIG_BOTTOM_RANKING = (immigrBottomList || []).filter(e => !IMMIG_SET.has(e.country || e)).slice(0, 20);
+    FUN_BOTTOM_SET = new Set(FUN_BOTTOM_RANKING.map(e => e.country || e));
+    SAFE_BOTTOM_SET = new Set(SAFE_BOTTOM_RANKING.map(e => e.country || e));
+    IMMIG_BOTTOM_SET = new Set(IMMIG_BOTTOM_RANKING.map(e => e.country || e));
 
     console.log("😎 FUN_SET loaded:", [...FUN_SET]);
     console.log("🛡️ SAFE_SET loaded:", [...SAFE_SET]);
@@ -344,12 +392,33 @@ async function loadFunSafeImmigrationSets() {
     FUN_SET = new Set();
     SAFE_SET = new Set();
     IMMIG_SET = new Set();
+    FUN_BOTTOM_SET = new Set();
+    SAFE_BOTTOM_SET = new Set();
+    IMMIG_BOTTOM_SET = new Set();
+    FUN_RANKING = [];
+    SAFE_RANKING = [];
+    IMMIG_RANKING = [];
+    FUN_BOTTOM_RANKING = [];
+    SAFE_BOTTOM_RANKING = [];
+    IMMIG_BOTTOM_RANKING = [];
   }
 }
 
 
 // === Fügt/entfernt ausschließlich die Icons gemäß funOn/safeOn ===
 function updateModeIcons() {
+  const states = {
+    normalMode: !funOn && !safeOn && !immigrOn,
+    funMode: Boolean(funOn),
+    safeMode: Boolean(safeOn),
+    immigrationMode: Boolean(immigrOn)
+  };
+  Object.entries(states).forEach(([id, active]) => {
+    const button = document.getElementById(id);
+    if (!button) return;
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+    button.classList.toggle("active", active);
+  });
   document.querySelectorAll("#overall-table tbody tr").forEach(tr => {
     const nameCell = tr.children[1];
     if (!nameCell) return;
@@ -359,17 +428,160 @@ function updateModeIcons() {
 
     const country = nameCell.textContent.trim();
     let icons = "";
-    if (funOn && FUN_SET.has(country)) icons += "😎";
-    if (safeOn && SAFE_SET.has(country)) icons += "🛡️";
-	if (immigrOn && IMMIG_SET.has(country)) icons += "🧳";
+    let iconLabel = "";
+    if (funOn && FUN_SET.has(country)) { icons = "😎"; iconLabel = "Fun Top 20"; }
+    if (funOn && FUN_BOTTOM_SET.has(country)) { icons = "☔"; iconLabel = "Fun Bottom 20"; }
+    if (safeOn && SAFE_SET.has(country)) { icons = "🛡️"; iconLabel = "Safe Haven Top 20"; }
+    if (safeOn && SAFE_BOTTOM_SET.has(country)) { icons = "💥"; iconLabel = "Safe Haven Bottom 20"; }
+	if (immigrOn && IMMIG_SET.has(country)) { icons = "🧳"; iconLabel = "Immigration Top 20"; }
+	if (immigrOn && IMMIG_BOTTOM_SET.has(country)) { icons = "🚧"; iconLabel = "Immigration Bottom 20"; }
 
     if (icons) {
       const span = document.createElement("span");
       span.className = "mode-icons";
       span.textContent = " " + icons;
+      span.title = iconLabel;
+      span.setAttribute("aria-label", iconLabel);
       nameCell.appendChild(span);
     }
   });
+  renderModeAnalysis();
+}
+
+function getActiveMode() {
+  if (funOn) return "fun";
+  if (safeOn) return "safe";
+  if (immigrOn) return "immigration";
+  return "normal";
+}
+
+function appendAnalysisHeading(container, title, text) {
+  const heading = document.createElement("h2");
+  heading.textContent = title;
+  container.appendChild(heading);
+  const description = document.createElement("p");
+  description.textContent = text;
+  container.appendChild(description);
+}
+
+function renderModeAnalysis() {
+  const container = document.getElementById("mode-analysis");
+  if (!container) return;
+  container.textContent = "";
+  const mode = getActiveMode();
+
+  if (mode === "normal") {
+    appendAnalysisHeading(
+      container,
+      "⚙️ Standard Overall analysis",
+      "This is the primary, data-driven scenario. Its country order is calculated from your current KPI list-box weights; no editorial mode changes that score."
+    );
+    const priorities = kpis
+      .filter(meta => ["very_high", "high"].includes(meta.relevance))
+      .map(meta => meta.title)
+      .slice(0, 8);
+    const priorityText = document.createElement("p");
+    priorityText.className = "mode-analysis__note";
+    priorityText.textContent = priorities.length
+      ? `Strongest selected priorities: ${priorities.join(", ")}${priorities.length === 8 ? " …" : ""}`
+      : "No high-priority KPI is currently selected.";
+    container.appendChild(priorityText);
+
+    if (CURRENT_OVERALL_RESULTS.length) {
+      const list = document.createElement("ol");
+      list.className = "mode-analysis__ranking mode-analysis__ranking--compact";
+      CURRENT_OVERALL_RESULTS.slice(0, 3).forEach(entry => {
+        const item = document.createElement("li");
+        item.textContent = `${entry.country}: ${(entry.score * 100).toFixed(2)} points, ${(entry.coverage * 100).toFixed(0)}% weighted data coverage`;
+        list.appendChild(item);
+      });
+      container.appendChild(list);
+    }
+    return;
+  }
+
+  const configs = {
+    fun: {
+      title: "😎 Fun lens",
+      text: "A deliberately light-hearted editorial lens combining measured quality of life with qualitative context such as climate, sunshine, social life, beer affordability and appealing cities.",
+      bottomNote: "Its Bottom list measures weak living-condition fit from KPI evidence; it does not judge whether a culture or its people are fun.",
+      topData: FUN_RANKING,
+      bottomData: FUN_BOTTOM_RANKING,
+      topIcon: "😎",
+      bottomIcon: "☔"
+    },
+    safe: {
+      title: "🛡️ Safe Haven lens",
+      text: "An editorial risk lens covering domestic safety, climate effects and resilience, conflict proximity, spillover exposure, geography and alliances. It is not a prediction of war.",
+      bottomNote: "Its Bottom list is a reproducible measured-risk ranking anchored in the Global Peace Index, not a model-selected narrative shortlist.",
+      topData: SAFE_RANKING,
+      bottomData: SAFE_BOTTOM_RANKING,
+      topIcon: "🛡️",
+      bottomIcon: "💥"
+    },
+    immigration: {
+      title: "🧳 Immigration lens",
+      text: "An editorial relocation lens combining destination quality with cautious consideration of visa, work-permit and residence accessibility. It is not legal advice.",
+      bottomNote: "Its Bottom list describes comparative access barriers and destination conditions, not immigrants or a country's population.",
+      topData: IMMIG_RANKING,
+      bottomData: IMMIG_BOTTOM_RANKING,
+      topIcon: "🧳",
+      bottomIcon: "🚧"
+    }
+  };
+  const config = configs[mode];
+  appendAnalysisHeading(container, config.title, config.text);
+
+  const note = document.createElement("p");
+  note.className = "mode-analysis__note";
+  note.textContent = `${config.bottomNote} These lists do not replace your KPI-weighted Overall ranking.`;
+  container.appendChild(note);
+
+  if (!config.topData.length && !config.bottomData.length) {
+    const unavailable = document.createElement("p");
+    unavailable.textContent = "This analytical lens is currently unavailable.";
+    container.appendChild(unavailable);
+    return;
+  }
+
+  const overallRank = new Map(CURRENT_OVERALL_RESULTS.map((entry, index) => [entry.country, index + 1]));
+  appendLensRanking(container, `${config.topIcon} Top ${config.topData.length}`, config.topData, overallRank, true, "strongest");
+  appendLensRanking(container, `${config.bottomIcon} Bottom ${config.bottomData.length}`, config.bottomData, overallRank, false, "weakest");
+}
+
+function appendLensRanking(container, title, data, overallRank, open, rankMeaning) {
+  const details = document.createElement("details");
+  details.className = "mode-analysis__details";
+  details.open = open;
+  const summary = document.createElement("summary");
+  summary.textContent = `${title} — rank 1 is the ${rankMeaning} match`;
+  details.appendChild(summary);
+  if (!data.length) {
+    const unavailable = document.createElement("p");
+    unavailable.textContent = "This list is currently unavailable.";
+    details.appendChild(unavailable);
+    container.appendChild(details);
+    return;
+  }
+  const list = document.createElement("ol");
+  list.className = "mode-analysis__ranking";
+  data.forEach((entry, index) => {
+    const country = entry.country || entry;
+    const item = document.createElement("li");
+    const heading = document.createElement("strong");
+    const standardRank = overallRank.get(country);
+    heading.textContent = `${country}${standardRank ? ` — Overall #${standardRank}` : ""}`;
+    item.appendChild(heading);
+    if (entry.reason) {
+      const reason = document.createElement("span");
+      reason.textContent = ` ${entry.reason}`;
+      item.appendChild(reason);
+    }
+    if (Number.isInteger(entry.rank) && entry.rank !== index + 1) item.value = entry.rank;
+    list.appendChild(item);
+  });
+  details.appendChild(list);
+  container.appendChild(details);
 }
 
 
@@ -460,14 +672,16 @@ function renderLegend(prioritizedCount, missing = []) {
     <div class="legend-block">
       <h3>📊 How the Overall Ranking Works</h3>
       <p>
-        For each KPI the <b>latest country value</b> is normalized to <code>[0,1]</code>:
+        For each KPI the <b>latest country value</b> is converted to a robust percentile score in <code>[0,1]</code>:
       </p>
       <pre class="legend-code">
-norm = (value - min) / (max - min)
+norm = percentile_rank(value)
 if sort == "lower": norm = 1 - norm
+if sort == "target": norm = 1 - percentile_rank(abs(value - target))
 weighted = norm × relevance_weight
-base_score(country) = Σ(weighted) / KPIs_used
-score(country) = base_score × coverage_ratio
+base_score(country) = Σ(weighted) / Σ(available KPI weights)
+weighted_coverage = Σ(available KPI weights) / Σ(all selected KPI weights)
+score(country) = base_score × weighted_coverage
       </pre>
       <ul>
         <li>🚫 Only indicators that make sense for such comparison are included.</li>
@@ -480,9 +694,9 @@ score(country) = base_score × coverage_ratio
 
     <div class="legend-block">
       <h3>🌍 Mode Highlights</h3>
-      <p><strong>😎 Fun Mode:</strong> Warm, sunny, happy and relaxed. Good beer, reasonably priced</p>
-      <p><strong>🛡️ Safe Haven Mode:</strong> Peaceful, resilient, and rights-respecting democracies with low climate risk.</p>
-	  <p><strong>🧳 Immigration Mode:</strong> Countries open to immigration, with job opportunities and welcoming integration culture.</p>
+      <p><strong>😎 / ☔ Fun Mode:</strong> Top and Bottom 20 for a light-hearted “cool place to live” view combining happiness and quality of life with sunshine, climate, affordable beer and recognised liveable cities.</p>
+      <p><strong>🛡️ / 💥 Safe Haven Mode:</strong> Top and Bottom 20 for domestic safety and resilience plus climate effects, conflict proximity and alliance exposure.</p>
+	  <p><strong>🧳 / 🚧 Immigration Mode:</strong> Top and Bottom 20 for destination attractiveness and comparatively accessible visa, work-permit and residence paths. It is orientation, not individual legal advice.</p>
     <p><strong>! Feature disabled while Google Translate is on! Switch to the original version to continue !  </strong> </p>
     </div>
   `;

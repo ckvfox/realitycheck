@@ -39,8 +39,11 @@ If you discover a vulnerability, report it privately.
 - Full and partial FTP uploads are built from the productive deployment allowlist; partial paths are validated against that package.
 - Production fetches and FTP-only deployments use separate concurrency groups to prevent overlapping writes.
 - Test-mode datasets, status, logs, hashes and pending mappings are isolated below `data/test/`; automatic production mapping updates are disabled in test mode.
+- Deployment packaging explicitly excludes the complete `data/test/` subtree.
 - Pull requests run the complete network-free source-contract, adapter-isolation, snapshot and deployment regression baseline before merge.
 - Fetch startup fails closed when source metadata and the explicit adapter registry differ; unknown types cannot enter a fallback dispatch branch.
+- Source-specific network clients receive output paths through an injected runtime boundary; mocked tests cover every supported source family without live network access.
+- Failed or empty adapter results preserve both the last known-good dataset and its previous fetch-status entry.
 
 ## Backup Strategy
 
