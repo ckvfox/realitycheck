@@ -28,7 +28,9 @@ AddCharset UTF-8 .html .htm .css .js .json .xml .svg
 Header always set Strict-Transport-Security "max-age=15552000"
 
 # Content Security Policy - external scripts only, with Google Translate support.
-Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; script-src 'self' unpkg.com cdn.jsdelivr.net translate.google.com translate.googleapis.com translate-pa.googleapis.com *.gstatic.com; style-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net translate.googleapis.com *.gstatic.com www.gstatic.com; img-src 'self' data: *.tile.openstreetmap.org *.infinityfree.net translate.google.com translate.googleapis.com *.gstatic.com www.google.com fonts.gstatic.com; connect-src 'self' api.worldbank.org raw.githubusercontent.com unpkg.com cdn.jsdelivr.net translate.googleapis.com translate-pa.googleapis.com; font-src 'self' translate.googleapis.com fonts.gstatic.com *.gstatic.com; object-src 'none';"
+# The sha256 hash allows the single fixed inline bootstrap script Google Translate's
+# widget iframe (about:srcdoc) injects; without it the translate panel fails silently.
+Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; script-src 'self' 'sha256-yMILSkP21TMcaXRWgcacApL5PXJdIReWq4XPHkbMNEQ=' unpkg.com cdn.jsdelivr.net translate.google.com translate.googleapis.com translate-pa.googleapis.com *.gstatic.com; style-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net translate.googleapis.com *.gstatic.com www.gstatic.com; img-src 'self' data: *.tile.openstreetmap.org *.infinityfree.net translate.google.com translate.googleapis.com *.gstatic.com www.google.com fonts.gstatic.com; connect-src 'self' api.worldbank.org raw.githubusercontent.com unpkg.com cdn.jsdelivr.net translate.googleapis.com translate-pa.googleapis.com; font-src 'self' translate.googleapis.com fonts.gstatic.com *.gstatic.com; object-src 'none';"
 
 # X-Frame-Options to prevent clickjacking
 Header always set X-Frame-Options "SAMEORIGIN"

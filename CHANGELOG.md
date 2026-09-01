@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## Unreleased
 
 ### Fixed
+- Fixed Google Translate widget being fully blocked by the Content-Security-Policy: added the sha256 hash for the widget's fixed inline bootstrap script (executed inside its `about:srcdoc` iframe) to `script-src`, so the translate panel initializes instead of failing with CSP violations and `Cannot read properties of undefined (reading 'height')` errors.
 - Fixed horizontal overflow on the World dashboard at iPhone widths by allowing KPI clusters and Chart.js cards to shrink below their desktop intrinsic width and wrapping descriptive text inside the viewport.
 
 ## 3.4.0 - 2026-08-01
