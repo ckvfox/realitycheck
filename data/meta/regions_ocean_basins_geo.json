@@ -1,0 +1,67 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "note": "Simplified rectangular tropical cyclone basin boundaries, following the 7-basin convention used by NOAA IBTrACS (BASIN attribute: NA, EP, WP, NI, SI, SP, SA). Not official warning-area boundaries."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "Acronym": "NA", "Name": "North Atlantic" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-100, 0], [0, 0], [0, 60], [-100, 60], [-100, 0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Acronym": "EP", "Name": "Eastern North Pacific" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-180, 0], [-75, 0], [-75, 60], [-180, 60], [-180, 0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Acronym": "WP", "Name": "Western North Pacific" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[100, 0], [180, 0], [180, 60], [100, 60], [100, 0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Acronym": "NI", "Name": "North Indian Ocean" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[30, 0], [100, 0], [100, 30], [30, 30], [30, 0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Acronym": "SI", "Name": "South Indian Ocean" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[20, -60], [135, -60], [135, 0], [20, 0], [20, -60]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Acronym": "SP", "Name": "South Pacific" },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [[[135, -60], [180, -60], [180, 0], [135, 0], [135, -60]]],
+          [[[-180, -60], [-70, -60], [-70, 0], [-180, 0], [-180, -60]]]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "Acronym": "SA", "Name": "South Atlantic" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-70, -60], [20, -60], [20, 0], [-70, 0], [-70, -60]]]
+      }
+    }
+  ]
+}

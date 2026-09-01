@@ -223,7 +223,7 @@ async function populateKpiSelect() {
 
   try {
     const grouped = groupKpisByCluster(getKpiArray(), {
-      filter: k => k.world_kpi !== "e",
+      filter: k => k.world_kpi !== "e" && k.geo_type !== "region",
       mapItem: meta => ({
         id: meta.filename,
         title: meta.title || meta.filename || "Unnamed KPI"

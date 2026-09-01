@@ -16,6 +16,7 @@ class SourceRuntime:
     maybe_invert_records: Callable[..., list[dict[str, Any]]]
     save_records: Callable[..., bool]
     save_imf_records: Callable[..., bool]
+    save_region_records: Callable[..., bool]
     keep_or_dummy: Callable[..., None]
     mark_skip: Callable[..., None]
     write_json: Callable[..., None]
@@ -23,4 +24,5 @@ class SourceRuntime:
     data_dir: Path
     meta_dir: Path
     source_csv_dir: Path
+    region_source_csv_dir: Path
     pending_dir: Path

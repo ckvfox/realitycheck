@@ -81,6 +81,7 @@
             <option value="groups">Groups (EU, G7, BRICS, etc.)</option>
             <option value="government">Government Type</option>
             <option value="language">Language</option>
+            <option value="climate">Climate Hazards &amp; Exposure</option>
           </select>
         </div>
         
@@ -125,6 +126,14 @@
           <select id="worldMapAggregationMode">
             <option value="median">Median</option>
             <option value="sum">Sum</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper" id="worldMapGeographyWrapper" hidden>
+          <label for="worldMapGeographyMode">Geography:</label>
+          <select id="worldMapGeographyMode">
+            <option value="countries">Countries</option>
+            <option value="regions">Regions (coming soon, country fallback)</option>
           </select>
         </div>
       </div>
@@ -178,7 +187,7 @@
   <!-- JS -->
         <!-- 🧠 Shared RealityCheck Core -->
         <script src="scripts/utils_ui.js" defer></script>
-        <script src="scripts/core.js?v=20260801-frontend-8" defer></script>
-        <script src="scripts/script_world.js?v=20260801-frontend-13" defer></script>
+        <script src="scripts/core.js?v=20260802-translate-fix-1" defer></script>
+        <script src="scripts/script_world.js?v=20260802-climate-map-4" defer></script>
 </body>
 </html>

@@ -836,7 +836,7 @@ window.googleTranslateElementInit = function googleTranslateElementInit() {
       
       if (widget) {
         // Style Google Translate dropdown
-        const select = widget.querySelector("select");
+        const select = widget.querySelector("select.goog-te-combo, select");
         if (select) {
           Object.assign(select.style, {
             background: "rgba(248, 250, 252, 0.9)",
@@ -851,13 +851,20 @@ window.googleTranslateElementInit = function googleTranslateElementInit() {
             backdropFilter: "blur(5px)"
           });
         }
-        
-        // Hide Google branding
-        const powered = widget.querySelector(".goog-logo-link");
-        if (powered) powered.style.display = "none";
-        
-        const logo = widget.querySelector(".goog-te-gadget-simple .goog-te-menu-value span:first-child");
-        if (logo) logo.style.display = "none";
+
+        // Fallback styling for the SIMPLE layout if Google renders a gadget button instead of a <select>.
+        const simpleGadget = widget.querySelector(".goog-te-gadget-simple");
+        if (simpleGadget) {
+          Object.assign(simpleGadget.style, {
+            width: "100%",
+            display: "block",
+            border: "2px solid rgba(226, 232, 240, 0.8)",
+            borderRadius: "12px",
+            background: "rgba(248, 250, 252, 0.9)",
+            padding: "0.55rem 0.75rem",
+            boxSizing: "border-box"
+          });
+        }
       }
     }, 500);
     

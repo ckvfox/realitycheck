@@ -3169,6 +3169,44 @@ body.glossary-page #glossary-container td a {
   word-break: break-all;
 }
 
+/* Keep glossary status colors fully opaque so zebra striping does not tint them. */
+body.glossary-page #glossary-table td.glossary-fresh,
+body.glossary-page #legend .glossary-fresh {
+  background-color: #e9ffe9 !important;
+}
+
+body.glossary-page #glossary-table td.glossary-warn,
+body.glossary-page #legend .glossary-warn {
+  background-color: #fff4bf !important;
+}
+
+body.glossary-page #glossary-table td.glossary-stale,
+body.glossary-page #legend .glossary-stale {
+  background-color: #ffe3e3 !important;
+}
+
+body.glossary-page #glossary-table td.glossary-outlier,
+body.glossary-page #glossary-table td .glossary-outlier,
+body.glossary-page #legend .glossary-outlier {
+  background-color: #ffd6d6 !important;
+  font-weight: 600;
+}
+
+body.glossary-page #glossary-table td.glossary-fresh,
+body.glossary-page #glossary-table td.glossary-warn,
+body.glossary-page #glossary-table td.glossary-stale,
+body.glossary-page #glossary-table td.glossary-outlier {
+  background-image: none;
+}
+
+body.glossary-page #legend .glossary-fresh,
+body.glossary-page #legend .glossary-warn,
+body.glossary-page #legend .glossary-stale,
+body.glossary-page #legend .glossary-outlier {
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+}
+
 body.glossary-page #glossary-table td:nth-child(2) {
   word-break: break-all;
 }
@@ -3298,6 +3336,33 @@ body.glossary-page th.sort-desc::after {
 
 .translator-widget:empty {
   display: none;
+}
+
+.translator-widget .goog-te-gadget,
+.translator-widget .goog-te-gadget-simple {
+  width: 100% !important;
+  display: block !important;
+  color: #2d3748 !important;
+}
+
+.translator-widget .goog-te-gadget-simple {
+  border: 2px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 12px !important;
+  background: rgba(248, 250, 252, 0.9) !important;
+  padding: 0.55rem 0.75rem !important;
+  box-sizing: border-box !important;
+}
+
+.translator-widget .goog-te-gadget-simple .goog-te-menu-value {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  color: #2d3748 !important;
+  text-decoration: none !important;
+}
+
+.translator-widget .goog-te-gadget-simple .goog-te-menu-value span {
+  color: #2d3748 !important;
 }
 
 .sr-only {

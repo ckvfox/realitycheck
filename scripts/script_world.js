@@ -269,8 +269,10 @@ let worldMapPopulation = []; // Changed from {} to [] for array operations
 let worldMapCountryMappings = {};
 let worldMapGdp = [];
 let worldMapEmissions = [];
+let worldMapArea = [];
 let worldMapSelectedKpiData = [];
 let worldMapSelectedKpiMeta = null;
+let worldMapYearRequestId = 0;
 const WORLD_MAP_SUMMABLE_KPIS = new Set([
   "area", "co2_emissions", "electric_vehicle_stock", "gdp", "net_migration",
   "olympic_medals_summer", "olympic_medals_winter", "population", "railway_length", "refugees_hosted",
@@ -284,6 +286,293 @@ const WORLD_MAP_GROUP_COLORS = {
   b: { fill: "#ef6c00", border: "#a84300" },
   overlap: { fill: "#7b1fa2", border: "#4a0866" },
 };
+const WORLD_MAP_CLIMATE_GROUPING = "climate";
+const WORLD_MAP_VALUE_MODE_LABELS = {
+  absolute: "Absolute",
+  per_capita: "Per capita",
+  share_population: "Share of population",
+  share_area: "Share of area",
+  hazard_class: "Hazard class",
+  change: "Change",
+  index: "Index / rate",
+};
+const WORLD_MAP_AGGREGATION_LABELS = {
+  median: "Median",
+  mean: "Mean",
+  sum: "Sum",
+  max: "Maximum",
+  population_weighted_mean: "Population-weighted mean",
+  area_weighted_mean: "Area-weighted mean",
+  source_aggregate: "Source-provided aggregate",
+};
+const WORLD_MAP_CLIMATE_CATEGORIES = {
+  multi_hazard_exposure: {
+    label: "Multi-Hazard Exposure",
+    description:
+      "Historical impact data from climate-related disasters (droughts, floods, extreme weather and temperatures, wildfires). This reflects observed impact reporting, not full climate risk.",
+    metrics: [
+      {
+        kpi: "people_affected_by_climate_disasters",
+        label: "Population exposed (people affected)",
+        valueModes: ["absolute", "per_capita"],
+        defaultValueMode: "absolute",
+        aggregations: ["sum", "median", "mean", "max"],
+        defaultAggregation: "sum",
+        measureType: "exposure",
+      },
+      {
+        kpi: "climate_disaster_deaths",
+        label: "Deaths",
+        valueModes: ["absolute", "per_capita"],
+        defaultValueMode: "absolute",
+        aggregations: ["sum", "median", "mean", "max"],
+        defaultAggregation: "sum",
+        measureType: "historical_impact",
+      },
+      {
+        kpi: "climate_disaster_damage_gdp",
+        label: "Recorded damage (% of GDP)",
+        valueModes: ["index"],
+        defaultValueMode: "index",
+        aggregations: ["median", "mean", "max"],
+        defaultAggregation: "median",
+        measureType: "historical_impact",
+      },
+    ],
+  },
+  agricultural_drought: {
+    label: "Agricultural Drought",
+    description:
+      "Proxy based on national water-stress pressure. This is not a direct drought-hazard footprint map and should not be interpreted as vulnerability or expected damage.",
+    metrics: [
+      {
+        kpi: "water_stress_level",
+        label: "Water stress level (proxy)",
+        valueModes: ["index"],
+        defaultValueMode: "index",
+        aggregations: ["median", "mean", "max"],
+        defaultAggregation: "median",
+        measureType: "hazard_proxy",
+      },
+    ],
+  },
+  emissions_transition: {
+    label: "Emissions & Transition",
+    description:
+      "Climate-pressure and transition indicators from established sources. CO2 reflects territorial emissions; transition metrics show progress proxies, not complete decarbonization pathways.",
+    metrics: [
+      {
+        kpi: "co2_emissions",
+        label: "CO2 emissions",
+        valueModes: ["absolute", "per_capita"],
+        defaultValueMode: "absolute",
+        aggregations: ["sum", "median", "mean", "max"],
+        defaultAggregation: "sum",
+        measureType: "historical_impact",
+      },
+      {
+        kpi: "renewable_energy_share",
+        label: "Renewable energy share",
+        valueModes: ["index"],
+        defaultValueMode: "index",
+        aggregations: ["median", "mean", "population_weighted_mean", "max"],
+        defaultAggregation: "median",
+        measureType: "hazard_proxy",
+      },
+      {
+        kpi: "electric_vehicle_stock",
+        label: "Electric vehicle stock",
+        valueModes: ["absolute", "per_capita"],
+        defaultValueMode: "per_capita",
+        aggregations: ["sum", "median", "mean", "max"],
+        defaultAggregation: "sum",
+        measureType: "hazard_proxy",
+      },
+    ],
+  },
+  ecosystem_air_pressure: {
+    label: "Ecosystem & Air Pressure",
+    description:
+      "Environmental pressure indicators with climate relevance. These are partial signals and should be interpreted together with other climate and resilience metrics.",
+    metrics: [
+      {
+        kpi: "air_quality_pm2_5_exposure",
+        label: "PM2.5 exposure",
+        valueModes: ["index"],
+        defaultValueMode: "index",
+        aggregations: ["median", "mean", "population_weighted_mean", "max"],
+        defaultAggregation: "median",
+        measureType: "hazard_proxy",
+      },
+      {
+        kpi: "terrestrial_protected_areas",
+        label: "Protected land area",
+        valueModes: ["index"],
+        defaultValueMode: "index",
+        aggregations: ["median", "mean", "area_weighted_mean", "max"],
+        defaultAggregation: "median",
+        measureType: "hazard_proxy",
+      },
+    ],
+  },
+  water_infrastructure_resilience: {
+    label: "Water & Infrastructure Resilience",
+    description:
+      "Foundational service coverage linked to climate resilience and adaptive capacity. High values do not remove hazard exposure but can reduce day-to-day vulnerability.",
+    metrics: [
+      {
+        kpi: "access_to_basic_drinking_water",
+        label: "Access to basic drinking water",
+        valueModes: ["index"],
+        defaultValueMode: "index",
+        aggregations: ["median", "mean", "population_weighted_mean", "max"],
+        defaultAggregation: "median",
+        measureType: "exposure",
+      },
+      {
+        kpi: "basic_sanitation_access",
+        label: "Basic sanitation access",
+        valueModes: ["index"],
+        defaultValueMode: "index",
+        aggregations: ["median", "mean", "population_weighted_mean", "max"],
+        defaultAggregation: "median",
+        measureType: "exposure",
+      },
+      {
+        kpi: "access_to_electricity",
+        label: "Access to electricity",
+        valueModes: ["index"],
+        defaultValueMode: "index",
+        aggregations: ["median", "mean", "population_weighted_mean", "max"],
+        defaultAggregation: "median",
+        measureType: "exposure",
+      },
+    ],
+  },
+  storm_impact: {
+    label: "Storm Impact (tropical cyclones)",
+    description:
+      "Named tropical cyclone activity per ocean basin, from NOAA's IBTrACS global best-track archive. This is a region view (ocean basins), not a country view: tropical cyclones form and travel across ocean basins, not within national borders.",
+    geoType: "region",
+    regionSet: "ocean_basins",
+    metrics: [
+      {
+        kpi: "tropical_cyclone_activity_basin",
+        label: "Named storms per year",
+        valueModes: ["absolute"],
+        defaultValueMode: "absolute",
+        aggregations: ["median"],
+        defaultAggregation: "median",
+        measureType: "historical_impact",
+      },
+    ],
+  },
+};
+const WORLD_MAP_CLIMATE_PLACEHOLDER_CATEGORIES = {
+  wildfire_impact: {
+    label: "Wildfire Impact (coming soon)",
+    description: "Planned region-based hazard category (IPCC AR6 climate reference regions). A verified, automated, no-login regional data source is not yet connected.",
+    geoType: "region",
+    regionSet: "ipcc_ar6",
+  },
+  flood_impact: {
+    label: "Flood Impact (coming soon)",
+    description: "Planned region-based hazard category (major river basins). A verified, automated, no-login regional data source is not yet connected.",
+    geoType: "region",
+    regionSet: "river_basins",
+  },
+  heat_impact: {
+    label: "Heat Impact (coming soon)",
+    description: "Planned region-based hazard category (IPCC AR6 climate reference regions). A verified, automated, no-login regional data source is not yet connected.",
+    geoType: "region",
+    regionSet: "ipcc_ar6",
+  },
+  drought_impact: {
+    label: "Drought Impact (coming soon)",
+    description: "Planned region-based hazard category (IPCC AR6 climate reference regions). A verified, automated, no-login regional data source is not yet connected.",
+    geoType: "region",
+    regionSet: "ipcc_ar6",
+  },
+};
+
+function isClimateGrouping(grouping) {
+  return grouping === WORLD_MAP_CLIMATE_GROUPING;
+}
+
+function getKpiMetaByFilename(filename) {
+  return META.find(kpi => kpi.filename === filename) || null;
+}
+
+function getClimateCategoryConfig(categoryKey) {
+  return WORLD_MAP_CLIMATE_CATEGORIES[categoryKey]
+    || WORLD_MAP_CLIMATE_PLACEHOLDER_CATEGORIES[categoryKey]
+    || null;
+}
+
+function getClimateMetricOptions(categoryKey) {
+  const category = getClimateCategoryConfig(categoryKey);
+  if (!category || !Array.isArray(category.metrics)) return [];
+  return category.metrics.filter(metric => Boolean(getKpiMetaByFilename(metric.kpi)));
+}
+
+function getActiveClimateMetricConfig() {
+  const grouping = document.getElementById("groupingSelect")?.value || "";
+  if (!isClimateGrouping(grouping)) return null;
+  const categoryKey = document.getElementById("categorySelect")?.value || "";
+  const selectedKpi = document.getElementById("worldMapKpiSelect")?.value || "";
+  return getClimateMetricOptions(categoryKey).find(metric => metric.kpi === selectedKpi) || null;
+}
+
+function setSelectOptions(select, options, preferredValue, fallbackValue = "") {
+  if (!select) return "";
+  const previous = select.value;
+  select.textContent = "";
+  options.forEach(optionDef => {
+    const option = document.createElement("option");
+    option.value = optionDef.value;
+    option.textContent = optionDef.label;
+    if (optionDef.disabled) option.disabled = true;
+    select.appendChild(option);
+  });
+  const allowed = new Set(options.map(item => item.value));
+  const resolved = [preferredValue, previous, fallbackValue].find(value => value && allowed.has(value)) || options[0]?.value || "";
+  if (resolved) select.value = resolved;
+  return resolved;
+}
+
+function updateWorldMapGeographyAvailability() {
+  const grouping = document.getElementById("groupingSelect")?.value || "";
+  const wrapper = document.getElementById("worldMapGeographyWrapper");
+  const select = document.getElementById("worldMapGeographyMode");
+  if (!wrapper || !select) return;
+  const categoryKey = document.getElementById("categorySelect")?.value || "";
+  const categoryConfig = getClimateCategoryConfig(categoryKey);
+  const isRegionCategory = isClimateGrouping(grouping) && categoryConfig?.geoType === "region";
+  wrapper.hidden = !isRegionCategory;
+  if (isRegionCategory) {
+    // Hazard categories backed by region data (basins, IPCC AR6 regions, ...) have
+    // no country-level equivalent, so this is informational rather than a toggle.
+    select.value = "regions";
+    select.disabled = true;
+  } else {
+    select.value = "countries";
+    select.disabled = false;
+  }
+}
+
+function describeMeasureType(type) {
+  if (type === "hazard_proxy") {
+    return "Hazard proxy: a physical pressure indicator, not direct exposure, vulnerability or expected damage.";
+  }
+  if (type === "historical_impact") {
+    return "Historical impact: recorded outcomes from events, not a direct hazard probability or full risk estimate.";
+  }
+  return "Exposure: people or value proxies within affected zones; this does not by itself measure vulnerability or risk.";
+}
+
+function getAggregationLabel(key) {
+  return WORLD_MAP_AGGREGATION_LABELS[key] || key;
+}
 
 function worldMapRealCountryNames() {
   return new Set(Object.keys(worldMapCountries));
@@ -371,26 +660,177 @@ function mixWithWhite(hex, intensity) {
   return `rgb(${rgb.map(channel => Math.round(255 - (255 - channel) * strength)).join(", ")})`;
 }
 
+// === Region-based climate hazard rendering (basins, IPCC AR6 regions, ...) ===
+// Kept separate from the country rendering path above so the country map
+// (groups/government/language + the country-level climate categories) stays
+// untouched. Only categories with geoType "region" (see
+// WORLD_MAP_CLIMATE_CATEGORIES / _PLACEHOLDER_CATEGORIES) use this path.
+let _worldMapRegionSetsMeta = null;
+const _worldMapRegionGeoJSONCache = {};
+
+async function loadRegionSetsMeta() {
+  if (!_worldMapRegionSetsMeta) {
+    _worldMapRegionSetsMeta = await loadJSON("data/meta/region_sets.json");
+  }
+  return _worldMapRegionSetsMeta;
+}
+
+async function loadRegionGeoJSON(regionSet) {
+  if (_worldMapRegionGeoJSONCache[regionSet]) return _worldMapRegionGeoJSONCache[regionSet];
+  const sets = await loadRegionSetsMeta();
+  const config = sets?.[regionSet];
+  if (!config?.geo_file) return null;
+  const geojson = await loadJSON(`data/meta/${config.geo_file}`);
+  _worldMapRegionGeoJSONCache[regionSet] = geojson;
+  return geojson;
+}
+
+function availableRegionYears(dataset) {
+  return [...new Set((dataset || [])
+    .filter(row => row.region && Number.isFinite(Number(row.year)) && Number.isFinite(Number(row.value)))
+    .map(row => Number(row.year)))]
+    .sort((a, b) => b - a);
+}
+
+function regionValuesForYear(dataset, year) {
+  const values = new Map();
+  if (!Number.isFinite(Number(year))) return values;
+  (dataset || []).forEach(row => {
+    if (Number(row.year) !== Number(year) || !row.region || !Number.isFinite(Number(row.value))) return;
+    values.set(row.region, Number(row.value));
+  });
+  return values;
+}
+
+async function renderWorldMapRegionLayer(categoryConfig, category) {
+  clearWorldMapSelection();
+  const regionSet = categoryConfig.regionSet;
+  const [regionSets, geojson] = await Promise.all([loadRegionSetsMeta(), loadRegionGeoJSON(regionSet)]);
+  const regionMeta = regionSets?.[regionSet];
+  const modeNote = document.getElementById('world-map-mode-note');
+  if (!worldMap || !geojson || !regionMeta) {
+    if (modeNote) modeNote.textContent = `${categoryConfig.label}: region geometry could not be loaded.`;
+    return;
+  }
+
+  const codeProperty = regionMeta.code_property || "Acronym";
+  const nameProperty = regionMeta.name_property || "Name";
+  const selectedYear = Number(document.getElementById('worldMapYearSelect')?.value);
+  const values = regionValuesForYear(worldMapSelectedKpiData, selectedYear);
+  const intensities = percentileIntensities(values);
+  const baseColor = WORLD_MAP_GROUP_COLORS.a.fill;
+  const borderColor = WORLD_MAP_GROUP_COLORS.a.border;
+
+  worldMapLayer = L.geoJSON(geojson, {
+    style: feature => {
+      const code = feature?.properties?.[codeProperty];
+      const intensity = intensities.get(code);
+      return {
+        fillColor: Number.isFinite(intensity) ? mixWithWhite(baseColor, intensity) : '#e8edf2',
+        weight: 1.5,
+        opacity: 1,
+        color: borderColor,
+        fillOpacity: Number.isFinite(intensity) ? 0.82 : 0.25,
+      };
+    },
+    onEachFeature: (feature, layer) => {
+      const code = feature?.properties?.[codeProperty];
+      const name = feature?.properties?.[nameProperty] || code || "Region";
+      const value = values.get(code);
+      const meta = worldMapSelectedKpiMeta;
+      const displayValue = Number.isFinite(value) ? formatWorldMapNumber(value, meta?.unit || "") : "no data";
+      const tooltip = `
+        <div class="map-tooltip">
+          <div class="map-tooltip__header">
+            <div class="map-tooltip__title">${name}</div>
+          </div>
+          <div class="map-tooltip__value">${meta?.title || "Selected metric"}: ${displayValue}</div>
+          <div class="map-tooltip__meta">
+            <div class="map-tooltip__meta-row">Year: ${Number.isFinite(selectedYear) ? selectedYear : "–"}</div>
+          </div>
+        </div>
+      `;
+      layer.bindTooltip(tooltip, { sticky: true });
+      layer.on({
+        mouseover: e => e.target.setStyle({ weight: 2.5, fillOpacity: 0.95 }),
+        mouseout: e => worldMapLayer.resetStyle(e.target),
+      });
+    },
+  }).addTo(worldMap);
+
+  const legendBox = document.getElementById('world-map-legend');
+  const legendTitle = document.getElementById('legend-title');
+  const legendContent = document.getElementById('legend-content');
+  if (legendBox && legendTitle && legendContent) {
+    legendTitle.textContent = `${categoryConfig.label} (${regionMeta.label || regionSet})`;
+    legendContent.textContent = `${categoryConfig.description} Metric: ${worldMapSelectedKpiMeta?.title || "–"}. Year: ${Number.isFinite(selectedYear) ? selectedYear : "–"}. Source: ${regionMeta.attribution || ""}`;
+    legendBox.classList.remove('hidden');
+  }
+  updateWorldMapVisualLegend(category, "");
+  if (modeNote) {
+    modeNote.textContent = `${categoryConfig.label} uses a region view (${regionMeta.label}) because this hazard is naturally reported per region, not per country. ${regionMeta.attribution || ""}`;
+  }
+  document.getElementById('world-group-summary')?.setAttribute('hidden', '');
+  syncWorldMapUrl();
+}
+
 function calculateGroupMetric(dataset, members, requestedYear, options = {}) {
   const memberSet = new Set(members);
   const population = countryValuesForYear(options.populationData || [], requestedYear, memberSet);
+  const area = countryValuesForYear(options.areaData || [], requestedYear, memberSet);
   const values = (dataset || [])
     .filter(row => Number(row.year) === Number(requestedYear) && memberSet.has(row.country) && Number.isFinite(row.value))
     .map(row => {
       const raw = Number(row.value);
-      if (options.valueMode !== "per_capita") return raw;
-      const denominator = population.get(row.country);
-      return Number.isFinite(denominator) && denominator > 0 ? raw / denominator : null;
+      let converted = raw;
+      if (options.valueMode === "per_capita") {
+        const denominator = population.get(row.country);
+        converted = Number.isFinite(denominator) && denominator > 0 ? raw / denominator : null;
+      }
+      return {
+        country: row.country,
+        value: Number.isFinite(converted) ? converted : null,
+        populationWeight: population.get(row.country),
+        areaWeight: area.get(row.country),
+      };
     })
-    .filter(Number.isFinite)
-    .sort((a, b) => a - b);
+    .filter(item => Number.isFinite(item.value));
+
   if (!values.length) return { value: null, covered: 0, total: members.length };
-  const value = options.aggregation === "sum"
-    ? values.reduce((sum, current) => sum + current, 0)
-    : values.length % 2
-      ? values[Math.floor(values.length / 2)]
-      : (values[values.length / 2 - 1] + values[values.length / 2]) / 2;
-  return { value, covered: values.length, total: members.length };
+
+  const sorted = values.map(item => item.value).sort((a, b) => a - b);
+  const median = sorted.length % 2
+    ? sorted[Math.floor(sorted.length / 2)]
+    : (sorted[sorted.length / 2 - 1] + sorted[sorted.length / 2]) / 2;
+
+  let value = median;
+  if (options.aggregation === "sum") {
+    value = values.reduce((sum, item) => sum + item.value, 0);
+  } else if (options.aggregation === "mean" || options.aggregation === "source_aggregate") {
+    value = values.reduce((sum, item) => sum + item.value, 0) / values.length;
+  } else if (options.aggregation === "max") {
+    value = Math.max(...values.map(item => item.value));
+  } else if (options.aggregation === "population_weighted_mean") {
+    const weighted = values
+      .filter(item => Number.isFinite(item.populationWeight) && item.populationWeight > 0)
+      .reduce((acc, item) => {
+        acc.weighted += item.value * item.populationWeight;
+        acc.totalWeight += item.populationWeight;
+        return acc;
+      }, { weighted: 0, totalWeight: 0 });
+    value = weighted.totalWeight > 0 ? weighted.weighted / weighted.totalWeight : null;
+  } else if (options.aggregation === "area_weighted_mean") {
+    const weighted = values
+      .filter(item => Number.isFinite(item.areaWeight) && item.areaWeight > 0)
+      .reduce((acc, item) => {
+        acc.weighted += item.value * item.areaWeight;
+        acc.totalWeight += item.areaWeight;
+        return acc;
+      }, { weighted: 0, totalWeight: 0 });
+    value = weighted.totalWeight > 0 ? weighted.weighted / weighted.totalWeight : null;
+  }
+
+  return { value: Number.isFinite(value) ? value : null, covered: values.length, total: members.length };
 }
 
 function formatWorldMapNumber(value, unit = "") {
@@ -429,6 +869,7 @@ async function initWorldMap() {
       worldMapPopulation,
       worldMapGdp,
       worldMapEmissions,
+      worldMapArea,
     ] = await Promise.all([
       loadJSON("data/meta/countries.json"),
       loadJSON("data/meta/groups.json"),
@@ -436,6 +877,7 @@ async function initWorldMap() {
       loadKPIData("population"),
       loadKPIData("gdp"),
       loadKPIData("co2_emissions"),
+      loadKPIData("area"),
     ]);
 
     // Lade GeoJSON für Länder-Polygone
@@ -459,18 +901,26 @@ async function initWorldMap() {
     const yearSelect = document.getElementById('worldMapYearSelect');
     const valueModeSelect = document.getElementById('worldMapValueMode');
     const aggregationSelect = document.getElementById('worldMapAggregationMode');
+    const geographySelect = document.getElementById('worldMapGeographyMode');
     
     if (groupingSelect) {
-      groupingSelect.addEventListener('change', () => {
+      groupingSelect.addEventListener('change', async () => {
         updateCategoryOptions();
-        clearWorldMapSelection();
-        syncWorldMapUrl();
+        updateWorldMapGeographyAvailability();
+        populateWorldMapKpiOptions();
+        await updateWorldMapYearOptions();
+        updateWorldMapModeAvailability();
+        updateWorldMapGeoJSON();
       });
     }
     
     if (categorySelect) {
-      categorySelect.addEventListener('change', () => {
+      categorySelect.addEventListener('change', async () => {
+        updateWorldMapGeographyAvailability();
         updateComparisonGroupOptions();
+        populateWorldMapKpiOptions();
+        await updateWorldMapYearOptions();
+        updateWorldMapModeAvailability();
         updateWorldMapGeoJSON();
       });
     }
@@ -494,8 +944,10 @@ async function initWorldMap() {
       updateWorldMapGeoJSON();
     });
     aggregationSelect?.addEventListener('change', updateWorldMapGeoJSON);
+    geographySelect?.addEventListener('change', updateWorldMapGeoJSON);
 
     populateWorldMapKpiOptions();
+    updateWorldMapGeographyAvailability();
     await restoreWorldMapUrlState();
 
   } catch (err) {
@@ -524,33 +976,73 @@ async function loadWorldGeoJSON() {
   }
 }
 
-function populateWorldMapKpiOptions() {
+function populateWorldMapKpiOptions(preferredKpi = null) {
   const select = document.getElementById('worldMapKpiSelect');
   if (!select) return;
-  const countryKpis = META
-    .filter(kpi => kpi.filename && kpi.world_kpi !== "e")
-    .sort((a, b) => (a.title || a.filename).localeCompare(b.title || b.filename));
-  select.textContent = "";
-  countryKpis.forEach(kpi => {
-    const option = document.createElement('option');
-    option.value = kpi.filename;
-    option.textContent = kpi.title || kpi.filename;
+  const grouping = document.getElementById('groupingSelect')?.value || "";
+  const category = document.getElementById('categorySelect')?.value || "";
+
+  let options = [];
+  if (isClimateGrouping(grouping) && category) {
+    const metrics = getClimateMetricOptions(category);
+    if (!metrics.length) {
+      select.textContent = "";
+      const option = document.createElement("option");
+      option.value = "";
+      option.textContent = "Coming soon: no connected hazard dataset yet";
+      select.appendChild(option);
+      select.disabled = true;
+      return;
+    }
+    options = metrics.map(metric => {
+      const meta = getKpiMetaByFilename(metric.kpi);
+      const unitText = meta?.unit ? ` (${meta.unit})` : "";
+      return {
+        value: metric.kpi,
+        label: `${metric.label}${unitText}`,
+      };
+    });
+  } else {
+    const countryKpis = META
+      .filter(kpi => kpi.filename && kpi.world_kpi !== "e" && kpi.geo_type !== "region")
+      .sort((a, b) => (a.title || a.filename).localeCompare(b.title || b.filename));
+    options = countryKpis.map(kpi => ({
+      value: kpi.filename,
+      label: kpi.title || kpi.filename,
+    }));
+  }
+
+  if (!options.length) {
+    select.textContent = "";
+    const option = document.createElement("option");
+    option.value = "";
+    option.textContent = isClimateGrouping(grouping)
+      ? "No climate KPI available for this category"
+      : "No KPI available";
     select.appendChild(option);
-  });
-  const preferredDefault = countryKpis.some(kpi => kpi.filename === "gdp")
-    ? "gdp"
-    : countryKpis[0]?.filename || "";
-  select.value = preferredDefault;
+    select.disabled = true;
+    return;
+  }
+
+  select.disabled = false;
+  const fallback = isClimateGrouping(grouping)
+    ? options[0]?.value
+    : (options.some(option => option.value === "gdp") ? "gdp" : options[0]?.value);
+  setSelectOptions(select, options, preferredKpi, fallback);
 }
 
 async function updateWorldMapYearOptions(preferredYear = null) {
   const kpiSelect = document.getElementById('worldMapKpiSelect');
   const yearSelect = document.getElementById('worldMapYearSelect');
   if (!kpiSelect || !yearSelect || !kpiSelect.value) return;
+  const requestId = ++worldMapYearRequestId;
   yearSelect.disabled = true;
   worldMapSelectedKpiMeta = META.find(kpi => kpi.filename === kpiSelect.value) || null;
   worldMapSelectedKpiData = await loadKPIData(kpiSelect.value);
-  const years = availableCountryYears(worldMapSelectedKpiData);
+  if (requestId !== worldMapYearRequestId) return;
+  const years = worldMapSelectedKpiMeta?.geo_type === "region"
+    ? availableRegionYears(worldMapSelectedKpiData)
+    : availableCountryYears(worldMapSelectedKpiData);
   yearSelect.textContent = "";
   years.forEach(year => {
     const option = document.createElement('option');
@@ -564,11 +1056,66 @@ async function updateWorldMapYearOptions(preferredYear = null) {
 }
 
 function updateWorldMapModeAvailability() {
+  const grouping = document.getElementById('groupingSelect')?.value || "";
   const kpi = document.getElementById('worldMapKpiSelect')?.value || "";
   const valueMode = document.getElementById('worldMapValueMode');
   const aggregation = document.getElementById('worldMapAggregationMode');
   const note = document.getElementById('world-map-mode-note');
   if (!valueMode || !aggregation) return;
+
+  if (isClimateGrouping(grouping)) {
+    const metric = getActiveClimateMetricConfig();
+    if (!metric) {
+      setSelectOptions(valueMode, [{ value: "index", label: "Index / rate" }], "index", "index");
+      setSelectOptions(aggregation, [{ value: "median", label: "Median" }], "median", "median");
+      valueMode.disabled = true;
+      aggregation.disabled = true;
+      if (note) {
+        const category = document.getElementById('categorySelect')?.value || "";
+        const config = getClimateCategoryConfig(category);
+        note.textContent = `${config?.label || "Climate category"}: ${config?.description || "Hazard category is not connected to production data yet."} Regional layer is planned; current map remains country-based fallback only.`;
+      }
+      return;
+    }
+
+    valueMode.disabled = false;
+    aggregation.disabled = false;
+    const allowedValueModes = (metric?.valueModes || ["absolute"])
+      .map(mode => ({ value: mode, label: WORLD_MAP_VALUE_MODE_LABELS[mode] || mode }));
+    const selectedValueMode = setSelectOptions(
+      valueMode,
+      allowedValueModes,
+      metric?.defaultValueMode,
+      allowedValueModes[0]?.value,
+    );
+
+    const allowedAggregations = (metric?.aggregations || ["median"])
+      .map(mode => ({ value: mode, label: getAggregationLabel(mode) }));
+    setSelectOptions(
+      aggregation,
+      allowedAggregations,
+      metric?.defaultAggregation,
+      allowedAggregations[0]?.value,
+    );
+
+    if (note) {
+      const meta = getKpiMetaByFilename(kpi);
+      const category = document.getElementById('categorySelect')?.value || "";
+      const categoryLabel = getClimateCategoryConfig(category)?.label || "Climate category";
+      note.textContent = `${categoryLabel}: ${meta?.title || "Selected metric"}. ${describeMeasureType(metric?.measureType || "exposure")} Values: ${WORLD_MAP_VALUE_MODE_LABELS[selectedValueMode] || selectedValueMode}. Summary: ${getAggregationLabel(aggregation.value)}.`;
+    }
+    return;
+  }
+
+  setSelectOptions(valueMode, [
+    { value: "absolute", label: "Absolute" },
+    { value: "per_capita", label: "Per capita" },
+  ], valueMode.value, "absolute");
+  setSelectOptions(aggregation, [
+    { value: "median", label: "Median" },
+    { value: "sum", label: "Sum" },
+  ], aggregation.value, "median");
+
   const summable = WORLD_MAP_SUMMABLE_KPIS.has(kpi);
   const perCapitaSupported = WORLD_MAP_PER_CAPITA_KPIS.has(kpi);
   valueMode.disabled = !perCapitaSupported;
@@ -594,6 +1141,7 @@ function readWorldMapUrlState() {
     year: params.get("year") || "",
     valueMode: params.get("value") || "absolute",
     aggregation: params.get("aggregate") || "median",
+    geography: params.get("geo") || "countries",
   };
 }
 
@@ -605,8 +1153,9 @@ function syncWorldMapUrl() {
   const year = document.getElementById('worldMapYearSelect')?.value || "";
   const valueMode = document.getElementById('worldMapValueMode')?.value || "absolute";
   const aggregation = document.getElementById('worldMapAggregationMode')?.value || "median";
+  const geography = document.getElementById('worldMapGeographyMode')?.value || "countries";
   const url = new URL(window.location.href);
-  const values = { grouping, group: category, compare: comparison, kpi, year, value: valueMode, aggregate: aggregation };
+  const values = { grouping, group: category, compare: comparison, kpi, year, value: valueMode, aggregate: aggregation, geo: geography };
   Object.entries(values).forEach(([key, value]) => {
     if (value) url.searchParams.set(key, value);
     else url.searchParams.delete(key);
@@ -620,23 +1169,26 @@ async function restoreWorldMapUrlState() {
   const categorySelect = document.getElementById('categorySelect');
   const comparisonSelect = document.getElementById('comparisonGroupSelect');
   const kpiSelect = document.getElementById('worldMapKpiSelect');
+  const geographySelect = document.getElementById('worldMapGeographyMode');
   if (groupingSelect && [...groupingSelect.options].some(option => option.value === state.grouping)) {
     groupingSelect.value = state.grouping;
   }
   updateCategoryOptions();
+  updateWorldMapGeographyAvailability();
   if (categorySelect && [...categorySelect.options].some(option => option.value === state.category)) {
     categorySelect.value = state.category;
   }
+  updateWorldMapGeographyAvailability();
   updateComparisonGroupOptions();
   if (comparisonSelect && [...comparisonSelect.options].some(option => option.value === state.comparison)) {
     comparisonSelect.value = state.comparison;
   }
-  if (kpiSelect && [...kpiSelect.options].some(option => option.value === state.kpi)) {
-    kpiSelect.value = state.kpi;
-  }
+  populateWorldMapKpiOptions(state.kpi);
+  if (kpiSelect && [...kpiSelect.options].some(option => option.value === state.kpi)) kpiSelect.value = state.kpi;
   await updateWorldMapYearOptions(state.year);
   const valueMode = document.getElementById('worldMapValueMode');
   const aggregation = document.getElementById('worldMapAggregationMode');
+  if (geographySelect && [...geographySelect.options].some(option => option.value === state.geography)) geographySelect.value = state.geography;
   if (valueMode && [...valueMode.options].some(option => option.value === state.valueMode)) valueMode.value = state.valueMode;
   if (aggregation && [...aggregation.options].some(option => option.value === state.aggregation)) aggregation.value = state.aggregation;
   updateWorldMapModeAvailability();
@@ -663,7 +1215,21 @@ function updateCategoryOptions() {
   categorySelect.innerHTML = '<option value="">Select category...</option>';
   categorySelect.disabled = !grouping;
   
-  if (grouping === 'groups') {
+  if (grouping === WORLD_MAP_CLIMATE_GROUPING) {
+    Object.entries(WORLD_MAP_CLIMATE_CATEGORIES).forEach(([categoryKey, config]) => {
+      if (!getClimateMetricOptions(categoryKey).length) return;
+      const option = document.createElement('option');
+      option.value = categoryKey;
+      option.textContent = config.label;
+      categorySelect.appendChild(option);
+    });
+    Object.entries(WORLD_MAP_CLIMATE_PLACEHOLDER_CATEGORIES).forEach(([categoryKey, config]) => {
+      const option = document.createElement('option');
+      option.value = categoryKey;
+      option.textContent = config.label;
+      categorySelect.appendChild(option);
+    });
+  } else if (grouping === 'groups') {
     // Füge Groups aus groups.json hinzu
     Object.keys(worldMapGroups).sort((a, b) => getWorldMapGroupTitle(a).localeCompare(getWorldMapGroupTitle(b))).forEach(groupName => {
       const option = document.createElement('option');
@@ -795,6 +1361,27 @@ function updateWorldMapGeoJSON() {
   const grouping = groupingSelect.value;
   const category = categorySelect.value;
   const comparison = grouping === "groups" ? comparisonSelect?.value || "" : "";
+  const categoryConfig = isClimateGrouping(grouping) ? getClimateCategoryConfig(category) : null;
+
+  if (isClimateGrouping(grouping) && !getActiveClimateMetricConfig()) {
+    clearWorldMapSelection();
+    const modeNote = document.getElementById('world-map-mode-note');
+    if (modeNote) {
+      modeNote.textContent = `${categoryConfig?.label || "Climate category"}: ${categoryConfig?.description || "Hazard category is not connected to production data yet."}`;
+    }
+    updateMapLegend(grouping, category, 0, comparison, 0);
+    syncWorldMapUrl();
+    return;
+  }
+
+  if (isClimateGrouping(grouping) && categoryConfig?.geoType === "region") {
+    if (worldMapLayer) {
+      worldMap.removeLayer(worldMapLayer);
+      worldMapLayer = null;
+    }
+    renderWorldMapRegionLayer(categoryConfig, category);
+    return;
+  }
   
   // Entferne bestehende GeoJSON Layer
   if (worldMapLayer) {
@@ -811,7 +1398,14 @@ function updateWorldMapGeoJSON() {
   // Finde relevante Länder
   let relevantCountries = [];
   
-  if (grouping === 'groups' && worldMapGroups[category]) {
+  if (isClimateGrouping(grouping)) {
+    const selectedYear = Number(document.getElementById('worldMapYearSelect')?.value);
+    const realCountries = worldMapRealCountryNames();
+    relevantCountries = (worldMapSelectedKpiData || [])
+      .filter(row => Number(row.year) === selectedYear && realCountries.has(row.country) && Number.isFinite(row.value))
+      .map(row => row.country);
+    relevantCountries = [...new Set(relevantCountries)];
+  } else if (grouping === 'groups' && worldMapGroups[category]) {
     // Groups haben eine 'members' Eigenschaft
     relevantCountries = worldMapGroups[category].members || worldMapGroups[category];
     console.log(`🗺️ Group ${category}: ${relevantCountries.length} countries`, relevantCountries);
@@ -1128,7 +1722,7 @@ function renderWorldGroupSummary(grouping, category, members, comparison = "", c
   const valueMode = document.getElementById('worldMapValueMode')?.value || "absolute";
   const aggregation = document.getElementById('worldMapAggregationMode')?.value || "median";
   const selectedMetric = calculateGroupMetric(worldMapSelectedKpiData, members, year, {
-    valueMode, aggregation, populationData: worldMapPopulation,
+    valueMode, aggregation, populationData: worldMapPopulation, areaData: worldMapArea,
   });
   const groupLabel = grouping === 'groups' ? getWorldMapGroupTitle(category) : category;
   const comparisonLabel = comparison ? getWorldMapGroupTitle(comparison) : "";
@@ -1137,19 +1731,19 @@ function renderWorldGroupSummary(grouping, category, members, comparison = "", c
 
   title.textContent = comparisonLabel ? `${groupLabel} vs ${comparisonLabel}` : `${groupLabel} summary`;
   summary.classList.toggle('world-group-summary--comparison', Boolean(comparisonMembers.length));
-  context.textContent = `Selected country KPI: ${metricTitle}, ${year} · ${valueMode === "per_capita" ? "per capita" : "absolute"} · ${aggregation}.`;
+  context.textContent = `Selected country KPI: ${metricTitle}, ${year} · ${WORLD_MAP_VALUE_MODE_LABELS[valueMode] || valueMode} · ${getAggregationLabel(aggregation)}.`;
   cards.textContent = "";
   if (!comparisonMembers.length) {
     appendWorldSummaryCard(cards, "Members", String(members.length), "Defined members / matching countries");
     appendWorldSummaryCard(cards, "World population share", Number.isFinite(population.share) ? `${(population.share * 100).toFixed(1)}%` : "No data", `Year ${population.year ?? "–"} · coverage ${formatCoverage(population.covered, population.total)}`);
     appendWorldSummaryCard(cards, "World GDP share", Number.isFinite(gdp.share) ? `${(gdp.share * 100).toFixed(1)}%` : "No data", `Current USD · year ${gdp.year ?? "–"} · coverage ${formatCoverage(gdp.covered, gdp.total)}`);
     appendWorldSummaryCard(cards, "World CO₂ share", Number.isFinite(emissions.share) ? `${(emissions.share * 100).toFixed(1)}%` : "No data", `Territorial emissions · year ${emissions.year ?? "–"} · coverage ${formatCoverage(emissions.covered, emissions.total)}`);
-    appendWorldSummaryCard(cards, `${aggregation === "sum" ? "Sum" : "Median"}: ${metricTitle}`, formatWorldMapNumber(selectedMetric.value, valueMode === "per_capita" ? `${metricUnit || "units"} per person` : metricUnit), `Year ${year} · coverage ${formatCoverage(selectedMetric.covered, selectedMetric.total)}`);
+    appendWorldSummaryCard(cards, `${getAggregationLabel(aggregation)}: ${metricTitle}`, formatWorldMapNumber(selectedMetric.value, valueMode === "per_capita" ? `${metricUnit || "units"} per person` : metricUnit), `Year ${year} · coverage ${formatCoverage(selectedMetric.covered, selectedMetric.total)}`);
   } else {
     const comparisonPopulation = calculateAdditiveShare(worldMapPopulation, comparisonMembers, year, realCountries);
     const comparisonGdp = calculateAdditiveShare(worldMapGdp, comparisonMembers, year, realCountries);
     const comparisonEmissions = calculateAdditiveShare(worldMapEmissions, comparisonMembers, year, realCountries);
-    const comparisonMetric = calculateGroupMetric(worldMapSelectedKpiData, comparisonMembers, year, { valueMode, aggregation, populationData: worldMapPopulation });
+    const comparisonMetric = calculateGroupMetric(worldMapSelectedKpiData, comparisonMembers, year, { valueMode, aggregation, populationData: worldMapPopulation, areaData: worldMapArea });
     const pair = (aValue, aMeta, bValue, bMeta) => [
       { label: groupLabel, value: aValue, meta: aMeta },
       { label: comparisonLabel, value: bValue, meta: bMeta },
@@ -1159,21 +1753,29 @@ function renderWorldGroupSummary(grouping, category, members, comparison = "", c
     appendWorldComparisonCard(cards, "World GDP share", ...pair(Number.isFinite(gdp.share) ? `${(gdp.share * 100).toFixed(1)}%` : "No data", `Year ${gdp.year ?? "–"} · ${formatCoverage(gdp.covered, gdp.total)}`, Number.isFinite(comparisonGdp.share) ? `${(comparisonGdp.share * 100).toFixed(1)}%` : "No data", `Year ${comparisonGdp.year ?? "–"} · ${formatCoverage(comparisonGdp.covered, comparisonGdp.total)}`));
     appendWorldComparisonCard(cards, "World CO₂ share", ...pair(Number.isFinite(emissions.share) ? `${(emissions.share * 100).toFixed(1)}%` : "No data", `Year ${emissions.year ?? "–"} · ${formatCoverage(emissions.covered, emissions.total)}`, Number.isFinite(comparisonEmissions.share) ? `${(comparisonEmissions.share * 100).toFixed(1)}%` : "No data", `Year ${comparisonEmissions.year ?? "–"} · ${formatCoverage(comparisonEmissions.covered, comparisonEmissions.total)}`));
     const displayUnit = valueMode === "per_capita" ? `${metricUnit || "units"} per person` : metricUnit;
-    appendWorldComparisonCard(cards, `${aggregation === "sum" ? "Sum" : "Median"}: ${metricTitle}`, ...pair(formatWorldMapNumber(selectedMetric.value, displayUnit), `Year ${year} · ${formatCoverage(selectedMetric.covered, selectedMetric.total)}`, formatWorldMapNumber(comparisonMetric.value, displayUnit), `Year ${year} · ${formatCoverage(comparisonMetric.covered, comparisonMetric.total)}`));
+    appendWorldComparisonCard(cards, `${getAggregationLabel(aggregation)}: ${metricTitle}`, ...pair(formatWorldMapNumber(selectedMetric.value, displayUnit), `Year ${year} · ${formatCoverage(selectedMetric.covered, selectedMetric.total)}`, formatWorldMapNumber(comparisonMetric.value, displayUnit), `Year ${year} · ${formatCoverage(comparisonMetric.covered, comparisonMetric.total)}`));
     const overlap = members.filter(country => new Set(comparisonMembers).has(country)).length;
     appendWorldSummaryCard(cards, "Overlap", `${overlap} countries`, `${groupLabel} ∩ ${comparisonLabel}`, "overlap");
   }
   note.textContent = "Population, GDP and CO₂ are additive shares of recognised-country totals. KPI colour intensity and the selected summary use the displayed value mode; missing members remain visible in coverage.";
+  if (isClimateGrouping(grouping)) {
+    const climateMetric = getActiveClimateMetricConfig();
+    note.textContent = `${describeMeasureType(climateMetric?.measureType || "exposure")} Aggregation: ${getAggregationLabel(aggregation)}. Coverage and year depend on the selected climate metric.`;
+  }
   summary.removeAttribute('hidden');
 }
 
 // === Update Context Legend Box ===
 function updateWorldMapVisualLegend(category, comparison) {
+  const grouping = document.getElementById('groupingSelect')?.value || "";
   const labelA = document.getElementById('legend-group-a-label');
   const labelB = document.getElementById('legend-group-b-label');
   const itemB = document.getElementById('legend-group-b-item');
   const overlap = document.getElementById('legend-overlap-item');
-  if (labelA) labelA.textContent = getWorldMapGroupTitle(category);
+  const categoryLabel = isClimateGrouping(grouping)
+    ? (getClimateCategoryConfig(category)?.label || "Climate selection")
+    : getWorldMapGroupTitle(category);
+  if (labelA) labelA.textContent = categoryLabel;
   if (labelB) labelB.textContent = comparison ? getWorldMapGroupTitle(comparison) : "Group B";
   if (itemB) itemB.hidden = !comparison;
   if (overlap) overlap.hidden = !comparison;
@@ -1189,7 +1791,16 @@ function updateMapLegend(grouping, category, countryCount, comparison = "", comp
   let title = '';
   let content = '';
   
-  if (grouping === 'groups') {
+  if (isClimateGrouping(grouping)) {
+    const config = getClimateCategoryConfig(category);
+    const selectedMetric = getKpiMetaByFilename(document.getElementById('worldMapKpiSelect')?.value || "");
+    const year = document.getElementById('worldMapYearSelect')?.value || "–";
+    const valueMode = document.getElementById('worldMapValueMode')?.value || "absolute";
+    const aggregation = document.getElementById('worldMapAggregationMode')?.value || "median";
+    const geography = document.getElementById('worldMapGeographyMode')?.value || "countries";
+    title = `${config?.label || "Climate Hazards & Exposure"} (${countryCount} countries)`;
+    content = `${config?.description || "Climate hazard/exposure view."} Metric: ${selectedMetric?.title || "–"}. Unit: ${selectedMetric?.unit || "n/a"}. Year: ${year}. Values: ${WORLD_MAP_VALUE_MODE_LABELS[valueMode] || valueMode}. Summary: ${getAggregationLabel(aggregation)}. Geography: ${geography}.`;
+  } else if (grouping === 'groups') {
     const groupDescriptions = {
       'EU': 'The European Union seeks to ensure peace, stability, and shared prosperity in Europe. It creates a single market with free movement of goods, people, services, and capital. The EU coordinates policies on trade, climate, agriculture, and consumer protection. It supports democracy, human rights, and the rule of law among its members. The EU also provides funding for regional development. Its mission is deeper integration and long-term cooperation across Europe.',
       'G7': 'The G7 unites advanced industrial democracies to coordinate global economic policy. It focuses on financial stability, sustainable growth, and international security. The group discusses challenges such as climate change, development, and geopolitical tensions. G7 meetings help align positions before major global negotiations. The group has no formal treaties but influences global governance through joint statements. Its mission is to promote a stable and rules-based international order.',

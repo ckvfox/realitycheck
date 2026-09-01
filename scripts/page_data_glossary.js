@@ -104,6 +104,20 @@ async function loadGlossary() {
       }
     };
 
+    const classifyYear = (year) => {
+      if (!Number.isFinite(year) || year <= 0) return "glossary-stale";
+      const age = nowYear - year;
+      if (age <= 1) return "glossary-fresh";
+      if (age <= 3) return "glossary-warn";
+      return "glossary-stale";
+    };
+
+    const classifyDate = (dateStr) => {
+      if (!dateStr || !/\d{4}/.test(dateStr)) return "glossary-stale";
+      const y = parseInt(dateStr.match(/\d{4}/)[0], 10);
+      return classifyYear(y);
+    };
+
     // Process each KPI
     for (const [id, info] of Object.entries(kpis)) {
       const tr = document.createElement("tr");
@@ -113,16 +127,11 @@ async function loadGlossary() {
       const flaggedCount = highs.length + lows.length;
 
       // Data year and freshness calculation
-      const dy = parseInt(info.data_year) || 0;
-      const clsYear = (dy && (nowYear - dy) <= 1) ? "fresh" : (dy && (nowYear - dy) <= 3) ? "warn" : "stale";
-      
-      let clsSrc = "stale";
-      if (info.source_date && /\d{4}/.test(info.source_date)) {
-        const y = parseInt(info.source_date.match(/\d{4}/)[0]);
-        clsSrc = (nowYear - y) <= 1 ? "fresh" : (nowYear - y) <= 3 ? "warn" : "stale";
-      }
-
-      const clsOut = flaggedCount >= 10 ? "outlier" : flaggedCount > 0 ? "warn" : "";
+      const dy = parseInt(info.data_year, 10) || 0;
+      const clsYear = classifyYear(dy);
+      const clsSrc = classifyDate(info.source_date);
+      const clsFetch = classifyDate(info.last_fetch);
+      const clsOut = flaggedCount >= 10 ? "glossary-outlier" : flaggedCount > 0 ? "glossary-warn" : "";
       
       // Outlier information
       const minList = lows.slice(0, 3).map(e => `${e.country} (${e.year})`);
@@ -163,7 +172,7 @@ async function loadGlossary() {
       tr.appendChild(cellSourceDate);
 
       const cellLastFetch = document.createElement("td");
-      cellLastFetch.className = clsSrc;
+      cellLastFetch.className = clsFetch;
       cellLastFetch.textContent = fmtShort(info.last_fetch);
       tr.appendChild(cellLastFetch);
 
@@ -173,6 +182,9 @@ async function loadGlossary() {
       tr.appendChild(cellCoverage);
 
       const cellOutliers = document.createElement("td");
+      if (clsOut) {
+        cellOutliers.classList.add(clsOut);
+      }
       if (flaggedCount) {
         const badge = document.createElement("span");
         badge.textContent = `🔺 ${flaggedCount}`;
@@ -246,19 +258,47 @@ function sortTableByColumn(table, col, asc = true) {
   const tbody = table.tBodies[0];
   const rows = Array.from(tbody.querySelectorAll("tr"));
   const dir = asc ? 1 : -1;
-  
+
   const parseVal = v => {
-    const num = parseFloat(v.replace(/[^\d.\-]/g, ""));
-    if (!isNaN(num)) return num;
-    const date = Date.parse(v);
-    return isNaN(date) ? v.toString().toLowerCase() : date;
+    const raw = String(v ?? "").trim();
+    const text = raw.toLowerCase();
+
+    const isUnknown = raw === "" || text === "unknown" || text === "n/a" || text === "na" || text === "-" || text === "–";
+    if (isUnknown) {
+      return { unknown: true, type: "unknown", value: null, text };
+    }
+
+    // Parse ISO dates before numeric parsing so 2026-07-13 is treated as a date, not as 2026.
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+      const ts = Date.parse(raw);
+      if (!isNaN(ts)) return { unknown: false, type: "date", value: ts, text };
+    }
+
+    const num = parseFloat(raw.replace(/[^\d.\-]/g, ""));
+    if (!isNaN(num)) return { unknown: false, type: "number", value: num, text };
+
+    const date = Date.parse(raw);
+    if (!isNaN(date)) return { unknown: false, type: "date", value: date, text };
+
+    return { unknown: false, type: "string", value: text, text };
   };
   
   rows.sort((a, b) => {
     const va = parseVal(a.cells[col].innerText.trim());
     const vb = parseVal(b.cells[col].innerText.trim());
-    if (va > vb) return 1 * dir;
-    if (va < vb) return -1 * dir;
+
+    // Unknown is always treated as the worst value:
+    // ascending -> first, descending -> last.
+    if (va.unknown !== vb.unknown) return va.unknown ? -1 * dir : 1 * dir;
+
+    if (va.type === vb.type) {
+      if (va.value > vb.value) return 1 * dir;
+      if (va.value < vb.value) return -1 * dir;
+      return 0;
+    }
+
+    if (va.text > vb.text) return 1 * dir;
+    if (va.text < vb.text) return -1 * dir;
     return 0;
   });
   

@@ -4,9 +4,26 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+## 3.5.0 - 2026-09-01
+
 ### Fixed
 - Fixed Google Translate widget being fully blocked by the Content-Security-Policy: added the sha256 hash for the widget's fixed inline bootstrap script (executed inside its `about:srcdoc` iframe) to `script-src`, so the translate panel initializes instead of failing with CSP violations and `Cannot read properties of undefined (reading 'height')` errors.
 - Fixed horizontal overflow on the World dashboard at iPhone widths by allowing KPI clusters and Chart.js cards to shrink below their desktop intrinsic width and wrapping descriptive text inside the viewport.
+- Fixed Data Glossary conditional cell backgrounds so freshness/outlier colors render exactly per legend and are no longer tinted by alternating row striping.
+- Fixed optional Google Translate interaction on regular pages by restoring a reliable, clickable language chooser rendering after consent; Germany Dossier remains intentionally excluded from Google Translate.
+- Fixed Data Glossary sorting so `Unknown`/dash values are always treated as worst values and move to the top in ascending order and to the bottom in descending order (including Last Fetch date sorting).
+
+### Added
+- Added integrated `Climate Hazards & Exposure` grouping support to the existing World map controls and URL state, including climate-specific category and KPI cascades, metric-aware value/summary mode options, and country-level fallback behavior when regional climate layers are not available.
+- Added a region-based rendering path for the World map (`renderWorldMapRegionLayer` in `scripts/script_world.js`), fully separate from the existing country-based rendering, driven by a new `data/meta/region_sets.json` registry and three region GeoJSON files (`regions_ipcc_ar6_geo.json`, `regions_river_basins_geo.json`, `regions_ocean_basins_geo.json`, all under `data/meta/`, CC BY 4.0 SantanderMetGroup/ATLAS for the first two, hand-authored WMO/IBTrACS basin boxes for the third).
+- Added a new `Storm Impact (tropical cyclones)` climate category backed by real, automated data: a new `tropical_cyclone_activity_basin` KPI (`geo_type: "region"`, `region_set: "ocean_basins"`) sourced from NOAA's public-domain IBTrACS global best-track archive (`source_type: "ibtracs"`), counting named storms per ocean basin per year.
+- Added two new backend adapters: `ibtracs` (downloads/aggregates NOAA IBTrACS storm counts by basin) and `region_csv` (generic adapter for future manually-curated region-keyed CSV datasets), plus supporting plumbing (`save_region_records`, `region_source_csv_dir` on `SourceRuntime`, `SUPPORTED_SOURCE_TYPES` additions in `scripts/source_contracts.py`).
+
+### Changed
+- Reworked climate-category geography handling: the `Regions`/`Countries` geography selector is now driven per-category (`geoType: "region"` vs. country-based) instead of a single global strict-placeholder flag, and is hidden entirely for country-based categories instead of being shown as a disabled toggle.
+- Restored visibility of the five real, country-based climate categories (previously hidden entirely behind a strict-placeholder mode); they render exactly as before.
+- Wildfire, Flood, Heat and Drought remain honest placeholders ("region data sourcing in progress") pending a verified, automated, no-login regional data source; no fabricated data is shown for these.
+
 
 ## 3.4.0 - 2026-08-01
 

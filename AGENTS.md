@@ -37,6 +37,8 @@ Framework target primary handover path:
 - Shared hosting environments may have FTP/rewrite constraints.
 - Partial uploads can lead to inconsistent runtime state if delta scope is wrong.
 - Country source aliases can require mapping maintenance.
+- On at least one local dev machine, the default/system `python` (Windows Store `python.exe`) has a broken pandas install (`DLL load failed` due to an application control policy blocking a native DLL). Use the repo's `.venv\Scripts\python.exe` instead.
+- Some NOAA hosts (`ncei.noaa.gov`, `ncdc.noaa.gov`) were unreachable (connection timeouts) from at least one local/corporate network, while other NOAA hosts (`star.nesdis.noaa.gov`) and other external hosts responded normally. This appears to be a local network restriction, not a general outage, but was not verified against the GitHub Actions runner environment where the monthly fetch actually runs. Adapters that depend on such hosts must fail fast and gracefully (short timeouts, dummy fallback) rather than hang.
 
 ## Framework Candidates
 

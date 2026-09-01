@@ -43,6 +43,7 @@ ROOT_DIR = SCRIPT_DIR.parent.resolve()
 DATA_DIR = ROOT_DIR / "data"
 META_DIR = DATA_DIR / "meta"
 SOURCE_CSV_DIR = SCRIPT_DIR / "source_csv"
+SOURCE_CSV_REGIONS_DIR = SCRIPT_DIR / "source_csv_regions"
 PENDING_DIR = DATA_DIR / "pending"
 TEST_DATA_DIR = DATA_DIR / "test"
 
@@ -51,6 +52,8 @@ COUNTRY_MAP_FILE = META_DIR / "country_mappings.json"
 STATUS_FILE = DATA_DIR / "fetch_status.json"
 COUNTRY_PENDING_FILE = DATA_DIR / "country_mappings_pending.json"
 AVAILABLE_FILE = META_DIR / "available_kpis.json"
+REGION_SETS_FILE = META_DIR / "region_sets.json"
+REGION_RECORD_FIELDS = ["region", "year", "value", "scenario", "horizon"]
 
 ACTIVE_DATA_DIR = DATA_DIR
 ALLOW_MAPPING_WRITES = True
@@ -94,7 +97,7 @@ def log(message: str, level: str = "info") -> None:
 
 
 def ensure_dirs() -> None:
-    for directory in (DATA_DIR, META_DIR, SOURCE_CSV_DIR, PENDING_DIR):
+    for directory in (DATA_DIR, META_DIR, SOURCE_CSV_DIR, SOURCE_CSV_REGIONS_DIR, PENDING_DIR):
         directory.mkdir(parents=True, exist_ok=True)
 
 
@@ -277,7 +280,12 @@ def save_imf_records(kpi_id, records, stats=None, output_dir=None) -> bool:
     return _save_rows(kpi_id, records, ["country", "iso3", "year", "value"], stats, output_dir, "IMF ")
 
 
-def keep_or_dummy(kpi_id: str, reason: str, stats: dict[str, Any], output_dir=None) -> None:
+def save_region_records(kpi_id, records, stats=None, output_dir=None) -> bool:
+    """Persist region-keyed KPI rows (region/year/value[/scenario/horizon]), not country rows."""
+    return _save_rows(kpi_id, records, REGION_RECORD_FIELDS, stats, output_dir, "region ")
+
+
+def keep_or_dummy(kpi_id: str, reason: str, stats: dict[str, Any], output_dir=None, fields=None) -> None:
     target = Path(output_dir or DATA_DIR)
     target.mkdir(parents=True, exist_ok=True)
     json_path = target / f"{kpi_id}.json"
@@ -288,7 +296,7 @@ def keep_or_dummy(kpi_id: str, reason: str, stats: dict[str, Any], output_dir=No
     else:
         write_json(json_path, [])
         with csv_path.open("w", encoding="utf-8", newline="") as handle:
-            csv.DictWriter(handle, fieldnames=["country", "iso2", "year", "value"]).writeheader()
+            csv.DictWriter(handle, fieldnames=fields or ["country", "iso2", "year", "value"]).writeheader()
         log(f"[WARN] Dummy created for {kpi_id} ({reason})")
     if is_error:
         stats["errors"] = stats.get("errors", 0) + 1
@@ -344,6 +352,7 @@ def build_source_runtime() -> SourceRuntime:
         maybe_invert_records=maybe_invert_records,
         save_records=save_records,
         save_imf_records=save_imf_records,
+        save_region_records=save_region_records,
         keep_or_dummy=keep_or_dummy,
         mark_skip=mark_skip,
         write_json=write_json,
@@ -351,6 +360,7 @@ def build_source_runtime() -> SourceRuntime:
         data_dir=DATA_DIR,
         meta_dir=META_DIR,
         source_csv_dir=SOURCE_CSV_DIR,
+        region_source_csv_dir=SOURCE_CSV_REGIONS_DIR,
         pending_dir=PENDING_DIR,
     )
 
