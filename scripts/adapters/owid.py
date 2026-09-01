@@ -187,7 +187,8 @@ def run(
             value = runtime.safe_float(row.get(value_column))
         try:
             raw_time = str(row.get(time_column) or "").strip()
-            year = int(raw_time[:4]) if configured_time == "day" else int(float(raw_time))
+            # "day"/"month" columns use ISO date-like strings (YYYY-MM-DD or YYYY-MM)
+            year = int(raw_time[:4]) if configured_time in ("day", "month") else int(float(raw_time))
         except (TypeError, ValueError):
             continue
         if canon and value is not None:

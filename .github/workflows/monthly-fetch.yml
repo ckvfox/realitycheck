@@ -130,7 +130,7 @@ jobs:
             - **Status**: ${{ job.status }}
             - **Date**: ${{ steps.date.outputs.date }}
             - **Run**: [View full log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-            - **Diagnostics**: Download artifact `realitycheck-fetch-diagnostics-${{ github.run_id }}` from the run page
+            - **Diagnostics**: Download artifact 'realitycheck-fetch-diagnostics-${{ github.run_id }}' from the run page
             
             ---
             *This issue was created automatically by the RealityCheck Bot.*
