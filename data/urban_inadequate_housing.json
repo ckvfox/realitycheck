@@ -1,5 +1,35 @@
 [
   {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2017,
+    "value": 9.2
+  },
+  {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2018,
+    "value": 6.0
+  },
+  {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2019,
+    "value": 5.5
+  },
+  {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2020,
+    "value": 3.8
+  },
+  {
+    "country": "Albania",
+    "iso2": "ALB",
+    "year": 2021,
+    "value": 3.3
+  },
+  {
     "country": "Austria",
     "iso2": "AUT",
     "year": 2004,
@@ -116,14 +146,14 @@
   {
     "country": "Austria",
     "iso2": "AUT",
-    "year": 2023,
-    "value": 20.0
+    "year": 2024,
+    "value": 6.3
   },
   {
     "country": "Austria",
     "iso2": "AUT",
-    "year": 2024,
-    "value": 6.3
+    "year": 2025,
+    "value": 6.1
   },
   {
     "country": "Belarus",
@@ -846,6 +876,12 @@
     "value": 14.6
   },
   {
+    "country": "Denmark",
+    "iso2": "DNK",
+    "year": 2025,
+    "value": 23.4
+  },
+  {
     "country": "Estonia",
     "iso2": "EST",
     "year": 2005,
@@ -964,6 +1000,12 @@
     "iso2": "EST",
     "year": 2024,
     "value": 8.6
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EST",
+    "year": 2025,
+    "value": 8.8
   },
   {
     "country": "Finland",
@@ -1210,6 +1252,12 @@
     "iso2": "FRA",
     "year": 2024,
     "value": 7.0
+  },
+  {
+    "country": "France",
+    "iso2": "FRA",
+    "year": 2025,
+    "value": 6.4
   },
   {
     "country": "Germany",
@@ -1776,6 +1824,12 @@
     "value": 4.7
   },
   {
+    "country": "Ireland",
+    "iso2": "IRL",
+    "year": 2025,
+    "value": 5.3
+  },
+  {
     "country": "Israel",
     "iso2": "ISR",
     "year": 2022,
@@ -2148,6 +2202,12 @@
     "value": 6.2
   },
   {
+    "country": "Lithuania",
+    "iso2": "LTU",
+    "year": 2025,
+    "value": 5.7
+  },
+  {
     "country": "Luxembourg",
     "iso2": "LUX",
     "year": 2003,
@@ -2280,6 +2340,12 @@
     "value": 8.0
   },
   {
+    "country": "Luxembourg",
+    "iso2": "LUX",
+    "year": 2025,
+    "value": 8.1
+  },
+  {
     "country": "Malta",
     "iso2": "MLT",
     "year": 2005,
@@ -2384,12 +2450,6 @@
   {
     "country": "Malta",
     "iso2": "MLT",
-    "year": 2022,
-    "value": 6.8
-  },
-  {
-    "country": "Malta",
-    "iso2": "MLT",
     "year": 2023,
     "value": 6.0
   },
@@ -2400,16 +2460,16 @@
     "value": 5.8
   },
   {
+    "country": "Malta",
+    "iso2": "MLT",
+    "year": 2025,
+    "value": 6.0
+  },
+  {
     "country": "Mauritius",
     "iso2": "MUS",
     "year": 2017,
     "value": 2.8
-  },
-  {
-    "country": "Moldova",
-    "iso2": "MDA",
-    "year": 2020,
-    "value": 11.7
   },
   {
     "country": "Montenegro",
@@ -3222,6 +3282,12 @@
     "value": 15.4
   },
   {
+    "country": "Serbia",
+    "iso2": "SRB",
+    "year": 2025,
+    "value": 7.9
+  },
+  {
     "country": "Slovakia",
     "iso2": "SVK",
     "year": 2005,
@@ -3340,6 +3406,12 @@
     "iso2": "SVK",
     "year": 2024,
     "value": 6.4
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SVK",
+    "year": 2025,
+    "value": 3.5
   },
   {
     "country": "Slovenia",
@@ -3903,19 +3975,19 @@
     "country": "Turkey",
     "iso2": "TUR",
     "year": 2022,
-    "value": 10.8
+    "value": 10.78
   },
   {
     "country": "Turkey",
     "iso2": "TUR",
     "year": 2023,
-    "value": 14.4
+    "value": 10.25
   },
   {
     "country": "Turkey",
     "iso2": "TUR",
     "year": 2024,
-    "value": 14.8
+    "value": 10.26
   },
   {
     "country": "United Kingdom",

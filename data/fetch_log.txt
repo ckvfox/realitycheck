@@ -11359,3 +11359,224 @@ Fetch completed successfully
 [2026-08-01T17:16:04 UTC] 💾 Saved analysis (29 chars)
 [2026-08-01T17:16:04 UTC] ⚙️ Limiting KPI analysis to 1 entries.
 [2026-08-01T17:16:04 UTC] ✅ KPI analyses saved (1 total)
+[2026-09-01T11:25:37 UTC] [INFO] Using OPENAI_API_KEY: found
+[2026-09-01T11:25:37 UTC] === Fetch started ===
+[2026-09-01T11:25:37 UTC] [SKIP] area: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] population: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] population_growth: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] fertility_rate: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] urbanization_rate: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] gdp: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] gdp_per_capita_current_us: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] gni_per_capita_current_us: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] gini_index: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] tax_revenue_of_gdp: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] unemployment_rate: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] health_expenditure_per_capita: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] infant_mortality_rate: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] maternal_mortality_ratio: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] hospital_beds_per_1_000_people: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] life_expectancy_at_birth: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] adult_literacy_rate: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] overall_immunization_coverage: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] extreme_poverty: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] access_to_basic_drinking_water: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] air_quality_pm2_5_exposure: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] renewable_energy_share: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] internet_penetration_rate: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] mobile_subscriptions_per_100_inhabitants: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] railway_length: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] inflation_consumer_price_index: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] employment_to_population_ratio: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] female_labor_force_participation: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] road_traffic_deaths_per_100k_people: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] fixed_broadband_subscriptions_per_100_people: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] education_expenditure_of_gdp: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] military_expenditure_of_gdp: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:37 UTC] [SKIP] purchasing_power_parity: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:38 UTC] [SKIP] median_age: source unchanged (2024-07-12)
+[2026-09-01T11:25:38 UTC] [SKIP] democracy_index: provider redistribution restriction is recorded in KPI metadata; preserving the last known-good dataset
+[2026-09-01T11:25:38 UTC] [SKIP] human_rights_index_vdem: source unchanged (2026-03-17)
+[2026-09-01T11:25:39 UTC] [SKIP] human_development_index_hdi: source unchanged (2025-05-07)
+[2026-09-01T11:25:39 UTC] [SKIP] physicians_per_1_000_people: source unchanged (2026-07-27)
+[2026-09-01T11:25:39 UTC] [SKIP] homelessness_rate: source unchanged (2024-04-30)
+[2026-09-01T11:25:40 UTC] [SKIP] old_age_dependency_ratio: source unchanged (2024-07-12)
+[2026-09-01T11:25:40 UTC] [SKIP] age_dependency_ratio_total: source unchanged (2024-07-12)
+[2026-09-01T11:25:41 UTC] [SKIP] co2_emissions: source unchanged (2025-11-13)
+[2026-09-01T11:25:42 UTC] [SKIP] political_corruption_index: source unchanged (2026-03-17)
+[2026-09-01T11:25:42 UTC] [SKIP] military_spending_sipri: source unchanged (2026-04-27)
+[2026-09-01T11:25:42 UTC] [SKIP] number_of_armed_conflicts: source unchanged (2026-06-10)
+[2026-09-01T11:25:43 UTC] [SKIP] mean_years_of_schooling: source unchanged (2023-07-17)
+[2026-09-01T11:25:44 UTC] [SKIP] living_planet_index: source unchanged (2024-09-30)
+[2026-09-01T11:25:44 UTC] [SKIP] electric_vehicle_stock: source unchanged (2026-06-15)
+[2026-09-01T11:25:44 UTC] [SKIP] number_of_recorded_natural_disasters: source unchanged (2026-04-30)
+[2026-09-01T11:25:45 UTC] [SKIP] global_co2_emissions: source unchanged (2025-11-13)
+[2026-09-01T11:25:45 UTC] [TRIM] global_temperature_anomaly: removed 50 records before 1900
+[2026-09-01T11:25:45 UTC] [TRIM] global_temperature_anomaly: removed 0 records after 2026
+[2026-09-01T11:25:45 UTC] [OK] OWID KPI saved: global_temperature_anomaly (177 rows)
+[2026-09-01T11:25:45 UTC] [SKIP] labor_productivity_per_hour_pennworldtable: source unchanged (2025-10-09)
+[2026-09-01T11:25:46 UTC] [SKIP] rule_of_law_index: source unchanged (2026-03-17)
+[2026-09-01T11:25:46 UTC] [SKIP] state_based_conflict_deaths: source unchanged (2026-06-10)
+[2026-09-01T11:25:51 UTC] [FALLBACK] Data360 maintained CSV is newer than API (2025 > 2024); using RWB_PFI_SCORE_WIDEF.csv
+[2026-09-01T11:25:51 UTC] [TRIM] press_freedom_index: removed 0 records before 1900
+[2026-09-01T11:25:51 UTC] [TRIM] press_freedom_index: removed 0 records after 2026
+[2026-09-01T11:25:51 UTC] [OK] Data360 KPI saved: press_freedom_index (3905 rows)
+[2026-09-01T11:25:51 UTC] [TRIM] world_happiness_index: removed 0 records before 1900
+[2026-09-01T11:25:51 UTC] [TRIM] world_happiness_index: removed 0 records after 2026
+[2026-09-01T11:25:51 UTC] [OK] CSV KPI saved: world_happiness_index (1435 rows)
+[2026-09-01T11:25:51 UTC] [TRIM] olympic_medals_summer: removed 10 records before 1900
+[2026-09-01T11:25:51 UTC] [TRIM] olympic_medals_summer: removed 0 records after 2026
+[2026-09-01T11:25:51 UTC] [OK] CSV KPI saved: olympic_medals_summer (1354 rows)
+[2026-09-01T11:25:51 UTC] [TRIM] big_mac_index: removed 0 records before 1900
+[2026-09-01T11:25:51 UTC] [TRIM] big_mac_index: removed 0 records after 2026
+[2026-09-01T11:25:51 UTC] [OK] CSV KPI saved: big_mac_index (1267 rows)
+[2026-09-01T11:25:51 UTC] [TRIM] recycling_rate: removed 0 records before 1900
+[2026-09-01T11:25:51 UTC] [TRIM] recycling_rate: removed 0 records after 2026
+[2026-09-01T11:25:51 UTC] [OK] CSV KPI saved: recycling_rate (5488 rows)
+[2026-09-01T11:25:51 UTC] [TRIM] environmental_performance_index: removed 0 records before 1900
+[2026-09-01T11:25:51 UTC] [TRIM] environmental_performance_index: removed 0 records after 2026
+[2026-09-01T11:25:51 UTC] [OK] CSV KPI saved: environmental_performance_index (180 rows)
+[2026-09-01T11:25:52 UTC] [TRIM] global_peace_index: removed 0 records before 1900
+[2026-09-01T11:25:52 UTC] [TRIM] global_peace_index: removed 0 records after 2026
+[2026-09-01T11:25:52 UTC] [OK] CSV KPI saved: global_peace_index (2922 rows)
+[2026-09-01T11:25:52 UTC] [TRIM] inform_resilience_index: removed 0 records before 1900
+[2026-09-01T11:25:52 UTC] [TRIM] inform_resilience_index: removed 0 records after 2026
+[2026-09-01T11:25:52 UTC] [OK] CSV KPI saved: inform_resilience_index (1910 rows)
+[2026-09-01T11:25:52 UTC] [TRIM] olympic_medals_winter: removed 0 records before 1900
+[2026-09-01T11:25:52 UTC] [TRIM] olympic_medals_winter: removed 0 records after 2026
+[2026-09-01T11:25:52 UTC] [OK] CSV KPI saved: olympic_medals_winter (403 rows)
+[2026-09-01T11:25:52 UTC] [TRIM] pisa_overall_score: removed 0 records before 1900
+[2026-09-01T11:25:52 UTC] [TRIM] pisa_overall_score: removed 0 records after 2026
+[2026-09-01T11:25:52 UTC] [OK] CSV KPI saved: pisa_overall_score (336 rows)
+[2026-09-01T11:25:52 UTC] [TRIM] network_readiness_index: removed 0 records before 1900
+[2026-09-01T11:25:52 UTC] [TRIM] network_readiness_index: removed 0 records after 2026
+[2026-09-01T11:25:52 UTC] [OK] CSV KPI saved: network_readiness_index (128 rows)
+[2026-09-01T11:25:52 UTC] [SKIP] intentional_homicides: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] trade_openness: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] fdi_inflows_of_gdp: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] water_stress_level: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [TRIM] social_progress_index: removed 0 records before 1900
+[2026-09-01T11:25:52 UTC] [TRIM] social_progress_index: removed 0 records after 2026
+[2026-09-01T11:25:52 UTC] [OK] CSV KPI saved: social_progress_index (1964 rows)
+[2026-09-01T11:25:52 UTC] [TRIM] lpi_infrastructure: removed 0 records before 1900
+[2026-09-01T11:25:52 UTC] [TRIM] lpi_infrastructure: removed 0 records after 2026
+[2026-09-01T11:25:52 UTC] [OK] CSV KPI saved: lpi_infrastructure (1056 rows)
+[2026-09-01T11:25:52 UTC] [SKIP] universal_health_coverage_index: source unchanged (2026-05-22)
+[2026-09-01T11:25:52 UTC] [SKIP] government_effectiveness: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] basic_sanitation_access: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] access_to_electricity: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] lower_secondary_completion_rate: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] prevalence_of_undernourishment: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] refugees_hosted: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] real_gdp_per_capita_growth: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] women_in_parliament: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] terrestrial_protected_areas: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] net_migration: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:52 UTC] [SKIP] statistical_performance_indicator: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:25:55 UTC] [TRIM] people_forcibly_displaced_worldwide: removed 0 records before 1900
+[2026-09-01T11:25:55 UTC] [TRIM] people_forcibly_displaced_worldwide: removed 0 records after 2026
+[2026-09-01T11:25:56 UTC] [SKIP] climate_disaster_deaths: source unchanged (2026-04-30)
+[2026-09-01T11:25:57 UTC] [SKIP] people_affected_by_climate_disasters: source unchanged (2026-04-30)
+[2026-09-01T11:25:58 UTC] [SKIP] climate_disaster_damage_gdp: source unchanged (2026-04-30)
+[2026-09-01T11:25:58 UTC] [TRIM] global_mean_sea_level: removed 0 records before 1900
+[2026-09-01T11:25:58 UTC] [TRIM] global_mean_sea_level: removed 0 records after 2026
+[2026-09-01T11:25:58 UTC] [OK] NOAA KPI saved: global_mean_sea_level (34 rows)
+[2026-09-01T11:25:58 UTC] [TRIM] global_ocean_heat_content: removed 0 records before 1900
+[2026-09-01T11:25:58 UTC] [TRIM] global_ocean_heat_content: removed 0 records after 2026
+[2026-09-01T11:25:58 UTC] [OK] OWID KPI saved: global_ocean_heat_content (21 rows)
+[2026-09-01T11:25:59 UTC] [TRIM] atmospheric_co2_concentration: removed 1768 records before 1900
+[2026-09-01T11:25:59 UTC] [TRIM] atmospheric_co2_concentration: removed 0 records after 2026
+[2026-09-01T11:25:59 UTC] [OK] OWID KPI saved: atmospheric_co2_concentration (1874 rows)
+[2026-09-01T11:26:01 UTC] [SKIP] median_income_or_consumption_per_day: source unchanged (2026-06-26)
+[2026-09-01T11:26:01 UTC] [TRIM] urban_inadequate_housing: removed 0 records before 1900
+[2026-09-01T11:26:01 UTC] [TRIM] urban_inadequate_housing: removed 0 records after 2026
+[2026-09-01T11:26:01 UTC] [OK] OWID KPI saved: urban_inadequate_housing (679 rows)
+[2026-09-01T11:26:01 UTC] [SKIP] healthy_diet_unaffordable: source unchanged (2025-08-04)
+[2026-09-01T11:26:01 UTC] [SKIP] energy_import_dependency: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:26:01 UTC] [SKIP] electricity_grid_losses: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:26:01 UTC] [SKIP] interpersonal_trust: source unchanged (2025-06-27)
+[2026-09-01T11:26:02 UTC] [SKIP] trust_in_government: source unchanged (2026-02-17)
+[2026-09-01T11:26:02 UTC] [SKIP] suicide_mortality_rate: source unchanged (2026-07-13T00:00:00Z)
+[2026-09-01T11:26:02 UTC] [FETCH] IMF DataMapper batch start for 1 KPI(s)
+[2026-09-01T11:26:12 UTC] [TRIM] general_government_gross_debt_gdp: removed 0 IMF records before 1900
+[2026-09-01T11:26:12 UTC] [TRIM] general_government_gross_debt_gdp: removed 0 IMF records after 2026
+[2026-09-01T11:26:13 UTC] [OK] IMF KPI saved: general_government_gross_debt_gdp (5976 rows, last year 2026)
+[2026-09-01T11:26:13 UTC] [INFO] IMF DataMapper batch completed
+[2026-09-01T11:26:13 UTC] [FETCH] Geopolitical Risk Index -> https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2026-09-01T11:26:13 UTC] [OK] GPR saved: 42 records
+=== RealityCheck Fetch Report ===
+Countries loaded:   198
+KPIs processed:     100
+Saved records:      31184
+WorldBank KPIs:     0
+CSV KPIs:           12
+OWID KPIs:          4
+NOAA KPIs:          1
+IMF KPIs:           1
+Data360 KPIs:       1
+UNHCR KPIs:         1
+Others KPIs:        1
+Mapping pending:    0
+Dummies:            0
+Skipped:            79
+Errors:             0
+Updated KPIs:       21
+Ignored test=o:     0
+
+Updated KPI files:
+  - atmospheric_co2_concentration
+  - big_mac_index
+  - environmental_performance_index
+  - general_government_gross_debt_gdp
+  - geopolitical_risk_index
+  - global_mean_sea_level
+  - global_ocean_heat_content
+  - global_peace_index
+  - global_temperature_anomaly
+  - inform_resilience_index
+  - lpi_infrastructure
+  - network_readiness_index
+  - olympic_medals_summer
+  - olympic_medals_winter
+  - people_forcibly_displaced_worldwide
+  - pisa_overall_score
+  - press_freedom_index
+  - recycling_rate
+  - social_progress_index
+  - urban_inadequate_housing
+  - world_happiness_index
+=================================
+Fetch completed successfully
+[2026-09-01T11:26:13 UTC] === Overall Ranking Generation Started ===
+[2026-09-01T11:26:13 UTC] ✅ 42 KPIs considered for ranking
+[2026-09-01T11:26:13 UTC] 💾 JSON saved successfully → data/overall_ranking.json (198 records)
+[2026-09-01T11:26:13 UTC] ✅ overall_ranking.json written to /home/runner/work/realitycheck/realitycheck/data/overall_ranking.json
+[2026-09-01T11:26:13 UTC] ➡️ Starting fun/safe haven ranking generation ...
+[2026-09-01T11:26:13 UTC] 🎬 Starting Top/Bottom 20 Fun, Safe & Immigration ranking generation…
+[2026-09-01T11:26:14 UTC] ➡️ Generating Fun Mode Top via GPT-4o-Mini …
+[2026-09-01T11:26:30 UTC] 💾 Saved data/fun_ranking.json (20 entries)
+[2026-09-01T11:26:30 UTC] 💾 Saved data/fun_ranking_bottom.json (20 entries)
+[2026-09-01T11:26:31 UTC] ➡️ Generating Safe Haven Mode Top via GPT-4o-Mini …
+[2026-09-01T11:26:40 UTC] ⚠️ Validation failed for Safe Haven Mode Top: Safe Haven reason states unsupported climate or conflict certainty
+[2026-09-01T11:26:51 UTC] 💾 Saved data/safe_haven_ranking.json (20 entries)
+[2026-09-01T11:26:51 UTC] 💾 Saved data/safe_haven_ranking_bottom.json (20 entries)
+[2026-09-01T11:26:51 UTC] ➡️ Generating Immigration Mode Top via GPT-4o-Mini …
+[2026-09-01T11:26:59 UTC] 💾 Saved data/immigration_ranking.json (20 entries)
+[2026-09-01T11:26:59 UTC] ➡️ Generating Immigration Mode Bottom via GPT-4o-Mini …
+[2026-09-01T11:27:07 UTC] 💾 Saved data/immigration_ranking_bottom.json (20 entries)
+[2026-09-01T11:27:07 UTC] ✅ All six Top/Bottom ranking lists generated successfully.
+[2026-09-01T11:27:07 UTC] ✅ Fun & Safe Haven rankings successfully generated.
+[2026-09-01T11:27:20 UTC] [STATE] Merged 21 updated KPIs -> total 21 entries
+[2026-09-01T11:27:20 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
+[2026-09-01T11:27:20 UTC] ➡️ Starting global analysis …
+[2026-09-01T11:27:23 UTC] 🌐 Global synthesis covers all 100 registered KPIs; updated-only selection is ignored here.
+[2026-09-01T11:27:36 UTC] 💾 Saved analysis (4996 chars)
+[2026-09-01T11:27:38 UTC] ⚙️ Limiting KPI analysis to 21 entries.
+[2026-09-01T11:29:08 UTC] ✅ KPI analyses saved (100 total)
+[2026-09-01T11:29:08 UTC] 🔎 Computing outliers …
+[2026-09-01T11:29:09 UTC] 💾 Outliers saved (89 KPIs, compact format)
+[2026-09-01T11:29:09 UTC] ✅ RealityCheck analysis completed successfully.
+[2026-09-01T11:29:09 UTC] CSV source audit: 12 sources, 12 valid, 0 possible updates, 0 online failures
+[2026-09-01T11:29:27 UTC] CSV source audit: 12 sources, 12 valid, 2 possible updates, 2 online failures
+[2026-09-01T11:29:27 UTC] Possible manual CSV update: environmental_performance_index local=2022 official-page=2026
+[2026-09-01T11:29:27 UTC] Possible manual CSV update: network_readiness_index local=2024 official-page=2025

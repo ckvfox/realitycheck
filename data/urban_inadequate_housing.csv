@@ -1,4 +1,9 @@
 country,iso2,year,value
+Albania,ALB,2017,9.2
+Albania,ALB,2018,6.0
+Albania,ALB,2019,5.5
+Albania,ALB,2020,3.8
+Albania,ALB,2021,3.3
 Austria,AUT,2004,7.9
 Austria,AUT,2005,4.6
 Austria,AUT,2006,5.0
@@ -18,8 +23,8 @@ Austria,AUT,2019,7.0
 Austria,AUT,2020,6.3
 Austria,AUT,2021,6.1
 Austria,AUT,2022,24.0
-Austria,AUT,2023,20.0
 Austria,AUT,2024,6.3
+Austria,AUT,2025,6.1
 Belarus,BLR,2022,0.0
 Belgium,BEL,2004,12.6
 Belgium,BEL,2005,8.6
@@ -140,6 +145,7 @@ Denmark,DNK,2021,15.5
 Denmark,DNK,2022,14.7
 Denmark,DNK,2023,15.4
 Denmark,DNK,2024,14.6
+Denmark,DNK,2025,23.4
 Estonia,EST,2005,7.9
 Estonia,EST,2006,6.8
 Estonia,EST,2007,5.2
@@ -160,6 +166,7 @@ Estonia,EST,2021,4.5
 Estonia,EST,2022,5.0
 Estonia,EST,2023,7.6
 Estonia,EST,2024,8.6
+Estonia,EST,2025,8.8
 Finland,FIN,2004,3.8
 Finland,FIN,2005,3.5
 Finland,FIN,2006,3.7
@@ -201,6 +208,7 @@ France,FRA,2020,5.6
 France,FRA,2022,6.5
 France,FRA,2023,6.5
 France,FRA,2024,7.0
+France,FRA,2025,6.4
 Germany,DEU,2010,14.4
 Germany,DEU,2011,16.1
 Germany,DEU,2012,16.6
@@ -295,6 +303,7 @@ Ireland,IRL,2021,2.6
 Ireland,IRL,2022,3.7
 Ireland,IRL,2023,4.7
 Ireland,IRL,2024,4.7
+Ireland,IRL,2025,5.3
 Israel,ISR,2022,34.6
 Italy,ITA,2004,12.2
 Italy,ITA,2005,12.6
@@ -357,6 +366,7 @@ Lithuania,LTU,2021,2.7
 Lithuania,LTU,2022,3.5
 Lithuania,LTU,2023,5.2
 Lithuania,LTU,2024,6.2
+Lithuania,LTU,2025,5.7
 Luxembourg,LUX,2003,3.6
 Luxembourg,LUX,2004,4.5
 Luxembourg,LUX,2005,3.8
@@ -379,6 +389,7 @@ Luxembourg,LUX,2021,5.1
 Luxembourg,LUX,2022,15.2
 Luxembourg,LUX,2023,11.5
 Luxembourg,LUX,2024,8.0
+Luxembourg,LUX,2025,8.1
 Malta,MLT,2005,1.7
 Malta,MLT,2006,1.8
 Malta,MLT,2007,2.5
@@ -396,11 +407,10 @@ Malta,MLT,2018,1.7
 Malta,MLT,2019,2.6
 Malta,MLT,2020,2.8
 Malta,MLT,2021,2.7
-Malta,MLT,2022,6.8
 Malta,MLT,2023,6.0
 Malta,MLT,2024,5.8
+Malta,MLT,2025,6.0
 Mauritius,MUS,2017,2.8
-Moldova,MDA,2020,11.7
 Montenegro,MNE,2013,19.7
 Montenegro,MNE,2014,16.9
 Montenegro,MNE,2015,16.8
@@ -536,6 +546,7 @@ Serbia,SRB,2020,17.8
 Serbia,SRB,2021,15.1
 Serbia,SRB,2022,13.1
 Serbia,SRB,2023,15.4
+Serbia,SRB,2025,7.9
 Slovakia,SVK,2005,14.6
 Slovakia,SVK,2006,16.4
 Slovakia,SVK,2007,17.8
@@ -556,6 +567,7 @@ Slovakia,SVK,2021,7.1
 Slovakia,SVK,2022,2.5
 Slovakia,SVK,2023,5.9
 Slovakia,SVK,2024,6.4
+Slovakia,SVK,2025,3.5
 Slovenia,SVN,2005,4.7
 Slovenia,SVN,2006,3.0
 Slovenia,SVN,2007,5.0
@@ -649,9 +661,9 @@ Turkey,TUR,2018,13.4
 Turkey,TUR,2019,13.6
 Turkey,TUR,2020,10.3
 Turkey,TUR,2021,11.5
-Turkey,TUR,2022,10.8
-Turkey,TUR,2023,14.4
-Turkey,TUR,2024,14.8
+Turkey,TUR,2022,10.78
+Turkey,TUR,2023,10.25
+Turkey,TUR,2024,10.26
 United Kingdom,GBR,2005,14.7
 United Kingdom,GBR,2006,16.4
 United Kingdom,GBR,2007,16.3
