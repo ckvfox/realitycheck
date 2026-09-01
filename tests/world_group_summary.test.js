@@ -50,6 +50,43 @@ test("group metric supports absolute sums and per-capita medians", () => {
   }), { value: 20, covered: 2, total: 2 });
 });
 
+test("group metric supports mean and max aggregations", () => {
+  const values = [
+    { country: "A", year: 2024, value: 2 },
+    { country: "B", year: 2024, value: 8 },
+    { country: "C", year: 2024, value: 20 },
+  ];
+  assert.equal(calculateGroupMetric(values, ["A", "B", "C"], 2024, { aggregation: "mean" }).value, 10);
+  assert.equal(calculateGroupMetric(values, ["A", "B", "C"], 2024, { aggregation: "max" }).value, 20);
+});
+
+test("group metric supports population and area weighted means", () => {
+  const values = [
+    { country: "A", year: 2024, value: 2 },
+    { country: "B", year: 2024, value: 8 },
+  ];
+  const population = [
+    { country: "A", year: 2024, value: 1 },
+    { country: "B", year: 2024, value: 3 },
+  ];
+  const area = [
+    { country: "A", year: 2024, value: 2 },
+    { country: "B", year: 2024, value: 1 },
+  ];
+  const popWeighted = calculateGroupMetric(values, ["A", "B"], 2024, {
+    aggregation: "population_weighted_mean",
+    populationData: population,
+    areaData: area,
+  });
+  const areaWeighted = calculateGroupMetric(values, ["A", "B"], 2024, {
+    aggregation: "area_weighted_mean",
+    populationData: population,
+    areaData: area,
+  });
+  assert.equal(popWeighted.value, 6.5);
+  assert.equal(areaWeighted.value, 4);
+});
+
 test("choropleth percentile intensity is stable for ties", () => {
   const intensities = percentileIntensities(new Map([["A", 1], ["B", 3], ["C", 3]]));
   assert.equal(intensities.get("A"), 0);

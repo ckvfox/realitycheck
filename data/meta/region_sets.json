@@ -1,0 +1,32 @@
+{
+  "ipcc_ar6": {
+    "label": "IPCC AR6 Climate Reference Regions",
+    "description": "Iturbide et al. (2020) reference regions (v4) used by the IPCC AR6 WGI report for regional climate reporting.",
+    "geo_file": "regions_ipcc_ar6_geo.json",
+    "code_property": "Acronym",
+    "name_property": "Name",
+    "attribution": "Iturbide, M. et al. (2020), Earth Syst. Sci. Data, 12, 2959-2970. DOI: 10.5194/essd-12-2959-2020. Data: SantanderMetGroup/ATLAS (IPCC-WG1 Atlas), CC BY 4.0.",
+    "source_url": "https://github.com/SantanderMetGroup/ATLAS/tree/main/reference-regions",
+    "license": "CC BY 4.0"
+  },
+  "river_basins": {
+    "label": "Major River Basins",
+    "description": "28 major river basins filtered from the World Bank major-river-basins-of-the-world data catalogue, as curated for IPCC WGII regional synthesis.",
+    "geo_file": "regions_river_basins_geo.json",
+    "code_property": "Acronym",
+    "name_property": "Name",
+    "attribution": "World Bank major river basins of the world data catalogue, curated via SantanderMetGroup/ATLAS (IPCC-WG1 Atlas), CC BY 4.0.",
+    "source_url": "https://datacatalog.worldbank.org/dataset/major-river-basins-world",
+    "license": "CC BY 4.0"
+  },
+  "ocean_basins": {
+    "label": "Tropical Cyclone Basins",
+    "description": "Simplified rectangular tropical cyclone basin boundaries matching the 7-basin convention used by NOAA IBTrACS (BASIN attribute).",
+    "geo_file": "regions_ocean_basins_geo.json",
+    "code_property": "Acronym",
+    "name_property": "Name",
+    "attribution": "Boundary convention matches NOAA IBTrACS BASIN classification (public domain, U.S. Government work).",
+    "source_url": "https://www.ncei.noaa.gov/products/international-best-track-archive",
+    "license": "Public domain (boundary convention only; not an official product)"
+  }
+}

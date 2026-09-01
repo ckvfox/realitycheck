@@ -1853,5 +1853,26 @@
     "invert": "",
     "analysis_guardrail": "Suicide mortality is only one severe outcome and is affected by stigma, legal context, reporting quality and modelled estimates. Do not label a population mentally healthy or unhealthy from this KPI alone.",
     "test": ""
+  },
+  {
+    "title": "Tropical Cyclone Activity by Ocean Basin",
+    "description": "Number of distinct named tropical cyclones (storms, hurricanes, typhoons) recorded per ocean basin per year, based on NOAA's IBTrACS global best-track archive since 1980. This is a region-level indicator, not a country indicator: values are keyed by ocean basin (North Atlantic, Eastern/Western North Pacific, North/South Indian, South Pacific, South Atlantic), not by country.",
+    "unit": "named storms per year",
+    "relation": "",
+    "sort": "higher",
+    "cluster": "Environment & Sustainability",
+    "source": "https://www.ncei.noaa.gov/products/international-best-track-archive",
+    "source_type": "ibtracs",
+    "source_code": "https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.since1980.list.v04r01.csv",
+    "scale": "none",
+    "world_kpi": "e",
+    "filename": "tropical_cyclone_activity_basin",
+    "geo_type": "region",
+    "region_set": "ocean_basins",
+    "relevance": "none",
+    "actuality": "annual",
+    "invert": "",
+    "analysis_guardrail": "Storm counts are affected by improved satellite detection over time (more short-lived storms are now recorded) and do not measure landfall impact, intensity or damage on their own.",
+    "test": ""
   }
 ]

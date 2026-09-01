@@ -11,7 +11,7 @@ from typing import Any, Iterable, Mapping
 
 
 SUPPORTED_SOURCE_TYPES = frozenset(
-    {"csv", "data360", "imf", "noaa", "owid", "special", "unhcr", "worldbank"}
+    {"csv", "data360", "ibtracs", "imf", "noaa", "owid", "region_csv", "special", "unhcr", "worldbank"}
 )
 _FILENAME_PATTERN = re.compile(r"^[a-z0-9_]+$")
 
