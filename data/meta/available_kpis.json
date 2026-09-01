@@ -1872,6 +1872,7 @@
     "relevance": "none",
     "actuality": "annual",
     "invert": "",
+    "publication_status": "pending_first_fetch",
     "analysis_guardrail": "Storm counts are affected by improved satellite detection over time (more short-lived storms are now recorded) and do not measure landfall impact, intensity or damage on their own.",
     "test": ""
   }
