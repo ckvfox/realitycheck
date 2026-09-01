@@ -1672,7 +1672,7 @@
     "source": "https://ourworldindata.org/grapher/monthly-ocean-heat-2000m",
     "source_type": "owid",
     "source_code": "monthly-ocean-heat-2000m.csv?v=1&csvType=full&useColumnShortNames=true",
-    "owid_time_column": "day",
+    "owid_time_column": "month",
     "owid_value_column": "ocean_heat_content_2000m",
     "owid_aggregation": "annual_mean",
     "scale": "none",
