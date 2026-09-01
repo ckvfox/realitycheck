@@ -1,52 +1,102 @@
 [
   {
     "rank": 1,
-    "country": "Portugal",
-    "reason": "Mild climate and sunny days combine with a high happiness score. Lisbon and Porto excel in livability rankings."
+    "country": "Norway",
+    "reason": "With happiness at a frosty 7.3, Norway boasts snowy landscapes and trustier citizens. Enjoy breathtaking views while grabbing a beer after kinesthetic snowball fights!"
   },
   {
     "rank": 2,
-    "country": "Spain",
-    "reason": "Spain boasts a vibrant lifestyle with plenty of sunny days, great climate, and a livable atmosphere, especially in Barcelona and Valencia."
+    "country": "Denmark",
+    "reason": "Home to the happiest people (or so they say), Denmark serves up a delightful mix of cozy hygge and social progress. Yes, you can enjoy that beer in peace!"
   },
   {
     "rank": 3,
-    "country": "Costa Rica",
-    "reason": "Known for its biodiversity and pleasant climate, it has a high happiness index, sunny days, and enjoys a relaxed lifestyle."
+    "country": "Iceland",
+    "reason": "Hot springs and glaciers coexist! Iceland’s world happiness sits at 7.53, proving that warmth isn’t just about weather. Grab your beer and soak like a Viking!"
   },
   {
     "rank": 4,
-    "country": "Mexico",
-    "reason": "Mexico offers warmth and sunshine, affordable cost of living, and happiness, with cities like Cancun and Playa del Carmen included."
+    "country": "Finland",
+    "reason": "Riding high on a 7.74 happiness index, Finland is all about trust, education, and lakes. You find tranquility here—perfect for sipping beer lakeside!"
   },
   {
     "rank": 5,
-    "country": "Greece",
-    "reason": "With its lovely climate and many sunny days, Greece also has high happiness ratings and enjoys scenic coastal living."
+    "country": "Luxembourg",
+    "reason": "With a snug capital and happiness level of 7.12, Luxembourg proves size doesn’t matter—it's lifestyle that counts. Their fancy beers will have you feeling regal!"
   },
   {
     "rank": 6,
-    "country": "Thailand",
-    "reason": "Thailand is famous for its warm weather, sunshine, and a relaxed lifestyle, especially in cities like Chiang Mai and Phuket."
+    "country": "Switzerland",
+    "reason": "Chocolate and neutrality are just the icing on the cake! A happiness index of 7.06 means serious living with high-quality beers to wash it all down."
   },
   {
     "rank": 7,
-    "country": "Italy",
-    "reason": "Italy's picturesque settings, mild climate, sunshine, and rich culture, along with cities like Florence enhancing livability."
+    "country": "Australia",
+    "reason": "An iconic beer culture and a 7.06 happiness rating make Australia the perfect place for fun in the sun. Just watch out for more BBQs than you planned!"
   },
   {
     "rank": 8,
-    "country": "South Africa",
-    "reason": "South Africa showcases stunning scenery and pleasant weather; Cape Town scores high in liveability despite safety considerations."
+    "country": "Canada",
+    "reason": "With a happiness index of 6.9, Canada is your friendly neighborhood paradise. Enjoy the great outdoors while kicking back with a locally brewed beer!"
   },
   {
     "rank": 9,
-    "country": "Cyprus",
-    "reason": "Cyprus combines beautiful weather, sunshine, and a happy lifestyle, making it a great choice for easy living."
+    "country": "Netherlands",
+    "reason": "In the land of tulips, a happiness score of 7.32 means cycling and craft beer are just a breath away. No windmills required for fun times here!"
   },
   {
     "rank": 10,
+    "country": "Belgium",
+    "reason": "Known for its mouthwatering chocolates and delectable beers, Belgium’s happiness scale is around 6.89, giving you sweet options for post-work relaxation!"
+  },
+  {
+    "rank": 11,
+    "country": "Ireland",
+    "reason": "The home of good cheer and (rightly) famed for its pint-sized pleasures, Ireland shines at a 6.84 happiness rating, promising a pint for every love story!"
+  },
+  {
+    "rank": 12,
+    "country": "Sweden",
+    "reason": "Echoing a happiness level of 7.34, Sweden champions balance in all things. After a brisk day, reward yourself with a beer and an embrace of the 'lagom' life!"
+  },
+  {
+    "rank": 13,
+    "country": "Austria",
+    "reason": "With a delightfully cultured background and a happiness level of 6.91, Austria invites you to sip coffee, enjoy classical music, and embrace life to the fullest!"
+  },
+  {
+    "rank": 14,
+    "country": "Czechia",
+    "reason": "Rich in history and beers with heart, Czechia scores 6.82 on happiness. Unwind in quaint cafes or lively pubs—wherever you go, cheer abounds!"
+  },
+  {
+    "rank": 15,
+    "country": "Germany",
+    "reason": "Celebrating its 6.72 happiness rating, Germany invites you to its beer gardens for tradition and delight. Just remember, good laughs pair best with hearty brews!"
+  },
+  {
+    "rank": 16,
+    "country": "Portugal",
+    "reason": "With a sun-kissed ambiance and a happiness quotient of 6.03, Portugal boasts beautiful coasts where a refreshing beer is just as famous as its adorable cats!"
+  },
+  {
+    "rank": 17,
+    "country": "Spain",
+    "reason": "Savoring life at a 6.42 rating, Spain gives you vibrant cultures and leisurely siestas. If you love tapas and time off, this is one happy country of sun!"
+  },
+  {
+    "rank": 18,
+    "country": "Taiwan",
+    "reason": "A happiness index of 6.5 proves that Taiwan knows how to please. Friendly faces and bubbling street food stalls make beer here just part of a flavorful tapestry!"
+  },
+  {
+    "rank": 19,
+    "country": "Singapore",
+    "reason": "Bubbling with diverse flavors, Singapore's 6.52 happiness scale ties wonderfully with its hawker culture, making every beer moment a culinary adventure!"
+  },
+  {
+    "rank": 20,
     "country": "New Zealand",
-    "reason": "New Zealand has a temperate climate with lots of outdoor activities, high happiness, and cities like Wellington in livability."
+    "reason": "With happiness hanging at 7.03, New Zealand wraps adventure and serenity in one. From nature walks to a cold beer, you'll find plenty to cheer about!"
   }
 ]

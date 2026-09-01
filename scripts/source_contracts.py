@@ -11,7 +11,7 @@ from typing import Any, Iterable, Mapping
 
 
 SUPPORTED_SOURCE_TYPES = frozenset(
-    {"csv", "data360", "imf", "owid", "special", "unhcr", "worldbank"}
+    {"csv", "data360", "imf", "noaa", "owid", "special", "unhcr", "worldbank"}
 )
 _FILENAME_PATTERN = re.compile(r"^[a-z0-9_]+$")
 
@@ -63,6 +63,26 @@ def validate_source_registry(entries: Iterable[Any]) -> list[str]:
         test_flag = str(item.get("test", "")).strip()
         if test_flag not in {"", "*", "o"}:
             errors.append(f"{filename or label}: test must be empty, '*' or 'o'")
+
+        fetch_policy = str(item.get("fetch_policy", "")).strip()
+        if fetch_policy not in {"", "provider_restricted"}:
+            errors.append(
+                f"{filename or label}: fetch_policy must be empty or 'provider_restricted'"
+            )
+
+        refresh_hours = item.get("refresh_hours")
+        if refresh_hours is not None:
+            try:
+                if float(refresh_hours) <= 0:
+                    raise ValueError
+            except (TypeError, ValueError):
+                errors.append(f"{filename or label}: refresh_hours must be a positive number")
+
+        publication_status = str(item.get("publication_status", "")).strip()
+        if publication_status not in {"", "pending_first_fetch"}:
+            errors.append(
+                f"{filename or label}: publication_status must be empty or 'pending_first_fetch'"
+            )
 
     return errors
 

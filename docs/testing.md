@@ -16,7 +16,8 @@ returns a non-zero exit code.
 
 - pipeline publication guards and last-known-good behavior
 - KPI source metadata contracts and production/test selection
-- World Bank and OWID test-output isolation
+- World Bank, OWID, CSV, Data360, UNHCR, IMF and special-source adapter contracts
+- requested-directory isolation for generated datasets and local CSV hashes
 - country and numeric normalization, inversion and year trimming
 - generated JSON/CSV format validation
 - productive deployment allowlist and delta detection
@@ -40,9 +41,9 @@ returns a non-zero exit code.
 ## Adding a new source type
 
 First register the type and its metadata requirements in
-`scripts/source_contracts.py`. Then implement and register an `AdapterRequest`
-to `AdapterResult` handler in `scripts/builtin_adapters.py` (or a dedicated
-adapter module). Add a network-free test that mocks the remote response and
+`scripts/source_contracts.py`. Then implement an `AdapterRequest` to
+`AdapterResult` handler in a dedicated `scripts/adapters/` module and register
+it in `scripts/builtin_adapters.py`. Add a network-free test that mocks the remote response and
 proves normalized output plus requested-directory isolation. Registry
 completeness blocks the run until contract and adapter agree. Live API
 availability is a separate smoke test and must not be required by pull-request

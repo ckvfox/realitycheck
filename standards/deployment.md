@@ -12,6 +12,7 @@ Deployment packaging rules are defined only in this file.
 - *.css
 - *.js
 - *.json
+- *.json.gz
 - *.xml
 - *.svg
 - *.png
@@ -23,6 +24,7 @@ Deployment packaging rules are defined only in this file.
 - .htaccess
 - images/
 - data/
+- data/analysis.md (productive report consumed by analysis.html)
 
 ## Negative list (excluded)
 
@@ -32,11 +34,18 @@ Deployment packaging rules are defined only in this file.
 - SECURITY*
 - docs/
 - tests/
+- data/test/
+- data/fetch_state.json
+- data/manual_source_status.json
+- data/meta/manual_csv_sources.json
+- data/workflow_fetch_console.log
+- data/workflow_fetch_summary.md
+- tracking.json (server-owned runtime counter state)
 - non-productive scripts, fetchers, helpers and raw sources
 - .github/
 - .git*
 - .env*
-- *.md
+- *.md (except the explicit productive file data/analysis.md)
 
 ## Deployment folders
 
@@ -45,9 +54,9 @@ Framework target folders:
 - build/deployment/full/
 - build/deployment/delta/
 
-Project transition note:
-
-- During migration, deployment/full_deployment/ and deployment/delta_deployment/ stay operational.
+The former root-level `deployment/` mirror was retired after the controlled
+cutover. It must not be recreated; all FTP handover packages originate below
+`build/deployment/`.
 
 ## Minimum release checks
 

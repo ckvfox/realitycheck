@@ -1,10 +1,9 @@
 // core.js already provides loadJSON(), showSpinner(), etc.
-let ALL_DATA = {};  // consolidated dataset
+let ALL_DATA = {};  // KPI datasets loaded on demand
 
 
 /* ========= Globals ========= */
 let kpis = {}, countries = {}, groups = {}, fetchStatus = {};
-let populationData = [], gdpData = [], areaData = [];
 let currentKpi = null, currentData = [], chartInstance = null;
 let currentYearList = [];
 let currentValueLookup = new Map();
@@ -13,6 +12,7 @@ let userSort = { col: null, asc: false };
 let currentScale = { factor: 1, suffix: "", label: "Exact values" };
 let sortingBound = false;
 let sortedCountryNames = [];
+let viewRequestId = 0;
 
 function isKnownCountry(name) {
   if (!name) return false;
@@ -72,10 +72,13 @@ function buildLookupMap(source) {
   return map;
 }
 
-function rebuildRelationLookups() {
-  relationLookups.percapita = buildLookupMap(populationData);
-  relationLookups.pergdp = buildLookupMap(gdpData);
-  relationLookups.perkm2 = buildLookupMap(areaData);
+async function ensureRelationData(relation) {
+  const sourceByRelation = { percapita: "population", pergdp: "gdp", perkm2: "area" };
+  const filename = sourceByRelation[relation];
+  if (!filename || relationLookups[relation]?.size) return;
+  const rows = await loadKPIData(filename);
+  ALL_DATA[filename] = rows;
+  relationLookups[relation] = buildLookupMap(rows);
 }
 
 function rebuildCurrentValueLookup(data) {
@@ -112,8 +115,18 @@ async function init() {
 
     // === Daten laden ===
     showSpinner(true, "Loading data…"); // ✅ zentraler Loader aktivieren
-    kpis = await loadJSON("data/meta/available_kpis.json");
-    countries = await loadJSON("data/meta/countries.json");
+	[
+	  kpis,
+	  countries,
+	  groups,
+	  fetchStatus
+	] = await Promise.all([
+	  loadJSON("data/meta/available_kpis.json"),
+	  loadJSON("data/meta/countries.json"),
+	  loadJSON("data/meta/groups.json"),
+	  loadJSON("data/fetch_status.json")
+	]);
+	kpis = (Array.isArray(kpis) ? kpis : []).filter(kpi => kpi.publication_status !== "pending_first_fetch");
 	
 	    // 🔧 Root-Cause-Fix: Falls countries als String geladen wurde (Edge/Cache-Bug)
     if (typeof countries === "string") {
@@ -125,14 +138,7 @@ async function init() {
         console.error("❌ RootFix: Failed to reparse countries.json", err);
       }
     }
-	
-    groups = await loadJSON("data/meta/groups.json");
-    fetchStatus = await loadJSON("data/fetch_status.json");
-            populationData = await loadJSON("data/population.json");
-    gdpData = await loadJSON("data/gdp.json");
-    areaData = await loadJSON("data/area.json");
-    rebuildRelationLookups();
-    ALL_DATA = await loadAllKPIData(); // ✅ Consolidated dataset
+    ALL_DATA = {};
         console.log(`✅ init(): loaded ${Object.keys(countries).length} countries, ${Object.keys(kpis).length} KPIs`);
 
 
@@ -164,7 +170,13 @@ async function init() {
       updateView();
     });
     el("yearSelect")?.addEventListener("change", updateTable);
-    el("relationSelect")?.addEventListener("change", () => {
+    el("relationSelect")?.addEventListener("change", async () => {
+      const relation = el("relationSelect").value;
+      const status = el("view-status");
+      if (relation !== "absolute" && !relationLookups[relation]?.size) {
+        if (status) status.textContent = "Loading comparison basis…";
+        await ensureRelationData(relation);
+      }
       updateTable();
       updateChart();
       updateMap();
@@ -184,8 +196,13 @@ async function init() {
 
     // === Trigger initial view update ===
     if (el("kpiSelect") && el("kpiSelect").options.length > 1) {
-      el("kpiSelect").selectedIndex = 1;
-      updateView();
+      const requestedKpi = new URLSearchParams(location.search).get("kpi");
+      const requestedOption = requestedKpi
+        ? Array.from(el("kpiSelect").options).find(option => option.value === requestedKpi)
+        : null;
+      if (requestedOption) el("kpiSelect").value = requestedKpi;
+      else el("kpiSelect").selectedIndex = 1;
+      await updateView();
     }
 
   } catch (e) {
@@ -226,9 +243,7 @@ async function populateKpiSelect() {
         o.textContent = item.title;
 
         if (
-          !ALL_DATA[item.id] ||
-          !Array.isArray(ALL_DATA[item.id]) ||
-          !ALL_DATA[item.id].length
+          fetchStatus?.kpis && !fetchStatus.kpis[item.id]
         ) {
           o.classList.add("option-no-data");
         }
@@ -368,14 +383,30 @@ function bindHeaderSorting() {
   const thead = document.querySelector("#country-table thead");
   if (!thead) return;
 
-  thead.addEventListener("click", event => {
+  const sortableHeaders = thead.querySelectorAll("th[data-col]");
+  sortableHeaders.forEach(th => {
+    th.tabIndex = 0;
+    th.setAttribute("role", "button");
+    th.setAttribute("aria-sort", "none");
+  });
+
+  const sortFromEvent = event => {
     const th = event.target.closest("th[data-col]");
     if (!th) return;
     const col = th.dataset.col;
     if (!col) return;
     if (userSort.col === col) userSort.asc = !userSort.asc;
     else userSort = { col, asc: col === "country" || col === "rank" };
+    sortableHeaders.forEach(header => header.setAttribute("aria-sort", "none"));
+    th.setAttribute("aria-sort", userSort.asc ? "ascending" : "descending");
     updateTable();
+  };
+
+  thead.addEventListener("click", sortFromEvent);
+  thead.addEventListener("keydown", event => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    sortFromEvent(event);
   });
 
   sortingBound = true;
@@ -852,7 +883,9 @@ function getColorForCountry(name, compareIndex = null) {
 
 
 /* ========= Compatibility: updateView() ========= */
-function updateView() {
+async function updateView() {
+  const requestId = ++viewRequestId;
+  const status = document.getElementById("view-status");
   try {
     const sel = document.getElementById("kpiSelect");
     currentKpi = sel?.value || currentKpi;
@@ -867,8 +900,13 @@ function updateView() {
 
     const filename = meta.filename || meta.id || meta.title;
 
-        currentData = ALL_DATA[filename] || [];
-        rebuildCurrentValueLookup(currentData);
+      document.getElementById("controls")?.setAttribute("aria-busy", "true");
+      if (status) status.textContent = `Loading ${meta.title || filename}…`;
+      const loadedData = ALL_DATA[filename] || await loadKPIData(filename);
+      if (requestId !== viewRequestId) return;
+      ALL_DATA[filename] = Array.isArray(loadedData) ? loadedData : [];
+      currentData = ALL_DATA[filename];
+      rebuildCurrentValueLookup(currentData);
 
       console.log(`✅ updateView(): ${filename} → ${currentData.length} records`);
 
@@ -876,6 +914,11 @@ function updateView() {
       updateTable();
       updateChart();
       updateMap();
+
+      const url = new URL(location.href);
+      url.searchParams.set("kpi", filename);
+      history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+      if (status) status.textContent = `${meta.title || filename}: ${currentData.length.toLocaleString()} observations loaded.`;
 
       // 🔹 KPI-Beschreibung
       const descEl = document.getElementById("kpi-description");
@@ -917,6 +960,9 @@ function updateView() {
       }
   } catch (e) {
     console.error("❌ updateView() failed:", e);
+    if (requestId === viewRequestId && status) status.textContent = "The selected indicator could not be loaded. Please try again.";
+  } finally {
+    if (requestId === viewRequestId) document.getElementById("controls")?.setAttribute("aria-busy", "false");
   }
 }
 

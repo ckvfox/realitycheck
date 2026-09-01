@@ -4,15 +4,60 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+### Fixed
+- Fixed horizontal overflow on the World dashboard at iPhone widths by allowing KPI clusters and Chart.js cards to shrink below their desktop intrinsic width and wrapping descriptive text inside the viewport.
+
+## 3.4.0 - 2026-08-01
+
 ### Added
+- Added eight guarded automated KPI definitions for median income/consumption, inadequate urban housing, healthy-diet affordability, energy-import dependence, electricity-grid losses, interpersonal trust, government trust and suicide mortality.
+- Completed the first live fetch for all eight additions, activated them atomically, regenerated consolidated data, Overall and editorial rankings, global analysis, 100 per-KPI analyses and outlier evidence.
+- Added first-fetch publication staging: incomplete new KPIs stay out of the browser, consolidated data, rankings and AI analysis until JSON and CSV artifacts both validate; successful fetches promote them automatically.
+- Extended the Fun, Safe Haven and Immigration evidence sets with the new living-condition, cohesion, climate-loss and energy-exposure dimensions; volatile climate damage uses a five-year average in editorial rankings.
+- Added simultaneous World-map group comparison with blue/orange exclusive membership, purple overlap, within-group KPI choropleth intensity, side-by-side group summaries, and guarded absolute/per-capita plus median/sum modes. Comparison and mode state are included in shareable URLs.
+- Added a source-backed World-map group summary with member count, world population/GDP/CO₂ shares, selected country-KPI median, actual data year and per-metric coverage. Grouping, group/category, KPI and year are persisted in shareable URL parameters.
+- Replaced unreliable model-selected Fun and Safe Haven Bottom lists with deterministic, coverage-gated percentile rankings. Safe Haven is now anchored in the Global Peace Index and uses conflict counts only as supporting context; automated contracts reject duplicate countries and implausible legacy false positives.
+- Added an accessible Overall Ranking analysis panel that explains the standard user-weighted result and shows source-constrained Top/Bottom-20 reasons plus standard-rank comparisons for the Fun, Safe Haven and Immigration lenses. Counter-lists use distinct ☔, 💥 and 🚧 symbols and exclude countries already present in the matching Top list.
+- Added a source/as-of-gated country context extension for future weather, conflict-exposure and immigration-access evidence, plus a documented analysis-coverage and World-map roadmap.
+- Added seven automated global-only indicators for forced displacement, climate-disaster deaths, affected people, disaster losses relative to GDP, NOAA satellite sea level, ocean heat and atmospheric CO₂; activated existing military spending on the World dashboard.
+- Added evidence-bound candidate construction for Fun, Safe Haven and Immigration rankings, plus stable country context for languages, geography and memberships. These modes remain explicitly editorial hybrids and do not invent exact external prices, city ranks, conflict probabilities or immigration rules.
+- Added country extremes, comparison-group medians, five-year anomaly candidates and non-causal cross-KPI rank associations to global and individual KPI analysis inputs, with metric-direction, target and scope guardrails.
+- Added `docs/analysis_methodology.md` describing the separation between measured evidence, hypotheses and qualitative editorial context.
+- Added visible per-KPI analysis timestamps, with exact UTC generation times for new analyses and a backward-compatible date display for legacy entries.
+- Added an always-generated monthly workflow summary and 30-day diagnostic artifact containing fetch console/log, status, state and validation evidence on both successful and failed runs.
+- Added ten open World Bank world-state indicators for sanitation, electricity, secondary completion, undernourishment, hosted refugees, real GDP-per-capita growth, women in parliament, protected land, net migration and statistical-system performance.
+- Added reviewed Overall Ranking defaults for seven directionally comparable new indicators while excluding migration counts and the statistical-performance guardrail from the score.
+- Added explicit acquisition contracts for all 12 locally maintained CSV KPIs, including Summer and Winter Olympic medals, with access constraints and reviewed official release-page checks.
+- Added a reproducible world-state KPI gap and freshness audit report covering automated-source replacements, discontinued series and high-value missing indicators.
+- Added a demand-driven KPI loader, request deduplication, native streaming gzip decoding with compatibility fallback, shareable `?kpi=` routes and frontend performance regression contracts.
+- Added keyboard-sortable country table headers, live loading feedback, automatic skip links, global focus visibility and reduced-motion handling.
 - Added fail-closed pipeline guards and unit tests for fetch errors, dummy results, empty selections, output-format requirements and isolated test KPIs.
 - Added automatic pull-request and `main` CI for Python compilation, data validation, JavaScript tests and PHP checks.
 - Added the pushed rollback tag `baseline-pre-safety-refactor-2026-07-31` for the complete pre-Sofortschutz state.
 - Added a network-free test baseline with 22 Python regression tests for source contracts, KPI selection, adapter output isolation, transformations, key-page assets, deployment allowlisting and delta detection.
 - Added `scripts/run_tests.py` as the shared local and CI entry point plus `docs/testing.md` for extending KPI and source coverage.
 - Added a typed fetch core, explicit built-in adapter registry and architecture documentation for immediate, batch and special source execution.
+- Added network-free contract tests for CSV, Data360, UNHCR, IMF and geopolitical-risk adapters; all supported source families now have focused adapter coverage.
 
 ### Changed
+- Made the World-map comparison overlap card span the full summary width and wrap long group names instead of clipping them.
+- Corrected the World-map comparison layout: desktop controls now use a balanced two-row grid, tablet/mobile breakpoints collapse predictably, the mode explanation no longer overlaps its select, and comparison metrics render as readable two-column cards instead of one compressed row.
+- Made Overall Ranking lenses mutually exclusive and clarified that they highlight editorial comparisons without replacing or modifying the list-box-driven standard score.
+- Restored the intended character of Fun, Safe Haven and Immigration: Fun is mildly humorous and considers climate, sunshine, beer and liveable cities; Safe Haven considers conflict proximity, alliance exposure and daily climate effects; Immigration explicitly considers visa, work and residence barriers.
+- Expanded per-KPI and global prompts to surface notable country and regional changes, potential best-practice candidates and traceable cross-domain hypotheses without presenting correlation as causation.
+- Clarified the lower-secondary completion KPI as a gross intake ratio that may exceed 100%, changed country scoring from unbounded `higher` to a 100% target, reduced its default weight, regenerated its AI interpretation and advanced the stored-default schema so the corrected weight takes effect.
+- Replaced the model-specific GPT-4 notice on Global Analysis with the generic AI and source-responsibility disclaimer used across the public dashboards.
+- Removed the browser-generated rectangular focus outline around mouse-selected Leaflet country shapes and bumped shared frontend assets to `20260801-frontend-8`.
+- Changed Overall Ranking normalization from outlier-sensitive min/max values to direction-aware percentile ranks, fixed declared-target scoring, excluded aggregate entities and calculated weights and coverage consistently. Revised defaults prioritize direct outcomes and institutions while de-emphasizing duplicate composites and the Big Mac proxy.
+- Changed the global AI synthesis from updated-only lifetime means to all 92 registered KPI snapshots using representative latest years, country coverage and comparable trends; volatile disaster indicators use adjacent five-year averages and incremental KPI summaries receive their validated data snapshot instead of metadata alone.
+- Extended the monthly refresh with official-page notifications for maintained CSV editions and pipefail-safe console capture; failed fetches still block FTP and Git push.
+- Replaced the model-based manual CSV update guesser with a deterministic offline schema/year/checksum audit and an optional official-page-only notification mode; it never downloads or overwrites maintained inputs.
+- Replaced only the opaque `teamwork_wunder.png` with its supplied JPG equivalent; transparent logos and translator assets remain PNG to preserve their alpha channel.
+- Completed the FPF deployment cutover: `build/deployment/full/` and `build/deployment/delta/` are now the only FTP handover paths, and legacy mirroring was removed from the packaging command.
+- Changed the Countries dashboard from loading the complete consolidated dataset to loading one selected KPI and lazy relation denominators.
+- Changed the World dashboard to load only its 15 world datasets, parallelized independent metadata requests and removed unused Pako downloads from pages that do not read consolidated gzip data.
+- Changed the floating scroll-to-top control to appear after meaningful scrolling and made the mobile primary navigation horizontally usable without compressing its links.
+- Versioned shared frontend assets as `20260801-frontend-1` for deterministic cache refresh on InfinityFree.
 - Changed force refreshes to preserve the last known-good data snapshot instead of deleting productive data before fetching replacements.
 - Changed full and partial FTP workflows to deploy only from the generated productive allowlist; full upload no longer performs remote clean-slate deletion.
 - Pinned direct Python dependencies and all GitHub Actions, serialized overlapping data/deployment workflows and removed token-bearing Git push URLs.
@@ -21,13 +66,42 @@ All notable changes to this project will be documented in this file.
 - Changed CI to install pinned dependencies and execute the same complete offline test runner used locally.
 - Replaced the source-type `if/elif` dispatcher with `AdapterRequest`/`AdapterResult` contracts, registry completeness checks and centralized status resolution.
 - Changed source-date resolution to run once per KPI and limited special-source work to fetch runs that actually selected that source.
+- Moved all World Bank, OWID, Data360, maintained CSV, UNHCR, IMF and geopolitical-risk clients/parsers into dedicated `scripts/adapters/` modules behind an injected runtime boundary.
+- Reduced `fetch_data.py` to source-neutral orchestration, persistence, status and safety processing, and removed the unused `sdmx1` dependency.
 
 ### Fixed
+- Restored the Countries KPI controls to a compact centred layout instead of stretching the four selectors across the full viewport.
+- Included the productive `data/analysis.md` report in FTP packages as an explicit exception to the repository Markdown exclusion.
+- Exported the consolidated KPI loader before deferred page initialization and bumped frontend assets to `20260801-frontend-5`, fixing the Overall Ranking `loadAllKPIData is not defined` startup failure.
+- Moved keyboard focus to the page heading before hiding the scroll-to-top control, preventing focused content from being placed below `aria-hidden`.
+- Excluded server-owned `tracking.json` state from FTP packages so local testing or full uploads cannot overwrite the live visit counter.
+- Declared Overall Ranking mode state before its DOM-ready callback, eliminating the `funOn` temporal-dead-zone crash that left the page blank.
+- Corrected the web app manifest icon dimensions to the actual 128×128 pixel favicon and refreshed frontend cache versions.
+- Removed the duplicate root-level `deployment/` package tree so FTP handover has one unambiguous source of truth.
+- Removed the duplicate Overall Ranking calculate handler that recalculated and stored the same selection twice per click.
+- Recovered gracefully from malformed locally stored ranking weights and exposed the ranking mode state with `aria-pressed`.
 - Made data validation return a failing exit code for missing, empty or malformed required outputs while recognizing the geopolitical-risk source as intentionally JSON-only.
 - Sanitized generated Markdown and rendered AI summaries as text to prevent untrusted generated content from becoming executable DOM markup.
 - Serialized visitor-counter writes and restricted the counter endpoint to POST requests.
 - Isolated OWID, World Bank, IMF, UNHCR, CSV status, log, hash and mapping side effects below `data/test/` during test runs instead of allowing writes into the productive data snapshot.
+- Preserved the previous fetch-status entry when an adapter does not produce a successful replacement dataset.
+- Accepted both legacy title-case and current short-name lowercase OWID CSV identity columns.
+- Excluded isolated `data/test/` fetch artifacts from full and delta FTP packages.
+- Adapted OWID world-only CSV parsing to sources without a country-code column and treated provider-declared non-redistributable datasets as explicit last-known-good skips.
+- Updated the Data360 Press Freedom source to the current `RWB_PFI_OVRL` indicator and filtered the API to score observations so rank rows cannot enter the KPI series.
+- Counted pending country aliases once per distinct new name instead of once per rejected observation.
+- Added a year-regression guard that preserves a newer stored dataset when a provider returns an older snapshot.
+- Made Data360 compare its live API result with the maintained raw fallback and select the source with the newer data year.
+- Rejected non-finite numeric inputs (`NaN` and infinities) centrally before they can enter generated JSON datasets.
+- Reused one HTTP session across immediate adapters and cached the database-wide World Bank source date once per run instead of requesting it for every KPI.
+- Corrected OWID metadata discovery to the current `.metadata.json` endpoint so unchanged Grapher datasets can be skipped before downloading their CSV.
+- Recorded provider-restricted KPIs explicitly in metadata so normal runs preserve them without repeatedly requesting a known-blocked download.
+- Added contract-validated per-source refresh intervals for Data360, IMF and GPR; forced runs still bypass them.
+- Made consolidated-data generation initialize UTF-8 output consistently on Windows.
+- Stopped retrying valid CSV-update responses with `latest_year: null` and shortened the inter-source delay, reducing model calls and check duration.
+- Added an explicit OWID indicator-API path for series whose Grapher CSV omits still-published projection years, restoring the schooling series through 2025 from official data.
 - Fixed `--force` being reset when a populated fetch status existed, so forced workflows now reliably bypass freshness checks.
+- Included generated `*.json.gz` KPI bundles in full and delta deployment packages; their index could previously be deployed without its referenced data parts.
 
 ## [3.3.0] - 2026-07-31
 

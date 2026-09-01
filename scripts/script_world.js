@@ -9,7 +9,7 @@
 const META_FILE = "data/meta/available_kpis.json";
 const DATA_DIR = "data";
 
-let META = [], ALL_DATA = {}; // consolidated dataset + meta
+let META = [], ALL_DATA = {}; // world-only datasets + metadata
 
 /* ========= Chart Helper ========= */
 function getWorldSeries(entries) {
@@ -184,8 +184,12 @@ async function initWorldPage() {
     // 🌀 Zeige globalen Spinner (aus core.js)
     showSpinner(true, "Loading world data…");
 
-    META = await loadJSON(META_FILE);
-    ALL_DATA = await loadAllKPIData();
+    META = (await loadJSON(META_FILE)).filter(kpi => kpi.publication_status !== "pending_first_fetch");
+    const worldKpis = META.filter(kpi =>
+      (kpi.world_kpi === "y" || kpi.world_kpi === "e") && kpi.filename
+    );
+    const worldDatasets = await Promise.all(worldKpis.map(kpi => loadKPIData(kpi.filename)));
+    ALL_DATA = Object.fromEntries(worldKpis.map((kpi, index) => [kpi.filename, worldDatasets[index]]));
 
     // === Gruppierung nach Cluster ===
     const grouped = {};
@@ -263,6 +267,149 @@ let worldMapCountries = {};
 let worldMapGroups = {};
 let worldMapPopulation = []; // Changed from {} to [] for array operations
 let worldMapCountryMappings = {};
+let worldMapGdp = [];
+let worldMapEmissions = [];
+let worldMapSelectedKpiData = [];
+let worldMapSelectedKpiMeta = null;
+const WORLD_MAP_SUMMABLE_KPIS = new Set([
+  "area", "co2_emissions", "electric_vehicle_stock", "gdp", "net_migration",
+  "olympic_medals_summer", "olympic_medals_winter", "population", "railway_length", "refugees_hosted",
+]);
+const WORLD_MAP_PER_CAPITA_KPIS = new Set([
+  "co2_emissions", "electric_vehicle_stock", "gdp", "net_migration",
+  "olympic_medals_summer", "olympic_medals_winter", "railway_length", "refugees_hosted",
+]);
+const WORLD_MAP_GROUP_COLORS = {
+  a: { fill: "#1976d2", border: "#0d47a1" },
+  b: { fill: "#ef6c00", border: "#a84300" },
+  overlap: { fill: "#7b1fa2", border: "#4a0866" },
+};
+
+function worldMapRealCountryNames() {
+  return new Set(Object.keys(worldMapCountries));
+}
+
+function availableCountryYears(dataset, countryUniverse = worldMapRealCountryNames()) {
+  return [...new Set((dataset || [])
+    .filter(row => countryUniverse.has(row.country) && Number.isFinite(Number(row.year)) && Number.isFinite(row.value))
+    .map(row => Number(row.year)))]
+    .sort((a, b) => b - a);
+}
+
+function resolveDataYear(dataset, requestedYear, countryUniverse = worldMapRealCountryNames()) {
+  const years = availableCountryYears(dataset, countryUniverse);
+  if (!years.length) return null;
+  const requested = Number(requestedYear);
+  if (!Number.isFinite(requested)) return years[0];
+  return years.find(year => year <= requested) ?? years[years.length - 1];
+}
+
+function countryValuesForYear(dataset, year, allowedCountries) {
+  const values = new Map();
+  if (!Number.isFinite(Number(year))) return values;
+  (dataset || []).forEach(row => {
+    if (Number(row.year) !== Number(year) || !allowedCountries.has(row.country) || !Number.isFinite(row.value)) return;
+    values.set(row.country, Number(row.value));
+  });
+  return values;
+}
+
+function calculateAdditiveShare(dataset, members, requestedYear, countryUniverse) {
+  const year = resolveDataYear(dataset, requestedYear, countryUniverse);
+  if (year === null) return { year: null, share: null, covered: 0, total: members.length };
+  const worldValues = countryValuesForYear(dataset, year, countryUniverse);
+  const memberSet = new Set(members);
+  const coveredValues = [...worldValues.entries()].filter(([country]) => memberSet.has(country));
+  const numerator = coveredValues.reduce((sum, [, value]) => sum + value, 0);
+  const denominator = [...worldValues.values()].reduce((sum, value) => sum + value, 0);
+  return {
+    year,
+    share: denominator > 0 ? numerator / denominator : null,
+    covered: coveredValues.length,
+    total: members.length,
+  };
+}
+
+function calculateMedianMetric(dataset, members, requestedYear) {
+  const memberSet = new Set(members);
+  const values = (dataset || [])
+    .filter(row => Number(row.year) === Number(requestedYear) && memberSet.has(row.country) && Number.isFinite(row.value))
+    .map(row => Number(row.value))
+    .sort((a, b) => a - b);
+  if (!values.length) return { value: null, covered: 0, total: members.length };
+  const middle = Math.floor(values.length / 2);
+  const value = values.length % 2 ? values[middle] : (values[middle - 1] + values[middle]) / 2;
+  return { value, covered: values.length, total: members.length };
+}
+
+function classifyGroupMembership(country, groupA, groupB = new Set()) {
+  const inA = groupA.has(country);
+  const inB = groupB.has(country);
+  if (inA && inB) return "overlap";
+  if (inA) return "a";
+  if (inB) return "b";
+  return "other";
+}
+
+function percentileIntensities(valueMap) {
+  const sorted = [...valueMap.values()].filter(Number.isFinite).sort((a, b) => a - b);
+  const result = new Map();
+  if (!sorted.length) return result;
+  valueMap.forEach((value, country) => {
+    if (!Number.isFinite(value)) return;
+    const lower = sorted.findIndex(candidate => candidate === value);
+    const upper = sorted.length - 1 - [...sorted].reverse().findIndex(candidate => candidate === value);
+    result.set(country, sorted.length === 1 ? 0.65 : ((lower + upper) / 2) / (sorted.length - 1));
+  });
+  return result;
+}
+
+function mixWithWhite(hex, intensity) {
+  const normalized = hex.replace("#", "");
+  const rgb = [0, 2, 4].map(offset => parseInt(normalized.slice(offset, offset + 2), 16));
+  const strength = 0.24 + Math.max(0, Math.min(1, intensity)) * 0.76;
+  return `rgb(${rgb.map(channel => Math.round(255 - (255 - channel) * strength)).join(", ")})`;
+}
+
+function calculateGroupMetric(dataset, members, requestedYear, options = {}) {
+  const memberSet = new Set(members);
+  const population = countryValuesForYear(options.populationData || [], requestedYear, memberSet);
+  const values = (dataset || [])
+    .filter(row => Number(row.year) === Number(requestedYear) && memberSet.has(row.country) && Number.isFinite(row.value))
+    .map(row => {
+      const raw = Number(row.value);
+      if (options.valueMode !== "per_capita") return raw;
+      const denominator = population.get(row.country);
+      return Number.isFinite(denominator) && denominator > 0 ? raw / denominator : null;
+    })
+    .filter(Number.isFinite)
+    .sort((a, b) => a - b);
+  if (!values.length) return { value: null, covered: 0, total: members.length };
+  const value = options.aggregation === "sum"
+    ? values.reduce((sum, current) => sum + current, 0)
+    : values.length % 2
+      ? values[Math.floor(values.length / 2)]
+      : (values[values.length / 2 - 1] + values[values.length / 2]) / 2;
+  return { value, covered: values.length, total: members.length };
+}
+
+function formatWorldMapNumber(value, unit = "") {
+  if (!Number.isFinite(value)) return "No data";
+  const absolute = Math.abs(value);
+  const formatted = absolute >= 1e12
+    ? `${(value / 1e12).toFixed(2)}T`
+    : absolute >= 1e9
+      ? `${(value / 1e9).toFixed(2)}B`
+      : absolute >= 1e6
+        ? `${(value / 1e6).toFixed(2)}M`
+        : new Intl.NumberFormat(undefined, { maximumFractionDigits: 2 }).format(value);
+  return unit ? `${formatted} ${unit}` : formatted;
+}
+
+function formatCoverage(covered, total) {
+  const percentage = total ? Math.round((covered / total) * 100) : 0;
+  return `${covered}/${total} countries (${percentage}%)`;
+}
 
 function getWorldMapGroupTitle(groupName) {
   const group = worldMapGroups[groupName];
@@ -275,10 +422,21 @@ function getWorldMapGroupTitle(groupName) {
 async function initWorldMap() {
   try {
     // Lade Daten
-    worldMapCountries = await loadJSON("data/meta/countries.json");
-    worldMapGroups = await loadJSON("data/meta/groups.json");
-    worldMapCountryMappings = await loadJSON("data/meta/country_mappings.json");
-    worldMapPopulation = await loadJSON("data/population.json"); // Store as array for language calculations
+    [
+      worldMapCountries,
+      worldMapGroups,
+      worldMapCountryMappings,
+      worldMapPopulation,
+      worldMapGdp,
+      worldMapEmissions,
+    ] = await Promise.all([
+      loadJSON("data/meta/countries.json"),
+      loadJSON("data/meta/groups.json"),
+      loadJSON("data/meta/country_mappings.json"),
+      loadKPIData("population"),
+      loadKPIData("gdp"),
+      loadKPIData("co2_emissions"),
+    ]);
 
     // Lade GeoJSON für Länder-Polygone
     await loadWorldGeoJSON();
@@ -296,14 +454,49 @@ async function initWorldMap() {
     // Event Listeners für Dropdowns
     const groupingSelect = document.getElementById('groupingSelect');
     const categorySelect = document.getElementById('categorySelect');
+    const comparisonSelect = document.getElementById('comparisonGroupSelect');
+    const kpiSelect = document.getElementById('worldMapKpiSelect');
+    const yearSelect = document.getElementById('worldMapYearSelect');
+    const valueModeSelect = document.getElementById('worldMapValueMode');
+    const aggregationSelect = document.getElementById('worldMapAggregationMode');
     
     if (groupingSelect) {
-      groupingSelect.addEventListener('change', updateCategoryOptions);
+      groupingSelect.addEventListener('change', () => {
+        updateCategoryOptions();
+        clearWorldMapSelection();
+        syncWorldMapUrl();
+      });
     }
     
     if (categorySelect) {
-      categorySelect.addEventListener('change', updateWorldMapGeoJSON);
+      categorySelect.addEventListener('change', () => {
+        updateComparisonGroupOptions();
+        updateWorldMapGeoJSON();
+      });
     }
+
+    comparisonSelect?.addEventListener('change', updateWorldMapGeoJSON);
+
+    if (kpiSelect) {
+      kpiSelect.addEventListener('change', async () => {
+        await updateWorldMapYearOptions();
+        updateWorldMapModeAvailability();
+        updateWorldMapGeoJSON();
+      });
+    }
+
+    if (yearSelect) {
+      yearSelect.addEventListener('change', updateWorldMapGeoJSON);
+    }
+
+    valueModeSelect?.addEventListener('change', () => {
+      updateWorldMapModeAvailability();
+      updateWorldMapGeoJSON();
+    });
+    aggregationSelect?.addEventListener('change', updateWorldMapGeoJSON);
+
+    populateWorldMapKpiOptions();
+    await restoreWorldMapUrlState();
 
   } catch (err) {
     console.error("🗺️ World Map init failed:", err);
@@ -331,6 +524,135 @@ async function loadWorldGeoJSON() {
   }
 }
 
+function populateWorldMapKpiOptions() {
+  const select = document.getElementById('worldMapKpiSelect');
+  if (!select) return;
+  const countryKpis = META
+    .filter(kpi => kpi.filename && kpi.world_kpi !== "e")
+    .sort((a, b) => (a.title || a.filename).localeCompare(b.title || b.filename));
+  select.textContent = "";
+  countryKpis.forEach(kpi => {
+    const option = document.createElement('option');
+    option.value = kpi.filename;
+    option.textContent = kpi.title || kpi.filename;
+    select.appendChild(option);
+  });
+  const preferredDefault = countryKpis.some(kpi => kpi.filename === "gdp")
+    ? "gdp"
+    : countryKpis[0]?.filename || "";
+  select.value = preferredDefault;
+}
+
+async function updateWorldMapYearOptions(preferredYear = null) {
+  const kpiSelect = document.getElementById('worldMapKpiSelect');
+  const yearSelect = document.getElementById('worldMapYearSelect');
+  if (!kpiSelect || !yearSelect || !kpiSelect.value) return;
+  yearSelect.disabled = true;
+  worldMapSelectedKpiMeta = META.find(kpi => kpi.filename === kpiSelect.value) || null;
+  worldMapSelectedKpiData = await loadKPIData(kpiSelect.value);
+  const years = availableCountryYears(worldMapSelectedKpiData);
+  yearSelect.textContent = "";
+  years.forEach(year => {
+    const option = document.createElement('option');
+    option.value = String(year);
+    option.textContent = String(year);
+    yearSelect.appendChild(option);
+  });
+  const requested = Number(preferredYear);
+  yearSelect.value = years.includes(requested) ? String(requested) : String(years[0] || "");
+  yearSelect.disabled = years.length === 0;
+}
+
+function updateWorldMapModeAvailability() {
+  const kpi = document.getElementById('worldMapKpiSelect')?.value || "";
+  const valueMode = document.getElementById('worldMapValueMode');
+  const aggregation = document.getElementById('worldMapAggregationMode');
+  const note = document.getElementById('world-map-mode-note');
+  if (!valueMode || !aggregation) return;
+  const summable = WORLD_MAP_SUMMABLE_KPIS.has(kpi);
+  const perCapitaSupported = WORLD_MAP_PER_CAPITA_KPIS.has(kpi);
+  valueMode.disabled = !perCapitaSupported;
+  if (!perCapitaSupported) valueMode.value = "absolute";
+  const sumOption = [...aggregation.options].find(option => option.value === "sum");
+  const sumAllowed = summable && valueMode.value === "absolute";
+  if (sumOption) sumOption.disabled = !sumAllowed;
+  if (!sumAllowed && aggregation.value === "sum") aggregation.value = "median";
+  if (note) note.textContent = perCapitaSupported
+    ? "Absolute and per-capita views are available. Sum is available for absolute additive values; per-capita comparisons use the country median."
+    : summable
+      ? "This total can be summed across members, but an additional per-capita conversion is not meaningful for this KPI."
+      : "This KPI is a rate, score, index or already normalised value. It is compared by country median; totals and an additional per-capita conversion would be misleading.";
+}
+
+function readWorldMapUrlState() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    grouping: params.get("grouping") || "",
+    category: params.get("group") || "",
+    comparison: params.get("compare") || "",
+    kpi: params.get("kpi") || "",
+    year: params.get("year") || "",
+    valueMode: params.get("value") || "absolute",
+    aggregation: params.get("aggregate") || "median",
+  };
+}
+
+function syncWorldMapUrl() {
+  const grouping = document.getElementById('groupingSelect')?.value || "";
+  const category = document.getElementById('categorySelect')?.value || "";
+  const comparison = document.getElementById('comparisonGroupSelect')?.value || "";
+  const kpi = document.getElementById('worldMapKpiSelect')?.value || "";
+  const year = document.getElementById('worldMapYearSelect')?.value || "";
+  const valueMode = document.getElementById('worldMapValueMode')?.value || "absolute";
+  const aggregation = document.getElementById('worldMapAggregationMode')?.value || "median";
+  const url = new URL(window.location.href);
+  const values = { grouping, group: category, compare: comparison, kpi, year, value: valueMode, aggregate: aggregation };
+  Object.entries(values).forEach(([key, value]) => {
+    if (value) url.searchParams.set(key, value);
+    else url.searchParams.delete(key);
+  });
+  window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+}
+
+async function restoreWorldMapUrlState() {
+  const state = readWorldMapUrlState();
+  const groupingSelect = document.getElementById('groupingSelect');
+  const categorySelect = document.getElementById('categorySelect');
+  const comparisonSelect = document.getElementById('comparisonGroupSelect');
+  const kpiSelect = document.getElementById('worldMapKpiSelect');
+  if (groupingSelect && [...groupingSelect.options].some(option => option.value === state.grouping)) {
+    groupingSelect.value = state.grouping;
+  }
+  updateCategoryOptions();
+  if (categorySelect && [...categorySelect.options].some(option => option.value === state.category)) {
+    categorySelect.value = state.category;
+  }
+  updateComparisonGroupOptions();
+  if (comparisonSelect && [...comparisonSelect.options].some(option => option.value === state.comparison)) {
+    comparisonSelect.value = state.comparison;
+  }
+  if (kpiSelect && [...kpiSelect.options].some(option => option.value === state.kpi)) {
+    kpiSelect.value = state.kpi;
+  }
+  await updateWorldMapYearOptions(state.year);
+  const valueMode = document.getElementById('worldMapValueMode');
+  const aggregation = document.getElementById('worldMapAggregationMode');
+  if (valueMode && [...valueMode.options].some(option => option.value === state.valueMode)) valueMode.value = state.valueMode;
+  if (aggregation && [...aggregation.options].some(option => option.value === state.aggregation)) aggregation.value = state.aggregation;
+  updateWorldMapModeAvailability();
+  if (groupingSelect?.value && categorySelect?.value) updateWorldMapGeoJSON();
+  else syncWorldMapUrl();
+}
+
+function clearWorldMapSelection() {
+  if (worldMapLayer && worldMap) {
+    worldMap.removeLayer(worldMapLayer);
+    worldMapLayer = null;
+  }
+  document.getElementById('world-group-summary')?.setAttribute('hidden', '');
+  document.getElementById('world-map-legend')?.classList.add('hidden');
+}
+
 function updateCategoryOptions() {
   const groupingSelect = document.getElementById('groupingSelect');
   const categorySelect = document.getElementById('categorySelect');
@@ -343,7 +665,7 @@ function updateCategoryOptions() {
   
   if (grouping === 'groups') {
     // Füge Groups aus groups.json hinzu
-    Object.keys(worldMapGroups).forEach(groupName => {
+    Object.keys(worldMapGroups).sort((a, b) => getWorldMapGroupTitle(a).localeCompare(getWorldMapGroupTitle(b))).forEach(groupName => {
       const option = document.createElement('option');
       option.value = groupName;
       const members = worldMapGroups[groupName].members || worldMapGroups[groupName];
@@ -389,17 +711,90 @@ function updateCategoryOptions() {
     });
   }
   
-  categorySelect.disabled = false;
+  categorySelect.disabled = !grouping;
+  updateComparisonGroupOptions();
+}
+
+function updateComparisonGroupOptions() {
+  const grouping = document.getElementById('groupingSelect')?.value || "";
+  const primary = document.getElementById('categorySelect')?.value || "";
+  const select = document.getElementById('comparisonGroupSelect');
+  const wrapper = document.getElementById('comparisonGroupWrapper');
+  if (!select) return;
+  const previous = select.value;
+  select.textContent = "";
+  const empty = document.createElement('option');
+  empty.value = "";
+  empty.textContent = "No comparison";
+  select.appendChild(empty);
+  if (grouping === "groups") {
+    Object.keys(worldMapGroups)
+      .filter(groupName => groupName !== primary)
+      .sort((a, b) => getWorldMapGroupTitle(a).localeCompare(getWorldMapGroupTitle(b)))
+      .forEach(groupName => {
+        const option = document.createElement('option');
+        option.value = groupName;
+        option.textContent = getWorldMapGroupTitle(groupName);
+        select.appendChild(option);
+      });
+  }
+  select.disabled = grouping !== "groups" || !primary;
+  if ([...select.options].some(option => option.value === previous)) select.value = previous;
+  if (wrapper) wrapper.hidden = grouping !== "groups";
+}
+
+function resolveWorldMapCountry(feature) {
+  const properties = feature?.properties || {};
+  const iso = (
+    properties.iso_a3_eh || properties.ISO_A3_EH || properties.ISO_A3 || properties.iso_a3 ||
+    properties.ADM0_A3 || properties.adm0_a3 || properties.SOV_A3 || properties.sov_a3 ||
+    properties.WB_A3 || properties.wb_a3 || properties.gu_a3 || properties.su_a3 || feature?.id || ""
+  ).toUpperCase();
+  const isoMatch = Object.entries(worldMapCountries).find(([, country]) =>
+    [country.iso_a3, country.iso3, country.ISO_A3].some(code => String(code || "").toUpperCase() === iso)
+  )?.[0];
+  if (isoMatch) return isoMatch;
+  const rawName = properties.name || properties.NAME || properties.ADMIN || properties.COUNTRY || properties.SOVEREIGNT || iso;
+  const aliases = {
+    "United States of America": "United States",
+    "United Kingdom of Great Britain and Northern Ireland": "United Kingdom",
+    "Russian Federation": "Russia",
+    "Iran (Islamic Republic of)": "Iran",
+    "Korea, Republic of": "South Korea",
+    "Venezuela (Bolivarian Republic of)": "Venezuela",
+    "Bolivia (Plurinational State of)": "Bolivia",
+    "Lao People's Democratic Republic": "Laos",
+    "Syrian Arab Republic": "Syria",
+    "Republic of Serbia": "Serbia",
+    "Czech Republic": "Czechia",
+    "Slovak Republic": "Slovakia",
+  };
+  const mapped = worldMapCountryMappings[rawName] || aliases[rawName] || rawName;
+  return Object.keys(worldMapCountries).find(country => country.toLowerCase() === String(mapped).toLowerCase()) || mapped;
+}
+
+function selectedWorldMapValues(year, countries, valueMode) {
+  const values = countryValuesForYear(worldMapSelectedKpiData, year, countries);
+  if (valueMode !== "per_capita") return values;
+  const population = countryValuesForYear(worldMapPopulation, year, countries);
+  const perCapita = new Map();
+  values.forEach((value, country) => {
+    const denominator = population.get(country);
+    if (Number.isFinite(denominator) && denominator > 0) perCapita.set(country, value / denominator);
+  });
+  return perCapita;
 }
 
 function updateWorldMapGeoJSON() {
   const groupingSelect = document.getElementById('groupingSelect');
   const categorySelect = document.getElementById('categorySelect');
+  const comparisonSelect = document.getElementById('comparisonGroupSelect');
   
   if (!groupingSelect || !categorySelect || !worldMap || !window._worldGeoJSON) return;
   
   const grouping = groupingSelect.value;
   const category = categorySelect.value;
+  const comparison = grouping === "groups" ? comparisonSelect?.value || "" : "";
   
   // Entferne bestehende GeoJSON Layer
   if (worldMapLayer) {
@@ -407,7 +802,11 @@ function updateWorldMapGeoJSON() {
     worldMapLayer = null;
   }
   
-  if (!grouping || !category) return;
+  if (!grouping || !category) {
+    clearWorldMapSelection();
+    syncWorldMapUrl();
+    return;
+  }
   
   // Finde relevante Länder
   let relevantCountries = [];
@@ -442,7 +841,17 @@ function updateWorldMapGeoJSON() {
   }
   
   // Erstelle Set für schnelle Lookup
+  const comparisonCountries = comparison && worldMapGroups[comparison]
+    ? worldMapGroups[comparison].members || worldMapGroups[comparison]
+    : [];
   const relevantCountriesSet = new Set(relevantCountries.map(c => c.toLowerCase()));
+  const groupASet = new Set(relevantCountries);
+  const groupBSet = new Set(comparisonCountries);
+  const selectedYear = Number(document.getElementById('worldMapYearSelect')?.value);
+  const valueMode = document.getElementById('worldMapValueMode')?.value || "absolute";
+  const selectedCountries = new Set([...groupASet, ...groupBSet]);
+  const choroplethValues = selectedWorldMapValues(selectedYear, selectedCountries, valueMode);
+  const intensities = percentileIntensities(choroplethValues);
   
   // Erstelle ISO-Lookup für relevante Länder (wie in countries.html)
   const isoByName = {};
@@ -454,6 +863,8 @@ function updateWorldMapGeoJSON() {
   // Erstelle GeoJSON Layer mit Styling
   worldMapLayer = L.geoJSON(window._worldGeoJSON, {
     style: feature => {
+      const resolvedCountry = resolveWorldMapCountry(feature);
+      const membership = classifyGroupMembership(resolvedCountry, groupASet, groupBSet);
       // 🧩 ISO-Fallbacks aus diversen GeoJSON-Feldern (wie in countries.html)
       const iso = (
         feature.properties.iso_a3_eh || feature.properties.ISO_A3_EH ||
@@ -559,12 +970,17 @@ function updateWorldMapGeoJSON() {
         }
       }
       
+      const groupColor = WORLD_MAP_GROUP_COLORS[membership];
+      const intensity = intensities.get(resolvedCountry);
       return {
-        fillColor: isRelevant ? '#2196F3' : '#ddd',
-        weight: isRelevant ? 2 : 1,
+        fillColor: groupColor
+          ? (Number.isFinite(intensity) ? mixWithWhite(groupColor.fill, intensity) : '#e8edf2')
+          : '#ddd',
+        weight: groupColor ? 2 : 1,
         opacity: 1,
-        color: isRelevant ? '#1976D2' : '#999',
-        fillOpacity: isRelevant ? 0.7 : 0.3
+        color: groupColor ? groupColor.border : '#999',
+        dashArray: membership === "overlap" ? "5 3" : null,
+        fillOpacity: groupColor ? 0.82 : 0.25
       };
     },
     onEachFeature: (f, layer) => {
@@ -580,21 +996,13 @@ function updateWorldMapGeoJSON() {
       ).toUpperCase();
 
       // 🧭 Fallback to name resolution
-      let cname = Object.entries(worldMapCountries).find(
-        ([, c]) => (c.iso_a3 || c.ISO_A3)?.toUpperCase() === iso
-      )?.[0] ||
-        f.properties.ADMIN ||
-        f.properties.NAME ||
-        f.properties.COUNTRY ||
-        iso;
-
-      // Apply country mappings for canonical name
-      if (worldMapCountryMappings?.[cname]) {
-        cname = worldMapCountryMappings[cname];
-      }
+      const cname = resolveWorldMapCountry(f);
 
       // Get population value
-      const currentYear = new Date().getFullYear();
+      const selectedKpiRow = worldMapSelectedKpiData.find(
+        row => row.country === cname && Number(row.year) === selectedYear && Number.isFinite(row.value)
+      );
+      const currentYear = Number.isFinite(selectedYear) ? selectedYear : new Date().getFullYear();
       let popValue = null;
       for (let year = currentYear; year >= currentYear - 5; year--) {
         const popData = worldMapPopulation.find(p => p.country === cname && p.year === year);
@@ -610,9 +1018,15 @@ function updateWorldMapGeoJSON() {
           ? `images/flag/${String(info.iso_a2).toLowerCase()}.svg`
           : "images/flag/question.svg");
       
-      const displayValue = Number.isFinite(popValue)
-        ? `${(popValue / 1000000).toFixed(1)}M`
+      const displayedKpiValue = choroplethValues.get(cname);
+      const displayedUnit = valueMode === "per_capita"
+        ? `${worldMapSelectedKpiMeta?.unit || "units"} per person`
+        : worldMapSelectedKpiMeta?.unit || "";
+      const selectedKpiValue = Number.isFinite(displayedKpiValue)
+        ? formatWorldMapNumber(displayedKpiValue, displayedUnit)
         : "no data";
+      const displayValue = `${worldMapSelectedKpiMeta?.title || "Selected KPI"}: ${selectedKpiValue}`;
+      const populationText = Number.isFinite(popValue) ? `${(popValue / 1000000).toFixed(1)}M` : "no data";
 
       const tooltip = `
         <div class="map-tooltip">
@@ -622,6 +1036,8 @@ function updateWorldMapGeoJSON() {
           </div>
           <div class="map-tooltip__value">${displayValue}</div>
           <div class="map-tooltip__meta">
+            <div class="map-tooltip__meta-row">Year: ${Number.isFinite(selectedYear) ? selectedYear : "–"}</div>
+            <div class="map-tooltip__meta-row">Population: ${populationText}</div>
             <div class="map-tooltip__meta-row">Capital: ${info.capital || "–"}</div>
             <div class="map-tooltip__meta-row">Gov: ${info.government || "–"}</div>
             <div class="map-tooltip__meta-row">Languages: ${info.languages || "–"}</div>
@@ -642,18 +1058,128 @@ function updateWorldMapGeoJSON() {
       });
 
       layer.on({
-        mouseover: e => e.target.setStyle({ weight: 1.2, color: "#000", fillOpacity: 0.9 }),
+        mouseover: e => e.target.setStyle({ weight: 2.5, fillOpacity: 0.95 }),
         mouseout: e => worldMapLayer.resetStyle(e.target)
       });
     }
   }).addTo(worldMap);
   
   // Update context legend
-  updateMapLegend(grouping, category, relevantCountries.length);
+  updateMapLegend(grouping, category, relevantCountries.length, comparison, comparisonCountries.length);
+  renderWorldGroupSummary(grouping, category, relevantCountries, comparison, comparisonCountries);
+  updateWorldMapVisualLegend(category, comparison);
+  syncWorldMapUrl();
+}
+
+function appendWorldSummaryCard(container, label, value, meta, modifier = "") {
+  const card = document.createElement('article');
+  card.className = 'world-group-summary__card';
+  if (modifier) card.classList.add(`world-group-summary__card--${modifier}`);
+  const labelElement = document.createElement('span');
+  labelElement.className = 'world-group-summary__label';
+  labelElement.textContent = label;
+  const valueElement = document.createElement('strong');
+  valueElement.className = 'world-group-summary__value';
+  valueElement.textContent = value;
+  const metaElement = document.createElement('small');
+  metaElement.className = 'world-group-summary__meta';
+  metaElement.textContent = meta;
+  card.append(labelElement, valueElement, metaElement);
+  container.appendChild(card);
+}
+
+function appendWorldComparisonCard(container, label, groupA, groupB) {
+  const card = document.createElement('article');
+  card.className = 'world-group-summary__card';
+  const labelElement = document.createElement('span');
+  labelElement.className = 'world-group-summary__label';
+  labelElement.textContent = label;
+  const comparison = document.createElement('div');
+  comparison.className = 'world-group-summary__comparison';
+  [groupA, groupB].forEach(group => {
+    const column = document.createElement('span');
+    const title = document.createElement('b');
+    title.textContent = group.label;
+    const value = document.createElement('strong');
+    value.className = 'world-group-summary__value';
+    value.textContent = group.value;
+    const meta = document.createElement('small');
+    meta.textContent = group.meta;
+    column.append(title, value, meta);
+    comparison.appendChild(column);
+  });
+  card.append(labelElement, comparison);
+  container.appendChild(card);
+}
+
+function renderWorldGroupSummary(grouping, category, members, comparison = "", comparisonMembers = []) {
+  const summary = document.getElementById('world-group-summary');
+  const title = document.getElementById('world-group-summary-title');
+  const context = document.getElementById('world-group-summary-context');
+  const cards = document.getElementById('world-group-summary-cards');
+  const note = document.getElementById('world-group-summary-note');
+  const year = Number(document.getElementById('worldMapYearSelect')?.value);
+  if (!summary || !title || !context || !cards || !note || !members.length || !Number.isFinite(year)) return;
+
+  const realCountries = worldMapRealCountryNames();
+  const population = calculateAdditiveShare(worldMapPopulation, members, year, realCountries);
+  const gdp = calculateAdditiveShare(worldMapGdp, members, year, realCountries);
+  const emissions = calculateAdditiveShare(worldMapEmissions, members, year, realCountries);
+  const valueMode = document.getElementById('worldMapValueMode')?.value || "absolute";
+  const aggregation = document.getElementById('worldMapAggregationMode')?.value || "median";
+  const selectedMetric = calculateGroupMetric(worldMapSelectedKpiData, members, year, {
+    valueMode, aggregation, populationData: worldMapPopulation,
+  });
+  const groupLabel = grouping === 'groups' ? getWorldMapGroupTitle(category) : category;
+  const comparisonLabel = comparison ? getWorldMapGroupTitle(comparison) : "";
+  const metricTitle = worldMapSelectedKpiMeta?.title || worldMapSelectedKpiMeta?.filename || "Selected KPI";
+  const metricUnit = worldMapSelectedKpiMeta?.unit || "";
+
+  title.textContent = comparisonLabel ? `${groupLabel} vs ${comparisonLabel}` : `${groupLabel} summary`;
+  summary.classList.toggle('world-group-summary--comparison', Boolean(comparisonMembers.length));
+  context.textContent = `Selected country KPI: ${metricTitle}, ${year} · ${valueMode === "per_capita" ? "per capita" : "absolute"} · ${aggregation}.`;
+  cards.textContent = "";
+  if (!comparisonMembers.length) {
+    appendWorldSummaryCard(cards, "Members", String(members.length), "Defined members / matching countries");
+    appendWorldSummaryCard(cards, "World population share", Number.isFinite(population.share) ? `${(population.share * 100).toFixed(1)}%` : "No data", `Year ${population.year ?? "–"} · coverage ${formatCoverage(population.covered, population.total)}`);
+    appendWorldSummaryCard(cards, "World GDP share", Number.isFinite(gdp.share) ? `${(gdp.share * 100).toFixed(1)}%` : "No data", `Current USD · year ${gdp.year ?? "–"} · coverage ${formatCoverage(gdp.covered, gdp.total)}`);
+    appendWorldSummaryCard(cards, "World CO₂ share", Number.isFinite(emissions.share) ? `${(emissions.share * 100).toFixed(1)}%` : "No data", `Territorial emissions · year ${emissions.year ?? "–"} · coverage ${formatCoverage(emissions.covered, emissions.total)}`);
+    appendWorldSummaryCard(cards, `${aggregation === "sum" ? "Sum" : "Median"}: ${metricTitle}`, formatWorldMapNumber(selectedMetric.value, valueMode === "per_capita" ? `${metricUnit || "units"} per person` : metricUnit), `Year ${year} · coverage ${formatCoverage(selectedMetric.covered, selectedMetric.total)}`);
+  } else {
+    const comparisonPopulation = calculateAdditiveShare(worldMapPopulation, comparisonMembers, year, realCountries);
+    const comparisonGdp = calculateAdditiveShare(worldMapGdp, comparisonMembers, year, realCountries);
+    const comparisonEmissions = calculateAdditiveShare(worldMapEmissions, comparisonMembers, year, realCountries);
+    const comparisonMetric = calculateGroupMetric(worldMapSelectedKpiData, comparisonMembers, year, { valueMode, aggregation, populationData: worldMapPopulation });
+    const pair = (aValue, aMeta, bValue, bMeta) => [
+      { label: groupLabel, value: aValue, meta: aMeta },
+      { label: comparisonLabel, value: bValue, meta: bMeta },
+    ];
+    appendWorldComparisonCard(cards, "Members", ...pair(String(members.length), "Defined members", String(comparisonMembers.length), "Defined members"));
+    appendWorldComparisonCard(cards, "World population share", ...pair(Number.isFinite(population.share) ? `${(population.share * 100).toFixed(1)}%` : "No data", `Year ${population.year ?? "–"} · ${formatCoverage(population.covered, population.total)}`, Number.isFinite(comparisonPopulation.share) ? `${(comparisonPopulation.share * 100).toFixed(1)}%` : "No data", `Year ${comparisonPopulation.year ?? "–"} · ${formatCoverage(comparisonPopulation.covered, comparisonPopulation.total)}`));
+    appendWorldComparisonCard(cards, "World GDP share", ...pair(Number.isFinite(gdp.share) ? `${(gdp.share * 100).toFixed(1)}%` : "No data", `Year ${gdp.year ?? "–"} · ${formatCoverage(gdp.covered, gdp.total)}`, Number.isFinite(comparisonGdp.share) ? `${(comparisonGdp.share * 100).toFixed(1)}%` : "No data", `Year ${comparisonGdp.year ?? "–"} · ${formatCoverage(comparisonGdp.covered, comparisonGdp.total)}`));
+    appendWorldComparisonCard(cards, "World CO₂ share", ...pair(Number.isFinite(emissions.share) ? `${(emissions.share * 100).toFixed(1)}%` : "No data", `Year ${emissions.year ?? "–"} · ${formatCoverage(emissions.covered, emissions.total)}`, Number.isFinite(comparisonEmissions.share) ? `${(comparisonEmissions.share * 100).toFixed(1)}%` : "No data", `Year ${comparisonEmissions.year ?? "–"} · ${formatCoverage(comparisonEmissions.covered, comparisonEmissions.total)}`));
+    const displayUnit = valueMode === "per_capita" ? `${metricUnit || "units"} per person` : metricUnit;
+    appendWorldComparisonCard(cards, `${aggregation === "sum" ? "Sum" : "Median"}: ${metricTitle}`, ...pair(formatWorldMapNumber(selectedMetric.value, displayUnit), `Year ${year} · ${formatCoverage(selectedMetric.covered, selectedMetric.total)}`, formatWorldMapNumber(comparisonMetric.value, displayUnit), `Year ${year} · ${formatCoverage(comparisonMetric.covered, comparisonMetric.total)}`));
+    const overlap = members.filter(country => new Set(comparisonMembers).has(country)).length;
+    appendWorldSummaryCard(cards, "Overlap", `${overlap} countries`, `${groupLabel} ∩ ${comparisonLabel}`, "overlap");
+  }
+  note.textContent = "Population, GDP and CO₂ are additive shares of recognised-country totals. KPI colour intensity and the selected summary use the displayed value mode; missing members remain visible in coverage.";
+  summary.removeAttribute('hidden');
 }
 
 // === Update Context Legend Box ===
-function updateMapLegend(grouping, category, countryCount) {
+function updateWorldMapVisualLegend(category, comparison) {
+  const labelA = document.getElementById('legend-group-a-label');
+  const labelB = document.getElementById('legend-group-b-label');
+  const itemB = document.getElementById('legend-group-b-item');
+  const overlap = document.getElementById('legend-overlap-item');
+  if (labelA) labelA.textContent = getWorldMapGroupTitle(category);
+  if (labelB) labelB.textContent = comparison ? getWorldMapGroupTitle(comparison) : "Group B";
+  if (itemB) itemB.hidden = !comparison;
+  if (overlap) overlap.hidden = !comparison;
+}
+
+function updateMapLegend(grouping, category, countryCount, comparison = "", comparisonCount = 0) {
   const legendBox = document.getElementById('world-map-legend');
   const legendTitle = document.getElementById('legend-title');
   const legendContent = document.getElementById('legend-content');
@@ -679,8 +1205,12 @@ function updateMapLegend(grouping, category, countryCount) {
     };
     
     const groupTitle = getWorldMapGroupTitle(category);
-    title = `${groupTitle} (${countryCount} countries)`;
-    content = worldMapGroups[category]?.description ||
+    title = comparison
+      ? `${groupTitle} (${countryCount}) vs ${getWorldMapGroupTitle(comparison)} (${comparisonCount})`
+      : `${groupTitle} (${countryCount} countries)`;
+    content = comparison
+      ? `Compare ${groupTitle} and ${getWorldMapGroupTitle(comparison)}. Blue and orange identify exclusive members; purple identifies overlap. Colour intensity shows the selected country KPI.`
+      : worldMapGroups[category]?.description ||
       groupDescriptions[category] ||
       `${groupTitle} is an international grouping of ${countryCount} countries.`;
     
@@ -744,6 +1274,18 @@ async function initWorldPageWithMap() {
 
 if (typeof onDocumentReady === "function") {
   onDocumentReady(initWorldPageWithMap);
-} else {
+} else if (typeof document !== "undefined") {
   document.addEventListener("DOMContentLoaded", initWorldPageWithMap);
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    calculateAdditiveShare,
+    calculateMedianMetric,
+    calculateGroupMetric,
+    classifyGroupMembership,
+    countryValuesForYear,
+    formatCoverage,
+    percentileIntensities,
+  };
 }

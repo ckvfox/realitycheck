@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "description": "Optional source-bound country context for editorial Overall Ranking lenses. A field is used only when value, source and as_of are present.",
+  "updated_at": null,
+  "fields": {
+    "annual_sunshine_hours": {
+      "modes": ["fun"],
+      "unit": "hours per year",
+      "description": "Representative long-term annual sunshine duration"
+    },
+    "annual_rain_days": {
+      "modes": ["fun"],
+      "unit": "days per year",
+      "description": "Representative long-term annual number of days with measurable precipitation"
+    },
+    "restaurant_beer_price_usd": {
+      "modes": ["fun"],
+      "unit": "current USD",
+      "description": "Documented representative restaurant beer price; city/country grain must be stated"
+    },
+    "liveable_city_recognition": {
+      "modes": ["fun"],
+      "unit": "qualitative",
+      "description": "Current source-named recognition of one or more cities; exact edition required"
+    },
+    "conflict_exposure": {
+      "modes": ["safe"],
+      "unit": "qualitative class",
+      "description": "Reviewed exposure to nearby active conflict and plausible spillover; not a war forecast"
+    },
+    "alliance_exposure": {
+      "modes": ["safe"],
+      "unit": "qualitative class",
+      "description": "Reviewed deterrence and obligation context beyond membership alone"
+    },
+    "daily_climate_impact": {
+      "modes": ["safe"],
+      "unit": "qualitative class",
+      "description": "Observed climate effects relevant to everyday life, kept separate from coping capacity"
+    },
+    "visa_work_access": {
+      "modes": ["immigration"],
+      "unit": "qualitative class",
+      "description": "Reviewed accessibility of a stated work-migration route for a stated applicant scope"
+    },
+    "permanent_residence_access": {
+      "modes": ["immigration"],
+      "unit": "qualitative class",
+      "description": "Reviewed longer-term residence pathway for a stated applicant scope"
+    },
+    "integration_policy_context": {
+      "modes": ["immigration"],
+      "unit": "qualitative class",
+      "description": "Source-bound policy context, distinct from migrant outcomes or population share"
+    }
+  },
+  "countries": {}
+}

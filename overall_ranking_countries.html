@@ -6,6 +6,7 @@
   <meta name="description" content="Comprehensive country ranking combining 60+ global indicators. Compare countries by economy, society, governance & environment. Create custom rankings with adjustable weights for personalized insights.">
   <meta name="keywords" content="country ranking, global comparison, best countries, country statistics, world ranking, international comparison, country performance, global indicators">
   <link rel="canonical" href="https://realitycheck.great-site.net/overall_ranking_countries.html">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -20,7 +21,7 @@
   <meta property="twitter:title" content="RealityCheck – Overall Country Ranking">
   <meta property="twitter:description" content="Comprehensive country ranking combining 60+ global indicators. Compare countries by economy, society, governance & environment.">
   
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260801-frontend-12" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -63,17 +64,22 @@
 
 <!-- 🌈 Mode Switch Buttons -->
 <section id="mode-switch">
-  <button id="normalMode" class="mode-button mode-button--icon-only"><span class="emoji">⚙️</span><span>Normal</span></button>
-  <button id="funMode" class="mode-button mode-button--icon-only"><span class="emoji">😎</span><span>Fun</span></button>
-  <button id="safeMode" class="mode-button mode-button--icon-only"><span class="emoji">🛡️</span><span>Safe</span></button>
-  <button id="immigrationMode" class="mode-button mode-button--icon-only"><span class="emoji">🧳</span><span>Immigration</span></button>
+  <button type="button" id="normalMode" class="mode-button mode-button--icon-only active" aria-pressed="true"><span class="emoji">⚙️</span><span>Normal</span></button>
+  <button type="button" id="funMode" class="mode-button mode-button--icon-only" aria-pressed="false"><span class="emoji">😎</span><span>Fun</span></button>
+  <button type="button" id="safeMode" class="mode-button mode-button--icon-only" aria-pressed="false"><span class="emoji">🛡️</span><span>Safe</span></button>
+  <button type="button" id="immigrationMode" class="mode-button mode-button--icon-only" aria-pressed="false"><span class="emoji">🧳</span><span>Immigration</span></button>
+</section>
+
+<section id="mode-analysis" class="mode-analysis" aria-live="polite" aria-label="Analysis of the selected ranking lens">
+  <h2>⚙️ Standard Overall analysis</h2>
+  <p>The standard ranking is calculated from the KPI priorities selected above.</p>
 </section>
 
 
   <!-- 📊 Ergebnis-Tabelle -->
 <section id="overall-results">
   <div class="table-wrapper">
-    <table id="overall-table">
+    <table id="overall-table" aria-label="Overall country ranking" aria-describedby="last-updated">
       <thead>
         <tr>
           <th scope="col">Rank</th>
@@ -94,7 +100,7 @@
   <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js" integrity="sha512-g2TeAWw5GPnX7z0Kn8nFbYfeHcvAu/tx6d6mrLe/90mkCxO+RcptyYpksUz35EO337F83bZwcmUyHiHamspkfg==" crossorigin="anonymous" defer></script>
         <!-- 🧠 Shared RealityCheck Core -->
         <script src="scripts/utils_ui.js" defer></script>
-        <script src="scripts/core.js" defer></script>
-  <script src="scripts/script_overall_ranking_countries.js?v=20251119-9" defer></script>
+        <script src="scripts/core.js?v=20260801-frontend-8" defer></script>
+  <script src="scripts/script_overall_ranking_countries.js?v=20260801-frontend-14" defer></script>
 </body>
 </html>

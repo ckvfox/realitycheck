@@ -12,7 +12,9 @@ import json, gzip
 from datetime import datetime, timezone
 from pathlib import Path
 
-from script_utils import read_json, safe_write_json
+from script_utils import ensure_utf8_stdout, read_json, safe_write_json
+
+ensure_utf8_stdout()
 
 # ======================================================================
 # 🔧 Pfade (robust gegen OS-Unterschiede)
@@ -52,6 +54,8 @@ def main():
     # === 1️⃣ Alle KPI-Dateien laden ===
     consolidated = {}
     for entry in meta:
+        if entry.get("publication_status") == "pending_first_fetch":
+            continue
         fname = entry.get("filename")
         if not fname:
             continue

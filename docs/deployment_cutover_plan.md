@@ -1,5 +1,9 @@
 # Deployment Cutover Plan
 
+> Historical record — completed. The root-level legacy `deployment/` mirror
+> was retired on 2026-08-01. Current commands and paths are defined in
+> `standards/deployment.md` and `docs/deployment_runbook.md`.
+
 ## Objective
 
 Switch primary FTP handover from legacy folders to framework target folders with minimal operational risk.

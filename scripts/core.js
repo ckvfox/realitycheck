@@ -36,7 +36,9 @@ function showSpinner(show = true, msg = "Loading…") {
   }
 }
 
-async function loadJSON(path) {
+const JSON_REQUEST_CACHE = new Map();
+
+async function fetchJSON(path) {
   try {
     const response = await fetch(path, { cache: "no-cache" });
     if (!response.ok) {
@@ -72,6 +74,25 @@ async function loadJSON(path) {
     console.warn("⚠️ loadJSON failed:", path, e);
     return [];
   }
+}
+
+function loadJSON(path, options = {}) {
+  const key = String(path);
+  if (!options.fresh && JSON_REQUEST_CACHE.has(key)) {
+    return JSON_REQUEST_CACHE.get(key);
+  }
+  const request = fetchJSON(key);
+  if (!options.fresh) JSON_REQUEST_CACHE.set(key, request);
+  return request;
+}
+
+function loadKPIData(filename) {
+  const id = String(filename || "").replace(/\.json$/i, "");
+  if (!/^[a-z0-9_]+$/.test(id)) {
+    console.warn("⚠️ Invalid KPI identifier:", filename);
+    return Promise.resolve([]);
+  }
+  return loadJSON(`data/${id}.json`);
 }
 
 function chooseScaleFromValues(values) {
@@ -148,6 +169,7 @@ window.whenDocumentReady = whenDocumentReady;
 window.onDocumentReady = onDocumentReady;
 window.showSpinner = showSpinner;
 window.loadJSON = loadJSON;
+window.loadKPIData = loadKPIData;
 window.chooseScaleFromValues = chooseScaleFromValues;
 window.formatValueAuto = formatValueAuto;
 window.calcTrend = calcTrend;
@@ -206,6 +228,7 @@ let translatorInitResolve;
 let translatorInitReject;
 
 document.addEventListener("DOMContentLoaded", async () => {
+  ensureSkipLink();
   const googleTranslatorDisabled = document.documentElement.hasAttribute("data-disable-google-translate");
   let launcher = googleTranslatorDisabled ? null : ensureTranslatorLauncherMounted();
   try {
@@ -277,6 +300,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   launcher = googleTranslatorDisabled ? null : ensureTranslatorLauncherMounted();
   if (launcher) setupTranslatorControls();
 });
+
+function ensureSkipLink() {
+  if (document.querySelector(".skip-link")) return;
+  const target = document.querySelector("main, [data-main-content], .page-intro, #priority-section, #world-kpis");
+  if (!target) return;
+  if (!target.id) target.id = "main-content";
+  const link = document.createElement("a");
+  link.className = "skip-link";
+  link.href = `#${target.id}`;
+  link.textContent = document.documentElement.lang?.toLowerCase().startsWith("de")
+    ? "Zum Inhalt springen"
+    : "Skip to content";
+  document.body.prepend(link);
+}
 
 function ensureTranslatorLauncherMounted() {
   if (document.documentElement.hasAttribute("data-disable-google-translate")) return null;
@@ -1105,7 +1142,30 @@ function rcLog(...msg) {
 /* ============================================================
    🧩 Consolidated KPI Loader (Split + Gzip Support, InfinityFree safe)
    ============================================================ */
-async function loadAllKPIData() {
+let allKpiDataPromise = null;
+
+async function decodeGzipResponse(response) {
+  const fallback = response.clone();
+  if (typeof DecompressionStream === "function" && response.body) {
+    try {
+      const stream = response.body.pipeThrough(new DecompressionStream("gzip"));
+      return await new Response(stream).text();
+    } catch (error) {
+      console.warn("⚠️ Native gzip decoding failed, using compatibility fallback:", error);
+    }
+  }
+  const bytes = new Uint8Array(await fallback.arrayBuffer());
+  if (typeof pako !== "undefined") {
+    try {
+      return pako.ungzip(bytes, { to: "string" });
+    } catch {
+      // Some hosts transparently decompress .gz responses before fetch exposes them.
+    }
+  }
+  return new TextDecoder("utf-8").decode(bytes);
+}
+
+async function fetchAllKPIData() {
   try {
     const index = await loadJSON("data/all_kpis_index.json");
     if (!index || !index.parts) {
@@ -1119,21 +1179,14 @@ async function loadAllKPIData() {
 		const ALL_DATA = {};
 		await Promise.all(
 			index.parts.map(async part => {
-				const url = "data/" + part + "?t=" + Date.now();
+				const version = encodeURIComponent(index.created || "1");
+				const url = "data/" + part + "?v=" + version;
 				rcLog("⬇️ Loading", url);
 
-				const response = await fetch(url);
+				const response = await fetch(url, { cache: "no-cache" });
 				if (!response.ok) throw new Error(`HTTP ${response.status} on ${url}`);
 
-				const buffer = await response.arrayBuffer();
-				const bytes = new Uint8Array(buffer);
-
-				let text;
-				try {
-					text = pako.ungzip(bytes, { to: "string" });
-				} catch {
-					text = new TextDecoder("utf-8").decode(bytes);
-				}
+				const text = await decodeGzipResponse(response);
 
 				const json = JSON.parse(text);
 				Object.assign(ALL_DATA, json);
@@ -1150,35 +1203,71 @@ async function loadAllKPIData() {
   }
 }
 
+function loadAllKPIData() {
+  if (!allKpiDataPromise) allKpiDataPromise = fetchAllKPIData();
+  return allKpiDataPromise;
+}
+
+// Deferred page scripts may run while document.readyState is already
+// "interactive". Export this loader immediately so their synchronous init
+// path cannot race the later DOMContentLoaded export block.
+window.loadAllKPIData = loadAllKPIData;
+
 // ============================================================
 // 🧠 KPI Smart Analysis Loader (shared for all pages)
 // ============================================================
 
 const KPI_ANALYSIS_CACHE = {};
 
-async function loadKpiAnalysis(metaOrId) {
+async function loadKpiAnalysisEntry(metaOrId) {
   // --- Parameter normalisieren ---
   let key = null;
-  if (!metaOrId) return "";
+  if (!metaOrId) return null;
   if (typeof metaOrId === "string") key = metaOrId.replace(/\.json$/i, "");
   else if (metaOrId.filename) key = metaOrId.filename.replace(/\.json$/i, "");
-  else return "";
+  else return null;
 
   // --- Cache prüfen ---
   if (KPI_ANALYSIS_CACHE[key]) return KPI_ANALYSIS_CACHE[key];
 
   try {
-    const res = await fetch("data/kpi_analysis.json?nocache=" + Date.now());
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const all = await res.json();
-    const info = all[key];
-    const summary = info?.summary || "";
-    KPI_ANALYSIS_CACHE[key] = summary;
-    return summary;
+    const all = await loadJSON("data/kpi_analysis.json");
+    const info = all[key] || null;
+    KPI_ANALYSIS_CACHE[key] = info;
+    return info;
   } catch (err) {
     console.warn("⚠️ loadKpiAnalysis failed:", err);
-    return "";
+    return null;
   }
+}
+
+async function loadKpiAnalysis(metaOrId) {
+  const info = await loadKpiAnalysisEntry(metaOrId);
+  return info?.summary || "";
+}
+
+function formatKpiAnalysisTimestamp(info) {
+  const raw = info?.generated_at || info?.last_update || "";
+  if (!raw) return "";
+  const date = new Date(/^\d{4}-\d{2}-\d{2}$/.test(raw) ? `${raw}T00:00:00Z` : raw);
+  if (Number.isNaN(date.getTime())) return raw;
+  const dateOnly = !info?.generated_at;
+  const formatted = new Intl.DateTimeFormat("en-GB", dateOnly ? {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC"
+  } : {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+    timeZone: "UTC",
+    timeZoneName: "short"
+  }).format(date);
+  return `${dateOnly ? "Analysis date" : "Analysis generated"}: ${formatted}`;
 }
 
 /**
@@ -1217,13 +1306,26 @@ async function renderKpiAnalysis(metaOrId, targetId = "kpi-analysis") {
 
   // --- Anzeige aktualisieren ---
   box.innerHTML = "<em>Loading AI insights…</em>";
-  const summary = await loadKpiAnalysis(key);
+  const info = await loadKpiAnalysisEntry(key);
+  const summary = info?.summary || "";
 
   // --- Ergebnis einfügen + Fade-in aktivieren ---
   if (summary) {
     const heading = document.createElement("strong");
     heading.textContent = "🧠 KPI Insights: ";
-    box.replaceChildren(heading, document.createTextNode(summary));
+    const text = document.createTextNode(summary);
+    const timestampText = formatKpiAnalysisTimestamp(info);
+    if (timestampText) {
+      const timestamp = document.createElement("small");
+      timestamp.className = "kpi-analysis-timestamp";
+      const time = document.createElement("time");
+      time.dateTime = info.generated_at || info.last_update;
+      time.textContent = timestampText;
+      timestamp.appendChild(time);
+      box.replaceChildren(heading, text, timestamp);
+    } else {
+      box.replaceChildren(heading, text);
+    }
   } else {
     box.innerHTML = "<em>No AI analysis available for this indicator.</em>";
   }
@@ -1279,12 +1381,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const frame = document.getElementById("main-frame");
       btn.addEventListener("click", () => {
         try {
+          const behavior = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
           if (frame && frame.contentWindow && frame.contentDocument) {
             const doc = frame.contentDocument;
             const scrollTarget = doc.scrollingElement || doc.documentElement;
-            scrollTarget.scrollTo({ top: 0, behavior: "smooth" });
+            scrollTarget.scrollTo({ top: 0, behavior });
           } else {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.scrollTo({ top: 0, behavior });
           }
           btn.style.transform = "scale(0.9)";
           setTimeout(() => (btn.style.transform = ""), 150);
@@ -1292,8 +1395,35 @@ document.addEventListener("DOMContentLoaded", () => {
           console.warn("⚠️ Scroll-to-top failed:", err);
         }
       });
-      btn.style.opacity = "0.9";
-      btn.style.pointerEvents = "auto";
+      const updateScrollButton = () => {
+        const visible = window.scrollY > 360;
+        if (!visible && document.activeElement === btn) {
+          const focusTarget = document.querySelector("main h1, h1, main, [role='main']");
+          if (focusTarget && typeof focusTarget.focus === "function") {
+            const hadTabIndex = focusTarget.hasAttribute("tabindex");
+            if (!hadTabIndex) focusTarget.setAttribute("tabindex", "-1");
+            focusTarget.focus({ preventScroll: true });
+            if (!hadTabIndex) {
+              focusTarget.addEventListener("blur", () => focusTarget.removeAttribute("tabindex"), { once: true });
+            }
+          } else {
+            btn.blur();
+          }
+        }
+        btn.classList.toggle("is-visible", visible);
+        btn.setAttribute("aria-hidden", visible ? "false" : "true");
+        btn.tabIndex = visible ? 0 : -1;
+      };
+      let scrollUpdateQueued = false;
+      window.addEventListener("scroll", () => {
+        if (scrollUpdateQueued) return;
+        scrollUpdateQueued = true;
+        requestAnimationFrame(() => {
+          updateScrollButton();
+          scrollUpdateQueued = false;
+        });
+      }, { passive: true });
+      updateScrollButton();
     }
 
     // === Mobile Mode Tooltips (nur auf kleinen Geräten) ===

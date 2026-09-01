@@ -11,6 +11,8 @@
   <meta name="description" content="Explore global trends and world statistics with interactive visualizations. Discover patterns in economy, society, environment across 190+ countries with data-driven insights inspired by Hans Rosling.">
   <meta name="keywords" content="world statistics, global trends, data visualization, world data explorer, international statistics, global indicators, world map data">
   <link rel="canonical" href="https://realitycheck.great-site.net/world.html">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -25,7 +27,7 @@
   <meta property="twitter:title" content="RealityCheck – World Trends Dashboard">
   <meta property="twitter:description" content="Explore global trends and world statistics with interactive visualizations. Discover patterns across 190+ countries.">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260801-frontend-13" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.min.js" integrity="sha512-TrzZNOcdTjzp6FQnXUlYrt08pfmmNWYCqfjkVK9sJmLrVo/NBuRnTL2FCg4JMjgm2xbn1MVhDbtedqFIppA6cQ==" crossorigin="anonymous" defer></script>
   <!-- 🗺️ Leaflet für World Map -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
@@ -88,7 +90,54 @@
             <option value="">Select category...</option>
           </select>
         </div>
+
+        <div class="select-wrapper" id="comparisonGroupWrapper">
+          <label for="comparisonGroupSelect">Compare with:</label>
+          <select id="comparisonGroupSelect" disabled>
+            <option value="">No comparison</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <label for="worldMapKpiSelect">Country KPI:</label>
+          <select id="worldMapKpiSelect">
+            <option value="">Loading KPIs...</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <label for="worldMapYearSelect">Year:</label>
+          <select id="worldMapYearSelect" disabled>
+            <option value="">Select year...</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <label for="worldMapValueMode">Values:</label>
+          <select id="worldMapValueMode">
+            <option value="absolute">Absolute</option>
+            <option value="per_capita">Per capita</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <label for="worldMapAggregationMode">Summary:</label>
+          <select id="worldMapAggregationMode">
+            <option value="median">Median</option>
+            <option value="sum">Sum</option>
+          </select>
+        </div>
       </div>
+      <p id="world-map-mode-note" class="world-map-mode-note" aria-live="polite"></p>
+
+      <section id="world-group-summary" class="world-group-summary" aria-live="polite" hidden>
+        <div class="world-group-summary__header">
+          <h3 id="world-group-summary-title">Group summary</h3>
+          <p id="world-group-summary-context"></p>
+        </div>
+        <div id="world-group-summary-cards" class="world-group-summary__cards"></div>
+        <p id="world-group-summary-note" class="world-group-summary__note"></p>
+      </section>
       
       <div id="world-map-container">
         <div id="world-map"></div>
@@ -104,21 +153,32 @@
       <div class="map-legend">
         <div class="legend-item">
           <span class="legend-color legend-color-blue"></span>
-          <span>Selected Group</span>
+          <span id="legend-group-a-label">Group A</span>
+        </div>
+        <div class="legend-item" id="legend-group-b-item" hidden>
+          <span class="legend-color legend-color-orange"></span>
+          <span id="legend-group-b-label">Group B</span>
+        </div>
+        <div class="legend-item" id="legend-overlap-item" hidden>
+          <span class="legend-color legend-color-purple"></span>
+          <span>Overlap</span>
         </div>
         <div class="legend-item">
           <span class="legend-color legend-color-gray"></span>
           <span>Other Countries</span>
+        </div>
+        <div class="legend-item legend-item--wide">
+          <span class="legend-gradient"></span>
+          <span>Darker = higher KPI value; pale = no data</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js" integrity="sha512-g2TeAWw5GPnX7z0Kn8nFbYfeHcvAu/tx6d6mrLe/90mkCxO+RcptyYpksUz35EO337F83bZwcmUyHiHamspkfg==" crossorigin="anonymous" defer></script>
         <!-- 🧠 Shared RealityCheck Core -->
         <script src="scripts/utils_ui.js" defer></script>
-        <script src="scripts/core.js?v=20251119-1" defer></script>
-        <script src="scripts/script_world.js?v=20251119-1" defer></script>
+        <script src="scripts/core.js?v=20260801-frontend-8" defer></script>
+        <script src="scripts/script_world.js?v=20260801-frontend-13" defer></script>
 </body>
 </html>

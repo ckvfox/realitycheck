@@ -46,3 +46,55 @@
 [2026-07-01T06:39:12.638312] ==== Validation Complete ====
 [2026-07-01T06:39:12.638360] ❌ 1 files missing or empty. See above.
 [2026-07-01T06:39:12.638382] Suggestions: Check for plausible value ranges, outliers, and year coverage in future.
+[2026-08-01T11:45:16.642702] ==== RealityCheck Data Validation Started ====
+[2026-08-01T11:45:17.103516] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T11:48:35.168983] ==== RealityCheck Data Validation Started ====
+[2026-08-01T11:48:35.671524] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T11:48:58.763680] ==== RealityCheck Data Validation Started ====
+[2026-08-01T11:48:59.247762] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T11:49:35.334341] ==== RealityCheck Data Validation Started ====
+[2026-08-01T11:49:35.843187] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T11:50:25.733688] ==== RealityCheck Data Validation Started ====
+[2026-08-01T11:50:26.234042] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T11:52:12.393313] ==== RealityCheck Data Validation Started ====
+[2026-08-01T11:52:12.898105] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T11:52:52.082547] ==== RealityCheck Data Validation Started ====
+[2026-08-01T11:52:52.608349] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T11:54:18.594752] ==== RealityCheck Data Validation Started ====
+[2026-08-01T11:54:19.090390] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T12:02:21.383119] ==== RealityCheck Data Validation Started ====
+[2026-08-01T12:02:21.865812] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T13:50:52.225096] ==== RealityCheck Data Validation Started ====
+[2026-08-01T13:50:52.747235] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T14:25:01.647690] ==== RealityCheck Data Validation Started ====
+[2026-08-01T14:25:02.191965] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\climate_disaster_deaths.json
+[2026-08-01T14:25:02.192785] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\climate_disaster_deaths.csv
+[2026-08-01T14:25:02.193749] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\people_affected_by_climate_disasters.json
+[2026-08-01T14:25:02.194928] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\people_affected_by_climate_disasters.csv
+[2026-08-01T14:25:02.195722] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\climate_disaster_damage_gdp.json
+[2026-08-01T14:25:02.196412] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\climate_disaster_damage_gdp.csv
+[2026-08-01T14:25:02.197098] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\global_mean_sea_level.json
+[2026-08-01T14:25:02.197780] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\global_mean_sea_level.csv
+[2026-08-01T14:25:02.198480] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\global_ocean_heat_content.json
+[2026-08-01T14:25:02.199150] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\global_ocean_heat_content.csv
+[2026-08-01T14:25:02.199823] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\atmospheric_co2_concentration.json
+[2026-08-01T14:25:02.200530] ERROR: MISSING: C:\Users\carst\OneDrive\Dokumente\GitHub\realitycheck\data\atmospheric_co2_concentration.csv
+[2026-08-01T14:25:02.201199] ERROR: Validation blocked publication: 12 error(s).
+[2026-08-01T14:29:19.359002] ==== RealityCheck Data Validation Started ====
+[2026-08-01T14:29:19.982032] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T16:50:42.711855] ==== RealityCheck Data Validation Started ====
+[2026-08-01T16:50:43.323066] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T16:50:45.064398] ==== RealityCheck Data Validation Started ====
+[2026-08-01T16:50:45.631787] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T16:50:47.245111] ==== RealityCheck Data Validation Started ====
+[2026-08-01T16:50:47.793578] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T16:50:49.919659] ==== RealityCheck Data Validation Started ====
+[2026-08-01T16:50:50.541258] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T16:54:05.156829] ==== RealityCheck Data Validation Started ====
+[2026-08-01T16:54:05.717218] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T16:54:07.872774] ==== RealityCheck Data Validation Started ====
+[2026-08-01T16:54:08.440656] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T16:54:10.361865] ==== RealityCheck Data Validation Started ====
+[2026-08-01T16:54:10.930097] OK: Validation passed: all required datasets are present, non-empty and parseable.
+[2026-08-01T16:56:40.469251] ==== RealityCheck Data Validation Started ====
+[2026-08-01T16:56:41.061373] OK: Validation passed: all required datasets are present, non-empty and parseable.

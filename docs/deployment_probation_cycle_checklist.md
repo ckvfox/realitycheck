@@ -18,7 +18,7 @@ Use this checklist for the first production cycle after switching primary handov
 
 - [ ] Upload from build/deployment/full/ or build/deployment/delta/ according to release scope.
 - [ ] Keep rollback option ready using fallback mirror command:
-  - python scripts/prepare_deployment.py --mode both --mirror-legacy
+  - python scripts/prepare_deployment.py --mode both
 - [ ] Keep legacy folders available but not primary.
 
 ## Post-Deployment Validation

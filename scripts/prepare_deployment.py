@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 """Prepare Full and Delta deployment bundles for RealityCheck.
 
-This script implements a controlled transition to the framework target paths:
+This script writes exclusively to the framework target paths:
 - build/deployment/full/
 - build/deployment/delta/
-
-It can also mirror outputs to legacy operational handover folders:
-- deployment/full_deployment/
-- deployment/delta_deployment/
 """
 
 from __future__ import annotations
@@ -25,8 +21,6 @@ ROOT = Path(__file__).resolve().parent.parent
 
 TARGET_FULL = ROOT / "build" / "deployment" / "full"
 TARGET_DELTA = ROOT / "build" / "deployment" / "delta"
-LEGACY_FULL = ROOT / "deployment" / "full_deployment"
-LEGACY_DELTA = ROOT / "deployment" / "delta_deployment"
 STATE_FILE = ROOT / "build" / "deployment" / ".deployment_state.json"
 
 # Keep this in sync with standards/deployment.md negative list.
@@ -47,6 +41,13 @@ EXCLUDE_PATTERNS = [
     "docs/**",
     "tests/*",
     "tests/**",
+    "data/test/*",
+    "data/test/**",
+    "data/fetch_state.json",
+    "data/manual_source_status.json",
+    "data/meta/manual_csv_sources.json",
+    "data/workflow_fetch_console.log",
+    "data/workflow_fetch_summary.md",
     "standards/*",
     "standards/**",
     "profiles/*",
@@ -57,6 +58,7 @@ EXCLUDE_PATTERNS = [
     "CHANGELOG*",
     "TODO*",
     "SECURITY*",
+    "tracking.json",
     "*.md",
     "*.py",
     ".env*",
@@ -69,6 +71,7 @@ ALLOWED_EXTENSIONS = {
     ".css",
     ".js",
     ".json",
+    ".gz",
     ".xml",
     ".svg",
     ".png",
@@ -103,6 +106,10 @@ PRODUCTIVE_SCRIPT_FILES = {
     "scripts/utils_ui.js",
 }
 
+PRODUCTIVE_MARKDOWN_FILES = {
+    "data/analysis.md",
+}
+
 
 def sha256_of(path: Path) -> str:
     h = hashlib.sha256()
@@ -113,6 +120,8 @@ def sha256_of(path: Path) -> str:
 
 
 def should_exclude(rel_posix: str) -> bool:
+    if rel_posix in PRODUCTIVE_MARKDOWN_FILES:
+        return False
     parts = rel_posix.split("/")
     for i, part in enumerate(parts):
         if not part.startswith("."):
@@ -131,8 +140,12 @@ def should_exclude(rel_posix: str) -> bool:
 
 
 def is_allowed_productive(rel_posix: str) -> bool:
+    if rel_posix == "data/test" or rel_posix.startswith("data/test/"):
+        return False
     if rel_posix.startswith("scripts/"):
         return rel_posix in PRODUCTIVE_SCRIPT_FILES
+    if rel_posix in PRODUCTIVE_MARKDOWN_FILES:
+        return True
     if rel_posix == "analysis-private/.htaccess":
         return True
     if rel_posix in ALLOWED_FILENAMES:
@@ -215,26 +228,9 @@ def detect_delta(files: list[Path], previous: dict[str, str]) -> list[Path]:
     return changed
 
 
-def mirror_to_legacy(target: Path, legacy: Path) -> None:
-    clear_dir(legacy)
-    for p in target.rglob("*"):
-        rel = p.relative_to(target)
-        dst = legacy / rel
-        if p.is_dir():
-            dst.mkdir(parents=True, exist_ok=True)
-        else:
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(p, dst)
-
-
 def main() -> int:
     parser = argparse.ArgumentParser(description="Prepare deployment bundles (full/delta).")
     parser.add_argument("--mode", choices=["full", "delta", "both"], default="both")
-    parser.add_argument(
-        "--mirror-legacy",
-        action="store_true",
-        help="Mirror generated bundles to deployment/full_deployment and deployment/delta_deployment.",
-    )
     args = parser.parse_args()
 
     files = iter_productive_files()
@@ -252,17 +248,9 @@ def main() -> int:
 
     save_manifest(manifest)
 
-    if args.mirror_legacy:
-        if args.mode in {"full", "both"}:
-            mirror_to_legacy(TARGET_FULL, LEGACY_FULL)
-        if args.mode in {"delta", "both"}:
-            mirror_to_legacy(TARGET_DELTA, LEGACY_DELTA)
-
     print(f"Prepared {len(files)} productive files.")
     if args.mode in {"delta", "both"}:
         print(f"Delta files: {len(detect_delta(files, previous))}")
-    if args.mirror_legacy:
-        print("Legacy mirror: enabled")
     return 0
 
 

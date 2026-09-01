@@ -2,7 +2,7 @@
 
 Project: RealityCheck
 Framework Target: Fox Project Framework v2.0.0
-Last Updated: 2026-06-13
+Last Updated: 2026-08-01
 
 ## Purpose
 
@@ -57,7 +57,7 @@ The framework target structure is:
 - Canonical packaging rules are defined in standards/deployment.md.
 - Framework packaging targets are build/deployment/full/ and build/deployment/delta/.
 - Deployment bundles are generated with scripts/prepare_deployment.py.
-- Legacy handover folders deployment/full_deployment/ and deployment/delta_deployment/ remain available for controlled transition.
+- The controlled transition is complete; only `build/deployment/` is used for FTP handover packages.
 
 ## Security Rules
 
