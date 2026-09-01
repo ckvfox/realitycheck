@@ -27,6 +27,7 @@ class BuiltinAdapterTests(unittest.TestCase):
             maybe_invert_records=lambda _kpi, _meta, rows: rows,
             save_records=Mock(),
             save_imf_records=Mock(),
+            save_region_records=Mock(),
             keep_or_dummy=Mock(),
             mark_skip=Mock(),
             write_json=Mock(),
@@ -34,6 +35,7 @@ class BuiltinAdapterTests(unittest.TestCase):
             data_dir=root,
             meta_dir=root / "meta",
             source_csv_dir=root / "source_csv",
+            region_source_csv_dir=root / "region_source_csv",
             pending_dir=root / "pending",
         )
 
