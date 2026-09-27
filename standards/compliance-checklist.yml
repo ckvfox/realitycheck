@@ -1,43 +1,210 @@
-version: "2.0.0"
-project_type: "web_data"
+version: "2.1.0"
+description: "Machine-readable checklist for Fox Project Framework audits"
 
-required_files:
-  - README.md
-  - AGENTS.md
-  - CHANGELOG.md
-  - TODO.md
-  - SECURITY.md
-  - .env.example
-  - .gitignore
-  - LICENSE
-  - robots.txt
-  - sitemap.xml
-  - .htaccess
+artifacts:
+  - id: project_master
+    path: PROJECT_MASTER.md
+    required: true
+    scope: framework
+    validator: exists
 
-required_directories:
-  - docs/
-  - src/
-  - tests/
-  - build/deployment/full/
-  - build/deployment/delta/
+  - id: readme
+    path: README.md
+    required: true
+    scope: project
+    validator: exists
 
-sections:
-  governance:
-    - PROJECT_MASTER.md exists
-    - standards/ exists
-    - changelog maintained
-    - todo maintained
-  security:
-    - no repo secrets
-    - security policy sections available
-    - env variables documented via .env.example
-  deployment:
-    - deployment rules documented
-    - full and delta packaging available
-    - documentation excluded from deployment bundles
-  seo:
-    - robots.txt available
-    - sitemap.xml available
-  ci_github:
-    - at least one workflow available
-    - templates for PR and issues available
+  - id: agents
+    path: AGENTS.md
+    required: true
+    scope: project
+    validator: exists
+
+  - id: changelog
+    path: CHANGELOG.md
+    required: true
+    scope: project
+    validator: exists
+
+  - id: todo
+    path: TODO.md
+    required: true
+    scope: project
+    validator: exists
+
+  - id: security
+    path: SECURITY.md
+    required: true
+    scope: project
+    validator: exists
+
+  - id: env_example
+    path: .env.example
+    required: true
+    scope: conditional_if_environment_variables_used
+    validator: exists
+
+  - id: python_requirements
+    path: requirements.txt
+    required: false
+    scope: python_projects
+    validator: exists
+
+  - id: robots
+    path: robots.txt
+    required: true
+    scope: public_web_projects
+    validator: exists
+
+  - id: sitemap
+    path: sitemap.xml
+    required: true
+    scope: public_web_projects
+    validator: exists
+
+  - id: htaccess
+    path: .htaccess
+    required: false
+    scope: apache_projects
+    validator: exists
+
+  - id: copilot_instructions
+    path: .github/copilot-instructions.md
+    required: false
+    scope: projects_using_github_copilot
+    validator: exists
+
+  - id: github_workflows
+    path: .github/workflows
+    required: false
+    scope: projects_using_github_actions
+    validator: exists
+
+  - id: deployment_full
+    path: build/deployment/full
+    required: true
+    scope: project
+    validator: exists
+
+  - id: deployment_delta
+    path: build/deployment/delta
+    required: true
+    scope: project
+    validator: exists
+
+content_checks:
+  - id: security_supported_versions
+    path: SECURITY.md
+    required: true
+    scope: project
+    validator: contains
+    value: "Supported Versions"
+
+  - id: security_vulnerability_reporting
+    path: SECURITY.md
+    required: true
+    scope: project
+    validator: contains
+    value: "Vulnerability Reporting"
+
+  - id: security_secret_handling
+    path: SECURITY.md
+    required: true
+    scope: project
+    validator: contains
+    value: "Secret Handling"
+
+  - id: security_production_hardening
+    path: SECURITY.md
+    required: true
+    scope: project
+    validator: contains
+    value: "Production Hardening"
+
+  - id: security_backup_strategy
+    path: SECURITY.md
+    required: true
+    scope: project
+    validator: contains
+    value: "Backup Strategy"
+
+  - id: security_installer_policy
+    path: SECURITY.md
+    required: true
+    scope: project
+    validator: contains
+    value: "Installer Policy"
+
+  - id: security_disclosure_policy
+    path: SECURITY.md
+    required: true
+    scope: project
+    validator: contains
+    value: "Disclosure Policy"
+
+  - id: security_response_targets
+    path: SECURITY.md
+    required: true
+    scope: project
+    validator: contains
+    value: "Response Targets"
+
+  - id: agents_local_toolchain
+    path: AGENTS.md
+    required: false
+    scope: project
+    validator: contains
+    value: "Local Toolchain"
+
+  - id: agents_setup_check
+    path: AGENTS.md
+    required: false
+    scope: project
+    validator: contains
+    value: "Setup Check"
+
+  - id: security_header_context
+    path: SECURITY.md
+    required: false
+    scope: public_web_projects
+    validator: contains
+    value: "security headers"
+
+  - id: copilot_fpf_context
+    path: .github/copilot-instructions.md
+    required: false
+    scope: projects_using_github_copilot
+    validator: contains
+    value: "Fox Project Framework"
+
+  - id: security_txt_contact_mailto
+    path: .well-known/security.txt
+    required: false
+    scope: public_web_projects
+    validator: regex
+    value: "(?m)^Contact:\\s*mailto:[^\\s]+$"
+
+  - id: security_txt_contact_https
+    path: .well-known/security.txt
+    required: false
+    scope: public_web_projects
+    validator: regex
+    value: "(?m)^Contact:\\s*https://[^\\s]+$"
+
+  - id: security_txt_expires
+    path: .well-known/security.txt
+    required: false
+    scope: public_web_projects
+    validator: regex
+    value: "(?m)^Expires:\\s*\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+
+fail_fast:
+  required_framework_artifacts:
+    - PROJECT_MASTER.md
+    - standards/
+  status_if_missing: framework-unverifizierbar
+
+supported_validators:
+  - exists
+  - contains
+  - regex

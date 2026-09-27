@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+- Migrated the repository governance baseline and vendored standards to Fox Project Framework v2.1, including the automated project compliance workflow.
+
 ## 3.5.0 - 2026-09-01
 
 ### Fixed

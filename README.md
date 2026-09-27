@@ -11,9 +11,9 @@
 **Backend:** Python (data fetchers, GPT-based analysis & rankings)  
 **Architecture:** Source adapters plus a cached, demand-driven browser data layer
 
-## Framework Governance (FPF 2.0)
+## Framework Governance (FPF 2.1)
 
-This repository now includes Fox Project Framework v2.0.0 baseline anchors for auditable compliance:
+This repository includes Fox Project Framework v2.1.0 baseline anchors for auditable compliance:
 
 - PROJECT_MASTER.md
 - standards/compliance-checklist.yml

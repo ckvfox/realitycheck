@@ -1,8 +1,8 @@
 # PROJECT_MASTER
 
 Project: RealityCheck
-Framework Target: Fox Project Framework v2.0.0
-Last Updated: 2026-08-01
+Framework Target: Fox Project Framework v2.1.0
+Last Updated: 2026-09-27
 
 ## Purpose
 

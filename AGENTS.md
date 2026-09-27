@@ -1,6 +1,18 @@
 # AGENTS.md
 
-Dieses Projekt folgt dem Fox Project Framework v2.0.0.
+Dieses Projekt folgt dem Fox Project Framework v2.1.0.
+
+## Verbindlicher Arbeitsbeginn
+
+- Vor jeder Aenderung zuerst `PROJECT_MASTER.md`, `README.md`, `AGENTS.md`, `TODO.md`, `SECURITY.md` sowie die fuer die Aufgabe relevanten Dateien unter `standards/` lesen.
+- Der lokale FPF-Baseline-Check ist vor Commit und Deployment auszufuehren.
+- Wiederverwendbare Erkenntnisse als Framework-Kandidaten dokumentieren, statt parallele Einzelloesungen aufzubauen.
+
+## Local Toolchain und Setup Check
+
+- Fuer Python-Aufgaben die Repository-Umgebung `.venv` verwenden.
+- Baseline: `.venv\Scripts\python.exe .github\scripts\fpf_project_compliance.py . --profile apache-shared-hosting --production`.
+- Frontend lokal statisch ausliefern und die betroffenen Seiten im Browser pruefen.
 
 ## Projekt
 

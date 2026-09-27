@@ -1,8 +1,8 @@
 # AGENTS Standard
 
-Version: 2.0.0
+Version: 2.1.0
 
-## Required sections in AGENTS.md
+## Pflichtabschnitte in AGENTS.md
 
 - Projekt
 - Lokale Entwicklung
@@ -15,19 +15,39 @@ Version: 2.0.0
 - Allowed Work
 - Deployment Packaging Rules
 
-## Recommended section
+## Empfohlener Abschnitt
 
 - Known Constraints
+- Local Toolchain
+- Setup Check
+- Copilot / AI Tooling
 
-## Security boundaries
+## Sicherheitsgrenzen
 
-AGENTS.md must never contain:
+`AGENTS.md` darf niemals enthalten:
 
-- passwords
-- API keys
-- credentials
-- secrets
+- Passwoerter
+- API Keys
+- Zugangsdaten
+- Secrets
 
-## Deployment reference
+## Deployment-Hinweis
 
-AGENTS.md should reference standards/deployment.md and not define conflicting packaging rules.
+`AGENTS.md` soll fuer Deployment nur auf `standards/deployment.md` verweisen und keine abweichenden Packaging-Regeln definieren.
+
+## Lokale Entwicklungsregeln fuer Agenten
+
+- Agenten arbeiten vom Repository-Root aus und pruefen den aktuellen Pfad, bevor Build-, Test- oder Deployment-Befehle laufen.
+- Agenten verwenden dokumentierte Projektbefehle aus README, AGENTS, package/composer/requirements-Dateien oder `scripts/`, bevor neue Befehle erfunden werden.
+- Agenten pruefen vorhandene Dependency-Manifeste, bevor Installationen vorgeschlagen oder ausgefuehrt werden.
+- Agenten dokumentieren fehlende lokale Tools als Known Constraint, statt dieselbe Diagnose in jeder Sitzung neu zu starten.
+- Projekt-AGENTS sollen explizit nennen, ob globale Tools erlaubt sind oder ob lokale/venv/vendor/node_modules-Installationen bevorzugt werden.
+- Pfade in Agent-Regeln sollen repo-relativ sein. Absolute lokale Pfade sind nur fuer projektspezifische Host-Ausnahmen erlaubt.
+
+## Copilot- und AI-Tooling
+
+- Projekte, die GitHub Copilot im Repository-Kontext nutzen, sollen `.github/copilot-instructions.md` aus `templates/.github/copilot-instructions.md` uebernehmen und projektspezifisch anpassen.
+- Stack- oder dateitypspezifische Regeln sollen unter `.github/instructions/*.instructions.md` liegen.
+- Empfohlene FPF-Vorlagen liegen unter `templates/.github/instructions/`.
+- Copilot-Instructions duerfen AGENTS-Regeln konkretisieren, aber keine widerspruechlichen Sicherheits-, Deployment- oder Secret-Regeln definieren.
+- Bestehende Projekte erhalten fehlende Copilot-Instructions zunaechst als Audit-Recommendation, nicht als harte Pflichtverletzung.

@@ -1,59 +1,62 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://realitycheck.local/standards/compliance-output-schema.json",
-  "title": "FPF Compliance Output",
+  "$id": "https://fox-project-framework.dev/schema/compliance-output-schema.json",
+  "title": "Fox Project Framework Compliance Output",
   "type": "object",
-  "required": [
-    "project",
-    "frameworkTarget",
-    "date",
-    "status",
-    "score",
-    "findings",
-    "recommendations",
-    "migrationSteps"
-  ],
+  "additionalProperties": false,
   "properties": {
-    "project": { "type": "string" },
-    "frameworkTarget": { "type": "string" },
-    "date": { "type": "string", "format": "date" },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
     "status": {
       "type": "string",
-      "enum": ["green", "yellow", "red", "framework-unverifizierbar"]
-    },
-    "score": {
-      "anyOf": [
-        { "type": "number", "minimum": 0, "maximum": 100 },
-        { "type": "null" }
+      "enum": [
+        "green",
+        "yellow",
+        "red",
+        "framework-unverifizierbar"
       ]
     },
-    "findings": {
+    "critical_findings": {
       "type": "array",
       "items": {
-        "type": "object",
-        "required": ["severity", "title", "impact", "nextStep"],
-        "properties": {
-          "severity": {
-            "type": "string",
-            "enum": ["critical", "warning", "info"]
-          },
-          "title": { "type": "string" },
-          "impact": { "type": "string" },
-          "nextStep": { "type": "string" }
-        }
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
       }
     },
     "recommendations": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
-    "migrationSteps": {
+    "migration_steps": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
-    "potentialFrameworkImprovements": {
+    "potential_framework_improvements": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     }
-  }
+  },
+  "required": [
+    "score",
+    "status",
+    "critical_findings",
+    "warnings",
+    "recommendations",
+    "migration_steps",
+    "potential_framework_improvements"
+  ]
 }
