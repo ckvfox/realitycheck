@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## Unreleased
 
 - Migrated the repository governance baseline and vendored standards to Fox Project Framework v2.1, including the automated project compliance workflow.
+- Completed the maintained structure inventory and documented the mixed-use
+  `scripts/` directory as an explicit Webcheck/FPF audit exception.
 
 ## 3.5.0 - 2026-09-01
 

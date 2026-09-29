@@ -439,6 +439,28 @@ FPF target standard for new projects:
 - `build/deployment/full/` and `build/deployment/delta/` are the preferred deployment package paths
 - the completed cutover retired the duplicate root-level `deployment/` handover tree
 - frontend JavaScript may stay in `scripts/` because this project has documented that path as productive browser code
+
+### Maintained structure inventory
+
+- Root HTML/PHP files, `style.css`, manifest, robots and sitemap are productive
+  web assets.
+- `scripts/` intentionally contains both productive browser JavaScript and
+  Python data-pipeline code; deployment uses an explicit allowlist instead of
+  treating the whole directory as development-only.
+- `src/`, `tests/`, `docs/`, `standards/`, `profiles/` and `.github/` contain
+  source, tests, governance and automation and are not public webroot content.
+- `data/` and `images/` contain versioned productive data/assets;
+  `build/deployment/` is the only supported FTP handover location.
+- Private analysis workspaces and local virtual environments are never part of
+  deployment packages.
+
+### Webcheck/FPF audit exception
+
+For this existing project, `scripts/` is a documented mixed-use path. FPF and
+Webcheck must classify browser-facing `.js` files selected by the deployment
+allowlist as productive assets, while Python adapters, tests and maintenance
+helpers remain development tooling. Audits must not flag the directory name
+alone as a structure violation.
 - data artifacts stay in `data/`; generated reports or audits should be documented separately
 
 Do not rename productive paths during routine harmonization. Document deviations and handle migrations only through a reversible deployment plan.

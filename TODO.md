@@ -46,6 +46,6 @@
 ## Structure Harmonization
 
 - [x] Retired legacy `deployment/full_deployment/` and `deployment/delta_deployment/` after the controlled cutover.
-- [ ] Keep README structure inventory aligned when data, scripts or deployment folders change.
-- [ ] Ensure WebCheck/FPF audits classify productive `scripts/` browser code as a documented exception.
+- [x] Keep README structure inventory aligned when data, scripts or deployment folders change.
+- [x] Ensure WebCheck/FPF audits classify productive `scripts/` browser code as a documented exception.
 
