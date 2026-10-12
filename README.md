@@ -465,3 +465,19 @@ alone as a structure violation.
 
 Do not rename productive paths during routine harmonization. Document deviations and handle migrations only through a reversible deployment plan.
 
+
+## Monthly workflow status records
+
+The monthly workflow retains one labelled GitHub issue per default-branch run.
+Successful records are closed immediately; failures and cancellations remain open.
+A later successful monthly run closes earlier machine-owned records with a recovery
+comment linking both runs. Reruns reuse their issue and preserve earlier attempts
+as comments. Human discussion, assignees and milestones protect historical
+records from automatic recovery closure. Feature-branch dispatches use the Actions
+summary only and cannot resolve production notifications.
+
+Actions summaries and diagnostic artifacts remain unchanged (artifacts expire
+after 30 days); closed issues retain the durable status history. Workflow success
+is evidence of pipeline completion, not proof that every provider published fresh
+data. Independently tracked source-quality and development tasks remain separate.
+See `docs/monthly_status_audit_2026-10-12.md` for the historical cleanup evidence.
