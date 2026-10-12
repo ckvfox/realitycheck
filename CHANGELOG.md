@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+- Updated NOAA IBTrACS verification evidence: runner fetch and FTP publication are confirmed; documented the reproduced North Atlantic parsing loss, metric-definition gaps and remaining production climate-map QA. No runtime or dataset changes.
+
 - Archive successful monthly status issues, reuse records across rerun attempts,
   and reconcile older machine-owned failures only after a successful default-branch
   monthly run. Preserve recovery links and protect human-owned follow-up tasks.
