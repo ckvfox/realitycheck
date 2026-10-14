@@ -481,3 +481,14 @@ after 30 days); closed issues retain the durable status history. Workflow succes
 is evidence of pipeline completion, not proof that every provider published fresh
 data. Independently tracked source-quality and development tasks remain separate.
 See `docs/monthly_status_audit_2026-10-12.md` for the historical cleanup evidence.
+
+## Regional climate-map status
+
+The World map supports tropical-cyclone basin observations independently of global
+series. Regional cards link directly to the map. The map reports selected-year
+coverage and missing observations, uses within-year percentile colours, and lists
+measurement and geometry sources separately. Basin rectangles are simplified
+illustrations, not official warning areas or precise storm footprints. Country,
+per-capita and cross-region summary modes are unsupported for this dataset.
+Unconnected hazard categories clear the map and year selection without a country
+fallback. See `docs/regional_climate_frontend_2026-10-14.md` for validation and limits.

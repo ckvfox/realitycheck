@@ -1477,6 +1477,7 @@ body.world-page { overflow-x: hidden; }
   .dossier-frame { padding: .55rem; }
 }
 
+#world-map-visual-legend[hidden],
 .map-controls .select-wrapper[hidden],
 .map-legend .legend-item[hidden] { display: none !important; }
 

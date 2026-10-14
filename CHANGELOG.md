@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+- Corrected regional climate-map geography labels and scope messages, retained
+  measurement-source links on regional-only KPI cards, and added a direct map link.
+- Regional maps now disclose selected-year coverage, missing observations,
+  percentile colour semantics, simplified boundaries and separate measurement/
+  geometry provenance; unsupported country, per-capita and summary views are explicit.
+- Cleared stale years on unconnected categories, guarded late async map/data replies,
+  and rejected null/blank regional observations without converting them to zero.
+- Added offline regional renderer, data/GeoJSON and selection regression tests.
+  NOAA parsing and the storm-count definition remain separate tasks.
+
 - Archive successful monthly status issues, reuse records across rerun attempts,
   and reconcile older machine-owned failures only after a successful default-branch
   monthly run. Preserve recovery links and protect human-owned follow-up tasks.

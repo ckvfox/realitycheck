@@ -42,3 +42,9 @@ Implemented targeted checks:
 - `php -d zend.assertions=1 -d assert.exception=1 tests/income_pyramid_data_test.php`
   validates the seven benchmark bands, six EU-SILC 2025 household types,
   DINKs caveat inputs and official source metadata.
+
+- `node --test tests/world_regions.test.js` checks committed cyclone/GeoJSON
+  consistency, dateline splitting, null versus zero, regional renderer output,
+  source provenance, unsupported summary modes, placeholder cleanup and async
+  selection races. The renderer boundary is simulated; browser acceptance remains
+  a separate required check.
