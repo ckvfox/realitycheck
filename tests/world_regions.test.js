@@ -113,7 +113,7 @@ test('regional layer renders all basins with correct values, missing states and 
   const ep = h.added[0].features.find(layer => layer.feature.properties.Acronym === 'EP');
   assert.match(ep.tooltip.innerHTML, new RegExp(String(regionValuesForYear(data, 2025).get('EP'))));
   assert.match(ep.tooltip.innerHTML, /2025/);
-  assert.match(ep.tooltip.innerHTML, /www.ncei.noaa.gov/);
+  assert.match(ep.tooltip.innerHTML, /www\.ncei\.noaa\.gov/);
   const legend = h.document.getElementById('legend-content');
   assert.match(legend.textContent, /Coverage: 5\/7/);
   assert.match(legend.children[0].textContent, /Not official/);
