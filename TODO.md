@@ -2,6 +2,12 @@
 
 ## Next Improvements
 
+- Regional climate-map frontend corrections implemented and covered by offline
+  renderer/data/geometry tests; desktop/mobile browser acceptance and post-upload
+  production QA remain open. See `docs/regional_climate_frontend_2026-10-14.md`.
+  Keep the missing North Atlantic parsing correction and storm-count definition
+  separate; frontend coverage must not be treated as data-completeness approval.
+
 - Continue the World-map roadmap in `docs/analysis_coverage_review.md` with source-backed conflict/climate lenses and an accessible text alternative; group comparison, overlap colouring, KPI choropleth, guarded aggregation modes, summaries and shareable URL state are complete.
 - Add a dedicated climate-exposure map mode: first a transparent country-level risk classification, then separately switchable subnational hazard layers for low-lying coasts, floods/deltas, heat, drought and wildfire. These layers must retain source, year, resolution and coverage metadata and must not be labelled as country groups.
 - Region-based hazard map architecture is implemented (`region_sets.json`, region GeoJSON files, `region_csv`/`ibtracs` adapters, `renderWorldMapRegionLayer` in `scripts/script_world.js`). Only `Storm Impact` (NOAA IBTrACS tropical cyclone counts by ocean basin) is wired to a real automated source so far. Wildfire, Flood, Heat and Drought remain honest "sourcing in progress" placeholders — no verified, automated, no-login regional data source has been found for them yet without fabricating data.
