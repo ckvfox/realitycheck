@@ -51,3 +51,15 @@
 - [x] Keep README structure inventory aligned when data, scripts or deployment folders change.
 - [x] Ensure WebCheck/FPF audits classify productive `scripts/` browser code as a documented exception.
 
+
+## HTTP delivery acceptance (2026-10-19)
+
+- Implemented locally: Translate native chooser/readiness, measured Google CSP
+  bootstrap hash, DirectoryIndex-safe canonical redirects and source-aware audit.
+- Live verified after manual FTP upload on 2026-10-19: shared script version
+  20261019-translate-2, populated language selector and actual German translation.
+- Pending: prove root 200 and aliases one-hop 301 with query preservation, confirm
+  the exact CSP response header and compare the central Webcheck UA. Cookie-free
+  HTTP probes still receive the InfinityFree hoster challenge.
+- Central Webcheck integration is separate; this repository provides the local
+  source-selection helper without modifying that service.

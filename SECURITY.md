@@ -66,3 +66,22 @@ If you discover a vulnerability, report it privately.
 - Initial acknowledgement target: within 3 business days.
 - Triage target: within 7 business days.
 - Fix timeline depends on severity and operational risk.
+
+## Hosting versus project evidence
+
+The read-only `scripts/security_audit.py` separates InfinityFree's upstream
+JavaScript challenge, identified application responses, marked project denials,
+HTTP redirects and unknown denials. Only application HTML with the project-policy
+marker is scored. Other responses stay inconclusive; UA differences are observed
+without claiming causality. No cookies, raw headers, response bodies or challenge
+execution are logged. UA strings never verify a crawler's identity.
+
+The CSP uses the measured Google TE_20261014 bootstrap hash, scoped Translate
+frames/connections and no inline event attributes. Existing CDNs, Leaflet styles,
+map tiles and same-origin forms remain supported. Referrer-Policy stays
+strict-origin-when-cross-origin. HSTS is unchanged. No local bot gate or UA
+branching is installed. The retired challenge URL redirects server-side.
+
+Framework candidate: combine application identity, project policy markers and
+hoster challenge detection before scoring security headers; keep an inconclusive
+state instead of merging evidence from different responses.

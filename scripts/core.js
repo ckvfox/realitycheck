@@ -193,6 +193,7 @@ const translatorState = {
   consent: false,
   previousFocus: null,
   scriptPromise: null,
+  loadTimer: null,
   ready: false,
   pendingOpen: false,
   initialized: false,
@@ -748,6 +749,7 @@ function ensureGoogleTranslate() {
     script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
     script.async = true;
     script.onerror = () => {
+      clearTimeout(translatorState.loadTimer);
       script.remove();
       translatorInitResolve = null;
       translatorInitReject = null;
@@ -755,6 +757,14 @@ function ensureGoogleTranslate() {
       updateTranslatorMessage("Google Translate could not be loaded.");
       reject(new Error("Google Translate script failed to load."));
     };
+    translatorState.loadTimer = setTimeout(() => {
+      translatorState.ready = false;
+      translatorState.pendingOpen = false;
+      updateTranslatorMessage("Language selection is unavailable. Please reload to retry or use your browser's translation feature.");
+      translatorInitResolve = null;
+      translatorInitReject = null;
+      reject(new Error("Google Translate language selection timed out."));
+    }, 15000);
     document.head.appendChild(script);
   });
 
@@ -770,21 +780,41 @@ function updateTranslatorMessage(message) {
 
 window.googleTranslateElementInit = function googleTranslateElementInit() {
   try {
-    const pageLanguage = document.documentElement.lang || "en";
-    const layout = google.translate?.TranslateElement?.InlineLayout?.SIMPLE;
+    const pageLanguage = (document.documentElement.lang || "en").split("-")[0];
+    const layout = google.translate?.TranslateElement?.InlineLayout?.VERTICAL;
     // 🌍 Top 5 world languages + German: English, Mandarin Chinese, Hindi, Spanish, French, German, Arabic, Portuguese
     new google.translate.TranslateElement({
       pageLanguage,
-      includedLanguages: "en,zh,hi,es,fr,de,ar,pt,ru,ja",
+      includedLanguages: "en,zh-CN,hi,es,fr,de,ar,pt,ru,ja",
       layout: layout ?? undefined,
       autoDisplay: false
     }, "google_translate_element");
 
-    translatorState.ready = true;
-    translatorState.scriptPromise = Promise.resolve();
-
-    const msgEl = document.querySelector(".translator-loading-message");
-    if (msgEl) msgEl.hidden = true;
+    // Google creates/populates the native select asynchronously. Constructor
+    // completion alone does not mean a usable language chooser exists.
+    const widgetRoot = document.getElementById("google_translate_element");
+    const checkChooser = () => {
+      const select = widgetRoot?.querySelector("select.goog-te-combo");
+      if (!select || select.options.length < 2) return false;
+      select.setAttribute("aria-label", "Translation language");
+      translatorState.ready = true;
+      clearTimeout(translatorState.loadTimer);
+      const msgEl = document.querySelector(".translator-loading-message");
+      if (msgEl) msgEl.hidden = true;
+      if (translatorState.pendingOpen) select.focus();
+      translatorState.pendingOpen = false;
+      if (typeof translatorInitResolve === "function") translatorInitResolve();
+      translatorInitResolve = null;
+      translatorInitReject = null;
+      return true;
+    };
+    if (!checkChooser() && widgetRoot) {
+      const observer = new MutationObserver(() => {
+        if (checkChooser()) observer.disconnect();
+      });
+      observer.observe(widgetRoot, { childList: true, subtree: true });
+      setTimeout(() => observer.disconnect(), 15000);
+    }
 
     // 🎨 Style the Google Translate panel
     setTimeout(() => {
@@ -868,16 +898,6 @@ window.googleTranslateElementInit = function googleTranslateElementInit() {
       }
     }, 500);
     
-    if (translatorState.pendingOpen) {
-      showTranslatorPanel();
-      const select = document.querySelector("#google_translate_element select");
-      if (select) {
-        requestAnimationFrame(() => select.focus());
-      }
-    }
-    translatorState.pendingOpen = false;
-
-    if (typeof translatorInitResolve === "function") translatorInitResolve();
   } catch (err) {
     translatorState.ready = false;
     translatorState.scriptPromise = null;
@@ -885,7 +905,7 @@ window.googleTranslateElementInit = function googleTranslateElementInit() {
     updateTranslatorMessage("Google Translate could not be loaded.");
     if (typeof translatorInitReject === "function") translatorInitReject(err);
     console.warn("⚠️ googleTranslateElementInit error", err);
-  } finally {
+    clearTimeout(translatorState.loadTimer);
     translatorInitResolve = null;
     translatorInitReject = null;
   }

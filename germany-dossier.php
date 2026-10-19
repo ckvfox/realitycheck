@@ -804,7 +804,7 @@ ob_start();
 
   <?php if ($analysisData !== null): ?>
     <script id="real-wages-data" type="application/json"><?= json_encode($analysisData, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR) ?></script>
-<script src="scripts/core.js?v=20260801-frontend-8" defer></script>
+<script src="scripts/core.js?v=20261019-translate-2" defer></script>
     <script src="scripts/page_real_wages_analysis.js?v=20260725-wage-analysis-3" defer></script>
   <?php endif; ?>
   <?php if ($scenarioData !== null): ?>

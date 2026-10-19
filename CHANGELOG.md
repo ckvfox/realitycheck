@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased - 2026-10-19
+
+- Restore Google Translate: measured TE_20261014 bootstrap CSP hash, native
+  language chooser, option-readiness detection, timeout feedback and script cache
+  versions. Actual German page translation verified locally under the CSP and live after
+  manual FTP upload on 2026-10-19.
+- Scope Translate frames/connections; disable inline event attributes while
+  preserving compatible map/CDN/form dependencies and Referrer-Policy.
+- Normalize aliases directly to the fixed HTTPS root with THE_REQUEST guards;
+  retire client-side redirects, challenge code and UA crawler markers.
+- Add project-policy response identifiers and a read-only source-aware HTTP audit
+  adapted from EnergyPlanning; hoster challenges remain inconclusive.
+
+
 All notable changes to this project will be documented in this file.
 
 ## Unreleased

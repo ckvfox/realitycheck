@@ -481,3 +481,17 @@ after 30 days); closed issues retain the durable status history. Workflow succes
 is evidence of pipeline completion, not proof that every provider published fresh
 data. Independently tracked source-quality and development tasks remain separate.
 See `docs/monthly_status_audit_2026-10-12.md` for the historical cleanup evidence.
+
+## HTTP security audit and translation
+
+`.venv/Scripts/python.exe scripts/security_audit.py` compares cookie-free HTTP
+responses for browser and audit User-Agents. `--audit-user-agent` accepts the
+actual central Webcheck UA. Exit 0 means the inspected project checks passed,
+1 means failed checks, 2 means inconclusive (including hoster challenges).
+Only identified application HTML with `X-RealityCheck-Policy: apache-v1` is scored.
+The local helper does not change the separate central Webcheck service.
+
+Translate uses a native select after consent and waits for populated options.
+Google TE_20261014 requires the updated narrow bootstrap CSP hash. Germany Dossier
+keeps its editorial EN/DE switch. The homepage remains English (`en-US`), matching
+its content. RealityCheck has no WordPress/plugin runtime.
