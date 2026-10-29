@@ -34,6 +34,9 @@ jobs:
           pip install -r requirements.txt
           echo "✅ Dependencies installed"
 
+      - name: Guard IBTrACS parsing before fetch
+        run: python -m unittest discover -s tests -p test_builtin_adapters.py -v
+
       - name: 🚀 Run full RealityCheck pipeline
         run: |
           set -o pipefail
@@ -45,6 +48,9 @@ jobs:
         run: |
           set -o pipefail
           python ./scripts/check_source_csv_updates.py --online 2>&1 | tee -a data/workflow_fetch_console.log
+
+      - name: Validate IBTrACS historical coverage before FTP
+        run: python -m unittest discover -s tests -p test_ibtracs_snapshot.py -v
 
       - name: 🌍 FTP Deploy /data to InfinityFree (Safe)
         uses: SamKirkland/ftp-deploy-action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5

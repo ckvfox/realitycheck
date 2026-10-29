@@ -1856,8 +1856,8 @@
   },
   {
     "title": "Tropical Cyclone Activity by Ocean Basin",
-    "description": "Number of distinct named tropical cyclones (storms, hurricanes, typhoons) recorded per ocean basin per year, based on NOAA's IBTrACS global best-track archive since 1980. This is a region-level indicator, not a country indicator: values are keyed by ocean basin (North Atlantic, Eastern/Western North Pacific, North/South Indian, South Pacific, South Atlantic), not by country.",
-    "unit": "named storms per year",
+    "description": "Number of distinct IBTrACS storm identifiers (SID) recorded in each ocean basin and NOAA SEASON, using the since1980 archive. Repeated observations count once per SID/BASIN/SEASON combination; a storm crossing basins can count in each. No name, nature or intensity filter is applied. SEASON is the source season label, not necessarily a calendar year. Missing basin-season rows are not verified zeros. Values describe recorded activity, not landfalls, intensity or damage.",
+    "unit": "recorded storms per basin-season",
     "relation": "",
     "sort": "higher",
     "cluster": "Environment & Sustainability",

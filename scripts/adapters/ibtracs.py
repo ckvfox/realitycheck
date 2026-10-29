@@ -40,6 +40,9 @@ def run(request: AdapterRequest, *, runtime: SourceRuntime, http_get=requests.ge
         frame = pd.read_csv(
             io.BytesIO(raw), header=0, skiprows=[1],
             usecols=["SID", "SEASON", "BASIN"], dtype=str, low_memory=False,
+            # NOAA's valid North Atlantic code "NA" is a pandas default NA token.
+            # NOAA CSV missing text fields are empty; handle whitespace below.
+            keep_default_na=False, na_values=[""],
         )
     except Exception as exc:
         runtime.log(f"[ERROR] IBTrACS parse failed: {exc}")
@@ -49,10 +52,10 @@ def run(request: AdapterRequest, *, runtime: SourceRuntime, http_get=requests.ge
         )
         return AdapterResult()
 
-    frame["BASIN"] = frame["BASIN"].str.strip()
+    for column in ("SID", "BASIN"):
+        frame[column] = frame[column].str.strip().replace("", pd.NA)
     frame["SEASON"] = pd.to_numeric(frame["SEASON"], errors="coerce")
     frame = frame.dropna(subset=["SID", "BASIN", "SEASON"])
-    frame = frame[frame["BASIN"] != ""]
     frame["SEASON"] = frame["SEASON"].astype(int)
 
     # One row per storm-basin-season combination avoids double counting the many

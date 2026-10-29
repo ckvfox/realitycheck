@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased - 2026-10-29
+
+- Fixed IBTrACS North Atlantic parsing and blank-key handling; added focused adapter regressions and monthly pre-FTP historical coverage gates.
+- Regenerated all 279 basin-season rows from NOAA, independently reconciled every count, and documented EP/WP 2025 source revisions.
+- Corrected unsupported named-storm/calendar-year claims to recorded storms per NOAA basin-season; no scientific filter or zero imputation added. See `docs/ibtracs_fix_validation_2026-10-29.md`.
+
 ## Unreleased - 2026-10-19
 
 - Restore Google Translate: measured TE_20261014 bootstrap CSP hash, native

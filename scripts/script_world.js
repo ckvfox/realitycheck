@@ -450,15 +450,15 @@ const WORLD_MAP_CLIMATE_CATEGORIES = {
     ],
   },
   storm_impact: {
-    label: "Storm Impact (tropical cyclones)",
+    label: "Storm Activity (IBTrACS)",
     description:
-      "Named tropical cyclone activity per ocean basin, from NOAA's IBTrACS global best-track archive. This is a region view (ocean basins), not a country view: tropical cyclones form and travel across ocean basins, not within national borders.",
+      "Recorded IBTrACS storms per ocean basin and NOAA season (SEASON), with no name or intensity filter. Repeated observations count once per storm/basin/season; cross-basin storms can count in each basin. Missing seasons are not verified zeros. Counts describe activity, not landfall impact or damage.",
     geoType: "region",
     regionSet: "ocean_basins",
     metrics: [
       {
         kpi: "tropical_cyclone_activity_basin",
-        label: "Named storms per year",
+        label: "Recorded storms per basin-season",
         valueModes: ["absolute"],
         defaultValueMode: "absolute",
         aggregations: ["median"],

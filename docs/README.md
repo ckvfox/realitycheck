@@ -11,3 +11,5 @@ Planned topics:
 ## Operations
 
 - [Monthly status audit and lifecycle](monthly_status_audit_2026-10-12.md)
+
+- [IBTrACS import correction and source reconciliation](ibtracs_fix_validation_2026-10-29.md)

@@ -495,3 +495,7 @@ Translate uses a native select after consent and waits for populated options.
 Google TE_20261014 requires the updated narrow bootstrap CSP hash. Germany Dossier
 keeps its editorial EN/DE switch. The homepage remains English (`en-US`), matching
 its content. RealityCheck has no WordPress/plugin runtime.
+
+### IBTrACS basin-season definition and validation
+
+The cyclone KPI counts distinct SID/BASIN/SEASON combinations with no name or intensity filter. Missing seasons are not zeros; basin sums are not unique global totals. The North Atlantic parser correction, validated historical regeneration and monthly coverage gate are documented in `docs/ibtracs_fix_validation_2026-10-29.md`.
