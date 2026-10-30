@@ -2,6 +2,8 @@
 
 ## Unreleased - 2026-10-30
 
+- Tighten every production upload to an explicit static-file and registry-derived allowlist: 386 current files instead of 456. Exclude eight internal data artifacts, six image variants and 56 unused flags. Route monthly/manual data and partial/full uploads through the fixed-root, non-deleting FTPS transport; add dependency, unsafe-registry and workflow regressions. Clear both handover folders before packaging.
+
 - Expose the tested FTPS transport as a reusable API with explicit per-site roots and checkpoints for EnergyPlanning; retain RealityCheck CLI defaults and test cross-site isolation.
 
 - Add automatic main-branch deployment: test and FPF-check the latest main snapshot under the production lock, build the existing productive allowlist, then incrementally upload via certificate-verified FTPS to the fixed domain webroot. The first run establishes a full hash checkpoint; later runs skip unchanged files, restore missing files and never delete remote content. Add transfer/retry/checkpoint/workflow regressions and a secret-free deployment receipt.

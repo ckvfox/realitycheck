@@ -39,14 +39,16 @@ class MonthlyClimateRefreshTests(unittest.TestCase):
         self.assertIn('cron: "0 3 1 * *"', text)
         command = next(line.strip() for line in text.splitlines() if line.strip().startswith("python ./scripts/fetch_data.py"))
         self.assertEqual(command, "python ./scripts/fetch_data.py 2>&1 | tee data/workflow_fetch_console.log")
-        self.assertLess(text.index(command), text.index("local-dir: data/"))
+        self.assertLess(text.index(command), text.index("python scripts/deploy_ftps.py --scope data"))
 
     def test_monthly_upload_targets_verified_domain_data_directory(self):
         text = (ROOT / ".github/workflows/monthly-fetch.yml").read_text(encoding="utf-8")
-        targets = [line.strip() for line in text.splitlines() if line.strip().startswith("server-dir:")]
-        self.assertEqual(targets, ["server-dir: /realitycheck.great-site.net/htdocs/data/"])
-        self.assertIn("local-dir: data/", text)
-        self.assertIn("dangerous-clean-slate: false", text)
+        import deploy_ftps
+        self.assertEqual(deploy_ftps.REMOTE_ROOT, "/realitycheck.great-site.net/htdocs")
+        self.assertIn("python scripts/deploy_ftps.py --scope data", text)
+        self.assertLess(text.index("python scripts/prepare_deployment.py --mode full"),
+                        text.index("python scripts/deploy_ftps.py --scope data"))
+        self.assertNotIn("secrets.FTP_DIR", text)
 
     def test_full_fetch_updates_esg_even_when_wdi_release_is_unchanged(self):
         with tempfile.TemporaryDirectory() as tmp, ExitStack() as patches:

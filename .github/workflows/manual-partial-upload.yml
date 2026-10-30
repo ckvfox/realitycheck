@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       files:
-        description: "Comma-separated productive files (e.g. 'germany-dossier.php,data/overall_ranking.json')"
+        description: "Comma-separated productive files (e.g. 'germany-dossier.php,data/kpi_analysis.json')"
         required: true
-        default: "data/overall_ranking.json"
+        default: "data/kpi_analysis.json"
 
 concurrency:
   group: realitycheck-data-pipeline
@@ -35,63 +35,13 @@ jobs:
           python scripts/validation.py
           python scripts/prepare_deployment.py --mode full
 
-      - name: 📦 Prepare partial upload folder
+      - name: Upload selected allowlisted files (FTPS, no deletes)
         env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FILES_INPUT: ${{ inputs.files }}
-        run: |
-          set -euo pipefail
-          echo "📦 Preparing partial upload..."
-          mkdir -p partial_upload
-          IFS=',' read -ra FILES <<< "$FILES_INPUT"
-          count=0
-          for raw_file in "${FILES[@]}"; do
-            f="${raw_file#"${raw_file%%[![:space:]]*}"}"
-            f="${f%"${f##*[![:space:]]}"}"
-            case "$f" in
-              ""|/*|*..*|*\\*)
-                echo "ERROR: Invalid relative deployment path: $f"
-                exit 1
-                ;;
-            esac
-            source_file="build/deployment/full/$f"
-            if [ ! -f "$source_file" ]; then
-              echo "ERROR: File is not in the productive deployment allowlist: $f"
-              exit 1
-            fi
-            echo "Adding $f"
-            mkdir -p "partial_upload/$(dirname "$f")"
-            cp -- "$source_file" "partial_upload/$f"
-            count=$((count + 1))
-          done
-          test "$count" -gt 0
-          echo "✅ Partial upload folder ready:"
-          find partial_upload -type f
-
-      - name: 🚀 Safe FTP Upload (incremental, no delete)
-        uses: SamKirkland/ftp-deploy-action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: partial_upload/
-          server-dir: ${{ secrets.FTP_DIR }}/
-          log-level: verbose
-
-          # ✅ Sicherheitseinstellungen
-          dangerous-clean-slate: false          # Niemals löschen!
-          state-name: .ftp-partial-sync.json    # Behält Sync-Status bei
-          timeout: 60000                        # 60s Timeout für InfinityFree
-          exclude: |
-            **/.git*
-            **/.github*
-            **/__pycache__/
-            **/*.py
-            **/*.md
-            **/*.yml
-            **/*.csv
-            **/pending/**
-            **/node_modules/**
+        run: python scripts/deploy_ftps.py --files "$FILES_INPUT" --commit "$(git rev-parse HEAD)"
 
       - name: 🕐 Get current UTC date
         id: date

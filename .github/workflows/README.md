@@ -53,10 +53,13 @@ validates data before uploading JSON/gzip files. These contracts are covered by
 
 The monthly FTPS destination is explicitly
 `/realitycheck.great-site.net/htdocs/data/`, matching the verified domain webroot.
-It does not depend on `FTP_DIR`; that secret remains in use by the separate manual
-workflows. Only the `data/` contents are synchronized, including the individual
-climate JSON files, metadata and consolidated gzip bundles. Frontend fixes still
-require a separate upload to `/realitycheck.great-site.net/htdocs/`.
+All production workflows now use the same strict package allowlist and fixed
+webroot; `FTP_DIR` is no longer used. Monthly/manual fetches build the package
+then invoke `scripts/deploy_ftps.py --scope data`. The filtered data selection
+includes registered climate JSONs, public analysis, metadata and indexed gzip
+bundles. Frontend changes are published by the separate main-push deployment.
+Data and partial uploads use separate checkpoints; all transport modes verify
+TLS and uploaded sizes and never delete remote files.
 
 The monthly workflow also checks the configured official release pages for
 maintained CSV sources. This is notification-only and never replaces a local
@@ -123,10 +126,10 @@ candidate: shared certificate-verified transport with project-owned allowlists.
 Example partial input:
 
 ```text
-germany-dossier.php,data/overall_ranking.json
+germany-dossier.php,data/kpi_analysis.json
 ```
 
-Logs, Markdown, Python, CSV sources and other non-productive files cannot be selected for partial deployment.
+Logs, documentation, Python, CSV sources and unregistered files cannot be selected for partial deployment. The public `data/analysis.md` is an explicit exception.
 
 ## Required secrets
 
@@ -136,8 +139,12 @@ Logs, Markdown, Python, CSV sources and other non-productive files cannot be sel
 | `FTP_SERVER` | FTPS server |
 | `FTP_USERNAME` | FTPS account |
 | `FTP_PASSWORD` | FTPS password |
-| `FTP_DIR` | Productive server root |
 
 Status details and logs remain available in the GitHub Actions run and uploaded artifacts.
 
-Last reviewed: 2026-07-31.
+Last reviewed: 2026-10-30.
+
+Payload audit on 2026-10-30 tightened the historical 456-file set to 386 files:
+eight backend data artifacts, six unused image variants and 56 unreferenced flags
+are no longer selected. Existing remote files remain untouched. Details and
+limitations: `docs/deployment_payload_audit_2026-10-30.md`.

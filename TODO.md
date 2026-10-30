@@ -2,6 +2,8 @@
 
 ## Next Improvements
 
+- Completed (2026-10-30): audit and strict allowlist for all nine productive upload workflows (386 files). Historical excluded server files remain untouched; any cleanup requires a separate reviewed action. See `docs/deployment_payload_audit_2026-10-30.md`.
+
 - Completed (2026-10-30): automatic main deployment passed its first live GitHub run (`41084172389`): complete tests + FPF, 456 productive files uploaded to the verified webroot, no deletions, successful hash checkpoint and secret-free receipt. Bounded reconnects address the first attempt's transient timeout; see `.github/workflows/README.md`.
 
 - Continue the World-map roadmap in `docs/analysis_coverage_review.md` with source-backed conflict/climate lenses and an accessible text alternative; group comparison, overlap colouring, KPI choropleth, guarded aggregation modes, summaries and shareable URL state are complete.

@@ -123,6 +123,23 @@ def connect_ftps(config):
         raise
 
 
+def select_files(files: dict, *, scope: str = "all", requested: str | None = None) -> dict:
+    """Filter only after the complete package has passed the productive allowlist."""
+    if requested is not None:
+        names = [name.strip() for name in requested.split(",")]
+        if scope != "all" or not names or any(not name or name not in files for name in names):
+            raise ValueError("Partial selection contains a non-productive or missing path")
+        return {name: files[name] for name in dict.fromkeys(names)}
+    if scope == "data":
+        selected = {name: meta for name, meta in files.items() if name.startswith("data/")}
+        if not selected:
+            raise ValueError("Data deployment cannot be empty")
+        return selected
+    if scope != "all":
+        raise ValueError("Unknown deployment scope")
+    return files
+
+
 def publish_package(package: Path, files: dict, *, commit: str, remote_root: str = REMOTE_ROOT,
                     state_name: str = STATE_NAME, force: bool = False) -> dict:
     """Shared transport API; the caller validates its project-specific package allowlist."""
@@ -159,10 +176,14 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--commit", required=True)
     parser.add_argument("--force", action="store_true", help="Upload all allowlisted files again")
+    parser.add_argument("--scope", choices=["all", "data"], default="all")
+    parser.add_argument("--files", help="Comma-separated paths already present in the validated full package")
     args = parser.parse_args()
     try:
-        files = package_manifest(TARGET_FULL)
-        report = publish_package(TARGET_FULL, files, commit=args.commit, force=args.force)
+        files = select_files(package_manifest(TARGET_FULL), scope=args.scope, requested=args.files)
+        state_name = ".realitycheck-partial-deploy.json" if args.files is not None else (
+            ".realitycheck-data-deploy.json" if args.scope == "data" else STATE_NAME)
+        report = publish_package(TARGET_FULL, files, commit=args.commit, force=args.force, state_name=state_name)
         RECEIPT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
         print(f"FTPS complete: {len(report['uploaded_files'])} uploaded, {report['skipped_files']} unchanged, 0 deleted")
         return 0

@@ -15,6 +15,20 @@ import prepare_deployment
 
 
 class DeploymentPackagingTests(unittest.TestCase):
+    def fixture_registries(self, root):
+        payloads = {
+            "data/meta/available_kpis.json": [{"filename": "sample"}],
+            "data/all_kpis_index.json": {"parts": ["all_kpis_part1.json.gz"]},
+            "data/meta/countries.json": {"Germany": {"iso_a2": "DE", "flag": "images/flag/de.svg"}},
+            "data/meta/region_sets.json": {},
+        }
+        for name, payload in payloads.items():
+            path = root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps(payload), encoding="utf-8")
+        (root / "data/all_kpis_part1.json.gz").write_bytes(b"fixture")
+        return set(payloads) | {"data/all_kpis_part1.json.gz"}
+
     def test_secret_bearing_names_are_excluded_before_packaging(self):
         for name in ("credentials.json", "data/credentials-backup.json", "auth.json", "data/auth.json",
                      ".env", "nested/private.key", "nested/id_ed25519", "known_hosts", ".npmrc"):
@@ -80,9 +94,34 @@ class DeploymentPackagingTests(unittest.TestCase):
                 path = root / relative
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(content, encoding="utf-8")
+            registries = self.fixture_registries(root)
             with patch.object(prepare_deployment, "ROOT", root):
                 inventory = {path.relative_to(root).as_posix() for path in prepare_deployment.iter_productive_files()}
-        self.assertEqual(inventory, {"data/analysis.md", "data/sample.json", "index.html", "scripts/core.js"})
+        self.assertEqual(inventory, {"data/analysis.md", "data/sample.json", "index.html", "scripts/core.js"} | registries)
+
+    def test_unregistered_assets_and_backend_json_are_not_productive(self):
+        for name in ("images/logo_bak.png", "images/logo_alt2.png", "images/original_translate.png",
+                     "images/logo4.png", "images/Logo.PNG", "images/flag/ai.svg", "src/example.json",
+                     "data/analysis.json", "data/overall_ranking.json", "data/master/area.json",
+                     "data/meta/country_analysis_context.json", "data/meta/country_mappings_pending.json",
+                     "data/country_mappings_pending.json", "new-page.html", "setup.php"):
+            self.assertFalse(prepare_deployment.is_allowed_productive(name), name)
+
+    def test_unsafe_registry_paths_and_missing_parts_fail_closed(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.object(prepare_deployment, "ROOT", Path(tmp)):
+            root = Path(tmp)
+            self.fixture_registries(root)
+            (root / "data/meta/available_kpis.json").write_text('[{"filename":"../outside"}]')
+            with self.assertRaises(ValueError):
+                prepare_deployment.iter_productive_files()
+            self.fixture_registries(root)
+            (root / "data/all_kpis_index.json").write_text('{"parts":["../../outside.json.gz"]}')
+            with self.assertRaises(ValueError):
+                prepare_deployment.iter_productive_files()
+            self.fixture_registries(root)
+            (root / "data/all_kpis_part1.json.gz").unlink()
+            with self.assertRaises(ValueError):
+                prepare_deployment.iter_productive_files()
 
     def test_delta_contains_only_new_or_changed_files(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -98,6 +137,42 @@ class DeploymentPackagingTests(unittest.TestCase):
             with patch.object(prepare_deployment, "ROOT", root):
                 delta = prepare_deployment.detect_delta([unchanged, changed], previous)
         self.assertEqual(delta, [changed])
+
+    def test_registry_updates_automatically_include_new_productive_dependencies(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.object(prepare_deployment, "ROOT", Path(tmp)):
+            root = Path(tmp)
+            self.fixture_registries(root)
+            prepare_deployment.iter_productive_files()  # Populate cache before a new release.
+            updates = {
+                "data/meta/available_kpis.json": [{"filename": "new_climate_kpi"}],
+                "data/all_kpis_index.json": {"parts": ["all_kpis_part1.json.gz", "all_kpis_part7.json.gz"]},
+                "data/meta/countries.json": {"New country": {"iso_a2": "FR", "flag": "images/flag/fr.svg"}},
+                "data/meta/region_sets.json": {"new": {"geo_file": "regions_new_geo.json"}},
+            }
+            for name, payload in updates.items():
+                (root / name).write_text(json.dumps(payload), encoding="utf-8")
+            expected = {"data/new_climate_kpi.json", "data/all_kpis_part7.json.gz",
+                        "images/flag/fr.svg", "data/meta/regions_new_geo.json"}
+            for name in expected:
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b"fixture")
+            paths = {p.relative_to(root).as_posix() for p in prepare_deployment.iter_productive_files()}
+            self.assertTrue(expected <= paths)
+            self.assertFalse(prepare_deployment.is_allowed_productive("data/not_registered.json"))
+
+    def test_productive_symlink_is_rejected_before_reading_its_target(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.object(prepare_deployment, "ROOT", Path(tmp)):
+            root = Path(tmp)
+            self.fixture_registries(root)
+            target = root / "unrelated.txt"
+            target.write_text("fixture", encoding="utf-8")
+            try:
+                (root / "index.html").symlink_to(target)
+            except OSError:
+                self.skipTest("Symlink creation unavailable on this Windows account")
+            with self.assertRaises(ValueError):
+                prepare_deployment.iter_productive_files()
 
 
 if __name__ == "__main__":

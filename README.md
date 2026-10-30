@@ -506,3 +506,11 @@ keeps its editorial EN/DE switch. The homepage remains English (`en-US`), matchi
 its content. RealityCheck has no WordPress/plugin runtime.
 
 For cumulative climate upload packages pending since the previous 449-file local baseline, use `.venv\Scripts\python.exe scripts/prepare_deployment.py --mode both --baseline-manifest build/source-review/previous-deployment-state.json`. The explicit baseline must exist and contain a nonempty manifest; a package manifest does not establish live server state.
+
+
+Deployment payload audit (2026-10-30): all production upload routes now use the
+same explicit static-file list and validated KPI/bundle/country/region registries.
+The current package contains 386 files (formerly 456); internal data artifacts
+and unused image/flag variants are excluded. New data releases follow the
+registries automatically. No remote files are deleted. See
+`docs/deployment_payload_audit_2026-10-30.md` and `standards/deployment.md`.

@@ -6,27 +6,27 @@ Version: 2.1.0
 
 Deployment-Regeln werden ausschliesslich in diesem Dokument definiert. `AGENTS.md` darf nur auf diese Regeln verweisen.
 
-## Positivliste (erlaubte Artefakte)
+## Positivliste (RealityCheck)
 
-- `*.html`
-- `*.css`
-- `*.js`
-- `*.json`
-- `*.xml`
-- `*.svg`
-- `*.png`
-- `*.jpg`
-- `*.webp`
-- `favicon.ico`
-- `robots.txt`
-- `sitemap.xml`
-- `.htaccess`
-- `.well-known/`
-- `assets/`
-- `images/`
-- `fonts/`
-- `api/`
-- produktive Frontend-Skripte aus `scripts/`, wenn das Projekt diesen Pfad bewusst fuer Browser-Code nutzt
+`scripts/prepare_deployment.py` ist die ausfuehrbare Positivliste. Eine passende
+Dateiendung allein erlaubt keinen Upload. Erlaubt sind:
+
+- explizite produktive Root-Dateien, Browser-Skripte und PHP-Includes;
+- drei belegte Bilder: `logo.png`, `translate.png`, `teamwork_wunder.jpg`;
+- benoetigte Flaggen aus der Laenderregistrierung sowie Sprach-/Fallback-Flaggen;
+- registrierte KPI-JSONs und ausschliesslich die im Index genannten gzip-Teile;
+- explizite oeffentliche Analysen/Rankings, Metadaten und registrierte Geometrien.
+
+Neue statische Seiten/Assets muessen explizit aufgenommen werden. Neue KPI-Dateien,
+Laenderflaggen und Datenpaketteile folgen automatisch den validierten Registern.
+Unsichere Registerpfade, Symlinks und fehlende deklarierte gzip-Teile brechen ab.
+Interne Masterdaten, Pending-Mappings, Analyse-Kontext und ungenutzte Bildkopien
+bleiben ausgeschlossen. `data/analysis.md` und `LICENSE` sind produktive Ausnahmen.
+
+Alle neun produktiven Upload-Workflows erzeugen dieses Paket. Datenlaeufe waehlen
+anschliessend nur `data/`; manuelle Teilauswahl darf die Liste nicht umgehen.
+FTPS-Ziel ist fest `/realitycheck.great-site.net/htdocs`. Es gibt keine Remote-
+Loeschungen. Historische Serverdateien werden dadurch nicht nachtraeglich entfernt.
 
 ## Negativliste (nicht erlaubt)
 
@@ -88,7 +88,7 @@ Plugin-Repository versioniert.
 
 Vor jeder Erzeugung gilt:
 
-1. Zielordner vollstaendig leeren.
+1. Beide Zielordner vollstaendig leeren, auch bei Auswahl nur eines Paketmodus.
 2. Paket vollstaendig neu erzeugen.
 
 Teilweises manuelles Nachkopieren ohne dokumentierten Prozess ist nicht erlaubt.

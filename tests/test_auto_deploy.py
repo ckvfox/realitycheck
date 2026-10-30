@@ -62,7 +62,7 @@ class AutoDeployTests(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.package = Path(self.tmp.name) / "full"
         self.package.mkdir()
-        for name in ("index.html", "world.html", "style.css", "data/example.json", "scripts/core.js"):
+        for name in ("index.html", "world.html", "style.css", "data/gdp.json", "scripts/core.js"):
             path = self.package / name
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(name.encode())
@@ -163,6 +163,14 @@ class AutoDeployTests(unittest.TestCase):
         self.assertIn(".energyplanning-auto-deploy.json", self.ftp.files)
         self.assertNotIn(deploy.STATE_NAME, self.ftp.files)
 
+    def test_data_and_partial_scopes_cannot_bypass_full_package_validation(self):
+        files = deploy.package_manifest(self.package)
+        self.assertEqual(set(deploy.select_files(files, scope="data")), {"data/gdp.json"})
+        self.assertEqual(set(deploy.select_files(files, requested="style.css, index.html")), {"style.css", "index.html"})
+        for requested in ("../index.html", "/index.html", "scripts/fetch_data.py", "data/meta/country_mappings_pending.json", ""):
+            with self.assertRaises(ValueError):
+                deploy.select_files(files, requested=requested)
+
     def test_workflow_has_main_guard_tests_before_upload_and_shared_lock(self):
         workflow = (ROOT / ".github/workflows/auto-deploy.yml").read_text(encoding="utf-8")
         self.assertIn("branches: [main]", workflow)
@@ -177,3 +185,17 @@ class AutoDeployTests(unittest.TestCase):
         for name in ("monthly-fetch.yml", "manual-ftp-full.yml", "manual-ftp-sync.yml", "manual-partial-upload.yml"):
             text = (ROOT / ".github/workflows" / name).read_text(encoding="utf-8")
             self.assertIn("group: realitycheck-data-pipeline", text, name)
+
+    def test_every_production_upload_uses_the_same_validated_allowlist(self):
+        names = ("monthly-fetch.yml", "manual-fetch.yml", "manual-fetch-fast.yml",
+                 "manual-fetch-force.yml", "manual-fetch-force-fast.yml", "manual-ftp-full.yml",
+                 "manual-ftp-sync.yml", "manual-partial-upload.yml", "auto-deploy.yml")
+        for name in names:
+            text = (ROOT / ".github/workflows" / name).read_text(encoding="utf-8")
+            with self.subTest(workflow=name):
+                self.assertNotIn("SamKirkland/ftp-deploy-action", text)
+                self.assertNotIn("secrets.FTP_DIR", text)
+                self.assertLess(text.index("python scripts/prepare_deployment.py --mode full"),
+                                text.index("python scripts/deploy_ftps.py"))
+                if "fetch" in name or name == "manual-ftp-sync.yml":
+                    self.assertIn("deploy_ftps.py --scope data", text)

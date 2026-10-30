@@ -28,25 +28,15 @@ jobs:
       - name: Validate committed data snapshot
         run: python scripts/validation.py
 
-      - name: FTP Sync /data
-        uses: SamKirkland/ftp-deploy-action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: data/
-          server-dir: ${{ secrets.FTP_DIR }}/data/
-          state-name: .ftp-deploy-sync-state-data.json
-          log-level: verbose
-          exclude: |
-            **/.git*
-            **/.github*
-            **/__pycache__/
-            **/*.py
-            **/*.md
-            **/*.yml
-            **/*.csv
+      - name: Prepare allowlisted production package
+        run: python scripts/prepare_deployment.py --mode full
+
+      - name: Upload validated package (FTPS, no deletes)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: python scripts/deploy_ftps.py --scope data --commit "$(git rev-parse HEAD)"
 
       - name: 🕐 Get current UTC date
         id: date

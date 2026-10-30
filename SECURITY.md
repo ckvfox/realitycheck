@@ -36,7 +36,7 @@ If you discover a vulnerability, report it privately.
 - Direct dependencies are version-pinned and GitHub Actions are pinned to immutable commit SHAs.
 - Fetch errors, dummy datasets and validation failures stop the workflow before analysis or FTP deployment.
 - Force mode never removes the last known-good data snapshot before replacement data succeeds.
-- Full and partial FTP uploads are built from the productive deployment allowlist; partial paths are validated against that package.
+- All production uploads (main push, monthly/manual fetch, full/sync/partial) use the same explicit static-file and validated registry allowlist. Partial and data selections are filtered only after package validation. Unknown files, unsafe registry paths, symlinks and missing indexed gzip parts block publication; the destination webroot is fixed. No remote deletion is performed.
 - Production fetches, automatic deployments and FTP-only workflows share the same concurrency group, preventing overlapping writes.
 - Automatic main deployments test the exact checked-out snapshot before packaging. FTPS uses certificate verification, encrypted data connections and runtime-only GitHub secrets; transfer errors do not print server replies or credentials. A remote hash checkpoint advances only after successful transfers and size checks; no remote files are deleted.
 - Test-mode datasets, status, logs, hashes and pending mappings are isolated below `data/test/`; automatic production mapping updates are disabled in test mode.
