@@ -52,6 +52,9 @@ class FakeFTP:
     def delete(self, name):
         raise AssertionError("Deployment must never delete remote files")
 
+    def close(self):
+        pass
+
 
 class AutoDeployTests(unittest.TestCase):
     def setUp(self):
@@ -130,6 +133,23 @@ class AutoDeployTests(unittest.TestCase):
              redirect_stdout(output):
             self.assertEqual(deploy.main(), 1)
         self.assertNotIn("private server reply", output.getvalue())
+
+    def test_timeout_reconnects_and_preserves_verified_transfers_in_run(self):
+        self.ftp.fail_on = "style.css"
+        retry = FakeFTP()
+        retry.files = self.ftp.files
+        with patch.object(sys, "argv", ["deploy_ftps.py", "--commit", "a" * 40]), \
+             patch.dict(deploy.os.environ, {"FTP_SERVER":"offline", "FTP_USERNAME":"offline", "FTP_PASSWORD":"offline"}), \
+             patch.object(deploy, "connect_ftps", side_effect=[self.ftp, retry]) as connect, \
+             patch.object(deploy.time, "sleep"), \
+             patch.object(deploy, "RECEIPT", self.package.parent / "receipt.json"), \
+             redirect_stdout(io.StringIO()):
+            self.assertEqual(deploy.main(), 0)
+        self.assertEqual(connect.call_count, 2)
+        receipt = json.loads((self.package.parent / "receipt.json").read_text())
+        self.assertEqual(len(receipt["uploaded_files"]), 5)
+        self.assertEqual(receipt["skipped_files"], 0)
+        self.assertEqual(len(self.ftp.uploads + retry.uploads), 6)  # 5 productive files + checkpoint
 
     def test_workflow_has_main_guard_tests_before_upload_and_shared_lock(self):
         workflow = (ROOT / ".github/workflows/auto-deploy.yml").read_text(encoding="utf-8")

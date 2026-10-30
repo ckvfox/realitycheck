@@ -9,6 +9,7 @@ import io
 import json
 import os
 import ssl
+import time
 from contextlib import suppress
 from pathlib import Path
 
@@ -78,9 +79,12 @@ def ensure_remote_directory(ftp, relative: str, known: set[str]) -> None:
     ftp.cwd(REMOTE_ROOT)
 
 
-def upload_package(ftp, package: Path, files: dict, *, commit: str, force: bool = False) -> dict:
+def upload_package(ftp, package: Path, files: dict, *, commit: str, force: bool = False,
+                   completed: dict | None = None) -> dict:
     ftp.cwd(REMOTE_ROOT)
     previous = {} if force else read_remote_state(ftp)
+    completed = completed if completed is not None else {}
+    previous.update(completed)
     uploaded = []
     known = set()
     for name, metadata in files.items():
@@ -97,12 +101,25 @@ def upload_package(ftp, package: Path, files: dict, *, commit: str, force: bool 
         if ftp.size(name) != metadata["size"]:
             raise ValueError("Uploaded size differs from production package")
         uploaded.append(name)
+        completed[name] = metadata
         print(f"Uploaded {name}", flush=True)
     # Advance the checkpoint only after every transfer and size check succeeds.
     state = json.dumps({"version": 1, "commit": commit, "files": files}, sort_keys=True).encode()
     ftp.storbinary(f"STOR {STATE_NAME}", io.BytesIO(state))
     return {"commit": commit, "destination": REMOTE_ROOT, "total_files": len(files),
             "uploaded_files": uploaded, "skipped_files": len(files) - len(uploaded), "deleted_files": 0}
+
+
+def connect_ftps(config):
+    ftp = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=60)
+    try:
+        ftp.connect(config["FTP_SERVER"], 21)
+        ftp.login(config["FTP_USERNAME"], config["FTP_PASSWORD"])
+        ftp.prot_p()
+        return ftp
+    except Exception:
+        ftp.close()
+        raise
 
 
 def main() -> int:
@@ -117,11 +134,26 @@ def main() -> int:
         config = {key: os.environ.get(key) for key in ("FTP_SERVER", "FTP_USERNAME", "FTP_PASSWORD")}
         if not all(config.values()):
             raise ValueError("Required FTPS runtime settings are missing")
-        ftp = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=60)
-        ftp.connect(config["FTP_SERVER"], 21)
-        ftp.login(config["FTP_USERNAME"], config["FTP_PASSWORD"])
-        ftp.prot_p()
-        report = upload_package(ftp, TARGET_FULL, files, commit=args.commit, force=args.force)
+        completed = {}
+        for attempt in range(4):
+            try:
+                ftp = connect_ftps(config)
+                report = upload_package(ftp, TARGET_FULL, files, commit=args.commit,
+                                        force=args.force, completed=completed)
+                break
+            except (OSError, EOFError, ftplib.error_temp, ftplib.error_proto, ftplib.error_reply) as exc:
+                if attempt == 3:
+                    raise
+                print(f"FTPS connection interrupted ({type(exc).__name__}); reconnecting ({attempt + 1}/3)", flush=True)
+                time.sleep(2 ** attempt)
+            finally:
+                if ftp is not None:
+                    with suppress(Exception):
+                        ftp.close()
+                    ftp = None
+        # Include transfers completed on earlier connections in this run's receipt.
+        report["uploaded_files"] = sorted(completed)
+        report["skipped_files"] = len(files) - len(completed)
         RECEIPT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
         print(f"FTPS complete: {len(report['uploaded_files'])} uploaded, {report['skipped_files']} unchanged, 0 deleted")
         return 0

@@ -85,7 +85,9 @@ only at the upload step. It verifies TLS certificates and encrypts data
 connections. The first successful run uploads the whole productive package;
 later runs compare SHA-256/size entries in `.realitycheck-auto-deploy.json` and
 check remote sizes before skipping unchanged files. The checkpoint is written
-only after all uploads and size checks pass. Failures stop the run; rerunning
+only after all uploads and size checks pass. Transient connection failures
+receive up to three bounded reconnects, retaining already size-verified files
+in memory for the same run. Persistent failures stop the run; rerunning
 retries unfinished changes. No files are deleted, including obsolete managed
 files and server-owned state. Manual deletion remains a separate action.
 
