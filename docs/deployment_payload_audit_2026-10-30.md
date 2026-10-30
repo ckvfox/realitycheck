@@ -1,4 +1,4 @@
-# RealityCheck deployment payload audit â€” 2026-10-30
+# RealityCheck deployment payload audit — 2026-10-30
 
 The audit compares the 456 paths in the first automatic upload receipt
 (run 41084172389) with product references and the current registries.

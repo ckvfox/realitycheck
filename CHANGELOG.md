@@ -2,7 +2,7 @@
 
 ## Unreleased - 2026-10-30
 
-- Add a separately authorized, frozen FTP cleanup plan for 109 RealityCheck and two EnergyPlanning surplus files. Require verified backups outside both webroots, unchanged originals and preserved server files before individual deletions; add corruption, scope and backup-order regressions. Normal deployments remain non-deleting.
+- Add a separately authorized, frozen FTP cleanup plan for 109 RealityCheck and two EnergyPlanning surplus files. Require verified backups in separately HTTP-denied archives, unchanged originals and preserved server files before individual deletions; add corruption, scope and backup-order regressions. Normal deployments remain non-deleting.
 
 - Tighten every production upload to an explicit static-file and registry-derived allowlist: 386 current files instead of 456. Exclude eight internal data artifacts, six image variants and 56 unused flags. Route monthly/manual data and partial/full uploads through the fixed-root, non-deleting FTPS transport; add dependency, unsafe-registry and workflow regressions. Clear both handover folders before packaging.
 

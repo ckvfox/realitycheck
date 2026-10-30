@@ -80,7 +80,7 @@ Enthaelt nur geaenderte Dateien.
 
 Neue Projekte verwenden `build/deployment/full` und `build/deployment/delta`.
 
-Bestehende Projekte duerfen dokumentierte Altpfade weiterverwenden, wenn produktive Prozesse, FTP-Uebergaben, GitHub Pages oder Hosting-AblÃ¤ufe davon abhaengen. Beispiele sind `builds/full-deployment`, `deployment/full_deployment`, `full`, `delta`, `deploy-paket` oder `delta-deploy-paket`.
+Bestehende Projekte duerfen dokumentierte Altpfade weiterverwenden, wenn produktive Prozesse, FTP-Uebergaben, GitHub Pages oder Hosting-Abläufe davon abhaengen. Beispiele sind `builds/full-deployment`, `deployment/full_deployment`, `full`, `delta`, `deploy-paket` oder `delta-deploy-paket`.
 
 Altpfade muessen in README oder AGENTS dokumentiert werden. Eine Umstellung auf den Zielstandard ist eine Deployment-Migration und benoetigt Test, Rollback und Changelog-Eintrag.
 

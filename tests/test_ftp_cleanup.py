@@ -96,3 +96,13 @@ class FTPCleanupTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 cleanup.delete_reviewed(self.ftp, self.plan, {"deleted": []})
         self.assertEqual(self.ftp.deleted, [])
+
+    def test_changed_archive_guard_blocks_backup_and_all_deletions(self):
+        with patch.object(cleanup, "inventory", self.ftp.inventory), redirect_stdout(io.StringIO()):
+            cleanup.backup(self.ftp, self.plan)
+            self.ftp.files[self.plan["sites"][1]["backup_root"] + "/.htaccess"] = b"changed fixture"
+            with self.assertRaises(ValueError):
+                cleanup.delete_reviewed(self.ftp, self.plan, {"deleted": []})
+            with self.assertRaises(ValueError):
+                cleanup.backup(self.ftp, self.plan)
+        self.assertEqual(self.ftp.deleted, [])

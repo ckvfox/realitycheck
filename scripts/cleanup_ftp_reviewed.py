@@ -18,30 +18,34 @@ RECEIPT = Path("build/source-review/ftp-cleanup-receipt.json")
 GUARD = b"<IfModule mod_authz_core.c>\nRequire all denied\n</IfModule>\n<IfModule !mod_authz_core.c>\nOrder allow,deny\nDeny from all\n</IfModule>\n"
 
 
+class CleanupSafetyError(ValueError):
+    """Only constant, secret-free validation messages may use this exception."""
+
+
 def validate_plan(plan):
     if plan.get("id") != "2026-10-30-reviewed-cleanup" or len(plan["sites"]) != 2:
-        raise ValueError("Unapproved cleanup plan")
+        raise CleanupSafetyError("Unapproved cleanup plan")
     if [site["root"] for site in plan["sites"]] != list(WEBROOTS):
-        raise ValueError("Unapproved webroots")
+        raise CleanupSafetyError("Unapproved webroots")
     for site, count in zip(plan["sites"], (109, 2)):
         root = site["root"]
         expected_backup = root + "/.ftp-backups/" + plan["id"]
         if site["backup_root"] != expected_backup:
-            raise ValueError("Backup must use the separately HTTP-denied archive")
+            raise CleanupSafetyError("Backup must use the separately HTTP-denied archive")
         names = [row["path"] for row in site["candidates"]]
         if len(names) != count or len(set(names)) != count or set(names) & set(site["preserved"]):
-            raise ValueError("Invalid candidate set")
+            raise CleanupSafetyError("Invalid candidate set")
         if root == WEBROOTS[0] and set(names) & productive_paths():
-            raise ValueError("Candidate became productive; audit again")
+            raise CleanupSafetyError("Candidate became productive; audit again")
         for name in names:
             path = PurePosixPath(name)
             if path.is_absolute() or ".." in path.parts or any(c in name for c in "\\\r\n"):
-                raise ValueError("Unsafe path")
+                raise CleanupSafetyError("Unsafe path")
             base = path.name.lower()
             if base in {"auth.json", "real-wages-auth.php", "tracking.json", "id_rsa", "id_ed25519", "known_hosts", ".npmrc", ".pypirc", ".secrets"} or any(
                 fnmatch.fnmatch(base, pattern) for pattern in (".env*", "credentials*", "*.pem", "*.key", "*.pfx", "*.p12", ".*-auto-deploy.json")
             ):
-                raise ValueError("Protected server file")
+                raise CleanupSafetyError("Protected server file")
 
 
 def retrieve(ftp, path):
@@ -71,13 +75,13 @@ def mkdirs(ftp, absolute, known):
 def snapshot(ftp, site):
     rows = {r["path"]: r for r in inventory(ftp, site["root"])["entries"] if r["type"] == "file"}
     if not set(site["preserved"]) <= rows.keys():
-        raise ValueError("Preserved file is missing")
+        raise CleanupSafetyError("Preserved file is missing")
     return rows
 
 
 def verify_original(row, current):
     if current is None or any(current.get(key) != row.get(key) for key in ("size", "modified")):
-        raise ValueError("Candidate changed since reviewed audit")
+        raise CleanupSafetyError("Candidate changed since reviewed audit")
 
 
 def backup(ftp, plan):
@@ -86,25 +90,25 @@ def backup(ftp, plan):
     # Finish and verify both sites before a later, separate delete invocation.
     for site in plan["sites"]:
         if retrieve(ftp, site["backup_root"] + "/.htaccess") != GUARD:
-            raise ValueError("Backup HTTP guard is missing or changed")
+            raise CleanupSafetyError("Backup HTTP guard is missing or changed")
         current = snapshot(ftp, site)
         records = []
         for row in site["candidates"]:
             verify_original(row, current.get(row["path"]))
             data = retrieve(ftp, site["root"] + "/" + row["path"])
             if len(data) != row["size"]:
-                raise ValueError("Original size changed")
+                raise CleanupSafetyError("Original size changed")
             target = site["backup_root"] + "/" + row["path"]
             mkdirs(ftp, str(PurePosixPath(target).parent), known)
             ftp.storbinary("STOR " + target, io.BytesIO(data))
             if digest(retrieve(ftp, target)) != digest(data):
-                raise ValueError("Backup integrity mismatch")
+                raise CleanupSafetyError("Backup integrity mismatch")
             records.append({"path": row["path"], "size": len(data), "sha256": digest(data)})
             print("Verified backup: " + site["root"] + "/" + row["path"], flush=True)
         receipt = {"root": site["root"], "backup_root": site["backup_root"], "files": records}
         ftp.storbinary("STOR " + site["backup_root"] + "/snapshot.json", io.BytesIO(json.dumps(receipt).encode()))
         if json.loads(retrieve(ftp, site["backup_root"] + "/snapshot.json")) != receipt:
-            raise ValueError("Backup receipt mismatch")
+            raise CleanupSafetyError("Backup receipt mismatch")
         receipts.append(receipt)
     return receipts
 
@@ -114,32 +118,36 @@ def delete_reviewed(ftp, plan, report):
     ready = []
     for site in plan["sites"]:
         if retrieve(ftp, site["backup_root"] + "/.htaccess") != GUARD:
-            raise ValueError("Backup HTTP guard is missing or changed")
+            raise CleanupSafetyError("Backup HTTP guard is missing or changed")
         current = snapshot(ftp, site)
         saved = json.loads(retrieve(ftp, site["backup_root"] + "/snapshot.json"))
         records = {r["path"]: r for r in saved["files"]}
         if saved["root"] != site["root"] or saved["backup_root"] != site["backup_root"] or set(records) != {r["path"] for r in site["candidates"]}:
-            raise ValueError("Backup does not match approved plan")
+            raise CleanupSafetyError("Backup does not match approved plan")
         for row in site["candidates"]:
             name = row["path"]
+            report["checking"] = {"root": site["root"], "path": name, "phase": "backup hash"}
             record = records[name]
             data = retrieve(ftp, site["backup_root"] + "/" + name)
             if len(data) != row["size"] or record["size"] != row["size"] or digest(data) != record["sha256"]:
-                raise ValueError("Backup verification failed")
+                raise CleanupSafetyError("Backup verification failed")
             if name in current:
+                report["checking"]["phase"] = "original metadata"
                 verify_original(row, current[name])
+                report["checking"]["phase"] = "original hash"
                 if digest(retrieve(ftp, site["root"] + "/" + name)) != record["sha256"]:
-                    raise ValueError("Original differs from backup")
+                    raise CleanupSafetyError("Original differs from backup")
                 ready.append((site, name))
     for site, name in ready:
         ftp.delete(site["root"] + "/" + name)
         report["deleted"].append({"root": site["root"], "path": name})
         print("Deleted backed-up candidate: " + site["root"] + "/" + name, flush=True)
     report["post_inventory"] = []
+    report.pop("checking", None)
     for site in plan["sites"]:
         rows = snapshot(ftp, site)
         if {r["path"] for r in site["candidates"]} & rows.keys():
-            raise ValueError("A candidate remains")
+            raise CleanupSafetyError("A candidate remains")
         report["post_inventory"].append(inventory(ftp, site["root"]))
 
 
@@ -160,7 +168,7 @@ def main():
                 ftp.storbinary("STOR " + site["backup_root"] + "/.htaccess", io.BytesIO(GUARD))
                 ftp.storbinary("STOR " + site["backup_root"] + "/protection-check.txt", io.BytesIO(b"Non-sensitive HTTP access test"))
                 if retrieve(ftp, site["backup_root"] + "/.htaccess") != GUARD:
-                    raise ValueError("Backup guard verification failed")
+                    raise CleanupSafetyError("Backup guard verification failed")
             report["instruction"] = "Verify HTTP 403 for both protection-check.txt URLs before backup"
         elif args.stage == "backup":
             report["backups"] = backup(ftp, plan)
@@ -169,6 +177,7 @@ def main():
         report["complete"] = True
         return 0
     except Exception as exc:
+        report["failure"] = str(exc) if isinstance(exc, CleanupSafetyError) else type(exc).__name__
         print(f"Cleanup stopped ({type(exc).__name__}); inspect metadata receipt, no server replies exposed")
         return 1
     finally:
