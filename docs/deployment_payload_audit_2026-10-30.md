@@ -81,3 +81,42 @@ candidate metadata/content or missing preserved files abort the operation.
 Deletion uses only individual frozen paths, never recursive directory removal.
 Artifacts contain metadata receipts, never backup file contents or credentials.
 Normal deployments remain non-deleting. This one-off helper is not deployed.
+
+The delayed pre-delete verification detected a changed `images/photo.png` backup
+and stopped before any deletion. All ten image backups were then copied under
+opaque `.original` storage names and matched against the initial verified source
+hashes. The other backup files were retained. No source hash was replaced or
+accepted with weaker checks.
+
+Recovery uses each archive's `snapshot.json`: `path` is the original destination;
+`storage_path`, when present, is the archive filename to restore, otherwise use
+`path`. Check `size` and `sha256` before copying back. Ignore archive files not
+selected by this mapping, including superseded image copies. Never upload the
+whole archive blindly to the webroot.
+
+Framework candidate: reverify backups after storage and before deleting originals;
+use opaque binary storage names with an explicit restoration manifest when an
+image copy changes after its initial upload verification.
+
+## Completed cleanup and live acceptance
+
+The final receipt from [run 41104448784](https://github.com/ckvfox/realitycheck/actions/runs/41104448784)
+confirms exactly 109 RealityCheck and two EnergyPlanning deletions, after the
+repaired backups passed the complete preflight. All 389 RealityCheck and 23
+EnergyPlanning original product/server files selected for preservation remain.
+These counts exclude the protected backup archives, which remain on FTP.
+
+Initial backup receipt: run 41101182550. Opaque-image repair receipt:
+run 41103890793. All 111 original hashes remained unchanged by repair. Both
+archive marker URLs returned HTTP 403 after the complete backup.
+
+Live checks after deletion: RealityCheck country values and visitor counter,
+NOAA basin table, wildfire/flood/heat/drought data and environmental legends,
+plus the public Germany dossier; EnergyPlanning calculation and funding hints,
+scenario switching and winter charts. Screenshots and the operational receipt
+are local artifacts under `build/source-review` and the session visual folder.
+The full offline suite passed (124 tests, one Windows symlink test skipped),
+including JavaScript/PHP checks; the FPF production baseline passed.
+
+The one-off cleanup workflow was then disabled in GitHub Actions. Automatic
+main deployment and the monthly fetch workflow remain active and non-deleting.

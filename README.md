@@ -514,3 +514,10 @@ The current package contains 386 files (formerly 456); internal data artifacts
 and unused image/flag variants are excluded. New data releases follow the
 registries automatically. No remote files are deleted. See
 `docs/deployment_payload_audit_2026-10-30.md` and `standards/deployment.md`.
+
+Separately authorized FTP cleanup completed on 2026-10-30: 109 RealityCheck and
+two EnergyPlanning surplus files were backed up, verified and removed from their
+original paths. Protected recovery archives remain at each site's
+`htdocs/.ftp-backups/2026-10-30-reviewed-cleanup/`; restore using `snapshot.json`
+and its optional `storage_path` mapping. The one-off cleanup workflow is disabled;
+ordinary deployments and monthly data refreshes retain their non-deleting policy.
