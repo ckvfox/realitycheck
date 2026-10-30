@@ -5,8 +5,8 @@ on:
     inputs:
       stage:
         type: choice
-        options: [backup, delete]
-        default: backup
+        options: [prepare, backup, delete]
+        default: prepare
         required: true
 
 permissions:

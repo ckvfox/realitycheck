@@ -1,4 +1,4 @@
-# RealityCheck deployment payload audit — 2026-10-30
+# RealityCheck deployment payload audit â€” 2026-10-30
 
 The audit compares the 456 paths in the first automatic upload receipt
 (run 41084172389) with product references and the current registries.
@@ -71,8 +71,11 @@ two EnergyPlanning candidates. Current deployment checkpoints, RealityCheck's
 server-side access configuration and visitor counter remain protected.
 
 `cleanup-ftp-reviewed.yml` has separate backup/delete stages. Backups go into
-each domain's `ftp-backups/2026-10-30-reviewed-cleanup/` sibling directory, outside
-the public `htdocs`. Size and SHA-256 are checked after copying. Before any
+each domain's `htdocs/.ftp-backups/2026-10-30-reviewed-cleanup/` archive, protected
+by its own deny-all Apache configuration. InfinityFree rejected the initial
+sibling-directory backup attempt before copying/deleting any candidates. The
+separate prepare stage creates only the guard and a harmless marker; HTTP 403
+for both marker URLs must be checked before starting backup. Size and SHA-256 are checked after copying. Before any
 deletion, both sites' backups and remaining originals are checked again; changed
 candidate metadata/content or missing preserved files abort the operation.
 Deletion uses only individual frozen paths, never recursive directory removal.

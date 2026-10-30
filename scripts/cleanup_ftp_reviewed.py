@@ -1,4 +1,4 @@
-"""One-off, explicitly approved cleanup. Backup outside htdocs before deleting exact paths."""
+"""One-off, explicitly approved cleanup. HTTP-denied backup before deleting exact paths."""
 from __future__ import annotations
 
 import argparse
@@ -15,6 +15,7 @@ from prepare_deployment import productive_paths
 
 PLAN = Path(__file__).with_name("ftp_cleanup_plan_2026_10_30.json")
 RECEIPT = Path("build/source-review/ftp-cleanup-receipt.json")
+GUARD = b"<IfModule mod_authz_core.c>\nRequire all denied\n</IfModule>\n<IfModule !mod_authz_core.c>\nOrder allow,deny\nDeny from all\n</IfModule>\n"
 
 
 def validate_plan(plan):
@@ -24,9 +25,9 @@ def validate_plan(plan):
         raise ValueError("Unapproved webroots")
     for site, count in zip(plan["sites"], (109, 2)):
         root = site["root"]
-        expected_backup = root.removesuffix("/htdocs") + "/ftp-backups/" + plan["id"]
+        expected_backup = root + "/.ftp-backups/" + plan["id"]
         if site["backup_root"] != expected_backup:
-            raise ValueError("Backup must be outside htdocs")
+            raise ValueError("Backup must use the separately HTTP-denied archive")
         names = [row["path"] for row in site["candidates"]]
         if len(names) != count or len(set(names)) != count or set(names) & set(site["preserved"]):
             raise ValueError("Invalid candidate set")
@@ -84,6 +85,8 @@ def backup(ftp, plan):
     receipts = []
     # Finish and verify both sites before a later, separate delete invocation.
     for site in plan["sites"]:
+        if retrieve(ftp, site["backup_root"] + "/.htaccess") != GUARD:
+            raise ValueError("Backup HTTP guard is missing or changed")
         current = snapshot(ftp, site)
         records = []
         for row in site["candidates"]:
@@ -110,6 +113,8 @@ def delete_reviewed(ftp, plan, report):
     # Preflight every backup and remaining original, across both sites, before any DELE.
     ready = []
     for site in plan["sites"]:
+        if retrieve(ftp, site["backup_root"] + "/.htaccess") != GUARD:
+            raise ValueError("Backup HTTP guard is missing or changed")
         current = snapshot(ftp, site)
         saved = json.loads(retrieve(ftp, site["backup_root"] + "/snapshot.json"))
         records = {r["path"]: r for r in saved["files"]}
@@ -140,7 +145,7 @@ def delete_reviewed(ftp, plan, report):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("stage", choices=("backup", "delete"))
+    parser.add_argument("stage", choices=("prepare", "backup", "delete"))
     args = parser.parse_args()
     ftp = None
     report = {"stage": args.stage, "complete": False, "deleted": []}
@@ -148,7 +153,16 @@ def main():
         plan = json.loads(PLAN.read_text(encoding="utf-8"))
         validate_plan(plan)
         ftp = connect_ftps({k: os.environ.get(k) for k in ("FTP_SERVER", "FTP_USERNAME", "FTP_PASSWORD")})
-        if args.stage == "backup":
+        if args.stage == "prepare":
+            known = set()
+            for site in plan["sites"]:
+                mkdirs(ftp, site["backup_root"], known)
+                ftp.storbinary("STOR " + site["backup_root"] + "/.htaccess", io.BytesIO(GUARD))
+                ftp.storbinary("STOR " + site["backup_root"] + "/protection-check.txt", io.BytesIO(b"Non-sensitive HTTP access test"))
+                if retrieve(ftp, site["backup_root"] + "/.htaccess") != GUARD:
+                    raise ValueError("Backup guard verification failed")
+            report["instruction"] = "Verify HTTP 403 for both protection-check.txt URLs before backup"
+        elif args.stage == "backup":
             report["backups"] = backup(ftp, plan)
         else:
             delete_reviewed(ftp, plan, report)

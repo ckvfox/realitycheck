@@ -4,7 +4,7 @@
   "sites": [
     {
       "root": "/realitycheck.great-site.net/htdocs",
-      "backup_root": "/realitycheck.great-site.net/ftp-backups/2026-10-30-reviewed-cleanup",
+      "backup_root": "/realitycheck.great-site.net/htdocs/.ftp-backups/2026-10-30-reviewed-cleanup",
       "candidates": [
         {
           "path": ".ftp-deploy-sync-state-data.json",
@@ -1055,7 +1055,7 @@
     },
     {
       "root": "/energyplanning.great-site.net/htdocs",
-      "backup_root": "/energyplanning.great-site.net/ftp-backups/2026-10-30-reviewed-cleanup",
+      "backup_root": "/energyplanning.great-site.net/htdocs/.ftp-backups/2026-10-30-reviewed-cleanup",
       "candidates": [
         {
           "path": "images/ChatGPT Image 28. Nov. 2025, 18_13_16.png",

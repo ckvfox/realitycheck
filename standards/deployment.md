@@ -30,7 +30,7 @@ Loeschungen. Historische Serverdateien werden dadurch nicht nachtraeglich entfer
 
 Separat genehmigte Einmalbereinigung: `cleanup-ftp-reviewed.yml` verwendet den
 festen Plan vom 30.10.2026. Erst nach vollstaendiger, SHA-256-gepruefter Sicherung
-beider Sites ausserhalb `htdocs` darf die getrennte Loeschphase exakt diese
+beider Sites in einem separat per HTTP gesperrten Archiv darf die getrennte Loeschphase exakt diese
 Dateien entfernen. Keine rekursive Loeschung, keine Serverkonfiguration und
 keine Erweiterung der normalen Deployment-Rechte oder Upload-Positivliste.
 
@@ -80,7 +80,7 @@ Enthaelt nur geaenderte Dateien.
 
 Neue Projekte verwenden `build/deployment/full` und `build/deployment/delta`.
 
-Bestehende Projekte duerfen dokumentierte Altpfade weiterverwenden, wenn produktive Prozesse, FTP-Uebergaben, GitHub Pages oder Hosting-Abläufe davon abhaengen. Beispiele sind `builds/full-deployment`, `deployment/full_deployment`, `full`, `delta`, `deploy-paket` oder `delta-deploy-paket`.
+Bestehende Projekte duerfen dokumentierte Altpfade weiterverwenden, wenn produktive Prozesse, FTP-Uebergaben, GitHub Pages oder Hosting-AblÃ¤ufe davon abhaengen. Beispiele sind `builds/full-deployment`, `deployment/full_deployment`, `full`, `delta`, `deploy-paket` oder `delta-deploy-paket`.
 
 Altpfade muessen in README oder AGENTS dokumentiert werden. Eine Umstellung auf den Zielstandard ist eine Deployment-Migration und benoetigt Test, Rollback und Changelog-Eintrag.
 

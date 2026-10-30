@@ -18,6 +18,7 @@ class FakeFTP:
         self.deleted = []
         self.retrieved = []
         for site in plan["sites"]:
+            self.files[site["backup_root"] + "/.htaccess"] = cleanup.GUARD
             for name in site["preserved"]:
                 self.files[site["root"] + "/" + name] = b"protected fixture"
             for row in site["candidates"]:
