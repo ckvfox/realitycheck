@@ -151,6 +151,18 @@ class AutoDeployTests(unittest.TestCase):
         self.assertEqual(receipt["skipped_files"], 0)
         self.assertEqual(len(self.ftp.uploads + retry.uploads), 6)  # 5 productive files + checkpoint
 
+    def test_shared_transport_keeps_other_site_root_and_checkpoint_separate(self):
+        root = "/energyplanning.great-site.net/htdocs"
+        self.ftp.directories.add(root)
+        with redirect_stdout(io.StringIO()):
+            result = deploy.upload_package(self.ftp, self.package, deploy.package_manifest(self.package),
+                                           commit="a" * 40, remote_root=root,
+                                           state_name=".energyplanning-auto-deploy.json")
+        self.assertEqual(result["destination"], root)
+        self.assertIn(root + "/data", self.ftp.directories)
+        self.assertIn(".energyplanning-auto-deploy.json", self.ftp.files)
+        self.assertNotIn(deploy.STATE_NAME, self.ftp.files)
+
     def test_workflow_has_main_guard_tests_before_upload_and_shared_lock(self):
         workflow = (ROOT / ".github/workflows/auto-deploy.yml").read_text(encoding="utf-8")
         self.assertIn("branches: [main]", workflow)

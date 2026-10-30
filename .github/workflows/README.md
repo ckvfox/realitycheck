@@ -109,6 +109,13 @@ tested commit `0f238a336ab8f85a126b51af5a25b3ec660ec5c6`. The upload file set wa
 compared with Git's productive allowlist: no untracked or missing paths.
 The earlier first attempt timed out; bounded reconnects are regression-tested.
 
+Reusable transport: `scripts/deploy_ftps.py` also exposes `publish_package` for
+other static sites. Callers supply their independently validated package,
+fixed site root and separate checkpoint name; the RealityCheck CLI defaults
+remain unchanged. EnergyPlanning consumes this API through a pinned sparse
+checkout rather than maintaining a duplicate FTP implementation. Framework
+candidate: shared certificate-verified transport with project-owned allowlists.
+
 - `manual-ftp-full.yml`: validates data, builds the productive allowlist and uploads the complete package without remote clean-slate deletion
 - `manual-ftp-sync.yml`: validates the committed data snapshot and synchronizes productive `/data/` files
 - `manual-partial-upload.yml`: accepts comma-separated productive paths, rejects traversal/absolute paths and uploads only files present in the generated deployment allowlist

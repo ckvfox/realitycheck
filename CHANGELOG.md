@@ -2,6 +2,8 @@
 
 ## Unreleased - 2026-10-30
 
+- Expose the tested FTPS transport as a reusable API with explicit per-site roots and checkpoints for EnergyPlanning; retain RealityCheck CLI defaults and test cross-site isolation.
+
 - Add automatic main-branch deployment: test and FPF-check the latest main snapshot under the production lock, build the existing productive allowlist, then incrementally upload via certificate-verified FTPS to the fixed domain webroot. The first run establishes a full hash checkpoint; later runs skip unchanged files, restore missing files and never delete remote content. Add transfer/retry/checkpoint/workflow regressions and a secret-free deployment receipt.
 - Share the production lock with all manual FTP workflows and exclude secret-bearing basenames before any deployment package reads their content.
 

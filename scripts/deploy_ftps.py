@@ -38,7 +38,7 @@ def package_manifest(package: Path) -> dict[str, dict]:
     return files
 
 
-def read_remote_state(ftp) -> dict:
+def read_remote_state(ftp, state_name: str = STATE_NAME) -> dict:
     payload = bytearray()
 
     def collect(chunk):
@@ -47,7 +47,7 @@ def read_remote_state(ftp) -> dict:
         payload.extend(chunk)
 
     try:
-        ftp.retrbinary(f"RETR {STATE_NAME}", collect)
+        ftp.retrbinary(f"RETR {state_name}", collect)
     except ftplib.error_perm as exc:
         if not str(exc).startswith("550"):
             raise
@@ -61,13 +61,13 @@ def read_remote_state(ftp) -> dict:
     return {}
 
 
-def ensure_remote_directory(ftp, relative: str, known: set[str]) -> None:
+def ensure_remote_directory(ftp, relative: str, known: set[str], remote_root: str = REMOTE_ROOT) -> None:
     parts = Path(relative).parts[:-1]
     for end in range(1, len(parts) + 1):
         directory = "/".join(parts[:end])
         if directory in known:
             continue
-        absolute = f"{REMOTE_ROOT}/{directory}"
+        absolute = f"{remote_root}/{directory}"
         try:
             ftp.cwd(absolute)
         except ftplib.error_perm as exc:
@@ -76,13 +76,14 @@ def ensure_remote_directory(ftp, relative: str, known: set[str]) -> None:
             ftp.mkd(absolute)
             ftp.cwd(absolute)
         known.add(directory)
-    ftp.cwd(REMOTE_ROOT)
+    ftp.cwd(remote_root)
 
 
 def upload_package(ftp, package: Path, files: dict, *, commit: str, force: bool = False,
-                   completed: dict | None = None) -> dict:
-    ftp.cwd(REMOTE_ROOT)
-    previous = {} if force else read_remote_state(ftp)
+                   completed: dict | None = None, remote_root: str = REMOTE_ROOT,
+                   state_name: str = STATE_NAME) -> dict:
+    ftp.cwd(remote_root)
+    previous = {} if force else read_remote_state(ftp, state_name)
     completed = completed if completed is not None else {}
     previous.update(completed)
     uploaded = []
@@ -95,7 +96,7 @@ def upload_package(ftp, package: Path, files: dict, *, commit: str, force: bool 
             except ftplib.error_perm as exc:
                 if not str(exc).startswith("550"):
                     raise
-        ensure_remote_directory(ftp, name, known)
+        ensure_remote_directory(ftp, name, known, remote_root)
         with (package / name).open("rb") as handle:
             ftp.storbinary(f"STOR {name}", handle, blocksize=256 * 1024)
         if ftp.size(name) != metadata["size"]:
@@ -105,8 +106,8 @@ def upload_package(ftp, package: Path, files: dict, *, commit: str, force: bool 
         print(f"Uploaded {name}", flush=True)
     # Advance the checkpoint only after every transfer and size check succeeds.
     state = json.dumps({"version": 1, "commit": commit, "files": files}, sort_keys=True).encode()
-    ftp.storbinary(f"STOR {STATE_NAME}", io.BytesIO(state))
-    return {"commit": commit, "destination": REMOTE_ROOT, "total_files": len(files),
+    ftp.storbinary(f"STOR {state_name}", io.BytesIO(state))
+    return {"commit": commit, "destination": remote_root, "total_files": len(files),
             "uploaded_files": uploaded, "skipped_files": len(files) - len(uploaded), "deleted_files": 0}
 
 
@@ -122,38 +123,46 @@ def connect_ftps(config):
         raise
 
 
+def publish_package(package: Path, files: dict, *, commit: str, remote_root: str = REMOTE_ROOT,
+                    state_name: str = STATE_NAME, force: bool = False) -> dict:
+    """Shared transport API; the caller validates its project-specific package allowlist."""
+    if not remote_root.startswith("/") or ".." in remote_root.split("/") or any(c in remote_root for c in "\r\n"):
+        raise ValueError("Unsafe remote root")
+    if Path(state_name).name != state_name or any(c in state_name for c in "\r\n\\/"):
+        raise ValueError("Unsafe checkpoint name")
+    config = {key: os.environ.get(key) for key in ("FTP_SERVER", "FTP_USERNAME", "FTP_PASSWORD")}
+    if not all(config.values()):
+        raise ValueError("Required FTPS runtime settings are missing")
+    completed = {}
+    for attempt in range(4):
+        ftp = None
+        try:
+            ftp = connect_ftps(config)
+            report = upload_package(ftp, package, files, commit=commit, force=force,
+                                    completed=completed, remote_root=remote_root, state_name=state_name)
+            break
+        except (OSError, EOFError, ftplib.error_temp, ftplib.error_proto, ftplib.error_reply) as exc:
+            if attempt == 3:
+                raise
+            print(f"FTPS connection interrupted ({type(exc).__name__}); reconnecting ({attempt + 1}/3)", flush=True)
+            time.sleep(2 ** attempt)
+        finally:
+            if ftp is not None:
+                with suppress(Exception):
+                    ftp.close()
+    report["uploaded_files"] = sorted(completed)
+    report["skipped_files"] = len(files) - len(completed)
+    return report
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--commit", required=True)
     parser.add_argument("--force", action="store_true", help="Upload all allowlisted files again")
     args = parser.parse_args()
-    ftp = None
     try:
         files = package_manifest(TARGET_FULL)
-        # Read runtime settings only; never open local secret files or print values.
-        config = {key: os.environ.get(key) for key in ("FTP_SERVER", "FTP_USERNAME", "FTP_PASSWORD")}
-        if not all(config.values()):
-            raise ValueError("Required FTPS runtime settings are missing")
-        completed = {}
-        for attempt in range(4):
-            try:
-                ftp = connect_ftps(config)
-                report = upload_package(ftp, TARGET_FULL, files, commit=args.commit,
-                                        force=args.force, completed=completed)
-                break
-            except (OSError, EOFError, ftplib.error_temp, ftplib.error_proto, ftplib.error_reply) as exc:
-                if attempt == 3:
-                    raise
-                print(f"FTPS connection interrupted ({type(exc).__name__}); reconnecting ({attempt + 1}/3)", flush=True)
-                time.sleep(2 ** attempt)
-            finally:
-                if ftp is not None:
-                    with suppress(Exception):
-                        ftp.close()
-                    ftp = None
-        # Include transfers completed on earlier connections in this run's receipt.
-        report["uploaded_files"] = sorted(completed)
-        report["skipped_files"] = len(files) - len(completed)
+        report = publish_package(TARGET_FULL, files, commit=args.commit, force=args.force)
         RECEIPT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
         print(f"FTPS complete: {len(report['uploaded_files'])} uploaded, {report['skipped_files']} unchanged, 0 deleted")
         return 0
@@ -161,10 +170,6 @@ def main() -> int:
         # FTP replies can contain account/server details. Keep diagnostics secret-free.
         print(f"FTPS deployment failed ({type(exc).__name__}); checkpoint was not advanced.")
         return 1
-    finally:
-        if ftp is not None:
-            with suppress(Exception):
-                ftp.quit()
 
 
 if __name__ == "__main__":
