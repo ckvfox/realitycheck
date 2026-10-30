@@ -10,7 +10,29 @@ const {
   countryValuesForYear,
   formatCoverage,
   percentileIntensities,
+  getRegionSeries,
+  regionValuesForYear,
+  formatWorldMapNumber,
 } = require("../scripts/script_world.js");
+
+test("small nonzero per-capita impacts do not round to a false zero", () => {
+  assert.match(formatWorldMapNumber(0.0005), /0[.,]0005/);
+  assert.equal(formatWorldMapNumber(0), "0");
+});
+
+test("basin trends preserve missing seasons and never manufacture a global sum", () => {
+  const rows = [
+    { region: "NA", year: 2024, value: 2 },
+    { region: "NA", year: 2025, value: 3 },
+    { region: "SA", year: 2024, value: 1 },
+  ];
+  const series = getRegionSeries(rows);
+  assert.deepEqual(series.years, [2024, 2025]);
+  assert.equal(series.datasets.length, 7);
+  assert.deepEqual(series.datasets.find(s => s.label === "South Atlantic").data, [1, null]);
+  assert.deepEqual(series.datasets.find(s => s.label === "North Atlantic").data, [2, 3]);
+  assert.equal(regionValuesForYear(rows, 2025).has("SA"), false);
+});
 
 test("group additive shares use real-country totals and report coverage", () => {
   const data = [

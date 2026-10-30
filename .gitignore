@@ -20,4 +20,4 @@ Thumbs.db
 serve.py
 
 # --- Framework deployment handover (local only; never commit) ---
-build/deployment/
+build/

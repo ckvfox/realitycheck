@@ -1581,6 +1581,11 @@ body.world-page { overflow-x: hidden; }
   border-radius: .2rem;
   background: linear-gradient(90deg, #e8eef5, #1976d2);
 }
+.legend-gradient--environment,
+.legend-bar--environment,
+.legend-color.legend-color--environment {
+  background: linear-gradient(90deg, hsl(0, 75%, 42%), hsl(60, 75%, 42%), hsl(120, 75%, 42%));
+}
 
 @media (max-width: 620px) {
   .world-group-summary--comparison .world-group-summary__cards,

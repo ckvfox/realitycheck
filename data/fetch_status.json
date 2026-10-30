@@ -703,10 +703,38 @@
     },
     "tropical_cyclone_activity_basin": {
       "source": "https://www.ncei.noaa.gov/products/international-best-track-archive",
-      "url": "",
-      "source_date": "2025-12-31",
+      "url": "https://www.ncei.noaa.gov/products/international-best-track-archive",
+      "source_date": "2026-10-30",
       "data_year": 2025,
-      "last_fetch": "2026-10-01T09:35:44Z"
+      "last_fetch": "2026-10-30T12:57:46Z"
+    },
+    "wildfire_burned_area": {
+      "source": "https://ourworldindata.org/grapher/annual-area-burnt-by-wildfires",
+      "url": "https://ourworldindata.org/grapher/annual-area-burnt-by-wildfires",
+      "source_date": "2026-10-12",
+      "data_year": 2025,
+      "last_fetch": "2026-10-30T12:57:39Z"
+    },
+    "flood_affected_people": {
+      "source": "https://ourworldindata.org/grapher/natural-disasters-people-affected?impact=total_affected&metric=total_number&timespan=annual&type=flood",
+      "url": "https://ourworldindata.org/grapher/natural-disasters-people-affected?impact=total_affected&metric=total_number&timespan=annual&type=flood",
+      "source_date": "2026-10-21",
+      "data_year": 2025,
+      "last_fetch": "2026-10-30T13:08:06Z"
+    },
+    "extreme_heat_days": {
+      "source": "https://databank.worldbank.org/metadataglossary/environment-social-and-governance-(esg)-data/series/EN.CLC.HEAT.XD",
+      "url": "https://databank.worldbank.org/metadataglossary/environment-social-and-governance-(esg)-data/series/EN.CLC.HEAT.XD",
+      "source_date": "2026-06-24",
+      "data_year": 2024,
+      "last_fetch": "2026-10-30T13:08:06Z"
+    },
+    "drought_spei": {
+      "source": "https://databank.worldbank.org/metadataglossary/environment-social-and-governance-(esg)-data/series/EN.CLC.SPEI.XD",
+      "url": "https://databank.worldbank.org/metadataglossary/environment-social-and-governance-(esg)-data/series/EN.CLC.SPEI.XD",
+      "source_date": "2026-06-24",
+      "data_year": 2023,
+      "last_fetch": "2026-10-30T13:08:06Z"
     }
   },
   "summary": {

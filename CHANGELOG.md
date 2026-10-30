@@ -1,5 +1,23 @@
 # Changelog
 
+## Unreleased - 2026-10-30
+
+- Verify all five climate KPIs participate in the unfiltered monthly pipeline. Separate World Bank WDI/ESG release-date caches and preserve OWID chart dimensions during release discovery, preventing an unrelated unchanged release from suppressing climate refreshes. Add an isolated orchestrator regression and monthly selection/workflow checks.
+
+- Activate three source-backed country categories: reported flood-affected people (3,315 observations, 179 countries, through 2025), modelled Heat Index >35°C days (7,961 observations, 194 countries, through 2024; provider RCP 8.5 note retained), and 12-month SPEI drought anomalies (12,159 observations, 190 countries, through 2023). Missing country-years stay missing.
+- Share environmental map colors between Countries and World: higher pressure/worse outcomes red, lower pressure/better outcomes green, missing observations gray. Use fixed SPEI drought thresholds, neutral ties and explicit relative-scale legends; retain group identity in map borders. SPEI changes use index units rather than undefined percentages around zero.
+- Resolve World Bank ESG source dates from source 75, preserve its JSON release date and refuse incomplete paginated responses. Add regression coverage for signed/zero values, source selection and environmental colors.
+- Support an explicit saved deployment manifest for cumulative pending FTP deltas.
+
+- Activate Wildfire — Burned Area as a country map: 2,772 GWIS/OWID observations for 198 countries, 2012–2025. Reuse the OWID adapter with completed-year and country-identity guards, excluding partial current years and preventing territory aliases from creating duplicate national observations.
+- Regenerate the changed consolidated data bundle and per-KPI fetch status; prepare full and delta FTP handover packages without deploying them.
+- Normalize CRLF in the monthly workflow regression test so the offline suite also runs on Windows.
+
+- Render cyclone trends as seven basin series instead of requesting a nonexistent global total; preserve gaps and avoid invalid cross-basin sums.
+- Replace illustrative cyclone basin rectangles with basin location circles and an accessible season/count table; clarify activity versus damage, season semantics and missing observations.
+- Preserve the North Atlantic `NA` basin code during CSV parsing and reject blank/unknown identifiers; add adapter and regional-series regressions. Refreshed all 279 basin/season observations against the NOAA raw file, restoring 46 North Atlantic seasons.
+- Replace hazard "coming soon" promises with integration-pending labels and document verified source candidates in `docs/climate_sources_2026-10-30.md`.
+
 ## Unreleased - 2026-10-19
 
 - Restore Google Translate: measured TE_20261014 bootstrap CSP hash, native

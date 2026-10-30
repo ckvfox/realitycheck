@@ -40,6 +40,17 @@ committed validation log.
 
 Every production fetch must pass the pipeline guard and final data validation before FTP and Git push can run.
 
+The normal monthly selection includes `tropical_cyclone_activity_basin`,
+`wildfire_burned_area`, `flood_affected_people`, `extreme_heat_days` and
+`drought_spei`. NOAA is checked each run; the OWID sources retain their complete
+chart query when checking release dates, and World Bank ESG source 75 has a
+separate release-date cache from WDI source 2. Unchanged provider releases may
+be skipped; failed replacements preserve the existing snapshot and block
+publication. Partial-year exclusion and country-identity guards remain active.
+The full pipeline promotes ready sources, rebuilds consolidated bundles and
+validates data before uploading JSON/gzip files. These contracts are covered by
+`tests/test_monthly_climate_refresh.py` and the adapter regressions in CI.
+
 The monthly workflow also checks the configured official release pages for
 maintained CSV sources. This is notification-only and never replaces a local
 CSV. Its shell pipeline uses `pipefail`, so writing the console output through

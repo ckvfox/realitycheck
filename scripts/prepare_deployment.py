@@ -90,6 +90,7 @@ ALLOWED_FILENAMES = {
 }
 
 PRODUCTIVE_SCRIPT_FILES = {
+    "scripts/environment_colors.js",
     "scripts/core.js",
     "scripts/page_about.js",
     "scripts/page_analysis.js",
@@ -202,13 +203,20 @@ def build_manifest(files: list[Path]) -> dict[str, str]:
     return {f.relative_to(ROOT).as_posix(): sha256_of(f) for f in files}
 
 
-def load_previous_manifest() -> dict[str, str]:
-    if not STATE_FILE.exists():
+def load_previous_manifest(baseline_file: Path | None = None) -> dict[str, str]:
+    state_file = baseline_file if baseline_file is not None else STATE_FILE
+    if not state_file.exists():
+        if baseline_file is not None:
+            raise FileNotFoundError(f"Explicit deployment baseline does not exist: {state_file}")
         return {}
     try:
-        data = json.loads(STATE_FILE.read_text(encoding="utf-8"))
+        data = json.loads(state_file.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
+        if baseline_file is not None:
+            raise ValueError("Explicit deployment baseline is not valid JSON")
         return {}
+    if baseline_file is not None and (not isinstance(data, dict) or not isinstance(data.get("manifest"), dict) or not data["manifest"]):
+        raise ValueError("Explicit deployment baseline requires a nonempty manifest")
     return data.get("manifest", {}) if isinstance(data, dict) else {}
 
 
@@ -231,10 +239,11 @@ def detect_delta(files: list[Path], previous: dict[str, str]) -> list[Path]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Prepare deployment bundles (full/delta).")
     parser.add_argument("--mode", choices=["full", "delta", "both"], default="both")
+    parser.add_argument("--baseline-manifest", type=Path, help="Explicit saved package manifest for cumulative pending delta changes")
     args = parser.parse_args()
 
     files = iter_productive_files()
-    previous = load_previous_manifest()
+    previous = load_previous_manifest(args.baseline_manifest)
     manifest = build_manifest(files)
 
     if args.mode in {"full", "both"}:

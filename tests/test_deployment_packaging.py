@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import sys
 import tempfile
+import json
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -14,6 +15,17 @@ import prepare_deployment
 
 
 class DeploymentPackagingTests(unittest.TestCase):
+    def test_explicit_baseline_is_used_and_invalid_baselines_fail(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            baseline = Path(tmp) / "baseline.json"
+            with self.assertRaises(FileNotFoundError):
+                prepare_deployment.load_previous_manifest(baseline)
+            baseline.write_text(json.dumps({"manifest":{"world.html":"old"}}),encoding="utf-8")
+            self.assertEqual(prepare_deployment.load_previous_manifest(baseline), {"world.html":"old"})
+            baseline.write_text('{}',encoding="utf-8")
+            with self.assertRaises(ValueError):
+                prepare_deployment.load_previous_manifest(baseline)
+
     def test_framework_build_tree_is_the_only_handover_target(self) -> None:
         self.assertEqual(
             prepare_deployment.TARGET_FULL,

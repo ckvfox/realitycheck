@@ -38,7 +38,7 @@ beyond perception, bias, or headlines.
 ---------------------------------------------------------------------
 
 🧭 WHAT THIS PROJECT DOES
-RealityCheck combines 100 registered global indicators (KPIs) into one coherent platform:
+RealityCheck combines 105 registered global indicators (KPIs) into one coherent platform:
 a living dashboard that visualizes progress, risks, and differences between nations.
 
 It’s both analytical and exploratory — you can:
@@ -71,8 +71,14 @@ It’s both analytical and exploratory — you can:
 
 ### 🧩 Data, analysis and reliability
 
+- All five climate sources participate automatically in the existing monthly full refresh (first day of each month, 03:00 UTC). Provider release dates are checked per dataset/database; unchanged releases retain their data, while failures preserve the last known-good snapshot and stop publication. The monthly source-selection and refresh contracts have offline CI coverage.
+
+- Flood impacts (EM-DAT/OWID), modelled heat-index days (World Bank ESG/CCKP) and 12-month SPEI drought anomalies (World Bank/SPEIbase) are active country map categories. Environmental maps share a red–yellow–green scale with direction-aware legends and gray missing observations; SPEI uses fixed drought thresholds. Source years, coverage and model limitations are documented in `docs/climate_sources_2026-10-30.md`.
+
+- The World cyclone view displays separate NOAA basin-season series and illustrative basin markers with a count table. Counts include unnamed systems and do not measure damage; missing seasons stay missing. The active Wildfire — Burned Area country map uses 198 countries and completed 2012–2025 observations from GWIS/OWID; partial current years are automatically excluded. Source integration status for the remaining hazard categories is recorded in `docs/climate_sources_2026-10-30.md`.
+
 - The fetch backend now uses independently tested source adapters, fail-closed publication guards and last-known-good preservation.
-- RealityCheck now registers 100 KPIs, including additional household, energy, cohesion, health, migration and world-climate indicators.
+- RealityCheck now registers 105 KPIs, including additional household, energy, cohesion, health, migration and world-climate indicators.
 - Global and per-KPI analyses use traceable country, regional, trend and coverage evidence; every KPI analysis displays its generation timestamp.
 - Overall Ranking keeps the user-weighted standard scenario and adds evidence-constrained Top/Bottom-20 Fun, Safe Haven and Immigration lenses.
 - The World map supports two-group comparison, overlap highlighting, KPI intensity, group summaries and shareable URL state.
@@ -163,6 +169,7 @@ It’s both analytical and exploratory — you can:
 │   ├── core.js                           # Global utilities, header/footer loading, Chart.js config
 │   ├── utils_ui.js                       # UI utilities, modal system, Chart.js defaults
 │   ├── script.js                         # Countries page main logic
+│   ├── environment_colors.js             # Shared environmental map colors and semantics
 │   ├── script_world.js                   # World trends dashboard
 │   ├── script_overall_ranking_countries.js # Interactive ranking system
 │   ├── page_about.js                     # About page (Earth Overshoot Timer)
@@ -495,3 +502,5 @@ Translate uses a native select after consent and waits for populated options.
 Google TE_20261014 requires the updated narrow bootstrap CSP hash. Germany Dossier
 keeps its editorial EN/DE switch. The homepage remains English (`en-US`), matching
 its content. RealityCheck has no WordPress/plugin runtime.
+
+For cumulative climate upload packages pending since the previous 449-file local baseline, use `.venv\Scripts\python.exe scripts/prepare_deployment.py --mode both --baseline-manifest build/source-review/previous-deployment-state.json`. The explicit baseline must exist and contain a nonempty manifest; a package manifest does not establish live server state.

@@ -55,8 +55,11 @@ def resolve_source_date(meta: dict[str, Any], *, runtime: SourceRuntime, http_ge
     code = str(meta.get("source_code") or meta.get("code") or "")
     if not code:
         return None
-    base_id = code.split("?")[0].removesuffix(".csv")
+    chart_id, separator, query = code.partition("?")
+    base_id = chart_id.removesuffix(".csv")
     url = f"https://ourworldindata.org/grapher/{base_id}.metadata.json"
+    if separator:
+        url += f"?{query}"
     try:
         response = http_get(url, timeout=20)
         if response.status_code != 200:
@@ -191,6 +194,18 @@ def run(
             year = int(raw_time[:4]) if configured_time in ("day", "month") else int(float(raw_time))
         except (TypeError, ValueError):
             continue
+        # Annual snapshots such as GWIS include a partial current year. Keep
+        # comparisons on completed years, including on future monthly refreshes.
+        if request.meta.get("owid_complete_years_only") and year >= datetime.now().year:
+            continue
+        if request.meta.get("owid_countries_only") and canon not in request.countries:
+            continue
+        if request.meta.get("owid_countries_only"):
+            # Do not collapse separately reported territories into a parent
+            # country through broad aliases (e.g. Northern Cyprus -> Cyprus).
+            code = str(row.get(code_column) or "") if code_column else ""
+            if name != canon and code != runtime.resolve_iso3(canon, request.countries):
+                continue
         if canon and value is not None:
             records.append(
                 {
