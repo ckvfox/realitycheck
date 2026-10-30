@@ -54,8 +54,14 @@ Shared tooltip CSS now overrides Leaflet's inherited nowrap, bounds width by
 the viewport and allows long labels/units to wrap. A local static-browser
 check of the 2019 flood per-capita view measured the value row's scroll width
 equal to its client width (260 px) while rendering the value on two lines.
-Countries and World stylesheet URLs were incremented. This follow-up CSS
-change still requires a separate frontend upload.
+Countries and World stylesheet URLs were incremented. With the user's explicit
+approval, the three-file frontend delta (`style.css`, `index.html`, `world.html`)
+was uploaded using FileZilla to the same verified webroot (three additional
+successful transfers, no failed transfers, empty queue). Live World QA loaded
+`style.css?v=20261030-tooltip-2` and confirmed a two-line flood per-capita value
+with equal client/scroll widths of 260 px. No additional production data/AI
+refresh was dispatched; successful execution of the newly pinned monthly
+destination remains to be observed at the next scheduled run.
 
 All four previously pending categories are now active country views; the cyclone view remains basin-based. They do not display subnational flood/drought/fire footprints.
 

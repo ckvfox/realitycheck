@@ -64,4 +64,4 @@
 - Central Webcheck integration is separate; this repository provides the local
   source-selection helper without modifying that service.
 
-- Completed and live verified (2026-10-30): flood/heat/drought country views, explicit coverage and shared environmental map colors. Follow-up tooltip wrapping is validated locally; its separate FTP publication is pending. Monthly FTPS destination is now explicit and regression-tested.
+- Completed and live verified (2026-10-30): flood/heat/drought country views, explicit coverage and shared environmental map colors. Follow-up tooltip wrapping was published as a three-file FileZilla delta and verified live without value-text overflow. Monthly FTPS destination is now explicit and regression-tested; its next scheduled execution remains future evidence.
