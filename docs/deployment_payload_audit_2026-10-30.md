@@ -61,3 +61,20 @@ file contents, follows no symlinks and has no upload/delete operations. The
 seven-day artifact contains paths, types, sizes and modification timestamps only.
 Credentials remain runtime-only GitHub secrets. This helper is excluded from
 the productive deployment package. Its tests use a metadata-only FTP double.
+
+## User-approved cleanup
+
+The user subsequently explicitly authorized backing up the surplus files,
+deleting them by FTP and checking both sites live. The frozen
+`scripts/ftp_cleanup_plan_2026_10_30.json` contains exactly 109 RealityCheck and
+two EnergyPlanning candidates. Current deployment checkpoints, RealityCheck's
+server-side access configuration and visitor counter remain protected.
+
+`cleanup-ftp-reviewed.yml` has separate backup/delete stages. Backups go into
+each domain's `ftp-backups/2026-10-30-reviewed-cleanup/` sibling directory, outside
+the public `htdocs`. Size and SHA-256 are checked after copying. Before any
+deletion, both sites' backups and remaining originals are checked again; changed
+candidate metadata/content or missing preserved files abort the operation.
+Deletion uses only individual frozen paths, never recursive directory removal.
+Artifacts contain metadata receipts, never backup file contents or credentials.
+Normal deployments remain non-deleting. This one-off helper is not deployed.

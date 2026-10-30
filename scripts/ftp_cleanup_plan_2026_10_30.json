@@ -1,0 +1,1100 @@
+{
+  "id": "2026-10-30-reviewed-cleanup",
+  "audit_run": 41095523368,
+  "sites": [
+    {
+      "root": "/realitycheck.great-site.net/htdocs",
+      "backup_root": "/realitycheck.great-site.net/ftp-backups/2026-10-30-reviewed-cleanup",
+      "candidates": [
+        {
+          "path": ".ftp-deploy-sync-state-data.json",
+          "type": "file",
+          "size": 31730,
+          "modified": "20251024132848"
+        },
+        {
+          "path": ".ftp-deploy-sync-state.json",
+          "type": "file",
+          "size": 850,
+          "modified": "20251025153055"
+        },
+        {
+          "path": ".gitignore",
+          "type": "file",
+          "size": 140,
+          "modified": "20251023191229"
+        },
+        {
+          "path": "README.md",
+          "type": "file",
+          "size": 13432,
+          "modified": "20251119085743"
+        },
+        {
+          "path": "analysis-private/real-wages-auth.example.php",
+          "type": "file",
+          "size": 388,
+          "modified": "20260731145638"
+        },
+        {
+          "path": "data/.ftp-deploy-sync-data-only.json",
+          "type": "file",
+          "size": 32857,
+          "modified": "20251118174534"
+        },
+        {
+          "path": "data/.ftp-deploy-sync-data.json",
+          "type": "file",
+          "size": 29932,
+          "modified": "20261001093918"
+        },
+        {
+          "path": "data/.ftp-deploy-sync-force-clean.json",
+          "type": "file",
+          "size": 32637,
+          "modified": "20251118174237"
+        },
+        {
+          "path": "data/.ftp-deploy-sync-state-data.json",
+          "type": "file",
+          "size": 23053,
+          "modified": "20251125125442"
+        },
+        {
+          "path": "data/analysis.json",
+          "type": "file",
+          "size": 4689,
+          "modified": "20261030155010"
+        },
+        {
+          "path": "data/country_mappings_pending.json",
+          "type": "file",
+          "size": 6853,
+          "modified": "20261030155026"
+        },
+        {
+          "path": "data/fetch_log.txt",
+          "type": "file",
+          "size": 1078073,
+          "modified": "20261001093909"
+        },
+        {
+          "path": "data/fetch_state.json",
+          "type": "file",
+          "size": 1557,
+          "modified": "20260701043929"
+        },
+        {
+          "path": "data/master/area.json",
+          "type": "file",
+          "size": 1117836,
+          "modified": "20261030155150"
+        },
+        {
+          "path": "data/master/human_rights_index_vdem.json",
+          "type": "file",
+          "size": 1984932,
+          "modified": "20261030155152"
+        },
+        {
+          "path": "data/meta/country_analysis_context.json",
+          "type": "file",
+          "size": 2208,
+          "modified": "20261030155204"
+        },
+        {
+          "path": "data/meta/country_mappings_pending.json",
+          "type": "file",
+          "size": 21913,
+          "modified": "20261030155207"
+        },
+        {
+          "path": "data/meta/meta_scan_report.txt",
+          "type": "file",
+          "size": 5983,
+          "modified": "20260201050603"
+        },
+        {
+          "path": "data/meta/world.json",
+          "type": "file",
+          "size": 3335,
+          "modified": "20261030155216"
+        },
+        {
+          "path": "data/ncd_burden_dalys.json",
+          "type": "file",
+          "size": 2,
+          "modified": "20251124182631"
+        },
+        {
+          "path": "data/overall_ranking.json",
+          "type": "file",
+          "size": 297135,
+          "modified": "20261030155241"
+        },
+        {
+          "path": "data/pending/big_mac_index.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125114911"
+        },
+        {
+          "path": "data/pending/environmental_performance_index.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125114911"
+        },
+        {
+          "path": "data/pending/global_peace_index.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125114911"
+        },
+        {
+          "path": "data/pending/inform_resilience_index.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125114911"
+        },
+        {
+          "path": "data/pending/lpi_infrastructure.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125124947"
+        },
+        {
+          "path": "data/pending/network_readiness_index.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125124947"
+        },
+        {
+          "path": "data/pending/olympic_medals_summer.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125114911"
+        },
+        {
+          "path": "data/pending/olympic_medals_winter.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125114911"
+        },
+        {
+          "path": "data/pending/pisa_overall_score.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125114911"
+        },
+        {
+          "path": "data/pending/recycling_rate.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125114911"
+        },
+        {
+          "path": "data/pending/social_progress_index.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125124947"
+        },
+        {
+          "path": "data/pending/world_happiness_index.md5",
+          "type": "file",
+          "size": 32,
+          "modified": "20251125114910"
+        },
+        {
+          "path": "data/validation_log.txt",
+          "type": "file",
+          "size": 10106,
+          "modified": "20261001093917"
+        },
+        {
+          "path": "images/Logo.PNG",
+          "type": "file",
+          "size": 37709,
+          "modified": "20261030161650"
+        },
+        {
+          "path": "images/flag/ai.svg",
+          "type": "file",
+          "size": 2955,
+          "modified": "20261030155402"
+        },
+        {
+          "path": "images/flag/aq.svg",
+          "type": "file",
+          "size": 4519,
+          "modified": "20261030155408"
+        },
+        {
+          "path": "images/flag/as.svg",
+          "type": "file",
+          "size": 47868,
+          "modified": "20261030155410"
+        },
+        {
+          "path": "images/flag/aw.svg",
+          "type": "file",
+          "size": 341,
+          "modified": "20261030155414"
+        },
+        {
+          "path": "images/flag/ax.svg",
+          "type": "file",
+          "size": 256,
+          "modified": "20261030155415"
+        },
+        {
+          "path": "images/flag/bl.svg",
+          "type": "file",
+          "size": 37273,
+          "modified": "20261030155430"
+        },
+        {
+          "path": "images/flag/bm.svg",
+          "type": "file",
+          "size": 32143,
+          "modified": "20261030155431"
+        },
+        {
+          "path": "images/flag/bq.svg",
+          "type": "file",
+          "size": 462,
+          "modified": "20261030155435"
+        },
+        {
+          "path": "images/flag/bv.svg",
+          "type": "file",
+          "size": 223,
+          "modified": "20261030155440"
+        },
+        {
+          "path": "images/flag/cc.svg",
+          "type": "file",
+          "size": 4700,
+          "modified": "20261030155447"
+        },
+        {
+          "path": "images/flag/ck.svg",
+          "type": "file",
+          "size": 1056,
+          "modified": "20261030155455"
+        },
+        {
+          "path": "images/flag/cw.svg",
+          "type": "file",
+          "size": 266,
+          "modified": "20261030155505"
+        },
+        {
+          "path": "images/flag/cx.svg",
+          "type": "file",
+          "size": 4472,
+          "modified": "20261030155507"
+        },
+        {
+          "path": "images/flag/eh.svg",
+          "type": "file",
+          "size": 504,
+          "modified": "20261030155523"
+        },
+        {
+          "path": "images/flag/fk.svg",
+          "type": "file",
+          "size": 130700,
+          "modified": "20261030155532"
+        },
+        {
+          "path": "images/flag/fo.svg",
+          "type": "file",
+          "size": 269,
+          "modified": "20261030155534"
+        },
+        {
+          "path": "images/flag/gb-eng.svg",
+          "type": "file",
+          "size": 176,
+          "modified": "20261030155538"
+        },
+        {
+          "path": "images/flag/gb-nir.svg",
+          "type": "file",
+          "size": 55061,
+          "modified": "20261030155540"
+        },
+        {
+          "path": "images/flag/gb-sct.svg",
+          "type": "file",
+          "size": 192,
+          "modified": "20261030155541"
+        },
+        {
+          "path": "images/flag/gb-wls.svg",
+          "type": "file",
+          "size": 15933,
+          "modified": "20261030155542"
+        },
+        {
+          "path": "images/flag/gf.svg",
+          "type": "file",
+          "size": 243,
+          "modified": "20261030155547"
+        },
+        {
+          "path": "images/flag/gg.svg",
+          "type": "file",
+          "size": 284,
+          "modified": "20261030155549"
+        },
+        {
+          "path": "images/flag/gi.svg",
+          "type": "file",
+          "size": 4004,
+          "modified": "20261030155551"
+        },
+        {
+          "path": "images/flag/gp.svg",
+          "type": "file",
+          "size": 13038,
+          "modified": "20261030155556"
+        },
+        {
+          "path": "images/flag/gs.svg",
+          "type": "file",
+          "size": 52221,
+          "modified": "20261030155600"
+        },
+        {
+          "path": "images/flag/gu.svg",
+          "type": "file",
+          "size": 11324,
+          "modified": "20261030155603"
+        },
+        {
+          "path": "images/flag/hk.svg",
+          "type": "file",
+          "size": 689,
+          "modified": "20261030155607"
+        },
+        {
+          "path": "images/flag/hm.svg",
+          "type": "file",
+          "size": 1299,
+          "modified": "20261030155608"
+        },
+        {
+          "path": "images/flag/im.svg",
+          "type": "file",
+          "size": 5036,
+          "modified": "20261030155619"
+        },
+        {
+          "path": "images/flag/io.svg",
+          "type": "file",
+          "size": 16623,
+          "modified": "20261030155622"
+        },
+        {
+          "path": "images/flag/je.svg",
+          "type": "file",
+          "size": 76606,
+          "modified": "20261030155629"
+        },
+        {
+          "path": "images/flag/ky.svg",
+          "type": "file",
+          "size": 35128,
+          "modified": "20261030155648"
+        },
+        {
+          "path": "images/flag/mf.svg",
+          "type": "file",
+          "size": 191,
+          "modified": "20261030155710"
+        },
+        {
+          "path": "images/flag/mo.svg",
+          "type": "file",
+          "size": 2265,
+          "modified": "20261030155719"
+        },
+        {
+          "path": "images/flag/mp.svg",
+          "type": "file",
+          "size": 164695,
+          "modified": "20261030155721"
+        },
+        {
+          "path": "images/flag/mq.svg",
+          "type": "file",
+          "size": 201,
+          "modified": "20261030155722"
+        },
+        {
+          "path": "images/flag/ms.svg",
+          "type": "file",
+          "size": 9015,
+          "modified": "20261030155726"
+        },
+        {
+          "path": "images/flag/nc.svg",
+          "type": "file",
+          "size": 1428,
+          "modified": "20261030155738"
+        },
+        {
+          "path": "images/flag/nf.svg",
+          "type": "file",
+          "size": 15685,
+          "modified": "20261030155741"
+        },
+        {
+          "path": "images/flag/nu.svg",
+          "type": "file",
+          "size": 1023,
+          "modified": "20261030155751"
+        },
+        {
+          "path": "images/flag/pf.svg",
+          "type": "file",
+          "size": 5826,
+          "modified": "20261030155758"
+        },
+        {
+          "path": "images/flag/pm.svg",
+          "type": "file",
+          "size": 83489,
+          "modified": "20261030155805"
+        },
+        {
+          "path": "images/flag/pn.svg",
+          "type": "file",
+          "size": 14919,
+          "modified": "20261030155806"
+        },
+        {
+          "path": "images/flag/pr.svg",
+          "type": "file",
+          "size": 267,
+          "modified": "20261030155807"
+        },
+        {
+          "path": "images/flag/re.svg",
+          "type": "file",
+          "size": 280,
+          "modified": "20261030155816"
+        },
+        {
+          "path": "images/flag/sh.svg",
+          "type": "file",
+          "size": 48705,
+          "modified": "20261030155831"
+        },
+        {
+          "path": "images/flag/sj.svg",
+          "type": "file",
+          "size": 223,
+          "modified": "20261030155834"
+        },
+        {
+          "path": "images/flag/sx.svg",
+          "type": "file",
+          "size": 24679,
+          "modified": "20261030155847"
+        },
+        {
+          "path": "images/flag/tc.svg",
+          "type": "file",
+          "size": 6310,
+          "modified": "20261030155851"
+        },
+        {
+          "path": "images/flag/tf.svg",
+          "type": "file",
+          "size": 1571,
+          "modified": "20261030155854"
+        },
+        {
+          "path": "images/flag/tk.svg",
+          "type": "file",
+          "size": 1207,
+          "modified": "20261030155859"
+        },
+        {
+          "path": "images/flag/um.svg",
+          "type": "file",
+          "size": 765,
+          "modified": "20261030155915"
+        },
+        {
+          "path": "images/flag/vg.svg",
+          "type": "file",
+          "size": 14771,
+          "modified": "20261030155924"
+        },
+        {
+          "path": "images/flag/vi.svg",
+          "type": "file",
+          "size": 19982,
+          "modified": "20261030155925"
+        },
+        {
+          "path": "images/flag/wf.svg",
+          "type": "file",
+          "size": 416,
+          "modified": "20261030155929"
+        },
+        {
+          "path": "images/flag/yt.svg",
+          "type": "file",
+          "size": 31989,
+          "modified": "20261030155934"
+        },
+        {
+          "path": "images/logo3.png",
+          "type": "file",
+          "size": 56730,
+          "modified": "20261030161835"
+        },
+        {
+          "path": "images/logo4.png",
+          "type": "file",
+          "size": 72128,
+          "modified": "20261030161837"
+        },
+        {
+          "path": "images/logo_alt2.png",
+          "type": "file",
+          "size": 1138134,
+          "modified": "20261030161845"
+        },
+        {
+          "path": "images/logo_bak.png",
+          "type": "file",
+          "size": 118505,
+          "modified": "20261030161849"
+        },
+        {
+          "path": "images/original_translate.png",
+          "type": "file",
+          "size": 1527748,
+          "modified": "20261030161852"
+        },
+        {
+          "path": "images/photo.png",
+          "type": "file",
+          "size": 1039753,
+          "modified": "20251027183426"
+        },
+        {
+          "path": "images/teamwork_wunder.png",
+          "type": "file",
+          "size": 539588,
+          "modified": "20251027183427"
+        },
+        {
+          "path": "licence",
+          "type": "file",
+          "size": 1089,
+          "modified": "20251023191230"
+        },
+        {
+          "path": "scripts/minimal-test.js",
+          "type": "file",
+          "size": 1414,
+          "modified": "20251118080415"
+        },
+        {
+          "path": "scripts/overshoot_timer.js",
+          "type": "file",
+          "size": 1389,
+          "modified": "20251128094523"
+        },
+        {
+          "path": "scripts/page_index.js",
+          "type": "file",
+          "size": 366,
+          "modified": "20251119085743"
+        },
+        {
+          "path": "scripts/source_csv/big_mac_index.csv",
+          "type": "file",
+          "size": 40170,
+          "modified": "20251027183411"
+        },
+        {
+          "path": "scripts/source_csv/environmental_performance_index.csv",
+          "type": "file",
+          "size": 2720,
+          "modified": "20251027183411"
+        },
+        {
+          "path": "scripts/source_csv/global_peace_index.csv",
+          "type": "file",
+          "size": 62184,
+          "modified": "20251027183411"
+        },
+        {
+          "path": "scripts/source_csv/happiness.csv",
+          "type": "file",
+          "size": 25171,
+          "modified": "20251027183412"
+        },
+        {
+          "path": "scripts/source_csv/inform_resilience_index.csv",
+          "type": "file",
+          "size": 26760,
+          "modified": "20251027183412"
+        },
+        {
+          "path": "scripts/source_csv/recycling_rate.csv",
+          "type": "file",
+          "size": 91674,
+          "modified": "20251027183413"
+        },
+        {
+          "path": "style_chat.css",
+          "type": "file",
+          "size": 747,
+          "modified": "20251023191230"
+        }
+      ],
+      "preserved": [
+        ".htaccess",
+        ".realitycheck-auto-deploy.json",
+        ".well-known/security.txt",
+        "LICENSE",
+        "about.html",
+        "analysis-private/.htaccess",
+        "analysis-private/germany-2036-scenarios-de.php",
+        "analysis-private/germany-2036-scenarios.php",
+        "analysis-private/germany-reform-agenda-depth.php",
+        "analysis-private/germany-reform-agenda.php",
+        "analysis-private/germany-war-stress-test-b2.php",
+        "analysis-private/germany-war-stress-test-de.php",
+        "analysis-private/germany-war-stress-test.php",
+        "analysis-private/income-pyramid-data-de.php",
+        "analysis-private/income-pyramid-data.php",
+        "analysis-private/real-wages-auth-lib.php",
+        "analysis-private/real-wages-auth.php",
+        "analysis-private/real-wages-data-de.php",
+        "analysis-private/real-wages-data.php",
+        "analysis.html",
+        "countries.html",
+        "data/access_to_basic_drinking_water.json",
+        "data/access_to_electricity.json",
+        "data/adult_literacy_rate.json",
+        "data/age_dependency_ratio_total.json",
+        "data/air_quality_pm2_5_exposure.json",
+        "data/all_kpis_index.json",
+        "data/all_kpis_part1.json.gz",
+        "data/all_kpis_part2.json.gz",
+        "data/all_kpis_part3.json.gz",
+        "data/all_kpis_part4.json.gz",
+        "data/all_kpis_part5.json.gz",
+        "data/all_kpis_part6.json.gz",
+        "data/analysis.md",
+        "data/analysis_outliers.json",
+        "data/area.json",
+        "data/atmospheric_co2_concentration.json",
+        "data/basic_sanitation_access.json",
+        "data/big_mac_index.json",
+        "data/climate_disaster_damage_gdp.json",
+        "data/climate_disaster_deaths.json",
+        "data/co2_emissions.json",
+        "data/democracy_index.json",
+        "data/drought_spei.json",
+        "data/education_expenditure_of_gdp.json",
+        "data/electric_vehicle_stock.json",
+        "data/electricity_grid_losses.json",
+        "data/employment_to_population_ratio.json",
+        "data/energy_import_dependency.json",
+        "data/environmental_performance_index.json",
+        "data/extreme_heat_days.json",
+        "data/extreme_poverty.json",
+        "data/fdi_inflows_of_gdp.json",
+        "data/female_labor_force_participation.json",
+        "data/fertility_rate.json",
+        "data/fetch_status.json",
+        "data/fixed_broadband_subscriptions_per_100_people.json",
+        "data/flood_affected_people.json",
+        "data/fun_ranking.json",
+        "data/fun_ranking_bottom.json",
+        "data/gdp.json",
+        "data/gdp_per_capita_current_us.json",
+        "data/general_government_gross_debt_gdp.json",
+        "data/geopolitical_risk_index.json",
+        "data/gini_index.json",
+        "data/global_co2_emissions.json",
+        "data/global_mean_sea_level.json",
+        "data/global_ocean_heat_content.json",
+        "data/global_peace_index.json",
+        "data/global_temperature_anomaly.json",
+        "data/gni_per_capita_current_us.json",
+        "data/government_effectiveness.json",
+        "data/health_expenditure_per_capita.json",
+        "data/healthy_diet_unaffordable.json",
+        "data/homelessness_rate.json",
+        "data/hospital_beds_per_1_000_people.json",
+        "data/human_development_index_hdi.json",
+        "data/human_rights_index_vdem.json",
+        "data/immigration_ranking.json",
+        "data/immigration_ranking_bottom.json",
+        "data/infant_mortality_rate.json",
+        "data/inflation_consumer_price_index.json",
+        "data/inform_resilience_index.json",
+        "data/intentional_homicides.json",
+        "data/internet_penetration_rate.json",
+        "data/interpersonal_trust.json",
+        "data/kpi_analysis.json",
+        "data/labor_productivity_per_hour_pennworldtable.json",
+        "data/life_expectancy_at_birth.json",
+        "data/living_planet_index.json",
+        "data/lower_secondary_completion_rate.json",
+        "data/lpi_infrastructure.json",
+        "data/maternal_mortality_ratio.json",
+        "data/mean_years_of_schooling.json",
+        "data/median_age.json",
+        "data/median_income_or_consumption_per_day.json",
+        "data/meta/available_kpis.json",
+        "data/meta/countries.json",
+        "data/meta/country_mappings.json",
+        "data/meta/groups.json",
+        "data/meta/region_sets.json",
+        "data/meta/regions_ipcc_ar6_geo.json",
+        "data/meta/regions_ocean_basins_geo.json",
+        "data/meta/regions_river_basins_geo.json",
+        "data/meta/world_countries_geo.json",
+        "data/military_expenditure_of_gdp.json",
+        "data/military_spending_sipri.json",
+        "data/mobile_subscriptions_per_100_inhabitants.json",
+        "data/net_migration.json",
+        "data/network_readiness_index.json",
+        "data/number_of_armed_conflicts.json",
+        "data/number_of_recorded_natural_disasters.json",
+        "data/old_age_dependency_ratio.json",
+        "data/olympic_medals_summer.json",
+        "data/olympic_medals_winter.json",
+        "data/overall_immunization_coverage.json",
+        "data/people_affected_by_climate_disasters.json",
+        "data/people_forcibly_displaced_worldwide.json",
+        "data/physicians_per_1_000_people.json",
+        "data/pisa_overall_score.json",
+        "data/political_corruption_index.json",
+        "data/population.json",
+        "data/population_growth.json",
+        "data/press_freedom_index.json",
+        "data/prevalence_of_undernourishment.json",
+        "data/purchasing_power_parity.json",
+        "data/railway_length.json",
+        "data/real_gdp_per_capita_growth.json",
+        "data/recycling_rate.json",
+        "data/refugees_hosted.json",
+        "data/renewable_energy_share.json",
+        "data/road_traffic_deaths_per_100k_people.json",
+        "data/rule_of_law_index.json",
+        "data/safe_haven_ranking.json",
+        "data/safe_haven_ranking_bottom.json",
+        "data/social_progress_index.json",
+        "data/state_based_conflict_deaths.json",
+        "data/statistical_performance_indicator.json",
+        "data/suicide_mortality_rate.json",
+        "data/tax_revenue_of_gdp.json",
+        "data/terrestrial_protected_areas.json",
+        "data/trade_openness.json",
+        "data/tropical_cyclone_activity_basin.json",
+        "data/trust_in_government.json",
+        "data/unemployment_rate.json",
+        "data/universal_health_coverage_index.json",
+        "data/urban_inadequate_housing.json",
+        "data/urbanization_rate.json",
+        "data/water_stress_level.json",
+        "data/wildfire_burned_area.json",
+        "data/women_in_parliament.json",
+        "data/world_happiness_index.json",
+        "data_glossary.html",
+        "favicon.ico",
+        "favicon.png",
+        "footer.html",
+        "germany-dossier.php",
+        "google-site-verification.html",
+        "google60f6cdba136e03e9.html",
+        "header.html",
+        "images/flag/ad.svg",
+        "images/flag/ae.svg",
+        "images/flag/af.svg",
+        "images/flag/ag.svg",
+        "images/flag/al.svg",
+        "images/flag/am.svg",
+        "images/flag/ao.svg",
+        "images/flag/ar.svg",
+        "images/flag/at.svg",
+        "images/flag/au.svg",
+        "images/flag/az.svg",
+        "images/flag/ba.svg",
+        "images/flag/bb.svg",
+        "images/flag/bd.svg",
+        "images/flag/be.svg",
+        "images/flag/bf.svg",
+        "images/flag/bg.svg",
+        "images/flag/bh.svg",
+        "images/flag/bi.svg",
+        "images/flag/bj.svg",
+        "images/flag/bn.svg",
+        "images/flag/bo.svg",
+        "images/flag/br.svg",
+        "images/flag/bs.svg",
+        "images/flag/bt.svg",
+        "images/flag/bw.svg",
+        "images/flag/by.svg",
+        "images/flag/bz.svg",
+        "images/flag/ca.svg",
+        "images/flag/cd.svg",
+        "images/flag/cf.svg",
+        "images/flag/cg.svg",
+        "images/flag/ch.svg",
+        "images/flag/ci.svg",
+        "images/flag/cl.svg",
+        "images/flag/cm.svg",
+        "images/flag/cn.svg",
+        "images/flag/co.svg",
+        "images/flag/cr.svg",
+        "images/flag/cu.svg",
+        "images/flag/cv.svg",
+        "images/flag/cy.svg",
+        "images/flag/cz.svg",
+        "images/flag/de.svg",
+        "images/flag/dj.svg",
+        "images/flag/dk.svg",
+        "images/flag/dm.svg",
+        "images/flag/do.svg",
+        "images/flag/dz.svg",
+        "images/flag/ec.svg",
+        "images/flag/ee.svg",
+        "images/flag/eg.svg",
+        "images/flag/er.svg",
+        "images/flag/es.svg",
+        "images/flag/et.svg",
+        "images/flag/fi.svg",
+        "images/flag/fj.svg",
+        "images/flag/fm.svg",
+        "images/flag/fr.svg",
+        "images/flag/ga.svg",
+        "images/flag/gb.svg",
+        "images/flag/gd.svg",
+        "images/flag/ge.svg",
+        "images/flag/gh.svg",
+        "images/flag/gl.svg",
+        "images/flag/gm.svg",
+        "images/flag/gn.svg",
+        "images/flag/gq.svg",
+        "images/flag/gr.svg",
+        "images/flag/gt.svg",
+        "images/flag/gw.svg",
+        "images/flag/gy.svg",
+        "images/flag/hn.svg",
+        "images/flag/hr.svg",
+        "images/flag/ht.svg",
+        "images/flag/hu.svg",
+        "images/flag/id.svg",
+        "images/flag/ie.svg",
+        "images/flag/il.svg",
+        "images/flag/in.svg",
+        "images/flag/iq.svg",
+        "images/flag/ir.svg",
+        "images/flag/is.svg",
+        "images/flag/it.svg",
+        "images/flag/jm.svg",
+        "images/flag/jo.svg",
+        "images/flag/jp.svg",
+        "images/flag/ke.svg",
+        "images/flag/kg.svg",
+        "images/flag/kh.svg",
+        "images/flag/ki.svg",
+        "images/flag/km.svg",
+        "images/flag/kn.svg",
+        "images/flag/kp.svg",
+        "images/flag/kr.svg",
+        "images/flag/kw.svg",
+        "images/flag/kz.svg",
+        "images/flag/la.svg",
+        "images/flag/lb.svg",
+        "images/flag/lc.svg",
+        "images/flag/li.svg",
+        "images/flag/lk.svg",
+        "images/flag/lr.svg",
+        "images/flag/ls.svg",
+        "images/flag/lt.svg",
+        "images/flag/lu.svg",
+        "images/flag/lv.svg",
+        "images/flag/ly.svg",
+        "images/flag/ma.svg",
+        "images/flag/mc.svg",
+        "images/flag/md.svg",
+        "images/flag/me.svg",
+        "images/flag/mg.svg",
+        "images/flag/mh.svg",
+        "images/flag/mk.svg",
+        "images/flag/ml.svg",
+        "images/flag/mm.svg",
+        "images/flag/mn.svg",
+        "images/flag/mr.svg",
+        "images/flag/mt.svg",
+        "images/flag/mu.svg",
+        "images/flag/mv.svg",
+        "images/flag/mw.svg",
+        "images/flag/mx.svg",
+        "images/flag/my.svg",
+        "images/flag/mz.svg",
+        "images/flag/na.svg",
+        "images/flag/ne.svg",
+        "images/flag/ng.svg",
+        "images/flag/ni.svg",
+        "images/flag/nl.svg",
+        "images/flag/no.svg",
+        "images/flag/np.svg",
+        "images/flag/nr.svg",
+        "images/flag/nz.svg",
+        "images/flag/om.svg",
+        "images/flag/pa.svg",
+        "images/flag/pe.svg",
+        "images/flag/pg.svg",
+        "images/flag/ph.svg",
+        "images/flag/pk.svg",
+        "images/flag/pl.svg",
+        "images/flag/ps.svg",
+        "images/flag/pt.svg",
+        "images/flag/pw.svg",
+        "images/flag/py.svg",
+        "images/flag/qa.svg",
+        "images/flag/question.svg",
+        "images/flag/ro.svg",
+        "images/flag/rs.svg",
+        "images/flag/ru.svg",
+        "images/flag/rw.svg",
+        "images/flag/sa.svg",
+        "images/flag/sb.svg",
+        "images/flag/sc.svg",
+        "images/flag/sd.svg",
+        "images/flag/se.svg",
+        "images/flag/sg.svg",
+        "images/flag/si.svg",
+        "images/flag/sk.svg",
+        "images/flag/sl.svg",
+        "images/flag/sm.svg",
+        "images/flag/sn.svg",
+        "images/flag/so.svg",
+        "images/flag/sr.svg",
+        "images/flag/ss.svg",
+        "images/flag/st.svg",
+        "images/flag/sv.svg",
+        "images/flag/sy.svg",
+        "images/flag/sz.svg",
+        "images/flag/td.svg",
+        "images/flag/tg.svg",
+        "images/flag/th.svg",
+        "images/flag/tj.svg",
+        "images/flag/tl.svg",
+        "images/flag/tm.svg",
+        "images/flag/tn.svg",
+        "images/flag/to.svg",
+        "images/flag/tr.svg",
+        "images/flag/tt.svg",
+        "images/flag/tv.svg",
+        "images/flag/tw.svg",
+        "images/flag/tz.svg",
+        "images/flag/ua.svg",
+        "images/flag/ug.svg",
+        "images/flag/us.svg",
+        "images/flag/uy.svg",
+        "images/flag/uz.svg",
+        "images/flag/va.svg",
+        "images/flag/vc.svg",
+        "images/flag/ve.svg",
+        "images/flag/vn.svg",
+        "images/flag/vu.svg",
+        "images/flag/ws.svg",
+        "images/flag/xk.svg",
+        "images/flag/ye.svg",
+        "images/flag/za.svg",
+        "images/flag/zm.svg",
+        "images/flag/zw.svg",
+        "images/logo.png",
+        "images/teamwork_wunder.jpg",
+        "images/translate.png",
+        "impressum.html",
+        "index.html",
+        "js_challenge.html",
+        "manifest.json",
+        "overall_ranking_countries.html",
+        "privacy.html",
+        "robots.txt",
+        "scripts/core.js",
+        "scripts/environment_colors.js",
+        "scripts/page_about.js",
+        "scripts/page_analysis.js",
+        "scripts/page_data_glossary.js",
+        "scripts/page_germany_2036_scenarios.js",
+        "scripts/page_germany_dossier.js",
+        "scripts/page_germany_dossier_i18n.js",
+        "scripts/page_germany_war_stress_test.js",
+        "scripts/page_income_pyramid.js",
+        "scripts/page_real_wages_analysis.js",
+        "scripts/script.js",
+        "scripts/script_overall_ranking_countries.js",
+        "scripts/script_world.js",
+        "scripts/utils_ui.js",
+        "sitemap.xml",
+        "style.css",
+        "tracking.json",
+        "tracking.php",
+        "world.html"
+      ]
+    },
+    {
+      "root": "/energyplanning.great-site.net/htdocs",
+      "backup_root": "/energyplanning.great-site.net/ftp-backups/2026-10-30-reviewed-cleanup",
+      "candidates": [
+        {
+          "path": "images/ChatGPT Image 28. Nov. 2025, 18_13_16.png",
+          "type": "file",
+          "size": 189727,
+          "modified": "20261030163828"
+        },
+        {
+          "path": "images/ChatGPT Image 28. Nov. 2025, 18_28_35.png",
+          "type": "file",
+          "size": 1476878,
+          "modified": "20261030163831"
+        }
+      ],
+      "preserved": [
+        ".energyplanning-auto-deploy.json",
+        ".htaccess",
+        ".well-known/security.txt",
+        "data/data.json",
+        "data/subsidies.json",
+        "datenschutz.html",
+        "favicon.ico",
+        "google60f6cdba136e03e9.html",
+        "images/logo.png",
+        "images/modernisierung-technologien.png",
+        "images/og-energyplanning.png",
+        "impressum.html",
+        "index.html",
+        "robots.txt",
+        "scripts/calculation-core.js",
+        "scripts/chart-ui.js",
+        "scripts/pdf-export.js",
+        "scripts/performance.js",
+        "scripts/script.js",
+        "scripts/subsidy-ui.js",
+        "service-worker.js",
+        "sitemap.xml",
+        "style.css"
+      ]
+    }
+  ]
+}

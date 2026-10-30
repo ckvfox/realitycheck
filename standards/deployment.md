@@ -28,6 +28,12 @@ anschliessend nur `data/`; manuelle Teilauswahl darf die Liste nicht umgehen.
 FTPS-Ziel ist fest `/realitycheck.great-site.net/htdocs`. Es gibt keine Remote-
 Loeschungen. Historische Serverdateien werden dadurch nicht nachtraeglich entfernt.
 
+Separat genehmigte Einmalbereinigung: `cleanup-ftp-reviewed.yml` verwendet den
+festen Plan vom 30.10.2026. Erst nach vollstaendiger, SHA-256-gepruefter Sicherung
+beider Sites ausserhalb `htdocs` darf die getrennte Loeschphase exakt diese
+Dateien entfernen. Keine rekursive Loeschung, keine Serverkonfiguration und
+keine Erweiterung der normalen Deployment-Rechte oder Upload-Positivliste.
+
 ## Negativliste (nicht erlaubt)
 
 - `README*`
