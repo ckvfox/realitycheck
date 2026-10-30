@@ -106,3 +106,17 @@ class FTPCleanupTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 cleanup.backup(self.ftp, self.plan)
         self.assertEqual(self.ftp.deleted, [])
+
+    def test_opaque_image_repair_retains_initial_hash_and_does_not_trust_changed_png(self):
+        with patch.object(cleanup, "inventory", self.ftp.inventory), redirect_stdout(io.StringIO()):
+            cleanup.backup(self.ftp, self.plan)
+            site = self.plan["sites"][0]
+            self.ftp.files[site["backup_root"] + "/images/photo.png"] = b"changed after first verification"
+            with self.assertRaises(ValueError):
+                cleanup.delete_reviewed(self.ftp, self.plan, {"deleted": []})
+            repaired = cleanup.repair_images(self.ftp, self.plan)
+            images = [r for s in repaired for r in s["files"] if "storage_path" in r]
+            self.assertEqual(len(images), 10)
+            self.assertTrue(all(r["storage_path"] == r["path"] + ".original" for r in images))
+            cleanup.delete_reviewed(self.ftp, self.plan, {"deleted": []})
+        self.assertEqual(len(self.ftp.deleted), 111)

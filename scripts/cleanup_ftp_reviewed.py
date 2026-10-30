@@ -124,11 +124,15 @@ def delete_reviewed(ftp, plan, report):
         records = {r["path"]: r for r in saved["files"]}
         if saved["root"] != site["root"] or saved["backup_root"] != site["backup_root"] or set(records) != {r["path"] for r in site["candidates"]}:
             raise CleanupSafetyError("Backup does not match approved plan")
+        report.setdefault("backups", []).append(saved)
         for row in site["candidates"]:
             name = row["path"]
             report["checking"] = {"root": site["root"], "path": name, "phase": "backup hash"}
             record = records[name]
-            data = retrieve(ftp, site["backup_root"] + "/" + name)
+            stored = record.get("storage_path", name)
+            if stored not in {name, name + ".original"}:
+                raise CleanupSafetyError("Unapproved backup storage path")
+            data = retrieve(ftp, site["backup_root"] + "/" + stored)
             if len(data) != row["size"] or record["size"] != row["size"] or digest(data) != record["sha256"]:
                 raise CleanupSafetyError("Backup verification failed")
             if name in current:
@@ -151,9 +155,43 @@ def delete_reviewed(ftp, plan, report):
         report["post_inventory"].append(inventory(ftp, site["root"]))
 
 
+def repair_images(ftp, plan):
+    """Keep image backups opaque to hosting-side image processing; preserve original hashes."""
+    receipts = []
+    for site in plan["sites"]:
+        current = snapshot(ftp, site)
+        if retrieve(ftp, site["backup_root"] + "/.htaccess") != GUARD:
+            raise CleanupSafetyError("Backup HTTP guard is missing or changed")
+        saved = json.loads(retrieve(ftp, site["backup_root"] + "/snapshot.json"))
+        records = {r["path"]: r for r in saved["files"]}
+        if saved["root"] != site["root"] or saved["backup_root"] != site["backup_root"] or set(records) != {r["path"] for r in site["candidates"]}:
+            raise CleanupSafetyError("Backup does not match approved plan")
+        for row in site["candidates"]:
+            name = row["path"]
+            if not name.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+                continue
+            verify_original(row, current.get(name))
+            data = retrieve(ftp, site["root"] + "/" + name)
+            record = records[name]
+            if len(data) != row["size"] or digest(data) != record["sha256"]:
+                raise CleanupSafetyError("Image original differs from initial verified snapshot")
+            stored = name + ".original"
+            ftp.storbinary("STOR " + site["backup_root"] + "/" + stored, io.BytesIO(data))
+            if digest(retrieve(ftp, site["backup_root"] + "/" + stored)) != record["sha256"]:
+                raise CleanupSafetyError("Opaque image backup verification failed")
+            record["storage_path"] = stored
+            print("Verified opaque image backup: " + site["root"] + "/" + name, flush=True)
+        saved["files"] = list(records.values())
+        ftp.storbinary("STOR " + site["backup_root"] + "/snapshot.json", io.BytesIO(json.dumps(saved).encode()))
+        if json.loads(retrieve(ftp, site["backup_root"] + "/snapshot.json")) != saved:
+            raise CleanupSafetyError("Backup receipt mismatch")
+        receipts.append(saved)
+    return receipts
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("stage", choices=("prepare", "backup", "delete"))
+    parser.add_argument("stage", choices=("prepare", "backup", "repair-images", "delete"))
     args = parser.parse_args()
     ftp = None
     report = {"stage": args.stage, "complete": False, "deleted": []}
@@ -172,6 +210,8 @@ def main():
             report["instruction"] = "Verify HTTP 403 for both protection-check.txt URLs before backup"
         elif args.stage == "backup":
             report["backups"] = backup(ftp, plan)
+        elif args.stage == "repair-images":
+            report["backups"] = repair_images(ftp, plan)
         else:
             delete_reviewed(ftp, plan, report)
         report["complete"] = True

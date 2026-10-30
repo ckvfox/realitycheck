@@ -5,7 +5,7 @@ on:
     inputs:
       stage:
         type: choice
-        options: [prepare, backup, delete]
+        options: [prepare, backup, repair-images, delete]
         default: prepare
         required: true
 
