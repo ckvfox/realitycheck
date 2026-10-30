@@ -52,3 +52,12 @@ policy-only change. New static assets must be deliberately registered and tested
 
 Framework candidate: one project-owned, dependency-aware payload manifest across
 all deployment entry points, with shared transport and no implicit server cleanup.
+
+## Read-only live inventory
+
+`audit-ftp.yml` can be dispatched on main to list MLSD directory metadata in the
+two explicitly authorized RealityCheck/EnergyPlanning webroots. It retrieves no
+file contents, follows no symlinks and has no upload/delete operations. The
+seven-day artifact contains paths, types, sizes and modification timestamps only.
+Credentials remain runtime-only GitHub secrets. This helper is excluded from
+the productive deployment package. Its tests use a metadata-only FTP double.
