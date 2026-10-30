@@ -2,6 +2,8 @@
 
 ## Next Improvements
 
+- Implemented: automatic FTPS deployment after main pushes, gated by the complete offline suite and FPF production baseline, using the verified webroot and incremental hash checkpoint without deletions. First GitHub-run acceptance is pending; see `.github/workflows/README.md`.
+
 - Continue the World-map roadmap in `docs/analysis_coverage_review.md` with source-backed conflict/climate lenses and an accessible text alternative; group comparison, overlap colouring, KPI choropleth, guarded aggregation modes, summaries and shareable URL state are complete.
 - Add a dedicated climate-exposure map mode: first a transparent country-level risk classification, then separately switchable subnational hazard layers for low-lying coasts, floods/deltas, heat, drought and wildfire. These layers must retain source, year, resolution and coverage metadata and must not be labelled as country groups.
 - Region-based hazard map architecture is implemented (`region_sets.json`, region GeoJSON files, `region_csv`/`ibtracs` adapters, `renderWorldMapRegionLayer` in `scripts/script_world.js`). Tropical Cyclone Activity is backed by NOAA IBTrACS; Wildfire — Burned Area is now active as a country view backed by OWID/GWIS (198 countries, 2012–2025, current partial year excluded). Flood, Heat and Drought are now active country categories using reported flood impacts, modelled heat-index days and 12-month SPEI moisture anomalies. Subnational hazard footprints remain a separate roadmap item. See `docs/climate_sources_2026-10-30.md`.

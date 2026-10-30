@@ -121,6 +121,12 @@ def sha256_of(path: Path) -> str:
 
 
 def should_exclude(rel_posix: str) -> bool:
+    basename = rel_posix.rsplit("/", 1)[-1].lower()
+    if basename in {"auth.json", "id_rsa", "id_ed25519", "known_hosts", ".npmrc", ".pypirc", ".secrets"} or any(
+        fnmatch.fnmatch(basename, pattern)
+        for pattern in (".env*", "credentials*", "*.pem", "*.key", "*.pfx", "*.p12")
+    ):
+        return True
     if rel_posix in PRODUCTIVE_MARKDOWN_FILES:
         return False
     parts = rel_posix.split("/")

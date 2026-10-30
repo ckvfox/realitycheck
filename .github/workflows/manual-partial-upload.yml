@@ -9,7 +9,7 @@ on:
         default: "data/overall_ranking.json"
 
 concurrency:
-  group: realitycheck-production-deploy
+  group: realitycheck-data-pipeline
   cancel-in-progress: false
 
 jobs:

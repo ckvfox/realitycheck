@@ -15,6 +15,11 @@ import prepare_deployment
 
 
 class DeploymentPackagingTests(unittest.TestCase):
+    def test_secret_bearing_names_are_excluded_before_packaging(self):
+        for name in ("credentials.json", "data/credentials-backup.json", "auth.json", "data/auth.json",
+                     ".env", "nested/private.key", "nested/id_ed25519", "known_hosts", ".npmrc"):
+            self.assertTrue(prepare_deployment.should_exclude(name), name)
+
     def test_explicit_baseline_is_used_and_invalid_baselines_fail(self):
         with tempfile.TemporaryDirectory() as tmp:
             baseline = Path(tmp) / "baseline.json"

@@ -2,6 +2,9 @@
 
 ## Unreleased - 2026-10-30
 
+- Add automatic main-branch deployment: test and FPF-check the latest main snapshot under the production lock, build the existing productive allowlist, then incrementally upload via certificate-verified FTPS to the fixed domain webroot. The first run establishes a full hash checkpoint; later runs skip unchanged files, restore missing files and never delete remote content. Add transfer/retry/checkpoint/workflow regressions and a secret-free deployment receipt.
+- Share the production lock with all manual FTP workflows and exclude secret-bearing basenames before any deployment package reads their content.
+
 - Pin monthly FTPS publication to the verified `/realitycheck.great-site.net/htdocs/data/` path and add a regression protecting the destination. Confirm the full monthly selection covers all five climate sources.
 - Wrap long country-map tooltip values and metadata within a viewport-bounded box on Countries and World; refresh the stylesheet cache versions on both entry pages.
 - Reconcile European flood coverage with the cached OWID source: Germany has 16 reported years including 2021 and 2024, but no 2019 observation; missing years remain missing rather than being backfilled or replaced with zero.

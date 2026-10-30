@@ -6,7 +6,7 @@ The workflows cover offline CI, source refreshes, validated deployment packaging
 
 - External actions are pinned to immutable commit SHAs.
 - Fetch workflows share the `realitycheck-data-pipeline` concurrency group, so two refreshes cannot write or deploy data simultaneously.
-- FTP-only workflows share the `realitycheck-production-deploy` concurrency group.
+- Automatic and manual FTP workflows use the same `realitycheck-data-pipeline` concurrency group as production fetches. Only one production writer runs at a time.
 - Fetch errors, dummy datasets, empty test selections and validation errors return non-zero exit codes and stop all later steps.
 - Force mode refetches data but never deletes the last known-good snapshot first.
 - Full and partial uploads are sourced from the allowlisted `build/deployment/full/` package.
@@ -77,6 +77,28 @@ data commit. The scheduled workflow deploys productive data only; frontend or
 backend code changes require a reviewed full or partial FTP workflow.
 
 ### FTP workflows
+
+- `auto-deploy.yml`: automatically runs on pushes to `main`, or manually on `main` with optional `force`. After acquiring the production lock it checks out the latest `main`, so a queued push cannot deploy an older snapshot over a completed monthly data update. It runs the complete offline test suite and FPF production baseline on that exact checkout, prepares the existing full allowlist and uploads to `/realitycheck.great-site.net/htdocs` with `scripts/deploy_ftps.py`. It never executes data fetches or AI analysis.
+
+The automatic uploader uses `FTP_SERVER`, `FTP_USERNAME` and `FTP_PASSWORD`
+only at the upload step. It verifies TLS certificates and encrypts data
+connections. The first successful run uploads the whole productive package;
+later runs compare SHA-256/size entries in `.realitycheck-auto-deploy.json` and
+check remote sizes before skipping unchanged files. The checkpoint is written
+only after all uploads and size checks pass. Failures stop the run; rerunning
+retries unfinished changes. No files are deleted, including obsolete managed
+files and server-owned state. Manual deletion remains a separate action.
+
+The run summary records status, tested commit and fixed destination. A
+30-day artifact stores the successful upload receipt (changed paths, counts,
+commit and destination, without credentials). `force` re-uploads the complete
+allowlist, useful after manual server edits that are invisible to the hash
+checkpoint. Adding a manual FTP upload does not update that checkpoint.
+
+GitHub does not start another push workflow for commits created with its
+`GITHUB_TOKEN`; monthly fetches already publish their own data directly. Pull
+requests and feature branches never receive this automatic production upload.
+CI failures prevent upload, and test secrets are not required.
 
 - `manual-ftp-full.yml`: validates data, builds the productive allowlist and uploads the complete package without remote clean-slate deletion
 - `manual-ftp-sync.yml`: validates the committed data snapshot and synchronizes productive `/data/` files

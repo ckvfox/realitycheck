@@ -37,7 +37,8 @@ If you discover a vulnerability, report it privately.
 - Fetch errors, dummy datasets and validation failures stop the workflow before analysis or FTP deployment.
 - Force mode never removes the last known-good data snapshot before replacement data succeeds.
 - Full and partial FTP uploads are built from the productive deployment allowlist; partial paths are validated against that package.
-- Production fetches and FTP-only deployments use separate concurrency groups to prevent overlapping writes.
+- Production fetches, automatic deployments and FTP-only workflows share the same concurrency group, preventing overlapping writes.
+- Automatic main deployments test the exact checked-out snapshot before packaging. FTPS uses certificate verification, encrypted data connections and runtime-only GitHub secrets; transfer errors do not print server replies or credentials. A remote hash checkpoint advances only after successful transfers and size checks; no remote files are deleted.
 - Test-mode datasets, status, logs, hashes and pending mappings are isolated below `data/test/`; automatic production mapping updates are disabled in test mode.
 - Deployment packaging explicitly excludes the complete `data/test/` subtree.
 - Pull requests run the complete network-free source-contract, adapter-isolation, snapshot and deployment regression baseline before merge.

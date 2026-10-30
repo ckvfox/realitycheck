@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: realitycheck-production-deploy
+  group: realitycheck-data-pipeline
   cancel-in-progress: false
 
 jobs:
