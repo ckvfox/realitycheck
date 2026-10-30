@@ -102,6 +102,13 @@ GitHub does not start another push workflow for commits created with its
 requests and feature branches never receive this automatic production upload.
 CI failures prevent upload, and test secrets are not required.
 
+Live acceptance on 2026-10-30: [run 41084172389](https://github.com/ckvfox/realitycheck/actions/runs/41084172389)
+passed the full suite and FPF baseline and uploaded all 456 tracked productive
+files to the verified webroot with zero deletions. Its receipt identifies
+tested commit `0f238a336ab8f85a126b51af5a25b3ec660ec5c6`. The upload file set was
+compared with Git's productive allowlist: no untracked or missing paths.
+The earlier first attempt timed out; bounded reconnects are regression-tested.
+
 - `manual-ftp-full.yml`: validates data, builds the productive allowlist and uploads the complete package without remote clean-slate deletion
 - `manual-ftp-sync.yml`: validates the committed data snapshot and synchronizes productive `/data/` files
 - `manual-partial-upload.yml`: accepts comma-separated productive paths, rejects traversal/absolute paths and uploads only files present in the generated deployment allowlist

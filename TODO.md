@@ -2,7 +2,7 @@
 
 ## Next Improvements
 
-- Implemented: automatic FTPS deployment after main pushes, gated by the complete offline suite and FPF production baseline, using the verified webroot and incremental hash checkpoint without deletions. First GitHub-run acceptance is pending; see `.github/workflows/README.md`.
+- Completed (2026-10-30): automatic main deployment passed its first live GitHub run (`41084172389`): complete tests + FPF, 456 productive files uploaded to the verified webroot, no deletions, successful hash checkpoint and secret-free receipt. Bounded reconnects address the first attempt's transient timeout; see `.github/workflows/README.md`.
 
 - Continue the World-map roadmap in `docs/analysis_coverage_review.md` with source-backed conflict/climate lenses and an accessible text alternative; group comparison, overlap colouring, KPI choropleth, guarded aggregation modes, summaries and shareable URL state are complete.
 - Add a dedicated climate-exposure map mode: first a transparent country-level risk classification, then separately switchable subnational hazard layers for low-lying coasts, floods/deltas, heat, drought and wildfire. These layers must retain source, year, resolution and coverage metadata and must not be labelled as country groups.
