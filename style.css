@@ -2758,8 +2758,14 @@ header#main-header nav a.active {
 .map-tooltip {
   display: grid;
   gap: 0.35rem;
-  max-width: 220px;
+  width: min(260px, calc(100vw - 48px));
+  white-space: normal;
+  overflow-wrap: anywhere;
   text-align: center;
+}
+
+.map-tooltip > * {
+  min-width: 0;
 }
 
 .map-tooltip__header {

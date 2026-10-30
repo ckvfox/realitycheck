@@ -41,6 +41,13 @@ class MonthlyClimateRefreshTests(unittest.TestCase):
         self.assertEqual(command, "python ./scripts/fetch_data.py 2>&1 | tee data/workflow_fetch_console.log")
         self.assertLess(text.index(command), text.index("local-dir: data/"))
 
+    def test_monthly_upload_targets_verified_domain_data_directory(self):
+        text = (ROOT / ".github/workflows/monthly-fetch.yml").read_text(encoding="utf-8")
+        targets = [line.strip() for line in text.splitlines() if line.strip().startswith("server-dir:")]
+        self.assertEqual(targets, ["server-dir: /realitycheck.great-site.net/htdocs/data/"])
+        self.assertIn("local-dir: data/", text)
+        self.assertIn("dangerous-clean-slate: false", text)
+
     def test_full_fetch_updates_esg_even_when_wdi_release_is_unchanged(self):
         with tempfile.TemporaryDirectory() as tmp, ExitStack() as patches:
             root = Path(tmp)

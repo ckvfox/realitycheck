@@ -51,6 +51,13 @@ The full pipeline promotes ready sources, rebuilds consolidated bundles and
 validates data before uploading JSON/gzip files. These contracts are covered by
 `tests/test_monthly_climate_refresh.py` and the adapter regressions in CI.
 
+The monthly FTPS destination is explicitly
+`/realitycheck.great-site.net/htdocs/data/`, matching the verified domain webroot.
+It does not depend on `FTP_DIR`; that secret remains in use by the separate manual
+workflows. Only the `data/` contents are synchronized, including the individual
+climate JSON files, metadata and consolidated gzip bundles. Frontend fixes still
+require a separate upload to `/realitycheck.great-site.net/htdocs/`.
+
 The monthly workflow also checks the configured official release pages for
 maintained CSV sources. This is notification-only and never replaces a local
 CSV. Its shell pipeline uses `pipefail`, so writing the console output through

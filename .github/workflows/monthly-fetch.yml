@@ -54,7 +54,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: data/
-          server-dir: ${{ secrets.FTP_DIR }}/data/
+          # Public, verified domain webroot; independent of the legacy FTP_DIR secret.
+          server-dir: /realitycheck.great-site.net/htdocs/data/
           state-name: .ftp-deploy-sync-data.json
           log-level: verbose
           dangerous-clean-slate: false

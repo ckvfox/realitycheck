@@ -3,6 +3,60 @@
 
 ## Current integration status (supersedes the earlier source survey below)
 
+### Publication and follow-up acceptance
+
+The cumulative 17-file delta was uploaded with FileZilla to
+`/realitycheck.great-site.net/htdocs` on 2026-10-30: 17 successful transfers,
+empty queue, no failed transfers. Live checks confirmed all ten climate
+categories, source-year selection, shared map colors on both dashboards,
+cyclone basin time series and circles/count table including North Atlantic
+2025 = 13. This supersedes the earlier local-only handover statements below.
+
+The monthly workflow is active (GitHub API check, 2026-10-30). Its unfiltered
+full fetch includes all five new climate sources, consolidates the data and
+validates it before FTPS. Its destination is now pinned explicitly to
+`/realitycheck.great-site.net/htdocs/data/`, rather than relying on the opaque
+`FTP_DIR` secret. Offline acceptance protects both source selection and the
+destination. No extra production fetch or AI-analysis run was dispatched;
+the next scheduled execution is 2026-11-01 at 03:00 UTC (04:00 Europe/Berlin).
+
+### European flood missingness investigation
+
+The reported screenshot selects **2019**. The map requires a record for the
+selected country and year; it never substitutes a different year's event
+impact. Comparison against the cached source CSV's
+`total_affected_flood_yearly` column found exact country/year/value parity for
+18 Central, Eastern and Northern European country histories, with no dropped
+observations in these histories and no duplicate published country-year keys.
+Evidence: ignored `build/source-review/flood-europe-coverage.json` and the
+original cached `flood-owid.csv`.
+
+| Country | Recorded years in this source | Latest reported year/value | 2019 |
+| --- | ---: | --- | --- |
+| Germany | 16 | 2024: 3,407 people | missing |
+| Poland | 16 | 2021: 0 people | missing |
+| Romania | 31 | 2025: 2,500 people | 362 people |
+| Ukraine | 16 | 2025: 2,010 people | missing |
+| Sweden | 3 | 2021: 13,500 people | missing |
+| Norway | 5 | 2013: 500 people | missing |
+| Finland | 1 | 2005: 400 people | missing |
+| Denmark / Estonia | 0 each | no records | missing |
+
+These are EM-DAT reports via OWID, not an exhaustive national flood census.
+An absent country-year is not a statement that no flood occurred; an explicit
+reported zero likewise does not establish safety. The metric counts injured,
+people requiring immediate assistance and homeless people, with incomplete
+reporting. Do not silently backfill or mix a second source's differently
+defined population counts. References: [OWID data and download definition](https://ourworldindata.org/grapher/natural-disasters-people-affected?impact=total_affected&metric=total_number&timespan=annual&type=flood),
+[EM-DAT impact definitions](https://doc.emdat.be/docs/data-structure-and-content/impact-variables/).
+
+Shared tooltip CSS now overrides Leaflet's inherited nowrap, bounds width by
+the viewport and allows long labels/units to wrap. A local static-browser
+check of the 2019 flood per-capita view measured the value row's scroll width
+equal to its client width (260 px) while rendering the value on two lines.
+Countries and World stylesheet URLs were incremented. This follow-up CSS
+change still requires a separate frontend upload.
+
 All four previously pending categories are now active country views; the cyclone view remains basin-based. They do not display subnational flood/drought/fire footprints.
 
 | KPI | Published observations | Country coverage across history | Years | Latest-year coverage | Source release |

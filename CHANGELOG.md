@@ -2,6 +2,10 @@
 
 ## Unreleased - 2026-10-30
 
+- Pin monthly FTPS publication to the verified `/realitycheck.great-site.net/htdocs/data/` path and add a regression protecting the destination. Confirm the full monthly selection covers all five climate sources.
+- Wrap long country-map tooltip values and metadata within a viewport-bounded box on Countries and World; refresh the stylesheet cache versions on both entry pages.
+- Reconcile European flood coverage with the cached OWID source: Germany has 16 reported years including 2021 and 2024, but no 2019 observation; missing years remain missing rather than being backfilled or replaced with zero.
+
 - Verify all five climate KPIs participate in the unfiltered monthly pipeline. Separate World Bank WDI/ESG release-date caches and preserve OWID chart dimensions during release discovery, preventing an unrelated unchanged release from suppressing climate refreshes. Add an isolated orchestrator regression and monthly selection/workflow checks.
 
 - Activate three source-backed country categories: reported flood-affected people (3,315 observations, 179 countries, through 2025), modelled Heat Index >35°C days (7,961 observations, 194 countries, through 2024; provider RCP 8.5 note retained), and 12-month SPEI drought anomalies (12,159 observations, 190 countries, through 2023). Missing country-years stay missing.

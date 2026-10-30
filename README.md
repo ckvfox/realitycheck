@@ -72,6 +72,7 @@ It’s both analytical and exploratory — you can:
 ### 🧩 Data, analysis and reliability
 
 - All five climate sources participate automatically in the existing monthly full refresh (first day of each month, 03:00 UTC). Provider release dates are checked per dataset/database; unchanged releases retain their data, while failures preserve the last known-good snapshot and stop publication. The monthly source-selection and refresh contracts have offline CI coverage.
+- Monthly FTPS data publication explicitly targets `/realitycheck.great-site.net/htdocs/data/`, independently of the legacy `FTP_DIR` secret used by manual workflows. Shared map tooltips wrap long indicator names and units within their viewport-bounded width.
 
 - Flood impacts (EM-DAT/OWID), modelled heat-index days (World Bank ESG/CCKP) and 12-month SPEI drought anomalies (World Bank/SPEIbase) are active country map categories. Environmental maps share a red–yellow–green scale with direction-aware legends and gray missing observations; SPEI uses fixed drought thresholds. Source years, coverage and model limitations are documented in `docs/climate_sources_2026-10-30.md`.
 
