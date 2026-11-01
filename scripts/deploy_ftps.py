@@ -20,6 +20,10 @@ STATE_NAME = ".realitycheck-auto-deploy.json"
 RECEIPT = ROOT / "build/deployment/auto-deploy-receipt.json"
 
 
+class UploadSizeMismatch(ftplib.error_temp):
+    """Retry an unverified upload without advancing the deployment checkpoint."""
+
+
 def package_manifest(package: Path) -> dict[str, dict]:
     if package.is_symlink() or package.resolve() != TARGET_FULL.resolve():
         raise ValueError("Upload must use the canonical production package")
@@ -99,8 +103,10 @@ def upload_package(ftp, package: Path, files: dict, *, commit: str, force: bool 
         ensure_remote_directory(ftp, name, known, remote_root)
         with (package / name).open("rb") as handle:
             ftp.storbinary(f"STOR {name}", handle, blocksize=256 * 1024)
-        if ftp.size(name) != metadata["size"]:
-            raise ValueError("Uploaded size differs from production package")
+        actual_size = ftp.size(name)
+        if actual_size != metadata["size"]:
+            print(f"FTPS size mismatch for {name}: expected {metadata['size']} bytes; received {actual_size} bytes", flush=True)
+            raise UploadSizeMismatch("Uploaded size differs from production package")
         uploaded.append(name)
         completed[name] = metadata
         print(f"Uploaded {name}", flush=True)
