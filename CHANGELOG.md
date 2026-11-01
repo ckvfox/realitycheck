@@ -3,6 +3,7 @@
 ## Unreleased - 2026-10-30
 
 - Retry uploads with mismatched server sizes through the existing bounded reconnect loop. Report only productive paths and byte counts; preserve the previous checkpoint on persistent mismatches. Regression tests cover transient and persistent corruption.
+- When FTP SIZE differs, require a bounded streaming readback with exact byte count and SHA-256 before accepting the upload. Wrong-size and same-size corrupt downloads remain failures.
 
 - Expose the tested FTPS transport as a reusable API with explicit per-site roots and checkpoints for EnergyPlanning; retain RealityCheck CLI defaults and test cross-site isolation.
 

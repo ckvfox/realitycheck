@@ -127,6 +127,17 @@ class AutoDeployTests(unittest.TestCase):
         self.assertEqual(len(result["uploaded_files"]), 5)
         self.assertEqual(self.ftp.uploads.count("style.css") + retry.uploads.count("style.css"), 2)
 
+    def test_inaccurate_size_requires_exact_downloaded_size_and_hash(self):
+        files = deploy.package_manifest(self.package)
+        self.upload()
+        with patch.object(self.ftp, "size", return_value=1), redirect_stdout(io.StringIO()) as output:
+            deploy.verify_uploaded_file(self.ftp, "style.css", files["style.css"])
+        self.assertIn("SHA-256 match: true", output.getvalue())
+        self.ftp.files["style.css"] = b"x" * files["style.css"]["size"]
+        with patch.object(self.ftp, "size", return_value=1), redirect_stdout(io.StringIO()), \
+             self.assertRaises(deploy.UploadSizeMismatch):
+            deploy.verify_uploaded_file(self.ftp, "style.css", files["style.css"])
+
     def test_persistent_size_mismatch_exhausts_retries_without_advancing_checkpoint(self):
         self.upload()
         checkpoint = self.ftp.files[deploy.STATE_NAME]
