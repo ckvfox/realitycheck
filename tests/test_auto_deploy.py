@@ -52,6 +52,9 @@ class FakeFTP:
     def delete(self, name):
         raise AssertionError("Deployment must never delete remote files")
 
+    def rename(self, source, destination):
+        self.files[destination] = self.files.pop(source) + (b"bad" if destination == self.corrupt_on else b"")
+
     def close(self):
         pass
 
@@ -126,6 +129,20 @@ class AutoDeployTests(unittest.TestCase):
         self.assertEqual(retry.files["style.css"], (self.package / "style.css").read_bytes())
         self.assertEqual(len(result["uploaded_files"]), 5)
         self.assertEqual(self.ftp.uploads.count("style.css") + retry.uploads.count("style.css"), 2)
+
+    def test_verified_staging_recovers_a_corrupt_direct_overwrite(self):
+        original_store = self.ftp.storbinary
+
+        def corrupt_direct_overwrite(command, handle, **kwargs):
+            original_store(command, handle, **kwargs)
+            if command == "STOR style.css":
+                self.ftp.files["style.css"] += b"bad"
+
+        with patch.object(self.ftp, "storbinary", side_effect=corrupt_direct_overwrite):
+            result = self.upload()
+        self.assertEqual(self.ftp.files["style.css"], (self.package / "style.css").read_bytes())
+        self.assertEqual(len(result["uploaded_files"]), 5)
+        self.assertFalse(any(name.endswith(".upload") for name in self.ftp.files))
 
     def test_inaccurate_size_requires_exact_downloaded_size_and_hash(self):
         files = deploy.package_manifest(self.package)

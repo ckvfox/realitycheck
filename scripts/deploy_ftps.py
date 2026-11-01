@@ -127,7 +127,19 @@ def upload_package(ftp, package: Path, files: dict, *, commit: str, force: bool 
         ensure_remote_directory(ftp, name, known, remote_root)
         with (package / name).open("rb") as handle:
             ftp.storbinary(f"STOR {name}", handle, blocksize=256 * 1024)
-        verify_uploaded_file(ftp, name, metadata)
+        try:
+            verify_uploaded_file(ftp, name, metadata)
+        except UploadSizeMismatch:
+            # Stage with a hidden, non-image suffix before replacing the final
+            # path. Some hosts transform direct overwrites of image filenames.
+            path = Path(name)
+            staged = (path.parent / f".{path.name}.{metadata['sha256'][:12]}.upload").as_posix()
+            print(f"Retrying {name} through verified staging", flush=True)
+            with (package / name).open("rb") as handle:
+                ftp.storbinary(f"STOR {staged}", handle, blocksize=256 * 1024)
+            verify_uploaded_file(ftp, staged, metadata)
+            ftp.rename(staged, name)
+            verify_uploaded_file(ftp, name, metadata)
         uploaded.append(name)
         completed[name] = metadata
         print(f"Uploaded {name}", flush=True)
