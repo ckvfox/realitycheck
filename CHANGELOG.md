@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased - 2026-11-01
+
+- Preserve the November IBTrACS snapshot and add historical coverage/parity publication gates plus parser regressions; reconcile superseded PR #110 without reverting current FTPS safeguards.
+
 ## Unreleased - 2026-10-30
 
 - Add a separately authorized, frozen FTP cleanup plan for 109 RealityCheck and two EnergyPlanning surplus files. Require verified backups in separately HTTP-denied archives, unchanged originals and preserved server files before individual deletions; add corruption, scope and backup-order regressions. Normal deployments remain non-deleting.

@@ -2,6 +2,8 @@
 
 ## Next Improvements
 
+- Completed (2026-11-01): reconcile IBTrACS PR #110 with the November snapshot; preserve 279 records and add historical-key/JSON-CSV gates plus parser regressions. See `docs/ibtracs_reconciliation_2026-11-01.md`.
+
 - Completed (2026-10-30): audit and strict allowlist for all nine productive upload workflows (386 files), followed by separately authorized backup-first cleanup of 109 RealityCheck and two EnergyPlanning surplus files. Needed product/server files remain; live checks passed. Protected FTP backup archives remain, and the one-off cleanup workflow is disabled. See `docs/deployment_payload_audit_2026-10-30.md`.
 
 - Completed (2026-10-30): automatic main deployment passed its first live GitHub run (`41084172389`): complete tests + FPF, 456 productive files uploaded to the verified webroot, no deletions, successful hash checkpoint and secret-free receipt. Bounded reconnects address the first attempt's transient timeout; see `.github/workflows/README.md`.
