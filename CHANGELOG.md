@@ -2,6 +2,8 @@
 
 ## Unreleased - 2026-11-01
 
+- Reuse EnergyPlanning's live-verified FTPS recovery: bounded SHA-256 readback on size mismatches, temporary staging plus rename for corrupt direct overwrites, and bounded reconnects without advancing failed checkpoints. Preserve data/partial deployment selection and the current productive allowlist.
+
 - Preserve the November IBTrACS snapshot and add historical coverage/parity publication gates plus parser regressions; reconcile superseded PR #110 without reverting current FTPS safeguards.
 
 ## Unreleased - 2026-10-30

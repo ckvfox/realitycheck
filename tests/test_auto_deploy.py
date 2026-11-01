@@ -52,6 +52,9 @@ class FakeFTP:
     def delete(self, name):
         raise AssertionError("Deployment must never delete remote files")
 
+    def rename(self, source, destination):
+        self.files[destination] = self.files.pop(source) + (b"bad" if destination == self.corrupt_on else b"")
+
     def close(self):
         pass
 
@@ -102,7 +105,7 @@ class AutoDeployTests(unittest.TestCase):
         self.assertEqual(self.ftp.files[deploy.STATE_NAME], checkpoint)
         self.ftp.fail_on = None
         self.ftp.corrupt_on = "style.css"
-        with self.assertRaises(ValueError):
+        with self.assertRaises(deploy.UploadSizeMismatch):
             self.upload()
         self.assertEqual(self.ftp.files[deploy.STATE_NAME], checkpoint)
         self.ftp.corrupt_on = None
@@ -113,6 +116,58 @@ class AutoDeployTests(unittest.TestCase):
         del self.ftp.files["index.html"]
         self.assertEqual(self.upload()["uploaded_files"], ["index.html"])
         self.assertEqual(len(self.upload(force=True)["uploaded_files"]), 5)
+
+    def test_size_mismatch_reconnects_and_reuploads_unverified_file(self):
+        self.ftp.corrupt_on = "style.css"
+        retry = FakeFTP()
+        retry.files = self.ftp.files
+        with patch.dict(deploy.os.environ, {"FTP_SERVER": "offline", "FTP_USERNAME": "offline", "FTP_PASSWORD": "offline"}), \
+             patch.object(deploy, "connect_ftps", side_effect=[self.ftp, retry]) as connect, \
+             patch.object(deploy.time, "sleep"), redirect_stdout(io.StringIO()):
+            result = deploy.publish_package(self.package, deploy.package_manifest(self.package), commit="a" * 40)
+        self.assertEqual(connect.call_count, 2)
+        self.assertEqual(retry.files["style.css"], (self.package / "style.css").read_bytes())
+        self.assertEqual(len(result["uploaded_files"]), 5)
+        self.assertEqual(self.ftp.uploads.count("style.css") + retry.uploads.count("style.css"), 2)
+
+    def test_verified_staging_recovers_a_corrupt_direct_overwrite(self):
+        original_store = self.ftp.storbinary
+
+        def corrupt_direct_overwrite(command, handle, **kwargs):
+            original_store(command, handle, **kwargs)
+            if command == "STOR style.css":
+                self.ftp.files["style.css"] += b"bad"
+
+        with patch.object(self.ftp, "storbinary", side_effect=corrupt_direct_overwrite):
+            result = self.upload()
+        self.assertEqual(self.ftp.files["style.css"], (self.package / "style.css").read_bytes())
+        self.assertEqual(len(result["uploaded_files"]), 5)
+        self.assertFalse(any(name.endswith(".upload") for name in self.ftp.files))
+
+    def test_inaccurate_size_requires_exact_downloaded_size_and_hash(self):
+        files = deploy.package_manifest(self.package)
+        self.upload()
+        with patch.object(self.ftp, "size", return_value=1), redirect_stdout(io.StringIO()) as output:
+            deploy.verify_uploaded_file(self.ftp, "style.css", files["style.css"])
+        self.assertIn("SHA-256 match: true", output.getvalue())
+        self.ftp.files["style.css"] = b"x" * files["style.css"]["size"]
+        with patch.object(self.ftp, "size", return_value=1), redirect_stdout(io.StringIO()), \
+             self.assertRaises(deploy.UploadSizeMismatch):
+            deploy.verify_uploaded_file(self.ftp, "style.css", files["style.css"])
+
+    def test_persistent_size_mismatch_exhausts_retries_without_advancing_checkpoint(self):
+        self.upload()
+        checkpoint = self.ftp.files[deploy.STATE_NAME]
+        (self.package / "style.css").write_bytes(b"change")
+        self.ftp.corrupt_on = "style.css"
+        with patch.dict(deploy.os.environ, {"FTP_SERVER": "offline", "FTP_USERNAME": "offline", "FTP_PASSWORD": "offline"}), \
+             patch.object(deploy, "connect_ftps", return_value=self.ftp) as connect, \
+             patch.object(deploy.time, "sleep"), redirect_stdout(io.StringIO()) as output, \
+             self.assertRaises(deploy.UploadSizeMismatch):
+            deploy.publish_package(self.package, deploy.package_manifest(self.package), commit="b" * 40)
+        self.assertEqual(connect.call_count, 4)
+        self.assertEqual(self.ftp.files[deploy.STATE_NAME], checkpoint)
+        self.assertIn("FTPS size mismatch for style.css: expected 6 bytes; received 9 bytes", output.getvalue())
 
     def test_bad_checkpoint_falls_back_to_complete_upload(self):
         self.ftp.files[deploy.STATE_NAME] = b"not json"

@@ -94,6 +94,13 @@ in memory for the same run. Persistent failures stop the run; rerunning
 retries unfinished changes. No files are deleted, including obsolete managed
 files and server-owned state. Manual deletion remains a separate action.
 
+If the server reports a different uploaded size, bounded FTPS readback must
+match the package byte count and SHA-256. A corrupt direct overwrite is retried
+under a hidden `.upload` staging name, checked, renamed to the productive path
+and checked again. Persistent mismatches use the same bounded reconnects and
+never advance the checkpoint. This shared recovery succeeded for EnergyPlanning
+in run `41296614318`; RealityCheck retains its own root, checkpoints and allowlist.
+
 The run summary records status, tested commit and fixed destination. A
 30-day artifact stores the successful upload receipt (changed paths, counts,
 commit and destination, without credentials). `force` re-uploads the complete

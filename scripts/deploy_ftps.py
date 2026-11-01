@@ -20,6 +20,34 @@ STATE_NAME = ".realitycheck-auto-deploy.json"
 RECEIPT = ROOT / "build/deployment/auto-deploy-receipt.json"
 
 
+class UploadSizeMismatch(ftplib.error_temp):
+    """Retry an unverified upload without advancing the deployment checkpoint."""
+
+
+def verify_uploaded_file(ftp, name: str, metadata: dict) -> None:
+    actual_size = ftp.size(name)
+    if actual_size == metadata["size"]:
+        return
+    # Some hosts report stale SIZE metadata. Only exact downloaded bytes can
+    # establish success in that case; never accept a mismatch on size alone.
+    print(f"FTPS size mismatch for {name}: expected {metadata['size']} bytes; received {actual_size} bytes", flush=True)
+    digest = hashlib.sha256()
+    received = 0
+
+    def collect(chunk):
+        nonlocal received
+        received += len(chunk)
+        if received > metadata["size"]:
+            raise UploadSizeMismatch("Downloaded size differs from production package")
+        digest.update(chunk)
+
+    ftp.retrbinary(f"RETR {name}", collect)
+    if received != metadata["size"] or digest.hexdigest() != metadata["sha256"]:
+        print(f"FTPS readback mismatch for {name}: downloaded {received} bytes; SHA-256 match: false", flush=True)
+        raise UploadSizeMismatch("Downloaded bytes differ from production package")
+    print(f"Verified {name} by FTPS readback: {received} bytes; SHA-256 match: true", flush=True)
+
+
 def package_manifest(package: Path) -> dict[str, dict]:
     if package.is_symlink() or package.resolve() != TARGET_FULL.resolve():
         raise ValueError("Upload must use the canonical production package")
@@ -99,8 +127,19 @@ def upload_package(ftp, package: Path, files: dict, *, commit: str, force: bool 
         ensure_remote_directory(ftp, name, known, remote_root)
         with (package / name).open("rb") as handle:
             ftp.storbinary(f"STOR {name}", handle, blocksize=256 * 1024)
-        if ftp.size(name) != metadata["size"]:
-            raise ValueError("Uploaded size differs from production package")
+        try:
+            verify_uploaded_file(ftp, name, metadata)
+        except UploadSizeMismatch:
+            # Stage with a hidden, non-image suffix before replacing the final
+            # path. Some hosts transform direct overwrites of image filenames.
+            path = Path(name)
+            staged = (path.parent / f".{path.name}.{metadata['sha256'][:12]}.upload").as_posix()
+            print(f"Retrying {name} through verified staging", flush=True)
+            with (package / name).open("rb") as handle:
+                ftp.storbinary(f"STOR {staged}", handle, blocksize=256 * 1024)
+            verify_uploaded_file(ftp, staged, metadata)
+            ftp.rename(staged, name)
+            verify_uploaded_file(ftp, name, metadata)
         uploaded.append(name)
         completed[name] = metadata
         print(f"Uploaded {name}", flush=True)
