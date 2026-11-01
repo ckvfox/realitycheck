@@ -71,6 +71,8 @@ It’s both analytical and exploratory — you can:
 
 ### 🧩 Data, analysis and reliability
 
+- IBTrACS publication now requires JSON/CSV parity and retention of all 279 verified historical basin-season keys, including 46 North Atlantic seasons. Run the read-only guard with `python scripts/verify_ibtracs.py`; reconciliation details: `docs/ibtracs_reconciliation_2026-11-01.md`.
+
 - All five climate sources participate automatically in the existing monthly full refresh (first day of each month, 03:00 UTC). Provider release dates are checked per dataset/database; unchanged releases retain their data, while failures preserve the last known-good snapshot and stop publication. The monthly source-selection and refresh contracts have offline CI coverage.
 - Monthly FTPS data publication explicitly targets `/realitycheck.great-site.net/htdocs/data/`, independently of the legacy `FTP_DIR` secret used by manual workflows. Shared map tooltips wrap long indicator names and units within their viewport-bounded width.
 - Pushes to `main` also trigger `auto-deploy.yml`: the current main snapshot passes the complete offline tests and FPF production baseline, then its productive package is published over FTPS to `/realitycheck.great-site.net/htdocs`. The first run establishes a complete baseline; later runs upload changed files using a remote hash checkpoint, preserve server-owned files and never delete remote files. All production upload workflows share the refresh lock.

@@ -45,6 +45,9 @@ jobs:
           path: data/fetch_log.txt
           retention-days: 7
 
+      - name: Validate IBTrACS historical coverage before publication
+        run: python -m unittest discover -s tests -p test_ibtracs_snapshot.py -v
+
       - name: Prepare allowlisted production package
         run: python scripts/prepare_deployment.py --mode full
 
