@@ -18,10 +18,17 @@ from fetch_core import (
     SourceAdapter,
     build_status_entry,
     force_refresh_required,
+    source_date_cache_key,
 )
 
 
 class FetchCoreRegistryTests(unittest.TestCase):
+    def test_worldbank_release_cache_separates_wdi_and_esg(self):
+        self.assertEqual(source_date_cache_key("worldbank", {}), "worldbank-database:2")
+        self.assertEqual(source_date_cache_key("worldbank", {"worldbank_source_id": 75}), "worldbank-database:75")
+        self.assertEqual(source_date_cache_key("worldbank", {"worldbank_source_id": "75"}), "worldbank-database:75")
+        self.assertEqual(source_date_cache_key("owid", {}), "")
+
     def make_request(self, output_dir: Path) -> AdapterRequest:
         return AdapterRequest(
             kpi_id="population",

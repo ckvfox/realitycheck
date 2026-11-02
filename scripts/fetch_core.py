@@ -152,3 +152,8 @@ def force_refresh_required(force_requested: bool, fetch_status: Mapping[str, Any
     """Force refreshes when requested or when no usable prior KPI status exists."""
     status_kpis = (fetch_status or {}).get("kpis")
     return bool(force_requested or not isinstance(status_kpis, Mapping) or not status_kpis)
+
+
+def source_date_cache_key(source_type: str, meta: Mapping[str, Any]) -> str:
+    """Share release dates only within the same provider database."""
+    return f"worldbank-database:{meta.get('worldbank_source_id') or 2}" if source_type == "worldbank" else ""

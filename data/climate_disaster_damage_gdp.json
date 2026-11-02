@@ -1257,7 +1257,7 @@
     "country": "Australia",
     "iso2": "AUS",
     "year": 1989,
-    "value": 0.03593867
+    "value": 0.037000734
   },
   {
     "country": "Australia",
@@ -1275,19 +1275,19 @@
     "country": "Australia",
     "iso2": "AUS",
     "year": 1992,
-    "value": 0.12862531900000002
+    "value": 0.129392229
   },
   {
     "country": "Australia",
     "iso2": "AUS",
     "year": 1993,
-    "value": 0.1570324257
+    "value": 0.1743086197
   },
   {
     "country": "Australia",
     "iso2": "AUS",
     "year": 1994,
-    "value": 0.220817163
+    "value": 0.20411283
   },
   {
     "country": "Australia",
@@ -1305,19 +1305,19 @@
     "country": "Australia",
     "iso2": "AUS",
     "year": 1997,
-    "value": 0.0015355635
+    "value": 0.0450813935
   },
   {
     "country": "Australia",
     "iso2": "AUS",
     "year": 1998,
-    "value": 0.09591331
+    "value": 0.095913315
   },
   {
     "country": "Australia",
     "iso2": "AUS",
     "year": 1999,
-    "value": 0.5626521
+    "value": 0.5123636
   },
   {
     "country": "Australia",
@@ -1329,13 +1329,13 @@
     "country": "Australia",
     "iso2": "AUS",
     "year": 2001,
-    "value": 0.0680910586
+    "value": 0.06917127029999999
   },
   {
     "country": "Australia",
     "iso2": "AUS",
     "year": 2002,
-    "value": 0.5328990250000001
+    "value": 0.5318626200000001
   },
   {
     "country": "Australia",
@@ -1650,6 +1650,12 @@
     "value": 0.0
   },
   {
+    "country": "Austria",
+    "iso2": "AUT",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Azerbaijan",
     "iso2": "AZE",
     "year": 1995,
@@ -1736,6 +1742,12 @@
   {
     "country": "Bahamas",
     "iso2": "BHS",
+    "year": 1998,
+    "value": 0.0
+  },
+  {
+    "country": "Bahamas",
+    "iso2": "BHS",
     "year": 1999,
     "value": 5.856424
   },
@@ -1779,7 +1791,7 @@
     "country": "Bahamas",
     "iso2": "BHS",
     "year": 2012,
-    "value": 0.0
+    "value": 6.5296073
   },
   {
     "country": "Bahamas",
@@ -1971,7 +1983,7 @@
     "country": "Bangladesh",
     "iso2": "BGD",
     "year": 1988,
-    "value": 8.04018
+    "value": 9.206513999999999
   },
   {
     "country": "Bangladesh",
@@ -2265,7 +2277,7 @@
     "country": "Barbados",
     "iso2": "BRB",
     "year": 2024,
-    "value": 0.0
+    "value": 1.2701427
   },
   {
     "country": "Belarus",
@@ -2544,6 +2556,12 @@
     "value": 0.0
   },
   {
+    "country": "Belgium",
+    "iso2": "BEL",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Belize",
     "iso2": "BLZ",
     "year": 1961,
@@ -2595,7 +2613,13 @@
     "country": "Belize",
     "iso2": "BLZ",
     "year": 2001,
-    "value": 21.330236
+    "value": 21.67152
+  },
+  {
+    "country": "Belize",
+    "iso2": "BLZ",
+    "year": 2004,
+    "value": 6.927572
   },
   {
     "country": "Belize",
@@ -3687,7 +3711,7 @@
     "country": "Brazil",
     "iso2": "BRA",
     "year": 2015,
-    "value": 0.09261650945
+    "value": 0.09261650945000001
   },
   {
     "country": "Brazil",
@@ -4833,7 +4857,7 @@
     "country": "Canada",
     "iso2": "CAN",
     "year": 2012,
-    "value": 0.0592881205
+    "value": 0.0647575005
   },
   {
     "country": "Canada",
@@ -4929,7 +4953,7 @@
     "country": "Cape Verde",
     "iso2": "CPV",
     "year": 1984,
-    "value": 0.0
+    "value": 2.120906
   },
   {
     "country": "Cape Verde",
@@ -5649,7 +5673,7 @@
     "country": "Chile",
     "iso2": "CHL",
     "year": 2025,
-    "value": 0.0
+    "value": 0.04379809
   },
   {
     "country": "China",
@@ -5763,25 +5787,25 @@
     "country": "China",
     "iso2": "CHN",
     "year": 1988,
-    "value": 0.9287946
+    "value": 1.01508722
   },
   {
     "country": "China",
     "iso2": "CHN",
     "year": 1989,
-    "value": 1.05459385
+    "value": 1.2098838
   },
   {
     "country": "China",
     "iso2": "CHN",
     "year": 1990,
-    "value": 0.7971936199999999
+    "value": 0.85997702
   },
   {
     "country": "China",
     "iso2": "CHN",
     "year": 1991,
-    "value": 2.2807729
+    "value": 2.5653217
   },
   {
     "country": "China",
@@ -5805,7 +5829,7 @@
     "country": "China",
     "iso2": "CHN",
     "year": 1995,
-    "value": 0.9667336748
+    "value": 0.9667336747999999
   },
   {
     "country": "China",
@@ -5853,7 +5877,7 @@
     "country": "China",
     "iso2": "CHN",
     "year": 2003,
-    "value": 0.942309335
+    "value": 0.958337572
   },
   {
     "country": "China",
@@ -5967,7 +5991,7 @@
     "country": "China",
     "iso2": "CHN",
     "year": 2022,
-    "value": 0.071317175
+    "value": 0.07131717500000001
   },
   {
     "country": "China",
@@ -6308,6 +6332,12 @@
   {
     "country": "Comoros",
     "iso2": "COM",
+    "year": 1984,
+    "value": 0.0
+  },
+  {
+    "country": "Comoros",
+    "iso2": "COM",
     "year": 1985,
     "value": 2.9008327
   },
@@ -6513,13 +6543,13 @@
     "country": "Costa Rica",
     "iso2": "CRI",
     "year": 1993,
-    "value": 0.0
+    "value": 0.080503374
   },
   {
     "country": "Costa Rica",
     "iso2": "CRI",
     "year": 1994,
-    "value": 0.038131903
+    "value": 0.32412118300000003
   },
   {
     "country": "Costa Rica",
@@ -6549,7 +6579,7 @@
     "country": "Costa Rica",
     "iso2": "CRI",
     "year": 2001,
-    "value": 0.0
+    "value": 0.006259321
   },
   {
     "country": "Costa Rica",
@@ -6909,7 +6939,7 @@
     "country": "Cuba",
     "iso2": "CUB",
     "year": 1985,
-    "value": 0.0
+    "value": 1.7451633
   },
   {
     "country": "Cuba",
@@ -6951,7 +6981,7 @@
     "country": "Cuba",
     "iso2": "CUB",
     "year": 1994,
-    "value": 0.35843232
+    "value": 0.7169771
   },
   {
     "country": "Cuba",
@@ -6963,7 +6993,7 @@
     "country": "Cuba",
     "iso2": "CUB",
     "year": 1996,
-    "value": 0.0519639
+    "value": 1.4469947
   },
   {
     "country": "Cuba",
@@ -7041,7 +7071,7 @@
     "country": "Cuba",
     "iso2": "CUB",
     "year": 2012,
-    "value": 0.0
+    "value": 2.7344444
   },
   {
     "country": "Cuba",
@@ -7276,6 +7306,12 @@
     "iso2": "CZE",
     "year": 2024,
     "value": 0.86434764
+  },
+  {
+    "country": "Czechia",
+    "iso2": "CZE",
+    "year": 2025,
+    "value": 0.0
   },
   {
     "country": "Democratic Republic of the Congo",
@@ -7548,6 +7584,12 @@
     "value": 0.0
   },
   {
+    "country": "Denmark",
+    "iso2": "DNK",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Djibouti",
     "iso2": "DJI",
     "year": 1988,
@@ -7695,7 +7737,7 @@
     "country": "Dominica",
     "iso2": "DMA",
     "year": 1999,
-    "value": 0.0
+    "value": 6.4806027
   },
   {
     "country": "Dominica",
@@ -7803,7 +7845,7 @@
     "country": "Dominican Republic",
     "iso2": "DOM",
     "year": 1988,
-    "value": 0.0
+    "value": 0.018607074
   },
   {
     "country": "Dominican Republic",
@@ -7822,6 +7864,12 @@
     "iso2": "DOM",
     "year": 1993,
     "value": 0.0
+  },
+  {
+    "country": "Dominican Republic",
+    "iso2": "DOM",
+    "year": 1994,
+    "value": 0.08194071
   },
   {
     "country": "Dominican Republic",
@@ -7857,7 +7905,7 @@
     "country": "Dominican Republic",
     "iso2": "DOM",
     "year": 2003,
-    "value": 0.20894103
+    "value": 0.24631867400000002
   },
   {
     "country": "Dominican Republic",
@@ -7977,7 +8025,7 @@
     "country": "Dominican Republic",
     "iso2": "DOM",
     "year": 2025,
-    "value": 0.0
+    "value": 0.018334875
   },
   {
     "country": "Timor-Leste",
@@ -8378,6 +8426,12 @@
   {
     "country": "El Salvador",
     "iso2": "SLV",
+    "year": 1993,
+    "value": 0.046405315
+  },
+  {
+    "country": "El Salvador",
+    "iso2": "SLV",
     "year": 1994,
     "value": 0.013021878
   },
@@ -8640,6 +8694,12 @@
     "value": 0.0
   },
   {
+    "country": "Estonia",
+    "iso2": "EST",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Eswatini",
     "iso2": "SWZ",
     "year": 1983,
@@ -8775,6 +8835,18 @@
     "country": "Eswatini",
     "iso2": "SWZ",
     "year": 2022,
+    "value": 0.0
+  },
+  {
+    "country": "Eswatini",
+    "iso2": "SWZ",
+    "year": 2023,
+    "value": 0.0
+  },
+  {
+    "country": "Eswatini",
+    "iso2": "SWZ",
+    "year": 2024,
     "value": 0.0
   },
   {
@@ -9158,6 +9230,12 @@
   {
     "country": "Fiji",
     "iso2": "FJI",
+    "year": 1988,
+    "value": 0.0
+  },
+  {
+    "country": "Fiji",
+    "iso2": "FJI",
     "year": 1989,
     "value": 0.0
   },
@@ -9321,6 +9399,12 @@
     "country": "Finland",
     "iso2": "FIN",
     "year": 2024,
+    "value": 0.0
+  },
+  {
+    "country": "Finland",
+    "iso2": "FIN",
+    "year": 2025,
     "value": 0.0
   },
   {
@@ -10034,6 +10118,12 @@
   {
     "country": "Germany",
     "iso2": "DEU",
+    "year": 2000,
+    "value": 0.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "DEU",
     "year": 2002,
     "value": 0.64927319
   },
@@ -10156,6 +10246,12 @@
     "iso2": "DEU",
     "year": 2024,
     "value": 0.09603908
+  },
+  {
+    "country": "Germany",
+    "iso2": "DEU",
+    "year": 2025,
+    "value": 0.0
   },
   {
     "country": "Ghana",
@@ -11880,6 +11976,12 @@
     "value": 0.0
   },
   {
+    "country": "Hungary",
+    "iso2": "HUN",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Iceland",
     "iso2": "ISL",
     "year": 1988,
@@ -12111,7 +12213,7 @@
     "country": "India",
     "iso2": "IND",
     "year": 1996,
-    "value": 0.569279164
+    "value": 0.569279173
   },
   {
     "country": "India",
@@ -12225,7 +12327,7 @@
     "country": "India",
     "iso2": "IND",
     "year": 2015,
-    "value": 0.258936025
+    "value": 0.25893602499999996
   },
   {
     "country": "India",
@@ -12489,7 +12591,7 @@
     "country": "Indonesia",
     "iso2": "IDN",
     "year": 2003,
-    "value": 0.00042594434
+    "value": 0.00211310984
   },
   {
     "country": "Indonesia",
@@ -13182,6 +13284,12 @@
     "value": 0.0
   },
   {
+    "country": "Ireland",
+    "iso2": "IRL",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Israel",
     "iso2": "ISR",
     "year": 1983,
@@ -13611,13 +13719,25 @@
     "country": "Jamaica",
     "iso2": "JAM",
     "year": 1994,
-    "value": 0.018340012
+    "value": 0.23475216
+  },
+  {
+    "country": "Jamaica",
+    "iso2": "JAM",
+    "year": 1995,
+    "value": 0.0
   },
   {
     "country": "Jamaica",
     "iso2": "JAM",
     "year": 1996,
     "value": 0.040574033
+  },
+  {
+    "country": "Jamaica",
+    "iso2": "JAM",
+    "year": 1998,
+    "value": 0.0
   },
   {
     "country": "Jamaica",
@@ -13671,13 +13791,13 @@
     "country": "Jamaica",
     "iso2": "JAM",
     "year": 2010,
-    "value": 1.1345973
+    "value": 1.8153557
   },
   {
     "country": "Jamaica",
     "iso2": "JAM",
     "year": 2012,
-    "value": 0.11171678
+    "value": 0.6753523
   },
   {
     "country": "Jamaica",
@@ -13701,13 +13821,13 @@
     "country": "Jamaica",
     "iso2": "JAM",
     "year": 2024,
-    "value": 0.10856516
+    "value": 1.644376
   },
   {
     "country": "Jamaica",
     "iso2": "JAM",
     "year": 2025,
-    "value": 44.04335
+    "value": 53.865017
   },
   {
     "country": "Japan",
@@ -13827,13 +13947,13 @@
     "country": "Japan",
     "iso2": "JPN",
     "year": 1980,
-    "value": 0.0
+    "value": 0.0023847516
   },
   {
     "country": "Japan",
     "iso2": "JPN",
     "year": 1981,
-    "value": 0.0
+    "value": 0.08101028
   },
   {
     "country": "Japan",
@@ -13845,7 +13965,7 @@
     "country": "Japan",
     "iso2": "JPN",
     "year": 1983,
-    "value": 0.0
+    "value": 0.02612471
   },
   {
     "country": "Japan",
@@ -13869,7 +13989,7 @@
     "country": "Japan",
     "iso2": "JPN",
     "year": 1987,
-    "value": 0.0
+    "value": 0.013889445
   },
   {
     "country": "Japan",
@@ -13881,7 +14001,7 @@
     "country": "Japan",
     "iso2": "JPN",
     "year": 1989,
-    "value": 0.0
+    "value": 0.00091025495
   },
   {
     "country": "Japan",
@@ -13893,19 +14013,19 @@
     "country": "Japan",
     "iso2": "JPN",
     "year": 1991,
-    "value": 0.2707867
+    "value": 0.2858744
   },
   {
     "country": "Japan",
     "iso2": "JPN",
     "year": 1992,
-    "value": 0.0
+    "value": 9.3491755e-05
   },
   {
     "country": "Japan",
     "iso2": "JPN",
     "year": 1993,
-    "value": 0.03777674
+    "value": 0.0345883814
   },
   {
     "country": "Japan",
@@ -13929,13 +14049,13 @@
     "country": "Japan",
     "iso2": "JPN",
     "year": 1997,
-    "value": 0.0021835107
+    "value": 0.0032774494
   },
   {
     "country": "Japan",
     "iso2": "JPN",
     "year": 1998,
-    "value": 0.08036654
+    "value": 0.080367334
   },
   {
     "country": "Japan",
@@ -13959,19 +14079,19 @@
     "country": "Japan",
     "iso2": "JPN",
     "year": 2002,
-    "value": 0.00060057273
+    "value": 0.0027155308
   },
   {
     "country": "Japan",
     "iso2": "JPN",
     "year": 2003,
-    "value": 0.00244893686
+    "value": 0.00306554406
   },
   {
     "country": "Japan",
     "iso2": "JPN",
     "year": 2004,
-    "value": 0.34591826999999997
+    "value": 0.34743198999999997
   },
   {
     "country": "Japan",
@@ -14892,6 +15012,12 @@
     "value": 0.0
   },
   {
+    "country": "Latvia",
+    "iso2": "LVA",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Lebanon",
     "iso2": "LBN",
     "year": 1992,
@@ -15218,6 +15344,12 @@
   {
     "country": "Liechtenstein",
     "iso2": "LIE",
+    "year": 2022,
+    "value": 0.0
+  },
+  {
+    "country": "Liechtenstein",
+    "iso2": "LIE",
     "year": 2023,
     "value": 0.0
   },
@@ -15279,6 +15411,12 @@
     "country": "Lithuania",
     "iso2": "LTU",
     "year": 2024,
+    "value": 0.0
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LTU",
+    "year": 2025,
     "value": 0.0
   },
   {
@@ -15345,6 +15483,12 @@
     "country": "Luxembourg",
     "iso2": "LUX",
     "year": 2024,
+    "value": 0.0
+  },
+  {
+    "country": "Luxembourg",
+    "iso2": "LUX",
+    "year": 2025,
     "value": 0.0
   },
   {
@@ -16314,6 +16458,12 @@
     "value": 0.0
   },
   {
+    "country": "Malta",
+    "iso2": "MLT",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Marshall Islands",
     "iso2": "MHL",
     "year": 1991,
@@ -16857,7 +17007,7 @@
     "country": "Mexico",
     "iso2": "MEX",
     "year": 1983,
-    "value": 0.0
+    "value": 0.12806803
   },
   {
     "country": "Mexico",
@@ -16881,7 +17031,7 @@
     "country": "Mexico",
     "iso2": "MEX",
     "year": 1988,
-    "value": 0.17983477618000002
+    "value": 0.88133357618
   },
   {
     "country": "Mexico",
@@ -16911,7 +17061,7 @@
     "country": "Mexico",
     "iso2": "MEX",
     "year": 1993,
-    "value": 0.333464882
+    "value": 0.368925838
   },
   {
     "country": "Mexico",
@@ -16935,7 +17085,7 @@
     "country": "Mexico",
     "iso2": "MEX",
     "year": 1998,
-    "value": 0.10972963242
+    "value": 0.11062655599999999
   },
   {
     "country": "Mexico",
@@ -16947,7 +17097,7 @@
     "country": "Mexico",
     "iso2": "MEX",
     "year": 2000,
-    "value": 0.00820711176
+    "value": 0.0107405951
   },
   {
     "country": "Mexico",
@@ -16965,7 +17115,7 @@
     "country": "Mexico",
     "iso2": "MEX",
     "year": 2003,
-    "value": 0.013062505
+    "value": 0.015831755
   },
   {
     "country": "Mexico",
@@ -17091,7 +17241,7 @@
     "country": "Mexico",
     "iso2": "MEX",
     "year": 2024,
-    "value": 0.14149222
+    "value": 0.14640895
   },
   {
     "country": "Mexico",
@@ -17115,19 +17265,19 @@
     "country": "Micronesia",
     "iso2": "FSM",
     "year": 2002,
-    "value": 0.21038963
+    "value": 6.5220785
   },
   {
     "country": "Micronesia",
     "iso2": "FSM",
     "year": 2003,
-    "value": 0.0
+    "value": 0.70554084
   },
   {
     "country": "Micronesia",
     "iso2": "FSM",
     "year": 2004,
-    "value": 0.0
+    "value": 5.9438367
   },
   {
     "country": "Micronesia",
@@ -17637,7 +17787,7 @@
     "country": "Mozambique",
     "iso2": "MOZ",
     "year": 1994,
-    "value": 0.0
+    "value": 0.6761078
   },
   {
     "country": "Mozambique",
@@ -17685,6 +17835,12 @@
     "country": "Mozambique",
     "iso2": "MOZ",
     "year": 2003,
+    "value": 0.053162996
+  },
+  {
+    "country": "Mozambique",
+    "iso2": "MOZ",
+    "year": 2004,
     "value": 0.0
   },
   {
@@ -18714,6 +18870,12 @@
     "value": 0.0041188323
   },
   {
+    "country": "Netherlands",
+    "iso2": "NLD",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "New Zealand",
     "iso2": "NZL",
     "year": 1968,
@@ -18783,7 +18945,7 @@
     "country": "New Zealand",
     "iso2": "NZL",
     "year": 1988,
-    "value": 0.0
+    "value": 0.18150905
   },
   {
     "country": "New Zealand",
@@ -18819,7 +18981,7 @@
     "country": "New Zealand",
     "iso2": "NZL",
     "year": 1997,
-    "value": 0.0
+    "value": 0.01013997
   },
   {
     "country": "New Zealand",
@@ -19017,7 +19179,7 @@
     "country": "Nicaragua",
     "iso2": "NIC",
     "year": 1993,
-    "value": 0.0
+    "value": 0.17079864
   },
   {
     "country": "Nicaragua",
@@ -19734,6 +19896,12 @@
     "value": 0.0
   },
   {
+    "country": "North Macedonia",
+    "iso2": "MKD",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Norway",
     "iso2": "NOR",
     "year": 1990,
@@ -19742,8 +19910,14 @@
   {
     "country": "Norway",
     "iso2": "NOR",
+    "year": 1991,
+    "value": 0.13206841
+  },
+  {
+    "country": "Norway",
+    "iso2": "NOR",
     "year": 1992,
-    "value": 0.0
+    "value": 0.18461698
   },
   {
     "country": "Norway",
@@ -19818,6 +19992,12 @@
     "value": 0.0
   },
   {
+    "country": "Norway",
+    "iso2": "NOR",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Oman",
     "iso2": "OMN",
     "year": 1977,
@@ -19828,6 +20008,12 @@
     "iso2": "OMN",
     "year": 1981,
     "value": 0.0
+  },
+  {
+    "country": "Oman",
+    "iso2": "OMN",
+    "year": 2002,
+    "value": 0.2167736
   },
   {
     "country": "Oman",
@@ -20362,6 +20548,12 @@
     "iso2": "PAN",
     "year": 1992,
     "value": 0.12434196
+  },
+  {
+    "country": "Panama",
+    "iso2": "PAN",
+    "year": 1994,
+    "value": 0.0
   },
   {
     "country": "Panama",
@@ -21297,7 +21489,7 @@
     "country": "Philippines",
     "iso2": "PHL",
     "year": 1982,
-    "value": 0.28115662984
+    "value": 0.33636203984
   },
   {
     "country": "Philippines",
@@ -21309,7 +21501,7 @@
     "country": "Philippines",
     "iso2": "PHL",
     "year": 1984,
-    "value": 0.94175273
+    "value": 0.9418899
   },
   {
     "country": "Philippines",
@@ -21357,7 +21549,7 @@
     "country": "Philippines",
     "iso2": "PHL",
     "year": 1992,
-    "value": 0.159848592
+    "value": 0.219862829
   },
   {
     "country": "Philippines",
@@ -21375,7 +21567,7 @@
     "country": "Philippines",
     "iso2": "PHL",
     "year": 1995,
-    "value": 1.20319458
+    "value": 1.2646281
   },
   {
     "country": "Philippines",
@@ -21387,13 +21579,13 @@
     "country": "Philippines",
     "iso2": "PHL",
     "year": 1997,
-    "value": 0.008050468724
+    "value": 0.018251697724
   },
   {
     "country": "Philippines",
     "iso2": "PHL",
     "year": 1998,
-    "value": 0.316055
+    "value": 0.2967255
   },
   {
     "country": "Philippines",
@@ -21411,7 +21603,7 @@
     "country": "Philippines",
     "iso2": "PHL",
     "year": 2001,
-    "value": 0.135655499
+    "value": 0.15339470900000002
   },
   {
     "country": "Philippines",
@@ -21429,7 +21621,7 @@
     "country": "Philippines",
     "iso2": "PHL",
     "year": 2004,
-    "value": 0.14617272
+    "value": 0.40932506
   },
   {
     "country": "Philippines",
@@ -21742,6 +21934,12 @@
     "iso2": "POL",
     "year": 2024,
     "value": 0.017080804
+  },
+  {
+    "country": "Poland",
+    "iso2": "POL",
+    "year": 2025,
+    "value": 0.0
   },
   {
     "country": "Portugal",
@@ -22580,14 +22778,20 @@
   {
     "country": "Saint Lucia",
     "iso2": "LCA",
+    "year": 1990,
+    "value": 0.17252396
+  },
+  {
+    "country": "Saint Lucia",
+    "iso2": "LCA",
     "year": 1994,
-    "value": 0.0
+    "value": 14.431759
   },
   {
     "country": "Saint Lucia",
     "iso2": "LCA",
     "year": 1999,
-    "value": 0.0
+    "value": 0.7159502
   },
   {
     "country": "Saint Lucia",
@@ -22630,6 +22834,12 @@
     "iso2": "LCA",
     "year": 2022,
     "value": 0.0
+  },
+  {
+    "country": "Saint Lucia",
+    "iso2": "LCA",
+    "year": 2024,
+    "value": 0.076771066
   },
   {
     "country": "Saint Vincent-Grenadines",
@@ -22767,12 +22977,6 @@
     "country": "Samoa",
     "iso2": "WSM",
     "year": 2004,
-    "value": 0.0
-  },
-  {
-    "country": "Samoa",
-    "iso2": "WSM",
-    "year": 2005,
     "value": 0.0
   },
   {
@@ -23274,6 +23478,12 @@
     "value": 0.0
   },
   {
+    "country": "Serbia",
+    "iso2": "SRB",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Seychelles",
     "iso2": "SYC",
     "year": 1997,
@@ -23530,6 +23740,12 @@
     "iso2": "SVK",
     "year": 2024,
     "value": 0.011849511
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SVK",
+    "year": 2025,
+    "value": 0.0
   },
   {
     "country": "Slovenia",
@@ -24417,7 +24633,7 @@
     "country": "South Korea",
     "iso2": "KOR",
     "year": 1991,
-    "value": 0.121753743
+    "value": 0.12360204699999999
   },
   {
     "country": "South Korea",
@@ -24429,7 +24645,7 @@
     "country": "South Korea",
     "iso2": "KOR",
     "year": 1993,
-    "value": 0.007244914
+    "value": 0.028442567
   },
   {
     "country": "South Korea",
@@ -25590,6 +25806,12 @@
     "value": 0.0
   },
   {
+    "country": "Sweden",
+    "iso2": "SWE",
+    "year": 2025,
+    "value": 0.0
+  },
+  {
     "country": "Switzerland",
     "iso2": "CHE",
     "year": 1977,
@@ -26409,7 +26631,7 @@
     "country": "Thailand",
     "iso2": "THA",
     "year": 1992,
-    "value": 0.0
+    "value": 0.02871172
   },
   {
     "country": "Thailand",
@@ -26463,7 +26685,7 @@
     "country": "Thailand",
     "iso2": "THA",
     "year": 2002,
-    "value": 0.029878429499999998
+    "value": 0.0298784295
   },
   {
     "country": "Thailand",
@@ -26720,8 +26942,14 @@
   {
     "country": "Tonga",
     "iso2": "TON",
-    "year": 1997,
+    "year": 1993,
     "value": 0.0
+  },
+  {
+    "country": "Tonga",
+    "iso2": "TON",
+    "year": 1997,
+    "value": 7.0700483
   },
   {
     "country": "Tonga",
@@ -26805,6 +27033,12 @@
     "country": "Trinidad and Tobago",
     "iso2": "TTO",
     "year": 1996,
+    "value": 0.0
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "iso2": "TTO",
+    "year": 2001,
     "value": 0.0
   },
   {
@@ -27620,14 +27854,20 @@
   {
     "country": "United Kingdom",
     "iso2": "GBR",
+    "year": 1992,
+    "value": 0.0
+  },
+  {
+    "country": "United Kingdom",
+    "iso2": "GBR",
     "year": 1993,
-    "value": 0.017618427
+    "value": 0.018829778
   },
   {
     "country": "United Kingdom",
     "iso2": "GBR",
     "year": 1994,
-    "value": 0.020692864
+    "value": 0.01956553
   },
   {
     "country": "United Kingdom",
@@ -27945,7 +28185,7 @@
     "country": "United States",
     "iso2": "USA",
     "year": 1982,
-    "value": 0.0641757
+    "value": 0.072549434
   },
   {
     "country": "United States",
@@ -27957,19 +28197,19 @@
     "country": "United States",
     "iso2": "USA",
     "year": 1984,
-    "value": 0.0646570121
+    "value": 0.0654124121
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 1985,
-    "value": 0.11740319621999999
+    "value": 0.12892664422
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 1986,
-    "value": 0.0402870899
+    "value": 0.042470672
   },
   {
     "country": "United States",
@@ -27987,13 +28227,13 @@
     "country": "United States",
     "iso2": "USA",
     "year": 1989,
-    "value": 0.13967718
+    "value": 0.14417946
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 1990,
-    "value": 0.01207416756
+    "value": 0.01484116456
   },
   {
     "country": "United States",
@@ -28011,37 +28251,37 @@
     "country": "United States",
     "iso2": "USA",
     "year": 1993,
-    "value": 0.268496632
+    "value": 0.27017337199999997
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 1994,
-    "value": 0.021297512249
+    "value": 0.023218680249
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 1995,
-    "value": 0.21944439
+    "value": 0.19198144
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 1996,
-    "value": 0.068839542
+    "value": 0.107610168
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 1997,
-    "value": 0.118355446845
+    "value": 0.119521279845
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 1998,
-    "value": 0.1982452076
+    "value": 0.1987969076
   },
   {
     "country": "United States",
@@ -28059,19 +28299,19 @@
     "country": "United States",
     "iso2": "USA",
     "year": 2001,
-    "value": 0.0641387564
+    "value": 0.0641393794
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 2002,
-    "value": 0.103589583
+    "value": 0.10358958299999999
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 2003,
-    "value": 0.163820387
+    "value": 0.175438297
   },
   {
     "country": "United States",
@@ -28083,13 +28323,13 @@
     "country": "United States",
     "iso2": "USA",
     "year": 2005,
-    "value": 1.2177420429599999
+    "value": 1.2180271196999999
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 2006,
-    "value": 0.0484880719
+    "value": 0.048219015399999995
   },
   {
     "country": "United States",
@@ -28143,13 +28383,13 @@
     "country": "United States",
     "iso2": "USA",
     "year": 2015,
-    "value": 0.138931141
+    "value": 0.13893114099999998
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 2016,
-    "value": 0.238536179
+    "value": 0.23853617900000001
   },
   {
     "country": "United States",
@@ -28191,13 +28431,13 @@
     "country": "United States",
     "iso2": "USA",
     "year": 2023,
-    "value": 0.2484368816
+    "value": 0.2523561216
   },
   {
     "country": "United States",
     "iso2": "USA",
     "year": 2024,
-    "value": 0.6141542603
+    "value": 0.6141542603000001
   },
   {
     "country": "United States",
@@ -28461,7 +28701,7 @@
     "country": "Vanuatu",
     "iso2": "VUT",
     "year": 2001,
-    "value": 0.0
+    "value": 0.5389124
   },
   {
     "country": "Vanuatu",
@@ -28473,7 +28713,7 @@
     "country": "Vanuatu",
     "iso2": "VUT",
     "year": 2004,
-    "value": 0.0
+    "value": 1.0411048
   },
   {
     "country": "Vanuatu",
@@ -28539,7 +28779,7 @@
     "country": "Venezuela",
     "iso2": "VEN",
     "year": 1988,
-    "value": 0.0
+    "value": 0.004981203
   },
   {
     "country": "Venezuela",
@@ -28701,7 +28941,7 @@
     "country": "Vietnam",
     "iso2": "VNM",
     "year": 1985,
-    "value": 0.0
+    "value": 0.46116665
   },
   {
     "country": "Vietnam",
@@ -28719,7 +28959,7 @@
     "country": "Vietnam",
     "iso2": "VNM",
     "year": 1988,
-    "value": 0.0
+    "value": 0.043266524
   },
   {
     "country": "Vietnam",
@@ -28749,7 +28989,7 @@
     "country": "Vietnam",
     "iso2": "VNM",
     "year": 1993,
-    "value": 0.56900282
+    "value": 0.46658231
   },
   {
     "country": "Vietnam",
@@ -28803,7 +29043,7 @@
     "country": "Vietnam",
     "iso2": "VNM",
     "year": 2002,
-    "value": 0.8105154519300001
+    "value": 0.81051545193
   },
   {
     "country": "Vietnam",
@@ -28941,7 +29181,7 @@
     "country": "Vietnam",
     "iso2": "VNM",
     "year": 2025,
-    "value": 0.335003
+    "value": 0.335002995
   },
   {
     "country": "World",
@@ -28995,7 +29235,7 @@
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1968,
-    "value": 0.027930935594000002
+    "value": 0.027930935594
   },
   {
     "country": "World",
@@ -29031,7 +29271,7 @@
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1974,
-    "value": 0.0742873425
+    "value": 0.07428734249999999
   },
   {
     "country": "World",
@@ -29055,7 +29295,7 @@
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1978,
-    "value": 0.070659406
+    "value": 0.07065940600000001
   },
   {
     "country": "World",
@@ -29067,169 +29307,169 @@
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1980,
-    "value": 0.052852607
+    "value": 0.053092158
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1981,
-    "value": 0.077387309
+    "value": 0.086062515
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1982,
-    "value": 0.099488203
+    "value": 0.102070097
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1983,
-    "value": 0.127273104
+    "value": 0.131767287
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1984,
-    "value": 0.075963456725
+    "value": 0.07623111672499999
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1985,
-    "value": 0.07953743290000001
+    "value": 0.0869316727
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1986,
-    "value": 0.0720991865
+    "value": 0.0727486295
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1987,
-    "value": 0.0696675451
+    "value": 0.0717550671
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1988,
-    "value": 0.060793191586500005
+    "value": 0.0707994765865
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1989,
-    "value": 0.098363092
+    "value": 0.105863659
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1990,
-    "value": 0.15092631925
+    "value": 0.15305837925000002
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1991,
-    "value": 0.1537505908
+    "value": 0.1617642948
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1992,
-    "value": 0.1959394181
+    "value": 0.1971666581
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1993,
-    "value": 0.1961308825
+    "value": 0.196964989
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1994,
-    "value": 0.14903282995
+    "value": 0.15028679223
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1995,
-    "value": 0.1751058962
+    "value": 0.17543744020000002
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1996,
-    "value": 0.13164008900000002
+    "value": 0.142489981
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1997,
-    "value": 0.11055146885
+    "value": 0.11171436385
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1998,
-    "value": 0.2666005922
+    "value": 0.2667580122
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 1999,
-    "value": 0.2019958775
+    "value": 0.20206715749999998
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2000,
-    "value": 0.1347308415
+    "value": 0.13478619149999999
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2001,
-    "value": 0.06388345282
+    "value": 0.06395639851
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2002,
-    "value": 0.1420444947
+    "value": 0.14247445179999998
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2003,
-    "value": 0.15628657640000002
+    "value": 0.1608234829
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2004,
-    "value": 0.215966807479
+    "value": 0.21707625747900003
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2005,
-    "value": 0.4368414441
+    "value": 0.43692420410000005
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2006,
-    "value": 0.0595366597
+    "value": 0.0594651285
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2007,
-    "value": 0.1007706234
+    "value": 0.10077062340000001
   },
   {
     "country": "World",
@@ -29247,7 +29487,7 @@
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2010,
-    "value": 0.11646434337
+    "value": 0.11659888537
   },
   {
     "country": "World",
@@ -29259,7 +29499,7 @@
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2012,
-    "value": 0.18302942069
+    "value": 0.18682068069
   },
   {
     "country": "World",
@@ -29271,7 +29511,7 @@
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2014,
-    "value": 0.1104014544
+    "value": 0.11040145440000002
   },
   {
     "country": "World",
@@ -29307,7 +29547,7 @@
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2020,
-    "value": 0.18823262699999999
+    "value": 0.188232627
   },
   {
     "country": "World",
@@ -29325,19 +29565,19 @@
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2023,
-    "value": 0.1440839974
+    "value": 0.1450993808
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2024,
-    "value": 0.23194146799999998
+    "value": 0.232414928
   },
   {
     "country": "World",
     "iso2": "OWID_WRL",
     "year": 2025,
-    "value": 0.1316437554
+    "value": 0.13367998339999998
   },
   {
     "country": "Yemen",

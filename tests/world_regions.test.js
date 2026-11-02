@@ -15,7 +15,7 @@ const metadata = read('data/meta/available_kpis.json');
 const cyclone = metadata.find(k => k.filename === 'tropical_cyclone_activity_basin');
 
 test('committed regional series are usable without inventing a global series', () => {
-  assert.equal(data.length, 233);
+  assert.equal(data.length, 279);
   assert.deepEqual(getWorldSeries(data), { years: [], values: [] });
   assert.equal(availableRegionYears(data)[0], 2025);
   assert.equal(availableRegionYears(data).at(-1), 1980);
@@ -24,7 +24,7 @@ test('committed regional series are usable without inventing a global series', (
     const coverage = regionCoverage(geo, 'Acronym', values);
     assert.equal(coverage.total, 7);
     assert.equal(coverage.unmapped.length, 0);
-    assert.equal(values.has('NA'), false); // Known separate parsing defect; do not fix here.
+    assert.equal(values.has('NA'), true); // Corrected main snapshot: all 46 NOAA seasons.
     assert.equal(values.get('EP'), data.find(row => row.region === 'EP' && row.year === year).value);
   }
   assert.equal(regionValuesForYear(data, 1980).has('SA'), false);
@@ -65,8 +65,13 @@ test('missing regional values are not zero; real zero and numeric strings remain
 function harness(loader = async url => url.endsWith('region_sets.json') ? sets : geo) {
   const elements = new Map();
   function element(tag = 'div') {
-    const el = { tagName: tag.toUpperCase(), value: '', disabled: false, hidden: false, children: [],
+    const el = { remove() {}, tagName: tag.toUpperCase(), value: '', disabled: false, hidden: false, children: [],
       appendChild(child) { this.children.push(child); return child; },
+      createCaption() { return this.appendChild(element('caption')); },
+      createTHead() { return this.appendChild(element('thead')); },
+      createTBody() { return this.appendChild(element('tbody')); },
+      insertRow() { return this.appendChild(element('tr')); },
+      insertCell() { return this.appendChild(element('td')); },
       prepend(child) { this.children.unshift(child); },
       setAttribute(name) { if (name === 'hidden') this.hidden = true; },
       removeAttribute(name) { if (name === 'hidden') this.hidden = false; },
@@ -78,10 +83,10 @@ function harness(loader = async url => url.endsWith('region_sets.json') ? sets :
     el.classList = { add() {}, remove() {} };
     return el;
   }
-  const document = { createElement: element, getElementById(id) { if (!elements.has(id)) elements.set(id, element()); return elements.get(id); }, addEventListener() {} };
+  const document = { querySelector() { return null; }, createElement: element, getElementById(id) { if (!elements.has(id)) elements.set(id, element()); return elements.get(id); }, addEventListener() {} };
   const added = [];
   const context = vm.createContext({ document, URL, console, loadJSON: loader,
-    loadKPIData: async () => data, renderKpiAnalysis() {},
+    loadKPIData: async () => data, renderKpiAnalysis() {}, renderLineChart() { return {}; },
     window: { location: { href: 'https://example.test/world.html' }, history: { replaceState() {} }, _worldGeoJSON: {} },
     L: { geoJSON(json, options) {
       const group = { features: [], resetStyle() {}, addTo() { added.push(this); return this; } };
@@ -92,7 +97,9 @@ function harness(loader = async url => url.endsWith('region_sets.json') ? sets :
       return group;
     } },
   });
+  vm.runInContext(fs.readFileSync(path.join(root, 'scripts/environment_colors.js'), 'utf8'), context);
   vm.runInContext(script, context);
+  vm.runInContext('WORLD_MAP_CLIMATE_PLACEHOLDER_CATEGORIES.test_pending = {label: "Unconnected test hazard", geoType: "region", regionSet: "ocean_basins", metrics: []};', context);
   context.testMeta = metadata;
   context.testData = data;
   vm.runInContext('META = testMeta; worldMapSelectedKpiMeta = META.find(k => k.filename === "tropical_cyclone_activity_basin"); worldMapSelectedKpiData = testData; worldMap = {removeLayer() {}};', context);
@@ -107,20 +114,23 @@ test('regional layer renders all basins with correct values, missing states and 
   const h = harness();
   await h.run('renderWorldMapRegionLayer(getClimateCategoryConfig("storm_impact"), "storm_impact")');
   assert.equal(h.added[0].features.length, 7);
-  const missing = h.added[0].features.find(layer => layer.feature.properties.Acronym === 'NA');
-  assert.equal(missing.style.fillColor, '#e8edf2');
+  assert.ok(h.added[0].features.every(layer => layer.feature.geometry.type === 'Point'));
+  assert.ok(h.document.getElementById('legend-content').children.some(el => el.tagName === 'TABLE'));
+  assert.match(h.document.getElementById('world-map-mode-note').textContent, /Circles locate ocean basins only/);
+  const missing = h.added[0].features.find(layer => layer.feature.properties.Acronym === 'SA');
+  assert.equal(missing.style.fillColor, '#e6e6e6');
   assert.match(missing.tooltip.innerHTML, /No regional data for selected year/);
   const ep = h.added[0].features.find(layer => layer.feature.properties.Acronym === 'EP');
   assert.match(ep.tooltip.innerHTML, new RegExp(String(regionValuesForYear(data, 2025).get('EP'))));
   assert.match(ep.tooltip.innerHTML, /2025/);
   assert.match(ep.tooltip.innerHTML, /www\.ncei\.noaa\.gov/);
   const legend = h.document.getElementById('legend-content');
-  assert.match(legend.textContent, /Coverage: 5\/7/);
+  assert.match(legend.textContent, /Coverage: 6\/7/);
   assert.match(legend.children[0].textContent, /Not official/);
   assert.match(legend.children[1].textContent, /Measurement source/);
   assert.match(legend.children[2].textContent, /Geometry source/);
   assert.match(legend.children[2].textContent, /License:/);
-  assert.match(h.document.getElementById('legend-other-label').textContent, /Region without/);
+  assert.match(h.document.getElementById('legend-other-label').textContent, /No observation/);
   assert.equal(h.document.getElementById('legend-group-a-item').hidden, true);
   h.run('updateWorldMapModeAvailability()');
   assert.equal(h.document.getElementById('worldMapAggregationMode').value, 'none');
@@ -129,7 +139,7 @@ test('regional layer renders all basins with correct values, missing states and 
 
 test('placeholder clears stale year/data and never displays country fallback or a countries legend', async () => {
   const h = harness();
-  h.document.getElementById('categorySelect').value = 'wildfire_impact';
+  h.document.getElementById('categorySelect').value = 'test_pending';
   h.document.getElementById('worldMapKpiSelect').value = '';
   await h.run('updateWorldMapYearOptions()');
   h.run('updateWorldMapModeAvailability(); updateWorldMapGeoJSON()');
@@ -138,7 +148,7 @@ test('placeholder clears stale year/data and never displays country fallback or 
   assert.equal(h.run('worldMapSelectedKpiData.length'), 0);
   assert.equal(h.added.length, 0);
   assert.equal(h.document.getElementById('world-map-visual-legend').hidden, true);
-  assert.match(h.document.getElementById('world-map-mode-note').textContent, /not yet connected/);
+  assert.match(h.document.getElementById('world-map-mode-note').textContent, /not connected to production data yet/);
 });
 
 test('late regional geometry cannot repaint after switching to a placeholder', async () => {
@@ -146,7 +156,7 @@ test('late regional geometry cannot repaint after switching to a placeholder', a
   const gate = new Promise(resolve => { release = resolve; });
   const h = harness(async url => { await gate; return url.endsWith('region_sets.json') ? sets : geo; });
   const pending = h.run('renderWorldMapRegionLayer(getClimateCategoryConfig("storm_impact"), "storm_impact")');
-  h.document.getElementById('categorySelect').value = 'heat_impact';
+  h.document.getElementById('categorySelect').value = 'test_pending';
   h.document.getElementById('worldMapKpiSelect').value = '';
   await h.run('updateWorldMapYearOptions()');
   h.run('updateWorldMapGeoJSON()');
@@ -163,7 +173,7 @@ test('regional chart card explains scope and keeps a map link and measurement so
   assert.match(block.children.find(el => el.className === 'kpi-message').textContent, /Regional data are available/);
   assert.ok(block.children.some(el => el.href?.includes('group=storm_impact')));
   assert.ok(block.children.some(el => el.className === 'chart-source'));
-  assert.equal(block.children.some(el => el.tagName === 'CANVAS'), false);
+  assert.equal(block.children.some(el => el.tagName === 'CANVAS'), true); // Preserve main regional chart.
 });
 
 test('year changes replace regional values and unsupported year stays missing', async () => {
@@ -199,11 +209,34 @@ test('geometry loading failure is distinct from missing measurements', async () 
   await h.run('renderWorldMapRegionLayer(getClimateCategoryConfig("storm_impact"), "storm_impact")');
   assert.equal(h.added.length, 0);
   assert.match(h.document.getElementById('world-map-mode-note').textContent, /Data availability cannot be inferred/);
-  assert.equal(h.run('worldMapSelectedKpiData.length'), 233);
+  assert.equal(h.run('worldMapSelectedKpiData.length'), 279);
 });
 
 test('tooltip text escapes dataset markup and existing global aliases retain their series', () => {
   const { escapeRegionText } = require('../scripts/script_world.js');
   assert.equal(escapeRegionText('<img onerror="x">'), '&lt;img onerror=&quot;x&quot;&gt;');
   assert.deepEqual(getWorldSeries([{ country: 'World', year: 2025, value: 3 }, { country: 'Welt', year: 2023, value: 1 }, { country: 'Global', year: 2024, value: 2 }, { region: 'EP', year: 2025, value: 90 }]), { years: [2023, 2024, 2025], values: [1, 2, 3] });
+});
+
+test('current main climate definitions and active country hazards survive integration', () => {
+  const h = harness();
+  for (const category of ['wildfire_impact', 'flood_impact', 'heat_impact', 'drought_impact']) {
+    assert.equal(h.run(`getClimateCategoryConfig('${category}').geoType`), 'country');
+    assert.ok(h.run(`getClimateCategoryConfig('${category}').metrics.length`) > 0);
+  }
+  const description = h.run('getClimateCategoryConfig("storm_impact").description');
+  assert.match(description, /including unnamed systems/);
+  assert.match(description, /July–June/);
+  assert.match(description, /must not be added/);
+});
+
+test('regional chart keeps seven separate series and gaps, and rejects invalid years', () => {
+  const { getRegionSeries } = require('../scripts/script_world.js');
+  const series = getRegionSeries(data);
+  assert.equal(series.datasets.length, 7);
+  assert.deepEqual(series.years, Array.from({length: 46}, (_, i) => 1980 + i));
+  const na = series.datasets.find(row => row.label === 'North Atlantic');
+  assert.deepEqual(na.data, series.years.map(year => data.find(row => row.region === 'NA' && row.year === year).value));
+  assert.equal(series.datasets.find(row => row.label === 'South Atlantic').data[0], null);
+  assert.deepEqual(getRegionSeries([null, {region: 'NA', year: null, value: 1}]).years, []);
 });

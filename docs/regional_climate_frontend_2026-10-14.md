@@ -1,6 +1,9 @@
 # Regional climate frontend correction — 2026-10-14
 
-Status: frontend implemented; browser acceptance and production upload pending.
+Historical evidence only; superseded by `regional_climate_integration_2026-11-02.md`.
+The 233-row snapshot, missing NA and polygon-rendering checklist below describe the original PR, not the integrated branch.
+
+Status at original review: frontend implemented; browser acceptance and production upload pending.
 Base: main 25c0244e735c845f07e6c04e4cbd1f3deac3159c. Related audit: PR #108
 (e81f4bbd095523ba91e476cbd96ebea2c0451ea7), documentation-only and still open
 when inspected. This change does not incorporate or supersede that audit.

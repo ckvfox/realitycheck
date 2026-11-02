@@ -43,7 +43,8 @@ def resolve_source_date(meta: dict[str, Any], *, runtime: SourceRuntime, http_ge
     code = _indicator_code(meta)
     if not code:
         return None
-    url = f"https://api.worldbank.org/v2/sources/2?format=json"
+    source_id = str(meta.get("worldbank_source_id") or "2")
+    url = f"https://api.worldbank.org/v2/sources/{source_id}?format=json"
     response = _get(url, runtime=runtime, http_get=http_get, timeout=30, attempts=2)
     try:
         if response is not None and response.status_code == 200:
@@ -56,8 +57,10 @@ def resolve_source_date(meta: dict[str, Any], *, runtime: SourceRuntime, http_ge
     return None
 
 
-def _zip_series(code: str, *, runtime: SourceRuntime, http_get=requests.get) -> tuple[list[dict[str, Any]], str | None]:
+def _zip_series(code: str, *, runtime: SourceRuntime, http_get=requests.get, source_id=None) -> tuple[list[dict[str, Any]], str | None]:
     url = f"https://api.worldbank.org/v2/en/indicator/{code}?downloadformat=csv"
+    if source_id:
+        url += f"&source={source_id}"
     response = _get(url, runtime=runtime, http_get=http_get, headers=ZIP_HEADERS, attempts=3)
     if response is None or response.status_code != 200 or response.content[:2] != b"PK":
         return [], None
@@ -102,18 +105,22 @@ def _zip_series(code: str, *, runtime: SourceRuntime, http_get=requests.get) -> 
     return records, source_date
 
 
-def _series(code: str, *, runtime: SourceRuntime, http_get=requests.get) -> tuple[list[dict[str, Any]], str | None]:
+def _series(code: str, *, runtime: SourceRuntime, http_get=requests.get, source_id=None) -> tuple[list[dict[str, Any]], str | None]:
     url = f"https://api.worldbank.org/v2/country/all/indicator/{code}?format=json&per_page=20000"
+    if source_id:
+        url += f"&source={source_id}"
     response = _get(url, runtime=runtime, http_get=http_get, attempts=5)
     try:
         if response is not None and response.status_code == 200:
             payload = response.json()
             if isinstance(payload, list) and len(payload) > 1 and isinstance(payload[1], list):
-                return payload[1], None
+                if int(payload[0].get("pages", 1)) > 1:
+                    raise ValueError("World Bank result requires pagination; refusing partial data")
+                return payload[1], payload[0].get("lastupdated")
     except Exception as exc:
         runtime.log(f"[WARN] World Bank JSON parsing failed for {code}: {exc}")
     runtime.log(f"[FALLBACK] World Bank {code}: trying ZIP download")
-    return _zip_series(code, runtime=runtime, http_get=http_get)
+    return _zip_series(code, runtime=runtime, http_get=http_get, source_id=source_id)
 
 
 def run(request: AdapterRequest, *, runtime: SourceRuntime, http_get=requests.get) -> AdapterResult:
@@ -122,7 +129,7 @@ def run(request: AdapterRequest, *, runtime: SourceRuntime, http_get=requests.ge
         runtime.keep_or_dummy(request.kpi_id, "missing source_code", request.stats, output_dir=request.output_dir)
         return AdapterResult()
     source_date = request.meta.get("_discovered_source_date")
-    rows, fallback_date = _series(code, runtime=runtime, http_get=http_get)
+    rows, fallback_date = _series(code, runtime=runtime, http_get=http_get, source_id=request.meta.get("worldbank_source_id"))
     records: list[dict[str, Any]] = []
     for row in rows:
         value = runtime.safe_float(row.get("value"))
@@ -142,6 +149,8 @@ def run(request: AdapterRequest, *, runtime: SourceRuntime, http_get=requests.ge
         except (TypeError, ValueError):
             continue
         if canon and value is not None:
+            if request.meta.get("worldbank_countries_only") and canon not in request.countries:
+                continue
             records.append({"country": canon, "iso2": "", "year": year, "value": value})
     if not records:
         runtime.keep_or_dummy(

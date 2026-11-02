@@ -38,7 +38,7 @@ beyond perception, bias, or headlines.
 ---------------------------------------------------------------------
 
 🧭 WHAT THIS PROJECT DOES
-RealityCheck combines 100 registered global indicators (KPIs) into one coherent platform:
+RealityCheck combines 105 registered global indicators (KPIs) into one coherent platform:
 a living dashboard that visualizes progress, risks, and differences between nations.
 
 It’s both analytical and exploratory — you can:
@@ -71,8 +71,18 @@ It’s both analytical and exploratory — you can:
 
 ### 🧩 Data, analysis and reliability
 
+- IBTrACS publication now requires JSON/CSV parity and retention of all 279 verified historical basin-season keys, including 46 North Atlantic seasons. Run the read-only guard with `python scripts/verify_ibtracs.py`; reconciliation details: `docs/ibtracs_reconciliation_2026-11-01.md`.
+
+- All five climate sources participate automatically in the existing monthly full refresh (first day of each month, 03:00 UTC). Provider release dates are checked per dataset/database; unchanged releases retain their data, while failures preserve the last known-good snapshot and stop publication. The monthly source-selection and refresh contracts have offline CI coverage.
+- Monthly FTPS data publication explicitly targets `/realitycheck.great-site.net/htdocs/data/`, independently of the legacy `FTP_DIR` secret used by manual workflows. Shared map tooltips wrap long indicator names and units within their viewport-bounded width.
+- Pushes to `main` also trigger `auto-deploy.yml`: the current main snapshot passes the complete offline tests and FPF production baseline, then its productive package is published over FTPS to `/realitycheck.great-site.net/htdocs`. The first run establishes a complete baseline; later runs upload changed files using a remote hash checkpoint, preserve server-owned files and never delete remote files. All production upload workflows share the refresh lock.
+
+- Flood impacts (EM-DAT/OWID), modelled heat-index days (World Bank ESG/CCKP) and 12-month SPEI drought anomalies (World Bank/SPEIbase) are active country map categories. Environmental maps share a red–yellow–green scale with direction-aware legends and gray missing observations; SPEI uses fixed drought thresholds. Source years, coverage and model limitations are documented in `docs/climate_sources_2026-10-30.md`.
+
+- The World cyclone view displays separate NOAA basin-season series and illustrative basin markers with a count table. Counts include unnamed systems and do not measure damage; missing seasons stay missing. The active Wildfire — Burned Area country map uses 198 countries and completed 2012–2025 observations from GWIS/OWID; partial current years are automatically excluded. Source integration status for the remaining hazard categories is recorded in `docs/climate_sources_2026-10-30.md`.
+
 - The fetch backend now uses independently tested source adapters, fail-closed publication guards and last-known-good preservation.
-- RealityCheck now registers 100 KPIs, including additional household, energy, cohesion, health, migration and world-climate indicators.
+- RealityCheck now registers 105 KPIs, including additional household, energy, cohesion, health, migration and world-climate indicators.
 - Global and per-KPI analyses use traceable country, regional, trend and coverage evidence; every KPI analysis displays its generation timestamp.
 - Overall Ranking keeps the user-weighted standard scenario and adds evidence-constrained Top/Bottom-20 Fun, Safe Haven and Immigration lenses.
 - The World map supports two-group comparison, overlap highlighting, KPI intensity, group summaries and shareable URL state.
@@ -163,6 +173,7 @@ It’s both analytical and exploratory — you can:
 │   ├── core.js                           # Global utilities, header/footer loading, Chart.js config
 │   ├── utils_ui.js                       # UI utilities, modal system, Chart.js defaults
 │   ├── script.js                         # Countries page main logic
+│   ├── environment_colors.js             # Shared environmental map colors and semantics
 │   ├── script_world.js                   # World trends dashboard
 │   ├── script_overall_ranking_countries.js # Interactive ranking system
 │   ├── page_about.js                     # About page (Earth Overshoot Timer)
@@ -486,9 +497,39 @@ See `docs/monthly_status_audit_2026-10-12.md` for the historical cleanup evidenc
 
 The World map supports tropical-cyclone basin observations independently of global
 series. Regional cards link directly to the map. The map reports selected-year
-coverage and missing observations, uses within-year percentile colours, and lists
-measurement and geometry sources separately. Basin rectangles are simplified
-illustrations, not official warning areas or precise storm footprints. Country,
+coverage and missing observations, preserves relative environmental colours, and lists
+measurement and geometry sources separately. Circles locate basins; they are not
+storm positions, tracks or boundaries. Country,
 per-capita and cross-region summary modes are unsupported for this dataset.
 Unconnected hazard categories clear the map and year selection without a country
-fallback. See `docs/regional_climate_frontend_2026-10-14.md` for validation and limits.
+fallback. See `docs/regional_climate_integration_2026-11-02.md` for current validation and limits.
+## HTTP security audit and translation
+
+`.venv/Scripts/python.exe scripts/security_audit.py` compares cookie-free HTTP
+responses for browser and audit User-Agents. `--audit-user-agent` accepts the
+actual central Webcheck UA. Exit 0 means the inspected project checks passed,
+1 means failed checks, 2 means inconclusive (including hoster challenges).
+Only identified application HTML with `X-RealityCheck-Policy: apache-v1` is scored.
+The local helper does not change the separate central Webcheck service.
+
+Translate uses a native select after consent and waits for populated options.
+Google TE_20261014 requires the updated narrow bootstrap CSP hash. Germany Dossier
+keeps its editorial EN/DE switch. The homepage remains English (`en-US`), matching
+its content. RealityCheck has no WordPress/plugin runtime.
+
+For cumulative climate upload packages pending since the previous 449-file local baseline, use `.venv\Scripts\python.exe scripts/prepare_deployment.py --mode both --baseline-manifest build/source-review/previous-deployment-state.json`. The explicit baseline must exist and contain a nonempty manifest; a package manifest does not establish live server state.
+
+
+Deployment payload audit (2026-10-30): all production upload routes now use the
+same explicit static-file list and validated KPI/bundle/country/region registries.
+The current package contains 386 files (formerly 456); internal data artifacts
+and unused image/flag variants are excluded. New data releases follow the
+registries automatically. No remote files are deleted. See
+`docs/deployment_payload_audit_2026-10-30.md` and `standards/deployment.md`.
+
+Separately authorized FTP cleanup completed on 2026-10-30: 109 RealityCheck and
+two EnergyPlanning surplus files were backed up, verified and removed from their
+original paths. Protected recovery archives remain at each site's
+`htdocs/.ftp-backups/2026-10-30-reviewed-cleanup/`; restore using `snapshot.json`
+and its optional `storage_path` mapping. The one-off cleanup workflow is disabled;
+ordinary deployments and monthly data refreshes retain their non-deleting policy.

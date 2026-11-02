@@ -1,53 +1,45 @@
-## Executive verdict
+## Executive Verdict
+The measured world has become generally less safe over the last five years, with notable increases in armed conflict, geopolitical risk, and climate change impacts. Despite some progress in areas like economic indicators and health access, significant challenges in security, environmental degradation, and socio-economic inequalities persist. Confidence in this conclusion is moderately high, considering the robust datasets provided across various domains.
 
-The measured world has become less safe over the past five years, marked by increased geopolitical risks, conflict-related deaths, and military expenditures. However, progress in technology and certain socio-economic metrics suggests mixed outcomes. The confidence in these observations is tempered by data volatility and limitations in some metrics.
+## Security and Instability
+- **Rising Conflicts**: The number of armed conflicts globally has increased by **22.2%** from 2020 to 2025 (KPI: number_of_armed_conflicts). This suggests a growing geopolitical instability.
+- **Increased Military Burden**: Military expenditure grew by **25.4%**, reaching **$2771.29 billion** globally (KPI: military_spending_sipri, 2025). Some countries, like **Ukraine** and **Russia**, saw significant increases, suggesting heightened tensions.
+- **Conflict Deaths**: State-based conflict deaths more than doubled, highlighting the severe human cost of rising tensions (KPI: state_based_conflict_deaths, 2025).
+- **Displacement**: The global number of forcibly displaced people rose by **46.3%** (KPI: people_forcibly_displaced_worldwide, 2025), indicating worsened humanitarian conditions.
 
-## Security and instability
+## Climate Change and Measured Impacts
+- **CO₂ Emissions**: Global CO₂ emissions increased by **4.1%** from 2019 to 2024 (KPI: global_co2_emissions). This underscores ongoing environmental challenges despite global climate pledges.
+- **Temperature Anomalies**: The global temperature anomaly rose by **0.27°C** above pre-industrial levels between 2021 and 2026 (KPI: global_temperature_anomaly), signifying escalating climate impacts.
+- **Natural Disasters**: While the number of recorded natural disasters slightly declined (-1.7%), disaster-related deaths surged, highlighting their growing severity (KPI: deaths from climate-related disasters, 2021–2025).
+- **Rising Sea Levels**: A significant increase of **17.42 mm** was observed in the global mean sea level between 2020 and 2025 (KPI: global_mean_sea_level).
 
-Global stability has deteriorated, reflected in the **22.2% rise** in the number of armed conflicts and a **110.1% increase** in state-based conflict deaths from 2020 to 2025. Military spending increased by **25.4%** globally, indicating heightened geopolitical tensions (military_spending_sipri, 2025). The **Geopolitical Risk Index** rose significantly, confirming a turbulent international environment (geopolitical_risk_index, 2026).
+## Country and Group Patterns
+- **Mixed Economic Performance**: While some countries like **Ireland** and **Guyana** showed robust GDP growth, others like **Japan** and **Nigeria** experienced declines (KPI: real_gdp_per_capita_growth, 2025).
+- **Social Indicators**: Significant variances exist within groups. For instance, the **EU** showed strong social progress with a median Social Progress Index of **83.88**, while the **African Union** lagged at **48.11** (KPI: social_progress_index, 2022).
+- **Governance**: BRICS countries generally exhibited lower democracy and human rights scores compared to the G7 and EU (KPI: democracy_index, human_rights_index_vdem).
 
-## Climate change and measured impacts
+## Noteworthy Changes and Outliers
+- **Health Improvements**: Overall improvements in life expectancy and access to basic services were observed, but substantial disparities remain across countries (KPI: life_expectancy_at_birth, basic_sanitation_access).
+- **Anomaly Alerts**: Some metrics like the **52.1%** increase in Ireland's GDP per capita (KPI: gdp_per_capita_current_us, 2025) or **Guyana's** 482.1% increase in PPP warrant closer review for validation or revision.
 
-Climate change is increasingly visible through physical changes, with the global temperature anomaly rising by **0.27°C** (global_temperature_anomaly, 2026) and CO₂ emissions increasing by **4.1%** since 2019. Ecosystem indicators like the **Living Planet Index** show declines, but the number of recorded natural disasters fell by **12.1%**, indicating fluctuating disaster impacts (living_planet_index, 2020; number_of_recorded_natural_disasters, 2025).
+## Potential Best Practices
+- **Health and Education**: Countries like **Norway** and **Finland** consistently rank high in health and education indicators, suggesting models to explore for effective policy strategies.
+- **Renewable Energy**: The **AfricanUnion** leads in renewable energy share with a median of **67.25%** (KPI: renewable_energy_share, 2021), potentially offering insights into sustainable energy development.
 
-## Country and group patterns
+## Connections and Hypotheses
+- **Economic and Environmental Links**: There is a strong correlation between **GDP** increase and rising **CO₂** emissions (rho=+0.93), highlighting the need for sustainable economic practices.
+- **Governance and Happiness**: Countries with higher democracy indexes often report higher happiness levels, suggesting a possible link between governance quality and citizen well-being.
 
-- **EU** and **G7** show high medians in governance indices, indicating relative stability (government_effectiveness, 2023).
-- **BRICS** countries demonstrate mixed outcomes, with high CO₂ emissions and varied economic growth.
-- **African Union** struggles with high poverty and undernutrition, though improvements in access to sanitation are recorded (basic_sanitation_access, 2024).
-- **OECD** countries lead in internet penetration and socio-economic indicators but face challenges in governance (internet_penetration_rate, 2024; political_corruption_index, 2025).
+## Economy Impacts
+- Significant increases in GDP, GDP per capita, and economic productivity, but these gains are not uniformly distributed, with inflation impacting real prosperity (KPI: gdp, inflation).
 
-## Noteworthy changes and outliers
+## Society and Governance
+- **Democracy and Human Rights Decline**: Global democracy and human rights indexes fell slightly, indicating challenges to political freedoms (KPI: democracy_index, human_rights_index_vdem).
+- **Gender and Age Dynamics**: While women in parliament increased, the world faces aging populations with rising dependency ratios affecting economic productivity (KPI: women_in_parliament, old_age_dependency_ratio).
 
-- Significant GDP growth observed in **Guyana** due to oil exploitation, with a **482.1% rise** in GDP per capita, PPP (purchasing_power_parity, 2025).
-- Declining income levels in **Japan** and **Nigeria** suggest economic challenges, raising concerns (gdp_per_capita_current_us, 2025).
+## Technology Trends
+- Rapid growth in internet penetration and fixed broadband access, enhancing connectivity, but also highlighting a digital divide in poorer regions (KPI: internet_penetration_rate, fixed_broadband_subscriptions).
 
-## Potential best practices
-
-- **Finland** and **Denmark** demonstrate strong environmental and social metrics (environmental_performance_index, 2022).
-- **Ireland** leads in labor productivity, potentially linked to high GDP growth (labor_productivity_per_hour_pennworldtable, 2023).
-
-## Connections and hypotheses
-
-- A strong correlation exists between GDP per capita and CO₂ emissions, supporting the hypothesis that economic growth drives emissions (global_co2_emissions, 2024).
-- Increased happiness is associated with higher GNI per capita, suggesting economic prosperity enhances well-being (world_happiness_index, 2024).
-
-## Economy
-
-Global GDP and GDP per capita have grown significantly, but inflation pressures pose challenges. **Ireland** and **Singapore** show outstanding growth, while **Japan** faces contractions. Economic disparities persist, with inflation impacting consumer prices unevenly (gdp_per_capita_current_us; inflation_consumer_price_index, 2025).
-
-## Society and governance
-
-Governance shows mixed results, with improvements in median income and educational attainment contrasting with declines in democracy and human rights indices. Press freedom and government trust remain variable across regions (press_freedom_index, 2025; government_effectiveness, 2023).
-
-## Technology
-
-Technology indicators, such as internet penetration and energy innovation, show remarkable progress. The rise in electric vehicle stocks denotes a shift towards sustainable practices, albeit still influenced by geopolitical and economic conditions (electric_vehicle_stock, 2025).
-
-## Data limits
-
-Data gaps and reporting variations may affect global reliability; caution is necessary when interpreting changes from limited-country data or emerging regions (interpersonal_trust; trust_in_government, 2024).
-
-## Outlook
-
-Looking forward, increasing tensions could further strain international relations, while climate impacts demand urgent adaptive responses. Economic growth will hinge on managing inflation and embracing technology, yet social stability will require addressing inequality and governance issues. Bridging disparities in technology access and environmental health holds transformative potential for a more stable future.
+## Data Limits and Outlook
+- Data coverage for some KPIs is limited; recency and coverage gaps necessitate cautious interpretation. High variance in reported extremes requires verification.
+- **Outlook**: The world faces a precarious path toward stability. Effective climate action, equitable economic policies, and strengthened governance frameworks are critical to fostering resilience and sustainable growth. Without addressing geopolitical and environmental risks, existing gains may be undermined by future instabilities.

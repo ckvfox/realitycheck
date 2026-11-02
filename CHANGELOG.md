@@ -1,5 +1,56 @@
 # Changelog
 
+## Unreleased - 2026-11-01
+
+- Reuse EnergyPlanning's live-verified FTPS recovery: bounded SHA-256 readback on size mismatches, temporary staging plus rename for corrupt direct overwrites, and bounded reconnects without advancing failed checkpoints. Preserve data/partial deployment selection and the current productive allowlist.
+
+- Preserve the November IBTrACS snapshot and add historical coverage/parity publication gates plus parser regressions; reconcile superseded PR #110 without reverting current FTPS safeguards.
+
+## Unreleased - 2026-10-30
+
+- Add a separately authorized, frozen FTP cleanup plan for 109 RealityCheck and two EnergyPlanning surplus files. Require verified backups in separately HTTP-denied archives, unchanged originals and preserved server files before individual deletions; add corruption, scope and backup-order regressions. Normal deployments remain non-deleting.
+
+- Tighten every production upload to an explicit static-file and registry-derived allowlist: 386 current files instead of 456. Exclude eight internal data artifacts, six image variants and 56 unused flags. Route monthly/manual data and partial/full uploads through the fixed-root, non-deleting FTPS transport; add dependency, unsafe-registry and workflow regressions. Clear both handover folders before packaging.
+
+- Expose the tested FTPS transport as a reusable API with explicit per-site roots and checkpoints for EnergyPlanning; retain RealityCheck CLI defaults and test cross-site isolation.
+
+- Add automatic main-branch deployment: test and FPF-check the latest main snapshot under the production lock, build the existing productive allowlist, then incrementally upload via certificate-verified FTPS to the fixed domain webroot. The first run establishes a full hash checkpoint; later runs skip unchanged files, restore missing files and never delete remote content. Add transfer/retry/checkpoint/workflow regressions and a secret-free deployment receipt.
+- Share the production lock with all manual FTP workflows and exclude secret-bearing basenames before any deployment package reads their content.
+
+- Pin monthly FTPS publication to the verified `/realitycheck.great-site.net/htdocs/data/` path and add a regression protecting the destination. Confirm the full monthly selection covers all five climate sources.
+- Wrap long country-map tooltip values and metadata within a viewport-bounded box on Countries and World; refresh the stylesheet cache versions on both entry pages.
+- Reconcile European flood coverage with the cached OWID source: Germany has 16 reported years including 2021 and 2024, but no 2019 observation; missing years remain missing rather than being backfilled or replaced with zero.
+
+- Verify all five climate KPIs participate in the unfiltered monthly pipeline. Separate World Bank WDI/ESG release-date caches and preserve OWID chart dimensions during release discovery, preventing an unrelated unchanged release from suppressing climate refreshes. Add an isolated orchestrator regression and monthly selection/workflow checks.
+
+- Activate three source-backed country categories: reported flood-affected people (3,315 observations, 179 countries, through 2025), modelled Heat Index >35°C days (7,961 observations, 194 countries, through 2024; provider RCP 8.5 note retained), and 12-month SPEI drought anomalies (12,159 observations, 190 countries, through 2023). Missing country-years stay missing.
+- Share environmental map colors between Countries and World: higher pressure/worse outcomes red, lower pressure/better outcomes green, missing observations gray. Use fixed SPEI drought thresholds, neutral ties and explicit relative-scale legends; retain group identity in map borders. SPEI changes use index units rather than undefined percentages around zero.
+- Resolve World Bank ESG source dates from source 75, preserve its JSON release date and refuse incomplete paginated responses. Add regression coverage for signed/zero values, source selection and environmental colors.
+- Support an explicit saved deployment manifest for cumulative pending FTP deltas.
+
+- Activate Wildfire — Burned Area as a country map: 2,772 GWIS/OWID observations for 198 countries, 2012–2025. Reuse the OWID adapter with completed-year and country-identity guards, excluding partial current years and preventing territory aliases from creating duplicate national observations.
+- Regenerate the changed consolidated data bundle and per-KPI fetch status; prepare full and delta FTP handover packages without deploying them.
+- Normalize CRLF in the monthly workflow regression test so the offline suite also runs on Windows.
+
+- Render cyclone trends as seven basin series instead of requesting a nonexistent global total; preserve gaps and avoid invalid cross-basin sums.
+- Replace illustrative cyclone basin rectangles with basin location circles and an accessible season/count table; clarify activity versus damage, season semantics and missing observations.
+- Preserve the North Atlantic `NA` basin code during CSV parsing and reject blank/unknown identifiers; add adapter and regional-series regressions. Refreshed all 279 basin/season observations against the NOAA raw file, restoring 46 North Atlantic seasons.
+- Replace hazard "coming soon" promises with integration-pending labels and document verified source candidates in `docs/climate_sources_2026-10-30.md`.
+
+## Unreleased - 2026-10-19
+
+- Restore Google Translate: measured TE_20261014 bootstrap CSP hash, native
+  language chooser, option-readiness detection, timeout feedback and script cache
+  versions. Actual German page translation verified locally under the CSP and live after
+  manual FTP upload on 2026-10-19.
+- Scope Translate frames/connections; disable inline event attributes while
+  preserving compatible map/CDN/form dependencies and Referrer-Policy.
+- Normalize aliases directly to the fixed HTTPS root with THE_REQUEST guards;
+  retire client-side redirects, challenge code and UA crawler markers.
+- Add project-policy response identifiers and a read-only source-aware HTTP audit
+  adapted from EnergyPlanning; hoster challenges remain inconclusive.
+
+
 All notable changes to this project will be documented in this file.
 
 ## Unreleased
@@ -12,7 +63,9 @@ All notable changes to this project will be documented in this file.
 - Cleared stale years on unconnected categories, guarded late async map/data replies,
   and rejected null/blank regional observations without converting them to zero.
 - Added offline regional renderer, data/GeoJSON and selection regression tests.
-  NOAA parsing and the storm-count definition remain separate tasks.
+  Integrated on 2026-11-02 with corrected NOAA data, seasonal definitions,
+  regional charts, basin markers/tables, environmental colors and FTPS guards.
+- Updated NOAA IBTrACS verification evidence: runner fetch and FTP publication are confirmed; documented the reproduced North Atlantic parsing loss, metric-definition gaps and remaining production climate-map QA. No runtime or dataset changes.
 
 - Archive successful monthly status issues, reuse records across rerun attempts,
   and reconcile older machine-owned failures only after a successful default-branch

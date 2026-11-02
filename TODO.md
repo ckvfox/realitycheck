@@ -5,13 +5,21 @@
 - Regional climate-map frontend corrections implemented and covered by offline
   renderer/data/geometry tests; desktop/mobile browser acceptance and post-upload
   production QA remain open. See `docs/regional_climate_frontend_2026-10-14.md`.
-  Keep the missing North Atlantic parsing correction and storm-count definition
-  separate; frontend coverage must not be treated as data-completeness approval.
+  Integrated with main on 2026-11-02: retain corrected 279-record NOAA snapshot,
+  seasonal definitions, environmental colors, basin markers and FTPS safeguards.
+  Current evidence: `docs/regional_climate_integration_2026-11-02.md`.
+- Completed (2026-11-01): reconcile IBTrACS PR #110 with the November snapshot; preserve 279 records and add historical-key/JSON-CSV gates plus parser regressions. See `docs/ibtracs_reconciliation_2026-11-01.md`.
+
+- Completed (2026-10-30): audit and strict allowlist for all nine productive upload workflows (386 files), followed by separately authorized backup-first cleanup of 109 RealityCheck and two EnergyPlanning surplus files. Needed product/server files remain; live checks passed. Protected FTP backup archives remain, and the one-off cleanup workflow is disabled. See `docs/deployment_payload_audit_2026-10-30.md`.
+
+- Completed (2026-10-30): automatic main deployment passed its first live GitHub run (`41084172389`): complete tests + FPF, 456 productive files uploaded to the verified webroot, no deletions, successful hash checkpoint and secret-free receipt. Bounded reconnects address the first attempt's transient timeout; see `.github/workflows/README.md`.
 
 - Continue the World-map roadmap in `docs/analysis_coverage_review.md` with source-backed conflict/climate lenses and an accessible text alternative; group comparison, overlap colouring, KPI choropleth, guarded aggregation modes, summaries and shareable URL state are complete.
 - Add a dedicated climate-exposure map mode: first a transparent country-level risk classification, then separately switchable subnational hazard layers for low-lying coasts, floods/deltas, heat, drought and wildfire. These layers must retain source, year, resolution and coverage metadata and must not be labelled as country groups.
-- Region-based hazard map architecture is implemented (`region_sets.json`, region GeoJSON files, `region_csv`/`ibtracs` adapters, `renderWorldMapRegionLayer` in `scripts/script_world.js`). Only `Storm Impact` (NOAA IBTrACS tropical cyclone counts by ocean basin) is wired to a real automated source so far. Wildfire, Flood, Heat and Drought remain honest "sourcing in progress" placeholders — no verified, automated, no-login regional data source has been found for them yet without fabricating data.
-- **Needs verification**: the `ibtracs` adapter (`scripts/adapters/ibtracs.py`) could not be end-to-end tested from this dev environment — local network access to `ncei.noaa.gov`/`www.ncei.noaa.gov` consistently times out (while other hosts, including a different NOAA host used by the existing `noaa` sea-level adapter, respond normally), suggesting a local/corporate network restriction rather than a NOAA-wide outage. Verify reachability and a successful fetch from the actual GitHub Actions runner (e.g. via manual `workflow_dispatch` of `monthly-fetch.yml`) before relying on this KPI in production; the adapter fails gracefully (dummy/error fallback via `keep_or_dummy`) if the source is unreachable.
+- Region-based hazard map architecture is implemented (`region_sets.json`, region GeoJSON files, `region_csv`/`ibtracs` adapters, `renderWorldMapRegionLayer` in `scripts/script_world.js`). Tropical Cyclone Activity is backed by NOAA IBTrACS; Wildfire — Burned Area is now active as a country view backed by OWID/GWIS (198 countries, 2012–2025, current partial year excluded). Flood, Heat and Drought are now active country categories using reported flood impacts, modelled heat-index days and 12-month SPEI moisture anomalies. Subnational hazard footprints remain a separate roadmap item. See `docs/climate_sources_2026-10-30.md`.
+- Completed: NOAA IBTrACS runner reachability, fetch/save and FTP upload were verified by the successful [October 1, 2026 monthly run](https://github.com/ckvfox/realitycheck/actions/runs/36843630183): 233 records, 21 updated KPIs and zero fetch errors. JSON/CSV consistency and repository climate-map wiring were checked on October 12; see `docs/ibtracs_verification_2026-10-12.md`.
+- Completed locally (2026-10-30): fixed the North Atlantic parser defect and refreshed the complete NOAA since1980 source. All 279 published basin/season counts reconcile with an independent raw CSV parse, including 46 North Atlantic seasons (1980–2025). Sparse South Atlantic seasons remain missing, not zero.
+- Completed (2026-10-30): FileZilla publication of the 17-file climate delta to `/realitycheck.great-site.net/htdocs`; live QA confirmed all ten climate categories, the NOAA basin series/count table and red–yellow–green map colors on World and Countries. Historical evidence: `docs/ibtracs_verification_2026-10-12.md`; current source review: `docs/climate_sources_2026-10-30.md`.
 
 - Completed and activated the first source-bound tranche for typical household resources, housing adequacy, healthy-diet affordability, energy dependence/efficiency, social trust and suicide mortality; all eight passed their first live JSON/CSV fetch and generated KPI analyses.
 - Continue source work for comparable rent burden, disposable income after housing, household energy prices/outages, daily climate exposure, conflict spillover, migration accessibility, polarisation and mental-health prevalence before adding further broad composite indices.
@@ -55,3 +63,17 @@
 - [x] Keep README structure inventory aligned when data, scripts or deployment folders change.
 - [x] Ensure WebCheck/FPF audits classify productive `scripts/` browser code as a documented exception.
 
+
+## HTTP delivery acceptance (2026-10-19)
+
+- Implemented locally: Translate native chooser/readiness, measured Google CSP
+  bootstrap hash, DirectoryIndex-safe canonical redirects and source-aware audit.
+- Live verified after manual FTP upload on 2026-10-19: shared script version
+  20261019-translate-2, populated language selector and actual German translation.
+- Pending: prove root 200 and aliases one-hop 301 with query preservation, confirm
+  the exact CSP response header and compare the central Webcheck UA. Cookie-free
+  HTTP probes still receive the InfinityFree hoster challenge.
+- Central Webcheck integration is separate; this repository provides the local
+  source-selection helper without modifying that service.
+
+- Completed and live verified (2026-10-30): flood/heat/drought country views, explicit coverage and shared environmental map colors. Follow-up tooltip wrapping was published as a three-file FileZilla delta and verified live without value-text overflow. Monthly FTPS destination is now explicit and regression-tested; its next scheduled execution remains future evidence.

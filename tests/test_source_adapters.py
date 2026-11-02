@@ -4,6 +4,7 @@ from __future__ import annotations
 import sys
 import tempfile
 import unittest
+from datetime import datetime
 from dataclasses import replace
 from pathlib import Path
 from unittest.mock import Mock, patch
@@ -13,7 +14,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from adapters import csv_source, data360, imf, noaa, owid, special, unhcr
+from adapters import csv_source, data360, ibtracs, imf, noaa, owid, special, unhcr, worldbank
 from adapters.runtime import SourceRuntime
 from fetch_core import AdapterRequest
 
@@ -39,7 +40,7 @@ class Response:
 def make_stats() -> dict:
     return {
         "mapped_ok": 0, "mapped_drop": 0, "mapped_pending": 0, "new_pending": set(),
-        "saved_records": 0, "csv_success": 0, "data360_success": 0, "owid_success": 0,
+        "saved_records": 0, "wb_success": 0, "csv_success": 0, "data360_success": 0, "owid_success": 0,
         "noaa_success": 0,
         "unhcr_success": 0, "imf_success": 0, "updated": 0, "fetched": 0,
         "errors": 0, "dummies": 0, "skipped": 0, "skipped_breakdown": {},
@@ -48,6 +49,60 @@ def make_stats() -> dict:
 
 
 class SourceAdapterTests(unittest.TestCase):
+    def test_worldbank_esg_uses_own_source_and_preserves_signed_and_zero_values(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            runtime = self.runtime(root)
+            runtime = replace(runtime, safe_float=lambda v: None if v is None else float(v))
+            request = self.request(root, "worldbank", {"source_code": "EN.CLC.SPEI.XD", "worldbank_source_id": 75, "worldbank_countries_only": True})
+            rows = [{"country": {"value":"Germany"}, "date": str(y), "value": v} for y,v in [(2020,-1.5),(2021,0),(2022,None)]]
+            get = Mock(return_value=Response(payload=[{"pages":1,"lastupdated":"2026-06-24"},rows]))
+            result = worldbank.run(request, runtime=runtime, http_get=get)
+            self.assertIn("source=75", get.call_args.args[0])
+            self.assertEqual(result.source_date, "2026-06-24")
+            self.assertEqual([r['value'] for r in runtime.save_records.call_args.args[1]], [-1.5,0])
+            get = Mock(return_value=Response(payload=[{},[{"lastupdated":"2026-06-24"}]]))
+            self.assertEqual(worldbank.resolve_source_date(request.meta,runtime=runtime,http_get=get),"2026-06-24T00:00:00Z")
+            self.assertIn("sources/75?",get.call_args.args[0])
+
+    def test_worldbank_does_not_publish_a_partial_paginated_result(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            runtime = self.runtime(Path(tmp))
+            get = Mock(return_value=Response(payload=[{"pages":2},[{"value":1}]]))
+            rows, _ = worldbank._series("EN.CLC.SPEI.XD",runtime=runtime,http_get=get,source_id=75)
+            self.assertEqual(rows, [])
+            self.assertIn("source=75",get.call_args.args[0])
+
+    def test_owid_wildfire_excludes_partial_years_and_aggregates_but_keeps_zero(self):
+        year = datetime.now().year
+        raw = f"Entity,Code,Year,Annual area burnt by wildfires\nGermany,DEU,{year-1},0\nGermany,DEU,{year},123\nWorld,OWID_WRL,{year-1},456\nAfrica,,{year-1},100\nGerman territory,OWID_TER,{year-1},25\n"
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            runtime = self.runtime(root)
+            runtime = replace(runtime, canonicalize_country=lambda name, *_: "Germany" if name in {"Germany", "German territory"} else None)
+            request = self.request(root, "owid", {
+                "source_code": "annual-area-burnt-by-wildfires.csv",
+                "owid_value_column": "Annual area burnt by wildfires",
+                "owid_complete_years_only": True, "owid_countries_only": True,
+            })
+            result = owid.run(request, runtime=runtime, http_get=Mock(return_value=Response(text=raw)))
+            self.assertEqual(result.data_year, year - 1)
+            self.assertEqual(runtime.save_records.call_args.args[1], [
+                {"country": "Germany", "iso2": "DEU", "year": year - 1, "value": 0.0},
+            ])
+
+    def test_ibtracs_preserves_atlantic_and_counts_unique_systems_per_basin(self):
+        raw = b"SID,SEASON,BASIN\n ,year, \na,2025,NA\na,2025,NA\na,2025,EP\nb,2025,NA\nc,2025,\n,2025,NA\nd,2025,MM\ne,invalid,NA\nf,2999,NA\n"
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            runtime = self.runtime(root)
+            request = self.request(root, "ibtracs", {})
+            result = ibtracs.run(request, runtime=runtime, http_get=Mock(return_value=Response(content=raw)))
+            rows = runtime.save_region_records.call_args.args[1]
+            self.assertEqual({(r["region"], r["year"]): r["value"] for r in rows}, {("NA", 2025): 2.0, ("EP", 2025): 1.0})
+            self.assertEqual(result.record_count, 2)
+            runtime.keep_or_dummy.assert_not_called()
+
     def setUp(self) -> None:
         self.countries = {"Germany": {"iso2": "DE", "iso3": "DEU"}}
 
@@ -214,7 +269,17 @@ class SourceAdapterTests(unittest.TestCase):
                 http_get=get,
             )
             self.assertEqual(source_date, "2026-07-31")
-            self.assertEqual(get.call_args.args[0], "https://ourworldindata.org/grapher/sample.metadata.json")
+            self.assertEqual(get.call_args.args[0], "https://ourworldindata.org/grapher/sample.metadata.json?useColumnShortNames=true")
+
+    def test_owid_release_check_keeps_flood_dimension_filters(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            runtime = self.runtime(Path(tmp))
+            flood_url = "https://ourworldindata.org/grapher/natural-disasters-people-affected.metadata.json?type=flood&timespan=annual"
+            def get(url, **kwargs):
+                date = "2026-10-21" if url == flood_url else "2026-04-30"
+                return Response(payload={"columns":{"affected":{"lastUpdated":date}}})
+            date = owid.resolve_source_date({"source_code":"natural-disasters-people-affected.csv?type=flood&timespan=annual"},runtime=runtime,http_get=get)
+            self.assertEqual(date,"2026-10-21")
 
     def test_owid_variable_api_preserves_projection_years(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

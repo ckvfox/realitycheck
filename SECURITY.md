@@ -36,8 +36,10 @@ If you discover a vulnerability, report it privately.
 - Direct dependencies are version-pinned and GitHub Actions are pinned to immutable commit SHAs.
 - Fetch errors, dummy datasets and validation failures stop the workflow before analysis or FTP deployment.
 - Force mode never removes the last known-good data snapshot before replacement data succeeds.
-- Full and partial FTP uploads are built from the productive deployment allowlist; partial paths are validated against that package.
-- Production fetches and FTP-only deployments use separate concurrency groups to prevent overlapping writes.
+- All production uploads (main push, monthly/manual fetch, full/sync/partial) use the same explicit static-file and validated registry allowlist. Partial and data selections are filtered only after package validation. Unknown files, unsafe registry paths, symlinks and missing indexed gzip parts block publication; the destination webroot is fixed. No remote deletion is performed.
+- Separately authorized one-off cleanup uses a frozen candidate plan, HTTP-denied backup archives and complete backup/original hash checks before individual deletions. Server configuration, visitor counters and current deployment checkpoints are excluded. It does not change the non-deleting behavior of ordinary deployments. Recovery follows the archive manifest, including opaque image storage names.
+- Production fetches, automatic deployments and FTP-only workflows share the same concurrency group, preventing overlapping writes.
+- Automatic main deployments test the exact checked-out snapshot before packaging. FTPS uses certificate verification, encrypted data connections and runtime-only GitHub secrets; transfer errors do not print server replies or credentials. A remote hash checkpoint advances only after successful transfers and size checks; no remote files are deleted.
 - Test-mode datasets, status, logs, hashes and pending mappings are isolated below `data/test/`; automatic production mapping updates are disabled in test mode.
 - Deployment packaging explicitly excludes the complete `data/test/` subtree.
 - Pull requests run the complete network-free source-contract, adapter-isolation, snapshot and deployment regression baseline before merge.
@@ -66,3 +68,22 @@ If you discover a vulnerability, report it privately.
 - Initial acknowledgement target: within 3 business days.
 - Triage target: within 7 business days.
 - Fix timeline depends on severity and operational risk.
+
+## Hosting versus project evidence
+
+The read-only `scripts/security_audit.py` separates InfinityFree's upstream
+JavaScript challenge, identified application responses, marked project denials,
+HTTP redirects and unknown denials. Only application HTML with the project-policy
+marker is scored. Other responses stay inconclusive; UA differences are observed
+without claiming causality. No cookies, raw headers, response bodies or challenge
+execution are logged. UA strings never verify a crawler's identity.
+
+The CSP uses the measured Google TE_20261014 bootstrap hash, scoped Translate
+frames/connections and no inline event attributes. Existing CDNs, Leaflet styles,
+map tiles and same-origin forms remain supported. Referrer-Policy stays
+strict-origin-when-cross-origin. HSTS is unchanged. No local bot gate or UA
+branching is installed. The retired challenge URL redirects server-side.
+
+Framework candidate: combine application identity, project policy markers and
+hoster challenge detection before scoring security headers; keep an inconclusive
+state instead of merging evidence from different responses.

@@ -2415,7 +2415,7 @@
     "country": "China",
     "iso2": "",
     "year": 2021,
-    "value": 35.7
+    "value": 35.8
   },
   {
     "country": "China",
@@ -2439,7 +2439,7 @@
     "country": "China",
     "iso2": "",
     "year": 2017,
-    "value": 39.1
+    "value": 39.0
   },
   {
     "country": "China",
@@ -2469,13 +2469,13 @@
     "country": "China",
     "iso2": "",
     "year": 2012,
-    "value": 42.2
+    "value": 42.1
   },
   {
     "country": "China",
     "iso2": "",
     "year": 2011,
-    "value": 42.4
+    "value": 42.3
   },
   {
     "country": "China",
@@ -2487,7 +2487,7 @@
     "country": "China",
     "iso2": "",
     "year": 2008,
-    "value": 43.0
+    "value": 42.9
   },
   {
     "country": "China",
@@ -2517,7 +2517,7 @@
     "country": "China",
     "iso2": "",
     "year": 1993,
-    "value": 33.9
+    "value": 33.8
   },
   {
     "country": "China",
@@ -2529,7 +2529,7 @@
     "country": "China",
     "iso2": "",
     "year": 1987,
-    "value": 29.4
+    "value": 29.3
   },
   {
     "country": "China",
@@ -6032,6 +6032,12 @@
   {
     "country": "India",
     "iso2": "",
+    "year": 2023,
+    "value": 23.0
+  },
+  {
+    "country": "India",
+    "iso2": "",
     "year": 2022,
     "value": 25.5
   },
@@ -8860,6 +8866,12 @@
     "iso2": "",
     "year": 2005,
     "value": 42.4
+  },
+  {
+    "country": "Moldova",
+    "iso2": "",
+    "year": 2024,
+    "value": 26.8
   },
   {
     "country": "Moldova",
@@ -12380,6 +12392,12 @@
   {
     "country": "Switzerland",
     "iso2": "",
+    "year": 2023,
+    "value": 33.5
+  },
+  {
+    "country": "Switzerland",
+    "iso2": "",
     "year": 2022,
     "value": 33.8
   },
@@ -13096,6 +13114,12 @@
     "iso2": "",
     "year": 2010,
     "value": 39.1
+  },
+  {
+    "country": "Uganda",
+    "iso2": "",
+    "year": 2023,
+    "value": 38.2
   },
   {
     "country": "Uganda",

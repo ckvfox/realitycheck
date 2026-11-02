@@ -26,7 +26,7 @@ from adapters import imf as imf_adapter, special as special_adapter
 from adapters.runtime import SourceRuntime
 from builtin_adapters import build_builtin_adapter_registry
 from env_utils import get_openai_key
-from fetch_core import AdapterMode, AdapterRequest, build_status_entry, force_refresh_required
+from fetch_core import AdapterMode, AdapterRequest, build_status_entry, force_refresh_required, source_date_cache_key
 from pipeline_guard import PipelineGuardError, ensure_fetch_succeeded
 from source_contracts import SourceContractError, ensure_source_registry, select_kpis
 from script_utils import (
@@ -451,7 +451,7 @@ def main(args: argparse.Namespace) -> dict[str, Any]:
                 )
                 continue
 
-            cache_key = "worldbank-database" if source_type == "worldbank" else ""
+            cache_key = source_date_cache_key(source_type, meta)
             if cache_key and cache_key in source_date_cache:
                 source_date = source_date_cache[cache_key]
             else:

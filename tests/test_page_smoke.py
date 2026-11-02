@@ -3,12 +3,15 @@ from __future__ import annotations
 
 import json
 import struct
+import sys
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+import prepare_deployment
 KEY_PAGES = (
     "index.html",
     "world.html",
@@ -33,6 +36,19 @@ class AssetParser(HTMLParser):
 
 
 class PublicPageSmokeTests(unittest.TestCase):
+    def test_public_page_assets_are_preserved_by_the_deployment_allowlist(self):
+        packaged = {p.relative_to(ROOT).as_posix() for p in prepare_deployment.iter_productive_files()}
+        pages = [name for name in packaged if "/" not in name and name.endswith((".html", ".php"))]
+        for name in pages:
+            parser = AssetParser()
+            parser.feed((ROOT / name).read_text(encoding="utf-8"))
+            for reference in parser.references:
+                if reference.startswith(("http:", "https:", "//", "data:")) or "<?" in reference:
+                    continue
+                path = urlsplit(reference).path.lstrip("/")
+                if path:
+                    self.assertIn(path, packaged, f"{name}: {reference}")
+
     def test_key_pages_exist_and_reference_existing_local_assets(self) -> None:
         missing: list[str] = []
         for relative_page in KEY_PAGES:

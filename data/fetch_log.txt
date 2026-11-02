@@ -11802,3 +11802,703 @@ Fetch completed successfully
 [2026-10-01T11:38:55 UTC] CSV source audit: 12 sources, 12 valid, 2 possible updates, 2 online failures
 [2026-10-01T11:38:55 UTC] Possible manual CSV update: inform_resilience_index local=2025 official-page=2026
 [2026-10-01T11:38:55 UTC] Possible manual CSV update: network_readiness_index local=2024 official-page=2025
+[2026-11-01T04:03:09 UTC] [INFO] Using OPENAI_API_KEY: found
+[2026-11-01T04:03:09 UTC] === Fetch started ===
+[2026-11-01T04:03:09 UTC] [TRIM] area: removed 0 records before 1900
+[2026-11-01T04:03:09 UTC] [TRIM] area: removed 0 records after 2026
+[2026-11-01T04:03:09 UTC] [OK] World Bank KPI saved: area (12292 rows)
+[2026-11-01T04:03:09 UTC] [TRIM] population: removed 0 records before 1900
+[2026-11-01T04:03:09 UTC] [TRIM] population: removed 0 records after 2026
+[2026-11-01T04:03:09 UTC] [OK] World Bank KPI saved: population (12840 rows)
+[2026-11-01T04:03:10 UTC] [TRIM] population_growth: removed 0 records before 1900
+[2026-11-01T04:03:10 UTC] [TRIM] population_growth: removed 0 records after 2026
+[2026-11-01T04:03:10 UTC] [OK] World Bank KPI saved: population_growth (4874 rows)
+[2026-11-01T04:03:10 UTC] [TRIM] fertility_rate: removed 0 records before 1900
+[2026-11-01T04:03:10 UTC] [TRIM] fertility_rate: removed 0 records after 2026
+[2026-11-01T04:03:10 UTC] [OK] World Bank KPI saved: fertility_rate (12643 rows)
+[2026-11-01T04:03:10 UTC] [TRIM] urbanization_rate: removed 0 records before 1900
+[2026-11-01T04:03:10 UTC] [TRIM] urbanization_rate: removed 0 records after 2026
+[2026-11-01T04:03:10 UTC] [OK] World Bank KPI saved: urbanization_rate (12870 rows)
+[2026-11-01T04:03:10 UTC] [TRIM] gdp: removed 0 records before 1900
+[2026-11-01T04:03:10 UTC] [TRIM] gdp: removed 0 records after 2026
+[2026-11-01T04:03:11 UTC] [OK] World Bank KPI saved: gdp (11010 rows)
+[2026-11-01T04:03:11 UTC] [TRIM] gdp_per_capita_current_us: removed 0 records before 1900
+[2026-11-01T04:03:11 UTC] [TRIM] gdp_per_capita_current_us: removed 0 records after 2026
+[2026-11-01T04:03:11 UTC] [OK] World Bank KPI saved: gdp_per_capita_current_us (4787 rows)
+[2026-11-01T04:03:11 UTC] [TRIM] gni_per_capita_current_us: removed 0 records before 1900
+[2026-11-01T04:03:11 UTC] [TRIM] gni_per_capita_current_us: removed 0 records after 2026
+[2026-11-01T04:03:11 UTC] [OK] World Bank KPI saved: gni_per_capita_current_us (10138 rows)
+[2026-11-01T04:03:12 UTC] [TRIM] gini_index: removed 0 records before 1900
+[2026-11-01T04:03:12 UTC] [TRIM] gini_index: removed 0 records after 2026
+[2026-11-01T04:03:12 UTC] [OK] World Bank KPI saved: gini_index (2433 rows)
+[2026-11-01T04:03:12 UTC] [TRIM] tax_revenue_of_gdp: removed 0 records before 1900
+[2026-11-01T04:03:12 UTC] [TRIM] tax_revenue_of_gdp: removed 0 records after 2026
+[2026-11-01T04:03:12 UTC] [OK] World Bank KPI saved: tax_revenue_of_gdp (4668 rows)
+[2026-11-01T04:03:13 UTC] [TRIM] unemployment_rate: removed 0 records before 1900
+[2026-11-01T04:03:13 UTC] [TRIM] unemployment_rate: removed 0 records after 2026
+[2026-11-01T04:03:13 UTC] [OK] World Bank KPI saved: unemployment_rate (6251 rows)
+[2026-11-01T04:03:14 UTC] [TRIM] health_expenditure_per_capita: removed 0 records before 1900
+[2026-11-01T04:03:14 UTC] [TRIM] health_expenditure_per_capita: removed 0 records after 2026
+[2026-11-01T04:03:14 UTC] [OK] World Bank KPI saved: health_expenditure_per_capita (4535 rows)
+[2026-11-01T04:03:14 UTC] [TRIM] infant_mortality_rate: removed 0 records before 1900
+[2026-11-01T04:03:14 UTC] [TRIM] infant_mortality_rate: removed 0 records after 2026
+[2026-11-01T04:03:14 UTC] [OK] World Bank KPI saved: infant_mortality_rate (11666 rows)
+[2026-11-01T04:03:15 UTC] [TRIM] maternal_mortality_ratio: removed 0 records before 1900
+[2026-11-01T04:03:15 UTC] [TRIM] maternal_mortality_ratio: removed 0 records after 2026
+[2026-11-01T04:03:15 UTC] [OK] World Bank KPI saved: maternal_mortality_ratio (7488 rows)
+[2026-11-01T04:03:16 UTC] [TRIM] hospital_beds_per_1_000_people: removed 0 records before 1900
+[2026-11-01T04:03:16 UTC] [TRIM] hospital_beds_per_1_000_people: removed 0 records after 2026
+[2026-11-01T04:03:16 UTC] [OK] World Bank KPI saved: hospital_beds_per_1_000_people (4694 rows)
+[2026-11-01T04:03:16 UTC] [TRIM] life_expectancy_at_birth: removed 0 records before 1900
+[2026-11-01T04:03:16 UTC] [TRIM] life_expectancy_at_birth: removed 0 records after 2026
+[2026-11-01T04:03:16 UTC] [OK] World Bank KPI saved: life_expectancy_at_birth (12641 rows)
+[2026-11-01T04:04:16 UTC] [WARN] World Bank request failed (1/5): HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=60)
+[2026-11-01T04:04:20 UTC] [TRIM] adult_literacy_rate: removed 0 records before 1900
+[2026-11-01T04:04:20 UTC] [TRIM] adult_literacy_rate: removed 0 records after 2026
+[2026-11-01T04:04:20 UTC] [OK] World Bank KPI saved: adult_literacy_rate (1100 rows)
+[2026-11-01T04:04:20 UTC] [TRIM] overall_immunization_coverage: removed 0 records before 1900
+[2026-11-01T04:04:20 UTC] [TRIM] overall_immunization_coverage: removed 0 records after 2026
+[2026-11-01T04:04:20 UTC] [OK] World Bank KPI saved: overall_immunization_coverage (8013 rows)
+[2026-11-01T04:04:21 UTC] [TRIM] extreme_poverty: removed 0 records before 1900
+[2026-11-01T04:04:21 UTC] [TRIM] extreme_poverty: removed 0 records after 2026
+[2026-11-01T04:04:21 UTC] [OK] World Bank KPI saved: extreme_poverty (2433 rows)
+[2026-11-01T04:04:21 UTC] [TRIM] access_to_basic_drinking_water: removed 0 records before 1900
+[2026-11-01T04:04:21 UTC] [TRIM] access_to_basic_drinking_water: removed 0 records after 2026
+[2026-11-01T04:04:21 UTC] [OK] World Bank KPI saved: access_to_basic_drinking_water (4725 rows)
+[2026-11-01T04:04:21 UTC] [TRIM] air_quality_pm2_5_exposure: removed 0 records before 1900
+[2026-11-01T04:04:21 UTC] [TRIM] air_quality_pm2_5_exposure: removed 0 records after 2026
+[2026-11-01T04:04:21 UTC] [OK] World Bank KPI saved: air_quality_pm2_5_exposure (6562 rows)
+[2026-11-01T04:04:25 UTC] [TRIM] renewable_energy_share: removed 0 records before 1900
+[2026-11-01T04:04:25 UTC] [TRIM] renewable_energy_share: removed 0 records after 2026
+[2026-11-01T04:04:25 UTC] [OK] World Bank KPI saved: renewable_energy_share (6125 rows)
+[2026-11-01T04:04:26 UTC] [TRIM] internet_penetration_rate: removed 0 records before 1900
+[2026-11-01T04:04:26 UTC] [TRIM] internet_penetration_rate: removed 0 records after 2026
+[2026-11-01T04:04:26 UTC] [OK] World Bank KPI saved: internet_penetration_rate (5905 rows)
+[2026-11-01T04:04:26 UTC] [TRIM] mobile_subscriptions_per_100_inhabitants: removed 0 records before 1900
+[2026-11-01T04:04:26 UTC] [TRIM] mobile_subscriptions_per_100_inhabitants: removed 0 records after 2026
+[2026-11-01T04:04:26 UTC] [OK] World Bank KPI saved: mobile_subscriptions_per_100_inhabitants (9854 rows)
+[2026-11-01T04:04:26 UTC] [TRIM] railway_length: removed 0 records before 1900
+[2026-11-01T04:04:26 UTC] [TRIM] railway_length: removed 0 records after 2026
+[2026-11-01T04:04:26 UTC] [OK] World Bank KPI saved: railway_length (2136 rows)
+[2026-11-01T04:04:26 UTC] [TRIM] inflation_consumer_price_index: removed 0 records before 1900
+[2026-11-01T04:04:26 UTC] [TRIM] inflation_consumer_price_index: removed 0 records after 2026
+[2026-11-01T04:04:26 UTC] [OK] World Bank KPI saved: inflation_consumer_price_index (8989 rows)
+[2026-11-01T04:04:28 UTC] [TRIM] employment_to_population_ratio: removed 0 records before 1900
+[2026-11-01T04:04:28 UTC] [TRIM] employment_to_population_ratio: removed 0 records after 2026
+[2026-11-01T04:04:28 UTC] [OK] World Bank KPI saved: employment_to_population_ratio (6251 rows)
+[2026-11-01T04:04:28 UTC] [TRIM] female_labor_force_participation: removed 0 records before 1900
+[2026-11-01T04:04:28 UTC] [TRIM] female_labor_force_participation: removed 0 records after 2026
+[2026-11-01T04:04:28 UTC] [OK] World Bank KPI saved: female_labor_force_participation (6430 rows)
+[2026-11-01T04:04:28 UTC] [TRIM] road_traffic_deaths_per_100k_people: removed 0 records before 1900
+[2026-11-01T04:04:28 UTC] [TRIM] road_traffic_deaths_per_100k_people: removed 0 records after 2026
+[2026-11-01T04:04:28 UTC] [OK] World Bank KPI saved: road_traffic_deaths_per_100k_people (3669 rows)
+[2026-11-01T04:04:29 UTC] [TRIM] fixed_broadband_subscriptions_per_100_people: removed 0 records before 1900
+[2026-11-01T04:04:29 UTC] [TRIM] fixed_broadband_subscriptions_per_100_people: removed 0 records after 2026
+[2026-11-01T04:04:29 UTC] [OK] World Bank KPI saved: fixed_broadband_subscriptions_per_100_people (4080 rows)
+[2026-11-01T04:04:29 UTC] [TRIM] education_expenditure_of_gdp: removed 0 records before 1900
+[2026-11-01T04:04:29 UTC] [TRIM] education_expenditure_of_gdp: removed 0 records after 2026
+[2026-11-01T04:04:29 UTC] [OK] World Bank KPI saved: education_expenditure_of_gdp (461 rows)
+[2026-11-01T04:04:29 UTC] [TRIM] military_expenditure_of_gdp: removed 0 records before 1900
+[2026-11-01T04:04:29 UTC] [TRIM] military_expenditure_of_gdp: removed 0 records after 2026
+[2026-11-01T04:04:29 UTC] [OK] World Bank KPI saved: military_expenditure_of_gdp (8187 rows)
+[2026-11-01T04:04:29 UTC] [TRIM] purchasing_power_parity: removed 0 records before 1900
+[2026-11-01T04:04:29 UTC] [TRIM] purchasing_power_parity: removed 0 records after 2026
+[2026-11-01T04:04:29 UTC] [OK] World Bank KPI saved: purchasing_power_parity (6689 rows)
+[2026-11-01T04:04:30 UTC] [SKIP] median_age: source unchanged (2024-07-12)
+[2026-11-01T04:04:30 UTC] [SKIP] democracy_index: provider redistribution restriction is recorded in KPI metadata; preserving the last known-good dataset
+[2026-11-01T04:04:31 UTC] [SKIP] human_rights_index_vdem: source unchanged (2026-03-17)
+[2026-11-01T04:04:31 UTC] [SKIP] human_development_index_hdi: source unchanged (2025-05-07)
+[2026-11-01T04:04:32 UTC] [SKIP] physicians_per_1_000_people: source unchanged (2026-07-27)
+[2026-11-01T04:04:32 UTC] [SKIP] homelessness_rate: source unchanged (2024-04-30)
+[2026-11-01T04:04:33 UTC] [SKIP] old_age_dependency_ratio: source unchanged (2024-07-12)
+[2026-11-01T04:04:33 UTC] [SKIP] age_dependency_ratio_total: source unchanged (2024-07-12)
+[2026-11-01T04:04:34 UTC] [SKIP] co2_emissions: source unchanged (2025-11-13)
+[2026-11-01T04:04:35 UTC] [SKIP] political_corruption_index: source unchanged (2026-03-17)
+[2026-11-01T04:04:35 UTC] [SKIP] military_spending_sipri: source unchanged (2026-04-27)
+[2026-11-01T04:04:36 UTC] [SKIP] number_of_armed_conflicts: source unchanged (2026-06-10)
+[2026-11-01T04:04:37 UTC] [SKIP] mean_years_of_schooling: source unchanged (2023-07-17)
+[2026-11-01T04:04:38 UTC] [TRIM] living_planet_index: removed 0 records before 1900
+[2026-11-01T04:04:38 UTC] [TRIM] living_planet_index: removed 0 records after 2026
+[2026-11-01T04:04:38 UTC] [OK] OWID KPI saved: living_planet_index (53 rows)
+[2026-11-01T04:04:38 UTC] [SKIP] electric_vehicle_stock: source unchanged (2026-06-15)
+[2026-11-01T04:04:39 UTC] [TRIM] number_of_recorded_natural_disasters: removed 0 records before 1900
+[2026-11-01T04:04:39 UTC] [TRIM] number_of_recorded_natural_disasters: removed 0 records after 2026
+[2026-11-01T04:04:39 UTC] [OK] OWID KPI saved: number_of_recorded_natural_disasters (126 rows)
+[2026-11-01T04:04:39 UTC] [SKIP] global_co2_emissions: source unchanged (2025-11-13)
+[2026-11-01T04:04:40 UTC] [TRIM] global_temperature_anomaly: removed 50 records before 1900
+[2026-11-01T04:04:40 UTC] [TRIM] global_temperature_anomaly: removed 0 records after 2026
+[2026-11-01T04:04:40 UTC] [OK] OWID KPI saved: global_temperature_anomaly (177 rows)
+[2026-11-01T04:04:41 UTC] [SKIP] labor_productivity_per_hour_pennworldtable: source unchanged (2025-10-09)
+[2026-11-01T04:04:42 UTC] [SKIP] rule_of_law_index: source unchanged (2026-03-17)
+[2026-11-01T04:04:43 UTC] [SKIP] state_based_conflict_deaths: source unchanged (2026-06-10)
+[2026-11-01T04:04:44 UTC] [FALLBACK] Data360 maintained CSV is newer than API (2025 > 2024); using RWB_PFI_SCORE_WIDEF.csv
+[2026-11-01T04:04:44 UTC] [TRIM] press_freedom_index: removed 0 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] press_freedom_index: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] Data360 KPI saved: press_freedom_index (3905 rows)
+[2026-11-01T04:04:44 UTC] [TRIM] world_happiness_index: removed 0 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] world_happiness_index: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] CSV KPI saved: world_happiness_index (1435 rows)
+[2026-11-01T04:04:44 UTC] [TRIM] olympic_medals_summer: removed 10 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] olympic_medals_summer: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] CSV KPI saved: olympic_medals_summer (1354 rows)
+[2026-11-01T04:04:44 UTC] [TRIM] big_mac_index: removed 0 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] big_mac_index: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] CSV KPI saved: big_mac_index (1267 rows)
+[2026-11-01T04:04:44 UTC] [TRIM] recycling_rate: removed 0 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] recycling_rate: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] CSV KPI saved: recycling_rate (5488 rows)
+[2026-11-01T04:04:44 UTC] [TRIM] environmental_performance_index: removed 0 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] environmental_performance_index: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] CSV KPI saved: environmental_performance_index (180 rows)
+[2026-11-01T04:04:44 UTC] [TRIM] global_peace_index: removed 0 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] global_peace_index: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] CSV KPI saved: global_peace_index (2922 rows)
+[2026-11-01T04:04:44 UTC] [TRIM] inform_resilience_index: removed 0 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] inform_resilience_index: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] CSV KPI saved: inform_resilience_index (1910 rows)
+[2026-11-01T04:04:44 UTC] [TRIM] olympic_medals_winter: removed 0 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] olympic_medals_winter: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] CSV KPI saved: olympic_medals_winter (403 rows)
+[2026-11-01T04:04:44 UTC] [TRIM] pisa_overall_score: removed 0 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] pisa_overall_score: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] CSV KPI saved: pisa_overall_score (336 rows)
+[2026-11-01T04:04:44 UTC] [TRIM] network_readiness_index: removed 0 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] network_readiness_index: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] CSV KPI saved: network_readiness_index (128 rows)
+[2026-11-01T04:04:44 UTC] [TRIM] intentional_homicides: removed 0 records before 1900
+[2026-11-01T04:04:44 UTC] [TRIM] intentional_homicides: removed 0 records after 2026
+[2026-11-01T04:04:44 UTC] [OK] World Bank KPI saved: intentional_homicides (3791 rows)
+[2026-11-01T04:04:45 UTC] [TRIM] trade_openness: removed 0 records before 1900
+[2026-11-01T04:04:45 UTC] [TRIM] trade_openness: removed 0 records after 2026
+[2026-11-01T04:04:45 UTC] [OK] World Bank KPI saved: trade_openness (8572 rows)
+[2026-11-01T04:04:45 UTC] [TRIM] fdi_inflows_of_gdp: removed 0 records before 1900
+[2026-11-01T04:04:45 UTC] [TRIM] fdi_inflows_of_gdp: removed 0 records after 2026
+[2026-11-01T04:04:45 UTC] [OK] World Bank KPI saved: fdi_inflows_of_gdp (9119 rows)
+[2026-11-01T04:04:47 UTC] [TRIM] water_stress_level: removed 0 records before 1900
+[2026-11-01T04:04:47 UTC] [TRIM] water_stress_level: removed 0 records after 2026
+[2026-11-01T04:04:47 UTC] [OK] World Bank KPI saved: water_stress_level (6167 rows)
+[2026-11-01T04:04:47 UTC] [TRIM] social_progress_index: removed 0 records before 1900
+[2026-11-01T04:04:47 UTC] [TRIM] social_progress_index: removed 0 records after 2026
+[2026-11-01T04:04:47 UTC] [OK] CSV KPI saved: social_progress_index (1964 rows)
+[2026-11-01T04:04:47 UTC] [TRIM] lpi_infrastructure: removed 0 records before 1900
+[2026-11-01T04:04:47 UTC] [TRIM] lpi_infrastructure: removed 0 records after 2026
+[2026-11-01T04:04:47 UTC] [OK] CSV KPI saved: lpi_infrastructure (1056 rows)
+[2026-11-01T04:04:47 UTC] [SKIP] universal_health_coverage_index: source unchanged (2026-05-22)
+[2026-11-01T04:04:47 UTC] [FALLBACK] World Bank GE.EST: trying ZIP download
+[2026-11-01T04:04:47 UTC] [TRIM] government_effectiveness: removed 0 records before 1900
+[2026-11-01T04:04:47 UTC] [TRIM] government_effectiveness: removed 0 records after 2026
+[2026-11-01T04:04:47 UTC] [OK] World Bank KPI saved: government_effectiveness (4709 rows)
+[2026-11-01T04:04:47 UTC] [TRIM] basic_sanitation_access: removed 0 records before 1900
+[2026-11-01T04:04:47 UTC] [TRIM] basic_sanitation_access: removed 0 records after 2026
+[2026-11-01T04:04:47 UTC] [OK] World Bank KPI saved: basic_sanitation_access (4696 rows)
+[2026-11-01T04:04:49 UTC] [TRIM] access_to_electricity: removed 0 records before 1900
+[2026-11-01T04:04:49 UTC] [TRIM] access_to_electricity: removed 0 records after 2026
+[2026-11-01T04:04:49 UTC] [OK] World Bank KPI saved: access_to_electricity (6012 rows)
+[2026-11-01T04:04:49 UTC] [TRIM] lower_secondary_completion_rate: removed 0 records before 1900
+[2026-11-01T04:04:49 UTC] [TRIM] lower_secondary_completion_rate: removed 0 records after 2026
+[2026-11-01T04:04:49 UTC] [OK] World Bank KPI saved: lower_secondary_completion_rate (4102 rows)
+[2026-11-01T04:04:49 UTC] [TRIM] prevalence_of_undernourishment: removed 0 records before 1900
+[2026-11-01T04:04:49 UTC] [TRIM] prevalence_of_undernourishment: removed 0 records after 2026
+[2026-11-01T04:04:49 UTC] [OK] World Bank KPI saved: prevalence_of_undernourishment (3942 rows)
+[2026-11-01T04:04:50 UTC] [TRIM] refugees_hosted: removed 0 records before 1900
+[2026-11-01T04:04:50 UTC] [TRIM] refugees_hosted: removed 0 records after 2026
+[2026-11-01T04:04:50 UTC] [OK] World Bank KPI saved: refugees_hosted (7335 rows)
+[2026-11-01T04:04:52 UTC] [TRIM] real_gdp_per_capita_growth: removed 0 records before 1900
+[2026-11-01T04:04:52 UTC] [TRIM] real_gdp_per_capita_growth: removed 0 records after 2026
+[2026-11-01T04:04:52 UTC] [OK] World Bank KPI saved: real_gdp_per_capita_growth (10747 rows)
+[2026-11-01T04:04:52 UTC] [TRIM] women_in_parliament: removed 0 records before 1900
+[2026-11-01T04:04:52 UTC] [TRIM] women_in_parliament: removed 0 records after 2026
+[2026-11-01T04:04:52 UTC] [OK] World Bank KPI saved: women_in_parliament (5233 rows)
+[2026-11-01T04:04:53 UTC] [TRIM] terrestrial_protected_areas: removed 0 records before 1900
+[2026-11-01T04:04:53 UTC] [TRIM] terrestrial_protected_areas: removed 0 records after 2026
+[2026-11-01T04:04:53 UTC] [OK] World Bank KPI saved: terrestrial_protected_areas (2499 rows)
+[2026-11-01T04:04:53 UTC] [TRIM] net_migration: removed 0 records before 1900
+[2026-11-01T04:04:53 UTC] [TRIM] net_migration: removed 0 records after 2026
+[2026-11-01T04:04:53 UTC] [OK] World Bank KPI saved: net_migration (12870 rows)
+[2026-11-01T04:04:54 UTC] [TRIM] statistical_performance_indicator: removed 0 records before 1900
+[2026-11-01T04:04:54 UTC] [TRIM] statistical_performance_indicator: removed 0 records after 2026
+[2026-11-01T04:04:54 UTC] [OK] World Bank KPI saved: statistical_performance_indicator (1610 rows)
+[2026-11-01T04:04:57 UTC] [TRIM] people_forcibly_displaced_worldwide: removed 0 records before 1900
+[2026-11-01T04:04:57 UTC] [TRIM] people_forcibly_displaced_worldwide: removed 0 records after 2026
+[2026-11-01T04:04:59 UTC] [TRIM] climate_disaster_deaths: removed 0 records before 1900
+[2026-11-01T04:04:59 UTC] [TRIM] climate_disaster_deaths: removed 0 records after 2026
+[2026-11-01T04:04:59 UTC] [OK] OWID KPI saved: climate_disaster_deaths (5696 rows)
+[2026-11-01T04:05:02 UTC] [TRIM] people_affected_by_climate_disasters: removed 0 records before 1900
+[2026-11-01T04:05:02 UTC] [TRIM] people_affected_by_climate_disasters: removed 0 records after 2026
+[2026-11-01T04:05:02 UTC] [OK] OWID KPI saved: people_affected_by_climate_disasters (5696 rows)
+[2026-11-01T04:05:06 UTC] [TRIM] climate_disaster_damage_gdp: removed 0 records before 1900
+[2026-11-01T04:05:06 UTC] [TRIM] climate_disaster_damage_gdp: removed 0 records after 2026
+[2026-11-01T04:05:06 UTC] [OK] OWID KPI saved: climate_disaster_damage_gdp (5006 rows)
+[2026-11-01T04:05:06 UTC] [TRIM] global_mean_sea_level: removed 0 records before 1900
+[2026-11-01T04:05:06 UTC] [TRIM] global_mean_sea_level: removed 0 records after 2026
+[2026-11-01T04:05:06 UTC] [OK] NOAA KPI saved: global_mean_sea_level (34 rows)
+[2026-11-01T04:05:07 UTC] [TRIM] global_ocean_heat_content: removed 0 records before 1900
+[2026-11-01T04:05:07 UTC] [TRIM] global_ocean_heat_content: removed 0 records after 2026
+[2026-11-01T04:05:07 UTC] [OK] OWID KPI saved: global_ocean_heat_content (21 rows)
+[2026-11-01T04:05:08 UTC] [TRIM] atmospheric_co2_concentration: removed 1768 records before 1900
+[2026-11-01T04:05:08 UTC] [TRIM] atmospheric_co2_concentration: removed 0 records after 2026
+[2026-11-01T04:05:08 UTC] [OK] OWID KPI saved: atmospheric_co2_concentration (1874 rows)
+[2026-11-01T04:05:12 UTC] [TRIM] median_income_or_consumption_per_day: removed 0 records before 1900
+[2026-11-01T04:05:12 UTC] [TRIM] median_income_or_consumption_per_day: removed 0 records after 2026
+[2026-11-01T04:05:12 UTC] [OK] OWID KPI saved: median_income_or_consumption_per_day (2321 rows)
+[2026-11-01T04:05:13 UTC] [SKIP] urban_inadequate_housing: source unchanged (2026-07-31)
+[2026-11-01T04:05:14 UTC] [SKIP] healthy_diet_unaffordable: source unchanged (2025-08-04)
+[2026-11-01T04:05:14 UTC] [TRIM] energy_import_dependency: removed 0 records before 1900
+[2026-11-01T04:05:14 UTC] [TRIM] energy_import_dependency: removed 0 records after 2026
+[2026-11-01T04:05:14 UTC] [OK] World Bank KPI saved: energy_import_dependency (143 rows)
+[2026-11-01T04:05:15 UTC] [TRIM] electricity_grid_losses: removed 0 records before 1900
+[2026-11-01T04:05:15 UTC] [TRIM] electricity_grid_losses: removed 0 records after 2026
+[2026-11-01T04:05:15 UTC] [OK] World Bank KPI saved: electricity_grid_losses (5074 rows)
+[2026-11-01T04:05:16 UTC] [SKIP] interpersonal_trust: source unchanged (2025-06-27)
+[2026-11-01T04:05:17 UTC] [SKIP] trust_in_government: source unchanged (2026-02-17)
+[2026-11-01T04:05:17 UTC] [TRIM] suicide_mortality_rate: removed 0 records before 1900
+[2026-11-01T04:05:17 UTC] [TRIM] suicide_mortality_rate: removed 0 records after 2026
+[2026-11-01T04:05:17 UTC] [OK] World Bank KPI saved: suicide_mortality_rate (4048 rows)
+[2026-11-01T04:05:22 UTC] [TRIM] tropical_cyclone_activity_basin: removed 0 region records before 1900
+[2026-11-01T04:05:22 UTC] [TRIM] tropical_cyclone_activity_basin: removed 0 region records after 2026
+[2026-11-01T04:05:22 UTC] [OK] IBTrACS KPI saved: tropical_cyclone_activity_basin (279 rows)
+[2026-11-01T04:05:23 UTC] [SKIP] wildfire_burned_area: source unchanged (2026-10-12)
+[2026-11-01T04:05:24 UTC] [SKIP] flood_affected_people: source unchanged (2026-10-21)
+[2026-11-01T04:05:25 UTC] [AUTO-MAP] Persisted group/region 'East Asia & Pacific (IDA & IBRD)' -> ''
+[2026-11-01T04:05:25 UTC] [AUTO-MAP] Persisted group/region 'Europe & Central Asia (IDA & IBRD)' -> ''
+[2026-11-01T04:05:25 UTC] [AUTO-MAP] Persisted group/region 'Latin America & Caribbean (IDA & IBRD)' -> ''
+[2026-11-01T04:05:25 UTC] [AUTO-MAP] Persisted group/region 'Sub-Saharan Africa (IDA & IBRD)' -> ''
+[2026-11-01T04:05:25 UTC] [TRIM] extreme_heat_days: removed 0 records before 1900
+[2026-11-01T04:05:25 UTC] [TRIM] extreme_heat_days: removed 0 records after 2026
+[2026-11-01T04:05:25 UTC] [OK] World Bank KPI saved: extreme_heat_days (7961 rows)
+[2026-11-01T04:05:26 UTC] [TRIM] drought_spei: removed 0 records before 1900
+[2026-11-01T04:05:26 UTC] [TRIM] drought_spei: removed 0 records after 2026
+[2026-11-01T04:05:26 UTC] [OK] World Bank KPI saved: drought_spei (12159 rows)
+[2026-11-01T04:05:26 UTC] [FETCH] IMF DataMapper batch start for 1 KPI(s)
+[2026-11-01T04:05:26 UTC] [TRIM] general_government_gross_debt_gdp: removed 0 IMF records before 1900
+[2026-11-01T04:05:26 UTC] [TRIM] general_government_gross_debt_gdp: removed 0 IMF records after 2026
+[2026-11-01T04:05:26 UTC] [OK] IMF KPI saved: general_government_gross_debt_gdp (5965 rows, last year 2026)
+[2026-11-01T04:05:26 UTC] [INFO] IMF DataMapper batch completed
+[2026-11-01T04:05:26 UTC] [FETCH] Geopolitical Risk Index -> https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls
+[2026-11-01T04:05:27 UTC] [OK] GPR saved: 42 records
+[2026-11-01T04:05:27 UTC] Starting Auto Country Mapping Agent...
+[2026-11-01T04:05:27 UTC] FOUND: 282 pending mappings gefunden
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Cayman Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Anguilla' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Falkland Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Guadeloupe' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'CYM' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'East Asia and Pacific (WB)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Europe and Central Asia (WB)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Latin America and Caribbean (WB)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Middle East, North Africa, Afghanistan and Pakistan (WB)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'North America (WB)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'South Asia (WB)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (WB)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'World'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Hong Kong S.A.R. of China' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Australasia (ANZ)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Bohemia' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Bohemia (BOH)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'British West Indies (BWI)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Czechoslovakia (TCH)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'FR Yugoslavia'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Formosa (ROC)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Germany (GER)[a]' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Great Britain (GBR)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Great Britain (GBR)[a]' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Greece (GRE)[b]' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Independent Olympic Athletes[D]'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Independent Olympic Participants'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Individual Neutral Athletes[A][B]' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Mixed team'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Refugee Olympic Team'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Russian Empire'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Soviet Union (URS)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'United Arab Republic (RAU)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'United Team of Germany (EUA)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Virgin Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Yugoslavia (YUG)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Africa Eastern and Southern' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Africa Western and Central' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Arab World'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Caribbean small states'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Central Europe and the Baltics' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Early-demographic dividend' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'East Asia & Pacific' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'East Asia & Pacific (excluding high income)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'East Asia & Pacific (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Euro area'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Europe & Central Asia' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Europe & Central Asia (excluding high income)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Europe & Central Asia (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'European Union'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Fragile and conflict affected situations' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Heavily indebted poor countries (HIPC)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'High income'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'IBRD only' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'IDA & IBRD total' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'IDA blend' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'IDA only' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'IDA total' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Late-demographic dividend' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Latin America & Caribbean' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Latin America & Caribbean (excluding high income)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Latin America & the Caribbean (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Least developed countries: UN classification'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Low & middle income'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Low income'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Lower middle income'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Middle East, North Africa, Afghanistan & Pakistan' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Middle East, North Africa, Afghanistan & Pakistan (excluding high income)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Middle East, North Africa, Afghanistan & Pakistan (IDA & IBRD)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Middle income'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'North America' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'OECD members'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Other small states'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Pacific island small states'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Post-demographic dividend' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Pre-demographic dividend' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Small states'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'South Asia' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'South Asia (IDA & IBRD)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Sub-Saharan Africa' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (excluding high income)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Sub-Saharan Africa (IDA & IBRD countries)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Upper middle income'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'American Samoa' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Aruba' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Bermuda' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'British Virgin Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Channel Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Curacao' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Faroe Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'French Polynesia' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Gibraltar' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Guam' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Hong Kong SAR, China' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Isle of Man' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Macao SAR, China' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'New Caledonia' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Northern Mariana Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Puerto Rico (US)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Sint Maarten (Dutch part)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'St. Martin (French part)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Turks and Caicos Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Virgin Islands (U.S.)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Africa (UN)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Asia (UN)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Bonaire Sint Eustatius and Saba' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Cook Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Europe (UN)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'French Guiana' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Guernsey' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'High-income countries' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Hong Kong' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Jersey' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Latin America and the Caribbean (UN)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Least developed countries'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Less developed regions' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Less developed regions, excluding China' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Less developed regions, excluding least developed countries'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Low-income countries' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Lower-middle-income countries'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Macao' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Martinique' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Mayotte' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Montserrat' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'More developed regions' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Niue' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Northern America (UN)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Oceania (UN)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Puerto Rico' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Reunion' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Saint Barthelemy' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Saint Helena' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Saint Martin (French part)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Saint Pierre and Miquelon' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Tokelau' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'United States Virgin Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Upper-middle-income countries'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Wallis and Futuna' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Western Sahara' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Africa'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Africa (population-weighted)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Aland Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Asia'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Asia (population-weighted)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Austria-Hungary' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'British Indian Ocean Territory' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Christmas Island' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Cocos Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Czechoslovakia'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'East Germany'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Europe'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Europe (population-weighted)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Great Colombia' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Korea (former)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Netherlands Antilles' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Norfolk Island' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'North America (population-weighted)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Oceania'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Oceania (population-weighted)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Orange Free State' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Pitcairn' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Serbia and Montenegro' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'South America' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'South America (population-weighted)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'South Georgia and the South Sandwich Islands' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'USSR' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'West Germany'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'World (population-weighted)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Yugoslavia'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Eastern Caribbean States' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Arab States (UNDP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'East Asia and the Pacific (UNDP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Europe and Central Asia (UNDP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'European Union (27)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'High human development (UNDP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Latin America and the Caribbean (UNDP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Low human development (UNDP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Medium human development (UNDP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'South Asia (UNDP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (UNDP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Very high human development (UNDP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Americas (UN)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Land-locked developing countries (LLDC)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Small island developing states (SIDS)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Africa (GCP)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Antarctica' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Asia (GCP)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Asia (excl. China and India)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Central America (GCP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Europe (GCP)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Europe (excl. EU-27)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Europe (excl. EU-28)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'European Union (28)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'International aviation' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'International shipping' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Kuwaiti Oil Fires (GCP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Middle East (GCP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Non-OECD (GCP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'North America (GCP)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'North America (excl. USA)' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'OECD (GCP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Oceania (GCP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Ryukyu Islands (GCP)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'South America (GCP)'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Brunswick' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Duchy of Nassau' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Saxony' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Two Sicilies' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Africa (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Americas (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Asia & Oceania (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Central America and the Caribbean (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Central Asia (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Central Europe (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'East Asia (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Eastern Europe (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Europe (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'European Union (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Middle East (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'North Africa (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'North America (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Oceania (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'South America (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'South Asia (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'South East Asia (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Sub-Saharan Africa (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Western Europe (SIPRI)'
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Americas'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Asia and Oceania' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Middle East' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Asia and Pacific' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Europe and Central Asia' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Freshwater' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Latin America and the Caribbean' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Rest of World'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Northern Hemisphere' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Southern hemisphere' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Hongkong' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Australasia' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] EXCLUDED (Gruppe/Region): 'Soviet Union'
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Unified Team' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'ABW' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'BMU' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'CUW' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'FRO' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'HKG' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'IMN' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'MAC' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'NCL' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'PYF' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'SXM' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'TCA' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'VGB' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'TCH' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: '4' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'URS' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'WAY' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'ANY' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'INA' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'ICA' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'NDS' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'RIA' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'NCE' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'ADA' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'ALY' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'REA' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'NIA' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'LIA' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'AIN' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'ARY' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'IUM' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'LIC' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'KIA' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'INE' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'VIA' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'YUG' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'EUN' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'SLO' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'LAT' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'OAR' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'OAVG' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] REMAINS PENDING: 'Hesse Electoral' (keine eindeutige Zuordnung)
+[2026-11-01T04:05:27 UTC] PENDING: 282 Einträge verbleiben in pending für manuelle Prüfung
+[2026-11-01T04:05:27 UTC] 
+ZUSAMMENFASSUNG:
+   Automatisch resolved: 0
+   Verbleiben pending:    282
+   Total processed:      282
+   Countries verfügbar:  198
+        
+=== RealityCheck Fetch Report ===
+Countries loaded:   198
+KPIs processed:     105
+Saved records:      397899
+WorldBank KPIs:     53
+CSV KPIs:           12
+OWID KPIs:          9
+NOAA KPIs:          1
+IMF KPIs:           1
+Data360 KPIs:       1
+UNHCR KPIs:         1
+Others KPIs:        2
+Mapping pending:    6
+Dummies:            0
+Skipped:            25
+Errors:             0
+Updated KPIs:       80
+Ignored test=o:     0
+
+Updated KPI files:
+  - access_to_basic_drinking_water
+  - access_to_electricity
+  - adult_literacy_rate
+  - air_quality_pm2_5_exposure
+  - area
+  - atmospheric_co2_concentration
+  - basic_sanitation_access
+  - big_mac_index
+  - climate_disaster_damage_gdp
+  - climate_disaster_deaths
+  - drought_spei
+  - education_expenditure_of_gdp
+  - electricity_grid_losses
+  - employment_to_population_ratio
+  - energy_import_dependency
+  - environmental_performance_index
+  - extreme_heat_days
+  - extreme_poverty
+  - fdi_inflows_of_gdp
+  - female_labor_force_participation
+  - fertility_rate
+  - fixed_broadband_subscriptions_per_100_people
+  - gdp
+  - gdp_per_capita_current_us
+  - general_government_gross_debt_gdp
+  - geopolitical_risk_index
+  - gini_index
+  - global_mean_sea_level
+  - global_ocean_heat_content
+  - global_peace_index
+  - global_temperature_anomaly
+  - gni_per_capita_current_us
+  - government_effectiveness
+  - health_expenditure_per_capita
+  - hospital_beds_per_1_000_people
+  - infant_mortality_rate
+  - inflation_consumer_price_index
+  - inform_resilience_index
+  - intentional_homicides
+  - internet_penetration_rate
+  - life_expectancy_at_birth
+  - living_planet_index
+  - lower_secondary_completion_rate
+  - lpi_infrastructure
+  - maternal_mortality_ratio
+  - median_income_or_consumption_per_day
+  - military_expenditure_of_gdp
+  - mobile_subscriptions_per_100_inhabitants
+  - net_migration
+  - network_readiness_index
+  - number_of_recorded_natural_disasters
+  - olympic_medals_summer
+  - olympic_medals_winter
+  - overall_immunization_coverage
+  - people_affected_by_climate_disasters
+  - people_forcibly_displaced_worldwide
+  - pisa_overall_score
+  - population
+  - population_growth
+  - press_freedom_index
+  - prevalence_of_undernourishment
+  - purchasing_power_parity
+  - railway_length
+  - real_gdp_per_capita_growth
+  - recycling_rate
+  - refugees_hosted
+  - renewable_energy_share
+  - road_traffic_deaths_per_100k_people
+  - social_progress_index
+  - statistical_performance_indicator
+  - suicide_mortality_rate
+  - tax_revenue_of_gdp
+  - terrestrial_protected_areas
+  - trade_openness
+  - tropical_cyclone_activity_basin
+  - unemployment_rate
+  - urbanization_rate
+  - water_stress_level
+  - women_in_parliament
+  - world_happiness_index
+=================================
+Fetch completed successfully
+[2026-11-01T04:05:27 UTC] === Overall Ranking Generation Started ===
+[2026-11-01T04:05:27 UTC] ✅ 42 KPIs considered for ranking
+[2026-11-01T04:05:27 UTC] 💾 JSON saved successfully → data/overall_ranking.json (198 records)
+[2026-11-01T04:05:27 UTC] ✅ overall_ranking.json written to /home/runner/work/realitycheck/realitycheck/data/overall_ranking.json
+[2026-11-01T04:05:27 UTC] ➡️ Starting fun/safe haven ranking generation ...
+[2026-11-01T04:05:27 UTC] 🎬 Starting Top/Bottom 20 Fun, Safe & Immigration ranking generation…
+[2026-11-01T04:05:27 UTC] ➡️ Generating Fun Mode Top via GPT-4o-Mini …
+[2026-11-01T04:05:38 UTC] 💾 Saved data/fun_ranking.json (20 entries)
+[2026-11-01T04:05:38 UTC] 💾 Saved data/fun_ranking_bottom.json (20 entries)
+[2026-11-01T04:05:38 UTC] ➡️ Generating Safe Haven Mode Top via GPT-4o-Mini …
+[2026-11-01T04:05:48 UTC] 💾 Saved data/safe_haven_ranking.json (20 entries)
+[2026-11-01T04:05:48 UTC] 💾 Saved data/safe_haven_ranking_bottom.json (20 entries)
+[2026-11-01T04:05:48 UTC] ➡️ Generating Immigration Mode Top via GPT-4o-Mini …
+[2026-11-01T04:05:55 UTC] 💾 Saved data/immigration_ranking.json (20 entries)
+[2026-11-01T04:05:55 UTC] ➡️ Generating Immigration Mode Bottom via GPT-4o-Mini …
+[2026-11-01T04:06:02 UTC] 💾 Saved data/immigration_ranking_bottom.json (20 entries)
+[2026-11-01T04:06:02 UTC] ✅ All six Top/Bottom ranking lists generated successfully.
+[2026-11-01T04:06:02 UTC] ✅ Fun & Safe Haven rankings successfully generated.
+[2026-11-01T04:06:13 UTC] [STATE] Merged 80 updated KPIs -> total 80 entries
+[2026-11-01T04:06:13 UTC] 🚀 Running RealityCheck Global Analysis (Final GPT-Compat)
+[2026-11-01T04:06:13 UTC] ➡️ Starting global analysis …
+[2026-11-01T04:06:15 UTC] 🌐 Global synthesis covers all 105 registered KPIs; updated-only selection is ignored here.
+[2026-11-01T04:06:28 UTC] 💾 Saved analysis (5517 chars)
+[2026-11-01T04:06:29 UTC] ⚙️ Limiting KPI analysis to 80 entries.
+[2026-11-01T04:10:49 UTC] ✅ KPI analyses saved (103 total)
+[2026-11-01T04:10:49 UTC] 🔎 Computing outliers …
+[2026-11-01T04:10:49 UTC] 💾 Outliers saved (93 KPIs, compact format)
+[2026-11-01T04:10:49 UTC] ✅ RealityCheck analysis completed successfully.
+[2026-11-01T04:10:49 UTC] CSV source audit: 12 sources, 12 valid, 0 possible updates, 0 online failures
+[2026-11-01T04:10:53 UTC] CSV source audit: 12 sources, 12 valid, 2 possible updates, 2 online failures
+[2026-11-01T04:10:53 UTC] Possible manual CSV update: world_happiness_index local=2024 official-page=2026
+[2026-11-01T04:10:53 UTC] Possible manual CSV update: network_readiness_index local=2024 official-page=2025

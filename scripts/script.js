@@ -496,9 +496,12 @@ function updateTable() {
 
     const arrow = pv != null && lv != null ? calcTrend(lv, pv) : "→";
     const dAbs = pv != null && lv != null ? lv - pv : null;
-    const dPct = pv != null && lv != null ? ((lv - pv) / pv) * 100 : null;
+    const dPct = meta.change_mode !== "absolute" && pv != null && pv !== 0 && lv != null ? ((lv - pv) / pv) * 100 : null;
     const dComp =
-      cv != null && lv != null ? (((lv - cv) / cv) * 100).toFixed(2) + "%" : "-";
+      cv != null && lv != null
+        ? meta.change_mode === "absolute" ? `${formatValueAuto(lv - cv, meta.scale)} ${meta.unit || ""}`
+          : cv !== 0 ? (((lv - cv) / cv) * 100).toFixed(2) + "%" : "-"
+        : "-";
 
     rows.push({
       country,
@@ -712,17 +715,13 @@ function updateTable() {
       if (!r.isGroup) highlightOnMap(r.country);
     });
 
-    const deltaTitle =
-      r.deltaPrevAbs != null
-        ? `title="Δ vs Prev: ${formatValueAuto(
-            r.deltaPrevAbs,
-            meta.scale
-          )} (${
-            r.deltaPrevPct != null
-              ? r.deltaPrevPct.toFixed(2) + "%"
-              : "n/a"
-          })"`
-        : `title="No previous year data"`;
+    const deltaValue = r.deltaPrevAbs != null ? formatValueAuto(r.deltaPrevAbs, meta.scale) : "";
+    const deltaDetail = meta.change_mode === "absolute"
+      ? `${deltaValue} ${meta.unit || ""}`
+      : `${deltaValue} (${r.deltaPrevPct != null ? r.deltaPrevPct.toFixed(2) + "%" : "n/a"})`;
+    const deltaTitle = r.deltaPrevAbs != null
+      ? `title="${escapeHtml(`Δ vs Prev: ${deltaDetail}`)}"`
+      : `title="No previous year data"`;
 
     tr.innerHTML = `
       <td>${r.rank ?? ""}</td>
@@ -779,6 +778,10 @@ function updateTable() {
      11) Legendenhinweis (Scaling)
      =========================================== */
   const roundInfo = document.getElementById("rounding-info");
+  const changeNote = document.getElementById("comparison-change-note");
+  if (changeNote) changeNote.textContent = meta.change_mode === "absolute"
+    ? `Changes are shown in ${meta.unit || "indicator units"}; percentage changes are not meaningful for this index.`
+    : "Δ vs Comparison Year in %";
   if (roundInfo) {
     if (scaleMode === "auto") {
       let explain =
@@ -1083,7 +1086,7 @@ async function updateMap() {
   let adjMax = Math.min(q95, Math.max(...values));
 
   const spreadRatio = adjMax / Math.max(adjMin, 1e-6);
-  const useLog = spreadRatio > 50; // Log bei sehr großer Spanne
+  const useLog = adjMin > 0 && spreadRatio > 50; // Log bei sehr großer Spanne
 
   const normalize = v => {
     if (!Number.isFinite(v)) return 0.5;
@@ -1097,7 +1100,9 @@ async function updateMap() {
   };
 
 	// === Farbzuweisung (grün–gelb–rot, heller im Mittelbereich) ===
+  const envScale = environmentalScale(meta, values);
 	const getColor = val => {
+    if (envScale) return environmentalColor(envScale, val);
 		if (!Number.isFinite(val)) return "#e6e6e6";
 
 		// 🎯 Zielmodus (Zielnähe = grün)
@@ -1251,7 +1256,9 @@ async function updateMap() {
 	}).addTo(map);
 
   // === Neue Legende ===
-  const legendHTML = buildHeatLegendHTML({
+  const legendHTML = envScale
+    ? `<div class="legend-box"><div class="legend-title"><strong>${escapeHtml(meta.title || currentKpi)}</strong></div><div class="legend-bar legend-bar--environment"></div><div class="legend-scale"><span>Higher pressure / worse outcome</span><span>Lower pressure / better outcome</span></div><div class="legend-note">${escapeHtml(environmentalScaleNote(envScale))}</div></div>`
+    : buildHeatLegendHTML({
     title: meta.title || currentKpi,
     unit: meta.unit || "",
     min: adjMin,

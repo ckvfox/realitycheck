@@ -22,6 +22,32 @@ function getWorldSeries(entries) {
   return { years, values };
 }
 
+// Representative label locations, not cyclone coordinates or official boundaries.
+const CYCLONE_BASINS = {
+  NA: { name: "North Atlantic", coordinates: [-45, 25] },
+  EP: { name: "Eastern North Pacific", coordinates: [-125, 15] },
+  WP: { name: "Western North Pacific", coordinates: [145, 20] },
+  NI: { name: "North Indian Ocean", coordinates: [70, 12] },
+  SI: { name: "South Indian Ocean", coordinates: [75, -25] },
+  SP: { name: "South Pacific", coordinates: [-150, -25] },
+  SA: { name: "South Atlantic", coordinates: [-25, -25] },
+};
+
+function getRegionSeries(entries) {
+  const rows = (Array.isArray(entries) ? entries : []).filter(regionObservation);
+  const years = [...new Set(rows.map(row => Number(row.year)))].sort((a, b) => a - b);
+  const colors = ["#1a355e", "#b45309", "#15803d", "#7e22ce", "#be123c", "#0e7490", "#57534e"];
+  const datasets = Object.entries(CYCLONE_BASINS).map(([code, basin], index) => {
+    const values = new Map(rows.filter(row => row.region === code).map(row => [Number(row.year), Number(row.value)]));
+    return {
+      label: basin.name, data: years.map(year => values.get(year) ?? null),
+      borderColor: colors[index], borderWidth: 2, pointRadius: 1,
+      fill: false, spanGaps: false, tension: 0,
+    };
+  });
+  return { years, datasets };
+}
+
 /* ========= Chart Renderer mit Tooltip ========= */
 function renderChart(container, title, unit, data) {
   if (!container) return;
@@ -37,7 +63,7 @@ function renderChart(container, title, unit, data) {
 
   const chart = renderLineChart(canvasEl, {
     labels: data.years,
-    datasets: [
+    datasets: data.datasets || [
       {
         label: title,
         data: data.values,
@@ -56,7 +82,7 @@ function renderChart(container, title, unit, data) {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: { display: false },
+        legend: { display: Boolean(data.datasets) },
         title: { display: false }
       },
       scales: {
@@ -119,7 +145,8 @@ async function renderWorldKpi(container, kpi) {
     return;
   }
 
-  const worldData = getWorldSeries(data);
+  const isRegional = kpi.geo_type === "region";
+  const worldData = isRegional ? getRegionSeries(data) : getWorldSeries(data);
   if (worldData.years.length === 0) {
     block.querySelectorAll("canvas").forEach(c => {
       if (c.__rcChart?.destroy) c.__rcChart.destroy();
@@ -127,25 +154,25 @@ async function renderWorldKpi(container, kpi) {
     });
     const msg = document.createElement("p");
     msg.className = "kpi-message";
-    const regional = kpi.geo_type === "region";
-    msg.textContent = regional
-      ? (availableRegionYears(data).length
-        ? "Regional data are available. This dataset does not provide a global series; explore the regional map below."
-        : "No usable regional observations are available. This dataset does not provide a global series.")
+    msg.textContent = isRegional
+      ? "No usable regional observations are available. This dataset does not provide a global series."
       : "No global series is provided in this dataset.";
     block.appendChild(msg);
-    if (regional && availableRegionYears(data).length) {
-      const category = Object.entries(WORLD_MAP_CLIMATE_CATEGORIES)
-        .find(([, config]) => config.metrics?.some(metric => metric.kpi === filename))?.[0];
-      if (category) {
-        const link = document.createElement("a");
-        link.href = `?grouping=climate&group=${encodeURIComponent(category)}&kpi=${encodeURIComponent(filename)}&geo=regions#world-map-container`;
-        link.textContent = "Explore regional data";
-        block.appendChild(link);
-      }
-    }
     appendWorldKpiSource(block, kpi);
     return;
+  }
+
+  if (isRegional) {
+    const message = document.createElement("p");
+    message.className = "kpi-message";
+    message.textContent = "Regional data are available as separate series; no unique global total is implied.";
+    block.appendChild(message);
+    const category = Object.entries(WORLD_MAP_CLIMATE_CATEGORIES)
+      .find(([, config]) => config.metrics?.some(metric => metric.kpi === filename))?.[0];
+    const link = document.createElement("a");
+    link.href = `?grouping=climate&group=${encodeURIComponent(category || "")}&kpi=${encodeURIComponent(filename)}&geo=regions#world-map-container`;
+    link.textContent = "Explore regional data";
+    block.appendChild(link);
   }
 
   renderChart(block, title, unit, worldData);
@@ -162,7 +189,8 @@ async function renderWorldKpi(container, kpi) {
   aiBox.id = `kpi-analysis-${filename}`;
   aiBox.className = "kpi-analysis";
   block.appendChild(aiBox);
-  renderKpiAnalysis(kpi, aiBox.id);
+  if (!isRegional) renderKpiAnalysis(kpi, aiBox.id);
+  else aiBox.remove();
 
   appendWorldKpiSource(block, kpi);
 }
@@ -471,15 +499,15 @@ const WORLD_MAP_CLIMATE_CATEGORIES = {
     ],
   },
   storm_impact: {
-    label: "Storm Impact (tropical cyclones)",
+    label: "Tropical Cyclone Activity",
     description:
-      "Recorded tropical cyclone activity per ocean basin, from NOAA's IBTrACS global best-track archive. This is a region view (ocean basins), not a country view: tropical cyclones form and travel across ocean basins, not within national borders.",
+      "Recorded cyclone systems per ocean basin and NOAA season, including unnamed systems. Counts describe activity, not landfalls, damage or people affected. A system crossing basins counts in each; basin counts must not be added as a unique global total. Southern Hemisphere seasons run July–June and use the ending year. Missing observations are not zero.",
     geoType: "region",
     regionSet: "ocean_basins",
     metrics: [
       {
         kpi: "tropical_cyclone_activity_basin",
-        label: "Recorded cyclone counts per year",
+        label: "Recorded systems per season",
         valueModes: ["absolute"],
         defaultValueMode: "absolute",
         aggregations: ["median"],
@@ -488,36 +516,51 @@ const WORLD_MAP_CLIMATE_CATEGORIES = {
       },
     ],
   },
-};
-const WORLD_MAP_CLIMATE_PLACEHOLDER_CATEGORIES = {
   wildfire_impact: {
-    label: "Wildfire Impact (coming soon)",
-    description: "Planned region-based hazard category (IPCC AR6 climate reference regions). A verified, automated, no-login regional data source is not yet connected.",
-    geoType: "region",
-    regionSet: "ipcc_ar6",
+    label: "Wildfire — Burned Area",
+    description: "Satellite-detected area burned by wildfires, in hectares per country (GWIS via Our World in Data). Completed years only; the current partial year is excluded. This is a country comparison, not fire perimeters or human/economic losses. Sensor resolution can miss small fires; missing observations are not zero.",
+    geoType: "country",
+    metrics: [{
+      kpi: "wildfire_burned_area",
+      label: "Burned area",
+      valueModes: ["absolute"],
+      defaultValueMode: "absolute",
+      aggregations: ["sum", "median", "mean", "max"],
+      defaultAggregation: "sum",
+      measureType: "historical_impact",
+    }],
   },
   flood_impact: {
-    label: "Flood Impact (coming soon)",
-    description: "Planned region-based hazard category (major river basins). A verified, automated, no-login regional data source is not yet connected.",
-    geoType: "region",
-    regionSet: "river_basins",
+    label: "Flood — Reported People Affected",
+    description: "People reported injured, requiring immediate assistance or left homeless by floods (EM-DAT via OWID). Reporting is incomplete and varies by country/year. Missing country-years stay gray; recorded zero does not prove safety. These are reported impacts, not flood extent or probability.",
+    geoType: "country",
+    metrics: [{ kpi: "flood_affected_people", label: "Reported people affected", valueModes: ["absolute", "per_capita"], defaultValueMode: "per_capita", aggregations: ["sum", "median", "mean", "max"], defaultAggregation: "median", measureType: "historical_impact" }],
   },
   heat_impact: {
-    label: "Heat Impact (coming soon)",
-    description: "Planned region-based hazard category (IPCC AR6 climate reference regions). A verified, automated, no-login regional data source is not yet connected.",
-    geoType: "region",
-    regionSet: "ipcc_ar6",
+    label: "Heat — Modelled Heat Index Days",
+    description: "Model-derived annual days with daily mean Heat Index above 35°C, including humidity (World Bank CCKP/ESG). The provider documents an RCP 8.5 basis. This is a modelled hazard indicator, not observed deaths, air-temperature maxima or a real-time warning. Country coverage and latest year vary.",
+    geoType: "country",
+    metrics: [{ kpi: "extreme_heat_days", label: "Modelled Heat Index > 35°C", valueModes: ["index"], defaultValueMode: "index", aggregations: ["median", "mean", "max"], defaultAggregation: "median", measureType: "hazard_proxy" }],
   },
   drought_impact: {
-    label: "Drought Impact (coming soon)",
-    description: "Planned region-based hazard category (IPCC AR6 climate reference regions). A verified, automated, no-login regional data source is not yet connected.",
-    geoType: "region",
-    regionSet: "ipcc_ar6",
+    label: "Drought — Moisture Anomaly (SPEI)",
+    description: "Country-level 12-month Standardised Precipitation-Evapotranspiration Index (World Bank / SPEIbase). Negative values indicate drier conditions; positive values wetter conditions. Annual country averages can hide local droughts. Green means lower drought pressure only, not freedom from flooding or other hazards; this is not a damage estimate.",
+    geoType: "country",
+    metrics: [{ kpi: "drought_spei", label: "12-month SPEI", valueModes: ["index"], defaultValueMode: "index", aggregations: ["median", "mean", "max"], defaultAggregation: "median", measureType: "hazard_proxy" }],
   },
 };
+const WORLD_MAP_CLIMATE_PLACEHOLDER_CATEGORIES = {};
 
 function isClimateGrouping(grouping) {
   return grouping === WORLD_MAP_CLIMATE_GROUPING;
+}
+
+function worldMapEnvironmentalScale(values = []) {
+  const meta = worldMapSelectedKpiMeta;
+  const climate = isClimateGrouping(document.getElementById('groupingSelect')?.value);
+  return environmentalScale(climate && meta
+    ? { ...meta, map_color_direction: meta.map_color_direction || meta.sort }
+    : meta, values);
 }
 
 function getKpiMetaByFilename(filename) {
@@ -734,14 +777,9 @@ function escapeRegionText(value) {
   })[char]);
 }
 
-function regionalMetricUnit(meta) {
-  // The counting definition is tracked separately; do not assert “named storms”.
-  return meta?.filename === "tropical_cyclone_activity_basin" ? "recorded cyclones per year" : meta?.unit || "";
-}
-
 function regionalMetricCaveat(meta) {
   return meta?.filename === "tropical_cyclone_activity_basin"
-    ? "The storm-count definition is under separate review; counts do not measure intensity, landfall, damage or risk."
+    ? "Recorded systems per NOAA season, including unnamed systems; a system crossing basins counts in each. Basin counts are not a unique global total and do not measure intensity, landfall, damage or risk."
     : "";
 }
 
@@ -802,13 +840,30 @@ async function renderWorldMapRegionLayer(categoryConfig, category, requestId = +
     return [code, values.get(code)];
   }).filter(([, value]) => Number.isFinite(value)));
   const intensities = percentileIntensities(mappedValues);
-  const unit = regionalMetricUnit(meta);
-  const layerGroup = L.geoJSON(geojson, {
+  const unit = (meta?.unit || "");
+  const selectedYear = year || "–";
+  const envScale = worldMapEnvironmentalScale([...mappedValues.values()]);
+  const baseColor = WORLD_MAP_GROUP_COLORS.a.fill;
+  const borderColor = WORLD_MAP_GROUP_COLORS.a.border;
+
+  const markerView = regionSet === "ocean_basins";
+  const features = markerView ? {
+    type: "FeatureCollection",
+    features: geojson.features.map(feature => ({
+      ...feature,
+      geometry: { type: "Point", coordinates: CYCLONE_BASINS[feature.properties[codeProperty]].coordinates },
+    })),
+  } : geojson;
+  const layerGroup = L.geoJSON(features, {
+    pointToLayer: (feature, latlng) => L.circleMarker(latlng, { radius: 16 }),
     style: feature => {
-      const intensity = intensities.get(feature?.properties?.[codeProperty]);
+      const code = feature?.properties?.[codeProperty];
+      const intensity = intensities.get(code);
       return {
-        fillColor: Number.isFinite(intensity) ? mixWithWhite(WORLD_MAP_GROUP_COLORS.a.fill, intensity) : '#e8edf2',
-        weight: 1.5, opacity: 1, color: WORLD_MAP_GROUP_COLORS.a.border,
+        fillColor: envScale ? environmentalColor(envScale, values.get(code)) : Number.isFinite(intensity) ? mixWithWhite(baseColor, intensity) : '#e8edf2',
+        weight: 1.5,
+        opacity: 1,
+        color: borderColor,
         fillOpacity: Number.isFinite(intensity) ? 0.82 : 0.25,
       };
     },
@@ -836,12 +891,32 @@ async function renderWorldMapRegionLayer(categoryConfig, category, requestId = +
   const legendContent = document.getElementById('legend-content');
   if (legendBox && legendTitle && legendContent) {
     legendTitle.textContent = `${categoryConfig.label} (${regionMeta.label || regionSet})`;
-    legendContent.textContent = `Metric: ${meta?.title || "–"}. Unit: ${unit || "Not specified"}. Year: ${year || "–"}. Coverage: ${coverage.covered}/${coverage.total} regions. Darker blue = higher value relative to mapped regions in this year (percentile ranks); pale grey = missing observation, not zero. `;
+    legendContent.textContent = `Metric: ${meta?.title || "–"}. Unit: ${unit || "Not specified"}. Year: ${year || "–"}. Coverage: ${coverage.covered}/${coverage.total} regions. ${envScale ? environmentalScaleNote(envScale) : "Darker blue = higher relative value (within-year percentile ranks)."} Pale grey = missing observation, not zero. `;
     const notes = document.createElement("p");
     notes.textContent = `${regionMeta.description || ""} ${geojson.properties?.note || ""} ${regionalMetricCaveat(meta)}`;
     legendContent.appendChild(notes);
     appendRegionSource(legendContent, "Measurement source", meta?.source);
     appendRegionSource(legendContent, "Geometry source", regionMeta.source_url, `${regionMeta.attribution || ""} License: ${regionMeta.license || "Not specified"}.`);
+    const definition = document.createElement("p");
+    definition.textContent = categoryConfig.description;
+    legendContent.appendChild(definition);
+    const table = document.createElement("table");
+    const caption = table.createCaption();
+    caption.textContent = `Basin observations · NOAA season ${selectedYear} (missing ≠ zero)`;
+    const header = table.createTHead().insertRow();
+    ["Ocean basin", worldMapSelectedKpiMeta?.unit || "Value"].forEach(label => {
+      const th = document.createElement("th");
+      th.scope = "col";
+      th.textContent = label;
+      header.appendChild(th);
+    });
+    const body = table.createTBody();
+    geojson.features.forEach(feature => {
+      const row = body.insertRow();
+      row.insertCell().textContent = feature.properties[nameProperty];
+      row.insertCell().textContent = formatWorldMapNumber(values.get(feature.properties[codeProperty]));
+    });
+    legendContent.appendChild(table);
     legendBox.classList.remove('hidden');
   }
   if (modeNote) {
@@ -851,6 +926,9 @@ async function renderWorldMapRegionLayer(categoryConfig, category, requestId = +
     const missing = coverage.missing.length ? ` Missing: ${coverage.missing.join(", ")}. Missing values are not zero.` : "";
     const unmapped = coverage.unmapped.length ? ` Values without supported geometry: ${coverage.unmapped.join(", ")}.` : "";
     modeNote.textContent = `${categoryConfig.label}: regional view. ${status}${missing}${unmapped} Country, per-capita and cross-region summary views are not supported. ${regionalMetricCaveat(meta)}`;
+    modeNote.textContent += markerView
+      ? " Circles locate ocean basins only; red indicates higher recorded activity, green lower activity in this comparison. They do not show storm positions, tracks, affected areas or basin boundaries. See the table for exact counts and missing observations."
+      : `${categoryConfig.label}: ${regionMeta.attribution || ""}`;
   }
   syncWorldMapUrl();
 }
@@ -923,7 +1001,8 @@ function formatWorldMapNumber(value, unit = "") {
       ? `${(value / 1e9).toFixed(2)}B`
       : absolute >= 1e6
         ? `${(value / 1e6).toFixed(2)}M`
-        : new Intl.NumberFormat(undefined, { maximumFractionDigits: 2 }).format(value);
+      : new Intl.NumberFormat(undefined, absolute > 0 && absolute < 0.01
+        ? { maximumSignificantDigits: 3 } : { maximumFractionDigits: 2 }).format(value);
   return unit ? `${formatted} ${unit}` : formatted;
 }
 
@@ -1077,7 +1156,7 @@ function populateWorldMapKpiOptions(preferredKpi = null) {
     }
     options = metrics.map(metric => {
       const meta = getKpiMetaByFilename(metric.kpi);
-      const unit = meta?.geo_type === "region" ? regionalMetricUnit(meta) : meta?.unit;
+      const unit = meta?.geo_type === "region" ? (meta?.unit || "") : meta?.unit;
       const unitText = unit ? ` (${unit})` : "";
       return {
         value: metric.kpi,
@@ -1548,6 +1627,7 @@ function updateWorldMapGeoJSON() {
   const selectedCountries = new Set([...groupASet, ...groupBSet]);
   const choroplethValues = selectedWorldMapValues(selectedYear, selectedCountries, valueMode);
   const intensities = percentileIntensities(choroplethValues);
+  const envScale = worldMapEnvironmentalScale([...choroplethValues.values()]);
   
   // Erstelle ISO-Lookup für relevante Länder (wie in countries.html)
   const isoByName = {};
@@ -1670,7 +1750,7 @@ function updateWorldMapGeoJSON() {
       const intensity = intensities.get(resolvedCountry);
       return {
         fillColor: groupColor
-          ? (Number.isFinite(intensity) ? mixWithWhite(groupColor.fill, intensity) : '#e8edf2')
+          ? (envScale ? environmentalColor(envScale, choroplethValues.get(resolvedCountry)) : Number.isFinite(intensity) ? mixWithWhite(groupColor.fill, intensity) : '#e8edf2')
           : '#ddd',
         weight: groupColor ? 2 : 1,
         opacity: 1,
@@ -1826,7 +1906,9 @@ function renderWorldGroupSummary(grouping, category, members, comparison = "", c
   const selectedMetric = calculateGroupMetric(worldMapSelectedKpiData, members, year, {
     valueMode, aggregation, populationData: worldMapPopulation, areaData: worldMapArea,
   });
-  const groupLabel = grouping === 'groups' ? getWorldMapGroupTitle(category) : category;
+  const groupLabel = isClimateGrouping(grouping)
+    ? (getClimateCategoryConfig(category)?.label || category)
+    : grouping === 'groups' ? getWorldMapGroupTitle(category) : category;
   const comparisonLabel = comparison ? getWorldMapGroupTitle(comparison) : "";
   const metricTitle = worldMapSelectedKpiMeta?.title || worldMapSelectedKpiMeta?.filename || "Selected KPI";
   const metricUnit = worldMapSelectedKpiMeta?.unit || "";
@@ -1872,18 +1954,24 @@ function updateWorldMapVisualLegend(category, comparison) {
   const grouping = document.getElementById('groupingSelect')?.value || "";
   document.getElementById('world-map-visual-legend')?.removeAttribute('hidden');
   const regional = isClimateGrouping(grouping) && getClimateCategoryConfig(category)?.geoType === "region";
-  const labelOther = document.getElementById('legend-other-label');
-  const gradient = document.getElementById('legend-gradient-label');
-  if (labelOther) labelOther.textContent = regional ? "Region without an observation for selected year" : "Other Countries";
-  if (gradient) gradient.textContent = regional ? "Darker blue = higher relative regional value (within selected year); grey = missing data" : "Darker = higher KPI value; pale = no data";
   document.getElementById('legend-group-a-item')?.toggleAttribute('hidden', regional);
   const labelA = document.getElementById('legend-group-a-label');
   const labelB = document.getElementById('legend-group-b-label');
   const itemB = document.getElementById('legend-group-b-item');
   const overlap = document.getElementById('legend-overlap-item');
+  const envScale = worldMapEnvironmentalScale();
+  document.querySelector('.legend-gradient')?.classList.toggle('legend-gradient--environment', Boolean(envScale));
+  document.querySelector('.legend-color-blue')?.classList.toggle('legend-color--environment', Boolean(envScale) && isClimateGrouping(grouping));
+  const scaleNote = document.getElementById('world-map-scale-note');
+  if (scaleNote) scaleNote.textContent = envScale
+    ? environmentalScaleNote(envScale) + (isClimateGrouping(grouping) ? "" : " Colored borders identify groups.")
+    : "Darker = higher KPI value; pale = no data";
   const categoryLabel = isClimateGrouping(grouping)
     ? (getClimateCategoryConfig(category)?.label || "Climate selection")
     : getWorldMapGroupTitle(category);
+  const otherLabel = document.getElementById('legend-other-label');
+  if (otherLabel) otherLabel.textContent = isClimateGrouping(grouping) && envScale
+    ? "No observation (not zero)" : regional ? "Region without an observation for selected year" : "Other Countries";
   if (labelA) labelA.textContent = categoryLabel;
   if (labelB) labelB.textContent = comparison ? getWorldMapGroupTitle(comparison) : "Group B";
   if (itemB) itemB.hidden = !comparison;
@@ -2012,5 +2100,7 @@ if (typeof module !== "undefined" && module.exports) {
     regionValuesForYear,
     regionCoverage,
     escapeRegionText,
+    getRegionSeries,
+    formatWorldMapNumber,
   };
 }

@@ -2,22 +2,28 @@
 # Created: 2025-11-17 - CSS Optimization & CSP Implementation
 
 DirectoryIndex index.html
+ErrorDocument 403 default
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# Force HTTPS for the canonical site URL.
+# Normalize explicit aliases without redirecting the internal DirectoryIndex.
+RewriteCond %{THE_REQUEST} \s/+(?:index|countries)\.html[\s?] [NC]
+RewriteRule ^(?:index|countries)\.html$ https://realitycheck.great-site.net/ [L,R=301,NE]
+RewriteRule ^js_challenge\.html$ https://realitycheck.great-site.net/ [L,R=301,NE,QSD]
+
+# Fixed canonical host; do not reflect arbitrary Host headers.
+RewriteCond %{HTTP_HOST} !^realitycheck\.great-site\.net$ [NC]
+RewriteRule ^ https://realitycheck.great-site.net%{REQUEST_URI} [L,R=301,NE]
+
+# Proxy-aware HTTPS normalization.
 RewriteCond %{HTTPS} !=on
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteCond %{HTTP:X-Forwarded-SSL} !on [NC]
+RewriteRule ^ https://realitycheck.great-site.net%{REQUEST_URI} [L,R=301,NE]
 
-# Canonical homepage URLs.
-RewriteRule ^index\.html$ / [L,R=301]
-RewriteRule ^countries\.html$ / [L,R=301]
-
-# Mark verified crawlers and webcheck for audit-friendly handling by future rewrite rules.
-RewriteCond %{HTTP_USER_AGENT} "(googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|applebot|facebookexternalhit|twitterbot|linkedinbot|semrushbot|ahrefsbot|mj12bot|webcheck-bot)" [NC]
-RewriteRule ^ - [E=RC_TRUSTED_CRAWLER:1]
+# No user-agent branching. A UA string cannot verify a crawler's identity.
+RewriteRule (^|/)\.(?!well-known/) - [F,E=RC_DENIED:1]
 </IfModule>
 
 # Ensure UTF-8 is declared for HTML and static text assets.
@@ -26,11 +32,15 @@ AddCharset UTF-8 .html .htm .css .js .json .xml .svg
 
 # Enforce HTTPS for a long-lived secure browsing context.
 Header always set Strict-Transport-Security "max-age=15552000"
+Header always set X-RealityCheck-Policy "apache-v1"
+Header always set X-RealityCheck-Denial "hidden-path" env=RC_DENIED
+Header always set X-RealityCheck-Denial "hidden-path" env=REDIRECT_RC_DENIED
 
 # Content Security Policy - external scripts only, with Google Translate support.
 # The sha256 hash allows the single fixed inline bootstrap script Google Translate's
-# widget iframe (about:srcdoc) injects; without it the translate panel fails silently.
-Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; script-src 'self' 'sha256-yMILSkP21TMcaXRWgcacApL5PXJdIReWq4XPHkbMNEQ=' unpkg.com cdn.jsdelivr.net translate.google.com translate.googleapis.com translate-pa.googleapis.com *.gstatic.com; style-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net translate.googleapis.com *.gstatic.com www.gstatic.com; img-src 'self' data: *.tile.openstreetmap.org *.infinityfree.net translate.google.com translate.googleapis.com *.gstatic.com www.google.com fonts.gstatic.com; connect-src 'self' api.worldbank.org raw.githubusercontent.com unpkg.com cdn.jsdelivr.net translate.googleapis.com translate-pa.googleapis.com; font-src 'self' translate.googleapis.com fonts.gstatic.com *.gstatic.com; object-src 'none';"
+# widget iframe (about:srcdoc) injects; measured against Google's TE_20261014.
+# Recheck this hash if Google changes the bootstrap; do not allow all inline JS.
+Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; script-src 'self' 'sha256-R6kjt5FwTd5vAw94Q08NLDZsSaGTzg4NsdIfKtECSp0=' unpkg.com cdn.jsdelivr.net translate.google.com translate.googleapis.com translate-pa.googleapis.com *.gstatic.com; script-src-attr 'none'; frame-src 'self' https://translate.google.com; style-src 'self' 'unsafe-inline' unpkg.com cdn.jsdelivr.net translate.googleapis.com *.gstatic.com www.gstatic.com; img-src 'self' data: *.tile.openstreetmap.org *.infinityfree.net translate.google.com translate.googleapis.com *.gstatic.com www.google.com fonts.gstatic.com; connect-src 'self' api.worldbank.org raw.githubusercontent.com unpkg.com cdn.jsdelivr.net translate.google.com translate.googleapis.com translate-pa.googleapis.com; font-src 'self' translate.googleapis.com fonts.gstatic.com *.gstatic.com; object-src 'none';"
 
 # X-Frame-Options to prevent clickjacking
 Header always set X-Frame-Options "SAMEORIGIN"

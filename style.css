@@ -1582,6 +1582,11 @@ body.world-page { overflow-x: hidden; }
   border-radius: .2rem;
   background: linear-gradient(90deg, #e8eef5, #1976d2);
 }
+.legend-gradient--environment,
+.legend-bar--environment,
+.legend-color.legend-color--environment {
+  background: linear-gradient(90deg, hsl(0, 75%, 42%), hsl(60, 75%, 42%), hsl(120, 75%, 42%));
+}
 
 @media (max-width: 620px) {
   .world-group-summary--comparison .world-group-summary__cards,
@@ -2754,8 +2759,14 @@ header#main-header nav a.active {
 .map-tooltip {
   display: grid;
   gap: 0.35rem;
-  max-width: 220px;
+  width: min(260px, calc(100vw - 48px));
+  white-space: normal;
+  overflow-wrap: anywhere;
   text-align: center;
+}
+
+.map-tooltip > * {
+  min-width: 0;
 }
 
 .map-tooltip__header {

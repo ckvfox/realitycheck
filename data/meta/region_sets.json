@@ -25,7 +25,7 @@
     "geo_file": "regions_ocean_basins_geo.json",
     "code_property": "Acronym",
     "name_property": "Name",
-    "attribution": "Boundary convention matches NOAA IBTrACS BASIN classification (public domain, U.S. Government work).",
+    "attribution": "Counts: NOAA IBTrACS (public domain). Map circles: illustrative basin label locations, not official boundaries or observed storm locations.",
     "source_url": "https://www.ncei.noaa.gov/products/international-best-track-archive",
     "license": "Public domain (boundary convention only; not an official product)"
   }

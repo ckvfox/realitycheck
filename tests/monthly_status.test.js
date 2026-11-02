@@ -1,7 +1,7 @@
 const {test} = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
-const workflow = fs.readFileSync('.github/workflows/monthly-fetch.yml', 'utf8');
+const workflow = fs.readFileSync('.github/workflows/monthly-fetch.yml', 'utf8').replace(/\r\n/g, '\n');
 const script = workflow.split('          script: |\n')[1].split('\n').map(line => line.slice(12)).join('\n');
 const execute = new (Object.getPrototypeOf(async function() {}).constructor)('github', 'context', 'core', 'process', script);
 function issue(number, run, status='failure', extra={}) {
