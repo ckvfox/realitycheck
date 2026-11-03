@@ -2,6 +2,12 @@
 
 ## Next Improvements
 
+- Regional climate-map frontend corrections implemented and covered by offline
+  renderer/data/geometry tests; desktop/mobile browser acceptance and post-upload
+  production QA remain open. See `docs/regional_climate_frontend_2026-10-14.md`.
+  Integrated with main on 2026-11-02: retain corrected 279-record NOAA snapshot,
+  seasonal definitions, environmental colors, basin markers and FTPS safeguards.
+  Current evidence: `docs/regional_climate_integration_2026-11-02.md`.
 - Completed (2026-11-01): reconcile IBTrACS PR #110 with the November snapshot; preserve 279 records and add historical-key/JSON-CSV gates plus parser regressions. See `docs/ibtracs_reconciliation_2026-11-01.md`.
 
 - Completed (2026-10-30): audit and strict allowlist for all nine productive upload workflows (386 files), followed by separately authorized backup-first cleanup of 109 RealityCheck and two EnergyPlanning surplus files. Needed product/server files remain; live checks passed. Protected FTP backup archives remain, and the one-off cleanup workflow is disabled. See `docs/deployment_payload_audit_2026-10-30.md`.

@@ -34,11 +34,11 @@ const CYCLONE_BASINS = {
 };
 
 function getRegionSeries(entries) {
-  const rows = entries.filter(row => row.region && Number.isFinite(row.value) && Number.isFinite(Number(row.year)));
+  const rows = (Array.isArray(entries) ? entries : []).filter(regionObservation);
   const years = [...new Set(rows.map(row => Number(row.year)))].sort((a, b) => a - b);
   const colors = ["#1a355e", "#b45309", "#15803d", "#7e22ce", "#be123c", "#0e7490", "#57534e"];
   const datasets = Object.entries(CYCLONE_BASINS).map(([code, basin], index) => {
-    const values = new Map(rows.filter(row => row.region === code).map(row => [Number(row.year), row.value]));
+    const values = new Map(rows.filter(row => row.region === code).map(row => [Number(row.year), Number(row.value)]));
     return {
       label: basin.name, data: years.map(year => values.get(year) ?? null),
       borderColor: colors[index], borderWidth: 2, pointRadius: 1,
@@ -139,7 +139,8 @@ async function renderWorldKpi(container, kpi) {
     });
     const msg = document.createElement("p");
     msg.className = "kpi-message";
-    msg.textContent = "No data available.";
+    msg.textContent = kpi.geo_type === "region" ? "No regional data available." : "No data available.";
+    appendWorldKpiSource(block, kpi);
     block.appendChild(msg);
     return;
   }
@@ -153,9 +154,25 @@ async function renderWorldKpi(container, kpi) {
     });
     const msg = document.createElement("p");
     msg.className = "kpi-message";
-    msg.textContent = "No global values in dataset.";
+    msg.textContent = isRegional
+      ? "No usable regional observations are available. This dataset does not provide a global series."
+      : "No global series is provided in this dataset.";
     block.appendChild(msg);
+    appendWorldKpiSource(block, kpi);
     return;
+  }
+
+  if (isRegional) {
+    const message = document.createElement("p");
+    message.className = "kpi-message";
+    message.textContent = "Regional data are available as separate series; no unique global total is implied.";
+    block.appendChild(message);
+    const category = Object.entries(WORLD_MAP_CLIMATE_CATEGORIES)
+      .find(([, config]) => config.metrics?.some(metric => metric.kpi === filename))?.[0];
+    const link = document.createElement("a");
+    link.href = `?grouping=climate&group=${encodeURIComponent(category || "")}&kpi=${encodeURIComponent(filename)}&geo=regions#world-map-container`;
+    link.textContent = "Explore regional data";
+    block.appendChild(link);
   }
 
   renderChart(block, title, unit, worldData);
@@ -175,7 +192,10 @@ async function renderWorldKpi(container, kpi) {
   if (!isRegional) renderKpiAnalysis(kpi, aiBox.id);
   else aiBox.remove();
 
-  // === Quelle hinzufügen ===
+  appendWorldKpiSource(block, kpi);
+}
+
+function appendWorldKpiSource(block, kpi) {
   const source = document.createElement("p");
   source.className = "chart-source";
   if (kpi.source) {
@@ -291,6 +311,7 @@ async function initWorldPage() {
 /* ========= World Map Gruppierungs-Feature ========= */
 let worldMap = null;
 let worldMapLayer = null;
+let viewBeforeCycloneBasins = null;
 let worldMapCountries = {};
 let worldMapGroups = {};
 let worldMapPopulation = []; // Changed from {} to [] for array operations
@@ -301,6 +322,7 @@ let worldMapArea = [];
 let worldMapSelectedKpiData = [];
 let worldMapSelectedKpiMeta = null;
 let worldMapYearRequestId = 0;
+let worldMapRenderRequestId = 0;
 const WORLD_MAP_SUMMABLE_KPIS = new Set([
   "area", "co2_emissions", "electric_vehicle_stock", "gdp", "net_migration",
   "olympic_medals_summer", "olympic_medals_winter", "population", "railway_length", "refugees_hosted",
@@ -728,40 +750,100 @@ async function loadRegionGeoJSON(regionSet) {
   return geojson;
 }
 
+// Missing observations are never converted to zero (Number(null/" ") === 0).
+function regionObservation(row) {
+  if (!row || typeof row.region !== "string" || !row.region.trim()) return false;
+  return [row.year, row.value].every(value =>
+    (typeof value === "number" || (typeof value === "string" && value.trim() !== ""))
+    && Number.isFinite(Number(value)));
+}
+
 function availableRegionYears(dataset) {
-  return [...new Set((dataset || [])
-    .filter(row => row.region && Number.isFinite(Number(row.year)) && Number.isFinite(Number(row.value)))
-    .map(row => Number(row.year)))]
-    .sort((a, b) => b - a);
+  return [...new Set((Array.isArray(dataset) ? dataset : [])
+    .filter(regionObservation).map(row => Number(row.year)))].sort((a, b) => b - a);
 }
 
 function regionValuesForYear(dataset, year) {
   const values = new Map();
-  if (!Number.isFinite(Number(year))) return values;
-  (dataset || []).forEach(row => {
-    if (Number(row.year) !== Number(year) || !row.region || !Number.isFinite(row.value)) return;
-    values.set(row.region, Number(row.value));
+  if (year === null || year === undefined || String(year).trim() === "" || !Number.isFinite(Number(year))) return values;
+  (Array.isArray(dataset) ? dataset : []).forEach(row => {
+    if (regionObservation(row) && Number(row.year) === Number(year)) values.set(row.region, Number(row.value));
   });
   return values;
 }
 
-async function renderWorldMapRegionLayer(categoryConfig, category) {
+function escapeRegionText(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  })[char]);
+}
+
+function regionalMetricCaveat(meta) {
+  return meta?.filename === "tropical_cyclone_activity_basin"
+    ? "Recorded systems per NOAA season, including unnamed systems; a system crossing basins counts in each. Basin counts are not a unique global total and do not measure intensity, landfall, damage or risk."
+    : "";
+}
+
+function regionCoverage(geojson, codeProperty, values) {
+  const codes = new Set(geojson.features.map(feature => feature.properties?.[codeProperty]).filter(Boolean));
+  const covered = [...codes].filter(code => values.has(code));
+  const missing = geojson.features.filter(feature => !values.has(feature.properties?.[codeProperty]))
+    .map(feature => feature.properties?.Name || feature.properties?.[codeProperty]);
+  const unmapped = [...values.keys()].filter(code => !codes.has(code));
+  return { covered: covered.length, total: codes.size, missing, unmapped };
+}
+
+function appendRegionSource(container, label, url, detail = "") {
+  const p = document.createElement("p");
+  p.textContent = `${label}: ${detail} `;
+  try {
+    const parsed = new URL(url);
+    if (["https:", "http:"].includes(parsed.protocol)) {
+      const link = document.createElement("a");
+      link.href = parsed.href;
+      link.textContent = parsed.hostname;
+      link.target = "_blank";
+      link.rel = "noopener";
+      p.appendChild(link);
+    }
+  } catch { /* Attribution text remains visible when no source URL exists. */ }
+  container.appendChild(p);
+}
+
+async function renderWorldMapRegionLayer(categoryConfig, category, requestId = ++worldMapRenderRequestId) {
   clearWorldMapSelection();
+  updateWorldMapVisualLegend(category, "");
+  // Capture the selection before awaiting geometry; late requests must not repaint.
   const regionSet = categoryConfig.regionSet;
-  const [regionSets, geojson] = await Promise.all([loadRegionSetsMeta(), loadRegionGeoJSON(regionSet)]);
-  const regionMeta = regionSets?.[regionSet];
+  const year = document.getElementById('worldMapYearSelect')?.value || "";
+  const values = regionValuesForYear(worldMapSelectedKpiData, year);
+  const meta = worldMapSelectedKpiMeta;
   const modeNote = document.getElementById('world-map-mode-note');
-  if (!worldMap || !geojson || !regionMeta) {
-    if (modeNote) modeNote.textContent = `${categoryConfig.label}: region geometry could not be loaded.`;
+  let regionSets, geojson;
+  try {
+    [regionSets, geojson] = await Promise.all([loadRegionSetsMeta(), loadRegionGeoJSON(regionSet)]);
+  } catch {
+    if (requestId === worldMapRenderRequestId && modeNote) modeNote.textContent = `${categoryConfig.label}: region geometry could not be loaded. Data availability cannot be inferred from this map error.`;
+    return;
+  }
+  if (requestId !== worldMapRenderRequestId) return;
+  const regionMeta = regionSets?.[regionSet];
+  if (!worldMap || !Array.isArray(geojson?.features) || !regionMeta) {
+    if (modeNote) modeNote.textContent = `${categoryConfig.label}: regional map geometry is unavailable or unsupported; this does not imply missing measurement data.`;
     return;
   }
 
   const codeProperty = regionMeta.code_property || "Acronym";
   const nameProperty = regionMeta.name_property || "Name";
-  const selectedYear = Number(document.getElementById('worldMapYearSelect')?.value);
-  const values = regionValuesForYear(worldMapSelectedKpiData, selectedYear);
-  const intensities = percentileIntensities(values);
-  const envScale = worldMapEnvironmentalScale([...values.values()]);
+  const coverage = regionCoverage(geojson, codeProperty, values);
+  const mappedValues = new Map(geojson.features.map(feature => {
+    const code = feature.properties?.[codeProperty];
+    return [code, values.get(code)];
+  }).filter(([, value]) => Number.isFinite(value)));
+  const intensities = percentileIntensities(mappedValues);
+  const unit = (meta?.unit || "");
+  const selectedYear = year || "–";
+  const envScale = worldMapEnvironmentalScale([...mappedValues.values()]);
   const baseColor = WORLD_MAP_GROUP_COLORS.a.fill;
   const borderColor = WORLD_MAP_GROUP_COLORS.a.border;
 
@@ -773,7 +855,7 @@ async function renderWorldMapRegionLayer(categoryConfig, category) {
       geometry: { type: "Point", coordinates: CYCLONE_BASINS[feature.properties[codeProperty]].coordinates },
     })),
   } : geojson;
-  worldMapLayer = L.geoJSON(features, {
+  const layerGroup = L.geoJSON(features, {
     pointToLayer: (feature, latlng) => L.circleMarker(latlng, { radius: 16 }),
     style: feature => {
       const code = feature?.properties?.[codeProperty];
@@ -790,33 +872,40 @@ async function renderWorldMapRegionLayer(categoryConfig, category) {
       const code = feature?.properties?.[codeProperty];
       const name = feature?.properties?.[nameProperty] || code || "Region";
       const value = values.get(code);
-      const meta = worldMapSelectedKpiMeta;
-      const displayValue = Number.isFinite(value) ? formatWorldMapNumber(value, meta?.unit || "") : "no data";
-      const tooltip = `
-        <div class="map-tooltip">
-          <div class="map-tooltip__header">
-            <div class="map-tooltip__title">${name}</div>
-          </div>
-          <div class="map-tooltip__value">${meta?.title || "Selected metric"}: ${displayValue}</div>
-          <div class="map-tooltip__meta">
-            <div class="map-tooltip__meta-row">Year: ${Number.isFinite(selectedYear) ? selectedYear : "–"}</div>
-          </div>
-        </div>
-      `;
+      const displayValue = Number.isFinite(value) ? formatWorldMapNumber(value, unit) : "No regional data for selected year";
+      const tooltip = document.createElement("div");
+      tooltip.className = "map-tooltip";
+      tooltip.innerHTML = `<div class="map-tooltip__header"><div class="map-tooltip__title">${escapeRegionText(name)} (${escapeRegionText(code)})</div></div>
+        <div class="map-tooltip__value">${escapeRegionText(meta?.title || "Selected metric")}: ${escapeRegionText(displayValue)}</div>
+        <div class="map-tooltip__meta">Year: ${escapeRegionText(year || "–")}<br>Source: ${escapeRegionText(meta?.source || "Not specified")}</div>`;
       layer.bindTooltip(tooltip, { sticky: true });
       layer.on({
-        mouseover: e => e.target.setStyle({ weight: 2.5, fillOpacity: 0.95 }),
-        mouseout: e => worldMapLayer.resetStyle(e.target),
+        mouseover: e => e.target.setStyle({ weight: 2.5 }),
+        mouseout: e => layerGroup.resetStyle(e.target),
       });
     },
   }).addTo(worldMap);
+  worldMapLayer = layerGroup;
+
+  if (markerView && !viewBeforeCycloneBasins && layerGroup.getBounds().isValid()) {
+    viewBeforeCycloneBasins = { center: worldMap.getCenter(), zoom: worldMap.getZoom() };
+    worldMap.fitBounds(layerGroup.getBounds(), { padding: [24, 24], maxZoom: 2, animate: false });
+  }
 
   const legendBox = document.getElementById('world-map-legend');
   const legendTitle = document.getElementById('legend-title');
   const legendContent = document.getElementById('legend-content');
   if (legendBox && legendTitle && legendContent) {
     legendTitle.textContent = `${categoryConfig.label} (${regionMeta.label || regionSet})`;
-    legendContent.textContent = `${categoryConfig.description} Metric: ${worldMapSelectedKpiMeta?.title || "–"}. Year: ${Number.isFinite(selectedYear) ? selectedYear : "–"}. Source: ${regionMeta.attribution || ""}`;
+    legendContent.textContent = `Metric: ${meta?.title || "–"}. Unit: ${unit || "Not specified"}. Year: ${year || "–"}. Coverage: ${coverage.covered}/${coverage.total} regions. ${envScale ? environmentalScaleNote(envScale) : "Darker blue = higher relative value (within-year percentile ranks)."} Pale grey = missing observation, not zero. `;
+    const notes = document.createElement("p");
+    notes.textContent = `${regionMeta.description || ""} ${geojson.properties?.note || ""} ${regionalMetricCaveat(meta)}`;
+    legendContent.appendChild(notes);
+    appendRegionSource(legendContent, "Measurement source", meta?.source);
+    appendRegionSource(legendContent, "Geometry source", regionMeta.source_url, `${regionMeta.attribution || ""} License: ${regionMeta.license || "Not specified"}.`);
+    const definition = document.createElement("p");
+    definition.textContent = categoryConfig.description;
+    legendContent.appendChild(definition);
     const table = document.createElement("table");
     const caption = table.createCaption();
     caption.textContent = `Basin observations · NOAA season ${selectedYear} (missing ≠ zero)`;
@@ -836,13 +925,17 @@ async function renderWorldMapRegionLayer(categoryConfig, category) {
     legendContent.appendChild(table);
     legendBox.classList.remove('hidden');
   }
-  updateWorldMapVisualLegend(category, "");
   if (modeNote) {
-    modeNote.textContent = markerView
-      ? "Circles locate ocean basins only; red indicates higher recorded activity, green lower activity in this comparison. They do not show storm positions, tracks, affected areas or basin boundaries. See the table for exact counts and missing observations."
+    const status = coverage.covered
+      ? `${coverage.covered}/${coverage.total} regions have observations for ${year}.`
+      : (year ? `No regional observations for ${year}.` : "No regional observations available; no year can be selected.");
+    const missing = coverage.missing.length ? ` Missing: ${coverage.missing.join(", ")}. Missing values are not zero.` : "";
+    const unmapped = coverage.unmapped.length ? ` Values without supported geometry: ${coverage.unmapped.join(", ")}.` : "";
+    modeNote.textContent = `${categoryConfig.label}: regional view. ${status}${missing}${unmapped} Country, per-capita and cross-region summary views are not supported. ${regionalMetricCaveat(meta)}`;
+    modeNote.textContent += markerView
+      ? " Circles locate ocean basins only; red indicates higher recorded activity, green lower activity in this comparison. They do not show storm positions, tracks, affected areas or basin boundaries. See the table for exact counts and missing observations."
       : `${categoryConfig.label}: ${regionMeta.attribution || ""}`;
   }
-  document.getElementById('world-group-summary')?.setAttribute('hidden', '');
   syncWorldMapUrl();
 }
 
@@ -960,7 +1053,7 @@ async function initWorldMap() {
     const mapElement = document.getElementById('world-map');
     if (!mapElement) return;
 
-    worldMap = L.map('world-map').setView([20, 0], 2);
+    worldMap = L.map('world-map', { zoomSnap: 0.25 }).setView([20, 0], 2);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
       maxZoom: 18
@@ -1069,7 +1162,8 @@ function populateWorldMapKpiOptions(preferredKpi = null) {
     }
     options = metrics.map(metric => {
       const meta = getKpiMetaByFilename(metric.kpi);
-      const unitText = meta?.unit ? ` (${meta.unit})` : "";
+      const unit = meta?.geo_type === "region" ? "" : meta?.unit;
+      const unitText = unit ? ` (${unit})` : "";
       return {
         value: metric.kpi,
         label: `${metric.label}${unitText}`,
@@ -1107,12 +1201,20 @@ function populateWorldMapKpiOptions(preferredKpi = null) {
 async function updateWorldMapYearOptions(preferredYear = null) {
   const kpiSelect = document.getElementById('worldMapKpiSelect');
   const yearSelect = document.getElementById('worldMapYearSelect');
-  if (!kpiSelect || !yearSelect || !kpiSelect.value) return;
+  if (!kpiSelect || !yearSelect) return;
   const requestId = ++worldMapYearRequestId;
+  ++worldMapRenderRequestId;
+  clearWorldMapSelection();
   yearSelect.disabled = true;
-  worldMapSelectedKpiMeta = META.find(kpi => kpi.filename === kpiSelect.value) || null;
-  worldMapSelectedKpiData = await loadKPIData(kpiSelect.value);
+  yearSelect.textContent = "";
+  worldMapSelectedKpiMeta = null;
+  worldMapSelectedKpiData = [];
+  if (!kpiSelect.value) return;
+  const meta = META.find(kpi => kpi.filename === kpiSelect.value) || null;
+  const data = await loadKPIData(kpiSelect.value);
   if (requestId !== worldMapYearRequestId) return;
+  worldMapSelectedKpiMeta = meta;
+  worldMapSelectedKpiData = data;
   const years = worldMapSelectedKpiMeta?.geo_type === "region"
     ? availableRegionYears(worldMapSelectedKpiData)
     : availableCountryYears(worldMapSelectedKpiData);
@@ -1146,11 +1248,19 @@ function updateWorldMapModeAvailability() {
       if (note) {
         const category = document.getElementById('categorySelect')?.value || "";
         const config = getClimateCategoryConfig(category);
-        note.textContent = `${config?.label || "Climate category"}: ${config?.description || "Hazard category is not connected to production data yet."} Regional layer is planned; current map remains country-based fallback only.`;
+        note.textContent = `${config?.label || "Climate category"}: ${config?.description || "Hazard category is not connected to production data yet."} No regional measurement dataset is connected. No country fallback is displayed.`;
       }
       return;
     }
 
+    const regional = getClimateCategoryConfig(document.getElementById('categorySelect')?.value)?.geoType === "region";
+    if (regional) {
+      setSelectOptions(valueMode, [{ value: "absolute", label: "Absolute regional values" }], "absolute");
+      setSelectOptions(aggregation, [{ value: "none", label: "Not supported for regional view" }], "none");
+      valueMode.disabled = true;
+      aggregation.disabled = true;
+      return;
+    }
     valueMode.disabled = false;
     aggregation.disabled = false;
     const allowedValueModes = (metric?.valueModes || ["absolute"])
@@ -1264,6 +1374,7 @@ async function restoreWorldMapUrlState() {
   if (geographySelect && [...geographySelect.options].some(option => option.value === state.geography)) geographySelect.value = state.geography;
   if (valueMode && [...valueMode.options].some(option => option.value === state.valueMode)) valueMode.value = state.valueMode;
   if (aggregation && [...aggregation.options].some(option => option.value === state.aggregation)) aggregation.value = state.aggregation;
+  updateWorldMapGeographyAvailability();
   updateWorldMapModeAvailability();
   if (groupingSelect?.value && categorySelect?.value) updateWorldMapGeoJSON();
   else syncWorldMapUrl();
@@ -1425,6 +1536,7 @@ function selectedWorldMapValues(year, countries, valueMode) {
 }
 
 function updateWorldMapGeoJSON() {
+  const requestId = ++worldMapRenderRequestId;
   const groupingSelect = document.getElementById('groupingSelect');
   const categorySelect = document.getElementById('categorySelect');
   const comparisonSelect = document.getElementById('comparisonGroupSelect');
@@ -1436,13 +1548,21 @@ function updateWorldMapGeoJSON() {
   const comparison = grouping === "groups" ? comparisonSelect?.value || "" : "";
   const categoryConfig = isClimateGrouping(grouping) ? getClimateCategoryConfig(category) : null;
 
+  if (viewBeforeCycloneBasins && categoryConfig?.regionSet !== "ocean_basins") {
+    const { center, zoom } = viewBeforeCycloneBasins;
+    worldMap.setView(center, zoom, { animate: false });
+    viewBeforeCycloneBasins = null;
+  }
+
   if (isClimateGrouping(grouping) && !getActiveClimateMetricConfig()) {
     clearWorldMapSelection();
     const modeNote = document.getElementById('world-map-mode-note');
     if (modeNote) {
       modeNote.textContent = `${categoryConfig?.label || "Climate category"}: ${categoryConfig?.description || "Hazard category is not connected to production data yet."}`;
     }
-    updateMapLegend(grouping, category, 0, comparison, 0);
+    updateWorldMapVisualLegend(category, "");
+    // No dataset is connected; a countries legend or year would imply a fallback.
+    document.getElementById('world-map-visual-legend')?.setAttribute('hidden', '');
     syncWorldMapUrl();
     return;
   }
@@ -1452,7 +1572,7 @@ function updateWorldMapGeoJSON() {
       worldMap.removeLayer(worldMapLayer);
       worldMapLayer = null;
     }
-    renderWorldMapRegionLayer(categoryConfig, category);
+    renderWorldMapRegionLayer(categoryConfig, category, requestId);
     return;
   }
   
@@ -1844,6 +1964,9 @@ function renderWorldGroupSummary(grouping, category, members, comparison = "", c
 // === Update Context Legend Box ===
 function updateWorldMapVisualLegend(category, comparison) {
   const grouping = document.getElementById('groupingSelect')?.value || "";
+  document.getElementById('world-map-visual-legend')?.removeAttribute('hidden');
+  const regional = isClimateGrouping(grouping) && getClimateCategoryConfig(category)?.geoType === "region";
+  document.getElementById('legend-group-a-item')?.toggleAttribute('hidden', regional);
   const labelA = document.getElementById('legend-group-a-label');
   const labelB = document.getElementById('legend-group-b-label');
   const itemB = document.getElementById('legend-group-b-item');
@@ -1860,7 +1983,7 @@ function updateWorldMapVisualLegend(category, comparison) {
     : getWorldMapGroupTitle(category);
   const otherLabel = document.getElementById('legend-other-label');
   if (otherLabel) otherLabel.textContent = isClimateGrouping(grouping) && envScale
-    ? "No observation (not zero)" : "Other Countries";
+    ? "No observation (not zero)" : regional ? "Region without an observation for selected year" : "Other Countries";
   if (labelA) labelA.textContent = categoryLabel;
   if (labelB) labelB.textContent = comparison ? getWorldMapGroupTitle(comparison) : "Group B";
   if (itemB) itemB.hidden = !comparison;
@@ -1984,8 +2107,12 @@ if (typeof module !== "undefined" && module.exports) {
     countryValuesForYear,
     formatCoverage,
     percentileIntensities,
-    getRegionSeries,
+    getWorldSeries,
+    availableRegionYears,
     regionValuesForYear,
+    regionCoverage,
+    escapeRegionText,
+    getRegionSeries,
     formatWorldMapNumber,
   };
 }

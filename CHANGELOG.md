@@ -55,6 +55,16 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+- Corrected regional climate-map geography labels and scope messages, retained
+  measurement-source links on regional-only KPI cards, and added a direct map link.
+- Regional maps now disclose selected-year coverage, missing observations,
+  percentile colour semantics, simplified boundaries and separate measurement/
+  geometry provenance; unsupported country, per-capita and summary views are explicit.
+- Cleared stale years on unconnected categories, guarded late async map/data replies,
+  and rejected null/blank regional observations without converting them to zero.
+- Added offline regional renderer, data/GeoJSON and selection regression tests.
+  Integrated on 2026-11-02 with corrected NOAA data, seasonal definitions,
+  regional charts, basin markers/tables, environmental colors and FTPS guards.
 - Updated NOAA IBTrACS verification evidence: runner fetch and FTP publication are confirmed; documented the reproduced North Atlantic parsing loss, metric-definition gaps and remaining production climate-map QA. No runtime or dataset changes.
 
 - Archive successful monthly status issues, reuse records across rerun attempts,
