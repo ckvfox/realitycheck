@@ -85,11 +85,24 @@ function harness(loader = async url => url.endsWith('region_sets.json') ? sets :
   }
   const document = { querySelector() { return null; }, createElement: element, getElementById(id) { if (!elements.has(id)) elements.set(id, element()); return elements.get(id); }, addEventListener() {} };
   const added = [];
-  const context = vm.createContext({ document, URL, console, loadJSON: loader,
+  const fitted = [];
+  const map = {
+    removeLayer() {},
+    getCenter() { return [20, 0]; },
+    getZoom() { return 2; },
+    fitBounds(bounds, options) { fitted.push({ bounds, options }); },
+    setView() {},
+  };
+  const context = vm.createContext({ document, URL, console, map, loadJSON: loader,
     loadKPIData: async () => data, renderKpiAnalysis() {}, renderLineChart() { return {}; },
     window: { location: { href: 'https://example.test/world.html' }, history: { replaceState() {} }, _worldGeoJSON: {} },
     L: { geoJSON(json, options) {
-      const group = { features: [], resetStyle() {}, addTo() { added.push(this); return this; } };
+      const group = {
+        features: [],
+        resetStyle() {},
+        addTo() { added.push(this); return this; },
+        getBounds() { return { isValid: () => true, points: json.features.map(feature => feature.geometry.coordinates) }; },
+      };
       for (const feature of json.features) {
         const layer = { feature, style: options.style(feature), bindTooltip(content) { this.tooltip = content; }, on(events) { this.events = events; }, setStyle() {} };
         options.onEachFeature(feature, layer); group.features.push(layer);
@@ -102,18 +115,21 @@ function harness(loader = async url => url.endsWith('region_sets.json') ? sets :
   vm.runInContext('WORLD_MAP_CLIMATE_PLACEHOLDER_CATEGORIES.test_pending = {label: "Unconnected test hazard", geoType: "region", regionSet: "ocean_basins", metrics: []};', context);
   context.testMeta = metadata;
   context.testData = data;
-  vm.runInContext('META = testMeta; worldMapSelectedKpiMeta = META.find(k => k.filename === "tropical_cyclone_activity_basin"); worldMapSelectedKpiData = testData; worldMap = {removeLayer() {}};', context);
+  vm.runInContext('META = testMeta; worldMapSelectedKpiMeta = META.find(k => k.filename === "tropical_cyclone_activity_basin"); worldMapSelectedKpiData = testData; worldMap = map;', context);
   document.getElementById('groupingSelect').value = 'climate';
   document.getElementById('categorySelect').value = 'storm_impact';
   document.getElementById('worldMapKpiSelect').value = cyclone.filename;
   document.getElementById('worldMapYearSelect').value = '2025';
-  return { context, document, added, run: source => vm.runInContext(source, context) };
+  return { context, document, added, fitted, run: source => vm.runInContext(source, context) };
 }
 
 test('regional layer renders all basins with correct values, missing states and distinct source information', async () => {
   const h = harness();
   await h.run('renderWorldMapRegionLayer(getClimateCategoryConfig("storm_impact"), "storm_impact")');
   assert.equal(h.added[0].features.length, 7);
+  assert.equal(h.fitted.length, 1);
+  assert.equal(h.fitted[0].bounds.points.length, 7);
+  assert.deepEqual(Array.from(h.fitted[0].options.padding), [24, 24]);
   assert.ok(h.added[0].features.every(layer => layer.feature.geometry.type === 'Point'));
   assert.ok(h.document.getElementById('legend-content').children.some(el => el.tagName === 'TABLE'));
   assert.match(h.document.getElementById('world-map-mode-note').textContent, /Circles locate ocean basins only/);

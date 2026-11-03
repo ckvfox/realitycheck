@@ -789,8 +789,8 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
 }
 
 .world-map-section .map-controls .select-wrapper:nth-child(-n + 3) { grid-column: span 4; }
-.world-map-section .map-controls .select-wrapper:nth-child(4) { grid-column: span 6; }
-.world-map-section .map-controls .select-wrapper:nth-child(n + 5) { grid-column: span 2; }
+.world-map-section .map-controls .select-wrapper:nth-child(4) { grid-column: span 8; }
+.world-map-section .map-controls .select-wrapper:nth-child(n + 5) { grid-column: span 4; }
 
 .map-controls .select-wrapper {
   display: flex;
@@ -3257,6 +3257,10 @@ body.glossary-page th.sort-desc::after {
 }
 
 /* === Translator Controls === */
+body.world-page > .translator-launcher {
+  position: absolute !important;
+}
+
 .translator-launcher {
   position: fixed;
   top: var(--floating-btn-offset);

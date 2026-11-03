@@ -311,6 +311,7 @@ async function initWorldPage() {
 /* ========= World Map Gruppierungs-Feature ========= */
 let worldMap = null;
 let worldMapLayer = null;
+let viewBeforeCycloneBasins = null;
 let worldMapCountries = {};
 let worldMapGroups = {};
 let worldMapPopulation = []; // Changed from {} to [] for array operations
@@ -886,6 +887,11 @@ async function renderWorldMapRegionLayer(categoryConfig, category, requestId = +
   }).addTo(worldMap);
   worldMapLayer = layerGroup;
 
+  if (markerView && !viewBeforeCycloneBasins && layerGroup.getBounds().isValid()) {
+    viewBeforeCycloneBasins = { center: worldMap.getCenter(), zoom: worldMap.getZoom() };
+    worldMap.fitBounds(layerGroup.getBounds(), { padding: [24, 24], maxZoom: 2, animate: false });
+  }
+
   const legendBox = document.getElementById('world-map-legend');
   const legendTitle = document.getElementById('legend-title');
   const legendContent = document.getElementById('legend-content');
@@ -1047,7 +1053,7 @@ async function initWorldMap() {
     const mapElement = document.getElementById('world-map');
     if (!mapElement) return;
 
-    worldMap = L.map('world-map').setView([20, 0], 2);
+    worldMap = L.map('world-map', { zoomSnap: 0.25 }).setView([20, 0], 2);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
       maxZoom: 18
@@ -1156,7 +1162,7 @@ function populateWorldMapKpiOptions(preferredKpi = null) {
     }
     options = metrics.map(metric => {
       const meta = getKpiMetaByFilename(metric.kpi);
-      const unit = meta?.geo_type === "region" ? (meta?.unit || "") : meta?.unit;
+      const unit = meta?.geo_type === "region" ? "" : meta?.unit;
       const unitText = unit ? ` (${unit})` : "";
       return {
         value: metric.kpi,
@@ -1541,6 +1547,12 @@ function updateWorldMapGeoJSON() {
   const category = categorySelect.value;
   const comparison = grouping === "groups" ? comparisonSelect?.value || "" : "";
   const categoryConfig = isClimateGrouping(grouping) ? getClimateCategoryConfig(category) : null;
+
+  if (viewBeforeCycloneBasins && categoryConfig?.regionSet !== "ocean_basins") {
+    const { center, zoom } = viewBeforeCycloneBasins;
+    worldMap.setView(center, zoom, { animate: false });
+    viewBeforeCycloneBasins = null;
+  }
 
   if (isClimateGrouping(grouping) && !getActiveClimateMetricConfig()) {
     clearWorldMapSelection();
