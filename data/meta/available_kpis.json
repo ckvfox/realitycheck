@@ -1189,12 +1189,13 @@
   },
   {
     "title": "PISA Overall Score",
-    "description": "The PISA Overall Score reflects a country’s average performance across all PISA assessment domains (Reading, Mathematics, Science, and any additional tested skills such as Creative Thinking) and all available demographic groups (e.g., female, male, overall). As the OECD does not publish an official combined index, this indicator uses a transparent and widely accepted methodology: for each country and year, all available scores across all domains and all genders are averaged without weighting. This avoids biases from differing national gender distributions or OECD focus-weighting schemes and ensures a neutral, reproducible, and academically defensible composite score.",
-    "unit": "PISA points (0–800)",
+    "description": "RealityCheck averages the three OECD mean scores for reading, mathematics and science with equal weights. It uses the published results for all assessed students, with all three subjects required for each country and cycle. The series starts in 2006. OECD sampling and coverage caveats apply. The result is a RealityCheck composite, not an official OECD overall score. Source: OECD (2026), PISA 2025 Results, Volume I, Annex B1.",
+    "unit": "PISA points",
     "relation": "",
     "sort": "higher",
     "cluster": "Education",
-    "source": "https://www.oecd.org/pisa/data/",
+    "source": "https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html",
+    "source_url": "https://stat.link/mrq53f",
     "source_type": "csv",
     "source_code": "pisa_overall_score.csv",
     "scale": "none",
@@ -1203,7 +1204,9 @@
     "relevance": "normal",
     "actuality": "normal",
     "invert": "",
-    "test": ""
+    "test": "",
+    "change_mode": "absolute",
+    "analysis_guardrail": "Use only the equal-weight composite of reading, mathematics and science. Do not infer statistical significance from composite differences. Check OECD sampling notes and changes in the tested population before interpreting country trends."
   },
   {
     "title": "Network Readiness Index (NRI)",

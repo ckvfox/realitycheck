@@ -1,337 +1,459 @@
 country,iso2,year,value
-Australia,AU,2000,529.0
-Australia,AU,2003,525.0
-Australia,AU,2006,520.0
-Australia,AU,2009,519.0
-Australia,AU,2012,512.0
-Australia,AU,2015,502.0
-Australia,AU,2018,499.0
-Austria,AT,2000,492.0
-Austria,AT,2003,498.0
-Austria,AT,2006,502.0
-Austria,AT,2012,500.0
-Austria,AT,2015,492.0
-Austria,AT,2018,491.0
-Belgium,BE,2000,508.0
-Belgium,BE,2003,518.0
-Belgium,BE,2006,511.0
-Belgium,BE,2009,509.0
-Belgium,BE,2012,509.0
-Belgium,BE,2015,503.0
-Belgium,BE,2018,500.0
-Brazil,BR,2000,396.0
-Brazil,BR,2003,379.0
-Brazil,BR,2006,384.0
-Brazil,BR,2009,401.0
-Brazil,BR,2012,401.0
-Brazil,BR,2015,395.0
-Brazil,BR,2018,400.0
-Canada,CA,2000,535.0
-Canada,CA,2003,532.0
-Canada,CA,2006,529.0
-Canada,CA,2009,527.0
-Canada,CA,2012,522.0
-Canada,CA,2015,523.0
-Canada,CA,2018,517.0
-Switzerland,CH,2000,495.0
-Switzerland,CH,2003,513.0
-Switzerland,CH,2006,514.0
-Switzerland,CH,2009,517.0
-Switzerland,CH,2012,518.0
-Switzerland,CH,2015,506.0
-Switzerland,CH,2018,498.0
-Chile,CL,2000,409.0
-Chile,CL,2006,430.0
-Chile,CL,2009,439.0
-Chile,CL,2012,436.0
-Chile,CL,2015,443.0
-Chile,CL,2018,438.0
-Colombia,CO,2015,410.0
-Colombia,CO,2018,405.0
-Costa Rica,CR,2018,415.0
-Czechia,CZ,2000,492.0
-Czechia,CZ,2003,502.0
-Czechia,CZ,2006,502.0
-Czechia,CZ,2009,491.0
-Czechia,CZ,2012,500.0
-Czechia,CZ,2015,491.0
-Czechia,CZ,2018,496.0
-Germany,DE,2000,485.0
-Germany,DE,2003,498.0
-Germany,DE,2006,505.0
-Germany,DE,2009,510.0
-Germany,DE,2012,515.0
-Germany,DE,2015,508.0
-Germany,DE,2018,500.0
-Denmark,DK,2000,497.0
-Denmark,DK,2003,503.0
-Denmark,DK,2006,501.0
-Denmark,DK,2009,499.0
-Denmark,DK,2012,498.0
-Denmark,DK,2015,504.0
-Denmark,DK,2018,501.0
-Spain,ES,2000,493.0
-Spain,ES,2003,483.0
-Spain,ES,2006,476.0
-Spain,ES,2009,484.0
-Spain,ES,2012,489.0
-Spain,ES,2015,491.0
-Spain,ES,2018,482.0
-Estonia,EE,2006,516.0
-Estonia,EE,2009,514.0
-Estonia,EE,2012,526.0
-Estonia,EE,2015,524.0
-Estonia,EE,2018,526.0
-Finland,FI,2000,546.0
-Finland,FI,2003,544.0
-Finland,FI,2006,553.0
-Finland,FI,2009,543.0
-Finland,FI,2012,530.0
-Finland,FI,2015,523.0
-Finland,FI,2018,516.0
-France,FR,2000,505.0
-France,FR,2003,503.0
-France,FR,2006,493.0
-France,FR,2009,497.0
-France,FR,2012,500.0
-France,FR,2015,496.0
-France,FR,2018,494.0
-United Kingdom,GB,2006,502.0
-United Kingdom,GB,2009,500.0
-United Kingdom,GB,2012,502.0
-United Kingdom,GB,2015,500.0
-United Kingdom,GB,2018,504.0
-Greece,GR,2000,474.0
-Greece,GR,2003,458.0
-Greece,GR,2006,464.0
+Albania,AL,2009,384.32
+Albania,AL,2012,395.22
+Albania,AL,2015,415.21
+Albania,AL,2018,419.79
+Albania,AL,2022,367.54
+Albania,AL,2025,425.03
+United Arab Emirates,AE,2009,430.12
+United Arab Emirates,AE,2012,441.36
+United Arab Emirates,AE,2015,432.59
+United Arab Emirates,AE,2018,433.46
+United Arab Emirates,AE,2022,426.81
+United Arab Emirates,AE,2025,447.82
+Argentina,AR,2006,382.07
+Argentina,AR,2009,395.72
+Argentina,AR,2012,396.68
+Argentina,AR,2018,395.01
+Argentina,AR,2022,394.82
+Argentina,AR,2025,382.82
+Armenia,AM,2025,364.24
+Australia,AU,2006,519.89
+Australia,AU,2009,518.84
+Australia,AU,2012,512.48
+Australia,AU,2015,502.26
+Australia,AU,2018,498.99
+Australia,AU,2022,497.38
+Australia,AU,2025,492.5
+Austria,AT,2006,502.17
+Austria,AT,2012,500.31
+Austria,AT,2015,492.22
+Austria,AT,2018,491.04
+Austria,AT,2022,486.31
+Austria,AT,2025,480.44
+Azerbaijan,AZ,2006,403.74
+Azerbaijan,AZ,2009,388.56
+Azerbaijan,AZ,2025,401.51
+Belgium,BE,2006,510.54
+Belgium,BE,2009,509.26
+Belgium,BE,2012,509.34
+Belgium,BE,2015,502.5
+Belgium,BE,2018,499.9
+Belgium,BE,2022,486.31
+Belgium,BE,2025,478.57
+Bulgaria,BG,2006,416.49
+Bulgaria,BG,2009,432.15
+Bulgaria,BG,2012,440.44
+Bulgaria,BG,2015,439.56
+Bulgaria,BG,2018,426.65
+Bulgaria,BG,2022,414.2
+Bulgaria,BG,2025,404.17
+Brazil,BR,2006,384.24
+Brazil,BR,2009,400.99
+Brazil,BR,2012,398.89
+Brazil,BR,2015,395.03
+Brazil,BR,2018,400.02
+Brazil,BR,2022,397.35
+Brazil,BR,2025,397.77
+Brunei,BN,2018,423.06
+Brunei,BN,2022,439.06
+Brunei,BN,2025,433.44
+Canada,CA,2006,529.5
+Canada,CA,2009,526.58
+Canada,CA,2012,522.21
+Canada,CA,2015,523.34
+Canada,CA,2018,516.7
+Canada,CA,2022,506.37
+Canada,CA,2025,495.07
+Switzerland,CH,2006,513.49
+Switzerland,CH,2009,517.01
+Switzerland,CH,2012,518.42
+Switzerland,CH,2015,506.32
+Switzerland,CH,2018,498.17
+Switzerland,CH,2022,497.95
+Switzerland,CH,2025,490.15
+Chile,CL,2006,430.54
+Chile,CL,2009,439.3
+Chile,CL,2012,436.32
+Chile,CL,2015,442.73
+Chile,CL,2018,437.75
+Chile,CL,2022,434.41
+Chile,CL,2025,426.89
+Colombia,CO,2006,381.11
+Colombia,CO,2009,398.59
+Colombia,CO,2012,392.86
+Colombia,CO,2015,410.09
+Colombia,CO,2018,405.52
+Colombia,CO,2022,400.83
+Colombia,CO,2025,397.84
+Costa Rica,CR,2009,427.48
+Costa Rica,CR,2012,425.63
+Costa Rica,CR,2015,415.78
+Costa Rica,CR,2018,414.82
+Costa Rica,CR,2022,403.6
+Costa Rica,CR,2025,409.03
+Cyprus,CY,2012,442.11
+Cyprus,CY,2015,437.51
+Cyprus,CY,2018,438.02
+Cyprus,CY,2022,403.43
+Cyprus,CY,2025,400.8
+Czechia,CZ,2006,501.81
+Czechia,CZ,2009,490.5
+Czechia,CZ,2012,500.05
+Czechia,CZ,2015,490.8
+Czechia,CZ,2018,495.49
+Czechia,CZ,2022,491.11
+Czechia,CZ,2025,478.59
+Germany,DE,2006,504.79
+Germany,DE,2009,510.16
+Germany,DE,2012,515.11
+Germany,DE,2015,508.07
+Germany,DE,2018,500.44
+Germany,DE,2022,482.35
+Germany,DE,2025,471.54
+Denmark,DK,2006,501.13
+Denmark,DK,2009,499.18
+Denmark,DK,2012,498.21
+Denmark,DK,2015,504.28
+Denmark,DK,2018,501.06
+Denmark,DK,2022,490.63
+Denmark,DK,2025,469.39
+Dominican Republic,DO,2015,339.03
+Dominican Republic,DO,2018,334.12
+Dominican Republic,DO,2022,350.28
+Dominican Republic,DO,2025,348.41
+Ecuador,EC,2018,395.22
+Ecuador,EC,2025,381.42
+Spain,ES,2006,476.4
+Spain,ES,2009,484.26
+Spain,ES,2012,489.57
+Spain,ES,2015,491.4
+Spain,ES,2022,477.33
+Spain,ES,2025,461.98
+Estonia,EE,2006,515.57
+Estonia,EE,2009,513.63
+Estonia,EE,2012,526.08
+Estonia,EE,2015,524.29
+Estonia,EE,2018,525.51
+Estonia,EE,2022,515.6
+Estonia,EE,2025,511.42
+Finland,FI,2006,552.85
+Finland,FI,2009,543.49
+Finland,FI,2012,529.4
+Finland,FI,2015,522.72
+Finland,FI,2018,516.42
+Finland,FI,2022,495.11
+Finland,FI,2025,482.45
+France,FR,2006,492.82
+France,FR,2009,496.88
+France,FR,2012,499.81
+France,FR,2015,495.73
+France,FR,2018,493.66
+France,FR,2022,478.34
+France,FR,2025,465.8
+United Kingdom,GB,2006,501.77
+United Kingdom,GB,2009,500.1
+United Kingdom,GB,2012,502.46
+United Kingdom,GB,2015,499.89
+United Kingdom,GB,2018,503.46
+United Kingdom,GB,2022,494.35
+United Kingdom,GB,2025,497.72
+Georgia,GE,2009,375.47
+Georgia,GE,2015,405.42
+Georgia,GE,2018,386.67
+Georgia,GE,2022,382.65
+Georgia,GE,2025,407.55
+Greece,GR,2006,464.1
 Greece,GR,2009,473.0
-Greece,GR,2012,466.0
-Greece,GR,2015,459.0
-Greece,GR,2018,454.0
-Hungary,HU,2000,480.0
-Hungary,HU,2003,486.0
-Hungary,HU,2006,493.0
-Hungary,HU,2009,496.0
-Hungary,HU,2012,486.0
-Hungary,HU,2015,474.0
-Hungary,HU,2018,479.0
-Indonesia,ID,2000,370.0
-Indonesia,ID,2003,371.0
-Indonesia,ID,2006,392.0
-Indonesia,ID,2009,385.0
-Indonesia,ID,2012,384.0
-Indonesia,ID,2015,395.0
-Indonesia,ID,2018,382.0
-Ireland,IE,2000,527.0
-Ireland,IE,2003,509.0
-Ireland,IE,2006,509.0
-Ireland,IE,2009,497.0
-Ireland,IE,2012,516.0
-Ireland,IE,2015,509.0
-Ireland,IE,2018,505.0
-Iceland,IS,2000,508.0
-Iceland,IS,2003,504.0
-Iceland,IS,2006,494.0
-Iceland,IS,2009,501.0
-Iceland,IS,2012,485.0
-Iceland,IS,2015,481.0
-Iceland,IS,2018,481.0
-Israel,IL,2000,452.0
-Israel,IL,2006,445.0
-Israel,IL,2009,458.0
-Israel,IL,2012,474.0
-Israel,IL,2015,472.0
-Israel,IL,2018,465.0
-Italy,IT,2000,488.0
-Italy,IT,2003,471.0
-Italy,IT,2006,469.0
-Italy,IT,2009,486.0
-Italy,IT,2012,490.0
-Italy,IT,2015,485.0
-Italy,IT,2018,477.0
-Japan,JP,2000,522.0
-Japan,JP,2003,516.0
-Japan,JP,2006,517.0
-Japan,JP,2009,530.0
-Japan,JP,2012,540.0
-Japan,JP,2015,529.0
-Japan,JP,2018,520.0
-South Korea,KR,2000,526.0
-South Korea,KR,2003,538.0
-South Korea,KR,2006,542.0
-South Korea,KR,2009,541.0
-South Korea,KR,2012,543.0
-South Korea,KR,2015,519.0
-South Korea,KR,2018,520.0
-Lithuania,LT,2018,480.0
-Luxembourg,LU,2000,442.0
-Luxembourg,LU,2003,486.0
-Luxembourg,LU,2006,485.0
-Luxembourg,LU,2009,482.0
-Luxembourg,LU,2012,490.0
-Luxembourg,LU,2015,483.0
-Luxembourg,LU,2018,477.0
-Latvia,LV,2000,458.0
-Latvia,LV,2003,487.0
-Latvia,LV,2006,485.0
-Latvia,LV,2009,487.0
-Latvia,LV,2012,494.0
-Latvia,LV,2015,487.0
-Latvia,LV,2018,487.0
-Mexico,MX,2000,422.0
-Mexico,MX,2003,392.0
-Mexico,MX,2006,408.0
-Mexico,MX,2009,420.0
-Mexico,MX,2012,417.0
-Mexico,MX,2015,416.0
-Mexico,MX,2018,416.0
-Netherlands,NL,2003,526.0
-Netherlands,NL,2006,521.0
-Netherlands,NL,2009,519.0
-Netherlands,NL,2012,519.0
-Netherlands,NL,2015,508.0
-Netherlands,NL,2018,502.0
-Norway,NO,2000,507.0
-Norway,NO,2003,498.0
-Norway,NO,2006,487.0
-Norway,NO,2009,500.0
-Norway,NO,2012,496.0
-Norway,NO,2015,505.0
-Norway,NO,2018,497.0
-New Zealand,NZ,2000,530.0
-New Zealand,NZ,2003,522.0
-New Zealand,NZ,2006,524.0
-New Zealand,NZ,2009,524.0
-New Zealand,NZ,2012,509.0
-New Zealand,NZ,2015,506.0
-New Zealand,NZ,2018,503.0
-Peru,PE,2015,394.0
-Poland,PL,2000,479.0
-Poland,PL,2003,493.0
-Poland,PL,2006,500.0
-Poland,PL,2009,501.0
-Poland,PL,2012,520.0
-Poland,PL,2015,504.0
-Poland,PL,2018,513.0
-Portugal,PT,2000,470.0
-Portugal,PT,2003,472.0
-Portugal,PT,2006,471.0
-Portugal,PT,2009,490.0
-Portugal,PT,2012,488.0
-Portugal,PT,2015,497.0
-Portugal,PT,2018,492.0
-Russia,RU,2000,462.0
-Russia,RU,2003,455.0
-Russia,RU,2006,465.0
-Russia,RU,2009,469.0
-Russia,RU,2012,481.0
-Russia,RU,2015,492.0
-Russia,RU,2018,481.0
-Singapore,SG,2015,552.0
-Slovakia,SK,2003,484.0
-Slovakia,SK,2006,482.0
-Slovakia,SK,2009,488.0
-Slovakia,SK,2012,472.0
-Slovakia,SK,2015,463.0
-Slovakia,SK,2018,469.0
-Slovenia,SI,2006,506.0
-Slovenia,SI,2009,499.0
-Slovenia,SI,2012,499.0
-Slovenia,SI,2015,510.0
-Slovenia,SI,2018,504.0
-Sweden,SE,2000,517.0
-Sweden,SE,2003,512.0
-Sweden,SE,2006,504.0
-Sweden,SE,2009,496.0
-Sweden,SE,2012,482.0
-Sweden,SE,2015,496.0
-Sweden,SE,2018,503.0
-Turkey,TR,2003,432.0
-Turkey,TR,2006,432.0
-Turkey,TR,2009,455.0
-Turkey,TR,2012,462.0
-Turkey,TR,2015,425.0
-Turkey,TR,2018,463.0
-Taiwan,TW,2015,524.0
-United States,US,2000,504.0
-United States,US,2003,489.0
-United States,US,2006,482.0
-United States,US,2009,496.0
-United States,US,2012,492.0
-United States,US,2015,488.0
-United States,US,2018,495.0
-Singapore,SG,2022,560.0
-Japan,JP,2022,533.0
-South Korea,KR,2022,523.0
-Estonia,EE,2022,516.0
-Switzerland,CH,2022,498.0
-Canada,CA,2022,506.0
-Netherlands,NL,2022,480.0
-Ireland,IE,2022,504.0
-Belgium,BE,2022,486.0
-Denmark,DK,2022,491.0
-United Kingdom,GB,2022,494.0
-Poland,PL,2022,492.0
-Austria,AT,2022,486.0
-Australia,AU,2022,497.0
-Czechia,CZ,2022,491.0
-Slovenia,SI,2022,485.0
-Finland,FI,2022,495.0
-Latvia,LV,2022,484.0
-Sweden,SE,2022,488.0
-New Zealand,NZ,2022,495.0
-Lithuania,LT,2022,477.0
-Germany,DE,2022,482.0
-France,FR,2022,478.0
-Spain,ES,2022,477.0
-Hungary,HU,2022,477.0
-Portugal,PT,2022,478.0
-Italy,IT,2022,477.0
-Vietnam,VN,2022,468.0
-Norway,NO,2022,474.0
-Malta,MT,2022,459.0
-United States,US,2022,489.0
-Slovakia,SK,2022,458.0
-Croatia,HR,2022,474.0
-Iceland,IS,2022,447.0
-Israel,IL,2022,466.0
-Turkey,TR,2022,462.0
-Brunei,BN,2022,439.0
-Serbia,RS,2022,442.0
-United Arab Emirates,AE,2022,427.0
-Greece,GR,2022,436.0
-Romania,RO,2022,428.0
-Kazakhstan,KZ,2022,411.0
-Mongolia,MN,2022,405.0
-Bulgaria,BG,2022,414.0
+Greece,GR,2012,465.63
+Greece,GR,2015,458.5
+Greece,GR,2018,453.47
+Greece,GR,2022,436.46
+Greece,GR,2025,426.93
+Guatemala,GT,2018,356.01
+Guatemala,GT,2022,363.76
+Guatemala,GT,2025,340.87
+Croatia,HR,2006,479.27
+Croatia,HR,2009,474.02
+Croatia,HR,2012,482.35
+Croatia,HR,2015,475.43
+Croatia,HR,2018,471.85
+Croatia,HR,2022,473.76
+Croatia,HR,2025,461.66
+Hungary,HU,2006,492.41
+Hungary,HU,2009,495.66
+Hungary,HU,2012,486.6
+Hungary,HU,2015,474.37
+Hungary,HU,2018,479.33
+Hungary,HU,2022,477.21
+Hungary,HU,2025,463.9
+Indonesia,ID,2006,392.47
+Indonesia,ID,2009,385.19
+Indonesia,ID,2012,384.38
+Indonesia,ID,2015,395.49
+Indonesia,ID,2018,381.9
+Indonesia,ID,2022,368.99
+Indonesia,ID,2025,372.59
+Ireland,IE,2006,509.04
+Ireland,IE,2009,496.92
+Ireland,IE,2012,515.56
+Ireland,IE,2015,509.04
+Ireland,IE,2018,504.61
+Ireland,IE,2022,503.83
+Ireland,IE,2025,493.31
+Iceland,IS,2006,493.59
+Iceland,IS,2009,500.85
+Iceland,IS,2012,484.49
+Iceland,IS,2015,480.93
+Iceland,IS,2018,481.4
+Iceland,IS,2022,447.27
+Iceland,IS,2025,437.8
+Israel,IL,2006,444.81
+Israel,IL,2009,458.57
+Israel,IL,2012,474.12
+Israel,IL,2015,471.73
+Israel,IL,2018,465.22
+Israel,IL,2022,465.49
+Israel,IL,2025,437.07
+Italy,IT,2006,468.54
+Italy,IT,2009,485.93
+Italy,IT,2012,489.54
+Italy,IT,2015,485.01
+Italy,IT,2018,476.96
+Italy,IT,2022,476.77
+Italy,IT,2025,475.01
+Jordan,JO,2022,359.31
+Jordan,JO,2025,385.7
+Japan,JP,2006,517.48
+Japan,JP,2009,529.43
+Japan,JP,2012,540.4
+Japan,JP,2015,528.93
+Japan,JP,2018,519.99
+Japan,JP,2022,532.69
+Japan,JP,2025,521.89
+Kazakhstan,KZ,2009,398.56
+Kazakhstan,KZ,2012,416.41
+Kazakhstan,KZ,2018,402.39
+Kazakhstan,KZ,2022,411.63
+Kazakhstan,KZ,2025,406.02
+Kenya,KE,2025,327.03
+Kyrgyzstan,KG,2006,305.77
+Kyrgyzstan,KG,2009,324.91
+Kyrgyzstan,KG,2025,356.91
+Cambodia,KH,2018,325.33
+Cambodia,KH,2022,337.45
+Cambodia,KH,2025,365.0
+South Korea,KR,2006,541.88
+South Korea,KR,2009,541.16
+South Korea,KR,2012,542.45
+South Korea,KR,2015,519.12
+South Korea,KR,2018,519.66
+South Korea,KR,2022,523.51
+South Korea,KR,2025,516.32
+Lebanon,LB,2015,376.43
+Lebanon,LB,2018,376.84
+Lebanon,LB,2025,360.02
+Lithuania,LT,2006,481.48
+Lithuania,LT,2009,478.82
+Lithuania,LT,2012,483.94
+Lithuania,LT,2015,475.4
+Lithuania,LT,2018,479.71
+Lithuania,LT,2022,477.15
+Lithuania,LT,2025,474.09
+Luxembourg,LU,2006,485.23
+Luxembourg,LU,2009,481.72
+Luxembourg,LU,2012,489.62
+Luxembourg,LU,2015,483.34
+Luxembourg,LU,2018,476.73
+Luxembourg,LU,2025,458.38
+Latvia,LV,2006,485.07
+Latvia,LV,2009,486.6
+Latvia,LV,2012,493.82
+Latvia,LV,2015,486.76
+Latvia,LV,2018,487.36
+Latvia,LV,2022,483.86
+Latvia,LV,2025,452.85
+Morocco,MA,2018,367.9
+Morocco,MA,2022,356.51
+Morocco,MA,2025,344.62
+Moldova,MD,2009,399.45
+Moldova,MD,2015,421.3
+Moldova,MD,2018,424.36
 Moldova,MD,2022,414.0
-Qatar,QA,2022,422.0
-Chile,CL,2022,435.0
-Uruguay,UY,2022,425.0
-Malaysia,MY,2022,404.0
-Montenegro,ME,2022,405.0
-Mexico,MX,2022,407.0
-Thailand,TH,2022,394.0
-Peru,PE,2022,402.0
-Georgia,GE,2022,383.0
-Saudi Arabia,SA,2022,387.0
-North Macedonia,MK,2022,376.0
-Costa Rica,CR,2022,404.0
-Colombia,CO,2022,401.0
-Brazil,BR,2022,397.0
-Argentina,AR,2022,395.0
-Jamaica,JM,2022,397.0
-Albania,AL,2022,367.0
-Indonesia,ID,2022,369.0
-Morocco,MA,2022,356.0
-Uzbekistan,UZ,2022,352.0
-Jordan,JO,2022,359.0
-Panama,PA,2022,379.0
-Philippines,PH,2022,353.0
-Guatemala,GT,2022,364.0
-El Salvador,SV,2022,360.0
-Dominican Republic,DO,2022,350.0
-Paraguay,PY,2022,360.0
-Cambodia,KH,2022,337.0
-Ukraine,UA,2022,440.0
-Cyprus,CY,2022,403.0
+Moldova,MD,2025,411.93
+Mexico,MX,2006,408.6
+Mexico,MX,2009,419.89
+Mexico,MX,2012,417.25
+Mexico,MX,2015,415.67
+Mexico,MX,2018,416.16
+Mexico,MX,2022,406.76
+Mexico,MX,2025,403.03
+North Macedonia,MK,2015,368.91
+North Macedonia,MK,2018,400.05
+North Macedonia,MK,2022,375.66
+North Macedonia,MK,2025,371.91
+Malta,MT,2009,455.42
+Malta,MT,2015,463.36
+Malta,MT,2018,458.85
+Malta,MT,2022,458.97
+Malta,MT,2025,435.41
+Montenegro,ME,2006,401.02
+Montenegro,ME,2009,403.78
+Montenegro,ME,2012,413.95
+Montenegro,ME,2015,418.71
+Montenegro,ME,2018,421.95
+Montenegro,ME,2022,404.58
+Montenegro,ME,2025,421.54
+Mongolia,MN,2022,405.13
+Mongolia,MN,2025,405.64
+Mauritius,MU,2009,414.59
+Mauritius,MU,2025,416.78
+Malaysia,MY,2009,413.43
+Malaysia,MY,2012,412.74
+Malaysia,MY,2018,430.94
+Malaysia,MY,2022,404.36
+Malaysia,MY,2025,403.13
+Netherlands,NL,2006,520.75
+Netherlands,NL,2009,518.82
+Netherlands,NL,2012,518.75
+Netherlands,NL,2015,507.93
+Netherlands,NL,2018,502.47
+Netherlands,NL,2022,480.08
+Netherlands,NL,2025,470.02
+Norway,NO,2006,486.89
+Norway,NO,2009,500.35
+Norway,NO,2012,495.94
+Norway,NO,2015,504.47
+Norway,NO,2018,496.94
+Norway,NO,2022,474.4
+Norway,NO,2025,458.26
+New Zealand,NZ,2006,524.47
+New Zealand,NZ,2009,524.06
+New Zealand,NZ,2012,509.19
+New Zealand,NZ,2015,505.93
+New Zealand,NZ,2018,502.9
+New Zealand,NZ,2022,494.69
+New Zealand,NZ,2025,495.35
+Peru,PE,2009,368.05
+Peru,PE,2012,375.12
+Peru,PE,2015,393.6
+Peru,PE,2018,401.52
+Peru,PE,2022,402.42
+Peru,PE,2025,392.73
+Philippines,PH,2018,349.73
+Philippines,PH,2022,352.48
+Philippines,PH,2025,370.29
+Poland,PL,2006,500.29
+Poland,PL,2009,501.12
+Poland,PL,2012,520.5
+Poland,PL,2015,503.87
+Poland,PL,2018,512.85
+Poland,PL,2022,492.28
+Poland,PL,2025,486.91
+Portugal,PT,2006,470.92
+Portugal,PT,2009,489.72
+Portugal,PT,2012,488.03
+Portugal,PT,2015,496.95
+Portugal,PT,2018,491.99
+Portugal,PT,2022,477.62
+Portugal,PT,2025,467.9
+Paraguay,PY,2018,351.3
+Paraguay,PY,2022,359.67
+Paraguay,PY,2025,347.06
+Palestine,PS,2022,367.83
+Palestine,PS,2025,354.32
+Qatar,QA,2006,326.49
+Qatar,QA,2009,373.09
+Qatar,QA,2012,382.53
+Qatar,QA,2015,407.3
+Qatar,QA,2018,413.48
+Qatar,QA,2022,421.94
+Qatar,QA,2025,422.86
+Romania,RO,2006,409.7
+Romania,RO,2009,426.57
+Romania,RO,2012,440.31
+Romania,RO,2015,437.49
+Romania,RO,2018,427.79
+Romania,RO,2022,427.92
+Romania,RO,2025,418.93
+Rwanda,RW,2025,309.96
+Saudi Arabia,SA,2018,386.21
+Saudi Arabia,SA,2022,387.24
+Saudi Arabia,SA,2025,396.87
+Singapore,SG,2009,543.2
+Singapore,SG,2012,555.73
+Singapore,SG,2015,551.62
+Singapore,SG,2018,556.47
+Singapore,SG,2022,559.55
+Singapore,SG,2025,552.55
+El Salvador,SV,2022,360.5
+El Salvador,SV,2025,365.78
+Serbia,RS,2006,424.01
+Serbia,RS,2009,442.39
+Serbia,RS,2012,446.6
+Serbia,RS,2018,442.54
+Serbia,RS,2022,442.56
+Serbia,RS,2025,420.11
+Slovakia,SK,2006,482.3
+Slovakia,SK,2009,488.13
+Slovakia,SK,2012,471.87
+Slovakia,SK,2015,462.84
+Slovakia,SK,2018,469.4
+Slovakia,SK,2022,457.71
+Slovakia,SK,2025,463.98
+Slovenia,SI,2006,505.89
+Slovenia,SI,2009,498.77
+Slovenia,SI,2012,498.86
+Slovenia,SI,2015,509.33
+Slovenia,SI,2018,503.75
+Slovenia,SI,2022,484.34
+Slovenia,SI,2025,462.77
+Sweden,SE,2006,504.33
+Sweden,SE,2009,495.6
+Sweden,SE,2012,482.13
+Sweden,SE,2015,495.83
+Sweden,SE,2018,502.54
+Sweden,SE,2022,487.43
+Sweden,SE,2025,471.93
+Thailand,TH,2006,418.28
+Thailand,TH,2009,421.75
+Thailand,TH,2012,437.32
+Thailand,TH,2015,415.31
+Thailand,TH,2018,412.42
+Thailand,TH,2022,393.96
+Thailand,TH,2025,410.28
+Turkey,TR,2006,431.64
+Turkey,TR,2009,454.52
+Turkey,TR,2012,462.3
+Turkey,TR,2015,424.76
+Turkey,TR,2018,462.48
+Turkey,TR,2022,461.72
+Turkey,TR,2025,475.97
+Taiwan,TW,2006,526.02
+Taiwan,TW,2009,519.61
+Taiwan,TW,2012,535.42
+Taiwan,TW,2015,523.92
+Taiwan,TW,2018,516.5
+Taiwan,TW,2022,533.21
+Taiwan,TW,2025,531.23
+Uruguay,UY,2006,422.48
+Uruguay,UY,2009,426.58
+Uruguay,UY,2012,412.16
+Uruguay,UY,2015,429.98
+Uruguay,UY,2018,423.53
+Uruguay,UY,2022,424.82
+Uruguay,UY,2025,424.21
+United States,US,2009,496.41
+United States,US,2012,492.12
+United States,US,2015,487.6
+United States,US,2018,495.33
+United States,US,2022,489.41
+United States,US,2025,484.65
+Uzbekistan,UZ,2022,351.43
+Vietnam,VN,2025,430.71
+Kosovo,XK,2015,362.37
+Kosovo,XK,2018,361.28
+Kosovo,XK,2022,351.39
+Kosovo,XK,2025,349.31
+Zambia,ZM,2018,281.0
+Zambia,ZM,2025,325.16

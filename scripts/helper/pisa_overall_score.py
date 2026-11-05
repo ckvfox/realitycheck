@@ -1,124 +1,81 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-RealityCheck – PISA Overall Score Generator (final version)
------------------------------------------------------------
-Reads OECD PISA raw dataset from:
+"""Build a reviewed PISA CSV from the OECD Annex B1.2a workbook."""
 
-    /scripts/source_raw/OECD PISA data.csv
+import argparse
+import csv
+import json
+import math
+import re
+from pathlib import Path
 
-Produces RealityCheck target-format CSV:
+from openpyxl import load_workbook
 
-    /scripts/source_csv/pisa_overall_score.csv
-
-Output format:
-    country,year,value
-
-Method:
- • All PISA domains (Math, Reading, Science, etc.)
- • All demographic groups (Boy, Girl, Male, Female, All, etc.)
- • Unweighted arithmetic mean – transparent & academically defensible
- • Kaufmännisches Runden (0.5 -> aufrunden)
-
-Author: RealityCheck AI Assistant
-"""
-
-import pandas as pd
-import numpy as np
-import os
+ROOT = Path(__file__).resolve().parents[2]
+TABLES = ("Table I.B1.2a.36", "Table I.B1.2a.37", "Table I.B1.2a.38")
+LABELS = {
+    "Korea": "South Korea",
+    "Palestinian Authority": "Palestine",
+    "Türkiye": "Turkey",
+}
+EXCLUDED = {
+    "B-S-J-Z (China)", "Dushanbe (Tajikistan)", "Hong Kong (China)",
+    "Kurdistan Region (Iraq)", "Macao (China)", "Ukrainian regions (17 of 27)",
+}
 
 
-# ---------------------------------------------------------------------------
-# Build safe, relative paths based on script location
-# ---------------------------------------------------------------------------
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))        # …/scripts/helper
-RAW_DIR  = os.path.join(BASE_DIR, "..", "source_raw")
-CSV_DIR  = os.path.join(BASE_DIR, "..", "source_csv")
+def read_domain(sheet, countries, aliases):
+    rows = iter(sheet.values)
+    cycle_row, score_row = [next(rows) for _ in range(9)][-2:]
+    columns = {
+        index: int(match[1])
+        for index, label in enumerate(cycle_row)
+        if score_row[index] == "Mean score" and (match := re.fullmatch(r"PISA (20[0-9]{2})", str(label)))
+    }
+    if not columns or max(columns.values()) < 2025:
+        raise ValueError(f"Unexpected cycle headers in {sheet.title}")
+    means = {}
+    for row in rows:
+        label = str(row[0] or "").strip().rstrip("*").strip()
+        if label.startswith("OECD average") or label in EXCLUDED:
+            continue
+        observations = [(year, row[index]) for index, year in columns.items()
+                        if type(row[index]) in (int, float) and math.isfinite(row[index])]
+        if not observations:
+            continue
+        country = LABELS.get(label, aliases.get(label, label))
+        if country not in countries:
+            raise ValueError(f"Unreviewed PISA participant: {label}")
+        code = countries[country]["iso_a3"]
+        for year, value in observations:
+            key = (code, year)
+            if key in means:
+                raise ValueError(f"Duplicate PISA mean in {sheet.title}: {key}")
+            means[key] = value
+    return means
 
-BASE_IN  = os.path.join(RAW_DIR, "OECD PISA data.csv")
-BASE_OUT = os.path.join(CSV_DIR, "pisa_overall_score.csv")
-
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-def normalize_iso3(code):
-    """Normalize to uppercase ISO3."""
-    if not isinstance(code, str):
-        return None
-    return code.strip().upper()
-
-
-def load_dataset(path):
-    """Load CSV file robustly (supports comma or semicolon)."""
-    try:
-        return pd.read_csv(path)
-    except Exception:
-        return pd.read_csv(path, sep=";")
-
-
-def compute_overall(df):
-    """Compute unweighted mean across all domains + genders."""
-
-    required = ["LOCATION", "TIME", "Value"]
-    for col in required:
-        if col not in df.columns:
-            raise ValueError(f"Required column '{col}' not found in dataset.")
-
-    df = df.copy()
-
-    df["LOCATION"] = df["LOCATION"].apply(normalize_iso3)
-    df["Value"]    = pd.to_numeric(df["Value"], errors="coerce")
-
-    # Group by ISO3 country code + year
-    result = (
-        df.groupby(["LOCATION", "TIME"])["Value"]
-          .mean()
-          .reset_index()
-    )
-
-    # Rename to RealityCheck schema
-    result = result.rename(columns={
-        "LOCATION": "country",
-        "TIME":     "year",
-        "Value":    "value"
-    }).sort_values(["country", "year"])
-
-    # -------------------------------------------------------------------
-    # Kaufmännisches Runden (Österreichisches / deutsches Runden)
-    # Beispiel: 524.83 -> 525
-    # -------------------------------------------------------------------
-    result["value"] = result["value"].round(0).astype(int)
-
-    return result
-
-
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
 
 def main():
-    print("📥 Reading raw file:", BASE_IN)
-
-    if not os.path.exists(BASE_IN):
-        raise FileNotFoundError(f"ERROR: Raw PISA file not found at:\n{BASE_IN}")
-
-    df = load_dataset(BASE_IN)
-
-    print("📊 Columns detected:", list(df.columns))
-
-    result = compute_overall(df)
-
-    # Ensure output directory exists
-    os.makedirs(CSV_DIR, exist_ok=True)
-
-    result.to_csv(BASE_OUT, index=False, encoding="utf-8")
-
-    print(f"✅ Created: {BASE_OUT}")
-    print(f"📄 Rows: {len(result)}")
-    print("\n🔎 Preview:")
-    print(result.head())
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("workbook", type=Path, help="Reviewed OECD Annex B1.2a XLSX")
+    parser.add_argument("output", type=Path, help="CSV output path for review")
+    args = parser.parse_args()
+    meta = ROOT / "data" / "meta"
+    countries = json.loads((meta / "countries.json").read_text(encoding="utf-8"))
+    aliases = json.loads((meta / "country_mappings.json").read_text(encoding="utf-8"))
+    book = load_workbook(args.workbook, read_only=True, data_only=True)
+    try:
+        domains = [read_domain(book[table], countries, aliases) for table in TABLES]
+    finally:
+        book.close()
+    common = set(domains[0]).intersection(*domains[1:])
+    if not common:
+        raise ValueError("No country-cycle has all three PISA domains")
+    with args.output.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.writer(handle, lineterminator="\n")
+        writer.writerow(("country", "year", "value"))
+        for code, year in sorted(common):
+            value = math.fsum(domain[code, year] for domain in domains) / len(domains)
+            writer.writerow((code, year, f"{value:.2f}"))
 
 
 if __name__ == "__main__":

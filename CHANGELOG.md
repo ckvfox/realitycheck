@@ -2,6 +2,8 @@
 
 ## Unreleased - 2026-11-05
 
+- Update PISA to 2025 and rebuild the full three-domain series from OECD aggregate mean-score tables.
+
 - Replace the EPI 2022 snapshot with Yale's 2026 edition and keep the edition review manual. Avoid presenting cross-edition scores as a time series.
 
 - Fetch both age-dependency ratios directly from World Development Indicators and replace Government Effectiveness with the complete revised WGI governance estimate series.

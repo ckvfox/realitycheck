@@ -72,7 +72,7 @@
       "access_mode": "public_download",
       "check_mode": "manual_review",
       "update_url": "https://www.oecd.org/en/about/programmes/pisa.html",
-      "notes": "Participation-year mentions are not evidence that results are already downloadable."
+      "notes": "Review the official Annex B1 mean-score tables for reading, mathematics and science. Rebuild the series with the same three-domain formula and review sampling flags and participant geography before import."
     },
     "recycling_rate": {
       "ingestion_mode": "manual_import",

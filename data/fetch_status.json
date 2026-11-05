@@ -442,11 +442,11 @@
       "last_fetch": "2026-11-01T03:04:44Z"
     },
     "pisa_overall_score": {
-      "source": "https://www.oecd.org/pisa/data/",
-      "url": "",
-      "source_date": "2022-01-01T00:00:00Z",
-      "data_year": 2022,
-      "last_fetch": "2026-11-01T03:04:44Z"
+      "source": "https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html",
+      "url": "https://stat.link/mrq53f",
+      "source_date": "2025-01-01T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2026-11-05T19:14:54Z"
     },
     "network_readiness_index": {
       "source": "https://networkreadinessindex.org/",

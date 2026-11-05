@@ -2272,17 +2272,6 @@
     ],
     "low_outliers": []
   },
-  "pisa_overall_score": {
-    "high_outliers": [
-      {
-        "country": "Singapore",
-        "year": 2022,
-        "value": 560.0,
-        "z": 2.238
-      }
-    ],
-    "low_outliers": []
-  },
   "network_readiness_index": {
     "high_outliers": [],
     "low_outliers": [
@@ -4075,5 +4064,23 @@
       }
     ],
     "low_outliers": []
+  },
+  "pisa_overall_score": {
+    "high_outliers": [
+      {
+        "country": "Singapore",
+        "year": 2025,
+        "value": 552.55,
+        "z": 2.317
+      }
+    ],
+    "low_outliers": [
+      {
+        "country": "Rwanda",
+        "year": 2025,
+        "value": 309.96,
+        "z": -2.189
+      }
+    ]
   }
 }

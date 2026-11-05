@@ -421,6 +421,15 @@ scripts/
 
 ## 🧾 Data Sources
 
+The RealityCheck PISA composite uses the equal-weight average of OECD mean
+scores for science, reading and mathematics, starting in 2006. Source:
+OECD (2026), *PISA 2025 Results (Volume I)*, Annex B1, tables I.B1.2a.36–38.
+The manual import uses the [OECD workbook](https://stat.link/mrq53f) with
+`python scripts/helper/pisa_overall_score.py <workbook> <review-output.csv>`.
+OECD's sampling and coverage notes apply, including the restricted 2025
+coverage for Lebanon and the Palestinian Authority. Subnational participant
+results are excluded from the country composite.
+
 The EPI 2026 snapshot is adapted from Wendling et al. (2026), *2026 Environmental
 Performance Index*, Yale Center for Environmental Law & Policy, with Columbia
 University. RealityCheck selects the published overall scores and reformats
