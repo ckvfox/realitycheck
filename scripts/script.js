@@ -162,6 +162,7 @@ async function init() {
     await populateKpiSelect();
     populateHomeCountrySelect();
     populateCountrySelects();
+    setupHomeCountryPreference();
     bindHeaderSorting();
 
     const el = id => document.getElementById(id);
@@ -283,6 +284,69 @@ function populateHomeCountrySelect() {
     o.textContent = n;
     s.appendChild(o);
   });
+}
+
+function setupHomeCountryPreference() {
+  const select = document.getElementById("countrySelect");
+  const chart = document.getElementById("country1Select");
+  const panel = document.getElementById("home-country-preference");
+  const remember = document.getElementById("remember-home-country");
+  const forget = document.getElementById("forget-home-country");
+  const status = document.getElementById("home-country-storage-status");
+  const key = "rc_home_country_v1";
+  const lifetime = 90 * 24 * 60 * 60 * 1000;
+  let savedCountry = "";
+
+  try {
+    const raw = localStorage.getItem(key);
+    if (raw) {
+      let preference;
+      try { preference = JSON.parse(raw); } catch { preference = null; }
+      if (Number.isFinite(preference?.expiresAt) && preference.expiresAt > Date.now()) {
+        savedCountry = sortedCountryNames.find(name => countries[name]?.iso_a2 === preference.code) || "";
+      }
+      if (!savedCountry) localStorage.removeItem(key);
+    }
+  } catch {
+    // The dashboard still works when the browser blocks storage.
+  }
+  if (savedCountry) select.value = chart.value = savedCountry;
+
+  const update = () => {
+    panel.hidden = !select.value && !savedCountry;
+    remember.hidden = !countries[select.value]?.iso_a2 || select.value === savedCountry;
+    forget.hidden = !savedCountry;
+  };
+  select.addEventListener("change", () => {
+    status.textContent = "";
+    update();
+  });
+  remember.addEventListener("click", () => {
+    const country = select.value;
+    const code = countries[country]?.iso_a2;
+    if (!code) return;
+    try {
+      localStorage.setItem(key, JSON.stringify({ code, expiresAt: Date.now() + lifetime }));
+      savedCountry = country;
+      status.textContent = "Home country saved in this browser.";
+      update();
+      forget.focus();
+    } catch {
+      status.textContent = "This browser could not save your home country.";
+    }
+  });
+  forget.addEventListener("click", () => {
+    try {
+      localStorage.removeItem(key);
+      savedCountry = "";
+      update();
+      select.focus();
+      status.textContent = "Saved home country removed.";
+    } catch {
+      status.textContent = "This browser could not remove the saved home country.";
+    }
+  });
+  update();
 }
 
 function populateCountrySelects() {

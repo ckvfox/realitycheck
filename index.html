@@ -92,9 +92,16 @@
     </div>
     <div class="select-wrapper">
       <label for="countrySelect">Home Country:</label>
-      <select id="countrySelect"></select>
+      <select id="countrySelect" aria-describedby="home-country-storage-info"></select>
     </div>
   </section>
+
+  <div id="home-country-preference" class="page-intro" hidden>
+    <p id="home-country-storage-info">Would you like RealityCheck to remember your home country for 90 days in this browser? The choice stays on this device. <a href="privacy.html#home-country-storage">Privacy details</a></p>
+    <button type="button" id="remember-home-country">Remember home country</button>
+    <button type="button" id="forget-home-country" hidden>Forget saved home country</button>
+    <span id="home-country-storage-status" role="status"></span>
+  </div>
 
   <!-- Warnbox & KPI-Beschreibung -->
   <div id="warning-box" class="hidden page-intro">
@@ -178,7 +185,7 @@
   <script src="scripts/utils_ui.js" defer></script>
   <script src="scripts/core.js?v=20261019-translate-2" defer></script>
   <script src="scripts/environment_colors.js?v=20261030-environment-1" defer></script>
-  <script src="scripts/script.js?v=20261105-remittances" defer></script>
+  <script src="scripts/script.js?v=20261105-home-country" defer></script>
 
 </body>
 </html>

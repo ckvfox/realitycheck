@@ -98,6 +98,22 @@ $incomePyramidData = null;
 $incomePyramidError = '';
 $reformAgendaData = null;
 $reformAgendaError = '';
+$housingRates = [];
+$housingPath = __DIR__ . '/data/housing_cost_overburden_rate.json';
+if ($authenticated && is_readable($housingPath)) {
+    $housingRows = json_decode((string) file_get_contents($housingPath), true);
+    foreach (is_array($housingRows) ? $housingRows : [] as $row) {
+        $country = $row['country'] ?? '';
+        $year = $row['year'] ?? null;
+        $value = $row['value'] ?? null;
+        if (in_array($country, ['Germany', 'European Union'], true)
+            && is_int($year) && is_numeric($value) && $value >= 0 && $value <= 100) {
+            $housingRates[$year][$country] = (float) $value;
+        }
+    }
+    $housingRates = array_filter($housingRates, static fn(array $row): bool => count($row) === 2);
+    krsort($housingRates, SORT_NUMERIC);
+}
 if ($authenticated) {
         $dataPath = __DIR__ . '/analysis-private/' . ($pageLanguage === 'de' ? 'real-wages-data-de.php' : 'real-wages-data.php');
     try {
@@ -359,7 +375,7 @@ ob_start();
         <a id="dossier-tab-prosperity" class="analysis-index-card analysis-index-card--prosperity" href="#germany-prosperity" role="tab" aria-controls="germany-prosperity" aria-selected="true" data-dossier-tab="germany-prosperity">
           <span class="analysis-index-tab">Germany · File 1</span>
           <strong>Prosperity analysis</strong>
-          <small>Real wages · purchasing-power context · Income Ladder</small>
+          <small>Real wages · housing costs · purchasing power · Income Ladder</small>
         </a>
         <a id="dossier-tab-scenarios" class="analysis-index-card analysis-index-card--scenarios" href="#germany-2036" role="tab" aria-controls="germany-2036" aria-selected="false" tabindex="-1" data-dossier-tab="germany-2036">
           <span class="analysis-index-tab">Germany · File 2</span>
@@ -461,6 +477,39 @@ ob_start();
         <p class="real-wages-source">Source: <a id="map-source" target="_blank" rel="noopener noreferrer"></a></p>
       </section>
     <?php endif; ?>
+
+    <section id="housing-cost-overburden" class="real-wages-panel" aria-labelledby="housing-cost-title">
+      <h2 id="housing-cost-title"><span lang="en">Housing cost overburden</span><span lang="de">Wohnkostenüberlastung</span></h2>
+      <p>
+        <span lang="en">Share of people in households that spend more than 40% of their disposable income on housing. Housing allowances are deducted from both costs and income.</span>
+        <span lang="de">Anteil der Bevölkerung in Haushalten, deren Wohnkosten mehr als 40 % des verfügbaren Einkommens ausmachen. Wohnkostenzuschüsse werden von Kosten und Einkommen abgezogen.</span>
+      </p>
+      <?php if ($housingRates): ?>
+        <table>
+          <caption><span lang="en">Germany and the EU-27 aggregate, latest common years</span><span lang="de">Deutschland und EU-27 insgesamt, jüngste gemeinsame Jahre</span></caption>
+          <thead>
+            <tr>
+              <th scope="col"><span lang="en">Year</span><span lang="de">Jahr</span></th>
+              <th scope="col"><span lang="en">Germany</span><span lang="de">Deutschland</span></th>
+              <th scope="col">EU-27</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach (array_slice($housingRates, 0, 10, true) as $year => $rates): ?>
+              <tr>
+                <th scope="row"><?= $year ?></th>
+                <?php foreach (['Germany', 'European Union'] as $area): ?>
+                  <td><span lang="en"><?= number_format($rates[$area], 1, '.', '') ?>%</span><span lang="de"><?= number_format($rates[$area], 1, ',', '') ?> %</span></td>
+                <?php endforeach; ?>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      <?php else: ?>
+        <p><span lang="en">No comparable observations are available.</span><span lang="de">Es liegen keine vergleichbaren Werte vor.</span></p>
+      <?php endif; ?>
+      <p class="real-wages-source"><a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho07a/default/table?lang=en" target="_blank" rel="noopener noreferrer">Eurostat · EU-SILC · ilc_lvho07a</a></p>
+    </section>
 
     <section id="income-pyramid" class="real-wages-panel income-section" aria-labelledby="income-title">
       <div class="real-wages-section-heading">

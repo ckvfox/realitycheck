@@ -742,6 +742,20 @@
       "source_date": "2026-10-08T00:00:00Z",
       "data_year": 2025,
       "last_fetch": "2026-11-05T16:59:38Z"
+    },
+    "electricity_carbon_intensity": {
+      "source": "https://ember-energy.org/data/yearly-electricity-data/",
+      "url": "",
+      "source_date": "2026-11-03T19:06:27+00:00",
+      "data_year": 2025,
+      "last_fetch": "2026-11-05T17:15:36Z"
+    },
+    "housing_cost_overburden_rate": {
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho07a/default/table?lang=en",
+      "url": "",
+      "source_date": "2026-10-29T23:00:00+0100",
+      "data_year": 2025,
+      "last_fetch": "2026-11-05T17:15:37Z"
     }
   },
   "summary": {

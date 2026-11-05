@@ -1982,5 +1982,41 @@
     "actuality": "annual",
     "change_mode": "absolute",
     "analysis_guardrail": "The indicator includes personal transfers and compensation of nonresident workers. It measures inflows relative to GDP and does not determine living standards or the number of migrants. Higher or lower shares do not imply better outcomes. Report changes in percentage points."
+  },
+  {
+    "filename": "electricity_carbon_intensity",
+    "title": "Greenhouse Gas Intensity of Electricity Generation",
+    "description": "Lifecycle greenhouse gas emissions per kilowatt-hour of electricity generated, as estimated by Ember. Covers domestic generation, including nuclear and renewables. Recent national values may be provisional and country coverage varies by year. The global series is Ember's own aggregate.",
+    "unit": "g CO2e/kWh",
+    "relation": "",
+    "sort": "lower",
+    "cluster": "Environment & Sustainability",
+    "source": "https://ember-energy.org/data/yearly-electricity-data/",
+    "source_type": "ember",
+    "source_code": "Total generation",
+    "world_kpi": "y",
+    "scale": "none",
+    "relevance": "none",
+    "actuality": "annual",
+    "change_mode": "absolute",
+    "analysis_guardrail": "Use Ember's published world aggregate. This is lifecycle emissions intensity of generation, not electricity consumption, total emissions or grid reliability. Distinguish provisional country values and varying coverage."
+  },
+  {
+    "filename": "housing_cost_overburden_rate",
+    "title": "Housing Cost Overburden Rate",
+    "description": "Share of people in households whose housing costs exceed 40% of disposable household income, both net of housing allowances. Eurostat EU-SILC, total population, EU-27 countries and published EU aggregate.",
+    "unit": "%",
+    "relation": "",
+    "sort": "lower",
+    "cluster": "Economy & Labor",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/ilc_lvho07a/default/table?lang=en",
+    "source_type": "eurostat",
+    "source_code": "ilc_lvho07a",
+    "world_kpi": "",
+    "scale": "none",
+    "relevance": "none",
+    "actuality": "annual",
+    "change_mode": "absolute",
+    "analysis_guardrail": "Compare observations from the same year, report differences in percentage points and keep the published EU-27 aggregate separate from national values. Coverage is European. The denominator is disposable household income, net of housing allowances."
   }
 ]

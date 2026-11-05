@@ -38,7 +38,7 @@ beyond perception, bias, or headlines.
 ---------------------------------------------------------------------
 
 🧭 WHAT THIS PROJECT DOES
-RealityCheck combines 106 registered global indicators (KPIs) into one coherent platform:
+RealityCheck combines 108 registered global and regional indicators (KPIs) into one coherent platform:
 a living dashboard that visualizes progress, risks, and differences between nations.
 
 It’s both analytical and exploratory — you can:
@@ -64,7 +64,7 @@ It’s both analytical and exploratory — you can:
 ### ⚡ Frontend performance and usability
 
 - The Countries dashboard now loads only the selected KPI; population, GDP and area comparison data load only when their relation mode is selected.
-- The World dashboard loads its 15 world KPIs instead of parsing the complete country dataset.
+- The World dashboard loads only its registered World KPIs instead of parsing the complete country dataset.
 - Shared JSON requests and the consolidated ranking payload are deduplicated per page; gzip decoding prefers the browser-native stream API with a compatibility fallback.
 - Keyboard sorting, visible loading status, shareable KPI URLs, skip links, reduced-motion support, stronger focus states and a less intrusive scroll-to-top button improve usability.
 - Frontend architecture and extension rules are documented in `docs/frontend_architecture.md`.
@@ -82,7 +82,7 @@ It’s both analytical and exploratory — you can:
 - The World cyclone view displays separate NOAA basin-season series and illustrative basin markers with a count table. Counts include unnamed systems and do not measure damage; missing seasons stay missing. The active Wildfire — Burned Area country map uses 198 countries and completed 2012–2025 observations from GWIS/OWID; partial current years are automatically excluded. Source integration status for the remaining hazard categories is recorded in `docs/climate_sources_2026-10-30.md`.
 
 - The fetch backend now uses independently tested source adapters, fail-closed publication guards and last-known-good preservation.
-- RealityCheck now registers 106 KPIs, including personal remittances received as a share of GDP from the World Bank.
+- RealityCheck registers 108 KPIs. The monthly data run includes the World Bank's remittance series, Ember's electricity generation intensity and Eurostat's EU-SILC housing cost overburden rate. The latter also appears in the Germany Dossier.
 - Global and per-KPI analyses use traceable country, regional, trend and coverage evidence; every KPI analysis displays its generation timestamp.
 - Overall Ranking keeps the user-weighted standard scenario and adds evidence-constrained Top/Bottom-20 Fun, Safe Haven and Immigration lenses.
 - The World map supports two-group comparison, overlap highlighting, KPI intensity, group summaries and shareable URL state.

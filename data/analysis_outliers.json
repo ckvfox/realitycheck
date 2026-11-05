@@ -3999,5 +3999,51 @@
       }
     ],
     "low_outliers": []
+  },
+  "electricity_carbon_intensity": {
+    "high_outliers": [
+      {
+        "country": "Turkmenistan",
+        "year": 2024,
+        "value": 1306.15,
+        "z": 3.703
+      },
+      {
+        "country": "Uzbekistan",
+        "year": 2025,
+        "value": 999.965,
+        "z": 2.447
+      },
+      {
+        "country": "Kosovo",
+        "year": 2025,
+        "value": 905.525,
+        "z": 2.06
+      },
+      {
+        "country": "Bahrain",
+        "year": 2024,
+        "value": 902.477,
+        "z": 2.048
+      },
+      {
+        "country": "Brunei",
+        "year": 2024,
+        "value": 892.986,
+        "z": 2.009
+      }
+    ],
+    "low_outliers": []
+  },
+  "housing_cost_overburden_rate": {
+    "high_outliers": [
+      {
+        "country": "Greece",
+        "year": 2025,
+        "value": 26.4,
+        "z": 4.196
+      }
+    ],
+    "low_outliers": []
   }
 }

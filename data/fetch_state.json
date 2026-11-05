@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-11-05T16:59:38Z",
+  "last_run": "2026-11-05T17:15:38Z",
   "updated_kpis": [
     "access_to_basic_drinking_water",
     "access_to_electricity",
@@ -13,6 +13,7 @@
     "climate_disaster_deaths",
     "drought_spei",
     "education_expenditure_of_gdp",
+    "electricity_carbon_intensity",
     "electricity_grid_losses",
     "employment_to_population_ratio",
     "energy_import_dependency",
@@ -36,6 +37,7 @@
     "government_effectiveness",
     "health_expenditure_per_capita",
     "hospital_beds_per_1_000_people",
+    "housing_cost_overburden_rate",
     "infant_mortality_rate",
     "inflation_consumer_price_index",
     "inform_resilience_index",
