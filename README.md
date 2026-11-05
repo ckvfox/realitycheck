@@ -421,6 +421,13 @@ scripts/
 
 ## 🧾 Data Sources
 
+The EPI 2026 snapshot is adapted from Wendling et al. (2026), *2026 Environmental
+Performance Index*, Yale Center for Environmental Law & Policy, with Columbia
+University. RealityCheck selects the published overall scores and reformats
+country codes and records. The EPI source CSV and derived EPI records are
+available under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+See the [official edition and downloads](https://epi.yale.edu/downloads/2026).
+
 - **World Bank API** – https://data.worldbank.org  
 - **Our World in Data (OWID)** – https://ourworldindata.org  
 - **UNHCR**, **WHO**, **IMF**, **Yale EPI**  

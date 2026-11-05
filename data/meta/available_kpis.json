@@ -1116,12 +1116,13 @@
   },
   {
     "title": "Environmental Performance Index",
-    "description": "The Environmental Performance Index (EPI), developed by Yale and Columbia Universities, evaluates how well countries perform in protecting environmental health and ecosystem vitality. It combines multiple indicators — including air and water quality, biodiversity, climate change mitigation, and sustainable agriculture — into a single composite score from 0 to 100. A higher EPI score reflects stronger environmental policies and better outcomes for both people and nature. This index helps compare national efforts to achieve sustainability goals and provides a basis for tracking progress toward global targets such as the Paris Agreement and the UN Sustainable Development Goals (SDGs). These data are published by Yale University & Columbia University – Environmental Performance Index (EPI).",
+    "description": "The 2026 Environmental Performance Index combines 47 indicators across environmental health, ecosystem vitality and climate change into a score from 0 to 100. The year denotes the EPI edition. The underlying observations have different reference years. Scores are comparable across countries within this edition. Source: Wendling et al. (2026), 2026 Environmental Performance Index, Yale Center for Environmental Law & Policy, with Columbia University. RealityCheck reformatted the published scores and mapped country codes under CC BY-NC-SA 4.0.",
     "unit": "index (0–100)",
     "relation": "",
     "sort": "higher",
     "cluster": "Environment & Sustainability",
-    "source": "https://epi.yale.edu/",
+    "source": "https://epi.yale.edu/downloads/2026",
+    "source_url": "https://epi.yale.edu/sites/default/files/2026-09/epi2026results2026-07-07.xlsx",
     "source_type": "csv",
     "source_code": "environmental_performance_index.csv",
     "scale": "none",
@@ -1130,7 +1131,8 @@
     "relevance": "normal",
     "actuality": "annual",
     "invert": "",
-    "test": ""
+    "test": "",
+    "analysis_guardrail": "Treat 2026 as an edition label. Compare countries within this edition and do not infer trends by comparing scores from previous editions. The latest underlying observation year differs by indicator."
   },
   {
     "title": "Global Peace Index",

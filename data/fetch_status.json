@@ -414,11 +414,11 @@
       "last_fetch": "2026-11-01T03:04:44Z"
     },
     "environmental_performance_index": {
-      "source": "https://epi.yale.edu/",
-      "url": "",
-      "source_date": "2022-01-01T00:00:00Z",
-      "data_year": 2022,
-      "last_fetch": "2026-11-01T03:04:44Z"
+      "source": "https://epi.yale.edu/downloads/2026",
+      "url": "https://epi.yale.edu/sites/default/files/2026-09/epi2026results2026-07-07.xlsx",
+      "source_date": "2026-01-01T00:00:00Z",
+      "data_year": 2026,
+      "last_fetch": "2026-11-05T18:07:25Z"
     },
     "global_peace_index": {
       "source": "https://www.visionofhumanity.org/maps/#/global-peace-index",

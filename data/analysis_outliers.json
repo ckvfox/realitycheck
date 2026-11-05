@@ -2131,47 +2131,6 @@
     ],
     "low_outliers": []
   },
-  "environmental_performance_index": {
-    "high_outliers": [
-      {
-        "country": "Denmark",
-        "year": 2022,
-        "value": 77.9,
-        "z": 2.837
-      },
-      {
-        "country": "United Kingdom",
-        "year": 2022,
-        "value": 77.7,
-        "z": 2.821
-      },
-      {
-        "country": "Finland",
-        "year": 2022,
-        "value": 76.5,
-        "z": 2.723
-      },
-      {
-        "country": "Malta",
-        "year": 2022,
-        "value": 75.2,
-        "z": 2.617
-      },
-      {
-        "country": "Sweden",
-        "year": 2022,
-        "value": 72.7,
-        "z": 2.413
-      },
-      {
-        "country": "Luxembourg",
-        "year": 2022,
-        "value": 72.3,
-        "z": 2.381
-      }
-    ],
-    "low_outliers": []
-  },
   "global_peace_index": {
     "high_outliers": [
       {
@@ -4057,5 +4016,64 @@
         "z": -2.007
       }
     ]
+  },
+  "environmental_performance_index": {
+    "high_outliers": [
+      {
+        "country": "Estonia",
+        "year": 2026,
+        "value": 74.79,
+        "z": 2.55
+      },
+      {
+        "country": "Luxembourg",
+        "year": 2026,
+        "value": 74.24,
+        "z": 2.506
+      },
+      {
+        "country": "United Kingdom",
+        "year": 2026,
+        "value": 71.51,
+        "z": 2.288
+      },
+      {
+        "country": "Finland",
+        "year": 2026,
+        "value": 71.04,
+        "z": 2.251
+      },
+      {
+        "country": "Netherlands",
+        "year": 2026,
+        "value": 70.49,
+        "z": 2.207
+      },
+      {
+        "country": "Germany",
+        "year": 2026,
+        "value": 69.93,
+        "z": 2.162
+      },
+      {
+        "country": "France",
+        "year": 2026,
+        "value": 69.82,
+        "z": 2.153
+      },
+      {
+        "country": "Norway",
+        "year": 2026,
+        "value": 69.24,
+        "z": 2.107
+      },
+      {
+        "country": "Sweden",
+        "year": 2026,
+        "value": 69.2,
+        "z": 2.104
+      }
+    ],
+    "low_outliers": []
   }
 }

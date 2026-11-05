@@ -13,11 +13,11 @@
       "ingestion_mode": "manual_import",
       "access_mode": "public_download",
       "check_mode": "official_page_pattern",
-      "update_url": "https://epi.yale.edu/epi-downloads",
+      "update_url": "https://epi.yale.edu/",
       "release_year_patterns": [
-        "(?:Environmental Performance Index|EPI)[^0-9]{0,30}(20\\d{2})"
+        "/(20\\d{2})/welcome"
       ],
-      "notes": "A newer release is only a notification; the existing normalization and methodology review remain manual."
+      "notes": "A newer release is a notification only. Review the official EPI.new column, country coverage, methodology and CC BY-NC-SA 4.0 reuse terms before replacing the snapshot. Do not combine editions in a time series."
     },
     "global_peace_index": {
       "ingestion_mode": "manual_import",

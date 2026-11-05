@@ -1,181 +1,178 @@
 country,iso2,year,value
-Afghanistan,AF,2022,43.6
-Angola,AO,2022,30.5
-Albania,AL,2022,47.1
-United Arab Emirates,AE,2022,52.4
-Argentina,AR,2022,41.1
-Armenia,AM,2022,48.3
-Antigua and Barbuda,AG,2022,52.4
-Australia,AU,2022,60.1
-Austria,AT,2022,66.5
-Azerbaijan,AZ,2022,38.6
-Burundi,BI,2022,30.5
-Belgium,BE,2022,58.2
-Benin,BJ,2022,29.6
-Burkina Faso,BF,2022,35.5
-Bangladesh,BD,2022,23.1
-Bulgaria,BG,2022,51.9
-Bahrain,BH,2022,42.0
-Bahamas,BS,2022,56.2
-Bosnia Herzegovina,BA,2022,39.4
-Belarus,BY,2022,48.5
-Belize,BZ,2022,50.0
-Bolivia,BO,2022,40.1
-Brazil,BR,2022,43.6
-Barbados,BB,2022,53.2
-Brunei,BN,2022,45.7
-Bhutan,BT,2022,42.5
-Botswana,BW,2022,54.0
-Central African Republic,CF,2022,44.9
-Canada,CA,2022,50.0
-Switzerland,CH,2022,65.9
-Chile,CL,2022,46.7
-China,CN,2022,28.4
-Ivory Coast,CI,2022,32.8
-Cameroon,CM,2022,30.2
-Democratic Republic of the Congo,CD,2022,36.9
-Republic of the Congo,CG,2022,40.1
-Colombia,CO,2022,42.4
-Comoros,KM,2022,42.5
-Cape Verde,CV,2022,41.9
-Costa Rica,CR,2022,46.3
-Cuba,CU,2022,47.5
-Cyprus,CY,2022,58.0
-Czechia,CZ,2022,59.9
-Germany,DE,2022,62.4
-Djibouti,DJ,2022,47.5
-Dominica,DM,2022,51.2
-Denmark,DK,2022,77.9
-Dominican Republic,DO,2022,42.2
-Algeria,DZ,2022,29.6
-Ecuador,EC,2022,46.5
-Egypt,EG,2022,35.5
-Eritrea,ER,2022,31.7
-Spain,ES,2022,56.6
-Estonia,EE,2022,61.4
-Ethiopia,ET,2022,31.8
-Finland,FI,2022,76.5
-Fiji,FJ,2022,31.3
-France,FR,2022,62.5
-Micronesia,FM,2022,37.4
-Gabon,GA,2022,49.7
-United Kingdom,GB,2022,77.7
-Georgia,GE,2022,39.1
-Ghana,GH,2022,27.7
-Guinea,GN,2022,31.6
-Gambia,GM,2022,36.4
-Guinea-Bissau,GW,2022,40.2
-Equatorial Guinea,GQ,2022,44.8
-Greece,GR,2022,56.2
-Grenada,GD,2022,47.9
-Guatemala,GT,2022,28.0
-Guyana,GY,2022,38.5
-Honduras,HN,2022,36.5
-Croatia,HR,2022,60.2
-Haiti,HT,2022,26.1
-Hungary,HU,2022,55.1
-Indonesia,ID,2022,28.2
-India,IN,2022,18.9
-Ireland,IE,2022,57.4
-Iran,IR,2022,34.5
-Iraq,IQ,2022,27.8
-Iceland,IS,2022,62.8
-Israel,IL,2022,48.2
-Italy,IT,2022,57.7
-Jamaica,JM,2022,45.6
-Jordan,JO,2022,43.6
-Japan,JP,2022,57.2
-Kazakhstan,KZ,2022,40.9
-Kenya,KE,2022,30.8
-Kyrgyzstan,KG,2022,35.7
-Cambodia,KH,2022,30.1
-Kiribati,KI,2022,49.0
-South Korea,KR,2022,46.9
-Kuwait,KW,2022,42.4
-Laos,LA,2022,30.7
-Lebanon,LB,2022,32.2
-Liberia,LR,2022,24.9
-Saint Lucia,LC,2022,49.4
-Sri Lanka,LK,2022,34.7
-Lesotho,LS,2022,32.3
-Lithuania,LT,2022,55.9
-Luxembourg,LU,2022,72.3
-Latvia,LV,2022,61.1
-Morocco,MA,2022,28.4
-Moldova,MD,2022,42.7
-Madagascar,MG,2022,28.0
-Maldives,MV,2022,37.4
-Mexico,MX,2022,45.5
-Marshall Islands,MH,2022,36.2
-North Macedonia,MK,2022,54.3
-Mali,ML,2022,28.5
-Malta,MT,2022,75.2
-Myanmar,MM,2022,19.4
-Montenegro,ME,2022,46.9
-Mongolia,MN,2022,29.6
-Mozambique,MZ,2022,31.7
-Mauritania,MR,2022,28.1
-Mauritius,MU,2022,44.8
-Malawi,MW,2022,40.6
-Malaysia,MY,2022,35.0
-Namibia,NA,2022,50.9
-Niger,NE,2022,37.7
-Nigeria,NG,2022,28.3
-Nicaragua,NI,2022,37.7
-Netherlands,NL,2022,62.6
-Norway,NO,2022,59.3
-Nepal,NP,2022,28.3
-New Zealand,NZ,2022,56.7
-Oman,OM,2022,30.7
-Pakistan,PK,2022,24.6
-Panama,PA,2022,50.5
-Peru,PE,2022,39.8
-Philippines,PH,2022,28.9
-Papua New Guinea,PG,2022,24.8
-Poland,PL,2022,50.6
-Portugal,PT,2022,50.4
-Paraguay,PY,2022,40.9
-Qatar,QA,2022,33.0
-Romania,RO,2022,56.0
-Russia,RU,2022,37.5
-Rwanda,RW,2022,32.8
-Saudi Arabia,SA,2022,37.9
-Sudan,SD,2022,27.6
-Senegal,SN,2022,33.9
-Singapore,SG,2022,50.9
-Solomon Islands,SB,2022,35.0
-Sierra Leone,SL,2022,32.7
-El Salvador,SV,2022,40.8
-Serbia,RS,2022,43.9
-São Tomé and Príncipe,ST,2022,52.9
-Suriname,SR,2022,45.9
-Slovakia,SK,2022,60.0
-Slovenia,SI,2022,67.3
-Sweden,SE,2022,72.7
-Eswatini,SZ,2022,44.9
-Seychelles,SC,2022,55.6
-Chad,TD,2022,28.1
-Togo,TG,2022,34.0
-Thailand,TH,2022,38.1
-Tajikistan,TJ,2022,37.1
-Turkmenistan,TM,2022,37.0
-Timor-Leste,TL,2022,35.1
-Tonga,TO,2022,43.8
-Trinidad and Tobago,TT,2022,47.8
-Tunisia,TN,2022,40.7
-Turkey,TR,2022,26.3
-Taiwan,TW,2022,45.3
-Tanzania,TZ,2022,34.2
-Uganda,UG,2022,35.8
-Ukraine,UA,2022,49.6
-Uruguay,UY,2022,37.4
-United States,US,2022,51.1
-Uzbekistan,UZ,2022,38.2
-Saint Vincent-Grenadines,VC,2022,53.2
-Venezuela,VE,2022,46.4
-Vietnam,VN,2022,20.1
-Vanuatu,VU,2022,36.9
-Samoa,WS,2022,36.4
-South Africa,ZA,2022,37.2
-Zambia,ZM,2022,38.4
-Zimbabwe,ZW,2022,46.2
+Afghanistan,AF,2026,33.14
+Albania,AL,2026,49.22
+Algeria,DZ,2026,42.74
+Angola,AO,2026,39.46
+Antigua and Barbuda,AG,2026,48.04
+Argentina,AR,2026,46.06
+Armenia,AM,2026,43.05
+Australia,AU,2026,59.4
+Austria,AT,2026,66.8
+Azerbaijan,AZ,2026,39.76
+Bahamas,BS,2026,44.99
+Bahrain,BH,2026,31.05
+Bangladesh,BD,2026,23.46
+Barbados,BB,2026,41.43
+Belarus,BY,2026,47.03
+Belgium,BE,2026,60.08
+Belize,BZ,2026,41.35
+Benin,BJ,2026,39.85
+Bhutan,BT,2026,47.74
+Bolivia,BO,2026,39.25
+Bosnia Herzegovina,BA,2026,42.88
+Botswana,BW,2026,51.77
+Brazil,BR,2026,48.27
+Brunei,BN,2026,37.71
+Bulgaria,BG,2026,59.77
+Burkina Faso,BF,2026,35.24
+Burundi,BI,2026,24.39
+Cape Verde,CV,2026,32.75
+Cambodia,KH,2026,31.21
+Cameroon,CM,2026,34.9
+Canada,CA,2026,57.78
+Central African Republic,CF,2026,31.53
+Chad,TD,2026,27.65
+Chile,CL,2026,50.95
+China,CN,2026,33.88
+Colombia,CO,2026,48.83
+Comoros,KM,2026,33.52
+Costa Rica,CR,2026,49.28
+Ivory Coast,CI,2026,30.85
+Croatia,HR,2026,52.82
+Cyprus,CY,2026,53.34
+Czechia,CZ,2026,62.9
+Democratic Republic of the Congo,CD,2026,30.01
+Denmark,DK,2026,66.57
+Djibouti,DJ,2026,26.92
+Dominica,DM,2026,46.06
+Dominican Republic,DO,2026,38.39
+Ecuador,EC,2026,45.46
+Egypt,EG,2026,38.48
+El Salvador,SV,2026,29.54
+Equatorial Guinea,GQ,2026,40.52
+Estonia,EE,2026,74.79
+Eswatini,SZ,2026,34.41
+Ethiopia,ET,2026,33.88
+Fiji,FJ,2026,35.54
+Finland,FI,2026,71.04
+France,FR,2026,69.82
+Gabon,GA,2026,48.84
+Gambia,GM,2026,30.19
+Georgia,GE,2026,42.67
+Germany,DE,2026,69.93
+Ghana,GH,2026,28.6
+Greece,GR,2026,66.03
+Grenada,GD,2026,35.67
+Guatemala,GT,2026,31.49
+Guinea,GN,2026,30.37
+Guinea-Bissau,GW,2026,27.95
+Guyana,GY,2026,30.32
+Haiti,HT,2026,31.97
+Honduras,HN,2026,37.37
+Hungary,HU,2026,54.78
+Iceland,IS,2026,58.37
+India,IN,2026,22.46
+Indonesia,ID,2026,26.24
+Iran,IR,2026,38.42
+Iraq,IQ,2026,26.55
+Ireland,IE,2026,62.01
+Israel,IL,2026,51.69
+Italy,IT,2026,61.56
+Jamaica,JM,2026,44.08
+Japan,JP,2026,63.15
+Jordan,JO,2026,46.72
+Kazakhstan,KZ,2026,41.26
+Kenya,KE,2026,36.1
+Kiribati,KI,2026,36.26
+Kuwait,KW,2026,39.19
+Kyrgyzstan,KG,2026,33.75
+Laos,LA,2026,21.78
+Latvia,LV,2026,55.51
+Lebanon,LB,2026,39.67
+Lesotho,LS,2026,39.01
+Liberia,LR,2026,25.27
+Lithuania,LT,2026,56.78
+Luxembourg,LU,2026,74.24
+Madagascar,MG,2026,31.13
+Malawi,MW,2026,33.21
+Malaysia,MY,2026,39.52
+Maldives,MV,2026,25.06
+Mali,ML,2026,23.56
+Malta,MT,2026,59.09
+Mauritania,MR,2026,25.34
+Mauritius,MU,2026,40.86
+Mexico,MX,2026,46.09
+Moldova,MD,2026,37.98
+Mongolia,MN,2026,34.15
+Montenegro,ME,2026,46.38
+Morocco,MA,2026,33.11
+Mozambique,MZ,2026,38.78
+Myanmar,MM,2026,28.87
+Namibia,NA,2026,42.75
+Nepal,NP,2026,33.99
+Netherlands,NL,2026,70.49
+New Zealand,NZ,2026,55.45
+Nicaragua,NI,2026,41.7
+Niger,NE,2026,31.1
+Nigeria,NG,2026,32.85
+North Macedonia,MK,2026,46.17
+Norway,NO,2026,69.24
+Oman,OM,2026,48.5
+Pakistan,PK,2026,29.03
+Palau,PW,2026,49.47
+Panama,PA,2026,45.14
+Papua New Guinea,PG,2026,28.94
+Paraguay,PY,2026,38.95
+Peru,PE,2026,41.01
+Philippines,PH,2026,27.87
+Poland,PL,2026,61.77
+Portugal,PT,2026,62.74
+Qatar,QA,2026,45.07
+Republic of the Congo,CG,2026,38.91
+Romania,RO,2026,53.94
+Russia,RU,2026,40.72
+Rwanda,RW,2026,26.42
+Saint Kitts and Nevis,KN,2026,44.58
+Saint Lucia,LC,2026,44.52
+Samoa,WS,2026,39.29
+São Tomé and Príncipe,ST,2026,41.03
+Saudi Arabia,SA,2026,38.74
+Senegal,SN,2026,33.34
+Serbia,RS,2026,44.94
+Seychelles,SC,2026,50.03
+Sierra Leone,SL,2026,29.26
+Singapore,SG,2026,46.06
+Slovakia,SK,2026,62.37
+Slovenia,SI,2026,64.95
+Solomon Islands,SB,2026,29.23
+South Africa,ZA,2026,37.6
+South Korea,KR,2026,52.65
+Spain,ES,2026,66.28
+Sri Lanka,LK,2026,39.58
+Saint Vincent-Grenadines,VC,2026,46.12
+Sudan,SD,2026,31.31
+Suriname,SR,2026,44.54
+Sweden,SE,2026,69.2
+Switzerland,CH,2026,64.06
+Taiwan,TW,2026,46.02
+Tajikistan,TJ,2026,26.75
+Tanzania,TZ,2026,38.89
+Thailand,TH,2026,43.74
+Timor-Leste,TL,2026,41.53
+Togo,TG,2026,31.3
+Tonga,TO,2026,33.06
+Trinidad and Tobago,TT,2026,45.9
+Tunisia,TN,2026,41.05
+Turkey,TR,2026,34.32
+Turkmenistan,TM,2026,34.64
+Uganda,UG,2026,34.69
+Ukraine,UA,2026,51.12
+United Arab Emirates,AE,2026,50.16
+United Kingdom,GB,2026,71.51
+United States,US,2026,58.54
+Uruguay,UY,2026,36.91
+Uzbekistan,UZ,2026,34.79
+Vanuatu,VU,2026,34.1
+Vietnam,VN,2026,23.82
+Zambia,ZM,2026,37.17
+Zimbabwe,ZW,2026,46.08
