@@ -1344,35 +1344,6 @@
       }
     ]
   },
-  "road_traffic_deaths_per_100k_people": {
-    "high_outliers": [
-      {
-        "country": "Dominican Republic",
-        "year": 2019,
-        "value": 64.6,
-        "z": 4.421
-      },
-      {
-        "country": "Zimbabwe",
-        "year": 2019,
-        "value": 41.2,
-        "z": 2.264
-      },
-      {
-        "country": "Venezuela",
-        "year": 2019,
-        "value": 39.0,
-        "z": 2.061
-      },
-      {
-        "country": "Liberia",
-        "year": 2019,
-        "value": 38.9,
-        "z": 2.052
-      }
-    ],
-    "low_outliers": []
-  },
   "fixed_broadband_subscriptions_per_100_people": {
     "high_outliers": [
       {
@@ -3403,71 +3374,6 @@
       }
     ]
   },
-  "suicide_mortality_rate": {
-    "high_outliers": [
-      {
-        "country": "Lesotho",
-        "year": 2021,
-        "value": 28.66,
-        "z": 3.344
-      },
-      {
-        "country": "South Korea",
-        "year": 2021,
-        "value": 27.53,
-        "z": 3.156
-      },
-      {
-        "country": "Eswatini",
-        "year": 2021,
-        "value": 27.23,
-        "z": 3.106
-      },
-      {
-        "country": "Guyana",
-        "year": 2021,
-        "value": 24.78,
-        "z": 2.698
-      },
-      {
-        "country": "Uruguay",
-        "year": 2021,
-        "value": 24.75,
-        "z": 2.693
-      },
-      {
-        "country": "South Africa",
-        "year": 2021,
-        "value": 22.3,
-        "z": 2.285
-      },
-      {
-        "country": "Suriname",
-        "year": 2021,
-        "value": 22.26,
-        "z": 2.279
-      },
-      {
-        "country": "Lithuania",
-        "year": 2021,
-        "value": 22.12,
-        "z": 2.255
-      },
-      {
-        "country": "Russia",
-        "year": 2021,
-        "value": 21.37,
-        "z": 2.131
-      },
-      {
-        "country": "Ukraine",
-        "year": 2021,
-        "value": 21.21,
-        "z": 2.104
-      }
-    ],
-    "low_outliers": []
-  },
   "wildfire_burned_area": {
     "high_outliers": [
       {
@@ -4091,6 +3997,118 @@
         "year": 2024,
         "value": 84.11,
         "z": 2.004
+      }
+    ],
+    "low_outliers": []
+  },
+  "road_traffic_deaths_per_100k_people": {
+    "high_outliers": [
+      {
+        "country": "North Korea",
+        "year": 2023,
+        "value": 53.9781008122011,
+        "z": 4.622
+      },
+      {
+        "country": "Haiti",
+        "year": 2023,
+        "value": 41.8140203628986,
+        "z": 3.237
+      },
+      {
+        "country": "Ghana",
+        "year": 2023,
+        "value": 36.5538513881943,
+        "z": 2.638
+      },
+      {
+        "country": "Nepal",
+        "year": 2023,
+        "value": 36.1544537696842,
+        "z": 2.592
+      },
+      {
+        "country": "Micronesia",
+        "year": 2023,
+        "value": 35.977400037279,
+        "z": 2.572
+      },
+      {
+        "country": "Kenya",
+        "year": 2023,
+        "value": 34.984930118102,
+        "z": 2.459
+      },
+      {
+        "country": "Libya",
+        "year": 2023,
+        "value": 33.3398538529957,
+        "z": 2.272
+      },
+      {
+        "country": "Syria",
+        "year": 2023,
+        "value": 31.6972418867467,
+        "z": 2.085
+      },
+      {
+        "country": "Burkina Faso",
+        "year": 2023,
+        "value": 31.6834173880299,
+        "z": 2.083
+      }
+    ],
+    "low_outliers": []
+  },
+  "suicide_mortality_rate": {
+    "high_outliers": [
+      {
+        "country": "Guyana",
+        "year": 2023,
+        "value": 45.5472417234106,
+        "z": 6.013
+      },
+      {
+        "country": "Suriname",
+        "year": 2023,
+        "value": 30.1778612871526,
+        "z": 3.489
+      },
+      {
+        "country": "South Korea",
+        "year": 2023,
+        "value": 27.7901728660842,
+        "z": 3.097
+      },
+      {
+        "country": "Lesotho",
+        "year": 2023,
+        "value": 23.1552621195033,
+        "z": 2.336
+      },
+      {
+        "country": "Uruguay",
+        "year": 2023,
+        "value": 23.068766277164,
+        "z": 2.322
+      },
+      {
+        "country": "Lithuania",
+        "year": 2023,
+        "value": 22.5825744845407,
+        "z": 2.242
+      },
+      {
+        "country": "Ukraine",
+        "year": 2023,
+        "value": 21.813365377543,
+        "z": 2.116
+      },
+      {
+        "country": "Russia",
+        "year": 2023,
+        "value": 21.8001957281699,
+        "z": 2.114
       }
     ],
     "low_outliers": []

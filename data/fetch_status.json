@@ -197,11 +197,11 @@
       "last_fetch": "2026-11-01T03:04:28Z"
     },
     "road_traffic_deaths_per_100k_people": {
-      "source": "https://data.worldbank.org/indicator/SH.STA.TRAF.P5",
-      "url": "",
-      "source_date": "2026-10-08T00:00:00Z",
-      "data_year": 2019,
-      "last_fetch": "2026-11-01T03:04:28Z"
+      "source": "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-leading-causes-of-death",
+      "url": "https://cdn.who.int/media/docs/default-source/gho-documents/global-health-estimates/crude-death-rates-2000-2023_bycountry_2026-10-01.xlsx?sfvrsn=8ccbc771_1",
+      "source_date": "2026-10-01",
+      "data_year": 2023,
+      "last_fetch": "2026-11-05T20:40:41Z"
     },
     "fixed_broadband_subscriptions_per_100_people": {
       "source": "https://data.worldbank.org/indicator/IT.NET.BBND.P2",
@@ -695,11 +695,11 @@
       "last_fetch": "2026-08-01T14:54:10Z"
     },
     "suicide_mortality_rate": {
-      "source": "https://data.worldbank.org/indicator/SH.STA.SUIC.P5",
-      "url": "",
-      "source_date": "2026-10-08T00:00:00Z",
-      "data_year": 2021,
-      "last_fetch": "2026-11-01T03:05:17Z"
+      "source": "https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-leading-causes-of-death",
+      "url": "https://cdn.who.int/media/docs/default-source/gho-documents/global-health-estimates/crude-death-rates-2000-2023_bycountry_2026-10-01.xlsx?sfvrsn=8ccbc771_1",
+      "source_date": "2026-10-01",
+      "data_year": 2023,
+      "last_fetch": "2026-11-05T20:40:42Z"
     },
     "tropical_cyclone_activity_basin": {
       "source": "https://www.ncei.noaa.gov/products/international-best-track-archive",

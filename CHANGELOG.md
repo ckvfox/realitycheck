@@ -2,6 +2,8 @@
 
 ## Unreleased - 2026-11-05
 
+- Replace road traffic and suicide mortality with WHO Global Health Estimates crude country rates through 2023. Use only the reported years from a single WHO edition.
+
 - Refresh the renewable share of final energy consumption from the UN SDG API and default the country table and map to the latest year covering at least half of the country registry.
 
 - Update PISA to 2025 and rebuild the full three-domain series from OECD aggregate mean-score tables.

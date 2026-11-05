@@ -421,6 +421,14 @@ scripts/
 
 ## 🧾 Data Sources
 
+Road traffic and suicide mortality use WHO (2026), *Global Health Estimates
+2023: Deaths by Cause, Age, Sex, by Country and by Region, 2000–2023*,
+accessed 5 November 2026. RealityCheck selects and reformats the WHO crude
+all-person estimates for road injury (1530) and self-harm (1610). The series
+contains only years published in that edition. See the [WHO source and
+methods](https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-leading-causes-of-death)
+and [WHO dataset terms](https://www.who.int/about/policies/publishing/data-policy/terms-and-conditions).
+
 Renewable energy share uses UN SDG 7.2.1, the share of renewables in total final
 energy consumption. Its country table and map default to the most recent year
 with data for at least half the registered countries. The trend chart retains
