@@ -1711,107 +1711,6 @@
     ],
     "low_outliers": []
   },
-  "old_age_dependency_ratio": {
-    "high_outliers": [
-      {
-        "country": "Vatican City",
-        "year": 2023,
-        "value": 91.46342,
-        "z": 6.155
-      },
-      {
-        "country": "Monaco",
-        "year": 2023,
-        "value": 70.10676,
-        "z": 4.423
-      },
-      {
-        "country": "Japan",
-        "year": 2023,
-        "value": 50.12053,
-        "z": 2.801
-      }
-    ],
-    "low_outliers": []
-  },
-  "age_dependency_ratio_total": {
-    "high_outliers": [
-      {
-        "country": "Central African Republic",
-        "year": 2023,
-        "value": 105.17741,
-        "z": 2.969
-      },
-      {
-        "country": "Vatican City",
-        "year": 2023,
-        "value": 103.65854,
-        "z": 2.872
-      },
-      {
-        "country": "Niger",
-        "year": 2023,
-        "value": 98.1641,
-        "z": 2.521
-      },
-      {
-        "country": "Somalia",
-        "year": 2023,
-        "value": 97.018166,
-        "z": 2.447
-      },
-      {
-        "country": "Democratic Republic of the Congo",
-        "year": 2023,
-        "value": 96.68237,
-        "z": 2.426
-      },
-      {
-        "country": "Monaco",
-        "year": 2023,
-        "value": 96.21759,
-        "z": 2.396
-      },
-      {
-        "country": "Mali",
-        "year": 2023,
-        "value": 95.562805,
-        "z": 2.354
-      },
-      {
-        "country": "Chad",
-        "year": 2023,
-        "value": 95.356895,
-        "z": 2.341
-      },
-      {
-        "country": "Burundi",
-        "year": 2023,
-        "value": 91.84654,
-        "z": 2.117
-      },
-      {
-        "country": "Mozambique",
-        "year": 2023,
-        "value": 90.55448,
-        "z": 2.035
-      }
-    ],
-    "low_outliers": [
-      {
-        "country": "Qatar",
-        "year": 2023,
-        "value": 20.095121,
-        "z": -2.466
-      },
-      {
-        "country": "United Arab Emirates",
-        "year": 2023,
-        "value": 22.002642,
-        "z": -2.344
-      }
-    ]
-  },
   "co2_emissions": {
     "high_outliers": [
       {
@@ -2696,60 +2595,6 @@
         "year": 2023,
         "value": 33.0,
         "z": -2.292
-      }
-    ]
-  },
-  "government_effectiveness": {
-    "high_outliers": [
-      {
-        "country": "Singapore",
-        "year": 2023,
-        "value": 25.4921917915344,
-        "z": 2.424
-      },
-      {
-        "country": "Switzerland",
-        "year": 2023,
-        "value": 23.4841973781586,
-        "z": 2.239
-      },
-      {
-        "country": "Monaco",
-        "year": 2023,
-        "value": 22.2524781227112,
-        "z": 2.126
-      },
-      {
-        "country": "Denmark",
-        "year": 2023,
-        "value": 22.172137260437,
-        "z": 2.119
-      },
-      {
-        "country": "Luxembourg",
-        "year": 2023,
-        "value": 21.0563462972641,
-        "z": 2.016
-      }
-    ],
-    "low_outliers": [
-      {
-        "country": "South Sudan",
-        "year": 2023,
-        "value": -25.6067707538604,
-        "z": -2.28
-      },
-      {
-        "country": "Yemen",
-        "year": 2023,
-        "value": -25.0296247005463,
-        "z": -2.227
-      },
-      {
-        "country": "Haiti",
-        "year": 2023,
-        "value": -24.4786732196808,
-        "z": -2.176
       }
     ]
   },
@@ -4045,5 +3890,172 @@
       }
     ],
     "low_outliers": []
+  },
+  "old_age_dependency_ratio": {
+    "high_outliers": [
+      {
+        "country": "Monaco",
+        "year": 2025,
+        "value": 71.7097745922925,
+        "z": 4.801
+      },
+      {
+        "country": "Japan",
+        "year": 2025,
+        "value": 51.0385733142186,
+        "z": 3.022
+      },
+      {
+        "country": "Portugal",
+        "year": 2025,
+        "value": 40.0084440263338,
+        "z": 2.072
+      },
+      {
+        "country": "Italy",
+        "year": 2025,
+        "value": 39.6841788691391,
+        "z": 2.044
+      },
+      {
+        "country": "Finland",
+        "year": 2025,
+        "value": 39.3731500761651,
+        "z": 2.017
+      }
+    ],
+    "low_outliers": []
+  },
+  "age_dependency_ratio_total": {
+    "high_outliers": [
+      {
+        "country": "Central African Republic",
+        "year": 2025,
+        "value": 103.585626770159,
+        "z": 3.109
+      },
+      {
+        "country": "Monaco",
+        "year": 2025,
+        "value": 99.1326477615041,
+        "z": 2.804
+      },
+      {
+        "country": "Somalia",
+        "year": 2025,
+        "value": 96.7394370384369,
+        "z": 2.641
+      },
+      {
+        "country": "Democratic Republic of the Congo",
+        "year": 2025,
+        "value": 96.2079825806326,
+        "z": 2.605
+      },
+      {
+        "country": "Niger",
+        "year": 2025,
+        "value": 95.4818820710142,
+        "z": 2.555
+      },
+      {
+        "country": "Mali",
+        "year": 2025,
+        "value": 92.8900095064012,
+        "z": 2.378
+      },
+      {
+        "country": "Chad",
+        "year": 2025,
+        "value": 92.6061106803711,
+        "z": 2.359
+      },
+      {
+        "country": "Angola",
+        "year": 2025,
+        "value": 88.6557825017491,
+        "z": 2.089
+      },
+      {
+        "country": "Mozambique",
+        "year": 2025,
+        "value": 88.3324550531064,
+        "z": 2.067
+      }
+    ],
+    "low_outliers": [
+      {
+        "country": "Qatar",
+        "year": 2025,
+        "value": 20.049623922883,
+        "z": -2.597
+      },
+      {
+        "country": "United Arab Emirates",
+        "year": 2025,
+        "value": 21.609697214495,
+        "z": -2.49
+      },
+      {
+        "country": "Kuwait",
+        "year": 2025,
+        "value": 26.8197986334013,
+        "z": -2.135
+      }
+    ]
+  },
+  "government_effectiveness": {
+    "high_outliers": [
+      {
+        "country": "Singapore",
+        "year": 2025,
+        "value": 2.0921398,
+        "z": 2.12
+      },
+      {
+        "country": "Japan",
+        "year": 2025,
+        "value": 2.0412225,
+        "z": 2.068
+      },
+      {
+        "country": "Luxembourg",
+        "year": 2025,
+        "value": 1.9771976,
+        "z": 2.001
+      }
+    ],
+    "low_outliers": [
+      {
+        "country": "South Sudan",
+        "year": 2025,
+        "value": -2.2509815,
+        "z": -2.363
+      },
+      {
+        "country": "Haiti",
+        "year": 2025,
+        "value": -2.0408679,
+        "z": -2.146
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2025,
+        "value": -1.9693812,
+        "z": -2.072
+      },
+      {
+        "country": "Sudan",
+        "year": 2025,
+        "value": -1.953554,
+        "z": -2.056
+      },
+      {
+        "country": "Somalia",
+        "year": 2025,
+        "value": -1.9067174999999998,
+        "z": -2.007
+      }
+    ]
   }
 }

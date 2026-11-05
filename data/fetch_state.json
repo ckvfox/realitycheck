@@ -1,9 +1,10 @@
 {
-  "last_run": "2026-11-05T17:15:38Z",
+  "last_run": "2026-11-05T17:53:33Z",
   "updated_kpis": [
     "access_to_basic_drinking_water",
     "access_to_electricity",
     "adult_literacy_rate",
+    "age_dependency_ratio_total",
     "air_quality_pm2_5_exposure",
     "area",
     "atmospheric_co2_concentration",
@@ -54,6 +55,7 @@
     "net_migration",
     "network_readiness_index",
     "number_of_recorded_natural_disasters",
+    "old_age_dependency_ratio",
     "olympic_medals_summer",
     "olympic_medals_winter",
     "overall_immunization_coverage",

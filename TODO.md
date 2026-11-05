@@ -27,7 +27,7 @@
 
 - Completed: extended World from seven to 15 series by activating global military spending and adding automated displacement, climate-disaster impact, NOAA sea-level, ocean-heat and atmospheric-CO₂ indicators with explicit source metadata.
 - Completed: fetched and validated all ten registered world-state KPIs and regenerated the consolidated gzip parts; production upload remains an explicit FTP workflow action.
-- Migrate Government Effectiveness to the revised WGI history and Road Traffic Deaths to the WHO country table after adding full-history/schema regression tests.
+- Migrate Road Traffic Deaths to the WHO country table after adding full-history/schema regression tests.
 
 - Review both editorial language versions of the Germany 2036 Reform Agenda at least annually and after major German legislation or new OECD/EU comparative evidence; keep country mechanisms distinct from transferability claims, compass scores distinct from source metrics and both B2 versions equivalent in meaning.
 - Revisit the military-duty versus universal-civic-year comparison after relevant German legislation, constitutional case law or new controlled evaluations; do not infer compulsory-service effects directly from voluntary-service participants.

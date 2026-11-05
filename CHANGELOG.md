@@ -2,6 +2,8 @@
 
 ## Unreleased - 2026-11-05
 
+- Fetch both age-dependency ratios directly from World Development Indicators and replace Government Effectiveness with the complete revised WGI governance estimate series.
+
 - Add Ember electricity generation emissions intensity and Eurostat housing cost overburden to the monthly refresh, with the EU-SILC comparison in the Germany Dossier.
 - Let visitors optionally remember their home country for 90 days in their browser and withdraw the preference from Countries. Explain the storage in the privacy policy.
 
