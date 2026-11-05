@@ -66,7 +66,9 @@ function harness(loader = async url => url.endsWith('region_sets.json') ? sets :
   const elements = new Map();
   function element(tag = 'div') {
     const el = { remove() {}, tagName: tag.toUpperCase(), value: '', disabled: false, hidden: false, children: [],
-      appendChild(child) { this.children.push(child); return child; },
+      appendChild(child) { if (typeof child === 'object') child.parent = this; this.children.push(child); return child; },
+      append(child) { this.appendChild(child); },
+      before(child) { this.parent.children.splice(this.parent.children.indexOf(this), 0, child); },
       createCaption() { return this.appendChild(element('caption')); },
       createTHead() { return this.appendChild(element('thead')); },
       createTBody() { return this.appendChild(element('tbody')); },
@@ -188,7 +190,9 @@ test('regional chart card explains scope and keeps a map link and measurement so
   const block = h.context.container.children[0];
   assert.match(block.children.find(el => el.className === 'kpi-message').textContent, /Regional data are available/);
   assert.ok(block.children.some(el => el.href?.includes('group=storm_impact')));
-  assert.ok(block.children.some(el => el.className === 'chart-source'));
+  const source = block.children.find(el => el.className === 'chart-source');
+  assert.ok(source);
+  assert.match(source.children.at(-1), /Latest observation: 2025 · 6 of 7 basins/);
   assert.equal(block.children.some(el => el.tagName === 'CANVAS'), true); // Preserve main regional chart.
 });
 

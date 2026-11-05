@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased - 2026-11-05
+
+- Add the World Bank's annual personal remittances received (% of GDP) series to Countries with percentage-point changes and a neutral map scale.
+
+- Use the new RealityCheck wordmark as a responsive WebP in the shared site header and include it in the production deployment allowlist.
+- Compact the mobile header, show source, observation year and coverage beside the Countries and World charts, and list country membership, overlaps and missing values below the World map summary.
+- Update the About page to describe the current ChatGPT and Codex workflow and the project owner's role in reviewing sources and publication.
+
 ## Unreleased - 2026-11-01
 
 - Reuse EnergyPlanning's live-verified FTPS recovery: bounded SHA-256 readback on size mismatches, temporary staging plus rename for corrupt direct overwrites, and bounded reconnects without advancing failed checkpoints. Preserve data/partial deployment selection and the current productive allowlist.

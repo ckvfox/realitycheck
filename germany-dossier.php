@@ -276,7 +276,7 @@ ob_start();
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
-<link rel="stylesheet" href="style.css?v=20260801-frontend-8">
+<link rel="stylesheet" href="style.css?v=20261105-coverage">
   <?php if ($authenticated): ?>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.min.js" integrity="sha512-TrzZNOcdTjzp6FQnXUlYrt08pfmmNWYCqfjkVK9sJmLrVo/NBuRnTL2FCg4JMjgm2xbn1MVhDbtedqFIppA6cQ==" crossorigin="anonymous" defer></script>
@@ -288,7 +288,7 @@ ob_start();
 <?php if ($accessProtectionEnabled && !$authenticated): ?>
   <main class="real-wages-login-shell">
     <section class="real-wages-login-card" aria-labelledby="login-title">
-      <img src="images/logo.png" alt="RealityCheck" class="real-wages-login-logo" decoding="async">
+      <img src="images/logo.webp" alt="RealityCheck" class="real-wages-login-logo" width="660" height="150" decoding="async">
       <div class="dossier-login-language">
         <span><span lang="en">Language</span><span lang="de">Sprache</span></span>
         <div class="dossier-language-toggle" role="group" aria-label="Language / Sprache">

@@ -3934,5 +3934,70 @@
         "z": -2.056
       }
     ]
+  },
+  "personal_remittances_received_gdp": {
+    "high_outliers": [
+      {
+        "country": "Tajikistan",
+        "year": 2025,
+        "value": 57.6648462573476,
+        "z": 6.462
+      },
+      {
+        "country": "Tonga",
+        "year": 2025,
+        "value": 39.3219613209479,
+        "z": 4.197
+      },
+      {
+        "country": "Lebanon",
+        "year": 2023,
+        "value": 33.349773045666,
+        "z": 3.46
+      },
+      {
+        "country": "Nepal",
+        "year": 2025,
+        "value": 32.3122082502615,
+        "z": 3.332
+      },
+      {
+        "country": "Honduras",
+        "year": 2025,
+        "value": 30.118530958428,
+        "z": 3.061
+      },
+      {
+        "country": "El Salvador",
+        "year": 2025,
+        "value": 27.5112692575543,
+        "z": 2.739
+      },
+      {
+        "country": "Nicaragua",
+        "year": 2024,
+        "value": 26.632397170907,
+        "z": 2.631
+      },
+      {
+        "country": "Gambia",
+        "year": 2025,
+        "value": 23.7880604641355,
+        "z": 2.279
+      },
+      {
+        "country": "Marshall Islands",
+        "year": 2024,
+        "value": 23.476617395281,
+        "z": 2.241
+      },
+      {
+        "country": "Samoa",
+        "year": 2025,
+        "value": 22.3700202891107,
+        "z": 2.104
+      }
+    ],
+    "low_outliers": []
   }
 }

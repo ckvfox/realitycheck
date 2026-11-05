@@ -92,6 +92,7 @@ function renderChart(container, title, unit, data) {
   });
 
   canvasEl.__rcChart = chart;
+  return canvasEl;
 }
 
 /* ========= Einzel-Render-Funktion ========= */
@@ -175,7 +176,7 @@ async function renderWorldKpi(container, kpi) {
     block.appendChild(link);
   }
 
-  renderChart(block, title, unit, worldData);
+  const canvas = renderChart(block, title, unit, worldData);
 
   if (desc) {
     const p = document.createElement("p");
@@ -192,12 +193,13 @@ async function renderWorldKpi(container, kpi) {
   if (!isRegional) renderKpiAnalysis(kpi, aiBox.id);
   else aiBox.remove();
 
-  appendWorldKpiSource(block, kpi);
+  appendWorldKpiSource(block, kpi, worldData, canvas);
 }
 
-function appendWorldKpiSource(block, kpi) {
+function appendWorldKpiSource(block, kpi, worldData, canvas) {
   const source = document.createElement("p");
   source.className = "chart-source";
+  source.id = `${block.id}-source`;
   if (kpi.source) {
     try {
       const url = new URL(kpi.source, window.location.href);
@@ -217,9 +219,24 @@ function appendWorldKpiSource(block, kpi) {
       source.textContent = `Source: ${kpi.source}`;
     }
   } else {
-    source.textContent = "Source: RealityCheck Database (OWID, World Bank, UN, EPI)";
+    source.textContent = "Source: unavailable";
   }
-  block.appendChild(source);
+  if (!worldData || !canvas) {
+    block.appendChild(source);
+    return;
+  }
+  const isRegional = kpi.geo_type === "region";
+  const latestIndex = isRegional
+    ? worldData.years.length - 1
+    : worldData.values.reduce((latest, value, index) => Number.isFinite(value) ? index : latest, -1);
+  const coverage = isRegional
+    ? `${worldData.datasets.filter(series => Number.isFinite(series.data[latestIndex])).length} of ${worldData.datasets.length} basins`
+    : "Global aggregate";
+  source.append(latestIndex >= 0
+    ? ` · Latest observation: ${worldData.years[latestIndex]} · ${coverage}`
+    : " · No observations");
+  canvas.setAttribute("aria-describedby", source.id);
+  canvas.before(source);
 }
 
 /* ========= Hauptlogik ========= */
@@ -1854,7 +1871,7 @@ function updateWorldMapGeoJSON() {
   
   // Update context legend
   updateMapLegend(grouping, category, relevantCountries.length, comparison, comparisonCountries.length);
-  renderWorldGroupSummary(grouping, category, relevantCountries, comparison, comparisonCountries);
+  renderWorldGroupSummary(grouping, category, relevantCountries, comparison, comparisonCountries, choroplethValues);
   updateWorldMapVisualLegend(category, comparison);
   syncWorldMapUrl();
 }
@@ -1900,14 +1917,16 @@ function appendWorldComparisonCard(container, label, groupA, groupB) {
   container.appendChild(card);
 }
 
-function renderWorldGroupSummary(grouping, category, members, comparison = "", comparisonMembers = []) {
+function renderWorldGroupSummary(grouping, category, members, comparison, comparisonMembers, mapValues) {
   const summary = document.getElementById('world-group-summary');
   const title = document.getElementById('world-group-summary-title');
   const context = document.getElementById('world-group-summary-context');
   const cards = document.getElementById('world-group-summary-cards');
   const note = document.getElementById('world-group-summary-note');
   const year = Number(document.getElementById('worldMapYearSelect')?.value);
-  if (!summary || !title || !context || !cards || !note || !members.length || !Number.isFinite(year)) return;
+  if (!summary || !title || !context || !cards || !note) return;
+  summary.hidden = !members.length || !Number.isFinite(year);
+  if (summary.hidden) return;
 
   const realCountries = worldMapRealCountryNames();
   const population = calculateAdditiveShare(worldMapPopulation, members, year, realCountries);
@@ -1958,7 +1977,34 @@ function renderWorldGroupSummary(grouping, category, members, comparison = "", c
     const climateMetric = getActiveClimateMetricConfig();
     note.textContent = `${describeMeasureType(climateMetric?.measureType || "exposure")} Aggregation: ${getAggregationLabel(aggregation)}. Coverage and year depend on the selected climate metric.`;
   }
-  summary.removeAttribute('hidden');
+  renderWorldGroupMembers(members, comparisonMembers, groupLabel, comparisonLabel, mapValues,
+    `${metricTitle}, ${year}`, valueMode === "per_capita" ? `${metricUnit || "units"} per person` : metricUnit);
+}
+
+function renderWorldGroupMembers(members, comparisonMembers, groupLabel, comparisonLabel, mapValues, metric, unit) {
+  const caption = document.getElementById("world-group-members-caption");
+  const body = document.getElementById("world-group-members-rows");
+  if (!caption || !body) return;
+
+  const groupA = new Set(members);
+  const groupB = new Set(comparisonMembers);
+  const labels = { a: groupLabel, b: comparisonLabel, overlap: `Both: ${groupLabel} and ${comparisonLabel}` };
+  const countries = [...new Set([...groupA, ...groupB])].sort((a, b) => a.localeCompare(b, "en"));
+  caption.textContent = `${metric} · ${countries.length - mapValues.size} of ${countries.length} countries without data`;
+  const rows = document.createDocumentFragment();
+  for (const country of countries) {
+    const row = document.createElement("tr");
+    const name = document.createElement("th");
+    name.scope = "row";
+    name.textContent = country;
+    row.appendChild(name);
+    const membership = classifyGroupMembership(country, groupA, groupB);
+    row.insertCell().textContent = labels[membership];
+    const value = mapValues.get(country);
+    row.insertCell().textContent = Number.isFinite(value) ? formatWorldMapNumber(value, unit) : "No data";
+    rows.appendChild(row);
+  }
+  body.replaceChildren(rows);
 }
 
 // === Update Context Legend Box ===

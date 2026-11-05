@@ -29,7 +29,7 @@
 	<link rel="icon" type="image/png" href="favicon.png">
 	<link rel="apple-touch-icon" href="favicon.png">
 
-  <link rel="stylesheet" href="style.css?v=20261030-tooltip-2" />
+  <link rel="stylesheet" href="style.css?v=20261105-remittances" />
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.min.js" integrity="sha512-TrzZNOcdTjzp6FQnXUlYrt08pfmmNWYCqfjkVK9sJmLrVo/NBuRnTL2FCg4JMjgm2xbn1MVhDbtedqFIppA6cQ==" crossorigin="anonymous" defer></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous" defer></script>
@@ -128,15 +128,14 @@
 		</div>
 	</section>
 
-  <!-- Quelle & Datum -->
-  <div id="data-meta">
-    Source: <a id="data-source" href="#" target="_blank" rel="noopener">---</a><br>
-    Last update: <span id="data-date">---</span>
-  </div>
-
   <!-- Chart -->
   <section id="chart-container">
-    <canvas id="kpi-chart"></canvas>
+    <div id="data-meta">
+      Source: <a id="data-source" target="_blank" rel="noopener">—</a>
+      <span id="data-coverage"></span>
+      · Dataset checked: <span id="data-date">—</span>
+    </div>
+    <canvas id="kpi-chart" aria-describedby="data-meta"></canvas>
 
     <div class="chart-selects" aria-label="Country comparison selectors">
       <span class="chart-selects-label">Compare:</span>
@@ -179,7 +178,7 @@
   <script src="scripts/utils_ui.js" defer></script>
   <script src="scripts/core.js?v=20261019-translate-2" defer></script>
   <script src="scripts/environment_colors.js?v=20261030-environment-1" defer></script>
-  <script src="scripts/script.js?v=20261030-environment-1" defer></script>
+  <script src="scripts/script.js?v=20261105-remittances" defer></script>
 
 </body>
 </html>

@@ -453,6 +453,7 @@ function updateTable() {
 
   const meta = getMetaForCurrent() || {};
   const unit = (meta.unit || "").trim();
+  const changeUnit = unit === "%" ? "percentage points" : unit;
   const scaleMode = meta.scale || "auto";
 
   /* ===========================================
@@ -499,7 +500,7 @@ function updateTable() {
     const dPct = meta.change_mode !== "absolute" && pv != null && pv !== 0 && lv != null ? ((lv - pv) / pv) * 100 : null;
     const dComp =
       cv != null && lv != null
-        ? meta.change_mode === "absolute" ? `${formatValueAuto(lv - cv, meta.scale)} ${meta.unit || ""}`
+        ? meta.change_mode === "absolute" ? `${formatValueAuto(lv - cv, meta.scale)} ${changeUnit}`
           : cv !== 0 ? (((lv - cv) / cv) * 100).toFixed(2) + "%" : "-"
         : "-";
 
@@ -717,7 +718,7 @@ function updateTable() {
 
     const deltaValue = r.deltaPrevAbs != null ? formatValueAuto(r.deltaPrevAbs, meta.scale) : "";
     const deltaDetail = meta.change_mode === "absolute"
-      ? `${deltaValue} ${meta.unit || ""}`
+      ? `${deltaValue} ${changeUnit}`
       : `${deltaValue} (${r.deltaPrevPct != null ? r.deltaPrevPct.toFixed(2) + "%" : "n/a"})`;
     const deltaTitle = r.deltaPrevAbs != null
       ? `title="${escapeHtml(`Δ vs Prev: ${deltaDetail}`)}"`
@@ -780,7 +781,7 @@ function updateTable() {
   const roundInfo = document.getElementById("rounding-info");
   const changeNote = document.getElementById("comparison-change-note");
   if (changeNote) changeNote.textContent = meta.change_mode === "absolute"
-    ? `Changes are shown in ${meta.unit || "indicator units"}; percentage changes are not meaningful for this index.`
+    ? `Changes are shown in ${changeUnit || "indicator units"}.`
     : "Δ vs Comparison Year in %";
   if (roundInfo) {
     if (scaleMode === "auto") {
@@ -807,6 +808,20 @@ function updateChart() {
 
   const meta = getMetaForCurrent() || { title: currentKpi || "Selected KPI", unit: "" };
   const years = currentYearList.length ? [...currentYearList] : [];
+  const coverage = document.getElementById("data-coverage");
+  if (coverage) {
+    const countrySeries = [...currentValueLookup].filter(([country]) => isKnownCountry(country));
+    coverage.textContent = " · No country data for this view";
+    for (let index = years.length - 1; index >= 0; index--) {
+      const year = years[index];
+      const count = countrySeries.filter(([country, observations]) =>
+        Number.isFinite(applyRelation(observations.get(year)?.value, country, year))
+      ).length;
+      if (!count) continue;
+      coverage.textContent = ` · Latest country data: ${year} · ${count} ${count === 1 ? "country" : "countries"} in that year`;
+      break;
+    }
+  }
 
   const datasets = [];
   const compareSelectIds = ["country1Select", "country2Select", "country3Select"];
@@ -943,7 +958,7 @@ async function updateView() {
           sourceLink.href = meta.source;
           sourceLink.textContent = new URL(meta.source).hostname.replace("www.", "");
         } else {
-          sourceLink.href = "#";
+          sourceLink.removeAttribute("href");
           sourceLink.textContent = meta.source || "---";
         }
       }
@@ -957,9 +972,10 @@ async function updateView() {
           meta.last_fetch ||
           meta.last_update ||
           "---";
-        dateEl.textContent = date !== "---"
-          ? new Date(date).toISOString().split("T")[0] // nur Datumsteil anzeigen
-          : "---";
+        const checkedAt = new Date(date);
+        dateEl.textContent = Number.isFinite(checkedAt.getTime())
+          ? checkedAt.toISOString().split("T")[0]
+          : "—";
       }
   } catch (e) {
     console.error("❌ updateView() failed:", e);
@@ -1119,6 +1135,7 @@ async function updateMap() {
 
 		// 🔁 Normalisierung 0..1
 		const n = Math.max(0, Math.min(1, normalize(val)));
+		if (sortMode === "neutral") return `hsl(213,65%,${92 - n * 60}%)`;
 
 		// ✅ Korrekte Farblogik:
 		// sort:"higher" → hohe Werte sind gut → grün
@@ -1313,6 +1330,10 @@ function buildHeatLegendHTML({
     case "higher":
       variant = "higher";
       modeText = "Higher values = greener";
+      break;
+    case "neutral":
+      variant = "neutral";
+      modeText = "Darker blue = higher values";
       break;
     default:
       variant = "higher";

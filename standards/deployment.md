@@ -12,7 +12,7 @@ Deployment-Regeln werden ausschliesslich in diesem Dokument definiert. `AGENTS.m
 Dateiendung allein erlaubt keinen Upload. Erlaubt sind:
 
 - explizite produktive Root-Dateien, Browser-Skripte und PHP-Includes;
-- drei belegte Bilder: `logo.png`, `translate.png`, `teamwork_wunder.jpg`;
+- drei belegte Bilder: `logo.webp`, `translate.png`, `teamwork_wunder.jpg`;
 - benoetigte Flaggen aus der Laenderregistrierung sowie Sprach-/Fallback-Flaggen;
 - registrierte KPI-JSONs und ausschliesslich die im Index genannten gzip-Teile;
 - explizite oeffentliche Analysen/Rankings, Metadaten und registrierte Geometrien.

@@ -108,7 +108,7 @@ PRODUCTIVE_SERVER_FILES = {
     "analysis-private/income-pyramid-data-de.php", "analysis-private/germany-reform-agenda.php",
     "analysis-private/germany-reform-agenda-depth.php",
 }
-PRODUCTIVE_IMAGE_FILES = {"images/logo.png", "images/translate.png", "images/teamwork_wunder.jpg"}
+PRODUCTIVE_IMAGE_FILES = {"images/logo.webp", "images/translate.png", "images/teamwork_wunder.jpg"}
 PRODUCTIVE_DATA_FILES = {
     "data/analysis.md", "data/analysis_outliers.json", "data/kpi_analysis.json", "data/fetch_status.json",
     "data/fun_ranking.json", "data/fun_ranking_bottom.json", "data/safe_haven_ranking.json",

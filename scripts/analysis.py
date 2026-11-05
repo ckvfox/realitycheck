@@ -478,6 +478,7 @@ def run_global_analysis(updated=None):
 def generate_kpi_analyses(data_dir: Path, updated_only=None):
     generated_at = datetime.now(timezone.utc).isoformat()
     all_meta=load_meta()
+    existing = json.loads(OUT_KPI.read_text(encoding="utf-8")) if OUT_KPI.exists() else {}
     try:
         with COUNTRIES_FILE.open(encoding="utf-8") as handle:
             country_names = set(json.load(handle))
@@ -487,7 +488,11 @@ def generate_kpi_analyses(data_dir: Path, updated_only=None):
     meta=all_meta
     if updated_only and "__force_all__" not in updated_only:
         allow={u.replace(".json","") for u in updated_only}
-        meta=[m for m in meta if m.get("filename","").replace(".json","") in allow]
+        meta = [
+            entry for entry in meta
+            if (filename := entry.get("filename", "").removesuffix(".json")) in allow
+            or (filename not in existing and (data_dir / f"{filename}.json").is_file())
+        ]
         log(f"⚙️ Limiting KPI analysis to {len(meta)} entries.")
     result={}
     for e in tqdm(meta,desc="🧩 KPI summaries"):
@@ -513,7 +518,6 @@ def generate_kpi_analyses(data_dir: Path, updated_only=None):
             "last_update": generated_at[:10],
         }
         time.sleep(0.8)
-    existing=json.loads(OUT_KPI.read_text(encoding="utf-8")) if OUT_KPI.exists() else {}
     existing.update(result)
     safe_write_json(OUT_KPI,existing)
     log(f"✅ KPI analyses saved ({len(existing)} total)")

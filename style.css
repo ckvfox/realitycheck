@@ -166,7 +166,7 @@ a:hover { text-decoration: underline; }
 .leaflet-popup-content .real-wages-page p, .leaflet-popup-content p { margin: .35rem 0; }
 .real-wages-login-shell { display: grid; min-height: 100vh; place-items: center; padding: 1rem; }
 .real-wages-login-card { width: min(100%, 430px); padding: 2rem; background: #fff; border-radius: var(--radius); box-shadow: 0 18px 55px rgba(26, 53, 94, .18); }
-.real-wages-login-logo { display: block; width: 190px; max-width: 60%; margin: 0 auto 1.5rem; }
+.real-wages-login-logo { display: block; width: 190px; max-width: 60%; height: auto; margin: 0 auto 1.5rem; }
 .real-wages-login-card h1 { margin: 0 0 .7rem; color: var(--steel-blue); }
 .real-wages-login-form { display: grid; gap: .65rem; margin-top: 1.25rem; }
 .real-wages-login-form label { font-weight: 700; }
@@ -485,10 +485,6 @@ nav { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; justify-c
     }
   }
 
-  #logo-text {
-    font-size: 1.1rem;
-  }
-
 }
 
 
@@ -653,6 +649,10 @@ main { flex: 1; position: relative; display: flex; flex-direction: column; }
 
 .legend-bar--target {
   background: linear-gradient(to right, hsl(0, 85%, 50%), #ffffff, hsl(120, 85%, 45%));
+}
+
+.legend-bar--neutral {
+  background: linear-gradient(to right, hsl(213, 65%, 92%), hsl(213, 65%, 32%));
 }
 
 .legend-mode {
@@ -1062,7 +1062,7 @@ body.overall-page #legend .missing-kpis span {
 }
 
 
-#data-meta { text-align: center; font-size: .85em; color: #666; margin: -.5rem 0 1.5rem; }
+#data-meta { text-align: center; font-size: .85em; color: #666; margin: 0 0 .75rem; }
 
 
 #data-meta a { color: #0b63c5; }
@@ -1353,7 +1353,6 @@ body.world-page { overflow-x: hidden; }
 .page-intro p.note { font-style: italic; color: #555; margin-top: 1.2rem; }
 
 
-#logo { height: 40px; width: auto; object-fit: contain; display: block; margin-bottom: .5rem; max-height: 70px; border-radius: 50%; transition: transform .3s ease; }
 
 
 #about-section { max-width: 900px; margin: 2rem auto 4rem; padding: 0 1.5rem; line-height: 1.6; }
@@ -1543,6 +1542,13 @@ body.world-page { overflow-x: hidden; }
 }
 .world-group-summary__note { margin: .8rem 0 0; color: #52606d; font-size: .82rem; }
 
+.world-group-members { margin-top: .8rem; }
+.world-group-members summary { cursor: pointer; color: #17365d; font-weight: 600; }
+.world-group-members table { width: 100%; margin-top: .6rem; }
+.world-group-members caption { padding: .4rem; text-align: left; color: #52606d; }
+.world-group-members th,
+.world-group-members td { padding: .4rem; text-align: left; overflow-wrap: anywhere; }
+
 .world-map-mode-note {
   min-height: 1.25rem;
   margin: .3rem 1rem 1rem;
@@ -1616,7 +1622,6 @@ body.world-page { overflow-x: hidden; }
 .chart-source a:hover { text-decoration: underline; }
 
 
-@supports (-webkit-touch-callout: none) { #logo { height: auto; max-height: 48px; margin: .4rem 0; } }
 
 
 tbody tr.fun-mode { background-color: #fff7cc; }
@@ -1721,7 +1726,6 @@ tr.fun-mode, tr.safe-mode, tr.fun-safe { background: transparent; }
 #logo:hover { transform: scale(1.05); }
 
 
-#logo-text { font-family: "Segoe UI",Roboto,sans-serif; font-weight: 600; font-size: 1.2rem; color: #fff; letter-spacing: .5px; white-space: nowrap; display: none; }
 
 
 #kpi-analysis { max-width: 900px; margin: 1rem auto 1.5rem; padding: 1rem 1.2rem; border-radius: 10px; background: #19325014; color: #222; font-size: .95rem; line-height: 1.5; opacity: 0; transition: opacity .8s ease; }
@@ -2106,7 +2110,7 @@ body.world-page .graph-block canvas[role="img"] {
    LOGO + META SECTIONS
    ============================================================ */
 
-header img, .header-logo img, nav img, #site-logo {
+header img:not(#logo), .header-logo img, nav img, #site-logo {
   display: inline-block !important;
   margin: 0 auto;
   max-height: 42px !important;
@@ -2118,7 +2122,7 @@ header img, .header-logo img, nav img, #site-logo {
 
 
 @media (max-width:700px){
-  header img, .header-logo img, nav img, #site-logo {
+  header img:not(#logo), .header-logo img, nav img, #site-logo {
     max-height: 30px !important;
     margin: 4px auto !important;
   }
@@ -2698,15 +2702,10 @@ header#main-header {
 }
 
 #logo {
-  width: 70px;
+  display: block;
+  width: clamp(156px, 45vw, 220px);
   height: auto;
-  margin-bottom: 0.2rem;
-}
-
-#logo-text {
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  transition: transform .3s ease;
 }
 
 /* Navigation – immer horizontal unter dem Logo */
@@ -3689,22 +3688,37 @@ input[type="submit"] {
 }
 
 @media (max-width: 720px) {
-  .header-actions nav {
-    width: 100%;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding: 0.2rem 0.35rem 0.55rem;
-    scroll-snap-type: x proximity;
-    scrollbar-width: thin;
+  header#main-header {
+    gap: 0;
+    padding: .55rem 0 .25rem;
   }
 
-  .header-actions nav a {
-    flex: 0 0 auto;
+  #logo-link { margin-bottom: 0; }
+
+  .translator-launcher { top: 4px !important; }
+
+  .translator-button {
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0;
+  }
+
+  .translator-icon { max-width: 100%; height: auto; }
+
+  header#main-header nav {
+    width: 100%;
+    gap: 0 .25rem;
+    margin-top: .25rem;
+    padding: 0 .35rem;
+  }
+
+  header#main-header nav a {
     min-height: 44px;
     display: inline-flex;
     align-items: center;
-    scroll-snap-align: start;
+    padding: .15rem .4rem;
+    font-size: .875rem;
+    white-space: nowrap;
   }
 }
 

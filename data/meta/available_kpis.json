@@ -1963,5 +1963,24 @@
     "map_color_scale": "spei_drought",
     "analysis_guardrail": "Annual country-level 12-month Standardised Precipitation-Evapotranspiration Index (World Bank ESG / SPEIbase, EN.CLC.SPEI.XD). Negative values indicate drier conditions; positive values indicate wetter conditions. Country averages can mask local droughts. Green indicates lower drought pressure only, not absence of flood risk; this is not recorded damage.",
     "change_mode": "absolute"
+  },
+  {
+    "filename": "personal_remittances_received_gdp",
+    "title": "Personal Remittances Received (% of GDP)",
+    "description": "Personal transfers received from abroad plus compensation of employees who work in an economy where they do not reside, expressed as a share of GDP. The World Bank combines IMF balance-of-payments data with national and international estimates. Coverage varies by year.",
+    "unit": "%",
+    "relation": "",
+    "sort": "neutral",
+    "cluster": "Economy & Labor",
+    "source": "https://data.worldbank.org/indicator/BX.TRF.PWKR.DT.GD.ZS",
+    "source_type": "worldbank",
+    "source_code": "BX.TRF.PWKR.DT.GD.ZS",
+    "worldbank_countries_only": true,
+    "scale": "none",
+    "world_kpi": "",
+    "relevance": "none",
+    "actuality": "annual",
+    "change_mode": "absolute",
+    "analysis_guardrail": "The indicator includes personal transfers and compensation of nonresident workers. It measures inflows relative to GDP and does not determine living standards or the number of migrants. Higher or lower shares do not imply better outcomes. Report changes in percentage points."
   }
 ]

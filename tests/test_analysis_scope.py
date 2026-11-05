@@ -2,6 +2,7 @@ import json
 import sys
 import unittest
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
 
@@ -121,6 +122,27 @@ class GlobalAnalysisScopeTests(unittest.TestCase):
         payload = write_json.call_args.args[1]["sample"]
         self.assertRegex(payload["generated_at"], r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}")
         self.assertEqual(payload["last_update"], payload["generated_at"][:10])
+
+    def test_incremental_analysis_includes_new_kpis_with_data(self):
+        meta = [{"filename": name} for name in ("updated", "new", "unfetched", "existing")]
+        existing = {"existing": {"summary": "Keep this summary"}}
+        with TemporaryDirectory() as temp:
+            data_dir = Path(temp)
+            output = data_dir / "kpi_analysis.json"
+            output.write_text(json.dumps(existing), encoding="utf-8")
+            (data_dir / "new.json").write_text('[{"country":"Germany","year":2025,"value":1}]', encoding="utf-8")
+            with (
+                patch.object(analysis, "load_meta", return_value=meta),
+                patch.object(analysis, "build_cross_kpi_associations", return_value={}),
+                patch.object(analysis, "build_kpi_snapshot", return_value="snapshot"),
+                patch.object(analysis, "gpt_call", return_value="Summary"),
+                patch.object(analysis, "OUT_KPI", output),
+                patch.object(analysis.time, "sleep"),
+            ):
+                analysis.generate_kpi_analyses(data_dir, updated_only=["updated"])
+            result = json.loads(output.read_text(encoding="utf-8"))
+        self.assertEqual(set(result), {"existing", "updated", "new"})
+        self.assertEqual(result["existing"], existing["existing"])
 
 
 if __name__ == "__main__":

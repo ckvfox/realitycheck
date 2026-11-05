@@ -1,4 +1,4 @@
-![RealityCheck Logo](images/logo.png)
+![RealityCheck Logo](images/logo.webp)
 
 # 🌍 RealityCheck – Interactive Country Comparison
 
@@ -38,7 +38,7 @@ beyond perception, bias, or headlines.
 ---------------------------------------------------------------------
 
 🧭 WHAT THIS PROJECT DOES
-RealityCheck combines 105 registered global indicators (KPIs) into one coherent platform:
+RealityCheck combines 106 registered global indicators (KPIs) into one coherent platform:
 a living dashboard that visualizes progress, risks, and differences between nations.
 
 It’s both analytical and exploratory — you can:
@@ -82,7 +82,7 @@ It’s both analytical and exploratory — you can:
 - The World cyclone view displays separate NOAA basin-season series and illustrative basin markers with a count table. Counts include unnamed systems and do not measure damage; missing seasons stay missing. The active Wildfire — Burned Area country map uses 198 countries and completed 2012–2025 observations from GWIS/OWID; partial current years are automatically excluded. Source integration status for the remaining hazard categories is recorded in `docs/climate_sources_2026-10-30.md`.
 
 - The fetch backend now uses independently tested source adapters, fail-closed publication guards and last-known-good preservation.
-- RealityCheck now registers 105 KPIs, including additional household, energy, cohesion, health, migration and world-climate indicators.
+- RealityCheck now registers 106 KPIs, including personal remittances received as a share of GDP from the World Bank.
 - Global and per-KPI analyses use traceable country, regional, trend and coverage evidence; every KPI analysis displays its generation timestamp.
 - Overall Ranking keeps the user-weighted standard scenario and adds evidence-constrained Top/Bottom-20 Fun, Safe Haven and Immigration lenses.
 - The World map supports two-group comparison, overlap highlighting, KPI intensity, group summaries and shareable URL state.
@@ -236,7 +236,7 @@ It’s both analytical and exploratory — you can:
 │   └── real-wages-auth.example.php # Non-secret setup template
 │
 └── /images/
-    ├── logo.png
+    ├── logo.webp
 ```
 
 ⚠️ RealityCheck structure changed — README update required. This inventory is

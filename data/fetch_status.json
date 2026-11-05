@@ -735,6 +735,13 @@
       "source_date": "2026-06-24T00:00:00Z",
       "data_year": 2023,
       "last_fetch": "2026-11-01T03:05:26Z"
+    },
+    "personal_remittances_received_gdp": {
+      "source": "https://data.worldbank.org/indicator/BX.TRF.PWKR.DT.GD.ZS",
+      "url": "",
+      "source_date": "2026-10-08T00:00:00Z",
+      "data_year": 2025,
+      "last_fetch": "2026-11-05T16:59:38Z"
     }
   },
   "summary": {
