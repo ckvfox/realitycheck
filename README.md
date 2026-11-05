@@ -421,6 +421,11 @@ scripts/
 
 ## 🧾 Data Sources
 
+Renewable energy share uses UN SDG 7.2.1, the share of renewables in total final
+energy consumption. Its country table and map default to the most recent year
+with data for at least half the registered countries. The trend chart retains
+the complete available series, including newer partial years.
+
 The RealityCheck PISA composite uses the equal-weight average of OECD mean
 scores for science, reading and mathematics, starting in 2006. Source:
 OECD (2026), *PISA 2025 Results (Volume I)*, Annex B1, tables I.B1.2a.36–38.

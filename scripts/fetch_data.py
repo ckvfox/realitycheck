@@ -17,13 +17,12 @@ import re
 import subprocess
 import sys
 import traceback
-import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from adapters import imf as imf_adapter, special as special_adapter
-from adapters.runtime import SourceRuntime
+from adapters.runtime import SourceRuntime, normalize_country_key as _norm
 from builtin_adapters import build_builtin_adapter_registry
 from env_utils import get_openai_key
 from fetch_core import AdapterMode, AdapterRequest, build_status_entry, force_refresh_required, source_date_cache_key
@@ -124,15 +123,6 @@ def resolve_kpi_id(meta: dict[str, Any] | None) -> str:
         if isinstance(value, str) and value.strip():
             return value.strip()
     return "kpi"
-
-
-def _norm(value: str) -> str:
-    value = "".join(
-        char
-        for char in unicodedata.normalize("NFKD", str(value).lower())
-        if not unicodedata.combining(char)
-    )
-    return re.sub(r"[^a-z0-9]+", "", value)
 
 
 def build_country_indices(countries: dict[str, Any], mapping: dict[str, str]):

@@ -1,9 +1,19 @@
 """Injected services shared by concrete source adapters."""
 from __future__ import annotations
 
+import re
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable
+
+
+def normalize_country_key(value: str) -> str:
+    normalized = "".join(
+        char for char in unicodedata.normalize("NFKD", str(value).lower())
+        if not unicodedata.combining(char)
+    )
+    return re.sub(r"[^a-z0-9]+", "", normalized)
 
 
 @dataclass(frozen=True)

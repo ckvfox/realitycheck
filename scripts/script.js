@@ -171,6 +171,10 @@ async function init() {
       updateView();
     });
     el("yearSelect")?.addEventListener("change", updateTable);
+    el("countrySnapshotYear")?.addEventListener("change", () => {
+      updateTable();
+      updateMap();
+    });
     el("relationSelect")?.addEventListener("change", async () => {
       const relation = el("relationSelect").value;
       const status = el("view-status");
@@ -502,6 +506,36 @@ function populateYearSelect() {
   }
 }
 
+function populateCountrySnapshot(meta) {
+  const control = document.getElementById("country-snapshot-control");
+  const select = document.getElementById("countrySnapshotYear");
+  if (!control || !select) return;
+  select.replaceChildren();
+  control.hidden = !meta.common_year_view;
+  if (control.hidden) return;
+
+  const counts = new Map();
+  for (const [country, observations] of currentValueLookup) {
+    if (!isKnownCountry(country)) continue;
+    for (const [year, observation] of observations) {
+      if (Number.isFinite(observation.value)) counts.set(year, (counts.get(year) || 0) + 1);
+    }
+  }
+  const years = [...counts.keys()].sort((a, b) => b - a);
+  const threshold = sortedCountryNames.length / 2;
+  const preferred = years.find(year => counts.get(year) >= threshold);
+  for (const year of years) {
+    const count = counts.get(year);
+    select.add(new Option(`${year} · ${count} ${count === 1 ? "country" : "countries"}`, String(year)));
+  }
+  select.add(new Option("Latest value per country", ""));
+  select.value = String(preferred ?? years[0] ?? "");
+}
+
+function countrySnapshotYear(meta) {
+  const selected = meta.common_year_view && document.getElementById("countrySnapshotYear")?.value;
+  return selected ? Number(selected) : null;
+}
 
 /* ========= Table ========= */
 function updateTable() {
@@ -516,6 +550,7 @@ function updateTable() {
       : null;
 
   const meta = getMetaForCurrent() || {};
+  const snapshotYear = countrySnapshotYear(meta);
   const unit = (meta.unit || "").trim();
   const changeUnit = unit === "%" ? "percentage points" : unit;
   const scaleMode = meta.scale || "auto";
@@ -547,8 +582,8 @@ function updateTable() {
   });
 
   grouped.forEach((bucket, country) => {
-    if (!bucket.latest) return;
-    const latest = bucket.latest;
+    const latest = snapshotYear === null ? bucket.latest : bucket.byYear.get(snapshotYear);
+    if (!latest) return;
     const prev = bucket.byYear.get(latest.year - 1) || null;
     const comp =
       compYear != null && bucket.byYear.has(compYear)
@@ -993,6 +1028,7 @@ async function updateView() {
       console.log(`✅ updateView(): ${filename} → ${currentData.length} records`);
 
       populateYearSelect();
+      populateCountrySnapshot(meta);
       updateTable();
       updateChart();
       updateMap();
@@ -1108,11 +1144,8 @@ async function updateMap() {
   if (!meta) return;
 
   const data = ALL_DATA[meta.filename] || [];
+  const snapshotYear = countrySnapshotYear(meta);
   if (!data.length) return;
-
-  // Alte Layer entfernen
-  if (mapLayer) map.removeLayer(mapLayer);
-  if (window._legendControl) map.removeControl(window._legendControl);
 
   // === ISO-Mapping vorbereiten ===
   const isoByName = {};
@@ -1130,6 +1163,9 @@ async function updateMap() {
       window._countryMappings = {};
     }
   }
+  if (meta !== getMetaForCurrent() || snapshotYear !== countrySnapshotYear(meta)) return;
+  if (mapLayer) map.removeLayer(mapLayer);
+  if (window._legendControl) map.removeControl(window._legendControl);
   for (const [alias, canonical] of Object.entries(window._countryMappings)) {
     const canonicalIso = isoByName[canonical.toLowerCase()];
     if (canonicalIso) isoByName[alias.toLowerCase()] = canonicalIso;
@@ -1139,6 +1175,7 @@ async function updateMap() {
   const latestByCountry = new Map();
   for (const d of data) {
     if (!d || !d.country || d.country === "World" || d.value == null) continue;
+    if (snapshotYear !== null && normalizeYear(d.year) !== snapshotYear) continue;
     const cname = d.country.trim();
     const prev = latestByCountry.get(cname);
     if (!prev || d.year > prev.year)
@@ -1337,10 +1374,11 @@ async function updateMap() {
 	}).addTo(map);
 
   // === Neue Legende ===
+  const mapTitle = snapshotYear === null ? meta.title || currentKpi : `${meta.title || currentKpi} (${snapshotYear})`;
   const legendHTML = envScale
-    ? `<div class="legend-box"><div class="legend-title"><strong>${escapeHtml(meta.title || currentKpi)}</strong></div><div class="legend-bar legend-bar--environment"></div><div class="legend-scale"><span>Higher pressure / worse outcome</span><span>Lower pressure / better outcome</span></div><div class="legend-note">${escapeHtml(environmentalScaleNote(envScale))}</div></div>`
+    ? `<div class="legend-box"><div class="legend-title"><strong>${escapeHtml(mapTitle)}</strong></div><div class="legend-bar legend-bar--environment"></div><div class="legend-scale"><span>Higher pressure / worse outcome</span><span>Lower pressure / better outcome</span></div><div class="legend-note">${escapeHtml(environmentalScaleNote(envScale))}</div></div>`
     : buildHeatLegendHTML({
-    title: meta.title || currentKpi,
+    title: mapTitle,
     unit: meta.unit || "",
     min: adjMin,
     max: adjMax,

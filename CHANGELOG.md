@@ -2,6 +2,8 @@
 
 ## Unreleased - 2026-11-05
 
+- Refresh the renewable share of final energy consumption from the UN SDG API and default the country table and map to the latest year covering at least half of the country registry.
+
 - Update PISA to 2025 and rebuild the full three-domain series from OECD aggregate mean-score tables.
 
 - Replace the EPI 2022 snapshot with Yale's 2026 edition and keep the edition review manual. Avoid presenting cross-edition scores as a time series.

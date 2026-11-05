@@ -1078,59 +1078,6 @@
     ],
     "low_outliers": []
   },
-  "renewable_energy_share": {
-    "high_outliers": [
-      {
-        "country": "Democratic Republic of the Congo",
-        "year": 2021,
-        "value": 96.3,
-        "z": 2.374
-      },
-      {
-        "country": "Somalia",
-        "year": 2022,
-        "value": 95.4,
-        "z": 2.341
-      },
-      {
-        "country": "Liberia",
-        "year": 2022,
-        "value": 92.8,
-        "z": 2.245
-      },
-      {
-        "country": "Gabon",
-        "year": 2021,
-        "value": 91.3,
-        "z": 2.19
-      },
-      {
-        "country": "Central African Republic",
-        "year": 2022,
-        "value": 90.9,
-        "z": 2.175
-      },
-      {
-        "country": "Uganda",
-        "year": 2022,
-        "value": 90.9,
-        "z": 2.175
-      },
-      {
-        "country": "Ethiopia",
-        "year": 2021,
-        "value": 90.6,
-        "z": 2.164
-      },
-      {
-        "country": "Guinea-Bissau",
-        "year": 2022,
-        "value": 87.4,
-        "z": 2.047
-      }
-    ],
-    "low_outliers": []
-  },
   "internet_penetration_rate": {
     "high_outliers": [],
     "low_outliers": [
@@ -4082,5 +4029,70 @@
         "z": -2.189
       }
     ]
+  },
+  "renewable_energy_share": {
+    "high_outliers": [
+      {
+        "country": "Democratic Republic of the Congo",
+        "year": 2023,
+        "value": 95.89,
+        "z": 2.45
+      },
+      {
+        "country": "Liberia",
+        "year": 2024,
+        "value": 94.35,
+        "z": 2.392
+      },
+      {
+        "country": "Gabon",
+        "year": 2023,
+        "value": 90.88,
+        "z": 2.26
+      },
+      {
+        "country": "Somalia",
+        "year": 2024,
+        "value": 89.28,
+        "z": 2.2
+      },
+      {
+        "country": "Central African Republic",
+        "year": 2024,
+        "value": 88.99,
+        "z": 2.189
+      },
+      {
+        "country": "Ethiopia",
+        "year": 2023,
+        "value": 88.87,
+        "z": 2.184
+      },
+      {
+        "country": "Uganda",
+        "year": 2024,
+        "value": 88.16,
+        "z": 2.158
+      },
+      {
+        "country": "Burundi",
+        "year": 2024,
+        "value": 85.17,
+        "z": 2.044
+      },
+      {
+        "country": "Haiti",
+        "year": 2023,
+        "value": 84.9,
+        "z": 2.034
+      },
+      {
+        "country": "Guinea-Bissau",
+        "year": 2024,
+        "value": 84.11,
+        "z": 2.004
+      }
+    ],
+    "low_outliers": []
   }
 }
