@@ -937,22 +937,24 @@
     "test": ""
   },
   {
-    "title": "Labor Productivity per Hour (Penn World Table)",
-    "description": "Labor productivity per hour worked, measured in 2021 international dollars, reflects the average output produced per hour of labor. This indicator is important for understanding economic efficiency and international competitiveness. It is influenced by factors such as technology, education, capital investment, and labor market structure. These data are compiled by Our World in Data based on the Penn World Table.",
-    "unit": "$ per hour",
+    "title": "Labor Productivity per Hour (ILOSTAT)",
+    "description": "ILO modelled estimates of GDP per hour worked in constant 2021 international dollars at purchasing power parity. The series uses one ILOSTAT model vintage and excludes its reference year and later years, since the download does not distinguish forecasts from estimates by row.",
+    "unit": "2021 international $ (PPP) per hour",
     "relation": "",
     "sort": "higher",
     "cluster": "Economy & Labor",
-    "source": "https://ourworldindata.org/grapher/labor-productivity-per-hour-pennworldtable",
-    "source_type": "owid",
-    "source_code": "labor-productivity-per-hour-pennworldtable.csv?useColumnShortNames=true",
+    "source": "https://ilostat.ilo.org/data/bulk/",
+    "source_url": "https://rplumber.ilo.org/data/indicator?id=GDP_2HRW_NOC_NB_A&format=.csv.gz",
+    "source_type": "ilostat",
+    "source_code": "GDP_2HRW_NOC_NB_A",
     "scale": "none",
     "world_kpi": "",
     "filename": "labor_productivity_per_hour_pennworldtable",
     "relevance": "none",
     "actuality": "normal",
     "invert": "",
-    "test": ""
+    "test": "",
+    "analysis_guardrail": "Use the ILO modelled GDP-per-hour series only. Do not combine it with Penn World Table values or describe the estimates as observed output."
   },
   {
     "title": "Rule of Law Index",

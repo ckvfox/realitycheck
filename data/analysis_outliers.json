@@ -1785,29 +1785,6 @@
     ],
     "low_outliers": []
   },
-  "labor_productivity_per_hour_pennworldtable": {
-    "high_outliers": [
-      {
-        "country": "Ireland",
-        "year": 2023,
-        "value": 158.20854,
-        "z": 4.399
-      },
-      {
-        "country": "Norway",
-        "year": 2023,
-        "value": 130.13191,
-        "z": 3.408
-      },
-      {
-        "country": "Switzerland",
-        "year": 2023,
-        "value": 99.93163,
-        "z": 2.342
-      }
-    ],
-    "low_outliers": []
-  },
   "press_freedom_index": {
     "high_outliers": [],
     "low_outliers": [
@@ -4109,6 +4086,59 @@
         "year": 2023,
         "value": 21.8001957281699,
         "z": 2.114
+      }
+    ],
+    "low_outliers": []
+  },
+  "labor_productivity_per_hour_pennworldtable": {
+    "high_outliers": [
+      {
+        "country": "Luxembourg",
+        "year": 2024,
+        "value": 158.81,
+        "z": 4.545
+      },
+      {
+        "country": "Ireland",
+        "year": 2024,
+        "value": 152.28,
+        "z": 4.316
+      },
+      {
+        "country": "Norway",
+        "year": 2024,
+        "value": 124.32,
+        "z": 3.337
+      },
+      {
+        "country": "Singapore",
+        "year": 2024,
+        "value": 99.45,
+        "z": 2.465
+      },
+      {
+        "country": "Netherlands",
+        "year": 2024,
+        "value": 91.23,
+        "z": 2.177
+      },
+      {
+        "country": "Denmark",
+        "year": 2024,
+        "value": 90.79,
+        "z": 2.162
+      },
+      {
+        "country": "Guyana",
+        "year": 2024,
+        "value": 90.77,
+        "z": 2.161
+      },
+      {
+        "country": "Belgium",
+        "year": 2024,
+        "value": 90.4,
+        "z": 2.148
       }
     ],
     "low_outliers": []

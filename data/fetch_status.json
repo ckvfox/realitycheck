@@ -358,11 +358,11 @@
       "last_fetch": "2026-11-01T03:04:40Z"
     },
     "labor_productivity_per_hour_pennworldtable": {
-      "source": "https://ourworldindata.org/grapher/labor-productivity-per-hour-pennworldtable",
-      "url": "",
-      "source_date": "2025-10-09",
-      "data_year": 2023,
-      "last_fetch": "2026-08-01T09:51:56Z"
+      "source": "https://ilostat.ilo.org/data/bulk/",
+      "url": "https://rplumber.ilo.org/data/indicator?id=GDP_2HRW_NOC_NB_A&format=.csv.gz",
+      "source_date": "2025-12-02T13:06:11+00:00",
+      "data_year": 2024,
+      "last_fetch": "2026-11-05T21:02:44Z"
     },
     "rule_of_law_index": {
       "source": "https://ourworldindata.org/grapher/rule-of-law-index",

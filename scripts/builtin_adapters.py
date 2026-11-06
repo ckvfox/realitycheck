@@ -5,7 +5,7 @@ from functools import partial
 
 import requests
 
-from adapters import csv_source, data360, ibtracs, noaa, owid, public_annual, region_csv, unhcr, unsd, wgi, who_ghe, worldbank
+from adapters import csv_source, data360, ibtracs, ilostat, noaa, owid, public_annual, region_csv, unhcr, unsd, wgi, who_ghe, worldbank
 from adapters.runtime import SourceRuntime
 from fetch_core import AdapterMode, AdapterRegistry, SourceAdapter
 from source_contracts import SUPPORTED_SOURCE_TYPES
@@ -43,6 +43,7 @@ def build_builtin_adapter_registry(
     registry.register(SourceAdapter("wgi", handler=partial(wgi.run, runtime=runtime, http_get=session.get)))
     registry.register(SourceAdapter("unsd", handler=partial(unsd.run, runtime=runtime, http_get=session.get)))
     registry.register(SourceAdapter("who_ghe", handler=who_ghe.make_handler(runtime, session.get)))
+    registry.register(ilostat.make_adapter(runtime, session.get))
     for provider in ("ember", "eurostat"):
         registry.register(SourceAdapter(
             provider, handler=partial(public_annual.run, runtime=runtime, http_get=session.get, provider=provider)

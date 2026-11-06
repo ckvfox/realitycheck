@@ -421,6 +421,12 @@ scripts/
 
 ## 🧾 Data Sources
 
+Labor productivity per hour uses [ILOSTAT](https://ilostat.ilo.org/data/bulk/)
+table `GDP_2HRW_NOC_NB_A`, in constant 2021 international dollars at PPP.
+The November 2025 model vintage is shown through 2024. The bulk file lacks a
+row-level forecast marker, so the adapter excludes the model vintage year
+and later years. The existing KPI identifier preserves dashboard links.
+
 Road traffic and suicide mortality use WHO (2026), *Global Health Estimates
 2023: Deaths by Cause, Age, Sex, by Country and by Region, 2000–2023*,
 accessed 5 November 2026. RealityCheck selects and reformats the WHO crude
