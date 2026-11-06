@@ -190,8 +190,7 @@ async function renderWorldKpi(container, kpi) {
   aiBox.id = `kpi-analysis-${filename}`;
   aiBox.className = "kpi-analysis";
   block.appendChild(aiBox);
-  if (!isRegional) renderKpiAnalysis(kpi, aiBox.id);
-  else aiBox.remove();
+  renderKpiAnalysis(kpi, aiBox.id);
 
   appendWorldKpiSource(block, kpi, worldData, canvas);
 }

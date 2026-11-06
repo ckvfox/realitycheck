@@ -455,9 +455,9 @@
     "last_update": "2026-08-01"
   },
   "tropical_cyclone_activity_basin": {
-    "summary": "The analysis focuses on Tropical Cyclone Activity by Ocean Basin, measured by recorded cyclone systems per season. This measure provides insight into the frequency of cyclone formation across different ocean basins, independent of landfall events, intensity, or resultant damage. The data capture activity from 1980 onwards, and systems traversing multiple basins are counted in each relevant basin, precluding their summation into a global total. Importantly, the measure reflects activity rather than impacts, making it a different assessment tool from those measuring human or economic impact.\n\nDespite the potential importance of these data in understanding climatic patterns and shifts, the current snapshot lacks usable values, preventing a detailed global or cross-country analysis. Thus, identifying notable country changes, outliers, or distinguishing group differences cannot be performed at this time. The absence of values also means it is not possible to pinpoint a best-practice case for managing tropical cyclone impacts or adaptation strategies.\n\nMoreover, the lack of associated indicators with robust cross-KPI links implies that any potential relationships between cyclone activity and other environmental or policy factors remain speculative. Consequently, the outlook must be approached with caution, pending data availability or future validation efforts that could provide more concrete insights and patterns in tropical cyclone activities across diverse ocean basins.",
-    "generated_at": "2026-11-01T03:06:28.448271+00:00",
-    "last_update": "2026-11-01"
+    "summary": "In the 2025 season, NOAA IBTrACS recorded 36 systems in the Western North Pacific, compared with 29 in 2024. The Eastern North Pacific rose from 22 to 29. The latest season covers six of the seven basins shown. A storm can be counted in more than one basin, and a missing season cannot be read as zero. These counts describe recorded activity. Landfalls, storm intensity and damage require separate measures.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
   },
   "extreme_heat_days": {
     "summary": "The modelled indicator 'Days with Heat Index Above 35°C' measures the annual number of days when daily mean Heat Index, factoring in temperature and humidity, exceeds 35°C under RCP 8.5 scenario. As of 2024, the median value across 135 countries rose to 6.00 days from 0.50 days in 2019, a dramatic 1100.0% increase, highlighting a growing heat stress risk. Countries with the highest values include Bahrain (151.1 days), Qatar (140.0 days), and the United Arab Emirates (129.7 days), indicating significant exposure to extreme heat. In contrast, the UK, Zambia, and Bosnia Herzegovina have near-zero days, suggesting minimal heat stress impact.\n\nGroup-wise, ASEAN countries have a median of 20.60 days, surpassing other groups like the EU (0.04) and OECD (1.70), reflecting regional climatic variabilities. Notable changes include a significant increase in Djibouti (+87.3%) and Cambodia (+56.6%), raising questions about data accuracy or model assumptions. Conversely, Bahrain and Turkmenistan reported decreases, intriguing as potential anomalies to verify.\n\nExploratory associations suggest a positive correlation with air quality degradation and a negative one with old-age dependency and hospital beds, hinting complex socio-economic interactions. Turkmenistan's sharp decrease and ASEAN's high median days offer cases for further examination without implying policy causation. Cautious interpretation is vital, given the model's hazard nature and varying data coverage.",
@@ -468,5 +468,75 @@
     "summary": "The Drought Moisture Anomaly (12-month SPEI) measures deviations in precipitation and evaporation, indicating wetter or drier conditions. In 2023, the global median stood at -0.30 across 190 countries, reflecting a notable improvement of 19.6% from 2018's median of -0.38. This suggests a general trend towards moister conditions, albeit with variations at the country level that may obscure local droughts.\n\nNotable outliers include Micronesia (2.41), indicating exceptionally wet conditions, and Turkmenistan (-2.48), reflecting severe drought. Group comparisons show the EU with a slightly favourable median of 0.16, while BRICS countries show significant drought pressures with a median of -1.37.\n\nAnomalies such as Denmark's increase from -2.18 to 1.73 and the Netherlands' shift from -1.95 to 1.30 require verification to rule out data errors or revised measurements. Similarly, Andorra and Morocco's severe declines warrant further examination.\n\nA standout positive outcome is the United Kingdom's significant moisture level (1.86), which could serve as a potential case study for moisture management, not as a direct policy causation.\n\nWhile there are no definitive cross-KPI associations provided, any interpretation of correlations must be approached prudently, ensuring recognition of the complex dynamics involved in climate and environmental systems. Overall, while the global trend appears positive, disparities and anomalies underscore the necessity of localized assessments and continued vigilance in environmental observation.",
     "generated_at": "2026-11-01T03:06:28.448271+00:00",
     "last_update": "2026-11-01"
+  },
+  "renewable_energy_share": {
+    "summary": "In 2023, renewables supplied 21.23% of Germany’s final energy consumption, compared with a median of 23.01% across 194 countries and territories. Germany was up from 19.56% in 2022. This measure includes transport fuels, heat and electricity. Traditional biomass can account for part of a high share, so the ranking alone says little about clean cooking or how far electricity generation has decarbonized. Use 2023 for broad comparisons: the 2024 snapshot covers only 55 countries and territories.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "road_traffic_deaths_per_100k_people": {
+    "summary": "The WHO estimated 3.44 road traffic deaths per 100,000 people in Germany in 2023, against a median of 11.61 across 184 countries and territories. Germany’s estimate was 3.30 in 2021, while the median was 12.35. These are crude mortality estimates per resident. Exposure to traffic, road design, emergency care and reporting can all influence the figures, so the comparison cannot isolate the effect of a particular safety policy.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "old_age_dependency_ratio": {
+    "summary": "Germany had about 38 residents aged 65 or over for every 100 residents aged 15–64 in 2025, up from 36 in 2023. Japan was at 51 in 2025. These differences show how age structures vary and help frame questions about pension and care provision. The denominator is a population age group, so the ratio cannot tell us how many people work, pay contributions or receive a pension.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "age_dependency_ratio_total": {
+    "summary": "In 2025, Germany had about 60 residents aged under 15 or 65 and over for every 100 residents aged 15–64, up from 58 in 2023. The 2025 median across 196 countries and territories was about 56. Similar total ratios can arise from very different age structures. The old-age ratio helps distinguish the role of ageing from that of a large child population. Neither measure counts actual workers or economic dependants.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "labor_productivity_per_hour_pennworldtable": {
+    "summary": "The ILO estimates that Germany produced 79.22 international dollars of GDP per hour worked in 2024, at constant 2021 purchasing power. The median across 175 economies was 19.85, and Germany’s 2023 estimate was 78.99. This is economy-wide output per hour: capital, industry mix and the way GDP and hours are measured matter. It cannot be read as an hourly wage or a measure of individual effort.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "environmental_performance_index": {
+    "summary": "Germany scored 69.93 in Yale’s 2026 Environmental Performance Index, sixth among 177 economies in this dataset. Estonia led with 74.79. The overall score combines 47 indicators, so two countries with similar scores can have different strengths in environmental health, ecosystem vitality and climate policy. The year labels the edition and underlying data come from different years. Use the 2026 edition for cross-country comparisons and the component indicators to understand the result.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "pisa_overall_score": {
+    "summary": "Germany’s equal-weight composite of reading, mathematics and science was 471.54 points in PISA 2025, compared with 482.35 in 2022. Singapore led the 2025 comparison with 552.55. The composite summarizes the three published OECD subject means. It can conceal differences between subjects, and the point gap alone does not establish statistical significance. Check the subject results and sampling notes before interpreting changes.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "government_effectiveness": {
+    "summary": "Germany’s revised WGI government effectiveness estimate was 1.49 in 2025, compared with 1.57 in 2023. In 2025 Singapore scored 2.09 and Japan 2.04 on the same estimate scale. The indicator combines perceptions of public services, administration and policy implementation. Small changes can fall within measurement uncertainty. Interpret changes alongside the source’s uncertainty intervals and distinguish this estimate from the WGI 0–100 score.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "suicide_mortality_rate": {
+    "summary": "The WHO estimated 13.10 suicide deaths per 100,000 people in Germany in 2023, compared with a median of 7.62 across 184 countries and territories. Germany’s estimate was 13.65 in 2022. The rates are crude, so differences in age structure, death registration and underreporting can affect comparisons. Suicide mortality is one severe outcome and cannot describe the mental health of a population on its own.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "wildfire_burned_area": {
+    "summary": "Satellite data show about 10,595 hectares burned in Germany in 2025, up from 5,907 in 2024. Australia recorded about 35.7 million hectares in 2025. Absolute area depends on country size, vegetation and the fire season, and satellites can miss smaller fires. Burned area describes physical extent. Evaluating exposure or losses requires information about where fires occurred and who or what was affected.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "flood_affected_people": {
+    "summary": "In 2025, the dataset recorded about 6.9 million people affected by floods in Pakistan and 4.6 million in Thailand. It has observations for 63 countries and territories in 2025, down from 78 in 2024. Changes in coverage and the occurrence of major floods both shape the figures. An absent entry cannot be interpreted as zero, and a recorded zero does not establish that a country faced no exposure.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "personal_remittances_received_gdp": {
+    "summary": "In 2025, personal remittances received were equivalent to 57.66% of GDP in Tajikistan and 39.32% in Tonga. Germany’s share was 0.47%. The ratio shows the scale of inflows relative to the receiving economy and can change when either inflows or GDP moves. It includes compensation of nonresident workers. Use a common reference year, as 2025 covers 129 economies in this dataset compared with 158 in 2024.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "electricity_carbon_intensity": {
+    "summary": "Ember’s world estimate fell from 473 to 460 grams of CO₂ equivalent per kilowatt-hour from 2024 to 2025. Germany was at 334 g CO₂e/kWh in 2025, down from 340 in 2024. These figures describe lifecycle emissions per unit of electricity generated. Total emissions also depend on how much electricity is generated, and domestic generation can differ from electricity consumed when imports matter. Recent national figures may be provisional.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
+  },
+  "housing_cost_overburden_rate": {
+    "summary": "In 2025, 11.2% of people in Germany lived in households spending more than 40% of disposable income on housing, down 0.8 percentage points from 2024. Denmark was at 14.7% and Greece at 26.4% in 2025. The measure captures the population above a cost threshold and depends on both household incomes and housing costs, net of housing allowances. This dataset supports European comparisons.",
+    "generated_at": "2026-11-06T10:35:21.663338+00:00",
+    "last_update": "2026-11-06"
   }
 }

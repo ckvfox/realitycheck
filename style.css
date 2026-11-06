@@ -144,6 +144,8 @@ a:hover { text-decoration: underline; }
 .income-household-comparison strong, .income-net-result strong { color: var(--steel-blue); font-size: 1.1rem; }
 .income-household-comparison span, .income-net-result span { margin-top: .4rem; line-height: 1.5; }
 #real-wages-map { height: clamp(390px, 58vw, 620px); border: 1px solid var(--border); border-radius: var(--radius); background: #dce7f0; }
+#real-wages-map path.leaflet-interactive:focus:not(:focus-visible),
+#war-conscription-map path.leaflet-interactive:focus:not(:focus-visible) { outline: none; }
 .real-wages-status { min-height: 1.5rem; margin: .6rem 0; color: var(--legend); }
 .real-wages-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: .75rem; margin-top: 1rem; }
 .real-wages-stat { min-height: 92px; padding: .9rem; border: 1px solid var(--border); border-radius: 8px; background: #f8fafc; }

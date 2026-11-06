@@ -218,6 +218,27 @@ def build_kpi_snapshot(entry, records=None, country_names=None, groups=None):
     guardrail = str(entry.get("analysis_guardrail") or "").strip()
     guardrail_note = f" Analysis guardrail: {guardrail}" if guardrail else ""
 
+    if entry.get("geo_type") == "region":
+        seasons = defaultdict(dict)
+        for record in records:
+            region = record.get("region")
+            year = _year(record.get("year"))
+            value = record.get("value")
+            if region and year is not None and _valid_number(value):
+                seasons[year][region] = float(value)
+        recent = "; ".join(
+            f"{year}: " + ", ".join(
+                f"{region}={_format_value(value)}"
+                for region, value in sorted(seasons[year].items())
+            )
+            for year in sorted(seasons)[-3:]
+        ) or "no usable regional values"
+        return (
+            f"[{cluster}] {title} ({kid}; {unit}): {recent}. "
+            "Scope: separate regional series, no world total or country rankings. "
+            f"Unreported regions are missing, not zero.{guardrail_note}"
+        )
+
     global_by_year = {}
     for record in records:
         if record.get("country") not in GLOBAL_ENTITIES:
@@ -510,8 +531,11 @@ def generate_kpi_analyses(data_dir: Path, updated_only=None):
             data_snapshot=build_kpi_snapshot(e, country_names=country_names),
             related_context=associations.get(fname, ""),
         )
-        try: summary=gpt_call(prompt,400)
-        except Exception as e: summary=f"⚠️ GPT error: {e}"
+        try:
+            summary = gpt_call(prompt, 400)
+        except Exception:
+            log(f"⚠️ KPI summary generation failed for {fname}.")
+            continue
         result[fname]={
             "summary": summary,
             "generated_at": generated_at,
