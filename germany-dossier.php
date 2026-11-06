@@ -304,7 +304,7 @@ ob_start();
 <?php if ($accessProtectionEnabled && !$authenticated): ?>
   <main class="real-wages-login-shell">
     <section class="real-wages-login-card" aria-labelledby="login-title">
-      <img src="images/logo.webp" alt="RealityCheck" class="real-wages-login-logo" width="660" height="150" decoding="async">
+      <img src="images/logo.webp?v=transparent-1" alt="RealityCheck" class="real-wages-login-logo" width="660" height="150" decoding="async">
       <div class="dossier-login-language">
         <span><span lang="en">Language</span><span lang="de">Sprache</span></span>
         <div class="dossier-language-toggle" role="group" aria-label="Language / Sprache">
