@@ -529,7 +529,6 @@ function populateYearSelect() {
   const sel = document.getElementById("yearSelect");
   if (!sel) return;
 
-  const display = relationDisplay(meta);
   const years = currentYearList.length
     ? [...currentYearList].sort((a, b) => b - a)
     : [];
@@ -956,6 +955,7 @@ function updateChart() {
   if (!ctxEl) return;
 
   const meta = getMetaForCurrent() || { title: currentKpi || "Selected KPI", unit: "" };
+  const display = relationDisplay(meta);
   const years = currentYearList.length ? [...currentYearList] : [];
   const coverage = document.getElementById("data-coverage");
   if (coverage) {

@@ -37,3 +37,31 @@ assert.equal(context.applyRelation(27, "Germany", 2022, gdp), 6.75);
 assert.equal(context.applyRelation(27, "Germany", 2022, context.relationDisplay({ unit: "count" })), 27);
 assert.equal(context.aggregateRelation([{ value: 2, relationWeight: 3 }, { value: 6, relationWeight: 1 }]), 3);
 assert.equal(context.aggregateRelation([{ value: null, relationWeight: 1 }]), null);
+
+// Exercise the two render steps that run during dashboard initialization.
+const yearSelect = { value: "2022" };
+const coverage = {};
+context.document.getElementById = id => ({
+  relationSelect: input,
+  yearSelect,
+  "kpi-chart": {},
+  "data-coverage": coverage,
+  country1Select: { value: "Germany" }
+})[id];
+Object.assign(context, {
+  currentYearList: [2022],
+  getMetaForCurrent: () => meta,
+  getColorForCountry: () => "#000000",
+  chartInstance: null,
+  renderLineChart: (_, options) => options
+});
+for (const name of ["populateYearSelect", "updateChart"]) {
+  const start = script.indexOf(`function ${name}(`);
+  vm.runInContext(script.slice(start, script.indexOf("\n}", start) + 2), context);
+}
+context.populateYearSelect();
+context.updateChart();
+assert.match(yearSelect.innerHTML, /2022/);
+assert.match(coverage.textContent, /2 countries/);
+assert.equal(context.chartInstance.unit, gdp.unit);
+assert.equal(context.chartInstance.datasets[0].data[0], 6.75);
