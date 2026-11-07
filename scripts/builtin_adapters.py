@@ -5,7 +5,7 @@ from functools import partial
 
 import requests
 
-from adapters import csv_source, data360, ibtracs, ilostat, noaa, owid, public_annual, region_csv, unhcr, unsd, wgi, who_ghe, worldbank
+from adapters import csv_source, data360, ibtracs, ilostat, inform, noaa, owid, public_annual, region_csv, unhcr, unsd, wgi, who_ghe, worldbank
 from adapters.runtime import SourceRuntime
 from fetch_core import AdapterMode, AdapterRegistry, SourceAdapter
 from source_contracts import SUPPORTED_SOURCE_TYPES
@@ -35,6 +35,7 @@ def build_builtin_adapter_registry(
     registry.register(
         SourceAdapter("data360", handler=partial(data360.run, runtime=runtime, http_get=session.get))
     )
+    registry.register(SourceAdapter("inform", handler=partial(inform.run, runtime=runtime, http_get=session.get)))
     registry.register(SourceAdapter("noaa", handler=partial(noaa.run, runtime=runtime, http_get=session.get)))
     registry.register(SourceAdapter("csv", handler=partial(csv_source.run, runtime=runtime)))
     registry.register(SourceAdapter("unhcr", handler=partial(unhcr.run, runtime=runtime, http_get=session.get)))

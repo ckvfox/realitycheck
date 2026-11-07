@@ -109,12 +109,10 @@ Netherlands,NL,1968,9.0
 Sweden,SE,1968,8.0
 Germany,DE,1968,7.0
 United States,US,1968,7.0
-Germany,DE,1968,5.0
 Finland,FI,1968,5.0
 Canada,CA,1968,3.0
 Switzerland,CH,1968,6.0
 Romania,RO,1968,1.0
-Germany,DE,1972,14.0
 Switzerland,CH,1972,10.0
 Netherlands,NL,1972,9.0
 United States,US,1972,8.0
@@ -129,7 +127,6 @@ Spain,ES,1972,1.0
 Finland,FI,1972,5.0
 France,FR,1972,3.0
 Canada,CA,1972,1.0
-Germany,DE,1976,19.0
 United States,US,1976,10.0
 Norway,NO,1976,7.0
 Germany,DE,1976,10.0
@@ -143,7 +140,6 @@ United Kingdom,GB,1976,1.0
 Liechtenstein,LI,1976,2.0
 Sweden,SE,1976,2.0
 France,FR,1976,1.0
-Germany,DE,1980,23.0
 United States,US,1980,12.0
 Austria,AT,1980,7.0
 Sweden,SE,1980,4.0
@@ -160,7 +156,6 @@ Hungary,HU,1980,1.0
 Japan,JP,1980,1.0
 Bulgaria,BG,1980,1.0
 France,FR,1980,1.0
-Germany,DE,1984,24.0
 United States,US,1984,8.0
 Finland,FI,1984,13.0
 Sweden,SE,1984,8.0
@@ -174,7 +169,6 @@ France,FR,1984,3.0
 Japan,JP,1984,1.0
 Liechtenstein,LI,1984,2.0
 Austria,AT,1984,1.0
-Germany,DE,1988,25.0
 Switzerland,CH,1988,15.0
 Finland,FI,1988,7.0
 Sweden,SE,1988,6.0
@@ -225,6 +219,7 @@ Finland,FI,1994,6.0
 France,FR,1994,5.0
 Netherlands,NL,1994,4.0
 China,CN,1994,3.0
+Slovenia,SI,1994,3.0
 United Kingdom,GB,1994,2.0
 Australia,AU,1994,1.0
 Germany,DE,1998,29.0
@@ -274,6 +269,7 @@ Bulgaria,BG,2002,3.0
 Japan,JP,2002,2.0
 Poland,PL,2002,2.0
 Belarus,BY,2002,1.0
+Slovenia,SI,2002,1.0
 Germany,DE,2006,29.0
 United States,US,2006,25.0
 Austria,AT,2006,23.0
@@ -299,6 +295,7 @@ Bulgaria,BG,2006,1.0
 United Kingdom,GB,2006,1.0
 Slovakia,SK,2006,1.0
 Ukraine,UA,2006,2.0
+Latvia,LV,2006,1.0
 Canada,CA,2010,26.0
 Germany,DE,2010,30.0
 United States,US,2010,37.0
@@ -320,6 +317,8 @@ Slovakia,SK,2010,3.0
 United Kingdom,GB,2010,1.0
 Japan,JP,2010,5.0
 Croatia,HR,2010,3.0
+Slovenia,SI,2010,3.0
+Latvia,LV,2010,2.0
 Finland,FI,2010,5.0
 Estonia,EE,2010,1.0
 Kazakhstan,KZ,2010,1.0
@@ -338,9 +337,11 @@ China,CN,2014,9.0
 South Korea,KR,2014,8.0
 Sweden,SE,2014,15.0
 Czechia,CZ,2014,8.0
+Slovenia,SI,2014,8.0
 Japan,JP,2014,8.0
 Finland,FI,2014,5.0
 United Kingdom,GB,2014,5.0
+Latvia,LV,2014,5.0
 Ukraine,UA,2014,2.0
 Slovakia,SK,2014,1.0
 Italy,IT,2014,8.0
@@ -369,10 +370,12 @@ Poland,PL,2018,2.0
 Hungary,HU,2018,1.0
 Ukraine,UA,2018,1.0
 Australia,AU,2018,3.0
+Slovenia,SI,2018,2.0
 Belgium,BE,2018,1.0
 New Zealand,NZ,2018,2.0
 Spain,ES,2018,2.0
 Kazakhstan,KZ,2018,1.0
+Latvia,LV,2018,1.0
 Liechtenstein,LI,2018,1.0
 Norway,NO,2022,37.0
 Germany,DE,2022,27.0
@@ -382,7 +385,6 @@ Sweden,SE,2022,18.0
 Netherlands,NL,2022,17.0
 Austria,AT,2022,18.0
 Switzerland,CH,2022,15.0
-Taiwan,TW,2022,32.0
 France,FR,2022,14.0
 Canada,CA,2022,26.0
 Japan,JP,2022,18.0
@@ -401,4 +403,34 @@ Belarus,BY,2022,2.0
 Spain,ES,2022,1.0
 Ukraine,UA,2022,1.0
 Estonia,EE,2022,1.0
+Latvia,LV,2022,1.0
 Poland,PL,2022,1.0
+Norway,NO,2026,41.0
+United States,US,2026,33.0
+Netherlands,NL,2026,20.0
+Italy,IT,2026,30.0
+Germany,DE,2026,26.0
+France,FR,2026,23.0
+Sweden,SE,2026,18.0
+Switzerland,CH,2026,23.0
+Austria,AT,2026,18.0
+Japan,JP,2026,24.0
+Canada,CA,2026,21.0
+China,CN,2026,15.0
+South Korea,KR,2026,10.0
+Australia,AU,2026,6.0
+United Kingdom,GB,2026,5.0
+Czechia,CZ,2026,5.0
+Slovenia,SI,2026,4.0
+Spain,ES,2026,3.0
+Brazil,BR,2026,1.0
+Kazakhstan,KZ,2026,1.0
+Poland,PL,2026,4.0
+New Zealand,NZ,2026,3.0
+Finland,FI,2026,6.0
+Latvia,LV,2026,2.0
+Denmark,DK,2026,1.0
+Estonia,EE,2026,1.0
+Georgia,GE,2026,1.0
+Bulgaria,BG,2026,2.0
+Belgium,BE,2026,1.0

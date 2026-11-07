@@ -1071,7 +1071,7 @@
   },
   {
     "title": "Olympic Medals (Summer)",
-    "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Summer Olympic Games. It reflects not only elite athletic performance but also the depth of a nation's sports culture, infrastructure, and long-term investment in youth and education. While Olympic success is not a direct measure of social well-being, strong performance often correlates with effective public health systems, access to sports facilities, and widespread participation in physical education. Over time, Summer Olympic results provide insight into global development, population trends, and the influence of national training programs. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
+    "description": "Total gold, silver and bronze medals per Summer Games, for delegations representing current UN member states. Medals of defunct countries and neutral or multinational delegations are excluded. Team medals count once.",
     "unit": "count",
     "relation": "*",
     "sort": "higher",
@@ -1164,26 +1164,27 @@
     "test": ""
   },
   {
-    "title": "Inform Resilience Index",
-    "description": "This index measures the ability of a country to cope with and recover from disasters. It reflects institutional strength, infrastructure, and access to basic services. Lower scores indicate higher resilience. These data are provided by the European Commission – INFORM Risk and Resilience Index (JRC DRMKC).",
+    "title": "INFORM Risk Index",
+    "description": "The European Commission Joint Research Centre INFORM Risk Index combines hazard and exposure, vulnerability, and lack of coping capacity into an overall humanitarian crisis and disaster risk score from 0 to 10. Lower values indicate lower overall risk. The year denotes the release year. The overall index is sourced from JRC, European Union, CC BY 4.0.",
     "unit": "index (0–10)",
     "relation": "",
     "sort": "lower",
     "cluster": "Society & Governance",
     "source": "https://drmkc.jrc.ec.europa.eu/inform-index",
-    "source_type": "csv",
-    "source_code": "inform_resilience_index.csv",
+    "source_type": "inform",
+    "source_code": "INFORM Risk Index",
     "scale": "index",
     "world_kpi": "",
     "filename": "inform_resilience_index",
     "relevance": "normal",
     "actuality": "stable",
     "invert": "",
-    "test": ""
+    "test": "",
+    "source_url": "https://drmkc.jrc.ec.europa.eu/inform-index/api/informapi/countries/trends?workflowid=0"
   },
   {
     "title": "Olympic Medals (Winter)",
-    "description": "This indicator measures the total number of Olympic medals (Gold, Silver, and Bronze) won by each country at the Winter Olympic Games. Beyond highlighting excellence in winter sports, it also reflects broader factors such as infrastructure, climate, and social investment in physical activity. Countries that perform well often have strong public sports programs, accessible training environments, and policies promoting youth participation. Although not a direct measure of prosperity, success at the Winter Olympics can indicate robust institutions, social cohesion, and an emphasis on national health and education through sport. These data are based on Kaggle – Athlete Events Dataset preprocessed by RealityCheck.",
+    "description": "Total gold, silver and bronze medals per Winter Games, for delegations representing current UN member states. Medals of defunct countries and neutral or multinational delegations are excluded. Team medals count once. The 2026 edition uses medal counts cross-checked against the Italian National Olympic Committee.",
     "unit": "count",
     "relation": "*",
     "sort": "higher",
@@ -1196,7 +1197,9 @@
     "filename": "olympic_medals_winter",
     "relevance": "none",
     "actuality": "normal",
-    "test": ""
+    "test": "",
+    "source_release_date": "2026-02-22",
+    "source_url": "https://www.coni.it/en/italia-team/medals-milano-cortina-2026.html"
   },
   {
     "title": "PISA Overall Score",

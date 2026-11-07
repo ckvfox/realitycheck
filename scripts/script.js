@@ -408,19 +408,63 @@ document.addEventListener('change', e => {
 setTimeout(syncHomeToChart, 0);
 
 /* ========= Relation ========= */
-function applyRelation(v, c, y) {
-  const rel = document.getElementById("relationSelect");
-  const m = getMetaForCurrent();
-  if (v == null) return v;
-  if (!m || m.relation !== "*") return v;
-  const relation = rel?.value;
-  if (!relation || relation === "absolute") return v;
-  const lookup = relationLookups[relation];
-  if (!lookup || !lookup.size) return v;
-  const key = relationKey(c, normalizeYear(y));
-  const divisor = lookup.get(key);
-  if (!Number.isFinite(divisor) || divisor === 0) return null;
-  return v / divisor;
+const relationUnits = { percapita: "people", pergdp: "USD GDP", perkm2: "km²" };
+const relationMultipliers = [
+  [1, ""], [1e3, "thousand"], [1e6, "million"],
+  [1e9, "billion"], [1e12, "trillion"]
+];
+
+function activeRelation(meta) {
+  const relation = document.getElementById("relationSelect")?.value;
+  return meta?.relation === "*" && Object.hasOwn(relationUnits, relation) ? relation : null;
+}
+
+function relationDivisor(relation, country, year) {
+  return relationLookups[relation]?.get(relationKey(country, normalizeYear(year)));
+}
+
+function relationRatio(value, relation, country, year) {
+  const divisor = relationDivisor(relation, country, year);
+  return Number.isFinite(value) && Number.isFinite(divisor) && divisor > 0 ? value / divisor : null;
+}
+
+function relationDisplay(meta) {
+  const relation = activeRelation(meta);
+  if (!relation) return { relation, factor: 1, unit: (meta.unit || "").trim() };
+
+  const magnitudes = [];
+  for (const [country, observations] of currentValueLookup) {
+    if (!isKnownCountry(country)) continue;
+    for (const record of observations.values()) {
+      const ratio = relationRatio(record.value, relation, country, record.year);
+      if (ratio) magnitudes.push(Math.abs(ratio));
+    }
+  }
+  magnitudes.sort((a, b) => a - b);
+  const median = magnitudes[Math.floor(magnitudes.length / 2)];
+  const [factor, prefix] = relationMultipliers.find(([factor]) => median * factor >= 0.1)
+    || relationMultipliers[median ? relationMultipliers.length - 1 : 0];
+  const basis = prefix ? `1 ${prefix} ` : "";
+  return { relation, factor, unit: [meta.unit, `per ${basis}${relationUnits[relation]}`].filter(Boolean).join(" ") };
+}
+
+function applyRelation(value, country, year, display) {
+  if (!display.relation) return value;
+  const ratio = relationRatio(value, display.relation, country, year);
+  return ratio === null ? null : ratio * display.factor;
+}
+
+function formatRelationValue(value) {
+  if (!Number.isFinite(value)) return "–";
+  if (value !== 0 && Math.abs(value) < 0.01) return Number(value.toPrecision(2)).toLocaleString("en", { maximumSignificantDigits: 2 });
+  return value.toFixed(2);
+}
+
+function aggregateRelation(rows) {
+  const valid = rows.filter(row => Number.isFinite(row.value) && row.relationWeight > 0);
+  if (!valid.length) return null;
+  return valid.reduce((sum, row) => sum + row.value * row.relationWeight, 0)
+    / valid.reduce((sum, row) => sum + row.relationWeight, 0);
 }
 
 /* ========= View ========= */
@@ -485,6 +529,7 @@ function populateYearSelect() {
   const sel = document.getElementById("yearSelect");
   if (!sel) return;
 
+  const display = relationDisplay(meta);
   const years = currentYearList.length
     ? [...currentYearList].sort((a, b) => b - a)
     : [];
@@ -551,7 +596,9 @@ function updateTable() {
 
   const meta = getMetaForCurrent() || {};
   const snapshotYear = countrySnapshotYear(meta);
-  const unit = (meta.unit || "").trim();
+  const display = relationDisplay(meta);
+  const unit = display.unit;
+  const formatDelta = value => display.relation ? formatRelationValue(value) : formatValueAuto(value, meta.scale);
   const changeUnit = unit === "%" ? "percentage points" : unit;
   const scaleMode = meta.scale || "auto";
 
@@ -590,22 +637,23 @@ function updateTable() {
         ? bucket.byYear.get(compYear)
         : null;
 
-    const lv = applyRelation(latest.value, country, latest.year);
-    const pv = prev ? applyRelation(prev.value, country, prev.year) : null;
-    const cv = comp ? applyRelation(comp.value, country, comp.year) : null;
+    const lv = applyRelation(latest.value, country, latest.year, display);
+    const pv = prev ? applyRelation(prev.value, country, prev.year, display) : null;
+    const cv = comp ? applyRelation(comp.value, country, comp.year, display) : null;
 
     const arrow = pv != null && lv != null ? calcTrend(lv, pv) : "→";
     const dAbs = pv != null && lv != null ? lv - pv : null;
     const dPct = meta.change_mode !== "absolute" && pv != null && pv !== 0 && lv != null ? ((lv - pv) / pv) * 100 : null;
     const dComp =
       cv != null && lv != null
-        ? meta.change_mode === "absolute" ? `${formatValueAuto(lv - cv, meta.scale)} ${changeUnit}`
+        ? meta.change_mode === "absolute" ? `${formatDelta(lv - cv)} ${changeUnit}`
           : cv !== 0 ? (((lv - cv) / cv) * 100).toFixed(2) + "%" : "-"
         : "-";
 
     rows.push({
       country,
       value: lv,
+      relationWeight: relationDivisor(display.relation, country, latest.year),
       deltaPrevArrow: arrow,
       deltaPrevAbs: dAbs,
       deltaPrevPct: dPct,
@@ -635,7 +683,7 @@ function updateTable() {
     const valid = rows.filter(r => Number.isFinite(r.value));
     if (!valid.length) return;
 
-    const val = isRelative
+    const val = display.relation ? aggregateRelation(valid) : isRelative
       ? valid.reduce((a, r) => a + (r.value || 0), 0) / valid.length
       : valid.reduce((a, r) => a + (r.value || 0), 0);
 
@@ -652,7 +700,7 @@ function updateTable() {
       update: lastYear,
       isGroup: false,
       isWorld: true,
-      aggregationType: isRelative ? "average" : "sum"
+      aggregationType: display.relation ? "weighted average" : isRelative ? "average" : "sum"
     });
   })();
 
@@ -677,7 +725,7 @@ function updateTable() {
       );
       if (!valid.length) continue;
 
-      const val = isRelative
+      const val = display.relation ? aggregateRelation(valid) : isRelative
         ? valid.reduce((a, r) => a + (r.value || 0), 0) / valid.length
         : valid.reduce((a, r) => a + (r.value || 0), 0);
 
@@ -693,7 +741,7 @@ function updateTable() {
         update: lastYear,
         isGroup: false, // WICHTIG → Verhalten wie Land
         isWorld: true,  // Flag für spätere Formatierung
-        aggregationType: isRelative ? "average" : "sum"
+        aggregationType: display.relation ? "weighted average" : isRelative ? "average" : "sum"
       });
 
       continue;
@@ -703,7 +751,7 @@ function updateTable() {
     const mrows = rows.filter(r => members.includes(r.country));
     if (!mrows.length) continue;
 
-    const agg = isRelative
+    const agg = display.relation ? aggregateRelation(mrows) : isRelative
       ? mrows.reduce((a, r) => a + (r.value || 0), 0) / mrows.length
       : mrows.reduce((a, r) => a + (r.value || 0), 0);
 
@@ -718,7 +766,7 @@ function updateTable() {
       deltaComp: "-",
       update: lastYear,
       isGroup: true,
-      aggregationType: isRelative ? "average" : "sum"
+      aggregationType: display.relation ? "weighted average" : isRelative ? "average" : "sum"
     });
   }
 
@@ -807,7 +855,7 @@ function updateTable() {
 
     if (r.isGroup) {
       tr.title = `Group value = ${
-        r.aggregationType === "average" ? "Average" : "Sum"
+        r.aggregationType
       } of members`;
     }
 
@@ -815,7 +863,7 @@ function updateTable() {
       if (!r.isGroup) highlightOnMap(r.country);
     });
 
-    const deltaValue = r.deltaPrevAbs != null ? formatValueAuto(r.deltaPrevAbs, meta.scale) : "";
+    const deltaValue = r.deltaPrevAbs != null ? formatDelta(r.deltaPrevAbs) : "";
     const deltaDetail = meta.change_mode === "absolute"
       ? `${deltaValue} ${changeUnit}`
       : `${deltaValue} (${r.deltaPrevPct != null ? r.deltaPrevPct.toFixed(2) + "%" : "n/a"})`;
@@ -827,7 +875,7 @@ function updateTable() {
       <td>${r.rank ?? ""}</td>
       <td>${r.country}</td>
       <td>${
-        meta.scale === "auto"
+        display.relation ? formatRelationValue(r.value) : meta.scale === "auto"
           ? (r.value / scaleInfo.divisor).toFixed(2) +
             " " +
             scaleInfo.suffix
@@ -883,7 +931,9 @@ function updateTable() {
     ? `Changes are shown in ${changeUnit || "indicator units"}.`
     : "Δ vs Comparison Year in %";
   if (roundInfo) {
-    if (scaleMode === "auto") {
+    if (display.relation) {
+      roundInfo.textContent = `Values shown in ${unit}. Group rates are weighted by the selected basis.`;
+    } else if (scaleMode === "auto") {
       let explain =
         "Values are auto-scaled using median-based factor (K, M, B, T).";
       roundInfo.textContent = explain;
@@ -914,7 +964,7 @@ function updateChart() {
     for (let index = years.length - 1; index >= 0; index--) {
       const year = years[index];
       const count = countrySeries.filter(([country, observations]) =>
-        Number.isFinite(applyRelation(observations.get(year)?.value, country, year))
+        Number.isFinite(applyRelation(observations.get(year)?.value, country, year, display))
       ).length;
       if (!count) continue;
       coverage.textContent = ` · Latest country data: ${year} · ${count} ${count === 1 ? "country" : "countries"} in that year`;
@@ -931,7 +981,7 @@ function updateChart() {
     const countryLookup = currentValueLookup.get(country);
     const vals = years.map(year => {
       const record = countryLookup?.get(year);
-      return record ? applyRelation(record.value, country, record.year) : null;
+      return record ? applyRelation(record.value, country, record.year, display) : null;
     });
     datasets.push({
       label: country,
@@ -953,7 +1003,8 @@ function updateChart() {
     labels: years,
     datasets,
     title: meta.title || "No data selected",
-    unit: meta.unit || "",
+    unit: display.unit,
+    formatValue: display.relation ? formatRelationValue : undefined,
     existingChart: chartInstance,
     fallbackDataset: {
       label: "Select countries to display data",
@@ -971,6 +1022,7 @@ function updateChart() {
       scales: {
         y: {
           beginAtZero: true,
+          ...(display.relation ? { ticks: { callback: formatRelationValue } } : {}),
           grid: { color: "rgba(255,255,255,0.05)" }
         },
         x: {
@@ -1182,11 +1234,14 @@ async function updateMap() {
       latestByCountry.set(cname, { year: d.year, value: Number(d.value) });
   }
 
+  const display = relationDisplay(meta);
+
   // === ISO → Value map ===
   const mapDataByIso = {};
   for (const [rawName, rec] of latestByCountry.entries()) {
     const iso = isoByName[rawName.toLowerCase()] || null;
-    if (iso && Number.isFinite(rec.value)) mapDataByIso[iso] = rec.value;
+    const value = applyRelation(rec.value, rawName, rec.year, display);
+    if (iso && Number.isFinite(value)) mapDataByIso[iso] = value;
   }
 
   const values = Object.values(mapDataByIso).filter(v => Number.isFinite(v));
@@ -1334,9 +1389,9 @@ async function updateMap() {
                                 (info.iso_a2
                                         ? `images/flag/${String(info.iso_a2).toLowerCase()}.svg`
                                         : "images/flag/question.svg");
-                        const valueUnit = meta.unit ? ` ${meta.unit}` : "";
+                        const valueUnit = display.unit ? ` ${display.unit}` : "";
                         const displayValue = Number.isFinite(val)
-                                ? `${formatValueAuto(val)}${valueUnit}`
+                                ? `${display.relation ? formatRelationValue(val) : formatValueAuto(val)}${valueUnit}`
                                 : "no data";
 
                         const tooltip = `
@@ -1379,7 +1434,8 @@ async function updateMap() {
     ? `<div class="legend-box"><div class="legend-title"><strong>${escapeHtml(mapTitle)}</strong></div><div class="legend-bar legend-bar--environment"></div><div class="legend-scale"><span>Higher pressure / worse outcome</span><span>Lower pressure / better outcome</span></div><div class="legend-note">${escapeHtml(environmentalScaleNote(envScale))}</div></div>`
     : buildHeatLegendHTML({
     title: mapTitle,
-    unit: meta.unit || "",
+    formatValue: display.relation ? formatRelationValue : formatValueAuto,
+    unit: display.unit,
     min: adjMin,
     max: adjMax,
     sortMode,
@@ -1413,6 +1469,7 @@ function buildHeatLegendHTML({
   title, unit, min, max,
   sortMode = "higher",
   targetVal = NaN,
+  formatValue = formatValueAuto,
   useLog = false
 }) {
   // ✅ Richtige Richtung: Grün = besser
@@ -1442,8 +1499,8 @@ function buildHeatLegendHTML({
       modeText = "Quantitative scale (higher = greener)";
   }
 
-  const minLabelRaw = typeof min === "number" ? formatValueAuto(min) : String(min ?? "");
-  const maxLabelRaw = typeof max === "number" ? formatValueAuto(max) : String(max ?? "");
+  const minLabelRaw = typeof min === "number" ? formatValue(min) : String(min ?? "");
+  const maxLabelRaw = typeof max === "number" ? formatValue(max) : String(max ?? "");
   const safeTitle = escapeHtml(title);
   const safeUnit = escapeHtml(unit);
   const safeMinLabel = escapeHtml(minLabelRaw);

@@ -436,10 +436,10 @@
     },
     "olympic_medals_winter": {
       "source": "https://www.olympics.com/en/olympic-games",
-      "url": "",
-      "source_date": "2022-01-01T00:00:00Z",
-      "data_year": 2022,
-      "last_fetch": "2026-11-01T03:04:44Z"
+      "url": "https://www.coni.it/en/italia-team/medals-milano-cortina-2026.html",
+      "source_date": "2026-02-22T00:00:00Z",
+      "data_year": 2026,
+      "last_fetch": "2026-11-07T08:16:32Z"
     },
     "pisa_overall_score": {
       "source": "https://www.oecd.org/en/publications/pisa-2025-results-volume-i_73451bc5-en/full-report/results-for-countries-and-economies_33854635.html",

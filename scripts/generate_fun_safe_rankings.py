@@ -141,7 +141,7 @@ BOTTOM_LABELS = {
     "purchasing_power_parity": "purchasing power",
     "number_of_armed_conflicts": "active conflicts",
     "intentional_homicides": "homicide safety",
-    "inform_resilience_index": "crisis resilience",
+    "inform_resilience_index": "humanitarian crisis and disaster risk",
     "rule_of_law_index": "rule of law",
     "human_rights_index_vdem": "human rights",
     "democracy_index": "democracy",
@@ -251,7 +251,7 @@ def build_deterministic_bottom_ranking(
         labels = ", ".join(label for _, label in dimensions)
         if mode == "safe":
             reason = (
-                f"Weakest relative evidence: {labels}. The score also includes crisis resilience and water stress; "
+                f"Weakest relative evidence: {labels}. The score also includes humanitarian crisis and disaster risk and water stress; "
                 "conflict exposure is not a forecast."
             )
         else:

@@ -100,10 +100,11 @@ The following remain unchanged:
 
 ## Maintained CSV source audit
 
-The twelve `source_type: csv` KPIs are local, reviewed inputs rather than
-download adapters. This includes both `olympic_medals_summer` and
-`olympic_medals_winter`. Their acquisition contracts live in
-`data/meta/manual_csv_sources.json`.
+The `source_type: csv` KPIs use local, reviewed inputs. The acquisition
+contracts for both Olympic medal series and the other maintained CSVs live in
+`data/meta/manual_csv_sources.json`. The Olympic adapter applies delegation
+validation during publication. INFORM Risk uses the JRC API and a preserved
+historical baseline. See [source details](inform_and_olympic_sources.md).
 
 `python scripts/check_source_csv_updates.py` performs an offline audit of file
 existence, the canonical `country,year,value` schema, row count, latest year,

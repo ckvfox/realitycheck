@@ -1053,7 +1053,7 @@ function deepCloneWithFunctions(value) {
   return cloned;
 }
 
-function resolveChartOptions({ title = "", unit = "", datasetCount = 0, overrides = {} }) {
+function resolveChartOptions({ title = "", unit = "", datasetCount = 0, overrides = {}, formatValue }) {
   // Use centralized chart options from utils_ui.js
   const base = window.DEFAULT_CHART_OPTIONS || {
     responsive: true,
@@ -1091,7 +1091,7 @@ function resolveChartOptions({ title = "", unit = "", datasetCount = 0, override
     if (value == null || isNaN(value)) {
       return `${datasetLabel}no data`;
     }
-    const formatted = Number(value).toLocaleString();
+    const formatted = formatValue ? formatValue(value) : Number(value).toLocaleString();
     return unit ? `${datasetLabel}${formatted} ${unit}`.trim() : `${datasetLabel}${formatted}`;
   };
   if (!tooltip.callbacks.title) {
@@ -1109,6 +1109,7 @@ function renderLineChart(canvas, config = {}) {
     datasets = [],
     title = "",
     unit = "",
+    formatValue,
     existingChart = null,
     fallbackDataset = null,
     options = {}
@@ -1151,6 +1152,7 @@ function renderLineChart(canvas, config = {}) {
       title,
       unit,
       datasetCount: datasets.length,
+      formatValue,
       overrides: options
     })
   };

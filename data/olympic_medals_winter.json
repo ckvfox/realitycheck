@@ -660,12 +660,6 @@
     "value": 7.0
   },
   {
-    "country": "Germany",
-    "iso2": "DE",
-    "year": 1968,
-    "value": 5.0
-  },
-  {
     "country": "Finland",
     "iso2": "FI",
     "year": 1968,
@@ -688,12 +682,6 @@
     "iso2": "RO",
     "year": 1968,
     "value": 1.0
-  },
-  {
-    "country": "Germany",
-    "iso2": "DE",
-    "year": 1972,
-    "value": 14.0
   },
   {
     "country": "Switzerland",
@@ -780,12 +768,6 @@
     "value": 1.0
   },
   {
-    "country": "Germany",
-    "iso2": "DE",
-    "year": 1976,
-    "value": 19.0
-  },
-  {
     "country": "United States",
     "iso2": "US",
     "year": 1976,
@@ -862,12 +844,6 @@
     "iso2": "FR",
     "year": 1976,
     "value": 1.0
-  },
-  {
-    "country": "Germany",
-    "iso2": "DE",
-    "year": 1980,
-    "value": 23.0
   },
   {
     "country": "United States",
@@ -966,12 +942,6 @@
     "value": 1.0
   },
   {
-    "country": "Germany",
-    "iso2": "DE",
-    "year": 1984,
-    "value": 24.0
-  },
-  {
     "country": "United States",
     "iso2": "US",
     "year": 1984,
@@ -1048,12 +1018,6 @@
     "iso2": "AT",
     "year": 1984,
     "value": 1.0
-  },
-  {
-    "country": "Germany",
-    "iso2": "DE",
-    "year": 1988,
-    "value": 25.0
   },
   {
     "country": "Switzerland",
@@ -1356,6 +1320,12 @@
     "value": 3.0
   },
   {
+    "country": "Slovenia",
+    "iso2": "SI",
+    "year": 1994,
+    "value": 3.0
+  },
+  {
     "country": "United Kingdom",
     "iso2": "GB",
     "year": 1994,
@@ -1650,6 +1620,12 @@
     "value": 1.0
   },
   {
+    "country": "Slovenia",
+    "iso2": "SI",
+    "year": 2002,
+    "value": 1.0
+  },
+  {
     "country": "Germany",
     "iso2": "DE",
     "year": 2006,
@@ -1800,6 +1776,12 @@
     "value": 2.0
   },
   {
+    "country": "Latvia",
+    "iso2": "LV",
+    "year": 2006,
+    "value": 1.0
+  },
+  {
     "country": "Canada",
     "iso2": "CA",
     "year": 2010,
@@ -1926,6 +1908,18 @@
     "value": 3.0
   },
   {
+    "country": "Slovenia",
+    "iso2": "SI",
+    "year": 2010,
+    "value": 3.0
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LV",
+    "year": 2010,
+    "value": 2.0
+  },
+  {
     "country": "Finland",
     "iso2": "FI",
     "year": 2010,
@@ -2034,6 +2028,12 @@
     "value": 8.0
   },
   {
+    "country": "Slovenia",
+    "iso2": "SI",
+    "year": 2014,
+    "value": 8.0
+  },
+  {
     "country": "Japan",
     "iso2": "JP",
     "year": 2014,
@@ -2048,6 +2048,12 @@
   {
     "country": "United Kingdom",
     "iso2": "GB",
+    "year": 2014,
+    "value": 5.0
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LV",
     "year": 2014,
     "value": 5.0
   },
@@ -2220,6 +2226,12 @@
     "value": 3.0
   },
   {
+    "country": "Slovenia",
+    "iso2": "SI",
+    "year": 2018,
+    "value": 2.0
+  },
+  {
     "country": "Belgium",
     "iso2": "BE",
     "year": 2018,
@@ -2240,6 +2252,12 @@
   {
     "country": "Kazakhstan",
     "iso2": "KZ",
+    "year": 2018,
+    "value": 1.0
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LV",
     "year": 2018,
     "value": 1.0
   },
@@ -2296,12 +2314,6 @@
     "iso2": "CH",
     "year": 2022,
     "value": 15.0
-  },
-  {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 2022,
-    "value": 32.0
   },
   {
     "country": "France",
@@ -2412,9 +2424,189 @@
     "value": 1.0
   },
   {
+    "country": "Latvia",
+    "iso2": "LV",
+    "year": 2022,
+    "value": 1.0
+  },
+  {
     "country": "Poland",
     "iso2": "PL",
     "year": 2022,
+    "value": 1.0
+  },
+  {
+    "country": "Norway",
+    "iso2": "NO",
+    "year": 2026,
+    "value": 41.0
+  },
+  {
+    "country": "United States",
+    "iso2": "US",
+    "year": 2026,
+    "value": 33.0
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NL",
+    "year": 2026,
+    "value": 20.0
+  },
+  {
+    "country": "Italy",
+    "iso2": "IT",
+    "year": 2026,
+    "value": 30.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "DE",
+    "year": 2026,
+    "value": 26.0
+  },
+  {
+    "country": "France",
+    "iso2": "FR",
+    "year": 2026,
+    "value": 23.0
+  },
+  {
+    "country": "Sweden",
+    "iso2": "SE",
+    "year": 2026,
+    "value": 18.0
+  },
+  {
+    "country": "Switzerland",
+    "iso2": "CH",
+    "year": 2026,
+    "value": 23.0
+  },
+  {
+    "country": "Austria",
+    "iso2": "AT",
+    "year": 2026,
+    "value": 18.0
+  },
+  {
+    "country": "Japan",
+    "iso2": "JP",
+    "year": 2026,
+    "value": 24.0
+  },
+  {
+    "country": "Canada",
+    "iso2": "CA",
+    "year": 2026,
+    "value": 21.0
+  },
+  {
+    "country": "China",
+    "iso2": "CN",
+    "year": 2026,
+    "value": 15.0
+  },
+  {
+    "country": "South Korea",
+    "iso2": "KR",
+    "year": 2026,
+    "value": 10.0
+  },
+  {
+    "country": "Australia",
+    "iso2": "AU",
+    "year": 2026,
+    "value": 6.0
+  },
+  {
+    "country": "United Kingdom",
+    "iso2": "GB",
+    "year": 2026,
+    "value": 5.0
+  },
+  {
+    "country": "Czechia",
+    "iso2": "CZ",
+    "year": 2026,
+    "value": 5.0
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SI",
+    "year": 2026,
+    "value": 4.0
+  },
+  {
+    "country": "Spain",
+    "iso2": "ES",
+    "year": 2026,
+    "value": 3.0
+  },
+  {
+    "country": "Brazil",
+    "iso2": "BR",
+    "year": 2026,
+    "value": 1.0
+  },
+  {
+    "country": "Kazakhstan",
+    "iso2": "KZ",
+    "year": 2026,
+    "value": 1.0
+  },
+  {
+    "country": "Poland",
+    "iso2": "PL",
+    "year": 2026,
+    "value": 4.0
+  },
+  {
+    "country": "New Zealand",
+    "iso2": "NZ",
+    "year": 2026,
+    "value": 3.0
+  },
+  {
+    "country": "Finland",
+    "iso2": "FI",
+    "year": 2026,
+    "value": 6.0
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LV",
+    "year": 2026,
+    "value": 2.0
+  },
+  {
+    "country": "Denmark",
+    "iso2": "DK",
+    "year": 2026,
+    "value": 1.0
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EE",
+    "year": 2026,
+    "value": 1.0
+  },
+  {
+    "country": "Georgia",
+    "iso2": "GE",
+    "year": 2026,
+    "value": 1.0
+  },
+  {
+    "country": "Bulgaria",
+    "iso2": "BG",
+    "year": 2026,
+    "value": 2.0
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BE",
+    "year": 2026,
     "value": 1.0
   }
 ]

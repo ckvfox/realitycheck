@@ -7,6 +7,7 @@ from typing import Any
 
 import pandas as pd
 
+from adapters import olympic_medals
 from adapters.runtime import SourceRuntime
 from fetch_core import AdapterRequest, AdapterResult
 
@@ -34,6 +35,9 @@ def run(request: AdapterRequest, *, runtime: SourceRuntime) -> AdapterResult:
     hash_path = hash_root / f"{request.kpi_id}.md5"
     output_path = request.output_dir / f"{request.kpi_id}.json"
     source_hash = _file_md5(source_path)
+    is_olympic = request.kpi_id in {"olympic_medals_summer", "olympic_medals_winter"}
+    if is_olympic:
+        source_hash += ":un-member-delegations-v1"
     if not is_test and output_path.exists() and hash_path.exists():
         try:
             if source_path.stat().st_mtime <= output_path.stat().st_mtime and hash_path.read_text().strip() == source_hash:
@@ -78,31 +82,48 @@ def run(request: AdapterRequest, *, runtime: SourceRuntime) -> AdapterResult:
     frame["year"] = pd.to_numeric(frame["year"], errors="coerce")
     frame["value"] = pd.to_numeric(frame["value"], errors="coerce")
     records: list[dict[str, Any]] = []
-    for _, row in frame.iterrows():
-        canon = runtime.canonicalize_country(
-            str(row.get("country") or "").strip(),
-            request.country_index,
-            request.alias_index,
-            request.countries,
-            request.pending,
-            request.stats,
-        )
-        value = runtime.safe_float(row.get("value"))
+    if is_olympic:
         try:
-            year = int(float(row.get("year")))
-        except (TypeError, ValueError):
-            continue
-        if canon and value is not None:
-            raw_iso2 = row.get("iso2")
-            iso2 = "" if pd.isna(raw_iso2) else str(raw_iso2 or "").strip()
-            records.append(
-                {
-                    "country": canon,
-                    "iso2": iso2 or runtime.resolve_iso2(canon, request.countries),
-                    "year": year,
-                    "value": value,
-                }
+            records = olympic_medals.records(
+                frame.to_dict("records"),
+                request.countries,
+                lambda label: runtime.canonicalize_country(
+                    label, request.country_index, request.alias_index, request.countries,
+                    request.pending, request.stats,
+                ),
             )
+        except (ValueError, TypeError, KeyError) as exc:
+            runtime.keep_or_dummy(
+                request.kpi_id, f"Olympic medal validation failed: {exc}", request.stats,
+                output_dir=request.output_dir,
+            )
+            return AdapterResult()
+    else:
+        for _, row in frame.iterrows():
+            canon = runtime.canonicalize_country(
+                str(row.get("country") or "").strip(),
+                request.country_index,
+                request.alias_index,
+                request.countries,
+                request.pending,
+                request.stats,
+            )
+            value = runtime.safe_float(row.get("value"))
+            try:
+                year = int(float(row.get("year")))
+            except (TypeError, ValueError):
+                continue
+            if canon and value is not None:
+                raw_iso2 = row.get("iso2")
+                iso2 = "" if pd.isna(raw_iso2) else str(raw_iso2 or "").strip()
+                records.append(
+                    {
+                        "country": canon,
+                        "iso2": iso2 or runtime.resolve_iso2(canon, request.countries),
+                        "year": year,
+                        "value": value,
+                    }
+                )
     if not records:
         runtime.keep_or_dummy(
             request.kpi_id, f"CSV empty {csv_name}", request.stats, output_dir=request.output_dir

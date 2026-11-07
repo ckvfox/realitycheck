@@ -236,6 +236,12 @@
   {
     "country": "Australia",
     "iso2": "AU",
+    "year": 1896,
+    "value": 2.0
+  },
+  {
+    "country": "Australia",
+    "iso2": "AU",
     "year": 1900,
     "value": 3.0
   },
@@ -382,6 +388,24 @@
     "iso2": "AU",
     "year": 2024,
     "value": 53.0
+  },
+  {
+    "country": "Australia",
+    "iso2": "AU",
+    "year": 1932,
+    "value": 5.0
+  },
+  {
+    "country": "Australia",
+    "iso2": "AU",
+    "year": 1960,
+    "value": 22.0
+  },
+  {
+    "country": "Austria",
+    "iso2": "AT",
+    "year": 1896,
+    "value": 5.0
   },
   {
     "country": "Austria",
@@ -1482,66 +1506,6 @@
     "value": 91.0
   },
   {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 1984,
-    "value": 1.0
-  },
-  {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 1992,
-    "value": 1.0
-  },
-  {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 1996,
-    "value": 1.0
-  },
-  {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 2000,
-    "value": 5.0
-  },
-  {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 2004,
-    "value": 5.0
-  },
-  {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 2008,
-    "value": 4.0
-  },
-  {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 2012,
-    "value": 2.0
-  },
-  {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 2016,
-    "value": 3.0
-  },
-  {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 2020,
-    "value": 12.0
-  },
-  {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 2024,
-    "value": 7.0
-  },
-  {
     "country": "Colombia",
     "iso2": "CO",
     "year": 1972,
@@ -1844,6 +1808,12 @@
   {
     "country": "Denmark",
     "iso2": "DK",
+    "year": 1896,
+    "value": 6.0
+  },
+  {
+    "country": "Denmark",
+    "iso2": "DK",
     "year": 1900,
     "value": 6.0
   },
@@ -2062,36 +2032,6 @@
     "iso2": "DO",
     "year": 2024,
     "value": 3.0
-  },
-  {
-    "country": "Germany",
-    "iso2": "DE",
-    "year": 1968,
-    "value": 25.0
-  },
-  {
-    "country": "Germany",
-    "iso2": "DE",
-    "year": 1972,
-    "value": 66.0
-  },
-  {
-    "country": "Germany",
-    "iso2": "DE",
-    "year": 1976,
-    "value": 90.0
-  },
-  {
-    "country": "Germany",
-    "iso2": "DE",
-    "year": 1980,
-    "value": 126.0
-  },
-  {
-    "country": "Germany",
-    "iso2": "DE",
-    "year": 1988,
-    "value": 102.0
   },
   {
     "country": "Ecuador",
@@ -2514,10 +2454,10 @@
     "value": 5.0
   },
   {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 1960,
-    "value": 1.0
+    "country": "France",
+    "iso2": "FR",
+    "year": 1896,
+    "value": 11.0
   },
   {
     "country": "France",
@@ -2750,6 +2690,12 @@
   {
     "country": "Germany",
     "iso2": "DE",
+    "year": 1896,
+    "value": 13.0
+  },
+  {
+    "country": "Germany",
+    "iso2": "DE",
     "year": 1900,
     "value": 9.0
   },
@@ -2878,6 +2824,12 @@
     "iso2": "GH",
     "year": 1960,
     "value": 1.0
+  },
+  {
+    "country": "United Kingdom",
+    "iso2": "GB",
+    "year": 1896,
+    "value": 7.0
   },
   {
     "country": "United Kingdom",
@@ -3056,6 +3008,12 @@
   {
     "country": "Greece",
     "iso2": "GR",
+    "year": 1896,
+    "value": 47.0
+  },
+  {
+    "country": "Greece",
+    "iso2": "GR",
     "year": 1904,
     "value": 2.0
   },
@@ -3164,6 +3122,12 @@
   {
     "country": "Greece",
     "iso2": "GR",
+    "year": 1960,
+    "value": 1.0
+  },
+  {
+    "country": "Greece",
+    "iso2": "GR",
     "year": 1908,
     "value": 4.0
   },
@@ -3220,6 +3184,12 @@
     "iso2": "HT",
     "year": 1928,
     "value": 1.0
+  },
+  {
+    "country": "Hungary",
+    "iso2": "HU",
+    "year": 1896,
+    "value": 6.0
   },
   {
     "country": "Hungary",
@@ -4426,24 +4396,6 @@
     "iso2": "KE",
     "year": 2024,
     "value": 11.0
-  },
-  {
-    "country": "Kosovo",
-    "iso2": "XK",
-    "year": 2016,
-    "value": 1.0
-  },
-  {
-    "country": "Kosovo",
-    "iso2": "XK",
-    "year": 2020,
-    "value": 2.0
-  },
-  {
-    "country": "Kosovo",
-    "iso2": "XK",
-    "year": 2024,
-    "value": 2.0
   },
   {
     "country": "Kuwait",
@@ -6078,12 +6030,6 @@
     "value": 1.0
   },
   {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 2020,
-    "value": 71.0
-  },
-  {
     "country": "Romania",
     "iso2": "RO",
     "year": 1924,
@@ -6552,6 +6498,24 @@
     "value": 6.0
   },
   {
+    "country": "South Africa",
+    "iso2": "ZA",
+    "year": 1908,
+    "value": 2.0
+  },
+  {
+    "country": "South Africa",
+    "iso2": "ZA",
+    "year": 1932,
+    "value": 5.0
+  },
+  {
+    "country": "South Africa",
+    "iso2": "ZA",
+    "year": 1960,
+    "value": 3.0
+  },
+  {
     "country": "South Korea",
     "iso2": "KR",
     "year": 1948,
@@ -6980,6 +6944,12 @@
   {
     "country": "Switzerland",
     "iso2": "CH",
+    "year": 1896,
+    "value": 3.0
+  },
+  {
+    "country": "Switzerland",
+    "iso2": "CH",
     "year": 1900,
     "value": 10.0
   },
@@ -7167,12 +7137,6 @@
     "country": "Syria",
     "iso2": "SY",
     "year": 2020,
-    "value": 1.0
-  },
-  {
-    "country": "Taiwan",
-    "iso2": "TW",
-    "year": 1968,
     "value": 1.0
   },
   {
@@ -7624,6 +7588,12 @@
     "iso2": "AE",
     "year": 2016,
     "value": 1.0
+  },
+  {
+    "country": "United States",
+    "iso2": "US",
+    "year": 1896,
+    "value": 20.0
   },
   {
     "country": "United States",
