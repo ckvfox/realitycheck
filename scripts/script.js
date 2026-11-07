@@ -180,7 +180,13 @@ async function init() {
       const status = el("view-status");
       if (relation !== "absolute" && !relationLookups[relation]?.size) {
         if (status) status.textContent = "Loading comparison basis…";
-        await ensureRelationData(relation);
+        try {
+          await ensureRelationData(relation);
+        } finally {
+          if (status?.textContent === "Loading comparison basis…" && el("relationSelect").value === relation) {
+            status.textContent = relationLookups[relation]?.size ? "" : "Comparison basis unavailable.";
+          }
+        }
       }
       updateTable();
       updateChart();
@@ -616,7 +622,7 @@ function updateTable() {
 
     let bucket = grouped.get(country);
     if (!bucket) {
-      bucket = { latest: null, byYear: new Map() };
+      bucket = { latest: null, latestComparable: null, byYear: new Map() };
       grouped.set(country, bucket);
     }
 
@@ -625,10 +631,16 @@ function updateTable() {
     if (!bucket.latest || year > bucket.latest.year) {
       bucket.latest = normalizedEntry;
     }
+    if (display.relation && Number.isFinite(applyRelation(entry.value, country, year, display))
+        && (!bucket.latestComparable || year > bucket.latestComparable.year)) {
+      bucket.latestComparable = normalizedEntry;
+    }
   });
 
   grouped.forEach((bucket, country) => {
-    const latest = snapshotYear === null ? bucket.latest : bucket.byYear.get(snapshotYear);
+    const latest = snapshotYear === null
+      ? bucket.latestComparable ?? bucket.latest
+      : bucket.byYear.get(snapshotYear);
     if (!latest) return;
     const prev = bucket.byYear.get(latest.year - 1) || null;
     const comp =
@@ -1224,24 +1236,24 @@ async function updateMap() {
   }
 
   // === Letzten gültigen Wert pro Land bestimmen ===
+  const display = relationDisplay(meta);
   const latestByCountry = new Map();
   for (const d of data) {
     if (!d || !d.country || d.country === "World" || d.value == null) continue;
     if (snapshotYear !== null && normalizeYear(d.year) !== snapshotYear) continue;
     const cname = d.country.trim();
+    const value = applyRelation(Number(d.value), cname, d.year, display);
+    if (!Number.isFinite(value)) continue;
     const prev = latestByCountry.get(cname);
     if (!prev || d.year > prev.year)
-      latestByCountry.set(cname, { year: d.year, value: Number(d.value) });
+      latestByCountry.set(cname, { year: d.year, value });
   }
-
-  const display = relationDisplay(meta);
 
   // === ISO → Value map ===
   const mapDataByIso = {};
   for (const [rawName, rec] of latestByCountry.entries()) {
     const iso = isoByName[rawName.toLowerCase()] || null;
-    const value = applyRelation(rec.value, rawName, rec.year, display);
-    if (iso && Number.isFinite(value)) mapDataByIso[iso] = value;
+    if (iso) mapDataByIso[iso] = rec.value;
   }
 
   const values = Object.values(mapDataByIso).filter(v => Number.isFinite(v));
