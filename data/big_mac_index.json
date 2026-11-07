@@ -7912,5 +7912,419 @@
     "iso2": "VN",
     "year": 2026,
     "value": 2.89463160099789
+  },
+  {
+    "country": "Austria",
+    "iso2": "AT",
+    "year": 2023,
+    "value": 5.3032558242097485
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BE",
+    "year": 2023,
+    "value": 5.4024851431658565
+  },
+  {
+    "country": "Germany",
+    "iso2": "DE",
+    "year": 2023,
+    "value": 5.887606258062382
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EE",
+    "year": 2023,
+    "value": 4.906338548385319
+  },
+  {
+    "country": "Spain",
+    "iso2": "ES",
+    "year": 2023,
+    "value": 5.7332495396862155
+  },
+  {
+    "country": "Finland",
+    "iso2": "FI",
+    "year": 2023,
+    "value": 6.3396509333068725
+  },
+  {
+    "country": "France",
+    "iso2": "FR",
+    "year": 2023,
+    "value": 5.843504338526334
+  },
+  {
+    "country": "Greece",
+    "iso2": "GR",
+    "year": 2023,
+    "value": 5.181975545485618
+  },
+  {
+    "country": "Croatia",
+    "iso2": "HR",
+    "year": 2023,
+    "value": 4.509421272560888
+  },
+  {
+    "country": "Ireland",
+    "iso2": "IE",
+    "year": 2023,
+    "value": 5.622994740846095
+  },
+  {
+    "country": "Italy",
+    "iso2": "IT",
+    "year": 2023,
+    "value": 6.394778332726932
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LT",
+    "year": 2023,
+    "value": 4.244809755344602
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LV",
+    "year": 2023,
+    "value": 4.079427557084422
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NL",
+    "year": 2023,
+    "value": 5.87658077817837
+  },
+  {
+    "country": "Portugal",
+    "iso2": "PT",
+    "year": 2023,
+    "value": 5.4024851431658565
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SI",
+    "year": 2023,
+    "value": 3.969172758244303
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SK",
+    "year": 2023,
+    "value": 4.740956350125139
+  },
+  {
+    "country": "Austria",
+    "iso2": "AT",
+    "year": 2024,
+    "value": 5.572809020375922
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BE",
+    "year": 2024,
+    "value": 5.302284310648935
+  },
+  {
+    "country": "Germany",
+    "iso2": "DE",
+    "year": 2024,
+    "value": 6.546697975393072
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EE",
+    "year": 2024,
+    "value": 4.869444775085756
+  },
+  {
+    "country": "Spain",
+    "iso2": "ES",
+    "year": 2024,
+    "value": 5.843333730102908
+  },
+  {
+    "country": "Finland",
+    "iso2": "FI",
+    "year": 2024,
+    "value": 6.438488091502278
+  },
+  {
+    "country": "France",
+    "iso2": "FR",
+    "year": 2024,
+    "value": 5.951543613993702
+  },
+  {
+    "country": "Greece",
+    "iso2": "GR",
+    "year": 2024,
+    "value": 5.085864542867346
+  },
+  {
+    "country": "Croatia",
+    "iso2": "HR",
+    "year": 2024,
+    "value": 4.674666984082326
+  },
+  {
+    "country": "Ireland",
+    "iso2": "IE",
+    "year": 2024,
+    "value": 6.113858439829895
+  },
+  {
+    "country": "Italy",
+    "iso2": "IT",
+    "year": 2024,
+    "value": 6.276173265666086
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LT",
+    "year": 2024,
+    "value": 4.436605239522578
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LV",
+    "year": 2024,
+    "value": 4.0037657039594
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NL",
+    "year": 2024,
+    "value": 6.157142393386212
+  },
+  {
+    "country": "Portugal",
+    "iso2": "PT",
+    "year": 2024,
+    "value": 5.356389252594332
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SI",
+    "year": 2024,
+    "value": 4.220185471740988
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SK",
+    "year": 2024,
+    "value": 4.869444775085756
+  },
+  {
+    "country": "Austria",
+    "iso2": "AT",
+    "year": 2025,
+    "value": 6.122709792850254
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BE",
+    "year": 2025,
+    "value": 5.809022573861722
+  },
+  {
+    "country": "Germany",
+    "iso2": "DE",
+    "year": 2025,
+    "value": 7.772472203826984
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EE",
+    "year": 2025,
+    "value": 5.344300767952784
+  },
+  {
+    "country": "Spain",
+    "iso2": "ES",
+    "year": 2025,
+    "value": 6.680375959940981
+  },
+  {
+    "country": "Finland",
+    "iso2": "FI",
+    "year": 2025,
+    "value": 7.377458668804387
+  },
+  {
+    "country": "France",
+    "iso2": "FR",
+    "year": 2025,
+    "value": 6.5061052827251284
+  },
+  {
+    "country": "Greece",
+    "iso2": "GR",
+    "year": 2025,
+    "value": 5.460481219430019
+  },
+  {
+    "country": "Croatia",
+    "iso2": "HR",
+    "year": 2025,
+    "value": 5.506953400020913
+  },
+  {
+    "country": "Ireland",
+    "iso2": "IE",
+    "year": 2025,
+    "value": 7.31936844306577
+  },
+  {
+    "country": "Italy",
+    "iso2": "IT",
+    "year": 2025,
+    "value": 7.2031879915885355
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LT",
+    "year": 2025,
+    "value": 4.763398510566612
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LV",
+    "year": 2025,
+    "value": 4.298676704657675
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NL",
+    "year": 2025,
+    "value": 6.912736862895449
+  },
+  {
+    "country": "Portugal",
+    "iso2": "PT",
+    "year": 2025,
+    "value": 6.041383476816192
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SI",
+    "year": 2025,
+    "value": 4.995759413521081
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SK",
+    "year": 2025,
+    "value": 5.460481219430019
+  },
+  {
+    "country": "Austria",
+    "iso2": "AT",
+    "year": 2026,
+    "value": 6.438774459909194
+  },
+  {
+    "country": "Belgium",
+    "iso2": "BE",
+    "year": 2026,
+    "value": 6.1642973958988545
+  },
+  {
+    "country": "Bulgaria",
+    "iso2": "BG",
+    "year": 2026,
+    "value": 6.495957181578014
+  },
+  {
+    "country": "Germany",
+    "iso2": "DE",
+    "year": 2026,
+    "value": 7.994144489301113
+  },
+  {
+    "country": "Estonia",
+    "iso2": "EE",
+    "year": 2026,
+    "value": 5.375175836869132
+  },
+  {
+    "country": "Spain",
+    "iso2": "ES",
+    "year": 2026,
+    "value": 6.747561156920825
+  },
+  {
+    "country": "Finland",
+    "iso2": "FI",
+    "year": 2026,
+    "value": 7.262205651940209
+  },
+  {
+    "country": "France",
+    "iso2": "FR",
+    "year": 2026,
+    "value": 6.404464826907901
+  },
+  {
+    "country": "Greece",
+    "iso2": "GR",
+    "year": 2026,
+    "value": 5.603906723544414
+  },
+  {
+    "country": "Croatia",
+    "iso2": "HR",
+    "year": 2026,
+    "value": 5.718272166882055
+  },
+  {
+    "country": "Ireland",
+    "iso2": "IE",
+    "year": 2026,
+    "value": 7.548119260284312
+  },
+  {
+    "country": "Italy",
+    "iso2": "IT",
+    "year": 2026,
+    "value": 7.502373082949256
+  },
+  {
+    "country": "Lithuania",
+    "iso2": "LT",
+    "year": 2026,
+    "value": 5.089262228525029
+  },
+  {
+    "country": "Latvia",
+    "iso2": "LV",
+    "year": 2026,
+    "value": 4.231521403492721
+  },
+  {
+    "country": "Netherlands",
+    "iso2": "NL",
+    "year": 2026,
+    "value": 7.159276752936332
+  },
+  {
+    "country": "Portugal",
+    "iso2": "PT",
+    "year": 2026,
+    "value": 6.461647548576723
+  },
+  {
+    "country": "Slovenia",
+    "iso2": "SI",
+    "year": 2026,
+    "value": 5.26081039353149
+  },
+  {
+    "country": "Slovakia",
+    "iso2": "SK",
+    "year": 2026,
+    "value": 5.718272166882055
   }
 ]

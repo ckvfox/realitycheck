@@ -1931,28 +1931,23 @@
         "country": "Switzerland",
         "year": 2026,
         "value": 9.0419272929956,
-        "z": 2.715
+        "z": 2.263
       },
       {
         "country": "Uruguay",
         "year": 2026,
         "value": 8.9381302128719,
-        "z": 2.649
-      },
-      {
-        "country": "Norway",
-        "year": 2026,
-        "value": 8.05315079524864,
-        "z": 2.078
-      },
-      {
-        "country": "Colombia",
-        "year": 2026,
-        "value": 8.0030158082737,
-        "z": 2.046
+        "z": 2.2
       }
     ],
-    "low_outliers": []
+    "low_outliers": [
+      {
+        "country": "Russia",
+        "year": 2022,
+        "value": 1.744,
+        "z": -2.178
+      }
+    ]
   },
   "recycling_rate": {
     "high_outliers": [

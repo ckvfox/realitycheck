@@ -270,8 +270,8 @@
     "last_update": "2026-11-07"
   },
   "big_mac_index": {
-    "summary": "The July 2026 snapshot covers 52 markets in the RealityCheck country view. The median price of one Big Mac is $5.03, with prices of $6.22 in the United States and $9.04 in Switzerland. The Economist reports the euro area separately at $7.08 and Hong Kong at $3.25. Both are outside the country-view sample. Germany has no separate July 2026 observation. The values reflect local burger prices converted at market exchange rates.",
-    "generated_at": "2026-11-07T07:55:18.040461+00:00",
+    "summary": "The July 2026 snapshot covers 70 markets. It combines USD prices from the Economist index export with national euro-area prices converted using the exchange rate in the Economist source CSV. Germany is $7.99, Austria $6.44 and Italy $7.50. The euro-area aggregate and Hong Kong are excluded from the country view.",
+    "generated_at": "2026-11-07T13:26:18.954533+00:00",
     "last_update": "2026-11-07"
   },
   "recycling_rate": {

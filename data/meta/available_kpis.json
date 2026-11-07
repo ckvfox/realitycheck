@@ -1088,7 +1088,7 @@
   },
   {
     "title": "Big Mac Index",
-    "description": "The Big Mac Index is a symbolic comparison of burger prices across markets. RealityCheck displays the price of one Big Mac converted to US dollars. Annual July snapshots use the dollar_price field from The Economist (CC BY 4.0), filtered to markets supported by the country view. The Economist reports a euro area average. The published index export excludes individual euro area markets, including Germany, Italy and Austria. Separate observations exist in the Economist source data. Euro area and Hong Kong are excluded from the country view. Earlier annual observations are retained.",
+    "description": "The Big Mac Index is a symbolic comparison of burger prices across markets. RealityCheck displays the price of one Big Mac converted to US dollars. Annual July snapshots use the dollar_price field from The Economist (CC BY 4.0), filtered to markets supported by the country view. The Economist reports a euro area average. Missing national euro area prices are taken from the Economist source CSV from July 2023 onward and converted using its exchange rate. Euro area and Hong Kong are excluded from the country view. Earlier annual observations are retained.",
     "unit": "USD",
     "relation": "",
     "sort": "lower",
