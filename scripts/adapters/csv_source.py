@@ -113,7 +113,12 @@ def run(request: AdapterRequest, *, runtime: SourceRuntime) -> AdapterResult:
     latest_year = max(row["year"] for row in records)
     if runtime.save_records(request.kpi_id, records, request.stats, output_dir=request.output_dir) is False:
         return AdapterResult(data_year=latest_year)
-    source_date = f"{latest_year}-01-01T00:00:00Z"
+    release_date = str(request.meta.get("source_release_date") or "")
+    source_date = (
+        f"{release_date}T00:00:00Z"
+        if release_date.startswith(f"{latest_year}-")
+        else f"{latest_year}-01-01T00:00:00Z"
+    )
     request.stats["csv_success"] += 1
     request.stats["saved_records"] += len(records)
     request.stats.setdefault("updated_kpis", set()).add(request.kpi_id)

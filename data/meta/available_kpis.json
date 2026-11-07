@@ -1088,7 +1088,7 @@
   },
   {
     "title": "Big Mac Index",
-    "description": "The Big Mac Index measures the cost of a Big Mac burger in different countries to compare the purchasing power of currencies. It helps us understand how much people can buy with their money in various economies, making it a fun and simple way to see if currencies are overvalued or undervalued. Factors like local wages, ingredient costs, and economic conditions influence the price of a Big Mac. This index is often used alongside other economic indicators, such as inflation rates and exchange rates, to provide a broader picture of a country's economic health. These data originate from The Economist’s Big Mac Index and have been preprocessed for comparison.",
+    "description": "The Big Mac Index is a symbolic comparison of burger prices across markets. RealityCheck displays the price of one Big Mac converted to US dollars. The July 2026 snapshot uses the dollar_price field from The Economist (CC BY 4.0), filtered to markets supported by the country view. Euro area and Hong Kong are excluded from that view. Earlier annual observations are retained.",
     "unit": "USD",
     "relation": "",
     "sort": "lower",
@@ -1102,7 +1102,10 @@
     "relevance": "none",
     "actuality": "critical",
     "invert": "",
-    "test": ""
+    "test": "",
+    "source_url": "https://github.com/TheEconomist/big-mac-data/blob/0d9710454755a71d7f0c03e662e580b271be456d/output-data/big-mac-full-index.csv",
+    "source_release_date": "2026-07-01",
+    "analysis_guardrail": "Describe USD burger prices. Do not infer currency misvaluation, general affordability or consumer-price inflation. Compare like-for-like markets and observation dates."
   },
   {
     "title": "Recycling Rate",

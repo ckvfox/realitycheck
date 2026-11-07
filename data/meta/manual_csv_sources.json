@@ -4,10 +4,10 @@
   "sources": {
     "big_mac_index": {
       "ingestion_mode": "manual_import",
-      "access_mode": "unknown_manual",
+      "access_mode": "public_download",
       "check_mode": "manual_review",
-      "update_url": "https://www.economist.com/big-mac-index",
-      "notes": "Keep the existing import manual until the acquisition path and reuse terms are documented."
+      "update_url": "https://github.com/TheEconomist/big-mac-data/releases",
+      "notes": "Manual review and import of The Economist-generated dollar_price data under CC BY 4.0. See docs/big_mac_index_2026-07.md for provenance, transformation and exclusions."
     },
     "environmental_performance_index": {
       "ingestion_mode": "manual_import",
