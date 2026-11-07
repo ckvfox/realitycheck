@@ -259,6 +259,13 @@ def _save_rows(kpi_id, records, fields, stats=None, output_dir=None, label="") -
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
         writer.writerows(trimmed)
+    if stats is not None and trimmed:
+        latest = max(int(float(row["year"])) for row in trimmed)
+        countries = {
+            row.get("iso2") or row.get("iso3") for row in trimmed
+            if int(float(row["year"])) == latest and (row.get("iso2") or row.get("iso3"))
+        }
+        stats.setdefault("coverage_by_kpi", {})[kpi_id] = {"year": latest, "countries": len(countries)}
     return True
 
 
@@ -328,7 +335,7 @@ def merge_fetch_state(updated_kpis: set[str]) -> None:
     state_path = DATA_DIR / "fetch_state.json"
     old_state = load_json_file(state_path, {}) if state_path.exists() else {}
     merged = sorted(set(old_state.get("updated_kpis", [])) | updated_kpis)
-    write_json(state_path, {"last_run": now_utc(), "updated_kpis": merged})
+    write_json(state_path, {**old_state, "last_run": now_utc(), "updated_kpis": merged})
     log(f"[STATE] Merged {len(updated_kpis)} updated KPIs -> total {len(merged)} entries")
 
 
@@ -420,10 +427,12 @@ def main(args: argparse.Namespace) -> dict[str, Any]:
     special_queue: list[dict[str, Any]] = []
     source_date_cache: dict[str, str] = {}
 
+    outcomes = {}
     for source_meta in kpi_list:
         meta = dict(source_meta)
         meta["output_dir"] = output_dir
         kpi_id = resolve_kpi_id(meta)
+        outcomes[kpi_id] = "skipped"
         try:
             source_type = str(meta.get("source_type") or meta.get("type") or "").lower().strip()
             adapter = registry.get(source_type)
@@ -451,6 +460,7 @@ def main(args: argparse.Namespace) -> dict[str, Any]:
             meta["_discovered_source_date"] = source_date
             if not args.test and not force_all_updates and not should_fetch(kpi_id, source_type, source_date, meta, fetch_status):
                 mark_skip(stats, "Remote data unchanged")
+                outcomes[kpi_id] = "not_due"
                 log(f"[SKIP] {kpi_id}: source unchanged ({source_date})")
                 continue
 
@@ -466,9 +476,11 @@ def main(args: argparse.Namespace) -> dict[str, Any]:
                 stats=stats,
                 output_dir=output_dir,
             )
+            before_failures = stats["errors"] + stats["dummies"]
             result = registry.dispatch(source_type, request)
             result.apply_to(meta)
             if kpi_id not in updated:
+                outcomes[kpi_id] = result.outcome or ("failed" if stats["errors"] + stats["dummies"] > before_failures else "unchanged")
                 log(f"[STATUS] {kpi_id}: no successful replacement; preserving previous status")
                 continue
             if not was_updated:
@@ -481,6 +493,7 @@ def main(args: argparse.Namespace) -> dict[str, Any]:
             )
             fetch_status.setdefault("kpis", {})[kpi_id] = status.entry
         except Exception as exc:
+            outcomes[kpi_id] = "failed"
             keep_or_dummy(kpi_id, f"Exception: {exc}", stats, output_dir=output_dir)
             log(f"[ERROR] {kpi_id} failed: {exc}\n{traceback.format_exc()}")
 
@@ -548,7 +561,11 @@ def main(args: argparse.Namespace) -> dict[str, Any]:
             if result.returncode != 0:
                 log(f"[WARN] Auto mapping failed: {result.stderr}")
 
+    for kpi_id in stats["updated_kpis"]:
+        outcomes[kpi_id] = "updated"
     fetch_state = {
+        "import_outcomes": outcomes,
+        "coverage_by_kpi": stats.get("coverage_by_kpi", {}),
         "last_run": now_utc(),
         "updated_kpis": sorted(stats["updated_kpis"]),
         "summary": {key: stats[key] for key in ("updated", "skipped", "errors")},

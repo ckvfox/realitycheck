@@ -134,3 +134,18 @@ definition, licence and normalization still require human review before import.
 Registry completeness intentionally fails until all these steps agree, so an
 accepted metadata type cannot silently fall into a dummy or unknown-source
 branch.
+
+
+### OECD edition reviews
+
+Run `python scripts/helper/audit_recycling_rate.py` for a read-only comparison
+with OECD material recycling as a percentage of treated municipal waste.
+The November 2026 check found 1,150 overlapping country-years in 55 countries
+and a median absolute gap of 9.92 percentage points. This source is unsuitable
+as a drop-in replacement for the existing wider series.
+
+The **PISA edition review** workflow takes an official Annex workbook, the
+cycle, reviewed worksheet names and the expected eligible participant count.
+It produces a candidate CSV and retains the workbook for review of sampling
+notes. It preserves existing observations and appends only normalized
+country-cycle keys with all three domain means.

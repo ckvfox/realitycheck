@@ -59,20 +59,24 @@ def append_july_editions(content, history, countries, today):
 
 def run(request, *, runtime, http_get):
     try:
+        response = http_get(URL, timeout=(10, 45))
+        response.raise_for_status()
+    except OSError as exc:
+        runtime.keep_or_dummy(request.kpi_id, f"Big Mac request failed: {exc}", request.stats, output_dir=request.output_dir)
+        return AdapterResult(outcome="source_unavailable")
+    try:
         target = request.output_dir / f"{request.kpi_id}.json"
         baseline = target if target.exists() else runtime.data_dir / target.name
         with baseline.open(encoding="utf-8") as handle:
             history = json.load(handle)
-        response = http_get(URL, timeout=(10, 45))
-        response.raise_for_status()
         records = append_july_editions(response.content.decode("utf-8-sig"), history, request.countries, date.today())
     except (ValueError, KeyError, TypeError, OSError) as exc:
         runtime.keep_or_dummy(request.kpi_id, f"Big Mac refresh failed: {exc}", request.stats, output_dir=request.output_dir)
-        return AdapterResult()
+        return AdapterResult(outcome="rejected")
 
     if len(records) == len(history) and target.exists() and target.with_suffix(".csv").exists():
         runtime.mark_skip(request.stats, "No newer complete Economist July edition")
-        return AdapterResult()
+        return AdapterResult(outcome="unchanged")
     if runtime.save_records(request.kpi_id, records, request.stats, output_dir=request.output_dir) is False:
         return AdapterResult()
 

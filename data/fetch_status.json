@@ -429,10 +429,10 @@
     },
     "inform_resilience_index": {
       "source": "https://drmkc.jrc.ec.europa.eu/inform-index",
-      "url": "",
-      "source_date": "2025-01-01T00:00:00Z",
-      "data_year": 2025,
-      "last_fetch": "2026-11-01T03:04:44Z"
+      "url": "https://drmkc.jrc.ec.europa.eu/inform-index/Portals/0/InfoRM/2026/INFORM_Risk_2026_v072.xlsx",
+      "source_date": "2026-03-31T00:00:00Z",
+      "data_year": 2026,
+      "last_fetch": "2026-11-07T12:46:41Z"
     },
     "olympic_medals_winter": {
       "source": "https://www.olympics.com/en/olympic-games",

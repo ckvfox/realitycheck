@@ -45,14 +45,19 @@ def build_summary(
     if run_url:
         lines.append(f"- **Complete Actions log:** {run_url}")
 
-    lines.extend(["", "## Updated datasets", ""])
-    if updated:
-        lines.extend(["| KPI | Latest data year |", "|---|---:|"])
-        for kpi in sorted(str(item) for item in updated):
-            info = kpi_status.get(kpi) if isinstance(kpi_status.get(kpi), dict) else {}
-            lines.append(f"| `{kpi}` | {info.get('data_year', 'n/a')} |")
-    else:
-        lines.append("No KPI replacement was recorded for this run.")
+    outcomes = fetch_state.get("import_outcomes", {})
+    coverage = fetch_state.get("coverage_by_kpi", {})
+    labels = {
+        "updated": "Imported", "unchanged": "No new edition", "not_due": "Check not due",
+        "source_unavailable": "Source unavailable", "rejected": "Data rejected",
+        "failed": "Import failed", "skipped": "Skipped",
+    }
+    lines.extend(["", "## Import status by KPI", "", "| KPI | Result | Year | Countries |", "|---|---|---:|---:|"])
+    for kpi in sorted(set(outcomes) | set(updated)):
+        info = kpi_status.get(kpi, {})
+        count = coverage.get(kpi, {})
+        result = outcomes.get(kpi, "updated")
+        lines.append(f"| `{kpi}` | {labels.get(result, 'Unknown')} | {count.get('year', info.get('data_year', '—'))} | {count.get('countries', '—')} |")
 
     lines.extend(
         [

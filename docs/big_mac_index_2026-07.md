@@ -12,3 +12,6 @@ RealityCheck filters the source to the July observation date and imports only `d
 The country view takes 52 of the 54 July observations. Historical Germany observations remain available through 2022. The published series contains two existing UAE values for 2018 because separate legacy source names resolve to the same country. This import preserves both and requires one observation per country for 2026.
 
 The regular fetch pipeline now checks the official Economist CSV for new July editions. It preserves existing published values, requires contiguous new years and retains all markets from the preceding edition. Invalid or incomplete releases leave the published data unchanged. The fetch status records the latest imported July date and the source URL.
+
+The Economist reports a euro-area average. It is not a uniform retail price
+and cannot be expanded into national observations. The processed index export filters out national euro-area series. The Economist input CSV still contains individual prices, including Germany, Austria and Italy in July 2026. RealityCheck currently imports the processed export.

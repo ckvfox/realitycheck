@@ -18,7 +18,7 @@ def extend_history(payload, history, current_year):
     baseline = {code for code, year in history if year == last_year}
     editions = {}
     for row in payload:
-        if row["IndicatorName"] != "INFORM Risk Index":
+        if row.get("FullName", row.get("IndicatorName")) != "INFORM Risk Index":
             continue
         code = row["Iso3"]
         raw_year = float(row["GNAYear"])
@@ -32,7 +32,9 @@ def extend_history(payload, history, current_year):
         if code in scores:
             raise ValueError(f"Duplicate INFORM country/year: {code}/{year}")
         scores[code] = score
-    if not editions or not baseline.issubset(editions.get(last_year, {})):
+    # The official release workbook can precede the trends API by one edition.
+    latest_overlap = max(set(editions) & years, default=0)
+    if latest_overlap < last_year - 1 or not baseline.issubset(editions.get(latest_overlap, {})):
         raise ValueError("INFORM API does not cover the baseline edition")
     for year in sorted(y for y in editions if y > last_year):
         if year != max(years) + 1 or not baseline.issubset(editions[year]):
@@ -46,6 +48,12 @@ def extend_history(payload, history, current_year):
 
 
 def run(request, *, runtime, http_get):
+    try:
+        response = http_get(URL, params={"workflowid": 0}, timeout=(10, 45))
+        response.raise_for_status()
+    except OSError as exc:
+        runtime.keep_or_dummy(request.kpi_id, f"INFORM request failed: {exc}", request.stats, output_dir=request.output_dir)
+        return AdapterResult(outcome="source_unavailable")
     try:
         names = {item["iso_a3"]: (country, item["iso_a2"]) for country, item in request.countries.items()}
         with (runtime.source_csv_dir / "inform_resilience_index.csv").open(
@@ -63,8 +71,6 @@ def run(request, *, runtime, http_get):
                 code = codes.get(row["country"])
                 if code and row["year"] > baseline_year:
                     history[(code, row["year"])] = row["value"]
-        response = http_get(URL, params={"workflowid": 0}, timeout=(10, 45))
-        response.raise_for_status()
         combined = extend_history(response.json(), history, date.today().year)
         baseline_codes = {code for code, _ in history}
         if {code for code, _ in combined} - baseline_codes - names.keys():
@@ -76,8 +82,11 @@ def run(request, *, runtime, http_get):
         latest = max(row["year"] for row in records)
     except (ValueError, KeyError, TypeError, OSError) as exc:
         runtime.keep_or_dummy(request.kpi_id, f"INFORM refresh failed: {exc}", request.stats, output_dir=request.output_dir)
-        return AdapterResult()
+        return AdapterResult(outcome="rejected")
 
+    if combined == history and target.exists() and target.with_suffix(".csv").exists():
+        runtime.mark_skip(request.stats, "No newer complete INFORM edition")
+        return AdapterResult(outcome="unchanged")
     if runtime.save_records(request.kpi_id, records, request.stats, output_dir=request.output_dir) is False:
         return AdapterResult()
     request.stats["others_success"] += 1

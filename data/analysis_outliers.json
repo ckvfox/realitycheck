@@ -2082,63 +2082,57 @@
     "high_outliers": [
       {
         "country": "South Sudan",
-        "year": 2025,
+        "year": 2026,
         "value": 8.5,
-        "z": 2.638
+        "z": 2.541
       },
       {
         "country": "Somalia",
-        "year": 2025,
-        "value": 8.4,
-        "z": 2.581
+        "year": 2026,
+        "value": 8.1,
+        "z": 2.313
       },
       {
         "country": "Yemen",
-        "year": 2025,
-        "value": 8.2,
-        "z": 2.465
-      },
-      {
-        "country": "Central African Republic",
-        "year": 2025,
+        "year": 2026,
         "value": 8.1,
-        "z": 2.408
+        "z": 2.313
       },
       {
         "country": "Democratic Republic of the Congo",
-        "year": 2025,
-        "value": 8.1,
-        "z": 2.408
+        "year": 2026,
+        "value": 8.0,
+        "z": 2.257
       },
       {
         "country": "Chad",
-        "year": 2025,
-        "value": 8.0,
-        "z": 2.35
+        "year": 2026,
+        "value": 7.9,
+        "z": 2.2
       },
       {
         "country": "Afghanistan",
-        "year": 2025,
+        "year": 2026,
         "value": 7.8,
-        "z": 2.235
-      },
-      {
-        "country": "Niger",
-        "year": 2025,
-        "value": 7.8,
-        "z": 2.235
+        "z": 2.143
       },
       {
         "country": "Sudan",
-        "year": 2025,
+        "year": 2026,
         "value": 7.8,
-        "z": 2.235
+        "z": 2.143
       },
       {
         "country": "Syria",
-        "year": 2025,
-        "value": 7.7,
-        "z": 2.177
+        "year": 2026,
+        "value": 7.8,
+        "z": 2.143
+      },
+      {
+        "country": "Central African Republic",
+        "year": 2026,
+        "value": 7.6,
+        "z": 2.029
       }
     ],
     "low_outliers": []

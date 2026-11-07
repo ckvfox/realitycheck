@@ -45,3 +45,8 @@ contributors and available under [CC BY-SA 4.0](https://creativecommons.org/lice
 Edition acquisition remains reviewed manually. Ingest reviewed totals as
 `country,year,value` in the appropriate season's source CSV. The normal
 fetch applies the delegation rules automatically.
+
+The 2026 edition was appended from the official JRC workbook, version 0.7.2
+of 31 March 2026. The 191 ISO3 codes match the preceding edition exactly.
+The trends API checked on 7 November still ended in 2025. The adapter accepts
+a one-edition lag while retaining the already imported 2026 observations.

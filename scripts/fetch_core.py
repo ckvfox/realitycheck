@@ -39,6 +39,7 @@ class AdapterResult:
     source_date: str | None = None
     data_year: int | None = None
     record_count: int = 0
+    outcome: str | None = None
 
     def apply_to(self, meta: MutableMapping[str, Any]) -> None:
         if self.source_date is not None:

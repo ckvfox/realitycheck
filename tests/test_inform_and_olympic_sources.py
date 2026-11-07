@@ -14,7 +14,7 @@ from adapters.olympic_medals import NON_MEMBERS, records
 
 class InformTests(unittest.TestCase):
     def score(self, code, year, score, indicator="INFORM Risk Index"):
-        return dict(Iso3=code, GNAYear=year, IndicatorScore=score, IndicatorName=indicator)
+        return dict(Iso3=code, GNAYear=year, IndicatorScore=score, FullName=indicator)
 
     def test_preserves_existing_scores_and_ignores_other_indicators(self):
         baseline = {("DEU", 2025): 2.6}
