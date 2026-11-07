@@ -11,4 +11,4 @@ RealityCheck filters the source to the July observation date and imports only `d
 
 The country view takes 52 of the 54 July observations. Historical Germany observations remain available through 2022. The published series contains two existing UAE values for 2018 because separate legacy source names resolve to the same country. This import preserves both and requires one observation per country for 2026.
 
-Future manual imports must record the exact source date and pinned CSV link in the KPI metadata, then regenerate the published CSV, JSON and relevant analysis.
+The regular fetch pipeline now checks the official Economist CSV for new July editions. It preserves existing published values, requires contiguous new years and retains all markets from the preceding edition. Invalid or incomplete releases leave the published data unchanged. The fetch status records the latest imported July date and the source URL.

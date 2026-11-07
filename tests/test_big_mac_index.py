@@ -2,11 +2,16 @@ import csv
 import gzip
 import json
 import math
+import sys
 import unittest
+from datetime import date
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from adapters.big_mac import append_july_editions
 
 
 def read_json(path):
@@ -65,8 +70,26 @@ class BigMacIndexTests(unittest.TestCase):
         meta = next(e for e in read_json("data/meta/available_kpis.json") if e["filename"] == "big_mac_index")
         status = read_json("data/fetch_status.json")["kpis"]["big_mac_index"]
         self.assertEqual(meta["unit"], "USD")
-        self.assertEqual(meta["source_release_date"], "2026-07-01")
-        self.assertEqual(status["source_date"], meta["source_release_date"] + "T00:00:00Z")
+        self.assertEqual(meta["source_type"], "big_mac")
+        self.assertEqual(status["source_date"], f'{status["data_year"]}-07-01T00:00:00Z')
         self.assertEqual(status["data_year"], max(row["year"] for row in rows))
-        self.assertEqual({row["year"] for row in rows}, set(range(2000, 2027)))
-        self.assertEqual(max(row["year"] for row in rows if row["iso2"] == "DE"), 2022)
+        self.assertEqual({row["year"] for row in rows}, set(range(2000, status["data_year"] + 1)))
+        self.assertEqual(max(row["year"] for row in rows if row["iso2"] == "DE" and row["year"] <= 2026), 2022)
+
+
+    def test_automatic_import_appends_only_complete_july_editions(self):
+        countries = read_json("data/meta/countries.json")
+        history = [{"country": "United States", "iso2": "US", "year": 2026, "value": 6.22}]
+        baseline = "date,iso_a3,dollar_price,USD_raw\n2026-07-01,USA,99,0\n"
+        january = "2027-01-01,USA,7.99,0\n"
+        july = "2027-07-01,USA,6.50,0\n"
+        excluded = "2027-07-01,EUZ,7.50,0.15\n2027-07-01,HKG,3.50,-0.46\n"
+        today = date(2027, 11, 7)
+        self.assertEqual(append_july_editions(baseline + january, history, countries, today), history)
+        self.assertEqual(
+            append_july_editions(baseline + january + july + excluded, history, countries, today),
+            history + [{"country": "United States", "iso2": "US", "year": 2027, "value": 6.50}],
+        )
+        for invalid in (july + july, july.replace("6.50", "NaN"), july.replace("USA", "CHE")):
+            with self.subTest(invalid=invalid), self.assertRaises(ValueError):
+                append_july_editions(baseline + invalid, history, countries, today)

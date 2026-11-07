@@ -1088,14 +1088,14 @@
   },
   {
     "title": "Big Mac Index",
-    "description": "The Big Mac Index is a symbolic comparison of burger prices across markets. RealityCheck displays the price of one Big Mac converted to US dollars. The July 2026 snapshot uses the dollar_price field from The Economist (CC BY 4.0), filtered to markets supported by the country view. Euro area and Hong Kong are excluded from that view. Earlier annual observations are retained.",
+    "description": "The Big Mac Index is a symbolic comparison of burger prices across markets. RealityCheck displays the price of one Big Mac converted to US dollars. Annual July snapshots use the dollar_price field from The Economist (CC BY 4.0), filtered to markets supported by the country view. Euro area and Hong Kong are excluded from that view. Earlier annual observations are retained.",
     "unit": "USD",
     "relation": "",
     "sort": "lower",
     "cluster": "Economy & Labor",
     "source": "https://www.economist.com/big-mac-index",
-    "source_type": "csv",
-    "source_code": "big_mac_index.csv",
+    "source_type": "big_mac",
+    "source_code": "dollar_price",
     "scale": "none",
     "world_kpi": "",
     "filename": "big_mac_index",
@@ -1103,8 +1103,7 @@
     "actuality": "critical",
     "invert": "",
     "test": "",
-    "source_url": "https://github.com/TheEconomist/big-mac-data/blob/0d9710454755a71d7f0c03e662e580b271be456d/output-data/big-mac-full-index.csv",
-    "source_release_date": "2026-07-01",
+    "source_url": "https://github.com/TheEconomist/big-mac-data/blob/master/output-data/big-mac-full-index.csv",
     "analysis_guardrail": "Describe USD burger prices. Do not infer currency misvaluation, general affordability or consumer-price inflation. Compare like-for-like markets and observation dates."
   },
   {
